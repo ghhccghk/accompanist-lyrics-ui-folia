@@ -52,10 +52,13 @@ No font or sample asset is copied from Folia/Accompanist. Browser shell/backdrop
 and subtitles are isolated from the core text comparison; this limitation must
 remain visible in every comparison report.
 
-Segmentation is independently written: ICU graphemes + conservative source-group
-boundaries; complex scripts retain whole runs. This is not Folia semantic CJK
-segmentation. Glow currently uses a documented provisional curve, not an exported
-upstream numerical fixture. Full original-browser visual equivalence is pending.
+Additional adaptation: wordGlow.ts → internal/animation/GraphemeGlow.kt and
+ClassicLine.kt per-grapheme masks. Original variants plus the pinned Framer
+keyframes generator produce glow.tsv (108 active/passed samples); Kotlin matches
+within 0.00002 opacity. Easing uses the runtime's 12-step Bézier resolution.
+Masks slice a complete shaped run before blur; body is never redrawn as characters.
+Blur kernels and selection-boundary coverage still need pixel calibration.
+Full original-browser visual equivalence is pending.
 
 ## Independent model input
 

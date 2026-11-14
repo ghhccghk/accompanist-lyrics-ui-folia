@@ -1,7 +1,9 @@
 # Third-party sources and dependencies
 
 No lyrics, covers, icons or fonts have been copied from reference applications.
-Synthetic sample text is written for this repository. Fonts use platform defaults.
+Synthetic sample text is written for this repository. Samples use platform defaults;
+verification/assets contains unmodified Noto Sans Bold under SIL OFL 1.1 with its
+license and provenance. It is used by the comparison harness only.
 
 | Component | Version | License / role |
 | --- | --- | --- |

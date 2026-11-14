@@ -38,3 +38,18 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 固定源代码在忽略的 .work/folia-major 检出，不构建或修改 Accompanist。
 数值夹具必须由固定源函数执行生成并注明生成入口；浏览器须使用真实上游 GlowWord，
 不能以重新实现的 HTML 近似替代后宣称原版对照。尚无完成 classic 最小闭环的结论。
+
+## 字素辉光验证（2026-11-15）
+
+GraphemeGlow.kt 与固定源 wordGlowVariants + 实际 Framer keyframes 生成的 glow.tsv
+108 个样本对照，三种 reveal、单字／多字、延迟／峰值／passed 采样误差 < 0.00002。
+曾发现 24 次高精度 Bézier 求解与上游 12 次近似存在约 0.00005 差异；已按实际运行时
+求解条件修复，未放宽阈值。ClassicLine 从完整塑形结果的 selection path 切分遮罩后
+再模糊，不逐字符重新塑形；移除临时 0.35/0.5 光晕强度。跨连字的裁剪仍需视觉核对。
+
+浏览器：verification/classic-browser/serve.mjs + capture.mjs；Chromium 151.0.7922.34，
+禁用 WAAPI，使用 Framer 原生 JS fallback 与虚拟时钟统一，10ms 媒体步进；源码未改。
+Kotlin：ClassicParityTest，同一 Noto Bold、800×600 density1、48px 字号、原创新合成文本。
+输出 build/verification/classic-{upstream,kotlin}/，default/avoid 各21检查点。
+1500ms 截图已目视检查：Kotlin 仍居中且词距过宽，浏览器为 seed-start；因此仅辉光
+数值曲线与接入完成，排版、整体过渡、模糊像素等价未通过。Android 此项仅构建验证。

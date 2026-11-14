@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.drawscope.CanvasDrawScope
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.drawscope.withTransform
+import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.*
@@ -34,8 +35,10 @@ import com.mocharealm.accompanist.lyrics.folia.internal.rendering.GlowBudget
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.hitClassicUnit
 import kotlin.math.*
 
+private data class GlyphGlow(val timing: TimedGrapheme, val origin: Offset,
+    val inner: ImageBitmap, val outer: ImageBitmap?)
 private data class Cell(val unit: DisplayUnit, val layout: TextLayoutResult, val center: Offset, val pose: Pose,
-    val innerGlow: ImageBitmap? = null, val outerGlow: ImageBitmap? = null, val glowPadding: Int = 0)
+    val glows: List<GlyphGlow> = emptyList())
 private data class Prepared(val cells: List<Cell>, val height: Float, val quality: FoliaQuality = FoliaQuality.Minimal)
 private class DrawnFrame { var timeUs: Long? = null; var center = Offset.Zero }
 private data class LineFrame(val alpha: Float, val scale: Float, val breathingY: Float)
@@ -107,20 +110,33 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             }
             // Fixed, bounded masks. Their alpha changes in draw; glyph shadows never change per frame.
             val padding = ceil(72 * density.density).toInt()
-            val bytesPerLayer = result.cells.sumOf { (it.layout.size.width + 2L * padding) * (it.layout.size.height + 2L * padding) * 4L }
+            fun glyphBounds(cell: Cell, timing: TimedGrapheme) = cell.layout.getPathForRange(timing.begin, timing.end).getBounds()
+            val bytesPerLayer = result.cells.sumOf { cell -> cell.unit.graphemes.sumOf { timing ->
+                val bounds = glyphBounds(cell, timing)
+                (ceil(bounds.width).toLong() + 2L * padding + 1) * (ceil(bounds.height).toLong() + 2L * padding + 1) * 4L
+            } }
             val layers = GlowBudget.layers(options.quality, bytesPerLayer, maskBudgetBytes)
             if (layers == 0) result
             else result.copy(quality = if (layers == 2) FoliaQuality.Standard else FoliaQuality.Reduced, cells = result.cells.map { cell ->
-                val bitmap = ImageBitmap(cell.layout.size.width + padding * 2, cell.layout.size.height + padding * 2)
-                CanvasDrawScope().draw(density, LayoutDirection.Ltr, BitmapCanvas(bitmap), Size(bitmap.width.toFloat(), bitmap.height.toFloat())) {
-                    drawRect(Color.Transparent, blendMode = BlendMode.Clear)
-                    drawText(cell.layout, Color.White, Offset(padding.toFloat(), padding.toFloat()))
-                }
                 val duration = line.endUs - line.startUs
                 val radii = floatArrayOf(if (duration < 100_000) 14f else if (duration < 180_000) 18f else 20f,
                     if (duration < 100_000) 24f else if (duration < 180_000) 32f else 40f)
-                val masks = blurredMasks(bitmap, IntArray(layers) { maxOf(1, (radii[it] * density.density / 2).toInt()) })
-                cell.copy(innerGlow = masks[0], outerGlow = masks.getOrNull(1), glowPadding = padding)
+                cell.copy(glows = cell.unit.graphemes.map { timing ->
+                    val path = cell.layout.getPathForRange(timing.begin, timing.end)
+                    val bounds = glyphBounds(cell, timing)
+                    val origin = Offset(floor(bounds.left) - padding, floor(bounds.top) - padding)
+                    val bitmap = ImageBitmap(ceil(bounds.right - origin.x + padding).toInt().coerceAtLeast(1),
+                        ceil(bounds.bottom - origin.y + padding).toInt().coerceAtLeast(1))
+                    CanvasDrawScope().draw(density, LayoutDirection.Ltr, BitmapCanvas(bitmap), Size(bitmap.width.toFloat(), bitmap.height.toFloat())) {
+                        drawRect(Color.Transparent, blendMode = BlendMode.Clear)
+                        withTransform({ translate(-origin.x, -origin.y) }) {
+                            // Slice coverage from one fully shaped run; never reshape individual characters.
+                            clipPath(path) { drawText(cell.layout, Color.White, Offset.Zero) }
+                        }
+                    }
+                    val masks = blurredMasks(bitmap, IntArray(layers) { maxOf(1, (radii[it] * density.density / 2).toInt()) })
+                    GlyphGlow(timing, origin, masks[0], masks.getOrNull(1))
+                })
             })
         }
         val notify by rememberUpdatedState(onPrepared)
@@ -169,10 +185,14 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                         scale(frame.scale, frame.scale, Offset.Zero)
                     }) {
                         val topLeft = Offset(-cell.layout.size.width / 2f, -cell.layout.size.height / 2f)
-                        if (options.quality != FoliaQuality.Minimal && frame.glow > .001f) {
-                            val glowOrigin = topLeft - Offset(cell.glowPadding.toFloat(), cell.glowPadding.toFloat())
-                            cell.outerGlow?.let { drawImage(it, glowOrigin, alpha = frame.glow * alpha * .35f, colorFilter = glowColor) }
-                            cell.innerGlow?.let { drawImage(it, glowOrigin, alpha = frame.glow * alpha * .5f, colorFilter = glowColor) }
+                        cell.glows.forEach { glyph ->
+                            val glow = sampleGraphemeGlow(time, enterUs, cell.unit.startUs, cell.unit.endUs,
+                                glyph.timing.startUs, glyph.timing.endUs, cell.unit.graphemes.size, profile)
+                            if (glow > .001f) {
+                                val origin = topLeft + glyph.origin
+                                glyph.outer?.let { drawImage(it, origin, alpha = glow * alpha, colorFilter = glowColor) }
+                                drawImage(glyph.inner, origin, alpha = glow * alpha, colorFilter = glowColor)
+                            }
                         }
                         drawText(cell.layout, lerp(colors.text, colors.active, frame.mix), topLeft, alpha = alpha)
                     }

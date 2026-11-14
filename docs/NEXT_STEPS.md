@@ -16,7 +16,10 @@
 源码和任务对应见 classic-parity.md。示例扩展、发布流程和非必要优化暂缓；
 先完成以上闭环，再恢复下面历史清单。Rust 仍不提前引入。
 
-下一项：显示分组与字素时序（上游 GlowWord.tsx、graphemeTiming.ts、cjkSemanticLayout.ts）。
+已完成数据层分组／内部时间保留：39dc379。字素辉光已接入完整塑形遮罩，
+与原版 wordGlowVariants + Framer keyframes 生成的 108 个样本对照，误差 < 0.00002。
+固定 Noto Bold、800×600 的浏览器／Kotlin 时间点截图已生成；排版仍显著不同，未验收。
+下一项：替换 safeScale 固定间距，移植旋转包络、动态词距、seed 对齐和避让。
 
 ## 历史工作（保留）
 

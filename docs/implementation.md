@@ -232,3 +232,12 @@ and secondary lines are explicitly outside these primary-line counters.
 Verified :library:jvmTest (16 tests) and :library:compileAndroidMain. Added
 Compose coverage for active → gap → next line → empty document. This change has
 in-process Desktop coverage; Android runtime recheck remains pending.
+
+## Continuous media checkpoints — 2026-11-15
+
+Added synthetic 480×360 classic/reduced-motion sampled GIFs, full-color PNGs,
+conditions and pixel hash manifest. A seeded random seek pass reconstructs all
+51 normal checkpoints; reduced motion must visibly change the sequence. Library
+JVM test passes and the 1500ms PNG was visually inspected for readable text,
+halo and captions. This is a platform-font diagnostic, not upstream parity or
+an FPS measurement; no remote video/font/lyrics assets are redistributed.

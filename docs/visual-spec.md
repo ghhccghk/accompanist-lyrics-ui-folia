@@ -61,3 +61,17 @@ are diagnostic artifacts rather than portable golden images.
 Still required: licensed fixed-font browser comparison at pinned upstream,
 continuous transition recordings, Android device checks, RTL/large-font UI and
 quantified CPU/GPU/memory measurements. Do not claim visual parity or 60Hz yet.
+
+## Continuous diagnostic sequence — 2026-11-15
+
+Run `./gradlew :library:jvmTest --tests '*VisualSequenceTest*'` to produce
+`library/build/verification/sequence/`: two 51-image GIF sequences, PNG checkpoints
+every 500ms, pixel SHA-256 CSV and conditions.txt. Original synthetic English
+lyrics are rendered at 480×360/density 1, Standard quality, default platform font,
+opaque background, 0–5000ms in 100ms media steps. The second sequence enables
+reduced motion. Randomly ordered seeks reconstruct every normal checkpoint exactly.
+
+GIF delay represents sampled media time at 10 images/second; this is not measured
+frame throughput. PNGs retain full color while GIF is indexed color. These outputs
+permit continuous-motion inspection without shipping reference media. Fixed-font
+upstream comparison and real-window recording remain outstanding.

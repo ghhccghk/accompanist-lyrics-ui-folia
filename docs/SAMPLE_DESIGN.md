@@ -1,6 +1,6 @@
 # lyrics-ui-folia 示例项目设计
 
-日期：2026-11-14。状态：待实现。本文定义后续开发必须交付的 Android／JVM Desktop 示例，不代表示例代码已经存在。
+日期：2026-11-14。状态：已有 Android／JVM Desktop 示例源码和运行验证；本文保留目标要求，尚未全部验收。实际能力和限制见 implementation.md、android-smoke.md、delivery.md。
 
 关联：[主设计](DESIGN.md)、[实施计划](../PLAN.md)、[可选 Rust 后端](NATIVE_DESIGN.md)。
 

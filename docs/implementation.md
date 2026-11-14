@@ -210,3 +210,14 @@ Both samples build. 2,000 seeded forward/inverse pose checks and an actual rende
 glyph touch test pass, along with a whitespace miss and original source identity.
 Latest touch changes have Compose Desktop runtime coverage; the earlier Android
 smoke predates this final hit-test change, so Android runtime recheck is pending.
+
+## Verification closeout — 2026-11-15
+
+Latest root results: 15 library tests and 15 shared tests, all pass. Both sample
+builds pass. Rebuilt local Maven snapshots pass the independent JVM rendering test,
+Android compilation and all current binary/source archive notice checks (one
+additional consumer test). README/design status now distinguish implementation
+from planned acceptance. delivery.md lists the saved milestones and remaining
+work; no claim of full classic parity, complete performance baseline or final
+release is made. The untracked daemon configuration and reference IDE edits
+remain outside this task's commits.

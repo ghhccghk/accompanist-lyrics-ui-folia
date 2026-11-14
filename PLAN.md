@@ -16,7 +16,7 @@
 | 新项目 | `F:\android app code\lyrics-ui-folia`，`lyrics-ui-folia` | 独立实现 Folia 文字显示，按约定的 AGPL 路线维护 |
 | 共用数据依赖 | 已发布的 `lyrics-core` | 提供 `SyncedLyrics`、歌词行和音节模型 |
 
-新项目使用独立 Git 仓库、Gradle settings、依赖配置、版本号、CI、示例和发布产物。当前仅编写计划与详细设计；建仓、工程骨架及实现属于后续阶段。
+新项目已建立独立 Git 仓库、Gradle settings、依赖配置、版本号、示例和本地验证产物；CI 尚未配置。实际完成项和未验证项见 docs/implementation.md、docs/delivery.md；以下仍包含未完成的设计目标。
 
 必须遵守：
 
@@ -81,7 +81,7 @@
 
 ## 4. 工程与依赖设计
 
-建议发布坐标：`com.mocharealm.accompanist:lyrics-ui-folia`；建议 Kotlin 包名：`com.mocharealm.accompanist.lyrics.folia`。以下为计划结构，尚未创建：
+当前本地验证坐标：`com.mocharealm.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`；Kotlin 包名：`com.mocharealm.accompanist.lyrics.folia`。以下为目标结构，其中 native 尚未创建：
 
 ```text
 lyrics-ui-folia/

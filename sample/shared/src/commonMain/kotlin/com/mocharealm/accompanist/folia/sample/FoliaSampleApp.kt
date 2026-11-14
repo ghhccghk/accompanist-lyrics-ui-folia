@@ -1,6 +1,7 @@
 package com.mocharealm.accompanist.folia.sample
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,6 +15,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.input.key.*
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import com.mocharealm.accompanist.folia.sample.fixtures.scenes
 import com.mocharealm.accompanist.folia.sample.playback.PreviewPlaybackController
 import com.mocharealm.accompanist.folia.sample.importing.*
@@ -22,13 +26,13 @@ import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.folia.*
 
 @Composable
-fun FoliaSampleApp(visible: Boolean = true) {
-    var scene by remember { mutableStateOf(scenes.first()) }
-    val clock = remember { PreviewPlaybackController(scene.durationMillis) }
+fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { SampleSession() }) {
+    var scene by session::scene
+    val clock = session.clock
     val playing by remember { derivedStateOf { clock.snapshot.isPlaying } }
-    var options by remember { mutableStateOf(FoliaOptions()) }
-    var tuning by remember { mutableStateOf(ClassicTuning()) }
-    var fontScale by remember { mutableFloatStateOf(1f) }
+    var options by session::options
+    var tuning by session::tuning
+    var fontScale by session::fontScale
     var settings by remember { mutableStateOf(false) }
     var picker by remember { mutableStateOf(false) }
     var debug by remember { mutableStateOf(false) }
@@ -36,7 +40,7 @@ fun FoliaSampleApp(visible: Boolean = true) {
     val requests = remember { ImportRequests() }
     val scope = rememberCoroutineScope()
     var importJob by remember { mutableStateOf<Job?>(null) }
-    var importedSource by remember { mutableStateOf<LyricsSource?>(null) }
+    var importedSource by session::importedSource
     val load: (LyricsSource) -> Unit = { source ->
         importJob?.cancel()
         val token = requests.begin()
@@ -52,13 +56,27 @@ fun FoliaSampleApp(visible: Boolean = true) {
         }
     }
     val open = rememberLyricsPicker(load) { message -> requests.fail(requests.begin(), message) }
+    val keyboardFocus = remember { FocusRequester() }
+    LaunchedEffect(Unit) { keyboardFocus.requestFocus() }
     LaunchedEffect(playing, visible) {
         if (!visible) clock.pause()
         else if (playing) while (clock.snapshot.isPlaying) withFrameNanos { clock.refresh() }
     }
     DisposableEffect(clock) { onDispose { clock.pause() } }
     MaterialTheme(colorScheme = darkColorScheme(primary = Color(0xFFB6CFFF))) {
-        BoxWithConstraints(Modifier.fillMaxSize().background(Brush.linearGradient(
+        BoxWithConstraints(Modifier.fillMaxSize().onKeyEvent { event ->
+            // Bubble after focused controls: slider arrows/buttons retain their own behavior.
+            if (event.type != KeyEventType.KeyDown || settings || picker || pressed != null || requests.error != null) false
+            else when {
+                event.isCtrlPressed && event.key == Key.O -> { open(); true }
+                event.isCtrlPressed && event.key == Key.R -> { importedSource?.let(load); true }
+                event.isCtrlPressed || event.isAltPressed || event.isMetaPressed -> false
+                event.key == Key.Spacebar -> { if (visible) clock.toggle(); true }
+                event.key == Key.DirectionLeft -> { clock.seek(clock.snapshot.positionMillis - 5_000); true }
+                event.key == Key.DirectionRight -> { clock.seek(clock.snapshot.positionMillis + 5_000); true }
+                else -> false
+            }
+        }.focusRequester(keyboardFocus).focusable().background(Brush.linearGradient(
             listOf(Color(0xFF152839), Color(0xFF272033)))).safeContentPadding().padding(16.dp)) {
             val metadata: @Composable (Boolean) -> Unit = { wide ->
                 Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {

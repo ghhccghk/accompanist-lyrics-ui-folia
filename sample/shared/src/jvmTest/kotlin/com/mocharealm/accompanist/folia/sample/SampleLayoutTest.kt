@@ -7,12 +7,30 @@ import androidx.compose.ui.graphics.toAwtImage
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.v2.runDesktopComposeUiTest
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.input.key.Key
 import java.io.File
 import javax.imageio.ImageIO
 import kotlin.test.Test
+import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
 class SampleLayoutTest {
+    @Test fun retainedSessionVisibilityDisposalAndKeyboard() = runDesktopComposeUiTest(width = 900, height = 740) {
+        val session = SampleSession()
+        var visible by mutableStateOf(true)
+        var attached by mutableStateOf(true)
+        setContent { if (attached) FoliaSampleApp(visible, session) }
+        onRoot().performKeyInput { pressKey(Key.DirectionRight) }
+        runOnIdle { assertEquals(5_000, session.clock.snapshot.positionMillis); session.clock.play(); visible = false }
+        waitForIdle()
+        runOnIdle { assertFalse(session.clock.snapshot.isPlaying); session.clock.seek(6_000); session.clock.changeSpeed(1.5); attached = false }
+        waitForIdle()
+        runOnIdle { attached = true; visible = true }
+        onNodeWithText("1.5×").assertExists()
+        runOnIdle { assertEquals(6_000, session.clock.snapshot.positionMillis); session.clock.play(); attached = false }
+        waitForIdle()
+        runOnIdle { assertFalse(session.clock.snapshot.isPlaying) }
+    }
     @Test fun scenesControlsAndResizeKeepState() = runDesktopComposeUiTest(width = 1100, height = 800) {
         var width by mutableStateOf(1100.dp)
         setContent { Box(Modifier.width(width).height(740.dp)) { FoliaSampleApp() } }

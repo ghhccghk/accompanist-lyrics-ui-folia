@@ -124,3 +124,16 @@ Verified both sample builds and eight shared tests, including real parser fixtur
 invalid UTF-8/unsupported/oversized input and stale request invalidation.
 Native picker interaction and Android provider permissions have not been exercised
 on a device; Compose surface tests do not establish native-dialog validation.
+
+## Session lifetime and keyboard
+
+SampleSession owns lyrics, clock and display options. Android retains it in a
+ViewModel across configuration recreation and pauses onStop; process-death
+restoration is not claimed. Desktop pauses when unfocused/minimized and on close.
+Composition removal cancels its frame/import jobs and pauses the clock. Returning
+to foreground requires an explicit play action. Shortcut events bubble after
+focused controls: Space, arrows ±5s, Ctrl+O and Ctrl+R; dialogs keep their own input.
+
+Verified both builds and nine shared tests. The added Compose test checks keyboard
+seek, background pause, retained session reattachment and disposal pause. Actual
+Android configuration recreation and OS minimize/focus interaction remain untested.

@@ -45,3 +45,33 @@ After pinning the JVM toolchain to 21 for independent-consumer compatibility,
 the same optimized probe on OpenJDK 21.0.5 measured preparation 42.40ms and
 batch-average query P50/P95/P99 84.42/121.79/158.96ns, 0.00636 B/query.
 This is a separate observation; it is not compared as a JVM-version speedup.
+
+## Paired halo preparation — 2026-11-15
+
+MaskBenchmark measures two masks (radii 10/20) from an original 320×160 alpha
+rectangle. Same host, JDK 21.0.5, 512MiB test heap, one thread; one cold probe,
+10 warmups, 30 individual paired preparations. It includes bitmap read/conversion
+and CPU blur, excludes glyph shaping/rasterization, native allocations and GPU.
+
+| Metric | Separate preparation | Shared source/scratch |
+| --- | ---: | ---: |
+| Cold probe ms | 10.2381 | 9.8875 |
+| Warm P50 ms | 3.0322 | 2.3417 |
+| Warm P95 ms | 6.4588 | 2.7209 |
+| Warm max ms | 8.0232 | 2.7548 |
+| JVM allocated bytes/pair | 2,050,840 | 1,231,095 |
+
+One process run per variant, uncontrolled host load: these observations do not
+establish whole-renderer throughput or statistically controlled latency gains.
+Checksum remains 16851. The optimization reads one rasterized glyph source and
+reuses three CPU arrays across radii, while each output bitmap owns its pixels.
+ClassicLine now rasterizes each shaped unit once for both layers and avoids
+repreparing white masks when only tint/breathing changes.
+
+All 102 classic/reduced-motion checkpoint hashes were identical before/after.
+GlowMaskTest independently checks three-pass integer rounding and transparent
+edges against a naive convolution, including radii exceeding image dimensions
+and repeated radius output after scratch reuse. Reproduce with
+`./gradlew :library:jvmTest --tests '*MaskBenchmark*'`; report is
+`library/build/verification/mask-benchmark.txt`. Total scene budgets, shaping,
+real-window frame tails and Android CPU/GPU measurements remain open.

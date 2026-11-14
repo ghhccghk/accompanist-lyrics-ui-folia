@@ -29,7 +29,7 @@ import com.mocharealm.accompanist.lyrics.folia.*
 import com.mocharealm.accompanist.lyrics.folia.internal.animation.*
 import com.mocharealm.accompanist.lyrics.folia.internal.model.NormalizedLine
 import com.mocharealm.accompanist.lyrics.folia.internal.text.*
-import com.mocharealm.accompanist.lyrics.folia.internal.rendering.blurredMask
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.blurredMasks
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.hitClassicUnit
 import kotlin.math.*
 
@@ -61,7 +61,8 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
     BoxWithConstraints(modifier.fillMaxWidth()) {
         val widthPx = with(density) { maxWidth.toPx() }.coerceAtLeast(1f)
         val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(80f)
-        val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning, measurer, options.quality, colors.active) {
+        val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
+            tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality) {
             val safeScale = if (tuning.avoidOverlap) 2.15f else 1.75f
             fun prepare(fontScale: Float): Prepared {
                 val style = textStyle.copy(fontSize = textStyle.fontSize * fontScale, textAlign = TextAlign.Center)
@@ -108,17 +109,16 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             val layers = if (options.quality == FoliaQuality.Standard) 2 else if (options.quality == FoliaQuality.Reduced) 1 else 0
             if (layers == 0 || bytesPerLayer * layers > 16L * 1024 * 1024) result
             else result.copy(quality = options.quality, cells = result.cells.map { cell ->
-                fun mask(radius: Float): ImageBitmap {
-                    val bitmap = ImageBitmap(cell.layout.size.width + padding * 2, cell.layout.size.height + padding * 2)
-                    CanvasDrawScope().draw(density, LayoutDirection.Ltr, BitmapCanvas(bitmap), Size(bitmap.width.toFloat(), bitmap.height.toFloat())) {
-                        drawRect(Color.Transparent, blendMode = BlendMode.Clear)
-                        drawText(cell.layout, Color.White, Offset(padding.toFloat(), padding.toFloat()))
-                    }
-                    return blurredMask(bitmap, maxOf(1, (radius * density.density / 2).toInt()))
+                val bitmap = ImageBitmap(cell.layout.size.width + padding * 2, cell.layout.size.height + padding * 2)
+                CanvasDrawScope().draw(density, LayoutDirection.Ltr, BitmapCanvas(bitmap), Size(bitmap.width.toFloat(), bitmap.height.toFloat())) {
+                    drawRect(Color.Transparent, blendMode = BlendMode.Clear)
+                    drawText(cell.layout, Color.White, Offset(padding.toFloat(), padding.toFloat()))
                 }
                 val duration = line.endUs - line.startUs
-                cell.copy(innerGlow = mask(if (duration < 100_000) 14f else if (duration < 180_000) 18f else 20f),
-                    outerGlow = if (layers == 2) mask(if (duration < 100_000) 24f else if (duration < 180_000) 32f else 40f) else null, glowPadding = padding)
+                val radii = floatArrayOf(if (duration < 100_000) 14f else if (duration < 180_000) 18f else 20f,
+                    if (duration < 100_000) 24f else if (duration < 180_000) 32f else 40f)
+                val masks = blurredMasks(bitmap, IntArray(layers) { maxOf(1, (radii[it] * density.density / 2).toInt()) })
+                cell.copy(innerGlow = masks[0], outerGlow = masks.getOrNull(1), glowPadding = padding)
             })
         }
         val notify by rememberUpdatedState(onPrepared)

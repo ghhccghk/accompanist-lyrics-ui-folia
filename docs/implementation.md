@@ -241,3 +241,15 @@ conditions and pixel hash manifest. A seeded random seek pass reconstructs all
 JVM test passes and the 1500ms PNG was visually inspected for readable text,
 halo and captions. This is a platform-font diagnostic, not upstream parity or
 an FPS measurement; no remote video/font/lyrics assets are redistributed.
+
+## Shared halo preparation — 2026-11-15
+
+Measured paired masks before optimizing: duplicated source reads and temporary
+arrays were visible in JVM allocations. Multiple radii now share source read and
+scratch buffers; ClassicLine rasterizes glyphs once for both layers. Mask tint
+and breathing changes no longer invalidate prepared geometry/masks. Output
+bitmaps remain independent. See performance.md for conditions and limitations.
+
+Verified library/shared JVM suites, both sample builds, all 102 before/after
+checkpoint hashes, plus an independent naive-convolution mask oracle. No new
+Android runtime or native/GPU memory claims; no Rust dependency was introduced.

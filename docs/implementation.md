@@ -108,3 +108,19 @@ See visual-spec.md for all deviations; this is not final Folia visual parity.
 An untracked gradle/gradle-daemon-jvm.properties appeared during the session
 (selects JDK 25). It was not authored or staged by this task and is left intact.
 Later local verification may therefore select that runtime despite JAVA_HOME.
+
+## Local LRC import
+
+Android OpenDocument and Desktop AWT FileDialog now select local documents;
+UTF-8 reads are bounded to 1 MiB and parsing runs off the UI owner. The published
+EnhancedLrcParser accepts tested standard/enhanced LRC. No other format is claimed.
+Cancellation retains the scene; explicit errors retain the scene and are shown.
+Generation guards reject stale results; selecting a fixture cancels pending work.
+Reload uses the last session-only document/file capability, without storage permission
+or persistence claims. The unbounded final standard-LRC source time is preserved;
+the no-audio clock ends five seconds after the final start (or later finite end).
+
+Verified both sample builds and eight shared tests, including real parser fixtures,
+invalid UTF-8/unsupported/oversized input and stale request invalidation.
+Native picker interaction and Android provider permissions have not been exercised
+on a device; Compose surface tests do not establish native-dialog validation.

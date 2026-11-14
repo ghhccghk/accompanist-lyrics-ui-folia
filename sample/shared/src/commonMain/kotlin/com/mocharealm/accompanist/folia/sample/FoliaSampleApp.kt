@@ -16,6 +16,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.mocharealm.accompanist.folia.sample.fixtures.scenes
 import com.mocharealm.accompanist.folia.sample.playback.PreviewPlaybackController
+import com.mocharealm.accompanist.folia.sample.importing.*
+import kotlinx.coroutines.*
 import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.folia.*
 
@@ -31,6 +33,25 @@ fun FoliaSampleApp(visible: Boolean = true) {
     var picker by remember { mutableStateOf(false) }
     var debug by remember { mutableStateOf(false) }
     var pressed by remember { mutableStateOf<ISyncedLine?>(null) }
+    val requests = remember { ImportRequests() }
+    val scope = rememberCoroutineScope()
+    var importJob by remember { mutableStateOf<Job?>(null) }
+    var importedSource by remember { mutableStateOf<LyricsSource?>(null) }
+    val load: (LyricsSource) -> Unit = { source ->
+        importJob?.cancel()
+        val token = requests.begin()
+        importJob = scope.launch {
+            try {
+                val bytes = source.read()
+                val imported = withContext(Dispatchers.Default) { parseLrc(source.name, bytes, token) }
+                if (requests.accept(token)) {
+                    scene = imported; importedSource = source; clock.replaceDuration(imported.durationMillis)
+                }
+            } catch (cancelled: CancellationException) { throw cancelled }
+            catch (error: Exception) { requests.fail(token, error.message ?: error.toString()) }
+        }
+    }
+    val open = rememberLyricsPicker(load) { message -> requests.fail(requests.begin(), message) }
     LaunchedEffect(playing, visible) {
         if (!visible) clock.pause()
         else if (playing) while (clock.snapshot.isPlaying) withFrameNanos { clock.refresh() }
@@ -51,10 +72,13 @@ fun FoliaSampleApp(visible: Boolean = true) {
                     }
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                         TextButton({ picker = true }) { Text("场景") }
+                        TextButton(open, enabled = !requests.loading) { Text("导入 LRC") }
+                        if (importedSource != null) TextButton({ load(importedSource!!) }, enabled = !requests.loading) { Text("重新载入") }
                         TextButton({ options = options.copy(showTranslation = !options.showTranslation) }) { Text(if (options.showTranslation) "译文 ✓" else "译文") }
                         TextButton({ options = options.copy(showPhonetic = !options.showPhonetic) }) { Text(if (options.showPhonetic) "注音 ✓" else "注音") }
                         TextButton({ settings = true }) { Text("设置") }
                     }
+                    if (requests.loading) Text("正在读取歌词…", color = MaterialTheme.colorScheme.onSurface)
                 }
             }
             val lyrics: @Composable (Modifier) -> Unit = { modifier ->
@@ -72,7 +96,10 @@ fun FoliaSampleApp(visible: Boolean = true) {
         }
         if (picker) AlertDialog(onDismissRequest = { picker = false }, title = { Text("合成场景") }, text = {
             Column(Modifier.heightIn(max = 440.dp).verticalScroll(rememberScrollState())) {
-                scenes.forEach { item -> TextButton({ scene = item; clock.replaceDuration(item.durationMillis); picker = false }) { Text(item.title) } }
+                scenes.forEach { item -> TextButton({
+                    importJob?.cancel(); requests.invalidate(); importedSource = null
+                    scene = item; clock.replaceDuration(item.durationMillis); picker = false
+                }) { Text(item.title) } }
             }
         }, confirmButton = { TextButton({ picker = false }) { Text("关闭") } })
         if (settings) AlertDialog(onDismissRequest = { settings = false }, title = { Text("显示设置") }, text = {
@@ -100,6 +127,9 @@ fun FoliaSampleApp(visible: Boolean = true) {
         }, confirmButton = { TextButton({ debug = false }) { Text("关闭") } })
         pressed?.let { line -> AlertDialog(onDismissRequest = { pressed = null }, title = { Text("来源行") },
             text = { Text("${line.start}–${line.end} ms") }, confirmButton = { TextButton({ pressed = null }) { Text("关闭") } }) }
+        requests.error?.let { message -> AlertDialog(onDismissRequest = requests::dismissError,
+            title = { Text("导入失败 · 已保留当前歌词") }, text = { Text(message) },
+            confirmButton = { TextButton(requests::dismissError) { Text("关闭") } }) }
     }
 }
 

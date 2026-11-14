@@ -38,17 +38,19 @@ fun FoliaLyricsView(
     val document = remember(IdentityKey(lyrics), contentKey) { normalize(lyrics) }
     val index = remember(document) { VisualTimeline(document.lines) }
     val currentPlayback by rememberUpdatedState(playback)
-    var quality by remember(contentKey, options.quality) { mutableStateOf(options.quality) }
-    var unitCount by remember(contentKey) { mutableIntStateOf(0) }
-    val statusObserver by rememberUpdatedState(onStatus)
-    LaunchedEffect(document, quality, options.quality, unitCount) {
-        statusObserver(FoliaStatus(options.quality, quality, unitCount,
-            document.diagnostics.map { "${it.ref.index}:${it.reason}" } +
-                if (quality != options.quality) listOf("GlowBudgetExceeded") else emptyList()))
-    }
     val selection by remember(index, options.offsetMillis) { derivedStateOf {
         index.at((currentPlayback().positionMillis - options.offsetMillis) * 1000)
     } }
+    // Preparation callbacks belong to this document/epoch, including a null primary in gaps.
+    // Never carry a previous line's count or budget fallback into the next selection.
+    var quality by remember(document, selection.primary, options.quality) { mutableStateOf(FoliaQuality.Minimal) }
+    var unitCount by remember(document, selection.primary, options.quality) { mutableIntStateOf(0) }
+    val statusObserver by rememberUpdatedState(onStatus)
+    LaunchedEffect(document, selection.primary, quality, options.quality, unitCount) {
+        statusObserver(FoliaStatus(options.quality, quality, unitCount,
+            document.diagnostics.map { "${it.ref.index}:${it.reason}" } +
+                if (unitCount > 0 && quality != options.quality) listOf("GlowBudgetExceeded") else emptyList()))
+    }
     BoxWithConstraints(modifier.padding(24.dp)) {
         val heightBudget = maxHeight * .6f
         val mainStyle = typography.main ?: typography.secondary.copy(

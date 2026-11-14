@@ -19,6 +19,8 @@ data class FoliaOptions(
 enum class FoliaQuality { Standard, Reduced, Minimal }
 
 @Immutable
+/** Status of the current primary line; gaps report zero units and Minimal quality.
+ * Exiting and secondary lines are not included in these primary-line counters. */
 data class FoliaStatus(
     val requestedQuality: FoliaQuality,
     val actualQuality: FoliaQuality,

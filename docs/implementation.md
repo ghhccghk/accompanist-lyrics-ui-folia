@@ -221,3 +221,14 @@ from planned acceptance. delivery.md lists the saved milestones and remaining
 work; no claim of full classic parity, complete performance baseline or final
 release is made. The untracked daemon configuration and reference IDE edits
 remain outside this task's commits.
+
+## Primary status lifetime — 2026-11-15
+
+FoliaStatus preparation state is now scoped to document, primary epoch and
+requested quality. Gaps and empty replacements report zero primary units and
+Minimal actual quality without a false GlowBudgetExceeded diagnostic. Exiting
+and secondary lines are explicitly outside these primary-line counters.
+
+Verified :library:jvmTest (16 tests) and :library:compileAndroidMain. Added
+Compose coverage for active → gap → next line → empty document. This change has
+in-process Desktop coverage; Android runtime recheck remains pending.

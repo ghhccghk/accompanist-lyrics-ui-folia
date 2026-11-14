@@ -18,6 +18,41 @@ import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
 class RendererTest {
+    @Test fun statusFollowsPrimaryAcrossGapsAndReplacement() = runDesktopComposeUiTest(width = 800, height = 600) {
+        fun line(text: String, start: Int, end: Int) = KaraokeLine.MainKaraokeLine(
+            listOf(KaraokeSyllable(text, start, end)), null, KaraokeAlignment.Unspecified, start, end)
+        var lyrics by mutableStateOf(SyncedLyrics(listOf(line("First", 1_000, 2_000), line("Next", 4_000, 5_000))))
+        var position by mutableStateOf(FoliaPlaybackSnapshot(1_500, false))
+        var status: FoliaStatus? = null
+        setContent { FoliaLyricsView(lyrics, { position }, Modifier.fillMaxSize(),
+            options = FoliaOptions(quality = FoliaQuality.Reduced), onStatus = { status = it }) }
+        waitForIdle()
+        runOnIdle {
+            assertEquals(1, status?.mainUnitCount)
+            assertEquals(FoliaQuality.Reduced, status?.actualQuality)
+            position = FoliaPlaybackSnapshot(3_500, false, 1)
+        }
+        waitForIdle()
+        runOnIdle {
+            assertEquals(0, status?.mainUnitCount)
+            assertEquals(FoliaQuality.Minimal, status?.actualQuality)
+            assertFalse("GlowBudgetExceeded" in status!!.diagnostics)
+            position = FoliaPlaybackSnapshot(4_500, false, 2)
+        }
+        waitForIdle()
+        runOnIdle {
+            assertEquals(1, status?.mainUnitCount)
+            assertEquals(FoliaQuality.Reduced, status?.actualQuality)
+            lyrics = SyncedLyrics(emptyList())
+        }
+        waitForIdle()
+        runOnIdle {
+            assertEquals(0, status?.mainUnitCount)
+            assertEquals(FoliaQuality.Minimal, status?.actualQuality)
+            assertTrue(status!!.diagnostics.isEmpty())
+        }
+    }
+
     @Test fun pausedSeekRebuildsSameFrameAndClickRetainsSource() = runDesktopComposeUiTest(width = 800, height = 600) {
         val original = KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable("Hello ", 1_000, 2_000),
             KaraokeSyllable("light", 2_000, 3_000)), "合成字幕", KaraokeAlignment.Unspecified, 1_000, 3_000)

@@ -15,11 +15,23 @@ import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
 class SampleLayoutTest {
+    @Test fun preferencesRestoreAndSaveThroughStore() = runDesktopComposeUiTest(width = 900, height = 740) {
+        var saved = SampleSettings(options = com.mocharealm.accompanist.lyrics.folia.FoliaOptions(showTranslation = false)).encode()
+        val store = object : SettingsStore {
+            override suspend fun read() = saved
+            override suspend fun write(value: String) { saved = value }
+        }
+        val session = SampleSession()
+        setContent { FoliaSampleApp(session = session, settingsStore = store) }
+        onNodeWithText("译文").performClick()
+        onNodeWithText("译文 ✓").assertExists()
+        runOnIdle { assertTrue(SampleSettings.decode(saved).options.showTranslation) }
+    }
     @Test fun retainedSessionVisibilityDisposalAndKeyboard() = runDesktopComposeUiTest(width = 900, height = 740) {
         val session = SampleSession()
         var visible by mutableStateOf(true)
         var attached by mutableStateOf(true)
-        setContent { if (attached) FoliaSampleApp(visible, session) }
+        setContent { if (attached) FoliaSampleApp(visible, session, settingsStore = null) }
         onRoot().performKeyInput { pressKey(Key.DirectionRight) }
         runOnIdle { assertEquals(5_000, session.clock.snapshot.positionMillis); session.clock.play(); visible = false }
         waitForIdle()
@@ -33,7 +45,7 @@ class SampleLayoutTest {
     }
     @Test fun scenesControlsAndResizeKeepState() = runDesktopComposeUiTest(width = 1100, height = 800) {
         var width by mutableStateOf(1100.dp)
-        setContent { Box(Modifier.width(width).height(740.dp)) { FoliaSampleApp() } }
+        setContent { Box(Modifier.width(width).height(740.dp)) { FoliaSampleApp(settingsStore = null) } }
         onNodeWithText("演示时钟 · 无音频").assertExists()
         onNodeWithText("1.0×").performClick()
         onNodeWithText("1.5×").assertExists()

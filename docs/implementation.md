@@ -147,3 +147,17 @@ See performance.md for conditions, numbers, memory tradeoff and measurement limi
 Both sample builds and all library/shared tests pass; random source queries and
 pixel reconstruction remain verified. This is only the initial CPU/allocation
 baseline. No frame-rate claim and no Rust backend were added.
+
+## Display preferences and actual status
+
+Display options, classic tuning, font size, quality and offset now persist through
+an app-owned versioned store (Android private SharedPreferences, Desktop Java
+Preferences node LyricsUiFoliaSample). Reads/writes run off the UI thread;
+failures are displayed. Invalid finite/range values fall back to safe defaults.
+Import capabilities/history remain session-only; no URI permission is persisted.
+The disabled-by-default debug panel shows actual quality, safe-unit count and
+model/budget diagnostics, with Kotlin identified as the actual implementation.
+
+Verified both sample builds; preference codec and injected-store Compose tests
+cover restore/update without writing developer preferences during tests.
+OS store persistence across a real application restart remains untested.

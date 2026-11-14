@@ -14,4 +14,5 @@ class SampleSession {
     var tuning by mutableStateOf(ClassicTuning())
     var fontScale by mutableFloatStateOf(1f)
     var importedSource by mutableStateOf<LyricsSource?>(null)
+    var preferencesLoaded = false
 }

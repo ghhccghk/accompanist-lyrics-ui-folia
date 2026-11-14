@@ -26,7 +26,8 @@ import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.folia.*
 
 @Composable
-fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { SampleSession() }) {
+fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { SampleSession() },
+    settingsStore: SettingsStore? = rememberSettingsStore()) {
     var scene by session::scene
     val clock = session.clock
     val playing by remember { derivedStateOf { clock.snapshot.isPlaying } }
@@ -37,6 +38,22 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
     var picker by remember { mutableStateOf(false) }
     var debug by remember { mutableStateOf(false) }
     var pressed by remember { mutableStateOf<ISyncedLine?>(null) }
+    var status by remember { mutableStateOf<FoliaStatus?>(null) }
+    var preferenceError by remember { mutableStateOf<String?>(null) }
+    LaunchedEffect(session, settingsStore) {
+        if (settingsStore != null) {
+            try {
+                if (!session.preferencesLoaded) {
+                    val initial = session.settings()
+                    val stored = settingsStore.read()?.let(SampleSettings::decode)
+                    if (stored != null && session.settings() == initial) session.applySettings(stored)
+                    session.preferencesLoaded = true
+                }
+                snapshotFlow { session.settings().encode() }.collect { settingsStore.write(it) }
+            } catch (cancelled: CancellationException) { throw cancelled }
+            catch (error: Exception) { preferenceError = "设置存储失败：${error.message ?: error}" }
+        }
+    }
     val requests = remember { ImportRequests() }
     val scope = rememberCoroutineScope()
     var importJob by remember { mutableStateOf<Job?>(null) }
@@ -97,11 +114,13 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
                         TextButton({ settings = true }) { Text("设置") }
                     }
                     if (requests.loading) Text("正在读取歌词…", color = MaterialTheme.colorScheme.onSurface)
+                    preferenceError?.let { Text(it, color = MaterialTheme.colorScheme.error) }
                 }
             }
             val lyrics: @Composable (Modifier) -> Unit = { modifier ->
                 FoliaLyricsView(scene.lyrics, { clock.snapshot }, modifier, contentKey = scene.id, options = options,
                     typography = FoliaTypography(scale = fontScale), style = FoliaStyle.Classic(tuning),
+                    onStatus = { status = it },
                     onLineClicked = { clock.seek(it.start.toLong() + options.offsetMillis) }, onLinePressed = { pressed = it })
             }
             if (maxWidth < 600.dp) Column {
@@ -129,6 +148,7 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
                 Text("字号 ${fontScale}"); Slider(fontScale, { fontScale = it }, valueRange = .5f..2f)
                 Text("词间距"); Slider(tuning.wordSpacing, { tuning = tuning.copy(wordSpacing = it) }, valueRange = 0f..2f)
                 Text("呼吸幅度"); Slider(tuning.breathingFloatMultiplier, { tuning = tuning.copy(breathingFloatMultiplier = it) }, valueRange = 0f..2f)
+                Text("歌词偏移 ${options.offsetMillis} ms"); Slider(options.offsetMillis.toFloat(), { options = options.copy(offsetMillis = it.toInt()) }, valueRange = -2_000f..2_000f)
                 TextButton({ options = options.copy(quality = FoliaQuality.entries[(options.quality.ordinal + 1) % FoliaQuality.entries.size]) }) { Text("画质 ${options.quality}") }
                 Toggle("开发面板", debug) { debug = it }
             }
@@ -136,6 +156,11 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
         if (debug && !settings) AlertDialog(onDismissRequest = { debug = false }, title = { Text("检查点 · Kotlin") }, text = {
             Column(Modifier.verticalScroll(rememberScrollState())) {
                 DebugTime(clock)
+                Text("场景 ${scene.id} · Kotlin")
+                status?.let { value ->
+                    Text("画质 ${value.requestedQuality} → ${value.actualQuality} · ${value.mainUnitCount} 单元")
+                    value.diagnostics.forEach { Text(it) }
+                }
                 Row {
                     TextButton({ clock.pause(); clock.seek(clock.snapshot.positionMillis - 16) }) { Text("−16ms") }
                     TextButton({ clock.pause(); clock.seek(clock.snapshot.positionMillis + 16) }) { Text("+16ms") }

@@ -12,15 +12,23 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
     private val source = TimelineIndex(lines)
     private val profiles = lines.map { renderProfile(it.startUs, it.endUs, it.fragments.lastOrNull()?.endUs ?: it.endUs) }
     private val epochs: List<PrimaryEpoch>
+    private val changeTimes: List<Long>
+    private val selections: List<VisualSelection>
+    private val empty = VisualSelection(null, emptyList(), emptyList(), lines.indices.firstOrNull())
     init {
         val boundaries = lines.indices.flatMap { listOf(lines[it].startUs, lines[it].endUs, profiles[it].renderEndUs) }.distinct().sorted()
         val collected = mutableListOf<PrimaryEpoch>()
         var previous: Int? = null
         var entered = 0L
+        var cursor = 0
+        var latest: Int? = null
         boundaries.forEach { time ->
             val active = source.select(time)
             // Only the latest begun primary is eligible for a tail; never resurrect an older completed line.
-            val latest = lines.indices.lastOrNull { !lines[it].accompaniment && lines[it].startUs <= time }
+            while (cursor < lines.size && lines[cursor].startUs <= time) {
+                if (!lines[cursor].accompaniment && (latest == null || lines[cursor].startUs > lines[latest!!].startUs)) latest = cursor
+                cursor++
+            }
             val chosen = active.primary ?: latest?.takeIf { time < profiles[it].renderEndUs }
             if (chosen != previous) {
                 previous?.let { collected += PrimaryEpoch(it, entered, time) }
@@ -28,8 +36,21 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
             }
         }
         epochs = collected
+        changeTimes = (boundaries + epochs.flatMap { listOf(it.leaveUs + exitDuration(it.line)) }).distinct().sorted()
+        selections = changeTimes.map(::prepareSelection)
     }
     fun at(time: Long): VisualSelection {
+        var low = 0; var high = changeTimes.size
+        while (low < high) {
+            val middle = (low + high) ushr 1
+            if (changeTimes[middle] <= time) low = middle + 1 else high = middle
+        }
+        return if (low == 0) empty else selections[low - 1]
+    }
+    private fun exitDuration(line: Int): Long = when(profiles[line].mode) {
+        Reveal.Normal -> 300_000; Reveal.Fast -> 160_000; Reveal.Instant -> 120_000
+    }
+    private fun prepareSelection(time: Long): VisualSelection {
         var low = 0; var high = epochs.size
         while (low < high) {
             val middle = (low + high) ushr 1
@@ -38,8 +59,7 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
         val current = (low - 1).takeIf { it >= 0 }?.let(epochs::get)?.takeIf { time < it.leaveUs }
         val end = if (current == null) low else low - 1
         val exiting = (maxOf(0, end - 4) until end).map { epochs[it] }.filter {
-            val exit = when(profiles[it.line].mode) { Reveal.Normal -> 300_000; Reveal.Fast -> 160_000; Reveal.Instant -> 120_000 }
-            time >= it.leaveUs && time < it.leaveUs + exit
+            time >= it.leaveUs && time < it.leaveUs + exitDuration(it.line)
         }
         val selection = source.select(time)
         return VisualSelection(current, exiting, (selection.secondary + listOfNotNull(selection.primary))

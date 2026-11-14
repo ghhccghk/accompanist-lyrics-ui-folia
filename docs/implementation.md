@@ -137,3 +137,13 @@ focused controls: Space, arrows ±5s, Ctrl+O and Ctrl+R; dialogs keep their own 
 Verified both builds and nine shared tests. The added Compose test checks keyboard
 seek, background pause, retained session reattachment and disposal pause. Actual
 Android configuration recreation and OS minimize/focus interaction remain untested.
+
+## Kotlin boundary lookup optimization
+
+Measured then removed per-query VisualSelection/list allocations and quadratic
+latest-primary scanning. Prepared immutable boundary selections make random seeks
+binary searches; equal-start source priority is maintained through gap tails.
+See performance.md for conditions, numbers, memory tradeoff and measurement limits.
+Both sample builds and all library/shared tests pass; random source queries and
+pixel reconstruction remain verified. This is only the initial CPU/allocation
+baseline. No frame-rate claim and no Rust backend were added.

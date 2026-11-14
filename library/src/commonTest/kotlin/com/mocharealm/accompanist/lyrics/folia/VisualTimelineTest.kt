@@ -7,6 +7,16 @@ import com.mocharealm.accompanist.lyrics.folia.internal.timeline.VisualTimeline
 import kotlin.test.*
 
 class VisualTimelineTest {
+    @Test fun intervalResultsAreReusedAndEqualStartPrioritySurvivesTail() {
+        val timeline = VisualTimeline(normalize(SyncedLyrics(listOf(
+            SyncedLine("first", null, 0, 1_000), SyncedLine("second", null, 0, 1_000)
+        ))).lines)
+        assertSame(timeline.at(300_000), timeline.at(300_001))
+        assertEquals(0, timeline.at(1_000_000).primary?.line)
+        val before = timeline.at(999_999)
+        repeat(100) { timeline.at(it * 17_321L) }
+        assertSame(before, timeline.at(999_999))
+    }
     @Test fun overlapResumptionProducesIndependentEpochAndCanonicalExit() {
         val timeline = VisualTimeline(normalize(SyncedLyrics(listOf(SyncedLine("long", null, 0, 2_000),
             SyncedLine("short", null, 500, 1_000)))).lines)

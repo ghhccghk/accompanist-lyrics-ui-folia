@@ -9,6 +9,9 @@ internal class TimelineIndex(val lines: List<NormalizedLine>) {
     private data class Delta(val time: Long, val add: List<Int>, val remove: List<Int>)
     private val deltas: List<Delta>
     private val checkpoints: Map<Int, Set<Int>>
+    private var cachedBoundary = Int.MIN_VALUE
+    private var cachedNext = Int.MIN_VALUE
+    private var cachedSelection: TimelineSelection? = null
 
     init {
         val events = mutableMapOf<Long, Pair<MutableList<Int>, MutableList<Int>>>()
@@ -22,7 +25,7 @@ internal class TimelineIndex(val lines: List<NormalizedLine>) {
         val active = mutableSetOf<Int>()
         checkpoints = buildMap {
             deltas.forEachIndexed { index, delta ->
-                active.removeAll(delta.remove.toSet()); active.addAll(delta.add)
+                delta.remove.forEach(active::remove); active.addAll(delta.add)
                 if (index % 64 == 0) put(index, active.toSet())
             }
         }
@@ -36,24 +39,27 @@ internal class TimelineIndex(val lines: List<NormalizedLine>) {
             if (deltas[middle].time <= timeUs) low = middle + 1 else high = middle
         }
         val boundary = low - 1
+        low = 0; high = lines.size
+        while (low < high) {
+            val middle = (low + high) ushr 1
+            if (lines[middle].startUs <= timeUs) low = middle + 1 else high = middle
+        }
+        val next = low
+        if (boundary == cachedBoundary && next == cachedNext) return cachedSelection!!
         val active = if (boundary < 0) mutableSetOf() else {
             val checkpoint = boundary / 64 * 64
             checkpoints.getValue(checkpoint).toMutableSet().also { set ->
                 for (index in checkpoint + 1..boundary) {
-                    set.removeAll(deltas[index].remove.toSet()); set.addAll(deltas[index].add)
+                    deltas[index].remove.forEach(set::remove); set.addAll(deltas[index].add)
                 }
             }
         }
         val primary = active.filter { !lines[it].accompaniment }
             .maxWithOrNull(compareBy<Int>({ lines[it].startUs }, { -lines[it].ref.index }))
             ?: active.minByOrNull { lines[it].ref.index }
-        // lines are sorted by start; upper-bound query also works in interludes.
-        low = 0; high = lines.size
-        while (low < high) {
-            val middle = (low + high) ushr 1
-            if (lines[middle].startUs <= timeUs) low = middle + 1 else high = middle
-        }
         return TimelineSelection(primary, active.filter { it != primary }.sorted(),
-            low.takeIf { it < lines.size })
+            next.takeIf { it < lines.size }).also {
+                cachedBoundary = boundary; cachedNext = next; cachedSelection = it
+            }
     }
 }

@@ -60,6 +60,16 @@ Masks slice a complete shaped run before blur; body is never redrawn as characte
 Blur kernels and selection-boundary coverage still need pixel calibration.
 Full original-browser visual equivalence is pending.
 
+glowWordOverlap.ts → internal/styles/classic/ClassicGeometry.kt: same rotated
+active and nine sampled passed reaches, RTL pair gaps, overflow. 160 original
+function fixtures, max tolerance 0.0001. classic/Visualizer.tsx → ClassicGeometry.kt
+and ClassicLine.kt: width-based one-decimal spacing, flex wrapping without word
+splits, seed justification, overlap-only fit (min .5, slack .98, .005 convergence).
+Canvas measurement includes trailing space; CSS word boxes collapse it. Compose
+uses fractional caret advances rather than rounded maxIntrinsicWidth for both.
+Core fixed-font two-line browser layout fixtures match all margins at 0.0001;
+DOM offset dimensions/positions match within integer-pixel rounding (0.51px).
+
 ## Independent model input
 
 Resolved candidate: `com.mocharealm.accompanist:lyrics-core:0.5.0`.

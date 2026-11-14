@@ -21,6 +21,7 @@ import com.mocharealm.accompanist.lyrics.folia.internal.model.normalize
 import com.mocharealm.accompanist.lyrics.folia.internal.timeline.VisualTimeline
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicLine
 import java.io.File
+import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicGeometry
 import javax.imageio.ImageIO
 import kotlin.test.*
 
@@ -38,6 +39,7 @@ class ClassicParityTest {
         val style = TextStyle(fontFamily = font, fontWeight = FontWeight.Bold, fontSize = 48.sp, lineHeight = 58.56.sp)
         var snapshot by mutableStateOf(FoliaPlaybackSnapshot(0, false))
         var avoid by mutableStateOf(false)
+        val geometries = mutableMapOf<Pair<Boolean, Int>, ClassicGeometry>()
         setContent {
             val selection = timeline.at(snapshot.positionMillis * 1000)
             Box(Modifier.fillMaxSize().background(Color(0xFF162435)).padding(horizontal = 32.dp), contentAlignment = Alignment.Center) {
@@ -45,7 +47,8 @@ class ClassicParityTest {
                 epochs.forEach { epoch -> key(epoch) {
                     ClassicLine(document.lines[epoch.line], { snapshot }, style, FoliaColors(), FoliaOptions(),
                         ClassicTuning(breathingFloatMultiplier = 0f, avoidOverlap = avoid), 356.dp,
-                        enterUs = epoch.enterUs, leaveUs = epoch.leaveUs)
+                        enterUs = epoch.enterUs, leaveUs = epoch.leaveUs,
+                        onLayout = { geometries[avoid to epoch.line] = it })
                 } }
             }
         }
@@ -62,5 +65,19 @@ class ClassicParityTest {
             }
         }
         File(directory, "conditions.txt").writeText("800x600 density1; NotoSans-Bold.ttf pinned SHA in verification/assets/README.md; same main.tsx input. Paused direct media reconstruction. Core only, no chrome/subtitles. JVM ${System.getProperty("java.version")}.\n")
+        File(directory, "layout.tsv").writeText("mode\tline\tindex\tleft\ttop\twidth\theight\tmargin\tlineHeight\trowGap\tpaddingTop\tpaddingBottom\n" +
+            geometries.entries.joinToString("\n") { (key, g) -> g.boxes.mapIndexed { i,b ->
+                listOf(if(key.first) "avoid" else "default",key.second,i,b.left,b.top,b.width,b.height,g.margins[i],g.height,g.rowGap,g.paddingTop,g.paddingBottom).joinToString("\t")
+            }.joinToString("\n") })
+        File("../verification/classic-fixtures/browser-layout.tsv").readLines().filterNot {it.startsWith("#") || it.isBlank()}.forEach { row ->
+            val c=row.split('\t'); val g=geometries.getValue((c[0]=="avoid") to c[1].toInt())
+            val i=c[2].toInt(); val b=g.boxes[i]
+            val actual=listOf(b.left.toDouble(),b.top.toDouble(),b.width.toDouble(),b.height.toDouble(),g.margins[i],
+                g.height.toDouble(),g.rowGap.toDouble(),g.paddingTop.toDouble(),g.paddingBottom.toDouble())
+            actual.forEachIndexed { j,value ->
+                // DOM offset* rounds to integral CSS pixels; margin is serialized to 0.1px.
+                assertEquals(c[j+3].toDouble(),value,if(j==4) .0001 else .51,"column ${j+3}: $row")
+            }
+        }
     }
 }

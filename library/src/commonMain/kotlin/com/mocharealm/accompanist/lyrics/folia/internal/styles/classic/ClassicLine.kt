@@ -38,8 +38,9 @@ import kotlin.math.*
 private data class GlyphGlow(val timing: TimedGrapheme, val origin: Offset,
     val inner: ImageBitmap, val outer: ImageBitmap?)
 private data class Cell(val unit: DisplayUnit, val layout: TextLayoutResult, val center: Offset, val pose: Pose,
-    val glows: List<GlyphGlow> = emptyList())
-private data class Prepared(val cells: List<Cell>, val height: Float, val quality: FoliaQuality = FoliaQuality.Minimal)
+    val boxWidth: Float, val boxHeight: Float, val glows: List<GlyphGlow> = emptyList())
+private data class Prepared(val cells: List<Cell>, val height: Float, val geometry: ClassicGeometry,
+    val quality: FoliaQuality = FoliaQuality.Minimal)
 private class DrawnFrame { var timeUs: Long? = null; var center = Offset.Zero }
 private data class LineFrame(val alpha: Float, val scale: Float, val breathingY: Float)
 private fun lineFrame(time: Long, lineStart: Long, enterUs: Long, leaveUs: Long?, profile: RenderProfile,
@@ -58,6 +59,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
     heightBudget: Dp, modifier: Modifier = Modifier, enterUs: Long = line.startUs,
     leaveUs: Long? = null, maskBudgetBytes: Long = GlowBudget.primaryBytes,
     onPrepared: (FoliaQuality, Int) -> Unit = { _, _ -> },
+    onLayout: (ClassicGeometry) -> Unit = {},
     onClick: (() -> Unit)? = null, onLongPress: (() -> Unit)? = null) {
     val measurer = rememberTextMeasurer(cacheSize = 64)
     val units = remember(line) { displayUnits(line) }
@@ -68,45 +70,35 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(80f)
         val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
             tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality, maskBudgetBytes) {
-            val safeScale = if (tuning.avoidOverlap) 2.15f else 1.75f
             fun prepare(fontScale: Float): Prepared {
-                val style = textStyle.copy(fontSize = textStyle.fontSize * fontScale, textAlign = TextAlign.Center)
-                val cellWidth = maxOf(1, (widthPx / safeScale).toInt())
+                val style = textStyle.copy(fontSize = textStyle.fontSize * fontScale,
+                    lineHeight = textStyle.fontSize * fontScale * 1.22f, textAlign = TextAlign.Start)
                 val measured = units.map { unit -> measurer.measure(AnnotatedString(unit.text), style,
-                    constraints = Constraints(maxWidth = cellWidth)) }
-                val gap = with(density) { (4 + 12 * tuning.wordSpacing).dp.toPx() }
-                val rows = mutableListOf<MutableList<Int>>(mutableListOf())
-                var used = 0f
-                measured.forEachIndexed { index, text ->
-                    val needed = text.size.width * safeScale + gap
-                    if (used > 0 && used + needed > widthPx) { rows += mutableListOf<Int>(); used = 0f }
-                    rows.last() += index
-                    used += needed
+                    softWrap = false) }
+                val rawWidths = measured.map { abs(it.getHorizontalPosition(it.layoutInput.text.length, true) - it.getHorizontalPosition(0, true)).toDouble() }
+                // CSS collapses trailing whitespace in the word's box, while its canvas spacing
+                // measurement includes that whitespace. Keep both metrics, and the timed text.
+                val boxWidths = units.map { unit -> measurer.measure(AnnotatedString(unit.text.trimEnd()), style,
+                    softWrap = false).let { abs(it.getHorizontalPosition(it.layoutInput.text.length, true) - it.getHorizontalPosition(0, true)).toDouble() } }
+                val poses = units.indices.map { wordPose(line.startUs, it, tuning.enableWordRotation) }
+                val rtl = measured.firstOrNull()?.getParagraphDirection(0) == androidx.compose.ui.text.style.ResolvedTextDirection.Rtl
+                val font = with(density) { style.fontSize.toPx() }.toDouble()
+                val geometry = classicGeometry(rawWidths, boxWidths, font, widthPx.toDouble(), poses, line.startUs,
+                    tuning.wordSpacing, tuning.avoidOverlap, rtl, density.density.toDouble())
+                val cells = units.indices.map { index ->
+                    val box = geometry.boxes[index]
+                    Cell(units[index], measured[index], Offset(box.left + box.width / 2, box.top + box.height / 2),
+                        poses[index], box.width, box.height)
                 }
-                val cells = mutableListOf<Cell>()
-                var top = 36f * density.density
-                rows.forEach { row ->
-                    val height = row.maxOfOrNull { measured[it].size.height * safeScale } ?: 0f
-                    val total = row.sumOf { (measured[it].size.width * safeScale + gap).toDouble() }.toFloat() - gap
-                    var left = (widthPx - total) / 2
-                    row.forEach { index ->
-                        val text = measured[index]
-                        val width = text.size.width * safeScale
-                        cells += Cell(units[index], text, Offset(left + width / 2, top + height / 2),
-                            wordPose(line.startUs, index, tuning.enableWordRotation))
-                        left += width + gap
-                    }
-                    top += height + gap
-                }
-                return Prepared(cells, top + 36f * density.density)
+                return Prepared(cells, geometry.height, geometry)
             }
             var result = prepare(1f)
             var fontScale = 1f
-            repeat(3) {
-                if (result.height > budgetPx && fontScale > .5f) {
-                    fontScale = (fontScale * budgetPx / result.height * .98f).coerceAtLeast(.5f)
-                    result = prepare(fontScale)
-                }
+            while (tuning.avoidOverlap && result.height > budgetPx && fontScale > .5f) {
+                val next = (fontScale * budgetPx / result.height * .98f).coerceAtLeast(.5f)
+                if (next >= fontScale - .005f) break
+                fontScale = next
+                result = prepare(fontScale)
             }
             // Fixed, bounded masks. Their alpha changes in draw; glyph shadows never change per frame.
             val padding = ceil(72 * density.density).toInt()
@@ -140,7 +132,8 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             })
         }
         val notify by rememberUpdatedState(onPrepared)
-        LaunchedEffect(prepared) { notify(prepared.quality, prepared.cells.size) }
+        val layoutObserver by rememberUpdatedState(onLayout)
+        LaunchedEffect(prepared) { notify(prepared.quality, prepared.cells.size); layoutObserver(prepared.geometry) }
         val profile = remember(line) { renderProfile(line.startUs, line.endUs, line.fragments.lastOrNull()?.endUs ?: line.endUs) }
         val drawn = remember(prepared) { DrawnFrame() }
         val click by rememberUpdatedState(onClick)
@@ -152,7 +145,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             return prepared.cells.asReversed().any { cell ->
                 val frame = sampleWord(time, enterUs, cell.unit.startUs, cell.unit.endUs, profile, cell.pose, options.reducedMotion)
                 hitClassicUnit(point, drawn.center, body.scale, body.breathingY, cell.center, frame,
-                    density.density, cell.layout.size.width.toFloat(), cell.layout.size.height.toFloat())
+                    density.density, cell.boxWidth, cell.boxHeight)
             }
         }
         val input = if (onClick == null && onLongPress == null) Modifier else Modifier
@@ -184,7 +177,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                         rotate(frame.rotation, Offset.Zero)
                         scale(frame.scale, frame.scale, Offset.Zero)
                     }) {
-                        val topLeft = Offset(-cell.layout.size.width / 2f, -cell.layout.size.height / 2f)
+                        val topLeft = Offset(-cell.boxWidth / 2f, -cell.boxHeight / 2f)
                         cell.glows.forEach { glyph ->
                             val glow = sampleGraphemeGlow(time, enterUs, cell.unit.startUs, cell.unit.endUs,
                                 glyph.timing.startUs, glyph.timing.endUs, cell.unit.graphemes.size, profile)

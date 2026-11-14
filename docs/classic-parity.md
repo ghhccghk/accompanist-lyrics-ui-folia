@@ -53,3 +53,17 @@ Kotlin：ClassicParityTest，同一 Noto Bold、800×600 density1、48px 字号�
 输出 build/verification/classic-{upstream,kotlin}/，default/avoid 各21检查点。
 1500ms 截图已目视检查：Kotlin 仍居中且词距过宽，浏览器为 seed-start；因此仅辉光
 数值曲线与接入完成，排版、整体过渡、模糊像素等价未通过。Android 此项仅构建验证。
+
+## 排版几何验证（2026-11-15）
+
+ClassicGeometry.kt 已替代 safeScale 和固定 gap；词整体不折行，使用上游 normal seed
+对齐、双侧动态边距及九个 passed 转角采样。avoidOverlap 才应用 reach 行间距、上下
+padding 和 fit；默认不因高度自动缩小。直接执行上游函数生成 geometry.tsv 的160组
+reach/overflow/RTL pairGap；Kotlin 误差 < 0.0001。
+
+固定字体 DOM 对照 browser-layout.tsv：两句 default/avoid 的全部词距分别为
+66.5/33.3、57.5/24.9、97.6/33.3、85.9/24.9px，与 Kotlin 一致。
+位置／宽高与 DOM offset*（整数舍入）差 < 0.51px，避让 padding 和 rowGap 一致。
+测量时发现 maxIntrinsicWidth 向整数取整造成边距偏差，已改为 fractional caret advance。
+图像1500ms位置接近，正文基线仍约有数像素差，需继续修复字体行高和过渡；
+尚未将窄屏多行／复杂脚本或整帧像素等价列为通过。

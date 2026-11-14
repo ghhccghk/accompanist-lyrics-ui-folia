@@ -46,3 +46,12 @@ half-open endpoints, gaps and random seek without a per-frame full-song scan.
 Verified `:library:jvmTest :library:compileAndroidMain`: five tests passed,
 including 2,000 seeded random queries against a naive overlap oracle.
 Visual display/epochs are not yet implemented at this milestone.
+
+## Sample clock
+
+Anchor-based monotonic clock supports play/pause, explicit seek, speed changes,
+terminal stop, looping and duration replacement. No accumulated frame deltas or
+fixed-rate timer. Owner-driven refresh means disposal owns no hidden job.
+Verified `:sample:shared:jvmTest :sample:shared:compileAndroidMain`: four tests
+cover sparse/frequent refresh equivalence, frozen pause, continuous speed change,
+seek state and multiple loop wraps. UI/lifecycle wiring follows separately.

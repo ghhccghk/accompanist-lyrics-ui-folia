@@ -87,3 +87,24 @@ stateless animation seeks, zero-duration words, short-word continuity and
 combining/ZWJ/Arabic/Latin boundaries. These are numerical checks, not visual
 equivalence or frame-time measurements. ICU adds binary size; low-API device
 behavior and complete transitive packaging remain unverified.
+
+## Classic Canvas and canonical exits
+
+Safe shaped units now render with seeded position/scale/rotation, timed color,
+cached inner/outer halos, media-time breathing and canonical line epochs/exits.
+Unit measurement/mask generation occurs during preparation, never in draw.
+Quality and reduce-motion controls are functional; mask budget fallback is
+observable through FoliaStatus. All overlapping source voices remain available.
+
+Both samples build. Twelve library tests include the actual Compose/Skia render:
+seek 1500→2500→1500ms gives identical pixels and click returns the original line.
+Two epoch tests cover overlap resumption, random access and bounded exits.
+Opaque-background screenshots are produced in library/build/verification.
+Initial apparent halo edges were traced to tiny-alpha transparent screenshot
+preview compositing; opaque diagnostic snapshots avoid that ambiguity. Mask
+generation now has an explicit fixed radius and a per-line memory ceiling.
+See visual-spec.md for all deviations; this is not final Folia visual parity.
+
+An untracked gradle/gradle-daemon-jvm.properties appeared during the session
+(selects JDK 25). It was not authored or staged by this task and is left intact.
+Later local verification may therefore select that runtime despite JAVA_HOME.

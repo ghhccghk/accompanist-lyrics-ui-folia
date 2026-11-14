@@ -25,6 +25,8 @@ fun FoliaSampleApp(visible: Boolean = true) {
     val clock = remember { PreviewPlaybackController(scene.durationMillis) }
     val playing by remember { derivedStateOf { clock.snapshot.isPlaying } }
     var options by remember { mutableStateOf(FoliaOptions()) }
+    var tuning by remember { mutableStateOf(ClassicTuning()) }
+    var fontScale by remember { mutableFloatStateOf(1f) }
     var settings by remember { mutableStateOf(false) }
     var picker by remember { mutableStateOf(false) }
     var debug by remember { mutableStateOf(false) }
@@ -39,11 +41,11 @@ fun FoliaSampleApp(visible: Boolean = true) {
             listOf(Color(0xFF152839), Color(0xFF272033)))).safeContentPadding().padding(16.dp)) {
             val metadata: @Composable (Boolean) -> Unit = { wide ->
                 Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    if (wide) Cover(Modifier.fillMaxWidth().heightIn(max = 260.dp).aspectRatio(1f))
+                    if (wide) Cover(Modifier.size(260.dp))
                     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
                         if (!wide) Cover(Modifier.size(64.dp))
                         Column(Modifier.weight(1f)) {
-                            Text(scene.title, style = MaterialTheme.typography.titleLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
+                            Text(scene.title, color = MaterialTheme.colorScheme.onSurface, style = MaterialTheme.typography.titleLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
                             Text("演示时钟 · 无音频", color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
                         }
                     }
@@ -57,6 +59,7 @@ fun FoliaSampleApp(visible: Boolean = true) {
             }
             val lyrics: @Composable (Modifier) -> Unit = { modifier ->
                 FoliaLyricsView(scene.lyrics, { clock.snapshot }, modifier, contentKey = scene.id, options = options,
+                    typography = FoliaTypography(scale = fontScale), style = FoliaStyle.Classic(tuning),
                     onLineClicked = { clock.seek(it.start.toLong() + options.offsetMillis) }, onLinePressed = { pressed = it })
             }
             if (maxWidth < 600.dp) Column {
@@ -73,8 +76,15 @@ fun FoliaSampleApp(visible: Boolean = true) {
             }
         }, confirmButton = { TextButton({ picker = false }) { Text("关闭") } })
         if (settings) AlertDialog(onDismissRequest = { settings = false }, title = { Text("显示设置") }, text = {
-            Column {
+            Column(Modifier.heightIn(max = 420.dp).verticalScroll(rememberScrollState())) {
                 Toggle("显示下一句", options.showNextLine) { options = options.copy(showNextLine = it) }
+                Toggle("减少动态效果", options.reducedMotion) { options = options.copy(reducedMotion = it) }
+                Toggle("文字旋转", tuning.enableWordRotation) { tuning = tuning.copy(enableWordRotation = it) }
+                Toggle("保守间距", tuning.avoidOverlap) { tuning = tuning.copy(avoidOverlap = it) }
+                Text("字号 ${fontScale}"); Slider(fontScale, { fontScale = it }, valueRange = .5f..2f)
+                Text("词间距"); Slider(tuning.wordSpacing, { tuning = tuning.copy(wordSpacing = it) }, valueRange = 0f..2f)
+                Text("呼吸幅度"); Slider(tuning.breathingFloatMultiplier, { tuning = tuning.copy(breathingFloatMultiplier = it) }, valueRange = 0f..2f)
+                TextButton({ options = options.copy(quality = FoliaQuality.entries[(options.quality.ordinal + 1) % FoliaQuality.entries.size]) }) { Text("画质 ${options.quality}") }
                 Toggle("开发面板", debug) { debug = it }
             }
         }, confirmButton = { TextButton({ settings = false }) { Text("完成") } })

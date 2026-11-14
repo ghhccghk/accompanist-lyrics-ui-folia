@@ -19,5 +19,9 @@ kotlin {
             implementation(compose.material3)
         }
         commonTest.dependencies { implementation(kotlin("test")) }
+        jvmTest.dependencies {
+            implementation("org.jetbrains.compose.ui:ui-test:1.12.0")
+            implementation(compose.desktop.currentOs)
+        }
     }
 }

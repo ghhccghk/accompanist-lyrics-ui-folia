@@ -12,7 +12,37 @@ data class FoliaOptions(
     val showPhonetic: Boolean = true,
     val showNextLine: Boolean = true,
     val offsetMillis: Int = 0,
+    val reducedMotion: Boolean = false,
+    val quality: FoliaQuality = FoliaQuality.Standard,
 )
+
+enum class FoliaQuality { Standard, Reduced, Minimal }
+
+@Immutable
+data class FoliaStatus(
+    val requestedQuality: FoliaQuality,
+    val actualQuality: FoliaQuality,
+    val mainUnitCount: Int,
+    val diagnostics: List<String>,
+)
+
+sealed interface FoliaStyle {
+    @Immutable
+    data class Classic(val tuning: ClassicTuning = ClassicTuning()) : FoliaStyle
+}
+
+@Immutable
+data class ClassicTuning(
+    val enableWordRotation: Boolean = true,
+    val breathingFloatMultiplier: Float = 1f,
+    val wordSpacing: Float = .7f,
+    val avoidOverlap: Boolean = false,
+) {
+    init {
+        require(breathingFloatMultiplier.isFinite() && breathingFloatMultiplier in 0f..2f)
+        require(wordSpacing.isFinite() && wordSpacing in 0f..2f)
+    }
+}
 
 @Immutable
 data class FoliaTypography(
@@ -20,7 +50,10 @@ data class FoliaTypography(
     val main: TextStyle? = null,
     val secondary: TextStyle = TextStyle(fontSize = 22.sp, fontWeight = FontWeight.Medium),
     val subtitle: TextStyle = TextStyle(fontSize = 18.sp),
-)
+    val scale: Float = 1f,
+) {
+    init { require(scale.isFinite() && scale in .5f..2f) }
+}
 
 @Immutable
 data class FoliaColors(

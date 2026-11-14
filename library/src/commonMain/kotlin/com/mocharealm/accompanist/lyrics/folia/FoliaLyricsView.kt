@@ -13,10 +13,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import com.mocharealm.accompanist.lyrics.folia.internal.model.normalize
-import com.mocharealm.accompanist.lyrics.folia.internal.timeline.TimelineIndex
+import com.mocharealm.accompanist.lyrics.folia.internal.timeline.VisualTimeline
+import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicLine
 
 /** Host owns media time and seeking. Whole runs are shaped by Compose, never per UTF-16 char. */
 @OptIn(ExperimentalFoundationApi::class)
@@ -29,28 +32,50 @@ fun FoliaLyricsView(
     typography: FoliaTypography = FoliaTypography(),
     colors: FoliaColors = FoliaColors(),
     options: FoliaOptions = FoliaOptions(),
+    style: FoliaStyle = FoliaStyle.Classic(),
+    onStatus: (FoliaStatus) -> Unit = {},
     onLineClicked: (ISyncedLine) -> Unit = {},
     onLinePressed: (ISyncedLine) -> Unit = {},
 ) {
     val document = remember(IdentityKey(lyrics), contentKey) { normalize(lyrics) }
-    val index = remember(document) { TimelineIndex(document.lines) }
+    val index = remember(document) { VisualTimeline(document.lines) }
     val currentPlayback by rememberUpdatedState(playback)
+    var quality by remember(contentKey, options.quality) { mutableStateOf(options.quality) }
+    var unitCount by remember(contentKey) { mutableIntStateOf(0) }
+    val statusObserver by rememberUpdatedState(onStatus)
+    LaunchedEffect(document, quality, options.quality, unitCount) {
+        statusObserver(FoliaStatus(options.quality, quality, unitCount,
+            document.diagnostics.map { "${it.ref.index}:${it.reason}" } +
+                if (quality != options.quality) listOf("GlowBudgetExceeded") else emptyList()))
+    }
     val selection by remember(index, options.offsetMillis) { derivedStateOf {
-        index.select((currentPlayback().positionMillis - options.offsetMillis) * 1000)
+        index.at((currentPlayback().positionMillis - options.offsetMillis) * 1000)
     } }
     BoxWithConstraints(modifier.padding(24.dp)) {
+        val heightBudget = maxHeight * .6f
         val mainStyle = typography.main ?: typography.secondary.copy(
-            fontSize = (maxWidth.value * .06f).coerceIn(36f, 72f).sp, fontWeight = FontWeight.Bold)
+            fontSize = ((maxWidth.value * .06f).coerceIn(36f, 72f) * typography.scale).sp, fontWeight = FontWeight.Bold)
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center) {
-            val main = selection.primary?.let(document.lines::get)
-            if (main == null) BasicText(if (document.lines.isEmpty()) "暂无可显示歌词" else "· · ·",
-                style = mainStyle.copy(color = colors.secondary, textAlign = TextAlign.Center))
-            else {
-                BasicText(main.text, Modifier.fillMaxWidth().combinedClickable(
-                    onClick = { onLineClicked(main.source) }, onLongClick = { onLinePressed(main.source) }),
-                    style = mainStyle.copy(color = colors.text, textAlign = TextAlign.Center))
+            val main = selection.primary?.line?.let(document.lines::get)
+            val tuning = (style as FoliaStyle.Classic).tuning
+            Box(Modifier.fillMaxWidth()) {
+                selection.exiting.forEach { epoch -> key(epoch) {
+                    ClassicLine(document.lines[epoch.line], playback, mainStyle, colors, options, tuning,
+                        heightBudget = heightBudget, enterUs = epoch.enterUs, leaveUs = epoch.leaveUs)
+                } }
+                if (main == null) BasicText(if (document.lines.isEmpty()) "暂无可显示歌词" else "· · ·",
+                    style = mainStyle.copy(color = colors.secondary, textAlign = TextAlign.Center))
+                else key(selection.primary) {
+                    ClassicLine(main, playback, mainStyle, colors, options, tuning, heightBudget,
+                        Modifier.fillMaxWidth().combinedClickable(onClick = { onLineClicked(main.source) },
+                            onLongClick = { onLinePressed(main.source) }).semantics { contentDescription = main.text },
+                        enterUs = selection.primary!!.enterUs,
+                        onPrepared = { actual, count -> quality = actual; unitCount = count })
+                }
+            }
+            if (main != null) {
                 if (options.showTranslation) main.translation?.takeIf { it.isNotBlank() && it != main.text }?.let {
                     BasicText(it, Modifier.padding(top = 20.dp), typography.subtitle.copy(color = colors.secondary, textAlign = TextAlign.Center))
                 }

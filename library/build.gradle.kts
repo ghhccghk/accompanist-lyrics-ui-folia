@@ -22,6 +22,10 @@ kotlin {
         }
         commonTest.dependencies { implementation(kotlin("test")) }
         jvmMain.dependencies { implementation("com.ibm.icu:icu4j:78.3") }
+        jvmTest.dependencies {
+            implementation("org.jetbrains.compose.ui:ui-test:1.12.0")
+            implementation(compose.desktop.currentOs)
+        }
         androidMain.dependencies { implementation("com.ibm.icu:icu4j:78.3") }
     }
 }

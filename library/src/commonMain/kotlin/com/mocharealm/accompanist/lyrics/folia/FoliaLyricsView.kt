@@ -13,8 +13,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.semantics
 import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import com.mocharealm.accompanist.lyrics.folia.internal.model.normalize
@@ -70,10 +68,10 @@ fun FoliaLyricsView(
                     style = mainStyle.copy(color = colors.secondary, textAlign = TextAlign.Center))
                 else key(selection.primary) {
                     ClassicLine(main, playback, mainStyle, colors, options, tuning, heightBudget,
-                        Modifier.fillMaxWidth().combinedClickable(onClick = { onLineClicked(main.source) },
-                            onLongClick = { onLinePressed(main.source) }).semantics { contentDescription = main.text },
+                        Modifier.fillMaxWidth(),
                         enterUs = selection.primary!!.enterUs,
-                        onPrepared = { actual, count -> quality = actual; unitCount = count })
+                        onPrepared = { actual, count -> quality = actual; unitCount = count },
+                        onClick = { onLineClicked(main.source) }, onLongPress = { onLinePressed(main.source) })
                 }
             }
             if (main != null) {

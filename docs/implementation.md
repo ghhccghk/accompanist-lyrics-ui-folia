@@ -197,3 +197,16 @@ The existing read-only API34 emulator successfully installed and ran the sample.
 Native LRC import/cancel, configuration-change retention, background pause and
 preference restart restoration were checked. See android-smoke.md for device,
 conditions, evidence and limits; historical physical-device rejection still stands.
+
+## Transform-aware lyric interaction
+
+Primary pointer hit testing now uses the last drawn media timestamp and inverses
+line scale/breathing plus unit translate/rotation/scale. Invisible units and space
+outside shaped-run rectangles do not trigger seek. Semantics and Enter/Space
+retain accessible source-line activation. Secondary text keeps standard controls.
+Cached color filters also avoid one repeated object per glowing unit per draw.
+
+Both samples build. 2,000 seeded forward/inverse pose checks and an actual rendered
+glyph touch test pass, along with a whitespace miss and original source identity.
+Latest touch changes have Compose Desktop runtime coverage; the earlier Android
+smoke predates this final hit-test change, so Android runtime recheck is pending.

@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.background
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toAwtImage
 import androidx.compose.ui.test.*
@@ -45,6 +46,13 @@ class RendererTest {
         runOnIdle { quality = FoliaQuality.Minimal }
         waitForIdle()
         javax.imageio.ImageIO.write(captureToImage().toAwtImage(), "png", File(directory, "classic-minimal-800x600-1500ms.png"))
+        onNodeWithContentDescription("Hello light").performTouchInput { click(Offset(4f, 4f)) }
+        assertNull(clicked)
+        val bright = firstPixels.indexOfFirst { ((it ushr 16) and 255) > 210 && ((it ushr 8) and 255) > 210 }
+        assertTrue(bright >= 0)
+        onRoot().performTouchInput { click(Offset((bright % first.width).toFloat(), (bright / first.width).toFloat())) }
+        assertSame(original, clicked)
+        clicked = null
         onNodeWithContentDescription("Hello light").performClick()
         assertSame(original, clicked)
     }

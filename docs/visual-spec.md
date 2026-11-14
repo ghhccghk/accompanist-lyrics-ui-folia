@@ -39,9 +39,11 @@ Videos/frames are only in ignored development storage, not source or sample asse
 - Glow envelope remains provisional, not matched to an upstream exported fixture.
   Per-grapheme glow within a merged shaping unit and dynamic body blur are not
   implemented. Reduce motion removes pose movement and retains timed color.
-- Whole-line click regions include internal whitespace. Precise inverse-transform
-  word hit testing, active-region culling and geometry-version preparation are
-  outstanding acceptance work.
+- Pointer hit testing inverses the last drawn line/unit transforms against each
+  visible shaped-run rectangle. Space between units does not click; whitespace
+  within a preserved shaped run is still part of its rectangle. Semantics and
+  Enter/Space activate the original source line. Active-region culling and
+  background geometry-version preparation remain outstanding acceptance work.
 
 ## Reproducible in-process rendering check
 

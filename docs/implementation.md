@@ -176,3 +176,15 @@ execution and Android compilation. The consumer is a separate Gradle root with
 only Maven dependencies. scripts/verify-consumer.ps1 repeats the checks and
 inspects current snapshot archives. Android runtime and final transitive notice
 audit remain outstanding; this local validation is not a public release.
+
+## Interrupted progress and gap alignment
+
+Progress drag Stop commits exactly once; Cancel discards pending preview.
+Losing foreground disables progress input and clears an interrupted preview;
+tap/keyboard completion remains supported. Gap/empty labels are now centered.
+Renderer snapshots are taken before click feedback to isolate media animation.
+
+Both samples build; Compose pointer tests verify release-to-seek once while paused
+and foreground-loss cancellation without seeking. Desktop synthetic touch Cancel
+did not emit the native interaction in the test engine, so direct native cancel
+gesture behavior remains a device/window acceptance item.

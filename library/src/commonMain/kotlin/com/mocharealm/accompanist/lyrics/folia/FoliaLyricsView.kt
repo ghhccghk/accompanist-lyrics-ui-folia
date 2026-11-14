@@ -66,6 +66,7 @@ fun FoliaLyricsView(
                         heightBudget = heightBudget, enterUs = epoch.enterUs, leaveUs = epoch.leaveUs)
                 } }
                 if (main == null) BasicText(if (document.lines.isEmpty()) "暂无可显示歌词" else "· · ·",
+                    modifier = Modifier.fillMaxWidth(),
                     style = mainStyle.copy(color = colors.secondary, textAlign = TextAlign.Center))
                 else key(selection.primary) {
                     ClassicLine(main, playback, mainStyle, colors, options, tuning, heightBudget,

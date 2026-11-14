@@ -6,7 +6,6 @@ import androidx.compose.foundation.background
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.asSkiaBitmap
 import androidx.compose.ui.graphics.toAwtImage
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.v2.runDesktopComposeUiTest
@@ -14,7 +13,6 @@ import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.core.model.karaoke.*
 import java.io.File
-import org.jetbrains.skia.Image
 import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
@@ -29,8 +27,7 @@ class RendererTest {
         setContent { Box(Modifier.fillMaxSize().background(Color(0xFF162435))) {
             FoliaLyricsView(lyrics, { position }, Modifier.fillMaxSize(), options = FoliaOptions(quality = quality), onLineClicked = { clicked = it })
         } }
-        onNodeWithContentDescription("Hello light").assertExists().performClick()
-        assertSame(original, clicked)
+        onNodeWithContentDescription("Hello light").assertExists()
         onNodeWithText("合成字幕").assertExists()
         val first = captureToImage()
         val firstPixels = IntArray(first.width * first.height)
@@ -48,5 +45,7 @@ class RendererTest {
         runOnIdle { quality = FoliaQuality.Minimal }
         waitForIdle()
         javax.imageio.ImageIO.write(captureToImage().toAwtImage(), "png", File(directory, "classic-minimal-800x600-1500ms.png"))
+        onNodeWithContentDescription("Hello light").performClick()
+        assertSame(original, clicked)
     }
 }

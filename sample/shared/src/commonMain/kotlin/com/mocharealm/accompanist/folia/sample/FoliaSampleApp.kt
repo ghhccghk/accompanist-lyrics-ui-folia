@@ -2,6 +2,9 @@ package com.mocharealm.accompanist.folia.sample
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.focusable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.DragInteraction
+import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,6 +21,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.input.key.*
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import com.mocharealm.accompanist.folia.sample.fixtures.scenes
 import com.mocharealm.accompanist.folia.sample.playback.PreviewPlaybackController
 import com.mocharealm.accompanist.folia.sample.importing.*
@@ -124,10 +129,10 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
                     onLineClicked = { clock.seek(it.start.toLong() + options.offsetMillis) }, onLinePressed = { pressed = it })
             }
             if (maxWidth < 600.dp) Column {
-                metadata(false); lyrics(Modifier.weight(1f).fillMaxWidth()); Transport(clock)
+                metadata(false); lyrics(Modifier.weight(1f).fillMaxWidth()); Transport(clock, visible)
             } else Row(horizontalArrangement = Arrangement.spacedBy(24.dp)) {
                 Column(Modifier.fillMaxWidth(.38f).fillMaxHeight().verticalScroll(rememberScrollState()),
-                    verticalArrangement = Arrangement.Center) { metadata(true); Transport(clock) }
+                    verticalArrangement = Arrangement.Center) { metadata(true); Transport(clock, visible) }
                 lyrics(Modifier.weight(1f).fillMaxHeight())
             }
         }
@@ -185,9 +190,9 @@ private fun Cover(modifier: Modifier) {
 }
 
 @Composable
-private fun Transport(clock: PreviewPlaybackController) {
+private fun Transport(clock: PreviewPlaybackController, enabled: Boolean) {
     Column(Modifier.fillMaxWidth()) {
-        Progress(clock)
+        Progress(clock, enabled)
         val playing by remember(clock) { derivedStateOf { clock.snapshot.isPlaying } }
         FlowRow(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
             FilledTonalButton({ clock.toggle() }) { Text(if (playing) "暂停" else "播放") }
@@ -199,11 +204,32 @@ private fun Transport(clock: PreviewPlaybackController) {
 }
 
 @Composable
-private fun Progress(clock: PreviewPlaybackController) {
+private fun Progress(clock: PreviewPlaybackController, enabled: Boolean) {
     var preview by remember(clock.durationMillis) { mutableStateOf<Float?>(null) }
+    val interactions = remember { MutableInteractionSource() }
+    var dragging by remember { mutableStateOf(false) }
+    val inputEnabled by rememberUpdatedState(enabled)
+    LaunchedEffect(interactions) {
+        interactions.interactions.collect { event ->
+            when (event) {
+                is DragInteraction.Start -> dragging = true
+                is DragInteraction.Stop -> {
+                    if (inputEnabled) preview?.let { clock.seek(it.toLong()) }
+                    preview = null; dragging = false
+                }
+                is DragInteraction.Cancel, is PressInteraction.Cancel -> { preview = null; dragging = false }
+            }
+        }
+    }
+    LaunchedEffect(enabled) { if (!enabled) preview = null }
     Slider(preview ?: clock.snapshot.positionMillis.toFloat(), { preview = it },
+        modifier = Modifier.semantics { contentDescription = "演示进度" }, interactionSource = interactions,
+        enabled = enabled,
         valueRange = 0f..clock.durationMillis.toFloat(),
-        onValueChangeFinished = { preview?.let { clock.seek(it.toLong()) }; preview = null })
+        onValueChangeFinished = {
+            // Drag Stop commits; Cancel discards. This callback also handles taps/keyboard.
+            if (!dragging) { if (enabled) preview?.let { clock.seek(it.toLong()) }; preview = null }
+        })
     val seconds by remember(clock) { derivedStateOf { clock.snapshot.positionMillis / 1000 } }
     Text("${seconds / 60}:${(seconds % 60).toString().padStart(2, '0')} / ${clock.durationMillis / 1000}s",
         style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)

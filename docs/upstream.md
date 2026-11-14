@@ -25,6 +25,9 @@ SPW's declaration is not used as authorization for Folia code.
 No Folia rendering code has been ported at the scaffold milestone. Each later
 adaptation must add its original file, target, change description and fixture here.
 
+The static milestone is independently written from the documented data/layout
+contract; no upstream rendering implementation has yet been copied.
+
 ## Independent model input
 
 Resolved candidate: `com.mocharealm.accompanist:lyrics-core:0.5.0`.

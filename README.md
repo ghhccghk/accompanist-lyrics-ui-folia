@@ -5,8 +5,9 @@ Independent Kotlin / Compose Multiplatform lyrics project. License:
 
 ## Implementation status
 
-The design is in PLAN.md and docs/. Work has started with an independent Android
-and Desktop scaffold. A scaffold is not acceptance of the planned classic effects.
+The design is in PLAN.md and docs/. Independent Android and Desktop samples now
+use `FoliaLyricsView` for static shaped text, subtitles and overlapping voices,
+with synthetic scenarios and a controllable clock. Animated classic is in progress.
 See [docs/implementation.md](docs/implementation.md) for verified capabilities.
 
 ## Toolchain

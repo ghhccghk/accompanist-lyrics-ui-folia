@@ -55,3 +55,21 @@ fixed-rate timer. Owner-driven refresh means disposal owns no hidden job.
 Verified `:sample:shared:jvmTest :sample:shared:compileAndroidMain`: four tests
 cover sparse/frequent refresh equivalence, frozen pause, continuous speed change,
 seek state and multiple loop wraps. UI/lifecycle wiring follows separately.
+
+## Static component and sample loop
+
+`FoliaLyricsView` now shapes complete text runs with Compose, supports responsive
+size, wrapping, original-line click/long press, translation/phonetic toggles,
+next-line preview, all overlapping secondary voices and explicit gaps/empty state.
+Ten original scenarios cover mixed language, short lines, long lines, gaps,
+overlap, Unicode, line timing, 300 units, empty and invalid data.
+Sample has narrow/wide layouts, scene selection, clock playback/pause, speed,
+loop, release-to-seek progress and disabled-by-default checkpoint diagnostics.
+
+Verified both sample builds plus all nine existing logic tests. Desktop `run`
+started an application window without a runtime exception. Windows capture
+failed repeatedly (`FrameArrived timed out`) including after helper reset;
+visual acceptance is still pending. Android device model 2509FPN0BC / API 37
+rejected installation with INSTALL_FAILED_USER_RESTRICTED, so no device UI
+verification is claimed. No device security setting was changed.
+Word transforms/glow and canonical line exits are the next separate feature.

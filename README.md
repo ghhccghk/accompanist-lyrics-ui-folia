@@ -90,6 +90,8 @@ fun LyricsPane(
 
 ```powershell
 ./scripts/verify-consumer.ps1
+# 从已提交 HEAD 导出干净源码，验证两端与独立消费（需 SDK 环境变量）
+./scripts/verify-checkout.ps1
 ```
 
 只生成 `build/local-maven` 文件仓库，再由独立 Gradle 根目录消费

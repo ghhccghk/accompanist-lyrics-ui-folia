@@ -70,3 +70,16 @@ session and remains untracked/uncommitted. It selects a local daemon independent
 of explicit JDK21 compiler/test toolchains. Do not overwrite it or claim the
 working tree is completely clean. The reference repository's existing IDE
 changes remain intact; this task made no source/config/license changes there.
+
+## Follow-up source-export verification — 2026-11-15
+
+scripts/verify-checkout.ps1 exports tracked HEAD to a unique ignored build folder,
+builds/tests both platforms, then runs that export's independent Maven consumer.
+It does not copy local.properties, untracked daemon settings or existing outputs.
+SDK/JDK installations and the host dependency cache remain prerequisites; this
+is not an offline or reproducible-binary claim. No CI service was configured.
+
+Executed successfully for 555a26e: 21 library, 15 shared and one consumer tests,
+zero failures; Desktop classes and Android APK build; independent Maven JVM
+runtime/Android compilation and archive notice presence checks. The script keeps
+the source export, reports and result.txt under build/clean-checkout-* for review.

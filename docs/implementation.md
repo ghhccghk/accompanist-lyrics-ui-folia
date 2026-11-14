@@ -265,3 +265,11 @@ is still pending. Primary status intentionally excludes exit-line diagnostics.
 
 Verified both sample builds and library suite, including overflow-safe budget
 boundary checks and real Compose mask fallback/recovery without content changes.
+
+## Clean tracked-source verification — 2026-11-15
+
+Added scripts/verify-checkout.ps1. A Git archive of 555a26e built and passed 21
+library + 15 shared + one independent-consumer tests without copying developer
+configuration/build output. Both sample builds and packaged notice presence
+checks pass. SDK/JDK and dependency caches still come from the host; no offline,
+bit-identical binary or CI claim is made. Evidence is in ignored build output.

@@ -31,3 +31,22 @@ INSTALL_FAILED_USER_RESTRICTED. No physical-device run is claimed or bypassed.
 Still unverified: low-API devices, alternate providers, revoked URI access, native
 cancel gestures, large-font accessibility, long-session memory, thermal/GPU/frame
 performance and pinned-upstream visual equivalence.
+
+## Latest renderer recheck — 2026-11-15
+
+Built 555a26e APK, installed in another headless read-only probe34/API34 session
+with the same viewport/density/SwiftShader conditions. After paused progress seek
+to 0:03, tapping empty space inside the lyric area retained 0:03; tapping the
+drawn transformed Chinese unit changed the clock to its original line start
+0:02. Actual screenshots and UI hierarchies confirm both outcomes.
+
+Temporary system font scale 1.5: metadata wraps, scene/settings/transport remain
+visible. At Unicode scene 0:08 the Arabic source remains a connected whole run,
+with Chinese subtitle and Indic preview readable. This checks RTL text shaping,
+not an Android RTL locale or exhaustive script/accessibility acceptance.
+No AndroidRuntime error was logged. Source-document import was not repeated.
+
+Font scale restored to 1.0; only this session's temporary device files were
+removed, then only the emulator launched for this check was stopped. Ignored
+.work/android-current-* captures/hierarchies retain evidence. Physical/low-API
+and long-session performance acceptance remain outstanding.

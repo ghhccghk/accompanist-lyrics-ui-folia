@@ -17,6 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.input.key.*
 import androidx.compose.ui.focus.FocusRequester
@@ -233,7 +234,7 @@ private fun Progress(clock: PreviewPlaybackController, enabled: Boolean) {
         })
     val seconds by remember(clock) { derivedStateOf { clock.snapshot.positionMillis / 1000 } }
     Text("${seconds / 60}:${(seconds % 60).toString().padStart(2, '0')} / ${clock.durationMillis / 1000}s",
-        style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        style = MaterialTheme.typography.bodySmall.copy(textDirection = TextDirection.Ltr), color = MaterialTheme.colorScheme.onSurfaceVariant)
 }
 
 @Composable

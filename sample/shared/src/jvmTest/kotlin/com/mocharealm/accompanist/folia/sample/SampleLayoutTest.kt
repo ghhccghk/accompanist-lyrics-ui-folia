@@ -7,6 +7,10 @@ import androidx.compose.ui.graphics.toAwtImage
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.v2.runDesktopComposeUiTest
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.unit.Density
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.input.key.Key
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.semantics.SemanticsProperties
@@ -17,6 +21,28 @@ import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
 class SampleLayoutTest {
+    @Test fun narrowRtlAndLargeFontKeepControlsAndSourceActivation() = runDesktopComposeUiTest(width = 360, height = 640) {
+        val session = SampleSession().apply {
+            scene = com.mocharealm.accompanist.folia.sample.fixtures.scenes.first { it.id == "unicode" }
+            clock.replaceDuration(scene.durationMillis)
+            clock.seek(8_000)
+        }
+        setContent {
+            CompositionLocalProvider(LocalDensity provides Density(1f, 1.5f), LocalLayoutDirection provides LayoutDirection.Rtl) {
+                FoliaSampleApp(session = session, settingsStore = null)
+            }
+        }
+        onNodeWithText("播放").assertIsDisplayed()
+        onNodeWithText("场景").assertIsDisplayed()
+        onNodeWithText("设置").assertIsDisplayed()
+        onNodeWithContentDescription("演示进度").assertIsDisplayed()
+        onNodeWithContentDescription("مرحبا بالعالم").assertIsDisplayed()
+        val directory = File("build/verification").apply { mkdirs() }
+        ImageIO.write(captureToImage().toAwtImage(), "png", File(directory, "sample-rtl-large-font.png"))
+        onNodeWithContentDescription("مرحبا بالعالم").performClick()
+        runOnIdle { assertEquals(7_000, session.clock.snapshot.positionMillis) }
+    }
+
     @Test fun shortWideWindowKeepsTransportVisible() = runDesktopComposeUiTest(width = 900, height = 380) {
         setContent { FoliaSampleApp(settingsStore = null) }
         onNodeWithText("播放").assertIsDisplayed()

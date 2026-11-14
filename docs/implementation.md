@@ -273,3 +273,15 @@ library + 15 shared + one independent-consumer tests without copying developer
 configuration/build output. Both sample builds and packaged notice presence
 checks pass. SDK/JDK and dependency caches still come from the host; no offline,
 bit-identical binary or CI claim is made. Evidence is in ignored build output.
+
+## Latest Android hit/large-font and RTL sample — 2026-11-15
+
+Read-only API34 emulator verified current transformed Chinese glyph hit seeks
+0:03 → 0:02; whitespace leaves the time unchanged. At font scale 1.5 controls
+remain visible and Arabic stays connected in the Unicode scene. No AndroidRuntime
+error. Font scale restored and our emulator stopped; details in android-smoke.md.
+
+Added Compose 360×640 RTL/layout-direction + 1.5 font-scale test for visible
+controls, Arabic source activation and diagnostic PNG. Inspection exposed reversed
+duration/time order in RTL; the numeric progress label now explicitly uses LTR
+paragraph direction. This is not exhaustive Android RTL-locale acceptance.

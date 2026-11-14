@@ -1,6 +1,6 @@
 # lyrics-ui-folia 实施计划
 
-日期：2026-11-14。状态：方案阶段，尚未开始库代码实现。
+日期：2026-11-14。状态：已开始实现；实际进度和验证见 docs/implementation.md，以下未完成阶段仍为计划。
 
 详细设计：[组件、数据、时序与渲染](docs/DESIGN.md)；[Rust Native 后端](docs/NATIVE_DESIGN.md)；[参考现有 UI 的独立示例项目](docs/SAMPLE_DESIGN.md)。以下 API 为早期草案，公共契约与实现细节以详细设计为准。
 
@@ -75,7 +75,7 @@
 - `src/utils/lyrics/graphemeTiming.ts`、`cjkSemanticLayout.ts`、`renderHints.ts`。
 - `src/components/visualizer/runtime.ts` 与字幕布局相关文件。
 
-新项目目标许可为 `AGPL-3.0-or-later`，在首次搬入代码前直接核对 Folia 原始仓库的适用授权声明。Folia 固定版本的 `package.json` 和 README 写 `AGPL-3.0`；P0 必须记录适用声明并确认具体版本选择，不使用 SPW 插件的许可声明代替原始代码的授权，也不以许可证全文末尾的使用示例代替项目授权声明。
+新项目目标许可为 `AGPL-3.0-only`，在首次搬入代码前直接核对 Folia 原始仓库的适用授权声明。Folia 固定版本的 `package.json` 和 README 写 `AGPL-3.0`；P0 必须记录适用声明并确认具体版本选择，不使用 SPW 插件的许可声明代替原始代码的授权，也不以许可证全文末尾的使用示例代替项目授权声明。
 
 工程初始化时准备 `LICENSE`、`NOTICE`、`THIRD_PARTY_NOTICES.md` 和 `docs/upstream.md`，记录来源路径、提交、版权、修改方式及第三方依赖。发布前核对源码包、二进制元数据与声明一致。原有项目的 Apache-2.0 文件及发布配置保持原状。
 

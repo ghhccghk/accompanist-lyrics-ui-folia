@@ -1,0 +1,15 @@
+lyrics-ui-folia
+Standalone Kotlin / Compose lyrics renderer and demonstration applications.
+
+Project license: GNU Affero General Public License, version 3 only
+(SPDX-License-Identifier: AGPL-3.0-only). See LICENSE.
+The license-version choice was explicitly approved on 2026-11-14.
+
+Folia reference: chthollyphile/folia-major, v0.7.26,
+cc6226e464050a456a2913e062374f23d3844cc5, by chthollyphile and contributors.
+The reference declares AGPL-3.0; no later-version grant is inferred.
+Adapted files, when introduced, are listed in docs/upstream.md.
+
+The existing Apache-2.0 lyrics-ui project is a separate reference project.
+Repository separation is an engineering boundary, not a conclusion about
+the legal scope of licensing obligations for a combined distribution.

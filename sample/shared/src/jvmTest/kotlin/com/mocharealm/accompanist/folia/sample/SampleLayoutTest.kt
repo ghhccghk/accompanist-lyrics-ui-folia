@@ -17,6 +17,12 @@ import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
 class SampleLayoutTest {
+    @Test fun shortWideWindowKeepsTransportVisible() = runDesktopComposeUiTest(width = 900, height = 380) {
+        setContent { FoliaSampleApp(settingsStore = null) }
+        onNodeWithText("播放").assertIsDisplayed()
+        onNodeWithText("场景").assertIsDisplayed()
+        onNodeWithContentDescription("演示进度").assertIsDisplayed()
+    }
     @Test fun releasedProgressDragSeeksOnceAndKeepsPause() = runDesktopComposeUiTest(width = 900, height = 740) {
         val session = SampleSession()
         setContent { FoliaSampleApp(session = session, settingsStore = null) }

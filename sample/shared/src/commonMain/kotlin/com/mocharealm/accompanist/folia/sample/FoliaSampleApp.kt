@@ -101,10 +101,11 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
         }.focusRequester(keyboardFocus).focusable().background(Brush.linearGradient(
             listOf(Color(0xFF152839), Color(0xFF272033)))).safeContentPadding().padding(16.dp)) {
             val metadata: @Composable (Boolean) -> Unit = { wide ->
+                val largeCover = wide && maxHeight >= 540.dp
                 Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    if (wide) Cover(Modifier.size(260.dp))
+                    if (largeCover) Cover(Modifier.size(260.dp))
                     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-                        if (!wide) Cover(Modifier.size(64.dp))
+                        if (!largeCover) Cover(Modifier.size(64.dp))
                         Column(Modifier.weight(1f)) {
                             Text(scene.title, color = MaterialTheme.colorScheme.onSurface, style = MaterialTheme.typography.titleLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
                             Text("演示时钟 · 无音频", color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)

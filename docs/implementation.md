@@ -188,3 +188,12 @@ Both samples build; Compose pointer tests verify release-to-seek once while paus
 and foreground-loss cancellation without seeking. Desktop synthetic touch Cancel
 did not emit the native interaction in the test engine, so direct native cancel
 gesture behavior remains a device/window acceptance item.
+
+## Short-wide sample and Android runtime smoke
+
+Short wide windows now use compact cover/metadata so transport remains visible;
+an additional Compose test exercises 900×380. Both sample builds pass.
+The existing read-only API34 emulator successfully installed and ran the sample.
+Native LRC import/cancel, configuration-change retention, background pause and
+preference restart restoration were checked. See android-smoke.md for device,
+conditions, evidence and limits; historical physical-device rejection still stands.

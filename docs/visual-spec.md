@@ -33,9 +33,12 @@ Videos/frames are only in ignored development storage, not source or sample asse
 - Breathing uses a media-time sinusoid, rather than the original wall-clock
   keyframe sequence. Pause freezes it; sparse inputs are not interpolated.
 - Halo is cached in fixed masks using three separable box-blur passes.
-  Standard uses two masks, Reduced one, Minimal none. A per-line 16MiB mask
-  ceiling falls back to Minimal and is reported through FoliaStatus.
-  This ceiling is not a measured whole-process or whole-scene memory budget.
+  Standard uses two masks, Reduced one, Minimal none. Primary masks have 16MiB,
+  and each of at most four exits has 4MiB. Insufficient capacity reduces Standard
+  to Reduced, then Minimal. Primary fallback is reported through FoliaStatus.
+  Retained visible mask pixels are bounded to 32MiB; scratch arrays, source
+  rasters, text layouts, transient replaced objects awaiting GC and GPU/native
+  overhead are excluded. This is not a whole-process memory ceiling.
 - Glow envelope remains provisional, not matched to an upstream exported fixture.
   Per-grapheme glow within a merged shaping unit and dynamic body blur are not
   implemented. Reduce motion removes pose movement and retains timed color.

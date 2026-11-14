@@ -8,16 +8,40 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toAwtImage
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.v2.runDesktopComposeUiTest
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.core.model.karaoke.*
+import com.mocharealm.accompanist.lyrics.folia.internal.model.normalize
+import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicLine
 import java.io.File
 import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
 class RendererTest {
+    @Test fun maskBudgetFallbackCanRecoverWithoutReplacingContent() = runDesktopComposeUiTest(width = 800, height = 600) {
+        val original = KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable("Light", 1_000, 2_000)),
+            null, KaraokeAlignment.Unspecified, 1_000, 2_000)
+        val line = normalize(SyncedLyrics(listOf(original))).lines.single()
+        var budget by mutableLongStateOf(16L * 1024 * 1024)
+        var actual: FoliaQuality? = null
+        setContent {
+            ClassicLine(line, { FoliaPlaybackSnapshot(1_500, false) }, TextStyle(fontSize = 48.sp),
+                FoliaColors(), FoliaOptions(), ClassicTuning(), 360.dp,
+                maskBudgetBytes = budget, onPrepared = { quality, _ -> actual = quality })
+        }
+        waitForIdle()
+        runOnIdle { assertEquals(FoliaQuality.Standard, actual); budget = 0 }
+        waitForIdle()
+        runOnIdle { assertEquals(FoliaQuality.Minimal, actual); budget = 16L * 1024 * 1024 }
+        waitForIdle()
+        runOnIdle { assertEquals(FoliaQuality.Standard, actual) }
+    }
+
     @Test fun statusFollowsPrimaryAcrossGapsAndReplacement() = runDesktopComposeUiTest(width = 800, height = 600) {
         fun line(text: String, start: Int, end: Int) = KaraokeLine.MainKaraokeLine(
             listOf(KaraokeSyllable(text, start, end)), null, KaraokeAlignment.Unspecified, start, end)

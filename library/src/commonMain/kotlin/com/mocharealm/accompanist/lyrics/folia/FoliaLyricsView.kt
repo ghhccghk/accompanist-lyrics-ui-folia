@@ -18,6 +18,7 @@ import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import com.mocharealm.accompanist.lyrics.folia.internal.model.normalize
 import com.mocharealm.accompanist.lyrics.folia.internal.timeline.VisualTimeline
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicLine
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.GlowBudget
 
 /** Host owns media time and seeking. Whole runs are shaped by Compose, never per UTF-16 char. */
 @OptIn(ExperimentalFoundationApi::class)
@@ -63,7 +64,8 @@ fun FoliaLyricsView(
             Box(Modifier.fillMaxWidth()) {
                 selection.exiting.forEach { epoch -> key(epoch) {
                     ClassicLine(document.lines[epoch.line], playback, mainStyle, colors, options, tuning,
-                        heightBudget = heightBudget, enterUs = epoch.enterUs, leaveUs = epoch.leaveUs)
+                        heightBudget = heightBudget, enterUs = epoch.enterUs, leaveUs = epoch.leaveUs,
+                        maskBudgetBytes = GlowBudget.perExitBytes)
                 } }
                 if (main == null) BasicText(if (document.lines.isEmpty()) "暂无可显示歌词" else "· · ·",
                     modifier = Modifier.fillMaxWidth(),

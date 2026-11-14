@@ -253,3 +253,15 @@ bitmaps remain independent. See performance.md for conditions and limitations.
 Verified library/shared JVM suites, both sample builds, all 102 before/after
 checkpoint hashes, plus an independent naive-convolution mask oracle. No new
 Android runtime or native/GPU memory claims; no Rust dependency was introduced.
+
+## Visible halo pixel budget — 2026-11-15
+
+The primary retains at most 16MiB of RGBA glow masks; each of the timeline's
+at most four exits retains at most 4MiB. Quality degrades Standard → Reduced →
+Minimal according to available capacity. Total retained visible mask pixels are
+bounded to 32MiB. This excludes source rasters, CPU scratch, layouts, GPU/native
+overhead and replaced objects awaiting GC; async preparation/lifetime profiling
+is still pending. Primary status intentionally excludes exit-line diagnostics.
+
+Verified both sample builds and library suite, including overflow-safe budget
+boundary checks and real Compose mask fallback/recovery without content changes.

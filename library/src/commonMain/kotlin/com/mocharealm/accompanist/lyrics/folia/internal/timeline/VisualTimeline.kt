@@ -4,6 +4,7 @@ import com.mocharealm.accompanist.lyrics.folia.internal.animation.*
 import com.mocharealm.accompanist.lyrics.folia.internal.model.NormalizedLine
 
 internal data class PrimaryEpoch(val line: Int, val enterUs: Long, val leaveUs: Long)
+internal const val MAX_EXITING_EPOCHS = 4
 internal data class VisualSelection(val primary: PrimaryEpoch?, val exiting: List<PrimaryEpoch>,
     val secondary: List<Int>, val next: Int?)
 
@@ -58,7 +59,7 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
         }
         val current = (low - 1).takeIf { it >= 0 }?.let(epochs::get)?.takeIf { time < it.leaveUs }
         val end = if (current == null) low else low - 1
-        val exiting = (maxOf(0, end - 4) until end).map { epochs[it] }.filter {
+        val exiting = (maxOf(0, end - MAX_EXITING_EPOCHS) until end).map { epochs[it] }.filter {
             time >= it.leaveUs && time < it.leaveUs + exitDuration(it.line)
         }
         val selection = source.select(time)

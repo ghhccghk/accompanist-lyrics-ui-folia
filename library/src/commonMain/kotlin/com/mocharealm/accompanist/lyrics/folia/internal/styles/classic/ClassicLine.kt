@@ -30,6 +30,7 @@ import com.mocharealm.accompanist.lyrics.folia.internal.animation.*
 import com.mocharealm.accompanist.lyrics.folia.internal.model.NormalizedLine
 import com.mocharealm.accompanist.lyrics.folia.internal.text.*
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.blurredMasks
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.GlowBudget
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.hitClassicUnit
 import kotlin.math.*
 
@@ -52,7 +53,8 @@ private fun lineFrame(time: Long, lineStart: Long, enterUs: Long, leaveUs: Long?
 internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnapshot,
     textStyle: TextStyle, colors: FoliaColors, options: FoliaOptions, tuning: ClassicTuning,
     heightBudget: Dp, modifier: Modifier = Modifier, enterUs: Long = line.startUs,
-    leaveUs: Long? = null, onPrepared: (FoliaQuality, Int) -> Unit = { _, _ -> },
+    leaveUs: Long? = null, maskBudgetBytes: Long = GlowBudget.primaryBytes,
+    onPrepared: (FoliaQuality, Int) -> Unit = { _, _ -> },
     onClick: (() -> Unit)? = null, onLongPress: (() -> Unit)? = null) {
     val measurer = rememberTextMeasurer(cacheSize = 64)
     val units = remember(line) { displayUnits(line) }
@@ -62,7 +64,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         val widthPx = with(density) { maxWidth.toPx() }.coerceAtLeast(1f)
         val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(80f)
         val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
-            tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality) {
+            tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality, maskBudgetBytes) {
             val safeScale = if (tuning.avoidOverlap) 2.15f else 1.75f
             fun prepare(fontScale: Float): Prepared {
                 val style = textStyle.copy(fontSize = textStyle.fontSize * fontScale, textAlign = TextAlign.Center)
@@ -106,9 +108,9 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             // Fixed, bounded masks. Their alpha changes in draw; glyph shadows never change per frame.
             val padding = ceil(72 * density.density).toInt()
             val bytesPerLayer = result.cells.sumOf { (it.layout.size.width + 2L * padding) * (it.layout.size.height + 2L * padding) * 4L }
-            val layers = if (options.quality == FoliaQuality.Standard) 2 else if (options.quality == FoliaQuality.Reduced) 1 else 0
-            if (layers == 0 || bytesPerLayer * layers > 16L * 1024 * 1024) result
-            else result.copy(quality = options.quality, cells = result.cells.map { cell ->
+            val layers = GlowBudget.layers(options.quality, bytesPerLayer, maskBudgetBytes)
+            if (layers == 0) result
+            else result.copy(quality = if (layers == 2) FoliaQuality.Standard else FoliaQuality.Reduced, cells = result.cells.map { cell ->
                 val bitmap = ImageBitmap(cell.layout.size.width + padding * 2, cell.layout.size.height + padding * 2)
                 CanvasDrawScope().draw(density, LayoutDirection.Ltr, BitmapCanvas(bitmap), Size(bitmap.width.toFloat(), bitmap.height.toFloat())) {
                     drawRect(Color.Transparent, blendMode = BlendMode.Clear)

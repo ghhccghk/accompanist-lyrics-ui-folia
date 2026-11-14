@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.compose.compiler)
 }
 kotlin {
+    jvmToolchain(21)
     android {
         namespace = "com.mocharealm.accompanist.folia.sample.shared"
         compileSdk = 37

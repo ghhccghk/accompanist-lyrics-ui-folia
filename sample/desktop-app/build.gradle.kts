@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.compose)
     alias(libs.plugins.compose.compiler)
 }
+kotlin { jvmToolchain(21) }
 dependencies {
     implementation(project(":sample:shared"))
     implementation(compose.desktop.currentOs)

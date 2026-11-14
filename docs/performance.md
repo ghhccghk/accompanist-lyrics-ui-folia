@@ -40,3 +40,8 @@ Next measurements: mask generation cold/warm latency and allocations, 300-unit
 layout, dense transitions, resize, full-sample frame distribution, Android midrange
 device CPU/GPU and memory. Optimize measured preparation/rendering hotspots before
 considering JNI, and include all transfer/lifetime costs in any future experiment.
+
+After pinning the JVM toolchain to 21 for independent-consumer compatibility,
+the same optimized probe on OpenJDK 21.0.5 measured preparation 42.40ms and
+batch-average query P50/P95/P99 84.42/121.79/158.96ns, 0.00636 B/query.
+This is a separate observation; it is not compared as a JVM-version speedup.

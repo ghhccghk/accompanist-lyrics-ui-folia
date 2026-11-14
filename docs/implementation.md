@@ -161,3 +161,18 @@ model/budget diagnostics, with Kotlin identified as the actual implementation.
 Verified both sample builds; preference codec and injected-store Compose tests
 cover restore/update without writing developer preferences during tests.
 OS store persistence across a real application restart remains untested.
+
+## Local Maven and independent consumer
+
+Root metadata, Android AAR and JVM JAR publish only to build/local-maven under
+com.mocharealm.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT (+ platform variants).
+POMs declare AGPL-3.0-only. Binary/source archives contain LICENSE, NOTICE,
+THIRD_PARTY_NOTICES.md and upstream.md; no remote destination was added.
+
+The first independent JVM run caught Java 25 bytecode produced by the local
+daemon default. Library/shared/Desktop and independent consumer now explicitly
+select JDK 21. Rebuilt artifacts pass independent JVM Compose render/callback
+execution and Android compilation. The consumer is a separate Gradle root with
+only Maven dependencies. scripts/verify-consumer.ps1 repeats the checks and
+inspects current snapshot archives. Android runtime and final transitive notice
+audit remain outstanding; this local validation is not a public release.

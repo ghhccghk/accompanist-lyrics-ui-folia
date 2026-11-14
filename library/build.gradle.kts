@@ -5,7 +5,12 @@ plugins {
     alias(libs.plugins.compose.compiler)
     `maven-publish`
 }
+val prepareLicenseResources by tasks.registering(Sync::class) {
+    from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md"))
+    into(layout.buildDirectory.dir("generated/licenseResources/META-INF/lyrics-ui-folia"))
+}
 kotlin {
+    jvmToolchain(21)
     android {
         namespace = "com.mocharealm.accompanist.lyrics.folia"
         compileSdk = 37
@@ -14,6 +19,7 @@ kotlin {
     }
     jvm()
     sourceSets {
+        commonMain { resources.srcDir(prepareLicenseResources.map { it.destinationDir.parentFile.parentFile }) }
         commonMain.dependencies {
             api(libs.lyrics.core)
             api(compose.runtime)
@@ -27,5 +33,25 @@ kotlin {
             implementation(compose.desktop.currentOs)
         }
         androidMain.dependencies { implementation("com.ibm.icu:icu4j:78.3") }
+    }
+}
+tasks.withType<Zip>().configureEach {
+    from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md")) { into("META-INF/lyrics-ui-folia") }
+    from(rootProject.file("docs/upstream.md")) { into("META-INF/lyrics-ui-folia") }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+publishing {
+    repositories { maven { name = "Verification"; url = rootProject.layout.buildDirectory.dir("local-maven").get().asFile.toURI() } }
+    publications.withType<MavenPublication>().configureEach {
+        artifactId = if (name == "kotlinMultiplatform") "lyrics-ui-folia" else "lyrics-ui-folia-${name.lowercase()}"
+        pom {
+            name.set("lyrics-ui-folia")
+            description.set("Independent Kotlin/Compose classic lyrics component for Android and JVM Desktop")
+            licenses { license {
+                name.set("GNU Affero General Public License v3.0 only (AGPL-3.0-only)")
+                url.set("https://www.gnu.org/licenses/agpl-3.0.html")
+                distribution.set("repo")
+            } }
+        }
     }
 }

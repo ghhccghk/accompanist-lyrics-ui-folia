@@ -61,6 +61,12 @@ class ClassicParityTest {
                 waitForIdle()
                 val image = captureToImage().toAwtImage()
                 assertEquals(800, image.width); assertEquals(600, image.height)
+                if(time==1500 || time==3700) {
+                    val bright=image.getRGB(0,0,image.width,image.height,null,0,image.width).count {p ->
+                        ((p ushr 16) and 255)>180 && ((p ushr 8) and 255)>180
+                    }
+                    assertTrue(bright>1000,"Core frame must contain visible body glyphs at $time ms")
+                }
                 ImageIO.write(image, "png", File(directory, "${if(mode) "avoid" else "default"}-${time}ms.png"))
             }
         }

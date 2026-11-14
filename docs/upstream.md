@@ -70,6 +70,17 @@ uses fractional caret advances rather than rounded maxIntrinsicWidth for both.
 Core fixed-font two-line browser layout fixtures match all margins at 0.0001;
 DOM offset dimensions/positions match within integer-pixel rounding (0.51px).
 
+glowWordTiming.ts/glowWordVariants.ts/classic/Visualizer.tsx → LineMotion.kt,
+ClassicSampler.kt, ClassicLine.kt: per-property default/explicit easing, physical
+spring rest thresholds, CSS negative leading, full body/line blur layers with
+explicit padded recordings, normal breathing keyframes. generate-motion.mjs calls original variants
+AND actual Motion animateMotionValue dispatcher (not merely keyframes defaults).
+42 word states and 120 line enter/exit combinations match within 0.0001.
+Motion runtime algorithm behavior was inspected from locked motion-dom 13.5.1 /
+motion-utils 13.5.0 (MIT); only mathematical response is independently implemented,
+no runtime code bundled into the component. Android RenderEffect needs API31+;
+older-platform continuous blur remains unimplemented, not an accepted final difference.
+
 ## Independent model input
 
 Resolved candidate: `com.mocharealm.accompanist:lyrics-core:0.5.0`.

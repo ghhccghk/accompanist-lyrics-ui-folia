@@ -45,6 +45,9 @@ try {
           rowGap: getComputedStyle(el.parentElement).rowGap,
           paddingTop: getComputedStyle(el.parentElement).paddingTop,
           paddingBottom: getComputedStyle(el.parentElement).paddingBottom,
+          lineOpacity: getComputedStyle(el.parentElement).opacity,
+          lineTransform: getComputedStyle(el.parentElement).transform,
+          lineFilter: getComputedStyle(el.parentElement).filter,
           width: el.offsetWidth, height: el.offsetHeight, margin: style.marginInlineEnd,
           transform: style.transform, opacity: style.opacity, color: bs.color, blur: bs.filter,
           glyphs: Array.from(el.querySelectorAll('[aria-hidden] > span')).map(g => ({text:g.textContent,opacity:getComputedStyle(g).opacity})) };

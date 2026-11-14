@@ -7,13 +7,13 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 | 上游行为／源码位置 | 当前实现 | 缺失或简化 | 修复与验收 |
 | --- | --- | --- | --- |
 | utils/lyrics/cjkSemanticLayout.ts:buildPostLyricLayoutUnits、buildDisplayWordsFromLayoutUnits；utils/lyrics/wordSegmentation.ts | internal/text/DisplayUnits.kt | 任意 Latin 同词片段合并；没有 sticky 标点／缩写；CJK 无语义层。上游 classic 最终会展开语义 CJK 词，非直接合并动画 | 保存逻辑词、显示／塑形分组与来源；对照收缩词、标点、中英和上下文文字 |
-| utils/lyrics/graphemeTiming.ts:buildWordGraphemeTimings；components/visualizer/GlowWord.tsx:graphemeTimings | DisplayUnit 只有总起止时间 | 合并后内部计时丢失；正文和辉光使用相同整词粒度 | 保存源片段；字素按 syllable 均分、最后终点精确；完整塑形并用字素范围遮罩控制辉光 |
-| classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicLine.kt:safeScale、固定 gap、居中 | 未按宽度／偏移计算边距；缺少 passed 旋转 8 步包络、seed 对齐和行距 | 移植纯几何公式并直接执行上游函数作数值 oracle；浏览器布局矩形与同字体测量对照 |
-| useOverlapFit.ts:useOverlapFit | ClassicLine.kt:最多 4 次 fit | 当前默认也缩小；上游只在 avoidOverlap 开启，min .5 / slack .98，按布局大小迭代 | 对齐触发条件和可用区域，检查窄／长／旋转场景 |
-| GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord | spring 有闭式实现；passed 默认曲线、正文 blur 和颜色曲线不完整 | 导出原版 transition 配置并采样引擎响应；对照 lookahead、短词、passed 边界和随机 seek |
-| wordGlow.ts:wordGlowVariants | ClassicSampler.kt:glowIn × glowOut；ClassicLine.kt:整词遮罩 | 临时线性曲线、0.35/0.5 层强度；无按字素延迟、6倍持续与 0.9s 余韵 | 正常／fast／instant 数值关键帧 oracle；同字体辉光截图，保留 shaping |
-| glowWordTiming.ts:getGlowWordLineContainerMotion | ClassicLine.kt:lineFrame | 入场固定 .22s、线性退出、无正文／整句 blur | 对齐各模式 opacity/scale/filter 与缓动，检查整句替换和空档 |
-| classic/Visualizer.tsx:lyricContainerFloat | ClassicLine.kt:sin | 上游 y=[0,-14,0,6.3,0]、scale=[1,1.01,1,.995,1]、7s easeInOut；当前正弦 | 保留关键帧形状；平台使用媒体时间以满足暂停/seek，明确此时间源适配 |
+| utils/lyrics/graphemeTiming.ts:buildWordGraphemeTimings；components/visualizer/GlowWord.tsx:graphemeTimings | DisplayUnit 保留原片段、有效／源字素时间；完整塑形范围遮罩 | 连字分界处的覆盖仍需更多语言截图 | 固定源分组／时间夹具通过；继续复杂脚本验证 |
+| classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicGeometry.kt：同源 reach／pairGap、seed 对齐和行距 | 窄屏多行及复杂脚本仍待同字体浏览器验证 | 160组几何夹具；两行 default/avoid DOM 词距一致、矩形舍入范围一致 |
+| useOverlapFit.ts:useOverlapFit | ClassicLine.kt:仅避让启用、min .5 / slack .98 / .005 收敛 | 长句缩小的浏览器验收未完成 | 补窄／长／旋转场景 |
+| GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31 的 RenderEffect 支持仍受平台限制；设备验证待补 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
+| wordGlow.ts:wordGlowVariants | GraphemeGlow.kt；ClassicLine.kt:字素范围遮罩 | 软件近似 blur 和原版 text-shadow 的像素差仍需校准 | 108个正常／fast／instant 样本通过；保护 shaping；同字体逐帧图像待最终验收 |
+| glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | 仍需两端设备和连续浏览器响应对照 | 120个原版调度器入场／退出组合数值通过；平台图层预留出界空间 |
+| classic/Visualizer.tsx:lyricContainerFloat | LineMotion.kt：原版7s y/scale关键帧、easeInOut | 浏览器长时呼吸截图仍待补 | 媒体时间锚定是平台适配；不再使用正弦替代 |
 
 ## 必要平台适配与未完成能力
 
@@ -67,3 +67,21 @@ reach/overflow/RTL pairGap；Kotlin 误差 < 0.0001。
 测量时发现 maxIntrinsicWidth 向整数取整造成边距偏差，已改为 fractional caret advance。
 图像1500ms位置接近，正文基线仍约有数像素差，需继续修复字体行高和过渡；
 尚未将窄屏多行／复杂脚本或整帧像素等价列为通过。
+
+## 正文与整句转场验证（2026-11-15）
+
+原版 variants 加实际 animateMotionValue 调度器生成 motion.tsv / line-motion.tsv，
+42个词状态与120个整句入退组合（normal/fast/instant）对照误差 < 0.0001。
+词 active opacity、passed 布局和未指定 ease 的 filter/normal exit 使用调度器默认
+ easeOut；显式颜色 easeInOut 保留。正常入场 scale 550/30 spring 与 opacity/filter
+默认曲线不同，已分离。完整正文与整句分别应用 blur，不将辉光 blur 代替正文 blur。
+图层由 rememberGraphicsLayer 管理释放，采用显式留白录制保留越界内容。
+一次 LayerOutsets 尝试触发空白回归，被连续帧检查检出；已替换并恢复随机 seek
+逐像素重建检查，未改动原测试阈值。固定字体截图增加活动态非空检查，防止只导出空图。
+
+CSS 允许负 leading，Compose 保留自然字高；已居中自然 paragraph 校正正文与 glow
+共同基线。浏览器等待提示在隔离壳中返回空文字，避免把界面提示混入核心像素统计。
+对照图 build/verification/classic-comparison/{default,avoid}-contact.png，CSV统计前景
+并集而非大片背景。当前默认检查点前景 RGB 平均绝对误差约2.9..17.5/255；
+尚无像素等价结论，接下来继续校准光晕、事件/RAF时间相位和更多文字/窄屏场景。
+Android 此项构建通过；API31以下 RenderEffect 连续模糊尚未补齐，不能视为通过。

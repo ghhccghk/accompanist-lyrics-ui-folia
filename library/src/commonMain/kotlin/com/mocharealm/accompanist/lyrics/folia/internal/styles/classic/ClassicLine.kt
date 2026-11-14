@@ -18,7 +18,10 @@ import androidx.compose.ui.graphics.drawscope.CanvasDrawScope
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.graphics.drawscope.clipPath
-import androidx.compose.ui.graphics.lerp
+import androidx.compose.ui.graphics.BlurEffect
+import androidx.compose.ui.graphics.TileMode
+import androidx.compose.ui.graphics.rememberGraphicsLayer
+import androidx.compose.ui.graphics.layer.drawLayer
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.style.TextAlign
@@ -42,14 +45,9 @@ private data class Cell(val unit: DisplayUnit, val layout: TextLayoutResult, val
 private data class Prepared(val cells: List<Cell>, val height: Float, val geometry: ClassicGeometry,
     val quality: FoliaQuality = FoliaQuality.Minimal)
 private class DrawnFrame { var timeUs: Long? = null; var center = Offset.Zero }
-private data class LineFrame(val alpha: Float, val scale: Float, val breathingY: Float)
-private fun lineFrame(time: Long, lineStart: Long, enterUs: Long, leaveUs: Long?, profile: RenderProfile,
-    reducedMotion: Boolean, breathing: Float, density: Float): LineFrame {
-    val exitDuration = when (profile.mode) { Reveal.Normal -> 300_000f; Reveal.Fast -> 160_000f; Reveal.Instant -> 120_000f }
-    val exit = leaveUs?.let { ((time - it) / exitDuration).coerceIn(0f, 1f) } ?: 0f
-    val enter = if (profile.mode == Reveal.Instant || reducedMotion) 1f else ((time - enterUs) / 220_000f).coerceIn(0f, 1f)
-    return LineFrame(enter * (1 - exit), if (reducedMotion) 1f else .9f + .1f * enter + .1f * exit,
-        if (reducedMotion) 0f else sin((time - lineStart) / 1_000_000.0 * 2 * PI / 7).toFloat() * 14 * breathing * density)
+private fun motionColor(a: Color, b: Color, q: Float): Color {
+    fun channel(x:Float,y:Float) = sqrt(x*x+(y*y-x*x)*q)
+    return Color(channel(a.red,b.red),channel(a.green,b.green),channel(a.blue,b.blue),a.alpha+(b.alpha-a.alpha)*q)
 }
 
 /** Measured only on content/geometry/font changes; time is read exclusively in draw. */
@@ -140,7 +138,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         val longPress by rememberUpdatedState(onLongPress)
         fun hit(point: Offset): Boolean {
             val time = drawn.timeUs ?: return false
-            val body = lineFrame(time, line.startUs, enterUs, leaveUs, profile, options.reducedMotion, tuning.breathingFloatMultiplier, density.density)
+            val body = sampleLine(time, enterUs, leaveUs, profile, options.reducedMotion, tuning.breathingFloatMultiplier, density.density)
             if (body.alpha <= .001f) return false
             return prepared.cells.asReversed().any { cell ->
                 val frame = sampleWord(time, enterUs, cell.unit.startUs, cell.unit.endUs, profile, cell.pose, options.reducedMotion)
@@ -160,24 +158,36 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 else { if (event.type == KeyEventType.KeyUp) click?.invoke(); true }
             }.focusable()
         val glowColor = remember(colors.active) { ColorFilter.tint(colors.active) }
+        val bodyLayers = prepared.cells.map { rememberGraphicsLayer() }
+        val lineLayer = rememberGraphicsLayer()
+        val linePadding = remember(prepared, density) {
+            val reach = prepared.cells.maxOfOrNull { hypot(it.boxWidth,it.boxHeight)*it.pose.scale*.75f } ?: 0f
+            ceil(reach+160*density.density).toInt()
+        }
         Canvas(Modifier.fillMaxWidth().height(with(density) { prepared.height.toDp() }).then(input)) {
             val time = (currentPlayback().positionMillis - options.offsetMillis) * 1000
             drawn.timeUs = time; drawn.center = center
-            val body = lineFrame(time, line.startUs, enterUs, leaveUs, profile, options.reducedMotion, tuning.breathingFloatMultiplier, density.density)
+            val body = sampleLine(time, enterUs, leaveUs, profile, options.reducedMotion, tuning.breathingFloatMultiplier, density.density)
+            lineLayer.alpha = body.alpha
+            lineLayer.renderEffect = if(body.blur > .01f) BlurEffect(body.blur,body.blur,TileMode.Decal) else null
+            lineLayer.record(size=IntSize(size.width.toInt()+linePadding*2,size.height.toInt()+linePadding*2)) {
+            withTransform({translate(linePadding.toFloat(),linePadding.toFloat())}) {
             withTransform({
                 translate(0f, body.breathingY)
-                scale(body.scale, body.scale, center)
+                scale(body.scale, body.scale, drawn.center)
             }) {
-                prepared.cells.forEach { cell ->
+                prepared.cells.forEachIndexed { cellIndex, cell ->
                     val frame = sampleWord(time, enterUs, cell.unit.startUs, cell.unit.endUs,
                         profile, cell.pose, options.reducedMotion)
-                    val alpha = (frame.alpha * body.alpha).coerceIn(0f, 1f)
+                    val alpha = frame.alpha.coerceIn(0f, 1f)
                     if (alpha > .001f) withTransform({
                         translate(cell.center.x + frame.x * density.density, cell.center.y + frame.y * density.density)
                         rotate(frame.rotation, Offset.Zero)
                         scale(frame.scale, frame.scale, Offset.Zero)
                     }) {
-                        val topLeft = Offset(-cell.boxWidth / 2f, -cell.boxHeight / 2f)
+                        // CSS splits even negative leading around the font metrics. Compose keeps
+                        // the minimum natural paragraph height; center that shaped paragraph in the box.
+                        val topLeft = Offset(-cell.boxWidth / 2f, -cell.layout.multiParagraph.height / 2f)
                         cell.glows.forEach { glyph ->
                             val glow = sampleGraphemeGlow(time, enterUs, cell.unit.startUs, cell.unit.endUs,
                                 glyph.timing.startUs, glyph.timing.endUs, cell.unit.graphemes.size, profile)
@@ -187,10 +197,22 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                                 drawImage(glyph.inner, origin, alpha = glow * alpha, colorFilter = glowColor)
                             }
                         }
-                        drawText(cell.layout, lerp(colors.text, colors.active, frame.mix), topLeft, alpha = alpha)
+                        val color = motionColor(colors.text, colors.active, frame.mix)
+                        if(frame.blur > .01f) {
+                            val layer = bodyLayers[cellIndex]
+                            val padding = ceil(32*density.density).toInt()
+                            layer.renderEffect = BlurEffect(frame.blur*density.density,frame.blur*density.density,TileMode.Decal)
+                            layer.record(size=IntSize(cell.layout.size.width+padding*2,cell.layout.size.height+padding*2)) {
+                                drawText(cell.layout,color,Offset(padding.toFloat(),padding.toFloat()),alpha=alpha)
+                            }
+                            withTransform({translate(topLeft.x-padding,topLeft.y-padding)}) {drawLayer(layer)}
+                        } else drawText(cell.layout, color, topLeft, alpha = alpha)
                     }
                 }
             }
+            }
+            }
+            withTransform({translate(-linePadding.toFloat(),-linePadding.toFloat())}) { drawLayer(lineLayer) }
         }
     }
 }

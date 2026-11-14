@@ -28,7 +28,7 @@ class ClassicSamplerTest {
             val direct = sampleWord(time, 0, 1_000_000, 1_000_000, profile, pose, false)
             sampleWord(random.nextLong(0, 4_000_000), 0, 1_000_000, 1_000_000, profile, pose, false)
             assertEquals(direct, sampleWord(time, 0, 1_000_000, 1_000_000, profile, pose, false))
-            assertTrue(listOf(direct.x, direct.y, direct.scale, direct.rotation, direct.alpha, direct.mix, direct.glow).all { it.isFinite() })
+            assertTrue(listOf(direct.x, direct.y, direct.scale, direct.rotation, direct.alpha, direct.mix, direct.blur).all { it.isFinite() })
         }
     }
     @Test fun shortWordDoesNotJumpAtPassedBoundary() {

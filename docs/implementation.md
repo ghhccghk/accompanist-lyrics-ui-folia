@@ -73,3 +73,17 @@ visual acceptance is still pending. Android device model 2509FPN0BC / API 37
 rejected installation with INSTALL_FAILED_USER_RESTRICTED, so no device UI
 verification is claimed. No device security setting was changed.
 Word transforms/glow and canonical line exits are the next separate feature.
+
+## Classic numerical sampling and shaping boundaries
+
+Implemented media-time render hints, 100/180ms thresholds, seeded normal poses,
+mass=1 spring, continuous passed endpoint, fixed lookahead and safe grouping.
+Both JVM/Android use ICU4J 78.3 for consistent grapheme boundaries (including ZWJ).
+Complex scripts retain a whole run; adjacent Latin fragments inside a word merge.
+This deliberately sacrifices independent transforms where shaping safety is unknown.
+
+Verified nine library tests and Android compilation, including 2,000 random
+stateless animation seeks, zero-duration words, short-word continuity and
+combining/ZWJ/Arabic/Latin boundaries. These are numerical checks, not visual
+equivalence or frame-time measurements. ICU adds binary size; low-API device
+behavior and complete transitive packaging remain unverified.

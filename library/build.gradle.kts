@@ -21,5 +21,7 @@ kotlin {
             implementation(compose.foundation)
         }
         commonTest.dependencies { implementation(kotlin("test")) }
+        jvmMain.dependencies { implementation("com.ibm.icu:icu4j:78.3") }
+        androidMain.dependencies { implementation("com.ibm.icu:icu4j:78.3") }
     }
 }

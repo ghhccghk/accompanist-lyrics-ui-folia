@@ -12,6 +12,7 @@ Synthetic sample text is written for this repository. Fonts use platform default
 | Android Gradle Plugin | 9.3.2 | Apache-2.0; build tooling |
 | AndroidX Activity Compose | 1.13.0 | Apache-2.0; Android sample entry |
 | lyrics-core | 0.5.0 | Apache-2.0; published model dependency, not lyrics-ui |
+| ICU4J | 78.3 | Unicode-3.0; grapheme segmentation, same implementation on Android/JVM |
 
 This inventory covers direct dependencies. Transitive binary/source notices and
 packaging must be audited before distribution. No remote publication is configured.

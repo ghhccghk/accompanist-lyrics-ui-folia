@@ -3,11 +3,11 @@
 This checkout is a working development baseline, not completion of all P2/P4
 acceptance requirements. Implementation history is in implementation.md.
 
-Final local verification snapshot: 15 library + 15 shared + 1 independent
-consumer tests, zero failures. Android sample assembleDebug and Desktop classes
-pass. The latest independent-consumer script passed with newly rebuilt artifacts
-and packaged notice checks. Android smoke coverage predates the final hit-test
-change, as called out below.
+Latest verification: clean tracked-source 555a26e passes 21 library + 15 shared
++ one independent consumer tests, zero failures, both sample builds and archive
+notice presence checks. The later RTL sample update passes 16 shared tests and
+both sample builds. Current library has API34 hit/whitespace/large-font/Arabic
+smoke coverage; the later LTR progress-label change has Compose runtime coverage.
 
 ## Saved implementation commits
 
@@ -28,6 +28,13 @@ change, as called out below.
 | 97bc56a | Interrupted progress handling and centered gaps |
 | 1dea5dc | Short-wide controls and API34 runtime evidence |
 | 68086b0 | Transform-aware glyph hit testing |
+| c795fc7 | Follow-up visual/performance acceptance plan |
+| fab4317 | Primary status lifetime across gaps and replacements |
+| 81bfb98 | Synthetic media-time GIF/PNG/checksum sequences |
+| 43f60ae | Measured paired-mask raster/scratch reuse |
+| 555a26e | Retained visible glow pixel budget and gradual fallback |
+| 1c56ffc | Clean tracked-source build/tests and independent consumption |
+| 5d184a5 | RTL progress ordering and large-font sample coverage |
 
 The documentation closeout follows these implementation commits in local Git.
 
@@ -48,21 +55,24 @@ Completed evidence:
 
 Outstanding requirements (do not mark these as supported/verified):
 
-- Fixed licensed-font pinned-upstream browser comparison and continuous motion
-  recordings; exported upstream glow fixtures, semantic CJK grouping, full layout
+- Fixed licensed-font pinned-upstream browser comparison and real-window motion
+  recordings (sampled synthetic GIF checkpoints now exist); exported upstream glow fixtures, semantic CJK grouping, full layout
   collision/rotation envelopes and dynamic body blur.
-- Complete preparation/cache budgeting, asynchronous geometry preparation and
-  measured disposal/memory behavior under dense exits, long lines and resizing.
-- Cold/warm mask/layout latency, full-sample CPU/GPU/frame P50/P95/P99,
+- Complete preparation/cache budgeting beyond the implemented 32MiB retained
+  visible mask-pixel limit, asynchronous geometry preparation and measured
+  disposal/memory behavior under dense exits, long lines and resizing.
+- Full mask/layout preparation latency beyond the paired-mask CPU/JVM allocation
+  probe, full-sample CPU/GPU/frame P50/P95/P99,
   allocations/GC/memory and representative Android-device performance.
-- Latest transform-aware hits on Android runtime; physical/low-API devices,
-  accessibility large fonts, alternate providers/revoked access/native cancel;
+- Physical/low-API devices, broader accessibility/font-scale and Android RTL-locale
+  matrix beyond API34 font-scale 1.5/Arabic text smoke; alternate providers/revoked access/native cancel;
   Desktop native picker and OS persistence restart interaction.
 - Import history and URI/file restoration across process death; safe reselect
   hint when the chosen document is unavailable. Current history is session-only.
 - Real Desktop-window capture (Windows capture helper timed out earlier);
   native dialogs' Escape/focus restoration across platforms.
-- Complete direct/transitive binary/source notice audit and clean-checkout CI.
+- Complete direct/transitive binary/source notice audit and CI automation
+  (local tracked-source export validation now passes).
   Artifacts are local verification snapshots, not a public release.
 
 Preserved local state: gradle/gradle-daemon-jvm.properties appeared during the

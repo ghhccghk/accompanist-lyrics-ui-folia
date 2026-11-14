@@ -1,0 +1,16 @@
+{
+  "name": "folia-classic-reference",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fixtures": "node generate-fixtures.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "13.4.3",
+    "playwright": "1.62.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.1"
+  }
+}

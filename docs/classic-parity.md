@@ -1,0 +1,40 @@
+# Classic 核心移植对照
+
+固定上游：Folia v0.7.26 / cc6226e464050a456a2913e062374f23d3844cc5，AGPL-3.0-only 路线。
+表中的上游路径以该提交仓库根目录为准，Kotlin 路径以 library/src/commonMain/kotlin/
+com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不是最终验收标准。
+
+| 上游行为／源码位置 | 当前实现 | 缺失或简化 | 修复与验收 |
+| --- | --- | --- | --- |
+| utils/lyrics/cjkSemanticLayout.ts:buildPostLyricLayoutUnits、buildDisplayWordsFromLayoutUnits；utils/lyrics/wordSegmentation.ts | internal/text/DisplayUnits.kt | 任意 Latin 同词片段合并；没有 sticky 标点／缩写；CJK 无语义层。上游 classic 最终会展开语义 CJK 词，非直接合并动画 | 保存逻辑词、显示／塑形分组与来源；对照收缩词、标点、中英和上下文文字 |
+| utils/lyrics/graphemeTiming.ts:buildWordGraphemeTimings；components/visualizer/GlowWord.tsx:graphemeTimings | DisplayUnit 只有总起止时间 | 合并后内部计时丢失；正文和辉光使用相同整词粒度 | 保存源片段；字素按 syllable 均分、最后终点精确；完整塑形并用字素范围遮罩控制辉光 |
+| classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicLine.kt:safeScale、固定 gap、居中 | 未按宽度／偏移计算边距；缺少 passed 旋转 8 步包络、seed 对齐和行距 | 移植纯几何公式并直接执行上游函数作数值 oracle；浏览器布局矩形与同字体测量对照 |
+| useOverlapFit.ts:useOverlapFit | ClassicLine.kt:最多 4 次 fit | 当前默认也缩小；上游只在 avoidOverlap 开启，min .5 / slack .98，按布局大小迭代 | 对齐触发条件和可用区域，检查窄／长／旋转场景 |
+| GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord | spring 有闭式实现；passed 默认曲线、正文 blur 和颜色曲线不完整 | 导出原版 transition 配置并采样引擎响应；对照 lookahead、短词、passed 边界和随机 seek |
+| wordGlow.ts:wordGlowVariants | ClassicSampler.kt:glowIn × glowOut；ClassicLine.kt:整词遮罩 | 临时线性曲线、0.35/0.5 层强度；无按字素延迟、6倍持续与 0.9s 余韵 | 正常／fast／instant 数值关键帧 oracle；同字体辉光截图，保留 shaping |
+| glowWordTiming.ts:getGlowWordLineContainerMotion | ClassicLine.kt:lineFrame | 入场固定 .22s、线性退出、无正文／整句 blur | 对齐各模式 opacity/scale/filter 与缓动，检查整句替换和空档 |
+| classic/Visualizer.tsx:lyricContainerFloat | ClassicLine.kt:sin | 上游 y=[0,-14,0,6.3,0]、scale=[1,1.01,1,.995,1]、7s easeInOut；当前正弦 | 保留关键帧形状；平台使用媒体时间以满足暂停/seek，明确此时间源适配 |
+
+## 必要平台适配与未完成能力
+
+- 原版 Framer 由状态改变后的墙钟驱动；组件约定要求暂停冻结、seek 可重建。
+  Kotlin 将相同曲线锚定媒体时间，这是时间源适配，不允许据此忽略曲线差异。
+- Compose 必须保留完整塑形运行；不能逐 UTF-16 字符重新绘制正文。
+  内部字素范围仍需保留计时并驱动遮罩。跨字素连字／上下文连接处允许记录栅格差异，
+  不能将缺少内部计时改称 shaping 必须牺牲的功能。
+- lyrics-core 没有上游的 wordSegments/autoWordSegments、isChorus、wordColors 等扩展字段。
+  不伪造来源语义；基础显示词由已发布模型的 syllables 映射。额外合唱／主题不作为已支持能力。
+- 当前系统字体截图不是跨端对照证据；需要同一可再分发字体文件、SHA、尺寸和时间表。
+
+## 执行状态
+
+第一项数据层：已实现源 syllable、显示分组及字素时间的分离；内部数据仍未全部用于绘制。
+实际执行固定源函数生成 graphemes.tsv/grouping.json。Kotlin 对照普通词、非均匀 hurricane、
+缩写 It’s、组合字符／ZWJ、世界。得到一致的有效显示字素时间（微秒四舍五入）。
+收缩词按上游均分有效显示时间，同时保留 sourceGraphemes 原时间；跨来源的组合字符
+采用覆盖区间，避免拆塑形。Arabic 原片段与内部时间在整体塑形运行中保留。
+保护 shaping 的 Latin／上下文运行当前仍共用外层姿态，独立逻辑词变换尚待校准。
+
+固定源代码在忽略的 .work/folia-major 检出，不构建或修改 Accompanist。
+数值夹具必须由固定源函数执行生成并注明生成入口；浏览器须使用真实上游 GlowWord，
+不能以重新实现的 HTML 近似替代后宣称原版对照。尚无完成 classic 最小闭环的结论。

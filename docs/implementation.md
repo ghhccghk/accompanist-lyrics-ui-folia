@@ -33,3 +33,16 @@ import, lifecycle, publication consumption and performance remain to implement.
 minSdk 21 is the library target; Android sample starts at 23. Actual manifest
 merging and device checks determine the verified matrix. Low-API Unicode and
 blur behavior have not yet been experimentally verified.
+
+## P1a — core adaptation and interval queries
+
+Implemented actual 0.5.0 karaoke, synced and unchecked models; source identity,
+nested accompaniment, exact text and phonetic separators are retained. Unknown
+types and reversed lines produce diagnostics. Line-only lyrics retain line-only
+timing. Normalized intervals cover outlying fragments without rewriting sources.
+
+Sweep deltas with 64-boundary checkpoints support unordered overlapping inputs,
+half-open endpoints, gaps and random seek without a per-frame full-song scan.
+Verified `:library:jvmTest :library:compileAndroidMain`: five tests passed,
+including 2,000 seeded random queries against a naive overlap oracle.
+Visual display/epochs are not yet implemented at this milestone.

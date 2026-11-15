@@ -1,5 +1,9 @@
 # Classic 核心移植对照
 
+当前验收状态：数据／曲线／几何已完成原版对照；完整帧仍有正文和字幕栅格残差，
+字幕主题阴影／光垫的公共契约决策尚未收到。下文按日期保留调查过程，旧缺失项
+若已有后续修复，以最新章节为准，不能把历史结论当作当前能力声明。
+
 固定上游：Folia v0.7.26 / cc6226e464050a456a2913e062374f23d3844cc5，AGPL-3.0-only 路线。
 表中的上游路径以该提交仓库根目录为准，Kotlin 路径以 library/src/commonMain/kotlin/
 com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不是最终验收标准。
@@ -340,3 +344,24 @@ cjkSemanticLayout.ts:TRAILING_WORD_CHAR_REGEX/canAttachToPrevious → SemanticLa
 直接执行固定源生成五个新场景，旧实现先失败，修复后16条新增字素结果全部匹配，
 包括补充平面、字母数字、其他数字、组合附标结尾与ZWJ表情不误粘连。
 完整JVM和两端构建通过。此项是数据/时间分组对照，不冒称新脚本字体画面验收。
+
+## 字幕实际字形基线（2026-11-15）
+
+原版 VisualizerSubtitleOverlay.tsx 的分数行高／基线 → ClassicSubtitles.kt。
+此前 DOM 几何误差小于 .02px，但双行首行实际 ink 比原版低 1px；SkParagraph
+reported baseline=22.64，实际 blob baseline=23。Skia TextLine.cpp 的
+floor(baseline + baselineShift + .5) 解释此差异。平台适配读取实际绘制基线，
+逐行裁剪同一个完整 shaped paragraph 的覆盖，将它定位到原版分数基线和行距；
+没有逐字重新塑形，也没有改动画或原版预期。
+
+capture-subtitles.mjs 从默认原版 PNG 另外提取 stable frame ink 上下边界；
+SubtitleParityTest 新增 800px 双行 1500ms 首行实际 y=434..448 严格断言。
+原版 84 帧／侧、原几何断言继续通过，完整 JVM 测试、Android APK／Desktop classes
+通过。双行 1500ms 前景 RGB MAE 17.2768→7.2436/255；单行仍7.7071。
+目视宽屏双行与380px长译文对照，无漏字／行切割异常，仍有字体边缘覆盖残差。
+
+独立 --grayscale 诊断关闭 Chromium LCD，保留默认规范截图不变。LCD只解释部分
+误差，不据此宣布平台必须差异或修改验收标准。证据：
+build/verification/subtitle-{comparison,grayscale-comparison}/，原版 ink 夹具
+verification/classic-fixtures/subtitle-ink.tsv。API34/API30最新APK冷启与暂停拖动检查
+另见 android-smoke.md；未将系统字体运行图冒充固定字体跨端验收。

@@ -26,6 +26,8 @@ import com.mocharealm.accompanist.lyrics.folia.internal.animation.sampleSubtitle
 import com.mocharealm.accompanist.lyrics.folia.internal.model.NormalizedLine
 import com.mocharealm.accompanist.lyrics.folia.internal.text.cssFontBaseline
 import com.mocharealm.accompanist.lyrics.folia.internal.text.naturalFontMetrics
+import com.mocharealm.accompanist.lyrics.folia.internal.text.paintedLineBaseline
+import androidx.compose.ui.graphics.drawscope.clipRect
 import com.mocharealm.accompanist.lyrics.folia.internal.timeline.*
 import kotlin.math.floor
 import kotlin.math.ceil
@@ -98,10 +100,21 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
                     val layer=layers[i];val padding=8
                     layer.alpha=row.alpha
                     layer.blurSigma=if(row.blur) density.density else 0f
-                    layer.record(this,size=IntSize(row.layout.size.width+padding*2,row.layout.size.height+padding*2)) {
-                        drawText(row.layout,topLeft=Offset(padding.toFloat(),padding.toFloat()))
+                    layer.record(this,size=IntSize(row.layout.size.width+padding*2,ceil(row.height).toInt()+padding*2)) {
+                        // Keep the entire shaped paragraph. Reposition only its line
+                        // coverage: SkParagraph rounds blob baselines/line heights,
+                        // while CSS preserves fractional line-height across wraps.
+                        repeat(row.layout.lineCount) { line ->
+                            val target=row.baseline+line*row.height/row.layout.lineCount
+                            withTransform({translate(0f,target-paintedLineBaseline(row.layout,line))}) {
+                                clipRect(-padding.toFloat(),row.layout.getLineTop(line)+padding,
+                                    row.layout.size.width+padding*2f,row.layout.getLineBottom(line)+padding) {
+                                    drawText(row.layout,topLeft=Offset(padding.toFloat(),padding.toFloat()))
+                                }
+                            }
+                        }
                     }
-                    withTransform({translate((size.width-row.layout.size.width)/2-padding,origin+row.top+row.baseline-row.layout.firstBaseline-padding)}) {drawClassicLayer(layer)}
+                    withTransform({translate((size.width-row.layout.size.width)/2-padding,origin+row.top-padding)}) {drawClassicLayer(layer)}
                 }
             }
         }

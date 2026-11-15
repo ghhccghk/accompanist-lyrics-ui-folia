@@ -22,3 +22,6 @@ internal fun cssBaseline(naturalBaseline:Float,naturalHeight:Float,lineHeight:Fl
     val descent=floor(naturalHeight-naturalBaseline+.5f)
     return ascent+floor((lineHeight-ascent-descent)/2)
 }
+
+/** A paragraph's reported baseline can differ from the baseline of its painted blob. */
+internal expect fun paintedLineBaseline(layout: androidx.compose.ui.text.TextLayoutResult, line: Int): Float

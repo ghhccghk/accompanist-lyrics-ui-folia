@@ -58,11 +58,23 @@ class SubtitleParityTest {
             runOnIdle {layout=mode}
             for(time in listOf(0,50,120,240,700,725,750,800,850,1000,1500,2500,3200,3250,3350,3500,4800,5000,5050,5150,5500)) {
                 runOnIdle{snapshot=FoliaPlaybackSnapshot(time.toLong(),false,snapshot.discontinuity+1)};waitForIdle()
-                ImageIO.write(captureToImage().toAwtImage(),"png",output.resolve("$width-$mode-${time}ms.png"))
+                val capture=captureToImage().toAwtImage()
+                ImageIO.write(capture,"png",output.resolve("$width-$mode-${time}ms.png"))
                 if(time in listOf(1500,2500,3500,5500)) {
-                    output.resolve("$width-$mode-${time}-geometry.tsv").writeText("text\tcanvasWidth\tparagraphWidth\tlineLeft\tlineRight\n"+measuredRows.joinToString("\n") {r->
-                        listOf(r.text,r.layout.size.width,r.layout.multiParagraph.width,r.layout.getLineLeft(0),r.layout.getLineRight(0)).joinToString("\t")
+                    output.resolve("$width-$mode-${time}-geometry.tsv").writeText("text\tcanvasWidth\tparagraphWidth\tlineLeft\tlineRight\tfirstBaseline\tcssBaseline\tlineTop\tlineBottom\n"+measuredRows.joinToString("\n") {r->
+                        listOf(r.text,r.layout.size.width,r.layout.multiParagraph.width,r.layout.getLineLeft(0),r.layout.getLineRight(0),r.layout.firstBaseline,r.baseline,r.layout.getLineTop(0),r.layout.getLineBottom(0)).joinToString("\t")
                     })
+                    if(width==800 && mode=="current+translation+romanization" && time==1500) {
+                        val original=File("../verification/classic-fixtures/subtitle-ink.tsv").readLines()
+                            .filterNot{it.startsWith("#")||it.isBlank()}.map{it.split('\t')}
+                            .single{it[0]=="800"&&it[1]==mode&&it[2]=="1500"&&it[3]=="0"}
+                        val inkY=(425 until 455).filter {y->(0 until width).any {x->
+                            val pixel=capture.getRGB(x,y)
+                            maxOf(((pixel ushr 16)and 255)-22,((pixel ushr 8)and 255)-36,(pixel and 255)-53)>20
+                        }}
+                        assertEquals(original[4].toInt(),inkY.first(),"Painted ink top, beyond reported baseline geometry")
+                        assertEquals(original[5].toInt(),inkY.last(),"Painted ink bottom")
+                    }
                     val reference=File("../verification/classic-fixtures/subtitle-layout.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.map{it.split('\t')}
                         .filter{it[0].toInt()==width&&it[1]==mode&&it[2].toInt()==time}
                     assertEquals(reference.size,measuredRows.size)

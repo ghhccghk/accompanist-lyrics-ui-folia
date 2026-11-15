@@ -200,3 +200,11 @@ SemanticLayout.kt trailingWordCharacter. Use the same Unicode Letter/Number
 categories at the end of the whole string instead of a UTF-16 Char predicate.
 Original-function fixtures include supplementary Adlam/Aegean, Roman numeral,
 combining mark and emoji boundaries, retaining effective and source glyph timing.
+
+Subtitle paint baseline: pinned VisualizerSubtitleOverlay.tsx CSS line-height →
+ClassicSubtitles.kt / CssTextMetrics.kt / FontMetrics.{jvm,android}.kt. Skia
+modules/skparagraph/src/TextLine.cpp documents rounded blob baselines despite
+fractional paragraph metrics. Independently position each intact paragraph line's
+coverage at CSS fractional baselines; no font engine code copied. Default browser
+PNG ink bounds supplement the existing DOM geometry; LCD-disabled screenshots
+are a separately labelled diagnostic, never a replacement reference.

@@ -74,3 +74,12 @@ area (24px status bar excluded): .work/folia-api30{,-b}.png. This verifies the
 actual low-API branch runs. Native sample font differs from the pinned browser
 fixture; full Android pixel parity and frame-time/memory measurements remain open.
 API21..29 and physical devices are not claimed verified.
+
+## Fractional subtitle ink baseline recheck — 2026-11-15
+
+Current baseline-fix APK rebuilt, installed and cold-launched in the same API34
+and API30 sessions. Paused progress drag shows current lyrics, translation,
+romanization and preview without crash. Captures:
+.work/emulator-{5558,5560}-baseline.png. AndroidRuntime contains no application
+exception. These use system fonts and sample layout, so validate native execution
+and absence of clipped subtitle rows, not fixed-font original-browser parity.

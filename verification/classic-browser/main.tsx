@@ -9,6 +9,7 @@ import {resolveGlowWordRenderProfile,getGlowWordActiveEndTime} from '../../.work
 import {buildPostLyricLayoutUnits,buildDisplayWordsFromLayoutUnits} from '../../.work/folia-major/src/utils/lyrics/cjkSemanticLayout';
 import fontUrl from '../assets/FoliaParityLatin-Bold.ttf?url';
 import arabicUrl from '../assets/NotoSansArabic-Bold.ttf?url';
+import bidiUrl from '../assets/FoliaParityBidi-Bold.ttf?url';
 import cjkUrl from '../assets/FoliaParityCJK-Bold.otf?url';
 import scenes from '../classic-fixtures/scenes.tsv?raw';
 
@@ -18,6 +19,8 @@ const face = new FontFace('Parity Noto', `url(${fontUrl})`, { weight: '700' });
 await face.load(); document.fonts.add(face);
 const arabicFace = new FontFace('Parity Arabic', `url(${arabicUrl})`, {weight:'700'});
 await arabicFace.load();document.fonts.add(arabicFace);
+const bidiFace = new FontFace('Parity Bidi', `url(${bidiUrl})`, {weight:'700'});
+await bidiFace.load();document.fonts.add(bidiFace);
 const cjkFace = new FontFace('Parity CJK', `url(${cjkUrl})`, {weight:'700'});
 await cjkFace.load();document.fonts.add(cjkFace);
 const params = new URLSearchParams(location.search);
@@ -47,6 +50,7 @@ if(params.has('scene')) {
   const words=rows.map(r=>({text:r[5],startTime:Number(r[3])/1000,endTime:Number(r[4])/1000}));
   lines=[{startTime:Number(rows[0][1])/1000,endTime:Number(rows[0][2])/1000,fullText:words.map(w=>w.text).join(''),words}];
   if(params.get('scene')==='arabic') themes.fontFamily='Parity Arabic';
+  if(params.get('scene')?.startsWith('bidi-')) themes.fontFamily='Parity Bidi';
   if(params.get('scene')==='cjk') themes.fontFamily='Parity CJK';
 }
 const root = createRoot(document.getElementById('root')!);

@@ -15,6 +15,7 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 | classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicGeometry.kt：同源 reach／pairGap、seed 对齐和行距 | CJK固定字体几何已测；全帧仍未验收 | 160组几何夹具；八场景 default/avoid DOM 词距一致、矩形舍入范围一致 |
 | useOverlapFit.ts:useOverlapFit | ClassicLine.kt:仅避让启用、min .5 / slack .98 / .005 收敛 | 完整帧像素仍未验收 | 380px窄屏长句CSS19.744px与浏览器对照通过 |
 | classic/Visualizer.tsx:isInterlude精确六点分支 | DisplayUnits.kt／wordPose／classicGeometry | 字形覆盖和采样仍有残差 | 六点独立词/完整词两输入、宽窄屏/default/avoid原版几何及Motion通过；两API截图见末节 |
+| classic/Visualizer.tsx:整句dir；utils/lyrics/textDirection.ts | ParagraphDirection.kt／ClassicLine.kt正文段落 | 跨平台字形覆盖残差保留 | 同一OFL混排face的原版Range、32帧及逆向暂停、API30/34各64请求通过；RTL数字/标点修复 |
 | GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31现有Kotlin软件回退/API30运行；完整效果残差待收敛 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
 | wordGlow.ts:wordGlowVariants | GraphemeGlow.kt；ClassicLine.kt:字素范围遮罩 | 软件近似 blur 和原版 text-shadow 的像素差仍需校准 | 108个正常／fast／instant 样本通过；保护 shaping；同字体逐帧图像待最终验收 |
 | glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | 本次中断入场场景尚未在Android运行；整帧残差保留 | normal/fast入场被打断时实际Motion数值、公开入口暂停/逆向seek通过；平台图层预留出界空间 |
@@ -717,3 +718,41 @@ classic-android-api{30,34}-interlude/，原PNG、pixel-errors.csv、条件JSON/A
 均保留。复现capture-interlude.mjs、InterludeParityTest、capture-android.py的
 --scenes interlude interlude-single --verify-seek和compare-interlude.py。既有录像
 不冒称覆盖本项，实机/API21..29/Desktop真实窗口仍未验证。
+
+## 词内部继承整句 bidi 方向（2026-11-15）
+
+固定classic/Visualizer.tsx给整句dir={resolveLyricTextDirection(fullText)}，词内正文
+继承该方向；词框RTL流向与词内bidi是两个独立行为。当前实现只做了前者，因而RTL
+行“مرحبا 2026!”的数字词被显示为2026!，原版应为!2026。原版Range记录首位数字
+相对left13.734375，旧代码0；新增测试先失败，未改容差。
+
+ParagraphDirection默认按整个歌词行的first-letter规则指定Ltr/Rtl，保留宿主显式
+textDirection覆写。完整段落用物理左对齐消除整数宽度在RTL Start时多出来的分数
+paint origin；RTL词框流向不变，不倒排UTF-16字符，也不重新塑形单个字符。
+保持原有.51px DOM offset舍入检查，不用增加容差吞掉约.51px的多余原点。
+
+验证夹具初版Arabic face不含Latin，Glow一词在两侧实际用了不同系统fallback，故该
+组不能作为同字体验收。现在从已有同一固定Noto提交的两个OFL face合并/子集并改名
+生成FoliaParityBidi-Bold.ttf，只用于新混排验证/debug；既有Latin/Arabic/CJK基线字体
+与期望PNG保持。原版与旧/新Kotlin重新使用同一最终字体SHA，旧/新同输入对照保留。
+初始fallback失败日志仍在.work；未把它当生产排版失败或修改像素标准。
+
+字体输入SHA均由脚本核对，固定创建/修改时间、name/STAT、700/5元数据和hash seed。
+两个独立Python进程产物SHA一致：e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699。
+OFL及输入出处见verification/assets/README.md；29KB合并子集不声称与任一原face
+像素相同，也不打包进库/正式示例。新场景所有字有cmap覆盖，不依赖回退字体。
+
+同源原版完整body的字符Range/Compose框均按原容差通过，宿主显式Ltr/Rtl覆写通过。
+公开入口32帧及32次逆向重访、每点推进虚拟墙钟1s后暂停均逐像素一致。
+1500ms RTL/default前景RGB MAE旧26.2358→新3.0655，avoid26.1087→2.9060；
+LTR控制场景截图逐像素保持。已目视原版/旧/新，感叹号位置与内部辉光方向已一致；
+仍有字形覆盖残差。最终完整JVM回归、Android debug与Desktop classes已通过。
+API30/API34各64个独立token请求（32条件及逆向重访）和暂停双截图均严格相同，
+安装APK/字体SHA与原版条件一并保存。首次API34在ADB已在线但package服务未就绪
+时安装失败；等待boot_completed/package服务后成功，不反复盲目重试。
+
+证据：build/verification/classic-bidi-{upstream,legacy,kotlin,comparison}/及
+classic-android-api{30,34}-bidi/。复现capture-bidi.mjs、BidiClassicParityTest、
+capture-android.py --scenes bidi-rtl bidi-ltr --verify-seek及compare-bidi.py。
+新场景非空帧的RGB MAE范围见pixel-errors.csv；原PNG和完整误差保留，不把这些
+数值当作新的视觉通过阈值。原版/旧/新/两API已目视检查；实机与Desktop实窗限制保持。

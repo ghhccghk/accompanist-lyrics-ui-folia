@@ -280,3 +280,15 @@ one shaped run. glowWordVariants.ts keeps a zero-target rotation spring running
 when active/passed share that target; Pose now records whether rotation was
 actually disabled. Synthetic scene/layout/Motion fixtures and public-entry PNGs
 come from unchanged pinned Classic via capture-interlude.mjs. No media copied.
+
+Inherited body direction: pinned classic/Visualizer.tsx dir attribute and
+utils/lyrics/textDirection.ts whole-line first-letter rule -> ParagraphDirection.kt
+and ClassicLine.kt intact paragraph styles. Explicit host textDirection is kept;
+default words inherit the resolved entire-line direction. Physical left alignment
+inside the integer Compose paragraph avoids a spurious RTL origin while the
+separate flex geometry still flows RTL. No character reordering or per-character
+reshaping is introduced. capture-bidi.mjs records the unchanged original body
+Range boxes separately from untouched full animation frames; BidiClassicParityTest
+checks those boxes and public paused/reverse-seek frames. New mixed-direction
+verification face merges/subsets the already pinned OFL inputs with renamed
+metadata (prepare-bidi.py), so no unverified system fallback is an oracle.

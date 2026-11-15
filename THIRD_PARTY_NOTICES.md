@@ -3,7 +3,8 @@
 No lyrics, covers, icons or fonts have been copied from reference applications.
 Synthetic sample text is written for this repository. Samples use platform defaults;
 verification/assets contains unmodified Noto Sans Bold and Noto Sans Arabic Bold,
-and a renamed Noto Sans CJK SC Bold subset under SIL OFL 1.1 with their license,
+plus a renamed Latin face, a CJK subset and a merged mixed-direction comparison
+face under SIL OFL 1.1 with their license,
 copyright metadata and provenance. They are used by the comparison harness only.
 
 | Component | Version | License / role |

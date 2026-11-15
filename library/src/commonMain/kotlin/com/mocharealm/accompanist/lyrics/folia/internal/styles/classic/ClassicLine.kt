@@ -79,7 +79,11 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 fun glyphSize(value:Float) = floor(value*100+.00001f)/100
                 val rendered=if(base<=36f || base>=72f) cssRound(base/16*fontScale)*16 else cssRound(6*fontScale)*base/6
                 val style = textStyle.copy(fontSize = glyphSize(rendered).sp,
-                    lineHeight = TextUnit.Unspecified, textAlign = TextAlign.Start,
+                    // CSS word boxes have intrinsic fractional widths. A Compose
+                    // paragraph's integer container must not right-align that
+                    // width and add an extra fractional origin in RTL words.
+                    lineHeight = TextUnit.Unspecified, textAlign = TextAlign.Left,
+                    textDirection = classicTextDirection(textStyle, line.text),
                     textMotion = textStyle.textMotion ?: TextMotion.Animated)
                 val renderedTexts = units.map { cssWordText(it.text) }
                 val measured = renderedTexts.map { word -> measurer.measure(AnnotatedString(word.text), style,

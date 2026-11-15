@@ -33,7 +33,7 @@ conditions={'serial':args.serial,'sdk':sdk,'device':adb('shell','getprop','ro.pr
     'viewportPlacement':'top-left 0,0; physical pixels; system bars hidden',
     'revision':subprocess.run(['git','rev-parse','HEAD'],cwd=root,capture_output=True,text=True,check=True).stdout.strip(),
     'fonts':{name:hashlib.sha256((root/'verification/assets'/name).read_bytes()).hexdigest()
-        for name in ['FoliaParityLatin-Bold.ttf','FoliaParityCJK-Bold.otf','NotoSansArabic-Bold.ttf']},
+        for name in ['FoliaParityLatin-Bold.ttf','FoliaParityCJK-Bold.otf','NotoSansArabic-Bold.ttf','FoliaParityBidi-Bold.ttf']},
     'apkSha256':hashlib.sha256((root/'sample/android-app/build/outputs/apk/debug/android-app-debug.apk').read_bytes()).hexdigest(),
     'activitySha256':hashlib.sha256((root/'sample/android-app/src/debug/kotlin/com/mocharealm/accompanist/folia/sample/ClassicParityActivity.kt').read_bytes()).hexdigest(),
     'frames':[]}
@@ -57,8 +57,9 @@ for scene in args.scenes:
     times=[1500,5500] if scene=='subtitle' else [750,800,1000,1200,1500,1900,2100,2800,3000] if scene!='baseline' else [750,1000,1500,2100,2300,3400,4400]
     if scene=='dense':times=[801,901,1001,1051,1101,1201,1301]
     if scene in ['interlude','interlude-single']:times=[750,1000,1500,1900,2300,2500]
+    if scene.startswith('bidi-'):times=[750,1000,1200,1500,1900,2100,2300,2500]
     if args.verify_seek and scene=='baseline':times += [1500,750,1500]
-    if args.verify_seek and scene in ['dense','interlude','interlude-single']:times+=times[::-1]
+    if args.verify_seek and (scene in ['dense','interlude','interlude-single'] or scene.startswith('bidi-')):times+=times[::-1]
     for width in widths:
         for mode in ([False] if scene=='dense' else [False,True]):
             for ms in times:

@@ -37,3 +37,18 @@ Reproduction: verification/subset-cjk.py with fontTools 4.55.3; ASCII plus the
 explicit synthetic CJK characters listed in that script. Family/PostScript names
 changed to Folia Parity CJK / FoliaParityCJK-Bold; glyph outlines are unchanged.
 This small subset is a comparison asset, not a general CJK application font.
+
+FoliaParityBidi-Bold.ttf is a verification-only merged/subset face from the two
+pinned Noto Sans / Noto Sans Arabic Bold inputs above; both use the retained
+SIL OFL1.1 in OFL.txt. New family/PostScript name: Folia Parity Bidi /
+FoliaParityBidi-Bold. The fontTools merger resolves duplicate cmap entries to the
+first (Latin) input, then retains ASCII plus the explicit synthetic Arabic letters
+and shaping closure. It is not claimed pixel-identical to either unmerged face.
+It supplies one identical face for both sides of new mixed-direction comparisons,
+without unverified browser/Compose system fallback. Existing Latin/Arabic/CJK
+reference scenes retain their original faces and expected images.
+Reproduction with fontTools4.55.3: set PYTHONHASHSEED=0, then run
+python verification/prepare-bidi.py. Both input hashes are checked; name/STAT,
+weight/width metadata and timestamps are fixed. Two fresh processes reproduce
+SHA-256 e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699.
+Only verification/debug assets include this face, not the published library.

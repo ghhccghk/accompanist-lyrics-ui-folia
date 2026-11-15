@@ -54,7 +54,7 @@ class ClassicParityActivity : ComponentActivity() {
             window.insetsController?.hide(WindowInsets.Type.systemBars())
         }
         requestedFrame=mutableStateOf(requested(intent))
-        val families=listOf("FoliaParityLatin-Bold.ttf","NotoSansArabic-Bold.ttf","FoliaParityCJK-Bold.otf").associateWith {name->
+        val families=listOf("FoliaParityLatin-Bold.ttf","NotoSansArabic-Bold.ttf","FoliaParityCJK-Bold.otf","FoliaParityBidi-Bold.ttf").associateWith {name->
             val file=File(filesDir,name)
             assets.open(name).use {input->file.outputStream().use(input::copyTo)}
             FontFamily(Font(file,weight=FontWeight.Bold))
@@ -94,7 +94,7 @@ class ClassicParityActivity : ComponentActivity() {
                     }
                 }
             }
-            val font=families.getValue(when(frame.scene) {"arabic"->"NotoSansArabic-Bold.ttf";"cjk"->"FoliaParityCJK-Bold.otf";else->"FoliaParityLatin-Bold.ttf"})
+            val font=families.getValue(when {frame.scene=="arabic"->"NotoSansArabic-Bold.ttf";frame.scene.startsWith("bidi-")->"FoliaParityBidi-Bold.ttf";frame.scene=="cjk"->"FoliaParityCJK-Bold.otf";else->"FoliaParityLatin-Bold.ttf"})
             val typography=FoliaTypography(secondary=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold),
                 subtitle=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold))
             CompositionLocalProvider(LocalDensity provides Density(1f)) {

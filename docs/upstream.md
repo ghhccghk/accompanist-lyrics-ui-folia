@@ -436,3 +436,14 @@ the independent halo, moving the actual baseline to191 and choosing an opaque bl
 background. ForegroundCoverageActivity is independently written debug code comparing a
 whole Compose paragraph on a checked hardware canvas to an identical software raster;
 no font outlines, Rust, native renderer code or production compensation were copied.
+
+Color-dependent body coverage: pinned GlowWord.tsx:122-128 paints the body with
+the animated color from glowWordVariants.ts. BodyParagraphRaster.kt and its
+platform policy retain one intact shaped paragraph at the existing raster scale,
+rasterize its actual ink on Windows, and retain only the latest immutable image.
+Android/other desktop backends keep white-mask tint pending evidence. No font
+outline, gamma compensation or browser raster implementation is copied. The
+existing body/word/line layers and timing remain unchanged. ClassicColorParityTest,
+capture-classic-colors.mjs and body-colors.tsv compare actual pinned mounted
+Classic colors plus full/body-isolated screenshots. Remaining full-frame
+regressions are recorded in classic-parity.md, not waived as platform differences.

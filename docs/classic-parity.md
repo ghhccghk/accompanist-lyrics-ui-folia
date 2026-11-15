@@ -1308,3 +1308,69 @@ capture-foreground-coverage.py --colors --adb <adb> --serial <设备>；
 python verification/compare-foreground-colors.py（仅JVM可传--platforms jvm）。
 下一步保留现有变换纹理比例，以相同颜色原版场景验证可局部修复的JVM覆盖路径，
 Android继续单独调查；不把直接绘字/平台AA当作未经证明的通用答案。
+
+
+## Windows 正文实际颜色覆盖（2026-11-15，阶段性修复）
+
+上游依据：固定GlowWord.tsx:122–128的独立body motion.span直接使用动画颜色，
+glowWordVariants.ts:waiting/active/passed分别定义颜色和正文blur。本项目此前在
+ClassicLine.kt准备白色完整段落，绘制时ColorFilter.tint；前节静态控制已证实
+白色mask不能完整表达Windows字体后端的颜色相关coverage。
+
+本项BodyParagraphRaster.kt保留同一完整塑形段落、原字号栅格和原有word/body/line
+变换层，改为按实际正文颜色栅格化；只保留最近一个颜色的不可变图，暂停复用，
+换色或逆向seek直接重建。不修改旧图，也不保留媒体时间/颜色历史。字素计时和
+独立辉光未改。仅Windows默认启用；Android和其他Desktop后端保留原白色路径，
+不将前节Android未改善的控制冒称修复。没有加入gamma、加粗、逐字绘制或新公共API。
+这是正文颜色覆盖的一步修复，完整classic画面仍未验收通过。
+
+同源对照：真实固定Classic/Motion、10ms加实际状态边界，800×600 Latin/Arabic
+48px及600×600 CJK36px；三份同一许可字体及SHA，深色底#162435。
+使用暖色#808080→#f2b45d和冷色#415d8a→#91e8e1，750/850/1000/1200/
+1500/1900/2100/2300/2800ms。54个原版帧每帧冻结双截图严格一致；旧white tint和
+native ink路径各54帧，全部逆向重访及UI时钟推进1000ms暂停后严格相同。
+128条实际DOM正文颜色（2800ms已退出无body）与生产classicBodyColor及媒体采样
+逐条整数RGB相同，不放宽颜色误差；颜色时序不是本矩阵残差的原因。
+
+| 同一三方前景并集、原尺寸RGB MAE | 白色mask | 实际颜色 | 帧结果 |
+| --- | ---: | ---: | --- |
+| 彩色完整54帧均值 | 1.423548 | 1.110309 | 39改善 / 3退步 / 12不变 |
+| 彩色完整最大值 | 2.933062 | 1.955365 | 最大值降低不代表全部通过 |
+| 正文隔离54帧均值 | 5.394660 | 4.905913 | 42改善 / 0退步 / 12不变 |
+| 正文隔离最大值 | 11.419516 | 11.120319 | 仍有明显coverage/采样残差 |
+| 原默认配色完整42帧均值 | 1.271428 | 1.271730 | 14改善 / 16退步 / 12不变 |
+| 原默认配色完整最大值 | 3.102893 | 3.097705 | 不隐藏平均误差的小幅上升 |
+
+完整彩色的3处退步均为冷色1200ms：Latin1.624531→1.672154，
+Arabic1.661093→1.767905，CJK1.111588→1.140240。正文隔离的对应值分别
+10.639586→10.332299、5.722101→5.527225、10.533684→10.354070。
+隔离控制为原版隐藏独立aria-hidden辉光、Kotlin使用Minimal，不改字体/排版/时序；
+隐藏内容也可能影响浏览器内部栅格表面，不能从这些数值直接宣称已经证明误差抵消。
+这些完整帧退步仍是待修项；没有降低标准、调整图像配准或据均值宣布移植达标。
+已目视三处1200ms原尺寸同框裁剪及三字体正文/完整contact；边缘和辉光仍有差别。
+
+证据在build/verification/classic-colors-{browser,tinted,native,comparison}、
+classic-colors-body-{browser,tinted,native,comparison}和classic-body-default-comparison。
+各comparison含完整PNG SHA、源码SHA、CSV与原版浏览器/字体/输入条件。contact仅为
+辅助目视缩略，指标使用完整截图且无平移/缩放拟合。默认42帧可由whiteMaskCoreCheckpoints
+重建旧路径，不要求旧工作目录/本机路径。它与bea2940保存的42张旧路径PNG相同。
+
+验证：BodyParagraphRasterTest检查同色identity复用、旧图不可变、只留最近颜色、透明/
+半透明色、逆向重建及完整office连字/组合字符；BodyRasterTest、公开入口和Renderer
+回归通过。三字体full/body-only的双路径、字幕及已有Motion检查通过；两端构建通过。
+没有本项新的Android设备运行、Desktop OS截图/输入或性能测量；不据此宣称高性能。
+可变颜色会重新准备一张正文图，分配/纹理生命周期尚未端到端测量，不能以单图缓存
+冒称全场景资源已达标。Android运行时仍是旧路径，本项不声称Androidcoverage改善。
+
+失败记录：首次构建误用Desktop的compileKotlinJvm任务（该模块实际为compileKotlin），
+纠正任务后两端构建通过。新颜色检查初次误写144条计数，实际原版在2800ms无body，
+8个挂载时间×2配色×(2 Latin+2 Arabic+4 CJK)=128；128条颜色本身首次已全部相同。
+修正计数同时在采集器逐帧严格校验预期body数，并单独复跑颜色检查通过；没有修改
+原版颜色、允许误差或消除退出检查点。失败日志colored-body-final-{checks,colors}.log
+与纠正后的checks-corrected/count-check及default-regression日志均保留。
+
+复现：serve.mjs → capture-classic-colors.mjs，另加--body-only；
+:library:jvmTest --tests '*ClassicColorParityTest' --tests '*BodyParagraphRasterTest'；
+默认回归运行ClassicParityTest.fixedFontCoreCheckpoints和whiteMaskCoreCheckpoints；
+python verification/compare-classic-colors.py，分别加--body-only、--default-palette。
+下一项：在相同冷色1200ms下核对实际辉光span几何与合成，不提前把残差归为平台必然差异。

@@ -30,8 +30,13 @@ const currentTime = motionValue(0);
 const audioPower = motionValue(0);
 const intensity=params.get('intensity')??'normal';
 if(!['calm','normal','chaotic'].includes(intensity))throw new Error('Invalid intensity');
+function ink(name:string,fallback:string) {
+  const value=params.get(name)??fallback;
+  if(!/^#[0-9a-f]{6}$/i.test(value))throw new Error('Invalid comparison color');
+  return value;
+}
 const themes = { animationIntensity: intensity, fontStyle: 'sans', fontFamily: 'Parity Noto', fontWeight: 700,
-  primaryColor: '#dfe5ec', accentColor: '#ffffff', secondaryColor: '#adb9c8', wordColors: [] };
+  primaryColor: ink('primary','#dfe5ec'), accentColor: ink('accent','#ffffff'), secondaryColor: '#adb9c8', wordColors: [] };
 let lines = [
   { startTime: .7, endTime: 1.9, fullText: 'Amber echo', words: [
     { text: 'Amber ', startTime: .7, endTime: 1.3 }, { text: 'echo', startTime: 1.3, endTime: 1.9 }] },

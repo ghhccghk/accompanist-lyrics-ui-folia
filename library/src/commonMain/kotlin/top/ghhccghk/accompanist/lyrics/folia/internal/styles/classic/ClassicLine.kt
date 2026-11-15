@@ -36,8 +36,8 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.text.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.blurredMasks
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.compositeGlowMasks
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.GlowBudget
-import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.ParagraphRaster
-import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.rasterizeParagraph
+import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.BodyParagraphRaster
+import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.LocalClassicNativeBodyInk
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.drawParagraphShadowSource
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.hitClassicUnit
 import kotlin.math.*
@@ -45,11 +45,11 @@ import kotlin.math.*
 private data class GlyphGlow(val timing: TimedGrapheme, val origin: Offset, val mask: ImageBitmap)
 private data class Cell(val unit: DisplayUnit, val layout: TextLayoutResult, val center: Offset, val isolatedCenter: Offset, val pose: Pose,
     val boxWidth: Float, val boxHeight: Float, val sourceBoundaries: IntArray, val paintTop: Float,
-    val glows: List<GlyphGlow> = emptyList(), val body: ParagraphRaster? = null)
+    val glows: List<GlyphGlow> = emptyList(), val body: BodyParagraphRaster? = null)
 private data class Prepared(val cells: List<Cell>, val height: Float, val geometry: ClassicGeometry,
     val quality: FoliaQuality = FoliaQuality.Minimal)
 private class DrawnFrame { var timeUs: Long? = null; var center = Offset.Zero; var contentOffset = Offset.Zero; var isolated = false }
-private fun motionColor(a: Color, b: Color, q: Float): Color {
+internal fun classicBodyColor(a: Color, b: Color, q: Float): Color {
     fun channel(x:Float,y:Float) = sqrt(x*x+(y*y-x*x)*q)
     return Color(channel(a.red,b.red),channel(a.green,b.green),channel(a.blue,b.blue),a.alpha+(b.alpha-a.alpha)*q)
 }
@@ -68,6 +68,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
     val density = LocalDensity.current
     val fontResolver = LocalFontFamilyResolver.current
     val viewport = LocalClassicViewport.current
+    val nativeBodyInk = LocalClassicNativeBodyInk.current
     val currentPlayback by rememberUpdatedState(playback)
     BoxWithConstraints(modifier.fillMaxWidth()) {
         val widthPx = with(density) { maxWidth.toPx() }.coerceAtLeast(1f)
@@ -75,7 +76,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         // its .5 font-scale floor, not an invented minimum area, limits shrink.
         val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(0f)
         val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
-            tuning.wordSpacing, tuning.enableWordRotation, measurer, fontResolver, options.quality, options.animationIntensity, maskBudgetBytes, viewport) {
+            tuning.wordSpacing, tuning.enableWordRotation, measurer, fontResolver, options.quality, options.animationIntensity, maskBudgetBytes, viewport, nativeBodyInk) {
             fun prepare(fontScale: Float): Prepared {
                 val base=textStyle.fontSize.value
                 fun cssRound(value:Float) = floor(value*1000+.5f)/1000
@@ -151,7 +152,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 val bodyStyle=classicBodyRasterStyle(it.layout.layoutInput.style)
                 val bodyLayout=if(bodyStyle==it.layout.layoutInput.style) it.layout
                     else measurer.measure(it.layout.layoutInput.text,bodyStyle,softWrap=false)
-                it.copy(body=rasterizeParagraph(bodyLayout,density))
+                it.copy(body=BodyParagraphRaster(bodyLayout,density,nativeBodyInk))
             })
             // Fixed, bounded masks. Their alpha changes in draw; glyph shadows never change per frame.
             val padding = ceil(72 * density.density).toInt()
@@ -286,16 +287,16 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                                 drawImage(glyph.mask, origin, alpha = glow, colorFilter = glowColor)
                             }
                         }
-                        val color = motionColor(colors.text, colors.active, frame.mix)
+                        val color = classicBodyColor(colors.text, colors.active, frame.mix)
                         if(frame.blur > .01f) {
                             val layer = bodyLayers[cellIndex]
                             val padding = ceil(32*density.density).toInt()
                             layer.blurSigma = frame.blur*density.density
                             layer.record(this,size=IntSize(cell.layout.size.width+padding*2,cell.layout.size.height+padding*2)) {
-                                drawImage(cell.body!!.image,cell.body.origin+Offset(padding.toFloat(),padding.toFloat()),colorFilter=ColorFilter.tint(color))
+                                cell.body!!.draw(this,color,Offset(padding.toFloat(),padding.toFloat()))
                             }
                             withTransform({translate(-padding.toFloat(),-padding.toFloat())}) {drawClassicLayer(layer)}
-                        } else drawImage(cell.body!!.image, cell.body.origin, colorFilter=ColorFilter.tint(color))
+                        } else cell.body!!.draw(this,color,Offset.Zero)
                         }
                         }
                         withTransform({translate(topLeft.x-wordPadding,topLeft.y-wordPadding)}) {drawClassicLayer(wordLayer)}

@@ -25,15 +25,18 @@ import java.io.File
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.classic.ClassicGeometry
 import javax.imageio.ImageIO
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.LocalClassicSoftwareLayers
+import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.LocalClassicNativeBodyInk
+import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.usesNativeBodyInk
 import kotlin.test.*
 
 /** Exact same fixture/font/surface as classic-browser/main.tsx; no sample chrome. */
 @OptIn(ExperimentalTestApi::class)
 class ClassicParityTest {
     @Test fun fixedFontCoreCheckpoints() = capture(false)
+    @Test fun whiteMaskCoreCheckpoints() = capture(false, nativeInk = false)
     @Test fun softwareBlurCoreCheckpoints() = capture(true)
     @Test fun continuousCoreSequence() = capture(false, sequence = true)
-    private fun capture(software: Boolean, sequence: Boolean = false) = runDesktopComposeUiTest(width = 800, height = 600) {
+    private fun capture(software: Boolean, sequence: Boolean = false, nativeInk: Boolean? = null) = runDesktopComposeUiTest(width = 800, height = 600) {
         fun line(a: String, b: String, start: Int, middle: Int, end: Int) = KaraokeLine.MainKaraokeLine(
             listOf(KaraokeSyllable(a, start, middle), KaraokeSyllable(b, middle, end)),
             null, KaraokeAlignment.Unspecified, start, end)
@@ -46,7 +49,8 @@ class ClassicParityTest {
         var avoid by mutableStateOf(false)
         val geometries = mutableMapOf<Pair<Boolean, Int>, ClassicGeometry>()
         setContent {
-          CompositionLocalProvider(LocalClassicSoftwareLayers provides software) {
+          CompositionLocalProvider(LocalClassicSoftwareLayers provides software,
+              LocalClassicNativeBodyInk provides (nativeInk ?: usesNativeBodyInk())) {
             val selection = timeline.at(snapshot.positionMillis * 1000)
             ClassicStage(Modifier.fillMaxSize().background(Color(0xFF162435))) {
                 val epochs = selection.exiting + listOfNotNull(selection.primary)
@@ -59,7 +63,7 @@ class ClassicParityTest {
             }
           }
         }
-        val directory = File("../build/verification/${if(sequence) "classic-continuous-kotlin" else if(software) "classic-software-kotlin" else "classic-kotlin"}").apply { mkdirs() }
+        val directory = File("../build/verification/${if(sequence) "classic-continuous-kotlin" else if(software) "classic-software-kotlin" else if(nativeInk == false) "classic-white-kotlin" else "classic-kotlin"}").apply { mkdirs() }
         val checkpoints = if(sequence) ((0..4800 step 40).toList()+listOf(1500,3700)).sorted()
             else listOf(0,700,750,850,1000,1200,1300,1500,1800,1900,2100,2220,2300,2500,3000,3200,3400,3700,4100,4400,4700)
         listOf(false, true).forEach { mode ->

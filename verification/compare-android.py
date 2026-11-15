@@ -7,15 +7,21 @@ import json
 
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--api',type=int,required=True)
+parser.add_argument('--label',default='')
 args=parser.parse_args()
 root=Path(__file__).resolve().parents[1]/'build/verification'
-candidate=root/f'classic-android-api{args.api}'
+if args.label and not all(c.isascii() and (c.isalnum() or c=='-') for c in args.label):parser.error('Invalid evidence label')
+tag=f'classic-android-api{args.api}{"-"+args.label if args.label else ""}'
+candidate=root/tag
 conditions=json.loads((candidate/'conditions.json').read_text(encoding='utf8'))
-output=root/f'classic-android-api{args.api}-comparison'
+output=root/f'{tag}-comparison'
 output.mkdir(parents=True,exist_ok=True)
 report=[]
 groups={}
+seen=set()
 for frame in conditions['frames']:
+    if frame['file'] in seen:continue  # Revisit hashes are checked by capture-android.
+    seen.add(frame['file'])
     scene,width,mode,ms=frame['scene'],frame['width'],frame['mode'],frame['mediaMs']
     if scene=='subtitle':
         original=root/('subtitle-backdrop-upstream' if mode=='backdrop' else 'subtitle-upstream')/f'{width}-translation-{ms}ms.png'

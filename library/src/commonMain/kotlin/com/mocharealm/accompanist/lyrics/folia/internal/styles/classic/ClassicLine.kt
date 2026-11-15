@@ -23,6 +23,7 @@ import com.mocharealm.accompanist.lyrics.folia.internal.rendering.drawClassicLay
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextMotion
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.input.key.*
@@ -77,7 +78,8 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 fun glyphSize(value:Float) = floor(value*100+.00001f)/100
                 val rendered=if(base<=36f || base>=72f) cssRound(base/16*fontScale)*16 else cssRound(6*fontScale)*base/6
                 val style = textStyle.copy(fontSize = glyphSize(rendered).sp,
-                    lineHeight = TextUnit.Unspecified, textAlign = TextAlign.Start)
+                    lineHeight = TextUnit.Unspecified, textAlign = TextAlign.Start,
+                    textMotion = textStyle.textMotion ?: TextMotion.Animated)
                 val renderedTexts = units.map { cssWordText(it.text) }
                 val measured = renderedTexts.map { word -> measurer.measure(AnnotatedString(word.text), style,
                     softWrap = false) }

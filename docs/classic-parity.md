@@ -409,3 +409,21 @@ Static启用hinting/关闭subpixel，Animated启用linear/subpixel。下一项�
 
 证据：build/verification/classic-android-api{30,34}{,-comparison}/。
 JVM八场景新compare-matrix.py亦输出真实manual Motion对照，正文/复杂脚本残差仍保留。
+
+## Android连续文字计量（2026-11-15）
+
+主句与字幕默认采用 TextMotion.Animated，保留宿主显式指定的模式。依据当前锁定
+Compose Android TextMotion/AndroidTextPaint 源码：Static 使用hinting、关闭subpixel；
+Animated 使用LINEAR_TEXT_FLAG和subpixel定位。Skiko两种模式均为空配置，JVM不变。
+此项是平台计量适配；原版分组、曲线、字号、避让算法和参考PNG均未改动。
+
+API30/API34各采集166个不同固定帧并额外逆序重访baseline的1500→750→1500ms，
+每次暂停双截图及重访同时间SHA均严格一致。窄屏wrap/avoid的2800ms前景RGB MAE
+从76.42184/76.37729降到16.95792/16.86117，1500ms从35.88008/35.16044降到
+10.13100/9.89400；长字幕800px/5500ms从41.73518/41.79086降到12.29091/16.02542。
+这是相同前景定义下的描述性误差，没有设置新的视觉通过阈值。
+
+已目视原版/Static/Animated三列窄屏对照，累计字距显著改善，仍有基线/覆盖残差。
+完整JVM测试、Android debug APK和Desktop classes构建通过；API21..29与实机未验证。
+证据：build/verification/classic-android-api{30,34}-linear{,-comparison}/、
+android-linear-wrap-detail.png。下一项定位实际绘制基线与剩余字幕/正文栅格差异。

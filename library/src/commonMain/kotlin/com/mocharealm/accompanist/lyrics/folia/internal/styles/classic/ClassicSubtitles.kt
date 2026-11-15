@@ -76,7 +76,8 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
             var total=padY
             fun prepare(value:String,fontSize:Float,weight:FontWeight,upcoming:Boolean,alpha:Float,gap:Float) {
                 val style=typography.subtitle.copy(fontSize=(floor(fontSize*100+.00001f)/100).sp,fontWeight=weight,
-                    color=colors.secondary,lineHeight=TextUnit.Unspecified)
+                    color=colors.secondary,lineHeight=TextUnit.Unspecified,
+                    textMotion=typography.subtitle.textMotion?:TextMotion.Animated)
                 val text=AnnotatedString(value)
                 // Relative CSS line-height uses Blink's nearest 1/64px used font
                 // size first (15.84px -> 15.84375px), then floors the product.

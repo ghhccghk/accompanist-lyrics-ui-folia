@@ -60,3 +60,17 @@ upcoming text; native Typeface font-metric resolution does not throw. AndroidRun
 contains no fatal/exception. Screenshot: .work/folia-subtitle.png. No pinned font
 is installed in the sample; this is a runtime smoke check, not browser pixel parity.
 Low API / physical hardware acceptance remains outstanding.
+
+## API30 software-layer runtime — 2026-11-15
+
+Downloaded official default x86_64 API30 r11 system image, verified SHA1
+5e4de3946d46f88856c35efcc4d797b381456347. Separate temporary classic30 AVD under
+ignored .work, emulator-5560, read-only/no snapshots, 800x600/density160, 2 cores,
+2GiB RAM, WHPX/SwiftShader. No existing AVD configuration or user files changed.
+Actual getprop SDK=30. Latest fallback APK installs/launches and paused seek at
+0:02 shows lyrics, translation, romanization and blurred upcoming text. No
+AndroidRuntime fatal/exception. Two paused screenshots match exactly in the app
+area (24px status bar excluded): .work/folia-api30{,-b}.png. This verifies the
+actual low-API branch runs. Native sample font differs from the pinned browser
+fixture; full Android pixel parity and frame-time/memory measurements remain open.
+API21..29 and physical devices are not claimed verified.

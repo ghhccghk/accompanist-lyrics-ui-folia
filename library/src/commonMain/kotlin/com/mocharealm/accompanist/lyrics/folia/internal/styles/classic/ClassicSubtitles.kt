@@ -8,11 +8,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.BlurEffect
-import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.graphics.rememberGraphicsLayer
-import androidx.compose.ui.graphics.layer.drawLayer
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.rememberClassicLayer
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.drawClassicLayer
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFontFamilyResolver
@@ -89,7 +87,7 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
                 val strutHeight=24*density.fontScale
                 total+=(strutHeight-cssFontBaseline(strut.ascent/density.density,strut.descent/density.density,strutHeight))*density.density
             }
-            val layers=paints.map {rememberGraphicsLayer()}
+            val layers=paints.map {rememberClassicLayer()}
             val observer by rememberUpdatedState(onLayout)
             SideEffect {observer(total,paints)}
             Canvas(Modifier.fillMaxWidth().height(with(density){ceil(total).toDp()}).semantics {
@@ -99,11 +97,11 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
                 paints.forEachIndexed {i,row->
                     val layer=layers[i];val padding=8
                     layer.alpha=row.alpha
-                    layer.renderEffect=if(row.blur) BlurEffect(density.density,density.density,TileMode.Decal) else null
-                    layer.record(size=IntSize(row.layout.size.width+padding*2,row.layout.size.height+padding*2)) {
+                    layer.blurSigma=if(row.blur) density.density else 0f
+                    layer.record(this,size=IntSize(row.layout.size.width+padding*2,row.layout.size.height+padding*2)) {
                         drawText(row.layout,topLeft=Offset(padding.toFloat(),padding.toFloat()))
                     }
-                    withTransform({translate((size.width-row.layout.size.width)/2-padding,origin+row.top+row.baseline-row.layout.firstBaseline-padding)}) {drawLayer(layer)}
+                    withTransform({translate((size.width-row.layout.size.width)/2-padding,origin+row.top+row.baseline-row.layout.firstBaseline-padding)}) {drawClassicLayer(layer)}
                 }
             }
         }

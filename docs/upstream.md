@@ -171,3 +171,12 @@ no third-party implementation text is shipped. Browser positive .01px shadow
 probe isolates glyph shadow coverage from normal foreground coverage. All fixtures
 are original synthetic M and the pinned OFL font. New single-shadow PNGs and
 original combined images provide independent pixel acceptance.
+
+Low-API layer adaptation: GlowWord body filter / classic line filter /
+VisualizerSubtitleOverlay preview blur → ClassicLayer.kt and SoftwareBlur.kt.
+Independently written finite Gaussian convolution over premultiplied colour;
+no third-party engine code copied, no new native dependency. Both paths retain
+whole-paragraph shaping, word-group alpha and media-time reconstruction. API30
+uses software Canvas for every nested group, avoiding unsupported hardware-layer
+replay on a software Canvas. This is a capability fallback; residual paint and
+performance limitations remain documented, not a new acceptance standard.

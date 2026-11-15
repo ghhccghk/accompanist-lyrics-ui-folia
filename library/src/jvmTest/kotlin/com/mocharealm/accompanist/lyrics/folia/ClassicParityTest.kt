@@ -23,12 +23,15 @@ import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicLi
 import java.io.File
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicGeometry
 import javax.imageio.ImageIO
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.LocalClassicSoftwareLayers
 import kotlin.test.*
 
 /** Exact same fixture/font/surface as classic-browser/main.tsx; no sample chrome. */
 @OptIn(ExperimentalTestApi::class)
 class ClassicParityTest {
-    @Test fun fixedFontCoreCheckpoints() = runDesktopComposeUiTest(width = 800, height = 600) {
+    @Test fun fixedFontCoreCheckpoints() = capture(false)
+    @Test fun softwareBlurCoreCheckpoints() = capture(true)
+    private fun capture(software: Boolean) = runDesktopComposeUiTest(width = 800, height = 600) {
         fun line(a: String, b: String, start: Int, middle: Int, end: Int) = KaraokeLine.MainKaraokeLine(
             listOf(KaraokeSyllable(a, start, middle), KaraokeSyllable(b, middle, end)),
             null, KaraokeAlignment.Unspecified, start, end)
@@ -41,6 +44,7 @@ class ClassicParityTest {
         var avoid by mutableStateOf(false)
         val geometries = mutableMapOf<Pair<Boolean, Int>, ClassicGeometry>()
         setContent {
+          CompositionLocalProvider(LocalClassicSoftwareLayers provides software) {
             val selection = timeline.at(snapshot.positionMillis * 1000)
             Box(Modifier.fillMaxSize().background(Color(0xFF162435)).padding(horizontal = 32.dp), contentAlignment = Alignment.Center) {
                 val epochs = selection.exiting + listOfNotNull(selection.primary)
@@ -51,10 +55,12 @@ class ClassicParityTest {
                         onLayout = { geometries[avoid to epoch.line] = it })
                 } }
             }
+          }
         }
-        val directory = File("../build/verification/classic-kotlin").apply { mkdirs() }
+        val directory = File("../build/verification/${if(software) "classic-software-kotlin" else "classic-kotlin"}").apply { mkdirs() }
         val checkpoints = listOf(0,700,750,850,1000,1200,1300,1500,1800,1900,2100,2220,2300,2500,3000,3200,3400,3700,4100,4400,4700)
         listOf(false, true).forEach { mode ->
+            var retained: IntArray? = null
             runOnIdle { avoid = mode }
             checkpoints.forEach { time ->
                 runOnIdle { snapshot = FoliaPlaybackSnapshot(time.toLong(), false, snapshot.discontinuity + 1) }
@@ -67,10 +73,18 @@ class ClassicParityTest {
                     }
                     assertTrue(bright>1000,"Core frame must contain visible body glyphs at $time ms")
                 }
+                if(time==1500) retained=image.getRGB(0,0,image.width,image.height,null,0,image.width)
                 ImageIO.write(image, "png", File(directory, "${if(mode) "avoid" else "default"}-${time}ms.png"))
             }
+            // Reverse seek after all exit frames must rebuild the same software layers.
+            runOnIdle { snapshot=FoliaPlaybackSnapshot(1500,false,snapshot.discontinuity+1) };waitForIdle()
+            val reconstructed=captureToImage().toAwtImage()
+            assertContentEquals(retained!!,reconstructed.getRGB(0,0,800,600,null,0,800))
+            waitForIdle()
+            val paused=captureToImage().toAwtImage()
+            assertContentEquals(retained,paused.getRGB(0,0,800,600,null,0,800))
         }
-        File(directory, "conditions.txt").writeText("800x600 density1; FoliaParityLatin-Bold.ttf pinned SHA in verification/assets/README.md; same main.tsx input. Paused direct media reconstruction. Core only, no chrome/subtitles. JVM ${System.getProperty("java.version")}.\n")
+        File(directory, "conditions.txt").writeText("800x600 density1; FoliaParityLatin-Bold.ttf pinned SHA in verification/assets/README.md; same main.tsx input. Paused direct media reconstruction. Core only, no chrome/subtitles. Software layers=$software; JVM ${System.getProperty("java.version")}.\n")
         File(directory, "layout.tsv").writeText("mode\tline\tindex\tleft\ttop\twidth\theight\tmargin\tlineHeight\trowGap\tpaddingTop\tpaddingBottom\n" +
             geometries.entries.joinToString("\n") { (key, g) -> g.boxes.mapIndexed { i,b ->
                 listOf(if(key.first) "avoid" else "default",key.second,i,b.left,b.top,b.width,b.height,g.margins[i],g.height,g.rowGap,g.paddingTop,g.paddingBottom).joinToString("\t")

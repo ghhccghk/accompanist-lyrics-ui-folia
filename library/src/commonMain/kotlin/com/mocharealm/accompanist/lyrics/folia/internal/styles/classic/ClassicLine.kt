@@ -18,10 +18,8 @@ import androidx.compose.ui.graphics.drawscope.CanvasDrawScope
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.graphics.drawscope.clipPath
-import androidx.compose.ui.graphics.BlurEffect
-import androidx.compose.ui.graphics.TileMode
-import androidx.compose.ui.graphics.rememberGraphicsLayer
-import androidx.compose.ui.graphics.layer.drawLayer
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.rememberClassicLayer
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.drawClassicLayer
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.style.TextAlign
@@ -178,9 +176,9 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 else { if (event.type == KeyEventType.KeyUp) click?.invoke(); true }
             }.focusable()
         val glowColor = remember(colors.active) { ColorFilter.tint(colors.active) }
-        val bodyLayers = prepared.cells.map { rememberGraphicsLayer() }
-        val wordLayers = prepared.cells.map { rememberGraphicsLayer() }
-        val lineLayer = rememberGraphicsLayer()
+        val bodyLayers = prepared.cells.map { rememberClassicLayer() }
+        val wordLayers = prepared.cells.map { rememberClassicLayer() }
+        val lineLayer = rememberClassicLayer()
         val linePadding = remember(prepared, density) {
             val reach = prepared.cells.maxOfOrNull { hypot(it.boxWidth,it.boxHeight)*it.pose.scale*.75f } ?: 0f
             ceil(reach+160*density.density).toInt()
@@ -190,8 +188,8 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             drawn.timeUs = time; drawn.center = center
             val body = sampleLine(time, enterUs, leaveUs, profile, options.reducedMotion, tuning.breathingFloatMultiplier, density.density)
             lineLayer.alpha = body.alpha
-            lineLayer.renderEffect = if(body.blur > .01f) BlurEffect(body.blur,body.blur,TileMode.Decal) else null
-            lineLayer.record(size=IntSize(size.width.toInt()+linePadding*2,size.height.toInt()+linePadding*2)) {
+            lineLayer.blurSigma = body.blur
+            lineLayer.record(this,size=IntSize(size.width.toInt()+linePadding*2,size.height.toInt()+linePadding*2)) {
             withTransform({translate(linePadding.toFloat(),linePadding.toFloat())}) {
             withTransform({
                 translate(0f, body.breathingY)
@@ -212,7 +210,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                         val wordLayer = wordLayers[cellIndex]
                         val wordPadding = ceil(96*density.density).toInt()
                         wordLayer.alpha = alpha
-                        wordLayer.record(size=IntSize(cell.layout.size.width+wordPadding*2,cell.layout.size.height+wordPadding*2)) {
+                        wordLayer.record(this,size=IntSize(cell.layout.size.width+wordPadding*2,cell.layout.size.height+wordPadding*2)) {
                         withTransform({translate(wordPadding.toFloat(),wordPadding.toFloat())}) {
                         cell.glows.forEach { glyph ->
                             val glow = sampleGraphemeGlow(time, enterUs, cell.unit.startUs, cell.unit.endUs,
@@ -227,21 +225,21 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                         if(frame.blur > .01f) {
                             val layer = bodyLayers[cellIndex]
                             val padding = ceil(32*density.density).toInt()
-                            layer.renderEffect = BlurEffect(frame.blur*density.density,frame.blur*density.density,TileMode.Decal)
-                            layer.record(size=IntSize(cell.layout.size.width+padding*2,cell.layout.size.height+padding*2)) {
+                            layer.blurSigma = frame.blur*density.density
+                            layer.record(this,size=IntSize(cell.layout.size.width+padding*2,cell.layout.size.height+padding*2)) {
                                 drawText(cell.layout,color,Offset(padding.toFloat(),padding.toFloat()))
                             }
-                            withTransform({translate(-padding.toFloat(),-padding.toFloat())}) {drawLayer(layer)}
+                            withTransform({translate(-padding.toFloat(),-padding.toFloat())}) {drawClassicLayer(layer)}
                         } else drawText(cell.layout, color, Offset.Zero)
                         }
                         }
-                        withTransform({translate(topLeft.x-wordPadding,topLeft.y-wordPadding)}) {drawLayer(wordLayer)}
+                        withTransform({translate(topLeft.x-wordPadding,topLeft.y-wordPadding)}) {drawClassicLayer(wordLayer)}
                     }
                 }
             }
             }
             }
-            withTransform({translate(-linePadding.toFloat(),-linePadding.toFloat())}) { drawLayer(lineLayer) }
+            withTransform({translate(-linePadding.toFloat(),-linePadding.toFloat())}) { drawClassicLayer(lineLayer) }
         }
     }
 }

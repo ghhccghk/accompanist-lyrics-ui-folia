@@ -22,13 +22,15 @@ import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicSu
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.SubtitlePaint
 import java.io.File
 import javax.imageio.ImageIO
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.LocalClassicSoftwareLayers
 import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
 class SubtitleParityTest {
     @Test fun wide()=capture(800)
     @Test fun narrow()=capture(380)
-    private fun capture(width:Int)=runDesktopComposeUiTest(width=width,height=600) {
+    @Test fun softwareNarrow()=capture(380,true)
+    private fun capture(width:Int,software:Boolean=false)=runDesktopComposeUiTest(width=width,height=600) {
         val lines=File("../verification/classic-fixtures/subtitle-scenes.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.map {row->
             val c=row.split('\t');normalize(SyncedLyrics(listOf(SyncedLine(c[2],c[3],c[0].toInt(),c[1].toInt())))).lines.single().copy(phonetic=c[4])
         }
@@ -40,6 +42,7 @@ class SubtitleParityTest {
         val font=FontFamily(Font(File("../verification/assets/FoliaParityLatin-Bold.ttf"),FontWeight.Bold))
         val typography=FoliaTypography(subtitle=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold))
         setContent {
+          CompositionLocalProvider(LocalClassicSoftwareLayers provides software) {
             val time=snapshot.positionMillis*1000;val epoch=index.at(time).primary
             val sources=if(layout=="translation") listOf(SubtitleSource.Translation) else listOf(SubtitleSource.Current,SubtitleSource.Translation,SubtitleSource.Phonetic)
             val content=resolveSubtitleContent(lines,epoch?.line,history.recent(time,epoch?.line),sources)
@@ -49,7 +52,8 @@ class SubtitleParityTest {
                     onLayout={height,rows->measuredHeight=height;measuredRows=rows})
             }
         }
-        val output=File("../build/verification/subtitle-kotlin").apply {mkdirs()}
+          }
+        val output=File("../build/verification/${if(software) "subtitle-software-kotlin" else "subtitle-kotlin"}").apply {mkdirs()}
         for(mode in listOf("translation","current+translation+romanization")) {
             runOnIdle {layout=mode}
             for(time in listOf(0,50,120,240,700,725,750,800,850,1000,1500,2500,3200,3250,3350,3500,4800,5000,5050,5150,5500)) {

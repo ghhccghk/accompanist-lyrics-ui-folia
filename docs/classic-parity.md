@@ -10,7 +10,7 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 | utils/lyrics/graphemeTiming.ts:buildWordGraphemeTimings；components/visualizer/GlowWord.tsx:graphemeTimings | DisplayUnit 保留原片段、有效／源字素时间；完整塑形范围遮罩 | 连字分界处的覆盖仍需更多语言截图 | 固定源分组／时间夹具通过；继续复杂脚本验证 |
 | classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicGeometry.kt：同源 reach／pairGap、seed 对齐和行距 | CJK固定字体几何已测；全帧仍未验收 | 160组几何夹具；八场景 default/avoid DOM 词距一致、矩形舍入范围一致 |
 | useOverlapFit.ts:useOverlapFit | ClassicLine.kt:仅避让启用、min .5 / slack .98 / .005 收敛 | 完整帧像素仍未验收 | 380px窄屏长句CSS19.744px与浏览器对照通过 |
-| GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31 的 RenderEffect 支持仍受平台限制；设备验证待补 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
+| GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31现有Kotlin软件回退/API30运行；完整效果残差待收敛 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
 | wordGlow.ts:wordGlowVariants | GraphemeGlow.kt；ClassicLine.kt:字素范围遮罩 | 软件近似 blur 和原版 text-shadow 的像素差仍需校准 | 108个正常／fast／instant 样本通过；保护 shaping；同字体逐帧图像待最终验收 |
 | glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | 仍需两端设备和连续浏览器响应对照 | 120个原版调度器入场／退出组合数值通过；平台图层预留出界空间 |
 | classic/Visualizer.tsx:lyricContainerFloat | LineMotion.kt：原版7s y/scale关键帧、easeInOut | Android实际运行仍需验证 | 两周期真实浏览器DOM轨迹通过；媒体时间锚定是平台适配 |
@@ -265,3 +265,29 @@ GlowMask.kt独立实现CSS/SVG三盒近似：sigma=CSS半径/2、宽度由sigma�
 Compose saveLayer栅格等价。完整帧还混有正文/阴影平台字形覆盖与变换采样残差，
 需要继续对照。软件遮罩临时内存变动使旧准备耗时/分配基线不再代表当前版本；
 本项优先修复效果，未宣称性能改善。Android <31连续模糊仍是缺失功能。
+
+## 低API连续模糊回退（2026-11-15）
+
+ClassicLayer.kt统一词组opacity、正文/整句blur和预览blur。API31以上/JVM保留原生图层；
+低API将相同完整paragraph绘制命令录制到软件Canvas，按预乘RGBA作可重建Gaussian卷积，
+透明外部不带入RGB。SoftwareBlur.kt不依赖Rust、RenderScript或新增native构建。
+crop仅移除透明留白并保留3sigma支持；opacity在模糊之后作用于整个词/句，
+不逐UTF-16绘字。离开Composition清除持有图像引用，原生层由Compose管理释放。
+
+SoftwareBlurTest用半透明红色脉冲/透明蓝色外部验证解析中心alpha与无颜色污染。
+ClassicParityTest新增真实软件绘制路径，共42帧，沿用所有原DOM布局断言；退场后
+逆向seek回1500ms及再次暂停捕获逐像素一致。SubtitleParityTest另测380px双行/预览，
+原版几何阈值仍为.02px。完整JVM及Android/Desktop构建通过。
+
+证据：build/verification/classic-software-{kotlin,comparison}；same原版手动Motion，
+800x600/固定字体，7检查点/两模式的整帧前景RGB MAE .34..4.31/255；
+未将该误差作为最终通过阈值。软件帧的正文与原版较接近，提示原生图层可能在词变换
+后重新栅格化；需要后续隔离验证，不能据此宣布平台必然差异或直接切换全部后端。
+软件Gaussian是3sigma有限核；与原生GPU滤镜在边缘仍可能有差异。
+
+官方API30 default x86_64 r11镜像（SHA1 5e4de3946d46f88856c35efcc4d797b381456347）
+新建本轮专用read-only classic30模拟器，800x600/density160/WHPX/SwiftShader。
+实际SDK=30，APK安装冷启、paused seek到0:02显示主句/译文/注音/模糊预览，
+无AndroidRuntime异常；两次应用区域PNG逐像素相同（排除24px系统状态栏）。
+证据.work/folia-api30{,-b}.png。默认系统字体，此为低API运行验证，非固定字体Android
+画面对照；API21..29/实机/全帧耗时与峰值内存未测，不能宣称流畅或高性能。

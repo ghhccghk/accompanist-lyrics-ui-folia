@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 
 class SampleViewModel : ViewModel() {
     val session = SampleSession()
-    override fun onCleared() { session.clock.pause() }
+    override fun onCleared() { session.clock.pause(); session.songs.close() }
 }
 
 class MainActivity : ComponentActivity() {
@@ -20,5 +20,5 @@ class MainActivity : ComponentActivity() {
         setContent { FoliaSampleApp(visible = sampleVisible, session = model.session) }
     }
     override fun onStart() { super.onStart(); sampleVisible = true }
-    override fun onStop() { sampleVisible = false; model.session.clock.pause(); super.onStop() }
+    override fun onStop() { sampleVisible = false; model.session.clock.pause(); model.session.songs.current?.player?.pause(); super.onStop() }
 }

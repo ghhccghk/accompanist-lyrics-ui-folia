@@ -32,7 +32,7 @@ import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.folia.*
 
 @Composable
-fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { SampleSession() },
+internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { SampleSession() },
     settingsStore: SettingsStore? = rememberSettingsStore()) {
     var scene by session::scene
     val clock = session.clock

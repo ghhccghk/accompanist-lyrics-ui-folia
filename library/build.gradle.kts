@@ -7,6 +7,7 @@ plugins {
 }
 val prepareLicenseResources by tasks.registering(Sync::class) {
     from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md"))
+    from(rootProject.file("LICENSES")) { into("licenses") }
     into(layout.buildDirectory.dir("generated/licenseResources/META-INF/lyrics-ui-folia"))
 }
 kotlin {
@@ -42,6 +43,7 @@ tasks.withType<Test>().configureEach {
     inputs.dir(rootProject.file("verification/assets"))
 }
 tasks.withType<Zip>().configureEach {
+    from(rootProject.file("LICENSES")) { into("META-INF/lyrics-ui-folia/licenses") }
     from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md")) { into("META-INF/lyrics-ui-folia") }
     from(rootProject.file("docs/upstream.md")) { into("META-INF/lyrics-ui-folia") }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE

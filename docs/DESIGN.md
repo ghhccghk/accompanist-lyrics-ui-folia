@@ -1,5 +1,10 @@
 # lyrics-ui-folia 详细设计
 
+2026-11-15新增要求：sample默认待选歌、真实本地音频播放；库入口仍只接歌词/快照/
+配置/回调。等待呼吸球单向迁入，使用所有声部时间并集的有限空档，不采用列表高度
+折叠；无歌词/出错/加载/歌曲结束不是间奏。覆盖本文旧的默认合成及音频延期安排，
+当前方案与验收见local-playback.md。
+
 日期：2026-11-14。版本：设计草案 0.1。状态：部分实现；本文保留目标契约，实际 API、测量和剩余验收分别见源码、implementation.md、delivery.md，不把设计目标当作已经支持。
 
 本文细化 [PLAN.md](../PLAN.md)。Rust ABI、native 发布与资源生命周期见 [NATIVE_DESIGN.md](NATIVE_DESIGN.md)；参考现有 UI 的独立 Android／Desktop 示例见 [SAMPLE_DESIGN.md](SAMPLE_DESIGN.md)。公共 API 与内部职责以本文为准；改变既定范围时同步修改计划。

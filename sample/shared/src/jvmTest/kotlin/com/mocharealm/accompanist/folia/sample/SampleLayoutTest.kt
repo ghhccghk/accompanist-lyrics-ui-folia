@@ -22,7 +22,7 @@ import kotlin.test.*
 @OptIn(ExperimentalTestApi::class)
 class SampleLayoutTest {
     @Test fun narrowRtlAndLargeFontKeepControlsAndSourceActivation() = runDesktopComposeUiTest(width = 360, height = 640) {
-        val session = SampleSession().apply {
+        val session = SampleSession(true).apply {
             scene = com.mocharealm.accompanist.folia.sample.fixtures.scenes.first { it.id == "unicode" }
             clock.replaceDuration(scene.durationMillis)
             clock.seek(8_000)
@@ -44,13 +44,13 @@ class SampleLayoutTest {
     }
 
     @Test fun shortWideWindowKeepsTransportVisible() = runDesktopComposeUiTest(width = 900, height = 380) {
-        setContent { FoliaSampleApp(settingsStore = null) }
+        setContent { FoliaSampleApp(session = remember { SampleSession(true) }, settingsStore = null) }
         onNodeWithText("播放").assertIsDisplayed()
         onNodeWithText("场景").assertIsDisplayed()
         onNodeWithContentDescription("演示进度").assertIsDisplayed()
     }
     @Test fun releasedProgressDragSeeksOnceAndKeepsPause() = runDesktopComposeUiTest(width = 900, height = 740) {
-        val session = SampleSession()
+        val session = SampleSession(true)
         setContent { FoliaSampleApp(session = session, settingsStore = null) }
         onNodeWithContentDescription("演示进度").performTouchInput {
             down(Offset(10f, centerY))
@@ -65,7 +65,7 @@ class SampleLayoutTest {
         }
     }
     @Test fun interruptedProgressDragDiscardsPreviewWithoutSeeking() = runDesktopComposeUiTest(width = 900, height = 740) {
-        val session = SampleSession()
+        val session = SampleSession(true)
         var visible by mutableStateOf(true)
         setContent { FoliaSampleApp(visible, session, settingsStore = null) }
         val progress = onNodeWithContentDescription("演示进度")
@@ -84,14 +84,14 @@ class SampleLayoutTest {
             override suspend fun read() = saved
             override suspend fun write(value: String) { saved = value }
         }
-        val session = SampleSession()
+        val session = SampleSession(true)
         setContent { FoliaSampleApp(session = session, settingsStore = store) }
         onNodeWithText("译文").performClick()
         onNodeWithText("译文 ✓").assertExists()
         runOnIdle { assertTrue(SampleSettings.decode(saved).options.showTranslation) }
     }
     @Test fun retainedSessionVisibilityDisposalAndKeyboard() = runDesktopComposeUiTest(width = 900, height = 740) {
-        val session = SampleSession()
+        val session = SampleSession(true)
         var visible by mutableStateOf(true)
         var attached by mutableStateOf(true)
         setContent { if (attached) FoliaSampleApp(visible, session, settingsStore = null) }
@@ -108,7 +108,7 @@ class SampleLayoutTest {
     }
     @Test fun scenesControlsAndResizeKeepState() = runDesktopComposeUiTest(width = 1100, height = 800) {
         var width by mutableStateOf(1100.dp)
-        setContent { Box(Modifier.width(width).height(740.dp)) { FoliaSampleApp(settingsStore = null) } }
+        setContent { Box(Modifier.width(width).height(740.dp)) { FoliaSampleApp(session = remember { SampleSession(true) }, settingsStore = null) } }
         onNodeWithText("演示时钟 · 无音频").assertExists()
         onNodeWithText("1.0×").performClick()
         onNodeWithText("1.5×").assertExists()

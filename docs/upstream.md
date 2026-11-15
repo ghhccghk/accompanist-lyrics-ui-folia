@@ -1,5 +1,22 @@
 # Source ledger
 
+## Local audio sample change — 2026-11-15
+
+Read-only Accompanist source revision: 6b1ab72319bf2143225acf7797031efa7491897c.
+SongSelectionDialog.kt, PlayerLayout.kt, PlayerPresentation.kt, Android PlayerScreen.kt/
+PlaybackService.kt and Desktop README were inspected. Android uses Media3 service;
+Desktop follows external players and cannot be treated as the same local transport.
+New LocalSongApp.kt and platform LocalPlayback files are independently written:
+system MediaPlayer / JDK Java Sound, no borrowed audio framework/service/assets.
+
+sample/shared/.../player/SelectedLyrics.kt -> sample/shared/.../importing/SelectedLyrics.kt:
+adapt timed-translation merge by exact start, preserving nested vocals; add bounded
+strict UTF-8 input, actual published lyrics-core0.5.0 AutoParser checks and unmatched
+translation error. Apache-2.0 source remains Apache-2.0; license copied unchanged
+to LICENSES/Apache-2.0.txt and included with library/sample notices. No SF Pro,
+cover, lyrics or other reference resource copied. Project AGPL-3.0-only decision
+does not replace individual source notices.
+
 ## License decision — 2026-11-14
 
 Fixed reference: https://github.com/chthollyphile/folia-major/tree/cc6226e464050a456a2913e062374f23d3844cc5

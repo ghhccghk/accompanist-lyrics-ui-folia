@@ -10,7 +10,7 @@ import androidx.compose.ui.platform.LocalWindowInfo
 fun main() = application {
     val session = remember { SampleSession() }
     val state = rememberWindowState(width = 1100.dp, height = 740.dp)
-    Window(onCloseRequest = { session.clock.pause(); exitApplication() }, title = "Folia · 演示时钟 · 无音频",
+    Window(onCloseRequest = { session.clock.pause(); session.songs.close(); exitApplication() }, title = "Folia · 本地歌曲",
         state = state) {
         FoliaSampleApp(visible = !state.isMinimized && LocalWindowInfo.current.isWindowFocused, session = session)
     }

@@ -22,3 +22,9 @@ copyright metadata and provenance. They are used by the comparison harness only.
 
 This inventory covers direct dependencies. Transitive binary/source notices and
 packaging must be audited before distribution. No remote publication is configured.
+
+Accompanist lyrics-ui (Apache-2.0), commit
+6b1ab72319bf2143225acf7797031efa7491897c: selected timed-translation merge logic
+adapted into the sample; original copyright/attribution remain with Accompanist
+contributors. See LICENSES/Apache-2.0.txt and docs/upstream.md. The source project
+is read-only and is not a runtime, build, or local-path dependency.

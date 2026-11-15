@@ -4,6 +4,16 @@ plugins {
     alias(libs.plugins.compose)
     alias(libs.plugins.compose.compiler)
 }
+
+tasks.register<JavaExec>("verifyLocalAudio") {
+    group = "verification"
+    description = "Explicitly verify a real Java Sound device using an original generated 12-second WAV"
+    val test = kotlin.targets.getByName("jvm").compilations.getByName("test")
+    classpath = files(test.output.allOutputs, test.runtimeDependencyFiles)
+    mainClass.set("com.mocharealm.accompanist.folia.sample.NativeAudioProbeKt")
+    dependsOn(test.compileTaskProvider)
+    workingDir = rootProject.projectDir
+}
 kotlin {
     jvmToolchain(21)
     android {

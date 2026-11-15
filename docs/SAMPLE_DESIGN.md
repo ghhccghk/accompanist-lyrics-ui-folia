@@ -1,5 +1,10 @@
 # lyrics-ui-folia 示例项目设计
 
+2026-11-15覆盖要求：首次待选歌；音频必选，歌词/翻译可选；真实播放、实际元数据
+与时长、播放/暂停/seek/歌词点击/重新选择。取消/失败保留原会话，过期请求不能提交。
+合成场景及无音频时钟仅位于开发/演示入口。平台最小适配和验证见local-playback.md，
+不再以本文历史的无音频默认流程作为验收目标。
+
 日期：2026-11-14。状态：已有 Android／JVM Desktop 示例源码和运行验证；本文保留目标要求，尚未全部验收。实际能力和限制见 implementation.md、android-smoke.md、delivery.md。
 
 关联：[主设计](DESIGN.md)、[实施计划](../PLAN.md)、[可选 Rust 后端](NATIVE_DESIGN.md)。

@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application>
+        <activity android:name=".LocalAudioVerificationActivity" android:exported="true"
+            android:theme="@android:style/Theme.Material.NoActionBar" />
         <activity android:name=".ClassicParityActivity" android:exported="true"
             android:theme="@android:style/Theme.Material.NoActionBar.Fullscreen"
             android:launchMode="singleTop" />

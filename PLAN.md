@@ -1,5 +1,9 @@
 # lyrics-ui-folia 实施计划
 
+2026-11-15变更：默认流程改为用户选音频并实际播放，歌词/翻译可选；合成场景转到
+开发/演示入口。单向复用原lyrics-ui有限时间呼吸球。本项覆盖下文默认合成及音频延期
+的旧安排，具体实施/验收见docs/local-playback.md；完成后回classic核心视觉对照。
+
 日期：2026-11-14。状态：已开始实现；实际进度和验证见 docs/implementation.md，以下未完成阶段仍为计划。
 
 详细设计：[组件、数据、时序与渲染](docs/DESIGN.md)；[Rust Native 后端](docs/NATIVE_DESIGN.md)；[参考现有 UI 的独立示例项目](docs/SAMPLE_DESIGN.md)。以下 API 为早期草案，公共契约与实现细节以详细设计为准。

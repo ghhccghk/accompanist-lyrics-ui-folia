@@ -7,7 +7,9 @@ import com.mocharealm.accompanist.folia.sample.playback.PreviewPlaybackControlle
 import com.mocharealm.accompanist.lyrics.folia.*
 
 /** Retained by the platform owner; jobs and file picker still belong to the composition. */
-class SampleSession {
+class SampleSession(demoInitially: Boolean = false) {
+    var demo by mutableStateOf(demoInitially)
+    val songs = com.mocharealm.accompanist.folia.sample.playback.SongSession()
     var scene by mutableStateOf(scenes.first())
     val clock = PreviewPlaybackController(scene.durationMillis)
     var options by mutableStateOf(FoliaOptions())

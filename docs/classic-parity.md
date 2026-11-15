@@ -195,6 +195,22 @@ build/verification/classic-manual-upstream；数值通过不代表完整画面�
 
 ## CSS空白与内部映射（2026-11-15）
 
+## 字幕内容与空档历史（2026-11-15）
+
+原版 VisualizerSubtitleOverlay.tsx:resolveVisualizerSubtitleOverlayContent 与
+runtime.ts:getRecentCompletedLine/getSubtitleNextLines直接在浏览器生成180组夹具，
+包括句前／句中／空档／末句后、译文／注音／双行／两条预览、隐藏、纯标点／符号占位、
+补充平面字母和Number类别。SubtitleContentTest随机顺序seek，逐条比较活动句、最近
+完成句、行顺序／文字／去重、预览索引，全部一致。字幕保留于空档，next以字幕所留句
+为基准；先取原版接下来两条再过滤占位，不能继续向后补足两条。
+
+公开入口接入这些选择规则；SubtitlePublicTest实际运行并截图，检查空档保留、占位
+不显示、倒退seek不残留。两端构建及公开入口核心布局回归通过。截图位于
+build/verification/subtitle-public。字幕转场、字号与多行排版尚未验收，下一项继续。
+API适配：保留既有showTranslation/showPhonetic/showNextLine三个开关，映射到对应
+行源；全部关闭不显示，showNextLine关闭也禁止缺失字幕时自动预览，保持既有契约。
+不加入上游播放器设置／背景引擎。原版底栏hook在隔离浏览器仅替换为默认112px宿主值。
+
 GlowWord.tsx的块级正文／whitespace-nowrap → CssWordText.kt和ClassicLine.kt。
 源文本和全部字素时间保持原样；仅排版文本折叠ASCII空白并去除块首尾普通空白，
 通过源UTF-16边界映射取得完整shaping结果的覆盖。被折叠空白不画空遮罩，

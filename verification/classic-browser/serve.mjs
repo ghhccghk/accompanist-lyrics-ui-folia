@@ -15,6 +15,7 @@ const server = await createServer({ configFile: false, root: path.dirname(fileUR
     { find: '../VisualizerShell', replacement: path.join(root, 'verification/classic-browser/surfaces.tsx') },
     { find: '../VisualizerSubtitleOverlay', replacement: path.join(root, 'verification/classic-browser/no-subtitle.tsx') },
     { find: 'pinned-classic', replacement: path.join(upstream, 'src/components/visualizer/classic/Visualizer.tsx') },
+    { find: '../../hooks/usePlayerBottomBarBottomPx', replacement: path.join(root, 'verification/classic-browser/subtitle-host.ts') },
   ] },
   server: { host: '127.0.0.1', port: 4173, strictPort: true, hmr: false, fs: { allow: [root] } },
 });

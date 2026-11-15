@@ -17,6 +17,9 @@ import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import com.mocharealm.accompanist.lyrics.folia.internal.model.normalize
 import com.mocharealm.accompanist.lyrics.folia.internal.timeline.VisualTimeline
+import com.mocharealm.accompanist.lyrics.folia.internal.timeline.SubtitleHistory
+import com.mocharealm.accompanist.lyrics.folia.internal.timeline.SubtitleSource
+import com.mocharealm.accompanist.lyrics.folia.internal.timeline.resolveSubtitleContent
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicLine
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.GlowBudget
 
@@ -38,10 +41,20 @@ fun FoliaLyricsView(
 ) {
     val document = remember(IdentityKey(lyrics), contentKey) { normalize(lyrics) }
     val index = remember(document) { VisualTimeline(document.lines) }
+    val subtitleHistory = remember(document) { SubtitleHistory(document.lines) }
     val currentPlayback by rememberUpdatedState(playback)
     val selection by remember(index, options.offsetMillis) { derivedStateOf {
         index.at((currentPlayback().positionMillis - options.offsetMillis) * 1000)
     } }
+    val subtitles by remember(index,subtitleHistory,options) {derivedStateOf {
+        val time=(currentPlayback().positionMillis-options.offsetMillis)*1000
+        val active=index.at(time).primary?.line
+        resolveSubtitleContent(document.lines,active,subtitleHistory.recent(time,active),buildList {
+            if(options.showTranslation) add(SubtitleSource.Translation)
+            if(options.showPhonetic) add(SubtitleSource.Phonetic)
+            if(options.showNextLine) add(SubtitleSource.Next)
+        },visible=options.showTranslation||options.showPhonetic||options.showNextLine,allowFallback=options.showNextLine)
+    }}
     // Preparation callbacks belong to this document/epoch, including a null primary in gaps.
     // Never carry a previous line's count or budget fallback into the next selection.
     var quality by remember(document, selection.primary, options.quality) { mutableStateOf(FoliaQuality.Minimal) }
@@ -85,13 +98,8 @@ fun FoliaLyricsView(
             .padding(bottom = 112.dp).widthIn(max = 896.dp).fillMaxWidth()
             .heightIn(max = maxHeight).verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally) {
-            if (main != null) {
-                if (options.showTranslation) main.translation?.takeIf { it.isNotBlank() && it != main.text }?.let {
-                    BasicText(it, Modifier.padding(top = 20.dp), typography.subtitle.copy(color = colors.secondary, textAlign = TextAlign.Center))
-                }
-                if (options.showPhonetic) main.phonetic?.takeIf { it.isNotBlank() && it != main.text && it != main.translation }?.let {
-                    BasicText(it, Modifier.padding(top = 8.dp), typography.subtitle.copy(color = colors.secondary, textAlign = TextAlign.Center))
-                }
+            subtitles.rows.forEach {row->
+                BasicText(row.text,Modifier.padding(top=8.dp),typography.subtitle.copy(color=colors.secondary,textAlign=TextAlign.Center))
             }
             selection.secondary.forEach { secondary ->
                 val line = document.lines[secondary]
@@ -99,7 +107,7 @@ fun FoliaLyricsView(
                     onClick = { onLineClicked(line.source) }, onLongClick = { onLinePressed(line.source) }),
                     typography.secondary.copy(color = colors.secondary, textAlign = TextAlign.Center))
             }
-            if (options.showNextLine) selection.next?.let { next ->
+            subtitles.upcoming.forEach { next ->
                 BasicText(document.lines[next].text, Modifier.padding(top = 32.dp),
                     typography.subtitle.copy(color = colors.secondary.copy(alpha = .55f), textAlign = TextAlign.Center))
             }

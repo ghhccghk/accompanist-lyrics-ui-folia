@@ -120,6 +120,14 @@ the original strict matrix tolerance was retained.
 
 ## Independent model input
 
+Subtitle content audit: VisualizerSubtitleOverlay.tsx content resolver and runtime.ts
+recent/next helpers → SubtitleContent.kt, ReadableText.{jvm,android}.kt and
+FoliaLyricsView.kt. Preserve gap translations, readable Unicode L/N filtering,
+trimmed alternate text, ordered deduplication and two-source-line preview bounds.
+The existing three public visibility booleans choose rows without importing the
+player settings contract. Browser calls original helpers; only the player-bottom
+hook is replaced by the original default 112px for isolated rendering.
+
 CSS baseline paint audit: original GlowWord.tsx block body/1.22 line-height →
 CssTextMetrics.kt and ClassicLine.kt. Zero-size inline probes observe baselines
 of eight fixed-font cases; separately rounded font metrics and floored half-leading

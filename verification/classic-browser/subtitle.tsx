@@ -8,7 +8,10 @@ import fontUrl from '../assets/FoliaParityLatin-Bold.ttf?url';
 import {getRecentCompletedLine,getSubtitleNextLines} from '../../.work/folia-major/src/components/visualizer/runtime';
 import {getLineRenderEndTime} from '../../.work/folia-major/src/utils/lyrics/renderHints';
 import sceneText from '../classic-fixtures/subtitle-scenes.tsv?raw';
-  const lines=sceneText.split(/\r?\n/).filter(r=>r&&!r.startsWith('#')).map(row=>{
+import cjkSceneText from '../classic-fixtures/subtitle-cjk-scenes.tsv?raw';
+import cjkFontUrl from '../assets/FoliaParityCJK-Bold.otf?url';
+const cjk=new URLSearchParams(location.search).has('cjk');
+  const lines=(cjk?cjkSceneText:sceneText).split(/\r?\n/).filter(r=>r&&!r.startsWith('#')).map(row=>{
     const [start,end,fullText,translation,romanization]=row.split('\t');
     return {startTime:Number(start)/1000,endTime:Number(end)/1000,fullText,translation,romanization,
       words:[{text:fullText,startTime:Number(start)/1000,endTime:Number(end)/1000}]};
@@ -28,7 +31,7 @@ import sceneText from '../classic-fixtures/subtitle-scenes.tsv?raw';
 (window as any).contentFixtures=rows.join("\n")+"\n";
 
 if(new URLSearchParams(location.search).has('paint')) {
-  const font=new FontFace('Subtitle Parity',`url(${fontUrl})`,{weight:'700'});
+  const font=new FontFace('Subtitle Parity',`url(${cjk?cjkFontUrl:fontUrl})`,{weight:'700'});
   await font.load();document.fonts.add(font);
   MotionGlobalConfig.useManualTiming=true;frameData.timestamp=0;motionTime.set(0);
   document.body.style.background='#162435';document.body.style.fontFamily='Subtitle Parity';

@@ -1135,3 +1135,41 @@ fitted-baselines-native-faces-validation、fitted-baselines-final-subtitle-regre
 源码/字体/APK SHA，标签fit-baseline-<档>、fit-short-stage-<档>-<高度>。
 API30与实机尚未重验，本项没有新的Desktop OS截图/输入验证。剩余字形覆盖及复杂
 字幕残差仍需定位，不能用此次逻辑/几何修复宣称最终整帧等价。
+
+## 显式行高字幕的真实paint基线（2026-11-15）
+
+原版 VisualizerSubtitleOverlay.tsx:181-267 的翻译/次字幕/下一句预览和
+subtitleFontSizes.ts -> FontMetrics.jvm.kt 的 paintedLineBaseline；CSS行盒和
+ClassicSubtitles.kt 的完整段落shaping保持不变。新增原创CJK场景使用已登记OFL
+子集中的字符，相同800/380×600、字体、时间网格直接挂载原版Overlay；采集器
+核对零尺寸baseline探针前后PNG严格相同，不修改上游。原有Latin夹具未重写。
+
+锁定Compose1.12.0解析到Skiko0.150.1，其gradle.properties锁定Skia
+m150-1f14f1166a。该版TextLine.cpp buildTextBlob按offset+round(ascent)绘制，
+getMetrics报告offset+roundedHeight-descent；两者不能总以round(reportedBaseline)
+互换。SubtitlePaintBaselineTest使用原生TextLine扫描，与完整双行段落逐行alpha
+比对；三种许可字体×六字号×两行全部零误差匹配。CJK14px实际17/38，旧预测16/37。
+新helper从公开cursor rect恢复未舍入ascent及上一行bottom；不能使用已floor的
+getLineBottom，因为20.999998会丢1px。没有反射/private API、重塑单字或原生渲染替代。
+
+诊断中第一轮用了子集不覆盖的“天”，其结果仅为fallback探针，不作为来源字体
+证据；改用覆盖的“合”，且新增glyph!=0断言。失败日志/输出完整保留于
+subtitle-baseline-before和.work/subtitle-explicit-baseline-covered-before.log。
+直接使用getLineBottom的候选使多组第二行退步，已拒绝，日志candidate/cursor保留。
+
+原版84帧、Kotlin168次正逆向请求，暂停推进1s与84次逆向重访严格相同；30条
+原版row geometry（含换行和预览）仍在.02px原容差内。新增CJK全帧80张不变，
+4张380/translation预览的MAE19.80548→17.45901；全84均值4.40568→4.29394。
+完整三列图已目视：基线向原版校正，但原版448px预览inline-block从x16延伸到464，
+现实现将其限在348并过早ellipsis，故本项绝不称为完整字幕视觉通过。该独立布局
+缺陷是下一项。对照不做图像重对齐/缩放，MAE不是验收阈值。
+
+旧Latin透明/主题光垫/阴影/软件回退共260张PNG逐字节相同；全部Subtitle测试、
+BodyRaster/BodySampling、自然行高两组控制及Android debug/Desktop classes通过，
+日志.work/subtitle-explicit-baseline-validation.log。生产更改仅JVM，Android未新跑，
+不能借构建声称设备验证；本项没有新的Desktop OS截图/输入证据。
+
+复现：node verification/classic-browser/capture-subtitles.mjs --cjk；
+:library:jvmTest --tests '*Subtitle*Test'；python verification/compare-subtitle-baselines.py。
+证据subtitle-cjk-{upstream,kotlin}、subtitle-native-baseline-control、
+subtitle-baseline-before、subtitle-baseline-comparison；后者保存84帧PNG SHA和源码SHA。

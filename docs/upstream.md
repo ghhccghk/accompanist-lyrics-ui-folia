@@ -352,3 +352,13 @@ history and was rejected. JVM native TextLine controls identify actual paragraph
 paint baselines by exact alpha equality; paragraph reported baseline is not used
 as a proxy for natural-height paint. Explicit-height subtitle path stays separate.
 Only API behavior/measurements referenced; no Skia source copied.
+
+Explicit subtitle paint baseline: pinned VisualizerSubtitleOverlay.tsx translation/
+secondary/upcoming line-height1.5 -> FontMetrics.jvm.kt paintedLineBaseline.
+Actual original Overlay CJK probes reuse only the registered OFL subset and new
+synthetic subtitle-cjk-scenes.tsv; capture-subtitles.mjs --cjk guards probe pixel
+identity. Skiko0.150.1 resolves Skia tag m150-1f14f1166a; TextLine.cpp
+buildTextBlob/getMetrics explain the distinct painted and reported baselines.
+Public Compose cursor rectangles recover the unrounded data; no Skia source is
+copied. SubtitlePaintBaselineTest compares complete shaped paragraphs against
+native TextLine alpha at explicit baselines and rejects uncovered probe glyphs.

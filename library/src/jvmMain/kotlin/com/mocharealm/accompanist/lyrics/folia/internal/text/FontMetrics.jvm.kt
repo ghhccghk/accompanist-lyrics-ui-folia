@@ -29,9 +29,19 @@ internal actual fun naturalFontMetrics(style:TextStyle,resolver:FontFamily.Resol
     }
 }
 
-// Explicit-line-height paragraph placement; natural-height body runs use the
-// separately measured baseline below. Keep paint details out of CSS geometry.
-internal actual fun paintedLineBaseline(layout: androidx.compose.ui.text.TextLayoutResult, line: Int): Float = kotlin.math.floor(layout.getLineBaseline(line)+.5f)
+// SkParagraph reports offset + roundedHeight - descent, but paints the blob at
+// offset + round(ascent). The cursor's unrounded top exposes that height delta.
+// Classic subtitles use uniform styling, Center leading and Trim.None; each
+// previous line's unrounded bottom gives the next integer paint origin.
+// getLineBottom floors floating-point noise (20.999998 -> 20), so cannot be
+// used for that origin. No private paragraph fields or per-glyph paint needed.
+// Keep this renderer detail separate from the original CSS row geometry.
+internal actual fun paintedLineBaseline(layout: androidx.compose.ui.text.TextLayoutResult, line: Int): Float {
+    val origin = if (line == 0) 0f else kotlin.math.floor(
+        layout.getCursorRect(layout.getLineStart(line - 1)).bottom + .5f)
+    val cursorTop = layout.getCursorRect(layout.getLineStart(line)).top
+    return origin + kotlin.math.floor(layout.getLineBaseline(line) - cursorTop + .5f)
+}
 
 // Native TextLine baseline sweeps match natural-height SkParagraph alpha exactly
 // at rounded raw ascent, including sizes where rounded reported baseline differs.

@@ -6,7 +6,8 @@ checkReference();
 const grayscale=process.argv.includes('--grayscale');
 const backdrop=process.argv.includes('--backdrop');
 const shadow=process.argv.includes('--shadow');
-const tag=`${backdrop?'backdrop-':shadow?'shadow-':''}${grayscale?'grayscale-':''}`;
+const cjk=process.argv.includes('--cjk');
+const tag=`${cjk?'cjk-':''}${backdrop?'backdrop-':shadow?'shadow-':''}${grayscale?'grayscale-':''}`;
 const output=path.join(root,`build/verification/subtitle-${tag}upstream`);fs.mkdirSync(output,{recursive:true});
 const rows=[`# Mounted original subtitle DOM and Motion values; pinned ${revision}`,'# width\tlayout\tmediaMs\touterAlpha\touterY\tinnerAlpha\tinnerY'];
 const layouts=[`# Actual original subtitle row geometry; pinned ${revision}`,'# width\tlayout\tmediaMs\trow\ttext\ttop\theight\tlastBaseline'];
@@ -17,7 +18,7 @@ try {
   const page=await browser.newPage({viewport:{width,height:600},deviceScaleFactor:1});
   await page.addInitScript(()=>{delete Element.prototype.animate;});
   const epoch=new Date('2026-01-01T00:00:00Z');await page.clock.install({time:epoch});await page.clock.pauseAt(epoch);
-  await page.goto(`http://127.0.0.1:4173/subtitle.html?paint${backdrop?'&backdrop':shadow?'&shadow':''}&layout=${encodeURIComponent(layout)}`);await page.waitForFunction(()=>window.ready===true);
+  await page.goto(`http://127.0.0.1:4173/subtitle.html?paint${cjk?'&cjk':''}${backdrop?'&backdrop':shadow?'&shadow':''}&layout=${encodeURIComponent(layout)}`);await page.waitForFunction(()=>window.ready===true);
   const times=[0,50,120,240,700,725,750,800,850,1000,1500,2500,3200,3250,3350,3500,4800,5000,5050,5150,5500];
   const observations=[];
   for(let tick=0;tick<=5500;tick+=5) {
@@ -32,6 +33,7 @@ try {
         return {text:row.textContent,source:row.getAttribute('data-subtitle-track'),baseline,rect:row.getBoundingClientRect().toJSON(),font:getComputedStyle(row).font,opacity:getComputedStyle(row).opacity};
       })};
     });
+    if(!png.equals(await page.screenshot()))throw new Error('Subtitle baseline probe changed frame');
     observations.push({mediaMs:tick,...data});rows.push([width,layout,tick,data.outer.opacity??1,data.outer.y??0,data.inner.opacity??1,data.inner.y??0].join('\t'));
     if(backdrop && tick===1500) {
       const text=page.locator('.relative.z-10');await text.evaluate(el=>el.style.visibility='hidden');
@@ -62,7 +64,7 @@ try {
     }
    }
   }
-  fs.writeFileSync(path.join(output,`${width}-${layout}.json`),JSON.stringify({revision,browser:browser.version(),antialias:grayscale?'--disable-lcd-text':'browser default',font:'FoliaParityLatin-Bold.ttf',observations},null,2));
+  fs.writeFileSync(path.join(output,`${width}-${layout}.json`),JSON.stringify({revision,browser:browser.version(),antialias:grayscale?'--disable-lcd-text':'browser default',font:cjk?'FoliaParityCJK-Bold.otf':'FoliaParityLatin-Bold.ttf',observations},null,2));
   await page.close();
  }
  if(!grayscale&&!shadow) fs.writeFileSync(path.join(root,`verification/classic-fixtures/subtitle-${tag}motion.tsv`),rows.join('\n')+'\n');

@@ -38,8 +38,11 @@ class SubtitleParityTest {
     @Test fun backdropPadNarrow()=capture(380,backdrop=true,padOnly=true)
     @Test fun shadowWide()=capture(800,shadowOnly=true)
     @Test fun shadowNarrow()=capture(380,shadowOnly=true)
-    private fun capture(width:Int,software:Boolean=false,backdrop:Boolean=false,padOnly:Boolean=false,shadowOnly:Boolean=false)=runDesktopComposeUiTest(width=width,height=600) {
-        val lines=File("../verification/classic-fixtures/subtitle-scenes.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.map {row->
+    @Test fun cjkWide()=capture(800,cjk=true)
+    @Test fun cjkNarrow()=capture(380,cjk=true)
+    private fun capture(width:Int,software:Boolean=false,backdrop:Boolean=false,padOnly:Boolean=false,shadowOnly:Boolean=false,cjk:Boolean=false)=runDesktopComposeUiTest(width=width,height=600) {
+        val cjkTag=if(cjk) "cjk-" else ""
+        val lines=File("../verification/classic-fixtures/subtitle-${cjkTag}scenes.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.map {row->
             val c=row.split('\t');normalize(SyncedLyrics(listOf(SyncedLine(c[2],c[3],c[0].toInt(),c[1].toInt())))).lines.single().copy(phonetic=c[4])
         }
         val index=VisualTimeline(lines);val history=SubtitleHistory(lines)
@@ -47,7 +50,7 @@ class SubtitleParityTest {
         var layout by mutableStateOf("translation")
         var measuredHeight=0f
         var measuredRows=emptyList<SubtitlePaint>()
-        val font=FontFamily(Font(File("../verification/assets/FoliaParityLatin-Bold.ttf"),FontWeight.Bold))
+        val font=FontFamily(Font(File("../verification/assets/${if(cjk) "FoliaParityCJK-Bold.otf" else "FoliaParityLatin-Bold.ttf"}"),FontWeight.Bold))
         val typography=FoliaTypography(subtitle=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold,shadow=if(padOnly) Shadow.None else null))
         setContent {
           CompositionLocalProvider(LocalClassicSoftwareLayers provides software) {
@@ -63,12 +66,21 @@ class SubtitleParityTest {
         }
           }
         val tag=if(backdrop) "backdrop-" else ""
-        val output=File("../build/verification/subtitle-${tag}${if(padOnly) "pad-" else if(shadowOnly) "shadow-" else ""}${if(software) "software-" else ""}kotlin").apply {mkdirs()}
+        val output=File("../build/verification/subtitle-${cjkTag}${tag}${if(padOnly) "pad-" else if(shadowOnly) "shadow-" else ""}${if(software) "software-" else ""}kotlin").apply {mkdirs()}
         for(mode in listOf("translation","current+translation+romanization")) {
             runOnIdle {layout=mode}
-            for(time in if(padOnly||shadowOnly) listOf(1500) else listOf(0,50,120,240,700,725,750,800,850,1000,1500,2500,3200,3250,3350,3500,4800,5000,5050,5150,5500)) {
+            val times=if(padOnly||shadowOnly) listOf(1500) else listOf(0,50,120,240,700,725,750,800,850,1000,1500,2500,3200,3250,3350,3500,4800,5000,5050,5150,5500)
+            val frames=mutableMapOf<Int,IntArray>()
+            for(time in if(cjk) times+times.asReversed() else times) {
                 runOnIdle{snapshot=FoliaPlaybackSnapshot(time.toLong(),false,snapshot.discontinuity+1)};waitForIdle()
                 val capture=captureToImage().toAwtImage()
+                if(cjk) {
+                    val pixels=capture.getRGB(0,0,width,600,null,0,width)
+                    frames[time]?.let {assertTrue(it.contentEquals(pixels),"Reverse subtitle seek at $width/$mode/$time")}
+                    frames[time]=pixels
+                    mainClock.advanceTimeBy(1000); waitForIdle()
+                    assertTrue(pixels.contentEquals(captureToImage().toAwtImage().getRGB(0,0,width,600,null,0,width)),"Paused subtitle at $width/$mode/$time")
+                }
                 ImageIO.write(capture,"png",output.resolve("$width-$mode-${time}ms.png"))
                 if(padOnly) {
                     val reference=ImageIO.read(File("../verification/classic-fixtures/subtitle-backdrop/$width-$mode-pad.png"))
@@ -89,7 +101,7 @@ class SubtitleParityTest {
                     output.resolve("$width-$mode-${time}-geometry.tsv").writeText("text\tcanvasWidth\tparagraphWidth\tlineLeft\tlineRight\tfirstBaseline\tcssBaseline\tlineTop\tlineBottom\n"+measuredRows.joinToString("\n") {r->
                         listOf(r.text,r.layout.size.width,r.layout.multiParagraph.width,r.layout.getLineLeft(0),r.layout.getLineRight(0),r.layout.firstBaseline,r.baseline,r.layout.getLineTop(0),r.layout.getLineBottom(0)).joinToString("\t")
                     })
-                    if(!backdrop && !shadowOnly && width==800 && mode=="current+translation+romanization" && time==1500) {
+                    if(!cjk && !backdrop && !shadowOnly && width==800 && mode=="current+translation+romanization" && time==1500) {
                         val original=File("../verification/classic-fixtures/subtitle-ink.tsv").readLines()
                             .filterNot{it.startsWith("#")||it.isBlank()}.map{it.split('\t')}
                             .single{it[0]=="800"&&it[1]==mode&&it[2]=="1500"&&it[3]=="0"}
@@ -100,7 +112,7 @@ class SubtitleParityTest {
                         assertEquals(original[4].toInt(),inkY.first(),"Painted ink top, beyond reported baseline geometry")
                         assertEquals(original[5].toInt(),inkY.last(),"Painted ink bottom")
                     }
-                    val reference=File("../verification/classic-fixtures/subtitle-${tag}layout.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.map{it.split('\t')}
+                    val reference=File("../verification/classic-fixtures/subtitle-${cjkTag}${tag}layout.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.map{it.split('\t')}
                         .filter{it[0].toInt()==width&&it[1]==mode&&it[2].toInt()==time}
                     assertEquals(reference.size,measuredRows.size)
                     reference.forEach {c->

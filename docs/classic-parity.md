@@ -565,3 +565,26 @@ shadow-final{,-comparison}/、shadow-final-contact.png（均在build/verificatio
 已目视两端最终解码帧出现3700ms的Silver/light，播放与两次暂停seek均有视频证据。
 编码时长为8.237722/8.314733s，不推断媒体速率/性能。当前录像位于
 classic-android-api{30,34}-recording/；上一提交录像保存在recording-before-shadow/。
+
+## Android 小数 advance 控制实验（2026-11-15）
+
+新增仅debug的metricsProbe、probe-android-advances.py与原版probe-advances.mjs。
+实际挂载同一GlowWord、同一Latin字体，测量Synthetic完整运行及各前缀；Android使用
+同字体Paint.getTextRunAdvances（不以单字重新塑形代替生产正文）。fontTools读取hmtx
+作为该无kerning控制词的独立数值参考，不是通用塑形算法，也不替换原版预期。
+
+API30/API34各20组设置完全相同：19.74px原浏览器93.01483154、native线性/关闭hinting
+92.96875000；64倍字号测量后归一化93.01446533。36/48/72px浏览器分别
+169.63194275/226.17597961/339.26391602，native为169.609375/226.1640625/
+339.24609375。线性文字下切换hinting没有消除差异；关闭线性文字在19.74px反而降为
+89.5078125，未采用。19.744px在两侧各自仍命中与19.74px相同的正常字号结果，
+而64倍控制保留了不同字号。这支持字体缓存/固定精度参与的判断；不是重复量化已获证实。
+
+读锁定Compose TextPaintExtensions.android.kt：Animated启用SUBPIXEL/LINEAR并关闭
+hinting。另读Android14_r1 Minikin LayoutCore.cpp的GetHorizontalAdvances/HBFloatToFixed
+与frameworks/base/libs/hwui/hwui/MinikinSkia.cpp的SkFont.getWidths调用路径。
+控制实验证明差异可量化，但尚未证明某一个转换点是全部原因。没有用hmtx、固定比例或
+大字号归一化替换生产排版；后者对变量字体、fallback及实际ink的影响尚未验收。
+本项debug构建及两模拟器实际探针通过，生产渲染不变。证据：build/verification/
+font-advances-{browser,api30,api34}/，包含原始日志、逐字CSV、字体/APK/浏览器条件SHA。
+下一步应隔离窄屏实际ink位置误差与宽度误差贡献，再决定是否需要平台计量适配。

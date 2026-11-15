@@ -77,7 +77,9 @@ internal fun stickyLayoutUnits(units: List<LayoutUnit>): List<LayoutUnit> {
 }
 
 /** Exactly the upstream classic conversion: only sticky nonsemantic units collapse. */
-internal fun displayWords(line: NormalizedLine): List<DisplayUnit> = stickyLayoutUnits(semanticLayoutUnits(line)).flatMap {unit ->
+internal fun displayWords(line: NormalizedLine): List<DisplayUnit> = displayWordsFromLayoutUnits(stickyLayoutUnits(semanticLayoutUnits(line)))
+
+internal fun displayWordsFromLayoutUnits(units: List<LayoutUnit>): List<DisplayUnit> = units.flatMap {unit ->
     if(!unit.sticky || unit.semantic) unit.words else {
         var shift=0
         val fragments=unit.words.flatMap {part ->

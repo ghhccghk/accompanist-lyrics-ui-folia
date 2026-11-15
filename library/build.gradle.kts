@@ -40,6 +40,7 @@ kotlin {
 // them so a newly captured source fixture cannot leave stale tests UP-TO-DATE.
 tasks.withType<Test>().configureEach {
     inputs.dir(rootProject.file("verification/classic-fixtures"))
+    inputs.dir(rootProject.file("verification/partita-fixtures"))
     inputs.dir(rootProject.file("verification/assets"))
 }
 tasks.withType<Zip>().configureEach {

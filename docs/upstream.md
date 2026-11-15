@@ -1,5 +1,21 @@
 # Source ledger
 
+## Partita layout — 2026-11-16
+
+Source revision: Folia cc6226e464050a456a2913e062374f23d3844cc5 (v0.7.26),
+AGPL-3.0-only per the existing approved license determination.
+`src/components/visualizer/partita/partitaLayout.ts` (buildSequentialColumns,
+buildPartitaWordConfigs) and `partitaOverlap.ts` (getPartitaOverlapSpacing)
+adapted to `internal/styles/partita/PartitaLayout.kt` under this project's own
+package. Kept seconds-based sine seeds, random consumption order, semantic/sticky
+layout units, per-word source timings, rem/em separation and CSS serialization.
+Uses existing Kotlin wordReach/pairGap rather than importing a browser runtime.
+Shared SemanticLayout.kt exposes its existing display conversion for chunk reuse;
+classic conversion behavior stays unchanged. A line-only lyrics-core input uses
+one explicit line-timed run. No fonts, lyrics, cover art or preview assets copied.
+generate-partita.mjs executes unmodified original modules for synthetic fixtures;
+PartitaLayoutTest compares numeric results. Renderer and public support are pending.
+
 ## Own namespace migration — 2026-11-15
 
 Own library/sample package prefix changed to top.ghhccghk under user instruction;

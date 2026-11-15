@@ -1,7 +1,7 @@
 # Classic 核心移植对照
 
 当前验收状态：数据／曲线／几何已完成原版对照；完整帧仍有正文和字幕栅格残差，
-字幕主题阴影／光垫的公共契约决策尚未收到。下文按日期保留调查过程，旧缺失项
+字幕主题阴影／光垫已获公共契约批准并接入，见最新章节。下文按日期保留调查过程，旧缺失项
 若已有后续修复，以最新章节为准，不能把历史结论当作当前能力声明。
 
 固定上游：Folia v0.7.26 / cc6226e464050a456a2913e062374f23d3844cc5，AGPL-3.0-only 路线。
@@ -365,3 +365,26 @@ SubtitleParityTest 新增 800px 双行 1500ms 首行实际 y=434..448 严格断�
 build/verification/subtitle-{comparison,grayscale-comparison}/，原版 ink 夹具
 verification/classic-fixtures/subtitle-ink.tsv。API34/API30最新APK冷启与暂停拖动检查
 另见 android-smoke.md；未将系统字体运行图冒充固定字体跨端验收。
+
+## 可选字幕主题光垫与阴影（2026-11-15）
+
+用户批准兼容扩展后接入 subtitleBackground（默认透明）和 showSubtitleBackground。
+固定源 Overlay 的 padding/insets、渐变半径／停靠点、2px文字阴影均保留；40px光垫
+模糊来自原 package-lock 固定的 Tailwind4.3.3 实际生成样式。初始验证页缺少这些
+utility，光垫宽高为零；已由相同编译器生成 CSS，再从有效原版重新采集，未修改上游。
+
+透明图层隐式裁剪曾切掉模糊边缘，改为显式预留160dp的整组图层；外层淡入作用于
+光垫／正文整体，内层入场仅作用正文。位置统一使用原Canvas尺寸，避免录制图层
+改变 DrawScope.size 导致偏移。窄屏换行扣除原版6px横向padding，预览保留父strut。
+带光垫84帧/侧，默认/次行/长译文/预览及稳定几何<.02px断言通过。
+
+另外隐藏原版正文、保留实际光垫得到四张独立参考，800/380px的Standard路径逐像素
+最大通道残差2/255，联合前景MAE .449..459/255；固定PNG回归守卫记录此量化残差，
+不是将其当作全帧通过标准。独立文字阴影MAE .555..602、max3/255，正文覆盖与
+量化仍有差异。完整字幕图的误差统计包含光垫扩大后的前景区域，不能与旧纯文字
+MAE直接比较。完整JVM及Android/Desktop构建通过；新可选效果Android运行待下一项。
+
+证据：verification/classic-fixtures/subtitle-backdrop/（原创合成词／OFL字体），
+build/verification/subtitle-backdrop-{upstream,kotlin,software-kotlin,pad-kotlin,comparison}/，
+subtitle-shadow-kotlin/。显式TextStyle.shadow保留宿主原生语义；主题派生阴影独立
+按CSS sigma绘制，未将平台Shadow半径差异带入默认实现。

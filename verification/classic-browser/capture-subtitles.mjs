@@ -4,7 +4,10 @@ import path from 'node:path';
 import {root,revision,checkReference} from './reference.mjs';
 checkReference();
 const grayscale=process.argv.includes('--grayscale');
-const output=path.join(root,`build/verification/subtitle-${grayscale?'grayscale-':''}upstream`);fs.mkdirSync(output,{recursive:true});
+const backdrop=process.argv.includes('--backdrop');
+const shadow=process.argv.includes('--shadow');
+const tag=`${backdrop?'backdrop-':shadow?'shadow-':''}${grayscale?'grayscale-':''}`;
+const output=path.join(root,`build/verification/subtitle-${tag}upstream`);fs.mkdirSync(output,{recursive:true});
 const rows=[`# Mounted original subtitle DOM and Motion values; pinned ${revision}`,'# width\tlayout\tmediaMs\touterAlpha\touterY\tinnerAlpha\tinnerY'];
 const layouts=[`# Actual original subtitle row geometry; pinned ${revision}`,'# width\tlayout\tmediaMs\trow\ttext\ttop\theight\tlastBaseline'];
 const ink=[`# Original subtitle ink bounds, fixed ${revision}`,'# width\tlayout\tmediaMs\trow\ttop\tbottom'];
@@ -14,7 +17,7 @@ try {
   const page=await browser.newPage({viewport:{width,height:600},deviceScaleFactor:1});
   await page.addInitScript(()=>{delete Element.prototype.animate;});
   const epoch=new Date('2026-01-01T00:00:00Z');await page.clock.install({time:epoch});await page.clock.pauseAt(epoch);
-  await page.goto(`http://127.0.0.1:4173/subtitle.html?paint&layout=${encodeURIComponent(layout)}`);await page.waitForFunction(()=>window.ready===true);
+  await page.goto(`http://127.0.0.1:4173/subtitle.html?paint${backdrop?'&backdrop':shadow?'&shadow':''}&layout=${encodeURIComponent(layout)}`);await page.waitForFunction(()=>window.ready===true);
   const times=[0,50,120,240,700,725,750,800,850,1000,1500,2500,3200,3250,3350,3500,4800,5000,5050,5150,5500];
   const observations=[];
   for(let tick=0;tick<=5500;tick+=5) {
@@ -30,6 +33,20 @@ try {
       })};
     });
     observations.push({mediaMs:tick,...data});rows.push([width,layout,tick,data.outer.opacity??1,data.outer.y??0,data.inner.opacity??1,data.inner.y??0].join('\t'));
+    if(backdrop && tick===1500) {
+      const text=page.locator('.relative.z-10');await text.evaluate(el=>el.style.visibility='hidden');
+      await page.screenshot({path:path.join(output,`${width}-${layout}-${tick}ms-pad.png`)});
+      const fixtures=path.join(root,'verification/classic-fixtures/subtitle-backdrop');fs.mkdirSync(fixtures,{recursive:true});
+      fs.copyFileSync(path.join(output,`${width}-${layout}-${tick}ms-pad.png`),path.join(fixtures,`${width}-${layout}-pad.png`));
+      await text.evaluate(el=>el.style.visibility='');
+    }
+    if(shadow && tick===1500) {
+      const text=page.locator('[data-subtitle-track],p');
+      await text.evaluateAll(els=>els.forEach(el=>el.style.color='transparent'));
+      const fixture=path.join(root,'verification/classic-fixtures/subtitle-backdrop');fs.mkdirSync(fixture,{recursive:true});
+      await page.screenshot({path:path.join(fixture,`${width}-${layout}-shadow.png`)});
+      await text.evaluateAll(els=>els.forEach(el=>el.style.color=''));
+    }
     if([1500,2500,3500,5500].includes(tick))data.rows.forEach((r,i)=>layouts.push([width,layout,tick,i,r.text,r.rect.top,r.rect.height,r.baseline].join('\t')));
     if([1500,2500,3500,5500].includes(tick)) {
      const boxes=await page.evaluate(async ({png,rows})=>{
@@ -48,7 +65,7 @@ try {
   fs.writeFileSync(path.join(output,`${width}-${layout}.json`),JSON.stringify({revision,browser:browser.version(),antialias:grayscale?'--disable-lcd-text':'browser default',font:'FoliaParityLatin-Bold.ttf',observations},null,2));
   await page.close();
  }
- if(!grayscale) fs.writeFileSync(path.join(root,'verification/classic-fixtures/subtitle-motion.tsv'),rows.join('\n')+'\n');
- if(!grayscale) fs.writeFileSync(path.join(root,'verification/classic-fixtures/subtitle-layout.tsv'),layouts.join('\n')+'\n');
- if(!grayscale) fs.writeFileSync(path.join(root,'verification/classic-fixtures/subtitle-ink.tsv'),ink.join('\n')+'\n');
+ if(!grayscale&&!shadow) fs.writeFileSync(path.join(root,`verification/classic-fixtures/subtitle-${tag}motion.tsv`),rows.join('\n')+'\n');
+ if(!grayscale&&!shadow) fs.writeFileSync(path.join(root,`verification/classic-fixtures/subtitle-${tag}layout.tsv`),layouts.join('\n')+'\n');
+ if(!grayscale&&!shadow) fs.writeFileSync(path.join(root,`verification/classic-fixtures/subtitle-${tag}ink.tsv`),ink.join('\n')+'\n');
 }finally {await browser.close();}

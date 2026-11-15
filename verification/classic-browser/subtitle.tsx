@@ -41,8 +41,8 @@ if(new URLSearchParams(location.search).has('paint')) {
     const recent=getRecentCompletedLine({lines,currentLineIndex,currentTime:ms/1000,getLineEndTime:getLineRenderEndTime});
     flushSync(()=>root.render(<Overlay showText={true} activeLine={lines[currentLineIndex]??null}
       recentCompletedLine={recent} nextLines={getSubtitleNextLines(lines,currentLineIndex,recent)}
-      theme={{fontFamily:'Subtitle Parity',fontWeight:700,fontStyle:'sans',secondaryColor:'#adb9c8',backgroundColor:'#162435'} as any}
-      {...resolveSubtitleFontSizes(1)} subtitleOverlayLayout={(params.get('layout')??'translation') as any} subtitleOverlayBackground={false}/>));
+      theme={{fontFamily:'Subtitle Parity',fontWeight:700,fontStyle:'sans',secondaryColor:'#adb9c8',backgroundColor:params.has('backdrop')||params.has('shadow')?'#48707e':'#162435'} as any}
+      {...resolveSubtitleFontSizes(1)} subtitleOverlayLayout={(params.get('layout')??'translation') as any} subtitleOverlayBackground={params.has('backdrop')}/>));
     flushKeyframeResolvers();frameData.isProcessing=true;
     try {Object.values(frameSteps).forEach(step=>step.process(frameData));}finally {frameData.isProcessing=false;}
   };

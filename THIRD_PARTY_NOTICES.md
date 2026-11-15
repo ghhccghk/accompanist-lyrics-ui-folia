@@ -17,6 +17,7 @@ copyright metadata and provenance. They are used by the comparison harness only.
 | lyrics-core | 0.5.0 | Apache-2.0; published model dependency, not lyrics-ui |
 | ICU4J | 78.3 | Unicode-3.0; grapheme segmentation, same implementation on Android/JVM |
 | kotlinx.coroutines | 1.11.0 | Apache-2.0; asynchronous sample import and settings I/O |
+| Tailwind CSS | 4.3.3 | MIT; verification-only compiler/generated subtitle utilities, matching the pinned Folia lockfile |
 
 This inventory covers direct dependencies. Transitive binary/source notices and
 packaging must be audited before distribution. No remote publication is configured.

@@ -14,6 +14,8 @@ data class FoliaOptions(
     val offsetMillis: Int = 0,
     val reducedMotion: Boolean = false,
     val quality: FoliaQuality = FoliaQuality.Standard,
+    /** Draw the local subtitle light pad when colors.subtitleBackground is nontransparent. */
+    val showSubtitleBackground: Boolean = true,
 )
 
 enum class FoliaQuality { Standard, Reduced, Minimal }
@@ -62,4 +64,7 @@ data class FoliaColors(
     val text: Color = Color(0xFFDFE5EC),
     val active: Color = Color(0xFFFFFFFF),
     val secondary: Color = Color(0xFFADB9C8),
+    /** Host theme color for the subtitle shadow and optional local light pad.
+     * Transparent preserves the existing transparent overlay and layout. */
+    val subtitleBackground: Color = Color.Transparent,
 )

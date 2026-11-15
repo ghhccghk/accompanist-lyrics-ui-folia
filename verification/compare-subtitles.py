@@ -7,9 +7,11 @@ import argparse
 root = Path(__file__).resolve().parents[1] / 'build/verification'
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--grayscale',action='store_true')
+parser.add_argument('--backdrop',action='store_true')
 args=parser.parse_args()
-reference='subtitle-grayscale-upstream' if args.grayscale else 'subtitle-upstream'
-output = root / ('subtitle-grayscale-comparison' if args.grayscale else 'subtitle-comparison')
+tag=('backdrop-' if args.backdrop else '')
+reference=f'subtitle-{tag}{"grayscale-" if args.grayscale else ""}upstream'
+output = root / f'subtitle-{tag}{"grayscale-" if args.grayscale else ""}comparison'
 output.mkdir(parents=True, exist_ok=True)
 report = []
 times = [750, 850, 1500, 2500, 3500, 5150, 5500]
@@ -17,7 +19,7 @@ for width in (800, 380):
     for layout in ('translation', 'current+translation+romanization'):
         sheet = Image.new('RGB', (width * 2, 220 * len(times)), '#eef1f5')
         for i, ms in enumerate(times):
-            images = [Image.open(root / f'{side}/{width}-{layout}-{ms}ms.png').convert('RGB') for side in (reference, 'subtitle-kotlin')]
+            images = [Image.open(root / f'{side}/{width}-{layout}-{ms}ms.png').convert('RGB') for side in (reference, f'subtitle-{tag}kotlin')]
             for j, (label, image) in enumerate(zip(('Original Folia', 'Kotlin Compose'), images)):
                 sheet.paste(image.crop((0, 400, width, 600)), (width*j, 220*i+20))
                 ImageDraw.Draw(sheet).text((width*j+4,220*i+4), f'{label} | {ms}ms', fill='black')

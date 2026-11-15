@@ -4,6 +4,12 @@
 
 本文细化 [PLAN.md](../PLAN.md)。Rust ABI、native 发布与资源生命周期见 [NATIVE_DESIGN.md](NATIVE_DESIGN.md)；参考现有 UI 的独立 Android／Desktop 示例见 [SAMPLE_DESIGN.md](SAMPLE_DESIGN.md)。公共 API 与内部职责以本文为准；改变既定范围时同步修改计划。
 
+2026-11-15 用户批准的兼容扩展：`FoliaColors.subtitleBackground` 默认为透明，
+宿主可提供主题背景色以启用原版字幕阴影与局部光垫；
+`FoliaOptions.showSubtitleBackground` 默认为 true，透明色时不增加 padding 或绘制。
+设为 false 可仅保留主题文字阴影。显式 `typography.subtitle.shadow` 优先于派生阴影。
+局部光垫仅服务字幕可读性，不实现背景引擎。旧调用的透明布局和效果保持不变。
+
 ## 1. 交付目标与工程边界
 
 `lyrics-ui-folia` 是与 `lyrics-ui` 并列的独立歌词显示库，通过 Kotlin / Compose Multiplatform 实现 Folia 的文字排版与动画。首版交付 Android、JVM Desktop 和 `classic` 样式。

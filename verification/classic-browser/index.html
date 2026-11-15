@@ -1,2 +1,7 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/style.css"></head>
-<body><div id="root"></div><script type="module" src="/main.tsx"></script></body></html>
+<body><div id="root"></div><script>
+// Observe timestamps without changing scheduling or values in the original renderer.
+window.rafTimes=[];
+const originalRaf=window.requestAnimationFrame.bind(window);
+window.requestAnimationFrame=callback=>originalRaf(t=>{window.rafTimes.push([t,performance.now()]);callback(t);});
+</script><script type="module" src="/main.tsx"></script></body></html>

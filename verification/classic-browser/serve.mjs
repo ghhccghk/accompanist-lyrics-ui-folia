@@ -16,7 +16,7 @@ const server = await createServer({ configFile: false, root: path.dirname(fileUR
     { find: '../VisualizerSubtitleOverlay', replacement: path.join(root, 'verification/classic-browser/no-subtitle.tsx') },
     { find: 'pinned-classic', replacement: path.join(upstream, 'src/components/visualizer/classic/Visualizer.tsx') },
   ] },
-  server: { host: '127.0.0.1', port: 4173, strictPort: true, fs: { allow: [root] } },
+  server: { host: '127.0.0.1', port: 4173, strictPort: true, hmr: false, fs: { allow: [root] } },
 });
 await server.listen();
 console.log('Fixed upstream classic comparison at http://127.0.0.1:4173');

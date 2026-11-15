@@ -8,12 +8,12 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 | --- | --- | --- | --- |
 | utils/lyrics/cjkSemanticLayout.ts:buildPostLyricLayoutUnits、buildDisplayWordsFromLayoutUnits；utils/lyrics/wordSegmentation.ts | SemanticLayout.kt／DisplayUnits.kt；sticky 先作用于语义单元，保留源片段与有效时间 | ICU 与 Intl 词典版本可能不同；core缺少分词覆写字段 | 上游9组混合／空白／缩写／标点夹具通过；Arabic完整词独立状态并保护词内塑形 |
 | utils/lyrics/graphemeTiming.ts:buildWordGraphemeTimings；components/visualizer/GlowWord.tsx:graphemeTimings | DisplayUnit 保留原片段、有效／源字素时间；完整塑形范围遮罩 | 连字分界处的覆盖仍需更多语言截图 | 固定源分组／时间夹具通过；继续复杂脚本验证 |
-| classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicGeometry.kt：同源 reach／pairGap、seed 对齐和行距 | 窄屏多行及复杂脚本仍待同字体浏览器验证 | 160组几何夹具；两行 default/avoid DOM 词距一致、矩形舍入范围一致 |
-| useOverlapFit.ts:useOverlapFit | ClassicLine.kt:仅避让启用、min .5 / slack .98 / .005 收敛 | 长句缩小的浏览器验收未完成 | 补窄／长／旋转场景 |
+| classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicGeometry.kt：同源 reach／pairGap、seed 对齐和行距 | CJK固定字体和全帧仍未验收 | 160组几何夹具；六场景 default/avoid DOM 词距一致、矩形舍入范围一致 |
+| useOverlapFit.ts:useOverlapFit | ClassicLine.kt:仅避让启用、min .5 / slack .98 / .005 收敛 | 完整帧像素仍未验收 | 380px窄屏长句CSS19.744px与浏览器对照通过 |
 | GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31 的 RenderEffect 支持仍受平台限制；设备验证待补 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
 | wordGlow.ts:wordGlowVariants | GraphemeGlow.kt；ClassicLine.kt:字素范围遮罩 | 软件近似 blur 和原版 text-shadow 的像素差仍需校准 | 108个正常／fast／instant 样本通过；保护 shaping；同字体逐帧图像待最终验收 |
 | glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | 仍需两端设备和连续浏览器响应对照 | 120个原版调度器入场／退出组合数值通过；平台图层预留出界空间 |
-| classic/Visualizer.tsx:lyricContainerFloat | LineMotion.kt：原版7s y/scale关键帧、easeInOut | 浏览器长时呼吸截图仍待补 | 媒体时间锚定是平台适配；不再使用正弦替代 |
+| classic/Visualizer.tsx:lyricContainerFloat | LineMotion.kt：原版7s y/scale关键帧、easeInOut | Android实际运行仍需验证 | 两周期真实浏览器DOM轨迹通过；媒体时间锚定是平台适配 |
 
 ## 必要平台适配与未完成能力
 
@@ -116,3 +116,13 @@ capture-halo.mjs 加载原版 GlowWord，隔离 identity pose、隐藏正文、�
 opacity .1 从0.94985降至0.54151；opacity1仍为1.14125，最大误差10。
 软件三次盒式模糊与 Chromium 字形阴影核仍有残差，不能据此宣布像素等价。
 连续帧／随机 seek 重建及固定字体核心截图检查通过；Android仍需实际运行验证。
+
+## 呼吸与浏览器帧相位（2026-11-15）
+
+capture-breathing.mjs 在 React 挂载前冻结浏览器时钟，运行原版 classic 两个7秒周期，
+观察外层实际 DOM transform；index.html 的RAF包装仅记录回调时间，不改变调度。
+使用实际末次RAF减挂载时刻，不能把截图请求的墙钟当作已经绘制的时间。例如3500ms
+请求的末次RAF为3488ms；未校正便会把浏览器帧采样差误判为曲线差。
+breathing.tsv 共25检查点，Kotlin y误差 <0.0001px、scale误差 <0.000005。
+没有拟合或修改既有关键帧。挂载时间变化会使捕获失败，禁止采纳中途重载后的轨迹。
+原版挂载墙钟相位替换为可重建媒体相位，暂停不走时、seek直接定位是既定平台适配。

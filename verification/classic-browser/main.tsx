@@ -34,6 +34,7 @@ if(params.has('scene')) {
   if(params.get('scene')==='arabic') themes.fontFamily='Parity Arabic';
 }
 const root = createRoot(document.getElementById('root')!);
+(window as any).mountTime=performance.now();
 (window as any).step = (ms: number) => {
   const seconds = ms / 1000;
   // Set the selected line before emitting time, matching host→runtime→GlowWord ownership.

@@ -22,10 +22,11 @@
 固定 Noto Bold／Noto Arabic Bold，六场景（含380px多行、连字、fast/instant）default/avoid
 DOM对照通过：所有margin在0.0001内，整数位置／尺寸在0.51px内；fit遵循实际CSS取整。
 图像位于 build/verification/classic-{upstream,kotlin,matrix-upstream,matrix-kotlin}。
-尚未通过：最终光晕像素／完整帧、实际浏览器呼吸、CJK固定字体、Android连续模糊运行对照。
+尚未通过：最终光晕像素／完整帧、CJK固定字体、Android连续模糊运行对照。
 本项：阴影先合成再应用字素透明度，词图层统一包住正文与光晕；隔离原版GlowWord
-半亮alpha前景误差1.66525→0.85470，满亮核差仍未解决。下一项：实际浏览器呼吸、
-连续时间相位与公共入口几何；Android <31 的模糊缺失保持未解决。
+半亮alpha前景误差1.66525→0.85470，满亮核差仍未解决（e03d4f3）。
+呼吸两周期25点真实DOM轨迹与媒体数学曲线通过，观察实际RAF／挂载时刻排除相位误判。
+下一项：公共入口几何与整帧对照；Android <31 的模糊缺失保持未解决。
 
 ## 历史工作（保留）
 

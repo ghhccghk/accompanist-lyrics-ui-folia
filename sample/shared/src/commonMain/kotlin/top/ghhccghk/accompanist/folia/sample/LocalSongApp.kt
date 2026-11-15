@@ -106,7 +106,7 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
                         else if(!songs.snapshot.isPlaying && songs.snapshot.positionMillis>=song.player.durationMillis)
                             Box(modifier,contentAlignment=Alignment.Center) { Text("播放结束") }
                         else FoliaLyricsView(song.lyrics,{songs.snapshot},modifier,contentKey=song.revision,options=session.options,
-                            typography=FoliaTypography(scale=session.fontScale),style=FoliaStyle.Classic(session.tuning),
+                            typography=FoliaTypography(scale=session.fontScale),style=session.lyricStyle,
                             onLineClicked={ line -> songs.control { it.seek(line.start.toLong()+session.options.offsetMillis) } })
                     }
                     if(maxWidth<600.dp) Column { metadata(); panel(Modifier.weight(1f).fillMaxWidth()); LocalTransport(songs,visible) }
@@ -138,7 +138,8 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
         },enabled=audio!=null && !songs.loading) {Text(if(editingLyrics)"应用歌词" else "播放所选歌曲")} },dismissButton={TextButton(::cancelSelection){Text("取消")}})
         if(!selection) (songs.error?:selectionError)?.let { message -> AlertDialog(onDismissRequest={songs.dismissError();selectionError=null},title={Text("操作失败 · 原会话保留")},text={Text(message)},confirmButton={TextButton({songs.dismissError();selectionError=null}){Text("关闭")}}) }
         if(settings) AlertDialog(onDismissRequest={settings=false},title={Text("显示设置")},text={
-            Column {
+            Column(Modifier.heightIn(max=420.dp).verticalScroll(rememberScrollState())) {
+                LyricThemeControls(session)
                 AudioToggle("翻译",session.options.showTranslation){session.options=session.options.copy(showTranslation=it)}
                 AudioToggle("注音",session.options.showPhonetic){session.options=session.options.copy(showPhonetic=it)}
                 AudioToggle("下一句",session.options.showNextLine){session.options=session.options.copy(showNextLine=it)}

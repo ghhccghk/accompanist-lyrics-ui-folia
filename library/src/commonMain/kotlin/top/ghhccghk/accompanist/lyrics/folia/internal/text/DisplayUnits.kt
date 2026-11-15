@@ -20,10 +20,16 @@ internal fun displayUnits(line: NormalizedLine): List<DisplayUnit> {
         return listOf(timedDisplayUnit(line.text, line.startUs, line.endUs, line.fragments))
     }
     val logicalWords = displayWords(line)
+    return shapeDisplayWords(logicalWords,line.text,line.text == "......")
+}
+
+/** Keep timing subdivisions inside a complete shaping run; also shared by Partita chunks. */
+internal fun shapeDisplayWords(logicalWords: List<DisplayUnit>, text: String,
+    separateDots: Boolean = false): List<DisplayUnit> {
     // Pinned classic animates each parser word in its exact six-dot interlude.
     // Dots have no contextual joining/ligatures to protect by merging runs.
-    if (line.text == "......") return logicalWords
-    val boundaries = graphemeBoundaries(line.text)
+    if (separateDots) return logicalWords
+    val boundaries = graphemeBoundaries(text)
     val groups = mutableListOf<DisplayUnit>()
     var begin = 0
     var start = Long.MAX_VALUE
@@ -34,8 +40,8 @@ internal fun displayUnits(line: NormalizedLine): List<DisplayUnit> {
         start = minOf(start, word.startUs); end = maxOf(end, word.endUs)
         offset += word.text.length
         pending += word
-        val before = line.text.getOrNull(offset - 1)
-        val after = line.text.getOrNull(offset)
+        val before = text.getOrNull(offset - 1)
+        val after = text.getOrNull(offset)
         val cjk = before != null && (before.code in 0x2E80..0xA4CF || before.code in 0xF900..0xFAFF)
         val safe = offset in boundaries && (after == null || before?.isWhitespace() == true || after.isWhitespace() || cjk)
         if (safe || index == logicalWords.lastIndex) {
@@ -53,9 +59,9 @@ internal fun displayUnits(line: NormalizedLine): List<DisplayUnit> {
                         shift += part.text.length
                         mapped
                     }
-                    return coalesceGraphemeTimings(line.text.substring(begin,offset),pieces,start,end)
+                    return coalesceGraphemeTimings(text.substring(begin,offset),pieces,start,end)
                 }
-                DisplayUnit(line.text.substring(begin,offset),start,end,fragments,timings(false),timings(true))
+                DisplayUnit(text.substring(begin,offset),start,end,fragments,timings(false),timings(true))
             }
             begin = offset; start = Long.MAX_VALUE; end = Long.MIN_VALUE
             pending.clear()

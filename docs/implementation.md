@@ -3,6 +3,25 @@
 Date: 2026-11-14. This file describes actual implementation; design documents
 remain the roadmap and must not be treated as an existing API support list.
 
+## 2026-11-16 — Partita stage (visual calibration in progress)
+
+FoliaStyle.Partita now dispatches to an independent chunk stage, not renamed classic.
+Original seeded rows, interrupted tween/springs, guides, shaped body/word/grapheme
+glow and fit are used in the sample's actual theme controls. Existing settings remain
+readable. Classic shared subtitles retain their default sizes and Partita uses its own.
+Source/provenance and the complete behavior matrix are in themes-parity.md/upstream.md.
+
+Actual original Motion chunk fixtures (702 states), 429 body-filter values, 30 scene
+geometry/pause/reverse captures, public resize/click/offset checks and explicit shaping
+regressions pass. A 0.53125px geometry failure was repaired by preserving original clamp
+serialization; a short-word blur error was fixed using actual mounted source values.
+360 full-frame foreground RGB MAE mean=4.620552, max=15.473299. Residuals are retained;
+this is not final visual acceptance. Previous 42 classic and 84 subtitle PNG hashes
+are unchanged. Android debug assembly, Desktop compilation and shared sample tests pass.
+Only headless Chromium and offscreen JVM UI were run for this new theme; Android device
+and visible Desktop window/recording acceptance remain unverified. No background/Rust/SPW
+expansion. User desktop packaging and daemon-criteria edits remain outside these commits.
+
 ## Starting point
 
 - Independent repository initialized on `codex/initial-implementation`.

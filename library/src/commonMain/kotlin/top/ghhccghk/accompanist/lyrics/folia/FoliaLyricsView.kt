@@ -23,6 +23,9 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.styles.classic.ClassicLine
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.classic.ClassicSubtitles
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.classic.ClassicStage
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.classic.classicHeightBudget
+import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.PartitaLine
+import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.PartitaConfig
+import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.partitaGraphemeCount
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.GlowBudget
 import top.ghhccghk.accompanist.lyrics.folia.internal.waiting.*
 import androidx.compose.ui.semantics.contentDescription
@@ -70,8 +73,8 @@ fun FoliaLyricsView(
     }}
     // Preparation callbacks belong to this document/epoch, including a null primary in gaps.
     // Never carry a previous line's count or budget fallback into the next selection.
-    var quality by remember(document, selection.primary, options.quality) { mutableStateOf(FoliaQuality.Minimal) }
-    var unitCount by remember(document, selection.primary, options.quality) { mutableIntStateOf(0) }
+    var quality by remember(document, selection.primary, options.quality, style) { mutableStateOf(FoliaQuality.Minimal) }
+    var unitCount by remember(document, selection.primary, options.quality, style) { mutableIntStateOf(0) }
     val statusObserver by rememberUpdatedState(onStatus)
     LaunchedEffect(document, selection.primary, quality, options.quality, unitCount) {
         statusObserver(FoliaStatus(options.quality, quality, unitCount,
@@ -83,9 +86,12 @@ fun FoliaLyricsView(
         // stage with p-8. Subtitles are an overlay and must not move the main line.
         val heightBudget = with(LocalDensity.current) { classicHeightBudget(maxHeight.toPx(), density).toDp() }
         val mainStyle = typography.main ?: typography.secondary.copy(
-            fontSize = ((maxWidth.value * .06f).coerceIn(36f, 72f) * typography.scale).sp, fontWeight = FontWeight.Bold)
+            fontSize = (if(style is FoliaStyle.Partita)
+                (maxWidth.value*.055f).coerceIn(40f,72f)*typography.scale
+                else (maxWidth.value * .06f).coerceIn(36f, 72f) * typography.scale).sp, fontWeight = FontWeight.Bold)
         val main = selection.primary?.line?.let(document.lines::get)
-        val tuning = (style as FoliaStyle.Classic).tuning
+        if(style is FoliaStyle.Classic) {
+        val tuning = style.tuning
         ClassicStage(Modifier.fillMaxSize()) {
                 selection.exiting.forEach { epoch -> key(epoch) {
                     ClassicLine(document.lines[epoch.line], playback, mainStyle, colors, options, tuning,
@@ -111,9 +117,36 @@ fun FoliaLyricsView(
                         defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
                 }
         }
+        } else if(style is FoliaStyle.Partita) {
+            val t=style.tuning
+            val config=PartitaConfig(t.useSemanticLayout,t.staggerMin.toDouble(),t.staggerMax.toDouble(),t.avoidOverlap,t.showGuideLines)
+            Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center) {
+                selection.exiting.forEach { epoch ->key(epoch) {
+                    val source=document.lines[epoch.line]
+                    val size=if(typography.main==null && partitaGraphemeCount(source)>40)
+                        mainStyle.copy(fontSize=mainStyle.fontSize*.8f) else mainStyle
+                    PartitaLine(source,playback,size,colors,options,config,enterUs=epoch.enterUs,leaveUs=epoch.leaveUs,
+                        maskBudgetBytes=GlowBudget.perExitBytes(index.maxExitingCount))
+                } }
+                if(document.lines.isEmpty()) BasicText("暂无可显示歌词",style=mainStyle.copy(color=colors.secondary))
+                else if(main!=null) key(selection.primary) {
+                    val size=if(typography.main==null && partitaGraphemeCount(main)>40)
+                        mainStyle.copy(fontSize=mainStyle.fontSize*.8f) else mainStyle
+                    PartitaLine(main,playback,size,colors,options,config,enterUs=selection.primary!!.enterUs,
+                        onPrepared={actual,count->quality=actual;unitCount=count},
+                        onClick={onLineClicked(main.source)},onLongPress={onLinePressed(main.source)})
+                }
+                waiting?.let {gap->
+                    WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
+                        {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
+                        Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
+                        defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
+                }
+            }
+        }
         ClassicSubtitles(subtitles,document.lines,playback,typography,colors,options,maxWidth,
             selection.primary?.enterUs?:subtitles.line?.let {document.lines[it].startUs},
-            Modifier.align(Alignment.BottomCenter).padding(bottom=112.dp)) {
+            Modifier.align(Alignment.BottomCenter).padding(bottom=112.dp),partita=style is FoliaStyle.Partita) {
             selection.secondary.forEach { secondary ->
                 val line = document.lines[secondary]
                 BasicText(line.text, Modifier.padding(top = 12.dp).combinedClickable(

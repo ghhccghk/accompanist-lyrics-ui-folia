@@ -14,7 +14,15 @@ class SampleSession(demoInitially: Boolean = false) {
     val clock = PreviewPlaybackController(scene.durationMillis)
     var options by mutableStateOf(FoliaOptions())
     var tuning by mutableStateOf(ClassicTuning())
+    var lyricTheme by mutableStateOf(SampleLyricTheme.Classic)
+    var partitaTuning by mutableStateOf(PartitaTuning())
+    val lyricStyle: FoliaStyle get() = when(lyricTheme) {
+        SampleLyricTheme.Classic -> FoliaStyle.Classic(tuning)
+        SampleLyricTheme.Partita -> FoliaStyle.Partita(partitaTuning)
+    }
     var fontScale by mutableFloatStateOf(1f)
     var importedSource by mutableStateOf<LyricsSource?>(null)
     var preferencesLoaded = false
 }
+
+enum class SampleLyricTheme { Classic, Partita }

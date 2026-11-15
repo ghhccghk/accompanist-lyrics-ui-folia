@@ -108,8 +108,10 @@ internal fun sampleWord(timeUs: Long, lineEnterUs: Long, startUs: Long, endUs: L
     val colorIn = (activeElapsed.toFloat() / duration).coerceIn(0f, 1f)
     val colorOut = easeInOut(passedElapsed.toDouble() / when(profile.mode) { Reveal.Normal -> 800_000; Reveal.Fast -> 240_000; Reveal.Instant -> 120_000 })
     val blurDuration = when(profile.mode) { Reveal.Normal -> 200_000; Reveal.Fast -> 120_000; Reveal.Instant -> 80_000 }
-    val blur = 10 * (1 - easeOut(activeElapsed.toDouble() / blurDuration)) *
-        (1 - easeOut(passedElapsed.toDouble() / when(profile.mode) { Reveal.Normal -> 500_000; Reveal.Fast -> 200_000; Reveal.Instant -> 120_000 }))
+    // active "none" and passed "blur(0px)" resolve to the same numeric
+    // target. Motion continues the original filter tween through short words;
+    // it neither freezes at activeEnd nor restarts a passed fade from there.
+    val blur = 10 * (1 - easeOut(motionElapsedUs(timeUs-begin).toDouble() / blurDuration))
     return WordFrame(if (reducedMotion) 0f else x,
         if (reducedMotion) 0f else y,
         if (reducedMotion) 1f else blend(activeScale, pose.scale, fade),

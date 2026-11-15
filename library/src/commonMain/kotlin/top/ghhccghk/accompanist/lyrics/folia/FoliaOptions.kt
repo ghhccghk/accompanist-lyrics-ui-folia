@@ -37,6 +37,25 @@ data class FoliaStatus(
 sealed interface FoliaStyle {
     @Immutable
     data class Classic(val tuning: ClassicTuning = ClassicTuning()) : FoliaStyle
+
+    /** Partita's staggered chunk stage. Visual calibration status: docs/themes-parity.md. */
+    @Immutable
+    data class Partita(val tuning: PartitaTuning = PartitaTuning()) : FoliaStyle
+}
+
+@Immutable
+data class PartitaTuning(
+    val showGuideLines: Boolean = true,
+    val useSemanticLayout: Boolean = true,
+    /** CSS logical pixels, independent of lyric font size. */
+    val staggerMin: Float = 20f,
+    val staggerMax: Float = 100f,
+    val avoidOverlap: Boolean = false,
+) {
+    init {
+        require(staggerMin.isFinite() && staggerMax.isFinite())
+        require(staggerMin in 0f..180f && staggerMax in staggerMin..180f)
+    }
 }
 
 @Immutable

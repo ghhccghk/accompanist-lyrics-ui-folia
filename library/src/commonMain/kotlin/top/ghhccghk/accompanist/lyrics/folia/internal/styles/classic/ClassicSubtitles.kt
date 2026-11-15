@@ -65,7 +65,8 @@ private fun DrawScope.drawSubtitleText(row:SubtitlePaint,padding:Float,color:Col
 @Composable
 internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>,playback:()->FoliaPlaybackSnapshot,
     typography:FoliaTypography,colors:FoliaColors,options:FoliaOptions,viewportWidth:Dp,enterUs:Long?,modifier:Modifier=Modifier,
-    onLayout:(Float,List<SubtitlePaint>)->Unit={_,_->},additionalContent:@Composable ColumnScope.()->Unit={}) {
+    onLayout:(Float,List<SubtitlePaint>)->Unit={_,_->},partita:Boolean=false,
+    additionalContent:@Composable ColumnScope.()->Unit={}) {
     val density=LocalDensity.current
     val fontResolver=LocalFontFamilyResolver.current
     val currentPlayback by rememberUpdatedState(playback)
@@ -87,7 +88,9 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
                 typography.subtitle.copy(fontSize=(floor(fontSize*100+.00001f)/100).sp,fontWeight=weight,
                     color=colors.secondary,lineHeight=TextUnit.Unspecified,
                     textMotion=typography.subtitle.textMotion?:TextMotion.Animated)
-            val previewSize=(viewportWidth.value*.02f).coerceIn(14f,16f)*typography.scale*explicitSize/18
+            val previewSize=(viewportWidth.value*(if(partita).018f else .02f)).coerceIn(14f,16f)*typography.scale*explicitSize/18
+            val translationSize=(if(partita)(viewportWidth.value*.022f).coerceIn(16.8f,19.2f)
+                else (viewportWidth.value*.026f).coerceIn(18f,20f))*typography.scale*explicitSize/18
             fun noWrapWidth(value:String,fontSize:Float,weight:FontWeight):Float {
                 val unwrapped=measurer.measure(value,textStyle(fontSize,weight),softWrap=false)
                 return (ceil(unwrapped.getPathForRange(0,value.length).getBounds().width/density.density*64)/64*density.density)
@@ -102,7 +105,7 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
             } else content.rows.mapIndexedNotNull { index,row ->
                 if(row.source!=SubtitleSource.Next) null else {
                     val secondary=index>0
-                    val size=(viewportWidth.value*.026f).coerceIn(18f,20f)*typography.scale*explicitSize/18*(if(secondary) .88f else 1f)
+                    val size=translationSize*(if(secondary) .88f else 1f)
                     noWrapWidth(row.text,size,typography.subtitle.fontWeight?:if(secondary) FontWeight.Normal else FontWeight.Medium)
                 }
             }).maxOrNull()?.plus(padX*2)?:0f
@@ -132,7 +135,7 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
             }
             content.rows.forEachIndexed {index,row->
                 val secondary=index>0
-                val size=(viewportWidth.value*.026f).coerceIn(18f,20f)*typography.scale*explicitSize/18*(if(secondary) .88f else 1f)
+                val size=translationSize*(if(secondary) .88f else 1f)
                 prepare(row.text,size,typography.subtitle.fontWeight?:if(secondary) FontWeight.Normal else FontWeight.Medium,
                     row.source==SubtitleSource.Next,if(secondary) .82f else 1f,if(secondary) size*.25f else 0f)
             }

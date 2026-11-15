@@ -4,6 +4,18 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 import kotlin.test.*
 
 class SettingsTest {
+    @Test fun themeAndItsOwnTuningRoundTripWithoutChangingClassicDefaults() {
+        val settings=SampleSettings(lyricTheme=SampleLyricTheme.Partita,
+            partitaTuning=PartitaTuning(false,false,12f,150f,true))
+        assertEquals(settings,SampleSettings.decode(settings.encode()))
+        val old=SampleSettings.decode("version=1")
+        assertEquals(SampleLyricTheme.Classic,old.lyricTheme)
+        assertEquals(PartitaTuning(),old.partitaTuning)
+        val invalid=SampleSettings.decode("version=1\nlyricTheme=Fume\npartitaMin=170\npartitaMax=20")
+        assertEquals(SampleLyricTheme.Classic,invalid.lyricTheme)
+        assertEquals(20f,invalid.partitaTuning.staggerMin)
+        assertEquals(170f,invalid.partitaTuning.staggerMax)
+    }
     @Test fun roundTripPreservesEveryDisplayPreference() {
         val settings = SampleSettings(FoliaOptions(false, false, false, -340, true, FoliaQuality.Reduced),
             ClassicTuning(false, .2f, 1.2f, true), 1.5f)

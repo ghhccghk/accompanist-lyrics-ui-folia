@@ -12,12 +12,17 @@ interface SettingsStore {
 expect fun rememberSettingsStore(): SettingsStore
 
 data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
-    val tuning: ClassicTuning = ClassicTuning(), val fontScale: Float = 1f) {
+    val tuning: ClassicTuning = ClassicTuning(), val fontScale: Float = 1f,
+    val lyricTheme: SampleLyricTheme = SampleLyricTheme.Classic,
+    val partitaTuning: PartitaTuning = PartitaTuning()) {
     fun encode(): String = listOf("version=1", "translation=${options.showTranslation}",
         "phonetic=${options.showPhonetic}", "next=${options.showNextLine}", "motion=${options.reducedMotion}",
         "quality=${options.quality}", "offset=${options.offsetMillis}", "rotation=${tuning.enableWordRotation}",
         "spacing=${tuning.wordSpacing}", "breathing=${tuning.breathingFloatMultiplier}",
-        "overlap=${tuning.avoidOverlap}", "font=$fontScale").joinToString("\n")
+        "overlap=${tuning.avoidOverlap}", "font=$fontScale", "lyricTheme=$lyricTheme",
+        "partitaGuides=${partitaTuning.showGuideLines}","partitaSemantic=${partitaTuning.useSemanticLayout}",
+        "partitaMin=${partitaTuning.staggerMin}","partitaMax=${partitaTuning.staggerMax}",
+        "partitaOverlap=${partitaTuning.avoidOverlap}").joinToString("\n")
 
     companion object {
         fun decode(value: String): SampleSettings {
@@ -33,12 +38,18 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
                 boolean("next", true), fields["offset"]?.toIntOrNull()?.coerceIn(-2_000, 2_000) ?: 0,
                 boolean("motion", false), FoliaQuality.entries.find { it.name == fields["quality"] } ?: FoliaQuality.Standard),
                 ClassicTuning(boolean("rotation", true), number("breathing", 1f, 0f..2f),
-                    number("spacing", .7f, 0f..2f), boolean("overlap", false)), number("font", 1f, .5f..2f))
+                    number("spacing", .7f, 0f..2f), boolean("overlap", false)), number("font", 1f, .5f..2f),
+                SampleLyricTheme.entries.find{it.name==fields["lyricTheme"]}?:SampleLyricTheme.Classic,
+                PartitaTuning(boolean("partitaGuides",true),boolean("partitaSemantic",true),
+                    minOf(number("partitaMin",20f,0f..180f),number("partitaMax",100f,0f..180f)),
+                    maxOf(number("partitaMin",20f,0f..180f),number("partitaMax",100f,0f..180f)),
+                    boolean("partitaOverlap",false)))
         }
     }
 }
 
-fun SampleSession.settings() = SampleSettings(options, tuning, fontScale)
+fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning)
 fun SampleSession.applySettings(value: SampleSettings) {
     options = value.options; tuning = value.tuning; fontScale = value.fontScale
+    lyricTheme=value.lyricTheme;partitaTuning=value.partitaTuning
 }

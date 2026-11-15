@@ -14,7 +14,22 @@ Shared SemanticLayout.kt exposes its existing display conversion for chunk reuse
 classic conversion behavior stays unchanged. A line-only lyrics-core input uses
 one explicit line-timed run. No fonts, lyrics, cover art or preview assets copied.
 generate-partita.mjs executes unmodified original modules for synthetic fixtures;
-PartitaLayoutTest compares numeric results. Renderer and public support are pending.
+PartitaLayoutTest compares numeric results. That first layout-only commit did not expose a renderer.
+
+Stage follow-up: PartitaChunk.tsx -> PartitaMotion.kt (initial tween, interrupted
+200/20 spring, unchanged-target continuation) and PartitaGuides.kt (CSS sizes,
+shadow, grouped opacity/scale). VisualizerPartita.tsx -> PartitaGeometry.kt,
+PartitaLine.kt and FoliaStyle.Partita (intrinsic rows, fit, media-time float).
+The stage reuses the attributed GlowWord sampling/full-paragraph raster/layers,
+not ClassicLine's free-form layout. DisplayUnits.kt exposes the existing shaping
+merge; invalid grapheme row breaks in core fragments are joined while keeping
+both effective and original source clocks. ClassicSubtitles.kt keeps classic
+defaults and adds Partita's original sizes. Sample controls are independently
+written. capture-partita.mjs mounts actual original modules with the existing
+text-only shell/background/subtitle isolation and CSS utility subset, records
+actual Motion and DOM geometry, not hand-written JS targets. No example lyric,
+SF Pro, cover, avatar/emoji pack, audio analyzer or SPW code copied. Final visual
+acceptance is pending; see themes-parity.md for results and remaining differences.
 
 ## Own namespace migration — 2026-11-15
 

@@ -39,13 +39,14 @@ private class PartitaRandom(private var seed: Double) {
     fun next(): Double = sin(seed++) .let { it * 10000 }.let { it - floor(it) }
 }
 private fun countGraphemes(text: String) = graphemeBoundaries(text.filterNot { it.isWhitespace() }).size - 1
+internal fun partitaGraphemeCount(line: NormalizedLine) = maxOf(countGraphemes(line.text),line.fragments.size,1)
 
 internal fun buildPartitaLayout(line: NormalizedLine, windowHeight: Double,
     intensity: FoliaAnimationIntensity, config: PartitaConfig = PartitaConfig()): PartitaLayout {
     require(windowHeight.isFinite() && windowHeight >= 0)
     val calm = intensity == FoliaAnimationIntensity.Calm
     val chaotic = intensity == FoliaAnimationIntensity.Chaotic
-    val units = stickyLayoutUnits(if (config.semantic) semanticLayoutUnits(line) else line.fragments.map {
+    val rawUnits = stickyLayoutUnits(if (config.semantic) semanticLayoutUnits(line) else line.fragments.map {
         val text = line.text.substring(it.begin, it.end)
         LayoutUnit(listOf(timedDisplayUnit(text, it.startUs, it.endUs,
             listOf(it.copy(begin = 0, end = text.length)))), false)
@@ -53,6 +54,21 @@ internal fun buildPartitaLayout(line: NormalizedLine, windowHeight: Double,
         // lyrics-core line-only input has no parser words: one explicit line-timed run.
         if (line.text.isEmpty()) emptyList() else listOf(LayoutUnit(listOf(timedDisplayUnit(line.text,
             line.startUs, line.endUs, emptyList())), false))
+    }
+    // A lyrics-core timing fragment can end inside a UTF-16 surrogate/EGC.
+    // Such a point is never a valid row break, even if the upstream Word input
+    // would have let its flex chunks split there. Preserve the timing pieces.
+    val boundaries = graphemeBoundaries(line.text)
+    var offset = 0
+    val units = mutableListOf<LayoutUnit>()
+    var pending = emptyList<LayoutUnit>()
+    rawUnits.forEach { unit ->
+        pending = pending + unit; offset += unit.text.length
+        if (offset in boundaries || offset == line.text.length) {
+            units += if (pending.size == 1) pending.single() else LayoutUnit(pending.flatMap { it.words },
+                pending.any { it.semantic }, pending.any { it.sticky })
+            pending = emptyList()
+        }
     }
     val count = min(units.size, max(1, floor(windowHeight * .65 / 100).toInt()))
     val random = PartitaRandom(line.startUs / 1e6)
@@ -83,7 +99,7 @@ internal fun buildPartitaLayout(line: NormalizedLine, windowHeight: Double,
             (if (index % 2 == 0) 1 else -1) * (if (chaotic) 6f else 3f)),
             if (chaotic) 6.4 else 9.6, index)
     }
-    return PartitaLayout(rows, maxOf(countGraphemes(line.text), line.fragments.size, 1), if (chaotic) 720 else 1000)
+    return PartitaLayout(rows, partitaGraphemeCount(line), if (chaotic) 720 else 1000)
 }
 
 internal fun partitaWordPoses(row: PartitaRow, intensity: FoliaAnimationIntensity): List<Pose> {
@@ -92,8 +108,10 @@ internal fun partitaWordPoses(row: PartitaRow, intensity: FoliaAnimationIntensit
     return row.words.indices.map { index ->
         val seed = row.words.first().startUs / 1e6 + index * 7.13
         fun random(offset: Int) = (sin(seed + offset) * 10000).let { it - floor(it) }
-        Pose(((random(1) - .5) * spread * 2).toFloat(), ((random(2) - .5) * spread * 2).toFloat(),
-            row.pose.scale, ((random(3) - .5) * rotation * 2).toFloat(), ((random(8) - .5) * 20).toFloat())
+        val x = (random(1) - .5) * spread * 2
+        val y = (random(2) - .5) * spread * 2
+        Pose(x.toFloat(), y.toFloat(), row.pose.scale, ((random(3) - .5) * rotation * 2).toFloat(),
+            ((random(8) - .5) * 20).toFloat(), waitingX=(x+sin(y)*100).toFloat(), waitingY=(y+cos(x)*50).toFloat())
     }
 }
 

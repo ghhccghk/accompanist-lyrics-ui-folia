@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { flushSync } from 'react-dom';
 import { motionValue, MotionGlobalConfig, frameData, frameSteps, time as motionTime, flushKeyframeResolvers, visualElementStore } from 'framer-motion';
 import Classic from 'pinned-classic';
+import Partita from 'pinned-partita';
 import { getLineRenderEndTime } from '../../.work/folia-major/src/utils/lyrics/renderHints';
 import { setGlowBlurQuantized } from '../../.work/folia-major/src/utils/glowBlurQuantize';
 import {resolveGlowWordRenderProfile,getGlowWordActiveEndTime} from '../../.work/folia-major/src/components/visualizer/glowWordTiming';
@@ -12,6 +13,7 @@ import arabicUrl from '../assets/NotoSansArabic-Bold.ttf?url';
 import bidiUrl from '../assets/FoliaParityBidi-Bold.ttf?url';
 import cjkUrl from '../assets/FoliaParityCJK-Bold.otf?url';
 import scenes from '../classic-fixtures/scenes.tsv?raw';
+import partitaScenes from '../partita-fixtures/scenes.tsv?raw';
 
 // Windows text-shadow branch is the baseline. No source patches and no remote media.
 setGlowBlurQuantized(false);
@@ -25,6 +27,7 @@ const cjkFace = new FontFace('Parity CJK', `url(${cjkUrl})`, {weight:'700'});
 await cjkFace.load();document.fonts.add(cjkFace);
 const params = new URLSearchParams(location.search);
 const manual = params.has('manual');
+const Visualizer = params.get('theme') === 'partita' ? Partita : Classic;
 if(manual) {MotionGlobalConfig.useManualTiming=true;frameData.timestamp=0;motionTime.set(0);}
 const currentTime = motionValue(0);
 const audioPower = motionValue(0);
@@ -52,7 +55,7 @@ if(params.has('dense')) {
   });
 }
 if(params.has('scene')) {
-  const rows=scenes.split(/\r?\n/).filter(r=>!r.startsWith('#')&&r.split('\t')[0]===params.get('scene')).map(r=>r.split('\t'));
+  const rows=(scenes+'\n'+(params.get('theme')==='partita'?partitaScenes:'')).split(/\r?\n/).filter(r=>!r.startsWith('#')&&r.split('\t')[0]===params.get('scene')).map(r=>r.split('\t'));
   if(!rows.length) throw new Error('Unknown scene');
   const words=rows.map(r=>({text:r[5],startTime:Number(r[3])/1000,endTime:Number(r[4])/1000}));
   lines=[{startTime:Number(rows[0][1])/1000,endTime:Number(rows[0][2])/1000,fullText:words.map(w=>w.text).join(''),words}];
@@ -83,9 +86,10 @@ const root = createRoot(document.getElementById('root')!);
   const seconds = ms / 1000;
   // Set the selected line before emitting time, matching host鈫抮untime鈫扜lowWord ownership.
   const index = lines.findIndex((l, i) => seconds >= l.startTime && seconds < getLineRenderEndTime(l) && (!lines[i + 1] || seconds < lines[i + 1].startTime));
-  flushSync(() => root.render(<Classic currentTime={currentTime} currentLineIndex={index} lines={lines}
+  flushSync(() => root.render(<Visualizer currentTime={currentTime} currentLineIndex={index} lines={lines}
     theme={themes} audioPower={audioPower} audioBands={{}} classicTuning={{ enableWordRotation: true,
-      breathingFloatMultiplier: params.has('breathe') ? 1 : 0, wordSpacing: .7, avoidOverlap: params.has('avoid'), useLegacyLayout: false }} />));
+      breathingFloatMultiplier: params.has('breathe') ? 1 : 0, wordSpacing: .7, avoidOverlap: params.has('avoid'), useLegacyLayout: false }}
+    partitaTuning={{ showGuideLines: !params.has('noGuides'), useSemanticLayout: true, staggerMin: 20, staggerMax: 100, avoidOverlap: params.has('avoid') }} />));
   flushSync(() => currentTime.set(seconds));
   if(manual) {
     flushKeyframeResolvers();

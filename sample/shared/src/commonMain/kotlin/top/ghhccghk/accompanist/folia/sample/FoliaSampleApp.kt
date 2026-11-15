@@ -126,7 +126,7 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
             }
             val lyrics: @Composable (Modifier) -> Unit = { modifier ->
                 FoliaLyricsView(scene.lyrics, { clock.snapshot }, modifier, contentKey = scene.id, options = options,
-                    typography = FoliaTypography(scale = fontScale), style = FoliaStyle.Classic(tuning),
+                    typography = FoliaTypography(scale = fontScale), style = session.lyricStyle,
                     onStatus = { status = it },
                     onLineClicked = { clock.seek(it.start.toLong() + options.offsetMillis) }, onLinePressed = { pressed = it })
             }
@@ -148,13 +148,16 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
         }, confirmButton = { TextButton({ picker = false }) { Text("关闭") } })
         if (settings) AlertDialog(onDismissRequest = { settings = false }, title = { Text("显示设置") }, text = {
             Column(Modifier.heightIn(max = 420.dp).verticalScroll(rememberScrollState())) {
+                LyricThemeControls(session)
                 Toggle("显示下一句", options.showNextLine) { options = options.copy(showNextLine = it) }
                 Toggle("减少动态效果", options.reducedMotion) { options = options.copy(reducedMotion = it) }
+                if(session.lyricTheme==SampleLyricTheme.Classic) {
                 Toggle("文字旋转", tuning.enableWordRotation) { tuning = tuning.copy(enableWordRotation = it) }
                 Toggle("保守间距", tuning.avoidOverlap) { tuning = tuning.copy(avoidOverlap = it) }
                 Text("字号 ${fontScale}"); Slider(fontScale, { fontScale = it }, valueRange = .5f..2f)
                 Text("词间距"); Slider(tuning.wordSpacing, { tuning = tuning.copy(wordSpacing = it) }, valueRange = 0f..2f)
                 Text("呼吸幅度"); Slider(tuning.breathingFloatMultiplier, { tuning = tuning.copy(breathingFloatMultiplier = it) }, valueRange = 0f..2f)
+                }
                 Text("歌词偏移 ${options.offsetMillis} ms"); Slider(options.offsetMillis.toFloat(), { options = options.copy(offsetMillis = it.toInt()) }, valueRange = -2_000f..2_000f)
                 TextButton({ options = options.copy(quality = FoliaQuality.entries[(options.quality.ordinal + 1) % FoliaQuality.entries.size]) }) { Text("画质 ${options.quality}") }
                 Toggle("开发面板", debug) { debug = it }

@@ -102,10 +102,12 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                     tuning.wordSpacing, tuning.avoidOverlap, rtl, density.density.toDouble(),lineFont)
                 val cells = units.indices.map { index ->
                     val box = geometry.boxes[index]
+                    // CSS places the painted baseline. SkParagraph's reported
+                    // baseline can differ from its rounded text-blob baseline.
                     Cell(units[index], measured[index], Offset(box.left + box.width / 2, box.top + box.height / 2),
                         poses[index], box.width, box.height, renderedTexts[index].boundaries,
                         cssBaseline(measured[index].firstBaseline/density.density,
-                            measured[index].multiParagraph.height/density.density,box.height/density.density)*density.density-measured[index].firstBaseline)
+                            measured[index].multiParagraph.height/density.density,box.height/density.density)*density.density-paintedLineBaseline(measured[index],0))
                 }
                 return Prepared(cells, geometry.height, geometry)
             }

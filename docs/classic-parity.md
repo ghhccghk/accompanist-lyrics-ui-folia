@@ -427,3 +427,23 @@ API30/API34各采集166个不同固定帧并额外逆序重访baseline的1500→
 完整JVM测试、Android debug APK和Desktop classes构建通过；API21..29与实机未验证。
 证据：build/verification/classic-android-api{30,34}-linear{,-comparison}/、
 android-linear-wrap-detail.png。下一项定位实际绘制基线与剩余字幕/正文栅格差异。
+
+## 正文实际blob基线（2026-11-15）
+
+沿用字幕已核对的SkParagraph实际baseline规则，将ClassicLine的paintTop从reported
+baseline改为paintedLineBaseline。完整paragraph正文与其内部字素遮罩共用同一偏移，
+没有改变选择path、内部时间或字形shaping；Android本身baseline已为整数，行为不变。
+BodyRasterTest同步采用同一实际绘制定位，原版CSS baseline预期保持不变。
+
+同源原版1500ms：group/default前景MAE6.75902附近→4.14902，CJK/default
+5.72279→3.69432，Arabic/default5.69436→5.39004；wrap/avoid2800ms
+14.23862→12.39624。已目视group与CJK活动帧；没有断字或漏掉内部辉光。
+并非所有帧的像素误差都下降：baseline/default1500ms约4.20→4.54，保留该残差，
+不通过调整原版参考补偿。完整JVM与Android/Desktop构建通过，暂停/seek严格断言保留。
+证据：classic-matrix-comparison/、classic-manual-comparison/、painted-body-baseline-detail.png。
+
+Android临时Paint/Compose探针另确认：19.74px的Synthetic advance为92.96875，
+同一字体原浏览器93.01488；传入未预先量化的19.744px仍为92.96875，因此先前
+“重复量化导致19.73px”的解释不成立。已撤回无效的字号转换实验及全部临时日志。
+保留实测小数计量差异，尚不能将其认定为平台必须差异或用固定比例更改字号。
+下一项已定位：Android Layout 的center绘制起点取整数，调查字幕分数居中。

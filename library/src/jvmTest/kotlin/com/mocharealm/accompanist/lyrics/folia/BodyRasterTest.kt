@@ -16,6 +16,7 @@ import java.io.File
 import javax.imageio.ImageIO
 import kotlin.math.ceil
 import com.mocharealm.accompanist.lyrics.folia.internal.text.cssBaseline
+import com.mocharealm.accompanist.lyrics.folia.internal.text.paintedLineBaseline
 import kotlin.test.*
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.rasterizeParagraph
 import androidx.compose.ui.graphics.ColorFilter
@@ -42,6 +43,7 @@ class BodyRasterTest {
             val width=(ceil(layout.getPathForRange(0,row[3].length).getBounds().width*64)/64)
             val height=row[5].toFloat()
             val baseline=cssBaseline(layout.firstBaseline,layout.multiParagraph.height,height)
+            val paintOffset=baseline-paintedLineBaseline(layout,0)
             assertEquals(row[6].toFloat(),baseline,.0001f,"CSS baseline for ${row[0]}")
             val raster=remember(layout) {rasterizeParagraph(layout,androidx.compose.ui.unit.Density(1f))}
             Canvas(androidx.compose.ui.Modifier) {
@@ -49,8 +51,8 @@ class BodyRasterTest {
                     translate(128f,128f)
                     if(transformed) {rotate(-4f,Offset(width/2,height/2));scale(1.6f,1.6f,Offset(width/2,height/2))}
                 }) {
-                    if(cachedPaint) drawImage(raster.image,raster.origin+Offset(0f,baseline-layout.firstBaseline),colorFilter=ColorFilter.tint(Color.White))
-                    else drawText(layout,Color.White,Offset(0f,baseline-layout.firstBaseline))
+                    if(cachedPaint) drawImage(raster.image,raster.origin+Offset(0f,paintOffset),colorFilter=ColorFilter.tint(Color.White))
+                    else drawText(layout,Color.White,Offset(0f,paintOffset))
                 }
             }
             SideEffect {metrics.append("${row[0]}\t${layout.firstBaseline}\t${layout.multiParagraph.height}\t$baseline\n")}

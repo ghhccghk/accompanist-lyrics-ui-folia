@@ -911,3 +911,38 @@ TEMP/TMP置于F盘项目忽略目录。API30使用原项目私有classic30，顺
 immersive_mode_confirmations此时为confirmed，随后从空白舞台重新完整采集全部条件；
 没有通过改系统动画/显示设置掩盖问题。采集器新增记录该只读状态。UIAutomator在空白
 画面返回null root，不把该诊断当运行失败或歌词断言通过。实际设备/API21..29仍未验证。
+
+
+## Desktop真实窗口与尺寸恢复（2026-11-15）
+
+`sample/desktop-app`增加隔离的`classicVerification` source set及
+`verifyClassicWindow`任务，使用实际`ComposeWindow`和公开`FoliaLyricsView`。
+它不进入示例分发，未更改库或上游生产渲染路径。与原版
+`classic/Visualizer.tsx`窗口resize驱动重排、`GlowWord.tsx`词转场对应，
+采用既有Amber/echo、同一OFL字体SHA、default/avoid、五个媒体时间点。
+
+实际Windows 150%显示缩放、Direct3D。AWT逻辑尺寸533×400/253×400对应
+记录图层物理800×600/380×600；组件内部density/fontScale固定1，与对照相同。
+初始AWT尺寸事件曾覆盖过早的resize，严格800×600断言正确超时；现等待窗口显示和
+初始通知后通过WindowState请求尺寸，并等待目标token及实际物理尺寸绘制完成。
+失败进程返回非零，提前关闭也不能被视为通过；每次采集先移除本任务旧SUCCESS标记。
+
+800→380→800、default/avoid、750/1000/1500/1900/2100ms正逆序，共60请求、
+20张不同PNG；每次实际等待1秒后暂停像素严格一致，40次重访与此前同时间/尺寸PNG
+严格相同，包括返回800宽后。源码SHA、字体SHA、运行时、实际后端/AWT尺寸和PNG
+SHA随结果保存。窗口关闭由Compose application释放，本项不做资源泄漏或性能推断。
+
+`compare-native-window.py`严格验证完整请求数、重访数、字体和PNG SHA后，生成
+原版/离屏Compose/真实窗口记录图层三列图。前景并集RGB MAE相对原版均值1.617146、
+最大2.343823；相对离屏均值.441194、最大.622848，均未逐像素相同。
+已目视800/default入场、词激活、余韵，位置/阶段/辉光走势一致，细部采样残差保留。
+这些数值是描述，不是新增通过阈值，也不代表所有classic场景通过。
+
+运行：`./gradlew.bat :sample:desktop-app:verifyClassicWindow`，随后
+`python verification/compare-native-window.py`。后者需要已生成的
+`layout-phase-public-{upstream,kotlin}`同源参考。证据在
+`build/verification/classic-native-window{,-comparison}`；失败日志保留于.work。
+Windows外部观察工具初始化因kernel assets路径错误不可用，未绕过工具去自动操作
+系统。这里捕获的是实际窗口绘制后的GraphicsLayer，不是操作系统窗口截图；鼠标/
+键盘、系统合成结果与Desktop真实窗口连续录屏仍未验证。此前DirectX12失败不能用于
+描述本次后端，本次实际为DIRECT3D。

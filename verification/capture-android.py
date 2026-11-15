@@ -53,11 +53,12 @@ conditions['startup']='Two exact empty-scene captures before media checkpoints; 
 observed={}
 request_token=0
 for scene in args.scenes:
-    widths=[800,380] if scene=='subtitle' else [380 if scene=='wrap' else 600 if scene in ['group','cjk'] else 800]
+    widths=[800,380] if scene in ['subtitle','interlude','interlude-single'] else [380 if scene=='wrap' else 600 if scene in ['group','cjk'] else 800]
     times=[1500,5500] if scene=='subtitle' else [750,800,1000,1200,1500,1900,2100,2800,3000] if scene!='baseline' else [750,1000,1500,2100,2300,3400,4400]
     if scene=='dense':times=[801,901,1001,1051,1101,1201,1301]
+    if scene in ['interlude','interlude-single']:times=[750,1000,1500,1900,2300,2500]
     if args.verify_seek and scene=='baseline':times += [1500,750,1500]
-    if args.verify_seek and scene=='dense':times+=times[::-1]
+    if args.verify_seek and scene in ['dense','interlude','interlude-single']:times+=times[::-1]
     for width in widths:
         for mode in ([False] if scene=='dense' else [False,True]):
             for ms in times:

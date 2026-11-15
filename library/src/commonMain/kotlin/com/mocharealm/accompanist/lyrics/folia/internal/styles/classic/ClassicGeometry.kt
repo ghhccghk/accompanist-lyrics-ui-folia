@@ -49,10 +49,11 @@ internal data class ClassicGeometry(val boxes: List<LayoutBox>, val margins: Lis
 /** Flex wrap uses untransformed boxes + inline-end margins; transformed reach is reserved separately. */
 internal fun classicGeometry(widths: List<Double>, boxes: List<Double>, font: Double, areaWidth: Double,
     poses: List<Pose>, startUs: Long, spacing: Float, avoid: Boolean, rtl: Boolean, density: Double,
-    lineFont: Double = font): ClassicGeometry {
-    val margins = widths.indices.map { i -> classicMargin(widths[i], widths.getOrElse(i + 1) { 0.0 }, font,
+    lineFont: Double = font, interlude: Boolean = false): ClassicGeometry {
+    val margins = widths.indices.map { i -> if (interlude) 48.0 * density else classicMargin(widths[i], widths.getOrElse(i + 1) { 0.0 }, font,
         poses[i], poses.getOrNull(i + 1), spacing, avoid, rtl, density) }
-    val overflow = if (avoid) widths.indices.map { wordOverflow(widths[it], font, poses[it], density) } else emptyList()
+    // Original early-return interlude config never contributes overlap reach.
+    val overflow = if (avoid && !interlude) widths.indices.map { wordOverflow(widths[it], font, poses[it], density) } else emptyList()
     val top = if (avoid) ceil((overflow.maxOfOrNull { it.top } ?: 0.0) / density) * density else 0.0
     val bottom = if (avoid) ceil((overflow.maxOfOrNull { it.bottom } ?: 0.0) / density) * density else 0.0
     val gap = if (avoid) ceil(((overflow.maxOfOrNull { it.top } ?: 0.0) + (overflow.maxOfOrNull { it.bottom } ?: 0.0)) / density) * density else 0.0
@@ -68,7 +69,7 @@ internal fun classicGeometry(widths: List<Double>, boxes: List<Double>, font: Do
     val contentHeight = rows.size * rowHeight + max(0, rows.size - 1) * gap
     val height = if (avoid) contentHeight + top + bottom else max(300 * density, contentHeight)
     val output = MutableList(boxes.size) { LayoutBox(0f, 0f, 0f, 0f) }
-    val justify = floor(startUs / 1e6 % 5).toInt().coerceIn(0, 4)
+    val justify = if (interlude) 1 else floor(startUs / 1e6 % 5).toInt().coerceIn(0, 4)
     rows.forEachIndexed { rowIndex, row ->
         val total = row.sumOf { boxes[it] + margins[it] }
         val free = areaWidth - total

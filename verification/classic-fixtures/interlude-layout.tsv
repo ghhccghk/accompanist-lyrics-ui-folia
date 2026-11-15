@@ -1,0 +1,30 @@
+# pinned cc6226e464050a456a2913e062374f23d3844cc5; actual DOM layout
+# scene	width	mode	index	left	top	widthPx	heightPx	margin	lineHeight	rowGap	paddingTop	paddingBottom
+interlude	800	default	0	183	121	14	59	48	300	0	0	0
+interlude	800	default	1	245	121	14	59	48	300	0	0	0
+interlude	800	default	2	306	121	14	59	48	300	0	0	0
+interlude	800	default	3	368	121	14	59	48	300	0	0	0
+interlude	800	default	4	430	121	14	59	48	300	0	0	0
+interlude	800	default	5	491	121	14	59	48	300	0	0	0
+interlude	800	avoid	0	183	0	14	59	48	59	0	0	0
+interlude	800	avoid	1	245	0	14	59	48	59	0	0	0
+interlude	800	avoid	2	306	0	14	59	48	59	0	0	0
+interlude	800	avoid	3	368	0	14	59	48	59	0	0	0
+interlude	800	avoid	4	430	0	14	59	48	59	0	0	0
+interlude	800	avoid	5	491	0	14	59	48	59	0	0	0
+interlude	380	default	0	12	106	10	44	48	300	0	0	0
+interlude	380	default	1	71	106	10	44	48	300	0	0	0
+interlude	380	default	2	129	106	10	44	48	300	0	0	0
+interlude	380	default	3	187	106	10	44	48	300	0	0	0
+interlude	380	default	4	245	106	10	44	48	300	0	0	0
+interlude	380	default	5	129	150	10	44	48	300	0	0	0
+interlude	380	avoid	0	12	0	10	44	48	88	0	0	0
+interlude	380	avoid	1	71	0	10	44	48	88	0	0	0
+interlude	380	avoid	2	129	0	10	44	48	88	0	0	0
+interlude	380	avoid	3	187	0	10	44	48	88	0	0	0
+interlude	380	avoid	4	245	0	10	44	48	88	0	0	0
+interlude	380	avoid	5	129	44	10	44	48	88	0	0	0
+interlude-single	800	default	0	303	121	82	59	48	300	0	0	0
+interlude-single	800	avoid	0	303	0	82	59	48	59	0	0	0
+interlude-single	380	default	0	103	128	62	44	48	300	0	0	0
+interlude-single	380	avoid	0	103	0	62	44	48	44	0	0	0

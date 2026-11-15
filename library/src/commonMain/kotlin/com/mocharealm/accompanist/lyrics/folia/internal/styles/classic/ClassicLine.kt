@@ -95,12 +95,13 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                     val width=layout.getPathForRange(0,layout.layoutInput.text.length).getBounds().width.toDouble()
                     ceil(width/density.density*64)/64*density.density
                 }
-                val poses = units.indices.map { wordPose(line.startUs, it, tuning.enableWordRotation) }
+                val interlude = line.text == "......"
+                val poses = units.indices.map { wordPose(line.startUs, it, tuning.enableWordRotation, interlude) }
                 val rtl = isRtlLyric(line.text)
                 val font = with(density) { (textStyle.fontSize*fontScale).toPx() }.toDouble()
                 val lineFont = with(density) { rendered.sp.toPx() }.toDouble()
                 val geometry = classicGeometry(rawWidths, boxWidths, font, widthPx.toDouble(), poses, line.startUs,
-                    tuning.wordSpacing, tuning.avoidOverlap, rtl, density.density.toDouble(),lineFont)
+                    tuning.wordSpacing, tuning.avoidOverlap, rtl, density.density.toDouble(),lineFont,interlude)
                 val cells = units.indices.map { index ->
                     val box = geometry.boxes[index]
                     // CSS places the painted baseline. SkParagraph's reported

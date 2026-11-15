@@ -269,3 +269,14 @@ Actual Motion samples include event left limits at1us, explicitly documenting th
 continuous media model. Public FoliaLyricsView captures forward/reverse/paused
 frames; compare-interrupted.py retains descriptive RGB errors and original crops.
 No upstream code/media copied or production curve changed for this validation.
+
+Six-dot interlude: pinned classic/Visualizer.tsx isInterlude branch (fullText exactly
+"......") -> ClassicSampler.kt:wordPose, ClassicGeometry.kt:classicGeometry and
+ClassicLine.kt preparation. Preserve the original x=0, seeded y spread15,
+scale1.5, zero configured rotations, inline-end3rem and centered justification.
+Avoid-overlap's original early return contributes no extra reach. DisplayUnits.kt
+keeps independently timed parser dots separate; an intact six-dot word remains
+one shaped run. glowWordVariants.ts keeps a zero-target rotation spring running
+when active/passed share that target; Pose now records whether rotation was
+actually disabled. Synthetic scene/layout/Motion fixtures and public-entry PNGs
+come from unchanged pinned Classic via capture-interlude.mjs. No media copied.

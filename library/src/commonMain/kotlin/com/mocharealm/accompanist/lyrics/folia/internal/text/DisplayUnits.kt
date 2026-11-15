@@ -20,6 +20,9 @@ internal fun displayUnits(line: NormalizedLine): List<DisplayUnit> {
         return listOf(timedDisplayUnit(line.text, line.startUs, line.endUs, line.fragments))
     }
     val logicalWords = displayWords(line)
+    // Pinned classic animates each parser word in its exact six-dot interlude.
+    // Dots have no contextual joining/ligatures to protect by merging runs.
+    if (line.text == "......") return logicalWords
     val boundaries = graphemeBoundaries(line.text)
     val groups = mutableListOf<DisplayUnit>()
     var begin = 0

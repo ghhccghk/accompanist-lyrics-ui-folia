@@ -52,12 +52,13 @@ internal fun physicsValue(from: Float, to: Float, seconds: Double, stiffness: Do
 }
 
 internal data class Pose(val x: Float, val y: Float, val scale: Float, val rotation: Float,
-    val passedRotation: Float)
-internal fun wordPose(startUs: Long, index: Int, rotation: Boolean): Pose {
+    val passedRotation: Float, val rotationEnabled: Boolean = true)
+internal fun wordPose(startUs: Long, index: Int, rotation: Boolean, interlude: Boolean = false): Pose {
     val seed = startUs / 1_000_000.0 + index
     fun random(offset: Int): Float { val n = sin(seed + offset) * 10000; return (n - floor(n)).toFloat() }
+    if (interlude) return Pose(0f, (random(2) - .5f) * 15, 1.5f, 0f, 0f, rotation)
     return Pose((random(1) - .5f) * 40, (random(2) - .5f) * 40, 1.1f + random(4) * .2f,
-        if (rotation) (random(3) - .5f) * 10 else 0f, if (rotation) (random(8) - .5f) * 45 else 0f)
+        if (rotation) (random(3) - .5f) * 10 else 0f, if (rotation) (random(8) - .5f) * 45 else 0f, rotation)
 }
 
 internal data class WordFrame(val x: Float, val y: Float, val scale: Float, val rotation: Float,
@@ -84,7 +85,10 @@ internal fun sampleWord(timeUs: Long, lineEnterUs: Long, startUs: Long, endUs: L
     val positionElapsed=motionElapsedUs(timeUs-begin)/1_000_000.0
     val x = physicsValue(waitingX, pose.x, positionElapsed)
     val y = physicsValue(waitingY, pose.y, positionElapsed)
-    val rotation = if (pose.rotation == 0f && pose.passedRotation == 0f) 0f else physicsValue(pose.rotation + 20, pose.rotation, elapsed)
+    // Interlude's active/passed rotation targets are both zero. Like x/y,
+    // Motion leaves that spring running across the status change.
+    val rotation = if (!pose.rotationEnabled) 0f else physicsValue(pose.rotation + 20, pose.rotation,
+        if (pose.passedRotation == 0f) positionElapsed else elapsed)
     val duration = displayDuration(startUs, endUs, profile)
     val colorIn = (activeElapsed.toFloat() / duration).coerceIn(0f, 1f)
     val colorOut = easeInOut(passedElapsed.toDouble() / when(profile.mode) { Reveal.Normal -> 800_000; Reveal.Fast -> 240_000; Reveal.Instant -> 120_000 })
@@ -94,7 +98,8 @@ internal fun sampleWord(timeUs: Long, lineEnterUs: Long, startUs: Long, endUs: L
     return WordFrame(if (reducedMotion) 0f else x,
         if (reducedMotion) 0f else y,
         if (reducedMotion) 1f else blend(activeScale, pose.scale, fade),
-        if (reducedMotion) 0f else blend(rotation, pose.rotation + pose.passedRotation, rotationFade),
+        if (reducedMotion) 0f else if (pose.passedRotation == 0f) rotation
+            else blend(rotation, pose.rotation + pose.passedRotation, rotationFade),
         if (reducedMotion) 1f else blend(alpha, .82f, fade), colorIn * (1 - colorOut),
         if (reducedMotion) 0f else blur)
 }

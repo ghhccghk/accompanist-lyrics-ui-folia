@@ -14,6 +14,7 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 | utils/lyrics/graphemeTiming.ts:buildWordGraphemeTimings；components/visualizer/GlowWord.tsx:graphemeTimings | DisplayUnit 保留原片段、有效／源字素时间；完整塑形范围遮罩 | 连字分界处的覆盖仍需更多语言截图 | 固定源分组／时间夹具通过；继续复杂脚本验证 |
 | classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicGeometry.kt：同源 reach／pairGap、seed 对齐和行距 | CJK固定字体几何已测；全帧仍未验收 | 160组几何夹具；八场景 default/avoid DOM 词距一致、矩形舍入范围一致 |
 | useOverlapFit.ts:useOverlapFit | ClassicLine.kt:仅避让启用、min .5 / slack .98 / .005 收敛 | 完整帧像素仍未验收 | 380px窄屏长句CSS19.744px与浏览器对照通过 |
+| classic/Visualizer.tsx:isInterlude精确六点分支 | DisplayUnits.kt／wordPose／classicGeometry | 字形覆盖和采样仍有残差 | 六点独立词/完整词两输入、宽窄屏/default/avoid原版几何及Motion通过；两API截图见末节 |
 | GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31现有Kotlin软件回退/API30运行；完整效果残差待收敛 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
 | wordGlow.ts:wordGlowVariants | GraphemeGlow.kt；ClassicLine.kt:字素范围遮罩 | 软件近似 blur 和原版 text-shadow 的像素差仍需校准 | 108个正常／fast／instant 样本通过；保护 shaping；同字体逐帧图像待最终验收 |
 | glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | 本次中断入场场景尚未在Android运行；整帧残差保留 | normal/fast入场被打断时实际Motion数值、公开入口暂停/逆向seek通过；平台图层预留出界空间 |
@@ -678,3 +679,41 @@ node verification/classic-browser/capture-interrupted.mjs，再执行
 :library:jvmTest --tests '*InterruptedLineParityTest'，最后运行
 verification/compare-interrupted.py。本项JVM数值和公开UI验证通过；Android尚未运行
 这个新场景，既有设备录像不冒称覆盖本项。下一步隔离变换采样与字形覆盖的贡献。
+
+## 六点间奏标记的原版专用布局（2026-11-15）
+
+复读固定版classic/Visualizer.tsx的isInterlude分支，发现当前实现漏掉原版对fullText
+精确等于“......”的专门处理。原版词位姿x=0、seed纵向散布15px、基础scale1.5、
+配置旋转0、词末距3rem、整句强制居中；avoidOverlap时早返回，不累计额外reach。
+这里仅处理输入已有的标记，不给无时间空档伪造逐点计时，也不扩展到任意省略号。
+
+先运行新增验证，旧实现明确失败：原版6个独立显示词被合成1个。现在保留parser点词
+的独立时间和位姿；一个完整六点词仍保持一个塑形运行。仅限不含上下文连接/连字的
+六点标记，其他Arabic、连字、组合字素等保护条件保持。公开API没有改动。
+
+原版真实Motion还发现：旋转配置0不等于关闭旋转。开启旋转时waiting仍为20度，
+active/passed的目标同为0，spring跨状态继续运行。旧逻辑误把“双零目标”当禁用；
+新Pose显式记录rotationEnabled，目标不变时继续原spring，不冻结后错误地补tween。
+此处原版1000ms第一点rotate=-.845257，错误冻结曲线曾给出1.308117，修复后
+全夹具误差<.0001；没有放宽预期。
+
+同源新场景覆盖6个点词和单个完整点串、800/380×600、default/avoid，实际原版DOM
+词矩形/行高/间距对照按原有offset整数舍入范围.51px通过；48px词距误差<.0001。
+旧版分组/布局的公开截图单独保存：临时使用db34c26的ClassicLine/DisplayUnits，
+新间奏helper不进入该旧路径；采集后逐字节恢复当前文件。没有更改Git历史。
+完整JVM回归、Android debug与Desktop classes通过。公开入口48个独立画面、48次
+逆向重访与各点推进虚拟墙钟1s后的暂停像素完全相同。API30/API34各96个独立token
+请求（同样48个时间/场景条件加逆向重访）全部通过，暂停双截图也严格相同。
+
+1500ms六个独立点的前景RGB MAE：800px/default旧36.6635→新3.1901，avoid
+36.5505→1.5363；380px/default旧36.8583→2.0089，avoid36.7701→1.9489。
+已目视原版/旧/新JVM/两API原尺寸裁剪，以及380px/1900ms的第六点换行完整画面。
+所有新场景非空帧误差范围JVM1.1279..9.9988、API30 .4936..15.1974、API34
+.5108..14.4818。最高误差仍在点串活动态，原版/Android点轮廓和采样有差别；不是
+新的通过阈值，也不据此宣布完整classic视觉验收完成。
+
+证据：build/verification/classic-interlude-{upstream,legacy,kotlin,comparison}/及
+classic-android-api{30,34}-interlude/，原PNG、pixel-errors.csv、条件JSON/APK SHA
+均保留。复现capture-interlude.mjs、InterludeParityTest、capture-android.py的
+--scenes interlude interlude-single --verify-seek和compare-interlude.py。既有录像
+不冒称覆盖本项，实机/API21..29/Desktop真实窗口仍未验证。

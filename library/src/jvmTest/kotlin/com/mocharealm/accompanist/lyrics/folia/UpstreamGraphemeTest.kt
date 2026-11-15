@@ -24,7 +24,12 @@ class UpstreamGraphemeTest {
                 "mixedCjk" to listOf("世","界"," ","a","b"," ","灯","光","!"),
                 "semanticSticky" to listOf("世","界","’","s ","light"),
                 "leadingWhitespace" to listOf("  ","世","界"," ","abc","!"),
-                "asciiStickyEdge" to listOf("We","'re"," ","ready","?","!")
+                "asciiStickyEdge" to listOf("We","'re"," ","ready","?","!"),
+                "supplementarySticky" to listOf("𞤀","’","s","!"),
+                "letterNumberSticky" to listOf("Ⅷ","!"),
+                "supplementaryNumberSticky" to listOf("𐄇","'re","!"),
+                "combiningEndNoSticky" to listOf("á","’","s"),
+                "emojiNoSticky" to listOf("👩‍🚀","!")
             ).map { (id,texts)->id to texts.mapIndexed { i,t->Triple(t,i*1000,i*1000+500) } }.toTypedArray(),
         )
         val expected = File("../verification/classic-fixtures/graphemes.tsv").readLines().filterNot { it.startsWith("#") || it.isEmpty() }

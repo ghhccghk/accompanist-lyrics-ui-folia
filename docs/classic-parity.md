@@ -331,3 +331,12 @@ capture-blur.mjs保存CSS blur原语的真实8bit透明PNG及矩，NativeBlurPar
 活动态仍约3.9..4.7；build/verification/classic-manual-comparison保存图像/CSV，
 软件路径同源对照亦保留。字幕预览也使用正确单位。完整JVM、Android/Desktop构建通过；
 最新APK在API34与API30实际播放一轮，无AndroidRuntime异常。未测实机或帧耗时。
+
+## 补充平面粘连与Number类别（2026-11-15）
+
+cjkSemanticLayout.ts:TRAILING_WORD_CHAR_REGEX/canAttachToPrevious → SemanticLayout.kt。
+旧Char.isLetterOrDigit只看末个UTF-16单元并排除Nl/No，漏掉𞤀与𐄇、Ⅷ后的缩写/标点。
+现与原版一致按完整Unicode L/N正则判断；不改变分组后的内部有效/源字素时间。
+直接执行固定源生成五个新场景，旧实现先失败，修复后16条新增字素结果全部匹配，
+包括补充平面、字母数字、其他数字、组合附标结尾与ZWJ表情不误粘连。
+完整JVM和两端构建通过。此项是数据/时间分组对照，不冒称新脚本字体画面验收。

@@ -194,3 +194,9 @@ independently inverts that documented arithmetic; native APIs cannot express
 sigma <= .5, so nested software scopes preserve exact Gaussian capability there.
 No Compose/AOSP implementation was copied. capture-blur.mjs is an original CSS
 white-square diagnostic, separate from unchanged Folia runtime frame comparison.
+
+Unicode sticky predicate: original cjkSemanticLayout.ts TRAILING_WORD_CHAR_REGEX →
+SemanticLayout.kt trailingWordCharacter. Use the same Unicode Letter/Number
+categories at the end of the whole string instead of a UTF-16 Char predicate.
+Original-function fixtures include supplementary Adlam/Aegean, Roman numeral,
+combining mark and emoji boundaries, retaining effective and source glyph timing.

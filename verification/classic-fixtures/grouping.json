@@ -1221,6 +1221,390 @@
           }
         ]
       ]
+    },
+    {
+      "id": "supplementarySticky",
+      "words": [
+        {
+          "text": "𞤀",
+          "startTime": 0,
+          "endTime": 0.5
+        },
+        {
+          "text": "’",
+          "startTime": 1,
+          "endTime": 1.5
+        },
+        {
+          "text": "s",
+          "startTime": 2,
+          "endTime": 2.5
+        },
+        {
+          "text": "!",
+          "startTime": 3,
+          "endTime": 3.5
+        }
+      ],
+      "layoutUnits": [
+        {
+          "text": "𞤀’s!",
+          "words": [
+            {
+              "text": "𞤀",
+              "startTime": 0,
+              "endTime": 0.5
+            },
+            {
+              "text": "’",
+              "startTime": 1,
+              "endTime": 1.5
+            },
+            {
+              "text": "s",
+              "startTime": 2,
+              "endTime": 2.5
+            },
+            {
+              "text": "!",
+              "startTime": 3,
+              "endTime": 3.5
+            }
+          ],
+          "startTime": 0,
+          "endTime": 3.5,
+          "isSemantic": false,
+          "isSticky": true
+        }
+      ],
+      "displayWords": [
+        {
+          "text": "𞤀’s!",
+          "startTime": 0,
+          "endTime": 3.5
+        }
+      ],
+      "timings": [
+        [
+          {
+            "char": "𞤀",
+            "startTime": 0,
+            "endTime": 0.875
+          },
+          {
+            "char": "’",
+            "startTime": 0.875,
+            "endTime": 1.75
+          },
+          {
+            "char": "s",
+            "startTime": 1.75,
+            "endTime": 2.625
+          },
+          {
+            "char": "!",
+            "startTime": 2.625,
+            "endTime": 3.5
+          }
+        ]
+      ]
+    },
+    {
+      "id": "letterNumberSticky",
+      "words": [
+        {
+          "text": "Ⅷ",
+          "startTime": 0,
+          "endTime": 0.5
+        },
+        {
+          "text": "!",
+          "startTime": 1,
+          "endTime": 1.5
+        }
+      ],
+      "layoutUnits": [
+        {
+          "text": "Ⅷ!",
+          "words": [
+            {
+              "text": "Ⅷ",
+              "startTime": 0,
+              "endTime": 0.5
+            },
+            {
+              "text": "!",
+              "startTime": 1,
+              "endTime": 1.5
+            }
+          ],
+          "startTime": 0,
+          "endTime": 1.5,
+          "isSemantic": false,
+          "isSticky": true
+        }
+      ],
+      "displayWords": [
+        {
+          "text": "Ⅷ!",
+          "startTime": 0,
+          "endTime": 1.5
+        }
+      ],
+      "timings": [
+        [
+          {
+            "char": "Ⅷ",
+            "startTime": 0,
+            "endTime": 0.75
+          },
+          {
+            "char": "!",
+            "startTime": 0.75,
+            "endTime": 1.5
+          }
+        ]
+      ]
+    },
+    {
+      "id": "supplementaryNumberSticky",
+      "words": [
+        {
+          "text": "𐄇",
+          "startTime": 0,
+          "endTime": 0.5
+        },
+        {
+          "text": "'re",
+          "startTime": 1,
+          "endTime": 1.5
+        },
+        {
+          "text": "!",
+          "startTime": 2,
+          "endTime": 2.5
+        }
+      ],
+      "layoutUnits": [
+        {
+          "text": "𐄇're!",
+          "words": [
+            {
+              "text": "𐄇",
+              "startTime": 0,
+              "endTime": 0.5
+            },
+            {
+              "text": "'re",
+              "startTime": 1,
+              "endTime": 1.5
+            },
+            {
+              "text": "!",
+              "startTime": 2,
+              "endTime": 2.5
+            }
+          ],
+          "startTime": 0,
+          "endTime": 2.5,
+          "isSemantic": false,
+          "isSticky": true
+        }
+      ],
+      "displayWords": [
+        {
+          "text": "𐄇're!",
+          "startTime": 0,
+          "endTime": 2.5
+        }
+      ],
+      "timings": [
+        [
+          {
+            "char": "𐄇",
+            "startTime": 0,
+            "endTime": 0.5
+          },
+          {
+            "char": "'",
+            "startTime": 0.5,
+            "endTime": 1
+          },
+          {
+            "char": "r",
+            "startTime": 1,
+            "endTime": 1.5
+          },
+          {
+            "char": "e",
+            "startTime": 1.5,
+            "endTime": 2
+          },
+          {
+            "char": "!",
+            "startTime": 2,
+            "endTime": 2.5
+          }
+        ]
+      ]
+    },
+    {
+      "id": "combiningEndNoSticky",
+      "words": [
+        {
+          "text": "á",
+          "startTime": 0,
+          "endTime": 0.5
+        },
+        {
+          "text": "’",
+          "startTime": 1,
+          "endTime": 1.5
+        },
+        {
+          "text": "s",
+          "startTime": 2,
+          "endTime": 2.5
+        }
+      ],
+      "layoutUnits": [
+        {
+          "text": "á",
+          "words": [
+            {
+              "text": "á",
+              "startTime": 0,
+              "endTime": 0.5
+            }
+          ],
+          "startTime": 0,
+          "endTime": 0.5,
+          "isSemantic": false
+        },
+        {
+          "text": "’s",
+          "words": [
+            {
+              "text": "’",
+              "startTime": 1,
+              "endTime": 1.5
+            },
+            {
+              "text": "s",
+              "startTime": 2,
+              "endTime": 2.5
+            }
+          ],
+          "startTime": 1,
+          "endTime": 2.5,
+          "isSemantic": false,
+          "isSticky": true
+        }
+      ],
+      "displayWords": [
+        {
+          "text": "á",
+          "startTime": 0,
+          "endTime": 0.5
+        },
+        {
+          "text": "’s",
+          "startTime": 1,
+          "endTime": 2.5
+        }
+      ],
+      "timings": [
+        [
+          {
+            "char": "á",
+            "startTime": 0,
+            "endTime": 0.5
+          }
+        ],
+        [
+          {
+            "char": "’",
+            "startTime": 1,
+            "endTime": 1.75
+          },
+          {
+            "char": "s",
+            "startTime": 1.75,
+            "endTime": 2.5
+          }
+        ]
+      ]
+    },
+    {
+      "id": "emojiNoSticky",
+      "words": [
+        {
+          "text": "👩‍🚀",
+          "startTime": 0,
+          "endTime": 0.5
+        },
+        {
+          "text": "!",
+          "startTime": 1,
+          "endTime": 1.5
+        }
+      ],
+      "layoutUnits": [
+        {
+          "text": "👩‍🚀",
+          "words": [
+            {
+              "text": "👩‍🚀",
+              "startTime": 0,
+              "endTime": 0.5
+            }
+          ],
+          "startTime": 0,
+          "endTime": 0.5,
+          "isSemantic": false
+        },
+        {
+          "text": "!",
+          "words": [
+            {
+              "text": "!",
+              "startTime": 1,
+              "endTime": 1.5
+            }
+          ],
+          "startTime": 1,
+          "endTime": 1.5,
+          "isSemantic": false
+        }
+      ],
+      "displayWords": [
+        {
+          "text": "👩‍🚀",
+          "startTime": 0,
+          "endTime": 0.5
+        },
+        {
+          "text": "!",
+          "startTime": 1,
+          "endTime": 1.5
+        }
+      ],
+      "timings": [
+        [
+          {
+            "char": "👩‍🚀",
+            "startTime": 0,
+            "endTime": 0.5
+          }
+        ],
+        [
+          {
+            "char": "!",
+            "startTime": 1,
+            "endTime": 1.5
+          }
+        ]
+      ]
     }
   ]
 }

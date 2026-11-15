@@ -52,7 +52,8 @@ private val suffix = Regex("^(s|t|m|d|ll|re|ve|em)$",RegexOption.IGNORE_CASE)
 private val direct = Regex("^['’](s|t|m|d|ll|re|ve|em)$",RegexOption.IGNORE_CASE)
 private val inline = Regex("[\\p{L}\\p{N}]+['’](s|t|m|d|ll|re|ve|em)",RegexOption.IGNORE_CASE)
 private fun punctuation(text:String) = text.trim().let {it.isNotEmpty() && it.all {c->c in trailingPunctuation}}
-private fun attachable(text:String) = text.trimEnd().lastOrNull()?.isLetterOrDigit()==true
+private val trailingWordCharacter = Regex("[\\p{L}\\p{N}]$")
+private fun attachable(text:String) = trailingWordCharacter.containsMatchIn(text.trimEnd())
 
 /** Sticky is a layout-unit property; semantic units must not be flattened before attachment. */
 internal fun stickyLayoutUnits(units: List<LayoutUnit>): List<LayoutUnit> {

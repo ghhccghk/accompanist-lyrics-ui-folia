@@ -7,7 +7,7 @@ checkReference();
 const output=path.join(root,'build/verification/font-advances-browser');fs.mkdirSync(output,{recursive:true});
 const browser=await chromium.launch({headless:true});
 try {
- const page=await browser.newPage({viewport:{width:600,height:400},deviceScaleFactor:1});
+ const page=await browser.newPage({viewport:{width:512,height:320},deviceScaleFactor:1});
  const rows=[];
  for(const size of [19.74,19.744,36,48,72]) {
   await page.goto(`http://127.0.0.1:4173/raster.html?text=Synthetic&size=${size}`);
@@ -19,9 +19,17 @@ try {
    return {text,font:s.font,cssSize:s.fontSize,boxWidth:el.getBoundingClientRect().width,
     total:c.measureText(text).width,advances:prefixes.slice(1).map((x,i)=>x-prefixes[i])};
   });
-  rows.push({size,...measurement});
+  await page.locator('[aria-hidden]').evaluate(el=>el.style.display='none');
+  await page.locator('.z-10').evaluate(el=>{
+   const marker=document.createElement('span');marker.style.cssText='display:inline-block;width:0;height:0';
+   el.appendChild(marker);const baseline=marker.getBoundingClientRect().top;marker.remove();
+   const host=el.parentElement.parentElement;host.style.top=`${128+191-baseline}px`;
+  });
+  const raster=`synthetic-${size}.png`;
+  await page.screenshot({path:path.join(output,raster),omitBackground:true});
+  rows.push({size,...measurement,raster});
  }
  fs.writeFileSync(path.join(output,'conditions.json'),JSON.stringify({revision,browser:browser.version(),
-  viewport:[600,400],density:1,font:'FoliaParityLatin-Bold.ttf',rows},null,2));
+  viewport:[512,320],density:1,baseline:191,left:128,font:'FoliaParityLatin-Bold.ttf',rows},null,2));
  console.log(output);
 }finally {await browser.close();}

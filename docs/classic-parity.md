@@ -588,3 +588,25 @@ hinting。另读Android14_r1 Minikin LayoutCore.cpp的GetHorizontalAdvances/HBFl
 本项debug构建及两模拟器实际探针通过，生产渲染不变。证据：build/verification/
 font-advances-{browser,api30,api34}/，包含原始日志、逐字CSV、字体/APK/浏览器条件SHA。
 下一步应隔离窄屏实际ink位置误差与宽度误差贡献，再决定是否需要平台计量适配。
+
+## 将 advance 与实际字形覆盖分离（2026-11-15）
+
+同一探针现额外输出Android真实软件Canvas PNG；原版仍是GlowWord，将完整正文的
+实际基线平移到191、左边128，512×320透明视口，不重写字体或替换正文。native与
+64倍控制都绘制完整Synthetic，后者将Canvas等比缩回，保留原生塑形。
+
+API30/API34均实际执行20组。19.74px两端原生字形边界与原版同为(128,176,221,196)，
+但alpha积分原版679.592/native607.396px²。提高advance测量精度后的覆盖为607.435，
+前景alpha MAE仅26.79502→25.95011；边界仍不变。36/48/72px还存在部分边缘相差
+1px的现象。不能将整个残差归为词宽量化，或仅靠修正advance宣布视觉通过。
+
+读Android14 SkScalerContext.cpp:PreprocessRec：mask filter绕过pre-blend，这支持
+之前正文与阴影源覆盖必须分离的处理；SkMaskGamma.cpp的LUT还依赖颜色/设备gamma/
+contrast。未据单一字体截图猜一个gamma或加粗系数进入生产。当前截图是原生软件
+字形输入隔离，不是整个Compose/GPU surface的验收。debug构建、两端实际采集及
+原版截图通过，原生API34部分大字号覆盖与API30不同，不能假定跨版本像素相同。
+
+证据：font-advances-{browser,api30,api34}/中的透明PNG、raster-errors.csv与条件SHA；
+API30的ink-contact.png为明确标识的4倍最近邻放大，仅辅助看边缘。一次双模拟器
+并存时浏览器captureScreenshot失败，释放一个模拟器后采集成功。未改变系统设置。
+本项未改变生产渲染；仍需继续隔离实际段落/变换采样与平台字形栅格，整帧验收保持未完成。

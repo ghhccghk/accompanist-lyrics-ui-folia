@@ -38,7 +38,7 @@ class ClassicParityActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
-        if(intent.getBooleanExtra("metricsProbe",false)) logNativeFontAdvances(assets)
+        if(intent.getBooleanExtra("metricsProbe",false)) logNativeFontAdvances(assets,filesDir)
         @Suppress("DEPRECATION")
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
         @Suppress("DEPRECATION")
@@ -114,7 +114,7 @@ class ClassicParityActivity : ComponentActivity() {
     }
     override fun onNewIntent(intent:Intent) {
         super.onNewIntent(intent)
-        if(intent.getBooleanExtra("metricsProbe",false)) logNativeFontAdvances(assets)
+        if(intent.getBooleanExtra("metricsProbe",false)) logNativeFontAdvances(assets,filesDir)
         requestedFrame.value=requested(intent)
     }
 }

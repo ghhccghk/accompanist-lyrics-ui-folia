@@ -48,7 +48,8 @@ internal data class ClassicGeometry(val boxes: List<LayoutBox>, val margins: Lis
 
 /** Flex wrap uses untransformed boxes + inline-end margins; transformed reach is reserved separately. */
 internal fun classicGeometry(widths: List<Double>, boxes: List<Double>, font: Double, areaWidth: Double,
-    poses: List<Pose>, startUs: Long, spacing: Float, avoid: Boolean, rtl: Boolean, density: Double): ClassicGeometry {
+    poses: List<Pose>, startUs: Long, spacing: Float, avoid: Boolean, rtl: Boolean, density: Double,
+    lineFont: Double = font): ClassicGeometry {
     val margins = widths.indices.map { i -> classicMargin(widths[i], widths.getOrElse(i + 1) { 0.0 }, font,
         poses[i], poses.getOrNull(i + 1), spacing, avoid, rtl, density) }
     val overflow = if (avoid) widths.indices.map { wordOverflow(widths[it], font, poses[it], density) } else emptyList()
@@ -62,7 +63,8 @@ internal fun classicGeometry(widths: List<Double>, boxes: List<Double>, font: Do
         if (rows.isEmpty() || (used > 0 && used + size > areaWidth)) { rows.add(mutableListOf()); used = 0.0 }
         rows.last().add(i); used += size
     }
-    val rowHeight = font * 1.22
+    // Blink stores used line heights in 1/64 CSS px before accumulating row sizes.
+    val rowHeight = floor(lineFont / density * 1.22 * 64) / 64 * density
     val contentHeight = rows.size * rowHeight + max(0, rows.size - 1) * gap
     val height = if (avoid) contentHeight + top + bottom else max(300 * density, contentHeight)
     val output = MutableList(boxes.size) { LayoutBox(0f, 0f, 0f, 0f) }

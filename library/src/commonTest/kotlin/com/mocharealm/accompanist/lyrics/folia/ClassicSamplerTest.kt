@@ -48,6 +48,7 @@ class ClassicSamplerTest {
                 null, KaraokeAlignment.Unspecified, 0, parts.size * 100)))).lines.single())
         assertEquals(listOf("tonight"), units(listOf("to", "night")).map { it.text })
         assertEquals(listOf("á"), units(listOf("a", "́")).map { it.text })
-        assertEquals(listOf("مرحبا بالعالم"), units(listOf("مرحبا ", "بالعالم")).map { it.text })
+        assertEquals(listOf("مرحبا ", "بالعالم"), units(listOf("مرحبا ", "بالعالم")).map { it.text })
+        assertEquals(listOf("مرحبا"), units(listOf("مر", "حبا")).map { it.text })
     }
 }

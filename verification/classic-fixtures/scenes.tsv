@@ -1,0 +1,22 @@
+# scene\tlineStartMs\tlineEndMs\twordStartMs\twordEndMs\ttext (spaces significant)
+arabic	700	1900	700	1300	مرحبا 
+arabic	700	1900	1300	1900	بالعالم
+wrap	700	2800	700	1000	Synthetic 
+wrap	700	2800	1000	1300	amber 
+wrap	700	2800	1300	1600	echoes 
+wrap	700	2800	1600	1900	cross 
+wrap	700	2800	1900	2200	the 
+wrap	700	2800	2200	2500	quiet 
+wrap	700	2800	2500	2800	window.
+group	700	1900	700	900	It
+group	700	1900	900	1100	’
+group	700	1900	1100	1300	s 
+group	700	1900	1300	1500	an 
+group	700	1900	1500	1700	echo
+group	700	1900	1700	1900	!
+cluster	700	1900	700	1100	á 
+cluster	700	1900	1100	1500	office 
+cluster	700	1900	1500	1900	glow
+fast	700	840	700	770	Soft 
+fast	700	840	770	840	glow
+instant	700	780	700	780	Hi

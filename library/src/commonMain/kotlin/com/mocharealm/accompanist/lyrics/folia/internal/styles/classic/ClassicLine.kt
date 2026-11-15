@@ -69,20 +69,29 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
             tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality, maskBudgetBytes) {
             fun prepare(fontScale: Float): Prepared {
-                val style = textStyle.copy(fontSize = textStyle.fontSize * fontScale,
-                    lineHeight = textStyle.fontSize * fontScale * 1.22f, textAlign = TextAlign.Start)
+                val base=textStyle.fontSize.value
+                fun cssRound(value:Float) = floor(value*1000+.5f)/1000
+                // The pinned Chromium font cache uses hundredths of a CSS pixel for
+                // glyph metrics, independently of the used CSS line-height precision.
+                fun glyphSize(value:Float) = floor(value*100+.00001f)/100
+                val rendered=if(base<=36f || base>=72f) cssRound(base/16*fontScale)*16 else cssRound(6*fontScale)*base/6
+                val style = textStyle.copy(fontSize = glyphSize(rendered).sp,
+                    lineHeight = (rendered * 1.22f).sp, textAlign = TextAlign.Start)
                 val measured = units.map { unit -> measurer.measure(AnnotatedString(unit.text), style,
                     softWrap = false) }
-                val rawWidths = measured.map { abs(it.getHorizontalPosition(it.layoutInput.text.length, true) - it.getHorizontalPosition(0, true)).toDouble() }
+                val measurementStyle=style.copy(fontSize=glyphSize(base*fontScale).sp)
+                val rawWidths = units.map { unit -> measurer.measure(AnnotatedString(unit.text),measurementStyle,softWrap=false)
+                    .let { it.getPathForRange(0,it.layoutInput.text.length).getBounds().width.toDouble() } }
                 // CSS collapses trailing whitespace in the word's box, while its canvas spacing
                 // measurement includes that whitespace. Keep both metrics, and the timed text.
                 val boxWidths = units.map { unit -> measurer.measure(AnnotatedString(unit.text.trimEnd()), style,
-                    softWrap = false).let { abs(it.getHorizontalPosition(it.layoutInput.text.length, true) - it.getHorizontalPosition(0, true)).toDouble() } }
+                    softWrap = false).let { it.getPathForRange(0,it.layoutInput.text.length).getBounds().width.toDouble() } }
                 val poses = units.indices.map { wordPose(line.startUs, it, tuning.enableWordRotation) }
-                val rtl = measured.firstOrNull()?.getParagraphDirection(0) == androidx.compose.ui.text.style.ResolvedTextDirection.Rtl
-                val font = with(density) { style.fontSize.toPx() }.toDouble()
+                val rtl = isRtlLyric(line.text)
+                val font = with(density) { (textStyle.fontSize*fontScale).toPx() }.toDouble()
+                val lineFont = with(density) { rendered.sp.toPx() }.toDouble()
                 val geometry = classicGeometry(rawWidths, boxWidths, font, widthPx.toDouble(), poses, line.startUs,
-                    tuning.wordSpacing, tuning.avoidOverlap, rtl, density.density.toDouble())
+                    tuning.wordSpacing, tuning.avoidOverlap, rtl, density.density.toDouble(),lineFont)
                 val cells = units.indices.map { index ->
                     val box = geometry.boxes[index]
                     Cell(units[index], measured[index], Offset(box.left + box.width / 2, box.top + box.height / 2),
@@ -93,7 +102,8 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             var result = prepare(1f)
             var fontScale = 1f
             while (tuning.avoidOverlap && result.height > budgetPx && fontScale > .5f) {
-                val next = (fontScale * budgetPx / result.height * .98f).coerceAtLeast(.5f)
+                val offsetHeight=round(result.height/density.density)*density.density
+                val next = (fontScale * budgetPx / offsetHeight * .98f).coerceAtLeast(.5f)
                 if (next >= fontScale - .005f) break
                 fontScale = next
                 result = prepare(fontScale)

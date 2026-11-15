@@ -81,6 +81,20 @@ motion-utils 13.5.0 (MIT); only mathematical response is independently implement
 no runtime code bundled into the component. Android RenderEffect needs API31+;
 older-platform continuous blur remains unimplemented, not an accepted final difference.
 
+Second grouping audit: cjkSemanticLayout.ts → SemanticLayout.kt preserves semantic/
+sticky flags until display conversion, rather than attaching after semantic flattening.
+Shaping-only joins carry both existing effective envelopes and source envelopes.
+textDirection.ts → ICU first-letter direction in Graphemes.{jvm,android}.kt; complete
+Arabic words now animate independently, while fragments within a word stay shaped.
+Additional original-function fixtures cover mixed CJK/Latin, leading whitespace,
+semantic contractions and consecutive punctuation. Noto Arabic font provenance is
+recorded alongside the Latin font. Browser matrix uses six synthetic scenes and
+actual original Classic at pinned fonts/sizes (including 380px wrap + overlap fit).
+ClassicLine/ClassicGeometry also reproduce CSS three-decimal font clamp serialization,
+Chromium hundredth-pixel glyph sizes, 1/64px line heights, and integer offsetHeight fit.
+These rounding rules were observed with inspect-layout.mjs and exact DOM fixtures;
+margin tolerance was not relaxed to conceal rounding discrepancies.
+
 ## Independent model input
 
 Resolved candidate: `com.mocharealm.accompanist:lyrics-core:0.5.0`.

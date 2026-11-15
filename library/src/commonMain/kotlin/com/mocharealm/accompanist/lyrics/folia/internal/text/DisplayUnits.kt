@@ -4,6 +4,7 @@ import com.mocharealm.accompanist.lyrics.folia.internal.model.NormalizedLine
 import com.mocharealm.accompanist.lyrics.folia.internal.model.TimedFragment
 
 internal expect fun graphemeBoundaries(text: String): Set<Int>
+internal expect fun isRtlLyric(text: String): Boolean
 
 internal data class TimedGrapheme(val begin: Int, val end: Int, val startUs: Long, val endUs: Long)
 internal data class DisplayUnit(val text: String, val startUs: Long, val endUs: Long,
@@ -12,9 +13,9 @@ internal data class DisplayUnit(val text: String, val startUs: Long, val endUs: 
     val graphemes: List<TimedGrapheme> = emptyList(),
     val sourceGraphemes: List<TimedGrapheme> = graphemes)
 
-/** Conservative shaping policy: complex scripts stay one shared run; Latin joins inside words. */
+/** Keep complete words/runs shaped; whitespace separates Arabic words without breaking joining. */
 internal fun displayUnits(line: NormalizedLine): List<DisplayUnit> {
-    if (line.fragments.isEmpty() || line.text.any { it.code in 0x0590..0x1CFF }) {
+    if (line.fragments.isEmpty()) {
         return listOf(timedDisplayUnit(line.text, line.startUs, line.endUs, line.fragments))
     }
     val logicalWords = displayWords(line)
@@ -40,9 +41,18 @@ internal fun displayUnits(line: NormalizedLine): List<DisplayUnit> {
                 local += part.text.length
                 shifted
             }
-            // Ordinary source words joined solely for shaping retain syllable-derived timing.
-            // A sticky display word already carries the upstream retimed grapheme envelope.
-            groups += if (pending.size == 1) pending.single() else timedDisplayUnit(line.text.substring(begin, offset), start, end, fragments)
+            groups += if (pending.size == 1) pending.single() else {
+                fun timings(source: Boolean): List<TimedGrapheme> {
+                    var shift = 0
+                    val pieces = pending.flatMap { part ->
+                        val mapped = (if(source) part.sourceGraphemes else part.graphemes).map { it.copy(begin=it.begin+shift,end=it.end+shift) }
+                        shift += part.text.length
+                        mapped
+                    }
+                    return coalesceGraphemeTimings(line.text.substring(begin,offset),pieces,start,end)
+                }
+                DisplayUnit(line.text.substring(begin,offset),start,end,fragments,timings(false),timings(true))
+            }
             begin = offset; start = Long.MAX_VALUE; end = Long.MIN_VALUE
             pending.clear()
         }

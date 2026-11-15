@@ -2,6 +2,21 @@ package com.mocharealm.accompanist.lyrics.folia.internal.text
 
 import com.ibm.icu.text.BreakIterator
 import com.ibm.icu.util.ULocale
+import com.ibm.icu.lang.UCharacter
+import com.ibm.icu.lang.UCharacterDirection
+
+internal actual fun isRtlLyric(text: String): Boolean {
+    var offset=0
+    while(offset<text.length) {
+        val cp=Character.codePointAt(text,offset)
+        if(UCharacter.isLetter(cp)) {
+            val direction=UCharacter.getDirection(cp)
+            return direction==UCharacterDirection.RIGHT_TO_LEFT || direction==UCharacterDirection.RIGHT_TO_LEFT_ARABIC
+        }
+        offset+=Character.charCount(cp)
+    }
+    return false
+}
 
 internal actual fun graphemeBoundaries(text: String): Set<Int> {
     val iterator = BreakIterator.getCharacterInstance(ULocale.ROOT)

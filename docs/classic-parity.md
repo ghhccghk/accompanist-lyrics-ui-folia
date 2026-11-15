@@ -6,7 +6,7 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 
 | 上游行为／源码位置 | 当前实现 | 缺失或简化 | 修复与验收 |
 | --- | --- | --- | --- |
-| utils/lyrics/cjkSemanticLayout.ts:buildPostLyricLayoutUnits、buildDisplayWordsFromLayoutUnits；utils/lyrics/wordSegmentation.ts | internal/text/DisplayUnits.kt | 任意 Latin 同词片段合并；没有 sticky 标点／缩写；CJK 无语义层。上游 classic 最终会展开语义 CJK 词，非直接合并动画 | 保存逻辑词、显示／塑形分组与来源；对照收缩词、标点、中英和上下文文字 |
+| utils/lyrics/cjkSemanticLayout.ts:buildPostLyricLayoutUnits、buildDisplayWordsFromLayoutUnits；utils/lyrics/wordSegmentation.ts | SemanticLayout.kt／DisplayUnits.kt；sticky 先作用于语义单元，保留源片段与有效时间 | ICU 与 Intl 词典版本可能不同；core缺少分词覆写字段 | 上游9组混合／空白／缩写／标点夹具通过；Arabic完整词独立状态并保护词内塑形 |
 | utils/lyrics/graphemeTiming.ts:buildWordGraphemeTimings；components/visualizer/GlowWord.tsx:graphemeTimings | DisplayUnit 保留原片段、有效／源字素时间；完整塑形范围遮罩 | 连字分界处的覆盖仍需更多语言截图 | 固定源分组／时间夹具通过；继续复杂脚本验证 |
 | classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicGeometry.kt：同源 reach／pairGap、seed 对齐和行距 | 窄屏多行及复杂脚本仍待同字体浏览器验证 | 160组几何夹具；两行 default/avoid DOM 词距一致、矩形舍入范围一致 |
 | useOverlapFit.ts:useOverlapFit | ClassicLine.kt:仅避让启用、min .5 / slack .98 / .005 收敛 | 长句缩小的浏览器验收未完成 | 补窄／长／旋转场景 |
@@ -85,3 +85,19 @@ CSS 允许负 leading，Compose 保留自然字高；已居中自然 paragraph �
 并集而非大片背景。当前默认检查点前景 RGB 平均绝对误差约2.9..17.5/255；
 尚无像素等价结论，接下来继续校准光晕、事件/RAF时间相位和更多文字/窄屏场景。
 Android 此项构建通过；API31以下 RenderEffect 连续模糊尚未补齐，不能视为通过。
+
+## 分组、RTL 与窄屏复核（2026-11-15）
+
+发现并修复 sticky 在语义展开前后顺序错误：保留 layout unit 的 semantic/sticky 直到
+最后转换，只有 sticky 且 nonsemantic 才合并。安全塑形合并保留已生成的有效字素包络，
+不再以源时间覆盖；源时间仍独立保存。Arabic 完整单词可独立变换，词内片段不拆塑形。
+数字／标点跳过后按第一个字母决定方向，补充平面 Adlam 也与原版一致。
+
+六组实际浏览器场景（scenes.tsv）均有同字体 Kotlin 截图，default/avoid 共156帧每侧。
+Noto Arabic 许可／提交／SHA 见 assets/README.md。380px 的避让长句从36px缩到
+CSS19.744px；原版 canvas与字形缓存实际按19.74px测量/绘制，行盒仍用CSS字号。
+布局计算补1/64px行高和整数offsetHeight fit，修复636.52与636.4375恰跨舍入边界
+导致的字号及0.1px词距误差；阈值未放宽。RTL整词宽度改用完整selection path，
+不以端点caret之差忽略bidi空白。inspect-layout.mjs仅观察原版测量，不改其返回值。
+六场景全部margin误差 <0.0001，DOM整数框误差 <0.51px；截图已检查Arabic1500ms。
+连字/Arabic辉光切片、fast/instant与窄屏图像仍需最终逐帧校准，未宣称整帧等价。

@@ -6,7 +6,7 @@ import com.mocharealm.accompanist.lyrics.folia.internal.model.NormalizedLine
 
 internal data class WordSegment(val text: String, val wordLike: Boolean)
 internal expect fun segmentWords(text: String): List<WordSegment>
-internal data class LayoutUnit(val words: List<DisplayUnit>, val semantic: Boolean) {
+internal data class LayoutUnit(val words: List<DisplayUnit>, val semantic: Boolean, val sticky: Boolean = false) {
     val text: String get() = words.joinToString("") { it.text }
 }
 private val cjk = Regex("[\u4e00-\u9fa5\u3040-\u30ff\uac00-\ud7af]")
@@ -48,24 +48,45 @@ internal fun semanticLayoutUnits(line: NormalizedLine): List<LayoutUnit> {
     return if (cursor == words.size && units.isNotEmpty()) units else fallback
 }
 
-/** Semantic CJK groups flatten to their original words in classic, not one animated blob. */
-internal fun displayWords(line: NormalizedLine): List<DisplayUnit> = buildList {
-    val pending = mutableListOf<DisplayUnit>()
-    fun flush() { addAll(attachStickyWords(pending)); pending.clear() }
-    semanticLayoutUnits(line).forEach { unit ->
-        if (unit.semantic) { flush(); addAll(unit.words) }
-        else pending += if (unit.words.size == 1) unit.words.single() else {
-            val merged = attachStickyWords(unit.words)
-            // Non-word segment attachment in the semantic stage preserves its source members.
-            if (merged.size == 1) merged.single() else {
-                val text = unit.text
-                val first = unit.words.first(); val last = unit.words.last()
-                timedDisplayUnit(text, first.startUs, last.endUs, unit.words.flatMapIndexed { i, w ->
-                    val shift = unit.words.take(i).sumOf { it.text.length }
-                    w.fragments.map { it.copy(begin = it.begin + shift, end = it.end + shift) }
-                })
-            }
+private val suffix = Regex("^(s|t|m|d|ll|re|ve|em)$",RegexOption.IGNORE_CASE)
+private val direct = Regex("^['’](s|t|m|d|ll|re|ve|em)$",RegexOption.IGNORE_CASE)
+private val inline = Regex("[\\p{L}\\p{N}]+['’](s|t|m|d|ll|re|ve|em)",RegexOption.IGNORE_CASE)
+private fun punctuation(text:String) = text.trim().let {it.isNotEmpty() && it.all {c->c in trailingPunctuation}}
+private fun attachable(text:String) = text.trimEnd().lastOrNull()?.isLetterOrDigit()==true
+
+/** Sticky is a layout-unit property; semantic units must not be flattened before attachment. */
+internal fun stickyLayoutUnits(units: List<LayoutUnit>): List<LayoutUnit> {
+    val merged=mutableListOf<LayoutUnit>()
+    fun append(unit:LayoutUnit) {merged[merged.lastIndex]=merged.last().copy(words=merged.last().words+unit.words,sticky=true)}
+    var i=0
+    while(i<units.size) {
+        val current=units[i]; val previous=merged.lastOrNull(); val core=current.text.trim(); val next=units.getOrNull(i+1)
+        when {
+            previous==null -> merged.add(current)
+            core in listOf("'","’") && next!=null && attachable(previous.text) && suffix.matches(next.text.trim()) -> {append(current);append(next);i++}
+            direct.matches(core) && attachable(previous.text) -> append(current)
+            suffix.matches(core) && previous.text.trimEnd().lastOrNull() in listOf('\'','’') -> append(current)
+            punctuation(core) && attachable(previous.text) -> append(current)
+            else -> merged.add(current)
         }
+        i++
     }
-    flush()
+    return merged.map {unit -> unit.copy(sticky=unit.sticky || (unit.words.size>1 &&
+        (punctuation(unit.words.last().text) || (!unit.semantic && inline.containsMatchIn(unit.text))))) }
+}
+
+/** Exactly the upstream classic conversion: only sticky nonsemantic units collapse. */
+internal fun displayWords(line: NormalizedLine): List<DisplayUnit> = stickyLayoutUnits(semanticLayoutUnits(line)).flatMap {unit ->
+    if(!unit.sticky || unit.semantic) unit.words else {
+        var shift=0
+        val fragments=unit.words.flatMap {part ->
+            val mapped=part.fragments.map {it.copy(begin=it.begin+shift,end=it.end+shift)}
+            shift+=part.text.length
+            mapped
+        }
+        val first=unit.words.first();val last=unit.words.last()
+        listOf(DisplayUnit(unit.text,first.startUs,last.endUs,fragments,
+            evenGraphemeTimings(unit.text,first.startUs,last.endUs),
+            sourceGraphemeTimings(unit.text,fragments,first.startUs,last.endUs)))
+    }
 }

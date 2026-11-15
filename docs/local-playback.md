@@ -67,8 +67,8 @@ classic原版对照及残差仍见classic-parity.md；本次不降低其验收�
 9类时长、正反向逐13ms及边界采样，scale/alpha/3个dotAlpha完全相等（maxError=0）。
 阶段CSV与18张JVM画面位于library/build/verification/waiting；暂停重绘和逆向重访逐像素相同。
 目视7000ms图确认居中3球和逐球明暗；组件验证与下列舞台区间验证分别记录。
-两端构建通过，日志.work/waiting-model-build.log。下一项为全部声部并集、有限前奏/间奏
-与文字退场避让及公开入口验证。原生Android呼吸球运行尚未验证。
+模型提交032f689；两端构建通过，日志.work/waiting-model-build.log。
+舞台与原生Android接入结果见下一节，阶段记录不代替最终验收。
 
 ## 有限前奏/间奏接入
 
@@ -101,5 +101,22 @@ android34-attached/paused.png实际展示1.276s有限前奏球。
 两端构建、sample JVM及相关library测试通过；未声称人工听音、原生系统选文件完整
 端到端、API30本项新代码、API21..29或实机验收。Desktop系统UI工具初始化仍报
 failed to write kernel assets (os error 3)，未用自写Windows自动化绕过；
-Java Sound真音频与Compose离屏UI证据仍分别有效。下一项：原生选择流程可用平台复核/
-说明收尾，然后回classic整帧字形覆盖残差；不继续扩播放器。
+Java Sound真音频与Compose离屏UI证据仍分别有效。
+
+## 原生选择流程复核与本项收尾
+
+有限空档接入提交1a0e9cd。之后实际操作API34 MainActivity与Android DocumentsUI，
+没有通过debug输入代替选择：首次页→选择音频→Downloads的原创WAV→确认，出现
+推进的0:02/0:12、暂停按钮、文件名标题/未知作者/占位封面，右侧“未加载歌词”。
+随后补选歌词和独立翻译两个LRC，应用时仍在12s暂停；拖动真实进度到6s，
+Amber/琥珀正确显示。再重新选歌→打开系统音频选择→返回→取消：原曲、暂停6s、
+歌词/翻译保留。XML、系统截图、APK/输入SHA在build/verification/local-audio/android34-picker。
+纯会话测试覆盖竞争/失败原子替换，Android原生连续切歌压力尚未实际运行。
+
+复核使用当前构建，sample/library相关测试及Android/Desktop构建再次通过
+（.work/waiting-final-retest.log）。没有依赖Rust/SPW或原工程。Desktop系统选择器受
+上述工具初始化阻碍，未声称本项跨两端原生UI均验收完成。原生Android无声输出的
+游标测试和真实选择路径是独立证据，不等价于人工听音；API21..29/实机仍待验证。
+
+本项有界实现完成，不继续扩展sample。下一项恢复classic整帧字形覆盖/采样残差，
+优先Android小数字号与复杂字幕；固定源码/字体/视口逐项数值和视觉比较，标准不变。

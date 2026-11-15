@@ -27,22 +27,28 @@ internal fun blurredMasks(source: ImageBitmap, sigmas: FloatArray): List<ImageBi
     val b = DoubleArray(pixels.size)
     return sigmas.map { sigma ->
         for (i in pixels.indices) a[i] = (pixels[i] ushr 24).toDouble()
-        val window = maxOf(1, floor(sigma * 3 * sqrt(2 * PI) / 4 + .5).toInt())
-        val widths = intArrayOf(window, window, window + if (window % 2 == 0) 1 else 0)
-        var input = a
-        var output = b
-        for (horizontal in listOf(true, false)) {
-            widths.forEachIndexed { pass, count ->
-                boxPass(input, output, width, height, count, horizontal,
-                    if (count % 2 == 0 && pass == 1) -1 else 0)
-                val swap = input; input = output; output = swap
-            }
-            val divisor = widths.fold(1.0) { product, count -> product * count }
-            for (i in input.indices) input[i] = floor(input[i] / divisor + .5).coerceIn(0.0, 255.0)
-        }
+        val input = blurBoxCoverage(a,b,width,height,sigma)
         val result = IntArray(pixels.size) { (input[it].toInt() shl 24) or 0xFFFFFF }
         bitmapFromArgb(width, height, result)
     }
+}
+
+/** Shared coverage kernel for the pre-31 premultiplied colour fallback. */
+internal fun blurBoxCoverage(a: DoubleArray, b: DoubleArray, width: Int, height: Int, sigma: Float): DoubleArray {
+    val window = maxOf(1, floor(sigma * 3 * sqrt(2 * PI) / 4 + .5).toInt())
+    val widths = intArrayOf(window, window, window + if (window % 2 == 0) 1 else 0)
+    var input = a
+    var output = b
+    for (horizontal in listOf(true, false)) {
+        widths.forEachIndexed { pass, count ->
+            boxPass(input, output, width, height, count, horizontal,
+                if (count % 2 == 0 && pass == 1) -1 else 0)
+            val swap = input; input = output; output = swap
+        }
+        val divisor = widths.fold(1.0) { product, count -> product * count }
+        for (i in input.indices) input[i] = floor(input[i] / divisor + .5).coerceIn(0.0, 255.0)
+    }
+    return input
 }
 
 private fun boxPass(input: DoubleArray, output: DoubleArray, width: Int, height: Int,

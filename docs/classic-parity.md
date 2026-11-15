@@ -311,3 +311,23 @@ ClassicLine.kt现在通过ParagraphRaster.kt在最终布局尺寸下栅格化完
 radius，内部转换sigma=.57735*radius+.5；CSS blur参数直接是sigma。
 目前生产代码仍直接传入，造成整句退出模糊偏小，这是下一项明确修复任务。
 完整JVM与Android/Desktop构建通过，随机seek/暂停重建保持原严格像素断言。
+
+## CSS sigma与平台radius映射（2026-11-15）
+
+ClassicLayer.kt现在在平台边界逆变换radius=(sigma-.5)/.57735。依据是当前Compose
+1.12.0 SkiaBackedRenderEffect.skiko.kt与AOSP Android14 libs/hwui/jni/RenderEffect.cpp
+/ utils/Blur.h；两端均将radius转为sigma。未改原版Motion的filter采样值。
+0<sigma<=.5不能由该原生API表示，使用精确软件路径，并把软件DrawScope传给所有
+嵌套词/正文层，避免Android将硬件RenderNode回放到软件Canvas。大sigma软件RGBA核
+改为已核对的三盒覆盖，仍正确预乘颜色；小sigma保留有限Gaussian。
+
+capture-blur.mjs保存CSS blur原语的真实8bit透明PNG及矩，NativeBlurParityTest读取
+同一参考；10/20 sigma的原生与软件alpha两侧均逐像素一致，包含36,864像素/帧。
+小sigma二阶矩误差约.00..02px，未宣称像素相同。曾以无限精度Gaussian方差作为
+新测试预期，20px在8bit裁掉尾部后实际stddev21.189而非22.028；现在直接读原浏览器
+量化覆盖，而不是调整生产sigma补偿测试。原生和软件10/20严格PNG断言保留。
+
+原固定classic帧：750ms MAE2.61→.835，2300ms 4.05→.975，4400ms8.11→1.25。
+活动态仍约3.9..4.7；build/verification/classic-manual-comparison保存图像/CSV，
+软件路径同源对照亦保留。字幕预览也使用正确单位。完整JVM、Android/Desktop构建通过；
+最新APK在API34与API30实际播放一轮，无AndroidRuntime异常。未测实机或帧耗时。

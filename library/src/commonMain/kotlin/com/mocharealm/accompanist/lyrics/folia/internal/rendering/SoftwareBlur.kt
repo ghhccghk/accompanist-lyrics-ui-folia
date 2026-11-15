@@ -9,6 +9,8 @@ internal data class BlurredPixels(val image: ImageBitmap, val origin: Offset)
 /** Finite Gaussian convolution in premultiplied sRGB, with transparent exterior.
  * Crop only transparent padding; keep three sigma of support on every edge.
  * Straight RGB must not bleed from transparent pixels into visible coloured text.
+ * Match the three-box CSS/Skia coverage kernel at sigma >= 2; retain the finite
+ * Gaussian for small sigmas where the integer box approximation is unsuitable.
  * This correctness fallback deliberately makes no real-time performance promise. */
 internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels {
     require(sigma.isFinite() && sigma > 0f)
@@ -38,19 +40,22 @@ internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels
             val a = pixels[i] ushr 24
             input[i] = if (channel == 24) a.toDouble() else ((pixels[i] ushr channel) and 255)*a/255.0
         }
-        for (y in 0 until height) for (x in 0 until width) {
-            var sum = 0.0
-            for (d in maxOf(-radius,-x)..minOf(radius,width-1-x)) sum += input[y*width+x+d]*kernel[d+radius]
-            temporary[y*width+x] = sum
-        }
-        for (y in 0 until height) for (x in 0 until width) {
-            var sum = 0.0
-            for (d in maxOf(-radius,-y)..minOf(radius,height-1-y)) sum += temporary[(y+d)*width+x]*kernel[d+radius]
-            output[y*width+x] = sum
+        val filtered = if (sigma >= 2f) blurBoxCoverage(input,temporary,width,height,sigma) else {
+            for (y in 0 until height) for (x in 0 until width) {
+                var sum = 0.0
+                for (d in maxOf(-radius,-x)..minOf(radius,width-1-x)) sum += input[y*width+x+d]*kernel[d+radius]
+                temporary[y*width+x] = sum
+            }
+            for (y in 0 until height) for (x in 0 until width) {
+                var sum = 0.0
+                for (d in maxOf(-radius,-y)..minOf(radius,height-1-y)) sum += temporary[(y+d)*width+x]*kernel[d+radius]
+                output[y*width+x] = sum
+            }
+            output
         }
         for (i in pixels.indices) {
-            val value = if (channel == 24) { alpha[i] = output[i]; output[i] }
-                else if (alpha[i] > 0) output[i]*255/alpha[i] else 0.0
+            val value = if (channel == 24) { alpha[i] = filtered[i]; filtered[i] }
+                else if (alpha[i] > 0) filtered[i]*255/alpha[i] else 0.0
             result[i] = result[i] or (floor(value+.5).toInt().coerceIn(0,255) shl channel)
         }
     }

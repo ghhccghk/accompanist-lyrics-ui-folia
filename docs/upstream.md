@@ -186,3 +186,11 @@ ParagraphRaster.kt / ClassicLine.kt. Preserve intact shaped paragraph coverage a
 prepared layout size, tint and transform its raster with the shared glyph halo.
 No browser rasterizer code copied. Direct/static font probes remain separate from
 actual animated-lifecycle frame comparison; residuals are explicitly recorded.
+
+CSS filter unit audit: original glowWordVariants.ts / glowWordTiming.ts use CSS
+blur(sigma). Compose 1.12.0 SkiaBackedRenderEffect.skiko.kt and AOSP Android14
+libs/hwui/jni/RenderEffect.cpp both convert platform radius to sigma. ClassicLayer.kt
+independently inverts that documented arithmetic; native APIs cannot express
+sigma <= .5, so nested software scopes preserve exact Gaussian capability there.
+No Compose/AOSP implementation was copied. capture-blur.mjs is an original CSS
+white-square diagnostic, separate from unchanged Folia runtime frame comparison.

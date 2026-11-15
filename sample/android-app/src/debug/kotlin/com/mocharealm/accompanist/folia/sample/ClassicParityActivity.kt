@@ -85,6 +85,12 @@ class ClassicParityActivity : ComponentActivity() {
                         KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable("D${i.toString().padStart(2,'0')}",start,start+1)),
                             null,KaraokeAlignment.Unspecified,start,start+1)
                     })
+                    "interrupted-fast", "interrupted-normal" -> SyncedLyrics(List(6) { i ->
+                        val start = 700 + i * 60
+                        val duration = if (frame.scene == "interrupted-fast") 150 else 300
+                        KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable("D${i.toString().padStart(2,'0')}",start,start+duration)),
+                            null,KaraokeAlignment.Unspecified,start,start+duration)
+                    })
                     "baseline"->SyncedLyrics(listOf(line("Amber ","echo",700,1300,1900),line("Silver ","light",3200,3650,4100)))
                     "subtitle"->SyncedLyrics(subtitleRows.map {SyncedLine(it[2],it[3],it[0].toInt(),it[1].toInt())})
                     else->{

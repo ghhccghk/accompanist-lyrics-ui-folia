@@ -18,7 +18,7 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 | classic/Visualizer.tsx:整句dir；utils/lyrics/textDirection.ts | ParagraphDirection.kt／ClassicLine.kt正文段落 | 跨平台字形覆盖残差保留 | 同一OFL混排face的原版Range、32帧及逆向暂停、API30/34各64请求通过；RTL数字/标点修复 |
 | GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31现有Kotlin软件回退/API30运行；完整效果残差待收敛 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
 | wordGlow.ts:wordGlowVariants | GraphemeGlow.kt；ClassicLine.kt:字素范围遮罩 | 软件近似 blur 和原版 text-shadow 的像素差仍需校准 | 108个正常／fast／instant 样本通过；保护 shaping；同字体逐帧图像待最终验收 |
-| glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | 本次中断入场场景尚未在Android运行；整帧残差保留 | normal/fast入场被打断时实际Motion数值、公开入口暂停/逆向seek通过；平台图层预留出界空间 |
+| glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | API30/34入场中断已实际核对；整帧残差保留 | normal/fast入场被打断时实际Motion数值、公开入口暂停/逆向seek通过；平台图层预留出界空间 |
 | classic/Visualizer.tsx:lyricContainerFloat | LineMotion.kt：原版7s y/scale关键帧、easeInOut | Android实际运行仍需验证 | 两周期真实浏览器DOM轨迹通过；媒体时间锚定是平台适配 |
 
 ## 必要平台适配与未完成能力
@@ -875,3 +875,39 @@ DPR1最终scale1.6/rotate−4°时，直接显示与从.3入场的原版alpha MA
 首帧及终态/重复PNG和DOM。复现capture-raster-history.mjs、compare-raster-history.py；
 后者严格检查同终态和稳定暂停，不以帧内容变化掩盖不同姿态。生产继续使用完整段落
 位图，尚未解决的变换/覆盖残差照常保留；下一项补足入场中断在Android的实际验收。
+
+
+## 入场中断的 Android 原生验收补充（2026-11-15）
+
+对应上游glowWordTiming.ts:getGlowWordLineContainerMotion及classic/Visualizer.tsx的
+AnimatePresence。此前db34c26的原版Motion数值与JVM公开画面保留；本次增加仅debug
+的interrupted-fast/normal场景，输入严格同为6句D00..D05、700ms起每60ms切句、每句
+150/300ms，不给正式示例增加功能。14检查点与capture-interrupted.mjs完全相同。
+
+最新debug APK构建成功；API30/API34各28张不同PNG及28次逆序重访，共56个独立token
+请求，每点第二张暂停截图严格相同。没有修改既有时间/像素断言、关闭检查或增加重试来
+吞掉不稳定帧。源码/字体/APK SHA、设备指纹、系统密度/实际Compose密度等均保存在
+classic-android-api{30,34}-interrupted/conditions.json；compare-interrupted.py现在
+给出原版/JVM/两API三/四列图，选点包含1241ms最大残差，而非只展示改善画面。
+
+| 条件 | JVM RGB MAE均值／最大 | API30 | API34 |
+| --- | --- | --- | --- |
+| fast150ms | 1.9284／5.4892 | 2.3940／15.3153 | 2.3722／15.3716 |
+| normal300ms | 1.9537／4.7244 | 1.5288／4.1691 | 1.3223／4.1690 |
+
+已目视入场被打断、多退出叠层、当前句及余韵；fast1241ms的前景阈值R>100范围原版/JVM
+为(338,255,459,320)，API34为(338,256,459,320)，覆盖仍不一致。全部CSV/PNG保留于
+classic-interrupted-comparison；不把这些MAE当通过阈值，不据此声称整个栅格等价。
+
+本次环境经过明确调整：C盘仅约1.5GB，原probe34 AVD因磁盘检查拒绝启动；未删除用户
+文件或改其配置。在项目忽略的.work/avds创建独立classic34，800×600/density160、
+2核/2GiB、Google APIs API34原有SDK镜像、WHPX/SwiftShader、read-only/no-snapshot，
+TEMP/TMP置于F盘项目忽略目录。API30使用原项目私有classic30，顺序运行，未并行JVM。
+这与旧probe34设备尺寸不同，条件已记录；不能作为同设备性能对比。
+
+新API34首次启动的全屏教育面板在941ms两次截图间消失，严格暂停断言正确失败；该组
+保留为classic-android-api34-interrupted-startup-overlay和.work/interrupted-api34.log。
+后续三张原生截图相同，窗口截图显示首张含Viewing full screen系统引导。只读检查
+immersive_mode_confirmations此时为confirmed，随后从空白舞台重新完整采集全部条件；
+没有通过改系统动画/显示设置掩盖问题。采集器新增记录该只读状态。UIAutomator在空白
+画面返回null root，不把该诊断当运行失败或歌词断言通过。实际设备/API21..29仍未验证。

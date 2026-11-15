@@ -32,7 +32,7 @@ class PublicClassicParityTest {
             KaraokeSyllable("echo",1300,1900)),"Synthetic subtitle",KaraokeAlignment.Unspecified,700,1900)
         val lyrics=SyncedLyrics(listOf(original))
         val line=normalize(lyrics).lines.single()
-        val font=FontFamily(Font(File("../verification/assets/NotoSans-Bold.ttf"),FontWeight.Bold))
+        val font=FontFamily(Font(File("../verification/assets/FoliaParityLatin-Bold.ttf"),FontWeight.Bold))
         val base=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold)
         val expected=base.copy(fontSize=(width*.06f).coerceIn(36f,72f).sp)
         var public by mutableStateOf(false)

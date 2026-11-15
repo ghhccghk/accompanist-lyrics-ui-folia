@@ -40,7 +40,7 @@ class ClassicMatrixTest {
         val source=KaraokeLine.MainKaraokeLine(rows.map {KaraokeSyllable(it[5],it[3].toInt(),it[4].toInt())},null,
             KaraokeAlignment.Unspecified,rows[0][1].toInt(),rows[0][2].toInt())
         val document=normalize(SyncedLyrics(listOf(source)));val timeline=VisualTimeline(document.lines)
-        val fontFile=when(scene) {"arabic"->"NotoSansArabic-Bold.ttf";"cjk"->"FoliaParityCJK-Bold.otf";else->"NotoSans-Bold.ttf"}
+        val fontFile=when(scene) {"arabic"->"NotoSansArabic-Bold.ttf";"cjk"->"FoliaParityCJK-Bold.otf";else->"FoliaParityLatin-Bold.ttf"}
         val family=FontFamily(Font(File("../verification/assets/$fontFile"),FontWeight.Bold))
         val style=TextStyle(fontFamily=family,fontWeight=FontWeight.Bold,fontSize=(width*.06f).coerceIn(36f,72f).sp)
         var snapshot by mutableStateOf(FoliaPlaybackSnapshot(0,false));var avoid by mutableStateOf(false)

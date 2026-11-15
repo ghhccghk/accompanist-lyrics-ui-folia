@@ -27,7 +27,7 @@ try {
   await page.screenshot({path:path.join(directory,'source.png'),omitBackground:true});
   fs.copyFileSync(path.join(directory,'source.png'),path.join(fixtures,'source.png'));
   fs.writeFileSync(path.join(directory,'conditions.json'),JSON.stringify({revision,browser:browser.version(),
-    font:'NotoSans-Bold.ttf',viewport:[320,320],density:1,style,
+    font:'FoliaParityLatin-Bold.ttf',viewport:[320,320],density:1,style,
     isolation:'Original GlowWord. Identity layout, body hidden, glyph opacity forced. Browser source mask reused in Kotlin to isolate blur/compositing from shaping.'},null,2));
   fs.copyFileSync(path.join(directory,'conditions.json'),path.join(fixtures,'conditions.json'));
 } finally {await browser.close();}

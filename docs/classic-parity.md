@@ -149,6 +149,21 @@ PublicClassicParityTest 在800和380宽、600高、同Noto Bold、normal/avoid�
 包含入场、内部字素活动、余韵与退场。已目视检查1500ms避让图，位置与词组一致，
 浏览器正文栅格更软；光晕仍有已记录的核差。未将平台栅格残差或整帧误差列为通过。
 
+## 正文隔离与静态字体元数据（2026-11-15）
+
+capture-raster.mjs 使用原始 GlowWord 正文、identity/rotate-scale 两种姿态，隔离辉光、
+计时和颜色；BodyRasterTest 使用相同文件、字号、视口和词。原始静态 Noto Bold 的
+STAT 仍含100..900等整族取值，Windows Skia0.150.1解析为100/2，OS/2却为700/5。
+请求Bold导致额外加粗：48px Amber透明覆盖面积原浏览器2581.71px²，Kotlin3062.68px²。
+关闭fontSynthesis不解决；移除STAT后同700请求为2499.21px²，native元数据恢复700/5。
+
+保留原始字体，新建OFL改名的FoliaParityLatin-Bold.ttf，prepare-latin.py可复现并逐表验证
+字形／hinting／字距／shaping未变。原始浏览器GlowWord前后逐像素相同；两侧共同使用
+派生字体，未降低字重请求或改动画预期。此为验证字体的元数据兼容修复，不在组件中
+偷偷更改宿主字体。仍有约0.71px基线、hinting和变换采样差异，下一项继续核对。
+证据：build/verification/raster-{upstream,kotlin}；手动整帧对照脚本新增--manual，
+旧RAF证据保留。590行实际挂载状态仍使用不变的严格比较。
+
 ## 实际挂载 Motion 状态复核（2026-11-15）
 
 capture-manual.mjs 运行固定版本原始 Classic／GlowWord／variants，冻结墙钟，

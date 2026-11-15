@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client';
 import {motionValue} from 'framer-motion';
 import {GlowWord} from '../../.work/folia-major/src/components/visualizer/GlowWord';
 import {setGlowBlurQuantized} from '../../.work/folia-major/src/utils/glowBlurQuantize';
-import fontUrl from '../assets/NotoSans-Bold.ttf?url';
+import fontUrl from '../assets/FoliaParityLatin-Bold.ttf?url';
 
 // Paint isolation: actual GlowWord/shadow definitions, identity pose, hidden body.
 // capture-halo forces only glyph opacity, to measure the fixed raster independently of timing.

@@ -7,7 +7,7 @@ import { getLineRenderEndTime } from '../../.work/folia-major/src/utils/lyrics/r
 import { setGlowBlurQuantized } from '../../.work/folia-major/src/utils/glowBlurQuantize';
 import {resolveGlowWordRenderProfile,getGlowWordActiveEndTime} from '../../.work/folia-major/src/components/visualizer/glowWordTiming';
 import {buildPostLyricLayoutUnits,buildDisplayWordsFromLayoutUnits} from '../../.work/folia-major/src/utils/lyrics/cjkSemanticLayout';
-import fontUrl from '../assets/NotoSans-Bold.ttf?url';
+import fontUrl from '../assets/FoliaParityLatin-Bold.ttf?url';
 import arabicUrl from '../assets/NotoSansArabic-Bold.ttf?url';
 import cjkUrl from '../assets/FoliaParityCJK-Bold.otf?url';
 import scenes from '../classic-fixtures/scenes.tsv?raw';

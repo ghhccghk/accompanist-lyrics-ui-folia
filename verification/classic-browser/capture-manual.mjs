@@ -50,7 +50,7 @@ try {
     if(errors.length)throw new Error(errors.join('\n'));
     fs.writeFileSync(path.join(output,`${scene?scene+'-':''}${avoid?'avoid':'default'}-frames.json`),JSON.stringify({revision,browser:browser.version(),
       clock:'Original Motion manual timing/frameSteps; frozen browser clock; boundary events include strict-passed epsilon .001ms, JS generator rounds elapsed milliseconds.',
-      viewport:[width,600],font:scene==='arabic'?'NotoSansArabic-Bold.ttf':scene==='cjk'?'FoliaParityCJK-Bold.otf':'NotoSans-Bold.ttf',frames},null,2));
+      viewport:[width,600],font:scene==='arabic'?'NotoSansArabic-Bold.ttf':scene==='cjk'?'FoliaParityCJK-Bold.otf':'FoliaParityLatin-Bold.ttf',frames},null,2));
     await page.close();
   }
   }

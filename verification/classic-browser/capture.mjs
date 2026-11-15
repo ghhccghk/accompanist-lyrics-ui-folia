@@ -61,7 +61,7 @@ try {
         parseFloat(w.rowGap)||0,parseFloat(w.paddingTop),parseFloat(w.paddingBottom)].join('\t')));
     }
     fs.writeFileSync(path.join(directory, `${avoid ? 'avoid' : 'default'}-frames.json`), JSON.stringify({ revision,
-      browser: browser.version(), viewport: [800, 600], density: 1, font: 'NotoSans-Bold.ttf',
+      browser: browser.version(), viewport: [800, 600], density: 1, font: 'FoliaParityLatin-Bold.ttf',
       mediaStepMs: 10, note: 'Original classic/GlowWord; backdrop/chrome/subtitles excluded; breathing disabled; Framer JS fallback (WAAPI disabled to share virtual clock); monotonic replay.', frames }, null, 2));
     await page.close();
   }

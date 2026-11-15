@@ -35,7 +35,7 @@ class ClassicParityTest {
         val document = normalize(SyncedLyrics(listOf(line("Amber ", "echo", 700, 1300, 1900),
             line("Silver ", "light", 3200, 3650, 4100))))
         val timeline = VisualTimeline(document.lines)
-        val font = FontFamily(Font(File("../verification/assets/NotoSans-Bold.ttf"), FontWeight.Bold))
+        val font = FontFamily(Font(File("../verification/assets/FoliaParityLatin-Bold.ttf"), FontWeight.Bold))
         val style = TextStyle(fontFamily = font, fontWeight = FontWeight.Bold, fontSize = 48.sp, lineHeight = 58.56.sp)
         var snapshot by mutableStateOf(FoliaPlaybackSnapshot(0, false))
         var avoid by mutableStateOf(false)
@@ -70,7 +70,7 @@ class ClassicParityTest {
                 ImageIO.write(image, "png", File(directory, "${if(mode) "avoid" else "default"}-${time}ms.png"))
             }
         }
-        File(directory, "conditions.txt").writeText("800x600 density1; NotoSans-Bold.ttf pinned SHA in verification/assets/README.md; same main.tsx input. Paused direct media reconstruction. Core only, no chrome/subtitles. JVM ${System.getProperty("java.version")}.\n")
+        File(directory, "conditions.txt").writeText("800x600 density1; FoliaParityLatin-Bold.ttf pinned SHA in verification/assets/README.md; same main.tsx input. Paused direct media reconstruction. Core only, no chrome/subtitles. JVM ${System.getProperty("java.version")}.\n")
         File(directory, "layout.tsv").writeText("mode\tline\tindex\tleft\ttop\twidth\theight\tmargin\tlineHeight\trowGap\tpaddingTop\tpaddingBottom\n" +
             geometries.entries.joinToString("\n") { (key, g) -> g.boxes.mapIndexed { i,b ->
                 listOf(if(key.first) "avoid" else "default",key.second,i,b.left,b.top,b.width,b.height,g.margins[i],g.height,g.rowGap,g.paddingTop,g.paddingBottom).joinToString("\t")

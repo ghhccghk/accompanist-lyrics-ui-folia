@@ -15,6 +15,7 @@ import androidx.compose.ui.test.v2.runDesktopComposeUiTest
 import java.io.File
 import javax.imageio.ImageIO
 import kotlin.math.ceil
+import com.mocharealm.accompanist.lyrics.folia.internal.text.cssBaseline
 import kotlin.test.*
 
 /** Isolate font/body paint from timing, opacity, glow and line motion. */
@@ -24,29 +25,37 @@ class BodyRasterTest {
         val output=File("../build/verification/raster-kotlin").apply {mkdirs()}
         val native=org.jetbrains.skia.FontMgr.default.makeFromFile("../verification/assets/FoliaParityLatin-Bold.ttf")!!
         native.use {assertEquals(700,it.fontStyle.weight);assertEquals(5,it.fontStyle.width)}
+        val rows=File("../verification/classic-fixtures/body-layout.tsv").readLines().filterNot {it.startsWith("#") || it.isBlank()}.map {it.split('\t')}
+        var row by mutableStateOf(rows.first())
         var transformed by mutableStateOf(false)
         var original by mutableStateOf(false)
+        val metrics=StringBuilder("scene\tnaturalBaseline\tnaturalHeight\tcssBaseline\n")
         setContent {
             val measurer=rememberTextMeasurer()
-            val file=if(original) "NotoSans-Bold.ttf" else "FoliaParityLatin-Bold.ttf"
+            val file=if(original) "NotoSans-Bold.ttf" else row[1]
             val family=FontFamily(Font(File("../verification/assets/$file"),FontWeight.Bold))
-            val layout=measurer.measure("Amber",TextStyle(fontFamily=family,fontWeight=FontWeight.Bold,fontSize=48.sp,lineHeight=58.56.sp),softWrap=false)
-            val natural=measurer.measure("Amber",TextStyle(fontFamily=family,fontWeight=FontWeight.Bold,fontSize=48.sp),softWrap=false)
-            val width=(ceil(layout.getPathForRange(0,5).getBounds().width*64)/64)
+            val style=TextStyle(fontFamily=family,fontWeight=FontWeight.Bold,fontSize=row[2].toFloat().sp)
+            val layout=measurer.measure(row[3],style,softWrap=false)
+            val width=(ceil(layout.getPathForRange(0,row[3].length).getBounds().width*64)/64)
+            val height=row[5].toFloat()
+            val baseline=cssBaseline(layout.firstBaseline,layout.multiParagraph.height,height)
+            assertEquals(row[6].toFloat(),baseline,.0001f,"CSS baseline for ${row[0]}")
             Canvas(androidx.compose.ui.Modifier) {
                 withTransform({
                     translate(128f,128f)
-                    if(transformed) {rotate(-4f,Offset(width/2,58.5625f/2));scale(1.6f,1.6f,Offset(width/2,58.5625f/2))}
-                }) {drawText(layout,Color.White,Offset(0f,(58.5625f-layout.multiParagraph.height)/2))}
+                    if(transformed) {rotate(-4f,Offset(width/2,height/2));scale(1.6f,1.6f,Offset(width/2,height/2))}
+                }) {drawText(layout,Color.White,Offset(0f,baseline-layout.firstBaseline))}
             }
-            SideEffect {output.resolve("metrics.txt").writeText("width=$width paragraphHeight=${layout.multiParagraph.height} firstBaseline=${layout.firstBaseline} size=${layout.size} naturalHeight=${natural.multiParagraph.height} naturalBaseline=${natural.firstBaseline}\n")}
+            SideEffect {metrics.append("${row[0]}\t${layout.firstBaseline}\t${layout.multiParagraph.height}\t$baseline\n")}
         }
-        for(pose in listOf("identity","transform","original")) {
-            runOnIdle {transformed=pose=="transform";original=pose=="original"};waitForIdle()
+        for(case in rows) for(pose in if(case[0]=="baseline") listOf("identity","transform","original") else listOf("identity","transform")) {
+            runOnIdle {row=case;transformed=pose=="transform";original=pose=="original"};waitForIdle()
             val image=captureToImage().toAwtImage()
             assertEquals(600,image.width)
             assertTrue(image.getRGB(0,0,600,400,null,0,600).any{it and 0xffffff != 0})
-            ImageIO.write(image,"png",output.resolve("$pose.png"))
+            val name=if(case[0]=="baseline") pose else "${case[0]}-$pose"
+            ImageIO.write(image,"png",output.resolve("$name.png"))
         }
+        output.resolve("metrics.tsv").writeText(metrics.toString())
     }
 }

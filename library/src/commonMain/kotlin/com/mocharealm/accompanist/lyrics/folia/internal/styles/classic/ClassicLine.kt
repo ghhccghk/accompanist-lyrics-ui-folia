@@ -41,7 +41,7 @@ import kotlin.math.*
 
 private data class GlyphGlow(val timing: TimedGrapheme, val origin: Offset, val mask: ImageBitmap)
 private data class Cell(val unit: DisplayUnit, val layout: TextLayoutResult, val center: Offset, val pose: Pose,
-    val boxWidth: Float, val boxHeight: Float, val sourceBoundaries: IntArray,
+    val boxWidth: Float, val boxHeight: Float, val sourceBoundaries: IntArray, val paintTop: Float,
     val glows: List<GlyphGlow> = emptyList())
 private data class Prepared(val cells: List<Cell>, val height: Float, val geometry: ClassicGeometry,
     val quality: FoliaQuality = FoliaQuality.Minimal)
@@ -77,7 +77,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 fun glyphSize(value:Float) = floor(value*100+.00001f)/100
                 val rendered=if(base<=36f || base>=72f) cssRound(base/16*fontScale)*16 else cssRound(6*fontScale)*base/6
                 val style = textStyle.copy(fontSize = glyphSize(rendered).sp,
-                    lineHeight = (rendered * 1.22f).sp, textAlign = TextAlign.Start)
+                    lineHeight = TextUnit.Unspecified, textAlign = TextAlign.Start)
                 val renderedTexts = units.map { cssWordText(it.text) }
                 val measured = renderedTexts.map { word -> measurer.measure(AnnotatedString(word.text), style,
                     softWrap = false) }
@@ -101,7 +101,9 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 val cells = units.indices.map { index ->
                     val box = geometry.boxes[index]
                     Cell(units[index], measured[index], Offset(box.left + box.width / 2, box.top + box.height / 2),
-                        poses[index], box.width, box.height, renderedTexts[index].boundaries)
+                        poses[index], box.width, box.height, renderedTexts[index].boundaries,
+                        cssBaseline(measured[index].firstBaseline/density.density,
+                            measured[index].multiParagraph.height/density.density,box.height/density.density)*density.density-measured[index].firstBaseline)
                 }
                 return Prepared(cells, geometry.height, geometry)
             }
@@ -204,9 +206,9 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                         rotate(frame.rotation, Offset.Zero)
                         scale(frame.scale, frame.scale, Offset.Zero)
                     }) {
-                        // CSS splits even negative leading around the font metrics. Compose keeps
-                        // the minimum natural paragraph height; center that shaped paragraph in the box.
-                        val topLeft = Offset(-cell.boxWidth / 2f, -cell.layout.multiParagraph.height / 2f)
+                        // Preserve the shaped paragraph; position its baseline using CSS rounded
+                        // ascent/descent and floored half-leading, including negative leading.
+                        val topLeft = Offset(-cell.boxWidth / 2f, -cell.boxHeight / 2f + cell.paintTop)
                         val wordLayer = wordLayers[cellIndex]
                         val wordPadding = ceil(96*density.density).toInt()
                         wordLayer.alpha = alpha

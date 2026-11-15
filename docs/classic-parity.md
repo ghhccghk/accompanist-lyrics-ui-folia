@@ -164,6 +164,14 @@ STAT 仍含100..900等整族取值，Windows Skia0.150.1解析为100/2，OS/2却
 证据：build/verification/raster-{upstream,kotlin}；手动整帧对照脚本新增--manual，
 旧RAF证据保留。590行实际挂载状态仍使用不变的严格比较。
 
+正文基线进一步修复：capture-raster.mjs在原版正文放置无尺寸inline基线探针，
+取得八组Latin/Arabic/CJK、19.74/36/48/72px实际CSS基线。自然字体ascent/descent
+分别取整、半leading向下取整，对照八组误差 <0.0001px；没有硬编码某字体的偏移。
+CssTextMetrics.kt → ClassicLine.kt统一移动完整shaping正文及其字素遮罩。
+48px identity前景alpha MAE从35.60566降至9.23550，rotate(-4°)/scale1.6从20.04913
+降至12.08475。剩余hinting／变换采样差异保持未验收。BodyRasterTest、完整JVM、
+Android APK和Desktop classes通过；此提交尚未作为Android实际运行通过。
+
 ## 实际挂载 Motion 状态复核（2026-11-15）
 
 capture-manual.mjs 运行固定版本原始 Classic／GlowWord／variants，冻结墙钟，

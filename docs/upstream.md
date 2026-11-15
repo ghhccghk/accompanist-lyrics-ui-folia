@@ -120,6 +120,12 @@ the original strict matrix tolerance was retained.
 
 ## Independent model input
 
+CSS baseline paint audit: original GlowWord.tsx block body/1.22 line-height →
+CssTextMetrics.kt and ClassicLine.kt. Zero-size inline probes observe baselines
+of eight fixed-font cases; separately rounded font metrics and floored half-leading
+position the intact Compose paragraph and glyph masks together. Font metadata
+compatibility and unchanged-outline proof are recorded in verification/assets/README.md.
+
 Mounted-runtime audit: unchanged classic/Visualizer.tsx, GlowWord.tsx and word
 variants at the pinned revision → ClassicSampler.kt, LineMotion.kt, GraphemeGlow.kt,
 GraphemeTiming.kt, DisplayUnits.kt, ClassicLine.kt. capture-manual.mjs observes real

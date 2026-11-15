@@ -38,6 +38,18 @@ conditions={'serial':args.serial,'sdk':sdk,'device':adb('shell','getprop','ro.pr
     'activitySha256':hashlib.sha256((root/'sample/android-app/src/debug/kotlin/com/mocharealm/accompanist/folia/sample/ClassicParityActivity.kt').read_bytes()).hexdigest(),
     'frames':[]}
 adb('shell','am','force-stop','com.mocharealm.accompanist.folia.sample')
+# Android's starting-window/splash compositor is independent of our media clock
+# and frame-commit callback. Settle that window at a known empty scene first;
+# every actual checkpoint below still requires an unchanged second capture.
+adb('shell','am','start','--activity-no-animation','-n','com.mocharealm.accompanist.folia.sample/.ClassicParityActivity',
+    '--es','scene','baseline','--el','mediaMs','0','--ei','width','800')
+deadline=time.monotonic()+15
+blank_captures=0
+while blank_captures<2:
+    startup=Image.open(io.BytesIO(adb('exec-out','screencap','-p',binary=True))).convert('RGB').crop((0,0,800,600))
+    blank_captures=blank_captures+1 if startup.getextrema()==((22,22),(36,36),(53,53)) else 0
+    if time.monotonic()>deadline:raise RuntimeError('Starting window did not settle to the exact empty scene')
+conditions['startup']='Two exact empty-scene captures before media checkpoints; no device animation settings changed'
 observed={}
 for scene in args.scenes:
     widths=[800,380] if scene=='subtitle' else [380 if scene=='wrap' else 600 if scene in ['group','cjk'] else 800]

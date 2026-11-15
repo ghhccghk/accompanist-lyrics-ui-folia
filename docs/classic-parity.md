@@ -435,7 +435,7 @@ baseline改为paintedLineBaseline。完整paragraph正文与其内部字素遮�
 没有改变选择path、内部时间或字形shaping；Android本身baseline已为整数，行为不变。
 BodyRasterTest同步采用同一实际绘制定位，原版CSS baseline预期保持不变。
 
-同源原版1500ms：group/default前景MAE6.75902附近→4.14902，CJK/default
+同源原版1500ms：group/default前景MAE6.75942→4.14902，CJK/default
 5.72279→3.69432，Arabic/default5.69436→5.39004；wrap/avoid2800ms
 14.23862→12.39624。已目视group与CJK活动帧；没有断字或漏掉内部辉光。
 并非所有帧的像素误差都下降：baseline/default1500ms约4.20→4.54，保留该残差，
@@ -447,3 +447,26 @@ Android临时Paint/Compose探针另确认：19.74px的Synthetic advance为92.968
 “重复量化导致19.73px”的解释不成立。已撤回无效的字号转换实验及全部临时日志。
 保留实测小数计量差异，尚不能将其认定为平台必须差异或用固定比例更改字号。
 下一项已定位：Android Layout 的center绘制起点取整数，调查字幕分数居中。
+
+## 字幕分数居中（2026-11-15）
+
+Android14 AOSP core/java/android/text/Layout.java:getLineStartPos/drawText以int extent
+和位移实现ALIGN_CENTER，getLineLeft/getLineRight的center分支也分别floor/ceil。
+ClassicSubtitles改为Start排版，逐行将完整paragraph的覆盖移到分数中心；Start在RTL
+采用右边缘原点，避免opposite对齐同样存在的整数extent。仍绘制同一个完整塑形结果，
+不拆字、不改变原行宽/换行或字幕内容，阴影和光垫沿用相同位置。
+
+API30/API34各8个独立字幕检查点、暂停双截图通过。380px/5500ms的前景RGB MAE
+19.77683/19.86642→10.58162/10.55967；800px/1500ms 14.14114/12.88052→
+11.90250/10.03905。800px/5500ms API34 16.02542→10.27252，API30保持12.29091。
+已目视原版/Android修复前后/JVM四列长译文，位置改善，字体边缘覆盖残差仍在。
+完整JVM、Android debug及Desktop classes通过，原字幕几何/ink断言保持不变。
+
+首次直接冷启字幕时严格暂停检查失败：API30整个背景受启动窗口合成影响，API34
+字形部分像素蓝色相差1。失败PNG留在classic-android-api{30,34}-center/，未删。
+脚本现在在0ms空场景确认连续两张全部像素等于背景色后再开始检查点，分离系统启动
+窗口与媒体动画；每个实际检查点仍严格比较第二张截图，不改变设备动画设置。
+证据：classic-android-api{30,34}-center-settled{,-comparison}/、
+subtitle-fractional-center-detail.png。最终Start版本与全部主句的设备回归已完成：
+API30/API34各166个不同帧和6次逆序seek重访，全部暂停双截图/重访像素严格一致；
+conditions.json绑定实际APK SHA，证据位于classic-android-api{30,34}-current/。

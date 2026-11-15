@@ -43,7 +43,13 @@ internal data class SubtitlePaint(val text:String,val layout:TextLayoutResult,va
 private fun DrawScope.drawSubtitleText(row:SubtitlePaint,padding:Float,color:Color=Color.Unspecified) {
     repeat(row.layout.lineCount) { line ->
         val target=row.baseline+line*row.height/row.layout.lineCount
-        withTransform({translate(0f,target-paintedLineBaseline(row.layout,line))}) {
+        val left=row.layout.getLineLeft(line)
+        val width=row.layout.getLineRight(line)-left
+        // Android Layout rounds ALIGN_CENTER's paint origin to an integer.
+        // Center a start-aligned, fully shaped paragraph ourselves, at CSS precision.
+        // Start also avoids the integer opposite-alignment origin in RTL Layout.
+        val x=(row.layout.size.width-width)/2-left
+        withTransform({translate(x,target-paintedLineBaseline(row.layout,line))}) {
             clipRect(-padding,row.layout.getLineTop(line)+padding,
                 row.layout.size.width+padding*2,row.layout.getLineBottom(line)+padding) {
                 if(color==Color.Unspecified) drawText(row.layout,topLeft=Offset(padding,padding))
@@ -87,7 +93,7 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
                 val available=minOf(with(density){maxWidth.toPx()}-padX*2,
                     (if(upcoming) 672f else 896f)*density.density).coerceAtLeast(1f)
                 val layout=measurer.measure(text,style.copy(
-                    lineHeight=(lineHeight/density.density/density.fontScale).sp,textAlign=TextAlign.Center,
+                    lineHeight=(lineHeight/density.density/density.fontScale).sp,textAlign=TextAlign.Start,
                     lineHeightStyle=LineHeightStyle(LineHeightStyle.Alignment.Center,LineHeightStyle.Trim.None,LineHeightStyle.Mode.Tight)),
                     maxLines=if(upcoming) 1 else Int.MAX_VALUE,overflow=if(upcoming) TextOverflow.Ellipsis else TextOverflow.Clip,
                     softWrap=!upcoming,constraints=Constraints(maxWidth=available.toInt().coerceAtLeast(1)))

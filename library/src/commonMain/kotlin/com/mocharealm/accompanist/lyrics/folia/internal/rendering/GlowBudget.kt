@@ -1,13 +1,17 @@
 package com.mocharealm.accompanist.lyrics.folia.internal.rendering
 
 import com.mocharealm.accompanist.lyrics.folia.FoliaQuality
-import com.mocharealm.accompanist.lyrics.folia.internal.timeline.MAX_EXITING_EPOCHS
 
 /** Retained RGBA mask pixels only, not total process/native/scratch memory. */
 internal object GlowBudget {
     const val primaryBytes = 16L * 1024 * 1024
     const val exitingBytes = 16L * 1024 * 1024
-    const val perExitBytes = exitingBytes / MAX_EXITING_EPOCHS
+    fun perExitBytes(maxConcurrentExits: Int): Long {
+        require(maxConcurrentExits >= 0)
+        // Preserve ordinary scenes' allocation while sharing a fixed total
+        // across dense transitions. Lower glow quality rather than drop text.
+        return exitingBytes / maxOf(4, maxConcurrentExits)
+    }
 
     fun layers(quality: FoliaQuality, bytesPerLayer: Long, budget: Long): Int {
         require(bytesPerLayer >= 0 && budget >= 0)

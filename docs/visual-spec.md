@@ -49,7 +49,9 @@ not claims that an earlier limitation still applies.
   still show raster/edge differences against the browser.
 - Halo is cached in fixed masks using three separable box-blur passes.
   Standard uses two masks, Reduced one, Minimal none. Primary masks have 16MiB,
-  and each of at most four exits has 4MiB. Insufficient capacity reduces Standard
+  while all unfinished exits share 16MiB, allocated by the document's peak exit
+  count (at least four shares). Text is never dropped to fit a line-count cap.
+  Insufficient mask capacity reduces Standard
   to Reduced, then Minimal. Primary fallback is reported through FoliaStatus.
   Retained visible mask pixels are bounded to 32MiB; scratch arrays, source
   rasters, text layouts, transient replaced objects awaiting GC and GPU/native

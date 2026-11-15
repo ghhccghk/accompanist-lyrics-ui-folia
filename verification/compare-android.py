@@ -25,6 +25,8 @@ for frame in conditions['frames']:
     scene,width,mode,ms=frame['scene'],frame['width'],frame['mode'],frame['mediaMs']
     if scene=='subtitle':
         original=root/('subtitle-backdrop-upstream' if mode=='backdrop' else 'subtitle-upstream')/f'{width}-translation-{ms}ms.png'
+    elif scene=='dense':
+        original=root/'classic-dense-upstream'/f'{ms}ms.png'
     else:
         original=root/'classic-manual-upstream'/f'{"" if scene=="baseline" else scene+"-"}{mode}-{ms}ms.png'
     a,b=Image.open(original).convert('RGB'),Image.open(candidate/frame['file']).convert('RGB')
@@ -35,7 +37,7 @@ for frame in conditions['frames']:
     report.append((scene,width,mode,ms,len(selected),sum(selected)/len(selected) if selected else 0))
     groups.setdefault((scene,width,mode),[]).append((ms,a,b))
 for (scene,width,mode),frames in groups.items():
-    selected=[f for f in frames if f[0] in [750,1000,1500,2100,3400,4400,5500]]
+    selected=frames if scene=='dense' else [f for f in frames if f[0] in [750,1000,1500,2100,3400,4400,5500]]
     sheet=Image.new('RGB',(width*2,622*len(selected)),'#eef1f5')
     for i,(ms,a,b) in enumerate(selected):
         for j,(label,image) in enumerate([('Original Folia',a),(f'Android API{args.api}',b)]):

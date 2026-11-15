@@ -33,6 +33,13 @@ let lines = [
   { startTime: 3.2, endTime: 4.1, fullText: 'Silver light', words: [
     { text: 'Silver ', startTime: 3.2, endTime: 3.65 }, { text: 'light', startTime: 3.65, endTime: 4.1 }] },
 ];
+if(params.has('dense')) {
+  lines=Array.from({length:30},(_,i)=>{
+    const startTime=(700+i*10)/1000,text=`D${String(i).padStart(2,'0')}`;
+    return {startTime,endTime:startTime+.001,fullText:text,
+      words:[{text,startTime,endTime:startTime+.001}]};
+  });
+}
 if(params.has('scene')) {
   const rows=scenes.split(/\r?\n/).filter(r=>!r.startsWith('#')&&r.split('\t')[0]===params.get('scene')).map(r=>r.split('\t'));
   if(!rows.length) throw new Error('Unknown scene');

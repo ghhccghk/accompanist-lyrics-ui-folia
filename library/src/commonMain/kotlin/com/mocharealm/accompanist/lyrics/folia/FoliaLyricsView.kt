@@ -79,7 +79,7 @@ fun FoliaLyricsView(
                 selection.exiting.forEach { epoch -> key(epoch) {
                     ClassicLine(document.lines[epoch.line], playback, mainStyle, colors, options, tuning,
                         heightBudget = heightBudget, enterUs = epoch.enterUs, leaveUs = epoch.leaveUs,
-                        maskBudgetBytes = GlowBudget.perExitBytes)
+                        maskBudgetBytes = GlowBudget.perExitBytes(index.maxExitingCount))
                 } }
                 if (main == null) BasicText(if (document.lines.isEmpty()) "暂无可显示歌词" else "· · ·",
                     modifier = Modifier.fillMaxWidth(),

@@ -29,11 +29,12 @@ class VisualTimelineTest {
         timeline.at(0)
         assertEquals(resumed, timeline.at(1_000_000).primary)
     }
-    @Test fun gapsNeverResurrectAnOlderTailAndDenseExitsAreBounded() {
+    @Test fun gapsNeverResurrectAnOlderTailAndDenseExitsFinishTheirTransitions() {
         val timeline = VisualTimeline(normalize(SyncedLyrics(List(30) { index ->
             SyncedLine("$index", null, index * 10, index * 10 + 1)
         })).lines)
-        assertTrue(timeline.at(300_000).exiting.size <= 4)
+        assertEquals((18..28).toList(), timeline.at(300_000).exiting.map { it.line })
+        assertEquals(12, timeline.maxExitingCount)
         assertNull(timeline.at(2_000_000).primary)
         assertTrue(timeline.at(2_000_000).exiting.isEmpty())
     }

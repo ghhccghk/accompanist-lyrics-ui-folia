@@ -51,24 +51,29 @@ while blank_captures<2:
     if time.monotonic()>deadline:raise RuntimeError('Starting window did not settle to the exact empty scene')
 conditions['startup']='Two exact empty-scene captures before media checkpoints; no device animation settings changed'
 observed={}
+request_token=0
 for scene in args.scenes:
     widths=[800,380] if scene=='subtitle' else [380 if scene=='wrap' else 600 if scene in ['group','cjk'] else 800]
     times=[1500,5500] if scene=='subtitle' else [750,800,1000,1200,1500,1900,2100,2800,3000] if scene!='baseline' else [750,1000,1500,2100,2300,3400,4400]
+    if scene=='dense':times=[801,901,1001,1051,1101,1201,1301]
     if args.verify_seek and scene=='baseline':times += [1500,750,1500]
+    if args.verify_seek and scene=='dense':times+=times[::-1]
     for width in widths:
-        for mode in [False,True]:
+        for mode in ([False] if scene=='dense' else [False,True]):
             for ms in times:
+                request_token+=1
                 adb('logcat','-c')
                 adb('shell','am','start','--activity-no-animation','--activity-single-top','-n','com.mocharealm.accompanist.folia.sample/.ClassicParityActivity',
                     '--es','scene',scene,'--el','mediaMs',str(ms),'--ei','width',str(width),
                     '--ez','avoid',str(mode if scene!='subtitle' else False).lower(),
-                    '--ez','backdrop',str(mode if scene=='subtitle' else False).lower())
-                ready=f'READY {scene} {ms} {width} {str(mode if scene!="subtitle" else False).lower()} {str(mode if scene=="subtitle" else False).lower()}'
+                    '--ez','backdrop',str(mode if scene=='subtitle' else False).lower(),
+                    '--el','captureToken',str(request_token))
+                ready=f'READY {scene} {ms} {width} {str(mode if scene!="subtitle" else False).lower()} {str(mode if scene=="subtitle" else False).lower()} token={request_token}'
                 deadline=time.monotonic()+15
                 while True:
                     logs=adb('logcat','-d','-s','FoliaParity:I','AndroidRuntime:E')
                     if 'FATAL EXCEPTION' in logs: raise RuntimeError(logs)
-                    if ready in logs: break
+                    if any(line.rstrip().endswith(ready) for line in logs.splitlines()): break
                     if time.monotonic()>deadline: raise RuntimeError(f'No rendered frame: {ready}\n{logs}')
                     time.sleep(.05)
                 raw=adb('exec-out','screencap','-p',binary=True)
@@ -86,7 +91,7 @@ for scene in args.scenes:
                     second.save(output/name.replace('.png','-repeat.png'))
                     raise RuntimeError(f'Paused surface changed at {name}')
                 conditions['frames'].append({'scene':scene,'width':width,'mode':label,'mediaMs':ms,'file':name,
-                    'pausedRepeatIdentical':True,'seekRevisit':revisited,'sha256':digest})
+                    'requestToken':request_token,'pausedRepeatIdentical':True,'seekRevisit':revisited,'sha256':digest})
                 (output/'conditions.json').write_text(json.dumps(conditions,ensure_ascii=False,indent=2),encoding='utf8')
             print(f'API{sdk} {scene}/{width}/{label}: captured, paused repeat identical',flush=True)
 (output/'conditions.json').write_text(json.dumps(conditions,ensure_ascii=False,indent=2),encoding='utf8')

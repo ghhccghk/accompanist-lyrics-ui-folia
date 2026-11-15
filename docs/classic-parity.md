@@ -618,3 +618,38 @@ Compose复核：相同字体/weight、TextMotion.Animated、density/fontScale1�
 无误，也不把平台差异当最终验收豁免。证据：同目录compose-raster-errors.csv与PNG，
 debug构建及两端实际运行通过。探针可重复触发，使用独立generation避免同intent状态
 被Compose合并而遗漏复测；generation不参与媒体时间。
+
+## 密集换句保留全部未结束退场（2026-11-15）
+
+依据classic/Visualizer.tsx的AnimatePresence mode=popLayout与glowWordTiming.ts，
+原版不会按固定句数提前删除退场层。新场景D00..D29每10ms开始一句、每句1ms；
+capture-dense-exits.mjs实际挂载未改动的Classic，保留全部DOM状态和PNG。夹具仅统计
+opacity>0的可见句层；原版零alpha节点可能留到整个退出批次完成，不把这些节点
+误称可见文字。801ms原版11层、旧Kotlin5层；901ms原版12个退场+1个当前句。
+新原版夹具先在旧代码上失败，证明缺失，再修复实现，未改原版曲线或放宽阈值。
+
+VisualTimeline移除4句截断，二分定位最长300ms退场窗口并按各句实际期限过滤；
+查询仍由媒体时间直接重建。辉光总预算16MiB保持，按文档峰值退场数分配（至少四份），
+不以删除正文控制预算。旧测试中的“<=4”验证了错误的中间资源策略，现替换为
+具体应保留的句ID/期限，新增原版ID及opacity误差.0001约束，要求正序/逆序均通过。
+这修订了内部设计的四层限制，提升到原版行为，公共入口不变。
+
+完整JVM与两端构建通过。public FoliaLyricsView的7个画面及7次逆向seek、每点推进
+虚拟墙钟1s后的暂停画面严格一致。额外重跑旧HEAD=d1f1389的实际4句timeline，
+仅补充供新调用方读取的4份预算属性，保存legacy4截图后逐字节恢复当前实现，再次
+通过原版/逻辑/公开UI检查。不是修改Git历史，也没有更改原版或测试场景输入。
+
+同源RGB前景MAE：801ms旧18.01715→新2.09948，901ms17.13951→2.53095，
+1001ms12.49008→2.85541；1051ms2.02471→2.56702略变差，仍需保留应有的低alpha
+退场层，不能为压低误差删掉它们。已目视原版/legacy4/新JVM/Android四列原尺寸裁剪。
+普通连续246帧的像素SHA全部保持，不影响此前主句/字幕/辉光修复结论。
+
+证据：classic-dense-{upstream,legacy4,kotlin,comparison}/，源夹具dense-exits.tsv；
+API30实际14次画面/逆向重访与暂停双PNG严格一致，MAE.95176..1.98898（非空帧）。
+API34首次重复相同1301ms请求因Frame相等而没有新的READY回执，准确保留失败。
+debug入口现为每个媒体请求保留独立requestId/discontinuity，并在frame commit回执带
+captureToken；采集器按完整token校验，不跳过重复seek。两端最终各34个独立token
+全部通过（14密集+20普通主句），暂停/逆向重访严格一致；普通主句均与shadow-final
+PNG逐像素相同。最终证据在classic-android-api{30,34}-dense-token/，原版/新JVM/
+两端Android/旧4句的汇总在classic-dense-comparison/；均位于build/verification。
+仍有字体输入及变换采样残差，不据本项宣布完整classic视觉验收完成。

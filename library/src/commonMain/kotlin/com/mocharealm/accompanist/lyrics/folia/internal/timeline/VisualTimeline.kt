@@ -4,7 +4,7 @@ import com.mocharealm.accompanist.lyrics.folia.internal.animation.*
 import com.mocharealm.accompanist.lyrics.folia.internal.model.NormalizedLine
 
 internal data class PrimaryEpoch(val line: Int, val enterUs: Long, val leaveUs: Long)
-internal const val MAX_EXITING_EPOCHS = 4
+private const val MAX_EXIT_DURATION_US = 300_000L
 internal data class VisualSelection(val primary: PrimaryEpoch?, val exiting: List<PrimaryEpoch>,
     val secondary: List<Int>, val next: Int?)
 
@@ -15,6 +15,7 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
     private val epochs: List<PrimaryEpoch>
     private val changeTimes: List<Long>
     private val selections: List<VisualSelection>
+    val maxExitingCount: Int
     private val empty = VisualSelection(null, emptyList(), emptyList(), lines.indices.firstOrNull())
     init {
         val boundaries = lines.indices.flatMap { listOf(lines[it].startUs, lines[it].endUs, profiles[it].renderEndUs) }.distinct().sorted()
@@ -39,6 +40,7 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
         epochs = collected
         changeTimes = (boundaries + epochs.flatMap { listOf(it.leaveUs + exitDuration(it.line)) }).distinct().sorted()
         selections = changeTimes.map(::prepareSelection)
+        maxExitingCount = selections.maxOfOrNull { it.exiting.size } ?: 0
     }
     fun at(time: Long): VisualSelection {
         var low = 0; var high = changeTimes.size
@@ -49,7 +51,7 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
         return if (low == 0) empty else selections[low - 1]
     }
     private fun exitDuration(line: Int): Long = when(profiles[line].mode) {
-        Reveal.Normal -> 300_000; Reveal.Fast -> 160_000; Reveal.Instant -> 120_000
+        Reveal.Normal -> MAX_EXIT_DURATION_US; Reveal.Fast -> 160_000; Reveal.Instant -> 120_000
     }
     private fun prepareSelection(time: Long): VisualSelection {
         var low = 0; var high = epochs.size
@@ -59,7 +61,14 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
         }
         val current = (low - 1).takeIf { it >= 0 }?.let(epochs::get)?.takeIf { time < it.leaveUs }
         val end = if (current == null) low else low - 1
-        val exiting = (maxOf(0, end - MAX_EXITING_EPOCHS) until end).map { epochs[it] }.filter {
+        // AnimatePresence retains every unfinished exit. Bound the search by
+        // elapsed transition time, never by an arbitrary number of lines.
+        var first = 0; var last = end
+        while (first < last) {
+            val middle = (first + last) ushr 1
+            if (epochs[middle].leaveUs <= time - MAX_EXIT_DURATION_US) first = middle + 1 else last = middle
+        }
+        val exiting = (first until end).map { epochs[it] }.filter {
             time >= it.leaveUs && time < it.leaveUs + exitDuration(it.line)
         }
         val selection = source.select(time)

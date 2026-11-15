@@ -30,10 +30,12 @@ import kotlinx.coroutines.isActive
 
 /** Public-entry fixture for fixed checkpoints and anchored playback verification. */
 class ClassicParityActivity : ComponentActivity() {
-    private data class Frame(val scene:String,val ms:Long,val width:Int,val avoid:Boolean,val backdrop:Boolean,val play:Boolean)
+    private var requestSequence=0L
+    private data class Frame(val scene:String,val ms:Long,val width:Int,val avoid:Boolean,val backdrop:Boolean,val play:Boolean,val requestId:Long)
     private fun requested(intent:Intent)=Frame(intent.getStringExtra("scene")?:"baseline",
         intent.getLongExtra("mediaMs",1500),intent.getIntExtra("width",800).also {require(it in 200..1280)},
-        intent.getBooleanExtra("avoid",false),intent.getBooleanExtra("backdrop",false),intent.getBooleanExtra("play",false))
+        intent.getBooleanExtra("avoid",false),intent.getBooleanExtra("backdrop",false),intent.getBooleanExtra("play",false),
+        intent.getLongExtra("captureToken",++requestSequence))
     private lateinit var requestedFrame:MutableState<Frame>
     private val metricsGeneration=mutableLongStateOf(0L)
 
@@ -63,13 +65,13 @@ class ClassicParityActivity : ComponentActivity() {
             val probeToken=metricsGeneration.longValue
             if(probeToken>0) ComposeFontRasterProbe(families.getValue("FoliaParityLatin-Bold.ttf"),probeToken,filesDir)
             val frame=requestedFrame.value
-            val snapshot=remember(frame) {mutableStateOf(FoliaPlaybackSnapshot(frame.ms,frame.play))}
+            val snapshot=remember(frame) {mutableStateOf(FoliaPlaybackSnapshot(frame.ms,frame.play,frame.requestId))}
             LaunchedEffect(frame) {
                 if(frame.play) {
                     val anchor=withFrameNanos {it}
                     Log.i("FoliaParity","CLOCK ${frame.scene} mediaMs=${frame.ms} anchorNanos=$anchor")
                     while(isActive) withFrameNanos {now->
-                        snapshot.value=FoliaPlaybackSnapshot(frame.ms+(now-anchor)/1_000_000,true)
+                        snapshot.value=FoliaPlaybackSnapshot(frame.ms+(now-anchor)/1_000_000,true,frame.requestId)
                     }
                 }
             }
@@ -78,6 +80,11 @@ class ClassicParityActivity : ComponentActivity() {
                 fun line(a:String,b:String,s:Int,m:Int,e:Int)=KaraokeLine.MainKaraokeLine(
                     listOf(KaraokeSyllable(a,s,m),KaraokeSyllable(b,m,e)),null,KaraokeAlignment.Unspecified,s,e)
                 when(frame.scene) {
+                    "dense"->SyncedLyrics(List(30) {i->
+                        val start=700+i*10
+                        KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable("D${i.toString().padStart(2,'0')}",start,start+1)),
+                            null,KaraokeAlignment.Unspecified,start,start+1)
+                    })
                     "baseline"->SyncedLyrics(listOf(line("Amber ","echo",700,1300,1900),line("Silver ","light",3200,3650,4100)))
                     "subtitle"->SyncedLyrics(subtitleRows.map {SyncedLine(it[2],it[3],it[0].toInt(),it[1].toInt())})
                     else->{
@@ -111,7 +118,7 @@ class ClassicParityActivity : ComponentActivity() {
                 // A Choreographer tick precedes drawing. Wait for the actual GPU
                 // frame commit so preparation/upload cannot masquerade as pause drift.
                 window.decorView.viewTreeObserver.registerFrameCommitCallback {
-                    Log.i("FoliaParity","READY ${frame.scene} ${frame.ms} ${frame.width} ${frame.avoid} ${frame.backdrop}")
+                    Log.i("FoliaParity","READY ${frame.scene} ${frame.ms} ${frame.width} ${frame.avoid} ${frame.backdrop} token=${frame.requestId}")
                 }
                 window.decorView.invalidate()
             }

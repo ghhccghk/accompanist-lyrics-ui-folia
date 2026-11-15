@@ -251,3 +251,12 @@ alpha coupling. Body foreground paint explicitly restores the host shadow or
 Shadow.None after cached paragraph reuse. Read locked Compose AndroidTextPaint:
 setShadow(null) leaves state intact. No font engine source copied. BodyRasterTest
 and compare-shadow-source.py retain the original source/kernel expectations.
+
+Dense exits: pinned classic/Visualizer.tsx AnimatePresence mode=popLayout and
+glowWordTiming.ts exit durations → VisualTimeline.kt retains every unfinished
+epoch, replacing the previous arbitrary four-line cutoff. GlowBudget.kt shares
+the existing total exit-mask budget by peak concurrency. capture-dense-exits.mjs
+mounts unchanged original Classic for30 synthetic D00..D29 lines; dense-exits.tsv
+keeps actual positive-opacity line IDs/values (zero-alpha mounted nodes are
+documented separately). DenseExitParityTest verifies the public component,
+direct/forward/reverse selection and paused PNGs. No original song media copied.

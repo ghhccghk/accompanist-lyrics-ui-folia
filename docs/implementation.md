@@ -256,8 +256,10 @@ Android runtime or native/GPU memory claims; no Rust dependency was introduced.
 
 ## Visible halo pixel budget — 2026-11-15
 
-The primary retains at most 16MiB of RGBA glow masks; each of the timeline's
-at most four exits retains at most 4MiB. Quality degrades Standard → Reduced →
+The primary retains at most 16MiB of RGBA glow masks. Originally, four exits each
+received4MiB; original AnimatePresence comparison later proved this drops visible
+text. All unfinished exits now share16MiB, divided by the document's peak count
+with a minimum of four shares. Quality degrades Standard → Reduced →
 Minimal according to available capacity. Total retained visible mask pixels are
 bounded to 32MiB. This excludes source rasters, CPU scratch, layouts, GPU/native
 overhead and replaced objects awaiting GC; async preparation/lifetime profiling

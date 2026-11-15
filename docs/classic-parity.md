@@ -140,3 +140,11 @@ PublicClassicParityTest 在800和380宽、600高、同Noto Bold、normal/avoid�
 字幕开关不改变主句区域像素，且字幕自身确实可见。截图在build/verification/classic-public。
 这证明公开入口使用已验证的核心；不把内部renderer尚有的浏览器栅格残差消除或隐瞒。
 连续帧、随机seek、命中源行、状态与资源预算回归通过，Android/Desktop构建通过。
+
+## 固定中文字体对照（2026-11-15）
+
+新增OFL Noto Sans CJK SC Bold的可重建命名子集（提交／SHA／许可见assets/README.md），
+两侧同文件、600×600、36px、合成文本“合成歌词光影流动”，四组非均匀词／内部字素计时。
+七场景矩阵default/avoid的DOM词距误差 <0.0001，整数框误差 <0.51px；中文两侧各26帧，
+包含入场、内部字素活动、余韵与退场。已目视检查1500ms避让图，位置与词组一致，
+浏览器正文栅格更软；光晕仍有已记录的核差。未将平台栅格残差或整帧误差列为通过。

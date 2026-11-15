@@ -22,13 +22,14 @@
 固定 Noto Bold／Noto Arabic Bold，六场景（含380px多行、连字、fast/instant）default/avoid
 DOM对照通过：所有margin在0.0001内，整数位置／尺寸在0.51px内；fit遵循实际CSS取整。
 图像位于 build/verification/classic-{upstream,kotlin,matrix-upstream,matrix-kotlin}。
-尚未通过：最终光晕像素／完整帧、CJK固定字体、Android连续模糊运行对照。
+尚未通过：最终光晕像素／完整帧、Android连续模糊运行对照。
 本项：阴影先合成再应用字素透明度，词图层统一包住正文与光晕；隔离原版GlowWord
 半亮alpha前景误差1.66525→0.85470，满亮核差仍未解决（e03d4f3）。
 呼吸两周期25点真实DOM轨迹与媒体数学曲线通过，观察实际RAF／挂载时刻排除相位误判。
 呼吸轨迹保存为3b40145。公开入口已对齐70%高舞台／32dp边距／全视口6vw／1152dp上限；
-800与380宽的入口／内部核心逐像素对照通过，字幕不推移主句。下一项：固定CJK字体
-与整帧对照、Android最新运行；Android <31 的模糊缺失保持未解决。
+800与380宽的入口／内部核心逐像素对照通过（525d9bd），字幕不推移主句。
+固定OFL中文子集场景两侧26帧，七场景DOM矩阵通过；浏览器正文更软，整帧仍未验收。
+下一项：核对正文栅格与Android最新运行；Android <31 的模糊缺失保持未解决。
 
 ## 历史工作（保留）
 

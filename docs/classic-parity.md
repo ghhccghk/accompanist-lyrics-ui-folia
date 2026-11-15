@@ -756,3 +756,20 @@ classic-android-api{30,34}-bidi/。复现capture-bidi.mjs、BidiClassicParityTes
 capture-android.py --scenes bidi-rtl bidi-ltr --verify-seek及compare-bidi.py。
 新场景非空帧的RGB MAE范围见pixel-errors.csv；原PNG和完整误差保留，不把这些
 数值当作新的视觉通过阈值。原版/旧/新/两API已目视检查；实机与Desktop实窗限制保持。
+
+## 精确匹配方向判定的脚本谓词（2026-11-15）
+
+上游textDirection.ts不是“所有Unicode强RTL类”，而是第一个Letter是否属于明确的
+十个Script。平台原实现用了ICU bidi class，因而把上游判为LTR的Kharoshthi、Old
+Hungarian、Meroitic和Script=Common的tatweel误判成RTL。generate-fixtures.mjs
+调用原函数补充全部十个允许脚本、以上反例及组合标记/Letter_Number中性前缀；
+旧UpstreamGraphemeTest先在Kharoshthi反例失败，保留日志.work/direction-before.log。
+
+新DirectionScripts保留原版脚本列表，两平台按ICU Script property查询首个Letter，
+仍按codepoint跳过补充平面，不用UTF-16 Char或平台locale猜方向。原版24组方向
+fixture全部通过；原字素/分组、公开Bidi及PublicClassicParity检查通过，Android debug
+与Desktop classes构建通过。既有16张LTR控制PNG也已实际逐像素复核完全相同。
+
+本项是逻辑判定对照，没有宣称这些罕见脚本已经有同字体视觉验收。上项API30/34的
+混排画面来自830ab84 APK，不能称为此次新APK的设备验证；新APK只已构建。
+下一项回到正文分数位置与变换采样隔离；整体视觉残差及平台限制保持。

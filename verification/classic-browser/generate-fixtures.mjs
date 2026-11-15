@@ -42,6 +42,11 @@ try {
   fs.writeFileSync(path.join(output, 'graphemes.tsv'), lines.join('\n') + '\n');
   fs.writeFileSync(path.join(output, 'grouping.json'), JSON.stringify({ revision, cases: json }, null, 2) + '\n');
   const {resolveLyricTextDirection}=await load('utils/lyrics/textDirection.ts');
-  const directions=['123 مرحبا بالعالم','! שלום','123 𞤀 abc','abc مرحبا','世界 abc','123 !','مرحبا abc', 'á 123'];
+  const directions=['123 مرحبا بالعالم','! שלום','123 𞤀 abc','abc مرحبا','世界 abc','123 !','مرحبا abc', 'á 123',
+    // Every script explicitly listed by the original predicate; other strong
+    // RTL scripts and a Script=Common Arabic modifier are deliberately probes.
+    ...[0x627,0x5D0,0x710,0x780,0x7CA,0x800,0x840,0x1E900,0x10D00,0x10E80,
+        0x10A10,0x10C80,0x10980,0x640].map(cp=>`123 ! ${String.fromCodePoint(cp)} abc`),
+    '\u064B abc', 'Ⅰ abc'];
   fs.writeFileSync(path.join(output,'direction.tsv'),['# original textDirection.ts '+revision,...directions.map(t=>t+'\t'+resolveLyricTextDirection(t))].join('\n')+'\n');
 } finally { await server.close(); }

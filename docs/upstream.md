@@ -292,3 +292,12 @@ Range boxes separately from untouched full animation frames; BidiClassicParityTe
 checks those boxes and public paused/reverse-seek frames. New mixed-direction
 verification face merges/subsets the already pinned OFL inputs with renamed
 metadata (prepare-bidi.py), so no unverified system fallback is an oracle.
+
+First-letter predicate: pinned utils/lyrics/textDirection.ts explicitly lists ten
+RTL scripts; it does not test Unicode bidi classes. DirectionScripts.kt keeps
+that exact list; Graphemes.jvm.kt/android.kt query the same ICU Script property
+for the first Letter. New original-function direction.tsv probes include every
+listed script, unlisted strong RTL scripts, Script=Common tatweel, combining
+marks and Letter_Number. Original Kharoshthi/Old Hungarian/Meroitic/tatweel
+results are LTR, unlike the previous broad bidi-class approximation. No font or
+character rendering is inferred from this logical property test.

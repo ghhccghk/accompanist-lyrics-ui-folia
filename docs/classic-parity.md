@@ -1265,3 +1265,46 @@ python verification/capture-foreground-coverage.py --adb <adb> --serial <设备>
 下一项：继续分离原版字体后端覆盖/颜色相关preblend与实际变换采样；先以同源多个字体、
 颜色和字号控制定位可修复点。仍不使用猜测加粗或单字体拟合补偿进入生产，不把完整
 classic验收改成曲线/构建通过。
+
+## 多字体/颜色覆盖隔离（2026-11-15，恢复后完成）
+
+固定源GlowWord.tsx的正文motion.span直接使用动画颜色绘制；本项目ClassicLine.kt
+目前预先栅格白色完整段落，再ColorFilter.tint。此次只扩展诊断，不改生产路径。
+同一原版GlowWord/三份已登记OFL字体，Synthetic、مرحبا、合成歌词；19.74/48px，
+白/灰#808080/暖色#f2b45d，黑/#e8edf2底，512×320、density/fontScale1、x128/基线191。
+宿主方向明确LTR，保持完整段落shaping；无motion/glow/opacity变量。
+
+浏览器36帧每帧双截图严格相等；从白色控制预测着色结果，对原版直接彩色正文的
+前景RGB MAE均值4.156965、最大10.411422，最大通道差41。说明同一个白色覆盖图
+不能完全表达原版的彩色栅格，并非只有平移/advance问题。没有拟合gamma或加粗补偿。
+旧10张原版控制与conditions JSON重新生成后，conditions SHA与旧API34记录严格一致。
+
+JVM实际Compose完整段落三条路径各36帧，直接彩色/彩色缓存/白色mask着色：
+相对原版前景MAE均值分别1.831923/1.831748/3.432353，最大均7.319347；
+最大单通道差20/20/24。彩色缓存与直接路径最大1级差，白色mask与直接路径最大36级差。
+三种字体均显示彩色缓存的均值改善；每个直接帧再次绘制严格一致。
+JVM为离屏CanvasDrawScope，不冒充真实Desktop窗口/OS截图。
+
+API34真实硬件Canvas三条路径共108帧，每帧暂停双截图严格相同；
+直接彩色/彩色缓存/白色mask着色的前景MAE均值9.338693/9.340153/8.861356，
+最大31.853549/31.853549/31.560498；最大单通道差仍251。
+彩色缓存对直接最大2级差，白色mask对直接最大29级差。此平台彩色路径并未整体改善，
+不能把JVM结果直接推广到Android；复杂CJK覆盖仍未通过。未重新测API30或实机。
+
+原版/两端完整PNG、CSV、字体/源码/APK/设备SHA在
+build/verification/foreground-coverage-colors-{browser,jvm,api34,comparison}。
+comparison/contact.png仅为2倍nearest裁剪辅助目视，指标均用完整原尺寸图，无平移/缩放对齐。
+已目视三字体暖色19.74px三路径对照；不是classic完整帧验收。
+
+恢复前失败：主机内存不足、一次#颜色被adb shell当注释、ADB瞬断、系统全屏教育覆盖；
+日志coverage-colors-*和startup-failed.png保留。已使用shlex.quote传颜色；本次正常启动后
+重新dump当前UI，确认Got it按钮后正常关闭系统教育，不改设备动画/AVD配置或删遮挡断言。
+最终APK构建UP-TO-DATE且APK/探针SHA与108帧记录一致。JVM测试通过，Python比较脚本通过；
+没有将失败采集称作通过，也没有把本项源覆盖控制替代整句动态验收。
+
+复现：serve.mjs → capture-foreground-coverage.mjs --colors；
+:library:jvmTest --tests '*ForegroundColorParityTest'；安装debug APK后
+capture-foreground-coverage.py --colors --adb <adb> --serial <设备>；
+python verification/compare-foreground-colors.py（仅JVM可传--platforms jvm）。
+下一步保留现有变换纹理比例，以相同颜色原版场景验证可局部修复的JVM覆盖路径，
+Android继续单独调查；不把直接绘字/平台AA当作未经证明的通用答案。

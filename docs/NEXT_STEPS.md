@@ -15,6 +15,12 @@
 完整证据/限制见local-playback.md。当前具体工作恢复classic小数字号/字形覆盖残差，
 不扩队列/后台/系统媒体/Rust。
 
+2026-11-15已按用户要求恢复。多字体/颜色覆盖控制已完成，详见classic-parity.md最新节；
+本轮先独立保存证据，然后迁移本项目包名/Maven group到top.ghhccghk前缀。
+已发布lyrics-core的旧坐标/模型包名与原工程归属不改。
+下一项classic修复：以同源彩色/动态场景验证JVM保留原比例的彩色段落栅格，
+Android不能照搬（新控制中彩色路径整体并未改善），不直接采用旧的直接变换绘字候选。
+
 已恢复classic调查：API34硬件直接段落与软件缓存段落，在5字号/2背景20帧中逐像素相同，
 均仍与原版coverage有差异；避免以直接硬件路径重写正文却不解决问题。证据与失败采集
 完整保留，见classic-parity.md末节。下一项固定多字体/颜色定位原版preblend与变换采样。
@@ -113,3 +119,15 @@ C盘空间不足已通过项目私有API34 AVD和F盘临时目录绕开；首次
 
 已有验证与限制见 implementation.md、visual-spec.md、performance.md、android-smoke.md。
 用户遗留的未跟踪 Gradle daemon 配置不纳入提交，不修改只读参考工程。
+
+## 用户即时暂停（2026-11-15，本轮未提交）
+
+因影响用户使用电脑，已停止本轮浏览器服务器和私有 API34 模拟器，不再构建/采集。
+当前新增多字体/多颜色静态覆盖控制，生产 renderer 未改；源码/脚本/JVM测试仍未提交。
+原版三字体×两字号×三颜色×两背景36帧已采集，浏览器白色mask再着色与直接彩色文字
+存在差异，尚不能据此宣布Kotlin修复完成。原20帧参考conditions SHA已核对恢复一致。
+Android新探针APK构建通过；彩色矩阵采集曾遇内存不足、ADB瞬断，日志保留在.work/
+coverage-colors-*。最终采集是否完整及结果需恢复后检查，不宣称已验证；JVM新测试未运行。
+恢复先检查build/verification/foreground-coverage-colors-*与日志，不重做已通过的旧调查。
+下一项：完成同条件JVM/API34直接彩色、彩色缓存和白色mask着色对照，再决定最小生产修复。
+用户遗留gradle/gradle-daemon-jvm.properties仍未修改/提交；本轮不提交未完成验证的改动。

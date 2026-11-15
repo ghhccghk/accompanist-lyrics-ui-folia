@@ -10,6 +10,8 @@ import cjkUrl from '../assets/FoliaParityCJK-Bold.otf?url';
 
 // Actual original body with identity variants; remove timing/glow as independent variables.
 const params=new URLSearchParams(location.search);
+const ink=params.get('ink')??'#fff';
+if(!/^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(ink))throw new Error('Invalid raster ink');
 const font=new FontFace('Raster Noto',`url(${params.has('original')?originalUrl:params.get('font')==='arabic'?arabicUrl:params.get('font')==='cjk'?cjkUrl:fontUrl})`,{weight:'700'});
 await font.load();document.fonts.add(font);
 const transformed=params.has('transform');
@@ -23,8 +25,8 @@ const target={opacity:1,x:motionPhase,y:motionPhase,scale:transformed?1.6:1,rota
 if(![phase,motionPhase].every(p=>Number.isFinite(p)&&Math.abs(p)<=1))throw new Error('Invalid raster phase');
 createRoot(document.getElementById('root')!).render(<div style={{position:'absolute',left:128+phase,top:128+phase,fontFamily:'Raster Noto'}}>
   <GlowWord word={{text:params.get('text')??'Amber',startTime:1,endTime:2}} config={{id:'raster'}} currentTime={clock}
-    theme={{fontWeight:700} as any} baseColor="#fff" activeColor="#fff" fontSize={`${params.get('size')??48}px`}
+    theme={{fontWeight:700} as any} baseColor={ink} activeColor={ink} fontSize={`${params.get('size')??48}px`}
     renderProfile={{wordLookahead:0,wordRevealMode:'normal'} as any}
     layoutStyle={{}} layoutVariants={{waiting:historicalScale===null?target:{...target,scale:historicalScale,rotate:20},active:{...target,transition:{duration:.3}}}}
-    bodyVariants={{waiting:{opacity:1,color:'#fff',filter:'blur(0px)'},active:{opacity:1,color:'#fff',filter:'blur(0px)'}}}/>
+    bodyVariants={{waiting:{opacity:1,color:ink,filter:'blur(0px)'},active:{opacity:1,color:ink,filter:'blur(0px)'}}}/>
 </div>);

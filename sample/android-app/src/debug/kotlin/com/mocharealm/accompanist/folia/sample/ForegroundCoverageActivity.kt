@@ -19,15 +19,26 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.*
 import androidx.compose.ui.text.style.TextMotion
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.*
 import java.io.File
 
 /** Debug control: intact Compose paragraph on hardware canvas vs the same cached software input. */
 class ForegroundCoverageActivity:ComponentActivity() {
-    private data class Request(val size:Float,val cached:Boolean,val dark:Boolean,val token:Long,val blank:Boolean)
+    private data class Request(val size:Float,val cached:Boolean,val dark:Boolean,val token:Long,val blank:Boolean,
+        val font:String,val ink:Color,val surface:Color,val tinted:Boolean)
     private fun requested(intent:Intent)=Request(intent.getFloatExtra("size",19.74f).also{require(it in 10f..80f)},
         intent.getBooleanExtra("cached",false),intent.getBooleanExtra("dark",true),intent.getLongExtra("token",0),
-        intent.getBooleanExtra("blank",false))
+        intent.getBooleanExtra("blank",false),
+        (intent.getStringExtra("font")?:"latin").also{require(it in setOf("latin","arabic","cjk"))},
+        parseColor(intent.getStringExtra("ink")?:"#ffffff"),
+        parseColor(intent.getStringExtra("surface")?:if(intent.getBooleanExtra("dark",true))"#162435" else "#000000"),
+        intent.getBooleanExtra("tinted",false))
+    private fun parseColor(value:String):Color {
+        require(Regex("#[0-9a-fA-F]{6}").matches(value))
+        return Color(android.graphics.Color.parseColor(value))
+    }
     private lateinit var request:MutableState<Request>
     override fun onCreate(state:Bundle?) {
         super.onCreate(state)
@@ -37,27 +48,31 @@ class ForegroundCoverageActivity:ComponentActivity() {
         window.decorView.systemUiVisibility=View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
             View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         request=mutableStateOf(requested(intent))
-        val fontFile=File(filesDir,"coverage-FoliaParityLatin-Bold.ttf")
-        assets.open("FoliaParityLatin-Bold.ttf").use {input->fontFile.outputStream().use(input::copyTo)}
-        val font=FontFamily(Font(fontFile,weight=FontWeight.Bold))
+        val fonts=mapOf("latin" to "FoliaParityLatin-Bold.ttf","arabic" to "NotoSansArabic-Bold.ttf","cjk" to "FoliaParityCJK-Bold.otf").mapValues {(_,asset)->
+            val file=File(filesDir,"coverage-$asset")
+            assets.open(asset).use {input->file.outputStream().use(input::copyTo)}
+            FontFamily(Font(file,weight=FontWeight.Bold))
+        }
         setContent {
             val r=request.value
             CompositionLocalProvider(LocalDensity provides Density(1f)) {
-                val layout=rememberTextMeasurer().measure("Synthetic",TextStyle(fontFamily=font,fontWeight=FontWeight.Bold,
-                    fontSize=r.size.sp,textMotion=TextMotion.Animated),softWrap=false)
+                val text=when(r.font){"arabic"->"مرحبا";"cjk"->"合成歌词";else->"Synthetic"}
+                val layout=rememberTextMeasurer().measure(text,TextStyle(fontFamily=fonts.getValue(r.font),fontWeight=FontWeight.Bold,
+                    fontSize=r.size.sp,textMotion=TextMotion.Animated,textAlign=TextAlign.Left,textDirection=TextDirection.Ltr),softWrap=false)
                 val origin=Offset(128f,191f-layout.firstBaseline)
-                val bitmap=remember(layout) {
+                val bitmap=remember(layout,r.ink,r.tinted) {
                     ImageBitmap(512,320).also {image->
                         CanvasDrawScope().draw(Density(1f),LayoutDirection.Ltr,Canvas(image),Size(512f,320f)) {
-                            drawText(layout,Color.White,origin,shadow=Shadow.None)
+                            drawText(layout,if(r.tinted)Color.White else r.ink,origin,shadow=Shadow.None)
                         }
                     }
                 }
                 Layout(content={},modifier=Modifier.drawBehind {
-                    drawRect(if(r.dark)Color(0xFF162435) else Color.Black)
+                    drawRect(r.surface)
                     check(drawContext.canvas.nativeCanvas.isHardwareAccelerated) {"Expected actual hardware surface"}
                     if(!r.blank) {
-                        if(r.cached)drawImage(bitmap) else drawText(layout,Color.White,origin,shadow=Shadow.None)
+                        if(r.cached)drawImage(bitmap,colorFilter=if(r.tinted)ColorFilter.tint(r.ink) else null)
+                        else drawText(layout,r.ink,origin,shadow=Shadow.None)
                     }
                 }) {_,constraints->layout(constraints.maxWidth,constraints.maxHeight){}}
             }

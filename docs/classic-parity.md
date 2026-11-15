@@ -1228,3 +1228,40 @@ API30同一APK/48不同帧/96请求也完成：全部暂停/48次逆向严格一
 capture-android.py --scenes subtitle-cjk subtitle-cjk-repeat2 --times 750 850 1500
 3500 5150 5500 --verify-seek；compare-subtitle-preview.py --android-api 34 30。
 对照/完整PNG SHA/源码SHA在subtitle-preview-final-comparison，设备/APK条件在各原目录。
+
+## Android 硬件正文与软件缓存路径隔离（2026-11-15）
+
+恢复classic核心调查后，新增debug-only ForegroundCoverageActivity：同一许可字体、
+Synthetic完整段落、Animated文本、density/fontScale1、x128/基线191，分别直接绘到
+实际硬件Canvas（运行时检查isHardwareAccelerated）或先用同一TextLayoutResult绘为
+透明位图再合成。没有逐字重塑、改字重、加gamma系数或替换生产正文路径。
+
+浏览器capture-foreground-coverage.mjs仍挂载固定cc6226e4真实GlowWord；仅隐藏独立
+辉光、保留原字体/正文/identity变换，把基线移到191。此次增加黑色和#162435两种
+真实不透明背景，而非只拿透明PNG的alpha推测GPU行为。上游工作树干净且提交匹配。
+
+API34实际运行5字号×2背景×direct/cached，共20帧，每帧暂停双截图严格一致。
+硬件direct与软件cached在每组中最大RGB差均为0，说明该静态控制下将正文改成直接
+硬件绘制不能消除已观察残差。黑底前景RGB MAE在19.74/19.744/36/48/72px分别
+26.795017/26.795017/20.952115/23.382064/11.229231；深色底对应
+22.762174/22.762174/17.841314/19.951814/9.572717。没有平移/缩放对齐后算误差。
+目视原尺寸截图：小字号原版覆盖较厚，36/48px部分边缘还不同；不能宣称效果通过，
+也不把本控制外推为全部变换/模糊/颜色均是平台必然差异。
+
+首次编译发现Android app没有foundation依赖，探针改用已存在的UI Layout.drawBehind，
+没有为探针扩展生产依赖。首次启动双截图仍有621个像素最大1级RGB变化，判失败并保留
+unstable-first/second；随后明确以两张精确纯背景结束系统启动窗口，再逐帧要求同样
+严格的暂停相等。一次复跑请求token重复导致LaunchedEffect合并，已改为每次唯一token，
+它仅标记采集请求，不参与媒体动画。失败日志均保留，未放宽像素阈值或屏蔽错误。
+
+证据build/verification/foreground-coverage-{browser,api34}：完整PNG、errors.csv、
+设备/字体/上游/浏览器/APK/探针SHA与条件。comparison-contact.png只为目视裁剪放大，
+所有数值来自原512×320截图。构建日志foreground-{hardware-final-build,final-build}，
+采集日志foreground-final-capture。只验证API34；API30、实机及动画矩阵不在本项结论中。
+复现：启动verification/classic-browser/serve.mjs，再运行同目录
+capture-foreground-coverage.mjs；安装debug APK后运行
+python verification/capture-foreground-coverage.py --adb <adb> --serial <设备>。
+
+下一项：继续分离原版字体后端覆盖/颜色相关preblend与实际变换采样；先以同源多个字体、
+颜色和字号控制定位可修复点。仍不使用猜测加粗或单字体拟合补偿进入生产，不把完整
+classic验收改成曲线/构建通过。

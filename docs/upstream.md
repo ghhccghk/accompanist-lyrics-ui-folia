@@ -420,3 +420,10 @@ the strict >5000ms intro/interlude threshold. New internal/waiting/WaitingTimeli
 uses that rule but independently unions every normalized vocal interval, rather than
 adjacent row bounds, to meet the overlapping-voice requirement. FoliaLyricsView waits
 for existing classic visual tails/exits before showing the dots at the original gap phase.
+
+Hardware coverage control: verification/classic-browser/capture-foreground-coverage.mjs
+mounts the same pinned GlowWord via raster.tsx. Its only measurement changes are hiding
+the independent halo, moving the actual baseline to191 and choosing an opaque black/dark
+background. ForegroundCoverageActivity is independently written debug code comparing a
+whole Compose paragraph on a checked hardware canvas to an identical software raster;
+no font outlines, Rust, native renderer code or production compensation were copied.

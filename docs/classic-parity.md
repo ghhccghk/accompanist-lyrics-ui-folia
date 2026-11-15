@@ -490,3 +490,27 @@ GIF仅为离线媒体采样序列，无音频，不是真实窗口录屏或帧�
 当前Desktop进程启动到run任务，日志有DirectX12设备创建失败/Skiko回退；本轮@oai/sky及CUA均在初始化时报
 “failed to write kernel assets: 系统找不到指定的路径”。未观察到窗口，不能称当前
 Desktop实窗目视/交互通过；不反复重试该环境故障。Android实际画面证据不受影响。
+
+## Windows正文与阴影的栅格覆盖分离（2026-11-15）
+
+读锁定Compose FontRasterizationSettings/ParagraphBuilder源码，Windows默认为Normal
+hinting/AA/subpixel。BodyRasterTest新增实际paragraph绘制探针，完整保留原版PNG：
+关闭hinting使48px静态正文alpha MAE9.23550→17.74014，因此没有采用；LCD smoothing
+使其降为3.53349，变换诊断14.93338→10.40908。未用静态结论直接替代动态验收。
+
+继续对比实际挂载Motion后，仅为Windows正文缓存选择LCD覆盖；字素阴影输入仍用原
+AA覆盖，字幕不套用此设置。宿主显式PlatformParagraphStyle及其他OS保持原配置。
+完整paragraph重新测量/栅格，内部字素时间、选择path、CSS几何及曲线不变。
+全局改LCD的中间实验已撤回，因为字幕部分帧变差，且阴影不能沿用正文gamma。
+
+最终同时间动态baseline：default/1500ms RGB MAE4.53943→3.83529，3700ms
+4.46620→3.48802；连续非空帧最高5.13259→4.59952，avoid最高4.70114→4.11413。
+八场景中wrap/whitespace等整体误差改善，但部分入场帧略变差，例如group/800ms
+1.324→1.682；fast场景误差之和21.712→22.510。保留这些差异，不宣称全部帧等价。
+已目视920/1500ms原版/旧AA/当前正文三列对照，正文边缘更接近，辉光时序未变。
+
+完整JVM与Android/Desktop构建通过，原曲线/几何/暂停/seek断言保持。最新APK在
+API30/API34各28次主句/字幕/逆向seek检查中，与修复前AndroidPNG逐像素完全相同，
+验证Windows专用适配没有带入Android显示变化。证据：raster-kotlin/settings.csv、
+classic-continuous-comparison/、lcd-body-detail.png、classic-android-api{30,34}-body-calibrated/。
+尚未完成真实窗口连续录屏和整帧最终视觉验收；下一项优先补可用Android的实际动态录制。

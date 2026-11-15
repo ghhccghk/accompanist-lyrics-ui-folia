@@ -4,6 +4,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.*
 import androidx.compose.ui.unit.Density
 
+internal actual fun classicBodyRasterStyle(style:TextStyle):TextStyle = style
+
 internal actual fun naturalFontMetrics(style:TextStyle,resolver:FontFamily.Resolver,density:Density):NaturalFontMetrics {
     val paint=android.graphics.Paint().apply {
         typeface=resolver.resolve(style.fontFamily,style.fontWeight?:FontWeight.Normal,

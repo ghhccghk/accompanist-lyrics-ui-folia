@@ -9,6 +9,9 @@ internal data class NaturalFontMetrics(val ascent:Float,val descent:Float)
 /** Public font resolver, then platform font metrics; paragraph height has already been rounded. */
 internal expect fun naturalFontMetrics(style:TextStyle,resolver:FontFamily.Resolver,density:Density):NaturalFontMetrics
 
+/** Foreground body coverage; shadow masks intentionally keep their own raster settings. */
+internal expect fun classicBodyRasterStyle(style:TextStyle):TextStyle
+
 internal fun cssFontBaseline(ascent:Float,descent:Float,lineHeight:Float):Float {
     val a=floor(ascent+.5f);val d=floor(descent+.5f)
     return a+floor((lineHeight-a-d)/2)

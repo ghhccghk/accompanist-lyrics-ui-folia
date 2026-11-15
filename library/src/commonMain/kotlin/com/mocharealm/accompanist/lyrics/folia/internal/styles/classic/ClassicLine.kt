@@ -120,7 +120,12 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 fontScale = next
                 result = prepare(fontScale)
             }
-            result = result.copy(cells=result.cells.map {it.copy(body=rasterizeParagraph(it.layout,density))})
+            result = result.copy(cells=result.cells.map {
+                val bodyStyle=classicBodyRasterStyle(it.layout.layoutInput.style)
+                val bodyLayout=if(bodyStyle==it.layout.layoutInput.style) it.layout
+                    else measurer.measure(it.layout.layoutInput.text,bodyStyle,softWrap=false)
+                it.copy(body=rasterizeParagraph(bodyLayout,density))
+            })
             // Fixed, bounded masks. Their alpha changes in draw; glyph shadows never change per frame.
             val padding = ceil(72 * density.density).toInt()
             fun visibleTimings(cell: Cell) = cell.unit.graphemes.filter { cell.sourceBoundaries[it.end] > cell.sourceBoundaries[it.begin] }

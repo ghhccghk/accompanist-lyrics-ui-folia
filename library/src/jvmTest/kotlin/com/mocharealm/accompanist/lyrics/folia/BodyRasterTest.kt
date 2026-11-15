@@ -22,7 +22,7 @@ import com.mocharealm.accompanist.lyrics.folia.internal.rendering.rasterizeParag
 import androidx.compose.ui.graphics.ColorFilter
 
 /** Isolate font/body paint from timing, opacity, glow and line motion. */
-@OptIn(ExperimentalTestApi::class)
+@OptIn(ExperimentalTestApi::class,ExperimentalTextApi::class)
 class BodyRasterTest {
     @Test fun isolatedBodyPaint() = runDesktopComposeUiTest(width=600,height=400) {
         val output=File("../build/verification/raster-kotlin").apply {mkdirs()}
@@ -33,12 +33,15 @@ class BodyRasterTest {
         var transformed by mutableStateOf(false)
         var original by mutableStateOf(false)
         var cachedPaint by mutableStateOf(false)
+        var hinting by mutableStateOf(FontRasterizationSettings.PlatformDefault.hinting)
+        var smoothing by mutableStateOf(FontRasterizationSettings.PlatformDefault.smoothing)
         val metrics=StringBuilder("scene\tnaturalBaseline\tnaturalHeight\tcssBaseline\n")
         setContent {
             val measurer=rememberTextMeasurer()
             val file=if(original) "NotoSans-Bold.ttf" else row[1]
             val family=FontFamily(Font(File("../verification/assets/$file"),FontWeight.Bold))
-            val style=TextStyle(fontFamily=family,fontWeight=FontWeight.Bold,fontSize=row[2].toFloat().sp)
+            val style=TextStyle(fontFamily=family,fontWeight=FontWeight.Bold,fontSize=row[2].toFloat().sp,
+                platformStyle=PlatformTextStyle(null,PlatformParagraphStyle(FontRasterizationSettings(smoothing,hinting,true,false))))
             val layout=measurer.measure(row[3],style,softWrap=false)
             val width=(ceil(layout.getPathForRange(0,row[3].length).getBounds().width*64)/64)
             val height=row[5].toFloat()
@@ -57,8 +60,11 @@ class BodyRasterTest {
             }
             SideEffect {metrics.append("${row[0]}\t${layout.firstBaseline}\t${layout.multiParagraph.height}\t$baseline\n")}
         }
-        for(case in rows) for(pose in if(case[0]=="baseline") listOf("identity","transform","original","identity-raster","transform-raster") else listOf("identity","transform")) {
-            runOnIdle {row=case;transformed=pose.startsWith("transform");original=pose=="original";cachedPaint=pose.endsWith("raster")};waitForIdle()
+        for(case in rows) for(pose in if(case[0]=="baseline") listOf("identity","transform","original","identity-raster","transform-raster","identity-no-hint","transform-no-hint","identity-lcd","transform-lcd") else listOf("identity","transform","identity-no-hint","transform-no-hint")) {
+            runOnIdle {row=case;transformed=pose.startsWith("transform");original=pose=="original";cachedPaint=pose.endsWith("raster")
+                hinting=if(pose.endsWith("no-hint")) FontHinting.None else FontRasterizationSettings.PlatformDefault.hinting
+                smoothing=if(pose.endsWith("lcd")) FontSmoothing.SubpixelAntiAlias else FontRasterizationSettings.PlatformDefault.smoothing
+            };waitForIdle()
             val image=captureToImage().toAwtImage()
             assertEquals(600,image.width)
             assertTrue(image.getRGB(0,0,600,400,null,0,600).any{it and 0xffffff != 0})

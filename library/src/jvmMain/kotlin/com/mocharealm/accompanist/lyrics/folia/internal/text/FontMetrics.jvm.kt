@@ -4,6 +4,21 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.*
 import androidx.compose.ui.text.platform.FontLoadResult
 import androidx.compose.ui.unit.Density
+import androidx.compose.ui.text.ExperimentalTextApi
+import androidx.compose.ui.text.PlatformTextStyle
+import androidx.compose.ui.text.PlatformParagraphStyle
+import androidx.compose.ui.text.FontRasterizationSettings
+import androidx.compose.ui.text.FontSmoothing
+import androidx.compose.ui.text.FontHinting
+
+@OptIn(ExperimentalTextApi::class)
+internal actual fun classicBodyRasterStyle(style:TextStyle):TextStyle {
+    if(!System.getProperty("os.name").startsWith("Windows") || style.platformStyle?.paragraphStyle!=null) return style
+    // Match the pinned Windows browser's foreground coverage. Text-shadow input
+    // stays grayscale; explicit host paragraph settings always take precedence.
+    return style.copy(platformStyle=PlatformTextStyle(style.platformStyle?.spanStyle,
+        PlatformParagraphStyle(FontRasterizationSettings(FontSmoothing.SubpixelAntiAlias,FontHinting.Normal,true,false))))
+}
 
 internal actual fun naturalFontMetrics(style:TextStyle,resolver:FontFamily.Resolver,density:Density):NaturalFontMetrics {
     val loaded=resolver.resolve(style.fontFamily,style.fontWeight?:FontWeight.Normal,

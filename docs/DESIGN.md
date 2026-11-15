@@ -392,7 +392,7 @@ Micro 的派生显示下限参考 67 ms。`renderEnd` 依据上游进入／退�
 
 Passed 从 activeEnd 时刻采样到的当前位姿开始，alpha／scale／位置约 500 ms 收束，旋转参考 5 s 线性过渡；有效窗口受整句退场限制。不能在极短词结束时强跳到完整 active 目标。
 
-颜色、blur 使用独立通道，按上游 Normal／Fast／Instant 时长处理。颜色空间首版固定为 sRGB 分量插值，并在视觉差异中说明；跨后端不使用隐式不同的插值约定。
+颜色、blur 使用独立通道，按上游 Normal／Fast／Instant 时长处理。实际挂载Motion对照已证实颜色采用平方分量插值再开方，当前Kotlin保持该曲线；取代早期草案的线性sRGB分量方案。跨后端不使用隐式不同的插值约定。
 
 ### 10.3 正文与辉光分离
 

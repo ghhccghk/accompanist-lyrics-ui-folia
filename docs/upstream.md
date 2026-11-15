@@ -235,3 +235,10 @@ Android14 AOSP core/java/android/text/Layout.java:getLineStartPos/drawText/
 getLineLeft/getLineRight read to diagnose integer center origins; independently
 written Compose adjustment, no Android font/layout source copied. TextMotion
 defaults follow the locked Compose source, retaining explicit host overrides.
+
+Windows body coverage: actual pinned GlowWord foreground/shadow screenshots →
+ClassicLine.kt separate intact body layout; FontMetrics.jvm.kt selects LCD
+smoothing/Normal hinting only for an unspecified host paragraph style on Windows.
+Read locked Compose FontRasterizationSettings.skiko.kt/ParagraphBuilder.skiko.kt;
+no font engine source copied. BodyRasterTest/compare-raster-settings.py preserve
+AA, no-hint and LCD probes rather than replacing the original expected image.

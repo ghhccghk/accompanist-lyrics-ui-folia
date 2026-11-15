@@ -4,6 +4,10 @@
 `com.mocharealm.accompanist:lyrics-core:0.5.0`。许可为 **AGPL-3.0-only**；证据和来源台账见
 [docs/upstream.md](docs/upstream.md)。仓库分离不代表许可证义务自动隔离。
 
+本项目 Maven 坐标为 `top.ghhccghk.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`，
+Kotlin 包名前缀为 `top.ghhccghk.accompanist.lyrics.folia`。示例包名也使用新前缀。
+外部 `lyrics-core` 的发布坐标及模型包名保持原样；这是本项目命名迁移，不涉及原工程。
+
 ## Implementation status
 
 当前为可构建、可运行的开发版本，尚未完成首版全部验收，也没有公开发布。
@@ -46,7 +50,7 @@ APK：`sample/android-app/build/outputs/apk/debug/android-app-debug.apk`。
 
 ```powershell
 adb install -r sample/android-app/build/outputs/apk/debug/android-app-debug.apk
-adb shell am start -n com.mocharealm.accompanist.folia.sample/.MainActivity
+adb shell am start -n top.ghhccghk.accompanist.folia.sample/.MainActivity
 ```
 
 已在 API30／34 x86_64 模拟器安装运行并采集固定字体画面，API30验证Kotlin软件模糊；
@@ -93,7 +97,7 @@ fun LyricsPane(
 }
 ```
 
-使用 `com.mocharealm.accompanist.lyrics.folia.*` 和 core 公开模型。
+使用 `top.ghhccghk.accompanist.lyrics.folia.*` 和 core 公开模型。
 快照含毫秒位置、`isPlaying`、`discontinuity`。正 offset 表示歌词延后：渲染使用媒体时间
 减 offset，点击换回媒体时间时 seek 到 `line.start + offset`。
 可编译源码见 [独立消费示例](verification/consumer/README.md)。API 尚未承诺 ABI 稳定。
@@ -107,7 +111,7 @@ fun LyricsPane(
 ```
 
 只生成 `build/local-maven` 文件仓库，再由独立 Gradle 根目录消费
-`com.mocharealm.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`，运行 JVM 渲染测试、
+`top.ghhccghk.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`，运行 JVM 渲染测试、
 编译 Android，并检查二进制／源码包声明。没有配置远程推送或公开发布目标。
 
 | 阶段 | 当前状态 |

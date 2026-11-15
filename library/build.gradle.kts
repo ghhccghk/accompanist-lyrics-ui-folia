@@ -13,7 +13,7 @@ val prepareLicenseResources by tasks.registering(Sync::class) {
 kotlin {
     jvmToolchain(21)
     android {
-        namespace = "com.mocharealm.accompanist.lyrics.folia"
+        namespace = "top.ghhccghk.accompanist.lyrics.folia"
         compileSdk = 37
         minSdk = 21
         withHostTestBuilder {}.configure {}

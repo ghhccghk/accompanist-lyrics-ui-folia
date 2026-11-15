@@ -47,7 +47,7 @@ with (out / 'pixel-errors.csv').open('w', newline='', encoding='utf8') as f:
     writer = csv.writer(f)
     writer.writerow(('frame', 'before_foreground_pixels', 'before_rgb_mae', 'after_rgb_mae', 'delta_mae', 'identical_png'))
     writer.writerows(rows)
-sources = ['library/src/jvmMain/kotlin/com/mocharealm/accompanist/lyrics/folia/internal/text/FontMetrics.jvm.kt',
+sources = ['library/src/jvmMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/text/FontMetrics.jvm.kt',
            'verification/assets/FoliaParityCJK-Bold.otf', 'verification/classic-fixtures/subtitle-cjk-scenes.tsv']
 summary = {'frames': len(rows), 'changed': sum(not r[5] for r in rows),
            'before_mean_mae': sum(r[2] for r in rows)/len(rows),

@@ -6,7 +6,7 @@
 
 固定上游：Folia v0.7.26 / cc6226e464050a456a2913e062374f23d3844cc5，AGPL-3.0-only 路线。
 表中的上游路径以该提交仓库根目录为准，Kotlin 路径以 library/src/commonMain/kotlin/
-com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不是最终验收标准。
+top/ghhccghk/accompanist/lyrics/folia/ 为准。当前表是修复清单，不是最终验收标准。
 
 | 上游行为／源码位置 | 当前实现 | 缺失或简化 | 修复与验收 |
 | --- | --- | --- | --- |

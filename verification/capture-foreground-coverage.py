@@ -8,7 +8,7 @@ p.add_argument('--adb',default='adb');p.add_argument('--serial',required=True)
 p.add_argument('--colors',action='store_true',help='Same-origin multi-font/foreground/surface control, including white-mask tint')
 args=p.parse_args()
 root=Path(__file__).resolve().parents[1]
-package='com.mocharealm.accompanist.folia.sample'
+package='top.ghhccghk.accompanist.folia.sample'
 def adb(*cmd):
     return subprocess.run([args.adb,'-s',args.serial,*cmd],capture_output=True,check=True,timeout=30).stdout
 api=adb('shell','getprop','ro.build.version.sdk').decode().strip()
@@ -77,7 +77,7 @@ for row in frames:
 apk=root/'sample/android-app/build/outputs/apk/debug/android-app-debug.apk'
 (out/'conditions.json').write_text(json.dumps({'api':api,'serial':args.serial,'fingerprint':adb('shell','getprop','ro.build.fingerprint').decode().strip(),
     'apk_sha256':hashlib.sha256(apk.read_bytes()).hexdigest(),'browser_conditions_sha256':hashlib.sha256((reference/'conditions.json').read_bytes()).hexdigest(),
-    'probe_sha256':hashlib.sha256((root/'sample/android-app/src/debug/kotlin/com/mocharealm/accompanist/folia/sample/ForegroundCoverageActivity.kt').read_bytes()).hexdigest(),
+    'probe_sha256':hashlib.sha256((root/'sample/android-app/src/debug/kotlin/top/ghhccghk/accompanist/folia/sample/ForegroundCoverageActivity.kt').read_bytes()).hexdigest(),
     'viewport':[512,320],'baseline':191,'left':128,'frames':frames,
     'limits':'Static intact paragraphs; color-matrix LTR host direction, no motion/glow. Does not certify classic transforms/glow or physical devices.'},indent=2),encoding='utf8')
 with (out/'errors.csv').open('w',newline='') as f:

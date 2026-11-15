@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import com.mocharealm.accompanist.lyrics.core.model.synced.SyncedLine
-import com.mocharealm.accompanist.lyrics.folia.*
+import top.ghhccghk.accompanist.lyrics.folia.*
 
 val originalLine = SyncedLine("Independent consumer", "Original synthetic text", 1_000, 5_000)
 

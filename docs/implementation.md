@@ -165,7 +165,7 @@ OS store persistence across a real application restart remains untested.
 ## Local Maven and independent consumer
 
 Root metadata, Android AAR and JVM JAR publish only to build/local-maven under
-com.mocharealm.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT (+ platform variants).
+top.ghhccghk.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT (+ platform variants).
 POMs declare AGPL-3.0-only. Binary/source archives contain LICENSE, NOTICE,
 THIRD_PARTY_NOTICES.md and upstream.md; no remote destination was added.
 
@@ -287,3 +287,31 @@ Added Compose 360×640 RTL/layout-direction + 1.5 font-scale test for visible
 controls, Arabic source activation and diagnostic PNG. Inspection exposed reversed
 duration/time order in RTL; the numeric progress label now explicitly uses LTR
 paragraph direction. This is not exhaustive Android RTL-locale acceptance.
+## Namespace migration — 2026-11-15
+
+User-requested own prefix migration: `com.mocharealm` -> `top.ghhccghk`.
+Maven group is now `top.ghhccghk.accompanist`; artifact names and version remain
+`lyrics-ui-folia` / `0.1.0-SNAPSHOT` with JVM/Android variants. Library packages
+start at `top.ghhccghk.accompanist.lyrics.folia`; samples use
+`top.ghhccghk.accompanist.folia.sample`. Android namespace/applicationId and JVM
+entry points, verification scripts and independent artifact consumer follow these names.
+Consumers must update the Folia coordinate and imports; no old-package aliases are supplied.
+
+Published external `com.mocharealm.accompanist:lyrics-core:0.5.0` and its public
+model/parser imports remain unchanged, as do original copyright/source attribution.
+All 118 moved Kotlin files were checked against the previous commit, permitting
+only own namespace/reference/path replacements (Git line endings normalized).
+The archived rejected direct-paragraph experiment patch is deliberately unchanged;
+it records its historical source paths, not an active old-package dependency.
+
+Validation: selected core/body/color regressions, sample shared JVM tests,
+Android debug APK, Desktop classes and native-window verification classes passed.
+All 108 color-control JVM PNG hashes equal the pre-migration capture.
+`scripts/verify-consumer.ps1` published only to the local file repository, then ran
+the separate consumer's JVM rendering/callback test and Android compilation.
+New POM groups/dependencies, JVM entry class and packaged license/source notices
+passed inspection. `aapt dump badging` confirms the new Android applicationId
+and MainActivity. Logs: `.work/namespace-migration-{build,consumer}.log`.
+This namespace change has no new Android device run or Desktop OS-window run;
+the earlier runtime evidence remains tied to its recorded commits/APKs.
+No remote repository, remote configuration, signing, public release or upstream project changed.

@@ -7,6 +7,6 @@ plugins {
     alias(libs.plugins.android.application) apply false
 }
 allprojects {
-    group = "com.mocharealm.accompanist"
+    group = "top.ghhccghk.accompanist"
     version = "0.1.0-SNAPSHOT"
 }

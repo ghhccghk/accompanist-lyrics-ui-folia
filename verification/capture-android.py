@@ -44,13 +44,13 @@ conditions={'serial':args.serial,'sdk':sdk,'device':adb('shell','getprop','ro.pr
     'fonts':{name:hashlib.sha256((root/'verification/assets'/name).read_bytes()).hexdigest()
         for name in ['FoliaParityLatin-Bold.ttf','FoliaParityCJK-Bold.otf','FoliaParitySubtitle-Bold.otf','NotoSansArabic-Bold.ttf','FoliaParityBidi-Bold.ttf']},
     'apkSha256':hashlib.sha256((root/'sample/android-app/build/outputs/apk/debug/android-app-debug.apk').read_bytes()).hexdigest(),
-    'activitySha256':hashlib.sha256((root/'sample/android-app/src/debug/kotlin/com/mocharealm/accompanist/folia/sample/ClassicParityActivity.kt').read_bytes()).hexdigest(),
+    'activitySha256':hashlib.sha256((root/'sample/android-app/src/debug/kotlin/top/ghhccghk/accompanist/folia/sample/ClassicParityActivity.kt').read_bytes()).hexdigest(),
     'animationIntensity':args.intensity,'viewportHeight':args.height,'frames':[]}
-adb('shell','am','force-stop','com.mocharealm.accompanist.folia.sample')
+adb('shell','am','force-stop','top.ghhccghk.accompanist.folia.sample')
 # Android's starting-window/splash compositor is independent of our media clock
 # and frame-commit callback. Settle that window at a known empty scene first;
 # every actual checkpoint below still requires an unchanged second capture.
-adb('shell','am','start','--activity-no-animation','-n','com.mocharealm.accompanist.folia.sample/.ClassicParityActivity',
+adb('shell','am','start','--activity-no-animation','-n','top.ghhccghk.accompanist.folia.sample/.ClassicParityActivity',
     '--es','scene','baseline','--el','mediaMs','0','--ei','width','800','--ei','height',str(args.height))
 deadline=time.monotonic()+15
 blank_captures=0
@@ -81,7 +81,7 @@ for scene in args.scenes:
             for ms in times:
                 request_token+=1
                 adb('logcat','-c')
-                adb('shell','am','start','--activity-no-animation','--activity-single-top','-n','com.mocharealm.accompanist.folia.sample/.ClassicParityActivity',
+                adb('shell','am','start','--activity-no-animation','--activity-single-top','-n','top.ghhccghk.accompanist.folia.sample/.ClassicParityActivity',
                     '--es','scene',scene,'--es','intensity',args.intensity,'--el','mediaMs',str(ms),'--ei','width',str(width),
                     '--ei','height',str(args.height),
                     '--ez','avoid',str(mode if not subtitle else False).lower(),

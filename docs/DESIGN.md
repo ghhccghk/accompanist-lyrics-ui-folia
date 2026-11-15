@@ -22,8 +22,8 @@
 | 决策 | 约定 |
 | --- | --- |
 | 工程位置 | `F:\android app code\lyrics-ui-folia` |
-| 发布坐标 | `com.mocharealm.accompanist:lyrics-ui-folia` |
-| 包名 | `com.mocharealm.accompanist.lyrics.folia` |
+| 发布坐标 | `top.ghhccghk.accompanist:lyrics-ui-folia` |
+| 包名 | `top.ghhccghk.accompanist.lyrics.folia` |
 | 组件入口 | `FoliaLyricsView` |
 | 数据来源 | 已发布 `lyrics-core`；当前已核对本地 `0.5.0` sources JAR 的模型 |
 | 上游实现 | 原始仓库 `chthollyphile/folia-major`，固定 `v0.7.26` / `cc6226e464050a456a2913e062374f23d3844cc5` |

@@ -85,7 +85,7 @@
 
 ## 4. 工程与依赖设计
 
-当前本地验证坐标：`com.mocharealm.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`；Kotlin 包名：`com.mocharealm.accompanist.lyrics.folia`。以下为目标结构，其中 native 尚未创建：
+当前本地验证坐标：`top.ghhccghk.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`；Kotlin 包名：`top.ghhccghk.accompanist.lyrics.folia`。以下为目标结构，其中 native 尚未创建：
 
 ```text
 lyrics-ui-folia/

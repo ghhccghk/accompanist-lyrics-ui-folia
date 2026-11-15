@@ -25,7 +25,7 @@ out=root/f'build/verification/classic-android-api{api}-recording';out.mkdir(pare
 def frame(ms,play=False):
     adb('logcat','-c')
     adb('shell','am','start','--activity-no-animation','--activity-single-top','-n',
-        'com.mocharealm.accompanist.folia.sample/.ClassicParityActivity','--es','scene','baseline',
+        'top.ghhccghk.accompanist.folia.sample/.ClassicParityActivity','--es','scene','baseline',
         '--el','mediaMs',str(ms),'--ei','width','800','--ez','play',str(play).lower())
     deadline=time.monotonic()+15
     while True:

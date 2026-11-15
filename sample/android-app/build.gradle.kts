@@ -22,10 +22,10 @@ androidComponents.onVariants(androidComponents.selector().withBuildType("debug")
     variant.sources.assets?.addGeneratedSourceDirectory(parityAssets, PrepareClassicParityAssets::outputDirectory)
 }
 android {
-    namespace = "com.mocharealm.accompanist.folia.sample"
+    namespace = "top.ghhccghk.accompanist.folia.sample"
     compileSdk = 37
     defaultConfig {
-        applicationId = "com.mocharealm.accompanist.folia.sample"
+        applicationId = "top.ghhccghk.accompanist.folia.sample"
         minSdk = 23
         targetSdk = 37
         versionCode = 1

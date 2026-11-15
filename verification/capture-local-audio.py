@@ -12,7 +12,7 @@ p.add_argument('--serial',required=True)
 p.add_argument('--attach-lyrics',action='store_true',help='Also verify in-place lyrics; capture finite intro waiting dots')
 args=p.parse_args()
 root=Path(__file__).resolve().parents[1]
-package='com.mocharealm.accompanist.folia.sample'
+package='top.ghhccghk.accompanist.folia.sample'
 def adb(*command):
     return subprocess.run([args.adb,'-s',args.serial,*command],check=True,capture_output=True,timeout=30).stdout
 sdk=adb('shell','getprop','ro.build.version.sdk').decode().strip()

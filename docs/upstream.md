@@ -1,5 +1,14 @@
 # Source ledger
 
+## Own namespace migration — 2026-11-15
+
+Own library/sample package prefix changed to top.ghhccghk under user instruction;
+published Folia group is top.ghhccghk.accompanist. Existing source attributions,
+original source revisions/paths/licenses and external lyrics-core coordinates
+remain unchanged. Target Kotlin directories now use top/ghhccghk/accompanist.
+Historical evidence and the rejected direct-paragraph patch retain their original
+source identities; use their recorded commits when reproducing old captures.
+
 ## Local audio sample change — 2026-11-15
 
 Read-only Accompanist source revision: 6b1ab72319bf2143225acf7797031efa7491897c.

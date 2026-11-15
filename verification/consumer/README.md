@@ -21,6 +21,6 @@ Standalone command (supply your artifact repository URI):
 gradle -PfoliaRepository=file:///path/to/local-maven jvmTest compileAndroidMain
 ```
 
-The tested coordinate is `com.mocharealm.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`.
+The tested coordinate is `top.ghhccghk.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`.
 Android compilation is not device execution. External binary distribution and a
 complete transitive notice audit remain separate delivery requirements.

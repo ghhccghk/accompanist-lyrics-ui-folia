@@ -4,7 +4,7 @@ dependencyResolutionManagement {
     repositories {
         maven(requireNotNull(providers.gradleProperty("foliaRepository").orNull) {
             "Pass -PfoliaRepository=<file Maven repository URI produced by the library>"
-        }) { content { includeModule("com.mocharealm.accompanist", "lyrics-ui-folia"); includeModule("com.mocharealm.accompanist", "lyrics-ui-folia-android"); includeModule("com.mocharealm.accompanist", "lyrics-ui-folia-jvm") } }
+        }) { content { includeModule("top.ghhccghk.accompanist", "lyrics-ui-folia"); includeModule("top.ghhccghk.accompanist", "lyrics-ui-folia-android"); includeModule("top.ghhccghk.accompanist", "lyrics-ui-folia-jvm") } }
         google(); mavenCentral()
     }
 }

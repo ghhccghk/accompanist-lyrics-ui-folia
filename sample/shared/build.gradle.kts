@@ -10,14 +10,14 @@ tasks.register<JavaExec>("verifyLocalAudio") {
     description = "Explicitly verify a real Java Sound device using an original generated 12-second WAV"
     val test = kotlin.targets.getByName("jvm").compilations.getByName("test")
     classpath = files(test.output.allOutputs, test.runtimeDependencyFiles)
-    mainClass.set("com.mocharealm.accompanist.folia.sample.NativeAudioProbeKt")
+    mainClass.set("top.ghhccghk.accompanist.folia.sample.NativeAudioProbeKt")
     dependsOn(test.compileTaskProvider)
     workingDir = rootProject.projectDir
 }
 kotlin {
     jvmToolchain(21)
     android {
-        namespace = "com.mocharealm.accompanist.folia.sample.shared"
+        namespace = "top.ghhccghk.accompanist.folia.sample.shared"
         compileSdk = 37
         minSdk = 23
         withHostTestBuilder {}.configure {}

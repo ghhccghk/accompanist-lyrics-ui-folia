@@ -26,7 +26,7 @@ api=adb('shell','getprop','ro.build.version.sdk').strip()
 out=root/f'build/verification/font-advances-api{api}';out.mkdir(parents=True,exist_ok=True)
 adb('logcat','-c')
 adb('shell','am','start','--activity-no-animation','--activity-single-top','-n',
-    'com.mocharealm.accompanist.folia.sample/.ClassicParityActivity','--es','scene','baseline',
+    'top.ghhccghk.accompanist.folia.sample/.ClassicParityActivity','--es','scene','baseline',
     '--el','mediaMs','0','--ez','metricsProbe','true')
 deadline=time.monotonic()+15
 while True:
@@ -49,7 +49,7 @@ with TTFont(font) as f:
         reference=next(x for x in browser['rows'] if abs(x['size']-row['size'])<.00001)
         assert reference['text']==row['text']
         name=row['raster'];assert '/' not in name and '\\' not in name
-        (out/name).write_bytes(adb('exec-out','run-as','com.mocharealm.accompanist.folia.sample','cat','files/'+name,binary=True))
+        (out/name).write_bytes(adb('exec-out','run-as','top.ghhccghk.accompanist.folia.sample','cat','files/'+name,binary=True))
         a=Image.open(browser_path.parent/reference['raster']).getchannel('A')
         b=Image.open(out/name).getchannel('A')
         assert a.size==b.size==(512,320)
@@ -68,7 +68,7 @@ with (out/'raster-errors.csv').open('w',newline='') as f:
 compose_errors=[]
 for row in compose:
     name=row['raster'];assert '/' not in name and '\\' not in name
-    (out/name).write_bytes(adb('exec-out','run-as','com.mocharealm.accompanist.folia.sample','cat','files/'+name,binary=True))
+    (out/name).write_bytes(adb('exec-out','run-as','top.ghhccghk.accompanist.folia.sample','cat','files/'+name,binary=True))
     reference=next(x for x in browser['rows'] if abs(x['size']-row['size'])<.00001)
     native=next(x for x in rows if x['mode']=='linear-no-hint' and x['size']==row['size'])
     a=Image.open(browser_path.parent/reference['raster']).getchannel('A')

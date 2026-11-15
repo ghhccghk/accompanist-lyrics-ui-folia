@@ -9,7 +9,7 @@ dependencies {
     implementation(compose.desktop.currentOs)
 }
 compose.desktop {
-    application { mainClass = "com.mocharealm.accompanist.folia.sample.MainKt" }
+    application { mainClass = "top.ghhccghk.accompanist.folia.sample.MainKt" }
 }
 
 // Isolated native-window core verification; never included in the sample distribution.
@@ -23,7 +23,7 @@ tasks.register<JavaExec>("verifyClassicWindow") {
     group = "verification"
     description = "Run the public classic renderer in a real ComposeWindow and inspect its recorded layer"
     classpath = classicVerification.runtimeClasspath
-    mainClass.set("com.mocharealm.accompanist.folia.sample.ClassicWindowVerificationKt")
+    mainClass.set("top.ghhccghk.accompanist.folia.sample.ClassicWindowVerificationKt")
     workingDir = rootProject.projectDir
     dependsOn(classicVerification.classesTaskName)
 }

@@ -1,5 +1,27 @@
 # Source ledger
 
+## Tilt sentence/layout/timing core — 2026-11-16
+
+Same approved Folia cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only.
+`src/utils/lyrics/sentenceLayout.ts` -> `internal/styles/tilt/TiltSentences.kt`:
+punctuation/bracket/Western/CJK/special separator hierarchy, semantic midpoint
+fallback, seeded selection and shortest-neighbor merge. Uses the existing platform
+word segmenter. UTF-16 fallback cuts are moved to EGC boundaries; indivisible
+clusters are retained rather than creating invalid strings. Source strings and
+offsets survive; no other simplification of the partition algorithm is intended.
+
+`src/components/visualizer/tilt/VisualizerTilt.tsx` private determineLineCount,
+seededRandom/buildTiltLayout -> TiltLayout.kt; findSegmentWordRange/buildCharTimings
+-> TiltTiming.kt. Preserves re-split/fit floors/short-final boost, inside-word ranges,
+nonspace timing and pulse/tail. Syllable inputs reuse attributed grapheme timing.
+Original source fragments are not replaced by display groups.
+generate-tilt-sentences.mjs executes the original export; generate-tilt-layout.mjs
+extracts named private declarations verbatim into an ignored Vite test wrapper.
+Font lookup/width measurement use explicit synthetic seams for this numeric control,
+not a browser-font or visual acceptance claim. Source checkout is not modified.
+No song/preview/font/cover assets copied. The internal core alone is not a supported
+public theme; a separate renderer and mounted-source screenshots are still required.
+
 ## Partita layout — 2026-11-16
 
 Source revision: Folia cc6226e464050a456a2913e062374f23d3844cc5 (v0.7.26),

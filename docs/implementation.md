@@ -22,6 +22,13 @@ Only headless Chromium and offscreen JVM UI were run for this new theme; Android
 and visible Desktop window/recording acceptance remain unverified. No background/Rust/SPW
 expansion. User desktop packaging and daemon-criteria edits remain outside these commits.
 
+Tilt follow-up: independent sentence partition/layout/timing core is implemented
+internally; 378 original partitions, 2430 layouts under explicit synthetic width
+metrics, 120 pulse states and 108 word-range/grapheme timing cases pass. Source
+declarations are executed verbatim; EGC-safe fallback is documented separately.
+This is not a public Tilt theme or visual acceptance. Next: actual normal/italic
+stage and same-font original browser comparison. No sample placeholder was added.
+
 ## Starting point
 
 - Independent repository initialized on `codex/initial-implementation`.

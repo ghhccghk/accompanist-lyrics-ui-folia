@@ -111,3 +111,21 @@ classic固定42帧和字幕宽窄84帧散列均与变更前相同。sample:share
 compileKotlin、Android assembleDebug通过。本轮使用离屏Compose和无界面Chromium，
 未开启用户桌面窗口/模拟器；新主题尚无设备或真实窗口运行验收。复现见
 verification/partita-fixtures/README.md，经典既有残差继续保留。
+
+## 倾诉：分段、拟合和内部计时（尚无公共舞台）
+
+上游VisualizerTilt.tsx的determineLineCount/buildTiltLayout使用UTF-16长度、秒种子，
+决定1–4段及唯一大号斜体段；宽度比>=1.6时重拆，按原分支选择拟合并保留0.5/0.55下限。
+SentenceLayout按五层标点/括号/中西文/空格/特殊符号优先级拆分，再选语义中点或种子回退。
+对应TiltLayout.kt、TiltSentences.kt，不调用classic或Partita布局冒充。
+
+findSegmentWordRange/buildCharTimings对应TiltTiming.kt，保留段内非空白字素计时和
+切入词内时的原版映射；pulse为0.2–0.9s正弦后接25%尾部，不是无限呼吸。
+lyrics-core原始片段仍由适配层保留。平台必要调整：原版UTF-16中点回退可能切断代理对
+或组合字素，Kotlin只使用合法EGC边界，不能分开的字素不强拆。这一输入保护单列测试。
+
+直接运行原始SentenceLayout得到378种分段；原版私有声明逐字提取到本地测试wrapper，
+以明确的合成测量回调生成2430种布局、120个pulse状态、108个词范围/内部计时。
+Kotlin对应数值测试全部通过；Android debug assembly通过。没有替换上游函数体，
+也没有把合成宽度控制当成真实字体度量或视觉证据。该核心仍未接入主题选择器。
+下一项是两种排版的真实文字绘制、分段/字素入场及同字体视口的原版浏览器对照。

@@ -47,14 +47,17 @@
    API21..29与实机未验证，模拟器不能作为性能证据。
 
 证据/源码位置/调查结果统一见classic-parity.md；图片和CSV在build/verification。
-短窗口避让已修：180/200px高时使用原版62/76预算；停止条件也按整数offsetHeight，
+2c6ebed短窗口避让已修：180/200px高时使用原版62/76预算；停止条件也按整数offsetHeight，
 避免76.046875px行在76预算里又缩一轮。36个原版画面/几何、72次JVM正逆向、
 公开入口/核心相同、暂停和尺寸恢复通过；失败及中间实验保留。API34短视口72请求通过。
-下一项具体工作：拟合字号基线。normal800x180/avoid仍有11.13前景MAE及约1px正文偏移；
-已采原版实际GlowWord的7个拟合字号baseline，fit-baselines.tsv；独立诊断测试已复现
-36.112px字号原baseline36、段落推导35、原始字体度量36。失败日志fitted-baselines-before.log，
-原始指标fit-baselines-kotlin/metrics.tsv。再检查正文LCD raster与原测量段落基线是否一致；
-不能靠加常数或放宽画面预期掩盖。
+拟合字号基线修复已通过JVM及两端构建，API34重采240请求通过（fitted-baselines-android.log）。
+原版10个拟合字号基线、Latin/Arabic/CJK控制已保存；段落reported baseline不能代表实际paint，
+原生TextLine与段落alpha零误差的控制证实自然行高应使用rounded raw ascent。
+只换CSS度量的候选令Chaotic2800误差4.65→38.88，已拒绝并保留fit-baseline-natural-only；
+联合修正恢复正常高度三档/连续/八场景全PNG完全一致，normal180短视口11.13→2.84。
+API34的120张不同PNG与上版完全相同，不能声称Android覆盖改善；字幕全部回归通过。
+下一步继续字幕长句/字形覆盖残差，优先实测自然行高与显式行高的实际paint差异，
+保留未更改的原版字幕PNG及现有几何/ink断言，不以非零MAE本身定义失败或放宽要求。
 Calm分数居中及三档API34画面已重采，但整个classic栅格尚未等价；
 API34最高残差18.14、正文小数字形覆盖/字幕残差继续保留，不能据此宣布最终视觉通过。
 normal/fast中断入场的Android验证已完成：两API各56请求，28画面及28逆向重访，暂停双截图严格相同；

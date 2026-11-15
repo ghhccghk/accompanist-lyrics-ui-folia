@@ -28,3 +28,7 @@ internal fun cssBaseline(naturalBaseline:Float,naturalHeight:Float,lineHeight:Fl
 
 /** A paragraph's reported baseline can differ from the baseline of its painted blob. */
 internal expect fun paintedLineBaseline(layout: androidx.compose.ui.text.TextLayoutResult, line: Int): Float
+
+/** Actual paint baseline for one natural-height line, with no explicit line-height.
+ * Reported paragraph metrics may include leading absent from the painted blob. */
+internal expect fun paintedNaturalBaseline(layout: androidx.compose.ui.text.TextLayoutResult, metrics: NaturalFontMetrics): Float

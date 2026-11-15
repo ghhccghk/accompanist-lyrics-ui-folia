@@ -3,6 +3,7 @@
 Run after the JVM capture tasks have completed. No alignment, resampling or
 pixel tolerance is applied to images. MAE uses the union foreground (>8 RGB).
 """
+import argparse
 import csv
 import hashlib
 import json
@@ -14,21 +15,33 @@ from statistics import mean
 from PIL import Image, ImageChops, ImageDraw, ImageStat
 
 root = Path(__file__).resolve().parents[1] / 'build/verification'
-out = root / 'line-center-comparison'
-out.mkdir(parents=True, exist_ok=True)
 sets = {
     'classic-intensity-kotlin': 'classic-intensity-upstream',
     'classic-kotlin': 'classic-manual-upstream',
     'classic-continuous-kotlin': 'classic-continuous-upstream',
     'classic-matrix-kotlin': 'classic-manual-upstream',
     'line-centers-kotlin': 'line-centers-upstream',
+    'short-stage-kotlin': 'short-stage-upstream',
+    'layout-phase-public-kotlin': 'layout-phase-public-upstream',
 }
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--before-directory',default='line-center-before')
+parser.add_argument('--before-revision',default='25d241b')
+parser.add_argument('--output',default='line-center-comparison')
+parser.add_argument('--no-intermediates',action='store_true')
+parser.add_argument('--datasets',nargs='+',choices=list(sets),default=list(sets)[:5])
+args=parser.parse_args()
+out = root / args.output
+out.mkdir(parents=True, exist_ok=True)
+sets={k:sets[k] for k in args.datasets}
 versions = {
-    'before': root / 'line-center-before',
+    'before': root / args.before_directory,
     'fractional-only': root / 'line-center-fractional-only',
     'cumulative-only': root / 'line-center-cumulative-only',
     'candidate': root,
 }
+if args.no_intermediates:
+    versions={k:v for k,v in versions.items() if k in ('before','candidate')}
 
 
 def error(a, b):
@@ -71,11 +84,12 @@ summary = [dict(dataset=k[0], group=k[1], version=k[2], count=len(v), mean=mean(
 (out / 'summary.json').write_text(json.dumps(summary, indent=2), encoding='utf8')
 (out / 'conditions.json').write_text(json.dumps({
     'upstreamRevision': 'cc6226e464050a456a2913e062374f23d3844cc5',
-    'baselineRevision': '25d241b',
+    'baselineRevision': args.before_revision,
     'candidateHead': subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=root.parents[1],
                                     capture_output=True, text=True, check=True).stdout.strip(),
     'candidateSourceSha256': {p.relative_to(root.parents[1]).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
-                             for p in sorted((root.parents[1] / 'library/src/commonMain').rglob('*.kt'))},
+                             for source in ('commonMain','jvmMain')
+                             for p in sorted((root.parents[1] / f'library/src/{source}').rglob('*.kt'))},
     'note': 'Candidate can be uncommitted. Before/intermediate evidence directories must be preserved. '
             'Pixel errors are descriptive, not a visual acceptance threshold.',
 }, indent=2), encoding='utf8')
@@ -89,6 +103,13 @@ with (out / 'changes.csv').open('w', newline='', encoding='utf8') as f:
     writer = csv.writer(f)
     writer.writerow(('dataset', 'frame', 'before_mae', 'candidate_mae', 'increase'))
     writer.writerows(changes)
+with (out / 'png-identity.csv').open('w', newline='', encoding='utf8') as f:
+    writer=csv.writer(f)
+    writer.writerow(('dataset','frame','before_png_sha256','candidate_png_sha256','encoded_png_identical'))
+    for dataset,name,*_ in changes:
+        before=hashlib.sha256((versions['before']/dataset/name).read_bytes()).hexdigest()
+        after=hashlib.sha256((root/dataset/name).read_bytes()).hexdigest()
+        writer.writerow((dataset,name,before,after,before==after))
 # Full resolution contact sheets for strongest regression/improvement, plus the
 # specific entry/filter-transition frames that motivated the investigation.
 selected = changes[:4] + changes[-4:]

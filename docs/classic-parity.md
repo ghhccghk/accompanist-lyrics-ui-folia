@@ -1088,3 +1088,50 @@ short-stage-comparison四列图。API30/实机未据此验证。
 复现：node verification/classic-browser/capture-short-stage.mjs；
 `:library:jvmTest --tests '*ClassicShortStageTest'`；
 python verification/compare-short-stage.py（Android结果追加--android-api 34）。
+
+## 自然行高的布局基线与真实paint基线（2026-11-15）
+
+短窗口Normal800×180/avoid的正文较原版高约1px。capture-fit-baselines.mjs从实际
+GlowWord记录10个拟合字号的baseline、canvas字体度量；零尺寸标记加入前后PNG/高度
+相同，删除后也严格恢复，不能以会影响排版的测量探针作为依据。另在原版Classic的
+Calm/Normal/Chaotic380×600实际词盒读取layout-only offsetTop，保留transform，
+前后PNG严格相同。最初清除/恢复transform的探针改变了栅格历史，严格断言失败后已
+拒绝，失败日志fit-baselines-actual-classic.log保留，不使用其PNG当规范。
+
+原版36.112px字号基线36，旧cssBaseline从Compose已经取整的段落高度反推得到35；
+raw font ascent/descent计算才是36。但只换CSS度量并不够：18px Chaotic原版基线17，
+旧推导18碰巧抵消了另一个paint误差；单项更改令Chaotic2800ms MAE4.65→38.88，
+故拒绝该候选，保留fit-baseline-natural-only的全帧、指标及控制结果。
+
+ParagraphPaintBaselineTest不靠屏幕亮字边界猜基线：用同一个已解析typeface、字号、
+栅格设置和单个被覆盖字形，比对完整段落与native TextLine在0..90的显式基线。
+17组Latin/Arabic/CJK/font-size条件的alpha均零误差精确匹配。18px报告19.726，
+实际native基线19；28.408px报告30.679，实际30；36.112px报告38.420，实际39。
+报告值四舍五入并不能描述自然行高的paint位置；rounded raw ascent与所有控制相符。
+生产正文仍完整词塑形，未换为单字/native renderer。新paintedNaturalBaseline只用于
+自然行高正文；显式行高字幕继续用原路径。Android仍使用其实际Layout baseline。
+FittedBaselineParityTest同时核对10个原版拟合字号及已有Arabic/CJK/其他字号CSS基线，
+不改fixture/容差。指标native-baseline-control及fit-baselines-kotlin/metrics.tsv。
+
+联合修正后：正常高度三档108、连续246、基础42、八场景208帧PNG与2c6ebed前证据
+逐字节相同；短视口36帧中35张不变，仅Normal180/avoid11.13096→2.84352，已目视
+基线偏移消除。短视口全36帧MAE均值2.74043→2.51023，最大11.13096→5.95406。
+旧layout-phase-public截图未在此首批重生成，不用其PNG一致性当本批证据；之后已另行
+重跑PublicClassicParityTest。完整对照与所有变化见fit-baseline-comparison，
+compare-line-centers.py支持--before-directory/--before-revision/--datasets，
+记录commonMain及jvmMain源码SHA，并导出每张前后PNG SHA，未作图像对齐。
+
+JVM首批、native三字体控制、字幕全部十种透明/光垫/阴影/软件回退回归及公开入口通过；
+Android debug/Desktop classes构建通过。日志fitted-baselines-native-corrected-validation、
+fitted-baselines-native-faces-validation、fitted-baselines-final-subtitle-regression。
+另发现外部fixture/font未声明为Gradle Test输入，会导致新增源采样后仍UP-TO-DATE；
+已为所有Test声明verification/classic-fixtures及assets输入，确认扩展夹具实际重跑。
+没有通过强制更新预期或删除失败检查绕过本次诊断。
+
+新APK API34三档216请求，加180/200px三档24请求，120张不同PNG与前一版逐字节
+相同；全部暂停和120次重访严格一致，遮挡检查有效。Windows修复不被误称为Android
+效果改善：三档MAE均值/最大仍为5.49531/15.33167、5.47047/15.19843、
+6.27009/18.14210；6个短视口避让均值5.82343/最大8.46888。新采集条件保存全部
+源码/字体/APK SHA，标签fit-baseline-<档>、fit-short-stage-<档>-<高度>。
+API30与实机尚未重验，本项没有新的Desktop OS截图/输入验证。剩余字形覆盖及复杂
+字幕残差仍需定位，不能用此次逻辑/几何修复宣称最终整帧等价。

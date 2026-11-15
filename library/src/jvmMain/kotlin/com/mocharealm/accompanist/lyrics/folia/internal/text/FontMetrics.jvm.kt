@@ -29,6 +29,11 @@ internal actual fun naturalFontMetrics(style:TextStyle,resolver:FontFamily.Resol
     }
 }
 
-// SkParagraph rounds the baseline when building a text blob; Android exposes its
-// already integral line baseline directly. Keep this platform detail out of CSS geometry.
+// Explicit-line-height paragraph placement; natural-height body runs use the
+// separately measured baseline below. Keep paint details out of CSS geometry.
 internal actual fun paintedLineBaseline(layout: androidx.compose.ui.text.TextLayoutResult, line: Int): Float = kotlin.math.floor(layout.getLineBaseline(line)+.5f)
+
+// Native TextLine baseline sweeps match natural-height SkParagraph alpha exactly
+// at rounded raw ascent, including sizes where rounded reported baseline differs.
+internal actual fun paintedNaturalBaseline(layout: androidx.compose.ui.text.TextLayoutResult, metrics: NaturalFontMetrics): Float =
+    kotlin.math.floor(metrics.ascent+.5f)

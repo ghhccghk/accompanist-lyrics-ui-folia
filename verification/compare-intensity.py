@@ -16,9 +16,10 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--android-api', type=int)
 parser.add_argument('--android-label-prefix', default='intensity',
                     help='Capture labels are <prefix>-calm/-normal/-chaotic')
+parser.add_argument('--output', default='classic-intensity-comparison')
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1] / 'build/verification'
-out = root / 'classic-intensity-comparison'
+out = root / args.output
 out.mkdir(parents=True, exist_ok=True)
 times = [750, 1000, 1500, 1900, 2100, 2300, 2500, 2800, 3000]
 rows = []

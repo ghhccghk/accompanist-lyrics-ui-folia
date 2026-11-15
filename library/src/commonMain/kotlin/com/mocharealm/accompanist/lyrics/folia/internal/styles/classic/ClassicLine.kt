@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.drawscope.clipPath
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.rememberClassicLayer
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.drawClassicLayer
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalFontFamilyResolver
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextMotion
@@ -65,6 +66,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
     val measurer = rememberTextMeasurer(cacheSize = 64)
     val units = remember(line) { displayUnits(line) }
     val density = LocalDensity.current
+    val fontResolver = LocalFontFamilyResolver.current
     val viewport = LocalClassicViewport.current
     val currentPlayback by rememberUpdatedState(playback)
     BoxWithConstraints(modifier.fillMaxWidth()) {
@@ -73,7 +75,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         // its .5 font-scale floor, not an invented minimum area, limits shrink.
         val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(0f)
         val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
-            tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality, options.animationIntensity, maskBudgetBytes, viewport) {
+            tuning.wordSpacing, tuning.enableWordRotation, measurer, fontResolver, options.quality, options.animationIntensity, maskBudgetBytes, viewport) {
             fun prepare(fontScale: Float): Prepared {
                 val base=textStyle.fontSize.value
                 fun cssRound(value:Float) = floor(value*1000+.5f)/1000
@@ -91,6 +93,9 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 val renderedTexts = units.map { cssWordText(it.text) }
                 val measured = renderedTexts.map { word -> measurer.measure(AnnotatedString(word.text), style,
                     softWrap = false) }
+                // Paragraph height has already been rounded, so deriving descent
+                // from it can move a fitted-size CSS baseline by one pixel.
+                val fontMetrics = naturalFontMetrics(style, fontResolver, density)
                 val measurementStyle=style.copy(fontSize=glyphSize(base*fontScale).sp)
                 val rawWidths = units.map { unit -> measurer.measure(AnnotatedString(canvasWordText(unit.text)),measurementStyle,softWrap=false)
                     .let { it.getPathForRange(0,it.layoutInput.text.length).getBounds().width.toDouble() } }
@@ -123,8 +128,8 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                         Offset(classicWordPaintOffset(box.left, 0f, density.density) + box.width / 2,
                             classicWordPaintOffset(box.top, 0f, density.density) + box.height / 2),
                         poses[index], box.width, box.height, renderedTexts[index].boundaries,
-                        cssBaseline(measured[index].firstBaseline/density.density,
-                            measured[index].multiParagraph.height/density.density,box.height/density.density)*density.density-paintedLineBaseline(measured[index],0))
+                        cssFontBaseline(fontMetrics.ascent/density.density,
+                            fontMetrics.descent/density.density,box.height/density.density)*density.density-paintedNaturalBaseline(measured[index],fontMetrics))
                 }
                 return Prepared(cells, geometry.height, geometry)
             }

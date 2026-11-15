@@ -341,3 +341,14 @@ Classic at 800x100/150/180/200/240/300 in all three intensities, with the same
 synthetic Amber/echo and OFL face. ClassicShortStageTest checks line heights,
 public/core drawing identity, pause and height restoration. Debug-only Android
 fixture accepts an optional height (default 600); production public API unchanged.
+
+Natural-line baseline: original GlowWord.tsx intact body block with line-height1.22
+and CSS font metrics -> ClassicLine.kt naturalFontMetrics/cssFontBaseline, plus
+paintedNaturalBaseline in FontMetrics.jvm.kt/android.kt and CssTextMetrics.kt.
+Actual original fitted-size baseline probes are capture-fit-baselines.mjs; the
+zero-size marker leaves pixels/height unchanged and real Classic uses offsetTop
+without touching its transform. Clearing/restoring a transform changed raster
+history and was rejected. JVM native TextLine controls identify actual paragraph
+paint baselines by exact alpha equality; paragraph reported baseline is not used
+as a proxy for natural-height paint. Explicit-height subtitle path stays separate.
+Only API behavior/measurements referenced; no Skia source copied.

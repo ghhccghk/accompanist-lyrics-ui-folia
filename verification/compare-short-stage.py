@@ -14,12 +14,15 @@ from PIL import Image, ImageChops, ImageDraw, ImageStat
 root=Path(__file__).resolve().parents[1]/'build/verification'
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--android-api',type=int)
+parser.add_argument('--android-label-prefix',default='short-stage')
+parser.add_argument('--heights',nargs='+',type=int,default=[100,150,180,200,240,300])
+parser.add_argument('--output',default='short-stage-comparison')
 args=parser.parse_args()
-out=root/'short-stage-comparison';out.mkdir(parents=True,exist_ok=True)
+out=root/args.output;out.mkdir(parents=True,exist_ok=True)
 rows=[]
 for level in ('calm','normal','chaotic'):
     for mode in ('default','avoid'):
-        heights=(100,150,180,200,240,300)
+        heights=args.heights
         sheet=Image.new('RGB',(800*(4 if args.android_api else 3),sum(heights)+24*len(heights)),'#eef1f5')
         y=0
         for h in heights:
@@ -28,7 +31,7 @@ for level in ('calm','normal','chaotic'):
                 root/'short-stage-upstream',root/'short-stage-before/short-stage-kotlin',root/'short-stage-kotlin')]
             labels=['Original','Before 80px area floor','Actual area budget']
             if args.android_api:
-                folder=root/f'classic-android-api{args.android_api}-short-stage-{level}-{h}'
+                folder=root/f'classic-android-api{args.android_api}-{args.android_label_prefix}-{level}-{h}'
                 assert not (folder/'INVALID.txt').exists()
                 conditions=json.loads((folder/'conditions.json').read_text(encoding='utf8'))
                 assert conditions['viewportHeight']==h and conditions['animationIntensity']==level
@@ -53,7 +56,7 @@ for level in ('calm','normal','chaotic'):
         sheet.save(out/f'{level}-{mode}{"-android" if args.android_api else ""}.png')
 with (out/f'pixel-errors{"-android" if args.android_api else ""}.csv').open('w',newline='',encoding='utf8') as f:
     writer=csv.writer(f);writer.writerow(('intensity','height','mode','candidate','union_foreground_rgb_mae'));writer.writerows(rows)
-assert len(rows)==(108 if args.android_api else 72)
+assert len(rows)==len(args.heights)*6*(3 if args.android_api else 2)
 for label in sorted(set(r[3] for r in rows)):
     values=[r[-1] for r in rows if r[3]==label and r[2]=='avoid']
     print(label,'avoid mean',mean(values),'maximum',max(values))

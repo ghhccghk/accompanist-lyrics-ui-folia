@@ -35,6 +35,12 @@ kotlin {
         androidMain.dependencies { implementation("com.ibm.icu:icu4j:78.3") }
     }
 }
+// Parity tests read pinned fixtures/fonts outside their source set. Declare
+// them so a newly captured source fixture cannot leave stale tests UP-TO-DATE.
+tasks.withType<Test>().configureEach {
+    inputs.dir(rootProject.file("verification/classic-fixtures"))
+    inputs.dir(rootProject.file("verification/assets"))
+}
 tasks.withType<Zip>().configureEach {
     from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md")) { into("META-INF/lyrics-ui-folia") }
     from(rootProject.file("docs/upstream.md")) { into("META-INF/lyrics-ui-folia") }

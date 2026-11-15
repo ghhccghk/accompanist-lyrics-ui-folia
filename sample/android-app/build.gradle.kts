@@ -14,8 +14,8 @@ abstract class PrepareClassicParityAssets : DefaultTask() {
 }
 val parityAssets = tasks.register<PrepareClassicParityAssets>("prepareClassicParityAssets") {
     inputsToCopy.from(rootProject.fileTree("verification/assets") {
-        include("FoliaParityLatin-Bold.ttf", "NotoSansArabic-Bold.ttf", "FoliaParityCJK-Bold.otf", "FoliaParityBidi-Bold.ttf", "*OFL.txt", "OFL.txt", "README.md")
-    }, rootProject.fileTree("verification/classic-fixtures") { include("scenes.tsv", "subtitle-scenes.tsv") })
+        include("FoliaParityLatin-Bold.ttf", "NotoSansArabic-Bold.ttf", "FoliaParityCJK-Bold.otf", "FoliaParitySubtitle-Bold.otf", "FoliaParityBidi-Bold.ttf", "*OFL.txt", "OFL.txt", "README.md")
+    }, rootProject.fileTree("verification/classic-fixtures") { include("scenes.tsv", "subtitle-scenes.tsv", "subtitle-cjk-scenes.tsv") })
     outputDirectory.set(layout.buildDirectory.dir("generated/classicParityAssets"))
 }
 androidComponents.onVariants(androidComponents.selector().withBuildType("debug")) { variant ->

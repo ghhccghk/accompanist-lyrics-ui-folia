@@ -9,12 +9,13 @@ import {getRecentCompletedLine,getSubtitleNextLines} from '../../.work/folia-maj
 import {getLineRenderEndTime} from '../../.work/folia-major/src/utils/lyrics/renderHints';
 import sceneText from '../classic-fixtures/subtitle-scenes.tsv?raw';
 import cjkSceneText from '../classic-fixtures/subtitle-cjk-scenes.tsv?raw';
-import cjkFontUrl from '../assets/FoliaParityCJK-Bold.otf?url';
+import cjkFontUrl from '../assets/FoliaParitySubtitle-Bold.otf?url';
 const cjk=new URLSearchParams(location.search).has('cjk');
+const repeatText=new URLSearchParams(location.search).has('repeat2')?2:1;
   const lines=(cjk?cjkSceneText:sceneText).split(/\r?\n/).filter(r=>r&&!r.startsWith('#')).map(row=>{
     const [start,end,fullText,translation,romanization]=row.split('\t');
-    return {startTime:Number(start)/1000,endTime:Number(end)/1000,fullText,translation,romanization,
-      words:[{text:fullText,startTime:Number(start)/1000,endTime:Number(end)/1000}]};
+    return {startTime:Number(start)/1000,endTime:Number(end)/1000,fullText:fullText.repeat(repeatText),translation,romanization,
+      words:[{text:fullText.repeat(repeatText),startTime:Number(start)/1000,endTime:Number(end)/1000}]};
   });
   const rows=[`# Original subtitle content/runtime, pinned cc6226e464050a456a2913e062374f23d3844cc5`,'# timeMs\tactive\trecent\tlayout\tvisible\trowsJSON\tupcomingJSON'];
   for(const ms of [0,699,700,1900,2140,2141,2500,3200,4400,4401,4800,5000,6400,7000,8300,9000,10300,12000]) {

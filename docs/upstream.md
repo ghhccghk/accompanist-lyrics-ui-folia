@@ -362,3 +362,15 @@ buildTextBlob/getMetrics explain the distinct painted and reported baselines.
 Public Compose cursor rectangles recover the unrounded data; no Skia source is
 copied. SubtitlePaintBaselineTest compares complete shaped paragraphs against
 native TextLine alpha at explicit baselines and rejects uncovered probe glyphs.
+
+Subtitle preview intrinsic overflow: pinned VisualizerSubtitleOverlay.tsx:181-267
+inline-block, px-1.5 and getUpcomingLyricsClassName truncate/max-w-2xl ->
+ClassicSubtitles.kt nowrap min-content width, 42rem cap, shared wrapper/light-pad
+origin and truncated line edge. Preserve complete paragraph shaping; do not
+prematurely ellipsize to the viewport. capture-subtitle-preview.mjs mounts actual
+original Overlay for synthetic CJK/long/translation+next/light-pad cases.
+FoliaParitySubtitle-Bold.otf is a separately renamed OFL subset of the same
+pinned CJK source, adding covered U+2026 without changing original outlines.
+Original body font/fixtures unchanged. Public-entry Desktop window and Android
+debug probes reuse the same source/font/viewport/media grid. See classic-parity.md
+for residuals, failed fallback-font candidate and platform limitations.

@@ -3,11 +3,16 @@ from pathlib import Path
 import csv
 import hashlib
 import json
+import argparse
 from PIL import Image, ImageChops, ImageDraw
 
 project = Path(__file__).resolve().parents[1]
 root = project / 'build/verification'
-out = root / 'subtitle-baseline-comparison'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--before',default='subtitle-baseline-before/subtitle-cjk-kotlin')
+parser.add_argument('--output',default='subtitle-baseline-comparison')
+args=parser.parse_args()
+out = root / args.output
 out.mkdir(parents=True, exist_ok=True)
 background = (22, 36, 53)
 
@@ -24,7 +29,7 @@ def error(reference, candidate):
 rows = []
 hashes = []
 for source in sorted((root / 'subtitle-cjk-upstream').glob('*.png')):
-    before = root / 'subtitle-baseline-before/subtitle-cjk-kotlin' / source.name
+    before = root / args.before / source.name
     after = root / 'subtitle-cjk-kotlin' / source.name
     frames = [Image.open(p).convert('RGB') for p in (source, before, after)]
     count, old = error(frames[0], frames[1])

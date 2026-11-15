@@ -7,18 +7,22 @@ const grayscale=process.argv.includes('--grayscale');
 const backdrop=process.argv.includes('--backdrop');
 const shadow=process.argv.includes('--shadow');
 const cjk=process.argv.includes('--cjk');
-const tag=`${cjk?'cjk-':''}${backdrop?'backdrop-':shadow?'shadow-':''}${grayscale?'grayscale-':''}`;
+const repeat2=process.argv.includes('--repeat2');
+const next=process.argv.includes('--next');
+const sceneTag=`${cjk?'cjk-':''}${repeat2?'repeat2-':''}${next?'next-':''}`;
+const tag=`${sceneTag}${backdrop?'backdrop-':shadow?'shadow-':''}${grayscale?'grayscale-':''}`;
 const output=path.join(root,`build/verification/subtitle-${tag}upstream`);fs.mkdirSync(output,{recursive:true});
 const rows=[`# Mounted original subtitle DOM and Motion values; pinned ${revision}`,'# width\tlayout\tmediaMs\touterAlpha\touterY\tinnerAlpha\tinnerY'];
 const layouts=[`# Actual original subtitle row geometry; pinned ${revision}`,'# width\tlayout\tmediaMs\trow\ttext\ttop\theight\tlastBaseline'];
 const ink=[`# Original subtitle ink bounds, fixed ${revision}`,'# width\tlayout\tmediaMs\trow\ttop\tbottom'];
+const boxes=[`# Original subtitle overflow boxes, fixed ${revision}`,'# width\tlayout\tmediaMs\trow\tleft\twidth\tscrollWidth\tclientWidth'];
 const browser=await chromium.launch({headless:true,args:grayscale?['--disable-lcd-text']:[]});
 try {
- for(const width of [800,380]) for(const layout of ['translation','current+translation+romanization']) {
+ for(const width of [800,380]) for(const layout of next?['translation+next']:['translation','current+translation+romanization']) {
   const page=await browser.newPage({viewport:{width,height:600},deviceScaleFactor:1});
   await page.addInitScript(()=>{delete Element.prototype.animate;});
   const epoch=new Date('2026-01-01T00:00:00Z');await page.clock.install({time:epoch});await page.clock.pauseAt(epoch);
-  await page.goto(`http://127.0.0.1:4173/subtitle.html?paint${cjk?'&cjk':''}${backdrop?'&backdrop':shadow?'&shadow':''}&layout=${encodeURIComponent(layout)}`);await page.waitForFunction(()=>window.ready===true);
+  await page.goto(`http://127.0.0.1:4173/subtitle.html?paint${cjk?'&cjk':''}${repeat2?'&repeat2':''}${backdrop?'&backdrop':shadow?'&shadow':''}&layout=${encodeURIComponent(layout)}`);await page.waitForFunction(()=>window.ready===true);
   const times=[0,50,120,240,700,725,750,800,850,1000,1500,2500,3200,3250,3350,3500,4800,5000,5050,5150,5500];
   const observations=[];
   for(let tick=0;tick<=5500;tick+=5) {
@@ -30,7 +34,7 @@ try {
       return {outer,inner,elements:[el,...el.querySelectorAll('*')].map(e=>({className:e.className,rect:e.getBoundingClientRect().toJSON(),font:getComputedStyle(e).font})),rows:Array.from(el.querySelectorAll('[data-subtitle-track],p')).map(row=>{
         const marker=document.createElement('span');marker.style.cssText='display:inline-block;width:0;height:0';row.appendChild(marker);
         const baseline=marker.getBoundingClientRect().top;marker.remove();
-        return {text:row.textContent,source:row.getAttribute('data-subtitle-track'),baseline,rect:row.getBoundingClientRect().toJSON(),font:getComputedStyle(row).font,opacity:getComputedStyle(row).opacity};
+        return {text:row.textContent,source:row.getAttribute('data-subtitle-track'),baseline,rect:row.getBoundingClientRect().toJSON(),font:getComputedStyle(row).font,opacity:getComputedStyle(row).opacity,scrollWidth:row.scrollWidth,clientWidth:row.clientWidth};
       })};
     });
     if(!png.equals(await page.screenshot()))throw new Error('Subtitle baseline probe changed frame');
@@ -38,18 +42,19 @@ try {
     if(backdrop && tick===1500) {
       const text=page.locator('.relative.z-10');await text.evaluate(el=>el.style.visibility='hidden');
       await page.screenshot({path:path.join(output,`${width}-${layout}-${tick}ms-pad.png`)});
-      const fixtures=path.join(root,'verification/classic-fixtures/subtitle-backdrop');fs.mkdirSync(fixtures,{recursive:true});
+      const fixtures=path.join(root,`verification/classic-fixtures/subtitle-${sceneTag}backdrop`);fs.mkdirSync(fixtures,{recursive:true});
       fs.copyFileSync(path.join(output,`${width}-${layout}-${tick}ms-pad.png`),path.join(fixtures,`${width}-${layout}-pad.png`));
       await text.evaluate(el=>el.style.visibility='');
     }
     if(shadow && tick===1500) {
       const text=page.locator('[data-subtitle-track],p');
       await text.evaluateAll(els=>els.forEach(el=>el.style.color='transparent'));
-      const fixture=path.join(root,'verification/classic-fixtures/subtitle-backdrop');fs.mkdirSync(fixture,{recursive:true});
+      const fixture=path.join(root,`verification/classic-fixtures/subtitle-${sceneTag}backdrop`);fs.mkdirSync(fixture,{recursive:true});
       await page.screenshot({path:path.join(fixture,`${width}-${layout}-shadow.png`)});
       await text.evaluateAll(els=>els.forEach(el=>el.style.color=''));
     }
     if([1500,2500,3500,5500].includes(tick))data.rows.forEach((r,i)=>layouts.push([width,layout,tick,i,r.text,r.rect.top,r.rect.height,r.baseline].join('\t')));
+    if([1500,2500,3500,5500].includes(tick))data.rows.forEach((r,i)=>boxes.push([width,layout,tick,i,r.rect.left,r.rect.width,r.scrollWidth,r.clientWidth].join('\t')));
     if([1500,2500,3500,5500].includes(tick)) {
      const boxes=await page.evaluate(async ({png,rows})=>{
       const bytes=Uint8Array.from(atob(png),c=>c.charCodeAt(0));const image=await createImageBitmap(new Blob([bytes],{type:'image/png'}));
@@ -64,10 +69,11 @@ try {
     }
    }
   }
-  fs.writeFileSync(path.join(output,`${width}-${layout}.json`),JSON.stringify({revision,browser:browser.version(),antialias:grayscale?'--disable-lcd-text':'browser default',font:cjk?'FoliaParityCJK-Bold.otf':'FoliaParityLatin-Bold.ttf',observations},null,2));
+  fs.writeFileSync(path.join(output,`${width}-${layout}.json`),JSON.stringify({revision,browser:browser.version(),antialias:grayscale?'--disable-lcd-text':'browser default',font:cjk?'FoliaParitySubtitle-Bold.otf':'FoliaParityLatin-Bold.ttf',observations},null,2));
   await page.close();
  }
  if(!grayscale&&!shadow) fs.writeFileSync(path.join(root,`verification/classic-fixtures/subtitle-${tag}motion.tsv`),rows.join('\n')+'\n');
  if(!grayscale&&!shadow) fs.writeFileSync(path.join(root,`verification/classic-fixtures/subtitle-${tag}layout.tsv`),layouts.join('\n')+'\n');
  if(!grayscale&&!shadow) fs.writeFileSync(path.join(root,`verification/classic-fixtures/subtitle-${tag}ink.tsv`),ink.join('\n')+'\n');
+ if(!grayscale&&!shadow) fs.writeFileSync(path.join(root,`verification/classic-fixtures/subtitle-${tag}boxes.tsv`),boxes.join('\n')+'\n');
 }finally {await browser.close();}

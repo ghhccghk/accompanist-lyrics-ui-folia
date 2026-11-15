@@ -31,6 +31,7 @@ class SubtitlePaintBaselineTest {
             "FoliaParityLatin-Bold.ttf" to "M",
             "NotoSansArabic-Bold.ttf" to "م",
             "FoliaParityCJK-Bold.otf" to "合",
+            "FoliaParitySubtitle-Bold.otf" to "合",
         ).flatMap { (font, glyph) ->
             listOf(14f,15.84f,16f,17.6f,18f,20f).map { Probe(font,it,glyph) }
         }

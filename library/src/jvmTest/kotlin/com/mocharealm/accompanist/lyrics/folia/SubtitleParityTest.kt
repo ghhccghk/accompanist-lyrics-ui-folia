@@ -40,22 +40,39 @@ class SubtitleParityTest {
     @Test fun shadowNarrow()=capture(380,shadowOnly=true)
     @Test fun cjkWide()=capture(800,cjk=true)
     @Test fun cjkNarrow()=capture(380,cjk=true)
-    private fun capture(width:Int,software:Boolean=false,backdrop:Boolean=false,padOnly:Boolean=false,shadowOnly:Boolean=false,cjk:Boolean=false)=runDesktopComposeUiTest(width=width,height=600) {
-        val cjkTag=if(cjk) "cjk-" else ""
-        val lines=File("../verification/classic-fixtures/subtitle-${cjkTag}scenes.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.map {row->
-            val c=row.split('\t');normalize(SyncedLyrics(listOf(SyncedLine(c[2],c[3],c[0].toInt(),c[1].toInt())))).lines.single().copy(phonetic=c[4])
+    @Test fun cjkCappedWide()=capture(800,cjk=true,repeatText=2)
+    @Test fun cjkCappedNarrow()=capture(380,cjk=true,repeatText=2)
+    @Test fun cjkNextWide()=capture(800,cjk=true,nextLayout=true)
+    @Test fun cjkNextNarrow()=capture(380,cjk=true,nextLayout=true)
+    @Test fun cjkNextCappedWide()=capture(800,cjk=true,repeatText=2,nextLayout=true)
+    @Test fun cjkNextCappedNarrow()=capture(380,cjk=true,repeatText=2,nextLayout=true)
+    @Test fun cjkNextBackdropWide()=capture(800,cjk=true,nextLayout=true,backdrop=true)
+    @Test fun cjkNextBackdropNarrow()=capture(380,cjk=true,nextLayout=true,backdrop=true)
+    @Test fun cjkNextBackdropCappedWide()=capture(800,cjk=true,repeatText=2,nextLayout=true,backdrop=true)
+    @Test fun cjkNextBackdropCappedNarrow()=capture(380,cjk=true,repeatText=2,nextLayout=true,backdrop=true)
+    private fun capture(width:Int,software:Boolean=false,backdrop:Boolean=false,padOnly:Boolean=false,shadowOnly:Boolean=false,cjk:Boolean=false,repeatText:Int=1,nextLayout:Boolean=false)=runDesktopComposeUiTest(width=width,height=600) {
+        val cjkTag=(if(cjk) "cjk-" else "")+(if(repeatText==2) "repeat2-" else "")+(if(nextLayout) "next-" else "")
+        val lines=File("../verification/classic-fixtures/subtitle-${if(cjk) "cjk-" else ""}scenes.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.map {row->
+            val c=row.split('\t');normalize(SyncedLyrics(listOf(SyncedLine(c[2].repeat(repeatText),c[3],c[0].toInt(),c[1].toInt())))).lines.single().copy(phonetic=c[4])
         }
         val index=VisualTimeline(lines);val history=SubtitleHistory(lines)
         var snapshot by mutableStateOf(FoliaPlaybackSnapshot(0,false))
         var layout by mutableStateOf("translation")
         var measuredHeight=0f
         var measuredRows=emptyList<SubtitlePaint>()
-        val font=FontFamily(Font(File("../verification/assets/${if(cjk) "FoliaParityCJK-Bold.otf" else "FoliaParityLatin-Bold.ttf"}"),FontWeight.Bold))
+        val fontFile=File("../verification/assets/${if(cjk) "FoliaParitySubtitle-Bold.otf" else "FoliaParityLatin-Bold.ttf"}")
+        if(cjk) org.jetbrains.skia.FontMgr.default.makeFromFile(fontFile.path)!!.use {face->
+            org.jetbrains.skia.Font(face,16f).use {native->
+                val text=lines.joinToString("") {it.text+(it.translation?:"")+(it.phonetic?:"")}+"…"
+                assertTrue(native.getStringGlyphs(text).all {it.toInt()!=0},"Synthetic subtitle and ellipsis must not use system fallback")
+            }
+        }
+        val font=FontFamily(Font(fontFile,FontWeight.Bold))
         val typography=FoliaTypography(subtitle=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold,shadow=if(padOnly) Shadow.None else null))
         setContent {
           CompositionLocalProvider(LocalClassicSoftwareLayers provides software) {
             val time=snapshot.positionMillis*1000;val epoch=index.at(time).primary
-            val sources=if(layout=="translation") listOf(SubtitleSource.Translation) else listOf(SubtitleSource.Current,SubtitleSource.Translation,SubtitleSource.Phonetic)
+            val sources=when(layout) {"translation"->listOf(SubtitleSource.Translation);"translation+next"->listOf(SubtitleSource.Translation,SubtitleSource.Next);else->listOf(SubtitleSource.Current,SubtitleSource.Translation,SubtitleSource.Phonetic)}
             val content=resolveSubtitleContent(lines,epoch?.line,history.recent(time,epoch?.line),sources)
             Box(Modifier.fillMaxSize().background(Color(0xFF162435))) {
                 ClassicSubtitles(content,lines,{snapshot},typography,FoliaColors(secondary=if(padOnly||shadowOnly) Color.Transparent else FoliaColors().secondary,
@@ -67,7 +84,7 @@ class SubtitleParityTest {
           }
         val tag=if(backdrop) "backdrop-" else ""
         val output=File("../build/verification/subtitle-${cjkTag}${tag}${if(padOnly) "pad-" else if(shadowOnly) "shadow-" else ""}${if(software) "software-" else ""}kotlin").apply {mkdirs()}
-        for(mode in listOf("translation","current+translation+romanization")) {
+        for(mode in if(nextLayout) listOf("translation+next") else listOf("translation","current+translation+romanization")) {
             runOnIdle {layout=mode}
             val times=if(padOnly||shadowOnly) listOf(1500) else listOf(0,50,120,240,700,725,750,800,850,1000,1500,2500,3200,3250,3350,3500,4800,5000,5050,5150,5500)
             val frames=mutableMapOf<Int,IntArray>()
@@ -120,6 +137,22 @@ class SubtitleParityTest {
                         val baseline=top+row.baseline+row.height-row.height/row.layout.lineCount
                         assertEquals(c[4],row.text)
                         listOf(top,row.height,baseline).forEachIndexed {i,value->assertEquals(c[i+5].toDouble(),value.toDouble(),.02,"subtitle geometry column ${i+5}: $c")}
+                    }
+                    if(cjk && mode in listOf("translation","translation+next") && time==5500) {
+                        val boxes=File("../verification/classic-fixtures/subtitle-${cjkTag}${tag}boxes.tsv").readLines()
+                            .filterNot {it.startsWith("#")||it.isBlank()}.map {it.split('\t')}
+                            .filter {it[0].toInt()==width && it[1]==mode && it[2].toInt()==time}
+                        boxes.forEach {c->
+                            val row=measuredRows[c[3].toInt()]
+                            if(c[5].toFloat()>width-32) {
+                                assertEquals(c[5].toFloat(),row.layout.size.width.toFloat(),.02f,"Original overflowing preview width")
+                                assertEquals(if(backdrop) 22f else 16f,c[4].toFloat(),.02f,"Overflowing inline-block begins at padded edge")
+                            }
+                            // Locked SkiaParagraph.isLineEllipsized is an unconditional
+                            // false stub. The actual native paragraph overflow result
+                            // is available on MultiParagraph; pixels remain separately compared.
+                            assertEquals(c[6].toInt()>c[7].toInt(),row.layout.multiParagraph.didExceedMaxLines,"Ellipsis only at the original 42rem boundary")
+                        }
                     }
                 }
             }

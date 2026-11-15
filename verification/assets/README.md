@@ -52,3 +52,13 @@ python verification/prepare-bidi.py. Both input hashes are checked; name/STAT,
 weight/width metadata and timestamps are fixed. Two fresh processes reproduce
 SHA-256 e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699.
 Only verification/debug assets include this face, not the published library.
+
+FoliaParitySubtitle-Bold.otf is a separate verification-only subset of the same
+pinned Noto Sans CJK SC Bold source described above, under CJK-OFL.txt. It has
+the identical synthetic CJK/ASCII glyph coverage plus U+2026, so truncation tests
+do not compare unrecorded system fallback fonts for the ellipsis. Family/PS names
+are Folia Parity Subtitle / FoliaParitySubtitle-Bold; original outline and font
+metrics are unchanged. Reproduce with fontTools4.55.3 using
+`python verification/subset-cjk.py <pinned-original.otf> --subtitle`.
+SHA-256: 54a8b4538b14bca544ef4021313e681c7097fd8c9899cdace3a65ea2ea4d71d1.
+The existing FoliaParityCJK-Bold.otf and original body fixtures remain unchanged.

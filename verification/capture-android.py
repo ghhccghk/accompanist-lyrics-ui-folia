@@ -42,7 +42,7 @@ conditions={'serial':args.serial,'sdk':sdk,'device':adb('shell','getprop','ro.pr
         for source_set in ['commonMain','androidMain']
         for p in sorted((root/'library/src'/source_set).rglob('*.kt'))},
     'fonts':{name:hashlib.sha256((root/'verification/assets'/name).read_bytes()).hexdigest()
-        for name in ['FoliaParityLatin-Bold.ttf','FoliaParityCJK-Bold.otf','NotoSansArabic-Bold.ttf','FoliaParityBidi-Bold.ttf']},
+        for name in ['FoliaParityLatin-Bold.ttf','FoliaParityCJK-Bold.otf','FoliaParitySubtitle-Bold.otf','NotoSansArabic-Bold.ttf','FoliaParityBidi-Bold.ttf']},
     'apkSha256':hashlib.sha256((root/'sample/android-app/build/outputs/apk/debug/android-app-debug.apk').read_bytes()).hexdigest(),
     'activitySha256':hashlib.sha256((root/'sample/android-app/src/debug/kotlin/com/mocharealm/accompanist/folia/sample/ClassicParityActivity.kt').read_bytes()).hexdigest(),
     'animationIntensity':args.intensity,'viewportHeight':args.height,'frames':[]}
@@ -65,8 +65,9 @@ conditions['startup']='Two exact empty-scene captures before media checkpoints; 
 observed={}
 request_token=0
 for scene in args.scenes:
-    widths=[800,380] if scene in ['subtitle','interlude','interlude-single'] else [380 if scene=='wrap' else 600 if scene in ['group','cjk'] else 800]
-    times=[1500,5500] if scene=='subtitle' else [750,800,1000,1200,1500,1900,2100,2800,3000] if scene!='baseline' else [750,1000,1500,2100,2300,3400,4400]
+    subtitle=scene.startswith('subtitle')
+    widths=[800,380] if subtitle or scene in ['interlude','interlude-single'] else [380 if scene=='wrap' else 600 if scene in ['group','cjk'] else 800]
+    times=[1500,5500] if subtitle else [750,800,1000,1200,1500,1900,2100,2800,3000] if scene!='baseline' else [750,1000,1500,2100,2300,3400,4400]
     if scene.startswith('interrupted-'):times=[731,761,791,821,851,881,941,1001,1041,1101,1241,1401,1701,2001]
     if scene=='dense':times=[801,901,1001,1051,1101,1201,1301]
     if scene in ['interlude','interlude-single']:times=[750,1000,1500,1900,2300,2500]
@@ -83,10 +84,10 @@ for scene in args.scenes:
                 adb('shell','am','start','--activity-no-animation','--activity-single-top','-n','com.mocharealm.accompanist.folia.sample/.ClassicParityActivity',
                     '--es','scene',scene,'--es','intensity',args.intensity,'--el','mediaMs',str(ms),'--ei','width',str(width),
                     '--ei','height',str(args.height),
-                    '--ez','avoid',str(mode if scene!='subtitle' else False).lower(),
-                    '--ez','backdrop',str(mode if scene=='subtitle' else False).lower(),
+                    '--ez','avoid',str(mode if not subtitle else False).lower(),
+                    '--ez','backdrop',str(mode if subtitle else False).lower(),
                     '--el','captureToken',str(request_token))
-                ready=f'READY {scene} {ms} {width} {str(mode if scene!="subtitle" else False).lower()} {str(mode if scene=="subtitle" else False).lower()} token={request_token}'
+                ready=f'READY {scene} {ms} {width} {str(mode if not subtitle else False).lower()} {str(mode if subtitle else False).lower()} token={request_token}'
                 deadline=time.monotonic()+15
                 while True:
                     logs=adb('logcat','-d','-s','FoliaParity:I','AndroidRuntime:E')
@@ -103,7 +104,7 @@ for scene in args.scenes:
                     image.save(output/f'{scene}-{ms}ms-obscured.png')
                     (output/'obscured-conditions.json').write_text(json.dumps(conditions,ensure_ascii=False,indent=2),encoding='utf8')
                     raise RuntimeError(f'Fixed-scene backdrop corners obscured at {scene}/{ms}; inspect saved screenshot')
-                label=('backdrop' if mode else 'transparent') if scene=='subtitle' else ('avoid' if mode else 'default')
+                label=('backdrop' if mode else 'transparent') if subtitle else ('avoid' if mode else 'default')
                 name=f'{scene}-{width}-{label}-{ms}ms.png'
                 digest=hashlib.sha256(image.tobytes()).hexdigest()
                 revisited=name in observed

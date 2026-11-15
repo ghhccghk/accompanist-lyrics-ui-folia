@@ -1173,3 +1173,58 @@ BodyRaster/BodySampling、自然行高两组控制及Android debug/Desktop class
 :library:jvmTest --tests '*Subtitle*Test'；python verification/compare-subtitle-baselines.py。
 证据subtitle-cjk-{upstream,kotlin}、subtitle-native-baseline-control、
 subtitle-baseline-before、subtitle-baseline-comparison；后者保存84帧PNG SHA和源码SHA。
+
+## 下一句预览的固有宽度、溢出和省略号（2026-11-15）
+
+上游VisualizerSubtitleOverlay.tsx:181-267的inline-block包裹与下一句
+getUpcomingLyricsClassName的truncate/max-w-2xl共同决定shrink-to-fit宽度。
+nowrap的min-content可超过可用视口；380px视口左右16px padding内，原版448/576px
+预览从x16开始向右溢出，不能先压成348px。超过42rem=672px才真正省略。
+有底色时px-1.5必须同时扩展包裹、光垫和所有行的定位。
+
+ClassicSubtitles.kt现从完整塑形结果保留nowrap固有宽度，cap672；按原版inline-block
+定位预览及光垫，正常多行仍完整段落shaping。真正截断时从行边缘绘制，避免
+SkParagraph不计ellipsis的reported line width导致手工居中再偏移。未增加公共API。
+锁定SkiaParagraph.isLineEllipsized为false stub，因此测试使用真实段落的
+multiParagraph.didExceedMaxLines；不是放宽溢出标准，完整图像仍独立对照。
+
+新合成场景普通/重复两遍、translation+next、主题光垫共336原版帧；原版PNG在
+baseline标记探针前后严格相同。初次超长测试发现旧CJK子集不含U+2026，不能把
+两侧未控制的系统ellipsis fallback当同字体验收。失败候选保存在
+subtitle-preview-system-fallback-before；从同一已登记OFL源生成独立字幕子集，
+补U+2026并重命名为Folia Parity Subtitle，glyph覆盖断言与48条native alpha控制通过。
+新字体SHA54a8b4538b14bca544ef4021313e681c7097fd8c9899cdace3a65ea2ea4d71d1；
+旧正文子集不变，原版基础CJK84张在换字体前后逐字节相同，未改变原outline/metrics。
+
+JVM同一336帧、逆向重访及暂停推进1s严格一致，原版row geometry继续使用.02px
+容差；额外核对原版scrollWidth/clientWidth、溢出宽度与省略边界。原CJK84张中仅
+4张380/translation/5000..5500ms变化，前景RGB MAE17.459012→3.706977，另80张
+完全不变；原Latin透明/阴影/光垫/软件回退260张也逐字节相同。六组均值/最大依次
+3.639083/9.771453、3.660808/9.771453、2.038618/6.091125、1.966653/5.764151、
+.485588/.854866、.491407/.875168；不把这个误差当自动通过阈值。全帧不对齐/缩放。
+已目视380溢出和800真正672截断，文字/光垫位置恢复，字形覆盖残差仍在。
+
+Desktop真实Direct3D窗口使用公开FoliaLyricsView、translation+next、两种长度，
+800→380→800，36请求/12不同画面/24重访；实际暂停等待1s严格一致。
+相对原版12帧均值4.422436、最大6.091125。记录font/renderer源码SHA。
+捕获的是窗口实际绘制后的GraphicsLayer；OS截图/输入工具仍因kernel assets初始化
+os error3不可用，未把内部图层称作OS截图。没有改系统设置或另写UI自动化绕过限制。
+
+全部Subtitle/Renderer、ClassicParity/Intensity及正文基线回归和两端构建通过；日志
+.work/subtitle-preview-{full-validation,covered-validation,covered-native-window}.log。
+API34实际安装新APK，两个长度×两宽度×透明/光垫×六时点正逆共96请求/48不同帧，
+暂停双截图、48次逆向重访严格一致。首次全屏引导经截图确认后正常点击关闭；没有
+关闭遮挡断言或改变设备密度。原版对照48帧均值3.940990、最大12.120787，已目视
+窄屏溢出、672边界和光垫；不据此豁免Android小数字号coverage残差。
+证据classic-android-api34-subtitle-preview，日志subtitle-preview-android34.log。
+API30同一APK/48不同帧/96请求也完成：全部暂停/48次逆向严格一致，使用Kotlin软件
+模糊回退，均值4.685990、最大15.225423。四方对照已目视，API30文字覆盖/blur残差
+继续记录，不因较新API通过而豁免。日志subtitle-preview-android30.log；两个私有
+只读模拟器均已正常emu kill。没有实机或API21..29的新验证。
+
+复现：node verification/classic-browser/capture-subtitle-preview.mjs；
+:library:jvmTest --tests '*Subtitle*Test' --tests '*RendererTest'；
+:sample:desktop-app:verifyClassicWindow --args=--subtitle；Android调试入口及
+capture-android.py --scenes subtitle-cjk subtitle-cjk-repeat2 --times 750 850 1500
+3500 5150 5500 --verify-seek；compare-subtitle-preview.py --android-api 34 30。
+对照/完整PNG SHA/源码SHA在subtitle-preview-final-comparison，设备/APK条件在各原目录。

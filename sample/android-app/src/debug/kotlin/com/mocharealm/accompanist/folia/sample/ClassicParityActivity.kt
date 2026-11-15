@@ -56,13 +56,14 @@ class ClassicParityActivity : ComponentActivity() {
             window.insetsController?.hide(WindowInsets.Type.systemBars())
         }
         requestedFrame=mutableStateOf(requested(intent))
-        val families=listOf("FoliaParityLatin-Bold.ttf","NotoSansArabic-Bold.ttf","FoliaParityCJK-Bold.otf","FoliaParityBidi-Bold.ttf").associateWith {name->
+        val families=listOf("FoliaParityLatin-Bold.ttf","NotoSansArabic-Bold.ttf","FoliaParityCJK-Bold.otf","FoliaParitySubtitle-Bold.otf","FoliaParityBidi-Bold.ttf").associateWith {name->
             val file=File(filesDir,name)
             assets.open(name).use {input->file.outputStream().use(input::copyTo)}
             FontFamily(Font(file,weight=FontWeight.Bold))
         }
         val sceneRows=assets.open("scenes.tsv").bufferedReader().use {it.readLines()}.filter {it.isNotBlank()&&!it.startsWith('#')}.map {it.split('\t')}
         val subtitleRows=assets.open("subtitle-scenes.tsv").bufferedReader().use {it.readLines()}.filter {it.isNotBlank()&&!it.startsWith('#')}.map {it.split('\t')}
+        val cjkSubtitleRows=assets.open("subtitle-cjk-scenes.tsv").bufferedReader().use {it.readLines()}.filter {it.isNotBlank()&&!it.startsWith('#')}.map {it.split('\t')}
         setContent {
             val probeToken=metricsGeneration.longValue
             if(probeToken>0) ComposeFontRasterProbe(families.getValue("FoliaParityLatin-Bold.ttf"),probeToken,filesDir)
@@ -77,7 +78,8 @@ class ClassicParityActivity : ComponentActivity() {
                     }
                 }
             }
-            val subtitle=frame.scene=="subtitle"
+            val subtitle=frame.scene.startsWith("subtitle")
+            val cjkSubtitle=frame.scene.startsWith("subtitle-cjk")
             val lyrics=remember(frame.scene) {
                 fun line(a:String,b:String,s:Int,m:Int,e:Int)=KaraokeLine.MainKaraokeLine(
                     listOf(KaraokeSyllable(a,s,m),KaraokeSyllable(b,m,e)),null,KaraokeAlignment.Unspecified,s,e)
@@ -95,6 +97,9 @@ class ClassicParityActivity : ComponentActivity() {
                     })
                     "baseline"->SyncedLyrics(listOf(line("Amber ","echo",700,1300,1900),line("Silver ","light",3200,3650,4100)))
                     "subtitle"->SyncedLyrics(subtitleRows.map {SyncedLine(it[2],it[3],it[0].toInt(),it[1].toInt())})
+                    "subtitle-cjk", "subtitle-cjk-repeat2"->SyncedLyrics(cjkSubtitleRows.map {
+                        SyncedLine(it[2].repeat(if(frame.scene.endsWith("repeat2")) 2 else 1),it[3],it[0].toInt(),it[1].toInt())
+                    })
                     else->{
                         val rows=sceneRows.filter {it[0]==frame.scene};require(rows.isNotEmpty()) {"Unknown parity scene ${frame.scene}"}
                         SyncedLyrics(listOf(KaraokeLine.MainKaraokeLine(rows.map {KaraokeSyllable(it[5],it[3].toInt(),it[4].toInt())},
@@ -102,7 +107,7 @@ class ClassicParityActivity : ComponentActivity() {
                     }
                 }
             }
-            val font=families.getValue(when {frame.scene=="arabic"->"NotoSansArabic-Bold.ttf";frame.scene.startsWith("bidi-")->"FoliaParityBidi-Bold.ttf";frame.scene=="cjk"->"FoliaParityCJK-Bold.otf";else->"FoliaParityLatin-Bold.ttf"})
+            val font=families.getValue(when {frame.scene=="arabic"->"NotoSansArabic-Bold.ttf";frame.scene.startsWith("bidi-")->"FoliaParityBidi-Bold.ttf";cjkSubtitle->"FoliaParitySubtitle-Bold.otf";frame.scene=="cjk"->"FoliaParityCJK-Bold.otf";else->"FoliaParityLatin-Bold.ttf"})
             val typography=FoliaTypography(secondary=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold),
                 subtitle=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold))
             CompositionLocalProvider(LocalDensity provides Density(1f)) {
@@ -112,7 +117,7 @@ class ClassicParityActivity : ComponentActivity() {
                             active=if(subtitle) Color.Transparent else Color.White,
                             secondary=if(subtitle) FoliaColors().secondary else Color.Transparent,
                             subtitleBackground=if(frame.backdrop) Color(0xFF48707E) else Color.Transparent),
-                        options=FoliaOptions(showTranslation=subtitle,showPhonetic=false,showNextLine=false,animationIntensity=frame.intensity),
+                        options=FoliaOptions(showTranslation=subtitle,showPhonetic=false,showNextLine=cjkSubtitle,animationIntensity=frame.intensity),
                         style=FoliaStyle.Classic(ClassicTuning(breathingFloatMultiplier=0f,avoidOverlap=frame.avoid)))
                 },modifier=Modifier.drawBehind {drawRect(Color(0xFF162435))}) {children,constraints->
                     require(constraints.maxWidth>=frame.width && constraints.maxHeight>=frame.height) {"Parity viewport exceeds device surface: $constraints"}

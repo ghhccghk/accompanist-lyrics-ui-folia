@@ -48,7 +48,10 @@ private fun DrawScope.drawSubtitleText(row:SubtitlePaint,padding:Float,color:Col
         // Android Layout rounds ALIGN_CENTER's paint origin to an integer.
         // Center a start-aligned, fully shaped paragraph ourselves, at CSS precision.
         // Start also avoids the integer opposite-alignment origin in RTL Layout.
-        val x=(row.layout.size.width-width)/2-left
+        // SkParagraph's reported line width excludes the ellipsis. A truncated
+        // nowrap CSS row paints from the row edge; centering that partial width
+        // shifts the whole preview and leaves a false gap before the first glyph.
+        val x=if(row.layout.multiParagraph.didExceedMaxLines) -left else (row.layout.size.width-width)/2-left
         withTransform({translate(x,target-paintedLineBaseline(row.layout,line))}) {
             clipRect(-padding,row.layout.getLineTop(line)+padding,
                 row.layout.size.width+padding*2,row.layout.getLineBottom(line)+padding) {
@@ -80,17 +83,39 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
             val padX=if(backdrop) 6*density.density else 0f
             val padY=if(backdrop) 2*density.density else 0f
             var total=padY
-            fun prepare(value:String,fontSize:Float,weight:FontWeight,upcoming:Boolean,alpha:Float,gap:Float) {
-                val style=typography.subtitle.copy(fontSize=(floor(fontSize*100+.00001f)/100).sp,fontWeight=weight,
+            fun textStyle(fontSize:Float,weight:FontWeight)=
+                typography.subtitle.copy(fontSize=(floor(fontSize*100+.00001f)/100).sp,fontWeight=weight,
                     color=colors.secondary,lineHeight=TextUnit.Unspecified,
                     textMotion=typography.subtitle.textMotion?:TextMotion.Animated)
+            val previewSize=(viewportWidth.value*.02f).coerceIn(14f,16f)*typography.scale*explicitSize/18
+            fun noWrapWidth(value:String,fontSize:Float,weight:FontWeight):Float {
+                val unwrapped=measurer.measure(value,textStyle(fontSize,weight),softWrap=false)
+                return (ceil(unwrapped.getPathForRange(0,value.length).getBounds().width/density.density*64)/64*density.density)
+                    .coerceAtMost(672*density.density)
+            }
+            // The original fallback preview is a shrink-to-fit inline-block.
+            // nowrap children establish a min-content width (capped at 42rem),
+            // even when that exceeds the padded viewport. It then starts at the
+            // inline line's left edge; narrowing each row early inserts a false ellipsis.
+            val previewWidth=(if(content.rows.isEmpty()) content.upcoming.map { index ->
+                noWrapWidth(lines[index].text,previewSize,typography.subtitle.fontWeight?:FontWeight.Normal)
+            } else content.rows.mapIndexedNotNull { index,row ->
+                if(row.source!=SubtitleSource.Next) null else {
+                    val secondary=index>0
+                    val size=(viewportWidth.value*.026f).coerceIn(18f,20f)*typography.scale*explicitSize/18*(if(secondary) .88f else 1f)
+                    noWrapWidth(row.text,size,typography.subtitle.fontWeight?:if(secondary) FontWeight.Normal else FontWeight.Medium)
+                }
+            }).maxOrNull()?.plus(padX*2)?:0f
+            val contentWidth=maxOf(with(density){maxWidth.toPx()},previewWidth)
+            fun prepare(value:String,fontSize:Float,weight:FontWeight,upcoming:Boolean,alpha:Float,gap:Float) {
+                val style=textStyle(fontSize,weight)
                 val text=AnnotatedString(value)
                 // Relative CSS line-height uses Blink's nearest 1/64px used font
                 // size first (15.84px -> 15.84375px), then floors the product.
                 val usedFont=floor(fontSize*density.fontScale*64+.5f)/64
                 val lineHeight=floor(usedFont*1.5f*64)/64*density.density
                 val natural=naturalFontMetrics(style,fontResolver,density)
-                val available=minOf(with(density){maxWidth.toPx()}-padX*2,
+                val available=minOf(contentWidth-padX*2,
                     (if(upcoming) 672f else 896f)*density.density).coerceAtLeast(1f)
                 val layout=measurer.measure(text,style.copy(
                     lineHeight=(lineHeight/density.density/density.fontScale).sp,textAlign=TextAlign.Start,
@@ -112,8 +137,7 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
                     row.source==SubtitleSource.Next,if(secondary) .82f else 1f,if(secondary) size*.25f else 0f)
             }
             content.upcoming.forEachIndexed {index,line->
-                val size=(viewportWidth.value*.02f).coerceIn(14f,16f)*typography.scale*explicitSize/18
-                prepare(lines[line].text,size,typography.subtitle.fontWeight?:FontWeight.Normal,true,1f,if(index>0) 8f/density.fontScale else 0f)
+                prepare(lines[line].text,previewSize,typography.subtitle.fontWeight?:FontWeight.Normal,true,1f,if(index>0) 8f/density.fontScale else 0f)
             }
             total+=padY
             val blockHeight=total
@@ -137,6 +161,7 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
                 // Recorded layers have their own DrawScope.size. Placement always
                 // refers to this viewport, never the padded layer dimensions.
                 val viewport=size
+                val contentLeft=((viewport.width-contentWidth)/2).coerceAtLeast(0f)
                 val origin=viewport.height-total
                 val outerPadding=160*density.density
                 outerLayer.alpha=frame().outerAlpha
@@ -150,7 +175,7 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
                     backdropLayer.record(this,size=IntSize(ceil(box.width+blurPadding*2).toInt(),ceil(box.height+blurPadding*2).toInt())) {
                         drawSubtitleBackdrop(colors.subtitleBackground,box,Offset(blurPadding,blurPadding))
                     }
-                    withTransform({translate((viewport.width-box.width)/2-blurPadding,origin-24*density.density-blurPadding)}) {drawClassicLayer(backdropLayer)}
+                    withTransform({translate(contentLeft+(contentWidth-box.width)/2-blurPadding,origin-24*density.density-blurPadding)}) {drawClassicLayer(backdropLayer)}
                 }
                 val f=frame()
                 val contentPadding=16*density.density
@@ -173,7 +198,7 @@ internal fun ClassicSubtitles(content:SubtitleContent,lines:List<NormalizedLine>
                         }
                         drawSubtitleText(row,padding.toFloat())
                     }
-                    withTransform({translate((viewport.width-row.layout.size.width)/2-padding,origin+row.top-padding)}) {drawClassicLayer(layer)}
+                    withTransform({translate(contentLeft+(contentWidth-row.layout.size.width)/2-padding,origin+row.top-padding)}) {drawClassicLayer(layer)}
                 }
                 }
                 }

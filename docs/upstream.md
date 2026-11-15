@@ -104,6 +104,13 @@ contain original synthetic "M", using the pinned OFL font, no upstream lyric ass
 No third-party blur implementation was copied. Existing software blur remains an
 approximation with measured residuals, recorded in classic-parity.md.
 
+Public stage audit: classic/Visualizer.tsx at the pinned commit → FoliaLyricsView.kt.
+Viewport-derived font, 70% stage height, 32dp padding, 1152dp line cap, independent
+bottom subtitle overlay and unbounded natural line height mirror the classic stage.
+No shell background/player engine code is imported. PublicClassicParityTest verifies
+public versus isolated core pixels on 800/380-wide surfaces; subtitle parity itself
+remains incomplete and is explicitly recorded separately.
+
 ## Independent model input
 
 Resolved candidate: `com.mocharealm.accompanist:lyrics-core:0.5.0`.

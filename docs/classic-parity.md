@@ -126,3 +126,17 @@ capture-breathing.mjs 在 React 挂载前冻结浏览器时钟，运行原版 cl
 breathing.tsv 共25检查点，Kotlin y误差 <0.0001px、scale误差 <0.000005。
 没有拟合或修改既有关键帧。挂载时间变化会使捕获失败，禁止采纳中途重载后的轨迹。
 原版挂载墙钟相位替换为可重建媒体相位，暂停不走时、seek直接定位是既定平台适配。
+
+## 公开入口舞台复核（2026-11-15）
+
+classic/Visualizer.tsx 的70vh、p-8、max-w-6xl和独立字幕层 → FoliaLyricsView.kt。
+修复入口24dp缩进、按内缩宽度计算6vw和字幕Column推移主句的问题；主句与退场句各自
+居中于70%高舞台，边距32dp，宽度上限1152dp，避让预算为舞台高度减64dp。
+未启用避让时允许原版长行自然溢出，不因Compose父约束偷偷缩高。
+字幕移为底部独立层；字幕自身的完整上游曲线／排版仍未验收。
+
+PublicClassicParityTest 在800和380宽、600高、同Noto Bold、normal/avoid两种模式的
+750/1000/1500/1900/2100ms，公开入口与已对照浏览器的内部renderer逐像素相同。
+字幕开关不改变主句区域像素，且字幕自身确实可见。截图在build/verification/classic-public。
+这证明公开入口使用已验证的核心；不把内部renderer尚有的浏览器栅格残差消除或隐瞒。
+连续帧、随机seek、命中源行、状态与资源预算回归通过，Android/Desktop构建通过。

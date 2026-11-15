@@ -52,16 +52,18 @@ fun FoliaLyricsView(
             document.diagnostics.map { "${it.ref.index}:${it.reason}" } +
                 if (unitCount > 0 && quality != options.quality) listOf("GlowBudgetExceeded") else emptyList()))
     }
-    BoxWithConstraints(modifier.padding(24.dp)) {
-        val heightBudget = maxHeight * .6f
+    BoxWithConstraints(modifier) {
+        // Upstream classic uses the full viewport for 6vw, then a centred 70vh
+        // stage with p-8. Subtitles are an overlay and must not move the main line.
+        val stageHeight = maxHeight * .7f
+        val heightBudget = (stageHeight - 64.dp).coerceAtLeast(0.dp)
         val mainStyle = typography.main ?: typography.secondary.copy(
             fontSize = ((maxWidth.value * .06f).coerceIn(36f, 72f) * typography.scale).sp, fontWeight = FontWeight.Bold)
-        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center) {
-            val main = selection.primary?.line?.let(document.lines::get)
-            val tuning = (style as FoliaStyle.Classic).tuning
-            Box(Modifier.fillMaxWidth()) {
+        val main = selection.primary?.line?.let(document.lines::get)
+        val tuning = (style as FoliaStyle.Classic).tuning
+        Box(Modifier.align(Alignment.Center).fillMaxWidth().height(stageHeight).padding(32.dp),
+            contentAlignment = Alignment.Center) {
+            Box(Modifier.widthIn(max = 1152.dp).fillMaxWidth().wrapContentHeight(unbounded = true), contentAlignment = Alignment.Center) {
                 selection.exiting.forEach { epoch -> key(epoch) {
                     ClassicLine(document.lines[epoch.line], playback, mainStyle, colors, options, tuning,
                         heightBudget = heightBudget, enterUs = epoch.enterUs, leaveUs = epoch.leaveUs,
@@ -78,6 +80,11 @@ fun FoliaLyricsView(
                         onClick = { onLineClicked(main.source) }, onLongPress = { onLinePressed(main.source) })
                 }
             }
+        }
+        Column(Modifier.align(Alignment.BottomCenter).padding(horizontal = 16.dp)
+            .padding(bottom = 112.dp).widthIn(max = 896.dp).fillMaxWidth()
+            .heightIn(max = maxHeight).verticalScroll(rememberScrollState()),
+            horizontalAlignment = Alignment.CenterHorizontally) {
             if (main != null) {
                 if (options.showTranslation) main.translation?.takeIf { it.isNotBlank() && it != main.text }?.let {
                     BasicText(it, Modifier.padding(top = 20.dp), typography.subtitle.copy(color = colors.secondary, textAlign = TextAlign.Center))

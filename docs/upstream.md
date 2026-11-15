@@ -332,3 +332,12 @@ Motion transforms and the same painted-space hit testing. Browser control probes
 capture-line-centers.mjs, capture-line-sampling.mjs and capture-line-isolation.mjs
 observe the real original; none/restored are pixel-identical while blur(0px)
 changes pixels without changing DOM geometry. No browser source or media copied.
+
+Short viewport fit: pinned useOverlapFit.ts:49-62 -> ClassicLine.kt preparation.
+Use actual padded availableHeight, including values below 80px. Compare its
+ratio to integer offsetHeight before another .98 shrink; keep MIN_FIT=.5 and
+the .005 convergence test. capture-short-stage.mjs observes actual original
+Classic at 800x100/150/180/200/240/300 in all three intensities, with the same
+synthetic Amber/echo and OFL face. ClassicShortStageTest checks line heights,
+public/core drawing identity, pause and height restoration. Debug-only Android
+fixture accepts an optional height (default 600); production public API unchanged.

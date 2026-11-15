@@ -31,12 +31,13 @@ import kotlinx.coroutines.isActive
 /** Public-entry fixture for fixed checkpoints and anchored playback verification. */
 class ClassicParityActivity : ComponentActivity() {
     private var requestSequence=0L
-    private data class Frame(val scene:String,val ms:Long,val width:Int,val avoid:Boolean,val backdrop:Boolean,val play:Boolean,val requestId:Long,val intensity:FoliaAnimationIntensity)
+    private data class Frame(val scene:String,val ms:Long,val width:Int,val avoid:Boolean,val backdrop:Boolean,val play:Boolean,val requestId:Long,val intensity:FoliaAnimationIntensity,val height:Int)
     private fun requested(intent:Intent)=Frame(intent.getStringExtra("scene")?:"baseline",
         intent.getLongExtra("mediaMs",1500),intent.getIntExtra("width",800).also {require(it in 200..1280)},
         intent.getBooleanExtra("avoid",false),intent.getBooleanExtra("backdrop",false),intent.getBooleanExtra("play",false),
         intent.getLongExtra("captureToken",++requestSequence),
-        FoliaAnimationIntensity.entries.single {it.name.lowercase()==(intent.getStringExtra("intensity")?:"normal")})
+        FoliaAnimationIntensity.entries.single {it.name.lowercase()==(intent.getStringExtra("intensity")?:"normal")},
+        intent.getIntExtra("height",600).also {require(it in 100..1280)})
     private lateinit var requestedFrame:MutableState<Frame>
     private val metricsGeneration=mutableLongStateOf(0L)
 
@@ -114,8 +115,8 @@ class ClassicParityActivity : ComponentActivity() {
                         options=FoliaOptions(showTranslation=subtitle,showPhonetic=false,showNextLine=false,animationIntensity=frame.intensity),
                         style=FoliaStyle.Classic(ClassicTuning(breathingFloatMultiplier=0f,avoidOverlap=frame.avoid)))
                 },modifier=Modifier.drawBehind {drawRect(Color(0xFF162435))}) {children,constraints->
-                    require(constraints.maxWidth>=frame.width && constraints.maxHeight>=600) {"Parity viewport exceeds device surface: $constraints"}
-                    val child=children.single().measure(Constraints.fixed(frame.width,600))
+                    require(constraints.maxWidth>=frame.width && constraints.maxHeight>=frame.height) {"Parity viewport exceeds device surface: $constraints"}
+                    val child=children.single().measure(Constraints.fixed(frame.width,frame.height))
                     layout(constraints.maxWidth,constraints.maxHeight) {child.place(0,0)}
                 }
             }

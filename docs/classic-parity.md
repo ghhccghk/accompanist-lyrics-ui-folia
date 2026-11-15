@@ -13,13 +13,14 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 | utils/lyrics/cjkSemanticLayout.ts:buildPostLyricLayoutUnits、buildDisplayWordsFromLayoutUnits；utils/lyrics/wordSegmentation.ts | SemanticLayout.kt／DisplayUnits.kt；sticky 先作用于语义单元，保留源片段与有效时间 | ICU 与 Intl 词典版本可能不同；core缺少分词覆写字段 | 上游9组混合／空白／缩写／标点夹具通过；Arabic完整词独立状态并保护词内塑形 |
 | utils/lyrics/graphemeTiming.ts:buildWordGraphemeTimings；components/visualizer/GlowWord.tsx:graphemeTimings | DisplayUnit 保留原片段、有效／源字素时间；完整塑形范围遮罩 | 连字分界处的覆盖仍需更多语言截图 | 固定源分组／时间夹具通过；继续复杂脚本验证 |
 | classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicGeometry.kt：同源 reach／pairGap、seed 对齐和行距 | CJK固定字体几何已测；全帧仍未验收 | 160组几何夹具；八场景 default/avoid DOM 词距一致、矩形舍入范围一致 |
-| useOverlapFit.ts:useOverlapFit | ClassicLine.kt:仅避让启用、min .5 / slack .98 / .005 收敛 | 完整帧像素仍未验收 | 380px窄屏长句CSS19.744px与浏览器对照通过 |
+| useOverlapFit.ts:useOverlapFit | ClassicLine.kt:实际clientHeight预算／整数offsetHeight、仅避让启用、min .5 / slack .98 / .005 收敛 | 完整帧像素仍有残差 | 380px窄屏长句及100–300px短窗口原版几何、公开入口／恢复检查通过，见末节 |
 | classic/Visualizer.tsx:isInterlude精确六点分支 | DisplayUnits.kt／wordPose／classicGeometry | 字形覆盖和采样仍有残差 | 六点独立词/完整词两输入、宽窄屏/default/avoid原版几何及Motion通过；两API截图见末节 |
 | classic/Visualizer.tsx:整句dir；utils/lyrics/textDirection.ts | ParagraphDirection.kt／ClassicLine.kt正文段落 | 跨平台字形覆盖残差保留 | 同一OFL混排face的原版Range、32帧及逆向暂停、API30/34各64请求通过；RTL数字/标点修复 |
 | GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31现有Kotlin软件回退/API30运行；完整效果残差待收敛 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
 | wordGlow.ts:wordGlowVariants | GraphemeGlow.kt；ClassicLine.kt:字素范围遮罩 | 软件近似 blur 和原版 text-shadow 的像素差仍需校准 | 108个正常／fast／instant 样本通过；保护 shaping；同字体逐帧图像待最终验收 |
 | glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | API30/34入场中断已实际核对；整帧残差保留 | normal/fast入场被打断时实际Motion数值、公开入口暂停/逆向seek通过；平台图层预留出界空间 |
-| classic/Visualizer.tsx:animationIntensity、placementOf、minMargin；glowWordVariants.ts:passed | ClassicSampler.kt／ClassicGeometry.kt／FoliaOptions.animationIntensity | 之前只有Normal；现补Calm/Chaotic，窄屏fractional容器中心仍待修复 | 实际原版450条Motion、54个词配置/DOM和三档两周期呼吸；108帧与暂停/逆向检查见末节 |
+| classic/Visualizer.tsx:animationIntensity、placementOf、minMargin；glowWordVariants.ts:passed | ClassicSampler.kt／ClassicGeometry.kt／FoliaOptions.animationIntensity | 三档已实现；正文栅格残差保留 | 实际原版450条Motion、54个词配置/DOM和三档两周期呼吸；108帧及API34各72请求见末节 |
+| classic/Visualizer.tsx:70vh/p-8独立行盒；glowWordTiming.ts:transitionEnd filter:none | ClassicStage.kt／ClassicLine.kt／ClassicLayer.kt：分数中心、合成表面内静态取整 | 跨后端字形覆盖仍不相同 | a590f15：36个原版中心/预算；Calm偏移修复，原入退场回归及API34三档通过；不声明逐像素等价 |
 | classic/Visualizer.tsx:lyricContainerFloat | LineMotion.kt：原版7s y/scale关键帧、easeInOut | Android实际运行仍需验证 | 两周期真实浏览器DOM轨迹通过；媒体时间锚定是平台适配 |
 
 ## 必要平台适配与未完成能力
@@ -1047,3 +1048,43 @@ RendererTest实际亮字点击/空白拒绝/源对象回调、间奏、RTL混排
 随后python verification/compare-line-centers.py；Android用capture-android.py的
 --label line-center-<档> --intensity <档> --scenes baseline wrap及九个同源时间点，
 --verify-seek，再compare-intensity.py --android-api 34 --android-label-prefix line-center。
+
+## 短窗口避让的实际预算与停止条件（2026-11-15）
+
+上游useOverlapFit.ts:49-62直接读取availableHeight，并先检查其与整数offsetHeight的
+比值。没有80px最小可用区域；只有最终字号MIN_FIT=.5。原Kotlin的80px下限使
+100/150/180/200px短窗口里的行仍按约80px空间缩放。capture-short-stage.mjs实际运行
+未修改的Classic，三档×六高度×default/avoid共36张原版PNG/几何，均为800宽、1500ms、
+同一许可字体。ClassicShortStageTest先失败：Normal原52.265625px的行变成79.375px，
+Calm也失败；全部修复前画面及XML保留于short-stage-before，未更改fixture。
+
+先去掉80下限仍未完成：Normal200px窗口原行高76.046875、DOM offsetHeight76、预算76，
+原版停止；Kotlin以分数高度比较后又缩到74.171875。中间失败画面/XML保存于
+short-stage-unclamped-only。现将停止条件恢复为budget / offsetHeight < 1，
+取整使用CSS的floor(x+.5)，继续保留.98余量、.005收敛和.5字号底限。
+
+三档短窗口测试最终通过：36个源行高、72次正逆高度/避让请求，暂停时钟推进1s严格相同、
+返回原高度严格相同、每点公开入口与内部core严格相同；关闭避让继续使用原版300px
+minHeight，不因窗口较短自行缩字。ClassicViewport/Intensity/Renderer回归及两端构建通过，
+日志.work/short-stage-corrected-validation.log。避让18帧前景RGB MAE均值/最大
+25.28737/61.28173→3.52861/11.13096；不是新通过阈值。已目视Normal200的字号恢复；
+Normal180仍有约1px正文偏移与11.13残差，另采实际GlowWord拟合字号baseline继续定位，
+不能据此宣称所有短窗口画面已等价。
+
+当前生产路径还重跑了Windows真实ComposeWindow：Direct3D、800→380→800、60请求，
+暂停实际等待1秒与40次重访严格一致。相对原版20帧均值1.563913、最大2.244154；
+相对离屏均值.381887、最大.595543。捕获的是窗口已绘制GraphicsLayer；OS截图/实际
+鼠标输入与录屏仍未由本项验证。证据classic-native-window及其comparison，
+日志.work/line-center-native-window.log。该窗口任务高度600，不借它证明短窗口实际运行。
+
+Android调试夹具增加可选height、默认600；capture-android.py --height控制实际组件的
+布局预算，并按完整指定视口截图。它不改变公共API或示例功能。API34三档六高度的
+实际采集共72请求/36不同帧、36次重访全部严格一致，背景有效；每组conditions记录
+完整高度、字体/APK/源码SHA及设备。目视Normal180字号/位置与原版接近，仍保留覆盖残差。
+18张避让帧相对原版RGB MAE均值5.25870、最大8.46888；未借JVM结果声称原生像素相同。
+日志.work/short-stage-android.log，证据classic-android-api34-short-stage-<档>-<高度>及
+short-stage-comparison四列图。API30/实机未据此验证。
+
+复现：node verification/classic-browser/capture-short-stage.mjs；
+`:library:jvmTest --tests '*ClassicShortStageTest'`；
+python verification/compare-short-stage.py（Android结果追加--android-api 34）。

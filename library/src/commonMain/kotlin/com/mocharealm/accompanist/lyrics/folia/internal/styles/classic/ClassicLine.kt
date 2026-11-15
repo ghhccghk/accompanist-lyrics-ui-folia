@@ -69,7 +69,9 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
     val currentPlayback by rememberUpdatedState(playback)
     BoxWithConstraints(modifier.fillMaxWidth()) {
         val widthPx = with(density) { maxWidth.toPx() }.coerceAtLeast(1f)
-        val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(80f)
+        // useOverlapFit uses the actual padded area even in a short window;
+        // its .5 font-scale floor, not an invented minimum area, limits shrink.
+        val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(0f)
         val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
             tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality, options.animationIntensity, maskBudgetBytes, viewport) {
             fun prepare(fontScale: Float): Prepared {
@@ -128,9 +130,14 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             }
             var result = prepare(1f)
             var fontScale = 1f
-            while (tuning.avoidOverlap && result.height > budgetPx && fontScale > .5f) {
-                val offsetHeight=round(result.height/density.density)*density.density
-                val next = (fontScale * budgetPx / offsetHeight * .98f).coerceAtLeast(.5f)
+            while (tuning.avoidOverlap && fontScale > .5f) {
+                // The source tests availableHeight / integer offsetHeight < 1.
+                // A 76.046875px line has offsetHeight=76 and already fits 76px;
+                // testing its fractional height would shrink one extra time.
+                val offsetHeight=floor(result.height/density.density+.5f)*density.density
+                val ratio=budgetPx / offsetHeight
+                if (!(ratio < 1f)) break
+                val next = (fontScale * ratio * .98f).coerceAtLeast(.5f)
                 if (next >= fontScale - .005f) break
                 fontScale = next
                 result = prepare(fontScale)

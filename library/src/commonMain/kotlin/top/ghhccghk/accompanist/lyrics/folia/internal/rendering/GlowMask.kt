@@ -70,11 +70,12 @@ private fun boxPass(input: DoubleArray, output: DoubleArray, width: Int, height:
     }
 }
 
-/** CSS applies the span opacity after painting all its shadows. Flatten first so
- * the overlapping inner/outer shadows receive one opacity during the sweep. */
-internal fun compositeGlowMasks(masks: List<ImageBitmap>): ImageBitmap {
+/** Each CSS shadow carries the ink alpha before source-over. The animated span
+ * opacity belongs to the flattened pair and is applied later, once, in draw. */
+internal fun compositeGlowMasks(masks: List<ImageBitmap>, inkAlpha: Float = 1f): ImageBitmap {
     require(masks.isNotEmpty())
-    if (masks.size == 1) return masks.single()
+    require(inkAlpha.isFinite() && inkAlpha in 0f..1f)
+    if (masks.size == 1 && inkAlpha == 1f) return masks.single()
     val width = masks.first().width
     val height = masks.first().height
     require(masks.all { it.width == width && it.height == height })
@@ -83,7 +84,7 @@ internal fun compositeGlowMasks(masks: List<ImageBitmap>): ImageBitmap {
     masks.forEach { mask ->
         mask.readPixels(pixels)
         for (i in coverage.indices) {
-            val a = pixels[i] ushr 24
+            val a = ((pixels[i] ushr 24) * inkAlpha).roundToInt()
             coverage[i] = a + (coverage[i] * (256 - a)) / 256
         }
     }

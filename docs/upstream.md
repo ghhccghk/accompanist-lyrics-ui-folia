@@ -447,3 +447,16 @@ existing body/word/line layers and timing remain unchanged. ClassicColorParityTe
 capture-classic-colors.mjs and body-colors.tsv compare actual pinned mounted
 Classic colors plus full/body-isolated screenshots. Remaining full-frame
 regressions are recorded in classic-parity.md, not waived as platform differences.
+
+Translucent shadow composition: pinned wordGlow.ts:textShadowAt/glowKeyframes and
+GlowWord.tsx:86-119 apply activeColor (including alpha) to EACH 20/40, 18/32 or
+14/24 shadow, then animate the grapheme span opacity around the pair. GlowMask.kt
+now applies ink alpha before source-over; GlowMaskPaint.kt keeps translucent
+span opacity in its own saveLayer after tint, avoiding software paint rounding
+that made low-coverage tails too bright. Opaque ink keeps the exact prior draw
+path. ClassicLine.kt invalidates prepared masks on active-color alpha changes.
+capture-translucent-halo.mjs executes actual original GlowWord/wordGlow targets;
+75 synthetic PNGs include 45 paired/group-opacity and 30 isolated single-shadow
+controls. No source modification, font outline or upstream example asset copied.
+The same registered OFL font/source baseline is reused. Full-image residuals and
+Android runtime limits remain documented in classic-parity.md.

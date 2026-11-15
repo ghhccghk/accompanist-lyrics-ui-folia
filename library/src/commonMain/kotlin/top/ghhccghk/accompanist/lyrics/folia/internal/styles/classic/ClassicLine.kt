@@ -12,7 +12,6 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.Canvas as BitmapCanvas
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.drawscope.CanvasDrawScope
 import androidx.compose.ui.geometry.Size
@@ -36,6 +35,7 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.text.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.blurredMasks
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.compositeGlowMasks
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.GlowBudget
+import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.GlowMaskPaint
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.BodyParagraphRaster
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.LocalClassicNativeBodyInk
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.drawParagraphShadowSource
@@ -76,7 +76,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         // its .5 font-scale floor, not an invented minimum area, limits shrink.
         val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(0f)
         val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
-            tuning.wordSpacing, tuning.enableWordRotation, measurer, fontResolver, options.quality, options.animationIntensity, maskBudgetBytes, viewport, nativeBodyInk) {
+            tuning.wordSpacing, tuning.enableWordRotation, measurer, fontResolver, options.quality, options.animationIntensity, maskBudgetBytes, viewport, nativeBodyInk, colors.active.alpha) {
             fun prepare(fontScale: Float): Prepared {
                 val base=textStyle.fontSize.value
                 fun cssRound(value:Float) = floor(value*1000+.5f)/1000
@@ -186,7 +186,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                         }
                     }
                     val masks = blurredMasks(bitmap, FloatArray(layers) { maxOf(1f, radii[it] * density.density / 2) })
-                    GlyphGlow(timing, origin, compositeGlowMasks(masks))
+                    GlyphGlow(timing, origin, compositeGlowMasks(masks, colors.active.alpha))
                 })
             })
         }
@@ -219,7 +219,9 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 if (event.key != Key.Enter && event.key != Key.Spacebar) false
                 else { if (event.type == KeyEventType.KeyUp) click?.invoke(); true }
             }.focusable()
-        val glowColor = remember(colors.active) { ColorFilter.tint(colors.active) }
+        // Ink alpha is already applied to each shadow before flattening. The
+        // animated grapheme opacity below still applies to the whole pair.
+        val glowPaint = remember(colors.active) { GlowMaskPaint(colors.active) }
         val bodyLayers = prepared.cells.map { rememberClassicLayer() }
         val wordLayers = prepared.cells.map { rememberClassicLayer() }
         val lineLayer = rememberClassicLayer()
@@ -284,7 +286,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                                 glyph.timing.startSeconds,glyph.timing.endSeconds)
                             if (glow > .001f) {
                                 val origin = glyph.origin
-                                drawImage(glyph.mask, origin, alpha = glow, colorFilter = glowColor)
+                                glowPaint.draw(this, glyph.mask, origin, glow)
                             }
                         }
                         val color = classicBodyColor(colors.text, colors.active, frame.mix)

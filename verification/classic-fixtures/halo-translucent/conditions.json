@@ -1,0 +1,867 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "width": 320,
+  "height": 320,
+  "density": 1,
+  "font": "FoliaParityLatin-Bold.ttf",
+  "fontSha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3",
+  "isolation": "Actual GlowWord and wordGlow waiting shadow targets; body hidden, identity word pose, only span opacity forced. No replacement blur/paint.",
+  "frames": [
+    {
+      "reveal": "normal",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 1,
+      "file": "normal-a0-o1.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0) 0px 0px 20px, rgba(145, 232, 225, 0) 0px 0px 40px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 0.5,
+      "file": "normal-a0-o0.5.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0) 0px 0px 20px, rgba(145, 232, 225, 0) 0px 0px 40px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 0.1,
+      "file": "normal-a0-o0.1.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0) 0px 0px 20px, rgba(145, 232, 225, 0) 0px 0px 40px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 1,
+      "singleRadius": 20,
+      "file": "normal-a0-single-20.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22"
+    },
+    {
+      "reveal": "normal",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 1,
+      "singleRadius": 40,
+      "file": "normal-a0-single-40.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22"
+    },
+    {
+      "reveal": "normal",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 1,
+      "file": "normal-a64-o1.png",
+      "sha256": "129315b9c890a63b21a809cb5dbbe83ce08e1dda1bd13d2c16b6dcbe2b0ba392",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.25) 0px 0px 20px, rgba(145, 232, 225, 0.25) 0px 0px 40px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 0.5,
+      "file": "normal-a64-o0.5.png",
+      "sha256": "ca8e711038c54478a144a916021f0dd9cfd3b5e47a58d99ad8532d5b25d3b88e",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.25) 0px 0px 20px, rgba(145, 232, 225, 0.25) 0px 0px 40px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 0.1,
+      "file": "normal-a64-o0.1.png",
+      "sha256": "1e0d4e22f0d08d41503634a487572185f78773ef5254bcf8ecdaea9fba24536e",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.25) 0px 0px 20px, rgba(145, 232, 225, 0.25) 0px 0px 40px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 1,
+      "singleRadius": 20,
+      "file": "normal-a64-single-20.png",
+      "sha256": "f4159a41dbb1e53e8b144a7e1dccfc0154c9e10dc18c2fea23dd87c866dee461"
+    },
+    {
+      "reveal": "normal",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 1,
+      "singleRadius": 40,
+      "file": "normal-a64-single-40.png",
+      "sha256": "1ecc5e7929072f25d80b16a1bb04ef581fa470eee709ad81584e28527b044e0e"
+    },
+    {
+      "reveal": "normal",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 1,
+      "file": "normal-a128-o1.png",
+      "sha256": "5f942c1b3f7462057a6812ea6f0d4fe085b96b66ee7e1138f6d9845368a079ec",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.5) 0px 0px 20px, rgba(145, 232, 225, 0.5) 0px 0px 40px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 0.5,
+      "file": "normal-a128-o0.5.png",
+      "sha256": "0727175aa9887f77d609cbdbe21f123c3b37589699b8e1d05be53744cac2e8a4",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.5) 0px 0px 20px, rgba(145, 232, 225, 0.5) 0px 0px 40px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 0.1,
+      "file": "normal-a128-o0.1.png",
+      "sha256": "d070d394f1e0ed04ee705d430d5a060cc64fe8e3bd08202b8d48ca387d22e520",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.5) 0px 0px 20px, rgba(145, 232, 225, 0.5) 0px 0px 40px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 1,
+      "singleRadius": 20,
+      "file": "normal-a128-single-20.png",
+      "sha256": "eab15e179330f7ef7c4540d623b0b10c8535e524345d6926478d70b67e1cfa55"
+    },
+    {
+      "reveal": "normal",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 1,
+      "singleRadius": 40,
+      "file": "normal-a128-single-40.png",
+      "sha256": "2fb535001c1fb4a04fd7ec6f7bcea9dff9aa633fc50c4e1f224a981731e1b286"
+    },
+    {
+      "reveal": "normal",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 1,
+      "file": "normal-a192-o1.png",
+      "sha256": "192d935f482c49d6f204b5b0692c671c774ad45853b1908b2677cc2ee702877b",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.753) 0px 0px 20px, rgba(145, 232, 225, 0.753) 0px 0px 40px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 0.5,
+      "file": "normal-a192-o0.5.png",
+      "sha256": "1fc933ed3bb6792b96909b26cfc17f93a41200b166ab58da4845d56b70d52bf7",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.753) 0px 0px 20px, rgba(145, 232, 225, 0.753) 0px 0px 40px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 0.1,
+      "file": "normal-a192-o0.1.png",
+      "sha256": "035d3607503f0ad33389db2e6dc2df181bfe7fd7e9f16528d50603c02348002e",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.753) 0px 0px 20px, rgba(145, 232, 225, 0.753) 0px 0px 40px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 1,
+      "singleRadius": 20,
+      "file": "normal-a192-single-20.png",
+      "sha256": "69cf21cb39586ba69126347fa630afd91dad1de9de4191eef13620499b63763f"
+    },
+    {
+      "reveal": "normal",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 1,
+      "singleRadius": 40,
+      "file": "normal-a192-single-40.png",
+      "sha256": "1dc656439a754bf9a689b196473cbdc174ee94af19fe0ce2c0d66cecd13d454c"
+    },
+    {
+      "reveal": "normal",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 1,
+      "file": "normal-a255-o1.png",
+      "sha256": "909ffd7988d5310b69f7dca47ac3ea2bc4be2ad20684f994e8116baa2c21a1b6",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgb(145, 232, 225) 0px 0px 20px, rgb(145, 232, 225) 0px 0px 40px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 0.5,
+      "file": "normal-a255-o0.5.png",
+      "sha256": "e8d96ebecc6ae6d9a02a8eac63eef3b2fc0e1e6615369160f8d40a83ace27c2d",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgb(145, 232, 225) 0px 0px 20px, rgb(145, 232, 225) 0px 0px 40px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 0.1,
+      "file": "normal-a255-o0.1.png",
+      "sha256": "1f52f3adc7cd205bd60de33ca22ce5cab42672ad0b5f1b1d3e3fc55838075b06",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgb(145, 232, 225) 0px 0px 20px, rgb(145, 232, 225) 0px 0px 40px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "normal",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 1,
+      "singleRadius": 20,
+      "file": "normal-a255-single-20.png",
+      "sha256": "4494054deb666892790585014d4ce154ad5b20c493129fd1a1a46270b38644be"
+    },
+    {
+      "reveal": "normal",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 1,
+      "singleRadius": 40,
+      "file": "normal-a255-single-40.png",
+      "sha256": "bbdd94c3d8f174530339ae2417ad8065410e1fa5a50c5e5357665d8623672ae9"
+    },
+    {
+      "reveal": "fast",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 1,
+      "file": "fast-a0-o1.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0) 0px 0px 18px, rgba(145, 232, 225, 0) 0px 0px 32px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 0.5,
+      "file": "fast-a0-o0.5.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0) 0px 0px 18px, rgba(145, 232, 225, 0) 0px 0px 32px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 0.1,
+      "file": "fast-a0-o0.1.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0) 0px 0px 18px, rgba(145, 232, 225, 0) 0px 0px 32px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 1,
+      "singleRadius": 18,
+      "file": "fast-a0-single-18.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22"
+    },
+    {
+      "reveal": "fast",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 1,
+      "singleRadius": 32,
+      "file": "fast-a0-single-32.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22"
+    },
+    {
+      "reveal": "fast",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 1,
+      "file": "fast-a64-o1.png",
+      "sha256": "c2753647f82ecc649d85e71aef614a7ee7934d3ccedc87b447b2c4fd08b6c9e7",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.25) 0px 0px 18px, rgba(145, 232, 225, 0.25) 0px 0px 32px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 0.5,
+      "file": "fast-a64-o0.5.png",
+      "sha256": "a077e9eebd58039086cbf4dd4f70add6bf08a2ace6644e92c09ff7355b073af6",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.25) 0px 0px 18px, rgba(145, 232, 225, 0.25) 0px 0px 32px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 0.1,
+      "file": "fast-a64-o0.1.png",
+      "sha256": "e4291a90c82ab773028eb821211540e342e94ec722db41df24bc1eb0fa362842",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.25) 0px 0px 18px, rgba(145, 232, 225, 0.25) 0px 0px 32px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 1,
+      "singleRadius": 18,
+      "file": "fast-a64-single-18.png",
+      "sha256": "75a82569b87aefb9947209fb3ca95163e96510b616c65ca922e7c9bebfc82ffd"
+    },
+    {
+      "reveal": "fast",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 1,
+      "singleRadius": 32,
+      "file": "fast-a64-single-32.png",
+      "sha256": "debe50acb21aabb06f5374d1466cf0aa5b5888640c61ec1464d1fa5441ab9ce3"
+    },
+    {
+      "reveal": "fast",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 1,
+      "file": "fast-a128-o1.png",
+      "sha256": "af315be5ea1e68ecac468edca37cdc0c60bcf7d43745404e02708d8c549dd196",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.5) 0px 0px 18px, rgba(145, 232, 225, 0.5) 0px 0px 32px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 0.5,
+      "file": "fast-a128-o0.5.png",
+      "sha256": "cb6e32201d7dd3cb38a01b1adcc6a66534dd05e9c6c035865261c830f7cc8936",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.5) 0px 0px 18px, rgba(145, 232, 225, 0.5) 0px 0px 32px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 0.1,
+      "file": "fast-a128-o0.1.png",
+      "sha256": "0f3c18c8663d245301feff227fd3d62a9a30e3a5019eef12c772fb746c80d70e",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.5) 0px 0px 18px, rgba(145, 232, 225, 0.5) 0px 0px 32px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 1,
+      "singleRadius": 18,
+      "file": "fast-a128-single-18.png",
+      "sha256": "bf73afb1d711c067b3ae6414973251faf4f7e28f16856405a24bc53cb02b7c29"
+    },
+    {
+      "reveal": "fast",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 1,
+      "singleRadius": 32,
+      "file": "fast-a128-single-32.png",
+      "sha256": "35c6dc874695b45c05807d9f894430dc1781b811627634c02185fc9231202867"
+    },
+    {
+      "reveal": "fast",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 1,
+      "file": "fast-a192-o1.png",
+      "sha256": "cf5d67cf4608e272ea7f8c0d731ec4ae383d4b971d2941133a499021449e7acf",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.753) 0px 0px 18px, rgba(145, 232, 225, 0.753) 0px 0px 32px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 0.5,
+      "file": "fast-a192-o0.5.png",
+      "sha256": "0bfa4a0a0199ec1b16d5328d9f2ee504ba84742604b44d5c492006479e2e0858",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.753) 0px 0px 18px, rgba(145, 232, 225, 0.753) 0px 0px 32px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 0.1,
+      "file": "fast-a192-o0.1.png",
+      "sha256": "1f2537f64ba784e08962b668e8e1050b391cee92cc33b3c9978d2a8d579ad1ab",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.753) 0px 0px 18px, rgba(145, 232, 225, 0.753) 0px 0px 32px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 1,
+      "singleRadius": 18,
+      "file": "fast-a192-single-18.png",
+      "sha256": "c6921bf855bd0abff279b8b9ccecd904d478e2561bc4824314728cfad19fd552"
+    },
+    {
+      "reveal": "fast",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 1,
+      "singleRadius": 32,
+      "file": "fast-a192-single-32.png",
+      "sha256": "6e3430b94a308ce36e0bf2d97429522e71bbd3ebc71e7ad632425719e063c029"
+    },
+    {
+      "reveal": "fast",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 1,
+      "file": "fast-a255-o1.png",
+      "sha256": "4cefec493a1fbd11207252ce0a9a459ad2877cfd823368ba67759df5067caefb",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgb(145, 232, 225) 0px 0px 18px, rgb(145, 232, 225) 0px 0px 32px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 0.5,
+      "file": "fast-a255-o0.5.png",
+      "sha256": "147c6dae5a95ffdc5281c52170b01160000e8407effc89d8cc4a6fa6ab290f65",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgb(145, 232, 225) 0px 0px 18px, rgb(145, 232, 225) 0px 0px 32px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 0.1,
+      "file": "fast-a255-o0.1.png",
+      "sha256": "d051c19f38705e6de5b1fc5244d0fceee3f45d5e52a131b71662f7d4bba22fc7",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgb(145, 232, 225) 0px 0px 18px, rgb(145, 232, 225) 0px 0px 32px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "fast",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 1,
+      "singleRadius": 18,
+      "file": "fast-a255-single-18.png",
+      "sha256": "1e1a0c3469a9271506c542627434d2f5bb3d8fbc3e0d2ba60469230ad0b5b723"
+    },
+    {
+      "reveal": "fast",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 1,
+      "singleRadius": 32,
+      "file": "fast-a255-single-32.png",
+      "sha256": "d4ad050e03adb53608f9588efd8ba06f4740db022b8364d3a361de0cce53341a"
+    },
+    {
+      "reveal": "instant",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 1,
+      "file": "instant-a0-o1.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0) 0px 0px 14px, rgba(145, 232, 225, 0) 0px 0px 24px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 0.5,
+      "file": "instant-a0-o0.5.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0) 0px 0px 14px, rgba(145, 232, 225, 0) 0px 0px 24px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 0.1,
+      "file": "instant-a0-o0.1.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0) 0px 0px 14px, rgba(145, 232, 225, 0) 0px 0px 24px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 1,
+      "singleRadius": 14,
+      "file": "instant-a0-single-14.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22"
+    },
+    {
+      "reveal": "instant",
+      "alpha": 0,
+      "ink": "#91e8e100",
+      "opacity": 1,
+      "singleRadius": 24,
+      "file": "instant-a0-single-24.png",
+      "sha256": "db61632768d576f85db4e4feb74f06bc82d9a2c3deb8f5fa788b54299c4f2e22"
+    },
+    {
+      "reveal": "instant",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 1,
+      "file": "instant-a64-o1.png",
+      "sha256": "ccf94b660b7f5bdbe3a4c094789595cc0dc812ca87854e6fb5de8b685f4d6a0e",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.25) 0px 0px 14px, rgba(145, 232, 225, 0.25) 0px 0px 24px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 0.5,
+      "file": "instant-a64-o0.5.png",
+      "sha256": "f656b4da851865c9999fbf80fb8352a955457c597351d328a797127b0bd0d427",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.25) 0px 0px 14px, rgba(145, 232, 225, 0.25) 0px 0px 24px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 0.1,
+      "file": "instant-a64-o0.1.png",
+      "sha256": "d4358221e3caedc7370a4e4abc66a0a454151d3368d7b36e172a3193e4d05bfe",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.25) 0px 0px 14px, rgba(145, 232, 225, 0.25) 0px 0px 24px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 1,
+      "singleRadius": 14,
+      "file": "instant-a64-single-14.png",
+      "sha256": "5c17e7dff044cc09d630dff020a77c0e9238f0a2f1afe05c78bdfcb02f45d5d0"
+    },
+    {
+      "reveal": "instant",
+      "alpha": 64,
+      "ink": "#91e8e140",
+      "opacity": 1,
+      "singleRadius": 24,
+      "file": "instant-a64-single-24.png",
+      "sha256": "e168be71577dcb92cb98154a0c0a6fcec87ed4fdea24a6232e365b92be26c7a0"
+    },
+    {
+      "reveal": "instant",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 1,
+      "file": "instant-a128-o1.png",
+      "sha256": "456d963629f58bc780d0c4674049149322779ea34d992a78f14fb3cd9110fa8b",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.5) 0px 0px 14px, rgba(145, 232, 225, 0.5) 0px 0px 24px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 0.5,
+      "file": "instant-a128-o0.5.png",
+      "sha256": "29d5d69cf3bbe7e2a4a407de53b48cebd60ae2d99724b0114effda914208f8f3",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.5) 0px 0px 14px, rgba(145, 232, 225, 0.5) 0px 0px 24px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 0.1,
+      "file": "instant-a128-o0.1.png",
+      "sha256": "65e2b7614415cadfa0446e760218f9671bb60822c020867aeedaa5403b1f3c33",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.5) 0px 0px 14px, rgba(145, 232, 225, 0.5) 0px 0px 24px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 1,
+      "singleRadius": 14,
+      "file": "instant-a128-single-14.png",
+      "sha256": "6ebafbbf2fbfb3c92d634ef583b3a16ec6bfe672e0de2065b56b809f6ba20787"
+    },
+    {
+      "reveal": "instant",
+      "alpha": 128,
+      "ink": "#91e8e180",
+      "opacity": 1,
+      "singleRadius": 24,
+      "file": "instant-a128-single-24.png",
+      "sha256": "e26e08e4f08bbdcfe8bdf9a7a00f65d11322b6b7affc94edce2aceb1c8f814e4"
+    },
+    {
+      "reveal": "instant",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 1,
+      "file": "instant-a192-o1.png",
+      "sha256": "14f47a09a9b68ce3795e8cf238925483072c20eba639783106352e12c8e743c5",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.753) 0px 0px 14px, rgba(145, 232, 225, 0.753) 0px 0px 24px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 0.5,
+      "file": "instant-a192-o0.5.png",
+      "sha256": "abf45857da438ba6a8693bcdc646e4ad010961b08fbc439e23113d89b0425678",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.753) 0px 0px 14px, rgba(145, 232, 225, 0.753) 0px 0px 24px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 0.1,
+      "file": "instant-a192-o0.1.png",
+      "sha256": "cf0411f6f8f1dd4d9069982c7438e8ef7bdfa985d76749c09fbf472984a93a82",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgba(145, 232, 225, 0.753) 0px 0px 14px, rgba(145, 232, 225, 0.753) 0px 0px 24px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 1,
+      "singleRadius": 14,
+      "file": "instant-a192-single-14.png",
+      "sha256": "313a16f415e6f61bd0d7636519238d90a999f0ae40446e0cb0f7fcd5d1973c33"
+    },
+    {
+      "reveal": "instant",
+      "alpha": 192,
+      "ink": "#91e8e1c0",
+      "opacity": 1,
+      "singleRadius": 24,
+      "file": "instant-a192-single-24.png",
+      "sha256": "440a3da1cb8c71907aea2d6626f5de611b756b52b0959a7be428681de88e4a6f"
+    },
+    {
+      "reveal": "instant",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 1,
+      "file": "instant-a255-o1.png",
+      "sha256": "cbdf163a02934ae940845131c5bd2148e57e48757b7ad0d44b21e7a34f21da2c",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgb(145, 232, 225) 0px 0px 14px, rgb(145, 232, 225) 0px 0px 24px",
+        "opacity": "1"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 0.5,
+      "file": "instant-a255-o0.5.png",
+      "sha256": "93c36847189e399e88f98b9e7a3ffbd56f758d265b1a52ba40d0db93871da2e5",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgb(145, 232, 225) 0px 0px 14px, rgb(145, 232, 225) 0px 0px 24px",
+        "opacity": "0.5"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 0.1,
+      "file": "instant-a255-o0.1.png",
+      "sha256": "495901f3b57a5bddc5b02894cfe9cfc689367e259baf803b540cb799fa9791e3",
+      "style": {
+        "color": "rgba(0, 0, 0, 0)",
+        "shadow": "rgb(145, 232, 225) 0px 0px 14px, rgb(145, 232, 225) 0px 0px 24px",
+        "opacity": "0.1"
+      }
+    },
+    {
+      "reveal": "instant",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 1,
+      "singleRadius": 14,
+      "file": "instant-a255-single-14.png",
+      "sha256": "a6aa0952e4333b1b09654b418fec06cea3bdce836c8917b98bc1f23cd102e0cf"
+    },
+    {
+      "reveal": "instant",
+      "alpha": 255,
+      "ink": "#91e8e1ff",
+      "opacity": 1,
+      "singleRadius": 24,
+      "file": "instant-a255-single-24.png",
+      "sha256": "3b42b8d7f539b5edc77a0ad0577f24e11387876b486ce76ac6577bdd6d9c47bd"
+    }
+  ]
+}

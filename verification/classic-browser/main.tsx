@@ -32,7 +32,7 @@ const intensity=params.get('intensity')??'normal';
 if(!['calm','normal','chaotic'].includes(intensity))throw new Error('Invalid intensity');
 function ink(name:string,fallback:string) {
   const value=params.get(name)??fallback;
-  if(!/^#[0-9a-f]{6}$/i.test(value))throw new Error('Invalid comparison color');
+  if(!/^#[0-9a-f]{6}([0-9a-f]{2})?$/i.test(value))throw new Error('Invalid comparison color');
   return value;
 }
 const themes = { animationIntensity: intensity, fontStyle: 'sans', fontFamily: 'Parity Noto', fontWeight: 700,

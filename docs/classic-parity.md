@@ -1374,3 +1374,82 @@ classic-colors-body-{browser,tinted,native,comparison}和classic-body-default-co
 默认回归运行ClassicParityTest.fixedFontCoreCheckpoints和whiteMaskCoreCheckpoints；
 python verification/compare-classic-colors.py，分别加--body-only、--default-palette。
 下一项：在相同冷色1200ms下核对实际辉光span几何与合成，不提前把残差归为平台必然差异。
+
+
+## 半透明阴影的颜色 alpha 与字素 opacity（2026-11-15）
+
+先完成冷色1200ms实际DOM检查：inspect-glow-layout.mjs重放同一Classic/Motion，
+三张动画PNG与前节原版cool1200逐字节相同；然后才在单独诊断中移除祖先transform，
+读取真实body Range及glow span框。Latin横向偏差最大0.046875px，Arabic0.03125px，
+CJK为0；不能以这点小偏移解释三字体共同的完整帧残差，因此没有据此平移生产遮罩。
+实际JSON/原版截图在build/verification/glow-layout-browser，检查工具可独立重放。
+
+发现并修复另一项明确的合成错误：固定wordGlow.ts:textShadowAt把activeColor直接
+用于内外每一个阴影；GlowWord.tsx:86–119随后才把字素span opacity用于整个阴影组。
+旧实现先合成两张不透明白mask，再以含alpha的ColorFilter统一着色；半透明active
+会偏暗。举例：两张50%覆盖各含50%颜色alpha，正确为.25+.25*.75=.4375，旧顺序
+为(.5+.5*.5)*.5=.375。这里的颜色alpha和媒体驱动span opacity是两个独立量。
+
+GlowMask.kt现在在每张阴影source-over前应用inkAlpha；ClassicLine.kt把
+colors.active.alpha加入准备key，色相改变仍只更新tint，颜色alpha改变重建遮罩。
+GlowMaskPaint.kt对半透明阴影在着色后的独立saveLayer应用span opacity；默认不透明
+active保留原drawImage路径，透明active输出零阴影。不引入公共选项或独立动画时钟。
+遮罩仍取同一完整塑形运行，不重塑每个字符；原字素计时/半径/内外层顺序不变。
+
+原版控制：capture-translucent-halo.mjs挂载真实GlowWord/wordGlow waiting targets，
+合成M、同一许可Noto64px、320×320/density1、identity，正文隐藏。
+normal20/40、fast18/32、instant14/24px，颜色#91e8e1、alpha=0/64/128/192/255，
+字素opacity=1/.5/.1。45张阴影组和30张独立阴影PNG全部静态双截图严格一致；
+原始适用源码/字体SHA/真实computed textShadow/浏览器条件保存在
+verification/classic-fixtures/halo-translucent，字体与归属沿用assets/README.md。
+
+为了隔离平台字体coverage，本测试复用原浏览器shadow-source.png作为blur输入。
+旧路径与修复路径都由真实Canvas绘制，不再仅离线乘alpha来代表drawImage合成。
+27个半透明组全部改善：共享前景alpha MAE平均1.348241→0.115102，最大22→2。
+剩余最大2级在颜色alpha64/192的量化边缘，继续记录，不宣称逐像素等价。
+alpha0与255的所有18个组保持前后逐像素一致；原已有UpstreamHaloPaintTest不改阈值。
+两mask的纯合成顺序、单层、透明和非法alpha也单独核对。
+
+公开入口：TranslucentClassicTest使用同源Amber echo、Latin48px、800×600，
+1500ms冻结媒体，alpha128→64→0→255→128；每一步live更新与fresh组件严格相同，
+推进UI时钟1000ms及750→1500逆向/重建保持像素相同。透明active的Standard与
+Minimal无阴影图严格相同，防止遗漏prepared key或重复乘颜色alpha。
+原生图层路径与强制软件图层路径均完成上述检查；这是JVM离屏集成，不是两台设备。
+
+同一真实原版Classic全场景四种alpha各1500ms与上述两路径对照，前景RGB MAE：
+
+| 颜色alpha/255 | JVM原生图层路径 | JVM软件图层路径 |
+| --- | ---: | ---: |
+| 128 | 1.032337 | 1.091311 |
+| 64 | 1.037189 | 0.992589 |
+| 0 | 0.745967 | 0.839258 |
+| 255 | 1.404818 | 1.301133 |
+
+本表只有修复后的公开全帧与原版，不冒称存在完整全帧修复前/后矩阵；修复前/后的
+数值证据来自上述45个实际Canvas阴影组。原默认42张及两条正文路径108张完整不透明
+PNG全部SHA保持012a907时的结果，未以只选截图掩盖退步；冷色1200ms及默认配色
+前节已有残差仍原样保留，不能把这项半透明修复称作它们已经解决。
+
+失败/修正：最初仅调整每层alpha仍用drawImage的paint alpha，normal/64/.1反而变差，
+说明离线乘alpha不足以验证实际合成。初次失败的同名PNG后来被重采覆盖；测试已
+将同一拒绝路径重现为独立rejected-direct-opacity PNG，三方共同前景上旧误差
+0.392374、拒绝路径0.983960，与当时观测一致；不将重现图冒称未覆盖的原始文件。
+失败日志保留。saveLayer的诊断首次
+有测试if/else分支写错，随后全不透明也建层导致旧PNG变化，均被严格检查检出。
+最终仅半透明需要独立组，不透明保持原路径；没有放松27组的逐组改善、18组严格不变
+或原150张完整帧SHA断言。组透明度不是每一层shadow再分别乘一次。
+
+证据build/verification/halo-translucent-{kotlin,comparison}：完整before/after PNG、
+共享前景CSV（alpha及预乘RGB）、源码/图像SHA、contact原尺寸同框。
+classic-translucent-{browser,live}包含四种颜色alpha的完整场景。
+contact已目视，半透明fast的旧阴影更暗；原图和完整帧残差照常保留。
+日志translucent-halo-checks/group-experiment/group-result/group-scoped/final均在.work；
+最终选定检查与两端构建BUILD SUCCESSFUL。保留用户同期改动的Desktop打包配置，
+没有暂存、改写该配置或gradle-daemon-jvm.properties。
+
+Android仅新APK构建通过，没有本项新的模拟器/实机alpha运行证据；Desktop OS窗口
+截图/输入未重验。saveLayer资源/全场景性能未测，不据此作性能结论或引入Rust。
+原版字形coverage、复杂字幕和不透明1200ms合成残差仍未验收通过。
+复现：serve.mjs → capture-translucent-halo.mjs、capture-translucent-classic.mjs；
+:library:jvmTest --tests '*Translucent*Test' --tests '*UpstreamHaloPaintTest'；
+默认/彩色原矩阵回归后运行python verification/compare-translucent-halo.py。

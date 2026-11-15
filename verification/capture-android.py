@@ -32,6 +32,10 @@ conditions={'serial':args.serial,'sdk':sdk,'device':adb('shell','getprop','ro.pr
     'buildFingerprint':adb('shell','getprop','ro.build.fingerprint'),
     'viewportPlacement':'top-left 0,0; physical pixels; system bars hidden',
     'revision':subprocess.run(['git','rev-parse','HEAD'],cwd=root,capture_output=True,text=True,check=True).stdout.strip(),
+    # A capture can precede its local commit; HEAD alone would misidentify the APK.
+    'rendererSourceSha256':{p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
+        for source_set in ['commonMain','androidMain']
+        for p in sorted((root/'library/src'/source_set).rglob('*.kt'))},
     'fonts':{name:hashlib.sha256((root/'verification/assets'/name).read_bytes()).hexdigest()
         for name in ['FoliaParityLatin-Bold.ttf','FoliaParityCJK-Bold.otf','NotoSansArabic-Bold.ttf','FoliaParityBidi-Bold.ttf']},
     'apkSha256':hashlib.sha256((root/'sample/android-app/build/outputs/apk/debug/android-app-debug.apk').read_bytes()).hexdigest(),

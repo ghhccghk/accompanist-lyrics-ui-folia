@@ -301,3 +301,12 @@ listed script, unlisted strong RTL scripts, Script=Common tatweel, combining
 marks and Letter_Number. Original Kharoshthi/Old Hungarian/Meroitic/tatweel
 results are LTR, unlike the previous broad bidi-class approximation. No font or
 character rendering is inferred from this logical property test.
+
+Static paint origin: pinned GlowWord.tsx will-change-transform word layer ->
+ClassicLine.kt separates CSS-pixel static layout rounding from continuous media
+transforms. This behavior is measured on the unchanged original component at
+DPR1/2 by capture-sampling.mjs (external left/top vs waiting-variant x/y); no
+Chromium source is copied and no approximate CSS renderer replaces GlowWord.
+Fractional measured geometry remains available for spacing/fit; only the painted
+word center and matching hit transform use the static snapped origin. Paragraph
+shaping, internal timings, animation curves and glow source stay intact.

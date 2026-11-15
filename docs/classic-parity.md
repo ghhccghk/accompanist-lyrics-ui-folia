@@ -773,3 +773,71 @@ fixture全部通过；原字素/分组、公开Bidi及PublicClassicParity检查�
 本项是逻辑判定对照，没有宣称这些罕见脚本已经有同字体视觉验收。上项API30/34的
 混排画面来自830ab84 APK，不能称为此次新APK的设备验证；新APK只已构建。
 下一项回到正文分数位置与变换采样隔离；整体视觉残差及平台限制保持。
+
+
+## 静态布局与连续变换的采样隔离（2026-11-15）
+
+上游依据是固定 GlowWord.tsx 的 will-change-transform 外层及实际 Chromium 151.0.7922.34
+画面；未修改原版文字组件。raster.tsx 仅在验证壳提供 phase（外部 left/top）和
+motionphase（原版 waiting variant x/y）两个独立控制。相同 Amber、48px、固定许可字体、
+600×400 CSS px、DPR1/2、四个四分之一像素相位、identity/scale1.6 rotate−4°，隐藏
+独立辉光后共64张原版PNG。DOM仍保留分数框，不把offset*整数测量误当布局精度。
+
+实际原版：layout相位0/.25逐像素相同，.5/.75逐像素相同，后一组相对前组正好平移
+1 CSS px（DPR2为2物理px）；identity与旋转缩放均如此。motion相位则每点都不同，
+DPR2的.25也会移动/改变覆盖。因此只能在静态布局入口舍入CSS像素，不能量化媒体驱动
+x/y、旋转、缩放或用固定帧率掩盖分数变换。此结论限于明确记录的实际浏览器条件。
+
+BodySamplingParityTest保持生产完整段落栅格路径，并与直接drawText作隔离比较；
+DPR1/2共256张候选PNG，每帧推进虚拟墙钟1s后严格相同。布局取整控制使identity
+四相位的alpha MAE均值从DPR1 15.4688降至3.5335，DPR2 17.2227降至2.0047。
+它没有消除覆盖与变换差异：缓存旋转缩放后的DPR1均值仍20.2952，直接段落10.4091；
+动画平移DPR1缓存均值12.1140、直接段落3.5009。直接路径只是诊断，尚未据单词实验
+替换生产图层或修改效果预期。
+
+ClassicLine只对word的静态box.left/top以density换回CSS像素后floor(x+.5)，再组成
+绘制中心。排版/避让/fit几何仍保留分数，命中使用实际绘制中心，媒体动画照常连续。
+完整shaping、正文/字素共同基线、独立内部计时、分组、入退场曲线和公开契约不变。
+
+证据：build/verification/sampling-{upstream,kotlin,comparison}/，条件JSON含原版提交、
+字体SHA、浏览器版本、真实DOM框和transform；original-phase.csv保留相位不变性，
+pixel-errors.csv和未缩放原PNG保留全部误差。DPR2接触表缩至CSS尺寸仅用于概览，
+不代替物理像素原图。复现capture-sampling.mjs、BodySamplingParityTest和compare-sampling.py。
+
+修改前确切源码由43bfe0c的git show只读提取到临时实验，完成后候选逐字节恢复，未改Git
+历史。原版输入、字体及PNG未换。sampling-full-legacy/conditions.json保留源码SHA。
+完整对照（前景并集RGB MAE，0..255）：
+
+| 场景组／帧数 | 修改前均值→修改后 | 修改前最大→修改后 | 改善／不变／上升 |
+| --- | --- | --- | --- |
+| 普通检查点／42 | 1.6812→1.2971 | 3.8038→3.1030 | 27／15／0 |
+| 连续媒体网格／246 | 1.5384→1.1833 | 3.9279→3.4294 | 130／104／12 |
+| 复杂脚本／换行／208 | 1.9677→1.4407 | 8.2125→7.6330 | 102／91／15 |
+| 混排公开入口／32 | 2.2910→1.5662 | 4.2297→2.3351 | 23／6／3 |
+| 六点间奏／48 | 2.4312→2.1660 | 9.9988→10.0046 | 26／17／5 |
+| 入场中断／28 | 2.2366→1.9410 | 10.3280→5.4892 | 19／5／4 |
+
+全部差异含上升帧保存在sampling-full-comparison/pixel-errors.csv，不以总体均值掩盖。
+最大回升是cjk/avoid/1500ms的2.1908→2.9904，分数插值与其他覆盖误差可能存在抵消，原因仍待隔离；
+不能因此给CJK加无上游依据的相位补丁。原版/旧/新普通活动帧和中文活动帧已目视；
+字形采样仍不完全相符，不宣布全帧视觉等价。
+
+另外使用公开FoliaLyricsView与实际原版Classic新采40张画面（800/380×600 CSS，
+DPR1/2，default/avoid，750/1000/1500/1900/2100ms），每点1s暂停、逆序seek严格相同。
+原版条件/词与句Motion值在layout-phase-public-upstream/conditions.json；JVM条件和PNG
+位于layout-phase-public-kotlin，比较表在layout-phase-public-comparison。DPR1各组
+前景RGB MAE均值1.7062..2.1446，DPR2为3.3148..3.5209；误差没有作为新通过阈值。
+复现capture-layout-phase.mjs、LayoutPaintParityTest、compare-layout-public.py；
+完整修改前/后比较为compare-layout-phase.py，旧/新都必须有确切输入和源码来源。
+
+完整JVM运行82项，只有DenseExitParityTest的画面用例在1分钟超时；该次完整运行
+与模拟器启动重叠，不能据此确定唯一原因。保存.work/layout-phase-final-build.log及
+layout-phase-full-test-results。停止模拟器后原样隔离运行两项DenseExitParityTest，
+47.235s通过；未增加超时、关闭测试、减少场景或放宽断言。最终Android debug与Desktop
+classes在该次独立构建通过；不把首次完整运行写成全绿。
+
+API34最新APK实际安装运行，baseline/wrap/cjk的default/avoid共50张不同画面、6次
+baseline逆向重访共56个token请求，第二次暂停截图均严格相同。采集记录额外保存所有
+commonMain/androidMain正文源码SHA，避免提交前的HEAD误标APK来源。条件、设备/APK/
+字体SHA和PNG位于classic-android-api34-layout-phase，原版接触表及CSV位于同名
+-comparison；本项API30、真实设备和Desktop实窗仍未验证，不借用旧APK设备结果。

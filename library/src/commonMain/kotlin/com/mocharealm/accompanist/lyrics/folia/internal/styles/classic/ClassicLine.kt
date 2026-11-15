@@ -110,7 +110,12 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                     val box = geometry.boxes[index]
                     // CSS places the painted baseline. SkParagraph's reported
                     // baseline can differ from its rounded text-blob baseline.
-                    Cell(units[index], measured[index], Offset(box.left + box.width / 2, box.top + box.height / 2),
+                    // GlowWord is a will-change-transform layer: static layout offsets
+                    // snap in CSS pixels before its continuous Motion transform.
+                    // Keep geometry fractional for layout/avoidance measurements.
+                    fun paintOffset(value: Float) = floor(value / density.density + .5f) * density.density
+                    Cell(units[index], measured[index], Offset(paintOffset(box.left) + box.width / 2,
+                        paintOffset(box.top) + box.height / 2),
                         poses[index], box.width, box.height, renderedTexts[index].boundaries,
                         cssBaseline(measured[index].firstBaseline/density.density,
                             measured[index].multiParagraph.height/density.density,box.height/density.density)*density.density-paintedLineBaseline(measured[index],0))

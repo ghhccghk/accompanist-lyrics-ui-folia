@@ -35,10 +35,13 @@ class ClassicParityActivity : ComponentActivity() {
         intent.getLongExtra("mediaMs",1500),intent.getIntExtra("width",800).also {require(it in 200..1280)},
         intent.getBooleanExtra("avoid",false),intent.getBooleanExtra("backdrop",false),intent.getBooleanExtra("play",false))
     private lateinit var requestedFrame:MutableState<Frame>
+    private val metricsGeneration=mutableLongStateOf(0L)
 
     override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
-        if(intent.getBooleanExtra("metricsProbe",false)) logNativeFontAdvances(assets,filesDir)
+        if(intent.getBooleanExtra("metricsProbe",false)) {
+            logNativeFontAdvances(assets,filesDir);metricsGeneration.longValue++
+        }
         @Suppress("DEPRECATION")
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
         @Suppress("DEPRECATION")
@@ -57,6 +60,8 @@ class ClassicParityActivity : ComponentActivity() {
         val sceneRows=assets.open("scenes.tsv").bufferedReader().use {it.readLines()}.filter {it.isNotBlank()&&!it.startsWith('#')}.map {it.split('\t')}
         val subtitleRows=assets.open("subtitle-scenes.tsv").bufferedReader().use {it.readLines()}.filter {it.isNotBlank()&&!it.startsWith('#')}.map {it.split('\t')}
         setContent {
+            val probeToken=metricsGeneration.longValue
+            if(probeToken>0) ComposeFontRasterProbe(families.getValue("FoliaParityLatin-Bold.ttf"),probeToken,filesDir)
             val frame=requestedFrame.value
             val snapshot=remember(frame) {mutableStateOf(FoliaPlaybackSnapshot(frame.ms,frame.play))}
             LaunchedEffect(frame) {
@@ -114,7 +119,9 @@ class ClassicParityActivity : ComponentActivity() {
     }
     override fun onNewIntent(intent:Intent) {
         super.onNewIntent(intent)
-        if(intent.getBooleanExtra("metricsProbe",false)) logNativeFontAdvances(assets,filesDir)
+        if(intent.getBooleanExtra("metricsProbe",false)) {
+            logNativeFontAdvances(assets,filesDir);metricsGeneration.longValue++
+        }
         requestedFrame.value=requested(intent)
     }
 }

@@ -30,13 +30,15 @@ adb('shell','am','start','--activity-no-animation','--activity-single-top','-n',
     '--el','mediaMs','0','--ez','metricsProbe','true')
 deadline=time.monotonic()+15
 while True:
-    log=adb('logcat','-d','-s','FoliaMetrics:I','AndroidRuntime:E')
+    log=adb('logcat','-d','-s','FoliaMetrics:I','FoliaRaster:I','AndroidRuntime:E')
     if 'FATAL EXCEPTION' in log:raise RuntimeError(log)
-    if 'DONE' in log:break
+    if 'RASTER_DONE' in log:break
     if time.monotonic()>deadline:raise RuntimeError('Font probe did not finish\n'+log)
     time.sleep(.05)
-rows=[json.loads(line[line.index('{'):]) for line in log.splitlines() if '{' in line]
+rows=[json.loads(line[line.index('{'):]) for line in log.splitlines() if '{' in line and 'FoliaMetrics' in line]
+compose=[json.loads(line[line.index('{'):]) for line in log.splitlines() if '{' in line and 'FoliaRaster' in line]
 assert len(rows)==20,'Every native size/mode must be present'
+assert len(compose)==5,'Every Compose size must be present'
 (out/'native-log.txt').write_text(log,encoding='utf8')
 font=root/'verification/assets/FoliaParityLatin-Bold.ttf'
 with TTFont(font) as f:
@@ -63,11 +65,25 @@ with (out/'advances.csv').open('w',newline='') as f:
 with (out/'raster-errors.csv').open('w',newline='') as f:
     w=csv.writer(f);w.writerow(['mode','size','browser_alpha_area','native_alpha_area','foreground_alpha_mae',
         'browser_bounds','native_bounds']);w.writerows(rasters)
+compose_errors=[]
+for row in compose:
+    name=row['raster'];assert '/' not in name and '\\' not in name
+    (out/name).write_bytes(adb('exec-out','run-as','com.mocharealm.accompanist.folia.sample','cat','files/'+name,binary=True))
+    reference=next(x for x in browser['rows'] if abs(x['size']-row['size'])<.00001)
+    native=next(x for x in rows if x['mode']=='linear-no-hint' and x['size']==row['size'])
+    a=Image.open(browser_path.parent/reference['raster']).getchannel('A')
+    b=Image.open(out/name).getchannel('A');c=Image.open(out/native['raster']).getchannel('A')
+    assert a.size==b.size==c.size==(512,320)
+    union=ImageChops.lighter(a,b).point(lambda x:255 if x else 0)
+    compose_errors.append((row['size'],row['advance'],sum(b.getdata())/255,
+        ImageStat.Stat(ImageChops.difference(a,b),union).mean[0],ImageChops.difference(b,c).getextrema()[1]))
+with (out/'compose-raster-errors.csv').open('w',newline='') as f:
+    w=csv.writer(f);w.writerow(['size','compose_advance','compose_alpha_area','browser_alpha_mae','native_max_alpha_delta']);w.writerows(compose_errors)
 (out/'conditions.json').write_text(json.dumps({'sdk':api,'serial':args.serial,
     'fingerprint':adb('shell','getprop','ro.build.fingerprint').strip(),
     'fontSha256':hashlib.sha256(font.read_bytes()).hexdigest(),
     'browserConditionsSha256':hashlib.sha256(browser_path.read_bytes()).hexdigest(),
     'apkSha256':hashlib.sha256((root/'sample/android-app/build/outputs/apk/debug/android-app-debug.apk').read_bytes()).hexdigest(),
     'note':'Native shaping diagnostics;64x is a metric control, never used to render production lyrics',
-    'rows':rows},indent=2),encoding='utf8')
+    'rows':rows,'compose':compose},indent=2),encoding='utf8')
 print(out)

@@ -610,3 +610,11 @@ contrast。未据单一字体截图猜一个gamma或加粗系数进入生产。�
 API30的ink-contact.png为明确标识的4倍最近邻放大，仅辅助看边缘。一次双模拟器
 并存时浏览器captureScreenshot失败，释放一个模拟器后采集成功。未改变系统设置。
 本项未改变生产渲染；仍需继续隔离实际段落/变换采样与平台字形栅格，整帧验收保持未完成。
+
+Compose复核：相同字体/weight、TextMotion.Animated、density/fontScale1、191基线，
+完整TextMeasurer段落绘制为透明PNG。API30/API34各5字号与对应原生Paint的alpha
+逐像素完全相同（native_max_alpha_delta=0）；advance也相同。这将该静态控制场景的
+残差定位到当前平台字形/计量输入，而非组件多余偏移或丢失塑形。仍未证明动态层采样
+无误，也不把平台差异当最终验收豁免。证据：同目录compose-raster-errors.csv与PNG，
+debug构建及两端实际运行通过。探针可重复触发，使用独立generation避免同intent状态
+被Compose合并而遗漏复测；generation不参与媒体时间。

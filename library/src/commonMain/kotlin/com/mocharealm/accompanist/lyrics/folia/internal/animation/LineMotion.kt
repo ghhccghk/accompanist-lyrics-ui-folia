@@ -7,12 +7,12 @@ import kotlin.math.*
 internal data class LineFrame(val alpha: Float, val scale: Float, val breathingY: Float, val blur: Float)
 internal fun sampleLine(time: Long, enterUs: Long, leaveUs: Long?, profile: RenderProfile,
     reducedMotion: Boolean, breathing: Float, density: Float): LineFrame {
-    val elapsed = (minOf(time, leaveUs ?: time) - enterUs).coerceAtLeast(0)
-    val exitTime = (time - (leaveUs ?: time)).coerceAtLeast(0)
+    val elapsed = motionElapsedUs(minOf(time, leaveUs ?: time) - enterUs)
+    val exitTime = motionElapsedUs(time - (leaveUs ?: time))
     val enter = when(profile.mode) {
         Reveal.Instant -> 1f
-        Reveal.Fast -> easeOut(elapsed / 160_000f)
-        Reveal.Normal -> cubicEase(elapsed / 300_000f, .25f, .1f, .35f, 1f)
+        Reveal.Fast -> easeOut(elapsed / 160_000.0)
+        Reveal.Normal -> cubicEase(elapsed / 300_000.0, .25, .1, .35, 1.0)
     }
     val initialAlpha = when(profile.mode) { Reveal.Normal -> 0f; Reveal.Fast -> .35f; Reveal.Instant -> 1f }
     val initialScale = when(profile.mode) { Reveal.Normal -> .9f; Reveal.Fast -> .96f; Reveal.Instant -> 1f }
@@ -21,9 +21,9 @@ internal fun sampleLine(time: Long, enterUs: Long, leaveUs: Long?, profile: Rend
     val enteredScale = if(profile.mode == Reveal.Normal) physicsValue(.9f,1f,elapsed/1e6,550.0,30.0,10.0)
         else initialScale+(1-initialScale)*enter
     val exit = when(profile.mode) {
-        Reveal.Normal -> easeOut(exitTime / 300_000f)
-        Reveal.Fast -> easeInOut(exitTime / 160_000f)
-        Reveal.Instant -> easeOut(exitTime / 120_000f)
+        Reveal.Normal -> easeOut(exitTime / 300_000.0)
+        Reveal.Fast -> easeInOut(exitTime / 160_000.0)
+        Reveal.Instant -> easeOut(exitTime / 120_000.0)
     }
     val exitScale = when(profile.mode) { Reveal.Normal -> 1.1f; Reveal.Fast -> 1.04f; Reveal.Instant -> 1.02f }
     val exitBlur = when(profile.mode) { Reveal.Normal -> 20f; Reveal.Fast -> 10f; Reveal.Instant -> 6f }

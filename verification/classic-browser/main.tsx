@@ -1,10 +1,12 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { flushSync } from 'react-dom';
-import { motionValue } from 'framer-motion';
+import { motionValue, MotionGlobalConfig, frameData, frameSteps, time as motionTime, flushKeyframeResolvers, visualElementStore } from 'framer-motion';
 import Classic from 'pinned-classic';
 import { getLineRenderEndTime } from '../../.work/folia-major/src/utils/lyrics/renderHints';
 import { setGlowBlurQuantized } from '../../.work/folia-major/src/utils/glowBlurQuantize';
+import {resolveGlowWordRenderProfile,getGlowWordActiveEndTime} from '../../.work/folia-major/src/components/visualizer/glowWordTiming';
+import {buildPostLyricLayoutUnits,buildDisplayWordsFromLayoutUnits} from '../../.work/folia-major/src/utils/lyrics/cjkSemanticLayout';
 import fontUrl from '../assets/NotoSans-Bold.ttf?url';
 import arabicUrl from '../assets/NotoSansArabic-Bold.ttf?url';
 import cjkUrl from '../assets/FoliaParityCJK-Bold.otf?url';
@@ -19,6 +21,8 @@ await arabicFace.load();document.fonts.add(arabicFace);
 const cjkFace = new FontFace('Parity CJK', `url(${cjkUrl})`, {weight:'700'});
 await cjkFace.load();document.fonts.add(cjkFace);
 const params = new URLSearchParams(location.search);
+const manual = params.has('manual');
+if(manual) {MotionGlobalConfig.useManualTiming=true;frameData.timestamp=0;motionTime.set(0);}
 const currentTime = motionValue(0);
 const audioPower = motionValue(0);
 const themes = { animationIntensity: 'normal', fontStyle: 'sans', fontFamily: 'Parity Noto', fontWeight: 700,
@@ -39,7 +43,23 @@ if(params.has('scene')) {
 }
 const root = createRoot(document.getElementById('root')!);
 (window as any).mountTime=performance.now();
+(window as any).motionValues=(element:Element)=>{
+  const visual=visualElementStore.get(element);
+  return {...visual?.latestValues,...Object.fromEntries(
+    Array.from(visual?.values.entries()??[]).map(([key,value])=>[key,value.get()]))};
+};
+(window as any).motionDebug=(element:Element)=>Object.fromEntries(
+  Array.from(visualElementStore.get(element)?.values.entries()??[]).map(([key,value])=>
+    [key,{value:value.get(),startTime:(value as any).animation?.startTime,keyframes:(value as any).animation?.options?.keyframes}]));
+(window as any).eventTimes=lines.flatMap(line=>{
+  const profile=resolveGlowWordRenderProfile(line)!;
+  const words=buildDisplayWordsFromLayoutUnits(buildPostLyricLayoutUnits(line,{semantic:true,sticky:true}));
+  return [line.startTime*1000,getLineRenderEndTime(line)*1000,...words.flatMap(word=>[
+    Math.max(line.startTime,word.startTime-profile.wordLookahead)*1000,
+    getGlowWordActiveEndTime(word,profile)*1000+.001])];
+});
 (window as any).step = (ms: number) => {
+  if(manual) {frameData.delta=ms-frameData.timestamp;frameData.timestamp=ms;motionTime.set(ms);}
   const seconds = ms / 1000;
   // Set the selected line before emitting time, matching host→runtime→GlowWord ownership.
   const index = lines.findIndex((l, i) => seconds >= l.startTime && seconds < getLineRenderEndTime(l) && (!lines[i + 1] || seconds < lines[i + 1].startTime));
@@ -47,6 +67,12 @@ const root = createRoot(document.getElementById('root')!);
     theme={themes} audioPower={audioPower} audioBands={{}} classicTuning={{ enableWordRotation: true,
       breathingFloatMultiplier: params.has('breathe') ? 1 : 0, wordSpacing: .7, avoidOverlap: params.has('avoid'), useLegacyLayout: false }} />));
   flushSync(() => currentTime.set(seconds));
+  if(manual) {
+    flushKeyframeResolvers();
+    frameData.isProcessing=true;
+    try {Object.values(frameSteps).forEach(step=>step.process(frameData));}
+    finally {frameData.isProcessing=false;}
+  }
 };
 (window as any).step(0);
 (window as any).ready = true;

@@ -149,6 +149,27 @@ PublicClassicParityTest 在800和380宽、600高、同Noto Bold、normal/avoid�
 包含入场、内部字素活动、余韵与退场。已目视检查1500ms避让图，位置与词组一致，
 浏览器正文栅格更软；光晕仍有已记录的核差。未将平台栅格残差或整帧误差列为通过。
 
+## 实际挂载 Motion 状态复核（2026-11-15）
+
+capture-manual.mjs 运行固定版本原始 Classic／GlowWord／variants，冻结墙钟，
+由 Motion 手动调度器推进媒体时间，关闭 WAAPI 以观察 JS runtime。读取实际 Motion
+values，避免 DOM matrix 六位有效数字造成假误差；严格 passed 边界追加 .001ms，
+仍按原运行时规则舍入 elapsed 毫秒。两句基线与八场景、default/avoid 共590行词状态。
+BrowserClassicMotionTest 对矩阵、透明度、正文模糊、句变换和字素透明度比较 <0.0001；
+原 CSS 整数 RGB 与线性颜色响应比较 <0.51，没有放宽原阈值。
+
+实际挂载对照发现三项差异并修复：Motion 以50ms探测解析弹簧 duration，运行时在
+该 duration 后钳制最终 keyframe（不是连续首次 rest）；passed 不重启目标不变的
+x/y spring；字素时间保留原始 Double 秒数，先舍入运行时 elapsed 毫秒，再减分数字素
+delay，避免 Arabic 的600ms/7字素和 fast 的900.8ms边界误差。保留 Long 微秒接口，
+渲染另传精确内部时间，不丢弃 shaping 内部计时，也不使用累积播放状态。
+
+旧 generate-motion.mjs 的 autoplay:false sample 绕过 running completion clamp；
+真实挂载对照先暴露问题后，生成器改为 play 后采样并保留同目标动画，motion.tsv约20行
+随原运行时行为更新。独立实际浏览器夹具与原 dispatcher 夹具现在均通过。
+完整 JVM 测试、Android assembleDebug、Desktop classes 通过。截图和诊断位于
+build/verification/classic-manual-upstream；数值通过不代表完整画面通过，下一步检查栅格。
+
 ## CSS空白与内部映射（2026-11-15）
 
 GlowWord.tsx的块级正文／whitespace-nowrap → CssWordText.kt和ClassicLine.kt。

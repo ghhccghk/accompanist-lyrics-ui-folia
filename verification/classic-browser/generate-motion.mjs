@@ -16,6 +16,9 @@ function sample(from,to,key,transition,us) {
   // Use the actual dispatcher, not only the low-level generator: unspecified tween
   // easing starts as easeOut here, whereas keyframes() alone defaults to easeInOut.
   const animation=animateMotionValue(key,motionValue(from),to,{...options,isSync:true,from,autoplay:false})(()=>{});
+  // A running animation clamps at its resolved generator duration. A paused
+  // sample bypasses this completion path and is not a live browser oracle.
+  animation.play();
   const value=animation.sample(Math.max(0,us/1000)).value;
   animation.stop();
   return value;
@@ -42,6 +45,9 @@ try {
     for(const delta of [-50000,0,25000,50000,100000,150000,200000,300000,500000,750000,850000,950000,1100000,1500000]) {
       const time=begin+delta,elapsed=Math.min(Math.max(0,delta),end-begin),exit=Math.max(0,time-end);
       const result=['x','y','scale','rotate','opacity'].map(key=>{
+        // Actual Motion keeps an in-flight animation when the next variant has
+        // the same target (see mounted browser motion-values fixture).
+        if(active[key]===passed[key])return sample(waiting[key],active[key],key,transition(active,key),Math.max(0,delta));
         const v=sample(waiting[key],active[key],key,transition(active,key),elapsed);
         return sample(v,passed[key],key,transition(passed,key),exit);
       });

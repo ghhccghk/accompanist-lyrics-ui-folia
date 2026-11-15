@@ -15,6 +15,7 @@ export function checkReference() {
 export async function referenceModules() {
   checkReference();
   const server = await createServer({ configFile: false, root: path.dirname(fileURLToPath(import.meta.url)),
+    cacheDir: path.join(root,'.work/vite-reference-cache'), optimizeDeps: { noDiscovery: true, entries: [] },
     server: { middlewareMode: true, fs: { allow: [root] } } });
   const load = async p => server.ssrLoadModule(path.join(upstream, 'src', p));
   return { server, load };

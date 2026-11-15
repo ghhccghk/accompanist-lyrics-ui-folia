@@ -120,6 +120,17 @@ the original strict matrix tolerance was retained.
 
 ## Independent model input
 
+Mounted-runtime audit: unchanged classic/Visualizer.tsx, GlowWord.tsx and word
+variants at the pinned revision → ClassicSampler.kt, LineMotion.kt, GraphemeGlow.kt,
+GraphemeTiming.kt, DisplayUnits.kt, ClassicLine.kt. capture-manual.mjs observes real
+Motion values at controlled media times (590 word states). Preserve fractional
+seconds alongside microseconds; round runtime elapsed milliseconds before glyph
+delay subtraction. Same-target passed x/y springs continue, and running spring
+duration uses Motion's 50ms duration probes. The old paused generator oracle now
+plays before sampling, as independently confirmed by mounted original components.
+No Motion runtime code is shipped in the library; mathematical sampling stays
+stateless and seek-reconstructible. Browser screenshots still require paint review.
+
 Resolved candidate: `com.mocharealm.accompanist:lyrics-core:0.5.0`.
 Maven Central POM availability was checked directly. Actual public models and
 parser entry points were read from its published sources JAR. The dependency is

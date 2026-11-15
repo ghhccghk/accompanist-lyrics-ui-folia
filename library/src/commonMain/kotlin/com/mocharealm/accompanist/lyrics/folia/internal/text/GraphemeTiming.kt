@@ -10,10 +10,12 @@ internal fun evenGraphemeTimings(text: String, startUs: Long, endUs: Long): List
     val edges = graphemeBoundaries(text).sorted()
     val count = edges.size - 1
     if (count <= 0) return emptyList()
-    val duration = (endUs - startUs).coerceAtLeast(0)
-    return (0 until count).map { i -> TimedGrapheme(edges[i], edges[i + 1],
-        startUs + (duration.toDouble() * i / count).roundToLong(),
-        if (i == count - 1) endUs else startUs + (duration.toDouble() * (i + 1) / count).roundToLong()) }
+    val start=startUs/1e6; val end=endUs/1e6
+    val unit=(end-start).coerceAtLeast(0.0)/count
+    return (0 until count).map { i ->
+        val a=start+unit*i;val b=if(i==count-1) end else start+unit*(i+1)
+        TimedGrapheme(edges[i],edges[i+1],(a*1e6).roundToLong(),(b*1e6).roundToLong(),a,b)
+    }
 }
 
 /** Subdivide each source syllable before grouping. A grapheme spanning source boundaries
@@ -32,7 +34,9 @@ internal fun coalesceGraphemeTimings(text: String, pieces: List<TimedGrapheme>, 
     graphemeBoundaries(text).sorted().zipWithNext { begin, end ->
         val covering = pieces.filter { it.end > begin && it.begin < end }
         TimedGrapheme(begin, end, covering.minOfOrNull { it.startUs } ?: startUs,
-            covering.maxOfOrNull { it.endUs } ?: endUs)
+            covering.maxOfOrNull { it.endUs } ?: endUs,
+            covering.minOfOrNull { it.startSeconds } ?: startUs/1e6,
+            covering.maxOfOrNull { it.endSeconds } ?: endUs/1e6)
     }
 
 internal fun timedDisplayUnit(text: String, startUs: Long, endUs: Long, fragments: List<TimedFragment>): DisplayUnit =

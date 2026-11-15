@@ -6,6 +6,8 @@ import kotlin.math.*
 
 internal enum class Reveal { Normal, Fast, Instant }
 internal data class RenderProfile(val mode: Reveal, val renderEndUs: Long, val lookaheadUs: Long)
+/** JSAnimation rounds elapsed milliseconds before evaluating a generator. */
+internal fun motionElapsedUs(delta:Long) = (floor(delta.coerceAtLeast(0)/1000.0+.5)*1000).toLong()
 
 internal fun renderProfile(start: Long, end: Long, lastWordEnd: Long = end): RenderProfile {
     val duration = (end - start).coerceAtLeast(0)
@@ -32,8 +34,21 @@ internal fun physicsValue(from: Float, to: Float, seconds: Double, stiffness: Do
     val remaining = envelope*delta*(cos(w*t)+decay/w*sin(w*t))
     val velocity = envelope*delta*stiffness/w*sin(w*t)
     val granular = abs(delta)<5
-    return if(abs(velocity) <= (restSpeedOverride ?: if(granular) .01 else 2.0) && abs(remaining) <= if(granular) .005 else .5) to
-        else (to-remaining).toFloat()
+    val restSpeed=restSpeedOverride ?: if(granular) .01 else 2.0
+    val restDelta=if(granular) .005 else .5
+    if(abs(velocity)<=restSpeed && abs(remaining)<=restDelta) return to
+    // Motion computes a generator's duration with 50ms probes (up to 20s), then
+    // a running JSAnimation clamps to its final keyframe beyond that duration.
+    // This is duration resolution, not a frame clock: every query still samples
+    // the analytic media-time curve and has no mutable playback/event history.
+    val probes=minOf(floor(t*20).toInt(),399)
+    for(i in 0..probes) {
+        val at=i*.05; val e=exp(-decay*at)
+        val r=e*delta*(cos(w*at)+decay/w*sin(w*at))
+        val v=e*delta*stiffness/w*sin(w*at)
+        if(abs(v)<=restSpeed && abs(r)<=restDelta) return to
+    }
+    return (to-remaining).toFloat()
 }
 
 internal data class Pose(val x: Float, val y: Float, val scale: Float, val rotation: Float,
@@ -54,25 +69,30 @@ internal fun sampleWord(timeUs: Long, lineEnterUs: Long, startUs: Long, endUs: L
     val begin = maxOf(lineEnterUs, startUs - profile.lookaheadUs)
     val activeEnd = activeWordEnd(startUs, endUs, profile).coerceAtLeast(begin)
     val sampleAt = minOf(timeUs, activeEnd)
-    val elapsed = (sampleAt - begin).coerceAtLeast(0) / 1_000_000.0
-    val alpha = easeOut((sampleAt - begin) / 100_000f)
-    val fade = easeOut((timeUs - activeEnd) / 500_000f)
-    val rotationFade = ((timeUs - activeEnd) / 5_000_000f).coerceIn(0f, 1f)
+    val activeElapsed=motionElapsedUs(sampleAt-begin)
+    val passedElapsed=motionElapsedUs(timeUs-activeEnd)
+    val elapsed = activeElapsed / 1_000_000.0
+    val alpha = easeOut(activeElapsed / 100_000.0)
+    val fade = easeOut(passedElapsed / 500_000.0)
+    val rotationFade = (passedElapsed / 5_000_000f).coerceIn(0f, 1f)
     val waitingX = pose.x + sin(pose.y) * 100
     val waitingY = pose.y + cos(pose.x) * 50
     fun blend(a: Float, b: Float, factor: Float) = a + (b - a) * factor
     val activeScale = physicsValue(.5f, pose.scale * 1.4f, elapsed)
-    val x = physicsValue(waitingX, pose.x, elapsed)
-    val y = physicsValue(waitingY, pose.y, elapsed)
+    // Active and passed keep the same x/y targets. Motion leaves these springs
+    // running instead of starting the passed tween used by scale/opacity.
+    val positionElapsed=motionElapsedUs(timeUs-begin)/1_000_000.0
+    val x = physicsValue(waitingX, pose.x, positionElapsed)
+    val y = physicsValue(waitingY, pose.y, positionElapsed)
     val rotation = if (pose.rotation == 0f && pose.passedRotation == 0f) 0f else physicsValue(pose.rotation + 20, pose.rotation, elapsed)
     val duration = displayDuration(startUs, endUs, profile)
-    val colorIn = ((sampleAt - begin).toFloat() / duration).coerceIn(0f, 1f)
-    val colorOut = easeInOut((timeUs - activeEnd).toFloat() / when(profile.mode) { Reveal.Normal -> 800_000; Reveal.Fast -> 240_000; Reveal.Instant -> 120_000 })
+    val colorIn = (activeElapsed.toFloat() / duration).coerceIn(0f, 1f)
+    val colorOut = easeInOut(passedElapsed.toDouble() / when(profile.mode) { Reveal.Normal -> 800_000; Reveal.Fast -> 240_000; Reveal.Instant -> 120_000 })
     val blurDuration = when(profile.mode) { Reveal.Normal -> 200_000; Reveal.Fast -> 120_000; Reveal.Instant -> 80_000 }
-    val blur = 10 * (1 - easeOut((sampleAt - begin).toFloat() / blurDuration)) *
-        (1 - easeOut((timeUs - activeEnd).toFloat() / when(profile.mode) { Reveal.Normal -> 500_000; Reveal.Fast -> 200_000; Reveal.Instant -> 120_000 }))
-    return WordFrame(if (reducedMotion) 0f else blend(x, pose.x, fade),
-        if (reducedMotion) 0f else blend(y, pose.y, fade),
+    val blur = 10 * (1 - easeOut(activeElapsed.toDouble() / blurDuration)) *
+        (1 - easeOut(passedElapsed.toDouble() / when(profile.mode) { Reveal.Normal -> 500_000; Reveal.Fast -> 200_000; Reveal.Instant -> 120_000 }))
+    return WordFrame(if (reducedMotion) 0f else x,
+        if (reducedMotion) 0f else y,
         if (reducedMotion) 1f else blend(activeScale, pose.scale, fade),
         if (reducedMotion) 0f else blend(rotation, pose.rotation + pose.passedRotation, rotationFade),
         if (reducedMotion) 1f else blend(alpha, .82f, fade), colorIn * (1 - colorOut),

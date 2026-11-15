@@ -214,7 +214,8 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                         withTransform({translate(wordPadding.toFloat(),wordPadding.toFloat())}) {
                         cell.glows.forEach { glyph ->
                             val glow = sampleGraphemeGlow(time, enterUs, cell.unit.startUs, cell.unit.endUs,
-                                glyph.timing.startUs, glyph.timing.endUs, cell.unit.graphemes.size, profile)
+                                glyph.timing.startUs, glyph.timing.endUs, cell.unit.graphemes.size, profile,
+                                glyph.timing.startSeconds,glyph.timing.endSeconds)
                             if (glow > .001f) {
                                 val origin = glyph.origin
                                 drawImage(glyph.mask, origin, alpha = glow, colorFilter = glowColor)

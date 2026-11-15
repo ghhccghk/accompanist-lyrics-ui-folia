@@ -6,7 +6,8 @@ import com.mocharealm.accompanist.lyrics.folia.internal.model.TimedFragment
 internal expect fun graphemeBoundaries(text: String): Set<Int>
 internal expect fun isRtlLyric(text: String): Boolean
 
-internal data class TimedGrapheme(val begin: Int, val end: Int, val startUs: Long, val endUs: Long)
+internal data class TimedGrapheme(val begin: Int, val end: Int, val startUs: Long, val endUs: Long,
+    val startSeconds: Double = startUs/1e6, val endSeconds: Double = endUs/1e6)
 internal data class DisplayUnit(val text: String, val startUs: Long, val endUs: Long,
     /** Original syllables with UTF-16 ranges relative to the complete shaped run. */
     val fragments: List<TimedFragment> = emptyList(),

@@ -180,3 +180,9 @@ whole-paragraph shaping, word-group alpha and media-time reconstruction. API30
 uses software Canvas for every nested group, avoiding unsupported hardware-layer
 replay on a software Canvas. This is a capability fallback; residual paint and
 performance limitations remain documented, not a new acceptance standard.
+
+Composited-body adaptation: original GlowWord.tsx body inside transformed word →
+ParagraphRaster.kt / ClassicLine.kt. Preserve intact shaped paragraph coverage at
+prepared layout size, tint and transform its raster with the shared glyph halo.
+No browser rasterizer code copied. Direct/static font probes remain separate from
+actual animated-lifecycle frame comparison; residuals are explicitly recorded.

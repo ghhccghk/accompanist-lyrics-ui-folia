@@ -291,3 +291,23 @@ ClassicParityTest新增真实软件绘制路径，共42帧，沿用所有原DOM�
 无AndroidRuntime异常；两次应用区域PNG逐像素相同（排除24px系统状态栏）。
 证据.work/folia-api30{,-b}.png。默认系统字体，此为低API运行验证，非固定字体Android
 画面对照；API21..29/实机/全帧耗时与峰值内存未测，不能宣称流畅或高性能。
+
+## 动态词正文的栅格层（2026-11-15）
+
+原版GlowWord正文和字素光晕属于独立composited层，词transform作用于层覆盖。
+ClassicLine.kt现在通过ParagraphRaster.kt在最终布局尺寸下栅格化完整paragraph，
+颜色变化只tint原覆盖，再与字素辉光组成同一词层；字素计时/选择path/布局不变。
+使用自然paragraph高度留足overhang，字号/视口变化重新准备。此为绘制行为校准，
+不是以性能为由忽略上游。没有逐字重塑形或改变曲线。
+
+同一实际挂载Motion/字体/800x600的7检查点对照：原生路径活动态前景RGB MAE
+1000ms 7.04→3.94，1500ms 7.67→4.20，2100ms 7.64→4.31；avoid亦改善。
+整句退出2300/4400ms残差仍约4.05/8.11，尚未验收。已检查default对照图。
+静态隔离BodyRasterTest保留原direct font诊断，另存identity-raster/transform-raster，
+不覆盖旧基线证据：静态transform可能触发浏览器不同raster scale，不能与动态生命周期
+混同；该诊断的缓存变体误差更高，仍需单独说明/调查，非全部姿态逐像素等价。
+
+已进一步读当前Compose 1.12.0源码和AOSP RenderEffect.cpp：原生BlurEffect参数是
+radius，内部转换sigma=.57735*radius+.5；CSS blur参数直接是sigma。
+目前生产代码仍直接传入，造成整句退出模糊偏小，这是下一项明确修复任务。
+完整JVM与Android/Desktop构建通过，随机seek/暂停重建保持原严格像素断言。

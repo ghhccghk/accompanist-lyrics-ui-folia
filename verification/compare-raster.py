@@ -8,8 +8,8 @@ browser = root / 'raster-upstream'
 kotlin = root / 'raster-kotlin'
 assert ImageChops.difference(Image.open(browser / 'original.png'), Image.open(browser / 'identity.png')).getbbox() is None, 'Font metadata must not change the original browser paint'
 rows = []
-for pose in ('original', 'identity', 'transform'):
-    a = Image.open(browser / (pose.replace('original', 'identity') + '.png')).getchannel('A')
+for pose in ('original', 'identity', 'transform', 'identity-raster', 'transform-raster'):
+    a = Image.open(browser / (pose.replace('original', 'identity').replace('-raster','') + '.png')).getchannel('A')
     b = Image.open(kotlin / f'{pose}.png').getchannel('A')
     union = [i for i, (x, y) in enumerate(zip(a.getdata(), b.getdata())) if x or y]
     delta = list(ImageChops.difference(a, b).getdata())

@@ -17,6 +17,8 @@ import javax.imageio.ImageIO
 import kotlin.math.ceil
 import com.mocharealm.accompanist.lyrics.folia.internal.text.cssBaseline
 import kotlin.test.*
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.rasterizeParagraph
+import androidx.compose.ui.graphics.ColorFilter
 
 /** Isolate font/body paint from timing, opacity, glow and line motion. */
 @OptIn(ExperimentalTestApi::class)
@@ -29,6 +31,7 @@ class BodyRasterTest {
         var row by mutableStateOf(rows.first())
         var transformed by mutableStateOf(false)
         var original by mutableStateOf(false)
+        var cachedPaint by mutableStateOf(false)
         val metrics=StringBuilder("scene\tnaturalBaseline\tnaturalHeight\tcssBaseline\n")
         setContent {
             val measurer=rememberTextMeasurer()
@@ -40,16 +43,20 @@ class BodyRasterTest {
             val height=row[5].toFloat()
             val baseline=cssBaseline(layout.firstBaseline,layout.multiParagraph.height,height)
             assertEquals(row[6].toFloat(),baseline,.0001f,"CSS baseline for ${row[0]}")
+            val raster=remember(layout) {rasterizeParagraph(layout,androidx.compose.ui.unit.Density(1f))}
             Canvas(androidx.compose.ui.Modifier) {
                 withTransform({
                     translate(128f,128f)
                     if(transformed) {rotate(-4f,Offset(width/2,height/2));scale(1.6f,1.6f,Offset(width/2,height/2))}
-                }) {drawText(layout,Color.White,Offset(0f,baseline-layout.firstBaseline))}
+                }) {
+                    if(cachedPaint) drawImage(raster.image,raster.origin+Offset(0f,baseline-layout.firstBaseline),colorFilter=ColorFilter.tint(Color.White))
+                    else drawText(layout,Color.White,Offset(0f,baseline-layout.firstBaseline))
+                }
             }
             SideEffect {metrics.append("${row[0]}\t${layout.firstBaseline}\t${layout.multiParagraph.height}\t$baseline\n")}
         }
-        for(case in rows) for(pose in if(case[0]=="baseline") listOf("identity","transform","original") else listOf("identity","transform")) {
-            runOnIdle {row=case;transformed=pose=="transform";original=pose=="original"};waitForIdle()
+        for(case in rows) for(pose in if(case[0]=="baseline") listOf("identity","transform","original","identity-raster","transform-raster") else listOf("identity","transform")) {
+            runOnIdle {row=case;transformed=pose.startsWith("transform");original=pose=="original";cachedPaint=pose.endsWith("raster")};waitForIdle()
             val image=captureToImage().toAwtImage()
             assertEquals(600,image.width)
             assertTrue(image.getRGB(0,0,600,400,null,0,600).any{it and 0xffffff != 0})

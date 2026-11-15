@@ -34,13 +34,15 @@ import com.mocharealm.accompanist.lyrics.folia.internal.text.*
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.blurredMasks
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.compositeGlowMasks
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.GlowBudget
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.ParagraphRaster
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.rasterizeParagraph
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.hitClassicUnit
 import kotlin.math.*
 
 private data class GlyphGlow(val timing: TimedGrapheme, val origin: Offset, val mask: ImageBitmap)
 private data class Cell(val unit: DisplayUnit, val layout: TextLayoutResult, val center: Offset, val pose: Pose,
     val boxWidth: Float, val boxHeight: Float, val sourceBoundaries: IntArray, val paintTop: Float,
-    val glows: List<GlyphGlow> = emptyList())
+    val glows: List<GlyphGlow> = emptyList(), val body: ParagraphRaster? = null)
 private data class Prepared(val cells: List<Cell>, val height: Float, val geometry: ClassicGeometry,
     val quality: FoliaQuality = FoliaQuality.Minimal)
 private class DrawnFrame { var timeUs: Long? = null; var center = Offset.Zero }
@@ -114,6 +116,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 fontScale = next
                 result = prepare(fontScale)
             }
+            result = result.copy(cells=result.cells.map {it.copy(body=rasterizeParagraph(it.layout,density))})
             // Fixed, bounded masks. Their alpha changes in draw; glyph shadows never change per frame.
             val padding = ceil(72 * density.density).toInt()
             fun visibleTimings(cell: Cell) = cell.unit.graphemes.filter { cell.sourceBoundaries[it.end] > cell.sourceBoundaries[it.begin] }
@@ -227,10 +230,10 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                             val padding = ceil(32*density.density).toInt()
                             layer.blurSigma = frame.blur*density.density
                             layer.record(this,size=IntSize(cell.layout.size.width+padding*2,cell.layout.size.height+padding*2)) {
-                                drawText(cell.layout,color,Offset(padding.toFloat(),padding.toFloat()))
+                                drawImage(cell.body!!.image,cell.body.origin+Offset(padding.toFloat(),padding.toFloat()),colorFilter=ColorFilter.tint(color))
                             }
                             withTransform({translate(-padding.toFloat(),-padding.toFloat())}) {drawClassicLayer(layer)}
-                        } else drawText(cell.layout, color, Offset.Zero)
+                        } else drawImage(cell.body!!.image, cell.body.origin, colorFilter=ColorFilter.tint(color))
                         }
                         }
                         withTransform({translate(topLeft.x-wordPadding,topLeft.y-wordPadding)}) {drawClassicLayer(wordLayer)}

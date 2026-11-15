@@ -91,7 +91,7 @@ class ClassicIntensityParityTest {
             val tuning=ClassicTuning(breathingFloatMultiplier=0f,avoidOverlap=avoid)
             if(public) FoliaLyricsView(source,{snapshot},Modifier.fillMaxSize().background(Color(0xFF162435)),
                 typography=FoliaTypography(secondary=style),colors=colors,options=options,style=FoliaStyle.Classic(tuning))
-            else Box(Modifier.fillMaxSize().background(Color(0xFF162435)).padding(horizontal=32.dp),contentAlignment=Alignment.Center) {
+            else ClassicStage(Modifier.fillMaxSize().background(Color(0xFF162435))) {
                 val selection=timeline.at(snapshot.positionMillis*1000)
                 (selection.exiting+listOfNotNull(selection.primary)).forEach {epoch->key(epoch) {
                     ClassicLine(document.lines[epoch.line],{snapshot},style,colors,options,tuning,356.dp,

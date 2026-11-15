@@ -42,12 +42,12 @@ import com.mocharealm.accompanist.lyrics.folia.internal.rendering.hitClassicUnit
 import kotlin.math.*
 
 private data class GlyphGlow(val timing: TimedGrapheme, val origin: Offset, val mask: ImageBitmap)
-private data class Cell(val unit: DisplayUnit, val layout: TextLayoutResult, val center: Offset, val pose: Pose,
+private data class Cell(val unit: DisplayUnit, val layout: TextLayoutResult, val center: Offset, val isolatedCenter: Offset, val pose: Pose,
     val boxWidth: Float, val boxHeight: Float, val sourceBoundaries: IntArray, val paintTop: Float,
     val glows: List<GlyphGlow> = emptyList(), val body: ParagraphRaster? = null)
 private data class Prepared(val cells: List<Cell>, val height: Float, val geometry: ClassicGeometry,
     val quality: FoliaQuality = FoliaQuality.Minimal)
-private class DrawnFrame { var timeUs: Long? = null; var center = Offset.Zero }
+private class DrawnFrame { var timeUs: Long? = null; var center = Offset.Zero; var contentOffset = Offset.Zero; var isolated = false }
 private fun motionColor(a: Color, b: Color, q: Float): Color {
     fun channel(x:Float,y:Float) = sqrt(x*x+(y*y-x*x)*q)
     return Color(channel(a.red,b.red),channel(a.green,b.green),channel(a.blue,b.blue),a.alpha+(b.alpha-a.alpha)*q)
@@ -65,12 +65,13 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
     val measurer = rememberTextMeasurer(cacheSize = 64)
     val units = remember(line) { displayUnits(line) }
     val density = LocalDensity.current
+    val viewport = LocalClassicViewport.current
     val currentPlayback by rememberUpdatedState(playback)
     BoxWithConstraints(modifier.fillMaxWidth()) {
         val widthPx = with(density) { maxWidth.toPx() }.coerceAtLeast(1f)
         val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(80f)
         val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
-            tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality, options.animationIntensity, maskBudgetBytes) {
+            tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality, options.animationIntensity, maskBudgetBytes, viewport) {
             fun prepare(fontScale: Float): Prepared {
                 val base=textStyle.fontSize.value
                 fun cssRound(value:Float) = floor(value*1000+.5f)/1000
@@ -113,9 +114,12 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                     // GlowWord is a will-change-transform layer: static layout offsets
                     // snap in CSS pixels before its continuous Motion transform.
                     // Keep geometry fractional for layout/avoidance measurements.
-                    fun paintOffset(value: Float) = floor(value / density.density + .5f) * density.density
-                    Cell(units[index], measured[index], Offset(paintOffset(box.left) + box.width / 2,
-                        paintOffset(box.top) + box.height / 2),
+                    val left = viewport?.let { (it.width - widthPx) / 2 } ?: 0f
+                    val top = viewport?.let { classicLineTopInStage(it.height, geometry.height, density.density) } ?: 0f
+                    Cell(units[index], measured[index], Offset(classicWordPaintOffset(box.left, left, density.density) + box.width / 2,
+                        classicWordPaintOffset(box.top, top, density.density) + box.height / 2),
+                        Offset(classicWordPaintOffset(box.left, 0f, density.density) + box.width / 2,
+                            classicWordPaintOffset(box.top, 0f, density.density) + box.height / 2),
                         poses[index], box.width, box.height, renderedTexts[index].boundaries,
                         cssBaseline(measured[index].firstBaseline/density.density,
                             measured[index].multiParagraph.height/density.density,box.height/density.density)*density.density-paintedLineBaseline(measured[index],0))
@@ -186,7 +190,8 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             if (body.alpha <= .001f) return false
             return prepared.cells.asReversed().any { cell ->
                 val frame = sampleWord(time, enterUs, cell.unit.startUs, cell.unit.endUs, profile, cell.pose, options.reducedMotion, options.animationIntensity)
-                hitClassicUnit(point, drawn.center, body.scale, body.breathingY, cell.center, frame,
+                val center = if(drawn.isolated) cell.isolatedCenter else cell.center
+                hitClassicUnit(point, drawn.center, body.scale, body.breathingY, center + drawn.contentOffset, frame,
                     density.density, cell.boxWidth, cell.boxHeight)
             }
         }
@@ -211,22 +216,44 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         }
         Canvas(Modifier.fillMaxWidth().height(with(density) { prepared.height.toDp() }).then(input)) {
             val time = (currentPlayback().positionMillis - options.offsetMillis) * 1000
-            drawn.timeUs = time; drawn.center = center
             val body = sampleLine(time, enterUs, leaveUs, profile, options.reducedMotion, tuning.breathingFloatMultiplier, density.density, options.animationIntensity)
+            val enterDuration = when(profile.mode) {Reveal.Normal -> 300_000L; Reveal.Fast -> 160_000L; Reveal.Instant -> 0L}
+            // transitionEnd changes blur(0px) to none. The former still creates
+            // a raster surface; it is not interchangeable with no filter.
+            val filterPresent = !options.reducedMotion && ((profile.mode != Reveal.Instant && motionElapsedUs(time-enterUs) <= enterDuration) || (leaveUs != null && time >= leaveUs))
+            drawn.isolated = filterPresent || body.blur > 0f || (body.alpha > 0f && body.alpha < 1f)
+            val rasterOffset = if(drawn.isolated && viewport != null) {
+                fun snap(value:Float) = floor(value/density.density+.5f)*density.density
+                Offset(snap((viewport.width-size.width)/2)-(viewport.width-size.width)/2,
+                    snap(classicStageTop(viewport.height,density.density)) +
+                        snap(classicLineTopInStage(viewport.height,prepared.height,density.density)) -
+                        (viewport.height-size.height)/2)
+            } else Offset.Zero
+            val centerCorrection = viewport?.let {
+                val stageTop = classicStageTop(it.height, density.density)
+                val paintedStageTop = floor(stageTop / density.density + .5f) * density.density
+                classicLineCenter(it.height, prepared.height, density.density) + paintedStageTop - stageTop - it.height / 2
+            } ?: 0f
+            drawn.timeUs = time
+            drawn.contentOffset = if(drawn.isolated) rasterOffset else Offset(0f,(size.height - prepared.height) / 2 + centerCorrection)
+            drawn.center = if(drawn.isolated) Offset(size.width/2,prepared.height/2)+rasterOffset else center+Offset(0f,centerCorrection)
             lineLayer.alpha = body.alpha
             lineLayer.blurSigma = body.blur
+            lineLayer.forceOffscreen = filterPresent
             lineLayer.record(this,size=IntSize(size.width.toInt()+linePadding*2,size.height.toInt()+linePadding*2)) {
             withTransform({translate(linePadding.toFloat(),linePadding.toFloat())}) {
             withTransform({
                 translate(0f, body.breathingY)
-                scale(body.scale, body.scale, drawn.center)
+                scale(body.scale, body.scale, drawn.center-rasterOffset)
+                translate(drawn.contentOffset.x-rasterOffset.x, drawn.contentOffset.y-rasterOffset.y)
             }) {
                 prepared.cells.forEachIndexed { cellIndex, cell ->
                     val frame = sampleWord(time, enterUs, cell.unit.startUs, cell.unit.endUs,
                         profile, cell.pose, options.reducedMotion, options.animationIntensity)
                     val alpha = frame.alpha.coerceIn(0f, 1f)
                     if (alpha > .001f) withTransform({
-                        translate(cell.center.x + frame.x * density.density, cell.center.y + frame.y * density.density)
+                        val center = if(drawn.isolated) cell.isolatedCenter else cell.center
+                        translate(center.x + frame.x * density.density, center.y + frame.y * density.density)
                         rotate(frame.rotation, Offset.Zero)
                         scale(frame.scale, frame.scale, Offset.Zero)
                     }) {
@@ -265,7 +292,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             }
             }
             }
-            withTransform({translate(-linePadding.toFloat(),-linePadding.toFloat())}) { drawClassicLayer(lineLayer) }
+            withTransform({translate(-linePadding+rasterOffset.x,-linePadding+rasterOffset.y)}) { drawClassicLayer(lineLayer) }
         }
     }
 }

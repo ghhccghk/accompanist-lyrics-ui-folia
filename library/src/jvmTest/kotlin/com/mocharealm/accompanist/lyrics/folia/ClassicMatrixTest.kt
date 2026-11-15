@@ -47,7 +47,7 @@ class ClassicMatrixTest {
         val layouts=mutableMapOf<Boolean,ClassicGeometry>()
         setContent {
             val selection=timeline.at(snapshot.positionMillis*1000)
-            Box(Modifier.fillMaxSize().background(Color(0xFF162435)).padding(horizontal=32.dp),contentAlignment=Alignment.Center) {
+            ClassicStage(Modifier.fillMaxSize().background(Color(0xFF162435))) {
                 (selection.exiting+listOfNotNull(selection.primary)).forEach {epoch->key(epoch) {
                     ClassicLine(document.lines[epoch.line],{snapshot},style,FoliaColors(),FoliaOptions(),
                         ClassicTuning(breathingFloatMultiplier=0f,avoidOverlap=avoid),356.dp,

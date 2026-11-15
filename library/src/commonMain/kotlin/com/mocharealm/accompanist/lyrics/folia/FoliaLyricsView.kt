@@ -7,6 +7,7 @@ import androidx.compose.foundation.text.BasicText
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -20,6 +21,8 @@ import com.mocharealm.accompanist.lyrics.folia.internal.timeline.SubtitleSource
 import com.mocharealm.accompanist.lyrics.folia.internal.timeline.resolveSubtitleContent
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicLine
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicSubtitles
+import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicStage
+import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.classicHeightBudget
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.GlowBudget
 
 /** Host owns media time and seeking. Whole runs are shaped by Compose, never per UTF-16 char. */
@@ -67,15 +70,12 @@ fun FoliaLyricsView(
     BoxWithConstraints(modifier) {
         // Upstream classic uses the full viewport for 6vw, then a centred 70vh
         // stage with p-8. Subtitles are an overlay and must not move the main line.
-        val stageHeight = maxHeight * .7f
-        val heightBudget = (stageHeight - 64.dp).coerceAtLeast(0.dp)
+        val heightBudget = with(LocalDensity.current) { classicHeightBudget(maxHeight.toPx(), density).toDp() }
         val mainStyle = typography.main ?: typography.secondary.copy(
             fontSize = ((maxWidth.value * .06f).coerceIn(36f, 72f) * typography.scale).sp, fontWeight = FontWeight.Bold)
         val main = selection.primary?.line?.let(document.lines::get)
         val tuning = (style as FoliaStyle.Classic).tuning
-        Box(Modifier.align(Alignment.Center).fillMaxWidth().height(stageHeight).padding(32.dp),
-            contentAlignment = Alignment.Center) {
-            Box(Modifier.widthIn(max = 1152.dp).fillMaxWidth().wrapContentHeight(unbounded = true), contentAlignment = Alignment.Center) {
+        ClassicStage(Modifier.fillMaxSize()) {
                 selection.exiting.forEach { epoch -> key(epoch) {
                     ClassicLine(document.lines[epoch.line], playback, mainStyle, colors, options, tuning,
                         heightBudget = heightBudget, enterUs = epoch.enterUs, leaveUs = epoch.leaveUs,
@@ -91,7 +91,6 @@ fun FoliaLyricsView(
                         onPrepared = { actual, count -> quality = actual; unitCount = count },
                         onClick = { onLineClicked(main.source) }, onLongPress = { onLinePressed(main.source) })
                 }
-            }
         }
         ClassicSubtitles(subtitles,document.lines,playback,typography,colors,options,maxWidth,
             selection.primary?.enterUs?:subtitles.line?.let {document.lines[it].startUs},

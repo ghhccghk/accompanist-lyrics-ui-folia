@@ -320,3 +320,15 @@ Normal default, without a theme/background engine. Waiting coordinates are
 computed from double source config before drawing Float conversion. Real original
 custom configs, DOM geometry, Motion and two-period breathing traces come from
 capture-intensity.mjs; fixtures and pixel residuals are recorded in classic-parity.md.
+
+Fractional line surfaces: pinned classic/Visualizer.tsx:350-379 (70vh padded
+stage, flex-centered independent line boxes), useOverlapFit.ts clientHeight and
+glowWordTiming.ts:59-100 (blur(0px) -> transitionEnd filter:none) ->
+ClassicStage.kt, FoliaLyricsView.kt, ClassicLine.kt and ClassicLayer.kt.
+Keep 1/64 CSS layout offsets and integer clientHeight fit budget; snap static
+word origins after accumulating offsets to the nearest composited surface.
+Filtered lines retain their own raster surface even for zero blur, with continuous
+Motion transforms and the same painted-space hit testing. Browser control probes
+capture-line-centers.mjs, capture-line-sampling.mjs and capture-line-isolation.mjs
+observe the real original; none/restored are pixel-identical while blur(0px)
+changes pixels without changing DOM geometry. No browser source or media copied.

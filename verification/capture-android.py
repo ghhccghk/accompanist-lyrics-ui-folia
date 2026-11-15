@@ -55,7 +55,10 @@ blank_captures=0
 while blank_captures<2:
     startup=Image.open(io.BytesIO(adb('exec-out','screencap','-p',binary=True))).convert('RGB').crop((0,0,800,600))
     blank_captures=blank_captures+1 if startup.getextrema()==((22,22),(36,36),(53,53)) else 0
-    if time.monotonic()>deadline:raise RuntimeError('Starting window did not settle to the exact empty scene')
+    if time.monotonic()>deadline:
+        startup.save(output/'startup-failed.png')
+        (output/'startup-failed-conditions.json').write_text(json.dumps(conditions,ensure_ascii=False,indent=2),encoding='utf8')
+        raise RuntimeError('Starting window did not settle to the exact empty scene; diagnostic PNG/conditions saved')
 conditions['startup']='Two exact empty-scene captures before media checkpoints; no device animation settings changed'
 observed={}
 request_token=0
@@ -90,6 +93,13 @@ for scene in args.scenes:
                     time.sleep(.05)
                 raw=adb('exec-out','screencap','-p',binary=True)
                 image=Image.open(io.BytesIO(raw)).convert('RGB').crop((0,0,width,600))
+                # These fixed scenes leave at least one outer backdrop corner clear.
+                # A stable system education/scrim overlay can pass pause/revisit
+                # equality while invalidating the entire visual comparison.
+                if not any(image.getpixel(point)==(22,36,53) for point in [(0,0),(width-1,0),(0,599),(width-1,599)]):
+                    image.save(output/f'{scene}-{ms}ms-obscured.png')
+                    (output/'obscured-conditions.json').write_text(json.dumps(conditions,ensure_ascii=False,indent=2),encoding='utf8')
+                    raise RuntimeError(f'Fixed-scene backdrop corners obscured at {scene}/{ms}; inspect saved screenshot')
                 label=('backdrop' if mode else 'transparent') if scene=='subtitle' else ('avoid' if mode else 'default')
                 name=f'{scene}-{width}-{label}-{ms}ms.png'
                 digest=hashlib.sha256(image.tobytes()).hexdigest()

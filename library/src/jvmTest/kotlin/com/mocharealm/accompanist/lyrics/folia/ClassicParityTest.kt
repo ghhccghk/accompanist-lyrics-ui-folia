@@ -20,6 +20,7 @@ import com.mocharealm.accompanist.lyrics.core.model.karaoke.*
 import com.mocharealm.accompanist.lyrics.folia.internal.model.normalize
 import com.mocharealm.accompanist.lyrics.folia.internal.timeline.VisualTimeline
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicLine
+import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicStage
 import java.io.File
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicGeometry
 import javax.imageio.ImageIO
@@ -47,7 +48,7 @@ class ClassicParityTest {
         setContent {
           CompositionLocalProvider(LocalClassicSoftwareLayers provides software) {
             val selection = timeline.at(snapshot.positionMillis * 1000)
-            Box(Modifier.fillMaxSize().background(Color(0xFF162435)).padding(horizontal = 32.dp), contentAlignment = Alignment.Center) {
+            ClassicStage(Modifier.fillMaxSize().background(Color(0xFF162435))) {
                 val epochs = selection.exiting + listOfNotNull(selection.primary)
                 epochs.forEach { epoch -> key(epoch) {
                     ClassicLine(document.lines[epoch.line], { snapshot }, style, FoliaColors(), FoliaOptions(),

@@ -6,6 +6,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.*
 import androidx.compose.ui.graphics.layer.GraphicsLayer
+import androidx.compose.ui.graphics.layer.CompositingStrategy
 import androidx.compose.ui.graphics.layer.drawLayer
 import androidx.compose.ui.unit.*
 
@@ -34,6 +35,7 @@ internal fun rememberClassicLayer(): ClassicLayer {
 internal class ClassicLayer(private val native: GraphicsLayer, private val software: Boolean) {
     var alpha = 1f
     var blurSigma = 0f
+    var forceOffscreen = false
     private var bitmap: ImageBitmap? = null
     private var painted: BlurredPixels? = null
     private var softwareFrame = software
@@ -44,6 +46,7 @@ internal class ClassicLayer(private val native: GraphicsLayer, private val softw
         softwareFrame = software || scope is SoftwareDrawScope || (blurSigma > .01f && blurSigma <= .5f)
         if (!softwareFrame) {
             native.alpha = alpha
+            native.compositingStrategy = if(forceOffscreen) CompositingStrategy.Offscreen else CompositingStrategy.Auto
             native.renderEffect = if (blurSigma > .01f) BlurEffect(nativeRadiusForCssSigma(blurSigma), nativeRadiusForCssSigma(blurSigma), TileMode.Decal) else null
             with(scope) { native.record(size = size, block = block) }
         } else {

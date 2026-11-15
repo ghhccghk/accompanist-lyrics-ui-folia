@@ -18,6 +18,7 @@ import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import com.mocharealm.accompanist.lyrics.core.model.karaoke.*
 import com.mocharealm.accompanist.lyrics.folia.internal.model.normalize
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicLine
+import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicStage
 import java.io.File
 import javax.imageio.ImageIO
 import kotlin.test.*
@@ -45,7 +46,7 @@ class PublicClassicParityTest {
             Box(Modifier.fillMaxSize().background(Color(0xFF162435)),contentAlignment=Alignment.Center) {
                 if(public) FoliaLyricsView(lyrics,{snapshot},Modifier.fillMaxSize(),
                     typography=FoliaTypography(secondary=base),options=options,style=FoliaStyle.Classic(tuning))
-                else Box(Modifier.fillMaxWidth().padding(horizontal=32.dp),contentAlignment=Alignment.Center) {
+                else ClassicStage(Modifier.fillMaxSize()) {
                     ClassicLine(line,{snapshot},expected,FoliaColors(),options,tuning,356.dp)
                 }
             }

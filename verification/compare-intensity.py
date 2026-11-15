@@ -14,6 +14,8 @@ from PIL import Image, ImageChops, ImageDraw, ImageStat
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--android-api', type=int)
+parser.add_argument('--android-label-prefix', default='intensity',
+                    help='Capture labels are <prefix>-calm/-normal/-chaotic')
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1] / 'build/verification'
 out = root / 'classic-intensity-comparison'
@@ -21,8 +23,9 @@ out.mkdir(parents=True, exist_ok=True)
 times = [750, 1000, 1500, 1900, 2100, 2300, 2500, 2800, 3000]
 rows = []
 for level in ('calm', 'normal', 'chaotic'):
-    android = root / f'classic-android-api{args.android_api}-intensity-{level}' if args.android_api else None
+    android = root / f'classic-android-api{args.android_api}-{args.android_label_prefix}-{level}' if args.android_api else None
     if android:
+        assert not (android / 'INVALID.txt').exists(), f'Invalid capture: {android}'
         conditions = json.loads((android / 'conditions.json').read_text(encoding='utf8'))
         assert conditions['animationIntensity'] == level
         assert len(conditions['frames']) == 72

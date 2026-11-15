@@ -986,3 +986,64 @@ DOM、实际Motion值及独立真实RAF呼吸轨迹；不是把Kotlin公式写�
 before-precision,comparison}`；固定数值fixture为`intensity-{motion,geometry,breathing}.tsv`。
 Android调试入口/采集器已接受intensity，构建通过；本项新三档Android原生画面尚未采集，
 不借用旧Normal APK结果。Desktop此项为离屏UI对照，不能借用b65c46b实窗结论。
+
+## 分数行盒与入场合成表面（2026-11-15）
+
+原版classic/Visualizer.tsx:350-379将每句独立居中于70vh/p-8舞台；
+useOverlapFit读取整数clientHeight后扣padding。Calm窄屏avoid的原版行高233.3125px、
+top183.34375px；原Compose先把高度变成233再以整数放在184，改变了文字静态栅格原点。
+新ClassicStage保留舞台/行盒1/64 CSS位置与分数transform中心，独立测量各退场行；
+ClassicLine在合成表面内累加静态偏移后取整。实际Motion和字素计时/完整塑形不变，
+点击使用相同已绘制坐标。601/602视口的fit预算由原版clientHeight恢复，不能用浮点70vh
+直接扣64。ClassicLineCenterTest对36个原版DOM中心/预算逐项误差<.0001，并检查density2。
+
+仅修分数居中的候选使Normal均值2.127→2.480；累积取整候选又使avoid960/3440/3480ms
+及fast-avoid850ms明显退步。两者均未作为结果接受，证据完整保留在
+line-center-fractional-only和line-center-cumulative-only。继续观察原版
+glowWordTiming.ts:59-100的transitionEnd：入场结束的blur(0px)下一帧才变none。
+外部控制none→blur(0px)→blur(.001px)→none保持DOM/transform相同，但前两态像素不同；
+恢复none逐像素恢复。baseline差值总和144585、wrap48937，说明需要区分实际合成表面，
+不能因sigma为0而假定等同无滤镜。capture-line-isolation.mjs保存四态与条件。
+
+现在有行滤镜时，静态词相对行表面取整，整个行表面在对齐的舞台原点放置，
+ClassicLayer强制保留zero-blur offscreen语义；无滤镜时使用舞台内累积原点。
+连续Motion仍不取整。compare-line-centers.py保留每帧误差、所有退步和选定完整原尺寸图，
+不以MAE阈值授予验收。首批JVM及Android debug/Desktop classes构建通过
+（.work/line-center-isolation-corrected-validation.log）。
+
+| 同源原版对照集合 | 修复前均值／最大 | 新候选均值／最大 |
+| --- | --- | --- |
+| Calm 36帧 | 4.31055／18.12070 | 2.39790／6.28741 |
+| Normal 36帧 | 2.12737／5.36329 | 2.05731／4.52812 |
+| Chaotic 36帧 | 2.15115／5.16820 | 2.08119／4.64945 |
+| 连续246帧 | 1.18332／3.42943 | 1.17896／3.42943 |
+| 八场景208帧 | 1.44073／7.63303 | 1.40572／7.63314 |
+
+Calm wrap/avoid2800ms 18.12070→3.77513，已目视整体垂直偏移消除，保留边缘/辉光残差。
+上述四个退步点现相对修复前误差变化分别+.000012/+.000229/-.000059/-.000086；
+全集合最大误差增加为cluster/avoid750ms +.002803，完整图保留，不能说逐像素相同。
+36个奇偶高度公开入口画面均在暂停1s及600→601→602→601→600返回后严格一致，
+相对原版均值2.69184、最大4.84534；该集合没有旧候选，不能计算修复前改善。
+首批截图与数值均未修改源fixture、放宽断言或以裁剪/对齐掩盖偏差。
+
+Android三档第一次采集的Calm整组有稳定Viewing full screen系统引导/scrim，
+即使暂停/重访一致仍为无效画面。原证据和INVALID.txt保留于
+classic-android-api34-intensity-calm及line-center-before；不引用其误差作为歌词结果。
+采集器新增固定合成场景背景角点遮挡检查及失败PNG/条件保存，比较器拒绝INVALID组。
+新版本API34三档各72请求/36不同帧，包含36次反向重访；所有暂停双截图与重访严格
+相同，背景检查有效。空场景启动先目视Viewing full screen引导，再正常Got it关闭；
+未修改系统动画/密度。首次过早安装时package服务已注册但sys.boot_completed未到1，
+安装报StorageManager空指针；待boot_completed=1后重新安装成功，非渲染失败。
+新标签line-center-{calm,normal,chaotic}避免覆盖无效旧Calm证据。条件记录字体/APK/
+每个渲染源码SHA、设备指纹、Compose及系统密度。前景RGB MAE均值/最大分别
+5.49531/15.33167、5.47047/15.19843、6.27009/18.14210；已目视Calm与最大残差
+Chaotic wrap/avoid2800ms，分组/换行/旋转位置吻合，字形边缘残差仍存在，不能声明
+整帧等价。Android此项实际运行仅API34模拟器；API30/实机尚未重验。
+
+RendererTest实际亮字点击/空白拒绝/源对象回调、间奏、RTL混排与中断入场回归通过
+（.work/line-center-interaction-validation.log）。DPR1/2公开入口对照也已重生成，
+同源图片及每帧CSV保留；没有借用旧APK/旧生产代码结论。
+运行：同本节测试类及既有ClassicParity/Matrix/Intensity/Public/HitGeometry/LayoutPaint，
+随后python verification/compare-line-centers.py；Android用capture-android.py的
+--label line-center-<档> --intensity <档> --scenes baseline wrap及九个同源时间点，
+--verify-seek，再compare-intensity.py --android-api 34 --android-label-prefix line-center。

@@ -37,6 +37,7 @@ import com.mocharealm.accompanist.lyrics.folia.internal.rendering.compositeGlowM
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.GlowBudget
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.ParagraphRaster
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.rasterizeParagraph
+import com.mocharealm.accompanist.lyrics.folia.internal.rendering.drawParagraphShadowSource
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.hitClassicUnit
 import kotlin.math.*
 
@@ -151,7 +152,10 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                         drawRect(Color.Transparent, blendMode = BlendMode.Clear)
                         withTransform({ translate(-origin.x, -origin.y) }) {
                             // Slice coverage from one fully shaped run; never reshape individual characters.
-                            clipPath(path) { drawText(cell.layout, Color.White, Offset.Zero) }
+                            // A positive subpixel shadow selects the text-shadow glyph
+                            // coverage, without visibly spreading it. Foreground AA has
+                            // different coverage; keep the complete shaped paragraph.
+                            clipPath(path) { drawParagraphShadowSource(cell.layout) }
                         }
                     }
                     val masks = blurredMasks(bitmap, FloatArray(layers) { maxOf(1f, radii[it] * density.density / 2) })

@@ -531,3 +531,37 @@ API30视频800×600，API34视频1080×2200；解码按自然大小截取左上8
 Android debug构建通过。双模拟器运行期间并行启动Chromium曾失败；关闭本轮模拟器
 后分别解码成功，没有更改安全设置。模拟器实际动态运行通过；Desktop真实窗口录像、
 Android实机与API21..29仍未验证，文字覆盖/变换采样残差及最终视觉验收仍待完成。
+
+## 阴影源覆盖与段落 paint 恢复（2026-11-15）
+
+依据固定 GlowWord.tsx 的独立 text-shadow 层，沿用未更改的 halo.tsx/M64 PNG：
+字体、基线191、视口320×320、20/40px双阴影不变。BodyRasterTest增加整段实际绘制
+探针，compare-shadow-source.py分别比较源覆盖与经过生产模糊核的双层辉光。
+原阴影源面积1451.431px²，普通Kotlin AA为1502.400；关闭hinting或使用正文LCD
+不能纠正该输入。原生微小正半径阴影源为1451.941，前景alpha MAE8.71806→4.67427；
+双层辉光MAE1.11425→0.31186，最大alpha误差8→3。没有重写原PNG或加入亮度系数。
+
+ClassicLine现在仍从完整shaping段落按内部字素范围裁切，但输入改为原生阴影覆盖。
+平台差异实测：Android透明正文同时抑制阴影，首个透明方案丢失辉光，已撤回。
+最终使用整数位移把不透明正文移出遮罩，再以相反的shadow offset将阴影放回原位置；
+字素计时、塑形、几何及20/40px模糊不变。Android又发现缓存段落保留shadow paint，
+初次逆向seek严格检查失败；ParagraphRaster显式恢复宿主shadow或Shadow.None。
+新增段落复用回归测试，并以原严格设备检查验证，未降低断言。
+
+最终连续原版/Kotlin246帧：default最高RGB MAE4.59952→3.92786，avoid
+4.11413→3.42943；default1500ms3.83529→3.28252，3700ms3.48802→2.96404。
+API30/API34各166个不同画面和6次逆向重访，暂停双PNG及重访全部严格相同。
+Android baseline平均MAE分别3.24480→3.20184、3.29132→3.20352，但并非所有帧改善：
+instant/default750ms分别增加0.27842/0.28362。字幕画面保持原值。不能据此宣布全帧等价。
+
+完整JVM、Android debug、Desktop classes通过。已目视源覆盖/辉光五列以及实际
+Android的Latin/Arabic/CJK原尺寸区域。证据：raster-kotlin/shadow-source.csv与
+shadow-source-contact.png、classic-continuous-comparison/、classic-android-api{30,34}-
+shadow-final{,-comparison}/、shadow-final-contact.png（均在build/verification下）。
+透明阴影与缓存污染失败证据保留在shadow-source/shadow-fixed目录及.work日志中。
+
+最终APK再次实际录像，双暂停PNG与shadow-final固定帧一致。首次10s录制在两模拟器
+负载下没有编码到最后一次seek，不能称该次视频覆盖3700ms；将录制请求延为15s后，
+已目视两端最终解码帧出现3700ms的Silver/light，播放与两次暂停seek均有视频证据。
+编码时长为8.237722/8.314733s，不推断媒体速率/性能。当前录像位于
+classic-android-api{30,34}-recording/；上一提交录像保存在recording-before-shadow/。

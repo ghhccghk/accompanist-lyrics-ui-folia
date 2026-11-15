@@ -242,3 +242,12 @@ smoothing/Normal hinting only for an unspecified host paragraph style on Windows
 Read locked Compose FontRasterizationSettings.skiko.kt/ParagraphBuilder.skiko.kt;
 no font engine source copied. BodyRasterTest/compare-raster-settings.py preserve
 AA, no-hint and LCD probes rather than replacing the original expected image.
+
+Shadow-source coverage: pinned GlowWord.tsx separate text-shadow spans and retained
+halo/M64 source PNGs → ParagraphRaster.kt:drawParagraphShadowSource and
+ClassicLine.kt glyph masks. Independently written opaque off-raster foreground /
+opposite shadow offset preserves full shaping and works around Android's shadow
+alpha coupling. Body foreground paint explicitly restores the host shadow or
+Shadow.None after cached paragraph reuse. Read locked Compose AndroidTextPaint:
+setShadow(null) leaves state intact. No font engine source copied. BodyRasterTest
+and compare-shadow-source.py retain the original source/kernel expectations.

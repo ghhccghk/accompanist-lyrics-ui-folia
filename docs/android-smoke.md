@@ -50,3 +50,13 @@ Font scale restored to 1.0; only this session's temporary device files were
 removed, then only the emulator launched for this check was stopped. Ignored
 .work/android-current-* captures/hierarchies retain evidence. Physical/low-API
 and long-session performance acceptance remain outstanding.
+
+## Subtitle renderer recheck — 2026-11-15
+
+Latest subtitle-motion/layout APK installed with adb install -r into this run's
+read-only probe34, emulator-5558, API34 / 1080x2200 / density420 / SwiftShader.
+Cold launch and paused drag to 0:02 show translation, romanization and blurred
+upcoming text; native Typeface font-metric resolution does not throw. AndroidRuntime
+contains no fatal/exception. Screenshot: .work/folia-subtitle.png. No pinned font
+is installed in the sample; this is a runtime smoke check, not browser pixel parity.
+Low API / physical hardware acceptance remains outstanding.

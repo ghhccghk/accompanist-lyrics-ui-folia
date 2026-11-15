@@ -7,3 +7,8 @@
 .p-8{padding:32px}.max-w-6xl{max-width:1152px}.inline-block{display:inline-block}.block{display:block}
 .origin-center{transform-origin:center}.whitespace-nowrap{white-space:nowrap}.select-none{user-select:none}
 .pointer-events-none{pointer-events:none}.will-change-transform{will-change:transform}
+.left-0{left:0}.right-0{right:0}.text-center{text-align:center}.z-20{z-index:20}
+.px-4{padding-left:16px;padding-right:16px}.mx-auto{margin-left:auto;margin-right:auto}
+.max-w-4xl{max-width:896px}.max-w-2xl{max-width:672px}
+.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.blur-\[1px\]{filter:blur(1px)}
+.space-y-2>:not(:last-child){margin-bottom:8px}p{margin:0}

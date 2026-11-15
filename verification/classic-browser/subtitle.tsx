@@ -1,4 +1,10 @@
-import {resolveVisualizerSubtitleOverlayContent} from '../../.work/folia-major/src/components/visualizer/VisualizerSubtitleOverlay';
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import {flushSync} from 'react-dom';
+import {MotionGlobalConfig,frameData,frameSteps,time as motionTime,flushKeyframeResolvers,visualElementStore} from 'framer-motion';
+import Overlay,{resolveVisualizerSubtitleOverlayContent} from '../../.work/folia-major/src/components/visualizer/VisualizerSubtitleOverlay';
+import {resolveSubtitleFontSizes} from '../../.work/folia-major/src/components/visualizer/subtitleFontSizes';
+import fontUrl from '../assets/FoliaParityLatin-Bold.ttf?url';
 import {getRecentCompletedLine,getSubtitleNextLines} from '../../.work/folia-major/src/components/visualizer/runtime';
 import {getLineRenderEndTime} from '../../.work/folia-major/src/utils/lyrics/renderHints';
 import sceneText from '../classic-fixtures/subtitle-scenes.tsv?raw';
@@ -20,3 +26,26 @@ import sceneText from '../classic-fixtures/subtitle-scenes.tsv?raw';
   }
 
 (window as any).contentFixtures=rows.join("\n")+"\n";
+
+if(new URLSearchParams(location.search).has('paint')) {
+  const font=new FontFace('Subtitle Parity',`url(${fontUrl})`,{weight:'700'});
+  await font.load();document.fonts.add(font);
+  MotionGlobalConfig.useManualTiming=true;frameData.timestamp=0;motionTime.set(0);
+  document.body.style.background='#162435';document.body.style.fontFamily='Subtitle Parity';
+  document.body.style.lineHeight='1.5';
+  const root=createRoot(document.getElementById('root')!);
+  const params=new URLSearchParams(location.search);
+  (window as any).step=(ms:number)=>{
+    frameData.delta=ms-frameData.timestamp;frameData.timestamp=ms;motionTime.set(ms);
+    const currentLineIndex=lines.findIndex(l=>ms/1000>=l.startTime&&ms/1000<getLineRenderEndTime(l));
+    const recent=getRecentCompletedLine({lines,currentLineIndex,currentTime:ms/1000,getLineEndTime:getLineRenderEndTime});
+    flushSync(()=>root.render(<Overlay showText={true} activeLine={lines[currentLineIndex]??null}
+      recentCompletedLine={recent} nextLines={getSubtitleNextLines(lines,currentLineIndex,recent)}
+      theme={{fontFamily:'Subtitle Parity',fontWeight:700,fontStyle:'sans',secondaryColor:'#adb9c8',backgroundColor:'#162435'} as any}
+      {...resolveSubtitleFontSizes(1)} subtitleOverlayLayout={(params.get('layout')??'translation') as any} subtitleOverlayBackground={false}/>));
+    flushKeyframeResolvers();frameData.isProcessing=true;
+    try {Object.values(frameSteps).forEach(step=>step.process(frameData));}finally {frameData.isProcessing=false;}
+  };
+  (window as any).motionValues=(el:Element)=>({...visualElementStore.get(el)?.latestValues,...Object.fromEntries(Array.from(visualElementStore.get(el)?.values.entries()??[]).map(([key,value])=>[key,value.get()]))});
+  (window as any).step(0);(window as any).ready=true;
+}

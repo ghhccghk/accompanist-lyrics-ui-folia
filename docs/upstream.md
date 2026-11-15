@@ -151,3 +151,12 @@ parser entry points were read from its published sources JAR. The dependency is
 `api` because the component's public signature exposes core types. Optional
 `-PlyricsCoreRepository=<Maven URL>` can select another published repository;
 there is no default local path or reference-project binding.
+
+Subtitle motion/layout audit: pinned VisualizerSubtitleOverlay.tsx,
+subtitleFontSizes.ts and utils/lyrics/subtitleTrackStyle.ts → SubtitleMotion.kt,
+ClassicSubtitles.kt and CssTextMetrics.kt. Preserve overlay/default inner Motion
+curves, responsive sizing, secondary rows, wrapping/ellipsis and preview blur.
+FontMetrics.{jvm,android}.kt independently reads native metrics through public
+Compose font resolution. No font engine implementation is copied. Browser captures
+unchanged Overlay with background pad disabled; original text-shadow remains an
+outstanding paint difference in Kotlin, not an accepted platform adjustment.

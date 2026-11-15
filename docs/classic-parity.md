@@ -8,7 +8,7 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 | --- | --- | --- | --- |
 | utils/lyrics/cjkSemanticLayout.ts:buildPostLyricLayoutUnits、buildDisplayWordsFromLayoutUnits；utils/lyrics/wordSegmentation.ts | SemanticLayout.kt／DisplayUnits.kt；sticky 先作用于语义单元，保留源片段与有效时间 | ICU 与 Intl 词典版本可能不同；core缺少分词覆写字段 | 上游9组混合／空白／缩写／标点夹具通过；Arabic完整词独立状态并保护词内塑形 |
 | utils/lyrics/graphemeTiming.ts:buildWordGraphemeTimings；components/visualizer/GlowWord.tsx:graphemeTimings | DisplayUnit 保留原片段、有效／源字素时间；完整塑形范围遮罩 | 连字分界处的覆盖仍需更多语言截图 | 固定源分组／时间夹具通过；继续复杂脚本验证 |
-| classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicGeometry.kt：同源 reach／pairGap、seed 对齐和行距 | CJK固定字体和全帧仍未验收 | 160组几何夹具；六场景 default/avoid DOM 词距一致、矩形舍入范围一致 |
+| classic/Visualizer.tsx:placementOf / calculatedMargin / lineConfig；glowWordOverlap.ts:getGlowWordReach / PairGap / Overflow | ClassicGeometry.kt：同源 reach／pairGap、seed 对齐和行距 | CJK固定字体几何已测；全帧仍未验收 | 160组几何夹具；八场景 default/avoid DOM 词距一致、矩形舍入范围一致 |
 | useOverlapFit.ts:useOverlapFit | ClassicLine.kt:仅避让启用、min .5 / slack .98 / .005 收敛 | 完整帧像素仍未验收 | 380px窄屏长句CSS19.744px与浏览器对照通过 |
 | GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31 的 RenderEffect 支持仍受平台限制；设备验证待补 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
 | wordGlow.ts:wordGlowVariants | GraphemeGlow.kt；ClassicLine.kt:字素范围遮罩 | 软件近似 blur 和原版 text-shadow 的像素差仍需校准 | 108个正常／fast／instant 样本通过；保护 shaping；同字体逐帧图像待最终验收 |
@@ -28,12 +28,12 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 
 ## 执行状态
 
-第一项数据层：已实现源 syllable、显示分组及字素时间的分离；内部数据仍未全部用于绘制。
+第一项数据层：已实现源 syllable、显示分组及字素时间的分离；内部字素计时现已驱动完整shaping范围遮罩。
 实际执行固定源函数生成 graphemes.tsv/grouping.json。Kotlin 对照普通词、非均匀 hurricane、
 缩写 It’s、组合字符／ZWJ、世界。得到一致的有效显示字素时间（微秒四舍五入）。
 收缩词按上游均分有效显示时间，同时保留 sourceGraphemes 原时间；跨来源的组合字符
 采用覆盖区间，避免拆塑形。Arabic 原片段与内部时间在整体塑形运行中保留。
-保护 shaping 的 Latin／上下文运行当前仍共用外层姿态，独立逻辑词变换尚待校准。
+Arabic完整词现可独立变换，词内保持shaping；跨连字覆盖仍需继续画面对照。
 
 固定源代码在忽略的 .work/folia-major 检出，不构建或修改 Accompanist。
 数值夹具必须由固定源函数执行生成并注明生成入口；浏览器须使用真实上游 GlowWord，
@@ -193,8 +193,6 @@ delay，避免 Arabic 的600ms/7字素和 fast 的900.8ms边界误差。保留 L
 完整 JVM 测试、Android assembleDebug、Desktop classes 通过。截图和诊断位于
 build/verification/classic-manual-upstream；数值通过不代表完整画面通过，下一步检查栅格。
 
-## CSS空白与内部映射（2026-11-15）
-
 ## 字幕内容与空档历史（2026-11-15）
 
 原版 VisualizerSubtitleOverlay.tsx:resolveVisualizerSubtitleOverlayContent 与
@@ -211,6 +209,8 @@ API适配：保留既有showTranslation/showPhonetic/showNextLine三个开关，
 行源；全部关闭不显示，showNextLine关闭也禁止缺失字幕时自动预览，保持既有契约。
 不加入上游播放器设置／背景引擎。原版底栏hook在隔离浏览器仅替换为默认112px宿主值。
 
+## CSS空白与内部映射（2026-11-15）
+
 GlowWord.tsx的块级正文／whitespace-nowrap → CssWordText.kt和ClassicLine.kt。
 源文本和全部字素时间保持原样；仅排版文本折叠ASCII空白并去除块首尾普通空白，
 通过源UTF-16边界映射取得完整shaping结果的覆盖。被折叠空白不画空遮罩，
@@ -222,3 +222,25 @@ GlowWord.tsx的块级正文／whitespace-nowrap → CssWordText.kt和ClassicLine
 修复使用宽度量化后通过，未放宽0.51px阈值。inspect-whitespace.mjs记录原测量。
 八场景default/avoid的词距 <0.0001、整数框 <0.51px；固定字体、公开入口、
 连续帧／随机seek回归通过；Android/Desktop构建通过。完整栅格仍未验收。
+
+## 字幕动画与分数排版（2026-11-15）
+
+原版VisualizerSubtitleOverlay.tsx、subtitleFontSizes.ts、subtitleTrackStyle.ts →
+SubtitleMotion.kt / ClassicSubtitles.kt。真实挂载Overlay四种组合（800/380宽、
+译文/三来源去重双行），每侧84帧；subtitle-motion.tsv对outer .24s easeOut、
+inner opacity .3s与y spring500/25的误差<.0001。两侧同一固定OFL字体，600高。
+媒体时间锚定是暂停/seek约定的适配；设置开关墙钟exit尚未完整对照。
+
+响应式字号、.88次行、.82透明度、.25em间距、长译文换行、预览单行省略/blur1
+均接入公开入口。1500/2500/3500/5500ms行顶/行高/末行基线严格误差<.02px。
+平台公开font resolver取得原始ascent/descent，避免18px取整paragraph反推错1px；
+次行先量化字号至1/64px再计算相对行高，修复窄屏两行累计.03125px差，阈值未改。
+预览inline-block的外围strut descent由字体度量计算，非固定字体偏移常数。
+
+build/verification/subtitle-{upstream,kotlin,comparison}保存PNG、DOM/Motion JSON、
+几何诊断和前景误差CSV。已目视检查宽屏译文及窄屏双行；稳定宽屏译文MAE约7.7/255，
+双行约17.3/255，3500ms预览MAE从33.7降至2.15。几何通过不代表这些像素残差已接受。
+原版text-shadow、可选背景光垫、低API preview blur仍未完成，不改称平台必须差异。
+完整JVM、Android APK、Desktop classes通过；最新APK实际安装于API34 probe34模拟器，
+暂停拖动至0:02，译文/注音/模糊预览显示，无AndroidRuntime异常；.work/folia-subtitle.png。
+这只是Android运行检查，非固定字体跨端效果验收；实机与API31以下仍未验证。

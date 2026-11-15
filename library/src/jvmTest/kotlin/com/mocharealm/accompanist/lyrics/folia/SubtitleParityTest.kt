@@ -1,0 +1,75 @@
+package com.mocharealm.accompanist.lyrics.folia
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toAwtImage
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.platform.Font
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.test.ExperimentalTestApi
+import androidx.compose.ui.test.v2.runDesktopComposeUiTest
+import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
+import com.mocharealm.accompanist.lyrics.core.model.synced.SyncedLine
+import com.mocharealm.accompanist.lyrics.folia.internal.model.normalize
+import com.mocharealm.accompanist.lyrics.folia.internal.timeline.*
+import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicSubtitles
+import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.SubtitlePaint
+import java.io.File
+import javax.imageio.ImageIO
+import kotlin.test.*
+
+@OptIn(ExperimentalTestApi::class)
+class SubtitleParityTest {
+    @Test fun wide()=capture(800)
+    @Test fun narrow()=capture(380)
+    private fun capture(width:Int)=runDesktopComposeUiTest(width=width,height=600) {
+        val lines=File("../verification/classic-fixtures/subtitle-scenes.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.map {row->
+            val c=row.split('\t');normalize(SyncedLyrics(listOf(SyncedLine(c[2],c[3],c[0].toInt(),c[1].toInt())))).lines.single().copy(phonetic=c[4])
+        }
+        val index=VisualTimeline(lines);val history=SubtitleHistory(lines)
+        var snapshot by mutableStateOf(FoliaPlaybackSnapshot(0,false))
+        var layout by mutableStateOf("translation")
+        var measuredHeight=0f
+        var measuredRows=emptyList<SubtitlePaint>()
+        val font=FontFamily(Font(File("../verification/assets/FoliaParityLatin-Bold.ttf"),FontWeight.Bold))
+        val typography=FoliaTypography(subtitle=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold))
+        setContent {
+            val time=snapshot.positionMillis*1000;val epoch=index.at(time).primary
+            val sources=if(layout=="translation") listOf(SubtitleSource.Translation) else listOf(SubtitleSource.Current,SubtitleSource.Translation,SubtitleSource.Phonetic)
+            val content=resolveSubtitleContent(lines,epoch?.line,history.recent(time,epoch?.line),sources)
+            Box(Modifier.fillMaxSize().background(Color(0xFF162435))) {
+                ClassicSubtitles(content,lines,{snapshot},typography,FoliaColors(),FoliaOptions(),width.dp,
+                    epoch?.enterUs?:content.line?.let{lines[it].startUs},Modifier.align(Alignment.BottomCenter).padding(bottom=112.dp),
+                    onLayout={height,rows->measuredHeight=height;measuredRows=rows})
+            }
+        }
+        val output=File("../build/verification/subtitle-kotlin").apply {mkdirs()}
+        for(mode in listOf("translation","current+translation+romanization")) {
+            runOnIdle {layout=mode}
+            for(time in listOf(0,50,120,240,700,725,750,800,850,1000,1500,2500,3200,3250,3350,3500,4800,5000,5050,5150,5500)) {
+                runOnIdle{snapshot=FoliaPlaybackSnapshot(time.toLong(),false,snapshot.discontinuity+1)};waitForIdle()
+                ImageIO.write(captureToImage().toAwtImage(),"png",output.resolve("$width-$mode-${time}ms.png"))
+                if(time in listOf(1500,2500,3500,5500)) {
+                    output.resolve("$width-$mode-${time}-geometry.tsv").writeText("text\tcanvasWidth\tparagraphWidth\tlineLeft\tlineRight\n"+measuredRows.joinToString("\n") {r->
+                        listOf(r.text,r.layout.size.width,r.layout.multiParagraph.width,r.layout.getLineLeft(0),r.layout.getLineRight(0)).joinToString("\t")
+                    })
+                    val reference=File("../verification/classic-fixtures/subtitle-layout.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.map{it.split('\t')}
+                        .filter{it[0].toInt()==width&&it[1]==mode&&it[2].toInt()==time}
+                    assertEquals(reference.size,measuredRows.size)
+                    reference.forEach {c->
+                        val row=measuredRows[c[3].toInt()];val top=600-112-measuredHeight+row.top
+                        val baseline=top+row.baseline+row.height-row.height/row.layout.lineCount
+                        assertEquals(c[4],row.text)
+                        listOf(top,row.height,baseline).forEachIndexed {i,value->assertEquals(c[i+5].toDouble(),value.toDouble(),.02,"subtitle geometry column ${i+5}: $c")}
+                    }
+                }
+            }
+        }
+    }
+}

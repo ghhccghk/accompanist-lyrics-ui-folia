@@ -3,9 +3,7 @@ package com.mocharealm.accompanist.lyrics.folia
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.BasicText
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,6 +19,7 @@ import com.mocharealm.accompanist.lyrics.folia.internal.timeline.SubtitleHistory
 import com.mocharealm.accompanist.lyrics.folia.internal.timeline.SubtitleSource
 import com.mocharealm.accompanist.lyrics.folia.internal.timeline.resolveSubtitleContent
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicLine
+import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicSubtitles
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.GlowBudget
 
 /** Host owns media time and seeking. Whole runs are shaped by Compose, never per UTF-16 char. */
@@ -94,22 +93,14 @@ fun FoliaLyricsView(
                 }
             }
         }
-        Column(Modifier.align(Alignment.BottomCenter).padding(horizontal = 16.dp)
-            .padding(bottom = 112.dp).widthIn(max = 896.dp).fillMaxWidth()
-            .heightIn(max = maxHeight).verticalScroll(rememberScrollState()),
-            horizontalAlignment = Alignment.CenterHorizontally) {
-            subtitles.rows.forEach {row->
-                BasicText(row.text,Modifier.padding(top=8.dp),typography.subtitle.copy(color=colors.secondary,textAlign=TextAlign.Center))
-            }
+        ClassicSubtitles(subtitles,document.lines,playback,typography,colors,options,maxWidth,
+            selection.primary?.enterUs?:subtitles.line?.let {document.lines[it].startUs},
+            Modifier.align(Alignment.BottomCenter).padding(bottom=112.dp)) {
             selection.secondary.forEach { secondary ->
                 val line = document.lines[secondary]
                 BasicText(line.text, Modifier.padding(top = 12.dp).combinedClickable(
                     onClick = { onLineClicked(line.source) }, onLongClick = { onLinePressed(line.source) }),
                     typography.secondary.copy(color = colors.secondary, textAlign = TextAlign.Center))
-            }
-            subtitles.upcoming.forEach { next ->
-                BasicText(document.lines[next].text, Modifier.padding(top = 32.dp),
-                    typography.subtitle.copy(color = colors.secondary.copy(alpha = .55f), textAlign = TextAlign.Center))
             }
         }
     }

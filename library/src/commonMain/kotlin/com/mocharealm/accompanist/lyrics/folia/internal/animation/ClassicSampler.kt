@@ -3,6 +3,7 @@
 package com.mocharealm.accompanist.lyrics.folia.internal.animation
 
 import kotlin.math.*
+import com.mocharealm.accompanist.lyrics.folia.FoliaAnimationIntensity
 
 internal enum class Reveal { Normal, Fast, Instant }
 internal data class RenderProfile(val mode: Reveal, val renderEndUs: Long, val lookaheadUs: Long)
@@ -52,13 +53,26 @@ internal fun physicsValue(from: Float, to: Float, seconds: Double, stiffness: Do
 }
 
 internal data class Pose(val x: Float, val y: Float, val scale: Float, val rotation: Float,
-    val passedRotation: Float, val rotationEnabled: Boolean = true)
-internal fun wordPose(startUs: Long, index: Int, rotation: Boolean, interlude: Boolean = false): Pose {
+    val passedRotation: Float, val rotationEnabled: Boolean = true,
+    val waitingX: Float = x + sin(y) * 100, val waitingY: Float = y + cos(x) * 50)
+internal fun wordPose(startUs: Long, index: Int, rotation: Boolean, interlude: Boolean = false,
+    intensity: FoliaAnimationIntensity = FoliaAnimationIntensity.Normal): Pose {
     val seed = startUs / 1_000_000.0 + index
-    fun random(offset: Int): Float { val n = sin(seed + offset) * 10000; return (n - floor(n)).toFloat() }
-    if (interlude) return Pose(0f, (random(2) - .5f) * 15, 1.5f, 0f, 0f, rotation)
-    return Pose((random(1) - .5f) * 40, (random(2) - .5f) * 40, 1.1f + random(4) * .2f,
-        if (rotation) (random(3) - .5f) * 10 else 0f, if (rotation) (random(8) - .5f) * 45 else 0f, rotation)
+    fun random(offset: Int): Double { val n = sin(seed + offset) * 10000; return n - floor(n) }
+    if (interlude) {
+        val y=(random(2)-.5)*15
+        return Pose(0f,y.toFloat(),1.5f,0f,0f,rotation,(sin(y)*100).toFloat(),(y+50).toFloat())
+    }
+    val spread = when(intensity) { FoliaAnimationIntensity.Calm -> 0f; FoliaAnimationIntensity.Normal -> 40f; FoliaAnimationIntensity.Chaotic -> 120f }
+    val rotate = when(intensity) { FoliaAnimationIntensity.Calm -> 0f; FoliaAnimationIntensity.Normal -> 10f; FoliaAnimationIntensity.Chaotic -> 60f }
+    val scale = if(intensity == FoliaAnimationIntensity.Chaotic) .8 + random(4) * .6 else 1.1 + random(4) * .2
+    val x=(random(1)-.5)*spread;val y=(random(2)-.5)*spread
+    // JS config coordinates remain doubles before sin/cos builds the waiting
+    // pose. Premature Float rounding is amplified by the larger Chaotic spread.
+    return Pose(x.toFloat(),y.toFloat(),scale.toFloat(),
+        if(rotation) ((random(3)-.5)*rotate).toFloat() else 0f,
+        if(rotation) ((random(8)-.5)*45).toFloat() else 0f,rotation,
+        (x+sin(y)*100).toFloat(),(y+cos(x)*50).toFloat())
 }
 
 internal data class WordFrame(val x: Float, val y: Float, val scale: Float, val rotation: Float,
@@ -66,7 +80,8 @@ internal data class WordFrame(val x: Float, val y: Float, val scale: Float, val 
 
 /** Closed-form media-time response. Passed starts at the sampled active endpoint, including short words. */
 internal fun sampleWord(timeUs: Long, lineEnterUs: Long, startUs: Long, endUs: Long,
-    profile: RenderProfile, pose: Pose, reducedMotion: Boolean): WordFrame {
+    profile: RenderProfile, pose: Pose, reducedMotion: Boolean,
+    intensity: FoliaAnimationIntensity = FoliaAnimationIntensity.Normal): WordFrame {
     val begin = maxOf(lineEnterUs, startUs - profile.lookaheadUs)
     val activeEnd = activeWordEnd(startUs, endUs, profile).coerceAtLeast(begin)
     val sampleAt = minOf(timeUs, activeEnd)
@@ -76,8 +91,8 @@ internal fun sampleWord(timeUs: Long, lineEnterUs: Long, startUs: Long, endUs: L
     val alpha = easeOut(activeElapsed / 100_000.0)
     val fade = easeOut(passedElapsed / 500_000.0)
     val rotationFade = (passedElapsed / 5_000_000f).coerceIn(0f, 1f)
-    val waitingX = pose.x + sin(pose.y) * 100
-    val waitingY = pose.y + cos(pose.x) * 50
+    val waitingX = pose.waitingX
+    val waitingY = pose.waitingY
     fun blend(a: Float, b: Float, factor: Float) = a + (b - a) * factor
     val activeScale = physicsValue(.5f, pose.scale * 1.4f, elapsed)
     // Active and passed keep the same x/y targets. Motion leaves these springs
@@ -100,6 +115,6 @@ internal fun sampleWord(timeUs: Long, lineEnterUs: Long, startUs: Long, endUs: L
         if (reducedMotion) 1f else blend(activeScale, pose.scale, fade),
         if (reducedMotion) 0f else if (pose.passedRotation == 0f) rotation
             else blend(rotation, pose.rotation + pose.passedRotation, rotationFade),
-        if (reducedMotion) 1f else blend(alpha, .82f, fade), colorIn * (1 - colorOut),
+        if (reducedMotion) 1f else blend(alpha, if(intensity == FoliaAnimationIntensity.Chaotic) .9f else .82f, fade), colorIn * (1 - colorOut),
         if (reducedMotion) 0f else blur)
 }

@@ -156,6 +156,10 @@ data class ClassicTuning(
 | `FoliaAnnotations` | 按来源行定位的可选分词边界和附加语义；不改写 `lyrics-core` |
 | `FoliaStatus` | 内容准备／可绘制／带降级可绘制／数据错误，供可选状态观察使用 |
 
+已实现的动效强度入口为 `FoliaOptions.animationIntensity`，取值
+`FoliaAnimationIntensity.Calm / Normal / Chaotic`，默认 Normal。对应原版主题强度；
+不需要额外主题引擎，也不改变现有默认调用。各档实际验收范围见 classic-parity.md。
+
 配置必须区分影响范围：字号、字体、分词和布局参数改变需要准备；颜色改变更新绘制资源；播放位置改变只更新时间／帧参数；减少动态效果改变采样策略，不重新解析整首歌词。
 
 不暴露 native 指针、纹理句柄、内部单元数组或 Rust ABI。调试开关和性能采样放在明确标记的诊断 API 中。

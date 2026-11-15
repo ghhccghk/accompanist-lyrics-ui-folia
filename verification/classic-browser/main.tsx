@@ -28,7 +28,9 @@ const manual = params.has('manual');
 if(manual) {MotionGlobalConfig.useManualTiming=true;frameData.timestamp=0;motionTime.set(0);}
 const currentTime = motionValue(0);
 const audioPower = motionValue(0);
-const themes = { animationIntensity: 'normal', fontStyle: 'sans', fontFamily: 'Parity Noto', fontWeight: 700,
+const intensity=params.get('intensity')??'normal';
+if(!['calm','normal','chaotic'].includes(intensity))throw new Error('Invalid intensity');
+const themes = { animationIntensity: intensity, fontStyle: 'sans', fontFamily: 'Parity Noto', fontWeight: 700,
   primaryColor: '#dfe5ec', accentColor: '#ffffff', secondaryColor: '#adb9c8', wordColors: [] };
 let lines = [
   { startTime: .7, endTime: 1.9, fullText: 'Amber echo', words: [
@@ -60,6 +62,7 @@ const root = createRoot(document.getElementById('root')!);
   return {...visual?.latestValues,...Object.fromEntries(
     Array.from(visual?.values.entries()??[]).map(([key,value])=>[key,value.get()]))};
 };
+(window as any).motionConfig=(element:Element)=>visualElementStore.get(element)?.props.custom?.config;
 (window as any).motionDebug=(element:Element)=>Object.fromEntries(
   Array.from(visualElementStore.get(element)?.values.entries()??[]).map(([key,value])=>
     [key,{value:value.get(),startTime:(value as any).animation?.startTime,keyframes:(value as any).animation?.options?.keyframes}]));
@@ -73,7 +76,7 @@ const root = createRoot(document.getElementById('root')!);
 (window as any).step = (ms: number) => {
   if(manual) {frameData.delta=ms-frameData.timestamp;frameData.timestamp=ms;motionTime.set(ms);}
   const seconds = ms / 1000;
-  // Set the selected line before emitting time, matching host→runtime→GlowWord ownership.
+  // Set the selected line before emitting time, matching host鈫抮untime鈫扜lowWord ownership.
   const index = lines.findIndex((l, i) => seconds >= l.startTime && seconds < getLineRenderEndTime(l) && (!lines[i + 1] || seconds < lines[i + 1].startTime));
   flushSync(() => root.render(<Classic currentTime={currentTime} currentLineIndex={index} lines={lines}
     theme={themes} audioPower={audioPower} audioBands={{}} classicTuning={{ enableWordRotation: true,

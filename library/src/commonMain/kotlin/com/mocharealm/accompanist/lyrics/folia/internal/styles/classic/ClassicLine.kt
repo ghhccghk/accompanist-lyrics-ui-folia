@@ -70,7 +70,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         val widthPx = with(density) { maxWidth.toPx() }.coerceAtLeast(1f)
         val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(80f)
         val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
-            tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality, maskBudgetBytes) {
+            tuning.wordSpacing, tuning.enableWordRotation, measurer, options.quality, options.animationIntensity, maskBudgetBytes) {
             fun prepare(fontScale: Float): Prepared {
                 val base=textStyle.fontSize.value
                 fun cssRound(value:Float) = floor(value*1000+.5f)/1000
@@ -100,12 +100,12 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                     ceil(width/density.density*64)/64*density.density
                 }
                 val interlude = line.text == "......"
-                val poses = units.indices.map { wordPose(line.startUs, it, tuning.enableWordRotation, interlude) }
+                val poses = units.indices.map { wordPose(line.startUs, it, tuning.enableWordRotation, interlude, options.animationIntensity) }
                 val rtl = isRtlLyric(line.text)
                 val font = with(density) { (textStyle.fontSize*fontScale).toPx() }.toDouble()
                 val lineFont = with(density) { rendered.sp.toPx() }.toDouble()
                 val geometry = classicGeometry(rawWidths, boxWidths, font, widthPx.toDouble(), poses, line.startUs,
-                    tuning.wordSpacing, tuning.avoidOverlap, rtl, density.density.toDouble(),lineFont,interlude)
+                    tuning.wordSpacing, tuning.avoidOverlap, rtl, density.density.toDouble(),lineFont,interlude,options.animationIntensity)
                 val cells = units.indices.map { index ->
                     val box = geometry.boxes[index]
                     // CSS places the painted baseline. SkParagraph's reported
@@ -182,10 +182,10 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         val longPress by rememberUpdatedState(onLongPress)
         fun hit(point: Offset): Boolean {
             val time = drawn.timeUs ?: return false
-            val body = sampleLine(time, enterUs, leaveUs, profile, options.reducedMotion, tuning.breathingFloatMultiplier, density.density)
+            val body = sampleLine(time, enterUs, leaveUs, profile, options.reducedMotion, tuning.breathingFloatMultiplier, density.density, options.animationIntensity)
             if (body.alpha <= .001f) return false
             return prepared.cells.asReversed().any { cell ->
-                val frame = sampleWord(time, enterUs, cell.unit.startUs, cell.unit.endUs, profile, cell.pose, options.reducedMotion)
+                val frame = sampleWord(time, enterUs, cell.unit.startUs, cell.unit.endUs, profile, cell.pose, options.reducedMotion, options.animationIntensity)
                 hitClassicUnit(point, drawn.center, body.scale, body.breathingY, cell.center, frame,
                     density.density, cell.boxWidth, cell.boxHeight)
             }
@@ -212,7 +212,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         Canvas(Modifier.fillMaxWidth().height(with(density) { prepared.height.toDp() }).then(input)) {
             val time = (currentPlayback().positionMillis - options.offsetMillis) * 1000
             drawn.timeUs = time; drawn.center = center
-            val body = sampleLine(time, enterUs, leaveUs, profile, options.reducedMotion, tuning.breathingFloatMultiplier, density.density)
+            val body = sampleLine(time, enterUs, leaveUs, profile, options.reducedMotion, tuning.breathingFloatMultiplier, density.density, options.animationIntensity)
             lineLayer.alpha = body.alpha
             lineLayer.blurSigma = body.blur
             lineLayer.record(this,size=IntSize(size.width.toInt()+linePadding*2,size.height.toInt()+linePadding*2)) {
@@ -223,7 +223,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             }) {
                 prepared.cells.forEachIndexed { cellIndex, cell ->
                     val frame = sampleWord(time, enterUs, cell.unit.startUs, cell.unit.endUs,
-                        profile, cell.pose, options.reducedMotion)
+                        profile, cell.pose, options.reducedMotion, options.animationIntensity)
                     val alpha = frame.alpha.coerceIn(0f, 1f)
                     if (alpha > .001f) withTransform({
                         translate(cell.center.x + frame.x * density.density, cell.center.y + frame.y * density.density)

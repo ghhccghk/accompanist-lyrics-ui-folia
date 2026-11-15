@@ -19,6 +19,7 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 | GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31现有Kotlin软件回退/API30运行；完整效果残差待收敛 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
 | wordGlow.ts:wordGlowVariants | GraphemeGlow.kt；ClassicLine.kt:字素范围遮罩 | 软件近似 blur 和原版 text-shadow 的像素差仍需校准 | 108个正常／fast／instant 样本通过；保护 shaping；同字体逐帧图像待最终验收 |
 | glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | API30/34入场中断已实际核对；整帧残差保留 | normal/fast入场被打断时实际Motion数值、公开入口暂停/逆向seek通过；平台图层预留出界空间 |
+| classic/Visualizer.tsx:animationIntensity、placementOf、minMargin；glowWordVariants.ts:passed | ClassicSampler.kt／ClassicGeometry.kt／FoliaOptions.animationIntensity | 之前只有Normal；现补Calm/Chaotic，窄屏fractional容器中心仍待修复 | 实际原版450条Motion、54个词配置/DOM和三档两周期呼吸；108帧与暂停/逆向检查见末节 |
 | classic/Visualizer.tsx:lyricContainerFloat | LineMotion.kt：原版7s y/scale关键帧、easeInOut | Android实际运行仍需验证 | 两周期真实浏览器DOM轨迹通过；媒体时间锚定是平台适配 |
 
 ## 必要平台适配与未完成能力
@@ -946,3 +947,42 @@ Windows外部观察工具初始化因kernel assets路径错误不可用，未绕
 系统。这里捕获的是实际窗口绘制后的GraphicsLayer，不是操作系统窗口截图；鼠标/
 键盘、系统合成结果与Desktop真实窗口连续录屏仍未验证。此前DirectX12失败不能用于
 描述本次后端，本次实际为DIRECT3D。
+
+
+## 补齐原版 Calm／Chaotic 强度（2026-11-15）
+
+复核固定源码发现此前仅移植Normal，并非平台必要差异。按DESIGN.md原有动效强度
+契约，增加兼容的`FoliaOptions.animationIntensity`枚举，默认Normal。来源：
+`classic/Visualizer.tsx:placementOf/lineConfig/calculatedMargin/lyricContainerFloat`、
+`glowWordVariants.ts:buildGlowWordLayoutVariants`；库中的ClassicSampler、ClassicGeometry、
+LineMotion及ClassicLine准备/绘制/命中共用该配置，不给示例扩展额外设置页面。
+
+Calm保留中心布局、零基础散布和基础转角；其passedRotate仍按上游随机生成，不能因
+名称而全部关闭旋转。Chaotic使用60范围参数、30°参数、.8+.6r基础scale、.08字号
+最小间距及.9余韵透明度；避让沿用旋转包络。三档呼吸分别为10/14/18距离与
+8.5/7/5.8s周期，保持媒体时间可重建的既有适配。六点间奏仍独立配置。
+
+`capture-intensity.mjs`加载实际未改的上游Classic/GlowWord，观察原始custom config、
+DOM、实际Motion值及独立真实RAF呼吸轨迹；不是把Kotlin公式写成另一个预期生成器。
+同一OFL字体SHA，baseline800及wrap380、default/avoid、九个时间点，共108张PNG。
+450条词/行Motion状态误差<.0001，54个原配置与DOM词框/间距对照、三档两周期呼吸
+通过。每档宽/窄屏正逆序、暂停1s，以及1500ms公开入口/核心像素一致检查通过；
+原Normal Motion/几何/呼吸回归和Android debug/Desktop classes构建通过。
+
+首次数值失败是Chaotic750ms第二词x误差约.000182：先把配置变成Float再算sin/cos
+放大了误差。现先以与JS相同的Double构造waiting pose，再转换为绘制Float，未放宽
+.0001断言、调整源fixture或关闭失败检查。Normal画面前景MAE均值2.127361→2.127373，
+默认外观保持；这不是位级相同声明。
+
+相对原版，旧Normal-only画面在Calm/Chaotic的前景RGB MAE均值57.396/54.685，现为
+4.311/2.151；Normal2.127。数字不是通过门槛。已目视宽屏和窄屏入场、活动与余韵，
+强度布局和运动差异已恢复，但Calm wrap/avoid2800ms仍达18.121，能看见整体垂直偏移；
+这提示奇数/分数行容器的居中舍入问题，不能笼统归为字体AA。下一项隔离并修正该位置
+偏差，然后重新对照。尚不宣布Calm窄屏或整个classic最终视觉验收通过。
+
+复现：`:library:jvmTest --tests '*ClassicIntensityParityTest'`、
+`node verification/classic-browser/capture-intensity.mjs`、
+`python verification/compare-intensity.py`。证据`classic-intensity-{upstream,kotlin,
+before-precision,comparison}`；固定数值fixture为`intensity-{motion,geometry,breathing}.tsv`。
+Android调试入口/采集器已接受intensity，构建通过；本项新三档Android原生画面尚未采集，
+不借用旧Normal APK结果。Desktop此项为离屏UI对照，不能借用b65c46b实窗结论。

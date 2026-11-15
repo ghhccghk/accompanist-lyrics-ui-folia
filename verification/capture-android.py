@@ -17,6 +17,8 @@ parser.add_argument('--adb',default='adb')
 parser.add_argument('--label',default='',help='Keep separate evidence directories, e.g. linear')
 parser.add_argument('--verify-seek',action='store_true',help='Revisit baseline frames in reverse order and require identical pixels')
 parser.add_argument('--scenes',nargs='+',default=['baseline','arabic','wrap','group','cluster','fast','instant','cjk','whitespace','subtitle'])
+parser.add_argument('--intensity',choices=['calm','normal','chaotic'],default='normal')
+parser.add_argument('--times',nargs='+',type=int,help='Explicit media checkpoints; keeps original default schedules unchanged')
 args=parser.parse_args()
 if args.label and not all(c.isascii() and (c.isalnum() or c=='-') for c in args.label):parser.error('Invalid evidence label')
 root=Path(__file__).resolve().parents[1]
@@ -41,7 +43,7 @@ conditions={'serial':args.serial,'sdk':sdk,'device':adb('shell','getprop','ro.pr
         for name in ['FoliaParityLatin-Bold.ttf','FoliaParityCJK-Bold.otf','NotoSansArabic-Bold.ttf','FoliaParityBidi-Bold.ttf']},
     'apkSha256':hashlib.sha256((root/'sample/android-app/build/outputs/apk/debug/android-app-debug.apk').read_bytes()).hexdigest(),
     'activitySha256':hashlib.sha256((root/'sample/android-app/src/debug/kotlin/com/mocharealm/accompanist/folia/sample/ClassicParityActivity.kt').read_bytes()).hexdigest(),
-    'frames':[]}
+    'animationIntensity':args.intensity,'frames':[]}
 adb('shell','am','force-stop','com.mocharealm.accompanist.folia.sample')
 # Android's starting-window/splash compositor is independent of our media clock
 # and frame-commit callback. Settle that window at a known empty scene first;
@@ -64,15 +66,17 @@ for scene in args.scenes:
     if scene=='dense':times=[801,901,1001,1051,1101,1201,1301]
     if scene in ['interlude','interlude-single']:times=[750,1000,1500,1900,2300,2500]
     if scene.startswith('bidi-'):times=[750,1000,1200,1500,1900,2100,2300,2500]
-    if args.verify_seek and scene=='baseline':times += [1500,750,1500]
-    if args.verify_seek and (scene in ['dense','interlude','interlude-single'] or scene.startswith(('bidi-','interrupted-'))):times+=times[::-1]
+    if args.times:times=list(args.times)
+    if args.verify_seek and args.times:times+=times[::-1]
+    elif args.verify_seek and scene=='baseline':times += [1500,750,1500]
+    if args.verify_seek and not args.times and (scene in ['dense','interlude','interlude-single'] or scene.startswith(('bidi-','interrupted-'))):times+=times[::-1]
     for width in widths:
         for mode in ([False] if scene=='dense' or scene.startswith('interrupted-') else [False,True]):
             for ms in times:
                 request_token+=1
                 adb('logcat','-c')
                 adb('shell','am','start','--activity-no-animation','--activity-single-top','-n','com.mocharealm.accompanist.folia.sample/.ClassicParityActivity',
-                    '--es','scene',scene,'--el','mediaMs',str(ms),'--ei','width',str(width),
+                    '--es','scene',scene,'--es','intensity',args.intensity,'--el','mediaMs',str(ms),'--ei','width',str(width),
                     '--ez','avoid',str(mode if scene!='subtitle' else False).lower(),
                     '--ez','backdrop',str(mode if scene=='subtitle' else False).lower(),
                     '--el','captureToken',str(request_token))

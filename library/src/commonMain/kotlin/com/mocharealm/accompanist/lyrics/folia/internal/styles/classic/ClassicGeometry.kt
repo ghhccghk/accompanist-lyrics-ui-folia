@@ -4,6 +4,7 @@ package com.mocharealm.accompanist.lyrics.folia.internal.styles.classic
 
 import com.mocharealm.accompanist.lyrics.folia.internal.animation.Pose
 import kotlin.math.*
+import com.mocharealm.accompanist.lyrics.folia.FoliaAnimationIntensity
 
 internal data class Reach(val halfWidth: Double, val halfHeight: Double)
 internal data class Overflow(val left: Double, val right: Double, val top: Double, val bottom: Double)
@@ -32,11 +33,11 @@ internal fun pairGap(width: Double, nextWidth: Double, font: Double, pose: Pose,
         (if (rtl) nextPose.x - pose.x else pose.x - nextPose.x) * offsetScale
 
 internal fun classicMargin(width: Double, nextWidth: Double, font: Double, pose: Pose, nextPose: Pose?,
-    spacing: Float, avoid: Boolean, rtl: Boolean, offsetScale: Double): Double {
+    spacing: Float, avoid: Boolean, rtl: Boolean, offsetScale: Double, intensity: FoliaAnimationIntensity = FoliaAnimationIntensity.Normal): Double {
     val nextX = nextPose?.x ?: 0f
     val offset = (if (rtl) nextX - pose.x else pose.x - nextX) * offsetScale
     val overflow = width * (pose.scale * 1.4 - 1) / 2 + nextWidth * ((nextPose?.scale?.times(1.4) ?: 1.0) - 1) / 2
-    var margin = max(font * .12 * spacing, (overflow + offset + font * .05) * spacing)
+    var margin = max(font * (if(intensity == FoliaAnimationIntensity.Chaotic) .08 else .12) * spacing, (overflow + offset + font * .05) * spacing)
     if (avoid && nextPose != null) margin = max(margin, pairGap(width, nextWidth, font, pose, nextPose, rtl, offsetScale) + font * .05)
     // CSS serializes logical pixels to one decimal before device scaling.
     return floor(margin / offsetScale * 10 + .5) / 10 * offsetScale
@@ -49,9 +50,10 @@ internal data class ClassicGeometry(val boxes: List<LayoutBox>, val margins: Lis
 /** Flex wrap uses untransformed boxes + inline-end margins; transformed reach is reserved separately. */
 internal fun classicGeometry(widths: List<Double>, boxes: List<Double>, font: Double, areaWidth: Double,
     poses: List<Pose>, startUs: Long, spacing: Float, avoid: Boolean, rtl: Boolean, density: Double,
-    lineFont: Double = font, interlude: Boolean = false): ClassicGeometry {
+    lineFont: Double = font, interlude: Boolean = false,
+    intensity: FoliaAnimationIntensity = FoliaAnimationIntensity.Normal): ClassicGeometry {
     val margins = widths.indices.map { i -> if (interlude) 48.0 * density else classicMargin(widths[i], widths.getOrElse(i + 1) { 0.0 }, font,
-        poses[i], poses.getOrNull(i + 1), spacing, avoid, rtl, density) }
+        poses[i], poses.getOrNull(i + 1), spacing, avoid, rtl, density, intensity) }
     // Original early-return interlude config never contributes overlap reach.
     val overflow = if (avoid && !interlude) widths.indices.map { wordOverflow(widths[it], font, poses[it], density) } else emptyList()
     val top = if (avoid) ceil((overflow.maxOfOrNull { it.top } ?: 0.0) / density) * density else 0.0
@@ -69,7 +71,7 @@ internal fun classicGeometry(widths: List<Double>, boxes: List<Double>, font: Do
     val contentHeight = rows.size * rowHeight + max(0, rows.size - 1) * gap
     val height = if (avoid) contentHeight + top + bottom else max(300 * density, contentHeight)
     val output = MutableList(boxes.size) { LayoutBox(0f, 0f, 0f, 0f) }
-    val justify = if (interlude) 1 else floor(startUs / 1e6 % 5).toInt().coerceIn(0, 4)
+    val justify = if (interlude || intensity == FoliaAnimationIntensity.Calm) 1 else floor(startUs / 1e6 % 5).toInt().coerceIn(0, 4)
     rows.forEachIndexed { rowIndex, row ->
         val total = row.sumOf { boxes[it] + margins[it] }
         val free = areaWidth - total

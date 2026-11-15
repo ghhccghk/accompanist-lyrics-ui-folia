@@ -310,3 +310,13 @@ Chromium source is copied and no approximate CSS renderer replaces GlowWord.
 Fractional measured geometry remains available for spacing/fit; only the painted
 word center and matching hit transform use the static snapped origin. Paragraph
 shaping, internal timings, animation curves and glow source stay intact.
+
+
+Classic intensity: pinned classic/Visualizer.tsx placementOf, lineConfig,
+calculatedMargin and lyricContainerFloat; glowWordVariants.ts passed opacity ->
+FoliaOptions.kt FoliaAnimationIntensity, ClassicSampler.kt, ClassicGeometry.kt,
+LineMotion.kt and ClassicLine.kt. Restore Calm/Chaotic alongside the existing
+Normal default, without a theme/background engine. Waiting coordinates are
+computed from double source config before drawing Float conversion. Real original
+custom configs, DOM geometry, Motion and two-period breathing traces come from
+capture-intensity.mjs; fixtures and pixel residuals are recorded in classic-parity.md.

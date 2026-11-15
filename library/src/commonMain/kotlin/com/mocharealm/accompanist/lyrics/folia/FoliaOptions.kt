@@ -16,7 +16,11 @@ data class FoliaOptions(
     val quality: FoliaQuality = FoliaQuality.Standard,
     /** Draw the local subtitle light pad when colors.subtitleBackground is nontransparent. */
     val showSubtitleBackground: Boolean = true,
+    /** Original classic theme intensity; Normal preserves the existing default. */
+    val animationIntensity: FoliaAnimationIntensity = FoliaAnimationIntensity.Normal,
 )
+
+enum class FoliaAnimationIntensity { Calm, Normal, Chaotic }
 
 enum class FoliaQuality { Standard, Reduced, Minimal }
 

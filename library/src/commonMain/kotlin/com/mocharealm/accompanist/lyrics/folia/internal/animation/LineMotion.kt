@@ -3,10 +3,12 @@
 package com.mocharealm.accompanist.lyrics.folia.internal.animation
 
 import kotlin.math.*
+import com.mocharealm.accompanist.lyrics.folia.FoliaAnimationIntensity
 
 internal data class LineFrame(val alpha: Float, val scale: Float, val breathingY: Float, val blur: Float)
 internal fun sampleLine(time: Long, enterUs: Long, leaveUs: Long?, profile: RenderProfile,
-    reducedMotion: Boolean, breathing: Float, density: Float): LineFrame {
+    reducedMotion: Boolean, breathing: Float, density: Float,
+    intensity: FoliaAnimationIntensity = FoliaAnimationIntensity.Normal): LineFrame {
     val elapsed = motionElapsedUs(minOf(time, leaveUs ?: time) - enterUs)
     val exitTime = motionElapsedUs(time - (leaveUs ?: time))
     val enter = when(profile.mode) {
@@ -28,10 +30,12 @@ internal fun sampleLine(time: Long, enterUs: Long, leaveUs: Long?, profile: Rend
     val exitScale = when(profile.mode) { Reveal.Normal -> 1.1f; Reveal.Fast -> 1.04f; Reveal.Instant -> 1.02f }
     val exitBlur = when(profile.mode) { Reveal.Normal -> 20f; Reveal.Fast -> 10f; Reveal.Instant -> 6f }
     fun blend(a:Float,b:Float,q:Float) = a+(b-a)*q
-    val breathQ = ((time.coerceAtLeast(0) % 7_000_000) / 1_750_000f)
+    val periodUs = when(intensity) { FoliaAnimationIntensity.Calm -> 8_500_000L; FoliaAnimationIntensity.Normal -> 7_000_000L; FoliaAnimationIntensity.Chaotic -> 5_800_000L }
+    val distance = when(intensity) { FoliaAnimationIntensity.Calm -> 10f; FoliaAnimationIntensity.Normal -> 14f; FoliaAnimationIntensity.Chaotic -> 18f }
+    val breathQ = ((time.coerceAtLeast(0) % periodUs) / (periodUs / 4f))
     val segment = floor(breathQ).toInt().coerceIn(0,3)
     val q = easeInOut(breathQ-segment)
-    val ys = floatArrayOf(0f,-14f,0f,6.3f,0f)
+    val ys = floatArrayOf(0f,-distance,0f,distance*.45f,0f)
     val scales = floatArrayOf(1f,1.01f,1f,.995f,1f)
     val breathScale = 1 + (blend(scales[segment],scales[segment+1],q)-1)*breathing
     return LineFrame(if(reducedMotion) 1-exit else blend(initialAlpha,1f,enter)*(1-exit),

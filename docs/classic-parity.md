@@ -16,7 +16,7 @@ com/mocharealm/accompanist/lyrics/folia/ 为准。当前表是修复清单，不
 | useOverlapFit.ts:useOverlapFit | ClassicLine.kt:仅避让启用、min .5 / slack .98 / .005 收敛 | 完整帧像素仍未验收 | 380px窄屏长句CSS19.744px与浏览器对照通过 |
 | GlowWord.tsx:状态选择；glowWordVariants.ts:layout/body variants | ClassicSampler.kt:sampleWord；完整 body 图层模糊 | Android <31现有Kotlin软件回退/API30运行；完整效果残差待收敛 | 原版 variants + Motion 调度器数值通过；spring/rest/opacity/filter/颜色混合已对齐 |
 | wordGlow.ts:wordGlowVariants | GraphemeGlow.kt；ClassicLine.kt:字素范围遮罩 | 软件近似 blur 和原版 text-shadow 的像素差仍需校准 | 108个正常／fast／instant 样本通过；保护 shaping；同字体逐帧图像待最终验收 |
-| glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | 仍需两端设备和连续浏览器响应对照 | 120个原版调度器入场／退出组合数值通过；平台图层预留出界空间 |
+| glowWordTiming.ts:getGlowWordLineContainerMotion | LineMotion.kt；整句 opacity/blur 图层 | 本次中断入场场景尚未在Android运行；整帧残差保留 | normal/fast入场被打断时实际Motion数值、公开入口暂停/逆向seek通过；平台图层预留出界空间 |
 | classic/Visualizer.tsx:lyricContainerFloat | LineMotion.kt：原版7s y/scale关键帧、easeInOut | Android实际运行仍需验证 | 两周期真实浏览器DOM轨迹通过；媒体时间锚定是平台适配 |
 
 ## 必要平台适配与未完成能力
@@ -653,3 +653,28 @@ captureToken；采集器按完整token校验，不跳过重复seek。两端最�
 PNG逐像素相同。最终证据在classic-android-api{30,34}-dense-token/，原版/新JVM/
 两端Android/旧4句的汇总在classic-dense-comparison/；均位于build/verification。
 仍有字体输入及变换采样残差，不据本项宣布完整classic视觉验收完成。
+
+## normal／fast 入场中断对照（2026-11-15）
+
+依据固定版 classic/Visualizer.tsx 的 AnimatePresence 与 glowWordTiming.ts 的入退场曲线，
+新增真实挂载原版的 capture-interrupted.mjs。6句合成 D00..D05 从700ms起每60ms切句，
+各句持续150ms（fast）或300ms（normal），确保上一句入场未完成就退场。
+同一授权字体 FoliaParityLatin-Bold.ttf、800×600、禁用呼吸，14个媒体检查点/模式。
+
+原版仍用锁定Motion，不改源码。调度在事件边界前1µs采样左极限，保证退出从连续媒体
+时间的入场值衔接；这是可重建媒体模型的明确参考条件，不是对真实窗口帧率的声称。
+interrupted-lines.tsv保留可见句ID及opacity/scale/blur，正序和逆序查询误差均小于
+.0001；本次已有生产曲线通过，没有为制造修复而改动它。
+
+公开FoliaLyricsView已输出28个独立PNG并进行28次逆向重访，每个请求后推进虚拟墙钟
+1s，暂停和同媒体时间重访均逐像素相同。真实上游/Kotlin同时间PNG的描述性前景RGB
+MAE：fast非空帧1.4791..10.3280，normal .7124..4.7236（0..255）。fast1241ms
+误差较高；已目视该全帧和入场/叠句/退场的原尺寸裁剪，仍可见正文覆盖/采样差异。
+这些误差不是视觉通过阈值，没有修改原图、预期值或宣称整帧等价。
+
+证据在build/verification/classic-interrupted-{upstream,kotlin,comparison}/，包括原版
+条件JSON、28组原PNG、pixel-errors.csv和contact.png。复现先运行浏览器4173服务及
+node verification/classic-browser/capture-interrupted.mjs，再执行
+:library:jvmTest --tests '*InterruptedLineParityTest'，最后运行
+verification/compare-interrupted.py。本项JVM数值和公开UI验证通过；Android尚未运行
+这个新场景，既有设备录像不冒称覆盖本项。下一步隔离变换采样与字形覆盖的贡献。

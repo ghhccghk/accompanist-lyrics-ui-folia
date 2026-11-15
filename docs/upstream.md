@@ -260,3 +260,12 @@ mounts unchanged original Classic for30 synthetic D00..D29 lines; dense-exits.ts
 keeps actual positive-opacity line IDs/values (zero-alpha mounted nodes are
 documented separately). DenseExitParityTest verifies the public component,
 direct/forward/reverse selection and paused PNGs. No original song media copied.
+
+Interrupted entries: pinned classic/Visualizer.tsx AnimatePresence and
+getGlowWordLineContainerMotion in glowWordTiming.ts -> capture-interrupted.mjs,
+interrupted-lines.tsv and InterruptedLineParityTest. Two original synthetic
+6-line/60ms sequences cover normal/fast entry interrupted before completion.
+Actual Motion samples include event left limits at1us, explicitly documenting the
+continuous media model. Public FoliaLyricsView captures forward/reverse/paused
+frames; compare-interrupted.py retains descriptive RGB errors and original crops.
+No upstream code/media copied or production curve changed for this validation.

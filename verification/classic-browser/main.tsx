@@ -34,10 +34,11 @@ let lines = [
     { text: 'Silver ', startTime: 3.2, endTime: 3.65 }, { text: 'light', startTime: 3.65, endTime: 4.1 }] },
 ];
 if(params.has('dense')) {
-  lines=Array.from({length:30},(_,i)=>{
-    const startTime=(700+i*10)/1000,text=`D${String(i).padStart(2,'0')}`;
-    return {startTime,endTime:startTime+.001,fullText:text,
-      words:[{text,startTime,endTime:startTime+.001}]};
+  const count=Number(params.get('denseCount')??30),step=Number(params.get('denseStep')??10),duration=Number(params.get('denseDuration')??1);
+  if(![count,step,duration].every(Number.isFinite)||count<1||count>100||step<1||duration<1)throw new Error('Invalid dense fixture');
+  lines=Array.from({length:count},(_,i)=>{
+    const startTime=(700+i*step)/1000,text=`D${String(i).padStart(2,'0')}`,endTime=startTime+duration/1000;
+    return {startTime,endTime,fullText:text,words:[{text,startTime,endTime}]};
   });
 }
 if(params.has('scene')) {

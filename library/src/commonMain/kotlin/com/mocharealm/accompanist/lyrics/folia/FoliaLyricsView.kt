@@ -24,6 +24,9 @@ import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicSu
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.ClassicStage
 import com.mocharealm.accompanist.lyrics.folia.internal.styles.classic.classicHeightBudget
 import com.mocharealm.accompanist.lyrics.folia.internal.rendering.GlowBudget
+import com.mocharealm.accompanist.lyrics.folia.internal.waiting.*
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 
 /** Host owns media time and seeking. Whole runs are shaped by Compose, never per UTF-16 char. */
 @OptIn(ExperimentalFoundationApi::class)
@@ -43,10 +46,18 @@ fun FoliaLyricsView(
 ) {
     val document = remember(IdentityKey(lyrics), contentKey) { normalize(lyrics) }
     val index = remember(document) { VisualTimeline(document.lines) }
+    // Unknown/invalid vocal intervals cannot safely establish silence.
+    val waitingTimeline = remember(document) {
+        WaitingTimeline(if(document.diagnostics.isEmpty()) document.lines else emptyList())
+    }
     val subtitleHistory = remember(document) { SubtitleHistory(document.lines) }
     val currentPlayback by rememberUpdatedState(playback)
     val selection by remember(index, options.offsetMillis) { derivedStateOf {
         index.at((currentPlayback().positionMillis - options.offsetMillis) * 1000)
+    } }
+    val waiting by remember(waitingTimeline,index,options.offsetMillis) { derivedStateOf {
+        val time=(currentPlayback().positionMillis-options.offsetMillis)*1000
+        waitingTimeline.visibleAt(time,index.at(time))
     } }
     val subtitles by remember(index,subtitleHistory,options) {derivedStateOf {
         val time=(currentPlayback().positionMillis-options.offsetMillis)*1000
@@ -81,15 +92,23 @@ fun FoliaLyricsView(
                         heightBudget = heightBudget, enterUs = epoch.enterUs, leaveUs = epoch.leaveUs,
                         maskBudgetBytes = GlowBudget.perExitBytes(index.maxExitingCount))
                 } }
-                if (main == null) BasicText(if (document.lines.isEmpty()) "暂无可显示歌词" else "· · ·",
+                if (document.lines.isEmpty()) BasicText("暂无可显示歌词",
                     modifier = Modifier.fillMaxWidth(),
                     style = mainStyle.copy(color = colors.secondary, textAlign = TextAlign.Center))
-                else key(selection.primary) {
+                else if(main != null) key(selection.primary) {
                     ClassicLine(main, playback, mainStyle, colors, options, tuning, heightBudget,
                         Modifier.fillMaxWidth(),
                         enterUs = selection.primary!!.enterUs,
                         onPrepared = { actual, count -> quality = actual; unitCount = count },
                         onClick = { onLineClicked(main.source) }, onLongPress = { onLinePressed(main.source) })
+                }
+                waiting?.let { gap ->
+                    WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
+                        { (currentPlayback().positionMillis-options.offsetMillis)
+                            .coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt() },
+                        Modifier.semantics { contentDescription="等待演唱" },
+                        reducedMotion=options.reducedMotion,
+                        defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
                 }
         }
         ClassicSubtitles(subtitles,document.lines,playback,typography,colors,options,maxWidth,

@@ -415,3 +415,8 @@ The migrated files are covered by the source repository's Apache declaration; re
 provenance limitation rather than erasing the comment or substituting the Folia/SPW license.
 BreathingDotsLayoutTest was read as reference: its collapsing list row is intentionally
 not migrated into Folia's fixed stage. Core numerical/visual checks are documented in local-playback.md.
+Accompanist internal/playback/LyricsPlaybackTimeline.kt:89-106,185 establishes
+the strict >5000ms intro/interlude threshold. New internal/waiting/WaitingTimeline.kt
+uses that rule but independently unions every normalized vocal interval, rather than
+adjacent row bounds, to meet the overlapping-voice requirement. FoliaLyricsView waits
+for existing classic visual tails/exits before showing the dots at the original gap phase.

@@ -66,7 +66,7 @@ observed={}
 request_token=0
 for scene in args.scenes:
     subtitle=scene.startswith('subtitle')
-    widths=[800,380] if subtitle or scene in ['interlude','interlude-single'] else [380 if scene=='wrap' else 600 if scene in ['group','cjk'] else 800]
+    widths=[800,380] if subtitle or scene.startswith('waiting') or scene in ['interlude','interlude-single'] else [380 if scene=='wrap' else 600 if scene in ['group','cjk'] else 800]
     times=[1500,5500] if subtitle else [750,800,1000,1200,1500,1900,2100,2800,3000] if scene!='baseline' else [750,1000,1500,2100,2300,3400,4400]
     if scene.startswith('interrupted-'):times=[731,761,791,821,851,881,941,1001,1041,1101,1241,1401,1701,2001]
     if scene=='dense':times=[801,901,1001,1051,1101,1201,1301]
@@ -77,7 +77,7 @@ for scene in args.scenes:
     elif args.verify_seek and scene=='baseline':times += [1500,750,1500]
     if args.verify_seek and not args.times and (scene in ['dense','interlude','interlude-single'] or scene.startswith(('bidi-','interrupted-'))):times+=times[::-1]
     for width in widths:
-        for mode in ([False] if scene=='dense' or scene.startswith('interrupted-') else [False,True]):
+        for mode in ([False] if scene=='dense' or scene.startswith(('interrupted-','waiting')) else [False,True]):
             for ms in times:
                 request_token+=1
                 adb('logcat','-c')

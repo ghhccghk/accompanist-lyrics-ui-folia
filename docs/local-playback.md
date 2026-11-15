@@ -66,6 +66,40 @@ classic原版对照及残差仍见classic-parity.md；本次不降低其验收�
 源测试连续性/边界/无效配置原样迁移；独立测试oracle保留原公式，仅重命名包/类/配置。
 9类时长、正反向逐13ms及边界采样，scale/alpha/3个dotAlpha完全相等（maxError=0）。
 阶段CSV与18张JVM画面位于library/build/verification/waiting；暂停重绘和逆向重访逐像素相同。
-目视7000ms图确认居中3球和逐球明暗；这只验证绘制组件，尚不代表舞台区间已接入。
+目视7000ms图确认居中3球和逐球明暗；组件验证与下列舞台区间验证分别记录。
 两端构建通过，日志.work/waiting-model-build.log。下一项为全部声部并集、有限前奏/间奏
 与文字退场避让及公开入口验证。原生Android呼吸球运行尚未验证。
+
+## 有限前奏/间奏接入
+
+已接入FoliaLyricsView。原库LyricsPlaybackTimeline的严格>5000ms阈值保留；
+采用所有非空主唱/伴唱（含嵌套及超出行界的有效片段）的演唱区间并集；相接区间合并。
+有限0→首个演唱为前奏，并集之间为空档；负时间、空文档、未知/无效行诊断、末句之后
+不推断等待区间。主句余韵/退场或任何仍活动声部存在时隐藏，恢复显示仍用原空档相位，
+不重新入场。舞台固定居中，不移植列表高度折叠。移除原先无界的静态“· · ·”。
+
+与歌词共用position-offset；无独立任务/无限动画，reducedMotion只冻结空间缩放。
+sample知道真实音频时长，在音频结束时显示“播放结束”，即使导入歌词仍有未来时间戳；
+无歌词继续显示“未加载歌词”。库没有音频时长参数，宿主需像示例一样提供结束状态UI。
+加载/解析错误不会把无歌词伪装为空档；失败保留旧会话。
+
+验证：20,000次随机时间与全声部区间oracle一致，半开边界/5000和5001ms/
+嵌套跨行/尾声/余韵/退场测试通过。公开入口17点正反向、暂停、500ms偏移、
+reducedMotion及切空文档通过，PNG在library/build/verification/waiting-stage。
+首轮公开测试把25s伴唱刚结束误期望为球，断言发现仍有文字退场；
+保留25s“不显示”断言并增加25.301s“显示”边界，没有缩短生产退出或降低避让要求。
+日志waiting-stage-build（失败）/waiting-stage-final/waiting-end-guard（通过）。
+
+API34实际运行：normal32/reduced16/offset16次请求，两种视口，均双截图暂停及逆向
+一致。8组position+500/offset500与原媒体时间逐像素相同，40s尾声为纯背景；
+check-waiting-captures.py复核，证据build/verification/classic-android-api34-waiting-*。
+首次被系统全屏教学遮挡的图保留并拒绝；确认界面后重采，不修改设备动画设置或验收条件。
+真实MediaPlayer同时验证在位补选不换player、不改变暂停快照/seek版本，12秒WAV
+时长正确，游标713/暂停716/seek6000/恢复6372/逆向1274ms；
+android34-attached/paused.png实际展示1.276s有限前奏球。
+
+两端构建、sample JVM及相关library测试通过；未声称人工听音、原生系统选文件完整
+端到端、API30本项新代码、API21..29或实机验收。Desktop系统UI工具初始化仍报
+failed to write kernel assets (os error 3)，未用自写Windows自动化绕过；
+Java Sound真音频与Compose离屏UI证据仍分别有效。下一项：原生选择流程可用平台复核/
+说明收尾，然后回classic整帧字形覆盖残差；不继续扩播放器。

@@ -103,6 +103,8 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
                     }
                     val panel:@Composable (Modifier)-> Unit = { modifier ->
                         if(song.lyrics==null) Box(modifier,contentAlignment=Alignment.Center) { Text("未加载歌词") }
+                        else if(!songs.snapshot.isPlaying && songs.snapshot.positionMillis>=song.player.durationMillis)
+                            Box(modifier,contentAlignment=Alignment.Center) { Text("播放结束") }
                         else FoliaLyricsView(song.lyrics,{songs.snapshot},modifier,contentKey=song.revision,options=session.options,
                             typography=FoliaTypography(scale=session.fontScale),style=FoliaStyle.Classic(session.tuning),
                             onLineClicked={ line -> songs.control { it.seek(line.start.toLong()+session.options.offsetMillis) } })

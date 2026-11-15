@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.mocharealm.accompanist.folia.sample.playback.*
+import com.mocharealm.accompanist.folia.sample.importing.parseSongLyrics
 import kotlinx.coroutines.*
 import java.io.File
 
@@ -34,6 +35,16 @@ class LocalAudioVerificationActivity:ComponentActivity() {
                 session.songs.control{it.pause();it.seek(1000)};delay(200);session.songs.control{it.play()};delay(300);session.songs.poll()
                 check(session.songs.snapshot.positionMillis in 1100..2000);records+="reverseSeek="+session.songs.snapshot
                 session.songs.control{it.pause()}
+                if(intent.getBooleanExtra("attachLyrics",false)) {
+                    val before=session.songs.snapshot
+                    check(session.songs.attachLyrics(SongFiles(source)) {
+                        parseSongLyrics("[00:06.00]Amber\n[00:08.00]Echo".encodeToByteArray())
+                    })
+                    check(player===session.songs.current!!.player)
+                    check(before==session.songs.snapshot)
+                    check(session.clock.snapshot.positionMillis==0L)
+                    records+="lyricsAttachedSameNativePlayer="+session.songs.snapshot
+                }
                 records+="SUCCESS"
                 File(filesDir,"local-audio-verification.txt").writeText(records.joinToString("\n")+"\n")
                 Log.i("FoliaLocalAudio","SUCCESS "+records.joinToString(";"))

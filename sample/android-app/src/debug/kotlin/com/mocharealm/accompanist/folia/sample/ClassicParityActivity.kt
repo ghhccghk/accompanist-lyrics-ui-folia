@@ -84,6 +84,15 @@ class ClassicParityActivity : ComponentActivity() {
                 fun line(a:String,b:String,s:Int,m:Int,e:Int)=KaraokeLine.MainKaraokeLine(
                     listOf(KaraokeSyllable(a,s,m),KaraokeSyllable(b,m,e)),null,KaraokeAlignment.Unspecified,s,e)
                 when(frame.scene) {
+                    "waiting", "waiting-reduced", "waiting-offset" -> {
+                        val backing=KaraokeLine.AccompanimentKaraokeLine(listOf(KaraokeSyllable("Backing",21000,25000)),
+                            null,KaraokeAlignment.Unspecified,21000,25000)
+                        SyncedLyrics(listOf(
+                            KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable("Amber",10000,12000)),
+                                null,KaraokeAlignment.Unspecified,10000,12000,accompanimentLines=listOf(backing)),
+                            KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable("Echo",36000,38000)),
+                                null,KaraokeAlignment.Unspecified,36000,38000)))
+                    }
                     "dense"->SyncedLyrics(List(30) {i->
                         val start=700+i*10
                         KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable("D${i.toString().padStart(2,'0')}",start,start+1)),
@@ -117,7 +126,9 @@ class ClassicParityActivity : ComponentActivity() {
                             active=if(subtitle) Color.Transparent else Color.White,
                             secondary=if(subtitle) FoliaColors().secondary else Color.Transparent,
                             subtitleBackground=if(frame.backdrop) Color(0xFF48707E) else Color.Transparent),
-                        options=FoliaOptions(showTranslation=subtitle,showPhonetic=false,showNextLine=cjkSubtitle,animationIntensity=frame.intensity),
+                        options=FoliaOptions(showTranslation=subtitle,showPhonetic=false,showNextLine=cjkSubtitle,
+                            reducedMotion=frame.scene=="waiting-reduced",offsetMillis=if(frame.scene=="waiting-offset") 500 else 0,
+                            animationIntensity=frame.intensity),
                         style=FoliaStyle.Classic(ClassicTuning(breathingFloatMultiplier=0f,avoidOverlap=frame.avoid)))
                 },modifier=Modifier.drawBehind {drawRect(Color(0xFF162435))}) {children,constraints->
                     require(constraints.maxWidth>=frame.width && constraints.maxHeight>=frame.height) {"Parity viewport exceeds device surface: $constraints"}

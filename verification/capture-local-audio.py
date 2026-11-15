@@ -9,13 +9,14 @@ import time
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--adb',default='adb')
 p.add_argument('--serial',required=True)
+p.add_argument('--attach-lyrics',action='store_true',help='Also verify in-place lyrics; capture finite intro waiting dots')
 args=p.parse_args()
 root=Path(__file__).resolve().parents[1]
 package='com.mocharealm.accompanist.folia.sample'
 def adb(*command):
     return subprocess.run([args.adb,'-s',args.serial,*command],check=True,capture_output=True,timeout=30).stdout
 sdk=adb('shell','getprop','ro.build.version.sdk').decode().strip()
-output=root/'build/verification/local-audio'/f'android{sdk}'
+output=root/'build/verification/local-audio'/f'android{sdk}{"-attached" if args.attach_lyrics else ""}'
 output.mkdir(parents=True,exist_ok=True)
 wav=root/'.work/local-audio/synthetic.wav'
 subprocess.run(['python',str(root/'verification/generate-local-audio.py'),str(wav)],check=True)
@@ -26,7 +27,7 @@ adb('shell','run-as',package,'mkdir','-p','files')
 adb('shell','run-as',package,'cp','/data/local/tmp/folia-local-audio.wav','files/verification.wav')
 adb('shell','am','force-stop',package)
 adb('logcat','-c')
-adb('shell','am','start','-n',package+'/.LocalAudioVerificationActivity')
+adb('shell','am','start','-n',package+'/.LocalAudioVerificationActivity','--ez','attachLyrics',str(args.attach_lyrics).lower())
 deadline=time.monotonic()+25
 while True:
     logs=adb('logcat','-d','-s','FoliaLocalAudio:I','AndroidRuntime:E').decode('utf8')

@@ -63,6 +63,14 @@ class SongSelectionTest {
         onNodeWithContentDescription("Amber").assertIsDisplayed()
         val out=File("build/verification/local-audio").apply{mkdirs()}
         ImageIO.write(captureToImage().toAwtImage(),"png",File(out,"selected-lyrics-wide.png"))
+        runOnIdle {
+            runBlocking {session.songs.attachLyrics(SongFiles(file)) {
+                parseSongLyrics("[00:20.00]Beyond the audio\n[00:25.00]Later".encodeToByteArray())
+            }}
+            session.songs.control {it.seek(12000)}
+        }
+        onNodeWithText("播放结束").assertIsDisplayed()
+        onNodeWithContentDescription("等待演唱").assertDoesNotExist()
         runOnIdle{session.songs.close()}
     }
 }

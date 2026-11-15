@@ -28,3 +28,10 @@ Accompanist lyrics-ui (Apache-2.0), commit
 adapted into the sample; original copyright/attribution remain with Accompanist
 contributors. See LICENSES/Apache-2.0.txt and docs/upstream.md. The source project
 is read-only and is not a runtime, build, or local-path dependency.
+
+The same Accompanist commit also supplies the waiting breathing-dots configuration,
+phase model, Canvas drawing calculation and phase tests. These files retain Apache-2.0
+headers and attribution in the new package. The source comment referring to an older
+feature-text-engine renderer is preserved; that older renderer has not been located in
+available refs. Source-to-target mapping and the precise scope of modifications are in
+docs/upstream.md. The original list state/layout engine is not included.

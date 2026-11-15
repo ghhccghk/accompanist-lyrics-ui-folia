@@ -391,3 +391,27 @@ pinned CJK source, adding covered U+2026 without changing original outlines.
 Original body font/fixtures unchanged. Public-entry Desktop window and Android
 debug probes reuse the same source/font/viewport/media grid. See classic-parity.md
 for residuals, failed fallback-font candidate and platform limitations.
+
+## Accompanist waiting dots (2026-11-15)
+
+Read-only source commit: 6b1ab72319bf2143225acf7797031efa7491897c, Apache-2.0.
+The following paths are relative to src/src in that repository:
+
+| Source | Target | Changes |
+| --- | --- | --- |
+| commonMain/kotlin/com/mocharealm/accompanist/lyrics/ui/internal/effects/PreparedBreathingDots.kt | library/.../internal/waiting/PreparedBreathingDots.kt | Own package/defaults name, remove unused imports; phase math unchanged |
+| commonMain/kotlin/com/mocharealm/accompanist/lyrics/ui/composable/lyrics/KaraokeBreathingDots.kt | library/.../internal/waiting/WaitingBreathingDots.kt | Own internal defaults/component; centred fixed stage, remove list collapse/alignment/trailing slot; reduced-motion spatial freeze |
+| jvmTest/.../composable/lyrics/BreathingDotsTest.kt | library/src/commonTest/.../WaitingDotsTest.kt | Own package/class/defaults imports; original assertions unchanged |
+| internal/effects/PreparedBreathingDots.kt | library/src/jvmTest/.../SourcePreparedBreathingDots.kt | Test oracle; only package/class/defaults names changed |
+
+Original source files contain no per-file author header; attribution remains with Accompanist
+contributors and LICENSES/Apache-2.0.txt. The original PreparedBreathingDots comment,
+"Static phase boundaries ported from feature-text-engine renderer/draw.rs.", is retained.
+Read-only searches of the available source, all local refs and draw.rs history did not locate
+that older renderer. The earliest available introduction (2ff60821eda63fa2cbfad97c322a7d1e73b94246)
+already has this comment. This does not establish that renderer's origin/version; no Rust file
+was copied, and no claim of an independently verified renderer attribution is made.
+The migrated files are covered by the source repository's Apache declaration; retain this
+provenance limitation rather than erasing the comment or substituting the Folia/SPW license.
+BreathingDotsLayoutTest was read as reference: its collapsing list row is intentionally
+not migrated into Folia's fixed stage. Core numerical/visual checks are documented in local-playback.md.

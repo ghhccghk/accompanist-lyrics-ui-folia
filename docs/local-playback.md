@@ -50,6 +50,22 @@ discontinuity、播放/暂停/滑条/歌词点击/重新选择。文件选择器
 :sample:shared:verifyLocalAudio --args='.work/local-audio/synthetic.wav build/verification/local-audio/desktop-native.txt'；
 python verification/capture-local-audio.py --serial <设备> --adb <adb>。
 原生文件选择器尚未自动操作验收；Compose对话框/取消测试和真实解码是分开的证据。
-API30/实机、Desktop不同设备/编码仍需复核。补选当前会重新准备歌曲，后续改为在位
-加载并保留当前位置/播放状态；呼吸球尚未迁入，不把本项称为全部新需求完成。
+API30/实机、Desktop不同设备/编码仍需复核。补选已在位加载，不重建播放器、不跳转；
+失败/取消/过期结果保留原歌词。会话与UI验证通过，两端构建通过，设备补选尚未验证。
+活动态截图selected-lyrics-wide.png固定1500ms，点击跳转边界断言独立保留。
+首个真实播放闭环f429141；在位补选4d461b3。日志local-lyrics-attachment*.log。
 classic原版对照及残差仍见classic-parity.md；本次不降低其验收标准。
+
+## 等待呼吸球迁移
+
+已迁入PreparedBreathingDots阶段公式和原Canvas逐球绘制；配置仍为3球、16dp、12dp间距，
+3000ms入场/3000ms下沉回升/200ms静止/200ms退出。只把原列表起止对齐、折叠高度改为
+固定舞台居中；不迁入列表状态或排版引擎。减少动态保留alpha和进度，空间缩放固定1。
+这不是classic主歌词呼吸或原版六个点词的替代品。
+
+源测试连续性/边界/无效配置原样迁移；独立测试oracle保留原公式，仅重命名包/类/配置。
+9类时长、正反向逐13ms及边界采样，scale/alpha/3个dotAlpha完全相等（maxError=0）。
+阶段CSV与18张JVM画面位于library/build/verification/waiting；暂停重绘和逆向重访逐像素相同。
+目视7000ms图确认居中3球和逐球明暗；这只验证绘制组件，尚不代表舞台区间已接入。
+两端构建通过，日志.work/waiting-model-build.log。下一项为全部声部并集、有限前奏/间奏
+与文字退场避让及公开入口验证。原生Android呼吸球运行尚未验证。

@@ -244,3 +244,24 @@ build/verification/subtitle-{upstream,kotlin,comparison}保存PNG、DOM/Motion J
 完整JVM、Android APK、Desktop classes通过；最新APK实际安装于API34 probe34模拟器，
 暂停拖动至0:02，译文/注音/模糊预览显示，无AndroidRuntime异常；.work/folia-subtitle.png。
 这只是Android运行检查，非固定字体跨端效果验收；实机与API31以下仍未验证。
+
+## 辉光核与阴影覆盖分离（2026-11-15）
+
+capture-halo.mjs现在保留普通foreground source.png并另存原版字素的.01px阴影探针、
+20/40px独立阴影。普通正文alpha积分1531.75px²；正半径但尚未扩散的阴影1451.43px²，
+20/40px阴影分别1450.89/1449.53px²。原正文输入混入了Chromium字形覆盖差异，不能
+用它推断模糊内核。探针不改变原始双阴影/opacity预期图，所有原件保持不变。
+
+GlowMask.kt独立实现CSS/SVG三盒近似：sigma=CSS半径/2、宽度由sigma计算、
+偶宽两次相反半像素中心、每轴三个累积求和后才量化；保留密度引出的分数sigma。
+旧实现固定2*sigma+1并每次整数截断，会丢失覆盖且核宽不符。
+以匹配的shadow-source为输入，20px单阴影与原版逐像素一致；40px前景MAE .00046/255、
+最大1；原双阴影满亮MAE .00046/255、最大1（旧核/旧输入为1.14125/255，不能混同
+这两个输入条件）。另确认原版整数source-over为a+b*(256-a)/256向下取整；
+以前数学四舍五入的.51断言测试的是自定量化规则，现用实际原版单/双阴影严格<.01
+和max1验证，并保留数学合成误差一量化单位检查，非放宽画面验收。
+
+.5/.1透明度的数学round采样仍有.504/.419前景MAE、最大1；未将其冒称为实际
+Compose saveLayer栅格等价。完整帧还混有正文/阴影平台字形覆盖与变换采样残差，
+需要继续对照。软件遮罩临时内存变动使旧准备耗时/分配基线不再代表当前版本；
+本项优先修复效果，未宣称性能改善。Android <31连续模糊仍是缺失功能。

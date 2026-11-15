@@ -160,3 +160,14 @@ FontMetrics.{jvm,android}.kt independently reads native metrics through public
 Compose font resolution. No font engine implementation is copied. Browser captures
 unchanged Overlay with background pad disabled; original text-shadow remains an
 outstanding paint difference in Kotlin, not an accepted platform adjustment.
+
+Halo kernel calibration: original wordGlow.ts text-shadow radii are unchanged.
+GlowMask.kt is an independently written separable box integrator using CSS/SVG
+Gaussian box-width mathematics, not copied Skia implementation. Research references:
+Chromium core/style/shadow_data.h (BlurRadiusToStdDev = radius/2), Skia
+src/core/SkMaskBlurFilter.cpp (three-box width/axis quantization), and CSS Filter
+Effects Gaussian approximation. These are used to understand paint semantics;
+no third-party implementation text is shipped. Browser positive .01px shadow
+probe isolates glyph shadow coverage from normal foreground coverage. All fixtures
+are original synthetic M and the pinned OFL font. New single-shadow PNGs and
+original combined images provide independent pixel acceptance.

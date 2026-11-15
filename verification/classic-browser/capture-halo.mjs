@@ -19,6 +19,18 @@ try {
     fs.copyFileSync(path.join(directory,`halo-${opacity}.png`),path.join(fixtures,`halo-${opacity}.png`));
   }
   const style=await glyph.evaluate(g=>({shadow:getComputedStyle(g).textShadow,rect:g.getBoundingClientRect().toJSON()}));
+  // A positive sub-threshold sigma selects Chromium's shadow mask raster path
+  // without spreading coverage. Ordinary foreground text uses different coverage.
+  for (const radius of [.01,20,40]) {
+    await glyph.evaluate((g,r)=>{
+      g.style.setProperty('text-shadow',`0 0 ${r}px #fff`,'important');
+      g.style.setProperty('color','transparent','important');
+      g.style.setProperty('opacity','1','important');
+    },radius);
+    const name=radius===.01?'shadow-source.png':`single-${radius}.png`;
+    await page.screenshot({path:path.join(directory,name),omitBackground:true});
+    fs.copyFileSync(path.join(directory,name),path.join(fixtures,name));
+  }
   await glyph.evaluate(g=>{
     g.style.setProperty('text-shadow','none','important');
     g.style.setProperty('color','#fff','important');
@@ -28,6 +40,6 @@ try {
   fs.copyFileSync(path.join(directory,'source.png'),path.join(fixtures,'source.png'));
   fs.writeFileSync(path.join(directory,'conditions.json'),JSON.stringify({revision,browser:browser.version(),
     font:'FoliaParityLatin-Bold.ttf',viewport:[320,320],density:1,style,
-    isolation:'Original GlowWord. Identity layout, body hidden, glyph opacity forced. Browser source mask reused in Kotlin to isolate blur/compositing from shaping.'},null,2));
+    isolation:'Original GlowWord. Identity layout, body hidden, glyph opacity forced. Positive .01px shadow captures the shadow glyph coverage; ordinary foreground source.png is retained separately. Single 20/40px shadows isolate kernel before original combined opacity comparison.'},null,2));
   fs.copyFileSync(path.join(directory,'conditions.json'),path.join(fixtures,'conditions.json'));
 } finally {await browser.close();}

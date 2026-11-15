@@ -144,7 +144,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                             clipPath(path) { drawText(cell.layout, Color.White, Offset.Zero) }
                         }
                     }
-                    val masks = blurredMasks(bitmap, IntArray(layers) { maxOf(1, (radii[it] * density.density / 2).toInt()) })
+                    val masks = blurredMasks(bitmap, FloatArray(layers) { maxOf(1f, radii[it] * density.density / 2) })
                     GlyphGlow(timing, origin, compositeGlowMasks(masks))
                 })
             })

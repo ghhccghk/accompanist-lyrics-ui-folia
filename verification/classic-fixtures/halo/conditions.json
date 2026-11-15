@@ -20,5 +20,5 @@
       "left": 128
     }
   },
-  "isolation": "Original GlowWord. Identity layout, body hidden, glyph opacity forced. Browser source mask reused in Kotlin to isolate blur/compositing from shaping."
+  "isolation": "Original GlowWord. Identity layout, body hidden, glyph opacity forced. Positive .01px shadow captures the shadow glyph coverage; ordinary foreground source.png is retained separately. Single 20/40px shadows isolate kernel before original combined opacity comparison."
 }

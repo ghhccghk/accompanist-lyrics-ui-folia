@@ -11,7 +11,7 @@ import kotlin.test.*
 class UpstreamHaloPaintTest {
     @Test fun opacityAppliesToCombinedShadows() {
         val fixtures=File("../verification/classic-fixtures/halo")
-        val source=ImageIO.read(File(fixtures,"source.png"))
+        val source=ImageIO.read(File(fixtures,"shadow-source.png"))
         val width=source.width; val height=source.height
         val count=width*height
         val input=source.getRGB(0,0,width,height,null,0,width)
@@ -19,7 +19,14 @@ class UpstreamHaloPaintTest {
         fun alpha(image:ImageBitmap)=IntArray(count).also {image.readPixels(it)}.map {it ushr 24}
         val inner=alpha(masks[0]); val outer=alpha(masks[1]); val combined=alpha(compositeGlowMasks(masks))
         combined.forEachIndexed {i,a ->
-            assertEquals(255-(255-inner[i])*(255-outer[i])/255.0,a.toDouble(),.51)
+            assertEquals(255-(255-inner[i])*(255-outer[i])/255.0,a.toDouble(),1.0)
+        }
+        for ((index,radius) in listOf(20,40).withIndex()) {
+            val reference=ImageIO.read(File(fixtures,"single-$radius.png")).getRGB(0,0,width,height,null,0,width).map {it ushr 24}
+            val actual=alpha(masks[index])
+            val errors=actual.indices.filter {actual[it]>0 || reference[it]>0}.map {abs(actual[it]-reference[it])}
+            assertTrue(errors.average()<.01,"Isolated $radius px shadow MAE: ${errors.average()}")
+            assertTrue(errors.max()<=1,"Isolated shadow maximum coverage error")
         }
         val report=StringBuilder("opacity\toldForegroundMAE\tcombinedForegroundMAE\tcombinedMaxError\n")
         for (opacity in listOf(1.0,.5,.1)) {
@@ -33,7 +40,8 @@ class UpstreamHaloPaintTest {
             val maxError=foreground.maxOf {abs(reference[it]-actual[it])}
             report.append("$opacity\t$oldError\t$error\t$maxError\n")
             // Behavioral assertion: opacity covers the combined group, independently of blur accuracy.
-            actual.forEachIndexed {i,a -> assertEquals(combined[i]*opacity,a.toDouble(),.51)}
+            actual.forEachIndexed {i,a -> assertEquals(combined[i]*opacity,a.toDouble(),1.0)}
+            if(opacity==1.0) assertTrue(error<.01,"Original combined halo foreground MAE: $error")
             if(opacity<1) assertTrue(error<oldError,"Group compositing must improve the actual original halo at opacity=$opacity")
         }
         File("../build/verification/halo-kotlin").apply {mkdirs()}.resolve("comparison.tsv").writeText(report.toString())

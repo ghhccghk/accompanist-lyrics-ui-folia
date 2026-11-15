@@ -2,6 +2,25 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
 }
+abstract class PrepareClassicParityAssets : DefaultTask() {
+    @get:InputFiles
+    @get:PathSensitive(PathSensitivity.RELATIVE)
+    abstract val inputsToCopy: ConfigurableFileCollection
+    @get:OutputDirectory
+    abstract val outputDirectory: DirectoryProperty
+    @get:Inject
+    abstract val fileSystem: FileSystemOperations
+    @TaskAction fun prepare() { fileSystem.sync { from(inputsToCopy); into(outputDirectory) } }
+}
+val parityAssets = tasks.register<PrepareClassicParityAssets>("prepareClassicParityAssets") {
+    inputsToCopy.from(rootProject.fileTree("verification/assets") {
+        include("FoliaParityLatin-Bold.ttf", "NotoSansArabic-Bold.ttf", "FoliaParityCJK-Bold.otf", "*OFL.txt", "OFL.txt", "README.md")
+    }, rootProject.fileTree("verification/classic-fixtures") { include("scenes.tsv", "subtitle-scenes.tsv") })
+    outputDirectory.set(layout.buildDirectory.dir("generated/classicParityAssets"))
+}
+androidComponents.onVariants(androidComponents.selector().withBuildType("debug")) { variant ->
+    variant.sources.assets?.addGeneratedSourceDirectory(parityAssets, PrepareClassicParityAssets::outputDirectory)
+}
 android {
     namespace = "com.mocharealm.accompanist.folia.sample"
     compileSdk = 37

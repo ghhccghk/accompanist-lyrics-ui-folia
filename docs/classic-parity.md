@@ -388,3 +388,24 @@ MAE直接比较。完整JVM及Android/Desktop构建通过；新可选效果Andro
 build/verification/subtitle-backdrop-{upstream,kotlin,software-kotlin,pad-kotlin,comparison}/，
 subtitle-shadow-kotlin/。显式TextStyle.shadow保留宿主原生语义；主题派生阴影独立
 按CSS sigma绘制，未将平台Shadow半径差异带入默认实现。
+
+## Android固定字体完整帧对照入口（2026-11-15）
+
+新增debug-only ClassicParityActivity，直接使用公开FoliaLyricsView、同一scenes.tsv和
+OFL字体；强制组件density/fontScale=1及物理视口，隐藏系统栏，无示例控件。主句
+比较隐藏waiting文案／字幕，与浏览器隔离范围一致。字幕比较隐藏主句，仅translation。
+Android资产通过AGP Variant API生成，仅debug构建引入；不修改发布边界或原工程。
+
+capture-android.py以实际GPU frame-commit作为ready，并对自身am启动使用no-animation，
+避免窗口启动动画冒充暂停漂移。没有修改设备动画设置；每个点另取第二张截图严格比对。
+API34/API30各166帧全部暂停一致；各有字体／视口／系统版本与PNG SHA记录。API30使用
+软件模糊，API34原生模糊；SwiftShader模拟器不是实机性能证据。
+
+compare-android.py输出原版/Android完整帧和描述性误差，不返回视觉通过。首轮发现：
+普通主句MAE约.38..6.99，但380px avoid长句最高76.42/255、800px长字幕约41.8，
+这类差异不能笼统归为AA。已读Compose AndroidTextPaint/TextMotion.android源码：
+Static启用hinting/关闭subpixel，Animated启用linear/subpixel。下一项实测此公开
+配置是否修复累计字距／避让偏移，再决定结果，不以现有构建和截图数宣称验收。
+
+证据：build/verification/classic-android-api{30,34}{,-comparison}/。
+JVM八场景新compare-matrix.py亦输出真实manual Motion对照，正文/复杂脚本残差仍保留。

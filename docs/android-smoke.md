@@ -83,3 +83,19 @@ romanization and preview without crash. Captures:
 .work/emulator-{5558,5560}-baseline.png. AndroidRuntime contains no application
 exception. These use system fonts and sample layout, so validate native execution
 and absence of clipped subtitle rows, not fixed-font original-browser parity.
+
+## Fixed-font public-entry matrix — 2026-11-15
+
+Debug-only ClassicParityActivity and verification/capture-android.py now capture
+the public component with the exact Latin/Arabic/CJK files and synthetic TSVs.
+Forced Compose density/fontScale=1, 600 physical pixels high, width800/600/380,
+top-left placement and hidden system bars. Device density/animation settings stay
+unchanged. Uses real GPU frame-commit and no-animation only for its activity start.
+API34 and API30 each captured166 frames with a second paused PNG exactly matching
+at every point. Ten scenes include normal/avoid, grouped text, Arabic, CJK,
+clusters, fast/instant and subtitles with/without the optional pad.
+
+Original-browser comparison is available under build/verification/classic-android-
+api{30,34}-comparison. Substantial narrow-avoid/long-subtitle advance differences
+remain; this is an actual execution and regression capture, not final visual parity.
+Next investigation: public TextMotion.Animated versus Android default static hinting.

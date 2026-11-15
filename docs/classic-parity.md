@@ -101,3 +101,18 @@ CSS19.744px；原版 canvas与字形缓存实际按19.74px测量/绘制，行盒
 不以端点caret之差忽略bidi空白。inspect-layout.mjs仅观察原版测量，不改其返回值。
 六场景全部margin误差 <0.0001，DOM整数框误差 <0.51px；截图已检查Arabic1500ms。
 连字/Arabic辉光切片、fast/instant与窄屏图像仍需最终逐帧校准，未宣称整帧等价。
+
+## 阴影合成顺序复核（2026-11-15）
+
+GlowWord.tsx 的字素 opacity 包住 wordGlow.ts 返回的两个 text-shadow；外层词 opacity
+又包住正文和全部辉光。修复先前逐阴影／逐绘制分别乘透明度的错误：准备时先合成双阴影，
+运行时以字素 opacity 绘制一次；正文与所有字素再进入词图层统一应用词 opacity。
+这些是合成顺序修复，没有用改变辉光曲线补偿亮度。
+
+capture-halo.mjs 加载原版 GlowWord，隔离 identity pose、隐藏正文、强制字素 opacity，
+同 Noto Bold 64px／320×320／density1。复用浏览器原始字形覆盖作为 Kotlin 输入，
+从而单独检查模糊和合成。夹具及条件保存在 verification/classic-fixtures/halo。
+以前景并集 alpha MAE（0..255）计：opacity .5 从1.66525降至0.85470，
+opacity .1 从0.94985降至0.54151；opacity1仍为1.14125，最大误差10。
+软件三次盒式模糊与 Chromium 字形阴影核仍有残差，不能据此宣布像素等价。
+连续帧／随机 seek 重建及固定字体核心截图检查通过；Android仍需实际运行验证。

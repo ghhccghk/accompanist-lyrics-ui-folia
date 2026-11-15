@@ -95,6 +95,15 @@ Chromium hundredth-pixel glyph sizes, 1/64px line heights, and integer offsetHei
 These rounding rules were observed with inspect-layout.mjs and exact DOM fixtures;
 margin tolerance was not relaxed to conceal rounding discrepancies.
 
+Halo compositing audit: GlowWord.tsx / wordGlow.ts at the same pinned commit →
+ClassicLine.kt word/glyph grouping and GlowMask.kt compositeGlowMasks. The original
+span opacity applies after both shadows have been painted; word opacity applies
+after body plus glows. Browser isolation source is actual GlowWord with identity
+layout and hidden body, opacity forced only for paint measurements. Generated PNGs
+contain original synthetic "M", using the pinned OFL font, no upstream lyric assets.
+No third-party blur implementation was copied. Existing software blur remains an
+approximation with measured residuals, recorded in classic-parity.md.
+
 ## Independent model input
 
 Resolved candidate: `com.mocharealm.accompanist:lyrics-core:0.5.0`.

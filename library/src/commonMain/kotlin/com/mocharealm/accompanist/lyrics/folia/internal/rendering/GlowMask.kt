@@ -28,6 +28,27 @@ internal fun blurredMasks(source: ImageBitmap, radii: IntArray): List<ImageBitma
     }
 }
 
+/** CSS applies the span opacity after painting all its shadows. Flatten first so
+ * the overlapping inner/outer shadows receive one opacity during the sweep. */
+internal fun compositeGlowMasks(masks: List<ImageBitmap>): ImageBitmap {
+    require(masks.isNotEmpty())
+    if (masks.size == 1) return masks.single()
+    val width = masks.first().width
+    val height = masks.first().height
+    require(masks.all { it.width == width && it.height == height })
+    val coverage = IntArray(width * height)
+    val pixels = IntArray(coverage.size)
+    masks.forEach { mask ->
+        mask.readPixels(pixels)
+        for (i in coverage.indices) {
+            val a = pixels[i] ushr 24
+            coverage[i] = a + (coverage[i] * (255 - a) + 127) / 255
+        }
+    }
+    for (i in coverage.indices) pixels[i] = (coverage[i] shl 24) or 0xFFFFFF
+    return bitmapFromArgb(width, height, pixels)
+}
+
 private fun blurAlpha(alpha: IntArray, temporary: IntArray, width: Int, height: Int, radius: Int) {
     val window = radius * 2 + 1
     repeat(3) {

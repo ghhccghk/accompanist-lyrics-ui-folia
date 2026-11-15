@@ -67,6 +67,20 @@ class SongSession {
     }
     fun cancelPending() { ++generation; loading = false }
     fun dismissError() { error = null }
+    suspend fun attachLyrics(files: SongFiles, parse: suspend (SongFiles) -> SyncedLyrics?): Boolean {
+        val original=current ?: return false
+        val token=++generation
+        loading=true;error=null
+        try {
+            require(files.audio === original.files.audio) { "补选只能应用于原音频，请使用重新选歌" }
+            val lyrics=parse(files)
+            if(token!=generation || closed || current !== original) return false
+            current=original.copy(files=files,lyrics=lyrics,revision=token)
+            return true
+        } catch(cancelled:CancellationException){throw cancelled}
+        catch(failure:Exception){if(token==generation && !closed)error=failure.message?:failure.toString();return false}
+        finally {if(token==generation)loading=false}
+    }
     suspend fun open(files: SongFiles, prepare: suspend (LyricsSource) -> LocalAudioPlayer,
         parse: suspend (SongFiles) -> SyncedLyrics? = { null }): Boolean {
         check(!closed)

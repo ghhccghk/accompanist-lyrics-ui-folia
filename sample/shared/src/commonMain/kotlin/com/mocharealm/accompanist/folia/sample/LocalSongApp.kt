@@ -2,6 +2,9 @@ package com.mocharealm.accompanist.folia.sample
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.DragInteraction
+import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -27,21 +30,28 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
     val latestVisible by rememberUpdatedState(visible)
     var work by remember { mutableStateOf<Job?>(null) }
     var selection by remember { mutableStateOf(false) }
+    var editingLyrics by remember { mutableStateOf(false) }
     var selectionError by remember { mutableStateOf<String?>(null) }
     var audio by remember { mutableStateOf<LyricsSource?>(null) }
     var lyrics by remember { mutableStateOf<LyricsSource?>(null) }
     var translation by remember { mutableStateOf<LyricsSource?>(null) }
     var settings by remember { mutableStateOf(false) }
     fun cancelSelection() { work?.cancel(); songs.cancelPending(); selection=false }
-    fun openSelection() { audio=null; lyrics=null; translation=null; selectionError=null; selection=true }
+    fun openSelection() { editingLyrics=false; audio=null; lyrics=null; translation=null; selectionError=null; selection=true }
     val systemPick = rememberSongFilePicker({ role, file ->
         songs.finishFileChoice()
         if(file!=null) when(role) { FileRole.Audio -> audio=file; FileRole.Lyrics -> lyrics=file; FileRole.Translation -> translation=file }
     }, { songs.finishFileChoice();selectionError=it })
     val pick:(FileRole)->Unit={role->songs.beginFileChoice();systemPick(role)}
-    LaunchedEffect(visible,session.demo,songs.current?.player,songs.filePickerActive) {
+    val nativePlayer=songs.current?.player
+    val nativePlaying=nativePlayer?.snapshot?.isPlaying==true
+    val nativeSeeking=nativePlayer?.isSeeking==true
+    LaunchedEffect(visible,session.demo,nativePlayer,songs.filePickerActive,nativePlaying,nativeSeeking) {
         if (!visible || session.demo) songs.control { it.pause() }
-        else if(!songs.filePickerActive) { songs.resumeFileChoice(); if (songs.current != null) while(isActive) { withFrameNanos { songs.poll() } } }
+        else if(!songs.filePickerActive) {
+            songs.resumeFileChoice();songs.poll()
+            while(isActive && (nativePlayer?.snapshot?.isPlaying==true || nativePlayer?.isSeeking==true)) { withFrameNanos { songs.poll() } }
+        }
     }
     DisposableEffect(session) { onDispose { songs.cancelPending(); songs.control { it.pause() }; session.clock.pause() } }
     if (session.demo) {
@@ -85,7 +95,7 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
                             Text(song.player.metadata.artist)
                             FlowRow {
                                 TextButton(::openSelection) { Text("重新选歌") }
-                                TextButton({ audio=song.files.audio; lyrics=song.files.lyrics; translation=song.files.translation; selectionError=null; selection=true }) { Text("补选歌词／翻译") }
+                                TextButton({ editingLyrics=true; audio=song.files.audio; lyrics=song.files.lyrics; translation=song.files.translation; selectionError=null; selection=true }) { Text("补选歌词／翻译") }
                                 TextButton({ settings=true }) { Text("设置") }
                                 TextButton({ songs.control { it.pause() }; session.demo=true }) { Text("开发／演示") }
                             }
@@ -107,7 +117,7 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
         }
         if(selection) AlertDialog(onDismissRequest=::cancelSelection,title={Text("选择歌曲")},text={
             Column(Modifier.heightIn(max=420.dp).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(8.dp)) {
-                OutlinedButton({pick(FileRole.Audio)},enabled=!songs.loading) { Text(audio?.name?:"音频文件（必选）") }
+                OutlinedButton({pick(FileRole.Audio)},enabled=!songs.loading && !editingLyrics) { Text(audio?.name?:"音频文件（必选）") }
                 OutlinedButton({pick(FileRole.Lyrics)},enabled=!songs.loading) { Text(lyrics?.name?:"歌词文件（可选）") }
                 if(lyrics!=null) TextButton({lyrics=null;translation=null}) {Text("清除歌词")}
                 OutlinedButton({pick(FileRole.Translation)},enabled=!songs.loading && lyrics!=null) { Text(translation?.name?:"翻译文件（可选）") }
@@ -119,8 +129,11 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
             }
         },confirmButton={ Button({
             val files=SongFiles(audio!!,lyrics,translation); work?.cancel()
-            work=scope.launch { if(songs.open(files,prepare,::loadSongLyrics)) { session.clock.pause(); selection=false; if(!latestVisible) songs.control {it.pause()} } }
-        },enabled=audio!=null && !songs.loading) {Text("播放所选歌曲")} },dismissButton={TextButton(::cancelSelection){Text("取消")}})
+            work=scope.launch {
+                val success=if(editingLyrics) songs.attachLyrics(files,::loadSongLyrics) else songs.open(files,prepare,::loadSongLyrics)
+                if(success) { session.clock.pause(); selection=false; if(!latestVisible) songs.control {it.pause()} }
+            }
+        },enabled=audio!=null && !songs.loading) {Text(if(editingLyrics)"应用歌词" else "播放所选歌曲")} },dismissButton={TextButton(::cancelSelection){Text("取消")}})
         if(!selection) (songs.error?:selectionError)?.let { message -> AlertDialog(onDismissRequest={songs.dismissError();selectionError=null},title={Text("操作失败 · 原会话保留")},text={Text(message)},confirmButton={TextButton({songs.dismissError();selectionError=null}){Text("关闭")}}) }
         if(settings) AlertDialog(onDismissRequest={settings=false},title={Text("显示设置")},text={
             Column {
@@ -146,11 +159,22 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
 @Composable private fun LocalTransport(songs:SongSession,enabled:Boolean) {
     val song=songs.current?:return
     var preview by remember(song.revision){mutableStateOf<Float?>(null)}
+    val interactions=remember{MutableInteractionSource()}
+    var dragging by remember{mutableStateOf(false)}
+    val latestEnabled by rememberUpdatedState(enabled)
+    LaunchedEffect(interactions) {
+        interactions.interactions.collect { event -> when(event) {
+            is DragInteraction.Start -> dragging=true
+            is DragInteraction.Stop -> {if(latestEnabled)preview?.let{target->songs.control{it.seek(target.toLong())}};preview=null;dragging=false}
+            is DragInteraction.Cancel,is PressInteraction.Cancel -> {preview=null;dragging=false}
+        } }
+    }
     LaunchedEffect(enabled){if(!enabled)preview=null}
     Column {
         Slider(preview?:songs.snapshot.positionMillis.toFloat(),{preview=it},enabled=enabled,
+            interactionSource=interactions,
             modifier=Modifier.semantics{contentDescription="播放进度"},valueRange=0f..song.player.durationMillis.toFloat(),
-            onValueChangeFinished={if(enabled)preview?.let{target->songs.control{it.seek(target.toLong())}};preview=null})
+            onValueChangeFinished={if(!dragging){if(enabled)preview?.let{target->songs.control{it.seek(target.toLong())}};preview=null}})
         Text(formatAudioTime(songs.snapshot.positionMillis)+" / "+formatAudioTime(song.player.durationMillis))
         Row { Button({songs.control{if(songs.snapshot.isPlaying)it.pause() else it.play()}},enabled=enabled){Text(if(songs.snapshot.isPlaying)"暂停" else "播放")}
             TextButton({songs.control{it.seek(0)}},enabled=enabled){Text("重播")} }

@@ -64,4 +64,18 @@ class LocalSongTest {
         session.finishFileChoice();session.resumeFileChoice();assertFalse(second.snapshot.isPlaying)
         session.close()
     }
+    @Test fun attachingLyricsNeverRecreatesOrSeeksAudioAndFailedLateResultsAreIgnored()=runBlocking {
+        val session=SongSession();val player=Player();session.open(SongFiles(source),{player})
+        session.control{it.seek(4200);it.pause()};val snapshot=session.snapshot
+        val parsed=parseSongLyrics("[00:01.00]Amber\n[00:05.00]Echo".encodeToByteArray())
+        assertTrue(session.attachLyrics(SongFiles(source)){parsed})
+        assertSame(player,session.current!!.player);assertEquals(snapshot,session.snapshot);assertSame(parsed,session.current!!.lyrics)
+        assertFalse(session.attachLyrics(SongFiles(source)){error("bad translation")})
+        assertSame(parsed,session.current!!.lyrics);assertEquals(snapshot,session.snapshot)
+        val gate=CompletableDeferred<Unit>()
+        val task=async(start=CoroutineStart.UNDISPATCHED){session.attachLyrics(SongFiles(source)){gate.await();parsed}}
+        val newer=Player();session.open(SongFiles(source),{newer});gate.complete(Unit)
+        assertFalse(task.await());assertSame(newer,session.current!!.player);assertNull(session.current!!.lyrics)
+        session.close()
+    }
 }

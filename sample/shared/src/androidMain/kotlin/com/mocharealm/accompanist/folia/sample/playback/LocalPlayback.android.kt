@@ -90,6 +90,7 @@ internal class AndroidAudioPlayer(private val player: MediaPlayer, override val 
         player.setOnInfoListener { _, what, _ ->
             if (what == MediaPlayer.MEDIA_INFO_BUFFERING_START) buffering = true
             if (what == MediaPlayer.MEDIA_INFO_BUFFERING_END) buffering = false
+            poll()
             false
         }
         player.setOnErrorListener { _, what, extra -> failure = "播放失败（" + what + " / " + extra + "）"; snapshot = snapshot.copy(isPlaying=false); true }

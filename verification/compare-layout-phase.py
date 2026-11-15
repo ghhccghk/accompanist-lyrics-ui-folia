@@ -6,11 +6,21 @@ an oracle. Descriptive pixel errors do not replace inspection of original PNGs.
 from pathlib import Path
 from PIL import Image, ImageChops, ImageDraw, ImageStat
 import csv
+import argparse
 from collections import defaultdict
 from statistics import mean
 
 root = Path(__file__).resolve().parents[1] / 'build/verification'
-out = root / 'sampling-full-comparison'; out.mkdir(parents=True, exist_ok=True)
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--before', default='sampling-full-legacy', help='Evidence folder under build/verification')
+parser.add_argument('--after', default='', help='Candidate folder under build/verification; empty uses current captures')
+parser.add_argument('--candidate-label', default='Layout snapped')
+parser.add_argument('--output', default='sampling-full-comparison', help='Comparison folder under build/verification')
+parser.add_argument('--public-densities', action='store_true', help='Include matching public-entry DPR1/2 captures')
+args = parser.parse_args()
+for value in [args.before, args.output, *([args.after] if args.after else [])]:
+    if not value or any(not (c.isascii() and (c.isalnum() or c == '-')) for c in value): parser.error('Invalid evidence directory name')
+out = root / args.output; out.mkdir(parents=True, exist_ok=True)
 folders = {
     'classic-kotlin': 'classic-manual-upstream',
     'classic-continuous-kotlin': 'classic-continuous-upstream',
@@ -19,13 +29,16 @@ folders = {
     'classic-interlude-kotlin': 'classic-interlude-upstream',
     'classic-interrupted-kotlin': 'classic-interrupted-upstream',
 }
+if args.public_densities: folders['layout-phase-public-kotlin'] = 'layout-phase-public-upstream'
 rows = []; summary = defaultdict(lambda: [[], []])
 for folder, original in folders.items():
-    for old in sorted((root / 'sampling-full-legacy' / folder).glob('*.png')):
+    before_frames = sorted((root / args.before / folder).glob('*.png'))
+    if not before_frames: raise FileNotFoundError(root / args.before / folder)
+    for old in before_frames:
         ref = root / original / old.name
         if not ref.exists(): raise FileNotFoundError(ref)
         a = Image.open(ref).convert('RGB')
-        candidates = [Image.open(old).convert('RGB'), Image.open(root / folder / old.name).convert('RGB')]
+        candidates = [Image.open(old).convert('RGB'), Image.open(root / args.after / folder / old.name).convert('RGB')]
         errors = []
         for b in candidates:
             assert a.size == b.size
@@ -40,7 +53,7 @@ for folder, original in folders.items():
         if old.name.endswith('1500ms.png') or old.name in ['150-1241ms.png','default-3400ms.png']:
             w,h = a.size
             sheet = Image.new('RGB',(w*3,h+22),'#eef1f5')
-            for i,(label,image) in enumerate(zip(['Original','Before','Layout snapped'],[a,*candidates])):
+            for i,(label,image) in enumerate(zip(['Original','Before',args.candidate_label],[a,*candidates])):
                 sheet.paste(image,(i*w,22)); ImageDraw.Draw(sheet).text((i*w+4,4),label,fill='black')
             sheet.save(out / f'{folder}-{old.name}')
 with (out / 'pixel-errors.csv').open('w',newline='') as f:

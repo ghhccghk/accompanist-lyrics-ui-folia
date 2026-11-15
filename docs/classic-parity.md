@@ -841,3 +841,37 @@ baseline逆向重访共56个token请求，第二次暂停截图均严格相同�
 commonMain/androidMain正文源码SHA，避免提交前的HEAD误标APK来源。条件、设备/APK/
 字体SHA和PNG位于classic-android-api34-layout-phase，原版接触表及CSV位于同名
 -comparison；本项API30、真实设备和Desktop实窗仍未验证，不借用旧APK设备结果。
+
+
+## 拒绝直接段落替换，并实测原版栅格历史（2026-11-15）
+
+9d375a1已保存静态布局修复。随后仅在实验中，把无正文模糊分支从缓存完整段落位图
+替换为记录完整TextLayoutResult；分组、几何、基线、时间、辉光及有模糊分支均不变。
+原测试和公开DPR1/2共644张对照均成功生成，暂停/seek检查通过，但画面明显退步：
+普通42帧RGB MAE均值1.2971→3.2419，连续246帧1.1833→3.0311，复杂208帧
+1.4407→3.5725；默认1500ms 1.9443→6.4496，CJK avoid1500ms 2.9904→5.0027。
+其余组的完整结果见paragraph-transform-comparison/pixel-errors.csv，不能以测试通过
+接受视觉退步。实验实现已逐字节恢复到9d375a1；未进入生产源码。
+
+为使失败实验也可审计，verification/direct-paragraph-experiment.patch保留最小补丁，
+只可用于明确的隔离实验，Gradle不会应用它。paragraph-transform-before的条件记录原
+提交/源码SHA；paragraph-transform-rejected保留实验PNG，paragraph-transform-comparison
+保留三列原版/旧/被拒绝候选，标签明确。compare-layout-phase.py支持--before/--after/
+--candidate-label/--public-densities；不存在的必要场景会失败，不将空目录当零误差。
+
+进一步用实际原版GlowWord、同一字体/视口/白色正文/无辉光，把同一个最终DOM姿态
+分别直接显示、从.3/20°入场、从1.6/20°入场。先真实绘制初始帧，原Motion JS fallback
+执行300ms转场并推进虚拟墙钟1s；再推进1s重复截图。12组最终DOM bounds、矩阵、
+颜色/透明度/字体/blur严格相同，各组暂停重复PNG也严格相同。此实验未修改原版源码。
+
+DPR1最终scale1.6/rotate−4°时，直接显示与从.3入场的原版alpha MAE为21.1132，
+即同一终态确实随实际图层历史改变覆盖；从1.6入场与直接显示相同。对从.3入场的
+原版，现有缓存段落alpha MAE3.0762，直接段落20.8993；对直接静态显示则分别
+20.2952/10.4091。DPR1最终identity从1.6进入也与直接显示相差20.5580；DPR2本次
+各历史间没有该差异。不能把静态终态控制的胜负直接扩展成完整classic运行结论。
+这证明采样受历史影响；尚未据此声称已定位或复现浏览器内部的精确contentsScale算法。
+
+证据：raster-history-{upstream,comparison}/；条件包含原版提交、字体SHA、浏览器、
+首帧及终态/重复PNG和DOM。复现capture-raster-history.mjs、compare-raster-history.py；
+后者严格检查同终态和稳定暂停，不以帧内容变化掩盖不同姿态。生产继续使用完整段落
+位图，尚未解决的变换/覆盖残差照常保留；下一项补足入场中断在Android的实际验收。

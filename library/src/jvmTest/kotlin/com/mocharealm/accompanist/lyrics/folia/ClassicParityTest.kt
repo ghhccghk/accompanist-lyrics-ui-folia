@@ -31,7 +31,8 @@ import kotlin.test.*
 class ClassicParityTest {
     @Test fun fixedFontCoreCheckpoints() = capture(false)
     @Test fun softwareBlurCoreCheckpoints() = capture(true)
-    private fun capture(software: Boolean) = runDesktopComposeUiTest(width = 800, height = 600) {
+    @Test fun continuousCoreSequence() = capture(false, sequence = true)
+    private fun capture(software: Boolean, sequence: Boolean = false) = runDesktopComposeUiTest(width = 800, height = 600) {
         fun line(a: String, b: String, start: Int, middle: Int, end: Int) = KaraokeLine.MainKaraokeLine(
             listOf(KaraokeSyllable(a, start, middle), KaraokeSyllable(b, middle, end)),
             null, KaraokeAlignment.Unspecified, start, end)
@@ -57,8 +58,9 @@ class ClassicParityTest {
             }
           }
         }
-        val directory = File("../build/verification/${if(software) "classic-software-kotlin" else "classic-kotlin"}").apply { mkdirs() }
-        val checkpoints = listOf(0,700,750,850,1000,1200,1300,1500,1800,1900,2100,2220,2300,2500,3000,3200,3400,3700,4100,4400,4700)
+        val directory = File("../build/verification/${if(sequence) "classic-continuous-kotlin" else if(software) "classic-software-kotlin" else "classic-kotlin"}").apply { mkdirs() }
+        val checkpoints = if(sequence) ((0..4800 step 40).toList()+listOf(1500,3700)).sorted()
+            else listOf(0,700,750,850,1000,1200,1300,1500,1800,1900,2100,2220,2300,2500,3000,3200,3400,3700,4100,4400,4700)
         listOf(false, true).forEach { mode ->
             var retained: IntArray? = null
             runOnIdle { avoid = mode }
@@ -85,6 +87,7 @@ class ClassicParityTest {
             assertContentEquals(retained,paused.getRGB(0,0,800,600,null,0,800))
         }
         File(directory, "conditions.txt").writeText("800x600 density1; FoliaParityLatin-Bold.ttf pinned SHA in verification/assets/README.md; same main.tsx input. Paused direct media reconstruction. Core only, no chrome/subtitles. Software layers=$software; JVM ${System.getProperty("java.version")}.\n")
+        if(sequence) File(directory,"times.txt").writeText(checkpoints.joinToString("\n")+"\n")
         File(directory, "layout.tsv").writeText("mode\tline\tindex\tleft\ttop\twidth\theight\tmargin\tlineHeight\trowGap\tpaddingTop\tpaddingBottom\n" +
             geometries.entries.joinToString("\n") { (key, g) -> g.boxes.mapIndexed { i,b ->
                 listOf(if(key.first) "avoid" else "default",key.second,i,b.left,b.top,b.width,b.height,g.margins[i],g.height,g.rowGap,g.paddingTop,g.paddingBottom).joinToString("\t")

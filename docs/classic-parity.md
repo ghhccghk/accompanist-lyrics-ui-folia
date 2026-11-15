@@ -470,3 +470,23 @@ API30/API34各8个独立字幕检查点、暂停双截图通过。380px/5500ms�
 subtitle-fractional-center-detail.png。最终Start版本与全部主句的设备回归已完成：
 API30/API34各166个不同帧和6次逆序seek重访，全部暂停双截图/重访像素严格一致；
 conditions.json绑定实际APK SHA，证据位于classic-android-api{30,34}-current/。
+
+## 密集连续媒体序列（2026-11-15）
+
+capture-sequence.mjs从未修改的固定Classic/GlowWord与实际挂载Motion读取0..4800ms
+的40ms网格，额外1500/3700ms，保留10ms推进和全部状态边界事件；Kotlin直接在相同
+123个媒体时间点重建default/avoid，共246帧/侧。字体、视口、媒体点和原版提交相同。
+browser-sequence-motion.tsv的328条实际词/句/字素状态沿用原有.0001数值阈值全部通过，
+没有改旧夹具预期；暂停与最后退场后逆向重访1500ms仍要求严格逐像素一致。
+
+compare-sequence.py输出两侧同速GIF、原PNG及逐帧SHA/描述性误差。非空帧前景RGB MAE
+default .66178..5.13259、avoid .64238..4.70114，最高发生在920ms等活动过渡；
+不能将GIF缩图或这些数值当作完整像素验收。已目视10个原尺寸来源的并排检查点，
+包括720/1000/1500/1920/2240/2400/3240/3700/4160/4400ms；未发现阶段错序、
+换句残留或缺失辉光。仍有正文覆盖/变换采样残差，见前述各项，保留待修复状态。
+
+证据：classic-continuous-{upstream,kotlin,comparison}/、classic-continuous-contact.png。
+GIF仅为离线媒体采样序列，无音频，不是真实窗口录屏或帧率/性能测量。
+当前Desktop进程启动到run任务，日志有DirectX12设备创建失败/Skiko回退；本轮@oai/sky及CUA均在初始化时报
+“failed to write kernel assets: 系统找不到指定的路径”。未观察到窗口，不能称当前
+Desktop实窗目视/交互通过；不反复重试该环境故障。Android实际画面证据不受影响。

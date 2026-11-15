@@ -11,7 +11,9 @@ import kotlin.test.*
 
 /** Original browser's actual layout/body/glow state, not a second implementation of variants. */
 class BrowserClassicMotionTest {
-    @Test fun mountedOriginalClassicMatchesMediaSamples() {
+    @Test fun mountedOriginalClassicMatchesMediaSamples() = compare("browser-motion.tsv")
+    @Test fun denseOriginalSequenceMatchesMediaSamples() = compare("browser-sequence-motion.tsv")
+    private fun compare(file:String) {
         fun line(a:String,b:String,start:Int,middle:Int,end:Int)=KaraokeLine.MainKaraokeLine(
             listOf(KaraokeSyllable(a,start,middle),KaraokeSyllable(b,middle,end)),null,KaraokeAlignment.Unspecified,start,end)
         val documents=mutableMapOf("baseline" to normalize(SyncedLyrics(listOf(line("Amber ","echo",700,1300,1900),line("Silver ","light",3200,3650,4100)))))
@@ -21,7 +23,7 @@ class BrowserClassicMotionTest {
                     KaraokeAlignment.Unspecified,rows[0][1].toInt(),rows[0][2].toInt())
                 documents[name]=normalize(SyncedLyrics(listOf(source)))
             }
-        File("../verification/classic-fixtures/browser-motion.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}.forEach {row ->
+        File("../verification/classic-fixtures/$file").readLines().filterNot{it.startsWith("#")||it.isBlank()}.forEach {row ->
             val c=row.split('\t');val time=c[1].toLong()*1000
             val document=documents.getValue(c[19])
             val line=document.lines.first{it.startUs==c[2].toDouble().roundToLong()*1000}

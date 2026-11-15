@@ -33,6 +33,7 @@ class ClassicMatrixTest {
     @Test fun fastLine() = capture("fast",800)
     @Test fun instantLine() = capture("instant",800)
     @Test fun cjkTimedGroups() = capture("cjk",600)
+    @Test fun collapsedWhitespace() = capture("whitespace",800)
 
     private fun capture(scene:String,width:Int) = runDesktopComposeUiTest(width=width,height=600) {
         val rows=File("../verification/classic-fixtures/scenes.tsv").readLines().filterNot {it.startsWith("#")}.map {it.split('\t')}.filter {it[0]==scene}

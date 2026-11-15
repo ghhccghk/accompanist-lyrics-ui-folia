@@ -111,6 +111,13 @@ No shell background/player engine code is imported. PublicClassicParityTest veri
 public versus isolated core pixels on 800/380-wide surfaces; subtitle parity itself
 remains incomplete and is explicitly recorded separately.
 
+CSS whitespace audit: GlowWord.tsx whitespace-nowrap / block body → CssWordText.kt
+and ClassicLine.kt source-boundary mapping. Canvas measurement retains whitespace
+count while CSS display collapses ASCII spaces and removes block-edge spaces.
+Glyph timing/count remains source based, including invisible whitespace. Browser
+inspect-whitespace.mjs also observes 1/64 CSS pixel upward used-width rounding;
+the original strict matrix tolerance was retained.
+
 ## Independent model input
 
 Resolved candidate: `com.mocharealm.accompanist:lyrics-core:0.5.0`.

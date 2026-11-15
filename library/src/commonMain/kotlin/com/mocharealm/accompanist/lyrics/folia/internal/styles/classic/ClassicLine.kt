@@ -41,7 +41,8 @@ import kotlin.math.*
 
 private data class GlyphGlow(val timing: TimedGrapheme, val origin: Offset, val mask: ImageBitmap)
 private data class Cell(val unit: DisplayUnit, val layout: TextLayoutResult, val center: Offset, val pose: Pose,
-    val boxWidth: Float, val boxHeight: Float, val glows: List<GlyphGlow> = emptyList())
+    val boxWidth: Float, val boxHeight: Float, val sourceBoundaries: IntArray,
+    val glows: List<GlyphGlow> = emptyList())
 private data class Prepared(val cells: List<Cell>, val height: Float, val geometry: ClassicGeometry,
     val quality: FoliaQuality = FoliaQuality.Minimal)
 private class DrawnFrame { var timeUs: Long? = null; var center = Offset.Zero }
@@ -77,15 +78,20 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 val rendered=if(base<=36f || base>=72f) cssRound(base/16*fontScale)*16 else cssRound(6*fontScale)*base/6
                 val style = textStyle.copy(fontSize = glyphSize(rendered).sp,
                     lineHeight = (rendered * 1.22f).sp, textAlign = TextAlign.Start)
-                val measured = units.map { unit -> measurer.measure(AnnotatedString(unit.text), style,
+                val renderedTexts = units.map { cssWordText(it.text) }
+                val measured = renderedTexts.map { word -> measurer.measure(AnnotatedString(word.text), style,
                     softWrap = false) }
                 val measurementStyle=style.copy(fontSize=glyphSize(base*fontScale).sp)
-                val rawWidths = units.map { unit -> measurer.measure(AnnotatedString(unit.text),measurementStyle,softWrap=false)
+                val rawWidths = units.map { unit -> measurer.measure(AnnotatedString(canvasWordText(unit.text)),measurementStyle,softWrap=false)
                     .let { it.getPathForRange(0,it.layoutInput.text.length).getBounds().width.toDouble() } }
                 // CSS collapses trailing whitespace in the word's box, while its canvas spacing
                 // measurement includes that whitespace. Keep both metrics, and the timed text.
-                val boxWidths = units.map { unit -> measurer.measure(AnnotatedString(unit.text.trimEnd()), style,
-                    softWrap = false).let { it.getPathForRange(0,it.layoutInput.text.length).getBounds().width.toDouble() } }
+                // Blink rounds an inline block's used width up to a LayoutUnit (1/64 CSS px).
+                // Keep canvas spacing metrics unrounded; they serve a different purpose.
+                val boxWidths = measured.map { layout ->
+                    val width=layout.getPathForRange(0,layout.layoutInput.text.length).getBounds().width.toDouble()
+                    ceil(width/density.density*64)/64*density.density
+                }
                 val poses = units.indices.map { wordPose(line.startUs, it, tuning.enableWordRotation) }
                 val rtl = isRtlLyric(line.text)
                 val font = with(density) { (textStyle.fontSize*fontScale).toPx() }.toDouble()
@@ -95,7 +101,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 val cells = units.indices.map { index ->
                     val box = geometry.boxes[index]
                     Cell(units[index], measured[index], Offset(box.left + box.width / 2, box.top + box.height / 2),
-                        poses[index], box.width, box.height)
+                        poses[index], box.width, box.height, renderedTexts[index].boundaries)
                 }
                 return Prepared(cells, geometry.height, geometry)
             }
@@ -110,8 +116,10 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             }
             // Fixed, bounded masks. Their alpha changes in draw; glyph shadows never change per frame.
             val padding = ceil(72 * density.density).toInt()
-            fun glyphBounds(cell: Cell, timing: TimedGrapheme) = cell.layout.getPathForRange(timing.begin, timing.end).getBounds()
-            val bytesPerLayer = result.cells.sumOf { cell -> cell.unit.graphemes.sumOf { timing ->
+            fun visibleTimings(cell: Cell) = cell.unit.graphemes.filter { cell.sourceBoundaries[it.end] > cell.sourceBoundaries[it.begin] }
+            fun glyphPath(cell: Cell, timing: TimedGrapheme) = cell.layout.getPathForRange(cell.sourceBoundaries[timing.begin], cell.sourceBoundaries[timing.end])
+            fun glyphBounds(cell: Cell, timing: TimedGrapheme) = glyphPath(cell, timing).getBounds()
+            val bytesPerLayer = result.cells.sumOf { cell -> visibleTimings(cell).sumOf { timing ->
                 val bounds = glyphBounds(cell, timing)
                 (ceil(bounds.width).toLong() + 2L * padding + 1) * (ceil(bounds.height).toLong() + 2L * padding + 1) * 4L
             } }
@@ -121,8 +129,8 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 val duration = line.endUs - line.startUs
                 val radii = floatArrayOf(if (duration < 100_000) 14f else if (duration < 180_000) 18f else 20f,
                     if (duration < 100_000) 24f else if (duration < 180_000) 32f else 40f)
-                cell.copy(glows = cell.unit.graphemes.map { timing ->
-                    val path = cell.layout.getPathForRange(timing.begin, timing.end)
+                cell.copy(glows = visibleTimings(cell).map { timing ->
+                    val path = glyphPath(cell, timing)
                     val bounds = glyphBounds(cell, timing)
                     val origin = Offset(floor(bounds.left) - padding, floor(bounds.top) - padding)
                     val bitmap = ImageBitmap(ceil(bounds.right - origin.x + padding).toInt().coerceAtLeast(1),

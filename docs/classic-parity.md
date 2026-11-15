@@ -148,3 +148,17 @@ PublicClassicParityTest 在800和380宽、600高、同Noto Bold、normal/avoid�
 七场景矩阵default/avoid的DOM词距误差 <0.0001，整数框误差 <0.51px；中文两侧各26帧，
 包含入场、内部字素活动、余韵与退场。已目视检查1500ms避让图，位置与词组一致，
 浏览器正文栅格更软；光晕仍有已记录的核差。未将平台栅格残差或整帧误差列为通过。
+
+## CSS空白与内部映射（2026-11-15）
+
+GlowWord.tsx的块级正文／whitespace-nowrap → CssWordText.kt和ClassicLine.kt。
+源文本和全部字素时间保持原样；仅排版文本折叠ASCII空白并去除块首尾普通空白，
+通过源UTF-16边界映射取得完整shaping结果的覆盖。被折叠空白不画空遮罩，
+但仍参与上游原始字素总数／延迟，不能令其后的文字提前发光。NBSP及组合序列保留。
+原Canvas词距测量仍保留空白个数（ASCII控制空白一对一转空格），与CSS块宽分开。
+
+新增空白场景实际原版DOM发现inline block使用宽度向上取1/64 CSS px：
+“soft light”Canvas宽217.48795，CSS宽217.5，offsetWidth218。初次严格几何测试失败，
+修复使用宽度量化后通过，未放宽0.51px阈值。inspect-whitespace.mjs记录原测量。
+八场景default/avoid的词距 <0.0001、整数框 <0.51px；固定字体、公开入口、
+连续帧／随机seek回归通过；Android/Desktop构建通过。完整栅格仍未验收。

@@ -7,7 +7,7 @@ const output=path.join(root,'build/verification/classic-matrix-upstream');fs.mkd
 const layout=[`# pinned ${revision}; exact source DOM offset*; integer rounded`,
   '# scene\tmode\tviewportWidth\tviewportHeight\tindex\tleft\ttop\twidth\theight\tmargin\tlineHeight\trowGap\tpaddingTop\tpaddingBottom\tfontSize'];
 try {
-  for(const [scene,width,height] of [['arabic',800,600],['wrap',380,600],['group',600,600],['cluster',800,600],['fast',800,600],['instant',800,600],['cjk',600,600]]) {
+  for(const [scene,width,height] of [['arabic',800,600],['wrap',380,600],['group',600,600],['cluster',800,600],['fast',800,600],['instant',800,600],['cjk',600,600],['whitespace',800,600]]) {
     for(const avoid of [false,true]) {
       const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1});const errors=[];
       page.on('pageerror',e=>errors.push(e.message));

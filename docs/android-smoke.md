@@ -99,3 +99,14 @@ Original-browser comparison is available under build/verification/classic-androi
 api{30,34}-comparison. Substantial narrow-avoid/long-subtitle advance differences
 remain; this is an actual execution and regression capture, not final visual parity.
 Next investigation: public TextMotion.Animated versus Android default static hinting.
+
+## Actual play/pause/seek surface recording — 2026-11-15
+
+API30/API34 screenrecord videos now exercise the debug public-entry fixture with
+an absolute withFrameNanos media anchor, both lines, reverse seek/pause at1500ms
+and seek/pause at3700ms. Both repeated paused PNGs are strictly identical on each
+device;1500ms also matches the existing fixed checkpoint. Actual decoded frames
+were inspected. Evidence, device/APK hashes and limitations are recorded in
+classic-parity.md and build/verification/classic-android-api{30,34}-recording/.
+Encoded video timestamps are observational, not exact media goldens or performance
+measurements. Physical devices, API21..29 and Desktop live recording remain open.

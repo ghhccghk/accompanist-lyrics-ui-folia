@@ -26,13 +26,14 @@ import com.mocharealm.accompanist.lyrics.core.model.karaoke.*
 import com.mocharealm.accompanist.lyrics.core.model.synced.SyncedLine
 import com.mocharealm.accompanist.lyrics.folia.*
 import java.io.File
+import kotlinx.coroutines.isActive
 
-/** Deterministic public-entry verification only. Not a sample screen or media clock. */
+/** Public-entry fixture for fixed checkpoints and anchored playback verification. */
 class ClassicParityActivity : ComponentActivity() {
-    private data class Frame(val scene:String,val ms:Long,val width:Int,val avoid:Boolean,val backdrop:Boolean)
+    private data class Frame(val scene:String,val ms:Long,val width:Int,val avoid:Boolean,val backdrop:Boolean,val play:Boolean)
     private fun requested(intent:Intent)=Frame(intent.getStringExtra("scene")?:"baseline",
         intent.getLongExtra("mediaMs",1500),intent.getIntExtra("width",800).also {require(it in 200..1280)},
-        intent.getBooleanExtra("avoid",false),intent.getBooleanExtra("backdrop",false))
+        intent.getBooleanExtra("avoid",false),intent.getBooleanExtra("backdrop",false),intent.getBooleanExtra("play",false))
     private lateinit var requestedFrame:MutableState<Frame>
 
     override fun onCreate(savedInstanceState:Bundle?) {
@@ -56,6 +57,16 @@ class ClassicParityActivity : ComponentActivity() {
         val subtitleRows=assets.open("subtitle-scenes.tsv").bufferedReader().use {it.readLines()}.filter {it.isNotBlank()&&!it.startsWith('#')}.map {it.split('\t')}
         setContent {
             val frame=requestedFrame.value
+            val snapshot=remember(frame) {mutableStateOf(FoliaPlaybackSnapshot(frame.ms,frame.play))}
+            LaunchedEffect(frame) {
+                if(frame.play) {
+                    val anchor=withFrameNanos {it}
+                    Log.i("FoliaParity","CLOCK ${frame.scene} mediaMs=${frame.ms} anchorNanos=$anchor")
+                    while(isActive) withFrameNanos {now->
+                        snapshot.value=FoliaPlaybackSnapshot(frame.ms+(now-anchor)/1_000_000,true)
+                    }
+                }
+            }
             val subtitle=frame.scene=="subtitle"
             val lyrics=remember(frame.scene) {
                 fun line(a:String,b:String,s:Int,m:Int,e:Int)=KaraokeLine.MainKaraokeLine(
@@ -75,7 +86,7 @@ class ClassicParityActivity : ComponentActivity() {
                 subtitle=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold))
             CompositionLocalProvider(LocalDensity provides Density(1f)) {
                 Layout(content={
-                    FoliaLyricsView(lyrics,{FoliaPlaybackSnapshot(frame.ms,false)},typography=typography,
+                    FoliaLyricsView(lyrics,{snapshot.value},typography=typography,
                         colors=FoliaColors(text=if(subtitle) Color.Transparent else FoliaColors().text,
                             active=if(subtitle) Color.Transparent else Color.White,
                             secondary=if(subtitle) FoliaColors().secondary else Color.Transparent,

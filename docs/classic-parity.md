@@ -514,3 +514,20 @@ API30/API34各28次主句/字幕/逆向seek检查中，与修复前AndroidPNG逐
 验证Windows专用适配没有带入Android显示变化。证据：raster-kotlin/settings.csv、
 classic-continuous-comparison/、lcd-body-detail.png、classic-android-api{30,34}-body-calibrated/。
 尚未完成真实窗口连续录屏和整帧最终视觉验收；下一项优先补可用Android的实际动态录制。
+
+## Android 实际 surface 连续录像（2026-11-15）
+
+ClassicParityActivity 的 debug-only play 入口使用 withFrameNanos 的绝对媒体 anchor，
+不累积帧间隔；换帧/销毁时 LaunchedEffect 取消。固定截图仍默认暂停。record-android.py
+在 API30/API34 实际 screenrecord：从0ms播放两句，反向seek到1500ms暂停，再seek到
+3700ms暂停。两个暂停点相隔0.4s的双PNG在两端均严格一致；1500ms还与此前固定帧
+逐像素相同。已目视实际视频解码的播放/换句/暂停帧，不以采样GIF代替录像。
+
+证据：build/verification/classic-android-api{30,34}-recording/，包含MP4、APK SHA、
+设备条件、CLOCK/READY日志、双PNG及解码帧。编码时长分别7.948311/8.216611s，
+API30视频800×600，API34视频1080×2200；解码按自然大小截取左上800×600组件区域。
+录像PTS不等于精确媒体时间，控制器请求10s不能作为速率或帧率/性能结论。
+
+Android debug构建通过。双模拟器运行期间并行启动Chromium曾失败；关闭本轮模拟器
+后分别解码成功，没有更改安全设置。模拟器实际动态运行通过；Desktop真实窗口录像、
+Android实机与API21..29仍未验证，文字覆盖/变换采样残差及最终视觉验收仍待完成。

@@ -41,9 +41,9 @@ class DenseExitParityTest {
                 val leave=epoch.leaveUs.takeIf {time>=it}
                 line.startUs/1000 to sampleLine(time,epoch.enterUs,leave,profile,false,0f,1f).alpha
             }.filter {it.second>0}
-            val starts=if(c[1].isEmpty()) emptyList() else c[1].split(',').map{it.toLong()}
+            val starts=if(c[1]=="-") emptyList() else c[1].split(',').map{it.toLong()}
             assertEquals(starts,actual.map{it.first},"Visible original line epochs at ${c[0]}ms")
-            if(c[2].isNotEmpty()) c[2].split(',').forEachIndexed{i,a->
+            if(c[2]!="-") c[2].split(',').forEachIndexed{i,a->
                 assertEquals(a.toDouble(),actual[i].second.toDouble(),.0001,"Original exit alpha at ${c[0]}ms / ${starts[i]}")
             }
         }

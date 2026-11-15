@@ -31,7 +31,7 @@ try {
   '# mediaMs\tlineStartsMs\tlineOpacities'];
  for(const row of rows) {
   const visible=row.lines.filter(l=>(l.values.opacity??1)>0);
-  table.push([row.mediaMs,visible.map(l=>l.startMs).join(','),visible.map(l=>l.values.opacity??1).join(',')].join('\t'));
+  table.push([row.mediaMs,visible.map(l=>l.startMs).join(',')||'-',visible.map(l=>l.values.opacity??1).join(',')||'-'].join('\t'));
  }
  fs.writeFileSync(path.join(root,'verification/classic-fixtures/dense-exits.tsv'),table.join('\n')+'\n');
  console.log(rows.map(r=>[r.mediaMs,r.lines.length,r.lines.map(l=>l.startMs)]));

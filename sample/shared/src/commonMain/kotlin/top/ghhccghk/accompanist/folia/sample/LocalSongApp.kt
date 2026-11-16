@@ -44,6 +44,13 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
     }, { songs.finishFileChoice();selectionError=it })
     val pick:(FileRole)->Unit={role->songs.beginFileChoice();systemPick(role)}
     val nativePlayer=songs.current?.player
+    // Remote transport events also wake paused/buffering/error states. The
+    // per-frame path below reads only the adapter's local snapshot mirror.
+    LaunchedEffect(visible, session.demo, nativePlayer) {
+        if (visible && !session.demo && nativePlayer != null) {
+            snapshotFlow { nativePlayer.updateRevision }.collect { songs.poll() }
+        }
+    }
     val nativePlaying=nativePlayer?.snapshot?.isPlaying==true
     val nativeSeeking=nativePlayer?.isSeeking==true
     LaunchedEffect(visible,session.demo,nativePlayer,songs.filePickerActive,nativePlaying,nativeSeeking) {

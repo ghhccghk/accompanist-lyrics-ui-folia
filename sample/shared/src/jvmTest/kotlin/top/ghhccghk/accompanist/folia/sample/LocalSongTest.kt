@@ -14,7 +14,8 @@ class LocalSongTest {
         override val durationMillis=10000L
         override var snapshot=FoliaPlaybackSnapshot(0,false,1)
         var closed=false
-        override fun poll() {}
+        var disconnected=false
+        override fun poll() { check(!disconnected) { "remote process disconnected" } }
         override fun play(){snapshot=snapshot.copy(isPlaying=true)}
         override fun pause(){snapshot=snapshot.copy(isPlaying=false)}
         override fun seek(positionMillis:Long){snapshot=snapshot.copy(positionMillis=positionMillis,discontinuity=snapshot.discontinuity+1)}
@@ -52,6 +53,25 @@ class LocalSongTest {
         assertFailsWith<IllegalArgumentException>{parseSongLyrics("not timed".encodeToByteArray())}
         assertFailsWith<IllegalArgumentException>{parseSongLyrics("[00:01.00]Amber".encodeToByteArray(),"[00:02.00]光影".encodeToByteArray())}
         assertFailsWith<Exception>{parseSongLyrics(byteArrayOf(0xC3.toByte()))}
+    }
+    @Test fun remoteFailureWhilePausedIsTerminalUntilFreshSelection()=runBlocking {
+        val session=SongSession();val first=Player()
+        session.open(SongFiles(source),{first})
+        session.control { it.seek(4200);it.pause() }
+        first.disconnected=true
+        session.poll() // Also invoked by the sample's asynchronous revision observer.
+        assertEquals("remote process disconnected",session.error)
+        assertFalse(session.snapshot.isPlaying)
+        assertEquals(4200,session.snapshot.positionMillis)
+        first.disconnected=false;first.play();first.seek(9000)
+        session.poll()
+        assertEquals(4200,session.snapshot.positionMillis)
+        assertFalse(session.snapshot.isPlaying)
+        val next=Player()
+        assertTrue(session.open(SongFiles(source),{next}))
+        assertTrue(first.closed);assertTrue(session.snapshot.isPlaying)
+        assertEquals(0,session.snapshot.positionMillis);assertNull(session.error)
+        session.close()
     }
     @Test fun cancelledNativePickerRestoresOnlyItsOwnPreviouslyPlayingSession()=runBlocking {
         val session=SongSession();val first=Player();session.open(SongFiles(source),{first})

@@ -6,8 +6,10 @@
   sample异步镜像保持原LocalAudioPlayer操作及FoliaLyricsView入口，Desktop不迁移。
 - 已完成确定性快照镜像：会话/事件/命令过滤，单调时钟有界外推，暂停/缓冲/seek冻结，
   反向/连续seek与discontinuity、完成重播、死亡后不被旧包复活。JVM真实逻辑测试通过。
-- 下一项：Messenger服务与客户端、取消/换歌/失联/解绑资源，状态事件唤醒暂停中的UI；
-  编译后建立隔离应用ID的设备探针，不覆盖用户当前播放器。当前adb无设备。
+- 已实现Messenger服务与客户端、取消/换歌/失联/解绑资源，状态事件唤醒暂停中的UI；
+  普通APK与隔离应用ID设备探针构建通过，sample全套JVM测试通过。当前adb无设备，探针未运行。
+  运行与准确验证边界见docs/android-playback-process.md。下一项：设备隔离探针、文档URI权限和
+  真实歌曲控制/生命周期验证，再以两进程合计PSS/CPU和帧分布判断收益。
 - 验收须证明实际服务PID不同、控制/媒体位置可用、UI不逐帧IPC、故障及关闭后释放；
   不把能构建当成设备或帧率通过。进程隔离不承诺减少UI卷积成本或总内存。
 
@@ -26,7 +28,7 @@
 - Android进程调查完成（docs/android-playback-process.md）：主线程创建/操作MediaPlayer、每帧poll；Manifest无播放Service。
   调查提交8cbbebb。
   远程Service可行但不会移走UI卷积热点，需Binder状态/故障/生命周期边界；不能仅加process属性。
-  官方正文已核对；保留同进程专用Looper优先对比路径，尚未实施进程/线程迁移或声称实测收益。
+  官方正文已核对；进程/线程迁移现已按用户授权实施，仍未声称实测收益。
   Kotlin/Native数学库未测，完整Native UI依赖限制不等于数学库不可行；本轮复用现有Rust工具链。
 
 ## 2026-11-16 卡顿优化（当前继续点）

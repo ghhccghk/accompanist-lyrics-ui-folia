@@ -17,6 +17,8 @@ interface LocalAudioPlayer {
     val durationMillis: Long
     val snapshot: FoliaPlaybackSnapshot
     val isSeeking: Boolean get() = false
+    /** Asynchronous transport events; default desktop transport remains polled. */
+    val updateRevision: Long get() = 0
     fun poll()
     fun play()
     fun pause()

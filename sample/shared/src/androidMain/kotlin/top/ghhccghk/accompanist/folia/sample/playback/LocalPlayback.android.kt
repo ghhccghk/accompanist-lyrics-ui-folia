@@ -2,7 +2,6 @@ package top.ghhccghk.accompanist.folia.sample.playback
 
 import android.content.Context
 import android.media.MediaMetadataRetriever
-import android.media.MediaPlayer
 import android.net.Uri
 import android.provider.OpenableColumns
 import android.graphics.BitmapFactory
@@ -13,10 +12,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import top.ghhccghk.accompanist.folia.sample.importing.*
-import top.ghhccghk.accompanist.lyrics.folia.FoliaPlaybackSnapshot
 import kotlinx.coroutines.*
-import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
 
 class AndroidSongFile(val context: Context, val uri: Uri, override val name: String) : LyricsSource {
     override suspend fun read() = withContext(Dispatchers.IO) {
@@ -64,41 +60,15 @@ suspend fun prepareAndroidAudio(source: LyricsSource): LocalAudioPlayer {
                 })
         } finally { retriever.release() }
     }
-    return withContext(Dispatchers.Main.immediate) { suspendCancellableCoroutine { continuation ->
-        val player = MediaPlayer()
-        continuation.invokeOnCancellation { player.release() }
-        player.setOnPreparedListener { if (continuation.isActive) continuation.resume(AndroidAudioPlayer(player, metadata)) }
-        player.setOnErrorListener { _, what, extra ->
-            if (continuation.isActive) { player.release(); continuation.resumeWithException(IllegalStateException("无法解码音频（" + what + " / " + extra + "）")) }; true
+    var candidate: RemoteAndroidAudioPlayer? = null
+    try {
+        return withContext(Dispatchers.Main.immediate) {
+            RemoteAndroidAudioPlayer(file.context,file.uri,metadata).also { candidate = it }.prepare()
         }
-        try { player.setDataSource(file.context, file.uri); player.prepareAsync() }
-        catch (failure: Exception) { player.release(); if(continuation.isActive) continuation.resumeWithException(failure) }
-    } }
-}
-internal class AndroidAudioPlayer(private val player: MediaPlayer, override val metadata: SongMetadata) : LocalAudioPlayer {
-    override val durationMillis = player.duration.toLong().coerceAtLeast(1)
-    override var snapshot by mutableStateOf(FoliaPlaybackSnapshot(0,false)); private set
-    private var discontinuity = 1L
-    private var closed = false
-    private var seeking: Long? = null
-    override val isSeeking get() = seeking != null
-    private var buffering = false
-    private var failure: String? = null
-    init {
-        player.setOnSeekCompleteListener { seeking = null; poll() }
-        player.setOnCompletionListener { snapshot = FoliaPlaybackSnapshot(durationMillis,false,discontinuity) }
-        player.setOnInfoListener { _, what, _ ->
-            if (what == MediaPlayer.MEDIA_INFO_BUFFERING_START) buffering = true
-            if (what == MediaPlayer.MEDIA_INFO_BUFFERING_END) buffering = false
-            poll()
-            false
-        }
-        player.setOnErrorListener { _, what, extra -> failure = "播放失败（" + what + " / " + extra + "）"; snapshot = snapshot.copy(isPlaying=false); true }
+    } catch (failure: Throwable) {
+        // withContext may discard a successful result when the caller is
+        // cancelled during the dispatcher hop. Preserve resource ownership.
+        withContext(NonCancellable + Dispatchers.Main.immediate) { candidate?.close() }
+        throw failure
     }
-    override fun poll() { if(!closed) { failure?.let { error(it) }; snapshot = FoliaPlaybackSnapshot(seeking ?: player.currentPosition.toLong(), player.isPlaying && seeking == null && !buffering, discontinuity) } }
-    override fun play() { check(!closed); failure?.let { error(it) }; if(snapshot.positionMillis >= durationMillis) seek(0); player.start(); poll() }
-    override fun pause() { if(!closed && failure == null) { if(player.isPlaying) player.pause(); poll() } }
-    override fun seek(positionMillis: Long) { check(!closed); val target=positionMillis.coerceIn(0,durationMillis); seeking=target; discontinuity++; snapshot=FoliaPlaybackSnapshot(target,false,discontinuity)
-        if(android.os.Build.VERSION.SDK_INT>=26) player.seekTo(target,MediaPlayer.SEEK_CLOSEST) else @Suppress("DEPRECATION") player.seekTo(target.toInt()) }
-    override fun close() { if(!closed) { closed=true; snapshot=snapshot.copy(isPlaying=false); player.release() } }
 }

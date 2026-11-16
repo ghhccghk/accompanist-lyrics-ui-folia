@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-16",
+  "sampleJvmTests": {
+    "tests": 42,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "androidNormalApkBuild": "passed",
+  "androidIsolatedProbeApksBuild": "passed",
+  "normalMergedManifest": {
+    "package": "top.ghhccghk.accompanist.folia.sample",
+    "service": "top.ghhccghk.accompanist.folia.sample.playback.RemotePlaybackService",
+    "process": ":playback",
+    "exported": false
+  },
+  "artifactsSha256": {
+    "build\\outputs\\folia-sample-playback-process-debug.apk": "18279ef0cd446bed818288d3687b4b3a4516d1fac2a0e3cd68bb8519c8db5e80",
+    "build\\outputs\\playback-process-probe\\probe.apk": "ae5dd28409ee3054af5989f2f9729cacfbf32aa81d6ee9dcf9f065efca9b6998",
+    "build\\outputs\\playback-process-probe\\probe-test.apk": "6c3c54a9821eb8e7e8075b0158897eb6945f21f11cfe37a861c1638d634fcffd"
+  },
+  "deviceRun": "not run: adb devices empty; no emulator executable",
+  "performance": "not measured; no playback smoothness or total memory benefit claimed",
+  "existingUserPlayer": "not installed, launched or stopped",
+  "sourceCommitMirror": "fa4565b"
+}

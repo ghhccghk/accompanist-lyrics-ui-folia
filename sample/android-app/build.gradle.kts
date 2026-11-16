@@ -57,6 +57,7 @@ val parityAssets = tasks.register<PrepareClassicParityAssets>("prepareClassicPar
 androidComponents.onVariants(androidComponents.selector().withBuildType("debug")) { variant ->
     variant.sources.assets?.addGeneratedSourceDirectory(parityAssets, PrepareClassicParityAssets::outputDirectory)
 }
+val playbackProbe = providers.gradleProperty("foliaPlaybackProbe").map { it == "true" }.orElse(false)
 android {
     namespace = "top.ghhccghk.accompanist.folia.sample"
     compileSdk = 37
@@ -66,7 +67,10 @@ android {
         targetSdk = 37
         versionCode = 1
         versionName = "0.1.0"
-        testInstrumentationRunner = "top.ghhccghk.accompanist.folia.sample.NativeMaskDeviceProbe"
+        if (playbackProbe.get()) applicationIdSuffix = ".playbackprobe"
+        testInstrumentationRunner = if (playbackProbe.get())
+            "top.ghhccghk.accompanist.folia.sample.PlaybackProcessDeviceProbe"
+        else "top.ghhccghk.accompanist.folia.sample.NativeMaskDeviceProbe"
     }
     buildFeatures { compose = true }
 }

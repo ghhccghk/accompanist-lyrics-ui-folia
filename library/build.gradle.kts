@@ -46,6 +46,25 @@ tasks.withType<Test>().configureEach {
 }
 // Development-only JNI experiment. No Rust task or runtime dependency in the
 // library, ordinary tests, or publications. Sample native packaging is separate.
+val compileNativeColourProbe by tasks.registering(JavaCompile::class) {
+    source(rootProject.file("verification/playback-stutter/native-colour/NativeColorExperiment.java"))
+    classpath = files()
+    destinationDirectory.set(layout.buildDirectory.dir("nativeColourProbe/classes"))
+    javaCompiler.set(javaToolchains.compilerFor { languageVersion.set(JavaLanguageVersion.of(21)) })
+    options.release.set(8)
+}
+tasks.register<JavaExec>("jvmNativeColourProbe") {
+    dependsOn("jvmTestClasses", compileNativeColourProbe)
+    classpath = tasks.named<Test>("jvmTest").get().classpath + files(compileNativeColourProbe.map { it.destinationDirectory })
+    mainClass.set("top.ghhccghk.accompanist.lyrics.folia.NativeColorExperiment")
+    javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(21)) })
+    jvmArgs("-Xcheck:jni", "-Xmx512m")
+    doFirst {
+        val nativeDll = providers.gradleProperty("foliaNativeMaskDll")
+        require(nativeDll.isPresent) { "Provide -PfoliaNativeMaskDll=<locally built experimental library>" }
+        args(nativeDll.get(), "jvm")
+    }
+}
 tasks.register<JavaExec>("jvmNativeMaskProbe") {
     dependsOn("jvmTestClasses")
     classpath = tasks.named<Test>("jvmTest").get().classpath

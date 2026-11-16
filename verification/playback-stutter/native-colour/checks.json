@@ -1,0 +1,39 @@
+{
+  "jvm-initial": {
+    "numericParityCases": 324,
+    "timedCases": 36,
+    "sameOutputHashes": true
+  },
+  "jvm-final-1": {
+    "numericParityCases": 324,
+    "timedCases": 36,
+    "sameOutputHashes": true
+  },
+  "jvm-final-2": {
+    "numericParityCases": 324,
+    "timedCases": 36,
+    "sameOutputHashes": true
+  },
+  "android-initial": {
+    "numericParityCases": 324,
+    "timedCases": 36,
+    "sameOutputHashes": true
+  },
+  "android-final-1": {
+    "numericParityCases": 324,
+    "timedCases": 36,
+    "sameOutputHashes": true
+  },
+  "android-final-2": {
+    "numericParityCases": 324,
+    "timedCases": 36,
+    "sameOutputHashes": true
+  },
+  "limitations": [
+    "Synthetic full bitmap preparation only; no frame rate or playback gain claim.",
+    "216 input parity cases plus 36 warm, 36 timed and 36 cold comparisons = 324.",
+    "Native workspace cold allocation has 5 samples, warm timing 25, 12 warmups; hot buffers persist between calls.",
+    "Native memory is additional direct memory, not a total memory saving.",
+    "Android/JVM bitmap roundtrips differ; compare within each platform only."
+  ]
+}

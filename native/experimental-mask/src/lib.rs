@@ -2,6 +2,7 @@
 //! Same six passes and per-axis rounding as the independent Kotlin GlowMask.kt.
 use jni_sys::{jclass, jint, jobject, JNIEnv};
 use std::{mem::align_of, panic::catch_unwind};
+mod color;
 
 fn box_pass(input: &[f64], output: &mut [f64], width: usize, height: usize,
             window: usize, horizontal: bool, origin: isize) {

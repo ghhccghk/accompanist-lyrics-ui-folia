@@ -1,5 +1,17 @@
 # 后续实施清单 — 2026-11-15
 
+## 2026-11-16 Native数学热点实验（最新继续点）
+
+- 目标：迁移真实CPU热点，与优化后Kotlin比较，必须包含JNI/复制并保持像素和媒体行为。
+- 完成小sigma预乘颜色卷积Rust原型：Windows/Android两ABI构建；两平台各两轮真实JNI
+  324项/轮ARGB与几何相同，错误buffer拒绝通过；所有数据见verification/playback-stutter/native-colour。
+  初版桌面退化已保留，最终连续行累加更快；Android大图观察到收益，小图/桌面仍有不占优项。
+- 尚未作为运行时颜色路径；原遮罩开关仍只控制遮罩。下一项单独接入可关闭的颜色卷积实验，
+  验证经典/云阶整帧、暂停/seek/错误回退，再做受控真实歌曲A/B。
+- Android进程调查同时进行：现状是主线程创建/操作MediaPlayer、每帧poll；Manifest无播放Service。
+  远程Service可行但不会移走UI卷积热点，需Binder状态/故障/生命周期边界；不能仅加process属性。
+  Kotlin/Native数学库未测，完整Native UI依赖限制不等于数学库不可行；本轮复用现有Rust工具链。
+
 ## 2026-11-16 卡顿优化（当前继续点）
 
 - 已提交9d40a77：按实际像素复用白色/中性色重复卷积，保持全部像素/原点/尺寸。

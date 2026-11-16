@@ -6,8 +6,8 @@ different directory and built using a compatible Gradle 9.5.0 installation/wrapp
 
 From the repository root, with JDK 21 installed and ANDROID_HOME set, run:
 
-```powershell
-./scripts/verify-consumer.ps1
+```sh
+python3 scripts/verify-consumer.py
 ```
 
 The script builds a file Maven repository under root build/local-maven, then
@@ -24,3 +24,5 @@ gradle -PfoliaRepository=file:///path/to/local-maven jvmTest compileAndroidMain
 The tested coordinate is `top.ghhccghk.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`.
 Android compilation is not device execution. External binary distribution and a
 complete transitive notice audit remain separate delivery requirements.
+
+The Python 3 stdlib verifier supports Windows, Linux and macOS; on Windows use `python` if `python3` is unavailable. Neither publication nor this consumer requires Cargo.

@@ -45,7 +45,7 @@ tasks.withType<Test>().configureEach {
     inputs.dir(rootProject.file("verification/assets"))
 }
 // Development-only JNI experiment. No Rust task or runtime dependency in the
-// library, ordinary tests, sample, or publications. Missing DLL fails explicitly.
+// library, ordinary tests, or publications. Sample native packaging is separate.
 tasks.register<JavaExec>("jvmNativeMaskProbe") {
     dependsOn("jvmTestClasses")
     classpath = tasks.named<Test>("jvmTest").get().classpath

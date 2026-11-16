@@ -70,7 +70,7 @@ rustup target add aarch64-linux-android x86_64-linux-android --toolchain 1.91.1
 
 可用 `-PfoliaRustCargo=<cargo.exe>` 选择私有安装，`CARGO_HOME`/`RUSTUP_HOME`沿用
 调用环境。Gradle 为 Android sample 各构建变体生成／打包 jniLibs；库 AAR/Maven 产物
-不依赖 Cargo，不包含该 native 运行时。构建脚本目前支持 Windows NDK host。
+不依赖 Cargo，不包含该 native 运行时。构建脚本按主机选择Windows PowerShell或Linux/macOS sh；后两者尚无真实构建结果。
 NDK 链接目标 API23，显式 16 KiB ELF 页对齐。
 
 显式关闭 native 的 Kotlin sample 构建：
@@ -79,10 +79,11 @@ NDK 链接目标 API23，显式 16 KiB ELF 页对齐。
 ./gradlew.bat :sample:android-app:assembleDebug :sample:desktop-app:compileKotlin -PfoliaExperimentalMask=false
 ```
 
-Desktop Windows x64 默认捆绑 DLL 为 sample-shared JAR 资源，首次打开开关时解包到独立临时目录并绝对路径加载；无需修改全局 PATH。关闭开关不卸载 JVM 已加载的 DLL。
-非 Windows 主机默认不构建此 Windows 专用 DLL。显式外部覆盖支持 VM 参数
+Desktop 按当前主机默认捆绑 Windows DLL、Linux .so 或 macOS .dylib 为 sample-shared JAR 资源，首次打开开关时解包到独立临时目录并绝对路径加载；无需修改全局 PATH。关闭开关不卸载 JVM 已加载的 DLL。
+支持的Desktop资源标识为windows-x86_64、linux-x86_64/aarch64、macos-x86_64/aarch64。
+源码与脚本已接入Linux/macOS；实际native构建/加载目前仅在Windows验证。显式外部覆盖支持 VM 参数
 `-Dfolia.mask.library=<DLL绝对路径>`，错误的显式路径会报告失败，不悄悄换用内置库。
-可用 `-PfoliaNativeMaskDirectory=<含DLL目录>` 跳过 Desktop Cargo 构建、打包已编译 DLL。
+可用 `-PfoliaNativeMaskDirectory=<含DLL目录>` 跳过 Desktop Cargo 构建、打包当前平台已编译的动态库。
 Android 仍通过系统 APK native loader 加载 .so，错误提示分平台提供。
 
 默认 sample 构建需要 Rust；两个 sample 都可用 `-PfoliaExperimentalMask=false` 排除 native。
@@ -122,3 +123,5 @@ Android默认debug APK两ABI、16KiB对齐和签名通过；本轮没有设备�
 库只增加 scoped `ExperimentalFoliaMaskProcessor`／`LocalFoliaMaskProcessor` 窄边界，
 默认 null 使用原 Kotlin。native 适配、装载、统计、开关和构建只属于 sample。
 Rust 内核仍为本项目独立编写的现有 Kotlin CPU 遮罩等价实现，jni-sys 归属不变。
+
+本轮内存修复及实际限制见 `verification/playback-stutter/memory/README.md`。当前测试APK：`build/outputs/folia-sample-native-memory-debug.apk`；本轮未替换设备上的应用。跨平台构建与Maven说明见 [BUILDING.md](BUILDING.md)。

@@ -7,13 +7,16 @@
 - 已提交28f59ad：Android默认两ABI、Windows sample JAR捆绑DLL和分平台加载/诊断。
   JDK21/JBR25空library.path的真实JNI通过；缺库UI回退三测试通过；false构建无残留。
   默认Android debug APK两ABI/16KiB/签名检查通过，本轮未做设备UI运行。
-- 内存修复：复用卷积数组、全尺寸时免裁剪复制、恢复native时释放软件帧引用。
+- 已提交a01afca，内存修复：复用卷积数组、全尺寸时免裁剪复制、恢复native时释放软件帧引用。
   JVM640×320每次少约2.34MiB；Android合成大图两轮少12.6%–13.7%托管分配。
   405组像素、原版CSS覆盖及云阶30场景暂停/seek检查通过。CPU耗时波动，不宣称稳定提速。
   证据：verification/playback-stutter/memory。
 - 仍未解决：嵌套tiny-sigma软件回退、同步准备、真实播放停顿及进程内存峰值。
   不能把本轮分配下降当成整会话PSS或FPS改善。
-- 下一项：同设备同歌固定片段/设置复测，再回到倾诉及classic上游视觉残差。
+- 已提交240c10e：Cargo缺PATH自动定位已有私有工具链；Linux/macOS sh构建与平台资源选择已接入。
+  Windows默认无Cargo参数的真实构建/加载通过；Unix脚本仅编排测试，实际主机尚未验证。
+- Maven三个变体、许可声明和独立消费已通过，便携Python验证脚本支持三主机。未远程发布。
+- 下一项：同设备同歌固定片段/设置复测；有Linux/macOS环境后实测；再回到倾诉及classic上游视觉残差。
   用户Desktop Gradle配置与daemon属性保留，不暂存。
 
 

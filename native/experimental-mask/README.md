@@ -1,8 +1,7 @@
 # Experimental Rust coverage kernel
 
 Optional CPU mask experiment authorized 2026-11-16. The sample now has a scoped
-Kotlin/Rust switch; default remains Kotlin. Android sample now packages arm64-v8a / x86_64 JNI by default; Windows x64 sample
-bundles the DLL in its JAR. Use `-PfoliaExperimentalMask=false` for sample builds
+Kotlin/Rust switch; default remains Kotlin. Android sample now packages arm64-v8a / x86_64 JNI by default; Desktop sample bundles the host DLL/.so/.dylib in its JAR. Use `-PfoliaExperimentalMask=false` for sample builds
 without Cargo/native. Library-only builds/publications still need no Cargo or native runtime. This is not the larger scene/animation ABI.
 See [sample setup, verification, and device limitations](../../docs/native-mask-sample.md).
 
@@ -21,6 +20,11 @@ For an installed Rust Windows GNU host without GCC, from repository root use:
 
 `-Cargo <cargo.exe>` can select a private installation; the script derives paths
 from rustc sysroot and does not edit user PATH, registry or Gradle runtime settings.
+Unix hosts use `sh native/experimental-mask/build-desktop.sh`; Android Gradle
+selects build-android.sh on Linux/macOS. Only Windows has actual native compile/load
+evidence here; Unix helper mock tests verify arguments, quoting and failure
+propagation, not native compilation. See docs/BUILDING.md for limits.
+
 The validated local toolchain is x86_64-pc-windows-gnu, Rust LLD, self-contained CRT,
 with explicit `DllMainCRTStartup` required by this linker combination. DLL depends
 on Windows system libraries. Android r28c shared libraries are built/packaging-checked;

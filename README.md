@@ -12,8 +12,10 @@ Kotlin 包名前缀为 `top.ghhccghk.accompanist.lyrics.folia`。示例包名也
 
 当前为可构建、可运行的开发版本，尚未完成首版全部验收，也没有公开发布。
 两端示例默认待选歌，用户选择本地音频后真实播放；歌词和翻译可选。原创合成场景和
-无音频时钟位于“开发／演示”入口。无需原工程、lyrics-ui、SPW、外部播放器、Rust
-或 NDK。平台格式限制与实际运行证据见 [本地播放](docs/local-playback.md)。
+无音频时钟位于“开发／演示”入口。无需原工程、lyrics-ui、SPW或外部播放器。
+库独立使用不需要Rust；sample默认打包实验Rust遮罩，运行时仍默认Kotlin。
+无Rust/NDK时可给sample构建传入 `-PfoliaExperimentalMask=false`。
+平台格式限制与实际运行证据见 [本地播放](docs/local-playback.md)。
 
 - classic 安全文字分组、确定性词位姿、spring、计时颜色、缓存辉光、呼吸、整句退出。
 - 云阶Partita已有独立阶梯块、块级入场、引导线和逐词/字素辉光，处于移植校准阶段，
@@ -40,7 +42,10 @@ Kotlin 包名前缀为 `top.ghhccghk.accompanist.lyrics.folia`。示例包名也
 Activity Compose 1.13.0、ICU4J 78.3 和 kotlinx.coroutines 1.11.0。
 **安装 JDK 21**：JVM 编译／测试显式选择 21，避免 daemon 版本改变产物字节码。
 Android 构建需要 SDK platform 37；设置 `ANDROID_HOME` 或未跟踪的 `local.properties`。
-构建脚本没有开发者 SDK 或原工程路径。
+构建脚本没有开发者 SDK 或原工程路径。默认Android sample另需NDK28.2.13676358、
+Rust1.91.1及两个Android target；Windows sample默认构建并捆绑x64 DLL。
+安装步骤与显式关闭方式见 [Rust sample](docs/native-mask-sample.md)。
+Windows/Linux/macOS构建路径、真实验证范围与Maven命令见 [构建说明](docs/BUILDING.md)。
 
 ```powershell
 .\gradlew.bat :sample:desktop-app:run
@@ -122,8 +127,8 @@ fun LyricsPane(
 | 独立工程、模型、索引、时钟、两端示例 | 已实现并构建／逻辑验证 |
 | classic 和交互 | 已有固定原版数值／DOM和JVM／API30／34画面对照；完整视觉、真实窗口连续录屏及实机待验收 |
 | 导入、设置、生命周期 | 已实现；跨进程导入历史和部分原生边界待补 |
-| Kotlin 优化 | 保留已有索引／遮罩优化；旧渲染性能数据不代表当前版本；效果验收前暂缓进一步优化 |
-| Rust | 未引入；现有测量不足以支持进入实验 |
+| Kotlin 优化 | 已按真实歌曲采样修复软件模糊热点；内存分配检查见verification/playback-stutter，整会话改善仍待复测 |
+| Rust | sample CPU遮罩实验已接入；默认Kotlin，局部像素对照通过，不宣称全帧提速 |
 | 本地产物／独立消费 | 干净源码导出构建及独立消费已通过；完整传递依赖审计、CI 和正式验收待完成 |
 
 详细证据：[Android 运行检查](docs/android-smoke.md)、[性能测量](docs/performance.md)、

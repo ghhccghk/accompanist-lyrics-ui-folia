@@ -1,0 +1,76 @@
+{
+  "apk": "build/outputs/folia-sample-native-colour-debug.apk",
+  "apkSha256": "87a0f1d979523030d0043c59950cc87a23438b0965087efe2a21255434aa498e",
+  "payload": {
+    "arm64-v8a": {
+      "bytes": 329352,
+      "sha256": "431d124c12dcdd85e696bbabd3b66e7dc9635129498a86373562086b4b31b47d",
+      "loadAlignment": [
+        16384,
+        16384,
+        16384,
+        16384
+      ],
+      "colourAndMaskSymbols": true
+    },
+    "x86_64": {
+      "bytes": 365072,
+      "sha256": "ff0676c8d2ea6f24c8035760dbb6731240cee11b18f9e3fc5503bad351a17efc",
+      "loadAlignment": [
+        16384,
+        16384,
+        16384,
+        16384
+      ],
+      "colourAndMaskSymbols": true
+    }
+  },
+  "screenshots": [
+    {
+      "theme": "classic",
+      "viewport": [
+        800,
+        600
+      ],
+      "mediaTimeMillis": 950,
+      "exactPngSha256": "a5e1a6764009a356b18ab7c56ac05a7fe9cbb7247363395e1be2cfa3a4c72442"
+    },
+    {
+      "theme": "classic",
+      "viewport": [
+        380,
+        600
+      ],
+      "mediaTimeMillis": 950,
+      "exactPngSha256": "783a74190140b860fbddfc76a2d8ce29a2e3c9707e4a185b3a3b96e2a52ab8b4"
+    },
+    {
+      "theme": "partita",
+      "viewport": [
+        800,
+        600
+      ],
+      "mediaTimeMillis": 950,
+      "exactPngSha256": "6aee02b62bc1a3dcdebf23477c92030a3d9e2e691fed9ea1dcc3baa12294f655"
+    },
+    {
+      "theme": "partita",
+      "viewport": [
+        380,
+        600
+      ],
+      "mediaTimeMillis": 950,
+      "exactPngSha256": "60d535f9f5fdacd653ac615e1661db2b94b72883dc54d3dac8f08d00beb6c8f3"
+    }
+  ],
+  "wholeFramePairs": 24,
+  "pauseReverseSeekResizeSwitchFallback": true,
+  "sampleAndroidBridge": "216 synthetic exact cases; independent app_process, no installation or UI",
+  "limitations": [
+    "Android UI and controlled playback A/B not run.",
+    "JVM colour frames forced software on both sides.",
+    "Linux/macOS runtime and Android x86_64 device not tested."
+  ],
+  "apkSignatureV1V2": true,
+  "signatureWarning": "AGP META-INF app-metadata entry warning retained; no entry removed."
+}

@@ -117,13 +117,13 @@ kotlin {
 }
 
 // Explicit native runtime/UI verification. Ordinary tests don't require a DLL.
-tasks.named<Test>("jvmTest") { exclude("**/NativeMaskRuntimeTest*") }
+tasks.named<Test>("jvmTest") { exclude("**/NativeMaskRuntimeTest*", "**/NativeColourRuntimeTest*") }
 tasks.register<Test>("jvmNativeMaskRuntimeTest") {
     dependsOn("jvmTestClasses")
     val ordinary = tasks.named<Test>("jvmTest")
     testClassesDirs = ordinary.get().testClassesDirs
     classpath = ordinary.get().classpath
-    include("**/NativeMaskRuntimeTest*")
+    include("**/NativeMaskRuntimeTest*", "**/NativeColourRuntimeTest*")
     workingDir = rootProject.projectDir
     jvmArgs("-Xcheck:jni")
     val directory = providers.gradleProperty("foliaNativeMaskDirectory")

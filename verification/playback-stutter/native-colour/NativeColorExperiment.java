@@ -17,6 +17,8 @@ public final class NativeColorExperiment {
         ByteBuffer alpha, ByteBuffer kernel, ByteBuffer output, int width, int height, int radius);
     private static Method bitmap, blur, read, getWidth, getHeight, getImage, getOrigin;
     private static Workspace workspace;
+    private static Object sampleProcessor;
+    private static Method sampleConvolve;
     private static long checksum;
     private static int parityCases;
 
@@ -67,17 +69,22 @@ public final class NativeColorExperiment {
             cropped=new int[n];
             for(int y=0;y<ch;y++) System.arraycopy(full,(top+y)*w+left,cropped,y*cw,cw);
         }
+        double[] weights=new double[2*radius+1]; double norm=0;
+        for(int i=0;i<weights.length;i++) {
+            weights[i]=Math.exp(-.5*Math.pow(i-radius,2)/(sigma*sigma)); norm+=weights[i];
+        }
+        for(int i=0;i<weights.length;i++) weights[i]/=norm;
+        if(sampleProcessor!=null) {
+            int[] output=(int[])sampleConvolve.invoke(sampleProcessor,cropped,cw,ch,weights);
+            if(output==null) throw new AssertionError("Sample processor unexpectedly fell back");
+            return new Result(image(cw,ch,output),left,top);
+        }
         Workspace work;
         if(cold) work=new Workspace(n);
         else {
             if(workspace==null || workspace.n<n) workspace=new Workspace(n);
             work=workspace;
         }
-        double[] weights=new double[2*radius+1]; double norm=0;
-        for(int i=0;i<weights.length;i++) {
-            weights[i]=Math.exp(-.5*Math.pow(i-radius,2)/(sigma*sigma)); norm+=weights[i];
-        }
-        for(int i=0;i<weights.length;i++) weights[i]/=norm;
         work.source.asIntBuffer().put(cropped); work.kernel.asDoubleBuffer().put(weights);
         int status=convolve(work.source,work.a,work.b,work.alpha,work.kernel,work.output,cw,ch,radius);
         if(status!=0) throw new AssertionError("Native status="+status);
@@ -135,7 +142,7 @@ public final class NativeColorExperiment {
     }
     private static void check(int actual,int expected) { if(actual!=expected) throw new AssertionError(actual+" != "+expected); }
     public static void main(String[] args) throws Exception {
-        if(args.length<2) throw new IllegalArgumentException("absolute library path; android|jvm; optional parity-only");
+        if(args.length<2) throw new IllegalArgumentException("absolute library path; android|jvm; optional parity-only|sample");
         System.load(new File(args[0]).getCanonicalPath());
         String base="top.ghhccghk.accompanist.lyrics.folia.internal.rendering.";
         Class<?> imageType=Class.forName("androidx.compose.ui.graphics.ImageBitmap");
@@ -149,6 +156,13 @@ public final class NativeColorExperiment {
         if(getOrigin==null) throw new AssertionError("No inline origin accessor");
         System.out.println("environment,"+System.getProperty("java.version")+","+System.getProperty("os.name")+","+System.getProperty("os.arch"));
         invalidArguments();
+        if(args.length>2 && args[2].equals("sample")) {
+            Class<?> processor=Class.forName("top.ghhccghk.accompanist.folia.sample.JniColourProcessor");
+            sampleProcessor=processor.getConstructor().newInstance();
+            sampleConvolve=processor.getMethod("convolve",int[].class,int.class,int.class,double[].class);
+            Class<?> bridge=Class.forName("top.ghhccghk.accompanist.folia.sample.NativeColourBridge");
+            if(!bridge.getMethod("version").invoke(null).equals(1)) throw new AssertionError("Sample colour ABI");
+        }
         for(int[] size:new int[][]{{1,1},{1,9},{9,1},{3,7},{97,43},{320,160}})
             for(String mode:new String[]{"white","neutral","colour"}) for(boolean padded:new boolean[]{false,true}) {
                 Object source=synthetic(size[0],size[1],mode,padded);
@@ -156,6 +170,17 @@ public final class NativeColorExperiment {
                     compare(kotlin(source,sigma),rust(source,sigma,false),Arrays.toString(size)+mode+sigma+padded);
             }
         System.out.println("parityCases,"+parityCases+",ABI-validation,passed");
+        if(sampleProcessor!=null) {
+            int[] limitInput=new int[1024*1024]; // Rejected before any native workspace allocation.
+            if(sampleConvolve.invoke(sampleProcessor,limitInput,1024,1024,new double[]{0,1,0})!=null)
+                throw new AssertionError("32MiB budget must fall back");
+            Object stats=sampleProcessor.getClass().getMethod("stats").invoke(sampleProcessor);
+            String error=(String)stats.getClass().getMethod("getError").invoke(stats);
+            if(error==null || !error.contains("32 MiB")) throw new AssertionError("Missing budget error: "+error);
+            sampleProcessor.getClass().getMethod("release").invoke(sampleProcessor);
+            System.out.println("sample-bridge,216 exact pixels/geometry cases,ABI and budget fallback and release passed; no UI or player claim");
+            return;
+        }
         if(args.length>2 && args[2].equals("parity-only")) return;
         System.out.println("width,height,mode,sigma,path,p50Ms,p95Ms,retainedDirectBytes,sha256");
         for(int[] size:new int[][]{{97,43},{640,320},{1200,500}}) for(String mode:new String[]{"white","neutral","colour"}) {

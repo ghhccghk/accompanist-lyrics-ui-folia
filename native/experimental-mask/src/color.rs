@@ -73,9 +73,24 @@ fn convolve(pixels: &[u32], a: &mut [f64], b: &mut [f64], alpha: &mut [f64],
 
 fn round(value: f64) -> u32 { (value + 0.5).floor().clamp(0.0, 255.0) as u32 }
 
+#[no_mangle]
+pub extern "system" fn Java_top_ghhccghk_accompanist_folia_sample_NativeColourBridge_version(
+    _env: *mut JNIEnv, _class: jclass,
+) -> jint { 1 }
+
+#[no_mangle]
+pub unsafe extern "system" fn Java_top_ghhccghk_accompanist_folia_sample_NativeColourBridge_convolve(
+    env: *mut JNIEnv, class: jclass, source: jobject, a: jobject, b: jobject,
+    alpha: jobject, kernel: jobject, output: jobject, width: jint, height: jint, radius: jint,
+) -> jint {
+    Java_top_ghhccghk_accompanist_lyrics_folia_NativeColorExperiment_convolve(
+        env,class,source,a,b,alpha,kernel,output,width,height,radius)
+}
+
 /// Probe-only JNI ABI. All buffers are native-order ByteBuffers. No retained
 /// addresses, native allocations, threads, or renderer state. Status codes match
 /// the mask experiment: 0 success, 1 invalid input, 2 overlap, 3 caught panic.
+/// The caller must not mutate inputs or access scratch/output during the call.
 #[no_mangle]
 pub unsafe extern "system" fn Java_top_ghhccghk_accompanist_lyrics_folia_NativeColorExperiment_convolve(
     env: *mut JNIEnv, _class: jclass, source: jobject, scratch_a: jobject,

@@ -45,8 +45,11 @@ class SampleMaskBackend {
 @Composable
 internal fun SampleMaskScope(session: SampleSession, content: @Composable () -> Unit) {
     val processor = session.maskBackend.processor
+    val colour = session.colourBackend.processor
     DisposableEffect(processor) { onDispose { processor?.release() } }
-    CompositionLocalProvider(LocalFoliaMaskProcessor provides processor, content = content)
+    DisposableEffect(colour) { onDispose { colour?.release() } }
+    CompositionLocalProvider(LocalFoliaMaskProcessor provides processor,
+        LocalFoliaColourProcessor provides colour, content = content)
 }
 
 @Composable
@@ -75,4 +78,5 @@ internal fun ExperimentalMaskControls(session: SampleSession) {
     if (stats.calls > 0) Text("JNI 遮罩累计 ${stats.millis.toLong()} ms（含复制；不是帧耗时）")
     Text("默认 Kotlin。仅切换流光／云阶辉光准备；文字排版、动画及绘制仍为 Kotlin/Compose。" +
         "切换会重建遮罩，保持播放位置。最简画质可能没有遮罩调用。", style = MaterialTheme.typography.bodySmall)
+    ExperimentalColourControls(session)
 }

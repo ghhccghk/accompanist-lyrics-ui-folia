@@ -3,6 +3,7 @@ package top.ghhccghk.accompanist.lyrics.folia.internal.rendering
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.ImageBitmap
 import kotlin.math.*
+import top.ghhccghk.accompanist.lyrics.folia.ExperimentalFoliaColourProcessor
 
 internal data class BlurredPixels(val image: ImageBitmap, val origin: Offset)
 
@@ -12,7 +13,11 @@ internal data class BlurredPixels(val image: ImageBitmap, val origin: Offset)
  * Match the three-box CSS/Skia coverage kernel at sigma >= 2; retain the finite
  * Gaussian for small sigmas where the integer box approximation is unsuitable.
  * This correctness fallback deliberately makes no real-time performance promise. */
-internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels {
+internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels =
+    blurPremultiplied(source, sigma, null)
+
+internal fun blurPremultiplied(source: ImageBitmap, sigma: Float,
+    processor: ExperimentalFoliaColourProcessor?): BlurredPixels {
     require(sigma.isFinite() && sigma > 0f)
     // Android ImageBitmap dimensions cross into Bitmap/JNI. Keep those reads
     // outside pixel loops, including the padded transparent-area scan.
@@ -46,6 +51,12 @@ internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels
         exp(-.5*(i-radius).toDouble().pow(2)/(sigma*sigma))
     }.also { values -> val norm=values.sum(); for (i in values.indices) values[i] /= norm }
         else doubleArrayOf()
+    if (sigma < 2f && processor != null) {
+        processor.convolve(pixels,width,height,kernel)?.let { output ->
+            require(output.size == count) { "Invalid experimental colour output" }
+            return BlurredPixels(bitmapFromArgb(width,height,output),Offset(left.toFloat(),top.toFloat()))
+        }
+    }
     val input = DoubleArray(count)
     val temporary = DoubleArray(count)
     val alpha = DoubleArray(count)

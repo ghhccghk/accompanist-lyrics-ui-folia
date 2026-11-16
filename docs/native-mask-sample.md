@@ -1,5 +1,10 @@
 # 示例 Rust 遮罩 A/B 开关 — 2026-11-16
 
+2026-11-16追加：
+
+新增独立“实验 Rust 颜色卷积”开关，作用及验证见[native-colour-sample.md](native-colour-sample.md)。
+本文遮罩开关的范围不变，不能由遮罩调用次数推断颜色卷积或全部渲染已经native化。
+
 用户要求先提供示例开关供真实设备测试。本次只把已有 Rust CPU alpha 遮罩内核
 接入流光 classic／云阶 Partita 的辉光准备，包括云阶引导线。不改变排版、shaping、
 内部字素时间、媒体时间、动画及 Compose 绘制；不是完整 native 渲染器。

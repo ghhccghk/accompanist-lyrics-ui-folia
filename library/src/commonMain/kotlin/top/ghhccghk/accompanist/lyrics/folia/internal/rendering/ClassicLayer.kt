@@ -9,6 +9,8 @@ import androidx.compose.ui.graphics.layer.GraphicsLayer
 import androidx.compose.ui.graphics.layer.CompositingStrategy
 import androidx.compose.ui.graphics.layer.drawLayer
 import androidx.compose.ui.unit.*
+import top.ghhccghk.accompanist.lyrics.folia.ExperimentalFoliaColourProcessor
+import top.ghhccghk.accompanist.lyrics.folia.LocalFoliaColourProcessor
 
 /** Compose/AOSP radius conversion is sigma = .57735 * radius + .5.
  * CSS blur() already specifies sigma; invert once at the platform boundary. */
@@ -24,7 +26,8 @@ internal val LocalClassicSoftwareLayers = staticCompositionLocalOf { false }
 internal fun rememberClassicLayer(): ClassicLayer {
     val native = rememberGraphicsLayer()
     val software = LocalClassicSoftwareLayers.current || !supportsNativeBlurLayers()
-    val layer = remember(native, software) { ClassicLayer(native, software) }
+    val colour = LocalFoliaColourProcessor.current
+    val layer = remember(native, software, colour) { ClassicLayer(native, software, colour) }
     DisposableEffect(layer) { onDispose { layer.release() } }
     return layer
 }
@@ -32,7 +35,8 @@ internal fun rememberClassicLayer(): ClassicLayer {
 /** Group opacity and blur must work together, including on pre-31 Android.
  * Software recording uses the same intact shaped paragraphs and draw commands;
  * it never attempts to draw a hardware RenderNode into a software Canvas. */
-internal class ClassicLayer(private val native: GraphicsLayer, private val software: Boolean) {
+internal class ClassicLayer(private val native: GraphicsLayer, private val software: Boolean,
+    private val colour: ExperimentalFoliaColourProcessor? = null) {
     var alpha = 1f
     var blurSigma = 0f
     var forceOffscreen = false
@@ -69,7 +73,7 @@ internal class ClassicLayer(private val native: GraphicsLayer, private val softw
                 drawRect(Color.Transparent, blendMode = BlendMode.Clear)
                 block(SoftwareDrawScope(this))
             }
-            painted = if (blurSigma > .01f) blurPremultiplied(image, blurSigma)
+            painted = if (blurSigma > .01f) blurPremultiplied(image, blurSigma, colour)
                 else BlurredPixels(image, Offset.Zero)
         }
         recorded = true

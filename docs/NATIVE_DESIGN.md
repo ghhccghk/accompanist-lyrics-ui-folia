@@ -1,5 +1,9 @@
 # Rust Native 计算后端设计
 
+2026-11-16追加：已实现独立的sample小sigma颜色卷积开关（默认关闭），并非本设计完整session后端。
+与优化Kotlin的真实JNI/整帧对照及平台限制见native-colour-sample.md；遮罩开关仍只控制遮罩。
+未验证真实播放整会话收益，不扩展Rust到标量动画、字体或播放器。
+
 2026-11-16 最新：示例已增加可选 Rust CPU 辉光遮罩开关和真实 JNI 接入，默认 Kotlin。
 Android sample默认打包arm64/x86_64，Windows x64 sample默认捆绑DLL；
 `-PfoliaExperimentalMask=false`可排除native，库产物保持独立。Windows真实JNI/同帧对照通过；

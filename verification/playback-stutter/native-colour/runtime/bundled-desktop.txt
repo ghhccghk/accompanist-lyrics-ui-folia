@@ -1,0 +1,4 @@
+PASS: packaged JAR native library + empty java.library.path + real ABI/startup/convolution + three toggle/release cycles.
+PASS: separate colour ABI/startup/convolution + three toggle/release cycles; mask selection unchanged.
+Runtime: 21.0.5; Eclipse Adoptium; amd64
+No full UI or performance claim.

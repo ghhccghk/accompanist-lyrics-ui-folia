@@ -6,9 +6,14 @@
 - 已提交8362122：小sigma预乘颜色卷积Rust原型，Windows/Android两ABI构建；两平台各两轮真实JNI
   324项/轮ARGB与几何相同，错误buffer拒绝通过；所有数据见verification/playback-stutter/native-colour。
   初版桌面退化已保留，最终连续行累加更快；Android大图观察到收益，小图/桌面仍有不占优项。
-- 尚未作为运行时颜色路径；原遮罩开关仍只控制遮罩。下一项单独接入可关闭的颜色卷积实验，
-  验证经典/云阶整帧、暂停/seek/错误回退，再做受控真实歌曲A/B。
+- 运行时颜色实验已接入单独开关，默认关闭，原遮罩开关仍只控制遮罩。两主题24整帧对照、
+  暂停/反向seek/resize/切回/错误回退与真实JNI调用通过；JVM打包JAR实际加载通过。
+  Android arm64实际sample processor216组像素/几何、预算回退通过，两ABI/16KiB/签名检查通过。
+  未安装APK、未做Android UI/真实歌曲A/B。运行与证据见docs/native-colour-sample.md。
+  下一项：固定片段、画质、100%分辨率，只切换颜色卷积，测帧分布/CPU/总内存；
+  继续同步准备/嵌套软件树优化，不拿局部速度代替核心视觉或流畅验收。
 - Android进程调查完成（docs/android-playback-process.md）：主线程创建/操作MediaPlayer、每帧poll；Manifest无播放Service。
+  调查提交8cbbebb。
   远程Service可行但不会移走UI卷积热点，需Binder状态/故障/生命周期边界；不能仅加process属性。
   官方正文已核对；保留同进程专用Looper优先对比路径，尚未实施进程/线程迁移或声称实测收益。
   Kotlin/Native数学库未测，完整Native UI依赖限制不等于数学库不可行；本轮复用现有Rust工具链。

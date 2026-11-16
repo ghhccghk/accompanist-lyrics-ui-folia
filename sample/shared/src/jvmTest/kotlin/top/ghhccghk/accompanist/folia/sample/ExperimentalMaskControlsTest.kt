@@ -31,6 +31,21 @@ class ExperimentalMaskControlsTest {
             assertFalse(message.contains("请安装 Rust 实验 APK"))
         }
     }
+    @Test fun unavailableColourSwitchIsIndependentAndHonest() = runDesktopComposeUiTest(width=420,height=800) {
+        val session=SampleSession()
+        setContent { FoliaSampleApp(session=session,settingsStore=null) }
+        onNodeWithText("设置").performClick()
+        onNodeWithContentDescription("实验 Rust 颜色卷积").performScrollTo().performClick()
+        runOnIdle {
+            assertTrue(session.colourBackend.requested)
+            assertNull(session.colourBackend.processor)
+            assertTrue(session.colourBackend.loadError!!.contains("UnsatisfiedLinkError"))
+            assertFalse(session.maskBackend.requested)
+        }
+        onNodeWithText("颜色卷积：Kotlin（Rust 不可用／已回退）").performScrollTo().assertExists()
+        onNodeWithContentDescription("实验 Rust 颜色卷积").performScrollTo().performClick()
+        runOnIdle { assertFalse(session.colourBackend.requested); assertFalse(SampleSession().colourBackend.requested) }
+    }
     @Test fun freshLaunchAndUnavailableSwitchAreHonest() = runDesktopComposeUiTest(width = 420, height = 800) {
         val session = SampleSession()
         setContent { FoliaSampleApp(session = session, settingsStore = null) }

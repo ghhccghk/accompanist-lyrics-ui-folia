@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-16",
+  "host": "Windows x64 / Intel i7-12650H / JDK 21 / offscreen Skia",
+  "logs": [
+    ".work/cropped-mask-tests.log",
+    ".work/cropped-mask-scenes-build.log"
+  ],
+  "maskPixelComparisons": 345,
+  "alphaBoundsComparisons": 36,
+  "softwareColorComparisons": 135,
+  "recapturedPngCount": 36,
+  "recapturedPngChanges": 0,
+  "androidBuild": "passed",
+  "sharedAndroidJvmCompile": "passed",
+  "apk": {
+    "path": "build/outputs/folia-sample-stutter-debug.apk",
+    "sha256": "f548962a7213029486110799ab4ec5f76d3e196d8c0d4f49f3803b0559f4934f",
+    "nativeLibraries": [
+      "lib/arm64-v8a/libfolia_mask_experiment.so",
+      "lib/x86_64/libfolia_mask_experiment.so"
+    ],
+    "signatureVerification": "passed (v1/v2)",
+    "signatureLog": ".work/cropped-mask-apksigner.log"
+  },
+  "androidRuntime": "not verified; adb devices empty; no installation",
+  "limitations": [
+    "Isolated JVM timing/allocation, not Android playback/frame/PSS measurements",
+    "Rust processor path unchanged",
+    "Visible nested small-sigma software fallback remains",
+    "Prior upstream raster residuals remain"
+  ]
+}

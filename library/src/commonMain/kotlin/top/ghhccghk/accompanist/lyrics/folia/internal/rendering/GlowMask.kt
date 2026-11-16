@@ -29,19 +29,47 @@ internal fun blurredMasks(source: ImageBitmap, sigmas: FloatArray,
         require(masks.size == sigmas.size && masks.all { it.size == pixels.size }) { "Invalid experimental mask output" }
         return masks.map { bitmapFromArgb(width, height, it) }
     }
-    val a = DoubleArray(pixels.size)
-    val b = DoubleArray(pixels.size)
+    val bounds = alphaBounds(pixels,width,height)
+    if (bounds == null) return sigmas.map { bitmapFromArgb(width,height,IntArray(pixels.size) { 0xFFFFFF }) }
+    // The three finite box passes cannot carry ink beyond this support. Retain
+    // enough zero exterior for every intermediate pass, including even-window
+    // phase offsets. Use the largest radius so scratch is reused across masks.
+    val window = boxWindow(sigmas.maxOrNull()!!)
+    val support = 3 * (window / 2) - if (window % 2 == 0) 1 else 0
+    val left = maxOf(0,bounds.left-support)
+    val top = maxOf(0,bounds.top-support)
+    val right = minOf(width,bounds.right+support)
+    val bottom = minOf(height,bounds.bottom+support)
+    val cropWidth = right-left
+    val cropHeight = bottom-top
+    val fullSurface = cropWidth==width && cropHeight==height
+    val a = DoubleArray(cropWidth*cropHeight)
+    val b = DoubleArray(a.size)
     return sigmas.map { sigma ->
-        for (i in pixels.indices) a[i] = (pixels[i] ushr 24).toDouble()
-        val input = blurBoxCoverage(a,b,width,height,sigma)
-        val result = IntArray(pixels.size) { (input[it].toInt() shl 24) or 0xFFFFFF }
-        bitmapFromArgb(width, height, result)
+        if (fullSurface) for (i in pixels.indices) a[i] = (pixels[i] ushr 24).toDouble()
+        else for (y in 0 until cropHeight) {
+            val sourceRow=(top+y)*width+left
+            val targetRow=y*cropWidth
+            for (x in 0 until cropWidth) a[targetRow+x]=(pixels[sourceRow+x] ushr 24).toDouble()
+        }
+        val input = blurBoxCoverage(a,b,cropWidth,cropHeight,sigma)
+        val result = if (fullSurface) IntArray(pixels.size) { (input[it].toInt() shl 24) or 0xFFFFFF }
+        else IntArray(pixels.size) { 0xFFFFFF }.also { output ->
+            for (y in 0 until cropHeight) {
+                val sourceRow=y*cropWidth
+                val targetRow=(top+y)*width+left
+                for (x in 0 until cropWidth) output[targetRow+x]=(input[sourceRow+x].toInt() shl 24) or 0xFFFFFF
+            }
+        }
+        bitmapFromArgb(width,height,result)
     }
 }
 
+private fun boxWindow(sigma: Float): Int = maxOf(1, floor(sigma * 3 * sqrt(2 * PI) / 4 + .5).toInt())
+
 /** Shared coverage kernel for the pre-31 premultiplied colour fallback. */
 internal fun blurBoxCoverage(a: DoubleArray, b: DoubleArray, width: Int, height: Int, sigma: Float): DoubleArray {
-    val window = maxOf(1, floor(sigma * 3 * sqrt(2 * PI) / 4 + .5).toInt())
+    val window = boxWindow(sigma)
     val widths = intArrayOf(window, window, window + if (window % 2 == 0) 1 else 0)
     var input = a
     var output = b

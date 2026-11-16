@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-16",
+  "baselineSourceCommit": "9f47417",
+  "environment": "Windows x64; JDK21 compilation/test toolchain; offscreen Compose/Skia",
+  "checks": [
+    {
+      "log": "zero-alpha-baseline.log",
+      "buildSuccessful": true,
+      "summary": [
+        "BUILD SUCCESSFUL in 7m 33s",
+        "12 actionable tasks: 7 executed, 5 up-to-date"
+      ]
+    },
+    {
+      "log": "zero-alpha-candidate.log",
+      "buildSuccessful": true,
+      "summary": [
+        "BUILD SUCCESSFUL in 9m 18s",
+        "12 actionable tasks: 7 executed, 5 up-to-date"
+      ]
+    },
+    {
+      "log": "zero-alpha-final-fixed.log",
+      "buildSuccessful": true,
+      "summary": [
+        "BUILD SUCCESSFUL in 8s",
+        "18 actionable tasks: 9 executed, 9 up-to-date"
+      ]
+    }
+  ],
+  "limits": [
+    "No Android device connected during validation.",
+    "No installed package or playback state changed.",
+    "PNG comparison is against frozen previous Kotlin implementation, not new upstream equivalence.",
+    "Task durations include full test harness and are not renderer benchmarks.",
+    "Initial final-check compilation failed from missing import in separate draft mask reference; fixed before passing final checks."
+  ]
+}

@@ -39,8 +39,17 @@ internal class ClassicLayer(private val native: GraphicsLayer, private val softw
     private var bitmap: ImageBitmap? = null
     private var painted: BlurredPixels? = null
     private var softwareFrame = software
+    private var recorded = false
     private val canvasScope = CanvasDrawScope()
     fun record(scope: DrawScope, size: IntSize, block: DrawScope.() -> Unit) {
+        // Group opacity zero cannot contribute pixels, even through a blur.
+        // Skip only exact zero: faint nonzero tails remain part of the effect.
+        // Invalidate the old frame so seek/replay cannot draw stale content.
+        // Callers keep media state and hit geometry outside this drawing block.
+        if (alpha == 0f) {
+            release()
+            return
+        }
         // Native radius APIs cannot express 0 < sigma <= .5. Propagate the
         // software scope into nested groups so none replays a RenderNode here.
         softwareFrame = software || scope is SoftwareDrawScope || (blurSigma > .01f && blurSigma <= .5f)
@@ -63,12 +72,14 @@ internal class ClassicLayer(private val native: GraphicsLayer, private val softw
             painted = if (blurSigma > .01f) blurPremultiplied(image, blurSigma)
                 else BlurredPixels(image, Offset.Zero)
         }
+        recorded = true
     }
     fun draw(scope: DrawScope) = with(scope) {
+        if (!recorded) return@with
         if (!softwareFrame) drawLayer(native)
         else painted?.let { drawImage(it.image, it.origin, alpha = alpha) }
     }
-    fun release() { painted = null; bitmap = null }
+    fun release() { painted = null; bitmap = null; recorded = false }
 }
 
 internal fun DrawScope.drawClassicLayer(layer: ClassicLayer) = layer.draw(this)

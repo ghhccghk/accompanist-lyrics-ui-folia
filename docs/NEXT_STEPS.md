@@ -2,19 +2,24 @@
 
 ## 2026-11-16 卡顿优化（当前继续点）
 
+- 最新真机复采：用户连接设备/配置歌曲后，两轮15秒取得2682/2708样本，均零丢失。
+  已安装APK SHA与8a45ecb优化构建产物完全一致；未安装或操作播放器，原进程持续运行。
+  635/628条保留帧记录，最长602.520/1059.384ms；图层录制含子栈39.484/39.874%、
+  软件blur19.612/20.030%，最长帧均与嵌套绘制/blur/bilerp重叠。
+  尚未达流畅目标；不是同片段A/B，不据此计算前后收益。证据verification/playback-stutter/optimized-capture。
 - 第一项已提交ca9e07c：ClassicLayer精确零alpha不再执行绘制/子树及滤镜，并清空软件帧、禁止重放旧帧。
   frozen旧实现120个组合逐像素一致；528张重采云阶/classic/字幕PNG完全一致；暂停/反向重访通过。
   具体分配测量和限制见verification/playback-stutter/transparent-layers；不宣称整会话提速。
-- 第二项：Kotlin辉光遮罩按有限卷积支持范围缩小临时计算区域，输出尺寸/位置/全部像素保持。
+- 第二项已提交8a45ecb：Kotlin辉光遮罩按有限卷积支持范围缩小临时计算区域，输出尺寸/位置/全部像素保持。
   345张遮罩与全尺寸参考逐像素相同；135组软件颜色blur及原内核对照通过；
   36张新采云阶换行/Arabic/词组图与ca9e07c完全相同，原版几何/暂停/反向seek检查通过。
   JVM640×500留白场景P50 16.73→6.52ms、托管分配12.80→8.01MB；非真机播放结论。
   Rust路径保持原实现；本项不声称Rust或全渲染提速。证据verification/playback-stutter/cropped-masks。
 - Android/JVM共享示例编译、默认含两ABI native的debug APK及签名检查通过；
   包位于build/outputs/folia-sample-stutter-debug.apk，SHA见上述checks.json。
-  设备目前未连接，未安装，没有新APK真机运行结论。
-- 下一项：连接设备后同歌同片段/主题/画质/后端复采CPU、帧记录和内存，与原采样条件对照；
-  再处理可见的小sigma嵌套software路径，不更改blur/opacity曲线或视觉验收标准。
+  本轮真机已确认运行此包，但未建立受控的同片段旧版A/B，也未补完整UI验收。
+- 下一项：优先检查可见的小sigma嵌套software路径及后代栅格尺寸/缩放，
+  以同像素修复降低同步绘制开销，再做同片段A/B；不更改blur/opacity曲线或视觉验收标准。
 - 未解决：非零alpha小sigma整棵树软件回退、同步准备/真实播放峰值，仍需同歌同设备A/B。
 
 ## 2026-11-16 当前真机播放重采

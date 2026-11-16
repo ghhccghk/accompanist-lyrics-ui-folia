@@ -1,0 +1,218 @@
+[
+  {
+    "durationMs": 1059.384083,
+    "offsetSeconds": 4.237447374,
+    "exportedSamples": 260,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 89,
+      "ClassicLayer.record": 201,
+      "GlowMaskKt.blurredMasks": 31,
+      "GlowMaskKt.blurBoxCoverage": 30,
+      "PartitaLineKt": 236,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 72,
+      "gc::": 0,
+      "art::jit::": 1,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 967.525277,
+    "offsetSeconds": 4.220842013,
+    "exportedSamples": 235,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 86,
+      "ClassicLayer.record": 196,
+      "GlowMaskKt.blurredMasks": 16,
+      "GlowMaskKt.blurBoxCoverage": 16,
+      "PartitaLineKt": 215,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 72,
+      "gc::": 0,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 662.723584,
+    "offsetSeconds": 12.356356151,
+    "exportedSamples": 159,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 88,
+      "ClassicLayer.record": 148,
+      "GlowMaskKt.blurredMasks": 0,
+      "GlowMaskKt.blurBoxCoverage": 10,
+      "PartitaLineKt": 148,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 40,
+      "gc::": 7,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 657.333436,
+    "offsetSeconds": 12.372966768,
+    "exportedSamples": 162,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 88,
+      "ClassicLayer.record": 149,
+      "GlowMaskKt.blurredMasks": 0,
+      "GlowMaskKt.blurBoxCoverage": 10,
+      "PartitaLineKt": 149,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 40,
+      "gc::": 7,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 636.403251,
+    "offsetSeconds": 8.40479159,
+    "exportedSamples": 155,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 78,
+      "ClassicLayer.record": 148,
+      "GlowMaskKt.blurredMasks": 0,
+      "GlowMaskKt.blurBoxCoverage": 0,
+      "PartitaLineKt": 148,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 43,
+      "gc::": 0,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 633.767326,
+    "offsetSeconds": 8.421392254,
+    "exportedSamples": 154,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 78,
+      "ClassicLayer.record": 146,
+      "GlowMaskKt.blurredMasks": 0,
+      "GlowMaskKt.blurBoxCoverage": 0,
+      "PartitaLineKt": 146,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 43,
+      "gc::": 0,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 619.635208,
+    "offsetSeconds": 14.232376557,
+    "exportedSamples": 145,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 77,
+      "ClassicLayer.record": 140,
+      "GlowMaskKt.blurredMasks": 0,
+      "GlowMaskKt.blurBoxCoverage": 4,
+      "PartitaLineKt": 141,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 39,
+      "gc::": 0,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 619.217918,
+    "offsetSeconds": 14.248968379,
+    "exportedSamples": 147,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 78,
+      "ClassicLayer.record": 141,
+      "GlowMaskKt.blurredMasks": 0,
+      "GlowMaskKt.blurBoxCoverage": 4,
+      "PartitaLineKt": 142,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 39,
+      "gc::": 0,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 572.992822,
+    "offsetSeconds": 9.96660457,
+    "exportedSamples": 151,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 67,
+      "ClassicLayer.record": 128,
+      "GlowMaskKt.blurredMasks": 0,
+      "GlowMaskKt.blurBoxCoverage": 4,
+      "PartitaLineKt": 129,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 33,
+      "gc::": 20,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 564.676462,
+    "offsetSeconds": 9.982656503,
+    "exportedSamples": 151,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 68,
+      "ClassicLayer.record": 129,
+      "GlowMaskKt.blurredMasks": 0,
+      "GlowMaskKt.blurBoxCoverage": 4,
+      "PartitaLineKt": 129,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 33,
+      "gc::": 20,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 558.74028,
+    "offsetSeconds": 6.412427166,
+    "exportedSamples": 128,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 68,
+      "ClassicLayer.record": 123,
+      "GlowMaskKt.blurredMasks": 0,
+      "GlowMaskKt.blurBoxCoverage": 0,
+      "PartitaLineKt": 123,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 29,
+      "gc::": 0,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  },
+  {
+    "durationMs": 548.71602,
+    "offsetSeconds": 6.429045228,
+    "exportedSamples": 126,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 68,
+      "ClassicLayer.record": 123,
+      "GlowMaskKt.blurredMasks": 0,
+      "GlowMaskKt.blurBoxCoverage": 0,
+      "PartitaLineKt": 123,
+      "ClassicLineKt": 0,
+      "neon::bilerp": 29,
+      "gc::": 0,
+      "art::jit::": 0,
+      "folia_mask_experiment": 0
+    },
+    "flags": 32
+  }
+]

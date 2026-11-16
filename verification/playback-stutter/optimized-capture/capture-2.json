@@ -1,0 +1,67 @@
+{
+  "installedApkSha256": "f548962a7213029486110799ab4ec5f76d3e196d8c0d4f49f3803b0559f4934f",
+  "event": "cpu-clock:u",
+  "frequencyHz": 250,
+  "recordedSamples": 2708,
+  "lostSamples": 0,
+  "exportedSamples": 2696,
+  "firstToLastSampleSeconds": 15.019374943,
+  "inclusiveSamplesNotAdditive": {
+    "SoftwareBlurKt.blurPremultiplied": 540,
+    "ClassicLayer.record": 1075,
+    "GlowMaskKt.blurredMasks": 133,
+    "GlowMaskKt.blurBoxCoverage": 138,
+    "PartitaLineKt": 1228,
+    "ClassicLineKt": 1,
+    "neon::bilerp": 256,
+    "gc::": 45,
+    "art::jit::": 5,
+    "folia_mask_experiment": 0
+  },
+  "inclusivePercent": {
+    "SoftwareBlurKt.blurPremultiplied": 20.03,
+    "ClassicLayer.record": 39.874,
+    "GlowMaskKt.blurredMasks": 4.933,
+    "GlowMaskKt.blurBoxCoverage": 5.119,
+    "PartitaLineKt": 45.549,
+    "ClassicLineKt": 0.037,
+    "neon::bilerp": 9.496,
+    "gc::": 1.669,
+    "art::jit::": 0.185,
+    "folia_mask_experiment": 0.0
+  },
+  "mainThreadPercent": 86.165,
+  "retainedFrames": {
+    "count": 628,
+    "p50Ms": 13.316778,
+    "p95Ms": 26.752145,
+    "maxMs": 1059.384083,
+    "over100Ms": 22,
+    "rawFlags": {
+      "32": 628
+    }
+  },
+  "memorySnapshots": {
+    "mem-2.txt": {
+      "pssKiB": 441307,
+      "rssKiB": 587916,
+      "swapPssKiB": 16449
+    },
+    "mem-5.txt": {
+      "pssKiB": 295301,
+      "rssKiB": 442448,
+      "swapPssKiB": 16198
+    },
+    "mem-after.txt": {
+      "pssKiB": 432444,
+      "rssKiB": 578652,
+      "swapPssKiB": 17309
+    },
+    "mem-before.txt": {
+      "pssKiB": 462923,
+      "rssKiB": 592772,
+      "swapPssKiB": 33137
+    }
+  },
+  "limitations": "Sample overhead; incomplete deduplicated frame rings, fully inside first/last exported timestamps only. Inclusive stacks overlap. Not controlled A/B, session FPS, peak memory or proof of exclusive wall-time attribution. Theme inferred from stacks, quality/backend unrecorded."
+}

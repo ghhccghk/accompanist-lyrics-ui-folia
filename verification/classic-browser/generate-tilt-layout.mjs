@@ -69,7 +69,7 @@ try {
      const descriptor=words.map(w=>[b64(w.text),w.startTime,w.endTime,
        (w.syllables??[]).map(s=>[b64(s.text),s.startTime,s.endTime].join('@')).join('+')].join('~')).join('|');
      timingOut.push([b64(fullText),descriptor,offset,b64(segment),start,end,range.startWordIndex,range.endWordIndex,
-       timings.map(t=>[t.charIndex,t.startTime,t.endTime].join(',')).join(';')].join('\t'));
+       timings.map(t=>[t.charIndex,t.startTime,t.endTime].join(',')).join(';')||'-'].join('\t'));
    }
  }
  fs.writeFileSync(path.join(folder,'timings.tsv'),timingOut.join('\n')+'\n');

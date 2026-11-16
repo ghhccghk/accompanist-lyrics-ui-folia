@@ -14,7 +14,7 @@
 | --- | --- | --- | --- |
 | 流光 | classic；`classic/Visualizer.tsx`、`GlowWord.tsx` | 居中词布局、字素辉光、余韵和句转场 | 已实现但未最终验收；完整画面栅格、Android复杂字幕残差继续保留在classic-parity.md |
 | 云阶 | partita；`partitaLayout.ts`、`PartitaChunk.tsx`、`partitaOverlap.ts` | 依高度拆块、交替阶梯错位、块级入场、引导线、GlowWord | **移植校准中**：已接FoliaStyle.Partita与示例，完整画面尚有残差，未最终验收 |
-| 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 未实现；先分段、宽度重拆和字号拟合，再校准字素时间；不能仅旋转classic |
+| 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 内部分段/计时/独立舞台已实现，尚未公开；Arabic shaping/段宽、CSS transform延迟和公共退场时间线仍待校准 |
 | 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 未实现；文章与确定性相机模型、resize/逆向seek对照，背景不纳入 |
 | 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 未实现；先同种子布局/包络，再文字层，不引入原DOM依赖 |
 | 群唱 | cappella；`VisualizerCappella.tsx`、`cappellaMessages.ts`、`cappellaMessageLayout.ts`、`cappellaReveal.ts` | 多发送者对话、气泡、消息保留与逐字揭示 | 未实现；明确core声部与发送者映射；先文字消息，不复制未知来源头像/emoji |
@@ -129,3 +129,31 @@ lyrics-core原始片段仍由适配层保留。平台必要调整：原版UTF-16
 Kotlin对应数值测试全部通过；Android debug assembly通过。没有替换上游函数体，
 也没有把合成宽度控制当成真实字体度量或视觉证据。该核心仍未接入主题选择器。
 下一项是两种排版的真实文字绘制、分段/字素入场及同字体视口的原版浏览器对照。
+
+### 倾诉内部舞台与真实原版证据（未接公开入口）
+
+`TiltLine.kt`独立绘制普通/斜体段、字距、内部字素揭示、上下交替错位和计时pulse。
+先塑形完整段落再裁取EGC遮罩，未按UTF-16逐字符塑形。`TiltMotion.kt`重建550/600ms
+行tween、500ms字素揭示、40/50ms字素延迟及行退场；句450ms淡出仍只接内部探针。
+公共VisualTimeline尚未延长退场保留，不能把此内部实现称为已支持倾诉。
+
+真实未改动上游组件、pretext锁定0.0.9、Latin/Arabic许可字体、380/800×600、DPR1：
+144张原版和144张离屏Compose图已保存，12场景分段文本、暂停和逆向重访严格一致。
+258行Motion状态误差≤0.0001；3882字素Motion状态误差≤0.001（输入原版未取整错位幅度，
+隔离动画与字体拟合）。实际CSS 60ms transform过渡保留，但computed transform尚未等价验证。
+最初10ms步进漏过2.2-.25的浮点阈值，已在oracle访问真实事件及其后1us，保留旧fixture在.work。
+未改曲线预期或放宽容差。首轮0.00102px错位失败最终定位为测试用已取整CSS字号反推幅度，
+不是已证实的生产精度bug；改为独立原幅度输入，生产保持Double到绘制边界。
+
+原版字体测量有实际兼容问题：倾斜fontSpec在字体族列表后附`italic`，Chromium拒绝赋值，
+沿用上一次Canvas font；初始10px sans-serif。真实pretext及Canvas测出整句229.692px，
+正确90px字体为2161.710px，single模式因此不重拆并溢出视口。当前按每行局部赋值顺序
+兼容，不复制全局Canvas/cache跨行历史；该全局历史差异未解决，不作为有意差异豁免。
+
+完整画面前景并集MAE均值38.6234、最大164.9593，远未达标：Arabic原版每EGC inline-block
+隔离、LTR host与Kotlin完整塑形存在显著字序/宽度/连接差异。继承未指定方向本身不能消除它；
+不能破坏shaping或隐藏Arabic来通过。Latin800第二段宽原版483、Kotlin480.328px；
+single整句1705与1700.547px，字距/最小空白宽、CSS整数盒和基线还需独立校准。
+目视contact.png确认差异，不把数值通过当作画面验收。下一步仍是上述校准、EGC片段安全
+保留原syllables、公开入口450ms时间线、字幕及平台运行。源码与复现见verification/tilt-fixtures/README.md。
+证据：build/verification/tilt-{browser,kotlin,kotlin-comparison}；本次未开用户窗口/模拟器。

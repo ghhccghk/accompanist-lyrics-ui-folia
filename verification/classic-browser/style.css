@@ -17,3 +17,5 @@
 .flex-col{flex-direction:column}.items-stretch{align-items:stretch}.max-w-5xl{max-width:1024px}
 .min-h-\[24rem\]{min-height:24rem}.min-w-\[3\.8rem\]{min-width:3.8rem}
 .px-3{padding-left:12px;padding-right:12px}.w-px{width:1px}.h-px{height:1px}
+/* Tilt segment spacing at the pinned source's sm breakpoint. */
+.gap-y-3{row-gap:12px}@media(min-width:640px){.sm\:gap-y-4{row-gap:16px}}

@@ -4,6 +4,7 @@ import { flushSync } from 'react-dom';
 import { motionValue, MotionGlobalConfig, frameData, frameSteps, time as motionTime, flushKeyframeResolvers, visualElementStore } from 'framer-motion';
 import Classic from 'pinned-classic';
 import Partita from 'pinned-partita';
+import Tilt from 'pinned-tilt';
 import { getLineRenderEndTime } from '../../.work/folia-major/src/utils/lyrics/renderHints';
 import { setGlowBlurQuantized } from '../../.work/folia-major/src/utils/glowBlurQuantize';
 import {resolveGlowWordRenderProfile,getGlowWordActiveEndTime} from '../../.work/folia-major/src/components/visualizer/glowWordTiming';
@@ -27,7 +28,7 @@ const cjkFace = new FontFace('Parity CJK', `url(${cjkUrl})`, {weight:'700'});
 await cjkFace.load();document.fonts.add(cjkFace);
 const params = new URLSearchParams(location.search);
 const manual = params.has('manual');
-const Visualizer = params.get('theme') === 'partita' ? Partita : Classic;
+const Visualizer = params.get('theme') === 'partita' ? Partita : params.get('theme')==='tilt' ? Tilt : Classic;
 if(manual) {MotionGlobalConfig.useManualTiming=true;frameData.timestamp=0;motionTime.set(0);}
 const currentTime = motionValue(0);
 const audioPower = motionValue(0);
@@ -55,7 +56,7 @@ if(params.has('dense')) {
   });
 }
 if(params.has('scene')) {
-  const rows=(scenes+'\n'+(params.get('theme')==='partita'?partitaScenes:'')).split(/\r?\n/).filter(r=>!r.startsWith('#')&&r.split('\t')[0]===params.get('scene')).map(r=>r.split('\t'));
+  const rows=(scenes+'\n'+(['partita','tilt'].includes(params.get('theme')??'')?partitaScenes:'')).split(/\r?\n/).filter(r=>!r.startsWith('#')&&r.split('\t')[0]===params.get('scene')).map(r=>r.split('\t'));
   if(!rows.length) throw new Error('Unknown scene');
   const words=rows.map(r=>({text:r[5],startTime:Number(r[3])/1000,endTime:Number(r[4])/1000}));
   lines=[{startTime:Number(rows[0][1])/1000,endTime:Number(rows[0][2])/1000,fullText:words.map(w=>w.text).join(''),words}];
@@ -77,7 +78,12 @@ const root = createRoot(document.getElementById('root')!);
 (window as any).eventTimes=lines.flatMap(line=>{
   const profile=resolveGlowWordRenderProfile(line)!;
   const words=buildDisplayWordsFromLayoutUnits(buildPostLyricLayoutUnits(line,{semantic:true,sticky:true}));
-  return [line.startTime*1000,getLineRenderEndTime(line)*1000,...words.flatMap(word=>[
+  return [line.startTime*1000,getLineRenderEndTime(line)*1000,
+    // Tilt tests must visit its own reveal events, rather than waiting for the
+    // next 10ms capture tick. The +1us visits thresholds rounded above the
+    // nominal millisecond by JavaScript subtraction (2.2 - .25, for example).
+    ...(params.get('theme')==='tilt'?line.words.flatMap(w=>[(w.startTime-.25)*1000,(w.startTime-.25)*1000+.001]):[]),
+    ...words.flatMap(word=>[
     Math.max(line.startTime,word.startTime-profile.wordLookahead)*1000,
     getGlowWordActiveEndTime(word,profile)*1000+.001])];
 });
@@ -89,7 +95,8 @@ const root = createRoot(document.getElementById('root')!);
   flushSync(() => root.render(<Visualizer currentTime={currentTime} currentLineIndex={index} lines={lines}
     theme={themes} audioPower={audioPower} audioBands={{}} classicTuning={{ enableWordRotation: true,
       breathingFloatMultiplier: params.has('breathe') ? 1 : 0, wordSpacing: .7, avoidOverlap: params.has('avoid'), useLegacyLayout: false }}
-    partitaTuning={{ showGuideLines: !params.has('noGuides'), useSemanticLayout: true, staggerMin: 20, staggerMax: 100, avoidOverlap: params.has('avoid') }} />));
+    partitaTuning={{ showGuideLines: !params.has('noGuides'), useSemanticLayout: true, staggerMin: 20, staggerMax: 100, avoidOverlap: params.has('avoid') }}
+    tiltTuning={{splitProbability:Number(params.get('split')??.75),tiltStyleProbability:Number(params.get('tilt')??.35),colorScheme:'default'}} />));
   flushSync(() => currentTime.set(seconds));
   if(manual) {
     flushKeyframeResolvers();

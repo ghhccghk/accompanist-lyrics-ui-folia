@@ -41,6 +41,7 @@ kotlin {
 tasks.withType<Test>().configureEach {
     inputs.dir(rootProject.file("verification/classic-fixtures"))
     inputs.dir(rootProject.file("verification/partita-fixtures"))
+    inputs.dir(rootProject.file("verification/tilt-fixtures"))
     inputs.dir(rootProject.file("verification/assets"))
 }
 tasks.withType<Zip>().configureEach {

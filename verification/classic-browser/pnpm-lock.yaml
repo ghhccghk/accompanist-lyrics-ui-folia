@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@chenglou/pretext':
+        specifier: 0.0.9
+        version: 0.0.9
       framer-motion:
         specifier: 13.4.3
         version: 13.4.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -31,6 +34,9 @@ importers:
         version: 8.3.1
 
 packages:
+
+  '@chenglou/pretext@0.0.9':
+    resolution: {integrity: sha512-vInlpC//3vjRfWTs78k2BBIq/0bUdpjIp8TIn9fXe0NvnChhTQZfjioVzERQQbkQvCVpPpw7PDOrTWMHpq27VA==}
 
   '@emnapi/core@2.0.0-beta.2':
     resolution: {integrity: sha512-MzCVoWtcg4Pm2B3je5mMvYMvj3MmBKw+fU7vbsJc9/iT8ip6/eYIHo/Dsm/mr+wsHB6SEyJDuxB09Yy6r/8+4A==}
@@ -498,6 +504,8 @@ packages:
         optional: true
 
 snapshots:
+
+  '@chenglou/pretext@0.0.9': {}
 
   '@emnapi/core@2.0.0-beta.2':
     dependencies:

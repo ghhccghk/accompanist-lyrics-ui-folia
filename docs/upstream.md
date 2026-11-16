@@ -1,5 +1,21 @@
 # Source ledger
 
+## Tilt internal stage — 2026-11-16
+
+Pinned Folia cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only:
+VisualizerTilt.tsx TiltLine -> TiltLine.kt (Compose intact-paragraph masks,
+normal/italic rows, tracking, nonspace reveal, stagger, source-time pulse,
+independent row/line compositing); row/char variants -> TiltMotion.kt.
+Native renderer has no DOM/global Canvas history. Per-line compatibility models
+the source's invalid trailing-italic Canvas font assignment; source global-cache
+history and intact Arabic shaping versus per-EGC DOM remain unresolved differences.
+No source checkout edits, unlicensed lyric/font/art assets, or source demo resources.
+capture-tilt.mjs mounts actual original code and preserves CSS transform transition;
+pretext 0.0.9/integrity matches upstream lock and is verification-only (MIT).
+144 paired screenshots, actual Motion fixtures, numeric/paused/reverse controls
+and unresolved large Arabic residuals are described in themes-parity.md.
+This internal renderer is not yet a supported public theme or a visual acceptance.
+
 ## Tilt sentence/layout/timing core — 2026-11-16
 
 Same approved Folia cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only.

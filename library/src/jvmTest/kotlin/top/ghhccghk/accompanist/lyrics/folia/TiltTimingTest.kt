@@ -19,7 +19,7 @@ class TiltTimingTest {
             }
             assertEquals(f[6].toInt() until f[7].toInt(),tiltWordRange(offset,segment,text,words),row)
             val actual=buildTiltCharTimings(offset,segment,f[4].toDouble(),f[5].toDouble(),text,words)
-            val expected=f[8].takeIf{it.isNotEmpty()}?.split(';')?.map { t ->
+            val expected=f[8].takeIf{it!="-"}?.split(';')?.map { t ->
                 val v=t.split(',');TiltCharTime(v[0].toInt(),v[1].toDouble(),v[2].toDouble())
             }?:emptyList()
             assertEquals(expected.size,actual.size,row)

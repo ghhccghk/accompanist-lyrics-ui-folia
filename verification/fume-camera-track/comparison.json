@@ -1,0 +1,48 @@
+{
+  "reference": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "conditions": "synthetic measured camera geometry; 800x600; media seconds 0..8; float origin9.25; smooth/stepped x static/float; local trial error .02px",
+  "reference_adapted": "untouched original stepFumeCamera run by an explicitly adapted media-time driver; this driver is not the original RAF behavior",
+  "original_60hz": "original operator at explicit 60Hz endpoint samples; same geometry, epochs, speed, intensity and float phase",
+  "status": "REJECTED for runtime integration: source60 trajectory residual and preparation-node cost remain unacceptable; test-only experiment, not in published library",
+  "scenarios": [
+    {
+      "scenario": 0,
+      "stepped": false,
+      "static": false,
+      "nodes": 5202,
+      "max_native_adapted_reference_error": 2.8848035071860068e-12,
+      "max_original_60hz_world_distance": 107.44954135267653,
+      "max_original_60hz_scale_error": 0.06265375564448816
+    },
+    {
+      "scenario": 1,
+      "stepped": true,
+      "static": false,
+      "nodes": 5192,
+      "max_native_adapted_reference_error": 2.8848035071860068e-12,
+      "max_original_60hz_world_distance": 107.44359467410001,
+      "max_original_60hz_scale_error": 0.06265375563993247
+    },
+    {
+      "scenario": 2,
+      "stepped": false,
+      "static": true,
+      "nodes": 5189,
+      "max_native_adapted_reference_error": 1.3926637620897964e-10,
+      "max_original_60hz_world_distance": 107.33021368048716,
+      "max_original_60hz_scale_error": 0.06227351770537326
+    },
+    {
+      "scenario": 3,
+      "stepped": true,
+      "static": true,
+      "nodes": 5162,
+      "max_native_adapted_reference_error": 1.3926637620897964e-10,
+      "max_original_60hz_world_distance": 107.32425624863389,
+      "max_original_60hz_scale_error": 0.06227351773905121
+    }
+  ],
+  "source_fixture_sha256": "07219baaa8bd8bb4e36854421f18d6722ca4357a3507f82cd1fe7ade159764f7",
+  "native_report_sha256": "3f22a0966aef80df4363b8cef7ad539fb08056cb418637c71d24c53e5b426cf5",
+  "next": "derive an efficient media-time spring response and calibrate against the actual finite-step source; keep deterministic pause/seek and do not reduce visual criteria"
+}

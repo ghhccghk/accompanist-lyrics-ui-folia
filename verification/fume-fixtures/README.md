@@ -149,3 +149,15 @@ at 1e-8, and the port must not mutate its input. Both static and idle-float,
 smooth and stepped modes, speed extremes and long flights are exercised.
 `camera-step.tsv` is sequential source evidence, **not** the native playback
 time model or proof that original frame-dependent motion is seek-rebuildable.
+
+## Rejected adaptive media trajectory
+
+`generate-fume-camera-track.mjs` uses the actual original operator with an
+explicitly adapted event-split media driver and separately records original
+60Hz finite-step trajectories. Run `:library:jvmTest --tests
+'*FumeCameraTrackExperimentTest'` then `python
+verification/compare-fume-camera-track.py`. The driver is test-only. The
+360 adapted-source samples reproduce within1.4e-10 and arbitrary query order
+does not change results, but actual original60Hz residual reaches107.45 world
+px / scale0.06265, with >5,000 prepared nodes for8s. **Rejected for runtime**;
+not a completed camera, not a new acceptance criterion, not included in sample.

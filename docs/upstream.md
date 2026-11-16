@@ -608,6 +608,27 @@ verification/fume-fixtures/README.md and docs/themes-parity.md.
 
 ### Camera target geometry
 
+#### Rejected media-reconstruction experiment
+
+Independent adaptive driver around the same original operator:
+`FumeCameraTrackExperiment.kt` and its checks are **test-only**, not commonMain,
+not published runtime and not selected by sample. Exact source-event splits,
+adaptive step-doubling and immutable prepared nodes make pause/reverse seek
+independent of display history. Source Float phase is anchored to media time
+instead of the wall clock. `generate-fume-camera-track.mjs` runs the untouched
+source operator under this explicitly adapted driver and also records original
+60Hz finite-step output. Kotlin matches the adapted driver (360 samples,
+maximum view-value error1.4e-10), and random queries do not mutate the track.
+
+**Rejected for runtime**: against the actual original60Hz response, the maximum
+distance is107.45 world px and scale difference0.06265; preparing8s requires
+5,162–5,202 nodes. A converged/adaptive version of the frame integrator is not
+automatically visual equivalence. These results are retained in
+`verification/fume-camera-track/comparison.json` / `trajectories.png`, not
+renamed an intentional final difference or hidden by the passing logic test.
+Next derive a more efficient media-time response and calibrate actual source
+finite-step behavior; no public Fume entry until the text/camera loop is usable.
+
 `src/components/visualizer/fume/fumeCameraStep.ts:stepFumeCamera` → `FumeCameraStep.kt`:
 original retarget/entry bias, direct and overview bridges, focus catch-up,
 position/scale springs, velocity limits, idle float and overview text restoration.

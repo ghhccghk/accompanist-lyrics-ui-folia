@@ -3,6 +3,8 @@
 库坐标：`top.ghhccghk.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`。
 Android/JVM变体由Gradle元数据选择；独立的lyrics-core坐标保持原样。
 库产物不携带sample或Rust，不需要Cargo。Rust目前仅为sample CPU遮罩实验。
+Kotlin/Native 编译试验独立于 Rust/JNI 与 JVM 安装包，见 [可行性与命令](KOTLIN_NATIVE.md)。
+目前完整 UI 仍为 Android/JVM；Native 时钟探针不属于歌词库发布目标。
 
 ## 工具与平台
 

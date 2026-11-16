@@ -1,0 +1,89 @@
+Selected actual Gradle diagnostics; full variant enumeration omitted. Not UI compile logs.
+
+=== mingwX64 ===
+> Task :sample:native-probe:kmpPartiallyResolvedDependenciesChecker
+> Task :sample:native-probe:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :sample:native-probe:checkMingwX64MainComposeLibrariesCompatibility
+> Task :sample:native-probe:downloadKotlinNativeDistribution UP-TO-DATE
+> Task :sample:native-probe:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :sample:native-probe:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :sample:native-probe:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :sample:native-probe:generateResourceAccessorsForCommonMain SKIPPED
+> Task :sample:native-probe:convertXmlValueResourcesForMingwMain NO-SOURCE
+> Task :sample:native-probe:copyNonXmlValueResourcesForMingwMain NO-SOURCE
+> Task :sample:native-probe:prepareComposeResourcesTaskForMingwMain NO-SOURCE
+> Task :sample:native-probe:generateResourceAccessorsForMingwMain SKIPPED
+> Task :sample:native-probe:convertXmlValueResourcesForMingwX64Main NO-SOURCE
+> Task :sample:native-probe:copyNonXmlValueResourcesForMingwX64Main NO-SOURCE
+> Task :sample:native-probe:prepareComposeResourcesTaskForMingwX64Main NO-SOURCE
+> Task :sample:native-probe:generateResourceAccessorsForMingwX64Main SKIPPED
+> Task :sample:native-probe:convertXmlValueResourcesForNativeMain NO-SOURCE
+> Task :sample:native-probe:copyNonXmlValueResourcesForNativeMain NO-SOURCE
+> Task :sample:native-probe:prepareComposeResourcesTaskForNativeMain NO-SOURCE
+> Task :sample:native-probe:generateResourceAccessorsForNativeMain SKIPPED
+> Task :sample:native-probe:generateActualResourceCollectorsForMingwX64Main SKIPPED
+> Task :sample:native-probe:generateComposeResClass SKIPPED
+> Task :sample:native-probe:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :sample:native-probe:compileKotlinMingwX64
+> Task :sample:native-probe:linkDebugExecutableMingwX64
+> Task :sample:native-probe:checkNativeUiDependencies FAILED
+      > No matching variant of com.mocharealm.accompanist:lyrics-core:0.5.0 was found. The consumer was configured to find a library for use during 'kotlin-api', preferably optimized for non-jvm, as well as attribute 'org.jetbrains.kotlin.klib.packaging' with value 'non-packed', attribute 'org.jetbrains.kotlin.native.target' with value 'mingw_x64', attribute 'org.jetbrains.kotlin.platform.type' with value 'native' but:
+      > No matching variant of org.jetbrains.compose.ui:ui:1.12.0 was found. The consumer was configured to find a library for use during 'kotlin-api', preferably optimized for non-jvm, as well as attribute 'org.jetbrains.kotlin.klib.packaging' with value 'non-packed', attribute 'org.jetbrains.kotlin.native.target' with value 'mingw_x64', attribute 'org.jetbrains.kotlin.platform.type' with value 'native' but:
+      > No matching variant of org.jetbrains.compose.foundation:foundation:1.12.0 was found. The consumer was configured to find a library for use during 'kotlin-api', preferably optimized for non-jvm, as well as attribute 'org.jetbrains.kotlin.klib.packaging' with value 'non-packed', attribute 'org.jetbrains.kotlin.native.target' with value 'mingw_x64', attribute 'org.jetbrains.kotlin.platform.type' with value 'native' but:
+      > No matching variant of org.jetbrains.compose.material3:material3:1.9.0 was found. The consumer was configured to find a library for use during 'kotlin-api', preferably optimized for non-jvm, as well as attribute 'org.jetbrains.kotlin.klib.packaging' with value 'non-packed', attribute 'org.jetbrains.kotlin.native.target' with value 'mingw_x64', attribute 'org.jetbrains.kotlin.platform.type' with value 'native' but:
+BUILD FAILED in 23s
+
+=== linuxX64 ===
+> Task :sample:native-probe:checkNativeUiDependencies FAILED
+      > No matching variant of com.mocharealm.accompanist:lyrics-core:0.5.0 was found. The consumer was configured to find a library for use during 'kotlin-api', preferably optimized for non-jvm, as well as attribute 'org.jetbrains.kotlin.klib.packaging' with value 'non-packed', attribute 'org.jetbrains.kotlin.native.target' with value 'linux_x64', attribute 'org.jetbrains.kotlin.platform.type' with value 'native' but:
+      > No matching variant of org.jetbrains.compose.ui:ui:1.12.0 was found. The consumer was configured to find a library for use during 'kotlin-api', preferably optimized for non-jvm, as well as attribute 'org.jetbrains.kotlin.klib.packaging' with value 'non-packed', attribute 'org.jetbrains.kotlin.native.target' with value 'linux_x64', attribute 'org.jetbrains.kotlin.platform.type' with value 'native' but:
+      > No matching variant of org.jetbrains.compose.foundation:foundation:1.12.0 was found. The consumer was configured to find a library for use during 'kotlin-api', preferably optimized for non-jvm, as well as attribute 'org.jetbrains.kotlin.klib.packaging' with value 'non-packed', attribute 'org.jetbrains.kotlin.native.target' with value 'linux_x64', attribute 'org.jetbrains.kotlin.platform.type' with value 'native' but:
+      > No matching variant of org.jetbrains.compose.material3:material3:1.9.0 was found. The consumer was configured to find a library for use during 'kotlin-api', preferably optimized for non-jvm, as well as attribute 'org.jetbrains.kotlin.klib.packaging' with value 'non-packed', attribute 'org.jetbrains.kotlin.native.target' with value 'linux_x64', attribute 'org.jetbrains.kotlin.platform.type' with value 'native' but:
+BUILD FAILED in 1s
+
+=== macosArm64 ===
+> Task :sample:native-probe:checkNativeUiDependencies
+animation-core-macosArm64Main-1.12.0.klib
+animation-macosArm64Main-1.12.0.klib
+annotation.klib
+atomicfu-macosArm64Cinterop-interopMain-0.28.0.klib
+atomicfu-macosArm64Main-0.28.0.klib
+collection-macosArm64Main-1.5.0.klib
+foundation-layout-macosArm64Main-1.12.0.klib
+foundation-macosArm64Main-1.12.0.klib
+kotlinx-coroutines-core.klib
+kotlinx-datetime-macosArm64Main-0.7.1.klib
+kotlinx-serialization-core-macosArm64Main-1.10.0.klib
+kotlinx-serialization-json-macosArm64Main-1.10.0.klib
+lifecycle-common-macosArm64Main-2.11.0.klib
+lifecycle-runtime-compose-macosArm64Main-2.11.0.klib
+lifecycle-runtime-compose-macosArm64Main-2.9.6.klib
+lifecycle-runtime-macosArm64Main-2.11.0.klib
+lifecycle-viewmodel-compose-macosArm64Main-2.11.0.klib
+lifecycle-viewmodel-macosArm64Main-2.11.0.klib
+lifecycle-viewmodel-savedstate-macosArm64Main-2.11.0.klib
+lyrics-core-macosArm64Main-0.5.0.klib
+material-ripple-macosArm64Main-1.9.1.klib
+material3-macosArm64Main-1.9.0.klib
+navigationevent-compose-macosArm64Main-1.1.0.klib
+navigationevent-compose-macosArm64Main-1.1.1.klib
+navigationevent-macosArm64Main-1.1.1.klib
+runtime-annotation-macosArm64Main-1.12.0.klib
+runtime-macosArm64Main-1.12.0.klib
+runtime-macosArm64Main-1.12.0.klib
+runtime-retain-macosArm64Main-1.12.0.klib
+runtime-saveable-macosArm64Main-1.12.0.klib
+runtime-saveable-macosArm64Main-1.12.0.klib
+savedstate-compose-macosArm64Main-1.3.6.klib
+savedstate-compose-macosArm64Main-1.4.0.klib
+savedstate-macosArm64Main-1.4.0.klib
+skiko-macosArm64Cinterop-skikoMain-0.150.1.klib
+skiko-macosArm64Main-0.150.1.klib
+ui-backhandler-macosArm64Main-1.12.0.klib
+ui-geometry-macosArm64Main-1.12.0.klib
+ui-graphics-macosArm64Main-1.12.0.klib
+ui-macosArm64Main-1.12.0.klib
+ui-text-macosArm64Main-1.12.0.klib
+ui-unit-macosArm64Main-1.12.0.klib
+ui-util-macosArm64Main-1.12.0.klib
+BUILD SUCCESSFUL in 43s

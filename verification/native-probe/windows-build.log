@@ -1,0 +1,29 @@
+> Task :sample:native-probe:kmpPartiallyResolvedDependenciesChecker
+> Task :sample:native-probe:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :sample:native-probe:checkMingwX64MainComposeLibrariesCompatibility
+> Task :sample:native-probe:downloadKotlinNativeDistribution UP-TO-DATE
+> Task :sample:native-probe:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :sample:native-probe:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :sample:native-probe:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :sample:native-probe:generateResourceAccessorsForCommonMain SKIPPED
+> Task :sample:native-probe:convertXmlValueResourcesForMingwMain NO-SOURCE
+> Task :sample:native-probe:copyNonXmlValueResourcesForMingwMain NO-SOURCE
+> Task :sample:native-probe:prepareComposeResourcesTaskForMingwMain NO-SOURCE
+> Task :sample:native-probe:generateResourceAccessorsForMingwMain SKIPPED
+> Task :sample:native-probe:convertXmlValueResourcesForMingwX64Main NO-SOURCE
+> Task :sample:native-probe:copyNonXmlValueResourcesForMingwX64Main NO-SOURCE
+> Task :sample:native-probe:prepareComposeResourcesTaskForMingwX64Main NO-SOURCE
+> Task :sample:native-probe:generateResourceAccessorsForMingwX64Main SKIPPED
+> Task :sample:native-probe:convertXmlValueResourcesForNativeMain NO-SOURCE
+> Task :sample:native-probe:copyNonXmlValueResourcesForNativeMain NO-SOURCE
+> Task :sample:native-probe:prepareComposeResourcesTaskForNativeMain NO-SOURCE
+> Task :sample:native-probe:generateResourceAccessorsForNativeMain SKIPPED
+> Task :sample:native-probe:generateActualResourceCollectorsForMingwX64Main SKIPPED
+> Task :sample:native-probe:generateComposeResClass SKIPPED
+> Task :sample:native-probe:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :sample:native-probe:compileKotlinMingwX64 UP-TO-DATE
+> Task :sample:native-probe:linkDebugExecutableMingwX64 UP-TO-DATE
+
+BUILD SUCCESSFUL in 1s
+5 actionable tasks: 2 executed, 3 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.5.0/userguide/configuration_cache_enabling.html

@@ -1,0 +1,56 @@
+> Task :library:checkJvmMainComposeLibrariesCompatibility
+> Task :library:kmpPartiallyResolvedDependenciesChecker
+> Task :library:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :library:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :library:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :library:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :library:generateResourceAccessorsForCommonMain SKIPPED
+> Task :library:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :library:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :library:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :library:generateResourceAccessorsForJvmMain SKIPPED
+> Task :library:generateActualResourceCollectorsForJvmMain SKIPPED
+> Task :library:generateComposeResClass SKIPPED
+> Task :library:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :library:compileKotlinJvm UP-TO-DATE
+> Task :library:compileJvmMainJava NO-SOURCE
+> Task :library:assembleJvmMainResources UP-TO-DATE
+> Task :library:prepareLicenseResources UP-TO-DATE
+> Task :library:jvmProcessResources UP-TO-DATE
+> Task :library:processJvmMainResources SKIPPED
+> Task :library:jvmMainClasses UP-TO-DATE
+> Task :library:jvmJar UP-TO-DATE
+> Task :sample:shared:checkJvmMainComposeLibrariesCompatibility
+> Task :sample:shared:kmpPartiallyResolvedDependenciesChecker
+> Task :sample:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :sample:shared:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :sample:shared:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :sample:shared:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :sample:shared:generateResourceAccessorsForCommonMain SKIPPED
+> Task :sample:shared:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :sample:shared:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :sample:shared:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :sample:shared:generateResourceAccessorsForJvmMain SKIPPED
+> Task :sample:shared:generateActualResourceCollectorsForJvmMain SKIPPED
+> Task :sample:shared:generateComposeResClass SKIPPED
+> Task :sample:shared:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :sample:shared:compileKotlinJvm UP-TO-DATE
+> Task :library:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :library:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :library:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :library:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :library:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :library:compileAndroidMain UP-TO-DATE
+> Task :library:androidPreBuild UP-TO-DATE
+> Task :library:preAndroidMainBuild UP-TO-DATE
+> Task :library:bundleAndroidMainClassesToCompileJar UP-TO-DATE
+> Task :sample:shared:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :sample:shared:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :sample:shared:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :sample:shared:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :sample:shared:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :sample:shared:compileAndroidMain UP-TO-DATE
+
+BUILD SUCCESSFUL in 2s
+13 actionable tasks: 4 executed, 9 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.5.0/userguide/configuration_cache_enabling.html

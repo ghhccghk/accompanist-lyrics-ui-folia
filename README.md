@@ -46,6 +46,8 @@ Android 构建需要 SDK platform 37；设置 `ANDROID_HOME` 或未跟踪的 `lo
 Rust1.91.1及两个Android target；Windows sample默认构建并捆绑x64 DLL。
 安装步骤与显式关闭方式见 [Rust sample](docs/native-mask-sample.md)。
 Windows/Linux/macOS构建路径、真实验证范围与Maven命令见 [构建说明](docs/BUILDING.md)。
+Kotlin/Native 编译试验与完整 UI 的阻碍见
+[Native 可行性](docs/KOTLIN_NATIVE.md)，目前不提供 Native 桌面播放器。
 
 ```powershell
 .\gradlew.bat :sample:desktop-app:run

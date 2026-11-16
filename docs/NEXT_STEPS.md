@@ -1,5 +1,19 @@
 # 后续实施清单 — 2026-11-15
 
+## 2026-11-16 Kotlin/Native 编译尝试（当前继续点）
+
+目标：学习kmp-native-wizard，调查当前示例脱离JVM的可行性；完整窗口/文字/真实音频才算Native播放器。
+
+- 新增按需sample:native-probe，直接复用生产时钟和快照；Windows x64 Kotlin/Native2.4.10
+  编译及实际EXE运行通过，pause/speed/seek/loop/replay断言通过。无GUI/音频，不宣称完整示例移植。
+- 完整UI必要依赖诊断：Windows/Linux缺lyrics-core与Compose UI等Native变体，真实解析失败；
+  macosArm64 klib解析通过，尚无Mac编译或窗口/音频运行证据。
+- 默认Android/JVM shared编译检查通过（UP-TO-DATE）；库发布目标未扩展，用户Desktop/daemon改动保留。
+- 证据与命令：docs/KOTLIN_NATIVE.md、verification/native-probe；没有Native性能改善结论。
+- 下一项：有Mac主机时先编译最小FoliaLyricsView和平台actual，再做文件/播放；
+  Windows/Linux完整Native UI需真实图形后端和已发布模型支持，不能靠该命令行模板绕过。
+  此调查不取代仍未完成的classic视觉残差与真实歌曲卡顿验证。
+
 ## 2026-11-16 默认 native 打包与内存（当前继续点）
 
 目标：sample默认携带可用native，Kotlin仍为运行时默认；减少模糊临时内存而不减画质。

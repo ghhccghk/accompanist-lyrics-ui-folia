@@ -1,0 +1,48 @@
+[
+  {
+    "coordinate": "com.mocharealm.accompanist:lyrics-core:0.5.0",
+    "sha256": "eab1f0c69696f2d718d37a37f8dd3d8123dbfb2a6fef12f698bbbbbfab96bd26",
+    "nativeTargets": [
+      "ios_arm64",
+      "ios_simulator_arm64",
+      "ios_x64",
+      "macos_arm64",
+      "macos_x64"
+    ]
+  },
+  {
+    "coordinate": "org.jetbrains.compose.runtime:runtime:1.12.0",
+    "sha256": "8ba3f2319dc93229e59d085c2d1d36caaf9cb7dffb20feefd4fa96e6d9450dff",
+    "nativeTargets": [
+      "ios_arm64",
+      "ios_simulator_arm64",
+      "linux_arm64",
+      "linux_x64",
+      "macos_arm64",
+      "mingw_x64",
+      "tvos_arm64",
+      "tvos_simulator_arm64",
+      "watchos_arm32",
+      "watchos_arm64",
+      "watchos_simulator_arm64"
+    ]
+  },
+  {
+    "coordinate": "org.jetbrains.compose.ui:ui:1.12.0",
+    "sha256": "e1263c66daebdab9479edcc5aa0b13e1bbf5b7b11e444c88135cf778898799dd",
+    "nativeTargets": [
+      "ios_arm64",
+      "ios_simulator_arm64",
+      "macos_arm64"
+    ]
+  },
+  {
+    "coordinate": "org.jetbrains.compose.foundation:foundation:1.12.0",
+    "sha256": "e104b8529a23c5f1a1c7aa9a231739ca8f7ab8dcfb97b831177167b357d993fa",
+    "nativeTargets": [
+      "ios_arm64",
+      "ios_simulator_arm64",
+      "macos_arm64"
+    ]
+  }
+]

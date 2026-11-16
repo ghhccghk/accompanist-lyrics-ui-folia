@@ -1,0 +1,9 @@
+initial position=0 playing=false discontinuity=0
+playing position=1250 playing=true discontinuity=0
+double-speed position=2250 playing=true discontinuity=0
+paused position=2250 playing=false discontinuity=0
+paused-seek position=9250 playing=false discontinuity=1
+multiple-loops position=1250 playing=true discontinuity=3
+end position=10000 playing=false discontinuity=3
+replay position=0 playing=true discontinuity=4
+PASS: production preview clock and Compose runtime executed on Kotlin/Native; no UI/audio claimed.

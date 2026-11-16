@@ -606,6 +606,29 @@ verification/fume-fixtures/README.md and docs/themes-parity.md.
 
 ## 2026-11-17 Fume live frame parameters
 
+`fumeCanvasText.ts:drawFumeLiveBlock/drawRenderTextRun` → `FumeLiveText.kt`:
+whole-shaped-row clipping, ordered print-stamp commands, per-EGC runs,
+separate line glow, static retained-text layers. Native sampling uses the
+existing independently implemented premultiplied Gaussian blur and isolated
+opaque text-shadow coverage. Canvas shadow source alpha is applied once,
+before run clipping. Masks allocate lazily; only the latest blurred radius is
+held per prepared segment and blur support is added around compact source
+coverage, instead of padding every article word by the largest possible halo.
+An initial oversized-mask implementation and compact one produce all 168
+identical native PNGs. No new native/Rust dependency or timer is used.
+
+Differences still under calibration: source pretext measured prefix advances
+versus native whole-row selection geometry and ICU word segmentation; source
+per-segment line-glow overhang versus a clipped shaped-row coverage partition;
+multiline rasterization and non-Latin baseline metrics. Mask tint versus native
+colored coverage can also differ. These are not final acceptance exemptions.
+`verification/fume-live/comparison.json` records 168 real original Canvas /
+Compose pairs at the same font, geometry, media time and 1:1 viewport, with no
+camera. Mean foreground-union RGB MAE 2.9653 (glow off 2.4973, on 3.4332),
+worst 9.8170. All 168 random revisits and pause checks are pixel identical.
+The source geometry is an explicit input here to isolate rendering; it is
+not evidence of an integrated article/camera/public Fume theme.
+
 Same pinned Folia `cc6226e464050a456a2913e062374f23d3844cc5` (AGPL-3.0-only).
 `src/components/visualizer/fume/fumeBlockFrame.ts` → `internal/styles/fume/FumeBlockFrame.kt`:
 waiting/live/passed classification, raw-end completion versus render-end trail,

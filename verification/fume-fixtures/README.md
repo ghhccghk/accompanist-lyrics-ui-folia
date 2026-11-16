@@ -106,3 +106,22 @@ stamp geometry, crossfade and overview restoration compare at 1e-8; reverse
 sampling and disabling stamps must preserve the remaining values.
 
 The complete Fume renderer, camera and public integration remain unfinished.
+
+## Live text raster comparison
+
+Start `node verification/classic-browser/serve.mjs`, run
+`node verification/classic-browser/capture-fume-live.mjs`, then
+`:library:jvmTest --tests '*FumeLiveTextTest'` and
+`python verification/compare-fume-live.py`. Uses actual original article blocks
+and untouched original live/static Canvas draw code. `live-geometry.tsv` is an
+explicit shared geometry input so this matrix isolates text rendering from
+article selection and camera. Three synthetic Latin scenes (parser words,
+uneven syllables, long wrapped paragraph + hard newline), two viewport widths,
+two glow settings and fourteen media times: 168 pairs. Licensed font/hash,
+browser version, all original/native PNG hashes and unregistered RGB errors
+are in `verification/fume-live/comparison.json`; images in `build/verification`.
+
+Mean foreground MAE 2.9653, maximum 9.8170. Not final visual acceptance.
+Native mask compaction changed zero PNGs; random revisits and pause checks
+are pixel identical. No Android device is attached, so Android runtime,
+other scripts, moving CTM and the complete camera remain unverified here.

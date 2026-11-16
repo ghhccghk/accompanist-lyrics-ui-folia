@@ -15,7 +15,7 @@
 | 流光 | classic；`classic/Visualizer.tsx`、`GlowWord.tsx` | 居中词布局、字素辉光、余韵和句转场 | 已实现但未最终验收；完整画面栅格、Android复杂字幕残差继续保留在classic-parity.md |
 | 云阶 | partita；`partitaLayout.ts`、`PartitaChunk.tsx`、`partitaOverlap.ts` | 依高度拆块、交替阶梯错位、块级入场、引导线、GlowWord | **移植校准中**：已接FoliaStyle.Partita与示例，完整画面尚有残差，未最终验收 |
 | 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 已接 FoliaStyle.Tilt 和示例，明确标注校准预览；450ms 公共退场、Latin 段宽已补，Arabic shaping、CSS transform 延迟和全局字体缓存仍未验收 |
-| 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部字素时序、文章布局、拟合与Latin静态快照已移植；动态文字和相机未完成，未开放选择器，背景不纳入 |
+| 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部时序、文章布局、拟合、Latin静态与实时文字已移植并有原Canvas对照；镜头未完成，文字栅格/复杂字体仍校准，未开放选择器，背景不纳入 |
 | 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 未实现；先同种子布局/包络，再文字层，不引入原DOM依赖 |
 | 群唱 | cappella；`VisualizerCappella.tsx`、`cappellaMessages.ts`、`cappellaMessageLayout.ts`、`cappellaReveal.ts` | 多发送者对话、气泡、消息保留与逐字揭示 | 未实现；明确core声部与发送者映射；先文字消息，不复制未知来源头像/emoji |
 | 时计 | pendolo；`VisualizerPendolo.tsx`、`pendoloGeometry.ts`、`pendoloTimeline.ts`、`PendoloActiveLyricSweep.tsx` | 圆弧歌词轨、机械跳步、当前句扫描、字幕轨 | 未实现；先文字几何/跳步/扫描；音频鼓点与节拍增强单列，不伪造输入 |
@@ -251,3 +251,20 @@ tilt-exits-{browser,kotlin}；原版fixture、字体散列及所有144帧散列�
 
 下一项仍是CSS60ms transform真实过渡、CJK/混排/字幕矩阵及Arabic源DOM与完整塑形的处理。
 这些是未解决的移植差异，不改成最终验收豁免；浮名等主题不以占位加入选择器。
+
+### 2026-11-17：浮名实时文字对照（内部，尚无主题入口）
+
+原版fumeBlockFrame/fumeCanvasText直接采样1104时刻、8970字素样式及317落印，
+颜色/alpha/半径/落印几何/读后淡出/总览恢复在1e-8内通过。Kotlin保留整行塑形，
+内部字素时钟与离散打印分离；用词段覆盖mask、run裁切及原命令顺序绘制。
+
+原版Canvas和Compose使用相同OFL字体、原块几何、媒体时刻、1:1视口，无镜头、无配准。
+三场景×两宽×辉光开关×14时刻=168对；前景RGB MAE均值2.9653、最大9.8170，
+关闭辉光2.4973、开启3.4332。已查看contact.png；仍未达最终视觉等价。
+实际分词/前缀advance与完整行shaping选区、词段光晕边缘、复杂字体基线和多行栅格
+差异继续登记，不能归为最终有意差异。源几何在此为显式输入，仅隔离文字绘制。
+
+168次随机重访与暂停像素严格相同；紧凑延迟mask相对初版168帧完全相同。
+证据见verification/fume-live/comparison.json和contact.png，原图在build/verification/fume-live-*。
+复现见verification/fume-fixtures/README.md。Android未连接设备，只报告构建；
+Desktop实际Compose离屏执行，不冒称可见窗口或完整主题运行。下一项是镜头焦点与媒体时间重建。

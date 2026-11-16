@@ -11,11 +11,15 @@ import java.security.MessageDigest;
  * installing it, stopping playback, starting an Activity, or reading user media. */
 public final class SoftwareBlurDeviceProbe {
     public static void main(String[] args) {
-        try { run(); }
+        try { run(args); }
         catch (Throwable failure) { failure.printStackTrace(); System.exit(1); }
     }
 
-    private static void run() throws Exception {
+    private static void run(String[] args) throws Exception {
+        String mode = args.length == 0 ? "colour" : args[0];
+        if (!Arrays.asList("colour", "white", "neutral").contains(mode)) {
+            throw new IllegalArgumentException("Unknown synthetic colour mode: " + mode);
+        }
         String base = "top.ghhccghk.accompanist.lyrics.folia.internal.rendering.";
         Class<?> imageType = Class.forName("androidx.compose.ui.graphics.ImageBitmap");
         Method bitmap = Class.forName(base + "Bitmap_androidKt").getMethod(
@@ -25,14 +29,16 @@ public final class SoftwareBlurDeviceProbe {
         Method unwrap = Class.forName("androidx.compose.ui.graphics.AndroidImageBitmap_androidKt")
             .getMethod("asAndroidBitmap", imageType);
         System.out.println("CPU bitmap fallback only; no UI, audio, GPU, or frame-rate claim. API=" +
-            Build.VERSION.SDK_INT + "; ABI=" + Build.SUPPORTED_ABIS[0]);
+            Build.VERSION.SDK_INT + "; ABI=" + Build.SUPPORTED_ABIS[0] + "; mode=" + mode);
         for (int[] size : new int[][]{{97, 43}, {1200, 500}}) {
             int w = size[0], h = size[1];
             int[] source = new int[w * h];
             for (int y = h / 3; y < h * 2 / 3; y++) {
                 for (int x = w / 4; x < w * 3 / 4; x++) {
-                    source[y * w + x] = (64 + (x * 13 + y * 73) % 192) << 24 |
+                    int rgb = mode.equals("white") ? 0xFFFFFF : mode.equals("neutral") ?
+                        ((x * 47 + y * 71) & 255) * 0x010101 :
                         ((x * 47) & 255) << 16 | ((y * 71) & 255) << 8 | ((x + y) & 255);
+                    source[y * w + x] = (64 + (x * 13 + y * 73) % 192) << 24 | rgb;
                 }
             }
             Object input = bitmap.invoke(null, w, h, source);

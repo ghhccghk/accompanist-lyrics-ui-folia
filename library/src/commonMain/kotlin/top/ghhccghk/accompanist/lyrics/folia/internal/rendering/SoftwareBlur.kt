@@ -23,7 +23,8 @@ internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels
         bufferOffset=0, stride=sourceWidth)
     var left = sourceWidth; var right = -1; var top = sourceHeight; var bottom = -1
     for (y in 0 until sourceHeight) for (x in 0 until sourceWidth) {
-        if (full[y * sourceWidth + x] ushr 24 != 0) {
+        val pixel = full[y * sourceWidth + x]
+        if (pixel ushr 24 != 0) {
             left = minOf(left,x); right = maxOf(right,x); top = minOf(top,y); bottom = maxOf(bottom,y)
         }
     }
@@ -49,6 +50,18 @@ internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels
     val temporary = DoubleArray(count)
     val alpha = DoubleArray(count)
     val result = IntArray(count)
+    // Exact input equality, not a colour approximation. Transparent RGB never
+    // contributes. White RGB has precisely the alpha input; neutral RGB channels
+    // have identical premultiplied input and therefore identical filtered output.
+    var white = true
+    var neutral = true
+    for (pixel in pixels) if (pixel ushr 24 != 0) {
+        if ((pixel and 0xFFFFFF) != 0xFFFFFF) white = false
+        if (((pixel xor (pixel ushr 8)) and 0xFFFF) != 0) {
+            neutral = false
+            break
+        }
+    }
     for (channel in intArrayOf(24,16,8,0)) {
         for (i in pixels.indices) {
             val a = pixels[i] ushr 24
@@ -67,11 +80,25 @@ internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels
             }
             input
         }
-        for (i in 0 until count) {
-            val value = if (channel == 24) { alpha[i] = filtered[i]; filtered[i] }
-                else if (alpha[i] > 0) filtered[i]*255/alpha[i] else 0.0
-            result[i] = result[i] or (floor(value+.5).toInt().coerceIn(0,255) shl channel)
+        // Classify outside the pixel loop: the general-colour path retains its
+        // original packing loop, without three new branches for every pixel.
+        when {
+            white -> for (i in 0 until count) {
+                val a = filtered[i]
+                result[i] = (floor(a+.5).toInt().coerceIn(0,255) shl 24) or
+                    if (a > 0) 0xFFFFFF else 0
+            }
+            neutral && channel == 16 -> for (i in 0 until count) {
+                val value = if (alpha[i] > 0) filtered[i]*255/alpha[i] else 0.0
+                result[i] = result[i] or (floor(value+.5).toInt().coerceIn(0,255) * 0x010101)
+            }
+            else -> for (i in 0 until count) {
+                val value = if (channel == 24) { alpha[i] = filtered[i]; filtered[i] }
+                    else if (alpha[i] > 0) filtered[i]*255/alpha[i] else 0.0
+                result[i] = result[i] or (floor(value+.5).toInt().coerceIn(0,255) shl channel)
+            }
         }
+        if (white || (neutral && channel == 16)) break
     }
     return BlurredPixels(bitmapFromArgb(width,height,result),Offset(left.toFloat(),top.toFloat()))
 }

@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-16",
+  "frozenSource": "4962f62",
+  "jvmPixelCases": 360,
+  "existingColourCases": 135,
+  "nestedLayerCases": 120,
+  "recapturedPngCount": 78,
+  "devicePixelComparisons": 48,
+  "device": "2509FPN0BC / arm64 / API37",
+  "deviceMethod": "Separate app_process; no install or UI/player interaction; 8 warmups + 15 operations, two opposite variant orders",
+  "baselineApkSha256": "f548962a7213029486110799ab4ec5f76d3e196d8c0d4f49f3803b0559f4934f",
+  "candidateApkSha256": "381ad0665e021078caed0a8d521803076a0cd4fd390ca399ecca3b5406a42f62",
+  "logs": [
+    ".work/neutral-blur-final.log",
+    ".work/neutral-blur-final-tests.log"
+  ],
+  "androidBuild": "passed",
+  "sharedJvmCompile": "passed",
+  "applicationRuntime": "Candidate not installed; synthetic Android bitmap function only",
+  "limits": [
+    "No whole-playback speedup/frame/PSS conclusion",
+    "No managed memory saving intended; temporary arrays retained",
+    "Visible nested software recording remains"
+  ]
+}

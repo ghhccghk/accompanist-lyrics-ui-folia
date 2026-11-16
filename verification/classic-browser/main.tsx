@@ -66,6 +66,7 @@ if(params.has('scene')) {
 }
 const root = createRoot(document.getElementById('root')!);
 (window as any).mountTime=performance.now();
+(window as any).lineRenderEnds=lines.map(line=>getLineRenderEndTime(line)*1000);
 (window as any).motionValues=(element:Element)=>{
   const visual=visualElementStore.get(element);
   return {...visual?.latestValues,...Object.fromEntries(

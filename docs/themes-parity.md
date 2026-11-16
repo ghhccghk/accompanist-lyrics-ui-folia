@@ -14,7 +14,7 @@
 | --- | --- | --- | --- |
 | 流光 | classic；`classic/Visualizer.tsx`、`GlowWord.tsx` | 居中词布局、字素辉光、余韵和句转场 | 已实现但未最终验收；完整画面栅格、Android复杂字幕残差继续保留在classic-parity.md |
 | 云阶 | partita；`partitaLayout.ts`、`PartitaChunk.tsx`、`partitaOverlap.ts` | 依高度拆块、交替阶梯错位、块级入场、引导线、GlowWord | **移植校准中**：已接FoliaStyle.Partita与示例，完整画面尚有残差，未最终验收 |
-| 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 内部分段/计时/独立舞台已实现，尚未公开；Arabic shaping/段宽、CSS transform延迟和公共退场时间线仍待校准 |
+| 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 已接 FoliaStyle.Tilt 和示例，明确标注校准预览；450ms 公共退场、Latin 段宽已补，Arabic shaping、CSS transform 延迟和全局字体缓存仍未验收 |
 | 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 未实现；文章与确定性相机模型、resize/逆向seek对照，背景不纳入 |
 | 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 未实现；先同种子布局/包络，再文字层，不引入原DOM依赖 |
 | 群唱 | cappella；`VisualizerCappella.tsx`、`cappellaMessages.ts`、`cappellaMessageLayout.ts`、`cappellaReveal.ts` | 多发送者对话、气泡、消息保留与逐字揭示 | 未实现；明确core声部与发送者映射；先文字消息，不复制未知来源头像/emoji |
@@ -114,6 +114,8 @@ verification/partita-fixtures/README.md，经典既有残差继续保留。
 
 ## 倾诉：分段、拟合和内部计时（尚无公共舞台）
 
+以下两节保留初次内部阶段记录；最新接入与证据见文末，不以历史“未公开”描述当前入口。
+
 上游VisualizerTilt.tsx的determineLineCount/buildTiltLayout使用UTF-16长度、秒种子，
 决定1–4段及唯一大号斜体段；宽度比>=1.6时重拆，按原分支选择拟合并保留0.5/0.55下限。
 SentenceLayout按五层标点/括号/中西文/空格/特殊符号优先级拆分，再选语义中点或种子回退。
@@ -157,3 +159,34 @@ single整句1705与1700.547px，字距/最小空白宽、CSS整数盒和基线�
 目视contact.png确认差异，不把数值通过当作画面验收。下一步仍是上述校准、EGC片段安全
 保留原syllables、公开入口450ms时间线、字幕及平台运行。源码与复现见verification/tilt-fixtures/README.md。
 证据：build/verification/tilt-{browser,kotlin,kotlin-comparison}；本次未开用户窗口/模拟器。
+
+### 2026-11-16：倾诉入口、段宽与450ms退场
+
+`FoliaStyle.Tilt(TiltTuning())` 已连接独立 TiltLine（不是 classic 换名）；两端 sample 的
+本地歌曲与开发/演示共用主题设置。参数对应原版 splitProbability、tiltStyleProbability、
+default/swap/accentAll/primaryAll，设置 version=1 向后兼容，旧默认仍是流光。
+**入口和界面均标注“移植校准预览”，不是最终视觉等价支持声明。**
+
+| 上游依据 | 本次实现 | 验证及仍有差异 |
+| --- | --- | --- |
+| VisualizerTilt.tsx:645 父容器 exit opacity / 0.45s easeInOut | VisualTimeline 支持主题指定保留时长；Tilt 固定450ms，其他主题保持原规则；TiltMotion 采样同曲线 | 实际原版11个退场时刻；310ms/400ms 原版 alpha .2014625/.02434718，采样误差≤.0001；公开/独立舞台11帧逐像素相同，不宣称与浏览器逐像素一致 |
+| VisualizerTilt.tsx:454/507 每个 EGC inline-block，无跨元素 kerning | 完整段落塑形保留，只关闭可选 kern；Skiko 用 kern 0，Android Paint 用带引号的标签；拟合测量不受影响 | 实际原版未取整 CSS 宽度，14个 Latin 段宽最大误差0.4069px；800px第二段480.328→483.156px，原版483.297px；joining/字素内部计时仍保留 |
+| VisualizerTilt.tsx:200/215 无效尾置italic字体声明；pretext0.0.9 measurement.ts 的按 fontSpec 缓存 | 每行重建无效字体键的空格/token宽缓存，后续正常字体赋值不抹掉已有度量；不引入跨行/全局历史 | 修正窄屏拟合；已新增真实 fractional CSS 度量，不能拿整数offsetWidth当精确尺寸。原版跨歌曲/跨组件缓存历史、复杂分词/全局字体状态仍未等价 |
+| VisualizerTilt.tsx:355 字距/行高与完整场景 | 保持现有行盒和shaping保护，不复制原逐字断开Arabic | 144张重新挂载原版与Compose画面；前景并集MAE均值32.8560，Latin12.4144、Arabic53.2976，最差167.1414，**仍未视觉验收通过** |
+
+旧width整数断言曾在238px原版/238.516px本地失败，进一步获取原版未取整CSS宽238.453px后，
+实际差0.063px；保留原fixture，增加 mounted-geometry.tsv，没有修改原版值或扩大0.51px容差。
+失败日志留.work/tilt-final-width-assertions.log。先前无效字体开关与忽略旧空格缓存的候选也未提交。
+
+验证：Tilt分段/拟合/内部计时/实际Motion/450ms曲线；公开入口与独立舞台、暂停、反向seek、
+offset一次、800→380→800恢复、点击/长按原行；经典采样/字素、云阶公开入口回归；
+sample JVM设置/播放器回归、Android APK及Desktop编译。没有开启可见窗口、没有安装设备包。
+Android仍缺真机主题交互和字体特性效果验证；Desktop为真实Compose离屏渲染，不冒充窗口运行。
+
+证据：verification/tilt-public/、build/verification/tilt-{browser,kotlin,kotlin-comparison} 和
+tilt-exits-{browser,kotlin}；原版fixture、字体散列及所有144帧散列已保存。
+复现先启动浏览器server，运行 capture-tilt.mjs、capture-tilt-geometry.mjs、capture-tilt-exits.mjs，
+再运行 `:library:jvmTest --tests '*Tilt*'` 和 compare-tilt.py。源checkout保持固定且干净。
+
+下一项仍是CSS60ms transform真实过渡、CJK/混排/字幕矩阵及Arabic源DOM与完整塑形的处理。
+这些是未解决的移植差异，不改成最终验收豁免；浮名等主题不以占位加入选择器。

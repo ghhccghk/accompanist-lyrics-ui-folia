@@ -57,6 +57,8 @@ internal fun TiltLine(line:NormalizedLine,playback:()->FoliaPlaybackSnapshot,tex
         val prepared=remember(line,config,ink,fontScale,width,textStyle,colors,density,resolver,measurer,nativeInk,enterUs) {
             fun style(font:Double,tilt:Boolean,tracking:Boolean):TextStyle = textStyle.copy(
                 fontSize=(floor(font*100+.000001)/100).sp,
+                fontFeatureSettings=if(tracking)listOfNotNull(textStyle.fontFeatureSettings,tiltKerningOff).joinToString(", ")
+                    else textStyle.fontFeatureSettings,
                 fontWeight=textStyle.fontWeight?:if(tilt)FontWeight.Light else FontWeight.Normal,
                 fontStyle=if(tilt)FontStyle.Italic else FontStyle.Normal,
                 // VisualizerTilt inherits the host direction (LTR in the pinned
@@ -73,10 +75,23 @@ internal fun TiltLine(line:NormalizedLine,playback:()->FoliaPlaybackSnapshot,tex
             // history into seek/resize. This upstream quirk is documented.
             var measurementStyle=TextStyle(fontFamily=FontFamily.SansSerif,fontSize=10.sp,
                 fontWeight=FontWeight.Normal,textMotion=TextMotion.Animated)
+            val invalidFontWidths=mutableMapOf<String,Double>()
+            fun rawWidth(value:String):Double {
+                val measured=measurer.measure(value,measurementStyle,softWrap=false)
+                return measured.getPathForRange(0,value.length).getBounds().width/density.density.toDouble()
+            }
             val layout=buildTiltLayout(line.text,line.startUs/1e6,config,width,fontScale.toDouble()) { text,tilt,size ->
                 if(!tilt)measurementStyle=style(size,false,false)
-                val measured=measurer.measure(text,measurementStyle,softWrap=false)
-                measured.getPathForRange(0,text.length).getBounds().width/density.density.toDouble()
+                if(!tilt)rawWidth(text) else {
+                    // The invalid fontSpec still keys pretext's metric cache.
+                    // Its first space/token widths survive later normal font
+                    // assignments. Rebuild that cache per line, never per seek.
+                    invalidFontWidths.getOrPut(" "){rawWidth(" ")}
+                    Regex("\\s+|\\S+").findAll(text.trim()).sumOf { match ->
+                        if(match.value.all{it.isWhitespace()})invalidFontWidths.getValue(" ")
+                        else invalidFontWidths.getOrPut(match.value){rawWidth(match.value)}
+                    }
+                }
             }
             val words=line.fragments.map { TiltWord(line.text.substring(it.begin,it.end),it.startUs/1e6,it.endUs/1e6) }
             val times=layout.segments.map { segment ->
@@ -164,10 +179,8 @@ internal fun TiltLine(line:NormalizedLine,playback:()->FoliaPlaybackSnapshot,tex
         Canvas(Modifier.fillMaxSize().then(input)) {
             val time=(currentPlayback().positionMillis-options.offsetMillis)*1000
             drawn.time=time;drawn.size=size
-            val exit=if(leaveUs!=null && time>=leaveUs)easeInOut(motionElapsedUs(time-leaveUs)/450_000.0) else 0f
-            val enter=if(options.reducedMotion)1f else easeOut(motionElapsedUs(time-enterUs)/300_000.0)
             val pad=ceil(128*density.density).toInt()
-            lineLayer.alpha=enter*(1-exit)
+            lineLayer.alpha=sampleTiltLineOpacity(time,enterUs,leaveUs,options.reducedMotion)
             lineLayer.record(this,IntSize(size.width.toInt()+2*pad,size.height.toInt()+2*pad)) {
                 withTransform({translate(pad.toFloat(),pad.toFloat())}) {
                     prepared.rows.forEachIndexed { ri,row ->

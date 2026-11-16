@@ -7,6 +7,24 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.timeline.VisualTimeline
 import kotlin.test.*
 
 class VisualTimelineTest {
+    @Test fun tiltRetainsEveryExitForTheOriginal450Milliseconds() {
+        val lines=normalize(SyncedLyrics(List(30) { index ->
+            SyncedLine("$index",null,index*10,index*10+1)
+        })).lines
+        val classic=VisualTimeline(lines)
+        val tilt=VisualTimeline(lines,fixedExitDurationUs=450_000)
+        val leaving=tilt.at(10_000).exiting.single()
+        assertEquals(0,leaving.line)
+        assertEquals(10_000,leaving.leaveUs)
+        assertTrue(tilt.at(459_999).exiting.contains(leaving))
+        assertFalse(tilt.at(460_000).exiting.contains(leaving))
+        assertFalse(classic.at(459_999).exiting.contains(leaving))
+        assertEquals((0..28).toList(),tilt.at(300_000).exiting.map{it.line})
+        val saved=tilt.at(459_999)
+        repeat(100){tilt.at(it*15_731L)}
+        assertSame(saved,tilt.at(459_999))
+        assertTrue(tilt.at(2_000_000).exiting.isEmpty())
+    }
     @Test fun intervalResultsAreReusedAndEqualStartPrioritySurvivesTail() {
         val timeline = VisualTimeline(normalize(SyncedLyrics(listOf(
             SyncedLine("first", null, 0, 1_000), SyncedLine("second", null, 0, 1_000)

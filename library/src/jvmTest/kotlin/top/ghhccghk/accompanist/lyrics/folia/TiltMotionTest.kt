@@ -9,6 +9,14 @@ import kotlin.math.*
 import kotlin.test.*
 
 class TiltMotionTest {
+    @Test fun parent450msExitMatchesMountedOriginalIncludingLateTail() {
+        val fixtures=rows("mounted-exits")
+        assertEquals(11,fixtures.size)
+        fixtures.forEach {f->
+            assertEquals(f[2].toDouble(),sampleTiltLineOpacity(3_000_000+f[0].toLong()*1000,
+                700_000,3_000_000,false).toDouble(),.0001,"Actual AnimatePresence parent at ${f[0]}ms")
+        }
+    }
     private fun rows(name:String)=File("../verification/tilt-fixtures/$name.tsv").readLines()
         .filterNot{it.startsWith("#")||it.isBlank()}.map{it.split('\t')}
     @Test fun mountedOriginalRowAndCharacterTargets() {

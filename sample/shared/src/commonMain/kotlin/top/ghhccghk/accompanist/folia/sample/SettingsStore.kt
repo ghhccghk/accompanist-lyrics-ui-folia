@@ -15,7 +15,8 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
     val tuning: ClassicTuning = ClassicTuning(), val fontScale: Float = 1f,
     val lyricTheme: SampleLyricTheme = SampleLyricTheme.Classic,
     val partitaTuning: PartitaTuning = PartitaTuning(),
-    val renderResolution: RenderResolution = RenderResolution.Full) {
+    val renderResolution: RenderResolution = RenderResolution.Full,
+    val tiltTuning: TiltTuning = TiltTuning()) {
     fun encode(): String = listOf("version=1", "translation=${options.showTranslation}",
         "phonetic=${options.showPhonetic}", "next=${options.showNextLine}", "motion=${options.reducedMotion}",
         "quality=${options.quality}", "offset=${options.offsetMillis}", "rotation=${tuning.enableWordRotation}",
@@ -23,7 +24,9 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
         "overlap=${tuning.avoidOverlap}", "font=$fontScale", "lyricTheme=$lyricTheme",
         "partitaGuides=${partitaTuning.showGuideLines}","partitaSemantic=${partitaTuning.useSemanticLayout}",
         "partitaMin=${partitaTuning.staggerMin}","partitaMax=${partitaTuning.staggerMax}",
-        "partitaOverlap=${partitaTuning.avoidOverlap}","renderResolution=$renderResolution").joinToString("\n")
+        "partitaOverlap=${partitaTuning.avoidOverlap}","renderResolution=$renderResolution",
+        "tiltSplit=${tiltTuning.splitProbability}","tiltProbability=${tiltTuning.tiltStyleProbability}",
+        "tiltColors=${tiltTuning.colorScheme}").joinToString("\n")
 
     companion object {
         fun decode(value: String): SampleSettings {
@@ -45,14 +48,17 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
                     minOf(number("partitaMin",20f,0f..180f),number("partitaMax",100f,0f..180f)),
                     maxOf(number("partitaMin",20f,0f..180f),number("partitaMax",100f,0f..180f)),
                     boolean("partitaOverlap",false)),
-                RenderResolution.entries.find { it.name == fields["renderResolution"] } ?: RenderResolution.Full)
+                RenderResolution.entries.find { it.name == fields["renderResolution"] } ?: RenderResolution.Full,
+                TiltTuning(number("tiltSplit",.75f,0f..1f),number("tiltProbability",.35f,0f..1f),
+                    TiltColorScheme.entries.find{it.name==fields["tiltColors"]}?:TiltColorScheme.Default))
         }
     }
 }
 
-fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning, renderResolution)
+fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning, renderResolution, tiltTuning)
 fun SampleSession.applySettings(value: SampleSettings) {
     options = value.options; tuning = value.tuning; fontScale = value.fontScale
     lyricTheme=value.lyricTheme;partitaTuning=value.partitaTuning
     renderResolution=value.renderResolution
+    tiltTuning=value.tiltTuning
 }

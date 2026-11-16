@@ -4,6 +4,19 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 import kotlin.test.*
 
 class SettingsTest {
+    @Test fun tiltPreferencesRoundTripAndOldSettingsRemainCompatible() {
+        for(colors in TiltColorScheme.entries) {
+            val settings=SampleSettings(lyricTheme=SampleLyricTheme.Tilt,tiltTuning=TiltTuning(.2f,.9f,colors))
+            assertEquals(settings,SampleSettings.decode(settings.encode()))
+            val session=SampleSession();session.applySettings(settings)
+            assertEquals(FoliaStyle.Tilt(settings.tiltTuning),session.lyricStyle)
+            assertEquals(settings,session.settings())
+        }
+        assertEquals(TiltTuning(),SampleSettings.decode("version=1").tiltTuning)
+        assertEquals(TiltTuning(),SampleSettings.decode("version=1\ntiltSplit=NaN\ntiltProbability=2\ntiltColors=Missing").tiltTuning)
+        assertFailsWith<IllegalArgumentException>{TiltTuning(Float.NaN)}
+        assertFailsWith<IllegalArgumentException>{TiltTuning(tiltStyleProbability=-1f)}
+    }
     @Test fun renderResolutionRoundTripsAndOldSettingsKeepFullResolution() {
         for (resolution in RenderResolution.entries) {
             val settings = SampleSettings(renderResolution=resolution)

@@ -1,0 +1,145 @@
+{
+  "date": "2026-11-16",
+  "upstreamRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "jvmTests": {
+    "library": {
+      "tests": 34,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "sample/shared": {
+      "tests": 43,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "latinGeometry": [
+    {
+      "mode": "normal",
+      "viewport": 380,
+      "row": 0,
+      "originalWidth": 149.453,
+      "kotlinWidth": 149.39062,
+      "absoluteError": 0.06237999999999033
+    },
+    {
+      "mode": "normal",
+      "viewport": 380,
+      "row": 1,
+      "originalWidth": 218.781,
+      "kotlinWidth": 218.71875,
+      "absoluteError": 0.06225000000000591
+    },
+    {
+      "mode": "normal",
+      "viewport": 380,
+      "row": 2,
+      "originalWidth": 144.25,
+      "kotlinWidth": 144.1875,
+      "absoluteError": 0.0625
+    },
+    {
+      "mode": "normal",
+      "viewport": 380,
+      "row": 3,
+      "originalWidth": 223.703,
+      "kotlinWidth": 223.60938,
+      "absoluteError": 0.09362000000001558
+    },
+    {
+      "mode": "normal",
+      "viewport": 800,
+      "row": 0,
+      "originalWidth": 476.734,
+      "kotlinWidth": 476.54688,
+      "absoluteError": 0.18711999999999307
+    },
+    {
+      "mode": "normal",
+      "viewport": 800,
+      "row": 1,
+      "originalWidth": 476.359,
+      "kotlinWidth": 476.15625,
+      "absoluteError": 0.20274999999998045
+    },
+    {
+      "mode": "single",
+      "viewport": 380,
+      "row": 0,
+      "originalWidth": 1550.22,
+      "kotlinWidth": 1549.9531,
+      "absoluteError": 0.26690000000007785
+    },
+    {
+      "mode": "single",
+      "viewport": 800,
+      "row": 0,
+      "originalWidth": 1705.36,
+      "kotlinWidth": 1704.9531,
+      "absoluteError": 0.4068999999999505
+    },
+    {
+      "mode": "tilt",
+      "viewport": 380,
+      "row": 0,
+      "originalWidth": 143.281,
+      "kotlinWidth": 143.29688,
+      "absoluteError": 0.015879999999981464
+    },
+    {
+      "mode": "tilt",
+      "viewport": 380,
+      "row": 1,
+      "originalWidth": 209.75,
+      "kotlinWidth": 209.8125,
+      "absoluteError": 0.0625
+    },
+    {
+      "mode": "tilt",
+      "viewport": 380,
+      "row": 2,
+      "originalWidth": 138.297,
+      "kotlinWidth": 138.3125,
+      "absoluteError": 0.015500000000002956
+    },
+    {
+      "mode": "tilt",
+      "viewport": 380,
+      "row": 3,
+      "originalWidth": 238.453,
+      "kotlinWidth": 238.51562,
+      "absoluteError": 0.06262000000000967
+    },
+    {
+      "mode": "tilt",
+      "viewport": 800,
+      "row": 0,
+      "originalWidth": 537.938,
+      "kotlinWidth": 537.7969,
+      "absoluteError": 0.1410999999999376
+    },
+    {
+      "mode": "tilt",
+      "viewport": 800,
+      "row": 1,
+      "originalWidth": 483.297,
+      "kotlinWidth": 483.15625,
+      "absoluteError": 0.14075000000002547
+    }
+  ],
+  "androidBuild": "passed",
+  "desktopCompile": "passed",
+  "androidDeviceRun": "not run; adb devices empty",
+  "desktopWindowRun": "not run; offscreen Compose screenshots only",
+  "acceptance": "calibration preview only; Arabic shaping, CSS 60ms transform, global cache history and broader font/script/subtitle coverage unresolved",
+  "androidApk": {
+    "path": "build/outputs/folia-sample-tilt-debug.apk",
+    "sha256": "6ca1558f24d59596131a37f87a9b9011f50bd6de4185e46323e15b216ab22632",
+    "signature": "verified",
+    "pretextNotice": [
+      "META-INF/lyrics-ui-folia/licenses/MIT-pretext-0.0.9.txt"
+    ]
+  }
+}

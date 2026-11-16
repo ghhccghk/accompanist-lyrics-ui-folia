@@ -18,3 +18,12 @@ Start `node verification/classic-browser/serve.mjs`, then run
 Run `./gradlew :library:jvmTest --tests '*Tilt*'` and
 `python verification/compare-tilt.py`. Keep both original and candidate evidence.
 These controls do not establish Android device or real Desktop-window parity.
+
+2026-11-16 follow-up: public/sample Tilt calibration preview and original 450ms
+exit retention are implemented. `capture-tilt-geometry.mjs` adds fractional CSS
+content widths without changing integer reference fixtures; `capture-tilt-exits.mjs`
+records the actual parent exit. Both require the same server. PublicTiltTest checks
+adapter/core pixels, pause, reverse seek, offset once, resize, hit/long press and
+the 450ms retained exit. Latin row widths compare against mounted-geometry.tsv
+at 0.51 CSS px; Arabic is reported, not silently accepted as equivalent.
+Current evidence/residuals: verification/tilt-public and docs/themes-parity.md.

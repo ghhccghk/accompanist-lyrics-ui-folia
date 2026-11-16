@@ -20,6 +20,7 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.animation.renderProfile
 import java.io.File
 import java.util.Base64
 import javax.imageio.ImageIO
+import kotlin.math.abs
 import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
@@ -68,6 +69,16 @@ class TiltParityTest {
                 val expected=File("../verification/tilt-fixtures/mounted-rows.tsv").readLines().filterNot{it.startsWith("#")||it.isBlank()}
                     .map{it.split('\t')}.filter{it[0]==mode && it[1]==name && it[2].toInt()==width && it[3]=="1500"}
                 assertEquals(expected.map{String(Base64.getDecoder().decode(it[5]),Charsets.UTF_8)},geometry.map{it.text})
+                val exact=File("../verification/tilt-fixtures/mounted-geometry.tsv").readLines()
+                    .filterNot{it.startsWith("#")||it.isBlank()}.map{it.split('\t')}
+                    .filter{it[0]==mode && it[1]==name && it[2].toInt()==width}
+                if(name=="wrap")geometry.forEachIndexed { i,g ->
+                    // Compare untransformed CSS content width, not rounded
+                    // offsetWidth (which adds up to 0.5px measurement error).
+                    // Arabic per-EGC DOM versus intact shaping stays open.
+                    assertTrue(abs(exact[i][6].toDouble()-g.box.width)<=.51,
+                        "Original inline-block row width $mode/$width/$i: expected ${exact[i][6]}, actual ${g.box.width}")
+                }
                 val report=geometry.mapIndexed { i,g ->
                     val e=expected[i]
                     listOf(mode,name,width,i,g.box.left,g.box.top,g.box.width,g.box.height,g.fontSize,

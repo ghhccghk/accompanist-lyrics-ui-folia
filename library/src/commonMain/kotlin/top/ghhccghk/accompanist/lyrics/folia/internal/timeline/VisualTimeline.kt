@@ -9,7 +9,8 @@ internal data class VisualSelection(val primary: PrimaryEpoch?, val exiting: Lis
     val secondary: List<Int>, val next: Int?)
 
 /** Canonical epochs are prepared once, including overlap resumption and gap tails. */
-internal class VisualTimeline(private val lines: List<NormalizedLine>) {
+internal class VisualTimeline(private val lines: List<NormalizedLine>, private val fixedExitDurationUs: Long? = null) {
+    private val maxExitDurationUs = fixedExitDurationUs ?: MAX_EXIT_DURATION_US
     private val source = TimelineIndex(lines)
     private val profiles = lines.map { renderProfile(it.startUs, it.endUs, it.fragments.lastOrNull()?.endUs ?: it.endUs) }
     private val epochs: List<PrimaryEpoch>
@@ -18,6 +19,7 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
     val maxExitingCount: Int
     private val empty = VisualSelection(null, emptyList(), emptyList(), lines.indices.firstOrNull())
     init {
+        require(fixedExitDurationUs == null || fixedExitDurationUs in 0..1_000_000)
         val boundaries = lines.indices.flatMap { listOf(lines[it].startUs, lines[it].endUs, profiles[it].renderEndUs) }.distinct().sorted()
         val collected = mutableListOf<PrimaryEpoch>()
         var previous: Int? = null
@@ -50,7 +52,7 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
         }
         return if (low == 0) empty else selections[low - 1]
     }
-    private fun exitDuration(line: Int): Long = when(profiles[line].mode) {
+    private fun exitDuration(line: Int): Long = fixedExitDurationUs ?: when(profiles[line].mode) {
         Reveal.Normal -> MAX_EXIT_DURATION_US; Reveal.Fast -> 160_000; Reveal.Instant -> 120_000
     }
     private fun prepareSelection(time: Long): VisualSelection {
@@ -66,7 +68,7 @@ internal class VisualTimeline(private val lines: List<NormalizedLine>) {
         var first = 0; var last = end
         while (first < last) {
             val middle = (first + last) ushr 1
-            if (epochs[middle].leaveUs <= time - MAX_EXIT_DURATION_US) first = middle + 1 else last = middle
+            if (epochs[middle].leaveUs <= time - maxExitDurationUs) first = middle + 1 else last = middle
         }
         val exiting = (first until end).map { epochs[it] }.filter {
             time >= it.leaveUs && time < it.leaveUs + exitDuration(it.line)

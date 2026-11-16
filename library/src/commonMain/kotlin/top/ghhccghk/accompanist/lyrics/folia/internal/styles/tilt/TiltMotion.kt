@@ -7,6 +7,12 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.animation.*
 internal data class TiltRowFrame(val alpha:Float,val y:Float,val scale:Float)
 internal fun tiltEase(progress:Double)=cubicEase(progress,.25,.46,.45,.94)
 
+internal fun sampleTiltLineOpacity(time:Long,enterUs:Long,leaveUs:Long?,reduced:Boolean):Float {
+    val enter=if(reduced)1f else easeOut(motionElapsedUs(time-enterUs)/300_000.0)
+    val exit=if(leaveUs!=null && time>=leaveUs)easeInOut(motionElapsedUs(time-leaveUs)/450_000.0) else 0f
+    return enter*(1-exit)
+}
+
 /** Reconstruct the interrupted row tween, including its own exit under the 450ms parent fade. */
 internal fun sampleTiltRow(time:Long,visibleUs:Long,leaveUs:Long?,tilt:Boolean,reduced:Boolean):TiltRowFrame {
     val at=minOf(time,leaveUs?:time)

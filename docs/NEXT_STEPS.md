@@ -1,5 +1,16 @@
 # 后续实施清单 — 2026-11-15
 
+## 2026-11-16 多主题恢复（最新继续点）
+
+- 当前目标：恢复原版多主题文字移植；倾诉先补已有内部舞台的真实入口、段宽和450ms退出。
+  完成条件是源码依据、公开/独立路径验证和真实原版对照；不把主题可选当最终视觉等价。
+- 已实现FoliaStyle.Tilt和sample校准预览、概率/配色持久化；媒体时间、pause/seek/resize与交互通过。
+  上游11个父层退出采样≤.0001；14段Latin fractional CSS宽最大误差0.4069px。
+  144帧MAE均值32.8560；Arabic/全局字体缓存/CSS60ms过渡仍未完成，详见themes-parity.md。
+- Android APK/共享模块与Desktop编译、相关库及sample JVM测试通过；ADB无设备，未安装或打开用户窗口。
+- 下一项：继续倾诉CSS变换、CJK/混排与字幕，再浮名文章/确定性相机；保留其他主题未实现标记。
+- 只提交本次代码；Android release签名配置及daemon属性是已有/并行用户改动，保留不暂存。
+
 ## 2026-11-16 Android播放独立进程（最新继续点）
 
 - 用户授权实际改造：私有bound Service、独立:playback进程、固定MediaPlayer Looper；

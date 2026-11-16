@@ -1,5 +1,31 @@
 # Source ledger
 
+## Tilt public calibration preview — 2026-11-16
+
+Same fixed Folia cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only.
+VisualizerTilt.tsx:334–534 -> TiltLine/TiltTextFeatures (whole-run shaping,
+optional kerning disabled to match independent source EGC boxes; required joining
+and retained internal timings remain). Source:645 -> sampleTiltLineOpacity and
+VisualTimeline's optional per-theme 450ms exit retention. Other themes unchanged.
+Source TiltTuning/getColors -> FoliaStyle.Tilt/TiltTuning/TiltColorScheme and
+independently written sample controls/settings. This is explicitly a calibration
+preview; Arabic/transform/global cache differences remain unresolved.
+
+Investigated pretext 0.0.9 src/measurement.ts getSegmentMetricCache/getSegmentMetrics:
+the source invalid trailing-italic fontSpec retains earlier cached token/space
+widths even after another valid Canvas font is assigned. TiltLine independently
+reconstructs a per-line cache; no pretext runtime dependency is introduced.
+MIT notice is retained in LICENSES/MIT-pretext-0.0.9.txt as conservative attribution.
+This is not a port of the full pretext line breaker; dictionary/global-history
+differences remain open. No font, lyric, cover or source demo assets copied.
+
+capture-tilt-geometry.mjs reads original untransformed fractional CSS dimensions;
+capture-tilt-exits.mjs records actual parent Motion values and screenshots.
+Existing integer geometry and Motion-target fixtures remain unchanged; a repeated
+capture had identical targets but differing computed CSS-transform history,
+saved under .work rather than silently replacing the checked-in reference.
+Numeric/visual evidence and limitations: verification/tilt-public and themes-parity.md.
+
 ## Tilt internal stage — 2026-11-16
 
 Pinned Folia cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only:

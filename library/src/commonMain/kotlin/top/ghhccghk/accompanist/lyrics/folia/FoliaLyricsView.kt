@@ -26,6 +26,7 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.styles.classic.classicHeig
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.PartitaLine
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.PartitaConfig
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.partitaGraphemeCount
+import top.ghhccghk.accompanist.lyrics.folia.internal.styles.tilt.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.GlowBudget
 import top.ghhccghk.accompanist.lyrics.folia.internal.waiting.*
 import androidx.compose.ui.semantics.contentDescription
@@ -48,7 +49,8 @@ fun FoliaLyricsView(
     onLinePressed: (ISyncedLine) -> Unit = {},
 ) {
     val document = remember(IdentityKey(lyrics), contentKey) { normalize(lyrics) }
-    val index = remember(document) { VisualTimeline(document.lines) }
+    val tilt = style is FoliaStyle.Tilt
+    val index = remember(document,tilt) { VisualTimeline(document.lines,if(tilt)450_000 else null) }
     // Unknown/invalid vocal intervals cannot safely establish silence.
     val waitingTimeline = remember(document) {
         WaitingTimeline(if(document.diagnostics.isEmpty()) document.lines else emptyList())
@@ -134,6 +136,33 @@ fun FoliaLyricsView(
                         mainStyle.copy(fontSize=mainStyle.fontSize*.8f) else mainStyle
                     PartitaLine(main,playback,size,colors,options,config,enterUs=selection.primary!!.enterUs,
                         onPrepared={actual,count->quality=actual;unitCount=count},
+                        onClick={onLineClicked(main.source)},onLongPress={onLinePressed(main.source)})
+                }
+                waiting?.let {gap->
+                    WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
+                        {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
+                        Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
+                        defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
+                }
+            }
+        } else if(style is FoliaStyle.Tilt) {
+            val t=style.tuning
+            val config=TiltConfig(t.splitProbability.toDouble(),t.tiltStyleProbability.toDouble())
+            val ink=when(t.colorScheme) {
+                TiltColorScheme.Default->TiltInk.Default;TiltColorScheme.Swap->TiltInk.Swap
+                TiltColorScheme.AccentAll->TiltInk.AccentAll;TiltColorScheme.PrimaryAll->TiltInk.PrimaryAll
+            }
+            val tiltStyle=typography.main?:typography.secondary.copy(fontWeight=null)
+            Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center) {
+                selection.exiting.forEach {epoch->key(epoch) {
+                    TiltLine(document.lines[epoch.line],playback,tiltStyle,colors,options,config,ink,
+                        fontScale=typography.scale,enterUs=epoch.enterUs,leaveUs=epoch.leaveUs)
+                }}
+                if(document.lines.isEmpty()) BasicText("暂无可显示歌词",style=mainStyle.copy(color=colors.secondary))
+                else if(main!=null)key(selection.primary) {
+                    TiltLine(main,playback,tiltStyle,colors,options,config,ink,fontScale=typography.scale,
+                        enterUs=selection.primary!!.enterUs,
+                        onPrepared={count->quality=options.quality;unitCount=count},
                         onClick={onLineClicked(main.source)},onLongPress={onLinePressed(main.source)})
                 }
                 waiting?.let {gap->

@@ -41,6 +41,26 @@ sealed interface FoliaStyle {
     /** Partita's staggered chunk stage. Visual calibration status: docs/themes-parity.md. */
     @Immutable
     data class Partita(val tuning: PartitaTuning = PartitaTuning()) : FoliaStyle
+
+    /** Source-based Tilt stage; visual calibration preview, not final parity.
+     * Whole-run shaping is retained; original per-EGC DOM script/width differences
+     * remain tracked in docs/themes-parity.md. */
+    @Immutable
+    data class Tilt(val tuning: TiltTuning = TiltTuning()) : FoliaStyle
+}
+
+enum class TiltColorScheme { Default, Swap, AccentAll, PrimaryAll }
+
+@Immutable
+data class TiltTuning(
+    val splitProbability: Float = .75f,
+    val tiltStyleProbability: Float = .35f,
+    val colorScheme: TiltColorScheme = TiltColorScheme.Default,
+) {
+    init {
+        require(splitProbability.isFinite() && splitProbability in 0f..1f)
+        require(tiltStyleProbability.isFinite() && tiltStyleProbability in 0f..1f)
+    }
 }
 
 @Immutable

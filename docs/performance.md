@@ -134,3 +134,15 @@ and repeated radius output after scratch reuse. Reproduce with
 `./gradlew :library:jvmTest --tests '*MaskBenchmark*'`; report is
 `library/build/verification/mask-benchmark.txt`. Total scene budgets, shaping,
 real-window frame tails and Android CPU/GPU measurements remain open.
+
+## Real-song CPU capture and dimension-loop fix — 2026-11-16
+
+User-triggered 15s device capture identifies Partita software blur as a CPU
+hotspot (25.01% inclusive samples). Cache Bitmap dimensions outside pixel loops
+and copy cropped rows without repeated JNI/division. Same-device synthetic
+1200×500 fallback P50 decreases about 17%–25% in one exploratory pair; no
+whole-playback gain is established. Eight output checksums agree and 405 JVM
+cases match frozen ebcaffd ARGB exactly. Original Gaussian/kernel/rounding and
+visual quality are retained. See verification/playback-stutter/README.md for
+raw evidence locations, settings/thermal limitations, incomplete frame ring,
+passed rendering checks and device disconnection before final-APK runtime QA.

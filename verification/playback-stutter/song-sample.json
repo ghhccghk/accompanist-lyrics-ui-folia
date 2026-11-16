@@ -1,0 +1,32 @@
+{
+  "exported_text_samples": 3367,
+  "first_to_last_sample_seconds": 15.045599369,
+  "inclusive_samples_not_additive": {
+    "SoftwareBlurKt.blurPremultiplied": 848,
+    "GlowMaskKt.blurBoxCoverage": 452,
+    "GlowMaskKt.blurredMasks": 129,
+    "ClassicLayer.record-": 1167,
+    "PartitaLineKt.": 1304,
+    "ClassicLineKt.": 1,
+    "android.graphics.Bitmap.getWidth": 30
+  },
+  "inclusive_percent": {
+    "SoftwareBlurKt.blurPremultiplied": 25.186,
+    "GlowMaskKt.blurBoxCoverage": 13.424,
+    "GlowMaskKt.blurredMasks": 3.831,
+    "ClassicLayer.record-": 34.66,
+    "PartitaLineKt.": 38.729,
+    "ClassicLineKt.": 0.03,
+    "android.graphics.Bitmap.getWidth": 0.891
+  },
+  "overlapping_retained_frames_only": {
+    "count": 76,
+    "p50_ms": 16.381751,
+    "p95_ms": 1451.048115,
+    "max_ms": 1563.458606,
+    "raw_frame_flags": {
+      "32": 76
+    }
+  },
+  "limits": "CPU sampling adds overhead. Text export omits some recorded samples; percentages use exported stacks. Frame ring buffer is incomplete, raw flags retained without classifying jank; not session FPS or a before/after benchmark. Theme inferred from stack, quality and Rust toggle unrecorded. No screenshots or user media captured."
+}

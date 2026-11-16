@@ -14,20 +14,29 @@ internal data class BlurredPixels(val image: ImageBitmap, val origin: Offset)
  * This correctness fallback deliberately makes no real-time performance promise. */
 internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels {
     require(sigma.isFinite() && sigma > 0f)
-    val full = IntArray(source.width * source.height)
-    source.readPixels(full)
-    var left = source.width; var right = -1; var top = source.height; var bottom = -1
-    for (y in 0 until source.height) for (x in 0 until source.width) {
-        if (full[y * source.width + x] ushr 24 != 0) {
+    // Android ImageBitmap dimensions cross into Bitmap/JNI. Keep those reads
+    // outside pixel loops, including the padded transparent-area scan.
+    val sourceWidth = source.width
+    val sourceHeight = source.height
+    val full = IntArray(sourceWidth * sourceHeight)
+    source.readPixels(full, startX=0, startY=0, width=sourceWidth, height=sourceHeight,
+        bufferOffset=0, stride=sourceWidth)
+    var left = sourceWidth; var right = -1; var top = sourceHeight; var bottom = -1
+    for (y in 0 until sourceHeight) for (x in 0 until sourceWidth) {
+        if (full[y * sourceWidth + x] ushr 24 != 0) {
             left = minOf(left,x); right = maxOf(right,x); top = minOf(top,y); bottom = maxOf(bottom,y)
         }
     }
     if (right < left) return BlurredPixels(bitmapFromArgb(1,1,intArrayOf(0)), Offset.Zero)
     val radius = ceil(3 * sigma).toInt().coerceAtLeast(1)
-    left = maxOf(0,left-radius); right = minOf(source.width-1,right+radius)
-    top = maxOf(0,top-radius); bottom = minOf(source.height-1,bottom+radius)
+    left = maxOf(0,left-radius); right = minOf(sourceWidth-1,right+radius)
+    top = maxOf(0,top-radius); bottom = minOf(sourceHeight-1,bottom+radius)
     val width = right-left+1; val height = bottom-top+1
-    val pixels = IntArray(width*height) { i -> full[(top+i/width)*source.width+left+i%width] }
+    val pixels = IntArray(width*height)
+    for (y in 0 until height) {
+        val start = (top+y)*sourceWidth+left
+        full.copyInto(pixels, y*width, start, start+width)
+    }
     val kernel = DoubleArray(radius*2+1) { i -> exp(-.5*(i-radius).toDouble().pow(2)/(sigma*sigma)) }
     val norm = kernel.sum(); for (i in kernel.indices) kernel[i] /= norm
     val input = DoubleArray(pixels.size)

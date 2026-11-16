@@ -10,7 +10,8 @@
 - 首次无设备；后续真机UnsatisfiedLinkError已定位为安装包缺少.so，更新含native包后
   arm64/API37加载/启动自检/15组CPU像素对照通过。设备帧率/完整UI仍未验证；
   新证据见verification/native-mask/device-load-fix，既有上游视觉残差不变。
-- 本项验证、命令与证据见native-mask-sample.md；提交后由用户先进行真实设备测试。
+- 已提交42ccb96（开关）及0d5f74f（缺库诊断与真机复核）。
+- 本项验证、命令与证据见native-mask-sample.md；含native包已保留数据更新到连接设备，由用户继续测流畅度。
 - 下一项：结合设备反馈定位实际掉帧路径，再继续倾诉分段／字序／转场及原版视觉对照。
   不无限扩展native框架，不把仅遮罩开关显示为全渲染引擎。
 - 用户Desktop打包配置与gradle-daemon-jvm.properties保持原样，不暂存。

@@ -125,3 +125,17 @@ Mean foreground MAE 2.9653, maximum 9.8170. Not final visual acceptance.
 Native mask compaction changed zero PNGs; random revisits and pause checks
 are pixel identical. No Android device is attached, so Android runtime,
 other scripts, moving CTM and the complete camera remain unverified here.
+
+## Camera target geometry
+
+`generate-fume-camera.mjs` executes unmodified `fumeCamera.ts` and block
+visibility code. `camera-blocks.tsv` / `camera-rows.tsv` give the explicit
+synthetic geometry seam. `camera-targets.tsv` contains 1,253 original samples:
+entry, stepped/smooth focus, cross-row window, scale, retarget durations,
+overview fit, source focus selection, flight bridges and overscan. Kotlin
+checks every value at 1e-8 and repeats in randomized order. Not evidence of
+the subsequent spring trajectory or full-theme raster equivalence.
+
+The original smooth focus returns from the next row to the previous one
+across the exact row boundary. Source samples now include boundary ±1e-8;
+this target discontinuity must not be silently replaced by an invented curve.

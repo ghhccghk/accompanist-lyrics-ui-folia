@@ -1,5 +1,22 @@
 # 后续实施清单 — 2026-11-15
 
+## 2026-11-16 默认 native 打包与内存（当前继续点）
+
+目标：sample默认携带可用native，Kotlin仍为运行时默认；减少模糊临时内存而不减画质。
+
+- 已提交28f59ad：Android默认两ABI、Windows sample JAR捆绑DLL和分平台加载/诊断。
+  JDK21/JBR25空library.path的真实JNI通过；缺库UI回退三测试通过；false构建无残留。
+  默认Android debug APK两ABI/16KiB/签名检查通过，本轮未做设备UI运行。
+- 内存修复：复用卷积数组、全尺寸时免裁剪复制、恢复native时释放软件帧引用。
+  JVM640×320每次少约2.34MiB；Android合成大图两轮少12.6%–13.7%托管分配。
+  405组像素、原版CSS覆盖及云阶30场景暂停/seek检查通过。CPU耗时波动，不宣称稳定提速。
+  证据：verification/playback-stutter/memory。
+- 仍未解决：嵌套tiny-sigma软件回退、同步准备、真实播放停顿及进程内存峰值。
+  不能把本轮分配下降当成整会话PSS或FPS改善。
+- 下一项：同设备同歌固定片段/设置复测，再回到倾诉及classic上游视觉残差。
+  用户Desktop Gradle配置与daemon属性保留，不暂存。
+
+
 ## 2026-11-16 真实歌曲卡顿采样（最新继续点）
 
 当前目标：按真实设备CPU热点修复卡顿，保持主题效果；局部内核提速不能代替流畅度验收。

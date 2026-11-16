@@ -32,18 +32,23 @@ internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels
     left = maxOf(0,left-radius); right = minOf(sourceWidth-1,right+radius)
     top = maxOf(0,top-radius); bottom = minOf(sourceHeight-1,bottom+radius)
     val width = right-left+1; val height = bottom-top+1
-    val pixels = IntArray(width*height)
-    for (y in 0 until height) {
-        val start = (top+y)*sourceWidth+left
-        full.copyInto(pixels, y*width, start, start+width)
+    val count = width*height
+    // Preserve contiguous scans for ART. Reuse full when no crop is needed.
+    val pixels = if (width == sourceWidth && height == sourceHeight) full else IntArray(count).also { crop ->
+        for (y in 0 until height) {
+            val start = (top+y)*sourceWidth+left
+            full.copyInto(crop,y*width,start,start+width)
+        }
     }
-    val kernel = DoubleArray(radius*2+1) { i -> exp(-.5*(i-radius).toDouble().pow(2)/(sigma*sigma)) }
-    val norm = kernel.sum(); for (i in kernel.indices) kernel[i] /= norm
-    val input = DoubleArray(pixels.size)
-    val temporary = DoubleArray(pixels.size)
-    val output = DoubleArray(pixels.size)
-    val alpha = DoubleArray(pixels.size)
-    val result = IntArray(pixels.size)
+    // The vertical pass reads only temporary, so output can reuse input.
+    val kernel = if (sigma < 2f) DoubleArray(radius*2+1) { i ->
+        exp(-.5*(i-radius).toDouble().pow(2)/(sigma*sigma))
+    }.also { values -> val norm=values.sum(); for (i in values.indices) values[i] /= norm }
+        else doubleArrayOf()
+    val input = DoubleArray(count)
+    val temporary = DoubleArray(count)
+    val alpha = DoubleArray(count)
+    val result = IntArray(count)
     for (channel in intArrayOf(24,16,8,0)) {
         for (i in pixels.indices) {
             val a = pixels[i] ushr 24
@@ -58,11 +63,11 @@ internal fun blurPremultiplied(source: ImageBitmap, sigma: Float): BlurredPixels
             for (y in 0 until height) for (x in 0 until width) {
                 var sum = 0.0
                 for (d in maxOf(-radius,-y)..minOf(radius,height-1-y)) sum += temporary[(y+d)*width+x]*kernel[d+radius]
-                output[y*width+x] = sum
+                input[y*width+x] = sum
             }
-            output
+            input
         }
-        for (i in pixels.indices) {
+        for (i in 0 until count) {
             val value = if (channel == 24) { alpha[i] = filtered[i]; filtered[i] }
                 else if (alpha[i] > 0) filtered[i]*255/alpha[i] else 0.0
             result[i] = result[i] or (floor(value+.5).toInt().coerceIn(0,255) shl channel)

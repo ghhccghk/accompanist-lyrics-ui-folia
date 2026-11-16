@@ -32,6 +32,33 @@ class SoftwareBlurTest {
         }
     }
 
+    @Test fun temporaryHeapAllocationDropsWithoutChangingPixels() {
+        val bean = java.lang.management.ManagementFactory.getThreadMXBean() as com.sun.management.ThreadMXBean
+        check(bean.isThreadAllocatedMemorySupported)
+        bean.isThreadAllocatedMemoryEnabled = true
+        val width=640; val height=320
+        val source=bitmapFromArgb(width,height,IntArray(width*height) { 0x80FF8040.toInt() })
+        val thread=Thread.currentThread().threadId()
+        val rows=mutableListOf("sigma,legacyJvmBytes,optimizedJvmBytes,savedJvmBytes")
+        for (sigma in listOf(.5f,6f)) {
+            repeat(3) { legacyBlurPremultiplied(source,sigma); blurPremultiplied(source,sigma) }
+            fun measure(blur: () -> BlurredPixels): Long {
+                val before=bean.getThreadAllocatedBytes(thread)
+                repeat(4) { check(blur().image.width==width) }
+                return (bean.getThreadAllocatedBytes(thread)-before)/4
+            }
+            val old=measure { legacyBlurPremultiplied(source,sigma) }
+            val now=measure { blurPremultiplied(source,sigma) }
+            // Removed one cropped IntArray and one DoubleArray (12 bytes/pixel).
+            // Leave allowance for VM wrappers; this is heap allocation, not RSS.
+            assertTrue(old-now >= width.toLong()*height*11, "$sigma old=$old new=$now")
+            rows += "$sigma,$old,$now,${old-now}"
+        }
+        java.io.File("build/verification/software-blur-memory.csv").apply {
+            parentFile.mkdirs(); writeText(rows.joinToString("\n")+"\n")
+        }
+    }
+
     @Test fun transparentColourCannotBleedAndOpacityIsPreserved() {
         val size=21
         // Deliberately coloured zero-alpha surroundings must contribute no blue.

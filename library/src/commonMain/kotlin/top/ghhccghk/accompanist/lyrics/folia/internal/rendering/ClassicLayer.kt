@@ -45,6 +45,10 @@ internal class ClassicLayer(private val native: GraphicsLayer, private val softw
         // software scope into nested groups so none replays a RenderNode here.
         softwareFrame = software || scope is SoftwareDrawScope || (blurSigma > .01f && blurSigma <= .5f)
         if (!softwareFrame) {
+            // A tiny-sigma frame may have allocated a full software tree. Once
+            // native recording resumes, none of those pixels is drawn again.
+            // Drop references now rather than retaining peak bitmaps to dispose.
+            release()
             native.alpha = alpha
             native.compositingStrategy = if(forceOffscreen) CompositingStrategy.Offscreen else CompositingStrategy.Auto
             native.renderEffect = if (blurSigma > .01f) BlurEffect(nativeRadiusForCssSigma(blurSigma), nativeRadiusForCssSigma(blurSigma), TileMode.Decal) else null

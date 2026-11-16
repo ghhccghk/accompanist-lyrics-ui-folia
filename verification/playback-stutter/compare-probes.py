@@ -26,6 +26,10 @@ for (size, sigma), old in before.items():
         if key in old or key in new:
             assert old.get(key) == new.get(key), f"Changed {size} sigma={sigma}: {key}"
     a, b = float(old["p50Ms"]), float(new["p50Ms"])
-    result.append({"source": size, "sigma": float(sigma), "before": old, "after": new,
-                   "p50_reduction_percent": round(100*(a-b)/a, 2)})
+    row = {"source": size, "sigma": float(sigma), "before": old, "after": new,
+           "p50_reduction_percent": round(100*(a-b)/a, 2)}
+    if "managedBytesPerCall" in old and "managedBytesPerCall" in new:
+        previous, current = int(old["managedBytesPerCall"]), int(new["managedBytesPerCall"])
+        row["managed_allocation_reduction_percent"] = round(100*(previous-current)/previous, 2)
+    result.append(row)
 Path(sys.argv[3]).write_text(json.dumps(result, indent=2)+"\n", encoding="utf-8")

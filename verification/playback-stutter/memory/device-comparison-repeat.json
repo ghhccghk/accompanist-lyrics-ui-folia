@@ -1,0 +1,210 @@
+[
+  {
+    "source": "97x43",
+    "sigma": 0.25,
+    "before": {
+      "sigma": "0.25",
+      "output": "50x16",
+      "origin": "4735535009275838464",
+      "argbHash": "258293749",
+      "sha256": "df106b8123368293807105bf4c0fcbc7f821c5ca92e2fedc24a72a376260d146",
+      "managedBytesPerCall": "53248",
+      "p50Ms": "0.204687",
+      "p95Ms": "0.691406"
+    },
+    "after": {
+      "sigma": "0.25",
+      "output": "50x16",
+      "origin": "4735535009275838464",
+      "argbHash": "258293749",
+      "sha256": "df106b8123368293807105bf4c0fcbc7f821c5ca92e2fedc24a72a376260d146",
+      "managedBytesPerCall": "46694",
+      "p50Ms": "0.210313",
+      "p95Ms": "0.715469"
+    },
+    "p50_reduction_percent": -2.75,
+    "managed_allocation_reduction_percent": 12.31
+  },
+  {
+    "source": "97x43",
+    "sigma": 0.5,
+    "before": {
+      "sigma": "0.5",
+      "output": "52x18",
+      "origin": "4733283209461104640",
+      "argbHash": "1985340478",
+      "sha256": "c48d0c3a92854a90b5b3d988e16ee8880138fd51942a5e527b42ab0b72ca841c",
+      "managedBytesPerCall": "59801",
+      "p50Ms": "0.11349",
+      "p95Ms": "0.127187"
+    },
+    "after": {
+      "sigma": "0.5",
+      "output": "52x18",
+      "origin": "4733283209461104640",
+      "argbHash": "1985340478",
+      "sha256": "c48d0c3a92854a90b5b3d988e16ee8880138fd51942a5e527b42ab0b72ca841c",
+      "managedBytesPerCall": "51063",
+      "p50Ms": "0.109688",
+      "p95Ms": "0.136302"
+    },
+    "p50_reduction_percent": 3.35,
+    "managed_allocation_reduction_percent": 14.61
+  },
+  {
+    "source": "97x43",
+    "sigma": 2.0,
+    "before": {
+      "sigma": "2.0",
+      "output": "60x26",
+      "origin": "4724276010202169344",
+      "argbHash": "-1759516926",
+      "sha256": "663b76c180ce0d4526c83be88fcee76bf3d93411a54ac8f325da108c79854ba9",
+      "managedBytesPerCall": "100215",
+      "p50Ms": "0.204896",
+      "p95Ms": "0.221563"
+    },
+    "after": {
+      "sigma": "2.0",
+      "output": "60x26",
+      "origin": "4724276010202169344",
+      "argbHash": "-1759516926",
+      "sha256": "663b76c180ce0d4526c83be88fcee76bf3d93411a54ac8f325da108c79854ba9",
+      "managedBytesPerCall": "82739",
+      "p50Ms": "0.207292",
+      "p95Ms": "0.433698"
+    },
+    "p50_reduction_percent": -1.17,
+    "managed_allocation_reduction_percent": 17.44
+  },
+  {
+    "source": "97x43",
+    "sigma": 6.0,
+    "before": {
+      "sigma": "6.0",
+      "output": "84x43",
+      "origin": "4665729213955833856",
+      "argbHash": "1996998888",
+      "sha256": "5cf48378f192ec8b00e36820f046f5bd62fb1c290813586bc18d1d4ec862e4bd",
+      "managedBytesPerCall": "185412",
+      "p50Ms": "0.443906",
+      "p95Ms": "0.482917"
+    },
+    "after": {
+      "sigma": "6.0",
+      "output": "84x43",
+      "origin": "4665729213955833856",
+      "argbHash": "1996998888",
+      "sha256": "5cf48378f192ec8b00e36820f046f5bd62fb1c290813586bc18d1d4ec862e4bd",
+      "managedBytesPerCall": "152644",
+      "p50Ms": "0.451563",
+      "p95Ms": "0.47276"
+    },
+    "p50_reduction_percent": -1.72,
+    "managed_allocation_reduction_percent": 17.67
+  },
+  {
+    "source": "1200x500",
+    "sigma": 0.25,
+    "before": {
+      "sigma": "0.25",
+      "output": "602x169",
+      "origin": "4869939310685913088",
+      "argbHash": "-1028619714",
+      "sha256": "1e69af5cb70ee9bc3c461cfab87836d8e470419d05a06aadf7ef2fddf63918b3",
+      "managedBytesPerCall": "6486425",
+      "p50Ms": "8.8625",
+      "p95Ms": "9.503802"
+    },
+    "after": {
+      "sigma": "0.25",
+      "output": "602x169",
+      "origin": "4869939310685913088",
+      "argbHash": "-1028619714",
+      "sha256": "1e69af5cb70ee9bc3c461cfab87836d8e470419d05a06aadf7ef2fddf63918b3",
+      "managedBytesPerCall": "5670229",
+      "p50Ms": "18.677135",
+      "p95Ms": "19.608802"
+    },
+    "p50_reduction_percent": -110.74,
+    "managed_allocation_reduction_percent": 12.58
+  },
+  {
+    "source": "1200x500",
+    "sigma": 0.5,
+    "before": {
+      "sigma": "0.5",
+      "output": "604x171",
+      "origin": "4869798573197492224",
+      "argbHash": "18794506",
+      "sha256": "f351bfc3fa2eab7953b2d70b6af587d9a040f64d262602744f93df3480ed819c",
+      "managedBytesPerCall": "6540492",
+      "p50Ms": "12.304011",
+      "p95Ms": "13.022239"
+    },
+    "after": {
+      "sigma": "0.5",
+      "output": "604x171",
+      "origin": "4869798573197492224",
+      "argbHash": "18794506",
+      "sha256": "f351bfc3fa2eab7953b2d70b6af587d9a040f64d262602744f93df3480ed819c",
+      "managedBytesPerCall": "5718562",
+      "p50Ms": "12.368698",
+      "p95Ms": "23.651719"
+    },
+    "p50_reduction_percent": -0.53,
+    "managed_allocation_reduction_percent": 12.57
+  },
+  {
+    "source": "1200x500",
+    "sigma": 2.0,
+    "before": {
+      "sigma": "2.0",
+      "output": "612x179",
+      "origin": "4869235623243808768",
+      "argbHash": "-878036239",
+      "sha256": "3b2cc10abbd26a912e49fd4472a5939b4f10ebbf2b7bfd0024eeb07436261afb",
+      "managedBytesPerCall": "6791714",
+      "p50Ms": "14.768802",
+      "p95Ms": "15.061406"
+    },
+    "after": {
+      "sigma": "2.0",
+      "output": "612x179",
+      "origin": "4869235623243808768",
+      "argbHash": "-878036239",
+      "sha256": "3b2cc10abbd26a912e49fd4472a5939b4f10ebbf2b7bfd0024eeb07436261afb",
+      "managedBytesPerCall": "5911893",
+      "p50Ms": "15.008073",
+      "p95Ms": "15.15026"
+    },
+    "p50_reduction_percent": -1.62,
+    "managed_allocation_reduction_percent": 12.95
+  },
+  {
+    "source": "1200x500",
+    "sigma": 6.0,
+    "before": {
+      "sigma": "6.0",
+      "output": "636x203",
+      "origin": "4867546773382758400",
+      "argbHash": "1515368353",
+      "sha256": "c1a8f34c347d51803c25ff9cc422ac9b07a13b97c7ea4706b25e2fd1bdf04344",
+      "managedBytesPerCall": "7596714",
+      "p50Ms": "17.145364",
+      "p95Ms": "17.332552"
+    },
+    "after": {
+      "sigma": "6.0",
+      "output": "636x203",
+      "origin": "4867546773382758400",
+      "argbHash": "1515368353",
+      "sha256": "c1a8f34c347d51803c25ff9cc422ac9b07a13b97c7ea4706b25e2fd1bdf04344",
+      "managedBytesPerCall": "6558242",
+      "p50Ms": "17.244219",
+      "p95Ms": "17.892344"
+    },
+    "p50_reduction_percent": -0.58,
+    "managed_allocation_reduction_percent": 13.67
+  }
+]

@@ -2,6 +2,7 @@ package top.ghhccghk.accompanist.folia.sample;
 
 import android.graphics.Bitmap;
 import android.os.Build;
+import android.os.Debug;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.security.MessageDigest;
@@ -39,11 +40,13 @@ public final class SoftwareBlurDeviceProbe {
                 Object result = null;
                 for (int i = 0; i < 8; i++) result = blur.invoke(null, input, sigma);
                 double[] ms = new double[15];
+                long allocatedBefore = Long.parseLong(Debug.getRuntimeStat("art.gc.bytes-allocated"));
                 for (int i = 0; i < ms.length; i++) {
                     long start = System.nanoTime();
                     result = blur.invoke(null, input, sigma);
                     ms[i] = (System.nanoTime() - start) / 1e6;
                 }
+                long allocated = Long.parseLong(Debug.getRuntimeStat("art.gc.bytes-allocated")) - allocatedBefore;
                 Bitmap output = (Bitmap) unwrap.invoke(null, result.getClass().getMethod("getImage").invoke(result));
                 int ow = output.getWidth(), oh = output.getHeight();
                 int[] pixels = new int[ow * oh];
@@ -64,7 +67,7 @@ public final class SoftwareBlurDeviceProbe {
                 System.out.println(w + "x" + h + " sigma=" + sigma + " output=" + ow + "x" + oh +
                     " origin=" + origin + " argbHash=" + Arrays.hashCode(pixels) +
                     " sha256=" + sha256 +
-                    " p50Ms=" + ms[7] + " p95Ms=" + ms[14]);
+                    " managedBytesPerCall=" + (allocated / ms.length) + " p50Ms=" + ms[7] + " p95Ms=" + ms[14]);
             }
         }
     }

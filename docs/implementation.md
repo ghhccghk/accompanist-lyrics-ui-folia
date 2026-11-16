@@ -17,6 +17,12 @@ Cargo unit-test executable link failed on this toolchain; DLL build/load passed.
 ed80f1b preserves the independent internal Tilt stage and original mounted controls;
 its 144-frame Arabic/layout residuals are explicitly not accepted and it is not public.
 
+Follow-up production optimization changes only Kotlin vertical coverage traversal:
+72 exact integer/fractional controls and 372 paired current-source PNGs unchanged.
+640×320 CPU+ARGB paired P50 5.7849→4.1757ms; full-renderer/device tails unmeasured.
+Both platform builds pass. Details and failed stale-image baseline are retained in
+performance.md; default production continues to run Kotlin without loading native.
+
 ## 2026-11-16 — Partita stage (visual calibration in progress)
 
 FoliaStyle.Partita now dispatches to an independent chunk stage, not renamed classic.

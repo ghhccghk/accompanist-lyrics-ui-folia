@@ -1,0 +1,8 @@
+JVM 21.0.5; Windows 10 amd64
+CPU coverage+ARGB packing only, not shaping/bitmap/GPU/frame time. Uncontrolled host load.
+12 warmups each, 40 alternating original/contiguous samples per size; one thread.
+320 x 160 original ms P50=1.0635 P95=1.0984 P99=1.7181
+320 x 160 contiguous ms P50=0.9444 P95=0.9679 P99=1.006
+640 x 320 original ms P50=5.7849 P95=6.0796 P99=6.2321
+640 x 320 contiguous ms P50=4.1757 P95=4.4226 P99=4.4999
+Checksum: 3489660720

@@ -58,6 +58,31 @@ private fun boxPass(input: DoubleArray, output: DoubleArray, width: Int, height:
     val stride = if (horizontal) 1 else width
     val left = window / 2 + origin
     val right = window - left - 1
+    if (!horizontal) {
+        // Keep the exact per-column recurrence, but write adjacent pixels in
+        // each row. The previous output row holds the rolling sums. This avoids
+        // strided column traversal without another buffer or changed rounding;
+        // fractional premultiplied channels use the same addition/subtraction
+        // order, not a prefix-sum or lower-precision approximation.
+        for (x in 0 until width) {
+            var total = 0.0
+            for (y in 0..minOf(right, height - 1)) total += input[y * width + x]
+            output[x] = total
+        }
+        for (y in 1 until height) {
+            val previous = (y - 1) * width
+            val current = y * width
+            val remove = y - 1 - left
+            val add = y + right
+            for (x in 0 until width) {
+                var total = output[previous + x]
+                if (remove >= 0) total -= input[remove * width + x]
+                if (add < height) total += input[add * width + x]
+                output[current + x] = total
+            }
+        }
+        return
+    }
     repeat(lines) { line ->
         val base = if (horizontal) line * width else line
         var total = 0.0

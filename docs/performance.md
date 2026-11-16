@@ -36,6 +36,23 @@ Kotlin候选约1,435,952/5,736,752B。native位图/driver内存、长期GC/GPU�
 Rust原型保留供后续更合适的热点继续比较。默认库/示例无native依赖，Android未构建/加载Rust，
 新主题效果验收与未实现主题继续按themes-parity.md推进，不能由基准替代。
 
+### 已落地：Kotlin连续纵向扫描
+
+`GlowMask.kt:boxPass`只改变纵向遍历顺序，使用上一输出行的rolling sums，保留每列
+初始化/减后加顺序、Double精度、轴末量化、偶窗口偏移、六次buffer交换及所有权。
+未引入pool/额外native依赖；遮罩与API<31预乘颜色fallback共用此内核。
+独立静态审查无新增问题。GlowMaskTest与旧递推快照逐值比较72组随机整数/小数输入，
+含单行/列、奇偶/超大窗口。JVM classic原色/white mask/软件fallback/连续序列372帧，
+同当前源码基线与优化版PNG SHA全部相同，暂停/逆向检查通过。最初比较旧software
+缓存发现30张不同，故重新构建当前HEAD旧内核并完整重采，证实是旧素材不能当有效基线；
+没有替换原版期望或隐藏失败。散列见verification/native-mask/kotlin-contiguous-pixel-regression.json。
+
+同进程12预热、40次交替旧/新CPU+ARGB配对：320×160 P50 1.0635→0.9444ms（约11%），
+640×320 5.7849→4.1757ms（约28%），P95 6.0796→4.4226ms。原始条件/尾值在
+kotlin-contiguous-traversal.txt。这是单进程局部观察；先前独立MaskBenchmark
+2.3171→1.5693ms受进程/JIT影响，随后旧内核复跑1.6476ms，不宣称稳定32%整准备提升。
+该优化后两端构建通过；未启设备/真实Desktop窗口，未证明用户实际掉帧已解决。
+
 This is an initial logic/allocation measurement, not a rendering, frame-time or
 60Hz result. Android CPU/GPU, mask preparation, texture upload, GC peaks and full
 sample frame percentiles remain unmeasured. No Rust experiment is justified by

@@ -1,0 +1,82 @@
+[
+  {
+    "durationMs": 966.891671,
+    "offsetSeconds": 11.254154679,
+    "exportedSamples": 235,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 164,
+      "ClassicLayer.record": 222,
+      "GlowMaskKt.blurredMasks": 0,
+      "PartitaLineKt": 223,
+      "GC": 0,
+      "gc::": 8,
+      "Jit::": 0,
+      "neon::bilerp": 28
+    },
+    "flags": "32"
+  },
+  {
+    "durationMs": 188.42082,
+    "offsetSeconds": 14.808980164,
+    "exportedSamples": 44,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 0,
+      "ClassicLayer.record": 0,
+      "GlowMaskKt.blurredMasks": 26,
+      "PartitaLineKt": 33,
+      "GC": 0,
+      "gc::": 0,
+      "Jit::": 0,
+      "neon::bilerp": 0
+    },
+    "flags": "32"
+  },
+  {
+    "durationMs": 181.711367,
+    "offsetSeconds": 10.988411858,
+    "exportedSamples": 42,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 0,
+      "ClassicLayer.record": 0,
+      "GlowMaskKt.blurredMasks": 30,
+      "PartitaLineKt": 36,
+      "GC": 0,
+      "gc::": 0,
+      "Jit::": 0,
+      "neon::bilerp": 0
+    },
+    "flags": "32"
+  },
+  {
+    "durationMs": 174.6428,
+    "offsetSeconds": 11.005016675,
+    "exportedSamples": 41,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 1,
+      "ClassicLayer.record": 1,
+      "GlowMaskKt.blurredMasks": 30,
+      "PartitaLineKt": 36,
+      "GC": 0,
+      "gc::": 0,
+      "Jit::": 0,
+      "neon::bilerp": 0
+    },
+    "flags": "32"
+  },
+  {
+    "durationMs": 27.051529,
+    "offsetSeconds": 11.204325654,
+    "exportedSamples": 6,
+    "inclusiveSamples": {
+      "SoftwareBlurKt.blurPremultiplied": 1,
+      "ClassicLayer.record": 2,
+      "GlowMaskKt.blurredMasks": 0,
+      "PartitaLineKt": 3,
+      "GC": 0,
+      "gc::": 0,
+      "Jit::": 0,
+      "neon::bilerp": 0
+    },
+    "flags": "32"
+  }
+]

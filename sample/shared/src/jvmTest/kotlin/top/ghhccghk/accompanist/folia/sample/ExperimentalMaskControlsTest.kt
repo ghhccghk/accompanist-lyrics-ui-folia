@@ -10,6 +10,14 @@ import kotlin.test.*
 /** Ordinary test process deliberately has no experimental library on its path. */
 @OptIn(ExperimentalTestApi::class)
 class ExperimentalMaskControlsTest {
+    @Test fun diagnosticsPreservePhaseAndActualLinkerReason() {
+        for (detail in listOf("library libfolia_mask_experiment.so not found", "cannot locate symbol missing_symbol", "No implementation found for version")) {
+            val message = nativeMaskLoadFailure("JNI 自检", UnsatisfiedLinkError(detail))
+            assertTrue(message.contains(detail))
+            assertTrue(message.contains("JNI 自检"))
+            assertTrue(message.contains("-PfoliaExperimentalMask=true"))
+        }
+    }
     @Test fun freshLaunchAndUnavailableSwitchAreHonest() = runDesktopComposeUiTest(width = 420, height = 800) {
         val session = SampleSession()
         setContent { FoliaSampleApp(session = session, settingsStore = null) }
@@ -21,6 +29,8 @@ class ExperimentalMaskControlsTest {
             assertTrue(session.maskBackend.requested)
             assertNull(session.maskBackend.processor)
             assertNotNull(session.maskBackend.loadError)
+            assertTrue(session.maskBackend.loadError!!.contains("UnsatisfiedLinkError"))
+            assertTrue(session.maskBackend.loadError!!.contains("-PfoliaExperimentalMask=true"))
         }
         onNodeWithText("实际：Kotlin（Rust 不可用／已回退）").assertExists()
         val folder = File("build/verification").apply { mkdirs() }

@@ -4,6 +4,35 @@
 接入流光 classic／云阶 Partita 的辉光准备，包括云阶引导线。不改变排版、shaping、
 内部字素时间、媒体时间、动画及 Compose 绘制；不是完整 native 渲染器。
 
+## 真机 UnsatisfiedLinkError 修复复核
+
+2026-11-16 用户反馈后，读取已连接 arm64/API37、型号2509FPN0BC的已安装 APK：
+仅含 `libandroidx.graphics.path.so`，没有 `libfolia_mask_experiment.so`。
+实际通过同一 sample loader 重现缺库错误；不是把已有 .so 的链接失败猜成 ABI 不支持。
+用含 native 的 debug APK `adb install -r` 更新后，该设备上实际 sample loader、ABI v1、
+启动自检和15组ARGB对照通过（独立有限卷积，尺寸1×1、3×7、13×5，
+sigma=1/2.25/10/20/4096），随后释放工作区。没有清除目标应用数据或卸载原应用。
+
+界面现在保留加载阶段与原始 linker 详情，可选中文本复制，明确提示普通构建缺库时
+应安装本页实验 APK，或带 `-PfoliaExperimentalMask=true` 构建。
+不能把所有 UnsatisfiedLinkError 都诊断成缺库；缺依赖、缺符号和 JNI 入口失败
+会显示各自原始原因。该修改不让默认库或普通 sample 构建强制依赖 Rust。
+
+证据见 `verification/native-mask/device-load-fix/`，包含升级前实际APK的库清单、
+升级前/后设备探测输出和本次交付APK哈希。此前 `sample-switch/` 是初次无设备阶段的证据。
+
+无需启动播放器或操作设备界面即可重跑专用 JNI 探测：
+
+```powershell
+./gradlew.bat :sample:android-app:assembleDebug :sample:android-app:assembleDebugAndroidTest -PfoliaExperimentalMask=true
+adb install -r sample/android-app/build/outputs/apk/debug/android-app-debug.apk
+adb install -r -t sample/android-app/build/outputs/apk/androidTest/debug/android-app-debug-androidTest.apk
+adb shell am instrument -w top.ghhccghk.accompanist.folia.sample.test/top.ghhccghk.accompanist.folia.sample.NativeMaskDeviceProbe
+```
+
+`-e expectMissing true` 仅用于刻意验证普通缺库构建；不是跳过 native 检查。
+这次证明真机 native 加载及CPU结果可用，尚未证明Android完整画面一致、帧率改善或整主题达标。
+
 ## 使用
 
 待选歌页、真实歌曲页的「设置」，以及「开发／演示 → 设置」均提供
@@ -70,8 +99,8 @@ Desktop 同样有开关；普通分发未捆绑 DLL，必须由启动 JVM 的 `j
 - 旧 JNI ABI 的 30 组随机尺寸／半径逐像素及越界、只读、别名、NaN 等错误检查重跑通过。
 - Android native 可选 APK／普通无 native APK 均构建，Desktop 编译通过；
   native APK 内两个 ABI 的 JNI 导出及 ELF LOAD 对齐检查、16KiB zipalign、签名验证通过。
-- 本机 `adb devices` 没有设备。**没有本轮 Android 真机／模拟器运行或性能验证**，
-  不把 Windows JNI 对照扩展为 Android 像素、设备帧率或整主题验收。
+- 初次交付没有设备；本次修复已通过上方 arm64/API37 真机 JNI 加载和15组CPU像素对照。
+  Android完整UI画面对照、设备帧率及x86_64设备运行仍未验证，不据此宣布整主题验收。
 - 已有 classic／多主题视觉残差仍见 classic-parity.md、themes-parity.md；
   本次 A/B 证明后端切换保持当前画面，不证明原版移植残差已消除。
 

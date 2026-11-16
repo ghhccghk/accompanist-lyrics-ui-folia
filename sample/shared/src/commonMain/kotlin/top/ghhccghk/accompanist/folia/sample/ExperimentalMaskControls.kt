@@ -1,6 +1,7 @@
 package top.ghhccghk.accompanist.folia.sample
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -68,7 +69,7 @@ internal fun ExperimentalMaskControls(session: SampleSession) {
         stats.calls == 0L -> "Rust 已加载，尚未计算遮罩"
         else -> "实际：Rust CPU 遮罩 · ${stats.calls} 次"
     })
-    error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
+    error?.let { SelectionContainer { Text(it, color = MaterialTheme.colorScheme.error) } }
     if (stats.calls > 0) Text("JNI 遮罩累计 ${stats.millis.toLong()} ms（含复制；不是帧耗时）")
     Text("默认 Kotlin。仅切换流光／云阶辉光准备；文字排版、动画及绘制仍为 Kotlin/Compose。" +
         "切换会重建遮罩，保持播放位置。最简画质可能没有遮罩调用。", style = MaterialTheme.typography.bodySmall)

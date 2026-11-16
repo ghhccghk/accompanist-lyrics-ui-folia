@@ -11,11 +11,14 @@ internal object NativeMaskBridge {
 }
 
 internal actual fun loadSampleNativeMask(): NativeMaskLoad {
+    var phase = "加载 libfolia_mask_experiment"
     return try {
         System.loadLibrary("folia_mask_experiment")
+        phase = "核对 JNI version 入口"
         check(NativeMaskBridge.version() == 1) { "Rust 遮罩 ABI 版本不兼容" }
         val processor = JniMaskProcessor()
         // Verify the actual JNI entry and kernel before the UI can claim availability.
+        phase = "运行 JNI blur 启动自检"
         val result = processor.blur(intArrayOf(-1), 1, 1, floatArrayOf(1f))
         if (result?.single()?.single() != 0x02ffffff) {
             val error = processor.stats().error ?: "Rust 遮罩启动自检不匹配"
@@ -26,13 +29,19 @@ internal actual fun loadSampleNativeMask(): NativeMaskLoad {
             NativeMaskLoad(processor)
         }
     } catch (error: LinkageError) {
-        NativeMaskLoad(error = "当前构建或设备 ABI 未提供可加载的 Rust 遮罩库（${error.javaClass.simpleName}）")
+        NativeMaskLoad(error = nativeMaskLoadFailure(phase, error))
     } catch (error: SecurityException) {
         NativeMaskLoad(error = "系统拒绝加载 Rust 遮罩库（${error.javaClass.simpleName}）")
     } catch (error: IllegalStateException) {
         NativeMaskLoad(error = error.message ?: "Rust 遮罩自检失败")
     }
 }
+
+/** Keep linker details: missing file, dependency, symbol and JNI entry differ. */
+internal fun nativeMaskLoadFailure(phase: String, error: LinkageError): String =
+    "$phase 失败（${error.javaClass.simpleName}）：${error.message ?: "无系统详情"}\n" +
+        "如果提示找不到 libfolia_mask_experiment.so，请安装 Rust 实验 APK；普通构建不包含该库。" +
+        "自行构建使用 -PfoliaExperimentalMask=true。"
 
 internal class JniMaskProcessor : SampleNativeMaskProcessor {
     private class Workspace(val pixels: Int, val layers: Int) {

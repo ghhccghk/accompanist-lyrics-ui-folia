@@ -61,6 +61,7 @@ android {
         targetSdk = 37
         versionCode = 1
         versionName = "0.1.0"
+        testInstrumentationRunner = "top.ghhccghk.accompanist.folia.sample.NativeMaskDeviceProbe"
     }
     buildFeatures { compose = true }
 }

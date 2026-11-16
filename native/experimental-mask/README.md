@@ -24,7 +24,8 @@ from rustc sysroot and does not edit user PATH, registry or Gradle runtime setti
 The validated local toolchain is x86_64-pc-windows-gnu, Rust LLD, self-contained CRT,
 with explicit `DllMainCRTStartup` required by this linker combination. DLL depends
 on Windows system libraries. Android r28c shared libraries are built/packaging-checked;
-actual Android runtime and device performance remain unverified.
+arm64/API37 sample loading and 15 exact CPU cases now pass on a real device.
+Android full UI parity, x86_64 runtime and device performance remain unverified.
 Cargo unit-test EXE linking failed on this environment (LLD cannot find import
 libraries in EXE mode); actual JVM DLL loading and parity/boundary checks passed.
 Do not report Cargo tests as passed or silently use a Kotlin fallback.

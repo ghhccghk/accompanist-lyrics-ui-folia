@@ -1,0 +1,39 @@
+{
+  "artifact": "folia-sample-rust-experimental-debug.apk",
+  "bytes": 27244456,
+  "sha256": "ec84bfcadd2b7362a36850d46d898addb005a68d40ef222ccec43612a76b5e72",
+  "libraries": {
+    "lib/arm64-v8a/libfolia_mask_experiment.so": {
+      "load_alignment": [
+        16384,
+        16384,
+        16384,
+        16384
+      ],
+      "jni_blur_and_version_exported": true,
+      "needed": [
+        "libdl.so",
+        "libc.so"
+      ],
+      "zip_offset": 13287424,
+      "sha256": "b6f6792561ebce4b5b991fb958afea6ad3fa66ae2c794eaa851d10644cf93a78",
+      "bytes": 323280
+    },
+    "lib/x86_64/libfolia_mask_experiment.so": {
+      "load_alignment": [
+        16384,
+        16384,
+        16384,
+        16384
+      ],
+      "jni_blur_and_version_exported": true,
+      "needed": [
+        "libdl.so",
+        "libc.so"
+      ],
+      "zip_offset": 13664256,
+      "sha256": "f4347aab8f946758241838cfb684f99f14b4fb51c5cf2075e92b34ce18d38baf",
+      "bytes": 357688
+    }
+  }
+}

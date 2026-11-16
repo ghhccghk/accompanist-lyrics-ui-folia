@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-16",
+  "device": {
+    "model": "2509FPN0BC",
+    "abis": [
+      "arm64-v8a"
+    ],
+    "api": 37
+  },
+  "cause": "Installed APK did not contain libfolia_mask_experiment.so. It was not the native experiment APK.",
+  "installed_before": {
+    "sha256": "02ec3f44879752376bfbbbd029424767f0418ee74e5a66160d8de9b0a9716957",
+    "native_libraries": [
+      "lib/arm64-v8a/libandroidx.graphics.path.so"
+    ]
+  },
+  "reproduction": "Explicit sample loader on device before upgrade returned UnsatisfiedLinkError; before.txt",
+  "fix": "Installed native debug APK with adb install -r, without uninstalling target or clearing app data.",
+  "verification": "Actual same sample loader, JNI version, startup self-test, 15 exact ARGB cases vs independent convolution, release. after.txt",
+  "diagnostic_change": "Preserve loader stage and original linker message; selectable UI explanation includes opt-in build flag.",
+  "jvm_regression": "ExperimentalMaskControlsTest 3 cases passed (real missing-library UI plus diagnostic assertions).",
+  "not_verified": [
+    "Android full rendered UI pixel parity",
+    "Device frame timing or speedup",
+    "x86_64 Android runtime"
+  ],
+  "cleanup": "Only newly installed test APK removed; target app reopened. No app data cleared."
+}

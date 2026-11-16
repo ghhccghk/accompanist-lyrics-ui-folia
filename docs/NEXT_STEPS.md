@@ -7,7 +7,9 @@
 
 - 已实现 scoped 遮罩注入、两处显示设置开关、启动自检、实际调用计数、错误和有界工作区回退。
 - Windows 两主题24组成对画面零ARGB差异；Android两ABI构建及16KiB打包检查通过。
-- Android设备运行与性能未验证（adb无设备）；既有上游视觉残差保持，不因A/B通过宣称消除。
+- 首次无设备；后续真机UnsatisfiedLinkError已定位为安装包缺少.so，更新含native包后
+  arm64/API37加载/启动自检/15组CPU像素对照通过。设备帧率/完整UI仍未验证；
+  新证据见verification/native-mask/device-load-fix，既有上游视觉残差不变。
 - 本项验证、命令与证据见native-mask-sample.md；提交后由用户先进行真实设备测试。
 - 下一项：结合设备反馈定位实际掉帧路径，再继续倾诉分段／字序／转场及原版视觉对照。
   不无限扩展native框架，不把仅遮罩开关显示为全渲染引擎。

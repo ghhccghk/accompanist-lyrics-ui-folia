@@ -15,7 +15,7 @@
 | 流光 | classic；`classic/Visualizer.tsx`、`GlowWord.tsx` | 居中词布局、字素辉光、余韵和句转场 | 已实现但未最终验收；完整画面栅格、Android复杂字幕残差继续保留在classic-parity.md |
 | 云阶 | partita；`partitaLayout.ts`、`PartitaChunk.tsx`、`partitaOverlap.ts` | 依高度拆块、交替阶梯错位、块级入场、引导线、GlowWord | **移植校准中**：已接FoliaStyle.Partita与示例，完整画面尚有残差，未最终验收 |
 | 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 已接 FoliaStyle.Tilt 和示例，明确标注校准预览；450ms 公共退场、Latin 段宽已补，Arabic shaping、CSS transform 延迟和全局字体缓存仍未验收 |
-| 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 未实现；文章与确定性相机模型、resize/逆向seek对照，背景不纳入 |
+| 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部字素打印/读后保留时序已移植；文章、相机和绘制未实现，未开放选择器，背景不纳入 |
 | 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 未实现；先同种子布局/包络，再文字层，不引入原DOM依赖 |
 | 群唱 | cappella；`VisualizerCappella.tsx`、`cappellaMessages.ts`、`cappellaMessageLayout.ts`、`cappellaReveal.ts` | 多发送者对话、气泡、消息保留与逐字揭示 | 未实现；明确core声部与发送者映射；先文字消息，不复制未知来源头像/emoji |
 | 时计 | pendolo；`VisualizerPendolo.tsx`、`pendoloGeometry.ts`、`pendoloTimeline.ts`、`PendoloActiveLyricSweep.tsx` | 圆弧歌词轨、机械跳步、当前句扫描、字幕轨 | 未实现；先文字几何/跳步/扫描；音频鼓点与节拍增强单列，不伪造输入 |
@@ -24,6 +24,18 @@
 除classic外，表中主题目录前缀与mode相同。实施顺序按复用依赖安排，不代表已经支持。
 字体、颜色、视口、媒体时间、随机种子相同才作视觉对照；暂停冻结、seek直接重建、
 完整shaping与内部字素计时、尺寸变化仍为每个主题共同验收条件。
+
+## 浮名：打印与读后保留内核（未开放主题）
+
+`FumeReveal.kt` 对应原版 `fumeReveal.ts`、`fumeTextStyle.ts`、`fumeMath.ts`。
+18个合成输入的30个词范围/内部时钟、1584个边界和随机媒体时间的正逆序重建、
+494个退场截止/辉光/读后保留数值通过：计数精确相等，浮点容差1e-10。
+没有借用classic的粘连/语义重计时；连续焦点与离散打印分别保留；句末强制完成使用
+原始end而非renderEnd。源片段切入EGC时仅合并不安全边界，原片段时钟仍保留。
+原版保留时长缓存的三位小数碰撞不移植，独立查询直接求值；Infinity分支按原函数保留，
+后续需连同真实调用层继续验证。证据生成器/限制见verification/fume-fixtures/README.md。
+FumeRevealTest与共享UpstreamGraphemeTest通过，Android示例assembleDebug和Desktop
+compileKotlin通过；没有Android连接设备或Fume画面验证，文章/镜头/绘制仍未实现。
 
 ## 云阶：内部布局内核
 

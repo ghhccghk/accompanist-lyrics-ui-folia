@@ -557,6 +557,30 @@ The same registered OFL font/source baseline is reused. Full-image residuals and
 Android runtime limits remain documented in classic-parity.md.
 
 
+## 2026-11-16 Fume printing / retained text
+
+Fixed source: chthollyphile/folia-major v0.7.26,
+`cc6226e464050a456a2913e062374f23d3844cc5`, AGPL-3.0-only.
+Original files under `src/` → target:
+
+- `components/visualizer/fume/fumeReveal.ts` →
+  `library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/fume/FumeReveal.kt`:
+  word ranges, following-space ownership, discrete syllable printing, independent
+  continuous focus progress, raw-line-end completion and next-line visual cutoff.
+- `components/visualizer/fume/fumeTextStyle.ts`, `fumeMath.ts` → same target:
+  retained style, cubic dimming, hold duration and delayed glow envelope.
+- `utils/lyrics/graphemeTiming.ts`, `renderHints.ts` → same target:
+  source-second clocks and render-end calculations. Native EGC ranges use the
+  existing segmenter; source pieces remain available if a parser splits an EGC.
+
+Changes: immutable Kotlin sampling with no event/frame integration or global
+rounded-key memo; lyrics-core normalized source-fragment adapter; exact JS
+whitespace set. No classic semantic/sticky re-timing. Test fixtures execute the
+original modules through reference.mjs; source remains clean. The generator
+clears the original hold-duration memo before each independent query. Inputs
+are synthetic and contain no upstream lyrics/assets. `verification/fume-fixtures/README.md`
+records evidence and limitations. No article, camera or renderer port claimed.
+
 ## 2026-11-16 示例 CPU 遮罩开关
 
 `ExperimentalFoliaMaskProcessor.kt` 为本项目独立编写的 scoped 可选边界；

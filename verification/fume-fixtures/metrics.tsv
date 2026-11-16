@@ -1,0 +1,496 @@
+# Folia cc6226e464050a456a2913e062374f23d3844cc5; generated from unmodified functions; synthetic text only
+# kind	arguments...	expected
+progress	0	-1	-0.1	-1	0
+progress	0	-1	0	-1	0
+progress	0	-1	0.7	-1	1
+progress	0	-1	0.8	-1	1
+progress	0	-1	1	-1	1
+progress	0	-1	3	-1	1
+progress	0	-1	-0.1	0	0
+progress	0	-1	0	0	0
+progress	0	-1	0.7	0	1
+progress	0	-1	0.8	0	1
+progress	0	-1	1	0	1
+progress	0	-1	3	0	1
+progress	0	-1	-0.1	0.7001	0
+progress	0	-1	0	0.7001	0
+progress	0	-1	0.7	0.7001	1
+progress	0	-1	0.8	0.7001	1
+progress	0	-1	1	0.7001	1
+progress	0	-1	3	0.7001	1
+progress	0	-1	-0.1	0.8	0
+progress	0	-1	0	0.8	0
+progress	0	-1	0.7	0.8	1
+progress	0	-1	0.8	0.8	1
+progress	0	-1	1	0.8	1
+progress	0	-1	3	0.8	1
+progress	0	-1	-0.1	4	0
+progress	0	-1	0	4	0
+progress	0	-1	0.7	4	1
+progress	0	-1	0.8	4	1
+progress	0	-1	1	4	1
+progress	0	-1	3	4	1
+progress	0	0	-0.1	-1	0
+progress	0	0	0	-1	0
+progress	0	0	0.7	-1	1
+progress	0	0	0.8	-1	1
+progress	0	0	1	-1	1
+progress	0	0	3	-1	1
+progress	0	0	-0.1	0	0
+progress	0	0	0	0	0
+progress	0	0	0.7	0	1
+progress	0	0	0.8	0	1
+progress	0	0	1	0	1
+progress	0	0	3	0	1
+progress	0	0	-0.1	0.7001	0
+progress	0	0	0	0.7001	0
+progress	0	0	0.7	0.7001	1
+progress	0	0	0.8	0.7001	1
+progress	0	0	1	0.7001	1
+progress	0	0	3	0.7001	1
+progress	0	0	-0.1	0.8	0
+progress	0	0	0	0.8	0
+progress	0	0	0.7	0.8	1
+progress	0	0	0.8	0.8	1
+progress	0	0	1	0.8	1
+progress	0	0	3	0.8	1
+progress	0	0	-0.1	4	0
+progress	0	0	0	4	0
+progress	0	0	0.7	4	1
+progress	0	0	0.8	4	1
+progress	0	0	1	4	1
+progress	0	0	3	4	1
+progress	0	0.01	-0.1	-1	0
+progress	0	0.01	0	-1	0
+progress	0	0.01	0.7	-1	1
+progress	0	0.01	0.8	-1	1
+progress	0	0.01	1	-1	1
+progress	0	0.01	3	-1	1
+progress	0	0.01	-0.1	0	0
+progress	0	0.01	0	0	0
+progress	0	0.01	0.7	0	1
+progress	0	0.01	0.8	0	1
+progress	0	0.01	1	0	1
+progress	0	0.01	3	0	1
+progress	0	0.01	-0.1	0.7001	0
+progress	0	0.01	0	0.7001	0
+progress	0	0.01	0.7	0.7001	1
+progress	0	0.01	0.8	0.7001	1
+progress	0	0.01	1	0.7001	1
+progress	0	0.01	3	0.7001	1
+progress	0	0.01	-0.1	0.8	0
+progress	0	0.01	0	0.8	0
+progress	0	0.01	0.7	0.8	1
+progress	0	0.01	0.8	0.8	1
+progress	0	0.01	1	0.8	1
+progress	0	0.01	3	0.8	1
+progress	0	0.01	-0.1	4	0
+progress	0	0.01	0	4	0
+progress	0	0.01	0.7	4	1
+progress	0	0.01	0.8	4	1
+progress	0	0.01	1	4	1
+progress	0	0.01	3	4	1
+progress	0	0.4	-0.1	-1	0
+progress	0	0.4	0	-1	0
+progress	0	0.4	0.7	-1	1
+progress	0	0.4	0.8	-1	1
+progress	0	0.4	1	-1	1
+progress	0	0.4	3	-1	1
+progress	0	0.4	-0.1	0	0
+progress	0	0.4	0	0	0
+progress	0	0.4	0.7	0	1
+progress	0	0.4	0.8	0	1
+progress	0	0.4	1	0	1
+progress	0	0.4	3	0	1
+progress	0	0.4	-0.1	0.7001	0
+progress	0	0.4	0	0.7001	0
+progress	0	0.4	0.7	0.7001	1
+progress	0	0.4	0.8	0.7001	1
+progress	0	0.4	1	0.7001	1
+progress	0	0.4	3	0.7001	1
+progress	0	0.4	-0.1	0.8	0
+progress	0	0.4	0	0.8	0
+progress	0	0.4	0.7	0.8	1
+progress	0	0.4	0.8	0.8	1
+progress	0	0.4	1	0.8	1
+progress	0	0.4	3	0.8	1
+progress	0	0.4	-0.1	4	0
+progress	0	0.4	0	4	0
+progress	0	0.4	0.7	4	1
+progress	0	0.4	0.8	4	1
+progress	0	0.4	1	4	1
+progress	0	0.4	3	4	1
+progress	0	2	-0.1	-1	0
+progress	0	2	0	-1	0
+progress	0	2	0.7	-1	1
+progress	0	2	0.8	-1	1
+progress	0	2	1	-1	1
+progress	0	2	3	-1	1
+progress	0	2	-0.1	0	0
+progress	0	2	0	0	0
+progress	0	2	0.7	0	1
+progress	0	2	0.8	0	1
+progress	0	2	1	0	1
+progress	0	2	3	0	1
+progress	0	2	-0.1	0.7001	0
+progress	0	2	0	0.7001	0
+progress	0	2	0.7	0.7001	0.9998571632623912
+progress	0	2	0.8	0.7001	1
+progress	0	2	1	0.7001	1
+progress	0	2	3	0.7001	1
+progress	0	2	-0.1	0.8	0
+progress	0	2	0	0.8	0
+progress	0	2	0.7	0.8	0.8749999999999999
+progress	0	2	0.8	0.8	1
+progress	0	2	1	0.8	1
+progress	0	2	3	0.8	1
+progress	0	2	-0.1	4	0
+progress	0	2	0	4	0
+progress	0	2	0.7	4	0.35
+progress	0	2	0.8	4	0.4
+progress	0	2	1	4	0.5
+progress	0	2	3	4	1
+progress	0.7	-1	-0.1	-1	0
+progress	0.7	-1	0	-1	0
+progress	0.7	-1	0.7	-1	0
+progress	0.7	-1	0.8	-1	1
+progress	0.7	-1	1	-1	1
+progress	0.7	-1	3	-1	1
+progress	0.7	-1	-0.1	0	0
+progress	0.7	-1	0	0	0
+progress	0.7	-1	0.7	0	0
+progress	0.7	-1	0.8	0	1
+progress	0.7	-1	1	0	1
+progress	0.7	-1	3	0	1
+progress	0.7	-1	-0.1	0.7001	0
+progress	0.7	-1	0	0.7001	0
+progress	0.7	-1	0.7	0.7001	0
+progress	0.7	-1	0.8	0.7001	1
+progress	0.7	-1	1	0.7001	1
+progress	0.7	-1	3	0.7001	1
+progress	0.7	-1	-0.1	0.8	0
+progress	0.7	-1	0	0.8	0
+progress	0.7	-1	0.7	0.8	0
+progress	0.7	-1	0.8	0.8	1
+progress	0.7	-1	1	0.8	1
+progress	0.7	-1	3	0.8	1
+progress	0.7	-1	-0.1	4	0
+progress	0.7	-1	0	4	0
+progress	0.7	-1	0.7	4	0
+progress	0.7	-1	0.8	4	1
+progress	0.7	-1	1	4	1
+progress	0.7	-1	3	4	1
+progress	0.7	0	-0.1	-1	0
+progress	0.7	0	0	-1	0
+progress	0.7	0	0.7	-1	0
+progress	0.7	0	0.8	-1	1
+progress	0.7	0	1	-1	1
+progress	0.7	0	3	-1	1
+progress	0.7	0	-0.1	0	0
+progress	0.7	0	0	0	0
+progress	0.7	0	0.7	0	0
+progress	0.7	0	0.8	0	1
+progress	0.7	0	1	0	1
+progress	0.7	0	3	0	1
+progress	0.7	0	-0.1	0.7001	0
+progress	0.7	0	0	0.7001	0
+progress	0.7	0	0.7	0.7001	0
+progress	0.7	0	0.8	0.7001	1
+progress	0.7	0	1	0.7001	1
+progress	0.7	0	3	0.7001	1
+progress	0.7	0	-0.1	0.8	0
+progress	0.7	0	0	0.8	0
+progress	0.7	0	0.7	0.8	0
+progress	0.7	0	0.8	0.8	1
+progress	0.7	0	1	0.8	1
+progress	0.7	0	3	0.8	1
+progress	0.7	0	-0.1	4	0
+progress	0.7	0	0	4	0
+progress	0.7	0	0.7	4	0
+progress	0.7	0	0.8	4	1
+progress	0.7	0	1	4	1
+progress	0.7	0	3	4	1
+progress	0.7	0.01	-0.1	-1	0
+progress	0.7	0.01	0	-1	0
+progress	0.7	0.01	0.7	-1	0
+progress	0.7	0.01	0.8	-1	1
+progress	0.7	0.01	1	-1	1
+progress	0.7	0.01	3	-1	1
+progress	0.7	0.01	-0.1	0	0
+progress	0.7	0.01	0	0	0
+progress	0.7	0.01	0.7	0	0
+progress	0.7	0.01	0.8	0	1
+progress	0.7	0.01	1	0	1
+progress	0.7	0.01	3	0	1
+progress	0.7	0.01	-0.1	0.7001	0
+progress	0.7	0.01	0	0.7001	0
+progress	0.7	0.01	0.7	0.7001	0
+progress	0.7	0.01	0.8	0.7001	1
+progress	0.7	0.01	1	0.7001	1
+progress	0.7	0.01	3	0.7001	1
+progress	0.7	0.01	-0.1	0.8	0
+progress	0.7	0.01	0	0.8	0
+progress	0.7	0.01	0.7	0.8	0
+progress	0.7	0.01	0.8	0.8	1
+progress	0.7	0.01	1	0.8	1
+progress	0.7	0.01	3	0.8	1
+progress	0.7	0.01	-0.1	4	0
+progress	0.7	0.01	0	4	0
+progress	0.7	0.01	0.7	4	0
+progress	0.7	0.01	0.8	4	1
+progress	0.7	0.01	1	4	1
+progress	0.7	0.01	3	4	1
+progress	0.7	0.4	-0.1	-1	0
+progress	0.7	0.4	0	-1	0
+progress	0.7	0.4	0.7	-1	0
+progress	0.7	0.4	0.8	-1	1
+progress	0.7	0.4	1	-1	1
+progress	0.7	0.4	3	-1	1
+progress	0.7	0.4	-0.1	0	0
+progress	0.7	0.4	0	0	0
+progress	0.7	0.4	0.7	0	0
+progress	0.7	0.4	0.8	0	1
+progress	0.7	0.4	1	0	1
+progress	0.7	0.4	3	0	1
+progress	0.7	0.4	-0.1	0.7001	0
+progress	0.7	0.4	0	0.7001	0
+progress	0.7	0.4	0.7	0.7001	0
+progress	0.7	0.4	0.8	0.7001	1
+progress	0.7	0.4	1	0.7001	1
+progress	0.7	0.4	3	0.7001	1
+progress	0.7	0.4	-0.1	0.8	0
+progress	0.7	0.4	0	0.8	0
+progress	0.7	0.4	0.7	0.8	0
+progress	0.7	0.4	0.8	0.8	1
+progress	0.7	0.4	1	0.8	1
+progress	0.7	0.4	3	0.8	1
+progress	0.7	0.4	-0.1	4	0
+progress	0.7	0.4	0	4	0
+progress	0.7	0.4	0.7	4	0
+progress	0.7	0.4	0.8	4	0.2500000000000001
+progress	0.7	0.4	1	4	0.7499999999999999
+progress	0.7	0.4	3	4	1
+progress	0.7	2	-0.1	-1	0
+progress	0.7	2	0	-1	0
+progress	0.7	2	0.7	-1	0
+progress	0.7	2	0.8	-1	1
+progress	0.7	2	1	-1	1
+progress	0.7	2	3	-1	1
+progress	0.7	2	-0.1	0	0
+progress	0.7	2	0	0	0
+progress	0.7	2	0.7	0	0
+progress	0.7	2	0.8	0	1
+progress	0.7	2	1	0	1
+progress	0.7	2	3	0	1
+progress	0.7	2	-0.1	0.7001	0
+progress	0.7	2	0	0.7001	0
+progress	0.7	2	0.7	0.7001	0
+progress	0.7	2	0.8	0.7001	1
+progress	0.7	2	1	0.7001	1
+progress	0.7	2	3	0.7001	1
+progress	0.7	2	-0.1	0.8	0
+progress	0.7	2	0	0.8	0
+progress	0.7	2	0.7	0.8	0
+progress	0.7	2	0.8	0.8	1
+progress	0.7	2	1	0.8	1
+progress	0.7	2	3	0.8	1
+progress	0.7	2	-0.1	4	0
+progress	0.7	2	0	4	0
+progress	0.7	2	0.7	4	0
+progress	0.7	2	0.8	4	0.050000000000000044
+progress	0.7	2	1	4	0.15000000000000002
+progress	0.7	2	3	4	1
+dim	-1	0	-1	1
+dim	-1	0	0	1
+dim	-1	0	2.4	0
+dim	-1	0	130	0
+dim	-1	0	Infinity	1
+dim	-1	0.7	-1	1
+dim	-1	0.7	0	1
+dim	-1	0.7	2.4	0
+dim	-1	0.7	130	0
+dim	-1	0.7	Infinity	1
+dim	-1	Infinity	-1	1
+dim	-1	Infinity	0	1
+dim	-1	Infinity	2.4	1
+dim	-1	Infinity	130	1
+dim	-1	Infinity	Infinity	1
+dim	0	0	-1	1
+dim	0	0	0	1
+dim	0	0	2.4	0
+dim	0	0	130	0
+dim	0	0	Infinity	1
+dim	0	0.7	-1	1
+dim	0	0.7	0	1
+dim	0	0.7	2.4	0
+dim	0	0.7	130	0
+dim	0	0.7	Infinity	1
+dim	0	Infinity	-1	1
+dim	0	Infinity	0	1
+dim	0	Infinity	2.4	1
+dim	0	Infinity	130	1
+dim	0	Infinity	Infinity	1
+dim	0.7	0	-1	1
+dim	0.7	0	0	1
+dim	0.7	0	2.4	0.0248119212962963
+dim	0.7	0	130	1.5612198452435137e-7
+dim	0.7	0	Infinity	1
+dim	0.7	0.7	-1	1
+dim	0.7	0.7	0	1
+dim	0.7	0.7	2.4	0
+dim	0.7	0.7	130	0
+dim	0.7	0.7	Infinity	1
+dim	0.7	Infinity	-1	1
+dim	0.7	Infinity	0	1
+dim	0.7	Infinity	2.4	1
+dim	0.7	Infinity	130	1
+dim	0.7	Infinity	Infinity	1
+dim	1	0	-1	1
+dim	1	0	0	1
+dim	1	0	2.4	0.07233796296296298
+dim	1	0	130	4.5516613563950847e-7
+dim	1	0	Infinity	1
+dim	1	0.7	-1	1
+dim	1	0.7	0	1
+dim	1	0.7	2.4	0.0019531250000000013
+dim	1	0.7	130	1.2289485662266731e-8
+dim	1	0.7	Infinity	1
+dim	1	Infinity	-1	1
+dim	1	Infinity	0	1
+dim	1	Infinity	2.4	1
+dim	1	Infinity	130	1
+dim	1	Infinity	Infinity	1
+dim	4	0	-1	1
+dim	4	0	0	1
+dim	4	0	2.4	1
+dim	4	0	130	0.000029130632680928542
+dim	4	0	Infinity	1
+dim	4	0.7	-1	1
+dim	4	0.7	0	1
+dim	4	0.7	2.4	1
+dim	4	0.7	130	0.000016357305416477014
+dim	4	0.7	Infinity	1
+dim	4	Infinity	-1	1
+dim	4	Infinity	0	1
+dim	4	Infinity	2.4	1
+dim	4	Infinity	130	1
+dim	4	Infinity	Infinity	1
+dim	80	0	-1	1
+dim	80	0	0	1
+dim	80	0	2.4	1
+dim	80	0	130	0.23304506144742834
+dim	80	0	Infinity	1
+dim	80	0.7	-1	1
+dim	80	0.7	0	1
+dim	80	0.7	2.4	1
+dim	80	0.7	130	0.226981
+dim	80	0.7	Infinity	1
+dim	80	Infinity	-1	1
+dim	80	Infinity	0	1
+dim	80	Infinity	2.4	1
+dim	80	Infinity	130	1
+dim	80	Infinity	Infinity	1
+dim	Infinity	0	-1	1
+dim	Infinity	0	0	1
+dim	Infinity	0	2.4	1
+dim	Infinity	0	130	1
+dim	Infinity	0	Infinity	1
+dim	Infinity	0.7	-1	1
+dim	Infinity	0.7	0	1
+dim	Infinity	0.7	2.4	1
+dim	Infinity	0.7	130	1
+dim	Infinity	0.7	Infinity	1
+dim	Infinity	Infinity	-1	1
+dim	Infinity	Infinity	0	1
+dim	Infinity	Infinity	2.4	1
+dim	Infinity	Infinity	130	1
+dim	Infinity	Infinity	Infinity	1
+dim	NaN	0	-1	1
+dim	NaN	0	0	1
+dim	NaN	0	2.4	1
+dim	NaN	0	130	1
+dim	NaN	0	Infinity	1
+dim	NaN	0.7	-1	1
+dim	NaN	0.7	0	1
+dim	NaN	0.7	2.4	1
+dim	NaN	0.7	130	1
+dim	NaN	0.7	Infinity	1
+dim	NaN	Infinity	-1	1
+dim	NaN	Infinity	0	1
+dim	NaN	Infinity	2.4	1
+dim	NaN	Infinity	130	1
+dim	NaN	Infinity	Infinity	1
+glow	-1	-1	0
+glow	-1	0.05	0
+glow	-1	0.8	0
+glow	-1	0.95	0
+glow	-1	2	0
+glow	0	-1	0
+glow	0	0.05	0
+glow	0	0.8	0
+glow	0	0.95	0
+glow	0	2	0
+glow	0.05	-1	1
+glow	0.05	0.05	1
+glow	0.05	0.8	0.176025390625
+glow	0.05	0.95	0.14973028138212585
+glow	0.05	2	0.14973028138212585
+glow	0.2	-1	0.9960635661175098
+glow	0.2	0.05	0.9960635661175098
+glow	0.2	0.8	0.578125
+glow	0.2	0.95	0.5079457646887301
+glow	0.2	2	0.5079457646887301
+glow	0.8	-1	0.5079457646887301
+glow	0.8	0.05	0.5079457646887301
+glow	0.8	0.8	1
+glow	0.8	0.95	0.9960635661175098
+glow	0.8	2	0.9960635661175098
+glow	0.95	-1	0.14973028138212585
+glow	0.95	0.05	0.14973028138212585
+glow	0.95	0.8	0.5781250000000006
+glow	0.95	0.95	1
+glow	0.95	2	1
+glow	1	-1	0
+glow	1	0.05	0
+glow	1	0.8	0
+glow	1	0.95	0
+glow	1	2	0
+glow	2	-1	0
+glow	2	0.05	0
+glow	2	0.8	0
+glow	2	0.95	0
+glow	2	2	0
+style	false	false	0.58	1	0.1	0.16
+style	false	true	0.075	0	0	0
+style	true	false	0.74	1	0.1	0.16
+style	true	true	0.11	0	0	0
+duration	-	0	2.4
+duration	-	0.3	2.4
+duration	-	0.6	4.8
+duration	-	0.999	7.992
+duration	-	1	Infinity
+duration	-	1.2	Infinity
+duration	0	0	2.4
+duration	0	0.3	2.4
+duration	0	0.6	4.8
+duration	0	0.999	7.992
+duration	0	1	Infinity
+duration	0	1.2	Infinity
+duration	0,1,4	0	2.4
+duration	0,1,4	0.3	2.4
+duration	0,1,4	0.6	2.4
+duration	0,1,4	0.999	3.1768199999999998
+duration	0,1,4	1	Infinity
+duration	0,1,4	1.2	Infinity
+duration	4,0,1	0	2.4
+duration	4,0,1	0.3	2.4
+duration	4,0,1	0.6	2.4
+duration	4,0,1	0.999	3.1768199999999998
+duration	4,0,1	1	Infinity
+duration	4,0,1	1.2	Infinity
+duration	0,8,1	0	2.4
+duration	0,8,1	0.3	2.4
+duration	0,8,1	0.6	2.4
+duration	0,8,1	0.999	3.1768199999999998
+duration	0,8,1	1	Infinity
+duration	0,8,1	1.2	Infinity

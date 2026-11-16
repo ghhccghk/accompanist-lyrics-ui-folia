@@ -1,5 +1,9 @@
 # lyrics-ui-folia 实施计划
 
+2026-11-16用户新增授权：可实验Rust调查性能问题。首项development-only CPU遮罩
+JNI原型与同算法Kotlin公平对照，真实支持/收益及未验证项见docs/performance.md。
+不因此放宽主题效果验收或让默认库依赖Rust；native未正式接入示例。
+
 2026-11-16优先级变更：按用户新增要求推进多主题文字行为，首项云阶Partita，
 再倾诉、浮名、心象、群唱、时计及镜台文字/镜头范围调查。真实支持与验收差异见
 docs/themes-parity.md；下文“首版仅classic”及旧扩展顺序不再代表当前实施顺序。

@@ -20,6 +20,7 @@ copyright metadata and provenance. They are used by the comparison harness only.
 | kotlinx.coroutines | 1.11.0 | Apache-2.0; asynchronous sample import and settings I/O |
 | Tailwind CSS | 4.3.3 | MIT; verification-only compiler/generated subtitle utilities, matching the pinned Folia lockfile |
 | pretext | 0.0.9 | MIT; verification-only original Tilt measurement, matching pinned Folia lockfile |
+| jni-sys | 0.3.0 | MIT OR Apache-2.0; optional development-only Rust JNI mask experiment, Cargo.lock pins checksum; not linked into default library/sample |
 
 This inventory covers direct dependencies. Transitive binary/source notices and
 packaging must be audited before distribution. No remote publication is configured.

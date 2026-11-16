@@ -1,5 +1,41 @@
 # Kotlin performance probe — 2026-11-14
 
+## Rust JNI遮罩实验 — 2026-11-16（最新，未启用生产）
+
+用户授权后，已独立实现native/experimental-mask，真实构建Windows x64 DLL并通过JNI运行。
+不是仅写Rust草案或无声Kotlin回退。Rust1.91.1、jni-sys0.3.0/Cargo.lock、release thin LTO，
+无fast-math/SIMD/线程。JDK21.0.5、Windows x64、i7-12650H、16逻辑核、512MiB heap，
+其他程序存在、温度/功耗未控制，不是整帧或Android性能结论。工具链仅在忽略的.work内，
+未改PATH/注册表。DLL加载通过；Cargo测试EXE的LLD import-library链接失败，未声称通过。
+
+30组随机尺寸/半径（1×1到640×320，sigma1/2.25/10/20/4096）与生产Kotlin alpha逐像素相同，
+同算法Kotlin候选也逐像素相同；只读/堆/未对齐/过小/重叠buffer、NaN、非法尺寸/数量拒绝，
+JVM使用-Xcheck:jni。所有native scratch与结果由Java持有，调用同步、不保存指针/句柄。
+第一轮审查发现只读输出检查缺失和kernel工作量不同，修复后完整重测三进程。
+
+下表为三个独立进程各12预热、40次交替顺序测量的P50范围，单位ms，非最快值：
+
+| 路径 | 320×160 | 640×320 |
+| --- | ---: | ---: |
+| 原Kotlin kernel（含两个ARGB结果打包） | 0.9932–1.0028 | 5.6996–6.8491 |
+| 同连续纵向扫描Kotlin kernel | 0.6964–0.7069 | 3.0543–3.1259 |
+| Rust JNI kernel（同ARGB工作量） | 0.8140–0.8320 | 3.6016–3.6024 |
+| 当前生产Kotlin双遮罩prepare | 2.6342–2.6788 | 9.8907–10.1643 |
+| 复用scratch＋连续扫描Kotlin候选prepare | 1.9304–1.9442 | 6.7867–6.8478 |
+| Rust JNI prepare（含输入/输出传输、位图创建/读取） | 1.9015–1.9620 | 7.2848–7.4058 |
+
+CPU纵向扫描改成按连续行写入（相同递推/量化）才带来主要收益；Rust对比未经优化Kotlin
+有改善，但对同算法Kotlin没有稳定优势，640×320准备仍更慢。不能据此正式切换native。
+Rust prepare JVM分配约1,026,135/4,098,135B，另持有1,433,608/5,734,408B direct buffers；
+Kotlin候选约1,435,952/5,736,752B。native位图/driver内存、长期GC/GPU未测，不能仅按JVM
+分配宣布总内存改善。内核输出与bitmap读取工作量已对齐；preparation方案分配策略仍不同。
+
+原始三轮P50/P95/P99、条件、校验和在verification/native-mask/windows-x64-run-{1,2,3}.txt。
+中间失败/偏置基准留.work/rust-mask-*，不拿作最终收益证据。复现见native/experimental-mask/README.md。
+下一项：先将已证明的连续扫描Kotlin候选以像素回归验证接入，再测真实歌词准备/整帧；
+Rust原型保留供后续更合适的热点继续比较。默认库/示例无native依赖，Android未构建/加载Rust，
+新主题效果验收与未实现主题继续按themes-parity.md推进，不能由基准替代。
+
 This is an initial logic/allocation measurement, not a rendering, frame-time or
 60Hz result. Android CPU/GPU, mask preparation, texture upload, GC peaks and full
 sample frame percentiles remain unmeasured. No Rust experiment is justified by

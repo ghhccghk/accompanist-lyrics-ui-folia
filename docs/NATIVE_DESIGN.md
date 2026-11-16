@@ -1,5 +1,11 @@
 # Rust Native 计算后端设计
 
+2026-11-16用户批准提前实验Rust以调查性能。已新增development-only
+native/experimental-mask：真实Windows x64 DLL/JNI、与Kotlin逐像素及错误边界对照。
+它只实验已有CPU遮罩热点，不是本文计划的完整计算session/发布ABI；库和示例尚未接入，
+默认Kotlin独立使用。实测同算法复用Kotlin优于该Rust JNI版本，不能宣称native已启用或
+全帧改善。结果与继续点见performance.md；下文“尚未引入Rust工程”是初始设计历史。
+
 日期：2026-11-14。版本：设计草案 0.1。状态：可选路线，尚未引入 Rust 工程或二进制。本文细化 [DESIGN.md](DESIGN.md) 的计算后端；不新增 SPW 实现，也不改变原有 Apache-2.0 项目。
 
 ## 1. 目的与启用条件

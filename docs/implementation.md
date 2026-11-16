@@ -3,6 +3,20 @@
 Date: 2026-11-14. This file describes actual implementation; design documents
 remain the roadmap and must not be treated as an existing API support list.
 
+## 2026-11-16 — Rust CPU mask experiment
+
+User authorized a native experiment. NativeMaskExperiment explicitly loads a locally
+built Rust1.91.1 Windows GNU DLL; 30 random coverage cases and JNI invalid-buffer checks
+pass with -Xcheck:jni. Three alternating-process measurements compare equivalent ARGB
+kernel work and bitmap preparation, including same-algorithm Kotlin. See performance.md
+and verification/native-mask for actual results. Rust loses to optimized Kotlin at
+640×320; no native runtime or backend selector is wired into the sample/library.
+Default Android/Desktop builds and mask/Motion tests pass without Cargo tasks.
+Cargo unit-test executable link failed on this toolchain; DLL build/load passed.
+
+ed80f1b preserves the independent internal Tilt stage and original mounted controls;
+its 144-frame Arabic/layout residuals are explicitly not accepted and it is not public.
+
 ## 2026-11-16 — Partita stage (visual calibration in progress)
 
 FoliaStyle.Partita now dispatches to an independent chunk stage, not renamed classic.

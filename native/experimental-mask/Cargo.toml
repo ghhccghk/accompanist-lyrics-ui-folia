@@ -1,0 +1,18 @@
+[package]
+name = "folia-mask-experiment"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "AGPL-3.0-only"
+
+[lib]
+name = "folia_mask_experiment"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+jni-sys = "=0.3.0"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+panic = "unwind"

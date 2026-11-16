@@ -1,0 +1,19 @@
+EXPERIMENTAL: actual Rust JNI library folia_mask_experiment.dll
+JVM 21.0.5; Windows 10 amd64
+CPUs 16; maxHeap 536870912
+CPU kernel and bitmap preparation only; excludes shaping, GPU, draw and full-frame latency.
+Exact alpha parity: 30 random size/radius cases; aliases, read-only/heap/short/misaligned buffers, invalid count/dimensions/NaN rejected.
+320 x 160 Kotlin-kernel ms P50=0.9948 P95=1.111 P99=1.536; JVM bytes/op=492.0
+320 x 160 Kotlin-contiguous-kernel ms P50=0.6972 P95=0.7745 P99=1.1152; JVM bytes/op=223.8
+320 x 160 Rust-JNI-kernel ms P50=0.832 P95=0.9058 P99=1.2393; JVM bytes/op=39.2
+320 x 160 Kotlin-prepare ms P50=2.6582 P95=3.0105 P99=3.5955; JVM bytes/op=2460079.2
+320 x 160 Kotlin-reused-contiguous-prepare ms P50=1.9442 P95=2.2293 P99=2.418; JVM bytes/op=1435951.8
+320 x 160 Rust-JNI-prepare ms P50=1.962 P95=2.1575 P99=2.4031; JVM bytes/op=1026135.2
+Checksum (anti-elision, not cross-path equality): 3489660720; persistent JNI direct buffers=1433608 bytes; excludes native bitmap/driver allocations.
+640 x 320 Kotlin-kernel ms P50=6.8491 P95=7.6041 P99=7.8469; JVM bytes/op=223.2
+640 x 320 Kotlin-contiguous-kernel ms P50=3.0543 P95=3.3284 P99=3.5484; JVM bytes/op=223.2
+640 x 320 Rust-JNI-kernel ms P50=3.6024 P95=3.9072 P99=4.0909; JVM bytes/op=39.2
+640 x 320 Kotlin-prepare ms P50=9.8907 P95=11.534 P99=12.5153; JVM bytes/op=9832887.6
+640 x 320 Kotlin-reused-contiguous-prepare ms P50=6.7867 P95=7.6844 P99=9.9739; JVM bytes/op=5736752.4
+640 x 320 Rust-JNI-prepare ms P50=7.4058 P95=7.9872 P99=9.9592; JVM bytes/op=4098135.2
+Checksum (anti-elision, not cross-path equality): 3489660720; persistent JNI direct buffers=5734408 bytes; excludes native bitmap/driver allocations.

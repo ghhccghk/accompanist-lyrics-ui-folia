@@ -44,6 +44,20 @@ tasks.withType<Test>().configureEach {
     inputs.dir(rootProject.file("verification/tilt-fixtures"))
     inputs.dir(rootProject.file("verification/assets"))
 }
+// Development-only JNI experiment. No Rust task or runtime dependency in the
+// library, ordinary tests, sample, or publications. Missing DLL fails explicitly.
+tasks.register<JavaExec>("jvmNativeMaskProbe") {
+    dependsOn("jvmTestClasses")
+    classpath = tasks.named<Test>("jvmTest").get().classpath
+    mainClass.set("top.ghhccghk.accompanist.lyrics.folia.NativeMaskExperiment")
+    javaLauncher.set(javaToolchains.launcherFor { languageVersion.set(JavaLanguageVersion.of(21)) })
+    jvmArgs("-Xcheck:jni", "-Xmx512m")
+    val nativeDll = providers.gradleProperty("foliaNativeMaskDll")
+    doFirst {
+        require(nativeDll.isPresent) { "Provide -PfoliaNativeMaskDll=<locally built experimental library>" }
+        args(nativeDll.get())
+    }
+}
 tasks.withType<Zip>().configureEach {
     from(rootProject.file("LICENSES")) { into("META-INF/lyrics-ui-folia/licenses") }
     from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md")) { into("META-INF/lyrics-ui-folia") }

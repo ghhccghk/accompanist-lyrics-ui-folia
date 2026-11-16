@@ -63,6 +63,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
     onPrepared: (FoliaQuality, Int) -> Unit = { _, _ -> },
     onLayout: (ClassicGeometry) -> Unit = {},
     onClick: (() -> Unit)? = null, onLongPress: (() -> Unit)? = null) {
+    val maskProcessor = top.ghhccghk.accompanist.lyrics.folia.LocalFoliaMaskProcessor.current
     val measurer = rememberTextMeasurer(cacheSize = 64)
     val units = remember(line) { displayUnits(line) }
     val density = LocalDensity.current
@@ -76,7 +77,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         // its .5 font-scale floor, not an invented minimum area, limits shrink.
         val budgetPx = with(density) { heightBudget.toPx() }.coerceAtLeast(0f)
         val prepared = remember(units, textStyle, widthPx, budgetPx, density, tuning.avoidOverlap,
-            tuning.wordSpacing, tuning.enableWordRotation, measurer, fontResolver, options.quality, options.animationIntensity, maskBudgetBytes, viewport, nativeBodyInk, colors.active.alpha) {
+            tuning.wordSpacing, tuning.enableWordRotation, measurer, fontResolver, options.quality, options.animationIntensity, maskBudgetBytes, viewport, nativeBodyInk, colors.active.alpha, maskProcessor) {
             fun prepare(fontScale: Float): Prepared {
                 val base=textStyle.fontSize.value
                 fun cssRound(value:Float) = floor(value*1000+.5f)/1000
@@ -185,7 +186,7 @@ internal fun ClassicLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                             clipPath(path) { drawParagraphShadowSource(cell.layout) }
                         }
                     }
-                    val masks = blurredMasks(bitmap, FloatArray(layers) { maxOf(1f, radii[it] * density.density / 2) })
+                    val masks = blurredMasks(bitmap, FloatArray(layers) { maxOf(1f, radii[it] * density.density / 2) }, maskProcessor)
                     GlyphGlow(timing, origin, compositeGlowMasks(masks, colors.active.alpha))
                 })
             })

@@ -8,6 +8,7 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 
 /** Retained by the platform owner; jobs and file picker still belong to the composition. */
 class SampleSession(demoInitially: Boolean = false) {
+    val maskBackend = SampleMaskBackend()
     var demo by mutableStateOf(demoInitially)
     val songs = top.ghhccghk.accompanist.folia.sample.playback.SongSession()
     var scene by mutableStateOf(scenes.first())

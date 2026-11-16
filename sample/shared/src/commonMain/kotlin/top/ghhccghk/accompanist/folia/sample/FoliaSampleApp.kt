@@ -125,10 +125,10 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
                 }
             }
             val lyrics: @Composable (Modifier) -> Unit = { modifier ->
-                FoliaLyricsView(scene.lyrics, { clock.snapshot }, modifier, contentKey = scene.id, options = options,
+                SampleMaskScope(session) { FoliaLyricsView(scene.lyrics, { clock.snapshot }, modifier, contentKey = scene.id, options = options,
                     typography = FoliaTypography(scale = fontScale), style = session.lyricStyle,
                     onStatus = { status = it },
-                    onLineClicked = { clock.seek(it.start.toLong() + options.offsetMillis) }, onLinePressed = { pressed = it })
+                    onLineClicked = { clock.seek(it.start.toLong() + options.offsetMillis) }, onLinePressed = { pressed = it }) }
             }
             if (maxWidth < 600.dp) Column {
                 metadata(false); lyrics(Modifier.weight(1f).fillMaxWidth()); Transport(clock, visible)
@@ -160,13 +160,15 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
                 }
                 Text("歌词偏移 ${options.offsetMillis} ms"); Slider(options.offsetMillis.toFloat(), { options = options.copy(offsetMillis = it.toInt()) }, valueRange = -2_000f..2_000f)
                 TextButton({ options = options.copy(quality = FoliaQuality.entries[(options.quality.ordinal + 1) % FoliaQuality.entries.size]) }) { Text("画质 ${options.quality}") }
+                ExperimentalMaskControls(session)
                 Toggle("开发面板", debug) { debug = it }
             }
         }, confirmButton = { TextButton({ settings = false }) { Text("完成") } })
-        if (debug && !settings) AlertDialog(onDismissRequest = { debug = false }, title = { Text("检查点 · Kotlin") }, text = {
+        if (debug && !settings) AlertDialog(onDismissRequest = { debug = false }, title = { Text("检查点") }, text = {
             Column(Modifier.verticalScroll(rememberScrollState())) {
                 DebugTime(clock)
-                Text("场景 ${scene.id} · Kotlin")
+                Text("场景 ${scene.id}")
+                ExperimentalMaskControls(session)
                 status?.let { value ->
                     Text("画质 ${value.requestedQuality} → ${value.actualQuality} · ${value.mainUnitCount} 单元")
                     value.diagnostics.forEach { Text(it) }

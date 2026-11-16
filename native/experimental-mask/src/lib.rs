@@ -138,3 +138,18 @@ mod tests {
         assert_eq!(a, [0.0; 21]);
     }
 }
+
+// Optional sample runtime entry points; retain the standalone benchmark ABI.
+#[no_mangle]
+pub extern "system" fn Java_top_ghhccghk_accompanist_folia_sample_NativeMaskBridge_version(
+    _env: *mut JNIEnv, _class: jclass,
+) -> jint { 1 }
+
+#[no_mangle]
+pub unsafe extern "system" fn Java_top_ghhccghk_accompanist_folia_sample_NativeMaskBridge_blur(
+    env: *mut JNIEnv, class: jclass, source: jobject, a: jobject, b: jobject,
+    sigmas: jobject, output: jobject, width: jint, height: jint, count: jint,
+) -> jint {
+    Java_top_ghhccghk_accompanist_lyrics_folia_NativeMaskExperiment_blur(
+        env, class, source, a, b, sigmas, output, width, height, count)
+}

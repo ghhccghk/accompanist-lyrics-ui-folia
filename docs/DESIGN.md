@@ -1,5 +1,10 @@
 # lyrics-ui-folia 详细设计
 
+2026-11-16 最新：示例已增加可选 Rust CPU 辉光遮罩开关和真实 JNI 接入，默认 Kotlin。
+Android debug 可选 arm64/x86_64，Windows 真实 JNI/同帧对照通过，Android 尚未设备运行；
+详见 [示例 A/B 验证与运行](native-mask-sample.md)。本节覆盖下方历史“未接示例”描述，
+不表示完整 native 渲染器、多主题效果验收或设备性能已完成。
+
 2026-11-16：按用户要求增加多主题。已有实际Kotlin舞台和FoliaStyle.Partita(PartitaTuning())，
 云阶仍在视觉校准。准确支持矩阵和上游差异见themes-parity.md；下文classic初期契约
 不再覆盖全部当前API，其他主题不得以占位或改名代替实现。

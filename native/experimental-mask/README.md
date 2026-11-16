@@ -1,9 +1,10 @@
 # Experimental Rust coverage kernel
 
-Development-only Windows x64 JNI experiment authorized 2026-11-16. Not loaded by
-the sample/library, not published, no production backend setting, no Android native
-runtime. Kotlin-only builds require no Cargo or DLL. This does not implement the
-larger session/animation ABI draft in docs/NATIVE_DESIGN.md.
+Optional CPU mask experiment authorized 2026-11-16. The sample now has a scoped
+Kotlin/Rust switch; default remains Kotlin. Android debug may package arm64-v8a /
+x86_64 JNI with `-PfoliaExperimentalMask=true`. Ordinary builds/publications need
+no Cargo or native runtime. This is not the larger scene/animation ABI.
+See [sample setup, verification, and device limitations](../../docs/native-mask-sample.md).
 
 Rust 1.91.1, jni-sys exactly 0.3.0 with Cargo.lock. The kernel is independently
 written from this project's Kotlin CPU coverage implementation. No Folia Rust,
@@ -22,7 +23,8 @@ For an installed Rust Windows GNU host without GCC, from repository root use:
 from rustc sysroot and does not edit user PATH, registry or Gradle runtime settings.
 The validated local toolchain is x86_64-pc-windows-gnu, Rust LLD, self-contained CRT,
 with explicit `DllMainCRTStartup` required by this linker combination. DLL depends
-on Windows system libraries; no platform artifact beyond this DLL is validated.
+on Windows system libraries. Android r28c shared libraries are built/packaging-checked;
+actual Android runtime and device performance remain unverified.
 Cargo unit-test EXE linking failed on this environment (LLD cannot find import
 libraries in EXE mode); actual JVM DLL loading and parity/boundary checks passed.
 Do not report Cargo tests as passed or silently use a Kotlin fallback.
@@ -41,6 +43,6 @@ Report JVM allocations plus persistent direct buffers separately. GPU, font,
 full-frame latency and native bitmap allocations remain unmeasured. Host load and
 thermal state are uncontrolled; repeat across processes before conclusions.
 
-Initial fair comparison favors reused contiguous Kotlin over Rust+JNI; don't
-enable native from the comparison to the unoptimized original alone. Current
+Initial fair comparison favors reused contiguous Kotlin over Rust+JNI; the sample
+switch is explicitly for device A/B testing, not a claim of stable native speedup. Current
 candidate findings and platform limits are recorded in docs/performance.md.

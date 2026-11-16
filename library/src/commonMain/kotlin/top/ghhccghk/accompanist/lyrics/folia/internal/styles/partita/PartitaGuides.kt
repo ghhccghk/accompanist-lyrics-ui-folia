@@ -12,13 +12,14 @@ import kotlin.math.ceil
 
 internal data class PartitaGuide(val size: Size, val padding: Int, val shadow: ImageBitmap)
 
-internal fun preparePartitaGuide(size: Size, density: Density): PartitaGuide {
+internal fun preparePartitaGuide(size: Size, density: Density,
+    processor: top.ghhccghk.accompanist.lyrics.folia.ExperimentalFoliaMaskProcessor? = null): PartitaGuide {
     val padding=ceil(16*density.density).toInt()
     val mask=ImageBitmap(ceil(size.width).toInt()+2*padding,ceil(size.height).toInt()+2*padding)
     CanvasDrawScope().draw(density,LayoutDirection.Ltr,Canvas(mask),Size(mask.width.toFloat(),mask.height.toFloat())) {
         drawRect(Color.White,Offset(padding.toFloat(),padding.toFloat()),size)
     }
-    return PartitaGuide(size,padding,blurredMasks(mask,floatArrayOf(5*density.density)).single())
+    return PartitaGuide(size,padding,blurredMasks(mask,floatArrayOf(5*density.density),processor).single())
 }
 
 /** Shadow and solid form one guide, whose opacity/scale applies to the group. */

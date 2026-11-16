@@ -49,6 +49,7 @@ internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
     onClick: (() -> Unit)? = null, onLongPress: (() -> Unit)? = null) {
     val density = LocalDensity.current
     val resolver = LocalFontFamilyResolver.current
+    val maskProcessor = top.ghhccghk.accompanist.lyrics.folia.LocalFoliaMaskProcessor.current
     val measurer = rememberTextMeasurer(cacheSize = 64)
     val nativeInk = LocalClassicNativeBodyInk.current
     val currentPlayback by rememberUpdatedState(playback)
@@ -62,7 +63,7 @@ internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             })
         }
         val prepared = remember(layout,textStyle,cssWidth,cssHeight,options.quality,config.avoidOverlap,
-            colors.active.alpha,measurer,resolver,density,nativeInk,maskBudgetBytes) {
+            colors.active.alpha,measurer,resolver,density,nativeInk,maskBudgetBytes,maskProcessor) {
             fun prepare(fit: Double): PartitaPrepared {
                 val size = partitaFontSize(textStyle.fontSize.value.toDouble(),cssWidth,fit)
                 // Blink's glyph cache uses hundredths; CSS line boxes/em lengths
@@ -146,7 +147,7 @@ internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                             withTransform({translate(-origin.x,-origin.y)}) {clipPath(path){drawParagraphShadowSource(cell.layout)}}
                         }
                         PartitaGlyph(g,origin,compositeGlowMasks(blurredMasks(image,
-                            FloatArray(layers){max(1f,radii[it]*density.density/2)}),colors.active.alpha))
+                            FloatArray(layers){max(1f,radii[it]*density.density/2)},maskProcessor),colors.active.alpha))
                     })
                 } })
         }
@@ -202,10 +203,10 @@ internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         val wordLayers=prepared.rows.map { row -> row.map { rememberClassicLayer() } }
         val blurLayers=prepared.rows.map { row -> row.map { rememberClassicLayer() } }
         val halo=remember(colors.active){GlowMaskPaint(colors.active)}
-        val guides=remember(prepared.geometry,density,config.showGuideLines) {
+        val guides=remember(prepared.geometry,density,config.showGuideLines,maskProcessor) {
             if(!config.showGuideLines) emptyList() else prepared.geometry.rows.map { row ->
-                preparePartitaGuide(Size(density.density,32*density.density),density) to
-                    preparePartitaGuide(Size((row.box.width+36)*density.density,density.density),density)
+                preparePartitaGuide(Size(density.density,32*density.density),density,maskProcessor) to
+                    preparePartitaGuide(Size((row.box.width+36)*density.density,density.density),density,maskProcessor)
             }
         }
         val guideLayers=guides.map{rememberClassicLayer() to rememberClassicLayer()}

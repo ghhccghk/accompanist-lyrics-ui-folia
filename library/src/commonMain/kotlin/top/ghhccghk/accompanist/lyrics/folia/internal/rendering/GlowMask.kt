@@ -2,6 +2,7 @@ package top.ghhccghk.accompanist.lyrics.folia.internal.rendering
 
 import androidx.compose.ui.graphics.ImageBitmap
 import kotlin.math.*
+import top.ghhccghk.accompanist.lyrics.folia.ExperimentalFoliaMaskProcessor
 
 internal expect fun bitmapFromArgb(width: Int, height: Int, pixels: IntArray): ImageBitmap
 
@@ -16,13 +17,18 @@ internal fun blurredMasks(source: ImageBitmap, radii: IntArray): List<ImageBitma
  * Keep integer sums exact through all three passes of each axis, quantizing
  * only the completed horizontal and vertical masks, as observed in Chromium.
  * A pair of opposite half-pixel even windows keeps the kernel centred. */
-internal fun blurredMasks(source: ImageBitmap, sigmas: FloatArray): List<ImageBitmap> {
+internal fun blurredMasks(source: ImageBitmap, sigmas: FloatArray,
+    processor: ExperimentalFoliaMaskProcessor? = null): List<ImageBitmap> {
     require(sigmas.all { it.isFinite() && it in 1f..4096f })
     if (sigmas.isEmpty()) return emptyList()
     val width = source.width
     val height = source.height
     val pixels = IntArray(width * height)
     source.readPixels(pixels)
+    processor?.blur(pixels, width, height, sigmas)?.let { masks ->
+        require(masks.size == sigmas.size && masks.all { it.size == pixels.size }) { "Invalid experimental mask output" }
+        return masks.map { bitmapFromArgb(width, height, it) }
+    }
     val a = DoubleArray(pixels.size)
     val b = DoubleArray(pixels.size)
     return sigmas.map { sigma ->

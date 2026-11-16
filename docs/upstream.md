@@ -529,3 +529,13 @@ capture-translucent-halo.mjs executes actual original GlowWord/wordGlow targets;
 controls. No source modification, font outline or upstream example asset copied.
 The same registered OFL font/source baseline is reused. Full-image residuals and
 Android runtime limits remain documented in classic-parity.md.
+
+
+## 2026-11-16 示例 CPU 遮罩开关
+
+`ExperimentalFoliaMaskProcessor.kt` 为本项目独立编写的 scoped 可选边界；
+`sample/shared/.../ExperimentalMaskControls.kt`、`NativeMaskBridge.kt`、
+`native/experimental-mask/build-android.ps1` 独立编写，没有搬入新的 Folia/Accompanist 代码。
+Rust 复用本仓库既有 `native/experimental-mask/src/lib.rs` 的独立 CPU 遮罩内核，
+只增加 sample JNI 名称和 ABI 自检导出，保留旧基准导出；jni-sys 现有授权声明保留。
+固定 Folia 来源提交与既有视觉/时间映射不变。具体运行边界与证据见native-mask-sample.md。

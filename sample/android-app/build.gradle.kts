@@ -2,6 +2,37 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
 }
+// Opt-in sample debug build only. Ordinary Kotlin builds/publications need no Rust.
+abstract class BuildExperimentalMask : DefaultTask() {
+    @get:InputFiles @get:PathSensitive(PathSensitivity.RELATIVE)
+    abstract val nativeInputs: ConfigurableFileCollection
+    @get:Input abstract val cargo: Property<String>
+    @get:Internal abstract val ndkDirectory: DirectoryProperty
+    @get:Internal abstract val script: RegularFileProperty
+    @get:OutputDirectory abstract val outputDirectory: DirectoryProperty
+    @get:Inject abstract val processes: ExecOperations
+    @TaskAction fun build() {
+        processes.exec {
+            val shell = File(System.getenv("SystemRoot"), "System32/WindowsPowerShell/v1.0/powershell.exe")
+            commandLine(shell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", script.get().asFile,
+                "-NdkDirectory", ndkDirectory.get().asFile, "-OutputDirectory", outputDirectory.get().asFile,
+                "-Cargo", cargo.get())
+        }
+    }
+}
+if (providers.gradleProperty("foliaExperimentalMask").orNull == "true") {
+    val mask = tasks.register<BuildExperimentalMask>("buildExperimentalMask") {
+        val directory = rootProject.layout.projectDirectory.dir("native/experimental-mask")
+        nativeInputs.from(fileTree(directory) { include("src/**", "Cargo.toml", "Cargo.lock", "rust-toolchain.toml", "build-android.ps1") })
+        script.set(directory.file("build-android.ps1"))
+        cargo.set(providers.gradleProperty("foliaRustCargo").orElse("cargo"))
+        ndkDirectory.set(androidComponents.sdkComponents.sdkDirectory.map { it.dir("ndk/28.2.13676358") })
+        outputDirectory.set(layout.buildDirectory.dir("generated/experimentalMask/jniLibs"))
+    }
+    androidComponents.onVariants(androidComponents.selector().withBuildType("debug")) { variant ->
+        variant.sources.jniLibs?.addGeneratedSourceDirectory(mask, BuildExperimentalMask::outputDirectory)
+    }
+}
 abstract class PrepareClassicParityAssets : DefaultTask() {
     @get:InputFiles
     @get:PathSensitive(PathSensitivity.RELATIVE)

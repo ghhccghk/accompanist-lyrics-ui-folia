@@ -85,6 +85,7 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
                     Text("Folia · 本地歌曲",style=MaterialTheme.typography.headlineMedium)
                     Text("选择音频开始播放；歌词和翻译可以稍后添加。")
                     Button(::openSelection) { Text("选择歌曲") }
+                    TextButton({ settings=true }) { Text("设置") }
                     Text(localAudioFormats,style=MaterialTheme.typography.bodySmall)
                     TextButton({ session.demo=true }) { Text("开发／演示") }
                 } else {
@@ -105,9 +106,9 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
                         if(song.lyrics==null) Box(modifier,contentAlignment=Alignment.Center) { Text("未加载歌词") }
                         else if(!songs.snapshot.isPlaying && songs.snapshot.positionMillis>=song.player.durationMillis)
                             Box(modifier,contentAlignment=Alignment.Center) { Text("播放结束") }
-                        else FoliaLyricsView(song.lyrics,{songs.snapshot},modifier,contentKey=song.revision,options=session.options,
+                        else SampleMaskScope(session) { FoliaLyricsView(song.lyrics,{songs.snapshot},modifier,contentKey=song.revision,options=session.options,
                             typography=FoliaTypography(scale=session.fontScale),style=session.lyricStyle,
-                            onLineClicked={ line -> songs.control { it.seek(line.start.toLong()+session.options.offsetMillis) } })
+                            onLineClicked={ line -> songs.control { it.seek(line.start.toLong()+session.options.offsetMillis) } }) }
                     }
                     if(maxWidth<600.dp) Column { metadata(); panel(Modifier.weight(1f).fillMaxWidth()); LocalTransport(songs,visible) }
                     else Row(horizontalArrangement=Arrangement.spacedBy(24.dp)) {
@@ -139,6 +140,7 @@ fun FoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { 
         if(!selection) (songs.error?:selectionError)?.let { message -> AlertDialog(onDismissRequest={songs.dismissError();selectionError=null},title={Text("操作失败 · 原会话保留")},text={Text(message)},confirmButton={TextButton({songs.dismissError();selectionError=null}){Text("关闭")}}) }
         if(settings) AlertDialog(onDismissRequest={settings=false},title={Text("显示设置")},text={
             Column(Modifier.heightIn(max=420.dp).verticalScroll(rememberScrollState())) {
+                ExperimentalMaskControls(session)
                 LyricThemeControls(session)
                 AudioToggle("翻译",session.options.showTranslation){session.options=session.options.copy(showTranslation=it)}
                 AudioToggle("注音",session.options.showPhonetic){session.options=session.options.copy(showPhonetic=it)}

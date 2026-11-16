@@ -1,5 +1,10 @@
 # Kotlin performance probe — 2026-11-14
 
+2026-11-16 最新：示例已增加可选 Rust CPU 辉光遮罩开关和真实 JNI 接入，默认 Kotlin。
+Android debug 可选 arm64/x86_64，Windows 真实 JNI/同帧对照通过，Android 尚未设备运行；
+详见 [示例 A/B 验证与运行](native-mask-sample.md)。本节覆盖下方历史“未接示例”描述，
+不表示完整 native 渲染器、多主题效果验收或设备性能已完成。
+
 ## Rust JNI遮罩实验 — 2026-11-16（最新，未启用生产）
 
 用户授权后，已独立实现native/experimental-mask，真实构建Windows x64 DLL并通过JNI运行。

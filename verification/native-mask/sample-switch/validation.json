@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-16",
+  "runtime": "Windows x64 JDK 21.0.5, Rust 1.91.1 release DLL, -Xcheck:jni",
+  "native_runtime_tests": {
+    "tests": "3",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  "native_cases": [
+    "classicSwitchPixelsPauseSeekResize",
+    "demoSwitchLoadsAndReportsRealCalls",
+    "partitaSwitchPixelsPauseSeekResize"
+  ],
+  "render_comparison": {
+    "themes": [
+      "classic",
+      "partita"
+    ],
+    "viewport_sizes": [
+      [
+        800,
+        600
+      ],
+      [
+        380,
+        600
+      ]
+    ],
+    "times_ms": [
+      700,
+      950,
+      1500,
+      2700,
+      2900,
+      3100
+    ],
+    "font": "FoliaParityLatin-Bold 44sp",
+    "input": "verification/classic-fixtures/scenes.tsv:wrap",
+    "pairs": 24,
+    "argb_different_pixels": 0
+  },
+  "ordinary_checks": [
+    "sample:shared:jvmTest",
+    "GlowMaskTest",
+    "SoftwareBlurTest",
+    "Android Kotlin-only assembleDebug",
+    "Android opt-in native assembleDebug",
+    "Desktop compileKotlin",
+    "30 random JNI kernel cases and invalid buffers"
+  ],
+  "apk_checks": {
+    "zipalign_16k": true,
+    "apksigner_exit_code": 0,
+    "signature_v1": true,
+    "signature_v2": true
+  },
+  "android_runtime": "NOT VERIFIED: adb has no devices; no emulator launched",
+  "performance": "No Android device or full-frame claim; UI cumulative JNI prep timing is diagnostic only",
+  "upstream_visual_acceptance": "Unchanged outstanding differences; pixel comparison is current Kotlin vs actual Rust, not upstream acceptance"
+}

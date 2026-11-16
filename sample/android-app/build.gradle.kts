@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
 }
-// Opt-in sample debug build only. Ordinary Kotlin builds/publications need no Rust.
+// Sample packages native by default; library publications remain Kotlin-only.
 abstract class BuildExperimentalMask : DefaultTask() {
     @get:InputFiles @get:PathSensitive(PathSensitivity.RELATIVE)
     abstract val nativeInputs: ConfigurableFileCollection
@@ -20,7 +20,7 @@ abstract class BuildExperimentalMask : DefaultTask() {
         }
     }
 }
-if (providers.gradleProperty("foliaExperimentalMask").orNull == "true") {
+if (providers.gradleProperty("foliaExperimentalMask").map { it == "true" }.orElse(true).get()) {
     val mask = tasks.register<BuildExperimentalMask>("buildExperimentalMask") {
         val directory = rootProject.layout.projectDirectory.dir("native/experimental-mask")
         nativeInputs.from(fileTree(directory) { include("src/**", "Cargo.toml", "Cargo.lock", "rust-toolchain.toml", "build-android.ps1") })
@@ -29,7 +29,7 @@ if (providers.gradleProperty("foliaExperimentalMask").orNull == "true") {
         ndkDirectory.set(androidComponents.sdkComponents.sdkDirectory.map { it.dir("ndk/28.2.13676358") })
         outputDirectory.set(layout.buildDirectory.dir("generated/experimentalMask/jniLibs"))
     }
-    androidComponents.onVariants(androidComponents.selector().withBuildType("debug")) { variant ->
+    androidComponents.onVariants { variant ->
         variant.sources.jniLibs?.addGeneratedSourceDirectory(mask, BuildExperimentalMask::outputDirectory)
     }
 }

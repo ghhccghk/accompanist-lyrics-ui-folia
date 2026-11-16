@@ -5,6 +5,61 @@ plugins {
     alias(libs.plugins.compose.compiler)
 }
 
+/** Sample-only JVM resource: optional Rust, never an input of the lyric library. */
+abstract class PrepareDesktopMaskResources : DefaultTask() {
+    @get:Input abstract val includeNative: Property<Boolean>
+    @get:Input abstract val cargo: Property<String>
+    @get:InputFiles @get:PathSensitive(PathSensitivity.RELATIVE)
+    abstract val nativeInputs: ConfigurableFileCollection
+    @get:Optional @get:InputFile @get:PathSensitive(PathSensitivity.NONE)
+    abstract val prebuiltLibrary: RegularFileProperty
+    @get:Internal abstract val buildScript: RegularFileProperty
+    @get:Internal abstract val builtLibrary: RegularFileProperty
+    @get:OutputDirectory abstract val outputDirectory: DirectoryProperty
+    @get:Inject abstract val processes: ExecOperations
+    @get:Inject abstract val fileSystem: FileSystemOperations
+
+    @TaskAction fun prepare() {
+        if (includeNative.get() && !prebuiltLibrary.isPresent) {
+            check(System.getProperty("os.name").startsWith("Windows")) {
+                "Experimental desktop mask currently builds Windows x64 only"
+            }
+            processes.exec {
+                val shell = File(System.getenv("SystemRoot"), "System32/WindowsPowerShell/v1.0/powershell.exe")
+                commandLine(shell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
+                    buildScript.get().asFile, "-Cargo", cargo.get())
+            }
+        }
+        val library = if (includeNative.get()) prebuiltLibrary.orElse(builtLibrary).get().asFile else null
+        if (library != null) check(library.isFile) { "Missing experimental desktop DLL: $library" }
+        // Sync only this generated resource directory. Removing the opt-in flag
+        // must remove the resource as well, including consecutive builds.
+        fileSystem.sync {
+            into(outputDirectory)
+            if (library != null) from(library) { into("native/windows-x86_64") }
+        }
+        outputDirectory.file("native/folia-mask-build.txt").get().asFile.apply {
+            parentFile.mkdirs()
+            writeText("experimentalWindowsX64=${includeNative.get()}\n")
+        }
+    }
+}
+
+val desktopMaskResources = tasks.register<PrepareDesktopMaskResources>("prepareDesktopMaskResources") {
+    val directory = rootProject.layout.projectDirectory.dir("native/experimental-mask")
+    includeNative.set(providers.gradleProperty("foliaExperimentalMask").map { it == "true" }.orElse(System.getProperty("os.name").startsWith("Windows")))
+    cargo.set(providers.gradleProperty("foliaRustCargo").orElse("cargo"))
+    nativeInputs.from(rootProject.fileTree(directory) {
+        include("src/**", "Cargo.toml", "Cargo.lock", "rust-toolchain.toml", "build-windows-gnu.ps1")
+    })
+    providers.gradleProperty("foliaNativeMaskDirectory").orNull?.let {
+        prebuiltLibrary.set(rootProject.file("$it/folia_mask_experiment.dll"))
+    }
+    buildScript.set(directory.file("build-windows-gnu.ps1"))
+    builtLibrary.set(directory.file("target/release/folia_mask_experiment.dll"))
+    outputDirectory.set(layout.buildDirectory.dir("generated/desktopMaskResources"))
+}
+
 tasks.register<JavaExec>("verifyLocalAudio") {
     group = "verification"
     description = "Explicitly verify a real Java Sound device using an original generated 12-second WAV"
@@ -33,7 +88,10 @@ kotlin {
         commonTest.dependencies { implementation(kotlin("test")) }
         androidMain.dependencies { implementation(libs.activity.compose) }
         androidMain { kotlin.srcDir("src/jvmAndAndroidMain/kotlin") }
-        jvmMain { kotlin.srcDir("src/jvmAndAndroidMain/kotlin") }
+        jvmMain {
+            kotlin.srcDir("src/jvmAndAndroidMain/kotlin")
+            resources.srcDir(desktopMaskResources.map { it.outputDirectory })
+        }
         jvmTest.dependencies {
             implementation("org.jetbrains.compose.ui:ui-test:1.12.0")
             implementation(compose.desktop.currentOs)
@@ -58,4 +116,17 @@ tasks.register<Test>("jvmNativeMaskRuntimeTest") {
         require(directory.isPresent) { "Provide -PfoliaNativeMaskDirectory=<directory containing experimental DLL>" }
         systemProperty("java.library.path", File(directory.get()).canonicalPath)
     }
+}
+
+// Load from the actual packaged sample-shared JAR, with an empty library path.
+// No visible window or dependency on IDE launch arguments/global PATH.
+tasks.register<JavaExec>("verifyBundledDesktopMask") {
+    dependsOn("jvmTestClasses", "jvmJar")
+    val main = kotlin.targets.getByName("jvm").compilations.getByName("main")
+    val ordinary = tasks.named<Test>("jvmTest")
+    classpath = ordinary.get().classpath.minus(main.output.allOutputs) + files(tasks.named("jvmJar"))
+    mainClass.set("top.ghhccghk.accompanist.folia.sample.BundledDesktopMaskProbe")
+    workingDir = rootProject.projectDir
+    jvmArgs("-Xcheck:jni", "-Djava.library.path=")
+    providers.gradleProperty("foliaProbeJava").orNull?.let { setExecutable(it) }
 }

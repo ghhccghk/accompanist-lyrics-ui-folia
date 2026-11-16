@@ -1,9 +1,9 @@
 # Experimental Rust coverage kernel
 
 Optional CPU mask experiment authorized 2026-11-16. The sample now has a scoped
-Kotlin/Rust switch; default remains Kotlin. Android debug may package arm64-v8a /
-x86_64 JNI with `-PfoliaExperimentalMask=true`. Ordinary builds/publications need
-no Cargo or native runtime. This is not the larger scene/animation ABI.
+Kotlin/Rust switch; default remains Kotlin. Android sample now packages arm64-v8a / x86_64 JNI by default; Windows x64 sample
+bundles the DLL in its JAR. Use `-PfoliaExperimentalMask=false` for sample builds
+without Cargo/native. Library-only builds/publications still need no Cargo or native runtime. This is not the larger scene/animation ABI.
 See [sample setup, verification, and device limitations](../../docs/native-mask-sample.md).
 
 Rust 1.91.1, jni-sys exactly 0.3.0 with Cargo.lock. The kernel is independently

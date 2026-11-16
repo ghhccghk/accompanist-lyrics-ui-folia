@@ -16,7 +16,7 @@ sigma=1/2.25/10/20/4096），随后释放工作区。没有清除目标应用数
 界面现在保留加载阶段与原始 linker 详情，可选中文本复制，明确提示普通构建缺库时
 应安装本页实验 APK，或带 `-PfoliaExperimentalMask=true` 构建。
 不能把所有 UnsatisfiedLinkError 都诊断成缺库；缺依赖、缺符号和 JNI 入口失败
-会显示各自原始原因。该修改不让默认库或普通 sample 构建强制依赖 Rust。
+会显示各自原始原因。库仍不依赖 Rust；sample 构建策略已按下述新要求调整。
 
 证据见 `verification/native-mask/device-load-fix/`，包含升级前实际APK的库清单、
 升级前/后设备探测输出和本次交付APK哈希。此前 `sample-switch/` 是初次无设备阶段的证据。
@@ -57,7 +57,7 @@ adb shell am instrument -w top.ghhccghk.accompanist.folia.sample.test/top.ghhccg
 
 本次生成的真机测试包：`build/outputs/folia-sample-rust-experimental-debug.apk`。
 这是含真实 `.so` 的 debug APK，Android 6.0/API23 起，ABI 为 arm64-v8a 和 x86_64；
-没有交付 32 位 native。普通构建仍无需 Rust，开关在缺库时报告不可用。
+没有交付 32 位 native。当前 Android sample 默认打包 Rust，开关仍默认 Kotlin。
 
 Windows 开发机需要 Android SDK、固定 NDK **28.2.13676358/r28c**、Rust **1.91.1**
 及以下 target；工具链与 Cargo.lock 锁定，不下载／提交 native 二进制到源码仓库：
@@ -69,24 +69,35 @@ rustup target add aarch64-linux-android x86_64-linux-android --toolchain 1.91.1
 ```
 
 可用 `-PfoliaRustCargo=<cargo.exe>` 选择私有安装，`CARGO_HOME`/`RUSTUP_HOME`沿用
-调用环境。Gradle 可选任务只为 debug 生成／打包 jniLibs，默认命令、库 AAR/Maven 产物
+调用环境。Gradle 为 Android sample 各构建变体生成／打包 jniLibs；库 AAR/Maven 产物
 不依赖 Cargo，不包含该 native 运行时。构建脚本目前支持 Windows NDK host。
 NDK 链接目标 API23，显式 16 KiB ELF 页对齐。
 
-普通 Kotlin 构建：
+显式关闭 native 的 Kotlin sample 构建：
 
 ```powershell
-./gradlew.bat :sample:android-app:assembleDebug :sample:desktop-app:compileKotlin
+./gradlew.bat :sample:android-app:assembleDebug :sample:desktop-app:compileKotlin -PfoliaExperimentalMask=false
 ```
 
-Desktop 同样有开关；普通分发未捆绑 DLL，必须由启动 JVM 的 `java.library.path`
-提供本地编译的 `folia_mask_experiment.dll` 才可加载，不自行搜索私人目录。
-本次 Desktop 实际 JNI 验证入口：
+Desktop Windows x64 默认捆绑 DLL 为 sample-shared JAR 资源，首次打开开关时解包到独立临时目录并绝对路径加载；无需修改全局 PATH。关闭开关不卸载 JVM 已加载的 DLL。
+非 Windows 主机默认不构建此 Windows 专用 DLL。显式外部覆盖支持 VM 参数
+`-Dfolia.mask.library=<DLL绝对路径>`，错误的显式路径会报告失败，不悄悄换用内置库。
+可用 `-PfoliaNativeMaskDirectory=<含DLL目录>` 跳过 Desktop Cargo 构建、打包已编译 DLL。
+Android 仍通过系统 APK native loader 加载 .so，错误提示分平台提供。
+
+默认 sample 构建需要 Rust；两个 sample 都可用 `-PfoliaExperimentalMask=false` 排除 native。
+此选项不改变运行时开关默认 Kotlin，不影响库独立消费。
 
 ```powershell
-./native/experimental-mask/build-windows-gnu.ps1
-./gradlew.bat :sample:shared:jvmNativeMaskRuntimeTest '-PfoliaNativeMaskDirectory=native/experimental-mask/target/release'
+./gradlew.bat :sample:android-app:assembleDebug :sample:desktop-app:run
+./gradlew.bat :sample:shared:verifyBundledDesktopMask
 ```
+
+2026-11-16 后台验证：JDK21及用户JBR25.0.4实际从JAR加载DLL，空java.library.path，
+ABI/启动自检/真实卷积/三次切换释放通过；缺库UI三测试通过。
+连续默认→false构建，JAR/APK均不残留本项目native文件。
+Android默认debug APK两ABI、16KiB对齐和签名通过；本轮没有设备运行验证。
+详情见 `verification/native-mask/default-bundling/README.md`。
 
 ## 已验证与限制
 

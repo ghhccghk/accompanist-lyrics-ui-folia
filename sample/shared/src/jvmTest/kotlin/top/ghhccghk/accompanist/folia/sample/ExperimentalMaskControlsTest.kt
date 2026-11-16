@@ -10,12 +10,25 @@ import kotlin.test.*
 /** Ordinary test process deliberately has no experimental library on its path. */
 @OptIn(ExperimentalTestApi::class)
 class ExperimentalMaskControlsTest {
+    private var previousLibrary: String? = null
+    @BeforeTest fun selectMissingLibrary() {
+        previousLibrary = System.getProperty("folia.mask.library")
+        System.setProperty("folia.mask.library", File("build/missing-native-test/folia_mask_experiment.dll").absolutePath)
+    }
+    @AfterTest fun restoreLibraryChoice() {
+        previousLibrary?.let { System.setProperty("folia.mask.library", it) }
+            ?: System.clearProperty("folia.mask.library")
+    }
+
     @Test fun diagnosticsPreservePhaseAndActualLinkerReason() {
         for (detail in listOf("library libfolia_mask_experiment.so not found", "cannot locate symbol missing_symbol", "No implementation found for version")) {
             val message = nativeMaskLoadFailure("JNI 自检", UnsatisfiedLinkError(detail))
             assertTrue(message.contains(detail))
             assertTrue(message.contains("JNI 自检"))
             assertTrue(message.contains("-PfoliaExperimentalMask=true"))
+            assertTrue(message.contains("folia_mask_experiment.dll"))
+            assertTrue(message.contains("-Dfolia.mask.library="))
+            assertFalse(message.contains("请安装 Rust 实验 APK"))
         }
     }
     @Test fun freshLaunchAndUnavailableSwitchAreHonest() = runDesktopComposeUiTest(width = 420, height = 800) {

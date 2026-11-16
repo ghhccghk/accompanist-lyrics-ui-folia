@@ -17,6 +17,8 @@ internal interface SampleNativeMaskProcessor : ExperimentalFoliaMaskProcessor {
 }
 internal data class NativeMaskLoad(val processor: SampleNativeMaskProcessor? = null, val error: String? = null)
 internal expect fun loadSampleNativeMask(): NativeMaskLoad
+internal expect fun loadSampleNativeLibrary()
+internal expect fun nativeMaskPlatformHelp(): String
 
 /** Session-only experiment: a new launch always starts with Kotlin. */
 class SampleMaskBackend {

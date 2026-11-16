@@ -91,3 +91,18 @@ Static snapshots remain short of final visual parity, especially multiline
 raster/compositing and fonts with differing hhea/OS/2 typo metrics. Live effects,
 camera, other scripts and Android runtime remain pending. The comparison JSON
 includes browser version, font hash and hashes for every full-size PNG.
+
+## Live draw recording — 2026-11-17
+
+Run `node verification/classic-browser/generate-fume-frame.mjs` to regenerate
+`frames.tsv` / `glyphs.tsv`. The original `drawFumeLiveBlock`, block timing,
+static-layer resolver, text styles and color helpers execute unchanged. The
+Canvas records paint/rect operations; each synthetic segment is one EGC with
+explicit advance `8.5 + index % 3`, so every glyph paint can be inspected.
+This is a controlled animation/paint seam, **not** a shaping or raster comparison.
+1,104 frames, 8,970 glyph paints, 317 stamps. Source checkout must be clean and
+fixed at the SHA in every fixture header. Native timing, RGB/alpha, shadow radius,
+stamp geometry, crossfade and overview restoration compare at 1e-8; reverse
+sampling and disabling stamps must preserve the remaining values.
+
+The complete Fume renderer, camera and public integration remain unfinished.

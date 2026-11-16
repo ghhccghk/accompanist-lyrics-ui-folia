@@ -604,6 +604,29 @@ No upstream example assets, Accompanist code or background engine copied.
 Exact procedures and current nonaccepted visual residual are documented in
 verification/fume-fixtures/README.md and docs/themes-parity.md.
 
+## 2026-11-17 Fume live frame parameters
+
+Same pinned Folia `cc6226e464050a456a2913e062374f23d3844cc5` (AGPL-3.0-only).
+`src/components/visualizer/fume/fumeBlockFrame.ts` → `internal/styles/fume/FumeBlockFrame.kt`:
+waiting/live/passed classification, raw-end completion versus render-end trail,
+next-line cutoff, retained-text crossfade and overview restoration.
+`fumeCanvasText.ts:drawFumeLiveBlock` → the same Kotlin file: per-EGC color,
+integer live shadow radius, line glow and transient print-stamp geometry/alpha.
+`wordColoring.ts:resolveWordColor` and `colorMix.ts` → typed sRGB ink interpolation
+and Fume's first-match keyword rule; retain distinct CJK predicates of both source files.
+Changes: pure media-time results instead of Canvas side effects; geometry relative to
+the shaped EGC advance origin; caller still paints the complete shaped segment.
+No public API or alternative theme selector is added by this numerical kernel.
+
+`verification/classic-browser/generate-fume-frame.mjs` calls the untouched source
+drawing function with a recording Canvas and explicit synthetic glyph advances.
+It records 1,104 frames / 8,970 glyph paints / 317 stamps, including source
+syllables, whitespace, emoji, CJK, Arabic, no words, next-line cutoff, hold,
+three intensities and overview restoration. This isolates animation math and
+colors; it is deliberately **not** screenshot, shaping or completed-theme evidence.
+`FumeBlockFrameTest` compares those values at 1e-8, including reverse traversal;
+there is no integration clock, accumulated animation state or fixed-FPS loop.
+
 ## 2026-11-17 Fume static text snapshots
 
 Fixed Folia revision/license unchanged. Original

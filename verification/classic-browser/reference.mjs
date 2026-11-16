@@ -2,6 +2,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { createServer } from 'vite';
+import { createRequire } from 'node:module';
 
 export const root = path.resolve(fileURLToPath(new URL('../..', import.meta.url)));
 export const upstream = path.join(root, '.work/folia-major');
@@ -15,6 +16,7 @@ export function checkReference() {
 export async function referenceModules() {
   checkReference();
   const server = await createServer({ configFile: false, root: path.dirname(fileURLToPath(import.meta.url)),
+    resolve: { alias: { '@chenglou/pretext': createRequire(import.meta.url).resolve('@chenglou/pretext') } },
     cacheDir: path.join(root,'.work/vite-reference-cache'), optimizeDeps: { noDiscovery: true, entries: [] },
     server: { middlewareMode: true, fs: { allow: [root] } } });
   const load = async p => server.ssrLoadModule(path.join(upstream, 'src', p));

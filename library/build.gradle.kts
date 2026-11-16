@@ -42,6 +42,7 @@ tasks.withType<Test>().configureEach {
     inputs.dir(rootProject.file("verification/classic-fixtures"))
     inputs.dir(rootProject.file("verification/partita-fixtures"))
     inputs.dir(rootProject.file("verification/tilt-fixtures"))
+    inputs.dir(rootProject.file("verification/fume-fixtures"))
     inputs.dir(rootProject.file("verification/assets"))
 }
 // Development-only JNI experiment. No Rust task or runtime dependency in the

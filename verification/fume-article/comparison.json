@@ -1,0 +1,57 @@
+{
+  "reference": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "conditions": "DPR1, height600, widths380/800/1440, two synthetic Latin articles, full-article 92% framing",
+  "source": "actual buildArticleLayout + createStaticBlockSnapshot; no glow or passed alpha, diagnostic block outlines",
+  "native": "FumeArticle + FumeTextMeasure; Compose diagnostic drawText, not a public theme renderer",
+  "font_sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3",
+  "measured_blocks": 150,
+  "max_recorded_geometry_error": 0.0,
+  "frames": [
+    {
+      "file": "0-1440.png",
+      "foreground_pixels": 6160,
+      "foreground_mae": 69.43544372294372
+    },
+    {
+      "file": "0-380.png",
+      "foreground_pixels": 3618,
+      "foreground_mae": 76.5929611203243
+    },
+    {
+      "file": "0-800.png",
+      "foreground_pixels": 3998,
+      "foreground_mae": 89.6128064032016
+    },
+    {
+      "file": "2-1440.png",
+      "foreground_pixels": 54900,
+      "foreground_mae": 66.84967820279296
+    },
+    {
+      "file": "2-380.png",
+      "foreground_pixels": 19949,
+      "foreground_mae": 58.78667268200578
+    },
+    {
+      "file": "2-800.png",
+      "foreground_pixels": 36326,
+      "foreground_mae": 61.79835379617904
+    }
+  ],
+  "mean_foreground_mae": 70.51265265457457,
+  "png_sha256": {
+    "build/verification/fume-article-browser/0-1440.png": "8f5132a15b55ca797e031a16f0064418028341d05e79e8ce2d6c4657132a91a6",
+    "build/verification/fume-article-kotlin/0-1440.png": "df40ea5bac5e218c021e9db711d7ecafcc9dcf4301ad18189412f016eb188dbb",
+    "build/verification/fume-article-browser/0-380.png": "affe8d326bda2193818423b60a9c8bb270722244ee81d9648297c07b74d1d1b5",
+    "build/verification/fume-article-kotlin/0-380.png": "cd53d1abd281306c22904c182eda981599a884bdabe27f9fbd255af2f5ab600d",
+    "build/verification/fume-article-browser/0-800.png": "d14ee2608c88ca21201dfa4adf55c65f80211ae701956c6890113d2c97034c38",
+    "build/verification/fume-article-kotlin/0-800.png": "64ffc0b170dab539131c408aa40c29b962554cfb06534d8ee2d08f917c0fd531",
+    "build/verification/fume-article-browser/2-1440.png": "9acf38d5e2b5e8ea261144da46c808f3ac74c7a2d85c1b5104b0435c65774fe9",
+    "build/verification/fume-article-kotlin/2-1440.png": "0354f452ea1d00cfe1c4a976eccfa3c05c54de2cc3201948cfa40fff7fbe3763",
+    "build/verification/fume-article-browser/2-380.png": "558ce1836c2dd651215a254e1475c188bc4bed2c73dca200873432ab88e884b5",
+    "build/verification/fume-article-kotlin/2-380.png": "a5831270aa05654d3b3dd63f3a3d398f6ba7b8f29528d4f50cd4db3897259188",
+    "build/verification/fume-article-browser/2-800.png": "e69c65dc4a1935dd933f863996319921430f6ef5af42f798c94dfaacd7e0b0b1",
+    "build/verification/fume-article-kotlin/2-800.png": "e59dc69b7d4df9d3862342c54df5132a729af539f7717290703844ef8093d23a"
+  },
+  "limitations": "Geometry checks pass; Canvas middle-baseline placement, hero text inset, snapshot compositing and raster parity remain unported. No camera/animation/Android runtime claim."
+}

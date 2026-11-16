@@ -26,3 +26,41 @@ without that history-dependent memo. Printing still respects all source
 rounding/minimum durations. Infinity in `resolvePassedDimAmount` returns 1
 in the original; a later renderer must preserve the caller's hold-style logic
 rather than interpreting this helper alone as the complete hold behavior.
+
+## Article geometry
+
+`node verification/classic-browser/generate-fume-article.mjs` executes the original
+`fumeArticleLayout.ts` generator and the original `chooseSingleLineFontPx`
+declaration. Only its text measurement import is replaced with a labelled seam:
+each EGC advances `fontPx * .57`, hard newlines are honored, and each candidate
+is measured directly. Unused render-detail imports return no render lines;
+the source's placement loop and final block construction remain intact.
+`article-inputs.tsv` and `article-layout.tsv` cover 96 layouts / 1,560 blocks,
+including empty blocks, fallback heroes, chorus heroes, Unicode and long lines.
+These are numerical algorithm fixtures, not a substitute for actual fonts.
+
+With the existing browser server running, use
+`node verification/classic-browser/capture-fume-article.mjs` for actual unmodified
+`buildArticleLayout` and `createStaticBlockSnapshot`, the registered OFL Latin
+font, DPR1, 380/800/1440 by600. Six articles / 150 real-font blocks are recorded
+in `article-browser.tsv` and `build/verification/fume-article-browser`.
+`FumeArticleFontTest` applies the same font and viewport in Compose, uses the
+library's FumeTextMeasure, and writes candidate pictures/CSV into
+`build/verification/fume-article-kotlin`. Article/block geometry and font sizes
+are checked at 1e-8, without widening the goal after initial failures.
+
+`python verification/compare-fume-article.py` creates the committed contact and
+raw-position comparison in `verification/fume-article`. The source pictures
+use actual original static snapshots; native pictures are a geometry diagnostic
+using drawText, with no final camera, active glow, baseline calibration or
+hero text inset. Both include diagnostic block outlines. Current mean RGB
+foreground-union MAE70.5127 is **not accepted visual parity**. The source's
+middle-baseline/static snapshot renderer remains the next rendering task.
+
+The failed initial integer intrinsic-width candidate is retained in
+`.work/fume-article-font-first.log`; the failed hanging-space-only and
+fractional-width candidates are also retained. The passing candidate measures
+fractional shaped line advance, hangs trailing ASCII spaces for fit only, and
+uses hundredth-pixel font quantization. Source text/timings are never trimmed.
+Browser font memo heuristics were not copied; more fonts/scripts and Android
+runtime still require their own comparison.

@@ -581,6 +581,29 @@ clears the original hold-duration memo before each independent query. Inputs
 are synthetic and contain no upstream lyrics/assets. `verification/fume-fixtures/README.md`
 records evidence and limitations. No article, camera or renderer port claimed.
 
+## 2026-11-16 Fume article / font fitting
+
+Same fixed source and AGPL-3.0-only as above. Original
+`src/components/visualizer/fume/fumeArticleLayout.ts` → internal/styles/fume/FumeArticle.kt:
+stable UTF-16 FNV seeding, fallback/natural heroes, shortest-column and spanning
+placement, font binary search and column/density scoring. Original
+`fumeTextMeasure.ts:chooseSingleLineFontPx` → FumeArticle.kt; its measurement
+contract → FumeTextMeasure.kt (whole Compose paragraphs, fractional advance,
+trailing ASCII whitespace hangs for fit only, calibrated font quantization).
+No global measurement-history heuristic or DOM/MessageChannel scheduler copied.
+Callers must arrange preparation/invalidation; this is not yet a public renderer.
+
+The article generator executes original source with a disclosed synthetic font
+measurement import seam and the original font-search declaration. Browser
+capture separately imports the untouched original article builder and
+`fumeCanvasText.ts:createStaticBlockSnapshot`; only the fixed diagnostic framing
+and block outlines are ours. Native diagnostic drawText is not claimed to match
+source baseline, hero inset or snapshot composition. Source remains clean.
+Font reuse/attribution is unchanged (`verification/assets/README.md`, OFL notices).
+No upstream example assets, Accompanist code or background engine copied.
+Exact procedures and current nonaccepted visual residual are documented in
+verification/fume-fixtures/README.md and docs/themes-parity.md.
+
 ## 2026-11-16 示例 CPU 遮罩开关
 
 `ExperimentalFoliaMaskProcessor.kt` 为本项目独立编写的 scoped 可选边界；

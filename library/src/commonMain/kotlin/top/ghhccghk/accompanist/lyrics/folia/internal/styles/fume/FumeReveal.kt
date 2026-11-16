@@ -136,7 +136,7 @@ internal class FumeReveal(val line: FumeLyric) {
     }
 }
 
-private fun fumeWhitespace(c: Char) = c in '\u0009'..'\u000D' || c == '\u0020' || c == '\u00A0' ||
+internal fun fumeWhitespace(c: Char) = c in '\u0009'..'\u000D' || c == '\u0020' || c == '\u00A0' ||
     c == '\u1680' || c in '\u2000'..'\u200A' || c == '\u2028' || c == '\u2029' ||
     c == '\u202F' || c == '\u205F' || c == '\u3000' || c == '\uFEFF'
 internal fun fumePassCutoff(line: FumeLyric, nextStart: Double?): Double =

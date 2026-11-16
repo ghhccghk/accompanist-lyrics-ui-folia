@@ -1,0 +1,36 @@
+{
+  "source": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "command": ":library:jvmTest --tests *Fume* --tests *UpstreamGraphemeTest :sample:android-app:assembleDebug :sample:desktop-app:compileKotlin",
+  "result": "BUILD SUCCESSFUL",
+  "suites": [
+    {
+      "name": "FumeArticleFontTest[jvm]",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "FumeArticleTest[jvm]",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "FumeRevealTest[jvm]",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "UpstreamGraphemeTest[jvm]",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "limitations": "Android build only; no connected device. Static diagnostic visuals remain unmatched; no Fume public renderer or camera yet."
+}

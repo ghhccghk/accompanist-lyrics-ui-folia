@@ -15,7 +15,7 @@
 | 流光 | classic；`classic/Visualizer.tsx`、`GlowWord.tsx` | 居中词布局、字素辉光、余韵和句转场 | 已实现但未最终验收；完整画面栅格、Android复杂字幕残差继续保留在classic-parity.md |
 | 云阶 | partita；`partitaLayout.ts`、`PartitaChunk.tsx`、`partitaOverlap.ts` | 依高度拆块、交替阶梯错位、块级入场、引导线、GlowWord | **移植校准中**：已接FoliaStyle.Partita与示例，完整画面尚有残差，未最终验收 |
 | 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 已接 FoliaStyle.Tilt 和示例，明确标注校准预览；450ms 公共退场、Latin 段宽已补，Arabic shaping、CSS transform 延迟和全局字体缓存仍未验收 |
-| 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部字素打印/读后保留时序已移植；文章、相机和绘制未实现，未开放选择器，背景不纳入 |
+| 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部字素时序、文章布局与拟合已移植；相机和正式绘制未实现，未开放选择器，背景不纳入 |
 | 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 未实现；先同种子布局/包络，再文字层，不引入原DOM依赖 |
 | 群唱 | cappella；`VisualizerCappella.tsx`、`cappellaMessages.ts`、`cappellaMessageLayout.ts`、`cappellaReveal.ts` | 多发送者对话、气泡、消息保留与逐字揭示 | 未实现；明确core声部与发送者映射；先文字消息，不复制未知来源头像/emoji |
 | 时计 | pendolo；`VisualizerPendolo.tsx`、`pendoloGeometry.ts`、`pendoloTimeline.ts`、`PendoloActiveLyricSweep.tsx` | 圆弧歌词轨、机械跳步、当前句扫描、字幕轨 | 未实现；先文字几何/跳步/扫描；音频鼓点与节拍增强单列，不伪造输入 |
@@ -36,6 +36,27 @@
 后续需连同真实调用层继续验证。证据生成器/限制见verification/fume-fixtures/README.md。
 FumeRevealTest与共享UpstreamGraphemeTest通过，Android示例assembleDebug和Desktop
 compileKotlin通过；没有Android连接设备或Fume画面验证，文章/镜头/绘制仍未实现。
+
+### 浮名文章布局（后续已完成内核）
+
+上游 `fumeArticleLayout.ts` → `FumeArticle.kt`，`fumeTextMeasure.ts` → `FumeTextMeasure.kt`：
+FNV-1a稳定打散、自然/兜底hero选择、跨列占位、等高轮转、字号二分、各列数与密度的
+高度评分均保留。几何与媒体时间无关，只在输入/视口/字体变动时由调用者重建；
+不沿用classic的一行居中布局。Compose始终测完整字符串，输入源字素/词计时不变。
+
+原版受控测量96篇/1560块的顺序、字号、位置与文章指标在1e-8内通过；
+真实OFL同字节字体、DPR1、380/800/1440×600、短篇和48句密集文章共6篇/150块，
+完整几何/字号/换行严格对齐。最初整数intrinsic测量失败，改用分数line advance，
+仅拟合时悬挂尾随ASCII空格，再按已核对的百分之一像素字号边界修复，没有改期望/容差。
+源码原文与完整shaping仍保留；未移植原版依赖测量历史的猜测缓存。
+
+原版实际createStaticBlockSnapshot与native几何诊断图均已保存；
+`verification/fume-article/contact.png`和comparison.json给出6帧对照。
+前景并集RGB MAE均值70.5127，**没有视觉通过**：Canvas middle基线、hero文字8%内缩、
+静态快照栅格/合成和逐字绘制还未移植。诊断图只有布局可验，不是Fume正式renderer。
+Fume相关JVM测试和共享字素回归、Android示例APK及Desktop编译通过；没有本轮Android运行。
+下一项：先按原版静态/动态文字层校正绘制，继续镜头目标与确定性媒体时间重建；
+达到可验收闭环后再开放主题入口，不把纯内核完成写成主题支持。
 
 ## 云阶：内部布局内核
 

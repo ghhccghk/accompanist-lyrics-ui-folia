@@ -1,0 +1,155 @@
+{
+  "reference": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "conditions": "synthetic measured camera blocks; 800x600; media 0..8s; float origin9.25; smooth/stepped x static/float",
+  "adaptation": "log(A)/h spring; h=1/60 coefficient calibration only; adaptive RK4 with 1e-7px local trial error, printing/retarget knots, immutable event-prepared nodes",
+  "status": "Internal calibration. Dynamic source residuals remain; NO complete-theme or device acceptance. Not connected to sample.",
+  "native_adapted_source_maximum_error": 4.18198260376812e-06,
+  "scenarios": [
+    {
+      "scenario": 0,
+      "rate": "30",
+      "samples": 241,
+      "nodes": 2720,
+      "maximum_world_distance": 94.59465307158382,
+      "maximum_scale_error": 0.06790273525375001,
+      "maximum_screen_distance": 136.2048982574547
+    },
+    {
+      "scenario": 0,
+      "rate": "60",
+      "samples": 481,
+      "nodes": 2720,
+      "maximum_world_distance": 3.351859087257039,
+      "maximum_scale_error": 0.0070028247310904845,
+      "maximum_screen_distance": 6.078373751432323
+    },
+    {
+      "scenario": 0,
+      "rate": "144",
+      "samples": 1153,
+      "nodes": 2720,
+      "maximum_world_distance": 107.50993195891189,
+      "maximum_scale_error": 0.09296644748092753,
+      "maximum_screen_distance": 173.13011080577857
+    },
+    {
+      "scenario": 0,
+      "rate": "irregular",
+      "samples": 406,
+      "nodes": 2720,
+      "maximum_world_distance": 288.7575827587914,
+      "maximum_scale_error": 0.24917483364168658,
+      "maximum_screen_distance": 471.3889149649447
+    },
+    {
+      "scenario": 1,
+      "rate": "30",
+      "samples": 241,
+      "nodes": 2791,
+      "maximum_world_distance": 94.58918454014695,
+      "maximum_scale_error": 0.06790273525374979,
+      "maximum_screen_distance": 136.2048982574547
+    },
+    {
+      "scenario": 1,
+      "rate": "60",
+      "samples": 481,
+      "nodes": 2791,
+      "maximum_world_distance": 2.6252734991665063,
+      "maximum_scale_error": 0.007002824753786552,
+      "maximum_screen_distance": 5.329475200114254
+    },
+    {
+      "scenario": 1,
+      "rate": "144",
+      "samples": 1153,
+      "nodes": 2791,
+      "maximum_world_distance": 107.50993195891235,
+      "maximum_scale_error": 0.09296644748092775,
+      "maximum_screen_distance": 173.13011080577948
+    },
+    {
+      "scenario": 1,
+      "rate": "irregular",
+      "samples": 406,
+      "nodes": 2791,
+      "maximum_world_distance": 288.7575827587908,
+      "maximum_scale_error": 0.2491748336416868,
+      "maximum_screen_distance": 471.3889149649438
+    },
+    {
+      "scenario": 2,
+      "rate": "30",
+      "samples": 241,
+      "nodes": 2606,
+      "maximum_world_distance": 94.4846567715569,
+      "maximum_scale_error": 0.06740536395655994,
+      "maximum_screen_distance": 137.28067601883808
+    },
+    {
+      "scenario": 2,
+      "rate": "60",
+      "samples": 481,
+      "nodes": 2606,
+      "maximum_world_distance": 3.33832501262805,
+      "maximum_scale_error": 0.006925576012962953,
+      "maximum_screen_distance": 6.062613512773635
+    },
+    {
+      "scenario": 2,
+      "rate": "144",
+      "samples": 1153,
+      "nodes": 2606,
+      "maximum_world_distance": 108.04191986440375,
+      "maximum_scale_error": 0.09204809527640112,
+      "maximum_screen_distance": 172.7312422555801
+    },
+    {
+      "scenario": 2,
+      "rate": "irregular",
+      "samples": 406,
+      "nodes": 2606,
+      "maximum_world_distance": 290.25447363344864,
+      "maximum_scale_error": 0.24728685641497394,
+      "maximum_screen_distance": 470.4919496262387
+    },
+    {
+      "scenario": 3,
+      "rate": "30",
+      "samples": 241,
+      "nodes": 2677,
+      "maximum_world_distance": 94.4791787858914,
+      "maximum_scale_error": 0.06740536395655994,
+      "maximum_screen_distance": 137.28067601883808
+    },
+    {
+      "scenario": 3,
+      "rate": "60",
+      "samples": 481,
+      "nodes": 2677,
+      "maximum_world_distance": 2.648496708765222,
+      "maximum_scale_error": 0.006925576012585033,
+      "maximum_screen_distance": 5.346385149954669
+    },
+    {
+      "scenario": 3,
+      "rate": "144",
+      "samples": 1153,
+      "nodes": 2677,
+      "maximum_world_distance": 108.04191986440429,
+      "maximum_scale_error": 0.09204809527640112,
+      "maximum_screen_distance": 172.73124225558107
+    },
+    {
+      "scenario": 3,
+      "rate": "irregular",
+      "samples": 406,
+      "nodes": 2677,
+      "maximum_world_distance": 290.25447363344796,
+      "maximum_scale_error": 0.24728685641497394,
+      "maximum_screen_distance": 470.49194962623756
+    }
+  ],
+  "source_sha256": "a0bf64cd45ac781eb07b3c843071a45d3206c820514b6f13f79ef300e5247e65",
+  "native_sha256": "ac1ff7aee9ec03f7ba8357127369ec16059fde514e5d67e4d7767fd3736ec92b"
+}

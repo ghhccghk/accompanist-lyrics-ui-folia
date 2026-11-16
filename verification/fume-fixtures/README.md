@@ -161,3 +161,31 @@ verification/compare-fume-camera-track.py`. The driver is test-only. The
 does not change results, but actual original60Hz residual reaches107.45 world
 px / scale0.06265, with >5,000 prepared nodes for8s. **Rejected for runtime**;
 not a completed camera, not a new acceptance criterion, not included in sample.
+
+## Continuous frozen-coefficient response
+
+`node verification/classic-browser/generate-fume-spring-response.mjs` records
+untouched source steps with fixed target/phase and 25 source coefficient sets
+into `spring-response.tsv` (125 samples, 375 axes).
+`:library:jvmTest --tests '*FumeSpringResponseTest' --tests '*FumeCameraStepTest'`
+checks the analytic response (maximum absolute error 1.1674e-12), partition
+independence, zero-duration freeze, derivative, coincident eigenvalue and
+hour-long duration. No display clock is used. This isolates constant-coefficient
+response, not a dynamic camera or integrated-theme screenshot comparison.
+
+## Continuous dynamic media-camera calibration
+
+`node verification/classic-browser/generate-fume-camera-continuous.mjs` writes
+`camera-continuous.tsv`: actual source30/60/144Hz/irregular poses alongside an
+explicit continuous adaptation using original target observations. Run
+`:library:jvmTest --tests '*FumeCameraTrackTest'`, then
+`python verification/compare-fume-camera-continuous.py`. Conditions, both SHA256,
+source-rate residuals and trajectory plot live in `verification/fume-camera-continuous`.
+No screenshot acceptance gate is replaced by this numerical seam.
+
+Native queries use immutable prepared nodes; no fixed-FPS playback or display
+history. The 1/60 calibration interval identifies one source response. The
+current1e-7px local integration tolerance was tightened after the first coarse
+candidate failed the unchanged1e-5 numeric comparison near discontinuities.
+Exact source expectations remain unmodified. Sample/public theme integration
+and whole-song preparation/runtime measurements are still pending.

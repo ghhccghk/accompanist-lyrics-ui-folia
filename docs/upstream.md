@@ -741,3 +741,57 @@ verification/fume-fixtures/README.md.
 Rust 复用本仓库既有 `native/experimental-mask/src/lib.rs` 的独立 CPU 遮罩内核，
 只增加 sample JNI 名称和 ABI 自检导出，保留旧基准导出；jni-sys 现有授权声明保留。
 固定 Folia 来源提交与既有视觉/时间映射不变。具体运行边界与证据见native-mask-sample.md。
+
+## 2026-11-17 Fume continuous response foundation
+
+The pinned `src/components/visualizer/fume/fumeCameraStep.ts` target/retarget
+selection is now exposed as the pure `fumeCameraIntent` inside `FumeCameraStep.kt`.
+All 8,696 original steps retain their previous 1e-8 comparison.
+`FumeSpringResponse.kt` independently expresses the real logarithm of the
+original frozen-coefficient position/velocity/focus update, with an analytic
+fractional-duration response. The default 1/60s is a coefficient-calibration
+interval identifying one source response, NOT a fixed-FPS playback integration
+loop. Original browser trajectories are rate-dependent. Dynamic coefficients,
+clamps, entry/focus changes and flight bridges still require explicit media
+reconstruction and full-scene validation; this foundation is not that result.
+
+`generate-fume-spring-response.mjs` directly runs untouched original code with
+fixed targets/coefficients: 25 coefficient sets, 125 samples, 375 axes, maximum
+absolute error 1.1674e-12. Fractional semigroup, derivative, coincident
+eigenvalue and hour-long seek checks pass. No source expectation was edited.
+The initial derivative probe incorrectly compared a forward secant against
+the start derivative; it now checks the midpoint derivative at the original
+tolerance. Failure log remains `.work/fume-response.log`.
+Android assembleDebug and Desktop compileKotlin pass; no device runtime or
+new Fume visual acceptance is claimed. No public theme/config contract changes.
+
+## 2026-11-17 Event-prepared Fume continuous camera (internal calibration)
+
+`FumeCameraTrack.kt` independently adapts the pinned `fumeCameraStep.ts` intent
+into continuous media-time response using `FumeSpringResponse`, RK4 step
+doubling, source printing/focus knots and exact retarget boundaries.
+The source target observation in `generate-fume-camera-continuous.mjs` uses
+the untouched operator to recover its focus target; this dt=1 observation seam
+is verification-only, never native runtime logic. Original 30/60/144 Hz and
+irregular trajectories are recorded separately; none is substituted for the
+native media clock. Bridge endpoint-forcing correction and source velocity
+limits are explicit adaptations, not claimed exact upstream equivalence.
+
+The first loose 0.002px local-error candidate failed the independent 1e-5
+numeric seam near discontinuities (e.g. x69.380504669 vs69.380991617 at4.45833s).
+The native/source integrators now split anticipated printing/flight knots and
+converge with1e-7px local trial error; the original assertion/expectations were
+not relaxed. 9,124 raw/adapted source rows across four smooth/stepped x
+static/float scenarios match native with maximum4.182e-6 across all nine fields.
+All1,940 distinct query times per scenario reproduce exactly in random/reverse
+order and on repeat; sampling cannot mutate prepared nodes. Inputs outside the
+prepared finite media window freeze to its boundary; invalid time is rejected.
+
+This is NOT full-theme visual acceptance. Against the actual60Hz operator,
+worst screen-position residual6.079px and scale0.007003 remain. Original30/144
+and irregular residuals are much larger and are not suppressed in reports.
+8s prepares2,606–2,791 nodes at this verification precision; whole-song cost
+is unmeasured. Not wired into a selector/sample; contributes no playback work.
+Evidence: `verification/fume-camera-continuous`, reproducible with the generator,
+`FumeCameraTrackTest`, then `compare-fume-camera-continuous.py`. Next: actual
+whole-article/camera/text captures and dynamic CTM shadow semantics.

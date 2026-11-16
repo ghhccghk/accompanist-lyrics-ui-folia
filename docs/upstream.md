@@ -608,6 +608,22 @@ verification/fume-fixtures/README.md and docs/themes-parity.md.
 
 ### Camera target geometry
 
+`src/components/visualizer/fume/fumeCameraStep.ts:stepFumeCamera` → `FumeCameraStep.kt`:
+original retarget/entry bias, direct and overview bridges, focus catch-up,
+position/scale springs, velocity limits, idle float and overview text restoration.
+Background/audio parallax is excluded. The Kotlin operator returns immutable
+state and never changes its argument. Explicit input seconds replace the source
+wall-clock-milliseconds argument without changing its phase. The source's
+phase-before-flight-duration-extension ordering is intentionally preserved.
+
+`generate-fume-camera-step.mjs` executes the original operator for 16 sequential
+trajectories at 30/60/144 Hz and irregular explicit steps, smooth/stepped focus,
+static/float, all three intensities, speed extremes, near/distant switches,
+return transitions and overview. All 8,696 pose/retarget/restore states compare
+at 1e-8 (restore1e-10). This proves the **operator**, not a media clock or seek
+implementation. It is internal and must not be called once per display frame
+as the public media model. Deterministic media-time reconstruction remains next.
+
 `src/components/visualizer/fume/fumeCamera.ts` → `FumeCameraTargets.kt`:
 stepped and smooth print focus, 0.7-EGC row blend, entry/scale targets,
 micro/short/normal retarget durations, padded article overview and long-distance

@@ -139,3 +139,13 @@ the subsequent spring trajectory or full-theme raster equivalence.
 The original smooth focus returns from the next row to the previous one
 across the exact row boundary. Source samples now include boundary ±1e-8;
 this target discontinuity must not be silently replaced by an invented curve.
+
+## Original spring/bridge operator
+
+`generate-fume-camera-step.mjs` runs the untouched original `stepFumeCamera`
+at explicitly recorded 30/60/144 Hz and irregular time steps; 16 scenarios,
+8,696 steps, pose/velocity/focus/retarget/bridge/restore values. All compare
+at 1e-8, and the port must not mutate its input. Both static and idle-float,
+smooth and stepped modes, speed extremes and long flights are exercised.
+`camera-step.tsv` is sequential source evidence, **not** the native playback
+time model or proof that original frame-dependent motion is seek-rebuildable.

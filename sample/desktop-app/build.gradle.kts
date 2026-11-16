@@ -1,3 +1,5 @@
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.compose)
@@ -9,7 +11,21 @@ dependencies {
     implementation(compose.desktop.currentOs)
 }
 compose.desktop {
-    application { mainClass = "top.ghhccghk.accompanist.folia.sample.MainKt" }
+    application {
+        mainClass = "top.ghhccghk.accompanist.folia.sample.MainKt"
+
+        nativeDistributions {
+            targetFormats(TargetFormat.Exe, TargetFormat.Msi) // 同时生成EXE和MSI
+            packageName = "Accompanist folia demo" // 自定义应用名称
+            packageVersion = "0.0.1" // 设置版本号
+
+            windows {
+                msiPackageVersion = packageVersion
+                exePackageVersion = packageVersion
+            }
+        }
+
+    }
 }
 
 // Isolated native-window core verification; never included in the sample distribution.

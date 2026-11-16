@@ -13,17 +13,22 @@ abstract class BuildExperimentalMask : DefaultTask() {
     @get:Inject abstract val processes: ExecOperations
     @TaskAction fun build() {
         processes.exec {
-            val shell = File(System.getenv("SystemRoot"), "System32/WindowsPowerShell/v1.0/powershell.exe")
-            commandLine(shell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", script.get().asFile,
-                "-NdkDirectory", ndkDirectory.get().asFile, "-OutputDirectory", outputDirectory.get().asFile,
-                "-Cargo", cargo.get())
+            if (System.getProperty("os.name").startsWith("Windows")) {
+                val shell = File(System.getenv("SystemRoot"), "System32/WindowsPowerShell/v1.0/powershell.exe")
+                commandLine(shell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", script.get().asFile,
+                    "-NdkDirectory", ndkDirectory.get().asFile, "-OutputDirectory", outputDirectory.get().asFile,
+                    "-Cargo", cargo.get())
+            } else {
+                commandLine("sh", File(script.get().asFile.parentFile,"build-android.sh"),
+                    ndkDirectory.get().asFile,outputDirectory.get().asFile,cargo.get())
+            }
         }
     }
 }
 if (providers.gradleProperty("foliaExperimentalMask").map { it == "true" }.orElse(true).get()) {
     val mask = tasks.register<BuildExperimentalMask>("buildExperimentalMask") {
         val directory = rootProject.layout.projectDirectory.dir("native/experimental-mask")
-        nativeInputs.from(fileTree(directory) { include("src/**", "Cargo.toml", "Cargo.lock", "rust-toolchain.toml", "build-android.ps1") })
+        nativeInputs.from(fileTree(directory) { include("src/**", "Cargo.toml", "Cargo.lock", "rust-toolchain.toml", "build-android.ps1", "rust-environment.ps1", "build-android.sh", "rust-environment.sh") })
         script.set(directory.file("build-android.ps1"))
         cargo.set(providers.gradleProperty("foliaRustCargo").orElse("cargo"))
         ndkDirectory.set(androidComponents.sdkComponents.sdkDirectory.map { it.dir("ndk/28.2.13676358") })

@@ -1,5 +1,9 @@
 param([string]$Cargo = 'cargo')
 $ErrorActionPreference = 'Stop'
+. (Join-Path $PSScriptRoot 'rust-environment.ps1')
+Invoke-MaskRustToolchain -Cargo $Cargo -Build {
+param([string]$Cargo)
+
 $manifest = Join-Path $PSScriptRoot 'Cargo.toml'
 $cargoCommand = Get-Command $Cargo
 $rustc = Join-Path (Split-Path $cargoCommand.Source) 'rustc.exe'
@@ -21,4 +25,6 @@ try {
 } finally {
     $env:RUSTFLAGS = $oldFlags
     $env:CARGO_TARGET_X86_64_PC_WINDOWS_GNU_LINKER = $oldLinker
+}
+
 }

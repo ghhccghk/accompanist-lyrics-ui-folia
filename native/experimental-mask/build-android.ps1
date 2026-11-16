@@ -4,6 +4,10 @@ param(
     [string]$Cargo = 'cargo'
 )
 $ErrorActionPreference = 'Stop'
+. (Join-Path $PSScriptRoot 'rust-environment.ps1')
+Invoke-MaskRustToolchain -Cargo $Cargo -Build {
+param([string]$Cargo)
+
 $revision = Get-Content -LiteralPath (Join-Path $NdkDirectory 'source.properties')
 if (-not ($revision -match 'Pkg.Revision = 28.2.13676358')) { throw 'Use the pinned Android NDK 28.2.13676358 (r28c)' }
 $clang = Join-Path $NdkDirectory 'toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe'
@@ -31,4 +35,6 @@ try {
 } finally {
     $env:RUSTFLAGS = $savedFlags
     $env:CARGO_ENCODED_RUSTFLAGS = $savedEncoded
+}
+
 }

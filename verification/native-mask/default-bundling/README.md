@@ -18,3 +18,14 @@ SHA256: 5819a5fdc9884bbf40db7021c400201e1327a73c5bac26ba1369b25cb6d752c3
 
 Local full build logs: .work/bundled-native-build.txt, .work/bundled-native-jbr25.txt,
 .work/native-disabled-build.txt (ignored; paths are local execution evidence only).
+
+Follow-up host support and Cargo discovery:
+- No PATH cargo, CARGO_HOME/RUSTUP_HOME unset: both Windows build helpers find
+  existing project-private rustup, real Android two-ABI/Desktop DLL builds pass.
+  Process environment restored after helper. No global PATH mutation/install.
+- Gradle default (no foliaRustCargo override): Android assemble and packaged DLL
+  probe pass. Platform mapping tests cover Windows/Linux/macOS x64/arm64 paths.
+- Unix sh helpers tested under Git Bash using mock compiler/uname in isolated
+  temporary paths with spaces; Linux/Darwin routing, two ABI copy and explicit
+  nonzero compiler exit propagation pass. These are NOT real host builds.
+- Linux/macOS native compilation, dynamic loading, UI and installer remain unverified.

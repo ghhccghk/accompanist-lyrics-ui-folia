@@ -9,6 +9,7 @@ plugins {
 abstract class PrepareDesktopMaskResources : DefaultTask() {
     @get:Input abstract val includeNative: Property<Boolean>
     @get:Input abstract val cargo: Property<String>
+    @get:Input abstract val platformId: Property<String>
     @get:InputFiles @get:PathSensitive(PathSensitivity.RELATIVE)
     abstract val nativeInputs: ConfigurableFileCollection
     @get:Optional @get:InputFile @get:PathSensitive(PathSensitivity.NONE)
@@ -21,42 +22,58 @@ abstract class PrepareDesktopMaskResources : DefaultTask() {
 
     @TaskAction fun prepare() {
         if (includeNative.get() && !prebuiltLibrary.isPresent) {
-            check(System.getProperty("os.name").startsWith("Windows")) {
-                "Experimental desktop mask currently builds Windows x64 only"
-            }
             processes.exec {
-                val shell = File(System.getenv("SystemRoot"), "System32/WindowsPowerShell/v1.0/powershell.exe")
-                commandLine(shell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
-                    buildScript.get().asFile, "-Cargo", cargo.get())
+                if (platformId.get().startsWith("windows-")) {
+                    val shell = File(System.getenv("SystemRoot"), "System32/WindowsPowerShell/v1.0/powershell.exe")
+                    commandLine(shell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
+                        buildScript.get().asFile, "-Cargo", cargo.get())
+                } else {
+                    commandLine("sh", File(buildScript.get().asFile.parentFile,"build-desktop.sh"),cargo.get())
+                }
             }
         }
         val library = if (includeNative.get()) prebuiltLibrary.orElse(builtLibrary).get().asFile else null
-        if (library != null) check(library.isFile) { "Missing experimental desktop DLL: $library" }
+        if (library != null) check(library.isFile) { "Missing experimental desktop native library: $library" }
         // Sync only this generated resource directory. Removing the opt-in flag
         // must remove the resource as well, including consecutive builds.
         fileSystem.sync {
             into(outputDirectory)
-            if (library != null) from(library) { into("native/windows-x86_64") }
+            if (library != null) from(library) { into("native/${platformId.get()}") }
         }
         outputDirectory.file("native/folia-mask-build.txt").get().asFile.apply {
             parentFile.mkdirs()
-            writeText("experimentalWindowsX64=${includeNative.get()}\n")
+            writeText("experimentalNative=${includeNative.get()}\nplatform=${platformId.get()}\n")
         }
     }
 }
 
+val desktopOs = System.getProperty("os.name").lowercase().let {
+    when { it.startsWith("windows") -> "windows"; it.startsWith("mac") -> "macos"; it.startsWith("linux") -> "linux"; else -> "unsupported" }
+}
+val desktopArch = System.getProperty("os.arch").lowercase().let {
+    when(it) { "amd64", "x86_64" -> "x86_64"; "arm64", "aarch64" -> "aarch64"; else -> "unsupported" }
+}
+val desktopPlatform = "$desktopOs-$desktopArch"
+val desktopNativeName = when(desktopOs) {
+    "windows" -> "folia_mask_experiment.dll"
+    "macos" -> "libfolia_mask_experiment.dylib"
+    else -> "libfolia_mask_experiment.so"
+}
+val supportedDesktopNative = desktopOs in setOf("linux","macos") && desktopArch != "unsupported" || desktopPlatform == "windows-x86_64"
+
 val desktopMaskResources = tasks.register<PrepareDesktopMaskResources>("prepareDesktopMaskResources") {
     val directory = rootProject.layout.projectDirectory.dir("native/experimental-mask")
-    includeNative.set(providers.gradleProperty("foliaExperimentalMask").map { it == "true" }.orElse(System.getProperty("os.name").startsWith("Windows")))
+    includeNative.set(providers.gradleProperty("foliaExperimentalMask").map { it == "true" }.orElse(supportedDesktopNative))
+    platformId.set(desktopPlatform)
     cargo.set(providers.gradleProperty("foliaRustCargo").orElse("cargo"))
     nativeInputs.from(rootProject.fileTree(directory) {
-        include("src/**", "Cargo.toml", "Cargo.lock", "rust-toolchain.toml", "build-windows-gnu.ps1")
+        include("src/**", "Cargo.toml", "Cargo.lock", "rust-toolchain.toml", "build-windows-gnu.ps1", "rust-environment.ps1", "build-desktop.sh", "rust-environment.sh")
     })
     providers.gradleProperty("foliaNativeMaskDirectory").orNull?.let {
-        prebuiltLibrary.set(rootProject.file("$it/folia_mask_experiment.dll"))
+        prebuiltLibrary.set(rootProject.file("$it/$desktopNativeName"))
     }
     buildScript.set(directory.file("build-windows-gnu.ps1"))
-    builtLibrary.set(directory.file("target/release/folia_mask_experiment.dll"))
+    builtLibrary.set(directory.file("target/release/$desktopNativeName"))
     outputDirectory.set(layout.buildDirectory.dir("generated/desktopMaskResources"))
 }
 
@@ -111,7 +128,7 @@ tasks.register<Test>("jvmNativeMaskRuntimeTest") {
     jvmArgs("-Xcheck:jni")
     val directory = providers.gradleProperty("foliaNativeMaskDirectory")
     inputs.property("nativeDirectory", directory.orElse("missing"))
-    directory.orNull?.let { inputs.file(File(it, "folia_mask_experiment.dll")) }
+    directory.orNull?.let { inputs.file(File(it, desktopNativeName)) }
     doFirst {
         require(directory.isPresent) { "Provide -PfoliaNativeMaskDirectory=<directory containing experimental DLL>" }
         systemProperty("java.library.path", File(directory.get()).canonicalPath)

@@ -14,7 +14,8 @@ expect fun rememberSettingsStore(): SettingsStore
 data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
     val tuning: ClassicTuning = ClassicTuning(), val fontScale: Float = 1f,
     val lyricTheme: SampleLyricTheme = SampleLyricTheme.Classic,
-    val partitaTuning: PartitaTuning = PartitaTuning()) {
+    val partitaTuning: PartitaTuning = PartitaTuning(),
+    val renderResolution: RenderResolution = RenderResolution.Full) {
     fun encode(): String = listOf("version=1", "translation=${options.showTranslation}",
         "phonetic=${options.showPhonetic}", "next=${options.showNextLine}", "motion=${options.reducedMotion}",
         "quality=${options.quality}", "offset=${options.offsetMillis}", "rotation=${tuning.enableWordRotation}",
@@ -22,7 +23,7 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
         "overlap=${tuning.avoidOverlap}", "font=$fontScale", "lyricTheme=$lyricTheme",
         "partitaGuides=${partitaTuning.showGuideLines}","partitaSemantic=${partitaTuning.useSemanticLayout}",
         "partitaMin=${partitaTuning.staggerMin}","partitaMax=${partitaTuning.staggerMax}",
-        "partitaOverlap=${partitaTuning.avoidOverlap}").joinToString("\n")
+        "partitaOverlap=${partitaTuning.avoidOverlap}","renderResolution=$renderResolution").joinToString("\n")
 
     companion object {
         fun decode(value: String): SampleSettings {
@@ -43,13 +44,15 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
                 PartitaTuning(boolean("partitaGuides",true),boolean("partitaSemantic",true),
                     minOf(number("partitaMin",20f,0f..180f),number("partitaMax",100f,0f..180f)),
                     maxOf(number("partitaMin",20f,0f..180f),number("partitaMax",100f,0f..180f)),
-                    boolean("partitaOverlap",false)))
+                    boolean("partitaOverlap",false)),
+                RenderResolution.entries.find { it.name == fields["renderResolution"] } ?: RenderResolution.Full)
         }
     }
 }
 
-fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning)
+fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning, renderResolution)
 fun SampleSession.applySettings(value: SampleSettings) {
     options = value.options; tuning = value.tuning; fontScale = value.fontScale
     lyricTheme=value.lyricTheme;partitaTuning=value.partitaTuning
+    renderResolution=value.renderResolution
 }

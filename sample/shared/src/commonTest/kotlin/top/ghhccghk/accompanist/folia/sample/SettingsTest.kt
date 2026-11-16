@@ -4,6 +4,17 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 import kotlin.test.*
 
 class SettingsTest {
+    @Test fun renderResolutionRoundTripsAndOldSettingsKeepFullResolution() {
+        for (resolution in RenderResolution.entries) {
+            val settings = SampleSettings(renderResolution=resolution)
+            assertEquals(settings,SampleSettings.decode(settings.encode()))
+            val session = SampleSession()
+            session.applySettings(settings)
+            assertEquals(resolution,session.settings().renderResolution)
+        }
+        assertEquals(RenderResolution.Full,SampleSettings.decode("version=1").renderResolution)
+        assertEquals(RenderResolution.Full,SampleSettings.decode("version=1\nrenderResolution=NaN").renderResolution)
+    }
     @Test fun themeAndItsOwnTuningRoundTripWithoutChangingClassicDefaults() {
         val settings=SampleSettings(lyricTheme=SampleLyricTheme.Partita,
             partitaTuning=PartitaTuning(false,false,12f,150f,true))

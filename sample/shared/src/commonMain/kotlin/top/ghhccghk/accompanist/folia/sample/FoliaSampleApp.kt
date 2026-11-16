@@ -125,10 +125,10 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
                 }
             }
             val lyrics: @Composable (Modifier) -> Unit = { modifier ->
-                SampleMaskScope(session) { FoliaLyricsView(scene.lyrics, { clock.snapshot }, modifier, contentKey = scene.id, options = options,
+                SampleRenderStage(session.renderResolution,modifier) { SampleMaskScope(session) { FoliaLyricsView(scene.lyrics, { clock.snapshot }, Modifier.fillMaxSize(), contentKey = scene.id, options = options,
                     typography = FoliaTypography(scale = fontScale), style = session.lyricStyle,
                     onStatus = { status = it },
-                    onLineClicked = { clock.seek(it.start.toLong() + options.offsetMillis) }, onLinePressed = { pressed = it }) }
+                    onLineClicked = { clock.seek(it.start.toLong() + options.offsetMillis) }, onLinePressed = { pressed = it }) } }
             }
             if (maxWidth < 600.dp) Column {
                 metadata(false); lyrics(Modifier.weight(1f).fillMaxWidth()); Transport(clock, visible)
@@ -149,6 +149,7 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
         if (settings) AlertDialog(onDismissRequest = { settings = false }, title = { Text("显示设置") }, text = {
             Column(Modifier.heightIn(max = 420.dp).verticalScroll(rememberScrollState())) {
                 LyricThemeControls(session)
+                RenderResolutionControls(session)
                 Toggle("显示下一句", options.showNextLine) { options = options.copy(showNextLine = it) }
                 Toggle("减少动态效果", options.reducedMotion) { options = options.copy(reducedMotion = it) }
                 if(session.lyricTheme==SampleLyricTheme.Classic) {

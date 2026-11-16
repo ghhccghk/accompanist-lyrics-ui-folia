@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-16",
+  "previousCommit": "9d40a77",
+  "host": "Windows x64 / JDK21 / offscreen Compose-Skia",
+  "originalResolutionPixelParity": "exact",
+  "distinctScenePngs": 30,
+  "pauseReverseSeekResize": "passed",
+  "rtlPhysicalPointerAndHostFontConversion": "passed",
+  "settingsLocalDemoAndStorage": "passed",
+  "sharedAndroidJvmCompile": "passed",
+  "androidAssembly": "passed",
+  "apk": {
+    "path": "build/outputs/folia-sample-resolution-debug.apk",
+    "sha256": "2d7d382d7dc3ba895cd680086daae5a592fc0694afc0311aad5bc64aa1e42c39",
+    "nativeLibraries": [
+      "lib/arm64-v8a/libfolia_mask_experiment.so",
+      "lib/x86_64/libfolia_mask_experiment.so"
+    ],
+    "signature": "v1/v2 verified"
+  },
+  "androidRuntime": "Not verified; device disconnected; no installation",
+  "quality": "Reduced resolutions are deliberately lossy and optional; default 100%",
+  "prewarming": "Not implemented",
+  "devicePerformance": "No frame-time or PSS benefit measured for these modes"
+}

@@ -22,6 +22,7 @@ class SampleSession(demoInitially: Boolean = false) {
         SampleLyricTheme.Partita -> FoliaStyle.Partita(partitaTuning)
     }
     var fontScale by mutableFloatStateOf(1f)
+    var renderResolution by mutableStateOf(RenderResolution.Full)
     var importedSource by mutableStateOf<LyricsSource?>(null)
     var preferencesLoaded = false
 }

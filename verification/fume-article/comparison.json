@@ -1,57 +1,99 @@
 {
   "reference": "cc6226e464050a456a2913e062374f23d3844cc5",
-  "conditions": "DPR1, height600, widths380/800/1440, two synthetic Latin articles, full-article 92% framing",
+  "conditions": {
+    "reference": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "deviceScaleFactor": 1,
+    "viewportHeight": 600,
+    "widths": [
+      380,
+      800,
+      1440
+    ],
+    "scenes": [
+      0,
+      2,
+      4
+    ],
+    "fontSha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3",
+    "framing": "92% full article; diagnostic block outlines; real original static text snapshots, no glow/passed alpha"
+  },
   "source": "actual buildArticleLayout + createStaticBlockSnapshot; no glow or passed alpha, diagnostic block outlines",
-  "native": "FumeArticle + FumeTextMeasure; Compose diagnostic drawText, not a public theme renderer",
+  "native": "FumeArticle + FumeTextMeasure + FumeStaticText; complete shaped row snapshots; no public theme renderer",
   "font_sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3",
-  "measured_blocks": 150,
+  "measured_blocks": 159,
   "max_recorded_geometry_error": 0.0,
+  "measured_rows": 289,
+  "max_row_width_error": 0.0007892773437561118,
+  "max_hero_inset_error": 3.0517578125e-05,
   "frames": [
     {
       "file": "0-1440.png",
-      "foreground_pixels": 6160,
-      "foreground_mae": 69.43544372294372
+      "foreground_pixels": 5106,
+      "foreground_mae": 1.9531270400835619
     },
     {
       "file": "0-380.png",
-      "foreground_pixels": 3618,
-      "foreground_mae": 76.5929611203243
+      "foreground_pixels": 2952,
+      "foreground_mae": 2.3069105691056913
     },
     {
       "file": "0-800.png",
-      "foreground_pixels": 3998,
-      "foreground_mae": 89.6128064032016
+      "foreground_pixels": 2959,
+      "foreground_mae": 2.2496338853216176
     },
     {
       "file": "2-1440.png",
-      "foreground_pixels": 54900,
-      "foreground_mae": 66.84967820279296
+      "foreground_pixels": 46029,
+      "foreground_mae": 4.205059129389443
     },
     {
       "file": "2-380.png",
-      "foreground_pixels": 19949,
-      "foreground_mae": 58.78667268200578
+      "foreground_pixels": 18008,
+      "foreground_mae": 4.235432400414631
     },
     {
       "file": "2-800.png",
-      "foreground_pixels": 36326,
-      "foreground_mae": 61.79835379617904
+      "foreground_pixels": 31995,
+      "foreground_mae": 3.8718445590456843
+    },
+    {
+      "file": "4-1440.png",
+      "foreground_pixels": 16151,
+      "foreground_mae": 11.62834086640662
+    },
+    {
+      "file": "4-380.png",
+      "foreground_pixels": 8404,
+      "foreground_mae": 10.03252419482786
+    },
+    {
+      "file": "4-800.png",
+      "foreground_pixels": 9566,
+      "foreground_mae": 13.704857481357585
     }
   ],
-  "mean_foreground_mae": 70.51265265457457,
+  "mean_foreground_mae": 6.020858902883632,
   "png_sha256": {
     "build/verification/fume-article-browser/0-1440.png": "8f5132a15b55ca797e031a16f0064418028341d05e79e8ce2d6c4657132a91a6",
-    "build/verification/fume-article-kotlin/0-1440.png": "df40ea5bac5e218c021e9db711d7ecafcc9dcf4301ad18189412f016eb188dbb",
+    "build/verification/fume-article-kotlin/0-1440.png": "8a6a0c569d50e009010365f130fcb197a9c182ac9b9b97d9c7c7775a8c8bd84f",
     "build/verification/fume-article-browser/0-380.png": "affe8d326bda2193818423b60a9c8bb270722244ee81d9648297c07b74d1d1b5",
-    "build/verification/fume-article-kotlin/0-380.png": "cd53d1abd281306c22904c182eda981599a884bdabe27f9fbd255af2f5ab600d",
+    "build/verification/fume-article-kotlin/0-380.png": "ae90e8756500eb38cbbf5e4e8f4b042d3535800d3bf0735c5f29b3a0f5c87154",
     "build/verification/fume-article-browser/0-800.png": "d14ee2608c88ca21201dfa4adf55c65f80211ae701956c6890113d2c97034c38",
-    "build/verification/fume-article-kotlin/0-800.png": "64ffc0b170dab539131c408aa40c29b962554cfb06534d8ee2d08f917c0fd531",
+    "build/verification/fume-article-kotlin/0-800.png": "3b0e741c54dcc68be7dee5298d8d6339f1d22ff90c863d751daf897def3f63c6",
     "build/verification/fume-article-browser/2-1440.png": "9acf38d5e2b5e8ea261144da46c808f3ac74c7a2d85c1b5104b0435c65774fe9",
-    "build/verification/fume-article-kotlin/2-1440.png": "0354f452ea1d00cfe1c4a976eccfa3c05c54de2cc3201948cfa40fff7fbe3763",
+    "build/verification/fume-article-kotlin/2-1440.png": "77a213f436629f25994e118bf58e968fc94e3be1a9395ff85cae5e7ebc54f40d",
     "build/verification/fume-article-browser/2-380.png": "558ce1836c2dd651215a254e1475c188bc4bed2c73dca200873432ab88e884b5",
-    "build/verification/fume-article-kotlin/2-380.png": "a5831270aa05654d3b3dd63f3a3d398f6ba7b8f29528d4f50cd4db3897259188",
+    "build/verification/fume-article-kotlin/2-380.png": "032c521145169efcaa1b341b18615940b414f7efd878e136ffd40812bb2817fb",
     "build/verification/fume-article-browser/2-800.png": "e69c65dc4a1935dd933f863996319921430f6ef5af42f798c94dfaacd7e0b0b1",
-    "build/verification/fume-article-kotlin/2-800.png": "e59dc69b7d4df9d3862342c54df5132a729af539f7717290703844ef8093d23a"
+    "build/verification/fume-article-kotlin/2-800.png": "f63a3f238ab9ef75c12474fbe556d96452e7d268d2375be56befa93666c2b397",
+    "build/verification/fume-article-browser/4-1440.png": "0ee87512063e34a236af8f94849131ac1987b76bdf001c3196cdceda56b0ac16",
+    "build/verification/fume-article-kotlin/4-1440.png": "570b7108c22b6b465e638a9ea78b6f35ffdc115561d450318903fb0abbe44007",
+    "build/verification/fume-article-browser/4-380.png": "32a45cbaecc426a7125b9cfe32993b6043d604480534b20ab115af97a04efe71",
+    "build/verification/fume-article-kotlin/4-380.png": "8a9afe68e77151ef190e1f54e7206b61bff1d35e03e439c3346c9f82b53acd26",
+    "build/verification/fume-article-browser/4-800.png": "19948e44eaf1d5562ad2ffa7198735a8e89975a4cfe9335b648bec6f6a298eea",
+    "build/verification/fume-article-kotlin/4-800.png": "c35df33f15eb62f615882dbc55a20bf52fef48bc337c6f5d441dc4ee2944fdd6"
   },
-  "limitations": "Geometry checks pass; Canvas middle-baseline placement, hero text inset, snapshot compositing and raster parity remain unported. No camera/animation/Android runtime claim."
+  "initial_six_mean_foreground_mae": 3.137001263893438,
+  "limitations": "Latin geometry/rows/baseline grid pass; raster residual remains. Native hhea fallback has not been validated against differing OS/2 typo metrics. No live stamps/glow, animated camera, other scripts or Android runtime claim."
 }

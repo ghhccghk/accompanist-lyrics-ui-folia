@@ -15,7 +15,7 @@ import kotlin.math.floor
  * The caller owns the measurer/cache and invalidates this adapter with density or font changes. */
 internal class FumeTextMeasure(private val measurer: TextMeasurer, private val baseStyle: TextStyle,
     private val density: Density) {
-    private fun style(fontPx: Double, hero: Boolean, lineHeight: Double?): TextStyle = baseStyle.copy(
+    internal fun style(fontPx: Double, hero: Boolean, lineHeight: Double? = null): TextStyle = baseStyle.copy(
         // Chromium Canvas's hundredth-pixel font boundary, retaining unrounded sizes in geometry.
         fontSize = (floor(fontPx * 100 + 1e-9) / 100).sp,
         fontWeight = baseStyle.fontWeight ?: FontWeight(if (hero) 780 else 640),
@@ -33,4 +33,7 @@ internal class FumeTextMeasure(private val measurer: TextMeasurer, private val b
     fun layout(text: String, hero: Boolean, fontPx: Double, width: Double, lineHeight: Double? = null): TextLayoutResult =
         measurer.measure(AnnotatedString(text), style(fontPx, hero, lineHeight),
             constraints = Constraints(maxWidth = floor(width * density.density).toInt().coerceAtLeast(1)))
+
+    fun naturalLayout(text: String, hero: Boolean, fontPx: Double): TextLayoutResult =
+        measurer.measure(AnnotatedString(text), style(fontPx, hero), softWrap = false)
 }

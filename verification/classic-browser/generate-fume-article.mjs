@@ -42,6 +42,8 @@ try {
       'Synthetic chorus', 'Another quiet line', 'The final invented phrase', 'A retained echo', '十一', 'Tail'],
     Array.from({ length: 48 }, (_, i) => `Synthetic article line ${i} ${'echo '.repeat(i % 6)}`),
     ['\t', 'A\nB', '👩‍👩‍👧‍👦', '', 'Two lines\nfor fallback', 'A'.repeat(140)],
+    ['A wholly invented sentence with a deliberately long paragraph. '.repeat(60),
+      'An explicit synthetic first row\nAnd an explicit second row', 'A final echo'],
   ];
   const header = `# original ${revision}; measurement seam: each EGC advance=font*.57, hard newlines; NOT visual evidence`;
   const inputs = [header, '# scene\tindex\ttextB64\tstart\tend\tchorus'];
@@ -68,5 +70,5 @@ try {
   const folder = path.join(root, 'verification/fume-fixtures');
   fs.writeFileSync(path.join(folder, 'article-inputs.tsv'), inputs.join('\n') + '\n');
   fs.writeFileSync(path.join(folder, 'article-layout.tsv'), rows.join('\n') + '\n');
-  console.log(JSON.stringify({ layouts: 96, blocks: rows.length - 2, revision }));
+  console.log(JSON.stringify({ layouts: texts.length * 24, blocks: rows.length - 2, revision }));
 } finally { await server.close(); }

@@ -17,7 +17,7 @@ class FumeArticleTest {
             FumeLyric(String(Base64.getDecoder().decode(f[2]), Charsets.UTF_8), f[3].toDouble(), f[4].toDouble(), chorus = f[5].toBoolean())
         } }
         val layouts = rows("article-layout").groupBy { it.take(5) }
-        assertEquals(96, layouts.size)
+        assertEquals(120, layouts.size)
         for ((key, expected) in layouts) {
             val lines = inputs.getValue(key[0])
             val viewport = FumeViewport(key[1].toDouble(), key[2].toDouble())

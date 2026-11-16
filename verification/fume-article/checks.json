@@ -5,7 +5,7 @@
   "suites": [
     {
       "name": "FumeArticleFontTest[jvm]",
-      "tests": 6,
+      "tests": 10,
       "failures": 0,
       "errors": 0,
       "skipped": 0
@@ -32,5 +32,6 @@
       "skipped": 0
     }
   ],
-  "limitations": "Android build only; no connected device. Static diagnostic visuals remain unmatched; no Fume public renderer or camera yet."
+  "conditions": "120 synthetic-measurement layouts, 1632 blocks; 9 actual-font layouts, 159 blocks, 289 rows and 159 Canvas baselines; static wall-clock freeze",
+  "limitations": "Android build only, no connected device. Static raster residual remains; different hhea/OS2 fonts unverified. No Fume live renderer or camera/public entry yet."
 }

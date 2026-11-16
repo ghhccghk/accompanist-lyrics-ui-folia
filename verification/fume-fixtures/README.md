@@ -64,3 +64,30 @@ fractional shaped line advance, hangs trailing ASCII spaces for fit only, and
 uses hundredth-pixel font quantization. Source text/timings are never trimmed.
 Browser font memo heuristics were not copied; more fonts/scripts and Android
 runtime still require their own comparison.
+
+## Static snapshot follow-up — 2026-11-17
+
+The paragraph above describes the initial article-only commit3224bb6. The
+current native candidate uses FumeStaticText with complete shaped row bitmaps,
+Canvas middle baseline and the source hero inset. The matrix now includes a
+long synthetic Latin paragraph and explicit hard newline: 120 synthetic-seam
+layouts / 1,632 blocks; nine actual-font articles / 159 blocks / 289 render rows.
+`article-baselines.tsv` holds159 actual Canvas middle shifts and
+`article-rows.tsv` the source row text/geometry. Native checks use1e-8 for
+article/block/font/baseline values and1/64px for row advances/insets. Actual
+maximum row width error is0.0007893px; maximum inset error0.00003052px.
+
+Row text, row count and breaks match exactly, including hanging spaces. The
+source em ascent and total em must be rounded separately to1/64 before the
+midpoint; the resulting shift can be on1/128. The initial whole-offset rounding
+failed and remains recorded in `.work/fume-static-baselines.log`. A subsequent
+row test caught native trailing-space trimming and extra wrapping; both were
+fixed without changing the assertions (`fume-static-rows*.log`).
+
+The original six frames now average3.1370 foreground RGB MAE (previous70.5127).
+All nine average6.0209, worst13.7049; no registration or rescaling is applied in
+the numerical comparison. Contact sheet thumbnails are only for inspection.
+Static snapshots remain short of final visual parity, especially multiline
+raster/compositing and fonts with differing hhea/OS/2 typo metrics. Live effects,
+camera, other scripts and Android runtime remain pending. The comparison JSON
+includes browser version, font hash and hashes for every full-size PNG.

@@ -15,7 +15,7 @@
 | 流光 | classic；`classic/Visualizer.tsx`、`GlowWord.tsx` | 居中词布局、字素辉光、余韵和句转场 | 已实现但未最终验收；完整画面栅格、Android复杂字幕残差继续保留在classic-parity.md |
 | 云阶 | partita；`partitaLayout.ts`、`PartitaChunk.tsx`、`partitaOverlap.ts` | 依高度拆块、交替阶梯错位、块级入场、引导线、GlowWord | **移植校准中**：已接FoliaStyle.Partita与示例，完整画面尚有残差，未最终验收 |
 | 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 已接 FoliaStyle.Tilt 和示例，明确标注校准预览；450ms 公共退场、Latin 段宽已补，Arabic shaping、CSS transform 延迟和全局字体缓存仍未验收 |
-| 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部字素时序、文章布局与拟合已移植；相机和正式绘制未实现，未开放选择器，背景不纳入 |
+| 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部字素时序、文章布局、拟合与Latin静态快照已移植；动态文字和相机未完成，未开放选择器，背景不纳入 |
 | 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 未实现；先同种子布局/包络，再文字层，不引入原DOM依赖 |
 | 群唱 | cappella；`VisualizerCappella.tsx`、`cappellaMessages.ts`、`cappellaMessageLayout.ts`、`cappellaReveal.ts` | 多发送者对话、气泡、消息保留与逐字揭示 | 未实现；明确core声部与发送者映射；先文字消息，不复制未知来源头像/emoji |
 | 时计 | pendolo；`VisualizerPendolo.tsx`、`pendoloGeometry.ts`、`pendoloTimeline.ts`、`PendoloActiveLyricSweep.tsx` | 圆弧歌词轨、机械跳步、当前句扫描、字幕轨 | 未实现；先文字几何/跳步/扫描；音频鼓点与节拍增强单列，不伪造输入 |
@@ -57,6 +57,34 @@ FNV-1a稳定打散、自然/兜底hero选择、跨列占位、等高轮转、字
 Fume相关JVM测试和共享字素回归、Android示例APK及Desktop编译通过；没有本轮Android运行。
 下一项：先按原版静态/动态文字层校正绘制，继续镜头目标与确定性媒体时间重建；
 达到可验收闭环后再开放主题入口，不把纯内核完成写成主题支持。
+
+### 2026-11-17 浮名静态文字层（最新）
+
+上段为3224bb6节点的历史诊断，后续将原版
+`fumeCanvasText.ts:createStaticBlockSnapshot`适配为`FumeStaticText.kt`。
+完整行塑形后生成带padding的透明快照，恢复Canvas middle基线、hero余宽8%内缩、
+原版body/hero行高和CJK基线系数。绘制时保留悬挂空格，不因拟合/整数约束再次拆行。
+行的UTF-16范围保留以供后续字素打印裁剪，不逐个UTF-16字符绘制。
+
+受控算法扩充为120篇/1632块；实际同字体3场景×3宽度共9篇/159块，包含长段落和硬换行。
+文章/块/字号仍在1e-8内相等；289个实际renderLine文字和换行逐项相等，
+行宽最大差0.0007893px、hero文字内缩最大差0.00003052px（各自检查上限1/64px）。
+159个字号的真实Canvas middle偏移全部在1e-8内精确对齐。
+每幅静态图再推进2秒墙钟像素不变；媒体打印/逆向seek原有检查继续通过。
+
+基线第一版只按整体1/64取整，精确探针失败；实际是上升部和总em分别取整，
+中点可落在1/128。另一次新renderLine检查暴露尾随空格被少算和额外空行，已修复。
+未提高容差或改源期望，失败日志保留在.work/fume-static-*。
+
+相同原6帧前景并集RGB MAE从70.5127降至3.1370；新增多行3帧后9帧均值6.0209，
+最高13.7049（多行800）。原位置不配准，不做色阶拟合；截图和比较JSON仍在
+verification/fume-article。**仍未通过最终视觉验收**：快照栅格/合成残差、
+多行采样、其他文字系统尚待校准；当前native自然字体度量作为typo度量的临时来源，
+OS/2与hhea不同的字体不能据Latin结果宣称基线等价。
+
+本轮JVM相关用例、Android APK构建与Desktop编译通过；未连接设备，无Android实际画面。
+尚无实时辉光/打印印记、确定性镜头、Fume公共主题入口。下一项继续这些依赖，并校准
+复杂字体基线；不扩展示例播放器、背景引擎、SPW或native性能分支。
 
 ## 云阶：内部布局内核
 

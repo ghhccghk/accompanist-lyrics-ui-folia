@@ -38,8 +38,12 @@ for (const b of a.blocks) {
 (window as any).fumeProbe = (text: string, px: number, width: number) => {
   const spec = `700 ${px}px 'Fume Parity'`;
   ctx.font = spec;
+  ctx.textBaseline = 'alphabetic';
+  const alphabetic = ctx.measureText('Hgj').actualBoundingBoxAscent;
+  ctx.textBaseline = 'middle';
+  const middleShift = alphabetic - ctx.measureText('Hgj').actualBoundingBoxAscent;
   const prepared = prepareWithSegments(text, spec, { whiteSpace: 'pre-wrap' });
-  return { native: ctx.measureText(text).width, trimmed: ctx.measureText(text.trimEnd()).width,
+  return { middleShift, native: ctx.measureText(text).width, trimmed: ctx.measureText(text.trimEnd()).width,
     natural: measureNaturalWidth(prepared), count: walkLineRanges(prepared, width, () => {}), segments: prepared.segments,
     widths: prepared.widths };
 };

@@ -604,6 +604,32 @@ No upstream example assets, Accompanist code or background engine copied.
 Exact procedures and current nonaccepted visual residual are documented in
 verification/fume-fixtures/README.md and docs/themes-parity.md.
 
+## 2026-11-17 Fume static text snapshots
+
+Fixed Folia revision/license unchanged. Original
+`src/components/visualizer/fume/fumeCanvasText.ts:createStaticBlockSnapshot`
+→ `internal/styles/fume/FumeStaticText.kt`: transparent padded bitmap, complete
+line shaping, source middle-baseline placement, 8% hero inset, .5/.52 baseline
+offsets and full trailing-space paint width. Row text and original UTF-16 ranges
+are retained; draw/measurement owns no independent clock. Glow and live stamps
+are not ported in this step.
+
+Independent native baseline-grid calculation was calibrated against actual
+Chromium Canvas metrics. Read-only implementation research also checked
+chromium/chromium `f7bd09bb3a838b72872f9d0f5732a58aaa5c60c5`:
+`third_party/blink/renderer/core/html/canvas/text_metrics.cc` (middle baseline)
+and `third_party/blink/renderer/platform/fonts/simple_font_data.cc` (normalized
+typographic metrics). No Chromium implementation text is copied into the project;
+the Kotlin calculation is independently expressed and tested from Canvas values.
+Current native hhea metrics are only calibrated for the registered Latin face;
+fonts whose OS/2 typographic ratio differs remain explicitly unverified.
+
+Verification expands synthetic article inputs and directly executes untouched
+Folia static snapshot drawing. No additional artwork, font or song is imported.
+All new functions remain internal until camera/live-text integration and visual
+acceptance. Procedure and honest raster residual are in themes-parity.md and
+verification/fume-fixtures/README.md.
+
 ## 2026-11-16 示例 CPU 遮罩开关
 
 `ExperimentalFoliaMaskProcessor.kt` 为本项目独立编写的 scoped 可选边界；

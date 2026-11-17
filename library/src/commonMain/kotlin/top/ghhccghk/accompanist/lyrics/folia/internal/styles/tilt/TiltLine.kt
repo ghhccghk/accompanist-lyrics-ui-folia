@@ -152,7 +152,10 @@ internal fun TiltLine(line:NormalizedLine,playback:()->FoliaPlaybackSnapshot,tex
             TiltPrepared(rows,height,rows.maxOfOrNull{it.box.box.width}?:0f)
         }
         val notify by rememberUpdatedState(onPrepared);val layoutObserver by rememberUpdatedState(onLayout)
-        LaunchedEffect(prepared){notify(prepared.rows.sumOf{it.glyphs.count{g->!g.space}});layoutObserver(prepared.rows.map{it.box})}
+        // The public status epoch resets on a requested quality change. Reuse
+        // the prepared shaping/raster, but republish its count to that epoch.
+        LaunchedEffect(prepared,options.quality){notify(prepared.rows.sumOf{it.glyphs.count{g->!g.space}})}
+        LaunchedEffect(prepared){layoutObserver(prepared.rows.map{it.box})}
         val drawn=remember(prepared){TiltDrawn()}
         val click by rememberUpdatedState(onClick);val press by rememberUpdatedState(onLongPress)
         fun hit(point:Offset):Boolean {

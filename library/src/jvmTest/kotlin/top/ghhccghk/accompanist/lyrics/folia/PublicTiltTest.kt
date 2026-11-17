@@ -26,6 +26,31 @@ import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
 class PublicTiltTest {
+    @Test fun qualityChangesRetainPreparedStatusWithoutRelayout()=runDesktopComposeUiTest(width=800,height=600) {
+        val lyrics=SyncedLyrics(listOf(KaraokeLine.MainKaraokeLine(
+            listOf(KaraokeSyllable("Amber echo",700,2800)),null,KaraokeAlignment.Unspecified,700,2800)))
+        val font=FontFamily(Font(File("../verification/assets/FoliaParityLatin-Bold.ttf"),FontWeight.Bold))
+        var options by mutableStateOf(FoliaOptions(showTranslation=false,showPhonetic=false,showNextLine=false))
+        var status:FoliaStatus?=null
+        setContent { FoliaLyricsView(lyrics,{FoliaPlaybackSnapshot(1600,false)},Modifier.fillMaxSize(),
+            style=FoliaStyle.Tilt(),typography=FoliaTypography(main=TextStyle(fontFamily=font,fontWeight=FontWeight.Bold)),
+            options=options,onStatus={status=it}) }
+        waitForIdle()
+        val count=assertNotNull(status).mainUnitCount
+        assertTrue(count>0,"baseline prepared count")
+        for(quality in listOf(FoliaQuality.Minimal,FoliaQuality.Reduced,FoliaQuality.Standard,FoliaQuality.Minimal)) {
+            runOnIdle { options=options.copy(quality=quality) }
+            waitForIdle()
+            runOnIdle {
+                val current=assertNotNull(status)
+                assertEquals(quality,current.requestedQuality)
+                assertEquals(quality,current.actualQuality)
+                assertEquals(count,current.mainUnitCount,"quality change must not lose existing preparation")
+                assertTrue(current.diagnostics.isEmpty())
+            }
+        }
+    }
+
     @Test fun publicStagePreservesPauseSeekResizeOffsetAndCallbacks()=runDesktopComposeUiTest(width=800,height=600) {
         val source=KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable("Amber echo",700,1900)),null,
             KaraokeAlignment.Unspecified,700,1900)

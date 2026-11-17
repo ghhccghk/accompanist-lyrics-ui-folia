@@ -20,6 +20,12 @@ Pendolo旧tick/chorus/CSS-width精确Motion锁补验已完成：144/168/168原�
 13个wheel案例与单独width回归通过；仍有tick盒1.364706px/旋转.325106°、chorus盒6.019072px。
 见verification/motion-lock-audit/pendolo-dense.json；这是精确基线复核，没有新生产行为修复。
 
+真实DIRECT3D窗口发现并修复Tilt画质切换后状态count永久0：复用已准备字形但向新画质epoch重发count，
+不重排/不改视觉。PublicTiltTest新增回归先失败9→0、后全部3项通过；Android默认含Rust APK构建通过。
+首轮七主题窗口105次重建逻辑通过，但图检发现Fume窄屏误采准备提示，不能称完整窗口通过；
+验证器需要按Fume准备输入变更清除旧ready状态，再等待新状态/实际绘制。先修验证器后复查，
+保留.work/themes-window-initial-*和首轮完整截图；不能以原105项成功掩盖未就绪帧。
+
 Cappella240精确锁复核已完成（0844f4f）：999数值行与被动状态完全不变，38图有原始差异，
 见verification/motion-lock-audit/cappella-pressure.json。局部snapshot候选完整采集配对均值6.370007→6.047083，
 峰22.188593→32.171478px，overlap/calm1.3s明显倒退，已恢复且不作为修复合入；

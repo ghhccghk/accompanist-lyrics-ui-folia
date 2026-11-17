@@ -31,7 +31,7 @@ python -X utf8 verification/compare-cappella-playback.py --public
 
 Report retains all nonbackground RGB pixels including arbitrarily low alpha;
 no registration, phase shift, dropped pixels or source-derived positions in the
-renderer. MAE2.325954, geometry peak3.637201px, opacity peak.013716, source
+renderer. MAE2.325973, geometry peak3.637201px, opacity peak.013716, source
 presence/order exact. Per-frame full-screen MAE, channel peak and worst64px tile
 are recorded. This foreground metric differs from older >8 reports; no improvement
 is claimed by comparing them. Contact.png inspected; glyph/raster differences remain.
@@ -47,3 +47,10 @@ pass (.work/cappella-public-final.log). No Android device or visible Desktop win
 **Not final visual acceptance.** The independent240-frame pressure matrix retains
 22.188593px peak layout discrepancy and all failure evidence. Preview availability,
 source geometry tests, graphics fidelity and device performance remain separate.
+
+2026-11-18 exact-lock review: regular210 source frames re-captured on a dedicated
+fresh server at original13.4.3/13.4.2/13.3.0.20 source PNGs have tiny differences,
+geometry/presence/opacity TSV bytes unchanged; all differences/old reports retained
+in ../motion-lock-audit. Public Kotlin pixel-equality/lifecycle tests rerun pass;
+current MAE2.32597280485,geometry3.63720031497px,opacity.01371552733.
+This does not recertify the independent dense240 matrix or imply final acceptance.

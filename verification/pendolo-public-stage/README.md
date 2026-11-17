@@ -47,3 +47,8 @@ Raw PNGs: ignored build/verification/pendolo-public-* (sample screenshots under
 sample/build/verification/pendolo-public-sample). Android build/Desktop compile
 passed; Compose offscreen only, no device/real window/performance acceptance.
 Public contract/known limits: docs/pendolo-preview.md.
+
+2026-11-18 exact-lock review: this original45-frame matrix rerun on a new isolated
+server at original Motion13.4.3/dom13.4.2/utils13.3.0. All45 PNG hashes and input/
+frame/row/conditions files unchanged. Scope and preserved baseline:
+../motion-lock-audit. Other older Pendolo matrices remain separately provisional.

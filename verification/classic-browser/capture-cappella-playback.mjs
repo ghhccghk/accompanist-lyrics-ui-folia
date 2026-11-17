@@ -1,13 +1,14 @@
 import fs from'node:fs';import path from'node:path';import{execFileSync}from'node:child_process';import{chromium}from'playwright';
 import{checkReference,root,revision}from'./reference.mjs';checkReference();
 const coverage=JSON.parse(execFileSync('python',[path.join(root,'verification/check-cappella-fonts.py')],{encoding:'utf8'}));
+const referenceUrl=process.env.FOLIA_REFERENCE_URL??'http://127.0.0.1:4173';
 const browser=await chromium.launch({headless:true}),out=path.join(root,'build/verification/cappella-playback-browser');fs.mkdirSync(out,{recursive:true});
 const states={},frames=['# file scene width height intensity time current'],rows=['# file row id sourceCurrent bubbleRect avatarRect opacity'];
 const probes=[0,.7,.72,.8,.86,1,1.6,2.8,3,3.18,3.2,3.4,4.7,4.72,4.8,4.9,5.1,6,6.8,7.18,7.3,8.7,8.72,8.8,9,9.1,9.5,10.8,11.18,11.3,12.7,12.75,12.9,13.1,14];
 try{
  for(const[scene,width,height,intensity]of[['latin',380,480,'calm'],['latin',380,480,'normal'],['latin',380,480,'chaotic'],['wrap',800,600,'normal'],['arabic',800,600,'normal'],['cjk',1200,600,'normal']]){
   const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1}),errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(`http://127.0.0.1:4173/cappella-playback.html?scene=${scene}&intensity=${intensity}`);await page.waitForFunction(()=>window.ready);
+  await page.goto(`${referenceUrl}/cappella-playback.html?scene=${scene}&intensity=${intensity}`);await page.waitForFunction(()=>window.ready);
   await page.evaluate(()=>window.mountStage(0));
   // Initialize the initially visible title. Later children mount normally.
   await page.evaluate(()=>{for(let i=0;i<90;i++)window.advanceSourceFrame()});

@@ -3,8 +3,9 @@ import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { checkReference, root, upstream } from './reference.mjs';
-checkReference();
 const require = createRequire(import.meta.url);
+export async function startReferenceServer(port = 4173) {
+checkReference();
 const server = await createServer({ configFile: false, root: path.dirname(fileURLToPath(import.meta.url)),
   resolve: { alias: [
     { find: /^react$/, replacement: require.resolve('react') },
@@ -22,7 +23,15 @@ const server = await createServer({ configFile: false, root: path.dirname(fileUR
     { find: '@chenglou/pretext/rich-inline', replacement: require.resolve('@chenglou/pretext/rich-inline') },
     { find: '../../hooks/usePlayerBottomBarBottomPx', replacement: path.join(root, 'verification/classic-browser/subtitle-host.ts') },
   ] },
-  server: { host: '127.0.0.1', port: 4173, strictPort: true, hmr: false, fs: { allow: [root] } },
+  optimizeDeps: { noDiscovery: true, entries: [], include: ['react', 'react-dom', 'react-dom/client', 'react/jsx-runtime', 'react/jsx-dev-runtime', 'framer-motion'] },
+  cacheDir: path.join(root, '.work', `reference-vite-${port}`),
+  server: { host: '127.0.0.1', port, strictPort: true, hmr: false, fs: { allow: [root] } },
 });
 await server.listen();
-console.log('Fixed upstream classic comparison at http://127.0.0.1:4173');
+return server;
+}
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const port = Number(process.env.FOLIA_REFERENCE_PORT ?? 4173);
+  await startReferenceServer(port);
+  console.log(`Fixed upstream reference at http://127.0.0.1:${port}`);
+}

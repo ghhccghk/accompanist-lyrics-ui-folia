@@ -119,10 +119,16 @@ c5ceac9 镜台镜头目标：13shot/read-head/hold/drift、缓存EGC/方向/rend
 原target极端位置也裁词，不能以此降低最终标准。两端构建/JVM离屏通过，无设备/
 真窗口；证据verification/diorama-camera-targets，source段落hash保留，未改原代码。
 
-Fume单因素焦点候选已拒绝：RK存储改当前B(t)但保留旧forcing/分支，92同mask
+c08b8e2 Fume单因素焦点候选已拒绝：RK存储改当前B(t)但保留旧forcing/分支，92同mask
 MAE8.175929→8.664704、屏幕峰15.933273→15.981226，旧适配断言失败，未改预期。
 候选撤回、生产代码逐字恢复，原FumeCameraTrack/FumeMounted/PublicCappellaStage回归通过；
 完整失败/哈希/具体下一步见verification/fume-camera-handoff。不是视觉修复或验收通过。
+
+精确Motion lock复核：原13.4.3/dom13.4.2/utils13.3.0独立4177/server/cache顺序采集，
+Pendolo公共45原图/四张输入表hash不变；Cappella常规210原图20变化（17..143pixels，
+channel峰34），输入/存在/盒/alpha表不变，三处被动glyphCount差异原样保留、不归因于版本。
+公共Cappella重新验证通过，MAE2.325973、盒3.637200px；旧报告与全hash保留。
+不是密集240或全部旧Pendolo矩阵复核，也不是视觉验收；见verification/motion-lock-audit。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

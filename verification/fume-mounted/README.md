@@ -60,6 +60,8 @@ observations were recaptured at exact versions:0 PNG hash/state changes.
 dependency-audit.json retains both version sets and the previous summary.
 This Fume result does not re-certify older Cappella/Pendolo Motion captures;
 their source code is pinned, but historical transitive packages were newer.
+2026-11-18 review now recertifies Pendolo public45/Cappella regular210 source
+matrices (see ../motion-lock-audit); dense/other older matrices remain provisional.
 Before final acceptance those affected Motion matrices need exact-lock review.
 Cubic-bezier source13.3.0 and13.5.0 is byte-identical. Production port is attributed
 to13.3.0; MIT Motion and original BezierEasing notices are in LICENSES.

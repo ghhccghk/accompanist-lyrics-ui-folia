@@ -1,4 +1,5 @@
 import fs from'node:fs';import path from'node:path';import{chromium}from'playwright';import{root,revision,checkReference}from'./reference.mjs';checkReference();
+const referenceUrl=process.env.FOLIA_REFERENCE_URL??'http://127.0.0.1:4173';
 const browser=await chromium.launch({headless:true}),out=path.join(root,'build/verification/pendolo-public-stage-browser');fs.mkdirSync(out,{recursive:true});
 const haloOut=path.join(root,'build/verification/pendolo-public-halo-browser');fs.mkdirSync(haloOut,{recursive:true});
 const frames=['# file scene width intensity dense time target wheel'],rows=['# file index scale haloOpacity haloScale contentRect'],states={},inputs={};
@@ -7,7 +8,7 @@ try{
  for(const[scene,width,lyricsScale,subtitleScale,dense]of[['latin',380,1,1,false],['latin',800,1.5,1,false],['cjk',380,1,1.75,false],['arabic',800,.75,1.5,false],['latin',380,1,1,true]]){
   const intensity='normal';
   const page=await browser.newPage({viewport:{width,height:600},deviceScaleFactor:1}),errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(`http://127.0.0.1:4173/pendolo-public-stage.html?scene=${scene}&intensity=${intensity}&dense=${dense?1:0}&lyricsScale=${lyricsScale}&subtitleScale=${subtitleScale}`);await page.waitForFunction(()=>window.ready,null,{polling:100});
+  await page.goto(`${referenceUrl}/pendolo-public-stage.html?scene=${scene}&intensity=${intensity}&dense=${dense?1:0}&lyricsScale=${lyricsScale}&subtitleScale=${subtitleScale}`);await page.waitForFunction(()=>window.ready,null,{polling:100});
   inputs[`${scene}-${width}-${lyricsScale}-${subtitleScale}-${dense}`]=await page.evaluate(()=>window.chorusInputs);
   for(let i=0;i<10;i++)await page.evaluate(()=>window.advanceSourceFrame());
   const base=await page.evaluate(()=>window.testNow),times=[...new Set([...probes,...Array.from({length:541},(_,i)=>i/60)])].sort((a,b)=>a-b);let last=-1;

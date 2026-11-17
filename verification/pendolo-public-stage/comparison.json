@@ -1,0 +1,855 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "DPR": 1,
+    "frames": 45,
+    "rows": 186,
+    "height": 600,
+    "scope": "Published-core equivalent millisecond input annotated with original renderHints. Active selection includes original render-polish end. Independent caller lyric/subtitle scales. Actual original useSpring/angle declarations and text-wheel JSX remain mounted. Controlled performance/RAF60Hz plus exact probes,one browser task per frame; original WAAPI/CSS transitions media-anchored at their start/creation times. Source target selection only rerenders on changes. Smart-beat zero; explicit alternating chorus and keyword palette; no audio/gears. Native uses semantic media history and exact derivative; differences are reported, not accepted as parity."
+  },
+  "status": "Actual original annotated input vs FoliaLyricsView and published lyrics-core; not theme acceptance or a claim of improved raster parity.",
+  "pendolo-public-stage-kotlin": {
+    "frames": [
+      {
+        "file": "arabic-800-0.75-1.5-false-0.png",
+        "maximum_channel_error": 74,
+        "worst_64px_foreground_mae": 11.24188790560472,
+        "foreground_mae": 5.6233279828785445,
+        "full_mae": 0.08028472222222222
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-11000.png",
+        "maximum_channel_error": 76,
+        "worst_64px_foreground_mae": 6.923958333333333,
+        "foreground_mae": 1.826912156278788,
+        "full_mae": 0.3016041666666667
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-24000.png",
+        "maximum_channel_error": 180,
+        "worst_64px_foreground_mae": 6.580020387359837,
+        "foreground_mae": 1.0315423760577795,
+        "full_mae": 0.14907291666666667
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-28000.png",
+        "maximum_channel_error": 180,
+        "worst_64px_foreground_mae": 6.580020387359837,
+        "foreground_mae": 1.0173332769802248,
+        "full_mae": 0.15044027777777777
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-31800.png",
+        "maximum_channel_error": 122,
+        "worst_64px_foreground_mae": 21.264686468646865,
+        "foreground_mae": 9.166820524655742,
+        "full_mae": 0.16549930555555556
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-31810.png",
+        "maximum_channel_error": 121,
+        "worst_64px_foreground_mae": 21.093729372937293,
+        "foreground_mae": 9.170976679750636,
+        "full_mae": 0.16549791666666666
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-48000.png",
+        "maximum_channel_error": 142,
+        "worst_64px_foreground_mae": 14.01213171577123,
+        "foreground_mae": 8.299538106235566,
+        "full_mae": 0.1497375
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-7000.png",
+        "maximum_channel_error": 145,
+        "worst_64px_foreground_mae": 13.186875891583453,
+        "foreground_mae": 6.123112777383727,
+        "full_mae": 0.12589375
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-9000.png",
+        "maximum_channel_error": 117,
+        "worst_64px_foreground_mae": 6.888888888888889,
+        "foreground_mae": 1.9113259875571547,
+        "full_mae": 0.30102986111111113
+      },
+      {
+        "file": "cjk-380-1-1.75-false-0.png",
+        "maximum_channel_error": 110,
+        "worst_64px_foreground_mae": 21.320936639118457,
+        "foreground_mae": 7.068684363786658,
+        "full_mae": 0.5500862573099415
+      },
+      {
+        "file": "cjk-380-1-1.75-false-11000.png",
+        "maximum_channel_error": 151,
+        "worst_64px_foreground_mae": 9.538720538720538,
+        "foreground_mae": 3.044817965480456,
+        "full_mae": 0.9764517543859649
+      },
+      {
+        "file": "cjk-380-1-1.75-false-24000.png",
+        "maximum_channel_error": 97,
+        "worst_64px_foreground_mae": 5.342936197916667,
+        "foreground_mae": 1.7174360135472977,
+        "full_mae": 0.5322997076023391
+      },
+      {
+        "file": "cjk-380-1-1.75-false-28000.png",
+        "maximum_channel_error": 97,
+        "worst_64px_foreground_mae": 5.269856770833333,
+        "foreground_mae": 1.7259841123152893,
+        "full_mae": 0.5406418128654971
+      },
+      {
+        "file": "cjk-380-1-1.75-false-31800.png",
+        "maximum_channel_error": 93,
+        "worst_64px_foreground_mae": 14.263157894736842,
+        "foreground_mae": 7.1934456496653585,
+        "full_mae": 0.6835350877192983
+      },
+      {
+        "file": "cjk-380-1-1.75-false-31810.png",
+        "maximum_channel_error": 94,
+        "worst_64px_foreground_mae": 14.263157894736842,
+        "foreground_mae": 7.254548813152304,
+        "full_mae": 0.6889912280701754
+      },
+      {
+        "file": "cjk-380-1-1.75-false-48000.png",
+        "maximum_channel_error": 160,
+        "worst_64px_foreground_mae": 37.93333333333333,
+        "foreground_mae": 8.878522722793742,
+        "full_mae": 0.6586461988304093
+      },
+      {
+        "file": "cjk-380-1-1.75-false-7000.png",
+        "maximum_channel_error": 134,
+        "worst_64px_foreground_mae": 16.663141993957705,
+        "foreground_mae": 7.0169989703266875,
+        "full_mae": 0.5479722222222222
+      },
+      {
+        "file": "cjk-380-1-1.75-false-9000.png",
+        "maximum_channel_error": 154,
+        "worst_64px_foreground_mae": 8.478523599542708,
+        "foreground_mae": 3.0008731910718667,
+        "full_mae": 0.8943391812865497
+      },
+      {
+        "file": "latin-380-1-1-false-0.png",
+        "maximum_channel_error": 94,
+        "worst_64px_foreground_mae": 15.211382113821138,
+        "foreground_mae": 5.388543371522095,
+        "full_mae": 0.36100877192982456
+      },
+      {
+        "file": "latin-380-1-1-false-11000.png",
+        "maximum_channel_error": 157,
+        "worst_64px_foreground_mae": 8.040852864583334,
+        "foreground_mae": 2.7421909246454277,
+        "full_mae": 0.8505482456140351
+      },
+      {
+        "file": "latin-380-1-1-false-24000.png",
+        "maximum_channel_error": 108,
+        "worst_64px_foreground_mae": 6.439276485788113,
+        "foreground_mae": 1.8154909178685656,
+        "full_mae": 0.5277982456140351
+      },
+      {
+        "file": "latin-380-1-1-false-28000.png",
+        "maximum_channel_error": 108,
+        "worst_64px_foreground_mae": 6.439276485788113,
+        "foreground_mae": 1.8416105917148018,
+        "full_mae": 0.5425643274853801
+      },
+      {
+        "file": "latin-380-1-1-false-31800.png",
+        "maximum_channel_error": 111,
+        "worst_64px_foreground_mae": 12.586870401810978,
+        "foreground_mae": 7.44200306591722,
+        "full_mae": 0.6387719298245614
+      },
+      {
+        "file": "latin-380-1-1-false-31810.png",
+        "maximum_channel_error": 111,
+        "worst_64px_foreground_mae": 12.55456475583864,
+        "foreground_mae": 7.444012944983819,
+        "full_mae": 0.6389444444444444
+      },
+      {
+        "file": "latin-380-1-1-false-48000.png",
+        "maximum_channel_error": 198,
+        "worst_64px_foreground_mae": 22.90701468189233,
+        "foreground_mae": 10.7786718581008,
+        "full_mae": 0.7285058479532164
+      },
+      {
+        "file": "latin-380-1-1-false-7000.png",
+        "maximum_channel_error": 168,
+        "worst_64px_foreground_mae": 28.952380952380953,
+        "foreground_mae": 8.54079295855985,
+        "full_mae": 0.6270365497076024
+      },
+      {
+        "file": "latin-380-1-1-false-9000.png",
+        "maximum_channel_error": 133,
+        "worst_64px_foreground_mae": 7.322664228014022,
+        "foreground_mae": 2.7924024282696527,
+        "full_mae": 0.7962266081871345
+      },
+      {
+        "file": "latin-380-1-1-true-0.png",
+        "maximum_channel_error": 94,
+        "worst_64px_foreground_mae": 15.211382113821138,
+        "foreground_mae": 5.388543371522095,
+        "full_mae": 0.36100877192982456
+      },
+      {
+        "file": "latin-380-1-1-true-11000.png",
+        "maximum_channel_error": 205,
+        "worst_64px_foreground_mae": 40.95810159436411,
+        "foreground_mae": 12.177615682698884,
+        "full_mae": 3.514684210526316
+      },
+      {
+        "file": "latin-380-1-1-true-24000.png",
+        "maximum_channel_error": 167,
+        "worst_64px_foreground_mae": 28.322378716744915,
+        "foreground_mae": 8.952243619561509,
+        "full_mae": 0.42205116959064326
+      },
+      {
+        "file": "latin-380-1-1-true-28000.png",
+        "maximum_channel_error": 167,
+        "worst_64px_foreground_mae": 28.322378716744915,
+        "foreground_mae": 9.201631159487704,
+        "full_mae": 0.4338084795321637
+      },
+      {
+        "file": "latin-380-1-1-true-31800.png",
+        "maximum_channel_error": 167,
+        "worst_64px_foreground_mae": 28.322378716744915,
+        "foreground_mae": 9.463329922163302,
+        "full_mae": 0.44614619883040935
+      },
+      {
+        "file": "latin-380-1-1-true-31810.png",
+        "maximum_channel_error": 167,
+        "worst_64px_foreground_mae": 28.322378716744915,
+        "foreground_mae": 9.463329922163302,
+        "full_mae": 0.44614619883040935
+      },
+      {
+        "file": "latin-380-1-1-true-48000.png",
+        "maximum_channel_error": 109,
+        "worst_64px_foreground_mae": 15.190340909090908,
+        "foreground_mae": 5.917189743589744,
+        "full_mae": 0.4217295321637427
+      },
+      {
+        "file": "latin-380-1-1-true-7000.png",
+        "maximum_channel_error": 168,
+        "worst_64px_foreground_mae": 28.952380952380953,
+        "foreground_mae": 8.54079295855985,
+        "full_mae": 0.6270365497076024
+      },
+      {
+        "file": "latin-380-1-1-true-9000.png",
+        "maximum_channel_error": 208,
+        "worst_64px_foreground_mae": 58.69589657110736,
+        "foreground_mae": 27.915079538820784,
+        "full_mae": 2.237124269005848
+      },
+      {
+        "file": "latin-800-1.5-1-false-0.png",
+        "maximum_channel_error": 110,
+        "worst_64px_foreground_mae": 17.32,
+        "foreground_mae": 6.731644203140132,
+        "full_mae": 0.2944673611111111
+      },
+      {
+        "file": "latin-800-1.5-1-false-11000.png",
+        "maximum_channel_error": 165,
+        "worst_64px_foreground_mae": 14.38888888888889,
+        "foreground_mae": 1.9013930963420917,
+        "full_mae": 0.6407298611111111
+      },
+      {
+        "file": "latin-800-1.5-1-false-24000.png",
+        "maximum_channel_error": 57,
+        "worst_64px_foreground_mae": 9.385964912280702,
+        "foreground_mae": 0.6676259756105648,
+        "full_mae": 0.20975
+      },
+      {
+        "file": "latin-800-1.5-1-false-28000.png",
+        "maximum_channel_error": 57,
+        "worst_64px_foreground_mae": 9.385964912280702,
+        "foreground_mae": 0.6846485017710553,
+        "full_mae": 0.2155701388888889
+      },
+      {
+        "file": "latin-800-1.5-1-false-31800.png",
+        "maximum_channel_error": 125,
+        "worst_64px_foreground_mae": 41.666666666666664,
+        "foreground_mae": 8.234419006883334,
+        "full_mae": 0.48931319444444443
+      },
+      {
+        "file": "latin-800-1.5-1-false-31810.png",
+        "maximum_channel_error": 125,
+        "worst_64px_foreground_mae": 41.55555555555556,
+        "foreground_mae": 8.197371958989466,
+        "full_mae": 0.4869409722222222
+      },
+      {
+        "file": "latin-800-1.5-1-false-48000.png",
+        "maximum_channel_error": 125,
+        "worst_64px_foreground_mae": 14.4,
+        "foreground_mae": 6.210384206798867,
+        "full_mae": 0.29230208333333335
+      },
+      {
+        "file": "latin-800-1.5-1-false-7000.png",
+        "maximum_channel_error": 161,
+        "worst_64px_foreground_mae": 20.893814997263274,
+        "foreground_mae": 4.8296902087887235,
+        "full_mae": 0.26698125
+      },
+      {
+        "file": "latin-800-1.5-1-false-9000.png",
+        "maximum_channel_error": 152,
+        "worst_64px_foreground_mae": 8.34351145038168,
+        "foreground_mae": 1.8586399816213732,
+        "full_mae": 0.5730729166666667
+      }
+    ],
+    "png_sha256": {
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-0.png": "9279091e77309c31bc05d3410fb47cb0057c898c371fdbc3031a1084555c7ed8",
+      "build/verification/pendolo-public-stage-kotlin/arabic-800-0.75-1.5-false-0.png": "67f8ec0a19c0cfa4d13facbaae8f067a7b8212b88743af89fc79fec51dc614f1",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-11000.png": "7e7353150cb18f35fd9460c01ba65c9e9ce91197d14bb7e7cd279de9fd2fb56b",
+      "build/verification/pendolo-public-stage-kotlin/arabic-800-0.75-1.5-false-11000.png": "254951dfdc0b4ed098faeda0f829185d46a55acc73601d2acff1aee689c3c8b7",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-24000.png": "a6e17234bf4e5ddd91388bf933e6f8b67d0241d23e2bb3fa8ceb57087e64611b",
+      "build/verification/pendolo-public-stage-kotlin/arabic-800-0.75-1.5-false-24000.png": "89a18caf905c34b60442aa134a9b06f37b97f938d8972de5691dc602b9e722bd",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-28000.png": "6bfca7e490d1014f1a3e68d7969f568a5c2be9dd1898d66d53da3ac8e06feeae",
+      "build/verification/pendolo-public-stage-kotlin/arabic-800-0.75-1.5-false-28000.png": "c521172ffaf9e2c8e5254a4a6249cb78063cef09ee9c444c363639f568b2fc9b",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-31800.png": "b796021a3731eb6fc0ae124375d5835e822092bf190a1eb727dc1b741d422917",
+      "build/verification/pendolo-public-stage-kotlin/arabic-800-0.75-1.5-false-31800.png": "9299af3a346581c1ba8adc4f21b244edd64e1dde3a4ac1477e38752de222b482",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-31810.png": "a6d2161b283c9eae1434256fc1a81b88f63f8f1aa741a5d2604135a0dde74726",
+      "build/verification/pendolo-public-stage-kotlin/arabic-800-0.75-1.5-false-31810.png": "43a7866409c0fc0310bb0ba09f46f2a38268aed012268e27fd42bcdc45cd8ef4",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-48000.png": "81511a5f5ea725c4392c7b291a9689f4faf83a0b1bcb427c9028c9294dff6f22",
+      "build/verification/pendolo-public-stage-kotlin/arabic-800-0.75-1.5-false-48000.png": "2e24526e4d46c66b1cfd358922402034afc28cb6d44d52b2e4576c1d255a9b0b",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-7000.png": "282741b41d5167e54737bfb41b959545cf27c4a1e0bf2b2bc0a835e9747e4fed",
+      "build/verification/pendolo-public-stage-kotlin/arabic-800-0.75-1.5-false-7000.png": "c12a8ab41c600a2b8d0900b52ab84ba12585d319b469b901a78743ab7a91cd18",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-9000.png": "a9b8a27cc4cab93e97da7b40d77a2329a97b739a1c40c69e4a2d35ae9c6f64fd",
+      "build/verification/pendolo-public-stage-kotlin/arabic-800-0.75-1.5-false-9000.png": "17b2857b330cf789a949ad2471ab1d5426ada67bec4efc48c6ba76239b3aec64",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-0.png": "8cb4263a439ebe041eaa42640e87eb4d479767d2d4be910c600d0cd48b5598f9",
+      "build/verification/pendolo-public-stage-kotlin/cjk-380-1-1.75-false-0.png": "02ad726e77d9645648e0e4d427c31b160dbcd56a1114b0c9a1fad1bf5e20643f",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-11000.png": "3f99a40799819101dc6a089ec47b8bc416c6454821731815819c6e3882bfa11e",
+      "build/verification/pendolo-public-stage-kotlin/cjk-380-1-1.75-false-11000.png": "d795e3487113bbc96fe36d5b3a41548c42b82b06f7c7ee9fabcbd673fba2f673",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-24000.png": "a89b6468468aa10f7502f09cc9b30113eaa49f1eb9342acf54296a8985570bbf",
+      "build/verification/pendolo-public-stage-kotlin/cjk-380-1-1.75-false-24000.png": "df4a7afee009d6c4d20bb348687d327a0891eb03cb89006efef69364e107c982",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-28000.png": "6451b8e4ef3c6f3cfc11eb9d5a947e6b00d982381add9cf3352a94a687578283",
+      "build/verification/pendolo-public-stage-kotlin/cjk-380-1-1.75-false-28000.png": "395805af53cf50511b16295edceec48e91c2fa352b95a6540f63442e08063904",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-31800.png": "ada088c26bda1e642001dbf769043adba784d81c6e8a3242c6ee3e89b875841a",
+      "build/verification/pendolo-public-stage-kotlin/cjk-380-1-1.75-false-31800.png": "e72f1861ae3e57553e1b7a1368c9e6733d27fe8634610361b9d2c6fda98195aa",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-31810.png": "56416520ce0d988f625cdda297a04397a54e8798404e4b6c657c2d83a62dae87",
+      "build/verification/pendolo-public-stage-kotlin/cjk-380-1-1.75-false-31810.png": "cd31ac1709ba233de798cb24b9c4b44418aef1217e8bf09a0f4c4160269fc805",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-48000.png": "38ae597539fdc64d46fd2324e1984c8774e12708ce011dd1f83b88d97974c1cd",
+      "build/verification/pendolo-public-stage-kotlin/cjk-380-1-1.75-false-48000.png": "14fe6ba9765609311b2387d90b0a24e100794d3e98a8234ee85dd5c16ad89219",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-7000.png": "0604f36e4cc91899c202073aba90f6038ba1d3d1269e2f078e262c2f81317380",
+      "build/verification/pendolo-public-stage-kotlin/cjk-380-1-1.75-false-7000.png": "fba2c6567d6ecaa1b76423478fc8fd34a360b10c3584d87a91e45c2ee7d3e115",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-9000.png": "7fd910a4176778c226375f37b27eae6f5bcf862e949d995b0fef8ff9ac33d264",
+      "build/verification/pendolo-public-stage-kotlin/cjk-380-1-1.75-false-9000.png": "280b720c61e1f0e78416416edda3ba74bd4d4be444b7247f01a444a42acd8a8e",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-0.png": "cbc4d86fca18bd0da7af90c5b8e17aff9acbb4f153b5b334078b8ef50f01d771",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-false-0.png": "afef51915192c3eb9bff403d530a66b386631ca2dd5004f413324f96efbeb344",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-11000.png": "3fa3a4019b5afae29353e19035346e4247d7e36d0eb86ce592fc3acfe35fa700",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-false-11000.png": "39498b3ed3d41253b7ce541a338d3fcc0e4414461fb300321a8caa0f58a776b1",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-24000.png": "c0504ea9aeee499da6f809088b5f4a787807f1ed6abb15615c117406cceeb25d",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-false-24000.png": "2d9e54c63a609d30f841ec8419c832f3e5f12f80e1c9e21e066fd7e402912d28",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-28000.png": "74660f0cc3a3bd80ad65ec034a080288837252d805c7a1c8b7eea2f998fd35a1",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-false-28000.png": "ce78cfed8d81af1678140c03520eaca59bfc1163471e7abec7160339df4b002f",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-31800.png": "81f40e784682e2974133258eb545ddf0c6b3515423299f4fc2c2c3031b8671e4",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-false-31800.png": "444350b0844babaa4ccd028939bd3127718da7db1b98a2bec2180015de42a11c",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-31810.png": "2342bef017eff6a6d779b940906d10b2dc5ceb6b6da686ad682cf4053f50b227",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-false-31810.png": "0ab26c3c12e47c8865498ad2fc41c976893fba21957408281643a7ab4f9e57a8",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-48000.png": "d01bf95680dc35b6d4ac8ac6cfdf6d48fc1ea749f9c9331232a7ca5857c08cb7",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-false-48000.png": "c2c0172c9eed608ffb724009e851029470f6a8b3a4de00c72f7b4b5f8dc25f32",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-7000.png": "18a15f25c547d84618c212f2d20d7e73ca730de3e629661bf7d9888b298b5980",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-false-7000.png": "7699b30a069b7007ca3637f6f658f3d64aed1b9cfadbc0bbd0068fa6aae45e5a",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-9000.png": "66687c8a1d2ba597b7fb5217aaf2054305011920c3c1e7375ff2941b0f38b696",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-false-9000.png": "81b08b03f986ca3295c1893be2717d0ae807ddfa2185859d506c7c796b40f3b2",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-0.png": "cbc4d86fca18bd0da7af90c5b8e17aff9acbb4f153b5b334078b8ef50f01d771",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-true-0.png": "afef51915192c3eb9bff403d530a66b386631ca2dd5004f413324f96efbeb344",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-11000.png": "fa2d98e1e1f71bf0f03f4861230a89ff76985309fe155e07fd6bb9c1be113b81",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-true-11000.png": "4df16dd95c593c61fd617804101a0f7fb5f487e18e4c8cb222cefc78fcaedbd4",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-24000.png": "76e6261e12e8c4733984711642d2febab5e2445b5cd36a6ee7a35f7b5dbfd556",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-true-24000.png": "c0d22a7b13ad44e47c23a36bcc6dcb6182c9118b7f43b419e395a5975bd4084c",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-28000.png": "c2b0107d9f3a71fc19bbbcd50c8c6cbae3d62c54cd29937da93d5d0d67b2cbc4",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-true-28000.png": "f728fff1278fcc37a2251a56543bcbc329b06f38c46186aefe1ade5ea1e10580",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-31800.png": "0e94f8c14f7ab983e0db6f2a2d96cb561bb659d123d6d2cbece0321708d27c55",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-true-31800.png": "cf374ec41bed24b1660898db555667313cacdf914819cb239e03a8526be0f322",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-31810.png": "0e94f8c14f7ab983e0db6f2a2d96cb561bb659d123d6d2cbece0321708d27c55",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-true-31810.png": "cf374ec41bed24b1660898db555667313cacdf914819cb239e03a8526be0f322",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-48000.png": "6ac4af205d42c8a03bc69d63b1e130ee33f0b302f5f7bd872bc91be7ad32269a",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-true-48000.png": "6289340def37337c02f9b2e561f6a38cef64c2b2cfa20058662f49b4b3bf8ed6",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-7000.png": "18a15f25c547d84618c212f2d20d7e73ca730de3e629661bf7d9888b298b5980",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-true-7000.png": "7699b30a069b7007ca3637f6f658f3d64aed1b9cfadbc0bbd0068fa6aae45e5a",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-9000.png": "7e0387df76b0d3e189c965634f4247bb0e8c5c0ce0f1581f7fed05add84f6132",
+      "build/verification/pendolo-public-stage-kotlin/latin-380-1-1-true-9000.png": "5c845e9b5a627d28c7543252ec53e4e8c8609d2aea0bbd43bb3109fee31f36e0",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-0.png": "add243e803cb59dcc5fce2e4aa0b41a3f1bad546e364ebcc0f1f6177c1672f4c",
+      "build/verification/pendolo-public-stage-kotlin/latin-800-1.5-1-false-0.png": "82a81951d23f6929a4834b392fc9c9d4b6ea7efc3aa96adbb477bb19679c0c19",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-11000.png": "37b4364eb4b5e61a7e9694d94fd895788ad9545e3869ff49c6ab73690ac5079d",
+      "build/verification/pendolo-public-stage-kotlin/latin-800-1.5-1-false-11000.png": "d86d1c30d10ac9b43b3d8b15e145965d695bdece62d10dae82554529f1b24a51",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-24000.png": "cf654c047c6eb3964ca9716c1280c563e5d4faff8b556fedf2c929ff59359046",
+      "build/verification/pendolo-public-stage-kotlin/latin-800-1.5-1-false-24000.png": "017e4df7f4e66a755e95d72f970484874cfcb1c9549295cd53470aee89b2adbf",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-28000.png": "7da336dffa375f1f653c6f2f136dd0fb6bfc4883549f2b7e9b8b15d2cfe7701e",
+      "build/verification/pendolo-public-stage-kotlin/latin-800-1.5-1-false-28000.png": "479d8a50a9a99c6dedcc4058ffceee495d737244bd07449199cfa7490b1e13dc",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-31800.png": "becd0dccd2e978c349ad7c3df98112bc3d07097c0ca99adceb1b9638d1aaed79",
+      "build/verification/pendolo-public-stage-kotlin/latin-800-1.5-1-false-31800.png": "bc1993e894b9552ecb6b54e45ef7c3ac1091a5b02322b4d9cc40efdccef96d2a",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-31810.png": "271702570ba921c0ab1a0d5c56a072acd2b0d6f3060c4c6e0878435bb3761d2b",
+      "build/verification/pendolo-public-stage-kotlin/latin-800-1.5-1-false-31810.png": "623dc029b6c0d41311b0e60095af358b53ea53caa222233c7b723ef1a975f757",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-48000.png": "ad429b065f27b90f6231b9cd337e2b5dfd03c39439e706a96ba467f0a2bc719d",
+      "build/verification/pendolo-public-stage-kotlin/latin-800-1.5-1-false-48000.png": "da0e8512d6dae9ef2b4a38fa9759e77be0aab4488348d8576ba3cb8feed1c330",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-7000.png": "5b8169c2d6e148263fbdfa910a9eeea6f7145e5bb3a70e060d0d61509ea5d692",
+      "build/verification/pendolo-public-stage-kotlin/latin-800-1.5-1-false-7000.png": "8d3ec2db6bb02d75972537e2d60d97eec972939c0abb4064703c178363bf16a1",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-9000.png": "7f89d28d07099470ed166a2efe00b140df2fce9d86e04aa8b7bd6ed2a2bc8eb1",
+      "build/verification/pendolo-public-stage-kotlin/latin-800-1.5-1-false-9000.png": "fc7c890d5e882f70072ac68e34912227188bc0fb4d79cc6bcf26d1702b6f8529"
+    },
+    "numeric_fields": 1302,
+    "chorus_maximum_errors": {
+      "0": 0.0011690024137498423,
+      "1": 0.015720154641342174,
+      "2": 0.0017954652519226455
+    },
+    "max_content_rect_error": 6.019072099438944,
+    "foreground_definition": "union of EVERY non-background RGB pixel, including low-alpha glow; no alignment or threshold rejection",
+    "mean_foreground_mae": 6.137633195333619,
+    "max_foreground_mae": 27.915079538820784
+  },
+  "pendolo-public-stage-source-rotation-kotlin": {
+    "frames": [
+      {
+        "file": "arabic-800-0.75-1.5-false-0.png",
+        "maximum_channel_error": 74,
+        "worst_64px_foreground_mae": 11.24188790560472,
+        "foreground_mae": 5.6233279828785445,
+        "full_mae": 0.08028472222222222
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-11000.png",
+        "maximum_channel_error": 76,
+        "worst_64px_foreground_mae": 6.923958333333333,
+        "foreground_mae": 1.826912156278788,
+        "full_mae": 0.3016041666666667
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-24000.png",
+        "maximum_channel_error": 180,
+        "worst_64px_foreground_mae": 6.580020387359837,
+        "foreground_mae": 1.0315423760577795,
+        "full_mae": 0.14907291666666667
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-28000.png",
+        "maximum_channel_error": 180,
+        "worst_64px_foreground_mae": 6.580020387359837,
+        "foreground_mae": 1.0173332769802248,
+        "full_mae": 0.15044027777777777
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-31800.png",
+        "maximum_channel_error": 122,
+        "worst_64px_foreground_mae": 21.264686468646865,
+        "foreground_mae": 9.166820524655742,
+        "full_mae": 0.16549930555555556
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-31810.png",
+        "maximum_channel_error": 121,
+        "worst_64px_foreground_mae": 21.093729372937293,
+        "foreground_mae": 9.170976679750636,
+        "full_mae": 0.16549791666666666
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-48000.png",
+        "maximum_channel_error": 142,
+        "worst_64px_foreground_mae": 14.01213171577123,
+        "foreground_mae": 8.299538106235566,
+        "full_mae": 0.1497375
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-7000.png",
+        "maximum_channel_error": 145,
+        "worst_64px_foreground_mae": 13.186875891583453,
+        "foreground_mae": 6.123112777383727,
+        "full_mae": 0.12589375
+      },
+      {
+        "file": "arabic-800-0.75-1.5-false-9000.png",
+        "maximum_channel_error": 117,
+        "worst_64px_foreground_mae": 6.888888888888889,
+        "foreground_mae": 1.9113259875571547,
+        "full_mae": 0.30102986111111113
+      },
+      {
+        "file": "cjk-380-1-1.75-false-0.png",
+        "maximum_channel_error": 110,
+        "worst_64px_foreground_mae": 21.320936639118457,
+        "foreground_mae": 7.068684363786658,
+        "full_mae": 0.5500862573099415
+      },
+      {
+        "file": "cjk-380-1-1.75-false-11000.png",
+        "maximum_channel_error": 151,
+        "worst_64px_foreground_mae": 9.538720538720538,
+        "foreground_mae": 3.044817965480456,
+        "full_mae": 0.9764517543859649
+      },
+      {
+        "file": "cjk-380-1-1.75-false-24000.png",
+        "maximum_channel_error": 97,
+        "worst_64px_foreground_mae": 5.342936197916667,
+        "foreground_mae": 1.7174360135472977,
+        "full_mae": 0.5322997076023391
+      },
+      {
+        "file": "cjk-380-1-1.75-false-28000.png",
+        "maximum_channel_error": 97,
+        "worst_64px_foreground_mae": 5.269856770833333,
+        "foreground_mae": 1.7259841123152893,
+        "full_mae": 0.5406418128654971
+      },
+      {
+        "file": "cjk-380-1-1.75-false-31800.png",
+        "maximum_channel_error": 93,
+        "worst_64px_foreground_mae": 14.263157894736842,
+        "foreground_mae": 7.1934456496653585,
+        "full_mae": 0.6835350877192983
+      },
+      {
+        "file": "cjk-380-1-1.75-false-31810.png",
+        "maximum_channel_error": 94,
+        "worst_64px_foreground_mae": 14.263157894736842,
+        "foreground_mae": 7.254548813152304,
+        "full_mae": 0.6889912280701754
+      },
+      {
+        "file": "cjk-380-1-1.75-false-48000.png",
+        "maximum_channel_error": 160,
+        "worst_64px_foreground_mae": 37.93333333333333,
+        "foreground_mae": 8.878522722793742,
+        "full_mae": 0.6586461988304093
+      },
+      {
+        "file": "cjk-380-1-1.75-false-7000.png",
+        "maximum_channel_error": 134,
+        "worst_64px_foreground_mae": 16.663141993957705,
+        "foreground_mae": 7.0169989703266875,
+        "full_mae": 0.5479722222222222
+      },
+      {
+        "file": "cjk-380-1-1.75-false-9000.png",
+        "maximum_channel_error": 154,
+        "worst_64px_foreground_mae": 8.478523599542708,
+        "foreground_mae": 3.0008731910718667,
+        "full_mae": 0.8943391812865497
+      },
+      {
+        "file": "latin-380-1-1-false-0.png",
+        "maximum_channel_error": 94,
+        "worst_64px_foreground_mae": 15.211382113821138,
+        "foreground_mae": 5.388543371522095,
+        "full_mae": 0.36100877192982456
+      },
+      {
+        "file": "latin-380-1-1-false-11000.png",
+        "maximum_channel_error": 157,
+        "worst_64px_foreground_mae": 8.040852864583334,
+        "foreground_mae": 2.7421909246454277,
+        "full_mae": 0.8505482456140351
+      },
+      {
+        "file": "latin-380-1-1-false-24000.png",
+        "maximum_channel_error": 108,
+        "worst_64px_foreground_mae": 6.439276485788113,
+        "foreground_mae": 1.8154909178685656,
+        "full_mae": 0.5277982456140351
+      },
+      {
+        "file": "latin-380-1-1-false-28000.png",
+        "maximum_channel_error": 108,
+        "worst_64px_foreground_mae": 6.439276485788113,
+        "foreground_mae": 1.8416105917148018,
+        "full_mae": 0.5425643274853801
+      },
+      {
+        "file": "latin-380-1-1-false-31800.png",
+        "maximum_channel_error": 111,
+        "worst_64px_foreground_mae": 12.586870401810978,
+        "foreground_mae": 7.44200306591722,
+        "full_mae": 0.6387719298245614
+      },
+      {
+        "file": "latin-380-1-1-false-31810.png",
+        "maximum_channel_error": 111,
+        "worst_64px_foreground_mae": 12.55456475583864,
+        "foreground_mae": 7.444012944983819,
+        "full_mae": 0.6389444444444444
+      },
+      {
+        "file": "latin-380-1-1-false-48000.png",
+        "maximum_channel_error": 198,
+        "worst_64px_foreground_mae": 22.90701468189233,
+        "foreground_mae": 10.7786718581008,
+        "full_mae": 0.7285058479532164
+      },
+      {
+        "file": "latin-380-1-1-false-7000.png",
+        "maximum_channel_error": 168,
+        "worst_64px_foreground_mae": 28.952380952380953,
+        "foreground_mae": 8.54079295855985,
+        "full_mae": 0.6270365497076024
+      },
+      {
+        "file": "latin-380-1-1-false-9000.png",
+        "maximum_channel_error": 133,
+        "worst_64px_foreground_mae": 7.322664228014022,
+        "foreground_mae": 2.7924024282696527,
+        "full_mae": 0.7962266081871345
+      },
+      {
+        "file": "latin-380-1-1-true-0.png",
+        "maximum_channel_error": 94,
+        "worst_64px_foreground_mae": 15.211382113821138,
+        "foreground_mae": 5.388543371522095,
+        "full_mae": 0.36100877192982456
+      },
+      {
+        "file": "latin-380-1-1-true-11000.png",
+        "maximum_channel_error": 160,
+        "worst_64px_foreground_mae": 13.75682637815559,
+        "foreground_mae": 3.1811668046621233,
+        "full_mae": 0.8762719298245614
+      },
+      {
+        "file": "latin-380-1-1-true-24000.png",
+        "maximum_channel_error": 167,
+        "worst_64px_foreground_mae": 28.322378716744915,
+        "foreground_mae": 8.952243619561509,
+        "full_mae": 0.42205116959064326
+      },
+      {
+        "file": "latin-380-1-1-true-28000.png",
+        "maximum_channel_error": 167,
+        "worst_64px_foreground_mae": 28.322378716744915,
+        "foreground_mae": 9.201631159487704,
+        "full_mae": 0.4338084795321637
+      },
+      {
+        "file": "latin-380-1-1-true-31800.png",
+        "maximum_channel_error": 167,
+        "worst_64px_foreground_mae": 28.322378716744915,
+        "foreground_mae": 9.463329922163302,
+        "full_mae": 0.44614619883040935
+      },
+      {
+        "file": "latin-380-1-1-true-31810.png",
+        "maximum_channel_error": 167,
+        "worst_64px_foreground_mae": 28.322378716744915,
+        "foreground_mae": 9.463329922163302,
+        "full_mae": 0.44614619883040935
+      },
+      {
+        "file": "latin-380-1-1-true-48000.png",
+        "maximum_channel_error": 109,
+        "worst_64px_foreground_mae": 15.190340909090908,
+        "foreground_mae": 5.781055613721747,
+        "full_mae": 0.41169736842105265
+      },
+      {
+        "file": "latin-380-1-1-true-7000.png",
+        "maximum_channel_error": 168,
+        "worst_64px_foreground_mae": 28.952380952380953,
+        "foreground_mae": 8.54079295855985,
+        "full_mae": 0.6270365497076024
+      },
+      {
+        "file": "latin-380-1-1-true-9000.png",
+        "maximum_channel_error": 176,
+        "worst_64px_foreground_mae": 22.87757575757576,
+        "foreground_mae": 10.645928850399049,
+        "full_mae": 0.7332616959064328
+      },
+      {
+        "file": "latin-800-1.5-1-false-0.png",
+        "maximum_channel_error": 110,
+        "worst_64px_foreground_mae": 17.32,
+        "foreground_mae": 6.731644203140132,
+        "full_mae": 0.2944673611111111
+      },
+      {
+        "file": "latin-800-1.5-1-false-11000.png",
+        "maximum_channel_error": 165,
+        "worst_64px_foreground_mae": 14.38888888888889,
+        "foreground_mae": 1.9013930963420917,
+        "full_mae": 0.6407298611111111
+      },
+      {
+        "file": "latin-800-1.5-1-false-24000.png",
+        "maximum_channel_error": 57,
+        "worst_64px_foreground_mae": 9.385964912280702,
+        "foreground_mae": 0.6676259756105648,
+        "full_mae": 0.20975
+      },
+      {
+        "file": "latin-800-1.5-1-false-28000.png",
+        "maximum_channel_error": 57,
+        "worst_64px_foreground_mae": 9.385964912280702,
+        "foreground_mae": 0.6846485017710553,
+        "full_mae": 0.2155701388888889
+      },
+      {
+        "file": "latin-800-1.5-1-false-31800.png",
+        "maximum_channel_error": 125,
+        "worst_64px_foreground_mae": 41.666666666666664,
+        "foreground_mae": 8.234419006883334,
+        "full_mae": 0.48931319444444443
+      },
+      {
+        "file": "latin-800-1.5-1-false-31810.png",
+        "maximum_channel_error": 125,
+        "worst_64px_foreground_mae": 41.55555555555556,
+        "foreground_mae": 8.197371958989466,
+        "full_mae": 0.4869409722222222
+      },
+      {
+        "file": "latin-800-1.5-1-false-48000.png",
+        "maximum_channel_error": 125,
+        "worst_64px_foreground_mae": 14.4,
+        "foreground_mae": 6.210384206798867,
+        "full_mae": 0.29230208333333335
+      },
+      {
+        "file": "latin-800-1.5-1-false-7000.png",
+        "maximum_channel_error": 161,
+        "worst_64px_foreground_mae": 20.893814997263274,
+        "foreground_mae": 4.8296902087887235,
+        "full_mae": 0.26698125
+      },
+      {
+        "file": "latin-800-1.5-1-false-9000.png",
+        "maximum_channel_error": 152,
+        "worst_64px_foreground_mae": 8.34351145038168,
+        "foreground_mae": 1.8586399816213732,
+        "full_mae": 0.5730729166666667
+      }
+    ],
+    "png_sha256": {
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-0.png": "9279091e77309c31bc05d3410fb47cb0057c898c371fdbc3031a1084555c7ed8",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/arabic-800-0.75-1.5-false-0.png": "67f8ec0a19c0cfa4d13facbaae8f067a7b8212b88743af89fc79fec51dc614f1",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-11000.png": "7e7353150cb18f35fd9460c01ba65c9e9ce91197d14bb7e7cd279de9fd2fb56b",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/arabic-800-0.75-1.5-false-11000.png": "254951dfdc0b4ed098faeda0f829185d46a55acc73601d2acff1aee689c3c8b7",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-24000.png": "a6e17234bf4e5ddd91388bf933e6f8b67d0241d23e2bb3fa8ceb57087e64611b",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/arabic-800-0.75-1.5-false-24000.png": "89a18caf905c34b60442aa134a9b06f37b97f938d8972de5691dc602b9e722bd",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-28000.png": "6bfca7e490d1014f1a3e68d7969f568a5c2be9dd1898d66d53da3ac8e06feeae",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/arabic-800-0.75-1.5-false-28000.png": "c521172ffaf9e2c8e5254a4a6249cb78063cef09ee9c444c363639f568b2fc9b",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-31800.png": "b796021a3731eb6fc0ae124375d5835e822092bf190a1eb727dc1b741d422917",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/arabic-800-0.75-1.5-false-31800.png": "9299af3a346581c1ba8adc4f21b244edd64e1dde3a4ac1477e38752de222b482",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-31810.png": "a6d2161b283c9eae1434256fc1a81b88f63f8f1aa741a5d2604135a0dde74726",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/arabic-800-0.75-1.5-false-31810.png": "43a7866409c0fc0310bb0ba09f46f2a38268aed012268e27fd42bcdc45cd8ef4",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-48000.png": "81511a5f5ea725c4392c7b291a9689f4faf83a0b1bcb427c9028c9294dff6f22",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/arabic-800-0.75-1.5-false-48000.png": "2e24526e4d46c66b1cfd358922402034afc28cb6d44d52b2e4576c1d255a9b0b",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-7000.png": "282741b41d5167e54737bfb41b959545cf27c4a1e0bf2b2bc0a835e9747e4fed",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/arabic-800-0.75-1.5-false-7000.png": "c12a8ab41c600a2b8d0900b52ab84ba12585d319b469b901a78743ab7a91cd18",
+      "build/verification/pendolo-public-stage-browser/arabic-800-0.75-1.5-false-9000.png": "a9b8a27cc4cab93e97da7b40d77a2329a97b739a1c40c69e4a2d35ae9c6f64fd",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/arabic-800-0.75-1.5-false-9000.png": "17b2857b330cf789a949ad2471ab1d5426ada67bec4efc48c6ba76239b3aec64",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-0.png": "8cb4263a439ebe041eaa42640e87eb4d479767d2d4be910c600d0cd48b5598f9",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/cjk-380-1-1.75-false-0.png": "02ad726e77d9645648e0e4d427c31b160dbcd56a1114b0c9a1fad1bf5e20643f",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-11000.png": "3f99a40799819101dc6a089ec47b8bc416c6454821731815819c6e3882bfa11e",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/cjk-380-1-1.75-false-11000.png": "d795e3487113bbc96fe36d5b3a41548c42b82b06f7c7ee9fabcbd673fba2f673",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-24000.png": "a89b6468468aa10f7502f09cc9b30113eaa49f1eb9342acf54296a8985570bbf",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/cjk-380-1-1.75-false-24000.png": "df4a7afee009d6c4d20bb348687d327a0891eb03cb89006efef69364e107c982",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-28000.png": "6451b8e4ef3c6f3cfc11eb9d5a947e6b00d982381add9cf3352a94a687578283",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/cjk-380-1-1.75-false-28000.png": "395805af53cf50511b16295edceec48e91c2fa352b95a6540f63442e08063904",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-31800.png": "ada088c26bda1e642001dbf769043adba784d81c6e8a3242c6ee3e89b875841a",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/cjk-380-1-1.75-false-31800.png": "e72f1861ae3e57553e1b7a1368c9e6733d27fe8634610361b9d2c6fda98195aa",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-31810.png": "56416520ce0d988f625cdda297a04397a54e8798404e4b6c657c2d83a62dae87",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/cjk-380-1-1.75-false-31810.png": "cd31ac1709ba233de798cb24b9c4b44418aef1217e8bf09a0f4c4160269fc805",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-48000.png": "38ae597539fdc64d46fd2324e1984c8774e12708ce011dd1f83b88d97974c1cd",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/cjk-380-1-1.75-false-48000.png": "14fe6ba9765609311b2387d90b0a24e100794d3e98a8234ee85dd5c16ad89219",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-7000.png": "0604f36e4cc91899c202073aba90f6038ba1d3d1269e2f078e262c2f81317380",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/cjk-380-1-1.75-false-7000.png": "fba2c6567d6ecaa1b76423478fc8fd34a360b10c3584d87a91e45c2ee7d3e115",
+      "build/verification/pendolo-public-stage-browser/cjk-380-1-1.75-false-9000.png": "7fd910a4176778c226375f37b27eae6f5bcf862e949d995b0fef8ff9ac33d264",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/cjk-380-1-1.75-false-9000.png": "280b720c61e1f0e78416416edda3ba74bd4d4be444b7247f01a444a42acd8a8e",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-0.png": "cbc4d86fca18bd0da7af90c5b8e17aff9acbb4f153b5b334078b8ef50f01d771",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-false-0.png": "afef51915192c3eb9bff403d530a66b386631ca2dd5004f413324f96efbeb344",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-11000.png": "3fa3a4019b5afae29353e19035346e4247d7e36d0eb86ce592fc3acfe35fa700",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-false-11000.png": "39498b3ed3d41253b7ce541a338d3fcc0e4414461fb300321a8caa0f58a776b1",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-24000.png": "c0504ea9aeee499da6f809088b5f4a787807f1ed6abb15615c117406cceeb25d",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-false-24000.png": "2d9e54c63a609d30f841ec8419c832f3e5f12f80e1c9e21e066fd7e402912d28",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-28000.png": "74660f0cc3a3bd80ad65ec034a080288837252d805c7a1c8b7eea2f998fd35a1",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-false-28000.png": "ce78cfed8d81af1678140c03520eaca59bfc1163471e7abec7160339df4b002f",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-31800.png": "81f40e784682e2974133258eb545ddf0c6b3515423299f4fc2c2c3031b8671e4",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-false-31800.png": "444350b0844babaa4ccd028939bd3127718da7db1b98a2bec2180015de42a11c",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-31810.png": "2342bef017eff6a6d779b940906d10b2dc5ceb6b6da686ad682cf4053f50b227",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-false-31810.png": "0ab26c3c12e47c8865498ad2fc41c976893fba21957408281643a7ab4f9e57a8",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-48000.png": "d01bf95680dc35b6d4ac8ac6cfdf6d48fc1ea749f9c9331232a7ca5857c08cb7",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-false-48000.png": "c2c0172c9eed608ffb724009e851029470f6a8b3a4de00c72f7b4b5f8dc25f32",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-7000.png": "18a15f25c547d84618c212f2d20d7e73ca730de3e629661bf7d9888b298b5980",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-false-7000.png": "7699b30a069b7007ca3637f6f658f3d64aed1b9cfadbc0bbd0068fa6aae45e5a",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-false-9000.png": "66687c8a1d2ba597b7fb5217aaf2054305011920c3c1e7375ff2941b0f38b696",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-false-9000.png": "81b08b03f986ca3295c1893be2717d0ae807ddfa2185859d506c7c796b40f3b2",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-0.png": "cbc4d86fca18bd0da7af90c5b8e17aff9acbb4f153b5b334078b8ef50f01d771",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-true-0.png": "afef51915192c3eb9bff403d530a66b386631ca2dd5004f413324f96efbeb344",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-11000.png": "fa2d98e1e1f71bf0f03f4861230a89ff76985309fe155e07fd6bb9c1be113b81",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-true-11000.png": "6c9219ef7d5494610addba9a9bafd238f9f7114753925227b92408e6f44af94e",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-24000.png": "76e6261e12e8c4733984711642d2febab5e2445b5cd36a6ee7a35f7b5dbfd556",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-true-24000.png": "c0d22a7b13ad44e47c23a36bcc6dcb6182c9118b7f43b419e395a5975bd4084c",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-28000.png": "c2b0107d9f3a71fc19bbbcd50c8c6cbae3d62c54cd29937da93d5d0d67b2cbc4",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-true-28000.png": "f728fff1278fcc37a2251a56543bcbc329b06f38c46186aefe1ade5ea1e10580",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-31800.png": "0e94f8c14f7ab983e0db6f2a2d96cb561bb659d123d6d2cbece0321708d27c55",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-true-31800.png": "cf374ec41bed24b1660898db555667313cacdf914819cb239e03a8526be0f322",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-31810.png": "0e94f8c14f7ab983e0db6f2a2d96cb561bb659d123d6d2cbece0321708d27c55",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-true-31810.png": "cf374ec41bed24b1660898db555667313cacdf914819cb239e03a8526be0f322",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-48000.png": "6ac4af205d42c8a03bc69d63b1e130ee33f0b302f5f7bd872bc91be7ad32269a",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-true-48000.png": "89d3bfe72d27e84ecd98425822bbfb79a798c0b30b2c7d390739ed8ec0c0a611",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-7000.png": "18a15f25c547d84618c212f2d20d7e73ca730de3e629661bf7d9888b298b5980",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-true-7000.png": "7699b30a069b7007ca3637f6f658f3d64aed1b9cfadbc0bbd0068fa6aae45e5a",
+      "build/verification/pendolo-public-stage-browser/latin-380-1-1-true-9000.png": "7e0387df76b0d3e189c965634f4247bb0e8c5c0ce0f1581f7fed05add84f6132",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-380-1-1-true-9000.png": "e806006618c7f6730e49444f1456cf3f33a0aa76b752d6d4cba0e25f4cdda222",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-0.png": "add243e803cb59dcc5fce2e4aa0b41a3f1bad546e364ebcc0f1f6177c1672f4c",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-800-1.5-1-false-0.png": "82a81951d23f6929a4834b392fc9c9d4b6ea7efc3aa96adbb477bb19679c0c19",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-11000.png": "37b4364eb4b5e61a7e9694d94fd895788ad9545e3869ff49c6ab73690ac5079d",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-800-1.5-1-false-11000.png": "d86d1c30d10ac9b43b3d8b15e145965d695bdece62d10dae82554529f1b24a51",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-24000.png": "cf654c047c6eb3964ca9716c1280c563e5d4faff8b556fedf2c929ff59359046",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-800-1.5-1-false-24000.png": "017e4df7f4e66a755e95d72f970484874cfcb1c9549295cd53470aee89b2adbf",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-28000.png": "7da336dffa375f1f653c6f2f136dd0fb6bfc4883549f2b7e9b8b15d2cfe7701e",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-800-1.5-1-false-28000.png": "479d8a50a9a99c6dedcc4058ffceee495d737244bd07449199cfa7490b1e13dc",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-31800.png": "becd0dccd2e978c349ad7c3df98112bc3d07097c0ca99adceb1b9638d1aaed79",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-800-1.5-1-false-31800.png": "bc1993e894b9552ecb6b54e45ef7c3ac1091a5b02322b4d9cc40efdccef96d2a",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-31810.png": "271702570ba921c0ab1a0d5c56a072acd2b0d6f3060c4c6e0878435bb3761d2b",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-800-1.5-1-false-31810.png": "623dc029b6c0d41311b0e60095af358b53ea53caa222233c7b723ef1a975f757",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-48000.png": "ad429b065f27b90f6231b9cd337e2b5dfd03c39439e706a96ba467f0a2bc719d",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-800-1.5-1-false-48000.png": "da0e8512d6dae9ef2b4a38fa9759e77be0aab4488348d8576ba3cb8feed1c330",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-7000.png": "5b8169c2d6e148263fbdfa910a9eeea6f7145e5bb3a70e060d0d61509ea5d692",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-800-1.5-1-false-7000.png": "8d3ec2db6bb02d75972537e2d60d97eec972939c0abb4064703c178363bf16a1",
+      "build/verification/pendolo-public-stage-browser/latin-800-1.5-1-false-9000.png": "7f89d28d07099470ed166a2efe00b140df2fce9d86e04aa8b7bd6ed2a2bc8eb1",
+      "build/verification/pendolo-public-stage-source-rotation-kotlin/latin-800-1.5-1-false-9000.png": "fc7c890d5e882f70072ac68e34912227188bc0fb4d79cc6bcf26d1702b6f8529"
+    },
+    "numeric_fields": 1302,
+    "chorus_maximum_errors": {
+      "0": 0.0011690024137498423,
+      "1": 0.015720154641342174,
+      "2": 0.0017954652519226455
+    },
+    "max_content_rect_error": 0.23150176341079032,
+    "foreground_definition": "union of EVERY non-background RGB pixel, including low-alpha glow; no alignment or threshold rejection",
+    "mean_foreground_mae": 5.5509280020819185,
+    "max_foreground_mae": 10.7786718581008
+  },
+  "unchanged_prior_native_pngs": 24
+}

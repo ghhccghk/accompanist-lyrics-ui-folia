@@ -4,6 +4,17 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 import kotlin.test.*
 
 class SettingsTest {
+    @Test fun pendoloTuningAndSourceHintsRoundTrip() {
+        val tuning=PendoloTuning(1.5f,.75f,setOf(1,4),listOf(FoliaWordColor("星光|~\n",androidx.compose.ui.graphics.Color(0xff71b8ed))))
+        val settings=SampleSettings(lyricTheme=SampleLyricTheme.Pendolo,pendoloTuning=tuning)
+        assertEquals(settings,SampleSettings.decode(settings.encode()))
+        val session=SampleSession();session.applySettings(settings)
+        assertEquals(FoliaStyle.Pendolo(tuning),session.lyricStyle);assertEquals(settings,session.settings())
+        assertEquals(PendoloTuning(),SampleSettings.decode("version=1").pendoloTuning)
+        assertEquals(PendoloTuning(),SampleSettings.decode("version=1\npendoloLyricsFont=NaN\npendoloSubtitleFont=3\npendoloChorus=-1,bad\npendoloWords=bad").pendoloTuning)
+        assertFailsWith<IllegalArgumentException>{PendoloTuning(lyricsFontScale=Float.NaN)}
+    }
+
     @Test fun cadenzaPreferencesAndKeywordsRoundTripWithoutEnablingUnimplementedThemes() {
         val tuning=CadenzaTuning(.8f,.6f,.4f,0f,setOf(0,5),listOf(FoliaWordColor("星光\nAmber|~",androidx.compose.ui.graphics.Color(0xff5bcefa))))
         val settings=SampleSettings(lyricTheme=SampleLyricTheme.Cadenza,cadenzaTuning=tuning)

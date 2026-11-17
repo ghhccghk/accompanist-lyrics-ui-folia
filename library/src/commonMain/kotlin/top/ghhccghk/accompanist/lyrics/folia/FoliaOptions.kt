@@ -35,6 +35,10 @@ data class FoliaStatus(
 )
 
 sealed interface FoliaStyle {
+    /** Text-wheel calibration preview. No invented beats/gears or audio analysis. */
+    @Immutable
+    data class Pendolo(val tuning:PendoloTuning=PendoloTuning()):FoliaStyle
+
     @Immutable
     data class Classic(val tuning: ClassicTuning = ClassicTuning()) : FoliaStyle
 
@@ -52,6 +56,21 @@ sealed interface FoliaStyle {
      * and source refresh-rate adaptation are recorded in docs/themes-parity.md. */
     @Immutable
     data class Cadenza(val tuning:CadenzaTuning=CadenzaTuning()) : FoliaStyle
+}
+
+@Immutable
+data class PendoloTuning(
+    val lyricsFontScale:Float=1f,
+    val subtitleFontScale:Float=1f,
+    /** Explicit top-level core indices; accompaniment is not chorus. */
+    val chorusLineIndices:Set<Int> = emptySet(),
+    val wordColors:List<FoliaWordColor> = emptyList(),
+) {
+    init {
+        require(lyricsFontScale.isFinite() && lyricsFontScale in .5f..2f)
+        require(subtitleFontScale.isFinite() && subtitleFontScale in .5f..2f)
+        require(chorusLineIndices.all{it>=0})
+    }
 }
 
 @Immutable

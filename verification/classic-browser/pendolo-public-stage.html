@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="/style.css"><style>
+body{background:#162435;line-height:1.5}.pointer-events-auto{pointer-events:auto}.overflow-visible{overflow:visible}
+.whitespace-pre{white-space:pre}.whitespace-pre-wrap{white-space:pre-wrap}.rounded-2xl{border-radius:16px}
+.transition-all{transition-property:all}.transition-opacity{transition-property:opacity}.duration-200{transition-duration:200ms}
+.transition-all,.transition-opacity{transition-timing-function:cubic-bezier(.4,0,.2,1)}
+</style></head><body><div id="root"></div><script>
+window.testNow=0;let serial=0;window.testRafs=new Map();Object.defineProperty(performance,'now',{value:()=>window.testNow});
+window.requestAnimationFrame=cb=>{const id=++serial;window.testRafs.set(id,cb);return id};window.cancelAnimationFrame=id=>window.testRafs.delete(id);
+window.advanceSourceFrame=(dt=1000/60)=>{window.testNow+=dt;const cbs=[...window.testRafs.values()];window.testRafs.clear();for(const cb of cbs)cb(window.testNow)};
+// The synthetic RAF/performance clock does not drive document.timeline.
+// Anchor ORIGINAL native WAAPI effects to their ORIGINAL Motion startTime;
+// CSS transitions use their creation time on this same controlled media clock.
+// Deliver the original completion callback once, since document.timeline is
+// frozen and would otherwise never dispatch finish/presence cleanup.
+const starts=new WeakMap(),finished=new WeakSet();
+window.driveNativeAnimations=()=>{
+ document.documentElement.getBoundingClientRect();
+ for(const a of document.getAnimations()){
+  if(a instanceof CSSAnimation)continue;
+  if(!starts.has(a)){
+   const start=a instanceof CSSTransition?window.testNow:a.startTime;
+   if(typeof start!=='number'||!Number.isFinite(start))throw Error('Unbound original native animation startTime');
+   starts.set(a,start);
+  }
+  const elapsed=Math.max(0,window.testNow-starts.get(a));a.pause();a.currentTime=elapsed;
+  const end=a.effect.getComputedTiming().endTime;
+  if(elapsed>=end&&!finished.has(a)){
+   finished.add(a);const callback=a.onfinish;a.onfinish=null;a.finish();
+   if(callback)callback.call(a,new Event('finish'));
+  }
+ }
+};
+</script><script type="module" src="/pendolo-public-stage.tsx"></script></body></html>

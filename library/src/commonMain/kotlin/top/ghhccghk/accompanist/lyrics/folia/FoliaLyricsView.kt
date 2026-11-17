@@ -12,6 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.TextUnit
 import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import top.ghhccghk.accompanist.lyrics.folia.internal.model.normalize
@@ -28,6 +29,7 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.PartitaConf
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.partitaGraphemeCount
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.tilt.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.cadenza.*
+import top.ghhccghk.accompanist.lyrics.folia.internal.styles.pendolo.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.timeline.PrimaryEpoch
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.GlowBudget
 import top.ghhccghk.accompanist.lyrics.folia.internal.waiting.*
@@ -102,12 +104,49 @@ fun FoliaLyricsView(
         // Upstream classic uses the full viewport for 6vw, then a centred 70vh
         // stage with p-8. Subtitles are an overlay and must not move the main line.
         val heightBudget = with(LocalDensity.current) { classicHeightBudget(maxHeight.toPx(), density).toDp() }
-        val mainStyle = typography.main ?: typography.secondary.copy(
+        val responsiveMain = typography.secondary.copy(
             fontSize = (if(style is FoliaStyle.Partita)
                 (maxWidth.value*.055f).coerceIn(40f,72f)*typography.scale
                 else (maxWidth.value * .06f).coerceIn(36f, 72f) * typography.scale).sp, fontWeight = FontWeight.Bold)
+        // A caller can supply only a font family/weight for a theme. Resolve
+        // its missing size before switching to classic/Partita text preparation.
+        val mainStyle=typography.main?.let { if(it.fontSize==TextUnit.Unspecified)it.copy(fontSize=responsiveMain.fontSize)else it }?:responsiveMain
         val main = selection.primary?.line?.let(document.lines::get)
-        if(style is FoliaStyle.Classic) {
+        if(style is FoliaStyle.Pendolo) {
+            val tuning=style.tuning
+            val core=remember(document,tuning.chorusLineIndices){pendoloCoreLines(document,tuning.chorusLineIndices)}
+            val lines=remember(core){core.map{it.stage}}
+            val mode=when {
+                options.showTranslation && options.showPhonetic->PendoloSubtitleMode.BOTH
+                options.showTranslation->PendoloSubtitleMode.TRANSLATION
+                options.showPhonetic->PendoloSubtitleMode.ROMANIZATION
+                else->PendoloSubtitleMode.NONE
+            }
+            val intensity=when(options.animationIntensity){
+                FoliaAnimationIntensity.Calm->PendoloIntensity.CALM
+                FoliaAnimationIntensity.Normal->PendoloIntensity.NORMAL
+                FoliaAnimationIntensity.Chaotic->PendoloIntensity.CHAOTIC
+            }
+            if(core.isEmpty()) BasicText("暂无可显示歌词",style=mainStyle.copy(color=colors.secondary))
+            else PendoloPlaybackWheel(lines,{(currentPlayback().positionMillis-options.offsetMillis)/1000.0},
+                typography.main?:typography.secondary.copy(fontWeight=FontWeight.Bold),Modifier.fillMaxSize(),intensity,
+                reducedMotion=options.reducedMotion,mode=mode,wordColors=tuning.wordColors,
+                palette=PendoloPalette(colors.text,colors.secondary,colors.active),
+                typeScale=PendoloTypeScale(tuning.lyricsFontScale.toDouble()*typography.scale,
+                    tuning.subtitleFontScale.toDouble()*typography.scale),subtitleStyle=typography.subtitle,
+                glowEnabled=options.quality!=FoliaQuality.Minimal,
+                onClick={onLineClicked(core[it].source)},onLongPress={onLinePressed(core[it].source)},
+                onRows={rows->
+                    unitCount=rows.filter{it.item.active}.sumOf{it.main.rows.sumOf{row->row.graphemeEnd-row.graphemeStart}}
+                    quality=if(unitCount==0)FoliaQuality.Minimal else options.quality
+                })
+            waiting?.let{gap->Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center){
+                WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
+                    {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
+                    Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
+                    defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
+            }}
+        } else if(style is FoliaStyle.Classic) {
         val tuning = style.tuning
         ClassicStage(Modifier.fillMaxSize()) {
                 selection.exiting.forEach { epoch -> key(epoch) {
@@ -214,7 +253,7 @@ fun FoliaLyricsView(
                 }
             }
         }
-        ClassicSubtitles(subtitles,document.lines,playback,typography,colors,options,maxWidth,
+        if(style !is FoliaStyle.Pendolo) ClassicSubtitles(subtitles,document.lines,playback,typography,colors,options,maxWidth,
             selection.primary?.enterUs?:subtitles.line?.let {document.lines[it].startUs},
             Modifier.align(Alignment.BottomCenter).padding(bottom=112.dp),partita=style is FoliaStyle.Partita) {
             selection.secondary.forEach { secondary ->

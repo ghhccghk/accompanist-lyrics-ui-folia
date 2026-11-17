@@ -1,27 +1,36 @@
 # 后续实施清单 — 2026-11-15
 
-## 唯一活动清单 — 2026-11-17
+## 唯一活动清单 — 2026-11-18
 
 | 主题 | 内部内核 | 公开校准预览 | 正式视觉验收 |
 | --- | --- | --- | --- |
 | Classic / Partita / Tilt / Cadenza | 已接入 | 可从 sample 选择 | 未完成，保留各自残差 |
-| Pendolo | core桥接、轮盘、扫描、字幕、副歌 | 未接入 | 未完成，密集tick/旋转/栅格差待校准 |
+| Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | 消息与动态presence舞台 | 未接入 | 压力布局差未解决 |
 | Fume | 文章/揭示/镜头实验 | 未接入 | 镜头残差未解决 |
 | Diorama | 待有界能力调查 | 无 | 未开始 |
 
-当前唯一下一项：Pendolo 绘制变换下的点击/长按命中，再接公共组件/sample。
-完成条件：反解hub旋转、文字反校正、行scale与副歌scale/位移；透明或未显示行不命中；
-回调保留原core对象/ref，offset由宿主媒体seek换算，不篡改来源对象。
+当前唯一下一项：Cappella真实core桥接与来源/agent契约核对。
+完成条件：保留原对象/ref、source/render时间、显示EGC和内部原片段时钟；
+缺agent使用原版已实现的seed fallback，不从alignment猜身份；真实core/原函数数值验证。
+再接公共组件/交互/sample，同时保留压力projection失败矩阵并继续定位。
 
 已完成（起点295d260）：
-- 正文/字幕独立缩放、源字号取整/行高、重排/避让/扫描/辉光尺寸贯通。
+- c59a70f 正文/字幕独立缩放、源字号取整/行高、重排/避让/扫描/辉光尺寸贯通。
   原轮盘16对/58行，字号和实际活动行断行全部一致；406数值字段，盒峰.010182px；
   MAE6.604243/峰10.092899，仍有栅格差。窄屏大字体原先少一行（64.125px）已修复，
   同矩阵MAE16.078982→6.604243；失败图/JSON及hyphen回归失败日志保留。
   原88扫描控制、24默认配色PNG不变；pause/随机seek/重挂/字号与尺寸恢复通过。
   Android APK/Desktop编译通过，未运行设备/真实窗口。证据verification/pendolo-typography-stage。
-  提交见本节下一次更新或git log（不预填哈希）。
+- Pendolo公共校准闭环：FoliaStyle.Pendolo、真实播放/演示入口/偏好、原对象点击/长按、
+  offset/切歌/切主题/重挂、独立字幕/Minimal辉光关闭。修复仅字体无字号切classic崩溃。
+  45真实源轮盘/core公共入口对图，1302字段，完整盒峰6.019072px，旋转隔离.231502px。
+  全非背景像素含低alpha光晕MAE6.137633/峰27.915080，局部64px最差/通道峰也留证。
+  不与旧>8阈值均值当改善比较。完整Pendolo与四个旧公开主题回归通过；sample选择/
+  偏好通过；Android APK/Desktop编译通过。未启动真窗口、未运行Android设备，不报性能。
+  当前可实际选择五主题；正式视觉验收仍未通过。证据docs/pendolo-preview.md及
+  verification/pendolo-public-stage；最后构建.work/pendolo-public-final.log。
+  本项提交哈希由git log取得（提交时不预填）。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

@@ -1436,3 +1436,16 @@ pretext0.0.9 `line-break.ts` segment/overflow behavior (MIT notice already retai
 in LICENSES/MIT-pretext-0.0.9.txt). Not a full pretext port: non-ASCII/idle keeps
 platform wrapping; whole-row shaping/prefix timing remain intact. No dependency
 on pretext at runtime. Evidence: verification/pendolo-typography-stage.
+
+### Public Pendolo integration (2026-11-18)
+Pinned cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only:
+`VisualizerPendolo.tsx` wheel/click source and `PendoloRotatingLine.tsx` →
+`PendoloWheelTarget.kt`, independent `PendoloHitTest.kt` inverse of drawn transforms,
+`FoliaLyricsView.kt` branch, `FoliaOptions.kt` config. Add original-core identity
+callbacks, custom accessibility actions, zero-alpha/empty-row input exclusion
+(user requirement; source CSS opacity0 alone can still receive pointer events),
+minimum-quality halo/cache suppression, source-independent main/subtitle styles.
+SampleSession/LyricThemeControls/SettingsStore select/persist actual theme for both
+local playback and demo. Explicit chorus/keywords only; no inferred beats or
+accompaniment-to-chorus conversion. See docs/pendolo-preview.md for adaptation and
+remaining differences. Real-core/full-source evidence: verification/pendolo-public-stage.

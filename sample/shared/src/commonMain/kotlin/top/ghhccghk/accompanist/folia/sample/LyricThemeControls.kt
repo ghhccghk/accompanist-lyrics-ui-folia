@@ -24,6 +24,16 @@ internal fun LyricThemeControls(session: SampleSession) {
     TextButton({session.lyricTheme=SampleLyricTheme.Cadenza}) {
         Text("心象${if(session.lyricTheme==SampleLyricTheme.Cadenza)" ✓" else ""}")
     }
+    TextButton({session.lyricTheme=SampleLyricTheme.Pendolo}) {
+        Text("时计${if(session.lyricTheme==SampleLyricTheme.Pendolo)" ✓" else ""}")
+    }
+    if(session.lyricTheme==SampleLyricTheme.Pendolo) {
+        Text("时计：移植校准预览。密集跳步、轮盘旋转与文字辉光仍有差异。",style=MaterialTheme.typography.bodySmall)
+        Text("正文字号倍率 ${session.pendoloTuning.lyricsFontScale}")
+        Slider(session.pendoloTuning.lyricsFontScale,{session.pendoloTuning=session.pendoloTuning.copy(lyricsFontScale=it)},valueRange=.5f..2f)
+        Text("字幕字号倍率 ${session.pendoloTuning.subtitleFontScale}")
+        Slider(session.pendoloTuning.subtitleFontScale,{session.pendoloTuning=session.pendoloTuning.copy(subtitleFontScale=it)},valueRange=.5f..2f)
+    }
     if(session.lyricTheme==SampleLyricTheme.Cadenza) {
         Text("心象：移植校准预览。原版刷新率响应、CJK 字形及辉光栅格仍有差异。",style=MaterialTheme.typography.bodySmall)
         Text("主题字号倍率 ${session.cadenzaTuning.fontScale}")

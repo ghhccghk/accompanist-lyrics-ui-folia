@@ -19,7 +19,8 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
     val partitaTuning: PartitaTuning = PartitaTuning(),
     val renderResolution: RenderResolution = RenderResolution.Full,
     val tiltTuning: TiltTuning = TiltTuning(),
-    val cadenzaTuning:CadenzaTuning=CadenzaTuning()) {
+    val cadenzaTuning:CadenzaTuning=CadenzaTuning(),
+    val pendoloTuning:PendoloTuning=PendoloTuning()) {
     fun encode(): String = listOf("version=1", "translation=${options.showTranslation}",
         "phonetic=${options.showPhonetic}", "next=${options.showNextLine}", "motion=${options.reducedMotion}",
         "quality=${options.quality}", "offset=${options.offsetMillis}", "rotation=${tuning.enableWordRotation}",
@@ -30,6 +31,11 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
         "partitaOverlap=${partitaTuning.avoidOverlap}","renderResolution=$renderResolution",
         "tiltSplit=${tiltTuning.splitProbability}","tiltProbability=${tiltTuning.tiltStyleProbability}",
         "tiltColors=${tiltTuning.colorScheme}","cadenzaFont=${cadenzaTuning.fontScale}",
+        "pendoloLyricsFont=${pendoloTuning.lyricsFontScale}","pendoloSubtitleFont=${pendoloTuning.subtitleFontScale}",
+        "pendoloChorus=${pendoloTuning.chorusLineIndices.sorted().joinToString(",")}",
+        "pendoloWords=${pendoloTuning.wordColors.joinToString("|"){entry->
+            entry.word.map{it.code.toString(16).padStart(4,'0')}.joinToString("")+"~"+entry.color.toArgb().toUInt().toString(16)
+        }}",
         "cadenzaWidth=${cadenzaTuning.widthRatio}","cadenzaGlow=${cadenzaTuning.glowIntensity}",
         "cadenzaMotion=${cadenzaTuning.motionAmount}","cadenzaChorus=${cadenzaTuning.chorusLineIndices.sorted().joinToString(",")}",
         "cadenzaWords=${cadenzaTuning.wordColors.joinToString("|"){entry->
@@ -67,16 +73,25 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
                         val chars=parts[0].chunked(4).map{it.toIntOrNull(16)?:return@mapNotNull null}
                         val color=parts[1].toUIntOrNull(16)?:return@mapNotNull null
                         FoliaWordColor(chars.map{it.toChar()}.joinToString(""),Color(color.toInt()))
+                    }),
+                PendoloTuning(number("pendoloLyricsFont",1f,.5f..2f),number("pendoloSubtitleFont",1f,.5f..2f),
+                    fields["pendoloChorus"].orEmpty().split(',').mapNotNull{it.toIntOrNull()?.takeIf{n->n>=0}}.toSet(),
+                    fields["pendoloWords"].orEmpty().split('|').mapNotNull{entry->
+                        val parts=entry.split('~');if(parts.size!=2||parts[0].length%4!=0)return@mapNotNull null
+                        val chars=parts[0].chunked(4).map{it.toIntOrNull(16)?:return@mapNotNull null}
+                        val color=parts[1].toUIntOrNull(16)?:return@mapNotNull null
+                        FoliaWordColor(chars.map{it.toChar()}.joinToString(""),Color(color.toInt()))
                     }))
         }
     }
 }
 
-fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning, renderResolution, tiltTuning,cadenzaTuning)
+fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning, renderResolution, tiltTuning,cadenzaTuning,pendoloTuning)
 fun SampleSession.applySettings(value: SampleSettings) {
     options = value.options; tuning = value.tuning; fontScale = value.fontScale
     lyricTheme=value.lyricTheme;partitaTuning=value.partitaTuning
     renderResolution=value.renderResolution
     tiltTuning=value.tiltTuning
     cadenzaTuning=value.cadenzaTuning
+    pendoloTuning=value.pendoloTuning
 }

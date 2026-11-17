@@ -4,6 +4,11 @@
 package top.ghhccghk.accompanist.lyrics.folia.internal.styles.pendolo
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
+import androidx.compose.foundation.gestures.waitForUpOrCancellation
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.semantics.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -64,7 +69,10 @@ internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Dou
     palette: PendoloPalette = PendoloPalette(),
     typeScale: PendoloTypeScale = PendoloTypeScale(), subtitleStyle: TextStyle = style,
     haloOnly: Boolean = false,
-    wheelRotationOverride: (() -> Double)? = null, onRows: (List<PendoloStageRow>) -> Unit = {}) {
+    wheelRotationOverride: (() -> Double)? = null,
+    glowEnabled:Boolean = true,
+    onClick:((Int)->Unit)? = null, onLongPress:((Int)->Unit)? = null,
+    onRows: (List<PendoloStageRow>) -> Unit = {}) {
     val clock by rememberUpdatedState(time)
     val track = remember(lines,intensity) { PendoloTickTrack(lines.map { PendoloLineTime(it.lyric.start,it.lyric.end,it.renderEnd) },intensity) }
     val target by remember(track) { derivedStateOf { track.at(clock()).target } }
@@ -88,7 +96,7 @@ internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Dou
         val limits by remember(widthTrack,reducedMotion) { derivedStateOf { widthTrack.at(clock(),reducedMotion).mapValues { (_,v)->floor(v*64)/64 } } }
         PendoloWheelTarget(lines, { clock() }, target, style, Modifier.fillMaxSize(), mode,
             wheelRotation = wheelRotationOverride ?: { track.at(clock(),reducedMotion).wheelRotation }, idleMainLimits=limits,
-            reservedHeights=heights,wordColors=wordColors,palette=palette,typeScale=typeScale,subtitleStyle=subtitleStyle,chorusTrack=chorusTrack,intensity=intensity,reducedMotion=reducedMotion,haloOnly=haloOnly,onRows = onRows)
+            reservedHeights=heights,wordColors=wordColors,palette=palette,typeScale=typeScale,subtitleStyle=subtitleStyle,chorusTrack=chorusTrack,intensity=intensity,reducedMotion=reducedMotion,haloOnly=haloOnly,glowEnabled=glowEnabled,onClick=onClick,onLongPress=onLongPress,onRows = onRows)
     }
 }
 
@@ -159,7 +167,8 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
     palette: PendoloPalette = PendoloPalette(),
     typeScale: PendoloTypeScale = PendoloTypeScale(), subtitleStyle: TextStyle = style,
     chorusTrack: PendoloChorusTrack? = null, intensity:PendoloIntensity = PendoloIntensity.NORMAL,
-    reducedMotion:Boolean = false, haloOnly:Boolean = false,
+    reducedMotion:Boolean = false, haloOnly:Boolean = false, glowEnabled:Boolean = true,
+    onClick:((Int)->Unit)? = null, onLongPress:((Int)->Unit)? = null,
     onRows: (List<PendoloStageRow>) -> Unit = {}) {
     val density = LocalDensity.current; val resolver = LocalFontFamilyResolver.current
     val measurer = rememberTextMeasurer(cacheSize = 64); val clock by rememberUpdatedState(time)
@@ -173,7 +182,7 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
         val presentations=remember(rows,lines,intensity) { rows.associate { row ->
             row.item.index to pendoloChorus(lines[row.item.index].isChorus,row.item.active,intensity)
         } }
-        val chorusLayers=rows.filter{presentations.getValue(it.item.index).active}.associate { row ->
+        val chorusLayers=rows.filter{glowEnabled && presentations.getValue(it.item.index).active}.associate { row ->
             row.item.index to key(row.item.index) { row.main.rows.map{rememberPendoloChorusLayer()} to rememberClassicLayer() }
         }
         val inks=remember(rows,lines,wordColors,presentations,palette) {
@@ -183,7 +192,43 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
             }
         }
         SideEffect { onRows(rows) }
-        Canvas(Modifier.fillMaxSize()) {
+        val click by rememberUpdatedState(onClick);val longPress by rememberUpdatedState(onLongPress)
+        val latestRows by rememberUpdatedState(rows)
+        val latestChorus by rememberUpdatedState(chorusTrack)
+        val latestReduced by rememberUpdatedState(reducedMotion)
+        val hub=Offset(0f,maxHeight.value/2)
+        val input=if(onClick==null && onLongPress==null)Modifier else Modifier.pointerInput(lines,hub,density) {
+            awaitEachGesture {
+                val down=awaitFirstDown(requireUnconsumed=false)
+                fun hit(p:Offset)=pendoloHitTest(latestRows,p/density.density,rotation(),hub) { i ->
+                    latestChorus?.at(i,clock(),latestReduced)?.scale ?: 1.0
+                }
+                val index=hit(down.position)?:return@awaitEachGesture
+                down.consume()
+                // Pair distinguishes cancellation from an actual long-press timeout.
+                val outcome=withTimeoutOrNull(viewConfiguration.longPressTimeoutMillis) {
+                    true to waitForUpOrCancellation()
+                }
+                if(outcome==null){
+                    if(hit(down.position)==index)longPress?.invoke(index)
+                    do { val event=awaitPointerEvent();event.changes.forEach{it.consume()} }while(event.changes.any{it.pressed})
+                } else outcome.second?.let { up ->
+                    if(hit(up.position)==index)click?.invoke(index)
+                    up.consume()
+                }
+            }
+        }
+        Canvas(Modifier.fillMaxSize().then(input).semantics {
+            contentDescription=rows.filter { pendoloRotatingOpacity(it.item.angleDeg,rotation(),it.item.alpha)>0 }
+                .joinToString("\n"){lines[it.item.index].lyric.text}
+            customActions=rows.filter{pendoloRotatingOpacity(it.item.angleDeg,rotation(),it.item.alpha)>0}.flatMap { row ->
+                val index=row.item.index;val label=lines[index].lyric.text
+                buildList {
+                    if(onClick!=null)add(CustomAccessibilityAction(label){click?.invoke(index);true})
+                    if(onLongPress!=null)add(CustomAccessibilityAction("长按 $label"){longPress?.invoke(index);true})
+                }
+            }
+        }) {
             val d = density.density; val t = clock(); val wheel = rotation()
             rotate(wheel.toFloat(), Offset(0f, size.height * .5f)) {
                 for (row in rows) {

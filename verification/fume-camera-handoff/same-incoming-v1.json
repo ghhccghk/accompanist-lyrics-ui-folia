@@ -1,0 +1,334 @@
+{
+  "version": 1,
+  "production": "d810975 unchanged continuous model",
+  "scope": "Same original incoming nine-state, retarget, original article/targets. No earlier song error. This diagnoses the old continuous adaptation; it is NOT visual acceptance or a successful behavior repair.",
+  "inputs": {
+    "articles.tsv": "b711f39698d95d233588d8cbf50a7625507d9ec502f2d841401a5fbc1ddc8d8b",
+    "blocks.tsv": "8e5b25c069108c77d794e6eb9ba4925436b1a4be4591f100fc38c626dfa611b8",
+    "rows.tsv": "d4f151202393f68bad349d81f5f71c4ee04ecaf808a7f6a2415a57e192931e1b",
+    "seeds.tsv": "14d754f6d64909e3ac92b9628c751e1b7aec5851b8bc37c4bf2455d15d33888a",
+    "source-trace.json": "9c79eeba4c8c7501a69dec3117cae643574cc80b37221a455764685c4bfe8186",
+    "steps.tsv": "bd0cf593d0c7c452233bfb7aa8d70ecbcf74d15ea8746098d940239fbc20dec8"
+  },
+  "nativeSha256": "95989d14a5b1fd966767341871f2b66e5a2dd3e349ba31ea5ee407e46f673acc",
+  "groups": [
+    {
+      "case": "380-false-3",
+      "rate": "mounted60",
+      "samples": 15,
+      "screenPeak": 0.33677408814990967,
+      "scalePeak": 0.00027334081110674813,
+      "focusPeak": 46.554987073154614,
+      "branchMismatches": []
+    },
+    {
+      "case": "380-false-3",
+      "rate": "144",
+      "samples": 36,
+      "screenPeak": 15.157569320062745,
+      "scalePeak": 0.009436033670712662,
+      "focusPeak": 48.74056128885913,
+      "branchMismatches": []
+    },
+    {
+      "case": "380-false-3",
+      "rate": "irregular",
+      "samples": 14,
+      "screenPeak": 14.269480658962864,
+      "scalePeak": 0.008741365854374239,
+      "focusPeak": 48.7279765383952,
+      "branchMismatches": []
+    },
+    {
+      "case": "380-false-5.4",
+      "rate": "mounted60",
+      "samples": 15,
+      "screenPeak": 8.313237577746193,
+      "scalePeak": 0.00010939847137914072,
+      "focusPeak": 61.47517201610205,
+      "branchMismatches": [
+        {
+          "time": 5.516666666666667,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "380-false-5.4",
+      "rate": "144",
+      "samples": 36,
+      "screenPeak": 19.1129188229037,
+      "scalePeak": 0.00019723616341082995,
+      "focusPeak": 69.24454192172459,
+      "branchMismatches": [
+        {
+          "time": 5.518055555555556,
+          "current": "bridge",
+          "anticipated": "spring"
+        },
+        {
+          "time": 5.525,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "380-false-5.4",
+      "rate": "irregular",
+      "samples": 14,
+      "screenPeak": 18.456646050357715,
+      "scalePeak": 0.00013332466831550427,
+      "focusPeak": 62.952859389131696,
+      "branchMismatches": []
+    },
+    {
+      "case": "380-true-3",
+      "rate": "mounted60",
+      "samples": 15,
+      "screenPeak": 0.6918212808252423,
+      "scalePeak": 0.0002712463804490639,
+      "focusPeak": 46.234272770396515,
+      "branchMismatches": []
+    },
+    {
+      "case": "380-true-3",
+      "rate": "144",
+      "samples": 36,
+      "screenPeak": 15.058579587600654,
+      "scalePeak": 0.009443874183458378,
+      "focusPeak": 48.431135077149065,
+      "branchMismatches": []
+    },
+    {
+      "case": "380-true-3",
+      "rate": "irregular",
+      "samples": 14,
+      "screenPeak": 14.18198101247229,
+      "scalePeak": 0.008725739927241127,
+      "focusPeak": 48.4185184163844,
+      "branchMismatches": []
+    },
+    {
+      "case": "380-true-5.4",
+      "rate": "mounted60",
+      "samples": 15,
+      "screenPeak": 8.26743019644591,
+      "scalePeak": 0.00010939845053470343,
+      "focusPeak": 60.00151721921153,
+      "branchMismatches": [
+        {
+          "time": 5.516666666666667,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "380-true-5.4",
+      "rate": "144",
+      "samples": 36,
+      "screenPeak": 18.648156379090914,
+      "scalePeak": 0.0001972360483424307,
+      "focusPeak": 67.44943118113724,
+      "branchMismatches": [
+        {
+          "time": 5.518055555555556,
+          "current": "bridge",
+          "anticipated": "spring"
+        },
+        {
+          "time": 5.525,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "380-true-5.4",
+      "rate": "irregular",
+      "samples": 14,
+      "screenPeak": 18.022230455832787,
+      "scalePeak": 0.00013332464445370285,
+      "focusPeak": 61.41971691676292,
+      "branchMismatches": []
+    },
+    {
+      "case": "800-false-3",
+      "rate": "mounted60",
+      "samples": 15,
+      "screenPeak": 17.202543286938468,
+      "scalePeak": 0.012085443597406709,
+      "focusPeak": 146.4166498622047,
+      "branchMismatches": [
+        {
+          "time": 3.1166666666666667,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "800-false-3",
+      "rate": "144",
+      "samples": 36,
+      "screenPeak": 34.23297695782233,
+      "scalePeak": 0.022577494369868445,
+      "focusPeak": 164.2680774602935,
+      "branchMismatches": [
+        {
+          "time": 3.1180555555555554,
+          "current": "bridge",
+          "anticipated": "spring"
+        },
+        {
+          "time": 3.125,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "800-false-3",
+      "rate": "irregular",
+      "samples": 14,
+      "screenPeak": 21.520721340072885,
+      "scalePeak": 0.013478446304346248,
+      "focusPeak": 149.8292749579261,
+      "branchMismatches": []
+    },
+    {
+      "case": "800-false-5.4",
+      "rate": "mounted60",
+      "samples": 15,
+      "screenPeak": 8.218209735917512,
+      "scalePeak": 0.0001179414542302748,
+      "focusPeak": 56.65536856087659,
+      "branchMismatches": [
+        {
+          "time": 5.516666666666667,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "800-false-5.4",
+      "rate": "144",
+      "samples": 36,
+      "screenPeak": 19.02145707091706,
+      "scalePeak": 0.00021263880877597785,
+      "focusPeak": 63.9041779410698,
+      "branchMismatches": [
+        {
+          "time": 5.518055555555556,
+          "current": "bridge",
+          "anticipated": "spring"
+        },
+        {
+          "time": 5.525,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "800-false-5.4",
+      "rate": "irregular",
+      "samples": 14,
+      "screenPeak": 18.403261077980563,
+      "scalePeak": 0.0001437362499800976,
+      "focusPeak": 58.03176682273953,
+      "branchMismatches": []
+    },
+    {
+      "case": "800-true-3",
+      "rate": "mounted60",
+      "samples": 15,
+      "screenPeak": 17.097709855459605,
+      "scalePeak": 0.012085443609705537,
+      "focusPeak": 144.05750679634082,
+      "branchMismatches": [
+        {
+          "time": 3.1166666666666667,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "800-true-3",
+      "rate": "144",
+      "samples": 36,
+      "screenPeak": 33.700748439670804,
+      "scalePeak": 0.022577494373380524,
+      "focusPeak": 161.42784638162695,
+      "branchMismatches": [
+        {
+          "time": 3.1180555555555554,
+          "current": "bridge",
+          "anticipated": "spring"
+        },
+        {
+          "time": 3.125,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "800-true-3",
+      "rate": "irregular",
+      "samples": 14,
+      "screenPeak": 21.484469736270725,
+      "scalePeak": 0.013478446300940528,
+      "focusPeak": 147.38139013492375,
+      "branchMismatches": []
+    },
+    {
+      "case": "800-true-5.4",
+      "rate": "mounted60",
+      "samples": 15,
+      "screenPeak": 8.164317382942773,
+      "scalePeak": 0.00011794145456356375,
+      "focusPeak": 55.05273221640564,
+      "branchMismatches": [
+        {
+          "time": 5.516666666666667,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "800-true-5.4",
+      "rate": "144",
+      "samples": 36,
+      "screenPeak": 18.470657647379184,
+      "scalePeak": 0.00021263870752186165,
+      "focusPeak": 61.95438898484222,
+      "branchMismatches": [
+        {
+          "time": 5.518055555555556,
+          "current": "bridge",
+          "anticipated": "spring"
+        },
+        {
+          "time": 5.525,
+          "current": "bridge",
+          "anticipated": "spring"
+        }
+      ]
+    },
+    {
+      "case": "800-true-5.4",
+      "rate": "irregular",
+      "samples": 14,
+      "screenPeak": 17.89578267464304,
+      "scalePeak": 0.00014373625011776525,
+      "focusPeak": 56.36480804019069,
+      "branchMismatches": []
+    }
+  ]
+}

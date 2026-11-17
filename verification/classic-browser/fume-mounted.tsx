@@ -26,7 +26,7 @@ flushSync(()=>render(-1));
  const current=lines.findLastIndex(l=>t>=l.startTime&&t<=l.renderHints!.renderEndTime);
  flushSync(()=>{media.set(t);if(current!==lastCurrent){render(current);lastCurrent=current}});
 };
-(window as any).readFume=()=>{
+function originalScene(){
  const canvas=document.querySelector('canvas')!;let fiber=(canvas as any)[Object.keys(canvas).find(k=>k.startsWith('__reactFiber$'))!];
  while(fiber&&fiber.type?.name!=='VisualizerFume')fiber=fiber.return;
  if(!fiber)throw Error('Original VisualizerFume fiber not found');
@@ -35,6 +35,12 @@ flushSync(()=>render(-1));
   if(value?.cameraState&&value?.getLineIndex)driver=value;if(value?.article&&value?.overviewCamera)scene=value;
  }
  if(!driver||!scene)throw Error('Original scene/driver memo not ready');
+ return {canvas,driver,scene};
+}
+// Passive serialization only; no source camera, layout or clock mutation.
+(window as any).exportFumeScene=()=>{const {scene}=originalScene();return JSON.parse(JSON.stringify(scene.article))};
+(window as any).readFume=()=>{
+ const {canvas,driver,scene}=originalScene();
  const parent=canvas.parentElement!;const rect=parent.getBoundingClientRect();
  return {camera:{...driver.cameraState.camera},retarget:{...driver.cameraState.retarget},parentTransform:parent.style.transform,
   parentScale:rect.width/innerWidth,canvasSize:[canvas.width,canvas.height],blocks:scene.article.blocks.length,firstStart:scene.article.firstRenderableStartTime,

@@ -1,17 +1,6 @@
-import fs from'node:fs';import path from'node:path';import{createRequire}from'node:module';import{fileURLToPath}from'node:url';
-import{createServer}from'vite';import{chromium}from'playwright';import{checkReference,root,revision,referenceMotionVersions}from'./reference.mjs';
-checkReference();const require=createRequire(import.meta.url),here=path.dirname(fileURLToPath(import.meta.url));
-const server=await createServer({configFile:false,root:here,resolve:{alias:[
- {find:/^react$/,replacement:require.resolve('react')},{find:/^react-dom\/client$/,replacement:require.resolve('react-dom/client')},
- {find:/^react\/jsx-dev-runtime$/,replacement:require.resolve('react/jsx-dev-runtime')},
- {find:/^react\/jsx-runtime$/,replacement:require.resolve('react/jsx-runtime')},
- {find:/^react-dom$/,replacement:require.resolve('react-dom')},{find:/^framer-motion$/,replacement:require.resolve('framer-motion')},
- {find:/^@chenglou\/pretext$/,replacement:require.resolve('@chenglou/pretext')},
- {find:'@chenglou/pretext/rich-inline',replacement:require.resolve('@chenglou/pretext/rich-inline')},
- {find:'lucide-react',replacement:path.join(here,'reference-icons.tsx')},
- {find:'../VisualizerShell',replacement:path.join(here,'surfaces.tsx')},{find:'../VisualizerSubtitleOverlay',replacement:path.join(here,'no-subtitle.tsx')},
- {find:'../../../stores/useVisualizerSettingsStore',replacement:path.join(here,'reference-settings.ts')}]},
- optimizeDeps:{noDiscovery:true,entries:[],include:['react','react-dom','react-dom/client','react/jsx-runtime','react/jsx-dev-runtime','framer-motion']},cacheDir:path.join(root,'.work/fume-mounted-vite'),server:{host:'127.0.0.1',port:4175,strictPort:true,hmr:false,fs:{allow:[root]}}});
+import fs from'node:fs';import path from'node:path';
+import{createFumeMountedServer}from'./fume-mounted-server.mjs';import{chromium}from'playwright';import{root,revision,referenceMotionVersions}from'./reference.mjs';
+const server=await createFumeMountedServer();
 let browser;try{
  await server.listen();browser=await chromium.launch({headless:true});const out=path.join(root,'build/verification/fume-mounted-browser');fs.mkdirSync(out,{recursive:true});
  const times=[0,.69,.7,.717,.75,.8,.9,1,1.15,1.3,2.6,3,3.15,4.2,5.4,5.6,6.3,7.6,8.3,9.5,10,10.7,11.5];

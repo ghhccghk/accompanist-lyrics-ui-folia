@@ -10,10 +10,18 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core分组/内部时钟、完整文字透视、三层合成、13镜头目标隔离核对 | 无 | 完整rig/朝向/切曲、深度/栅格/设备尚未验收 |
 
-当前唯一下一项：用相同原incoming九维状态建立Fume短bridge→spring局部交接对照。
-完成条件：固定原retarget/几何/目标，记录3.13附近最后bridge/首spring及5.4s对照组，
-拆开forcing/代数focus/限速顺序；有依据修复后才扩大到同92mounted矩阵。
-两种单因素候选均失败且撤回，禁止再只改focus或midpoint分支/改预期/固定延迟。
+当前唯一下一项：Cappella密集240帧精确Motion锁复核，然后定位影响可读性的最大布局残差。
+完成条件：先保留旧图/表/报告，专用实例复采同矩阵，记录实际版本/条件/差异；
+用原被动布局事件定位一项明确算法或事件错误，必要修复后同矩阵验证并提交。
+
+Fume同原incoming九维局部交接v1已完成（本轮提交见git log）。8组/520原步骤，
+目标峰1.14e-13/单步算子峰2.28e-13；连续模型提前分支与有限步clamp位移问题已分离，
+800/smooth3.116667原bridge但当前anticipated spring；同初态dx14.207132。
+5.4s控制组仍有8.164..8.314px峰，旧整曲误差存在相互抵消。生产模型没有修复，
+未重采92图、未改旧适配fixture；见verification/fume-camera-handoff同初态节及v1原始记录。
+下一条有界相机假设为冻结原首spring目标/系数，跨clamp阈值比较完整(x,v,focus)映射，
+先解释非可逆限幅位移再推导分段媒体算子，不再猜focus-only/midpoint-only/固定延迟。
+此前“同九维初态交接对照”为历史下一项，实验已完成而行为修复仍未完成。
 镜台有界文字/透视/材质/镜头目标探针已完成；后续完整rig/回正/切曲、weighted picker、
 near/depth/fog、Android中线、overhang/混合bidi与设备仍未完成，不开放Diorama。
 Fume短bridge/总览仍未修复：mounted原版与当前连续模型在3.15s、10s差最大；

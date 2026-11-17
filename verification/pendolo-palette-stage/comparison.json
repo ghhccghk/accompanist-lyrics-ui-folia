@@ -1,0 +1,379 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "DPR": 1,
+    "frames": 24,
+    "rows": 122,
+    "height": 600,
+    "scope": "Actual original useSpring/angle declarations and text-wheel JSX remain mounted. Controlled performance/RAF60Hz plus exact probes,one browser task per frame; original WAAPI/CSS transitions media-anchored at their start/creation times. Source target selection only rerenders on changes. Smart-beat zero; explicit alternating chorus and keyword palette; no audio/gears. Native uses semantic media history and exact derivative; differences are reported, not accepted as parity."
+  },
+  "status": "Actual original alternate palette vs parameterized native wheel; not theme acceptance or a claim of improved raster parity.",
+  "pendolo-palette-stage-kotlin": {
+    "frames": [
+      {
+        "file": "arabic-800-normal-spaced-0.png",
+        "foreground_mae": 7.563326910725754,
+        "full_mae": 0.09088194444444445
+      },
+      {
+        "file": "arabic-800-normal-spaced-13000.png",
+        "foreground_mae": 3.0692887394120576,
+        "full_mae": 0.11658541666666666
+      },
+      {
+        "file": "arabic-800-normal-spaced-24000.png",
+        "foreground_mae": 2.558769778290771,
+        "full_mae": 0.12183680555555555
+      },
+      {
+        "file": "arabic-800-normal-spaced-28001.png",
+        "foreground_mae": 11.448111277785355,
+        "full_mae": 0.1851076388888889
+      },
+      {
+        "file": "arabic-800-normal-spaced-31000.png",
+        "foreground_mae": 10.231747738063245,
+        "full_mae": 0.16957291666666666
+      },
+      {
+        "file": "arabic-800-normal-spaced-48000.png",
+        "foreground_mae": 9.160266901674431,
+        "full_mae": 0.15911111111111112
+      },
+      {
+        "file": "arabic-800-normal-spaced-7500.png",
+        "foreground_mae": 8.158884828799566,
+        "full_mae": 0.2625354166666667
+      },
+      {
+        "file": "arabic-800-normal-spaced-9000.png",
+        "foreground_mae": 6.497706691755851,
+        "full_mae": 0.2837986111111111
+      },
+      {
+        "file": "cjk-800-normal-spaced-0.png",
+        "foreground_mae": 8.535797233161668,
+        "full_mae": 0.18921736111111112
+      },
+      {
+        "file": "cjk-800-normal-spaced-13000.png",
+        "foreground_mae": 3.4106347010911326,
+        "full_mae": 0.17
+      },
+      {
+        "file": "cjk-800-normal-spaced-24000.png",
+        "foreground_mae": 2.6111771195790547,
+        "full_mae": 0.17379791666666666
+      },
+      {
+        "file": "cjk-800-normal-spaced-28001.png",
+        "foreground_mae": 11.459212681892648,
+        "full_mae": 0.3443645833333333
+      },
+      {
+        "file": "cjk-800-normal-spaced-31000.png",
+        "foreground_mae": 11.212704705271603,
+        "full_mae": 0.34531666666666666
+      },
+      {
+        "file": "cjk-800-normal-spaced-48000.png",
+        "foreground_mae": 10.66332475274353,
+        "full_mae": 0.33835902777777777
+      },
+      {
+        "file": "cjk-800-normal-spaced-7500.png",
+        "foreground_mae": 10.156675153666127,
+        "full_mae": 0.40886805555555555
+      },
+      {
+        "file": "cjk-800-normal-spaced-9000.png",
+        "foreground_mae": 8.15497574406713,
+        "full_mae": 0.4238777777777778
+      },
+      {
+        "file": "latin-380-normal-spaced-0.png",
+        "foreground_mae": 6.474338483395489,
+        "full_mae": 0.36100877192982456
+      },
+      {
+        "file": "latin-380-normal-spaced-13000.png",
+        "foreground_mae": 5.758121740617252,
+        "full_mae": 0.48482748538011694
+      },
+      {
+        "file": "latin-380-normal-spaced-24000.png",
+        "foreground_mae": 4.371999425039529,
+        "full_mae": 0.5277982456140351
+      },
+      {
+        "file": "latin-380-normal-spaced-28001.png",
+        "foreground_mae": 8.737185660781167,
+        "full_mae": 0.6387748538011696
+      },
+      {
+        "file": "latin-380-normal-spaced-31000.png",
+        "foreground_mae": 9.198940238873577,
+        "full_mae": 0.6719956140350877
+      },
+      {
+        "file": "latin-380-normal-spaced-48000.png",
+        "foreground_mae": 12.017226335601924,
+        "full_mae": 0.7285058479532164
+      },
+      {
+        "file": "latin-380-normal-spaced-7500.png",
+        "foreground_mae": 10.485316275764037,
+        "full_mae": 0.755703216374269
+      },
+      {
+        "file": "latin-380-normal-spaced-9000.png",
+        "foreground_mae": 8.778624072567725,
+        "full_mae": 0.7962266081871345
+      }
+    ],
+    "png_sha256": {
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-0.png": "4abc7aa0e9de08030da52535ad391a18532b7a4b3b7b22c1660c0d26ac112f2e",
+      "build/verification/pendolo-palette-stage-kotlin/arabic-800-normal-spaced-0.png": "ef4ba4366eb95c9c141f4e9fe5975ebdef2b117abd1da8ea96e5821c0cfff814",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-13000.png": "faa020db5efe519a9578d8ea5396fcf5a9ac8df8708ed3802e9a5d27a27cad71",
+      "build/verification/pendolo-palette-stage-kotlin/arabic-800-normal-spaced-13000.png": "d32e96749d5d3d29cd3bc70a23dd53f42c33a130acae3ac2ef2b035a699611e2",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-24000.png": "efe1eb742582ad750ab6afbd9342fc50d01f41b8d107ee07c389c414dacc94f5",
+      "build/verification/pendolo-palette-stage-kotlin/arabic-800-normal-spaced-24000.png": "126ca1119867bd3cf2584bb7804b435e3e95d53520e2292c85230ac394819931",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-28001.png": "f37d80f5c26b6c1041e02a59d045e3b6e1425d361c2a8e30a69ef7bbb5256708",
+      "build/verification/pendolo-palette-stage-kotlin/arabic-800-normal-spaced-28001.png": "faaecb432ac2935d2908a6cb292ed40c0363ef546cd13c0828a71b4c04e6a7a1",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-31000.png": "cbbebba3aecc1f984a3d4aa6fceeb99292ef688081988be74f7321ae68c6a4d4",
+      "build/verification/pendolo-palette-stage-kotlin/arabic-800-normal-spaced-31000.png": "ea3de449bec303bd379c04e3c620cf9a8a953c09344e010e6124dcb984010aa7",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-48000.png": "71bb0cd3b8ae190decf7d2f868e293f3f5804d9d4789b3e58c0f8b6be692ce12",
+      "build/verification/pendolo-palette-stage-kotlin/arabic-800-normal-spaced-48000.png": "3d7fd7523daeb89efa5c9f043b8c9002d9c45693dbe211df1087710118035735",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-7500.png": "215685724ac9e903963cabf43afd8eaf32bcfbd19825a32adfd8d118dcf1253f",
+      "build/verification/pendolo-palette-stage-kotlin/arabic-800-normal-spaced-7500.png": "f9b7e8db73ce8ed8bc962aaea5b3ea87e1a978bf9085637226d70d4697c13a9a",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-9000.png": "ae3bcf036ab5cec6940dc37f39ac99f5b70fee7967b204c3c18d790ad34f7e5f",
+      "build/verification/pendolo-palette-stage-kotlin/arabic-800-normal-spaced-9000.png": "7fa68ee7c85b746075d1a49325c1d680be23857698b2bef3559889757973e0b8",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-0.png": "96411dc0ff6b4ce82f8d6aac80bc0e06bab7d07488f1a1ca64158f2adc62ccd6",
+      "build/verification/pendolo-palette-stage-kotlin/cjk-800-normal-spaced-0.png": "de825205a700e42f00b9f6f7e05f8c6ad76e4715cf04d0fabdd81586aac61904",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-13000.png": "d9967940e1a3e7a3dc07c1d206bc24c6d125880e4f713032102c38b432c86d4d",
+      "build/verification/pendolo-palette-stage-kotlin/cjk-800-normal-spaced-13000.png": "3977e7b8050084844a96bf687fb624260f1f0e5dca3c6236c04b3d8be26f9050",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-24000.png": "a9bba561e140f42d4b5b413de43fba0a33a802ed949d39684e840f706160658d",
+      "build/verification/pendolo-palette-stage-kotlin/cjk-800-normal-spaced-24000.png": "538053e6a4698af0570dfc8fef0997ceae5cf3017581a172dd4efd5bcf6cdb30",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-28001.png": "48fbb8b0e565317c433cb07626c395f5761b3ba7da00bda67e595e7d42a0aea9",
+      "build/verification/pendolo-palette-stage-kotlin/cjk-800-normal-spaced-28001.png": "995b6e6a65a1c88064b5bdba2fcb3cabb0a7968cb18520959f3a66c65e9e2276",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-31000.png": "cdbb3ab6acc26101a1f7006a949e0cea8400a5ad7407b3aa8ded08e99a69c7d2",
+      "build/verification/pendolo-palette-stage-kotlin/cjk-800-normal-spaced-31000.png": "7c588b32dfba3015f724bd98224a450696e925c1c8b5708c9fc1d4a917735eb5",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-48000.png": "05d43c3e48cc6f4d949d88ed40581c1dd2bf94fd7bc0671c9bdeebed38428d74",
+      "build/verification/pendolo-palette-stage-kotlin/cjk-800-normal-spaced-48000.png": "9ebd5aa907b6c121102728a51d3ab08e8b17bab4be4ee1a7043194badd4e0315",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-7500.png": "491e59ce76dc2cdf16f876c4cedc0cbf956470530adf13ee24f290979ca98221",
+      "build/verification/pendolo-palette-stage-kotlin/cjk-800-normal-spaced-7500.png": "8cdc589d223eb878244faa9b00140365aac04b72da0a1b7e35888401494a33c4",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-9000.png": "75628fcfc74ad4719c3e6c3cfd18c6e1d4c7d99b32df7e26d587b8c76087382f",
+      "build/verification/pendolo-palette-stage-kotlin/cjk-800-normal-spaced-9000.png": "e5aa6875728a8a47f4bab9cfff88aba3a1cf70f7890c4cfd0bf09ea631265a5f",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-0.png": "cbc4d86fca18bd0da7af90c5b8e17aff9acbb4f153b5b334078b8ef50f01d771",
+      "build/verification/pendolo-palette-stage-kotlin/latin-380-normal-spaced-0.png": "afef51915192c3eb9bff403d530a66b386631ca2dd5004f413324f96efbeb344",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-13000.png": "2b9a11deb055eccfaf38610c7ed0dd407d352b608989ef7647ac67b6c826ada8",
+      "build/verification/pendolo-palette-stage-kotlin/latin-380-normal-spaced-13000.png": "b12ac87db7745a3cd274ee26a77dac23a71933e5e36b6506a3fc81f26d50643d",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-24000.png": "c0504ea9aeee499da6f809088b5f4a787807f1ed6abb15615c117406cceeb25d",
+      "build/verification/pendolo-palette-stage-kotlin/latin-380-normal-spaced-24000.png": "2d9e54c63a609d30f841ec8419c832f3e5f12f80e1c9e21e066fd7e402912d28",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-28001.png": "b6cc25f9ec7ea76755b768da6abfa63a027f0b330fa32ba17dddaf053a3f5b41",
+      "build/verification/pendolo-palette-stage-kotlin/latin-380-normal-spaced-28001.png": "444350b0844babaa4ccd028939bd3127718da7db1b98a2bec2180015de42a11c",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-31000.png": "5d7d87f24ea69ab0e3508bbea1af48cdefe2f2b4fb8d6f4f9cfb4118dc043c86",
+      "build/verification/pendolo-palette-stage-kotlin/latin-380-normal-spaced-31000.png": "894fbf8ea534aa77254be2d3342ff81cfa18ba4b191c16a9ab7ef2b0a0f53c18",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-48000.png": "d01bf95680dc35b6d4ac8ac6cfdf6d48fc1ea749f9c9331232a7ca5857c08cb7",
+      "build/verification/pendolo-palette-stage-kotlin/latin-380-normal-spaced-48000.png": "c2c0172c9eed608ffb724009e851029470f6a8b3a4de00c72f7b4b5f8dc25f32",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-7500.png": "c6ff45b7ac18d30464b0ca8fecac25046f8614c0df2f81dc66ae0a1e8dfa83ca",
+      "build/verification/pendolo-palette-stage-kotlin/latin-380-normal-spaced-7500.png": "091f88d5205ed5d30bfe298cd5719bb1ef7c120daa7b01fbbcbdbff499b09d6b",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-9000.png": "66687c8a1d2ba597b7fb5217aaf2054305011920c3c1e7375ff2941b0f38b696",
+      "build/verification/pendolo-palette-stage-kotlin/latin-380-normal-spaced-9000.png": "81b08b03f986ca3295c1893be2717d0ae807ddfa2185859d506c7c796b40f3b2"
+    },
+    "numeric_fields": 854,
+    "chorus_maximum_errors": {
+      "0": 1.1073613713996622e-05,
+      "1": 0.000102986042022718,
+      "2": 4.916362761342441e-07
+    },
+    "max_content_rect_error": 0.0683292349118858,
+    "mean_foreground_mae": 7.946431549609193,
+    "max_foreground_mae": 12.017226335601924
+  },
+  "pendolo-palette-stage-source-rotation-kotlin": {
+    "frames": [
+      {
+        "file": "arabic-800-normal-spaced-0.png",
+        "foreground_mae": 7.563326910725754,
+        "full_mae": 0.09088194444444445
+      },
+      {
+        "file": "arabic-800-normal-spaced-13000.png",
+        "foreground_mae": 3.0692887394120576,
+        "full_mae": 0.11658541666666666
+      },
+      {
+        "file": "arabic-800-normal-spaced-24000.png",
+        "foreground_mae": 2.558769778290771,
+        "full_mae": 0.12183680555555555
+      },
+      {
+        "file": "arabic-800-normal-spaced-28001.png",
+        "foreground_mae": 11.448111277785355,
+        "full_mae": 0.1851076388888889
+      },
+      {
+        "file": "arabic-800-normal-spaced-31000.png",
+        "foreground_mae": 10.231747738063245,
+        "full_mae": 0.16957291666666666
+      },
+      {
+        "file": "arabic-800-normal-spaced-48000.png",
+        "foreground_mae": 9.160266901674431,
+        "full_mae": 0.15911111111111112
+      },
+      {
+        "file": "arabic-800-normal-spaced-7500.png",
+        "foreground_mae": 8.158884828799566,
+        "full_mae": 0.2625354166666667
+      },
+      {
+        "file": "arabic-800-normal-spaced-9000.png",
+        "foreground_mae": 6.497706691755851,
+        "full_mae": 0.2837986111111111
+      },
+      {
+        "file": "cjk-800-normal-spaced-0.png",
+        "foreground_mae": 8.535797233161668,
+        "full_mae": 0.18921736111111112
+      },
+      {
+        "file": "cjk-800-normal-spaced-13000.png",
+        "foreground_mae": 3.4106347010911326,
+        "full_mae": 0.17
+      },
+      {
+        "file": "cjk-800-normal-spaced-24000.png",
+        "foreground_mae": 2.6111771195790547,
+        "full_mae": 0.17379791666666666
+      },
+      {
+        "file": "cjk-800-normal-spaced-28001.png",
+        "foreground_mae": 11.459212681892648,
+        "full_mae": 0.3443645833333333
+      },
+      {
+        "file": "cjk-800-normal-spaced-31000.png",
+        "foreground_mae": 11.212704705271603,
+        "full_mae": 0.34531666666666666
+      },
+      {
+        "file": "cjk-800-normal-spaced-48000.png",
+        "foreground_mae": 10.66332475274353,
+        "full_mae": 0.33835902777777777
+      },
+      {
+        "file": "cjk-800-normal-spaced-7500.png",
+        "foreground_mae": 10.156675153666127,
+        "full_mae": 0.40886805555555555
+      },
+      {
+        "file": "cjk-800-normal-spaced-9000.png",
+        "foreground_mae": 8.15497574406713,
+        "full_mae": 0.4238777777777778
+      },
+      {
+        "file": "latin-380-normal-spaced-0.png",
+        "foreground_mae": 6.474338483395489,
+        "full_mae": 0.36100877192982456
+      },
+      {
+        "file": "latin-380-normal-spaced-13000.png",
+        "foreground_mae": 5.758121740617252,
+        "full_mae": 0.48482748538011694
+      },
+      {
+        "file": "latin-380-normal-spaced-24000.png",
+        "foreground_mae": 4.371999425039529,
+        "full_mae": 0.5277982456140351
+      },
+      {
+        "file": "latin-380-normal-spaced-28001.png",
+        "foreground_mae": 8.737185660781167,
+        "full_mae": 0.6387748538011696
+      },
+      {
+        "file": "latin-380-normal-spaced-31000.png",
+        "foreground_mae": 9.198940238873577,
+        "full_mae": 0.6719956140350877
+      },
+      {
+        "file": "latin-380-normal-spaced-48000.png",
+        "foreground_mae": 12.017226335601924,
+        "full_mae": 0.7285058479532164
+      },
+      {
+        "file": "latin-380-normal-spaced-7500.png",
+        "foreground_mae": 10.485316275764037,
+        "full_mae": 0.755703216374269
+      },
+      {
+        "file": "latin-380-normal-spaced-9000.png",
+        "foreground_mae": 8.778624072567725,
+        "full_mae": 0.7962266081871345
+      }
+    ],
+    "png_sha256": {
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-0.png": "4abc7aa0e9de08030da52535ad391a18532b7a4b3b7b22c1660c0d26ac112f2e",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/arabic-800-normal-spaced-0.png": "ef4ba4366eb95c9c141f4e9fe5975ebdef2b117abd1da8ea96e5821c0cfff814",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-13000.png": "faa020db5efe519a9578d8ea5396fcf5a9ac8df8708ed3802e9a5d27a27cad71",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/arabic-800-normal-spaced-13000.png": "d32e96749d5d3d29cd3bc70a23dd53f42c33a130acae3ac2ef2b035a699611e2",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-24000.png": "efe1eb742582ad750ab6afbd9342fc50d01f41b8d107ee07c389c414dacc94f5",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/arabic-800-normal-spaced-24000.png": "126ca1119867bd3cf2584bb7804b435e3e95d53520e2292c85230ac394819931",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-28001.png": "f37d80f5c26b6c1041e02a59d045e3b6e1425d361c2a8e30a69ef7bbb5256708",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/arabic-800-normal-spaced-28001.png": "faaecb432ac2935d2908a6cb292ed40c0363ef546cd13c0828a71b4c04e6a7a1",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-31000.png": "cbbebba3aecc1f984a3d4aa6fceeb99292ef688081988be74f7321ae68c6a4d4",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/arabic-800-normal-spaced-31000.png": "ea3de449bec303bd379c04e3c620cf9a8a953c09344e010e6124dcb984010aa7",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-48000.png": "71bb0cd3b8ae190decf7d2f868e293f3f5804d9d4789b3e58c0f8b6be692ce12",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/arabic-800-normal-spaced-48000.png": "3d7fd7523daeb89efa5c9f043b8c9002d9c45693dbe211df1087710118035735",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-7500.png": "215685724ac9e903963cabf43afd8eaf32bcfbd19825a32adfd8d118dcf1253f",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/arabic-800-normal-spaced-7500.png": "f9b7e8db73ce8ed8bc962aaea5b3ea87e1a978bf9085637226d70d4697c13a9a",
+      "build/verification/pendolo-palette-stage-browser/arabic-800-normal-spaced-9000.png": "ae3bcf036ab5cec6940dc37f39ac99f5b70fee7967b204c3c18d790ad34f7e5f",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/arabic-800-normal-spaced-9000.png": "7fa68ee7c85b746075d1a49325c1d680be23857698b2bef3559889757973e0b8",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-0.png": "96411dc0ff6b4ce82f8d6aac80bc0e06bab7d07488f1a1ca64158f2adc62ccd6",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/cjk-800-normal-spaced-0.png": "de825205a700e42f00b9f6f7e05f8c6ad76e4715cf04d0fabdd81586aac61904",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-13000.png": "d9967940e1a3e7a3dc07c1d206bc24c6d125880e4f713032102c38b432c86d4d",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/cjk-800-normal-spaced-13000.png": "3977e7b8050084844a96bf687fb624260f1f0e5dca3c6236c04b3d8be26f9050",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-24000.png": "a9bba561e140f42d4b5b413de43fba0a33a802ed949d39684e840f706160658d",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/cjk-800-normal-spaced-24000.png": "538053e6a4698af0570dfc8fef0997ceae5cf3017581a172dd4efd5bcf6cdb30",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-28001.png": "48fbb8b0e565317c433cb07626c395f5761b3ba7da00bda67e595e7d42a0aea9",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/cjk-800-normal-spaced-28001.png": "995b6e6a65a1c88064b5bdba2fcb3cabb0a7968cb18520959f3a66c65e9e2276",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-31000.png": "cdbb3ab6acc26101a1f7006a949e0cea8400a5ad7407b3aa8ded08e99a69c7d2",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/cjk-800-normal-spaced-31000.png": "7c588b32dfba3015f724bd98224a450696e925c1c8b5708c9fc1d4a917735eb5",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-48000.png": "05d43c3e48cc6f4d949d88ed40581c1dd2bf94fd7bc0671c9bdeebed38428d74",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/cjk-800-normal-spaced-48000.png": "9ebd5aa907b6c121102728a51d3ab08e8b17bab4be4ee1a7043194badd4e0315",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-7500.png": "491e59ce76dc2cdf16f876c4cedc0cbf956470530adf13ee24f290979ca98221",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/cjk-800-normal-spaced-7500.png": "8cdc589d223eb878244faa9b00140365aac04b72da0a1b7e35888401494a33c4",
+      "build/verification/pendolo-palette-stage-browser/cjk-800-normal-spaced-9000.png": "75628fcfc74ad4719c3e6c3cfd18c6e1d4c7d99b32df7e26d587b8c76087382f",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/cjk-800-normal-spaced-9000.png": "e5aa6875728a8a47f4bab9cfff88aba3a1cf70f7890c4cfd0bf09ea631265a5f",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-0.png": "cbc4d86fca18bd0da7af90c5b8e17aff9acbb4f153b5b334078b8ef50f01d771",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/latin-380-normal-spaced-0.png": "afef51915192c3eb9bff403d530a66b386631ca2dd5004f413324f96efbeb344",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-13000.png": "2b9a11deb055eccfaf38610c7ed0dd407d352b608989ef7647ac67b6c826ada8",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/latin-380-normal-spaced-13000.png": "b12ac87db7745a3cd274ee26a77dac23a71933e5e36b6506a3fc81f26d50643d",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-24000.png": "c0504ea9aeee499da6f809088b5f4a787807f1ed6abb15615c117406cceeb25d",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/latin-380-normal-spaced-24000.png": "2d9e54c63a609d30f841ec8419c832f3e5f12f80e1c9e21e066fd7e402912d28",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-28001.png": "b6cc25f9ec7ea76755b768da6abfa63a027f0b330fa32ba17dddaf053a3f5b41",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/latin-380-normal-spaced-28001.png": "444350b0844babaa4ccd028939bd3127718da7db1b98a2bec2180015de42a11c",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-31000.png": "5d7d87f24ea69ab0e3508bbea1af48cdefe2f2b4fb8d6f4f9cfb4118dc043c86",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/latin-380-normal-spaced-31000.png": "894fbf8ea534aa77254be2d3342ff81cfa18ba4b191c16a9ab7ef2b0a0f53c18",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-48000.png": "d01bf95680dc35b6d4ac8ac6cfdf6d48fc1ea749f9c9331232a7ca5857c08cb7",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/latin-380-normal-spaced-48000.png": "c2c0172c9eed608ffb724009e851029470f6a8b3a4de00c72f7b4b5f8dc25f32",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-7500.png": "c6ff45b7ac18d30464b0ca8fecac25046f8614c0df2f81dc66ae0a1e8dfa83ca",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/latin-380-normal-spaced-7500.png": "091f88d5205ed5d30bfe298cd5719bb1ef7c120daa7b01fbbcbdbff499b09d6b",
+      "build/verification/pendolo-palette-stage-browser/latin-380-normal-spaced-9000.png": "66687c8a1d2ba597b7fb5217aaf2054305011920c3c1e7375ff2941b0f38b696",
+      "build/verification/pendolo-palette-stage-source-rotation-kotlin/latin-380-normal-spaced-9000.png": "81b08b03f986ca3295c1893be2717d0ae807ddfa2185859d506c7c796b40f3b2"
+    },
+    "numeric_fields": 854,
+    "chorus_maximum_errors": {
+      "0": 1.1073613713996622e-05,
+      "1": 0.000102986042022718,
+      "2": 4.916362761342441e-07
+    },
+    "max_content_rect_error": 0.06832923491185738,
+    "mean_foreground_mae": 7.946431549609193,
+    "max_foreground_mae": 12.017226335601924
+  },
+  "unchanged_prior_native_pngs": 1202
+}

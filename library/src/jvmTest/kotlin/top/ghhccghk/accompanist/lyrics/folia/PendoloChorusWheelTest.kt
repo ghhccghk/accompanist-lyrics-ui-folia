@@ -33,10 +33,15 @@ class PendoloChorusWheelTest {
     @Test fun dense()=capture("latin",380,"normal",true)
     @Test fun normalSoftware()=capture("latin",380,"normal",software=true)
     @Test fun chaoticSoftware()=capture("latin",380,"chaotic",software=true)
-    private fun capture(scene: String,width: Int,intensityName: String,dense:Boolean=false,software:Boolean=false)=runDesktopComposeUiTest(width=800,height=600) {
+    @Test fun paletteLatin()=capture("latin",380,"normal",custom=true)
+    @Test fun paletteArabic()=capture("arabic",800,"normal",custom=true)
+    @Test fun paletteCjk()=capture("cjk",800,"normal",custom=true)
+    private fun capture(scene: String,width: Int,intensityName: String,dense:Boolean=false,software:Boolean=false,custom:Boolean=false)=runDesktopComposeUiTest(width=800,height=600) {
         fun decode(s:String)=String(Base64.getDecoder().decode(s),Charsets.UTF_8)
         val f=File("../verification/cadenza-fixtures/sceneInputs.tsv").readLines().first { it.startsWith("$scene\t") }.split('\t')
         val subtitles=when(scene){"arabic"->PendoloSubtitleSource("بالعالم","مرحبا");"cjk"->PendoloSubtitleSource("星光","向远方");else->PendoloSubtitleSource("beyond","Amber echoes")}
+        val variant=if(custom)"palette" else "chorus"
+        var customPalette by mutableStateOf(custom)
         val step=if(dense).16 else 4.0
         val lines=(0 until 8).map { i->PendoloStageLine(PendoloLyric(decode(f[1]),f[2].toDouble()+i*step,f[3].toDouble()+i*step,
             f[4].split('|').map { token->val w=token.split('~');PendoloTimedText(decode(w[0]),w[1].toDouble()+i*step,w[2].toDouble()+i*step) }),subtitles,isChorus=i%2==0) }
@@ -53,19 +58,20 @@ class PendoloChorusWheelTest {
         setContent { CompositionLocalProvider(LocalClassicSoftwareLayers provides software) {
             Box(Modifier.fillMaxSize().background(Color(0xff162435))) {
                 if(mounted) {
+                    val palette=if(customPalette)PendoloPalette(Color(0xff71b8ed),Color(0xffe2b66f),Color(0xff93f1a1))else PendoloPalette()
                     val r=sourceRotation
-                    if(r==null) PendoloPlaybackWheel(lines,{t},style,Modifier.width(width.dp).height(600.dp),intensity,wordColors=colors,haloOnly=haloOnly,onRows={observed=it})
-                    else PendoloPlaybackWheel(lines,{t},style,Modifier.width(width.dp).height(600.dp),intensity,wordColors=colors,haloOnly=haloOnly,wheelRotationOverride={r},onRows={observed=it})
+                    if(r==null) PendoloPlaybackWheel(lines,{t},style,Modifier.width(width.dp).height(600.dp),intensity,wordColors=colors,palette=palette,haloOnly=haloOnly,onRows={observed=it})
+                    else PendoloPlaybackWheel(lines,{t},style,Modifier.width(width.dp).height(600.dp),intensity,wordColors=colors,palette=palette,haloOnly=haloOnly,wheelRotationOverride={r},onRows={observed=it})
                 }
             }
         }
         }
-        val output=File("../build/verification/pendolo-chorus-stage-${if(software) "software" else "kotlin"}").apply { mkdirs() }
-        val halo=File("../build/verification/pendolo-chorus-halo-${if(software) "software" else "kotlin"}").apply{mkdirs()}
-        val isolated=File("../build/verification/pendolo-chorus-stage-source-rotation-${if(software) "software" else "kotlin"}").apply { mkdirs() }
-        val frames=File("../verification/pendolo-fixtures/chorus-stage-frames.tsv").readLines().filterNot { it.startsWith('#')||it.isBlank() }.map { it.split('\t') }
+        val output=File("../build/verification/pendolo-$variant-stage-${if(software) "software" else "kotlin"}").apply { mkdirs() }
+        val halo=File("../build/verification/pendolo-$variant-halo-${if(software) "software" else "kotlin"}").apply{mkdirs()}
+        val isolated=File("../build/verification/pendolo-$variant-stage-source-rotation-${if(software) "software" else "kotlin"}").apply { mkdirs() }
+        val frames=File("../verification/pendolo-fixtures/$variant-stage-frames.tsv").readLines().filterNot { it.startsWith('#')||it.isBlank() }.map { it.split('\t') }
             .filter { it[1]==scene&&it[2].toInt()==width&&it[3]==intensityName && it[4].toBooleanStrict()==dense }
-        val source=File("../verification/pendolo-fixtures/chorus-stage-rows.tsv").readLines().filterNot { it.startsWith('#')||it.isBlank() }.map { it.split('\t') }.groupBy { it[0] }
+        val source=File("../verification/pendolo-fixtures/$variant-stage-rows.tsv").readLines().filterNot { it.startsWith('#')||it.isBlank() }.map { it.split('\t') }.groupBy { it[0] }
         val residual=mutableListOf("# file row field original native error");val isolatedResidual=mutableListOf("# file row field original native error")
         var chorusTrack:PendoloChorusTrack?=null
         val hashes=linkedMapOf<String,String>()
@@ -101,6 +107,10 @@ class PendoloChorusWheelTest {
         for(f in frames.shuffled(Random(419))){set(f);assertEquals(hashes[f[0]],hash(),"seek ${f[0]}")}
         val paused=hash();mainClock.advanceTimeBy(2000);waitForIdle();assertEquals(paused,hash(),"pause")
         runOnIdle{mounted=false};waitForIdle();runOnIdle{mounted=true};waitForIdle();assertEquals(paused,hash(),"remount")
-        output.resolve("$scene-$intensityName-revisit.txt").writeText("24 frames + random revisits,pause,remount pixel-identical\n")
+        if(custom){
+            val colored=hash();runOnIdle{customPalette=false};waitForIdle();assertNotEquals(colored,hash(),"palette must change visible paint")
+            runOnIdle{customPalette=true};waitForIdle();assertEquals(colored,hash(),"palette restore")
+        }
+        output.resolve("$scene-$intensityName-revisit.txt").writeText("${frames.size} frames + random revisits,pause,remount pixel-identical\n")
     }
 }

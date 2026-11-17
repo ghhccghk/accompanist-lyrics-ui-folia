@@ -1400,3 +1400,13 @@ visual acceptance still pending, no public selector.
   `verification/pendolo-chorus-stage`. Not final theme/device acceptance.
 - Shared independent layer recording snapshots density; regression preserves1034
   older native images. No fonts/assets or native dependencies added.
+
+## Pendolo caller palette (2026-11-17)
+
+- Same pinned `VisualizerPendolo.tsx` color inputs/`PendoloActiveLyricSweep.tsx`
+  mix/filters → `PendoloPalette` and parameter propagation in `PendoloWheelTarget.kt`.
+- Independent native palette type; original primary/secondary/accent roles and
+  range-keyword override precedence preserved. No reference files/assets modified.
+- Real original alternate-palette24 pairs plus24 rotation controls,1202 older
+  native hashes unchanged. Reproduction and remaining raster limits:
+  `verification/pendolo-palette-stage`. Still internal, not final-theme support.

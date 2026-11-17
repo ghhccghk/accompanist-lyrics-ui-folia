@@ -22,6 +22,8 @@ import kotlin.math.*
 internal data class PendoloStageLine(val lyric: PendoloLyric, val subtitles: PendoloSubtitleSource = PendoloSubtitleSource(),
     val renderEnd: Double = lyric.end, val isChorus: Boolean = false)
 internal data class PendoloPreparedSubtitle(val track: PendoloSubtitleTrack, val text: PendoloPreparedText)
+internal data class PendoloPalette(val primary:Color=Color(0xffdfe5ec),val secondary:Color=Color(0xffadb9c8),
+    val accent:Color=Color(0xfff17b4d))
 internal data class PendoloStageRow(val item: PendoloWheelItem, val main: PendoloPreparedText,
     val subtitles: List<PendoloPreparedSubtitle>, val blockHeight: Double, val reservedHeight: Double,
     val width: Double, val contentRect: List<Double>)
@@ -52,6 +54,7 @@ internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Dou
     intensity: PendoloIntensity = PendoloIntensity.NORMAL, reducedMotion: Boolean = false,
     mode: PendoloSubtitleMode = PendoloSubtitleMode.BOTH,
     wordColors: List<FoliaWordColor> = emptyList(),
+    palette: PendoloPalette = PendoloPalette(),
     haloOnly: Boolean = false,
     wheelRotationOverride: (() -> Double)? = null, onRows: (List<PendoloStageRow>) -> Unit = {}) {
     val clock by rememberUpdatedState(time)
@@ -77,7 +80,7 @@ internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Dou
         val limits by remember(widthTrack,reducedMotion) { derivedStateOf { widthTrack.at(clock(),reducedMotion).mapValues { (_,v)->floor(v*64)/64 } } }
         PendoloWheelTarget(lines, { clock() }, target, style, Modifier.fillMaxSize(), mode,
             wheelRotation = wheelRotationOverride ?: { track.at(clock(),reducedMotion).wheelRotation }, idleMainLimits=limits,
-            reservedHeights=heights,wordColors=wordColors,chorusTrack=chorusTrack,intensity=intensity,reducedMotion=reducedMotion,haloOnly=haloOnly,onRows = onRows)
+            reservedHeights=heights,wordColors=wordColors,palette=palette,chorusTrack=chorusTrack,intensity=intensity,reducedMotion=reducedMotion,haloOnly=haloOnly,onRows = onRows)
     }
 }
 
@@ -144,6 +147,7 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
     wheelRotation: () -> Double = { 0.0 },
     idleMainLimits: Map<Int,Double> = emptyMap(), reservedHeights: List<Double>? = null,
     wordColors: List<FoliaWordColor> = emptyList(),
+    palette: PendoloPalette = PendoloPalette(),
     chorusTrack: PendoloChorusTrack? = null, intensity:PendoloIntensity = PendoloIntensity.NORMAL,
     reducedMotion:Boolean = false, haloOnly:Boolean = false,
     onRows: (List<PendoloStageRow>) -> Unit = {}) {
@@ -162,10 +166,10 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
         val chorusLayers=rows.filter{presentations.getValue(it.item.index).active}.associate { row ->
             row.item.index to key(row.item.index) { row.main.rows.map{rememberPendoloChorusLayer()} to rememberClassicLayer() }
         }
-        val inks=remember(rows,lines,wordColors,presentations) {
+        val inks=remember(rows,lines,wordColors,presentations,palette) {
             if(wordColors.isEmpty())emptyMap() else rows.associate { row ->
                 row.item.index to preparePendoloInk(lines[row.item.index].lyric.text,row.main,wordColors,
-                    pendoloSweepColor(Color(0xffdfe5ec),Color(0xfff17b4d),presentations.getValue(row.item.index).accentMix))
+                    pendoloSweepColor(palette.primary,palette.accent,presentations.getValue(row.item.index).accentMix))
             }
         }
         SideEffect { onRows(rows) }
@@ -186,16 +190,16 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
                         val filter=pendoloChorusFilter(28.0,p.glowMultiplier)
                         val margin=if(p.active)max(64.0,3*(filter.firstSigma+filter.secondSigma)+filter.padding+2).toFloat() else 64f
                         drawContext.canvas.saveLayer(Rect(-margin*d, -margin*d, (row.width.toFloat()+margin)*d, (row.blockHeight.toFloat()+margin)*d), Paint().apply { this.alpha = alpha })
-                        chorusLayers[item.index]?.second?.let { drawPendoloHalo(it,row.width,row.blockHeight,chorus,Color(0xfff17b4d)) }
+                        chorusLayers[item.index]?.second?.let { drawPendoloHalo(it,row.width,row.blockHeight,chorus,palette.accent) }
                         if(!haloOnly) {
                         if (item.active) drawPendoloSweep(row.main, timelines[item.index],
-                            lines[item.index].lyric.end, 28.0, t, Color(0xffdfe5ec), Color(0xfff17b4d),inks[item.index],p,chorusLayers[item.index]?.first.orEmpty())
-                        else drawPendoloRows(row.main, Color(0xffdfe5ec).copy(alpha = .75f))
+                            lines[item.index].lyric.end, 28.0, t, palette.primary, palette.accent,inks[item.index],p,chorusLayers[item.index]?.first.orEmpty())
+                        else drawPendoloRows(row.main, palette.primary.copy(alpha = .75f))
                         var top = row.main.height
                         for (sub in row.subtitles) {
                             top += sub.track.gapEm * sub.track.fontPx
                             translate(0f, (top * d).toFloat()) {
-                                drawPendoloRows(sub.text, Color(0xffadb9c8).copy(alpha =
+                                drawPendoloRows(sub.text, palette.secondary.copy(alpha =
                                     ((if (item.active) 1.0 else .6) * sub.track.opacity).toFloat()))
                             }
                             top += sub.text.height

@@ -1141,3 +1141,22 @@ wrapped due fractional width truncation, now fixed with a ceil integer constrain
 failure image/report retained. This is not dynamic row/layout spring,.2s frame
 resize or timestamp appearance parity. Raster/shadow/complex shaping residuals
 are measured, not excused by builds. No Android device/performance acceptance.
+
+## 2026-11-17 Cappella media response kernel
+
+`CappellaMessageRow.tsx`, `CappellaBubbleParts.tsx`, `cappellaIntensity.ts` at
+cc6226e4 → `CappellaResponse.kt`. Three exact parameter sets,analytic damped ODE
+including original calm overdamping,mass/initial velocity,magnitude rest rules,
+50ms duration resolution,enter/exit/resize/timestamp cubic responses and
+immutable event-prepared tracks. No display-frame state or Motion runtime code
+is bundled. Actual installed MIT Motion runtime is used only as an oracle;
+the mathematical equations are independently evaluated in Kotlin.
+
+1134 original-config/actual-dispatcher values have max2.85e-14 error,raw spring
+velocity max5.97e-13. Source `sample()` bypasses normal RAF millisecond rounding;
+continuous media adapter preserves the former and must separately measure
+ordinary RAF quantization. Wrong initial rounding/0.25s normal exit were fixed,
+not hidden by altered fixtures/tolerances. Native retains original0.24s exit.
+Independent interruption continuity/unchanged-target/random seek tests pass.
+Evidence/reproduction: verification/cappella-response. This does not establish
+mounted layout projection/velocity history or full moving-stage equivalence.

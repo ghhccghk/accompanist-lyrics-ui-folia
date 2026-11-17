@@ -1,0 +1,23 @@
+{
+  "observations": 1134,
+  "maximum_runtime_error": 2.842170943040401e-14,
+  "maximum_raw_spring_error": 2.842170943040401e-14,
+  "maximum_velocity_error": 5.968558980384842e-13,
+  "scope": "Individual actual Motion configured responses, not mounted dynamic layout acceptance",
+  "initial_failures": [
+    {
+      "reason": "Incorrect native rounding before sample; original JSAnimation.sample bypasses RAF ms rounding",
+      "kind": "resize-width",
+      "time": 0.0006,
+      "original": 73.64186486622202,
+      "native": 74.74717005791625
+    },
+    {
+      "reason": "Incorrect normal exit duration .25; original .24",
+      "kind": "exit-y",
+      "time": 0.22,
+      "original": -15.577114470710512,
+      "native": -14.556034104607534
+    }
+  ]
+}

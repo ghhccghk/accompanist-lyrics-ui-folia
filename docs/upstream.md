@@ -1265,3 +1265,16 @@ match themselves. Grayscale baseline8.461170→5.681259 MAE with established
 foreground adapter, peak9.120121 remains. Source/browser/native captures,
 conditions, source alias failure and before-image retention described in
 verification/pendolo-sweep. No whole-theme, device or full visual acceptance.
+
+## 2026-11-17 Pendolo subtitle-track model
+
+cc6226e4 `pendolo/pendoloSubtitleTracks.ts`, `utils/lyrics/alternateText.ts` and
+`utils/lyrics/subtitleTrackStyle.ts` → `internal/styles/pendolo/PendoloSubtitles.kt`.
+Retain original AGPL-3.0-only attribution. Native immutable roles/source/track
+types replace TypeScript interfaces; original role priority, ECMAScript trim,
+L/N readability, placeholder/direct-field behavior, de-duplication, focal/idle
+sizes, rounding, secondary styling and per-row gaps are retained. Text-only
+height is a caller-supplied measurement, not guessed from character count in
+production. Original exports generate528 configurations/168 tracks; all fields
+and controlled sum heights match. See verification/pendolo-fixtures/SUBTITLES.md.
+Actual wrapped subtitle measurement/drawing and wheel integration remain open.

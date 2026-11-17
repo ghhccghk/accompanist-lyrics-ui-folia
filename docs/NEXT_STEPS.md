@@ -10,9 +10,10 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core分组/内部时钟、完整文字透视、三层合成、13镜头目标隔离核对 | 无 | 完整rig/朝向/切曲、深度/栅格/设备尚未验收 |
 
-当前唯一下一项：七主题真实Desktop窗口重建验证，定位并修复由窗口/切换触发的实际问题。
-完成条件：公开入口和真实core输入，检查暂停/seek/主题切换/字号/resize/卸载，
-记录真实窗口后端/条件和失败；离屏、原版视觉与实际选歌音频证据分开，Android无设备准确待验。
+当前唯一下一项：Cappella减少动态时的flow布局核对；确认是否仍受动画高度/边距驱动，
+如成立只修正减少动态路径并保留正常240帧基线，然后继续parent/local二次提交局部探针。
+完成条件：真实core公开入口/密集词组，减少动态布局按当前目标直接重建，暂停/seek/切换可复现；
+正常路径原图hash和数值门槛不变，不把减少动态修复称密集Motion投影22.188593px已修好。
 
 Pendolo旧tick/chorus/CSS-width精确Motion锁补验已完成：144/168/168原帧，全部fixture/
 被动状态相同；4张tick和6张chorus图有2..19像素微差，峰通道4，光晕168图不变。
@@ -22,9 +23,10 @@ Pendolo旧tick/chorus/CSS-width精确Motion锁补验已完成：144/168/168原�
 
 真实DIRECT3D窗口发现并修复Tilt画质切换后状态count永久0：复用已准备字形但向新画质epoch重发count，
 不重排/不改视觉。PublicTiltTest新增回归先失败9→0、后全部3项通过；Android默认含Rust APK构建通过。
-首轮七主题窗口105次重建逻辑通过，但图检发现Fume窄屏误采准备提示，不能称完整窗口通过；
-验证器需要按Fume准备输入变更清除旧ready状态，再等待新状态/实际绘制。先修验证器后复查，
-保留.work/themes-window-initial-*和首轮完整截图；不能以原105项成功掩盖未就绪帧。
+059087b后七主题真实DIRECT3D窗口105次检查已通过，含暂停/seek/resize/字号/设置/offset/换输入/
+卸载重挂/反向切主题。首轮误采Fume准备提示已保留为无效证据，验证器按准备输入清除旧ready后
+完整重跑34s并图检。证据verification/themes-native-window；这不是音频/原版视觉/Android设备验收。
+Tilt大字字幕重叠、Fume oversized camera等仍需固定原版条件另验，不因窗口可运行而忽略。
 
 Cappella240精确锁复核已完成（0844f4f）：999数值行与被动状态完全不变，38图有原始差异，
 见verification/motion-lock-audit/cappella-pressure.json。局部snapshot候选完整采集配对均值6.370007→6.047083，

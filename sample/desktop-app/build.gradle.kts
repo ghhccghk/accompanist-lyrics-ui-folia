@@ -43,3 +43,12 @@ tasks.register<JavaExec>("verifyClassicWindow") {
     workingDir = rootProject.projectDir
     dependsOn(classicVerification.classesTaskName)
 }
+
+tasks.register<JavaExec>("verifyThemesWindow") {
+    group = "verification"
+    description = "Check seven public themes and reconstruction in a real ComposeWindow"
+    classpath = classicVerification.runtimeClasspath
+    mainClass.set("top.ghhccghk.accompanist.folia.sample.ThemesWindowVerification")
+    workingDir = rootProject.projectDir
+    dependsOn(classicVerification.classesTaskName)
+}

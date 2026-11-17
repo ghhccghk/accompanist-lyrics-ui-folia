@@ -189,3 +189,23 @@ current1e-7px local integration tolerance was tightened after the first coarse
 candidate failed the unchanged1e-5 numeric comparison near discontinuities.
 Exact source expectations remain unmodified. Sample/public theme integration
 and whole-song preparation/runtime measurements are still pending.
+
+## Actual article + camera + text scenes
+
+With the local headless fixture server running,
+`node verification/classic-browser/capture-fume-scene.mjs` captures144 original
+scenes and writes `scene-camera.tsv`. Run `:library:jvmTest --tests
+'*FumeSceneTest'`, then `python verification/compare-fume-scene.py` and
+`python verification/compare-fume-scene.py --native-dir
+build/verification/fume-scene-kotlin-source-camera --out
+verification/fume-scene-source-camera`. The latter deliberately shares source
+poses and isolates raster only; it does not verify the native camera. Both
+series use independently measured native article/focus geometry.
+
+Conditions/source and native hashes, unregistered pixel errors, camera residuals
+and contact sheets are recorded. `raster-correction.json` retains initial and
+corrected statistics with the identical144 original PNG hashes. First native
+PNGs remain locally in `build/verification/fume-scene-kotlin-first` and
+`fume-scene-kotlin-source-camera-first`. No time/position registration, fitted
+colors, user lyrics or unlicensed font resources. This is calibration evidence,
+not Android runtime or completed-theme acceptance.

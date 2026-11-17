@@ -62,22 +62,47 @@ private data class FumePaintedRow(val segments: List<FumePaintedSegment>, val wh
 /** Prepared rows retain the full TextLayoutResult for shaping and all original EGC times.
  * World coordinates are converted only at draw. This internal path is under visual calibration. */
 internal class FumeLiveText private constructor(private val block: FumeArticleBlock,
-    private val rasterDensity: Density, private val rows: List<FumePaintedRow>) {
+    private val rasterDensity: Density, private val rows: List<FumePaintedRow>, val focus: FumeFocusBlock) {
     val reveal = FumeReveal(block.line)
+    // At most the two static crossfade paints. Never key by frame time/camera scale.
+    private val snapshots = linkedMapOf<FumePaint, Pair<ImageBitmap, Offset>>()
+    internal fun releaseStaticSnapshots() { snapshots.clear() }
+
+    private fun snapshot(paint: FumePaint): Pair<ImageBitmap, Offset> {
+        snapshots.remove(paint)?.let { snapshots[paint] = it; return it }
+        val pixels = rasterDensity.density
+        val padding = ceil(maxOf(block.fontPx * .32, paint.blur + block.fontPx * .08, 4.0))
+        val image = ImageBitmap(ceil((block.width + 2 * padding) * pixels).toInt().coerceAtLeast(1),
+            ceil((block.height + 2 * padding) * pixels).toInt().coerceAtLeast(1))
+        val origin = Offset(((block.x - padding) * pixels).toFloat(), ((block.y - padding) * pixels).toFloat())
+        CanvasDrawScope().draw(rasterDensity, LayoutDirection.Ltr, Canvas(image), Size(image.width.toFloat(), image.height.toFloat())) {
+            withTransform({ translate(-origin.x, -origin.y) }) {
+                for (row in rows) row.whole.draw(this, paint, row.whole.bounds.left, row.whole.bounds.right)
+            }
+        }
+        val result = image to origin
+        if (snapshots.size >= 2) snapshots.remove(snapshots.keys.first())
+        snapshots[paint] = result
+        return result
+    }
 
     fun draw(scope: DrawScope, time: Double, nextStart: Double?, theme: FumeFrameTheme,
-        hold: Double = 1.0, fadeDuration: Double = 2.4, overviewRestore: Double = 0.0, showStamp: Boolean = true) = with(scope) {
+        hold: Double = 1.0, fadeDuration: Double = 2.4, overviewRestore: Double = 0.0, showStamp: Boolean = true,
+        liveShadowScale: Double = 1.0) = with(scope) {
+        require(liveShadowScale.isFinite() && liveShadowScale > 0)
+        fun livePaint(paint: FumePaint) = if (liveShadowScale == 1.0) paint else paint.copy(blur = paint.blur / liveShadowScale)
         val timing = fumeBlockTiming(block, time, nextStart, hold)
         val layers = fumeStaticLayers(block, timing, theme, time, fadeDuration, overviewRestore)
         if (layers != null) {
-            rows.forEach { row -> layers.forEach { layer ->
-                row.whole.draw(this, layer.paint, row.whole.bounds.left, row.whole.bounds.right, layer.alpha.toFloat())
-            } }
+            for (layer in layers) {
+                val (image, origin) = snapshot(layer.paint)
+                drawImage(image, origin, alpha = layer.alpha.toFloat())
+            }
             return@with
         }
         fumeLineGlow(block, timing, theme, time)?.let { glow ->
             for (row in rows) for (segment in row.segments) if (!segment.blank)
-                segment.glow(this, glow)
+                segment.glow(this, livePaint(glow))
         }
         val scale = rasterDensity.density
         for (row in rows) for (segment in row.segments) {
@@ -89,11 +114,12 @@ internal class FumeLiveText private constructor(private val block: FumeArticleBl
                     (glyph.right - glyph.left).toDouble() / scale, showStamp)
                 // Preserve source command order: stamps precede a pending run's flush.
                 frame.stamp?.let { stamp ->
-                    drawStamp(this, stamp, Offset(glyph.left, row.baseline), scale)
+                    drawStamp(this, stamp.copy(paint = livePaint(stamp.paint)), Offset(glyph.left, row.baseline), scale)
                 }
                 if (frame.paint.fill.alpha <= .002) { flush(); continue }
-                if (run != frame.paint) {
-                    flush(); run = frame.paint; left = glyph.left; right = glyph.right
+                val paint = livePaint(frame.paint)
+                if (run != paint) {
+                    flush(); run = paint; left = glyph.left; right = glyph.right
                 } else { left = min(left, glyph.left); right = max(right, glyph.right) }
             }
             flush()
@@ -131,8 +157,17 @@ internal class FumeLiveText private constructor(private val block: FumeArticleBl
             val middle = fumeMiddleBaseline(metrics.ascent, metrics.descent, with(density) { style.fontSize.toPx() })
             val cjk = Regex("[\u4e00-\u9fff\u3040-\u30ff\uac00-\ud7af]").containsMatchIn(block.line.text)
             val baselineOffset = block.lineHeight * if (cjk) .52 else .5
+            val focusRows = mutableListOf<FumeFocusRow>()
             val rows = static.rows.map { row ->
                 val layout = measure.naturalLayout(row.text, block.hero, block.fontPx)
+                val first = edges.indexOf(row.startUtf16)
+                val last = edges.indexOf(row.endUtf16)
+                check(first >= 0 && last >= first) { "A Fume row boundary split an extended grapheme" }
+                val offsets = (first..last).map { index ->
+                    val count = edges[index] - row.startUtf16
+                    if (count == 0) 0.0 else layout.getPathForRange(0, count).getBounds().width.toDouble() / scale
+                }
+                focusRows += FumeFocusRow(first,last,row.left,row.top,row.width.toDouble(),offsets)
                 val baseline = ((block.y + row.top + baselineOffset) * scale).toFloat() + middle
                 val origin = Offset(((block.x + row.left) * scale).toFloat(), baseline - paintedNaturalBaseline(layout, metrics))
                 val clipPad = ceil(max(block.fontPx * 3, 80.0) * scale).toInt()
@@ -169,7 +204,7 @@ internal class FumeLiveText private constructor(private val block: FumeArticleBl
                 }
                 FumePaintedRow(segments, segment(glyphs, false, true), (baseline - middle))
             }
-            return FumeLiveText(block, density, rows)
+            return FumeLiveText(block, density, rows, FumeFocusBlock(block, focusRows))
         }
     }
 }

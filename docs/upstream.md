@@ -795,3 +795,37 @@ is unmeasured. Not wired into a selector/sample; contributes no playback work.
 Evidence: `verification/fume-camera-continuous`, reproducible with the generator,
 `FumeCameraTrackTest`, then `compare-fume-camera-continuous.py`. Next: actual
 whole-article/camera/text captures and dynamic CTM shadow semantics.
+
+## 2026-11-17 Integrated Fume text stage and CTM corrections
+
+Pinned `useFumeCanvasStage.ts` text-only camera transform, block overscan and
+chronological next-line cutoff → `FumeArticleDrawing.kt`. Prepared complete
+rows now expose their native focus geometry; paragraph shaping and source EGC
+times remain intact. No background/audio engine, subtitle or public selector
+is added. `FumeLiveText.kt` now composites static paints into at most two
+per-block snapshots before camera transformation; offscreen blocks release
+those snapshot references. Native live shadow radius is compensated for the
+camera CTM (line glow, glyph paint and print stamps); static shadows remain
+baked world-space images, matching the two source draw paths.
+
+The new browser shell directly executes untouched original article, camera,
+block timing, passed hold-duration and Canvas drawing functions. Fixed OFL
+font,380/800x600,DPR1,18 times,glow0/1,smooth/stepped give144 actual scenes.
+Native independently measures the article/focus geometry. A second144-frame
+series explicitly shares the original camera to isolate text rasterization;
+that series is NOT evidence of native camera agreement.
+
+The original144 PNG hashes are unchanged between raster comparisons. Shared
+camera foreground-union RGB MAE4.822642→3.363080; whole scene15.754087→14.704448.
+All288 random revisits and media pause comparisons reproduce exactly. Contact
+sheets have been visually inspected. The old standalone168-frame text matrix
+also remains deterministic and improves2.965264→2.880905 mean MAE.
+
+NOT final theme acceptance: actual article exposes camera residual14.8672px
+screen/scale0.055319, worse than the synthetic-geometry trajectory; this is
+reported rather than hidden by the shared-camera seam. Static fractional
+bitmap destination-size resampling, complex-script baselines/shaping advances,
+continuous camera/retarget boundary calibration and full-song preparation cost
+remain. No attached Android device; no device or visible-window claim.
+Evidence/reproduction: `verification/fume-scene`, `fume-scene-source-camera`,
+`capture-fume-scene.mjs`, `FumeSceneTest`, `compare-fume-scene.py`.

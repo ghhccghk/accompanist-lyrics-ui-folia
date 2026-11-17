@@ -1,0 +1,21 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "cases": 67,
+  "glyphs": 641,
+  "units": 226,
+  "scope": "Actual unmodified original shared timing + splitDioramaLyricUnits via Vite SSR/Intl.Segmenter. Reused synthetic Cappella cases plus explicit Diorama category boundaries. No rendering/camera/visual acceptance.",
+  "sources": [
+    {
+      "file": "src/utils/lyrics/graphemeTiming.ts",
+      "sha256": "76ca4929c7658486a793545114c249b5c7178d4ac6fa905a2d06b066576ede35"
+    },
+    {
+      "file": "src/components/visualizer/diorama/dioramaSceneLayout.ts",
+      "sha256": "1d0ef0ee78535071b4d913a8e7cbb9e72ebb6822aec9b6f523c68b2920379338"
+    },
+    {
+      "file": "src/components/visualizer/diorama/dioramaSceneTypes.ts",
+      "sha256": "3fd50fac7881e7e3a7516fc6e7893dda3a3a3eed0d6e6d27776dc2988c17313c"
+    }
+  ]
+}

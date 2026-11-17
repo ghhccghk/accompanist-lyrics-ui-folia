@@ -1539,3 +1539,14 @@ background/subtitle/loading UI; no upstream edits. Exact original Motion-dom13.4
 and utils13.3.0 transitive lock restored, checked on every oracle invocation.
 Historical newer-transitive Motion evidence remains provisional; Fume92 frames
 were recaptured unchanged. See verification/fume-mounted for full scope/failures.
+
+### Diorama text preparation and core bridge (2026-11-18)
+Pinned cc6226e4 dioramaSceneLayout.ts:145–205 (splitDioramaLyricUnits),
+dioramaSceneTypes.ts CJK_GRAPHEME_RE, utils/lyrics/graphemeTiming.ts ->
+DioramaText.kt. Exact source category/word-identity/forward matching/gap rules.
+Internal units additionally retain complete grapheme timelines and source clocks;
+unsafe syllable splits reconcile EGCs without discarding the parser intervals.
+Independent lyrics-core bridge keeps source objects/refs/nested lines, raw declared
+times and subtitles; no-word even timing remains explicitly derived. No fonts,
+rasters, background, camera damping or public/sample theme introduced. Actual
+original-function evidence and shaping adaptation: verification/diorama-text.

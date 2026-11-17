@@ -5,7 +5,7 @@
 
 | 层 | 原始位置与真实职责 | 当前结果／后续工作 |
 | --- | --- | --- |
-| 文字 | `dioramaSceneLayout.ts:145–230`：CJK字素／其他词分组、前缀宽度；`dioramaTextRaster.ts:29–185`：128px完整字体栈Canvas纹理、邻行4096边界、四层纯halo | 本轮仅共享原纹理隔离投影；Kotlin整行塑形切片／内时钟待移植，不能把单位独立栅格照抄成逐字塑形 |
+| 文字 | `dioramaSceneLayout.ts:145–230`：CJK字素／其他词分组、前缀宽度；`dioramaTextRaster.ts:29–185`：128px完整字体栈Canvas纹理、邻行4096边界、四层纯halo | 本轮仅共享原纹理隔离投影；内部文字分组/原词身份/完整EGC时钟/core桥接已迁，67原输入641字素/226单元时间峰0；Kotlin整行塑形切片待移植，不能把单位独立栅格照抄成逐字塑形 |
 | 路径／摆位 | `cameraPath.ts:223–346`：整曲8世界单位步长、局部正交框架、offset/roll/yaw/scale/look | 已迁入内部DioramaProjection.kt；四seed（含UTF-16 emoji）、12行、四weave的原函数数值对照 |
 | 运镜 | `cameraPath.ts:531–754`：13类shot、读头truck、空档settle、drift；`CameraRig.tsx:200–434`：SmoothDamp、24单位seek snap、回正和安全视锥、四元数跟随 | 尚未移植。冻结lookAt投影不是CameraRig，不能以数学通过代替播放镜头验收；媒体重建策略必须另建对照 |
 | 投影 | `VisualizerDiorama.tsx:470–478`：真实R3F/Three透视相机55°；`dioramaSceneUnits.ts:103–142`：固定5.2距离fit、basis×yaw×roll | 最小Double投影／平面单应矩阵与Three数值通过；JVM Compose Matrix实际透视纹理绘制9对画面可运行；Android仅共同代码构建 |
@@ -24,3 +24,8 @@ Three/OpenGL场景引擎。共同Double数学无native依赖；JVM Skia的Compos
 纹理采样／抗锯齿差明确保留，不能将其解释为原版等价。冻结相机不含运镜、揭示、
 原React组装；无Android运行或设备性能结论。
 证据与复现见 `verification/diorama-projection/README.md`。
+
+文字内核追加：DioramaText.kt保留词身份、UTF16范围及内部每个字素时钟；跨parser边界
+的EGC保留所有源区间（ZWJ片段独立分段后可能贡献多个区间）。原对象/嵌套伴唱/
+源行边界/字幕保持；无词只派生整句均匀时间。对应来源、原函数矩阵与保留的自编测试
+断言错误见verification/diorama-text。没有新增公开主题或绘制结论。

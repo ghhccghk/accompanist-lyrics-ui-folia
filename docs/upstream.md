@@ -1384,3 +1384,19 @@ visual acceptance still pending, no public selector.
   image pairs.400 old native PNG hashes unchanged; residuals and reproduction
   in `verification/pendolo-chorus-sweep`. Parent halo/scale and full-wheel effects
   remain pending; no theme/device/performance acceptance claim.
+
+## Pendolo mounted chorus parent/halo (2026-11-17)
+
+- Source: `src/components/visualizer/pendolo/VisualizerPendolo.tsx:590–653`
+  at cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only.
+- Targets: `PendoloChorusTrack.kt`, `PendoloHalo.kt`, `PendoloWheelTarget.kt`.
+  Adaptation retains original profiles, conditional mount/removal, alpha product,
+  root-em radial bounds, blur and transform origins; histories are media events,
+  not replayed display frames. Original source and external Apache project untouched.
+- No gears, smart-beat, audio analysis or background implementation imported.
+- Actual original mounted JSX/control records168 frames/804 rows, with independent
+  rotation and low-alpha halo controls. Dense source RAF activation differs from
+  semantic media onset; all errors, failed controls and reproducible evidence in
+  `verification/pendolo-chorus-stage`. Not final theme/device acceptance.
+- Shared independent layer recording snapshots density; regression preserves1034
+  older native images. No fonts/assets or native dependencies added.

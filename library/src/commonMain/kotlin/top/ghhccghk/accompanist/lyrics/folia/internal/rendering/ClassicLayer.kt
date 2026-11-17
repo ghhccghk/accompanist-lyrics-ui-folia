@@ -65,7 +65,11 @@ internal class ClassicLayer(private val native: GraphicsLayer, private val softw
             native.alpha = alpha
             native.compositingStrategy = if(forceOffscreen) CompositingStrategy.Offscreen else CompositingStrategy.Auto
             native.renderEffect = if (blurSigma > .01f) BlurEffect(nativeRadiusForCssSigma(blurSigma), nativeRadiusForCssSigma(blurSigma), TileMode.Decal) else null
-            with(scope) { native.record(size = size, block = block) }
+            // DrawScope.record temporarily reuses the caller's draw context.
+            // Passing that same scope as Density can make a density read in
+            // the recorded block delegate back to itself (e.g. an em halo).
+            // Snapshot values and use the member's independent record scope.
+            native.record(Density(scope.density, scope.fontScale), scope.layoutDirection, size, block)
         } else {
             val image = bitmap?.takeIf { it.width == size.width && it.height == size.height }
                 ?: ImageBitmap(size.width.coerceAtLeast(1), size.height.coerceAtLeast(1)).also { bitmap = it }

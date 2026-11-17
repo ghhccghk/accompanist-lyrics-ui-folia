@@ -1,0 +1,2395 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "DPR": 1,
+    "frames": 168,
+    "rows": 804,
+    "height": 600,
+    "scope": "Actual original useSpring/angle declarations and text-wheel JSX remain mounted. Controlled performance/RAF60Hz plus exact probes,one browser task per frame; original WAAPI/CSS transitions media-anchored at their start/creation times. Source target selection only rerenders on changes. Smart-beat zero; explicit alternating chorus and keyword palette; no audio/gears. Native uses semantic media history and exact derivative; differences are reported, not accepted as parity."
+  },
+  "status": "Mounted tick/text calibration; remaining numeric/pixel differences are not final theme acceptance.",
+  "pendolo-chorus-stage-kotlin": {
+    "frames": [
+      {
+        "file": "arabic-800-normal-spaced-0.png",
+        "foreground_mae": 9.492764332779112,
+        "full_mae": 0.11763819444444444
+      },
+      {
+        "file": "arabic-800-normal-spaced-11000.png",
+        "foreground_mae": 7.120938803219862,
+        "full_mae": 0.33311111111111114
+      },
+      {
+        "file": "arabic-800-normal-spaced-28000.png",
+        "foreground_mae": 2.785036707085705,
+        "full_mae": 0.13874097222222223
+      },
+      {
+        "file": "arabic-800-normal-spaced-28001.png",
+        "foreground_mae": 14.371439719079204,
+        "full_mae": 0.24129861111111112
+      },
+      {
+        "file": "arabic-800-normal-spaced-28200.png",
+        "foreground_mae": 13.533861037818822,
+        "full_mae": 0.2251875
+      },
+      {
+        "file": "arabic-800-normal-spaced-29000.png",
+        "foreground_mae": 13.208579754864147,
+        "full_mae": 0.2262173611111111
+      },
+      {
+        "file": "arabic-800-normal-spaced-31000.png",
+        "foreground_mae": 12.92617823479006,
+        "full_mae": 0.2218701388888889
+      },
+      {
+        "file": "arabic-800-normal-spaced-35000.png",
+        "foreground_mae": 12.91048231511254,
+        "full_mae": 0.22125416666666667
+      },
+      {
+        "file": "arabic-800-normal-spaced-47000.png",
+        "foreground_mae": 11.59050799934026,
+        "full_mae": 0.20324097222222223
+      },
+      {
+        "file": "arabic-800-normal-spaced-47200.png",
+        "foreground_mae": 11.975926382384356,
+        "full_mae": 0.21041180555555555
+      },
+      {
+        "file": "arabic-800-normal-spaced-48000.png",
+        "foreground_mae": 11.300468914221037,
+        "full_mae": 0.20222916666666665
+      },
+      {
+        "file": "arabic-800-normal-spaced-49000.png",
+        "foreground_mae": 10.479590593395882,
+        "full_mae": 0.1881736111111111
+      },
+      {
+        "file": "arabic-800-normal-spaced-51000.png",
+        "foreground_mae": 13.414737515493183,
+        "full_mae": 0.24102708333333334
+      },
+      {
+        "file": "arabic-800-normal-spaced-60000.png",
+        "foreground_mae": 7.741444216290212,
+        "full_mae": 0.13208125
+      },
+      {
+        "file": "arabic-800-normal-spaced-7000.png",
+        "foreground_mae": 10.689241721699219,
+        "full_mae": 0.1718
+      },
+      {
+        "file": "arabic-800-normal-spaced-70000.png",
+        "foreground_mae": 13.926823868039412,
+        "full_mae": 0.27495138888888887
+      },
+      {
+        "file": "arabic-800-normal-spaced-7200.png",
+        "foreground_mae": 9.840620655634781,
+        "full_mae": 0.26326805555555555
+      },
+      {
+        "file": "arabic-800-normal-spaced-73000.png",
+        "foreground_mae": 13.153976120747917,
+        "full_mae": 0.2564625
+      },
+      {
+        "file": "arabic-800-normal-spaced-7500.png",
+        "foreground_mae": 9.667952840300106,
+        "full_mae": 0.2872645833333333
+      },
+      {
+        "file": "arabic-800-normal-spaced-8000.png",
+        "foreground_mae": 8.644630130253134,
+        "full_mae": 0.3007444444444444
+      },
+      {
+        "file": "arabic-800-normal-spaced-87000.png",
+        "foreground_mae": 10.980103542787534,
+        "full_mae": 0.24248333333333333
+      },
+      {
+        "file": "arabic-800-normal-spaced-87500.png",
+        "foreground_mae": 10.567955033472275,
+        "full_mae": 0.3661638888888889
+      },
+      {
+        "file": "arabic-800-normal-spaced-9000.png",
+        "foreground_mae": 7.663907531692766,
+        "full_mae": 0.30860902777777777
+      },
+      {
+        "file": "arabic-800-normal-spaced-90000.png",
+        "foreground_mae": 8.983736548264423,
+        "full_mae": 0.40219375
+      },
+      {
+        "file": "cjk-800-normal-spaced-0.png",
+        "foreground_mae": 10.615707780129561,
+        "full_mae": 0.2430138888888889
+      },
+      {
+        "file": "cjk-800-normal-spaced-11000.png",
+        "foreground_mae": 8.348869201562758,
+        "full_mae": 0.48879236111111113
+      },
+      {
+        "file": "cjk-800-normal-spaced-28000.png",
+        "foreground_mae": 2.973426027380008,
+        "full_mae": 0.20643402777777778
+      },
+      {
+        "file": "cjk-800-normal-spaced-28001.png",
+        "foreground_mae": 14.397730693527846,
+        "full_mae": 0.4465340277777778
+      },
+      {
+        "file": "cjk-800-normal-spaced-28200.png",
+        "foreground_mae": 14.924693237383522,
+        "full_mae": 0.46399097222222224
+      },
+      {
+        "file": "cjk-800-normal-spaced-29000.png",
+        "foreground_mae": 16.634903520003594,
+        "full_mae": 0.5298263888888889
+      },
+      {
+        "file": "cjk-800-normal-spaced-31000.png",
+        "foreground_mae": 13.966957153231663,
+        "full_mae": 0.4435125
+      },
+      {
+        "file": "cjk-800-normal-spaced-35000.png",
+        "foreground_mae": 13.953206828538393,
+        "full_mae": 0.442975
+      },
+      {
+        "file": "cjk-800-normal-spaced-47000.png",
+        "foreground_mae": 13.114954834392773,
+        "full_mae": 0.41839444444444446
+      },
+      {
+        "file": "cjk-800-normal-spaced-47200.png",
+        "foreground_mae": 12.9300582290342,
+        "full_mae": 0.4134201388888889
+      },
+      {
+        "file": "cjk-800-normal-spaced-48000.png",
+        "foreground_mae": 12.986863066012003,
+        "full_mae": 0.4238409722222222
+      },
+      {
+        "file": "cjk-800-normal-spaced-49000.png",
+        "foreground_mae": 12.64423876416787,
+        "full_mae": 0.41337083333333335
+      },
+      {
+        "file": "cjk-800-normal-spaced-51000.png",
+        "foreground_mae": 13.302898550724638,
+        "full_mae": 0.4372986111111111
+      },
+      {
+        "file": "cjk-800-normal-spaced-60000.png",
+        "foreground_mae": 10.258854637812261,
+        "full_mae": 0.31524097222222225
+      },
+      {
+        "file": "cjk-800-normal-spaced-7000.png",
+        "foreground_mae": 13.696401378536507,
+        "full_mae": 0.3707715277777778
+      },
+      {
+        "file": "cjk-800-normal-spaced-70000.png",
+        "foreground_mae": 16.728775951223277,
+        "full_mae": 0.61850625
+      },
+      {
+        "file": "cjk-800-normal-spaced-7200.png",
+        "foreground_mae": 10.798556328950761,
+        "full_mae": 0.39939583333333334
+      },
+      {
+        "file": "cjk-800-normal-spaced-73000.png",
+        "foreground_mae": 15.00506740232044,
+        "full_mae": 0.5491611111111111
+      },
+      {
+        "file": "cjk-800-normal-spaced-7500.png",
+        "foreground_mae": 12.046047601430509,
+        "full_mae": 0.4673986111111111
+      },
+      {
+        "file": "cjk-800-normal-spaced-8000.png",
+        "foreground_mae": 9.80630848104467,
+        "full_mae": 0.4480013888888889
+      },
+      {
+        "file": "cjk-800-normal-spaced-87000.png",
+        "foreground_mae": 14.253131839106482,
+        "full_mae": 0.5432534722222222
+      },
+      {
+        "file": "cjk-800-normal-spaced-87500.png",
+        "foreground_mae": 12.71226828265494,
+        "full_mae": 0.6264944444444445
+      },
+      {
+        "file": "cjk-800-normal-spaced-9000.png",
+        "foreground_mae": 9.687517077579503,
+        "full_mae": 0.4818340277777778
+      },
+      {
+        "file": "cjk-800-normal-spaced-90000.png",
+        "foreground_mae": 11.997403381642512,
+        "full_mae": 0.7184388888888888
+      },
+      {
+        "file": "latin-380-calm-spaced-0.png",
+        "foreground_mae": 8.02020202020202,
+        "full_mae": 0.4532719298245614
+      },
+      {
+        "file": "latin-380-calm-spaced-11000.png",
+        "foreground_mae": 8.60396721537296,
+        "full_mae": 0.7903230994152047
+      },
+      {
+        "file": "latin-380-calm-spaced-28000.png",
+        "foreground_mae": 5.029907740335034,
+        "full_mae": 0.5837368421052631
+      },
+      {
+        "file": "latin-380-calm-spaced-28001.png",
+        "foreground_mae": 10.5808632671858,
+        "full_mae": 0.7848611111111111
+      },
+      {
+        "file": "latin-380-calm-spaced-28200.png",
+        "foreground_mae": 11.591149561212424,
+        "full_mae": 0.8607865497076024
+      },
+      {
+        "file": "latin-380-calm-spaced-29000.png",
+        "foreground_mae": 11.694639845324776,
+        "full_mae": 0.8756491228070176
+      },
+      {
+        "file": "latin-380-calm-spaced-31000.png",
+        "foreground_mae": 11.573588105134727,
+        "full_mae": 0.8638918128654971
+      },
+      {
+        "file": "latin-380-calm-spaced-35000.png",
+        "foreground_mae": 10.156745288905528,
+        "full_mae": 0.760154970760234
+      },
+      {
+        "file": "latin-380-calm-spaced-47000.png",
+        "foreground_mae": 14.421851398978637,
+        "full_mae": 0.9043114035087719
+      },
+      {
+        "file": "latin-380-calm-spaced-47200.png",
+        "foreground_mae": 14.552822658203501,
+        "full_mae": 0.9097383040935673
+      },
+      {
+        "file": "latin-380-calm-spaced-48000.png",
+        "foreground_mae": 14.471025973402467,
+        "full_mae": 0.9060526315789473
+      },
+      {
+        "file": "latin-380-calm-spaced-49000.png",
+        "foreground_mae": 13.700585789871504,
+        "full_mae": 0.8714312865497076
+      },
+      {
+        "file": "latin-380-calm-spaced-51000.png",
+        "foreground_mae": 12.424842226047046,
+        "full_mae": 0.7844751461988304
+      },
+      {
+        "file": "latin-380-calm-spaced-60000.png",
+        "foreground_mae": 10.339183094961989,
+        "full_mae": 0.6048698830409357
+      },
+      {
+        "file": "latin-380-calm-spaced-7000.png",
+        "foreground_mae": 13.864785992217898,
+        "full_mae": 0.7135014619883041
+      },
+      {
+        "file": "latin-380-calm-spaced-70000.png",
+        "foreground_mae": 16.82496653279786,
+        "full_mae": 1.3633318713450293
+      },
+      {
+        "file": "latin-380-calm-spaced-7200.png",
+        "foreground_mae": 14.134385995022742,
+        "full_mae": 0.8762982456140351
+      },
+      {
+        "file": "latin-380-calm-spaced-73000.png",
+        "foreground_mae": 11.242137085053194,
+        "full_mae": 0.8893742690058479
+      },
+      {
+        "file": "latin-380-calm-spaced-7500.png",
+        "foreground_mae": 12.617995704683011,
+        "full_mae": 0.8174195906432749
+      },
+      {
+        "file": "latin-380-calm-spaced-8000.png",
+        "foreground_mae": 13.578429800652023,
+        "full_mae": 0.9027353801169591
+      },
+      {
+        "file": "latin-380-calm-spaced-87000.png",
+        "foreground_mae": 12.164018536908308,
+        "full_mae": 0.7862324561403509
+      },
+      {
+        "file": "latin-380-calm-spaced-87500.png",
+        "foreground_mae": 11.256344434686662,
+        "full_mae": 0.8961418128654971
+      },
+      {
+        "file": "latin-380-calm-spaced-9000.png",
+        "foreground_mae": 11.97834015630815,
+        "full_mae": 0.8974283625730994
+      },
+      {
+        "file": "latin-380-calm-spaced-90000.png",
+        "foreground_mae": 10.49048417886273,
+        "full_mae": 1.024688596491228
+      },
+      {
+        "file": "latin-380-chaotic-spaced-0.png",
+        "foreground_mae": 8.02020202020202,
+        "full_mae": 0.4532719298245614
+      },
+      {
+        "file": "latin-380-chaotic-spaced-11000.png",
+        "foreground_mae": 8.50281394835577,
+        "full_mae": 0.8485438596491228
+      },
+      {
+        "file": "latin-380-chaotic-spaced-28000.png",
+        "foreground_mae": 3.9436454812556607,
+        "full_mae": 0.6361067251461988
+      },
+      {
+        "file": "latin-380-chaotic-spaced-28001.png",
+        "foreground_mae": 10.445753621352253,
+        "full_mae": 0.7732090643274854
+      },
+      {
+        "file": "latin-380-chaotic-spaced-28200.png",
+        "foreground_mae": 11.530061755168639,
+        "full_mae": 0.8612426900584795
+      },
+      {
+        "file": "latin-380-chaotic-spaced-29000.png",
+        "foreground_mae": 10.99668284292647,
+        "full_mae": 0.8302953216374269
+      },
+      {
+        "file": "latin-380-chaotic-spaced-31000.png",
+        "foreground_mae": 9.93659780985565,
+        "full_mae": 0.7461461988304093
+      },
+      {
+        "file": "latin-380-chaotic-spaced-35000.png",
+        "foreground_mae": 10.156745288905528,
+        "full_mae": 0.760154970760234
+      },
+      {
+        "file": "latin-380-chaotic-spaced-47000.png",
+        "foreground_mae": 14.421851398978637,
+        "full_mae": 0.9043114035087719
+      },
+      {
+        "file": "latin-380-chaotic-spaced-47200.png",
+        "foreground_mae": 14.228082816928472,
+        "full_mae": 0.8906769005847953
+      },
+      {
+        "file": "latin-380-chaotic-spaced-48000.png",
+        "foreground_mae": 14.526493854204698,
+        "full_mae": 0.898109649122807
+      },
+      {
+        "file": "latin-380-chaotic-spaced-49000.png",
+        "foreground_mae": 14.066027765768363,
+        "full_mae": 0.8803216374269006
+      },
+      {
+        "file": "latin-380-chaotic-spaced-51000.png",
+        "foreground_mae": 12.849517931050983,
+        "full_mae": 0.8097602339181287
+      },
+      {
+        "file": "latin-380-chaotic-spaced-60000.png",
+        "foreground_mae": 10.339183094961989,
+        "full_mae": 0.6048698830409357
+      },
+      {
+        "file": "latin-380-chaotic-spaced-7000.png",
+        "foreground_mae": 15.44970038133285,
+        "full_mae": 0.7787441520467836
+      },
+      {
+        "file": "latin-380-chaotic-spaced-70000.png",
+        "foreground_mae": 23.317441757463016,
+        "full_mae": 1.9642733918128654
+      },
+      {
+        "file": "latin-380-chaotic-spaced-7200.png",
+        "foreground_mae": 13.59467959260221,
+        "full_mae": 0.9221608187134503
+      },
+      {
+        "file": "latin-380-chaotic-spaced-73000.png",
+        "foreground_mae": 11.241559096018918,
+        "full_mae": 0.8887646198830409
+      },
+      {
+        "file": "latin-380-chaotic-spaced-7500.png",
+        "foreground_mae": 11.278717264072066,
+        "full_mae": 0.8940233918128655
+      },
+      {
+        "file": "latin-380-chaotic-spaced-8000.png",
+        "foreground_mae": 11.229187195229793,
+        "full_mae": 0.9568786549707602
+      },
+      {
+        "file": "latin-380-chaotic-spaced-87000.png",
+        "foreground_mae": 13.01124515398878,
+        "full_mae": 0.8300730994152047
+      },
+      {
+        "file": "latin-380-chaotic-spaced-87500.png",
+        "foreground_mae": 10.52578624588053,
+        "full_mae": 0.9939766081871345
+      },
+      {
+        "file": "latin-380-chaotic-spaced-9000.png",
+        "foreground_mae": 10.495288842679836,
+        "full_mae": 1.0388830409356724
+      },
+      {
+        "file": "latin-380-chaotic-spaced-90000.png",
+        "foreground_mae": 8.727167073433947,
+        "full_mae": 0.9430540935672515
+      },
+      {
+        "file": "latin-380-normal-dense-0.png",
+        "foreground_mae": 8.02020202020202,
+        "full_mae": 0.4532719298245614
+      },
+      {
+        "file": "latin-380-normal-dense-11000.png",
+        "foreground_mae": 45.12191085437851,
+        "full_mae": 4.3822573099415205
+      },
+      {
+        "file": "latin-380-normal-dense-28000.png",
+        "foreground_mae": 10.886264390631203,
+        "full_mae": 0.49125730994152045
+      },
+      {
+        "file": "latin-380-normal-dense-28001.png",
+        "foreground_mae": 10.887422257509593,
+        "full_mae": 0.4913084795321637
+      },
+      {
+        "file": "latin-380-normal-dense-28200.png",
+        "foreground_mae": 10.894766441709674,
+        "full_mae": 0.4916359649122807
+      },
+      {
+        "file": "latin-380-normal-dense-29000.png",
+        "foreground_mae": 10.919644038639673,
+        "full_mae": 0.492766081871345
+      },
+      {
+        "file": "latin-380-normal-dense-31000.png",
+        "foreground_mae": 11.02659785629218,
+        "full_mae": 0.49753362573099413
+      },
+      {
+        "file": "latin-380-normal-dense-35000.png",
+        "foreground_mae": 11.39155749636099,
+        "full_mae": 0.5136827485380117
+      },
+      {
+        "file": "latin-380-normal-dense-47000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-47200.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-48000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-49000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-51000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-60000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-7000.png",
+        "foreground_mae": 15.100736664595722,
+        "full_mae": 0.7765701754385965
+      },
+      {
+        "file": "latin-380-normal-dense-70000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-7200.png",
+        "foreground_mae": 12.876381195852861,
+        "full_mae": 0.8452222222222222
+      },
+      {
+        "file": "latin-380-normal-dense-73000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-7500.png",
+        "foreground_mae": 12.46957162748792,
+        "full_mae": 0.8722017543859649
+      },
+      {
+        "file": "latin-380-normal-dense-8000.png",
+        "foreground_mae": 10.994405667529344,
+        "full_mae": 0.856735380116959
+      },
+      {
+        "file": "latin-380-normal-dense-87000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-87500.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-9000.png",
+        "foreground_mae": 37.01943119590178,
+        "full_mae": 2.7809590643274853
+      },
+      {
+        "file": "latin-380-normal-dense-90000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-spaced-0.png",
+        "foreground_mae": 8.02020202020202,
+        "full_mae": 0.4532719298245614
+      },
+      {
+        "file": "latin-380-normal-spaced-11000.png",
+        "foreground_mae": 8.796633079380683,
+        "full_mae": 0.9418172514619884
+      },
+      {
+        "file": "latin-380-normal-spaced-28000.png",
+        "foreground_mae": 4.39840991643171,
+        "full_mae": 0.5794868421052631
+      },
+      {
+        "file": "latin-380-normal-spaced-28001.png",
+        "foreground_mae": 10.945606781926001,
+        "full_mae": 0.8126812865497076
+      },
+      {
+        "file": "latin-380-normal-spaced-28200.png",
+        "foreground_mae": 11.296584656908543,
+        "full_mae": 0.8403201754385965
+      },
+      {
+        "file": "latin-380-normal-spaced-29000.png",
+        "foreground_mae": 10.847439530204099,
+        "full_mae": 0.8164122807017544
+      },
+      {
+        "file": "latin-380-normal-spaced-31000.png",
+        "foreground_mae": 11.283977465722215,
+        "full_mae": 0.8425190058479533
+      },
+      {
+        "file": "latin-380-normal-spaced-35000.png",
+        "foreground_mae": 10.156745288905528,
+        "full_mae": 0.760154970760234
+      },
+      {
+        "file": "latin-380-normal-spaced-47000.png",
+        "foreground_mae": 14.421851398978637,
+        "full_mae": 0.9043114035087719
+      },
+      {
+        "file": "latin-380-normal-spaced-47200.png",
+        "foreground_mae": 14.3940401339404,
+        "full_mae": 0.8997149122807018
+      },
+      {
+        "file": "latin-380-normal-spaced-48000.png",
+        "foreground_mae": 14.383984113312279,
+        "full_mae": 0.9026593567251462
+      },
+      {
+        "file": "latin-380-normal-spaced-49000.png",
+        "foreground_mae": 14.4195678702175,
+        "full_mae": 0.9053099415204678
+      },
+      {
+        "file": "latin-380-normal-spaced-51000.png",
+        "foreground_mae": 10.078429951690822,
+        "full_mae": 0.6340190058479532
+      },
+      {
+        "file": "latin-380-normal-spaced-60000.png",
+        "foreground_mae": 10.339183094961989,
+        "full_mae": 0.6048698830409357
+      },
+      {
+        "file": "latin-380-normal-spaced-7000.png",
+        "foreground_mae": 15.100736664595722,
+        "full_mae": 0.7765701754385965
+      },
+      {
+        "file": "latin-380-normal-spaced-70000.png",
+        "foreground_mae": 11.427441038641776,
+        "full_mae": 0.9086622807017544
+      },
+      {
+        "file": "latin-380-normal-spaced-7200.png",
+        "foreground_mae": 12.876381195852861,
+        "full_mae": 0.8452222222222222
+      },
+      {
+        "file": "latin-380-normal-spaced-73000.png",
+        "foreground_mae": 11.241427409043357,
+        "full_mae": 0.8892368421052631
+      },
+      {
+        "file": "latin-380-normal-spaced-7500.png",
+        "foreground_mae": 12.46957162748792,
+        "full_mae": 0.8722017543859649
+      },
+      {
+        "file": "latin-380-normal-spaced-8000.png",
+        "foreground_mae": 10.994405667529344,
+        "full_mae": 0.856735380116959
+      },
+      {
+        "file": "latin-380-normal-spaced-87000.png",
+        "foreground_mae": 12.78148358406661,
+        "full_mae": 0.828311403508772
+      },
+      {
+        "file": "latin-380-normal-spaced-87500.png",
+        "foreground_mae": 11.89853243907298,
+        "full_mae": 0.9988187134502924
+      },
+      {
+        "file": "latin-380-normal-spaced-9000.png",
+        "foreground_mae": 10.342824601366743,
+        "full_mae": 0.9130219298245614
+      },
+      {
+        "file": "latin-380-normal-spaced-90000.png",
+        "foreground_mae": 9.315475539017182,
+        "full_mae": 1.0481695906432749
+      },
+      {
+        "file": "wrap-380-normal-spaced-0.png",
+        "foreground_mae": 8.125421093547551,
+        "full_mae": 0.6093333333333333
+      },
+      {
+        "file": "wrap-380-normal-spaced-11000.png",
+        "foreground_mae": 8.151478149972187,
+        "full_mae": 1.264140350877193
+      },
+      {
+        "file": "wrap-380-normal-spaced-28000.png",
+        "foreground_mae": 3.6862750467844263,
+        "full_mae": 0.6846856725146199
+      },
+      {
+        "file": "wrap-380-normal-spaced-28001.png",
+        "foreground_mae": 16.063329594316695,
+        "full_mae": 1.5677690058479532
+      },
+      {
+        "file": "wrap-380-normal-spaced-28200.png",
+        "foreground_mae": 15.372000866846228,
+        "full_mae": 1.5127119883040936
+      },
+      {
+        "file": "wrap-380-normal-spaced-29000.png",
+        "foreground_mae": 15.402885936784243,
+        "full_mae": 1.5343040935672514
+      },
+      {
+        "file": "wrap-380-normal-spaced-31000.png",
+        "foreground_mae": 18.411415751991207,
+        "full_mae": 1.848295321637427
+      },
+      {
+        "file": "wrap-380-normal-spaced-35000.png",
+        "foreground_mae": 18.945115423470696,
+        "full_mae": 1.8984444444444444
+      },
+      {
+        "file": "wrap-380-normal-spaced-47000.png",
+        "foreground_mae": 12.270468010656487,
+        "full_mae": 0.9442894736842106
+      },
+      {
+        "file": "wrap-380-normal-spaced-47200.png",
+        "foreground_mae": 12.60259678662477,
+        "full_mae": 0.9743187134502924
+      },
+      {
+        "file": "wrap-380-normal-spaced-48000.png",
+        "foreground_mae": 12.344021376085504,
+        "full_mae": 0.9321388888888889
+      },
+      {
+        "file": "wrap-380-normal-spaced-49000.png",
+        "foreground_mae": 12.548402188726836,
+        "full_mae": 0.9425087719298245
+      },
+      {
+        "file": "wrap-380-normal-spaced-51000.png",
+        "foreground_mae": 12.038756899448044,
+        "full_mae": 0.916203216374269
+      },
+      {
+        "file": "wrap-380-normal-spaced-60000.png",
+        "foreground_mae": 10.98840786964812,
+        "full_mae": 0.7733494152046784
+      },
+      {
+        "file": "wrap-380-normal-spaced-7000.png",
+        "foreground_mae": 13.091931417044881,
+        "full_mae": 0.8003567251461988
+      },
+      {
+        "file": "wrap-380-normal-spaced-70000.png",
+        "foreground_mae": 21.25455524384369,
+        "full_mae": 2.2447119883040934
+      },
+      {
+        "file": "wrap-380-normal-spaced-7200.png",
+        "foreground_mae": 12.897253258845438,
+        "full_mae": 1.0378464912280703
+      },
+      {
+        "file": "wrap-380-normal-spaced-73000.png",
+        "foreground_mae": 20.333019621263976,
+        "full_mae": 2.136764619883041
+      },
+      {
+        "file": "wrap-380-normal-spaced-7500.png",
+        "foreground_mae": 11.459523809523809,
+        "full_mae": 1.0416769005847952
+      },
+      {
+        "file": "wrap-380-normal-spaced-8000.png",
+        "foreground_mae": 10.132645099333773,
+        "full_mae": 1.033748538011696
+      },
+      {
+        "file": "wrap-380-normal-spaced-87000.png",
+        "foreground_mae": 11.1650048183767,
+        "full_mae": 0.8862967836257309
+      },
+      {
+        "file": "wrap-380-normal-spaced-87500.png",
+        "foreground_mae": 10.41025232121341,
+        "full_mae": 1.1264912280701755
+      },
+      {
+        "file": "wrap-380-normal-spaced-9000.png",
+        "foreground_mae": 7.547668827095965,
+        "full_mae": 0.9740058479532163
+      },
+      {
+        "file": "wrap-380-normal-spaced-90000.png",
+        "foreground_mae": 5.3960124116986865,
+        "full_mae": 0.9781330409356725
+      }
+    ],
+    "png_sha256": {
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-0.png": "779657b9c3b6ff7a6528811e815bb8e80b8e04a898c79af061b868f05c3f898d",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-0.png": "b10bc3b36fa7b81055c477cc04e5e6b33bf10b47fa02253b4cbae845e4ec09f2",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-11000.png": "6a501b67ce5020deb83a95d2b490c63d404820059295901f3e00c228d77f3ca4",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-11000.png": "a349484645fac347e7df6c4ab4683665678efd2c904b442084ef6b6bde232da0",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-28000.png": "7141c11fc05ad025ab46d638b86d3dc931fe3bf1865b467b197d0cd3be96026d",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-28000.png": "0fc6c828949bc984cdda30accf185d26f8feca094b36aa0db29b56aee2c16d3a",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-28001.png": "79f1b6fa4459eb1f79cd51069d13cba2fcde69710ea8e6f08cc3062dea1b0370",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-28001.png": "032c4769ceeb6e10d73741d79f5a3b4215e657d96ffc101474802aa6f5fbc3e2",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-28200.png": "82370f674b5a563b15c350b4b221a7aaac80c9256b03fe7a15ac5a848da3abdd",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-28200.png": "48a34217158bf826569338873eb338a038df00166d68645e1f78e0e2cf8c1cac",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-29000.png": "574d85e30b570fb47f43c14effa5bf0fb9327931b6dc743d97d0baf348d48809",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-29000.png": "d45edbae081c6936146e01b5d1a9485d4be90ac89d0db60c8c5629e10d74dc69",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-31000.png": "b07f2d27d30c3a363864c2c333dca50c7cbca9cc9072487ca8cc09997204ebb8",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-31000.png": "656d63cc5041e178a933a9e4f138d8eda49b8059d35fff2b0f13e17e37f53a81",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-35000.png": "c819540f038b90661643cc99777cd600860acb4f5b48e5d85f4169d6e3424e2a",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-35000.png": "f2237cf1644947cc17be42d38355cbf2056f4298f73dacd33509fd0f53cfbfc8",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-47000.png": "c52c039d43763c56b3f51b94a4a38ab1b1ee9f8132ed5c82852baa8c6a9b5be4",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-47000.png": "8cbcdb25076608c06417f989a9ad18bb715974ce89c828b25be043cb4e15db23",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-47200.png": "984a36f536d5d07087c6e50aea35e2c6b1d1800876c2cd12f43045268e3bf9e1",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-47200.png": "74140d6a251356be68cbdbf1404d7a4cb8d9c97745206a26946d0d1523a0e5b7",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-48000.png": "07737417e2ee748e865b2744fb3e631229fa1b2a4abf09f2d1cffcc68db1c164",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-48000.png": "731ed6d032b49d73e225e9f69aecf9ac796936e15ae084fd871b44d69daa97f8",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-49000.png": "cabcc4b1f83b0c9a237193deffe9f98bc29b8d818fe3dccef81b37148bedb6cf",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-49000.png": "3a8eec0a0557f3cc26abddfd2ebf62b3d830e24343c23c7ff97f649775d809ae",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-51000.png": "821740eb9480dfb3e66d4bfa6bb2645cedf435ccaab4ff8ae011605c6eb1dfa2",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-51000.png": "8693cf3db1e0f245e9c48996000d051cc8be0e619b3845ccafeef2464f5a2e28",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-60000.png": "dac3079b272dbc61f6fd71a314f876d10f3d179e999e3e7209958913a3ca2541",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-60000.png": "24c0a5658aea65ca1d481e14fb469e9b253ee4c39a513e9d7cc5995e73035035",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-7000.png": "1e831aa1b765fae6179b2c0e2fd41e07e8865ab46d91d3fe46c05dc229e53a39",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-7000.png": "b9847b54d5e8a2ba668de65113cf31ad68fe1c376a4a3f99da756afaea5828d1",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-70000.png": "f67b9c63bf7a24b970d1cff445c106e514ffc70889ebf75c2682d583b3ad5a41",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-70000.png": "2cedf213bfad45183b677b468ce9cf678e5739dc118b17ddac1e731a29a11d33",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-7200.png": "db715617d0c4490457c0f69e6d2367da143c1b86bd3befc1a7dbd3d3fb47e629",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-7200.png": "d0a5140b28f20ed3249662f474d1fc05f6b9f87c9582f268ffd0fbc0608244e4",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-73000.png": "5fdb5e421572b53fd89ab993199f5d6fbc31796d315fcee319be434efea7d7ac",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-73000.png": "53c3152b880b669950d688f2b3bb5466711fd454b341583ef67a6f0471f88fde",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-7500.png": "dc2a247258c76a53e4f55df340041258e35381a6075f9a9d446cdeee13a84bce",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-7500.png": "02e36175fe60e4013ae69c86f3f6ba37b04d4874532d09bb2a364b2165447515",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-8000.png": "395f765c76b90a005bff23ef87742bfeee1ee1c8a8fa7f8d59e0b9b0136a1426",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-8000.png": "b41c4f0d2facf5079e24f5d3cb67d385b6d5e2dc04a4b5c85c7517b6608260f5",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-87000.png": "d3acc82442e8430140ed73a1b90a8229eedf3f4699473ca84992ca2d25f8365a",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-87000.png": "360ae0605f31e78c8b0ea26e0608eead821c25c64504b5b0658e5d288d20badb",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-87500.png": "35ef7b2adfd1e3a90ca2a368b6ba7803f13837010e59511878af2692bd2c4ddf",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-87500.png": "56d2d4348b7785372477c92d443669ee3a8c8fcd41579f2c43587f95b59e3d89",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-9000.png": "1275b46075aa645a6a5f3dd08a38327811b2c3f522b326606605b8cec34c408b",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-9000.png": "c7e820dfb5ff3da0d8fb78a67dab6eb5362f8cb67a3d24cfa44fa56d28717814",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-90000.png": "8bb3048b6f4cdd4ba3ffcc060bfc88af90587bec6418e4a1bbe35c888175882b",
+      "build/verification/pendolo-chorus-stage-kotlin/arabic-800-normal-spaced-90000.png": "02966b010c643550d372447c1e709ec28542798432dd8084e38579d76009b12a",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-0.png": "8d5dbb0245aaf51a23c127e6c3321f86b8f053a4f270addd73bb60ea082a3291",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-0.png": "4c309e08a34f44e9b4d5f51f7c37a32acd8e6a4bd33cd9b94c8956e4a9f8b0e6",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-11000.png": "5e3ec5b3868ccaf5c7de57996fc68f35f53d266eb0ef229cb84f4afd829857e6",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-11000.png": "c42357194268c3455db30955a70550c6033b56323c03f911c6832baab2185b45",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-28000.png": "8f7b8a2e71e8a65cb9bfcb0b402b546071a24f972e74c9f35148657f3d64e628",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-28000.png": "61d88091f979e8333e6b20c088215f17388fdcf297f59bdd90cbec54888c2d37",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-28001.png": "770237ec7b7197e26f795881ff33d5677ecdcb0d99558b3074019645aa190ada",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-28001.png": "cc0967c457df5df19d26444e9fada5e5a05a740c078ba8ae2679eaf4fd2011aa",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-28200.png": "5780e222440388c4d0549c88ea15efd2b5eb1cb14f9f63864301632141235ae5",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-28200.png": "94459dab5ad0cabcb6ed30c0959ca76ffc0ed2f6c74d935ba43ecb74a56bb8bd",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-29000.png": "059564355aca6351ae92907700b316f4a099daad479a5ef32b7b9c1fc412c6ad",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-29000.png": "e466da8f7b46efa453c750a621207d048e1a413f4d1b6c551de5fcd2e5753b5b",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-31000.png": "a5e1615557b192adb2e657726d667dedfc6c9841a600fd2a98cce8806fa2a3c0",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-31000.png": "331aadbeaad8587b8a2ec4a07b054df2e2ee8a78f315233ce95dc904b4983be6",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-35000.png": "fe13ac1102c0fc2c84e93b4e5869dc1c53bf98b015058c6432d84fdd1cf4e361",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-35000.png": "b219ee74170f3869c4abebe92ade43123ec6fc51b06ee6900832e11a356a38a3",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-47000.png": "bbd60ce0c317c5fcd8494bd3f83aecdc081b990537d745a6bf5452fd7dc18e18",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-47000.png": "5b2aa8c1f447db008eb4f7b075368a2b6a3c03734b9a548d076cbce78ffe8297",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-47200.png": "e94ea42e71dd444049df7d2ca6cd0f0280c648cb11a3aafc4c61f839ffb4633e",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-47200.png": "8bf715ac535016e51985d0e6b9c91dbdf6f35f6929002b97237c89dd57db5969",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-48000.png": "f446d8b86e3b9cbfe24f292b0ca2af7861568dd7bf3c195dd7d111b4b47d5043",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-48000.png": "401a816cbac97d6a7f8a14099d2df0f0077e6b1d3a5bd2eaf873e44920b8e4d8",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-49000.png": "c53a2d78003d73f5997d1cbd1f4448a0ad2b8b4a88d1fdd4f221a1e7c1d370d2",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-49000.png": "2295b2a7f17340db2b25e8af32f01a6135ae2a37eda3ad2d528fd61401524bce",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-51000.png": "8ae2ef16c40d2ce2da010173b951473f64d80938889f2970e4275706a7c733ce",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-51000.png": "4130f46c6a821e934725668714ce4ba5e41e8bcb36f7ac68a203f5dd1fa8115b",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-60000.png": "a0a14457b1c0498597cdf58a500b7d374dfd2927a4ae0c024c66b753fd4d787c",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-60000.png": "b8d12ca0ebb3718d2acee9e2160ab16f29e2821a436538450d600643a82dbbf8",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-7000.png": "b089bdc1e5cd8978b5f086a47a11648e8b774c0469febec6b32abb05f8a373d8",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-7000.png": "0c6496ca067a76a9a458f607f965a0307c4587c298370ed623d0fe39d549b3ba",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-70000.png": "deab12e7279dfa36cc4893f6ee0a3a5dc7eb95569df343f0aeea9110797be19a",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-70000.png": "d7764ecfcbe2b297d573a9e205eab5ce590cb7496f9bc96272201ba7c51c5c53",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-7200.png": "488b4bded50297e1c08af81014077ced43f6c697b8dfa8dda1a84c87c9f9b5e3",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-7200.png": "2ecc2692479cb5d9b8b25f573e7f762a2dff7bef5529090ec1cf38ae0aeb22b7",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-73000.png": "278a3f0e36dfa0290886a16051486777e5515c04e7ee2975bfde78767f16fb95",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-73000.png": "97c9a587dfcf1d8b87a80b8d1bf549f2a409e654bc3fcfeec4e10313488de897",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-7500.png": "0d4076faf9299a6cd2def5b14acf94778e6b728d029d340be2dfdd95685f30f9",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-7500.png": "603b3d03d6af765b67da0928031cfab8031ca4beaeeb75c0cdecf48d69443fd0",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-8000.png": "16036f8e0b830da66bc2cd81dff79544f206737836ddd0b5b033bc02571ece19",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-8000.png": "a135a2c3020115cc6bce9af031471d9264f4ad1a18d6b5a31386a8eeebbb7df1",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-87000.png": "7c65c742360c23e72fce14ccf5906d6233d4b4cdc94f76b2bf77fa8a27e04e3e",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-87000.png": "2420c497ac9b01052f1bc69e008fee82995a17ffc95291f62914b09d664d242f",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-87500.png": "712da887254a885c51b11a02d289c63510430a356b5e67b90ffef69c5f0b74da",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-87500.png": "d5dd435e9dc44923bda4e1f157498b6507b23f3797fe2d842ae27fb1303b4285",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-9000.png": "d8edb95ffd4e7c3035873a505196b8cbc38f10e4bedd2b55d4756af607ea0cd9",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-9000.png": "7c130be667366e4c4ef7073212b81de2fd0c0c94bf27cc51f8da0886f1af237b",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-90000.png": "7d0660cb6241f5166303329b459e89e8726002ec4dfd55b80a1f28f461c4d419",
+      "build/verification/pendolo-chorus-stage-kotlin/cjk-800-normal-spaced-90000.png": "c4ab3b0e09c9cf8cc6ca4f5b81faafcbf5e9710a87268751fccc0fd7795069c5",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-0.png": "d546f495c4160b9277af1d0a0c96b1efee98ad3593b477b791269125425439f0",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-0.png": "34952dbe1deab2adcd267353bb5646ef62cdb02c7e0eb1876f2423fa8e182d05",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-11000.png": "09b529c80df1bc75fdf4f811758d38a56fb5d2b652656cbb469168066ad6b44c",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-11000.png": "267e9428c8bf4ee804781ae426fb5b33c5f0cd56e266ed96b3c8e66347d35cd9",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-28000.png": "7e3fabbf063c9ecf4ddb7017f121ed5160589376a98703211c6cf3831e0cbe1e",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-28000.png": "a17671c861c5a678a82d5a5b521e1660259979147be5ff79a7b9980f546edff8",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-28001.png": "4001b9cdffd50424b1e9f000da1d7d8727825e4a47ba5628050031be6e96e6e0",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-28001.png": "398fa28358551d87eff4e7c1f30f3838db67e4ddd9840230b18f8956d2872dbf",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-28200.png": "5e2bafb2cb5e6fbc5c1159f0f363dddd3f8ca758fd4b35ace23b0b72e61e2b9f",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-28200.png": "78ae3746a5a63a5bdd545cdc43d95dc8360c90ea95231a31e96b4f60451578d1",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-29000.png": "01f2717483b67ce04dbbf6f970166f8ae0420675aa59d09f9ba4e172c3be197f",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-29000.png": "74ec2fe79320d2efdd5fa6f93ccd1cd47fb6d1060628a0a9da326838f2e316ac",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-31000.png": "03914a567d5cb7b715e41403b89508e3c2432177f15de5491cda8e9ab0406ff6",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-31000.png": "f6abe9f530ebfbfb2d34ac8701c3fba8ae2d493b2c70eff5fa6795a66ceb5048",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-35000.png": "acbd65b1817c59f6395cbb68b325f9aee84776de3377aae11a2e673e1277216e",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-35000.png": "ffc74c6f7f22990c0a4efa4c37fce69a62f1bed47f02f7ad6585dd35ef9cd4ba",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-47000.png": "13425ed6236114b1532f7f5d79088c523f7265cf57d765bb46660e59db60e0db",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-47000.png": "56880bcf05fcf63526135863e53c3890197e5a87f08eb1d5ef40d8a5b451154c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-47200.png": "fb0ad55473190cc82d5db9b089cf5f93828a94f444a792330ef38d19202e6d13",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-47200.png": "97fb28bd4da2baa4d04acd7fe6e0cea6b9aadb45ec2321a5668d649dee3bdfe6",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-48000.png": "5789ae85bea45a54d65406383909cabe1d9e50ebd664941165bf01d2ee85e9ea",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-48000.png": "c3f77d60ad15d019f7276a896f7d76a998f25f535cbba8d807d9e15e9b6aab18",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-49000.png": "354c0775a3dc707783a1130baee3b1ac55cb530b28db4052679db14c64b9a9c1",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-49000.png": "97c367a70237a90f560485f486bf8c77c4ef8e6e9c28e06c9576718ebeb7a73a",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-51000.png": "aca9c1cb2552f24cf848b274947472a4400420561da96173e8855fe15d11d360",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-51000.png": "3d63703f25bb0e2da88054138fece7f458175bb059ddd7a3a4d5e78dfc716b11",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-60000.png": "5630937f04ba3d2110b35f9c84441fc65e1bd7ecf582adaedc9d28e8c1098e7a",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-60000.png": "4eb4a24e2f03e5314ea09778f8e4a14aa6c68da5a598d6df87d2b73da566b441",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-7000.png": "9fc108f937f401da8e3532f67fb00b03e89e8959a45addba72485deae93d6611",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-7000.png": "2673ec93ab6f37eeb2a91e9006f2b9d565102ee5735c3c20312b497ffc931530",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-70000.png": "b50730dd13a46884995c9fe57b3a2dc177b6d81b78d88b9efbe0b53d1bc5821d",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-70000.png": "1d66b4366b1a2a6af126b6d8538310411a7a233d2bdaf1d8df1de6fad567e573",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-7200.png": "88c80ce9aac94418a50a39421be3590ae4af4c13cdeed56fbeb32620355f8915",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-7200.png": "95c5a928db77a74619ae70d0a1e794120e201160e31854166a6623c042390b2a",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-73000.png": "f740de061acef6b54575efb0a34c10474edc0ccc6e999611ba69efbdeadf4958",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-73000.png": "14157bbb906a586b24923447e8ecaa573bee98b168eb205b0ede45d1359bbc68",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-7500.png": "27073e9af1ec87267d98d78b1c3afd82d59c77329bf9dd2d45d1975716cf4263",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-7500.png": "56b747a3ca3acc0ddbcc1c3486bb57f0ff512c1ede40f95aae88fe324a275f0b",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-8000.png": "8d50e61d4ecba8c4d372c488007edb56606077fe9c69356ead9c6a4584452140",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-8000.png": "5fb736bd60db0c9e48e5feddc3677889423a42b9c50644eea002773879a205c9",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-87000.png": "2db1c4f7f791a7172e9ad2c90bc04a5ac37544cd71fa05bf4328978f5270bfe5",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-87000.png": "bd1d93ee652c42e74911ccfe30130bd52a7d07623835ac759ab1812bcad9cc61",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-87500.png": "1601cbb1d626ee7f47443ef430f56fdea7cd834b960ec8aa8d78d2abc8170596",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-87500.png": "a2d5adbd01b8199b5e6be309512909af4cb15f50da8578891203766089118744",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-9000.png": "9f35c235152c6c80e0683690ae77d253b6448d0edea6ddebab39143d4b60e947",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-9000.png": "5a174901d79b8f85905ef48a31dbef98e1f91471ad9c96018c6fc67a1a8ce711",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-90000.png": "33c749238fbe8f9cb441412f9cc24da7342d8c0756430427f0472f0c86b8ed04",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-calm-spaced-90000.png": "d7146be7a3c58ffca0a1d93ac125f97ddd2ca370aaf63bf938752390202e5103",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-0.png": "d546f495c4160b9277af1d0a0c96b1efee98ad3593b477b791269125425439f0",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-0.png": "34952dbe1deab2adcd267353bb5646ef62cdb02c7e0eb1876f2423fa8e182d05",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-11000.png": "874d232c6b5c9ed7e44e1045a171a47c7f30a427c99222460500e8c968401aac",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-11000.png": "c4abaf539c1c50722098457bef8e8d51cde11601b82a61c6550f86486f6aa0fe",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-28000.png": "bacba7d8f2ba8f9ea56bc362b71ebe93b20eaf34d43091ccf7752ccc59afe0db",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-28000.png": "2e90a371895f7209e648a92770c1f896ce64b7825b97916e8074749425909344",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-28001.png": "933e8c23ae3ea180ee4930a34f13bbe0fe794e99b2d414137624fa414838cdf8",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-28001.png": "c5459d721ac0b7cbf7fad9d1e9b31eba81ee949381ea7a97c774cec82e1ec260",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-28200.png": "13ef6b77939256112ad89904c3b7085bd05c6c0c53f77f00c8f1b9d91e59518e",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-28200.png": "3d0d0a38c2c71c07b6a29da1001bba04806d2ce35c1546dd27a02f9814d97cd7",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-29000.png": "e636f4c6d787b56c0e5f20cdbfc430ff2baa530d595f381f9c12f51f2cef177c",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-29000.png": "3c33f92c826ef1c2d0cb9babd62a67203c2332a5c32637973fc12c68cf7d8a9d",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-31000.png": "0d8ebdedf6f59dc919b9f7f966cb9f4d7f31863e66fb4edc489847c83177d3ab",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-31000.png": "de5edf42277fdeda982ffb9864837209550c0fdc09f5786f5a67d7de5a8bab6c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-35000.png": "acbd65b1817c59f6395cbb68b325f9aee84776de3377aae11a2e673e1277216e",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-35000.png": "ffc74c6f7f22990c0a4efa4c37fce69a62f1bed47f02f7ad6585dd35ef9cd4ba",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-47000.png": "13425ed6236114b1532f7f5d79088c523f7265cf57d765bb46660e59db60e0db",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-47000.png": "56880bcf05fcf63526135863e53c3890197e5a87f08eb1d5ef40d8a5b451154c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-47200.png": "54348be046d5676df27eb9494fa7baa78c03da741a2eb991065481184fb2688f",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-47200.png": "bbaa447659114774acd554c0f0bc22899792911dabb7226d20b2460bfd6a4ea4",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-48000.png": "07b2b3a91ae719113f8b651cc04dffcb364bc42b5153e116aa47ba4df6c2250a",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-48000.png": "cb9deab01185f48277c4f208b75b3cf65f82e5eec69050c6f3ee178c0f4dd500",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-49000.png": "d75d45a73335f32e70dd4bb88d4becd9d603424f308cbaf3762f8cddf38af47e",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-49000.png": "e8103a0c6b5adf058ad86fd2c39a9fcf4fe8858bc0545adb8f59c965703a7d83",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-51000.png": "45c42c80d368d8a556815f0382791cd4bf0253b3c9f0264e7e8151d76ca6edcd",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-51000.png": "10b18433175eec3f55e66eca6098478b625c8815ae6090f6d77c25561088abce",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-60000.png": "5630937f04ba3d2110b35f9c84441fc65e1bd7ecf582adaedc9d28e8c1098e7a",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-60000.png": "4eb4a24e2f03e5314ea09778f8e4a14aa6c68da5a598d6df87d2b73da566b441",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-7000.png": "41b80e406a3fb76be35e8bd26c5b8e7cfbac38a94bd7a38d0f69d33db3c35369",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-7000.png": "f8c60334decfa01e1e99c084f62e244e647490489d3384c951a04b93a607b2bb",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-70000.png": "a25ea3fef7f3f5fef0a44c0c66b2606f2fb15c7d6e6a83c218f1b507b88df0cf",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-70000.png": "1a1a86a71c4d574625b147f57e547c7f35e08d6c83fa9e7da8e097b817b537ad",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-7200.png": "691867f5407406728e907910cd2e2a479ab3888ecbabb5e3de87ff08b3938a1d",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-7200.png": "2f3c400e461548d8eb8ef6c8401165611dfe99d1c6a7592165b9cf38d2f3843c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-73000.png": "bd02b81cd7ad328212b7f52fa9a77d1077df9bd88566d6081a80a3f4f8010629",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-73000.png": "8750080a66eb7ce98b4cc102ce22ae97a362b0fbc17a2eba945738ae06757a9f",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-7500.png": "ee942294f0d1a27da8e6b8cc73b9f2fd9c489b58aea310801bce8f65acaedb1a",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-7500.png": "1780f1c1c3b4f432b46704e434516be6e8fc2ce4204abd2f1dfcd6c2763ecb6c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-8000.png": "7dbcfea27e0312ea016ff70549c2445a4ddb734264da373e778068c62c27506c",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-8000.png": "013e5e4c6e1238cac8c1de317184925dca5f42cff893cc202e847b114c7544bb",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-87000.png": "4376463de4179c6b21e84f65f0c58a6174c1033c0bbad4013bbe59e2f2d07a9d",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-87000.png": "654bd601cd0bce6b6533c7bb8929129466c08415519b211bf49f6664b77b2ec3",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-87500.png": "ee2fb09ec8e4d5b1ceaccc0816a5b328dc0ce60edb6eea2d8215760cf191ab88",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-87500.png": "0f0e38be87c90d23d6fbd2b901ea1adcc8f54b062e6ae1b52d8c9663ff3825da",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-9000.png": "e7a17ed6a3de82ae08e79052bb437ceaf35d5b25e5851f79fcba5c20b9854170",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-9000.png": "21ba1162d5914ad7767c06d8daa313d87d751a4f435a74a4ab5dd7fa6e929dd6",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-90000.png": "e998f635e4b7eb0e418df15012cfa77e107410ee73728a87d4e4d56971fbea20",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-chaotic-spaced-90000.png": "45b9bcb4577af5107db811c5f3f35739eade03639cbd07d763d2468e1cbeedca",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-0.png": "d546f495c4160b9277af1d0a0c96b1efee98ad3593b477b791269125425439f0",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-0.png": "34952dbe1deab2adcd267353bb5646ef62cdb02c7e0eb1876f2423fa8e182d05",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-11000.png": "bc484eda2babd15812945ad3f37600e6642f6d68c24308c86df5e3caf2177ebc",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-11000.png": "e2f63da716703b2d9c2c4efe6db5b5d5cf0a47ec97506abada30dae94efa3529",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-28000.png": "80f9db6bcbc1399f38fc05c77ebabdd9b4661e31d8ae27114721000f1b0e6de9",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-28000.png": "f2cc102f50b6deac64dc2163e048ee47e7d46dc7f541b178b1bd57a92f493cb7",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-28001.png": "c523820e8a799e6cc4ecf953dda220b9ba814099be6d0952478e12aaa9232de9",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-28001.png": "3478a345d40bee6b8d86afa6a78772428ed73bf969e758fa6c5a00529b44dbb0",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-28200.png": "e662658a01ce16e071d6cb2c52cafeabea51a6b10ebb4bfba675824d9c5b0ffc",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-28200.png": "6ea80ebaeee3058a08d9ae9438416f666bc586c1e7df76a7eaffdebbcb70a6ab",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-29000.png": "65924bf612ff500a6353d74005aa6d49a8f9307dad7c49c4f75c428a209a7298",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-29000.png": "9c99706ef7c5e79472c3eb8ce16d5178a60cec2d5dfafc314ee4a66f0b0de2bd",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-31000.png": "c80485f6893ac25364899507eaf30fd4b524b3be1f135ea1aef6e98a708ed5a1",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-31000.png": "4b9ab2aa211152ed30895b3780fa82cd19fd6e7a2e1780dd37c6aaab62d6a8d6",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-35000.png": "6672f4c27257bb1db5a8760c57d9d4a91da877447def87e04ac3c9b9a173a26c",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-35000.png": "dba43ddc471828b48b08f3e6487fe7eeae0057402aa29d911b27adf4fd838501",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-47000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-47000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-47200.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-47200.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-48000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-48000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-49000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-49000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-51000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-51000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-60000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-60000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-7000.png": "cf97f76a1cc80573b88e7051e95016af5449b7bc86f33680602e1817685f8b4c",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-7000.png": "8220477856153666d8a19c2b51cecfc8f2380cbbc64f6b9b496d25013f58baf8",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-70000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-70000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-7200.png": "c9cba892f0acae5cb8d39fcd053ee0a2d2e976634e5b1a5c30901e72baf28389",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-7200.png": "f5e37303022310936bfbe57784d3194a26dc09a960b265f5ade81dace50fe0b3",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-73000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-73000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-7500.png": "81a1e0fd98d6eafb3ec4838dc09b3969eb73cc727037de66e3441f4525abd7e9",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-7500.png": "f33a7df2930d782bdd39342e77088ff82c5fc8a835191a701cf728ebad873190",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-8000.png": "f88ff5ae9f4bf17519a4e4286253b03b3ae1958ae78a77413a2fe2157d038750",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-8000.png": "bf2616741fb63e2e65e0e5f2c4f2a629872912286c314bbecff36c5bcebce93f",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-87000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-87000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-87500.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-87500.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-9000.png": "04307a850cc5326de93f0df223d10f07464fa90225d77b72e3e7b6fc3d042730",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-9000.png": "0cffe2effc8ec665aed81e2a306327d000070b1c964f69d3ff719ff335a6d89c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-90000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-dense-90000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-0.png": "d546f495c4160b9277af1d0a0c96b1efee98ad3593b477b791269125425439f0",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-0.png": "34952dbe1deab2adcd267353bb5646ef62cdb02c7e0eb1876f2423fa8e182d05",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-11000.png": "fb96196a7cfb4486f772665178c8df8a19b9f101c42edf3fd3519c2dc4d32911",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-11000.png": "8187a67711b428e86372f132af03e0b55468ee84a6919784e37ce5547559f5fa",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-28000.png": "a82a1b4de6e23e04094a95c43114bfef6abb2a5dfaba4a62299b8f73c60c2df5",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-28000.png": "96ba5b1feba4d14a15c89e310cac34e50890ac742555f9e808d12b351d3c9fae",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-28001.png": "819779764e4bc40be630b497929c6600846603e371b65f2b512b06f4eda8197d",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-28001.png": "5f586bb14452d89ae8a5d837ccf06757a1881a2eb5fac205af9079f642efa429",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-28200.png": "632d67d3ab6566089ddfac6b18e652b67cd1378cece7d96db95041c4f69e964b",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-28200.png": "b55ef6e7041b16e904195e2be1053d19ada8d2a2ca35bd08dac2d4fdf0f9fc2d",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-29000.png": "3766e1dba74da0041830b116f75f3c425829c60be287438ac5ddc03db99ba99c",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-29000.png": "214a276b2d4bb1bbbfacdf5b5d63e2543991762f55f3a26d1d427cb4b3cd160a",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-31000.png": "8cc41f9ee3a3039e121a0caafb31def82e443b60e87c476eb81b3029d19e3ff5",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-31000.png": "19c33a6a41a6abd23286c1dc1cffe502e067c199e9cea094bb5ce118a9930ad9",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-35000.png": "acbd65b1817c59f6395cbb68b325f9aee84776de3377aae11a2e673e1277216e",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-35000.png": "ffc74c6f7f22990c0a4efa4c37fce69a62f1bed47f02f7ad6585dd35ef9cd4ba",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-47000.png": "13425ed6236114b1532f7f5d79088c523f7265cf57d765bb46660e59db60e0db",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-47000.png": "56880bcf05fcf63526135863e53c3890197e5a87f08eb1d5ef40d8a5b451154c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-47200.png": "7b764591234f8aa33c338940b8a2c13857fe2ce9d270a911e2e3fc900276e69a",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-47200.png": "5e2811a6384b6f770009affa2b8e964594a28d0c2eddae2fe5a6f5b51b3c6f81",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-48000.png": "55cd66af543f10a7938f2aac80668b546be3450d798ae55613d143dfe25ca0b9",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-48000.png": "4801fe94af3cc6b2d445eb7cf707ee39627cc07b1153cea6e04485ef5ef61c4b",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-49000.png": "974754f694530ac82f599be16dc3c2ccbc22cb47407c30f6451cc1406d8ca53d",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-49000.png": "23c5eea3df02a6a9137cde5c99c14efc0e1b3ca83153385d54a4b050d0be8b00",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-51000.png": "063121a33d3e25938ec8ddf3d374fa66c643c25452e19ab9bd3fbc874eed46eb",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-51000.png": "d270e2d888a47e07219067af8b34d52033be3df002ccbbcf054fb0b19d363cf4",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-60000.png": "5630937f04ba3d2110b35f9c84441fc65e1bd7ecf582adaedc9d28e8c1098e7a",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-60000.png": "4eb4a24e2f03e5314ea09778f8e4a14aa6c68da5a598d6df87d2b73da566b441",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-7000.png": "cf97f76a1cc80573b88e7051e95016af5449b7bc86f33680602e1817685f8b4c",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-7000.png": "8220477856153666d8a19c2b51cecfc8f2380cbbc64f6b9b496d25013f58baf8",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-70000.png": "ca6892ff52c1f2bc8fdb26e67a961365512812c362ca37d6283b0340b567e02f",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-70000.png": "86cdf13ad199c2403225627476db180134025c1e5b03c7e828a5e737a830ce60",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-7200.png": "c9cba892f0acae5cb8d39fcd053ee0a2d2e976634e5b1a5c30901e72baf28389",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-7200.png": "f5e37303022310936bfbe57784d3194a26dc09a960b265f5ade81dace50fe0b3",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-73000.png": "60f8dff50d89f3af228a25b9fd7e76ff6bff03489b99d2d1cb8bafbb1905aa44",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-73000.png": "cfab501a12b3d34ba23f202213fcde9c0d33edf98937e6326a24246f638c19fd",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-7500.png": "81a1e0fd98d6eafb3ec4838dc09b3969eb73cc727037de66e3441f4525abd7e9",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-7500.png": "f33a7df2930d782bdd39342e77088ff82c5fc8a835191a701cf728ebad873190",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-8000.png": "f88ff5ae9f4bf17519a4e4286253b03b3ae1958ae78a77413a2fe2157d038750",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-8000.png": "bf2616741fb63e2e65e0e5f2c4f2a629872912286c314bbecff36c5bcebce93f",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-87000.png": "a09de355dea2f5a8094d74546fb23d6d40ed2053b1fd56ca7043b66387e315e1",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-87000.png": "ecf349373744cd64f7871fb4fa6847238cd087d6f259851c27d138c9d43a163f",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-87500.png": "5f4bff52d87aa36be3bb43b2a157991537094a086aea90816afaee5240f83dcb",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-87500.png": "32ef03fdc6c31a87a45f1f7e539f33f1bf2a981fa35c0762367cf865eb589c70",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-9000.png": "84d94bc1ff199d61415643c6b180bf60d9775a8ce82d67e0893d3abcddaed8cf",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-9000.png": "ec19e7880e3beff49bd5d450b71fed6608722d8fe176a3d2aef99f8f93cb8763",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-90000.png": "6f2d9e73b30fc8f4771bd021989f6451500edb54bc2207b12bce0631cc6b1ad3",
+      "build/verification/pendolo-chorus-stage-kotlin/latin-380-normal-spaced-90000.png": "d74455db339deaac909ed9f453d765bd59417f26217c9283850679a4d137130d",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-0.png": "10bf360806398b10db1f5732a957e5c29b7892ebeb87af24236b17111b449ca6",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-0.png": "937eddedb6714ca55cdd77fbb16b3fa6c3778880f11fa60c888dc09c3a30f4d8",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-11000.png": "55d36f375d715f79b35aca159bfeb8cc27c8b33ceb88b9b46afb8fadfcb9a61d",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-11000.png": "4780d2a8b21e1e36af9eb6605ea49b6c212239e3b229f15e56e12be75e6b89db",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-28000.png": "da352fe003720b2ac66878a0cf2a506d44aeb8465fc7eea82e8963de5e29452f",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-28000.png": "98d95d9fc857466807ec78871d9fbfbf1c20d460fba6528c7bc69665a2f73fd3",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-28001.png": "a8631e887d9302eeeae9e0a33948696e5119c484c096f5cde91b7a3f0beab413",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-28001.png": "ae81032a4e5e0a8f31b20a8aa63dfc4d59b2cd47d83fb2e6dcc6aac758dfcd23",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-28200.png": "ed68cddbe3d82577b15a60c982ccaaef921ea405ddcafd660347f49a137d3317",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-28200.png": "7d4ef632cb227e6f496a6e728072c7db8cc316205241d4b0460d24c20a4040ad",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-29000.png": "e194c4fbea357799d6e030882c4876d1484bcce99b8ece0d099ff50c786ddc5d",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-29000.png": "3dffcde6eff8b2b918e7a74ab378560cdfcbd0f64cfc183290a19fa0db244881",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-31000.png": "9455929981a835e8dc64e6b9c518f67c57e215fb839cc2c1083834ea50e38553",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-31000.png": "914f1bd428d1c3858af2fc1ecf6e1bbe5bdda56b3bf168a035ecff4a6b0bd3e6",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-35000.png": "6d52c9fe2633fcd9d2e53a475badf22da08ab7de825ab8dfd1adba97834071d9",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-35000.png": "a21a82fe6a01e33cc5f09f7dd4a766518ab9aee92146a34b504d3fc03adf4858",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-47000.png": "771328c5d5e9c7e8212661e55835fa8235d862616f45b710de66804e25f014a6",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-47000.png": "77bd8bc2c9e057bc23c9d8634a9c7c7e98bb64c376406b4e6d5d5d1c96eab394",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-47200.png": "268404d6de6ed7696625bcca8c46aeb9fd00bafd88d4915e407c7792534725d7",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-47200.png": "8589f725819f7116ba974931e18f0cc9e22b0b5fee0dff77f8e725ed25588dca",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-48000.png": "289cd416347ed6eab184d89e576bf3dcad5bfeb4aa3c7cd8f1fcb2cc4d1e4240",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-48000.png": "c6ef77fb47d8b73693f3da6469e0749929c2e9dadf92132674f225d0be39cf1a",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-49000.png": "2f709e82ddbc4f3c4d7924c7e7b5b111367641663d0e390a5b7ecdb77aabdf0e",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-49000.png": "148f773891f815d03625c4f6383874d641acb641bbe346fab5a27af72744fa3a",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-51000.png": "76f6a0c5000130a861660ec660abaddd67928308f48c00f9d7d63f0736c47bb9",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-51000.png": "09cd4107236fa947c3135c4a7a6380ec55348d077c158e9ee06d4dfc42e8c951",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-60000.png": "a3eda074b2a8d5a3e63db9a3ce2b2ed8ab8772f1af53d956a52228fc94ada446",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-60000.png": "7cbebde3881c51ecf23c4da8985734fe3f5240b17d103e776dc802c49e99ae9b",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-7000.png": "d18de2102e4cab73b7267118a91244a84966e53318392e852e41d048b8330570",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-7000.png": "9a88c974ea30bd3e94aaaff5d9497cfcdc0a7781b6539d7d65a3b064f9acee8a",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-70000.png": "93f1065c0db136dae7fbdcf916ce249379214635c5ee6eee04247ad8eec1e8ca",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-70000.png": "c233555e3c16094d4a02a0f7a60b6440456ec708c9fc3a6ccb1731c07e0eb6f9",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-7200.png": "7e5eb21f2921d59612977a8d0f2ed7e77d4a8ba187ab5164239da10f858a3e6c",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-7200.png": "0b1f6fb32e6432cf18c27eb8751c995c2e90ddfd9f871052565267a4b6fa85d2",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-73000.png": "ceec95354d9b8fe080d61be518a0f06ad0a9dca5dc0d34b5dba07c2bd99ff2fe",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-73000.png": "53cd829430c84e535c90656ebbec1f2a5dde24b5e5849f16394bc7aa36d8caaa",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-7500.png": "4fe08b9d8fceaa491ead7ec402160e9959ba6c4cfabbde1eca71e49724d8ca13",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-7500.png": "3d5608cbe1963d1d7391489bf4e49aa9bb2782784ff3ac61489f076ef611576f",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-8000.png": "6531a6c4b653c34557228d81ad6d944ccb9b7726f187ec8b3adc81f869bb34c0",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-8000.png": "3b291802248ccfa96dee0edcb55bf37df6140e2d6830116cc0440fc83ff08d06",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-87000.png": "77b168481ce6c23d73935729007236bdd77e93d66780180f4b2c3ca7de0ff7a9",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-87000.png": "3e2ac80851ff0162cf424763022c1a86a3392980198025352270b661600fb84e",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-87500.png": "e89ce33bec9ab8e80303b41612fdaee293b897007edaa2e115e93954d919bd50",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-87500.png": "351c7230e74c1930733af7eee89a253299767036ac4b37cfb42e4042ec9b8d27",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-9000.png": "c72062132b5e342ae72c9981ed95fab662e24cb3e9112d670392e7fcab24066a",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-9000.png": "9f987682c548dd96b93f83e6560155683e75353188f7e621d1af945ff812fe80",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-90000.png": "09cd75eedb1402ac781b54c2d657f878955cf491acdf6295291ded70377f360f",
+      "build/verification/pendolo-chorus-stage-kotlin/wrap-380-normal-spaced-90000.png": "afea8ed97fe25252749831eb26a3613d0bd6fe7dc4236830bebf6cf965ec18c1"
+    },
+    "numeric_fields": 5628,
+    "chorus_maximum_errors": {
+      "0": 0.0011690024137498423,
+      "1": 0.015720154641342174,
+      "2": 0.0017954652519226455
+    },
+    "max_content_rect_error": 6.019072099438944,
+    "mean_foreground_mae": 11.918331827939847,
+    "max_foreground_mae": 45.12191085437851
+  },
+  "pendolo-chorus-stage-source-rotation-kotlin": {
+    "frames": [
+      {
+        "file": "arabic-800-normal-spaced-0.png",
+        "foreground_mae": 9.492764332779112,
+        "full_mae": 0.11763819444444444
+      },
+      {
+        "file": "arabic-800-normal-spaced-11000.png",
+        "foreground_mae": 7.120938803219862,
+        "full_mae": 0.33311111111111114
+      },
+      {
+        "file": "arabic-800-normal-spaced-28000.png",
+        "foreground_mae": 2.785036707085705,
+        "full_mae": 0.13874097222222223
+      },
+      {
+        "file": "arabic-800-normal-spaced-28001.png",
+        "foreground_mae": 14.371439719079204,
+        "full_mae": 0.24129861111111112
+      },
+      {
+        "file": "arabic-800-normal-spaced-28200.png",
+        "foreground_mae": 13.533861037818822,
+        "full_mae": 0.2251875
+      },
+      {
+        "file": "arabic-800-normal-spaced-29000.png",
+        "foreground_mae": 13.208579754864147,
+        "full_mae": 0.2262173611111111
+      },
+      {
+        "file": "arabic-800-normal-spaced-31000.png",
+        "foreground_mae": 12.92617823479006,
+        "full_mae": 0.2218701388888889
+      },
+      {
+        "file": "arabic-800-normal-spaced-35000.png",
+        "foreground_mae": 12.91048231511254,
+        "full_mae": 0.22125416666666667
+      },
+      {
+        "file": "arabic-800-normal-spaced-47000.png",
+        "foreground_mae": 11.59050799934026,
+        "full_mae": 0.20324097222222223
+      },
+      {
+        "file": "arabic-800-normal-spaced-47200.png",
+        "foreground_mae": 11.975926382384356,
+        "full_mae": 0.21041180555555555
+      },
+      {
+        "file": "arabic-800-normal-spaced-48000.png",
+        "foreground_mae": 11.300468914221037,
+        "full_mae": 0.20222916666666665
+      },
+      {
+        "file": "arabic-800-normal-spaced-49000.png",
+        "foreground_mae": 10.479590593395882,
+        "full_mae": 0.1881736111111111
+      },
+      {
+        "file": "arabic-800-normal-spaced-51000.png",
+        "foreground_mae": 13.414737515493183,
+        "full_mae": 0.24102708333333334
+      },
+      {
+        "file": "arabic-800-normal-spaced-60000.png",
+        "foreground_mae": 7.741444216290212,
+        "full_mae": 0.13208125
+      },
+      {
+        "file": "arabic-800-normal-spaced-7000.png",
+        "foreground_mae": 10.689241721699219,
+        "full_mae": 0.1718
+      },
+      {
+        "file": "arabic-800-normal-spaced-70000.png",
+        "foreground_mae": 12.7151643927533,
+        "full_mae": 0.25002291666666665
+      },
+      {
+        "file": "arabic-800-normal-spaced-7200.png",
+        "foreground_mae": 9.840620655634781,
+        "full_mae": 0.26326805555555555
+      },
+      {
+        "file": "arabic-800-normal-spaced-73000.png",
+        "foreground_mae": 13.182316295128725,
+        "full_mae": 0.25714166666666666
+      },
+      {
+        "file": "arabic-800-normal-spaced-7500.png",
+        "foreground_mae": 9.667952840300106,
+        "full_mae": 0.2872645833333333
+      },
+      {
+        "file": "arabic-800-normal-spaced-8000.png",
+        "foreground_mae": 8.644630130253134,
+        "full_mae": 0.3007444444444444
+      },
+      {
+        "file": "arabic-800-normal-spaced-87000.png",
+        "foreground_mae": 10.980103542787534,
+        "full_mae": 0.24248333333333333
+      },
+      {
+        "file": "arabic-800-normal-spaced-87500.png",
+        "foreground_mae": 10.567955033472275,
+        "full_mae": 0.3661638888888889
+      },
+      {
+        "file": "arabic-800-normal-spaced-9000.png",
+        "foreground_mae": 7.663907531692766,
+        "full_mae": 0.30860902777777777
+      },
+      {
+        "file": "arabic-800-normal-spaced-90000.png",
+        "foreground_mae": 8.983736548264423,
+        "full_mae": 0.40219375
+      },
+      {
+        "file": "cjk-800-normal-spaced-0.png",
+        "foreground_mae": 10.615707780129561,
+        "full_mae": 0.2430138888888889
+      },
+      {
+        "file": "cjk-800-normal-spaced-11000.png",
+        "foreground_mae": 8.348869201562758,
+        "full_mae": 0.48879236111111113
+      },
+      {
+        "file": "cjk-800-normal-spaced-28000.png",
+        "foreground_mae": 2.973426027380008,
+        "full_mae": 0.20643402777777778
+      },
+      {
+        "file": "cjk-800-normal-spaced-28001.png",
+        "foreground_mae": 14.397730693527846,
+        "full_mae": 0.4465340277777778
+      },
+      {
+        "file": "cjk-800-normal-spaced-28200.png",
+        "foreground_mae": 14.924693237383522,
+        "full_mae": 0.46399097222222224
+      },
+      {
+        "file": "cjk-800-normal-spaced-29000.png",
+        "foreground_mae": 16.634903520003594,
+        "full_mae": 0.5298263888888889
+      },
+      {
+        "file": "cjk-800-normal-spaced-31000.png",
+        "foreground_mae": 13.966957153231663,
+        "full_mae": 0.4435125
+      },
+      {
+        "file": "cjk-800-normal-spaced-35000.png",
+        "foreground_mae": 13.953206828538393,
+        "full_mae": 0.442975
+      },
+      {
+        "file": "cjk-800-normal-spaced-47000.png",
+        "foreground_mae": 13.114954834392773,
+        "full_mae": 0.41839444444444446
+      },
+      {
+        "file": "cjk-800-normal-spaced-47200.png",
+        "foreground_mae": 12.9300582290342,
+        "full_mae": 0.4134201388888889
+      },
+      {
+        "file": "cjk-800-normal-spaced-48000.png",
+        "foreground_mae": 12.986863066012003,
+        "full_mae": 0.4238409722222222
+      },
+      {
+        "file": "cjk-800-normal-spaced-49000.png",
+        "foreground_mae": 12.64423876416787,
+        "full_mae": 0.41337083333333335
+      },
+      {
+        "file": "cjk-800-normal-spaced-51000.png",
+        "foreground_mae": 13.302898550724638,
+        "full_mae": 0.4372986111111111
+      },
+      {
+        "file": "cjk-800-normal-spaced-60000.png",
+        "foreground_mae": 10.258854637812261,
+        "full_mae": 0.31524097222222225
+      },
+      {
+        "file": "cjk-800-normal-spaced-7000.png",
+        "foreground_mae": 13.696401378536507,
+        "full_mae": 0.3707715277777778
+      },
+      {
+        "file": "cjk-800-normal-spaced-70000.png",
+        "foreground_mae": 15.022080729014545,
+        "full_mae": 0.5521611111111111
+      },
+      {
+        "file": "cjk-800-normal-spaced-7200.png",
+        "foreground_mae": 10.798556328950761,
+        "full_mae": 0.39939583333333334
+      },
+      {
+        "file": "cjk-800-normal-spaced-73000.png",
+        "foreground_mae": 14.940865892291447,
+        "full_mae": 0.54729375
+      },
+      {
+        "file": "cjk-800-normal-spaced-7500.png",
+        "foreground_mae": 12.046047601430509,
+        "full_mae": 0.4673986111111111
+      },
+      {
+        "file": "cjk-800-normal-spaced-8000.png",
+        "foreground_mae": 9.80630848104467,
+        "full_mae": 0.4480013888888889
+      },
+      {
+        "file": "cjk-800-normal-spaced-87000.png",
+        "foreground_mae": 14.253131839106482,
+        "full_mae": 0.5432534722222222
+      },
+      {
+        "file": "cjk-800-normal-spaced-87500.png",
+        "foreground_mae": 12.71226828265494,
+        "full_mae": 0.6264944444444445
+      },
+      {
+        "file": "cjk-800-normal-spaced-9000.png",
+        "foreground_mae": 9.687517077579503,
+        "full_mae": 0.4818340277777778
+      },
+      {
+        "file": "cjk-800-normal-spaced-90000.png",
+        "foreground_mae": 11.997403381642512,
+        "full_mae": 0.7184388888888888
+      },
+      {
+        "file": "latin-380-calm-spaced-0.png",
+        "foreground_mae": 8.02020202020202,
+        "full_mae": 0.4532719298245614
+      },
+      {
+        "file": "latin-380-calm-spaced-11000.png",
+        "foreground_mae": 8.60396721537296,
+        "full_mae": 0.7903230994152047
+      },
+      {
+        "file": "latin-380-calm-spaced-28000.png",
+        "foreground_mae": 5.029907740335034,
+        "full_mae": 0.5837368421052631
+      },
+      {
+        "file": "latin-380-calm-spaced-28001.png",
+        "foreground_mae": 10.5808632671858,
+        "full_mae": 0.7848611111111111
+      },
+      {
+        "file": "latin-380-calm-spaced-28200.png",
+        "foreground_mae": 11.591149561212424,
+        "full_mae": 0.8607865497076024
+      },
+      {
+        "file": "latin-380-calm-spaced-29000.png",
+        "foreground_mae": 11.694639845324776,
+        "full_mae": 0.8756491228070176
+      },
+      {
+        "file": "latin-380-calm-spaced-31000.png",
+        "foreground_mae": 11.573588105134727,
+        "full_mae": 0.8638918128654971
+      },
+      {
+        "file": "latin-380-calm-spaced-35000.png",
+        "foreground_mae": 10.156745288905528,
+        "full_mae": 0.760154970760234
+      },
+      {
+        "file": "latin-380-calm-spaced-47000.png",
+        "foreground_mae": 14.421851398978637,
+        "full_mae": 0.9043114035087719
+      },
+      {
+        "file": "latin-380-calm-spaced-47200.png",
+        "foreground_mae": 14.552822658203501,
+        "full_mae": 0.9097383040935673
+      },
+      {
+        "file": "latin-380-calm-spaced-48000.png",
+        "foreground_mae": 14.471025973402467,
+        "full_mae": 0.9060526315789473
+      },
+      {
+        "file": "latin-380-calm-spaced-49000.png",
+        "foreground_mae": 13.700585789871504,
+        "full_mae": 0.8714312865497076
+      },
+      {
+        "file": "latin-380-calm-spaced-51000.png",
+        "foreground_mae": 12.424842226047046,
+        "full_mae": 0.7844751461988304
+      },
+      {
+        "file": "latin-380-calm-spaced-60000.png",
+        "foreground_mae": 10.339183094961989,
+        "full_mae": 0.6048698830409357
+      },
+      {
+        "file": "latin-380-calm-spaced-7000.png",
+        "foreground_mae": 13.864785992217898,
+        "full_mae": 0.7135014619883041
+      },
+      {
+        "file": "latin-380-calm-spaced-70000.png",
+        "foreground_mae": 11.401634458225171,
+        "full_mae": 0.9063157894736842
+      },
+      {
+        "file": "latin-380-calm-spaced-7200.png",
+        "foreground_mae": 14.134385995022742,
+        "full_mae": 0.8762982456140351
+      },
+      {
+        "file": "latin-380-calm-spaced-73000.png",
+        "foreground_mae": 11.261464511377293,
+        "full_mae": 0.8907719298245614
+      },
+      {
+        "file": "latin-380-calm-spaced-7500.png",
+        "foreground_mae": 12.617995704683011,
+        "full_mae": 0.8174195906432749
+      },
+      {
+        "file": "latin-380-calm-spaced-8000.png",
+        "foreground_mae": 13.578429800652023,
+        "full_mae": 0.9027353801169591
+      },
+      {
+        "file": "latin-380-calm-spaced-87000.png",
+        "foreground_mae": 12.164018536908308,
+        "full_mae": 0.7862324561403509
+      },
+      {
+        "file": "latin-380-calm-spaced-87500.png",
+        "foreground_mae": 11.256344434686662,
+        "full_mae": 0.8961418128654971
+      },
+      {
+        "file": "latin-380-calm-spaced-9000.png",
+        "foreground_mae": 11.97834015630815,
+        "full_mae": 0.8974283625730994
+      },
+      {
+        "file": "latin-380-calm-spaced-90000.png",
+        "foreground_mae": 10.49048417886273,
+        "full_mae": 1.024688596491228
+      },
+      {
+        "file": "latin-380-chaotic-spaced-0.png",
+        "foreground_mae": 8.02020202020202,
+        "full_mae": 0.4532719298245614
+      },
+      {
+        "file": "latin-380-chaotic-spaced-11000.png",
+        "foreground_mae": 8.50281394835577,
+        "full_mae": 0.8485438596491228
+      },
+      {
+        "file": "latin-380-chaotic-spaced-28000.png",
+        "foreground_mae": 3.9436454812556607,
+        "full_mae": 0.6361067251461988
+      },
+      {
+        "file": "latin-380-chaotic-spaced-28001.png",
+        "foreground_mae": 10.445753621352253,
+        "full_mae": 0.7732090643274854
+      },
+      {
+        "file": "latin-380-chaotic-spaced-28200.png",
+        "foreground_mae": 11.530061755168639,
+        "full_mae": 0.8612426900584795
+      },
+      {
+        "file": "latin-380-chaotic-spaced-29000.png",
+        "foreground_mae": 10.99668284292647,
+        "full_mae": 0.8302953216374269
+      },
+      {
+        "file": "latin-380-chaotic-spaced-31000.png",
+        "foreground_mae": 9.93659780985565,
+        "full_mae": 0.7461461988304093
+      },
+      {
+        "file": "latin-380-chaotic-spaced-35000.png",
+        "foreground_mae": 10.156745288905528,
+        "full_mae": 0.760154970760234
+      },
+      {
+        "file": "latin-380-chaotic-spaced-47000.png",
+        "foreground_mae": 14.421851398978637,
+        "full_mae": 0.9043114035087719
+      },
+      {
+        "file": "latin-380-chaotic-spaced-47200.png",
+        "foreground_mae": 14.228082816928472,
+        "full_mae": 0.8906769005847953
+      },
+      {
+        "file": "latin-380-chaotic-spaced-48000.png",
+        "foreground_mae": 14.526493854204698,
+        "full_mae": 0.898109649122807
+      },
+      {
+        "file": "latin-380-chaotic-spaced-49000.png",
+        "foreground_mae": 14.066027765768363,
+        "full_mae": 0.8803216374269006
+      },
+      {
+        "file": "latin-380-chaotic-spaced-51000.png",
+        "foreground_mae": 12.849517931050983,
+        "full_mae": 0.8097602339181287
+      },
+      {
+        "file": "latin-380-chaotic-spaced-60000.png",
+        "foreground_mae": 10.339183094961989,
+        "full_mae": 0.6048698830409357
+      },
+      {
+        "file": "latin-380-chaotic-spaced-7000.png",
+        "foreground_mae": 15.44970038133285,
+        "full_mae": 0.7787441520467836
+      },
+      {
+        "file": "latin-380-chaotic-spaced-70000.png",
+        "foreground_mae": 11.42912231991362,
+        "full_mae": 0.9064488304093568
+      },
+      {
+        "file": "latin-380-chaotic-spaced-7200.png",
+        "foreground_mae": 13.59467959260221,
+        "full_mae": 0.9221608187134503
+      },
+      {
+        "file": "latin-380-chaotic-spaced-73000.png",
+        "foreground_mae": 11.133915236155563,
+        "full_mae": 0.879827485380117
+      },
+      {
+        "file": "latin-380-chaotic-spaced-7500.png",
+        "foreground_mae": 11.278717264072066,
+        "full_mae": 0.8940233918128655
+      },
+      {
+        "file": "latin-380-chaotic-spaced-8000.png",
+        "foreground_mae": 11.229187195229793,
+        "full_mae": 0.9568786549707602
+      },
+      {
+        "file": "latin-380-chaotic-spaced-87000.png",
+        "foreground_mae": 13.01124515398878,
+        "full_mae": 0.8300730994152047
+      },
+      {
+        "file": "latin-380-chaotic-spaced-87500.png",
+        "foreground_mae": 10.52578624588053,
+        "full_mae": 0.9939766081871345
+      },
+      {
+        "file": "latin-380-chaotic-spaced-9000.png",
+        "foreground_mae": 10.495288842679836,
+        "full_mae": 1.0388830409356724
+      },
+      {
+        "file": "latin-380-chaotic-spaced-90000.png",
+        "foreground_mae": 8.727167073433947,
+        "full_mae": 0.9430540935672515
+      },
+      {
+        "file": "latin-380-normal-dense-0.png",
+        "foreground_mae": 8.02020202020202,
+        "full_mae": 0.4532719298245614
+      },
+      {
+        "file": "latin-380-normal-dense-11000.png",
+        "foreground_mae": 11.685397380289592,
+        "full_mae": 1.034861111111111
+      },
+      {
+        "file": "latin-380-normal-dense-28000.png",
+        "foreground_mae": 10.886264390631203,
+        "full_mae": 0.49125730994152045
+      },
+      {
+        "file": "latin-380-normal-dense-28001.png",
+        "foreground_mae": 10.887422257509593,
+        "full_mae": 0.4913084795321637
+      },
+      {
+        "file": "latin-380-normal-dense-28200.png",
+        "foreground_mae": 10.894766441709674,
+        "full_mae": 0.4916359649122807
+      },
+      {
+        "file": "latin-380-normal-dense-29000.png",
+        "foreground_mae": 10.919644038639673,
+        "full_mae": 0.492766081871345
+      },
+      {
+        "file": "latin-380-normal-dense-31000.png",
+        "foreground_mae": 11.02659785629218,
+        "full_mae": 0.49753362573099413
+      },
+      {
+        "file": "latin-380-normal-dense-35000.png",
+        "foreground_mae": 11.39155749636099,
+        "full_mae": 0.5136827485380117
+      },
+      {
+        "file": "latin-380-normal-dense-47000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-47200.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-48000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-49000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-51000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-60000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-7000.png",
+        "foreground_mae": 15.100736664595722,
+        "full_mae": 0.7765701754385965
+      },
+      {
+        "file": "latin-380-normal-dense-70000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-7200.png",
+        "foreground_mae": 12.876381195852861,
+        "full_mae": 0.8452222222222222
+      },
+      {
+        "file": "latin-380-normal-dense-73000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-7500.png",
+        "foreground_mae": 12.46957162748792,
+        "full_mae": 0.8722017543859649
+      },
+      {
+        "file": "latin-380-normal-dense-8000.png",
+        "foreground_mae": 10.994405667529344,
+        "full_mae": 0.856735380116959
+      },
+      {
+        "file": "latin-380-normal-dense-87000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-87500.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-dense-9000.png",
+        "foreground_mae": 14.346667610686302,
+        "full_mae": 0.9137923976608188
+      },
+      {
+        "file": "latin-380-normal-dense-90000.png",
+        "foreground_mae": 8.990730808372527,
+        "full_mae": 0.5292543859649123
+      },
+      {
+        "file": "latin-380-normal-spaced-0.png",
+        "foreground_mae": 8.02020202020202,
+        "full_mae": 0.4532719298245614
+      },
+      {
+        "file": "latin-380-normal-spaced-11000.png",
+        "foreground_mae": 8.796633079380683,
+        "full_mae": 0.9418172514619884
+      },
+      {
+        "file": "latin-380-normal-spaced-28000.png",
+        "foreground_mae": 4.39840991643171,
+        "full_mae": 0.5794868421052631
+      },
+      {
+        "file": "latin-380-normal-spaced-28001.png",
+        "foreground_mae": 10.945606781926001,
+        "full_mae": 0.8126812865497076
+      },
+      {
+        "file": "latin-380-normal-spaced-28200.png",
+        "foreground_mae": 11.296584656908543,
+        "full_mae": 0.8403201754385965
+      },
+      {
+        "file": "latin-380-normal-spaced-29000.png",
+        "foreground_mae": 10.847439530204099,
+        "full_mae": 0.8164122807017544
+      },
+      {
+        "file": "latin-380-normal-spaced-31000.png",
+        "foreground_mae": 11.283977465722215,
+        "full_mae": 0.8425190058479533
+      },
+      {
+        "file": "latin-380-normal-spaced-35000.png",
+        "foreground_mae": 10.156745288905528,
+        "full_mae": 0.760154970760234
+      },
+      {
+        "file": "latin-380-normal-spaced-47000.png",
+        "foreground_mae": 14.421851398978637,
+        "full_mae": 0.9043114035087719
+      },
+      {
+        "file": "latin-380-normal-spaced-47200.png",
+        "foreground_mae": 14.3940401339404,
+        "full_mae": 0.8997149122807018
+      },
+      {
+        "file": "latin-380-normal-spaced-48000.png",
+        "foreground_mae": 14.383984113312279,
+        "full_mae": 0.9026593567251462
+      },
+      {
+        "file": "latin-380-normal-spaced-49000.png",
+        "foreground_mae": 14.4195678702175,
+        "full_mae": 0.9053099415204678
+      },
+      {
+        "file": "latin-380-normal-spaced-51000.png",
+        "foreground_mae": 10.078429951690822,
+        "full_mae": 0.6340190058479532
+      },
+      {
+        "file": "latin-380-normal-spaced-60000.png",
+        "foreground_mae": 10.339183094961989,
+        "full_mae": 0.6048698830409357
+      },
+      {
+        "file": "latin-380-normal-spaced-7000.png",
+        "foreground_mae": 15.100736664595722,
+        "full_mae": 0.7765701754385965
+      },
+      {
+        "file": "latin-380-normal-spaced-70000.png",
+        "foreground_mae": 11.055947153532085,
+        "full_mae": 0.8784239766081872
+      },
+      {
+        "file": "latin-380-normal-spaced-7200.png",
+        "foreground_mae": 12.876381195852861,
+        "full_mae": 0.8452222222222222
+      },
+      {
+        "file": "latin-380-normal-spaced-73000.png",
+        "foreground_mae": 11.396097107678012,
+        "full_mae": 0.9014356725146199
+      },
+      {
+        "file": "latin-380-normal-spaced-7500.png",
+        "foreground_mae": 12.46957162748792,
+        "full_mae": 0.8722017543859649
+      },
+      {
+        "file": "latin-380-normal-spaced-8000.png",
+        "foreground_mae": 10.994405667529344,
+        "full_mae": 0.856735380116959
+      },
+      {
+        "file": "latin-380-normal-spaced-87000.png",
+        "foreground_mae": 12.78148358406661,
+        "full_mae": 0.828311403508772
+      },
+      {
+        "file": "latin-380-normal-spaced-87500.png",
+        "foreground_mae": 11.89853243907298,
+        "full_mae": 0.9988187134502924
+      },
+      {
+        "file": "latin-380-normal-spaced-9000.png",
+        "foreground_mae": 10.342824601366743,
+        "full_mae": 0.9130219298245614
+      },
+      {
+        "file": "latin-380-normal-spaced-90000.png",
+        "foreground_mae": 9.315475539017182,
+        "full_mae": 1.0481695906432749
+      },
+      {
+        "file": "wrap-380-normal-spaced-0.png",
+        "foreground_mae": 8.125421093547551,
+        "full_mae": 0.6093333333333333
+      },
+      {
+        "file": "wrap-380-normal-spaced-11000.png",
+        "foreground_mae": 8.151478149972187,
+        "full_mae": 1.264140350877193
+      },
+      {
+        "file": "wrap-380-normal-spaced-28000.png",
+        "foreground_mae": 3.6862750467844263,
+        "full_mae": 0.6846856725146199
+      },
+      {
+        "file": "wrap-380-normal-spaced-28001.png",
+        "foreground_mae": 16.063329594316695,
+        "full_mae": 1.5677690058479532
+      },
+      {
+        "file": "wrap-380-normal-spaced-28200.png",
+        "foreground_mae": 15.372000866846228,
+        "full_mae": 1.5127119883040936
+      },
+      {
+        "file": "wrap-380-normal-spaced-29000.png",
+        "foreground_mae": 15.402885936784243,
+        "full_mae": 1.5343040935672514
+      },
+      {
+        "file": "wrap-380-normal-spaced-31000.png",
+        "foreground_mae": 18.411415751991207,
+        "full_mae": 1.848295321637427
+      },
+      {
+        "file": "wrap-380-normal-spaced-35000.png",
+        "foreground_mae": 18.945115423470696,
+        "full_mae": 1.8984444444444444
+      },
+      {
+        "file": "wrap-380-normal-spaced-47000.png",
+        "foreground_mae": 12.270468010656487,
+        "full_mae": 0.9442894736842106
+      },
+      {
+        "file": "wrap-380-normal-spaced-47200.png",
+        "foreground_mae": 12.60259678662477,
+        "full_mae": 0.9743187134502924
+      },
+      {
+        "file": "wrap-380-normal-spaced-48000.png",
+        "foreground_mae": 12.344021376085504,
+        "full_mae": 0.9321388888888889
+      },
+      {
+        "file": "wrap-380-normal-spaced-49000.png",
+        "foreground_mae": 12.548402188726836,
+        "full_mae": 0.9425087719298245
+      },
+      {
+        "file": "wrap-380-normal-spaced-51000.png",
+        "foreground_mae": 12.038756899448044,
+        "full_mae": 0.916203216374269
+      },
+      {
+        "file": "wrap-380-normal-spaced-60000.png",
+        "foreground_mae": 10.98840786964812,
+        "full_mae": 0.7733494152046784
+      },
+      {
+        "file": "wrap-380-normal-spaced-7000.png",
+        "foreground_mae": 13.091931417044881,
+        "full_mae": 0.8003567251461988
+      },
+      {
+        "file": "wrap-380-normal-spaced-70000.png",
+        "foreground_mae": 20.313440906115712,
+        "full_mae": 2.138090643274854
+      },
+      {
+        "file": "wrap-380-normal-spaced-7200.png",
+        "foreground_mae": 12.897253258845438,
+        "full_mae": 1.0378464912280703
+      },
+      {
+        "file": "wrap-380-normal-spaced-73000.png",
+        "foreground_mae": 20.50286447199658,
+        "full_mae": 2.1553684210526316
+      },
+      {
+        "file": "wrap-380-normal-spaced-7500.png",
+        "foreground_mae": 11.459523809523809,
+        "full_mae": 1.0416769005847952
+      },
+      {
+        "file": "wrap-380-normal-spaced-8000.png",
+        "foreground_mae": 10.132645099333773,
+        "full_mae": 1.033748538011696
+      },
+      {
+        "file": "wrap-380-normal-spaced-87000.png",
+        "foreground_mae": 11.1650048183767,
+        "full_mae": 0.8862967836257309
+      },
+      {
+        "file": "wrap-380-normal-spaced-87500.png",
+        "foreground_mae": 10.41025232121341,
+        "full_mae": 1.1264912280701755
+      },
+      {
+        "file": "wrap-380-normal-spaced-9000.png",
+        "foreground_mae": 7.547668827095965,
+        "full_mae": 0.9740058479532163
+      },
+      {
+        "file": "wrap-380-normal-spaced-90000.png",
+        "foreground_mae": 5.3960124116986865,
+        "full_mae": 0.9781330409356725
+      }
+    ],
+    "png_sha256": {
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-0.png": "779657b9c3b6ff7a6528811e815bb8e80b8e04a898c79af061b868f05c3f898d",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-0.png": "b10bc3b36fa7b81055c477cc04e5e6b33bf10b47fa02253b4cbae845e4ec09f2",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-11000.png": "6a501b67ce5020deb83a95d2b490c63d404820059295901f3e00c228d77f3ca4",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-11000.png": "a349484645fac347e7df6c4ab4683665678efd2c904b442084ef6b6bde232da0",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-28000.png": "7141c11fc05ad025ab46d638b86d3dc931fe3bf1865b467b197d0cd3be96026d",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-28000.png": "0fc6c828949bc984cdda30accf185d26f8feca094b36aa0db29b56aee2c16d3a",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-28001.png": "79f1b6fa4459eb1f79cd51069d13cba2fcde69710ea8e6f08cc3062dea1b0370",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-28001.png": "032c4769ceeb6e10d73741d79f5a3b4215e657d96ffc101474802aa6f5fbc3e2",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-28200.png": "82370f674b5a563b15c350b4b221a7aaac80c9256b03fe7a15ac5a848da3abdd",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-28200.png": "48a34217158bf826569338873eb338a038df00166d68645e1f78e0e2cf8c1cac",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-29000.png": "574d85e30b570fb47f43c14effa5bf0fb9327931b6dc743d97d0baf348d48809",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-29000.png": "d45edbae081c6936146e01b5d1a9485d4be90ac89d0db60c8c5629e10d74dc69",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-31000.png": "b07f2d27d30c3a363864c2c333dca50c7cbca9cc9072487ca8cc09997204ebb8",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-31000.png": "656d63cc5041e178a933a9e4f138d8eda49b8059d35fff2b0f13e17e37f53a81",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-35000.png": "c819540f038b90661643cc99777cd600860acb4f5b48e5d85f4169d6e3424e2a",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-35000.png": "f2237cf1644947cc17be42d38355cbf2056f4298f73dacd33509fd0f53cfbfc8",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-47000.png": "c52c039d43763c56b3f51b94a4a38ab1b1ee9f8132ed5c82852baa8c6a9b5be4",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-47000.png": "8cbcdb25076608c06417f989a9ad18bb715974ce89c828b25be043cb4e15db23",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-47200.png": "984a36f536d5d07087c6e50aea35e2c6b1d1800876c2cd12f43045268e3bf9e1",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-47200.png": "74140d6a251356be68cbdbf1404d7a4cb8d9c97745206a26946d0d1523a0e5b7",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-48000.png": "07737417e2ee748e865b2744fb3e631229fa1b2a4abf09f2d1cffcc68db1c164",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-48000.png": "731ed6d032b49d73e225e9f69aecf9ac796936e15ae084fd871b44d69daa97f8",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-49000.png": "cabcc4b1f83b0c9a237193deffe9f98bc29b8d818fe3dccef81b37148bedb6cf",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-49000.png": "3a8eec0a0557f3cc26abddfd2ebf62b3d830e24343c23c7ff97f649775d809ae",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-51000.png": "821740eb9480dfb3e66d4bfa6bb2645cedf435ccaab4ff8ae011605c6eb1dfa2",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-51000.png": "8693cf3db1e0f245e9c48996000d051cc8be0e619b3845ccafeef2464f5a2e28",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-60000.png": "dac3079b272dbc61f6fd71a314f876d10f3d179e999e3e7209958913a3ca2541",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-60000.png": "24c0a5658aea65ca1d481e14fb469e9b253ee4c39a513e9d7cc5995e73035035",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-7000.png": "1e831aa1b765fae6179b2c0e2fd41e07e8865ab46d91d3fe46c05dc229e53a39",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-7000.png": "b9847b54d5e8a2ba668de65113cf31ad68fe1c376a4a3f99da756afaea5828d1",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-70000.png": "f67b9c63bf7a24b970d1cff445c106e514ffc70889ebf75c2682d583b3ad5a41",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-70000.png": "23fea04e9b0a8203210420abd486bce03bf796e12347453abd30b5428ecc9b41",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-7200.png": "db715617d0c4490457c0f69e6d2367da143c1b86bd3befc1a7dbd3d3fb47e629",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-7200.png": "d0a5140b28f20ed3249662f474d1fc05f6b9f87c9582f268ffd0fbc0608244e4",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-73000.png": "5fdb5e421572b53fd89ab993199f5d6fbc31796d315fcee319be434efea7d7ac",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-73000.png": "5bb2bf64879289db702dc74c58f3e8dc917be88de82b1844cbdfacc9f0c408f1",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-7500.png": "dc2a247258c76a53e4f55df340041258e35381a6075f9a9d446cdeee13a84bce",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-7500.png": "02e36175fe60e4013ae69c86f3f6ba37b04d4874532d09bb2a364b2165447515",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-8000.png": "395f765c76b90a005bff23ef87742bfeee1ee1c8a8fa7f8d59e0b9b0136a1426",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-8000.png": "b41c4f0d2facf5079e24f5d3cb67d385b6d5e2dc04a4b5c85c7517b6608260f5",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-87000.png": "d3acc82442e8430140ed73a1b90a8229eedf3f4699473ca84992ca2d25f8365a",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-87000.png": "360ae0605f31e78c8b0ea26e0608eead821c25c64504b5b0658e5d288d20badb",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-87500.png": "35ef7b2adfd1e3a90ca2a368b6ba7803f13837010e59511878af2692bd2c4ddf",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-87500.png": "56d2d4348b7785372477c92d443669ee3a8c8fcd41579f2c43587f95b59e3d89",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-9000.png": "1275b46075aa645a6a5f3dd08a38327811b2c3f522b326606605b8cec34c408b",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-9000.png": "c7e820dfb5ff3da0d8fb78a67dab6eb5362f8cb67a3d24cfa44fa56d28717814",
+      "build/verification/pendolo-chorus-stage-browser/arabic-800-normal-spaced-90000.png": "8bb3048b6f4cdd4ba3ffcc060bfc88af90587bec6418e4a1bbe35c888175882b",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/arabic-800-normal-spaced-90000.png": "02966b010c643550d372447c1e709ec28542798432dd8084e38579d76009b12a",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-0.png": "8d5dbb0245aaf51a23c127e6c3321f86b8f053a4f270addd73bb60ea082a3291",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-0.png": "4c309e08a34f44e9b4d5f51f7c37a32acd8e6a4bd33cd9b94c8956e4a9f8b0e6",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-11000.png": "5e3ec5b3868ccaf5c7de57996fc68f35f53d266eb0ef229cb84f4afd829857e6",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-11000.png": "c42357194268c3455db30955a70550c6033b56323c03f911c6832baab2185b45",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-28000.png": "8f7b8a2e71e8a65cb9bfcb0b402b546071a24f972e74c9f35148657f3d64e628",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-28000.png": "61d88091f979e8333e6b20c088215f17388fdcf297f59bdd90cbec54888c2d37",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-28001.png": "770237ec7b7197e26f795881ff33d5677ecdcb0d99558b3074019645aa190ada",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-28001.png": "cc0967c457df5df19d26444e9fada5e5a05a740c078ba8ae2679eaf4fd2011aa",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-28200.png": "5780e222440388c4d0549c88ea15efd2b5eb1cb14f9f63864301632141235ae5",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-28200.png": "94459dab5ad0cabcb6ed30c0959ca76ffc0ed2f6c74d935ba43ecb74a56bb8bd",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-29000.png": "059564355aca6351ae92907700b316f4a099daad479a5ef32b7b9c1fc412c6ad",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-29000.png": "e466da8f7b46efa453c750a621207d048e1a413f4d1b6c551de5fcd2e5753b5b",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-31000.png": "a5e1615557b192adb2e657726d667dedfc6c9841a600fd2a98cce8806fa2a3c0",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-31000.png": "331aadbeaad8587b8a2ec4a07b054df2e2ee8a78f315233ce95dc904b4983be6",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-35000.png": "fe13ac1102c0fc2c84e93b4e5869dc1c53bf98b015058c6432d84fdd1cf4e361",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-35000.png": "b219ee74170f3869c4abebe92ade43123ec6fc51b06ee6900832e11a356a38a3",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-47000.png": "bbd60ce0c317c5fcd8494bd3f83aecdc081b990537d745a6bf5452fd7dc18e18",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-47000.png": "5b2aa8c1f447db008eb4f7b075368a2b6a3c03734b9a548d076cbce78ffe8297",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-47200.png": "e94ea42e71dd444049df7d2ca6cd0f0280c648cb11a3aafc4c61f839ffb4633e",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-47200.png": "8bf715ac535016e51985d0e6b9c91dbdf6f35f6929002b97237c89dd57db5969",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-48000.png": "f446d8b86e3b9cbfe24f292b0ca2af7861568dd7bf3c195dd7d111b4b47d5043",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-48000.png": "401a816cbac97d6a7f8a14099d2df0f0077e6b1d3a5bd2eaf873e44920b8e4d8",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-49000.png": "c53a2d78003d73f5997d1cbd1f4448a0ad2b8b4a88d1fdd4f221a1e7c1d370d2",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-49000.png": "2295b2a7f17340db2b25e8af32f01a6135ae2a37eda3ad2d528fd61401524bce",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-51000.png": "8ae2ef16c40d2ce2da010173b951473f64d80938889f2970e4275706a7c733ce",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-51000.png": "4130f46c6a821e934725668714ce4ba5e41e8bcb36f7ac68a203f5dd1fa8115b",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-60000.png": "a0a14457b1c0498597cdf58a500b7d374dfd2927a4ae0c024c66b753fd4d787c",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-60000.png": "b8d12ca0ebb3718d2acee9e2160ab16f29e2821a436538450d600643a82dbbf8",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-7000.png": "b089bdc1e5cd8978b5f086a47a11648e8b774c0469febec6b32abb05f8a373d8",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-7000.png": "0c6496ca067a76a9a458f607f965a0307c4587c298370ed623d0fe39d549b3ba",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-70000.png": "deab12e7279dfa36cc4893f6ee0a3a5dc7eb95569df343f0aeea9110797be19a",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-70000.png": "1a6b2996fc0517a496478fc8a3ca3b962b12b1ec078c2e3c9c48fbf3ffd07ee1",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-7200.png": "488b4bded50297e1c08af81014077ced43f6c697b8dfa8dda1a84c87c9f9b5e3",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-7200.png": "2ecc2692479cb5d9b8b25f573e7f762a2dff7bef5529090ec1cf38ae0aeb22b7",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-73000.png": "278a3f0e36dfa0290886a16051486777e5515c04e7ee2975bfde78767f16fb95",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-73000.png": "5e338df80b1595b414aa866bf6e52fc75aa757d433aa60ec4ba316b4fae6ff75",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-7500.png": "0d4076faf9299a6cd2def5b14acf94778e6b728d029d340be2dfdd95685f30f9",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-7500.png": "603b3d03d6af765b67da0928031cfab8031ca4beaeeb75c0cdecf48d69443fd0",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-8000.png": "16036f8e0b830da66bc2cd81dff79544f206737836ddd0b5b033bc02571ece19",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-8000.png": "a135a2c3020115cc6bce9af031471d9264f4ad1a18d6b5a31386a8eeebbb7df1",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-87000.png": "7c65c742360c23e72fce14ccf5906d6233d4b4cdc94f76b2bf77fa8a27e04e3e",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-87000.png": "2420c497ac9b01052f1bc69e008fee82995a17ffc95291f62914b09d664d242f",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-87500.png": "712da887254a885c51b11a02d289c63510430a356b5e67b90ffef69c5f0b74da",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-87500.png": "d5dd435e9dc44923bda4e1f157498b6507b23f3797fe2d842ae27fb1303b4285",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-9000.png": "d8edb95ffd4e7c3035873a505196b8cbc38f10e4bedd2b55d4756af607ea0cd9",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-9000.png": "7c130be667366e4c4ef7073212b81de2fd0c0c94bf27cc51f8da0886f1af237b",
+      "build/verification/pendolo-chorus-stage-browser/cjk-800-normal-spaced-90000.png": "7d0660cb6241f5166303329b459e89e8726002ec4dfd55b80a1f28f461c4d419",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/cjk-800-normal-spaced-90000.png": "c4ab3b0e09c9cf8cc6ca4f5b81faafcbf5e9710a87268751fccc0fd7795069c5",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-0.png": "d546f495c4160b9277af1d0a0c96b1efee98ad3593b477b791269125425439f0",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-0.png": "34952dbe1deab2adcd267353bb5646ef62cdb02c7e0eb1876f2423fa8e182d05",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-11000.png": "09b529c80df1bc75fdf4f811758d38a56fb5d2b652656cbb469168066ad6b44c",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-11000.png": "267e9428c8bf4ee804781ae426fb5b33c5f0cd56e266ed96b3c8e66347d35cd9",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-28000.png": "7e3fabbf063c9ecf4ddb7017f121ed5160589376a98703211c6cf3831e0cbe1e",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-28000.png": "a17671c861c5a678a82d5a5b521e1660259979147be5ff79a7b9980f546edff8",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-28001.png": "4001b9cdffd50424b1e9f000da1d7d8727825e4a47ba5628050031be6e96e6e0",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-28001.png": "398fa28358551d87eff4e7c1f30f3838db67e4ddd9840230b18f8956d2872dbf",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-28200.png": "5e2bafb2cb5e6fbc5c1159f0f363dddd3f8ca758fd4b35ace23b0b72e61e2b9f",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-28200.png": "78ae3746a5a63a5bdd545cdc43d95dc8360c90ea95231a31e96b4f60451578d1",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-29000.png": "01f2717483b67ce04dbbf6f970166f8ae0420675aa59d09f9ba4e172c3be197f",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-29000.png": "74ec2fe79320d2efdd5fa6f93ccd1cd47fb6d1060628a0a9da326838f2e316ac",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-31000.png": "03914a567d5cb7b715e41403b89508e3c2432177f15de5491cda8e9ab0406ff6",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-31000.png": "f6abe9f530ebfbfb2d34ac8701c3fba8ae2d493b2c70eff5fa6795a66ceb5048",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-35000.png": "acbd65b1817c59f6395cbb68b325f9aee84776de3377aae11a2e673e1277216e",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-35000.png": "ffc74c6f7f22990c0a4efa4c37fce69a62f1bed47f02f7ad6585dd35ef9cd4ba",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-47000.png": "13425ed6236114b1532f7f5d79088c523f7265cf57d765bb46660e59db60e0db",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-47000.png": "56880bcf05fcf63526135863e53c3890197e5a87f08eb1d5ef40d8a5b451154c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-47200.png": "fb0ad55473190cc82d5db9b089cf5f93828a94f444a792330ef38d19202e6d13",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-47200.png": "97fb28bd4da2baa4d04acd7fe6e0cea6b9aadb45ec2321a5668d649dee3bdfe6",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-48000.png": "5789ae85bea45a54d65406383909cabe1d9e50ebd664941165bf01d2ee85e9ea",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-48000.png": "c3f77d60ad15d019f7276a896f7d76a998f25f535cbba8d807d9e15e9b6aab18",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-49000.png": "354c0775a3dc707783a1130baee3b1ac55cb530b28db4052679db14c64b9a9c1",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-49000.png": "97c367a70237a90f560485f486bf8c77c4ef8e6e9c28e06c9576718ebeb7a73a",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-51000.png": "aca9c1cb2552f24cf848b274947472a4400420561da96173e8855fe15d11d360",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-51000.png": "3d63703f25bb0e2da88054138fece7f458175bb059ddd7a3a4d5e78dfc716b11",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-60000.png": "5630937f04ba3d2110b35f9c84441fc65e1bd7ecf582adaedc9d28e8c1098e7a",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-60000.png": "4eb4a24e2f03e5314ea09778f8e4a14aa6c68da5a598d6df87d2b73da566b441",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-7000.png": "9fc108f937f401da8e3532f67fb00b03e89e8959a45addba72485deae93d6611",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-7000.png": "2673ec93ab6f37eeb2a91e9006f2b9d565102ee5735c3c20312b497ffc931530",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-70000.png": "b50730dd13a46884995c9fe57b3a2dc177b6d81b78d88b9efbe0b53d1bc5821d",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-70000.png": "a5d10744493bb9e221f7a22d663b6e08b345be6459d31a4bd044db6499555399",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-7200.png": "88c80ce9aac94418a50a39421be3590ae4af4c13cdeed56fbeb32620355f8915",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-7200.png": "95c5a928db77a74619ae70d0a1e794120e201160e31854166a6623c042390b2a",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-73000.png": "f740de061acef6b54575efb0a34c10474edc0ccc6e999611ba69efbdeadf4958",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-73000.png": "130ee35c3adc02531973299f8bd571c377d7b624d757ef7008c37efa573ff39f",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-7500.png": "27073e9af1ec87267d98d78b1c3afd82d59c77329bf9dd2d45d1975716cf4263",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-7500.png": "56b747a3ca3acc0ddbcc1c3486bb57f0ff512c1ede40f95aae88fe324a275f0b",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-8000.png": "8d50e61d4ecba8c4d372c488007edb56606077fe9c69356ead9c6a4584452140",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-8000.png": "5fb736bd60db0c9e48e5feddc3677889423a42b9c50644eea002773879a205c9",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-87000.png": "2db1c4f7f791a7172e9ad2c90bc04a5ac37544cd71fa05bf4328978f5270bfe5",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-87000.png": "bd1d93ee652c42e74911ccfe30130bd52a7d07623835ac759ab1812bcad9cc61",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-87500.png": "1601cbb1d626ee7f47443ef430f56fdea7cd834b960ec8aa8d78d2abc8170596",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-87500.png": "a2d5adbd01b8199b5e6be309512909af4cb15f50da8578891203766089118744",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-9000.png": "9f35c235152c6c80e0683690ae77d253b6448d0edea6ddebab39143d4b60e947",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-9000.png": "5a174901d79b8f85905ef48a31dbef98e1f91471ad9c96018c6fc67a1a8ce711",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-calm-spaced-90000.png": "33c749238fbe8f9cb441412f9cc24da7342d8c0756430427f0472f0c86b8ed04",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-calm-spaced-90000.png": "d7146be7a3c58ffca0a1d93ac125f97ddd2ca370aaf63bf938752390202e5103",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-0.png": "d546f495c4160b9277af1d0a0c96b1efee98ad3593b477b791269125425439f0",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-0.png": "34952dbe1deab2adcd267353bb5646ef62cdb02c7e0eb1876f2423fa8e182d05",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-11000.png": "874d232c6b5c9ed7e44e1045a171a47c7f30a427c99222460500e8c968401aac",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-11000.png": "c4abaf539c1c50722098457bef8e8d51cde11601b82a61c6550f86486f6aa0fe",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-28000.png": "bacba7d8f2ba8f9ea56bc362b71ebe93b20eaf34d43091ccf7752ccc59afe0db",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-28000.png": "2e90a371895f7209e648a92770c1f896ce64b7825b97916e8074749425909344",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-28001.png": "933e8c23ae3ea180ee4930a34f13bbe0fe794e99b2d414137624fa414838cdf8",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-28001.png": "c5459d721ac0b7cbf7fad9d1e9b31eba81ee949381ea7a97c774cec82e1ec260",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-28200.png": "13ef6b77939256112ad89904c3b7085bd05c6c0c53f77f00c8f1b9d91e59518e",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-28200.png": "3d0d0a38c2c71c07b6a29da1001bba04806d2ce35c1546dd27a02f9814d97cd7",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-29000.png": "e636f4c6d787b56c0e5f20cdbfc430ff2baa530d595f381f9c12f51f2cef177c",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-29000.png": "3c33f92c826ef1c2d0cb9babd62a67203c2332a5c32637973fc12c68cf7d8a9d",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-31000.png": "0d8ebdedf6f59dc919b9f7f966cb9f4d7f31863e66fb4edc489847c83177d3ab",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-31000.png": "de5edf42277fdeda982ffb9864837209550c0fdc09f5786f5a67d7de5a8bab6c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-35000.png": "acbd65b1817c59f6395cbb68b325f9aee84776de3377aae11a2e673e1277216e",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-35000.png": "ffc74c6f7f22990c0a4efa4c37fce69a62f1bed47f02f7ad6585dd35ef9cd4ba",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-47000.png": "13425ed6236114b1532f7f5d79088c523f7265cf57d765bb46660e59db60e0db",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-47000.png": "56880bcf05fcf63526135863e53c3890197e5a87f08eb1d5ef40d8a5b451154c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-47200.png": "54348be046d5676df27eb9494fa7baa78c03da741a2eb991065481184fb2688f",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-47200.png": "bbaa447659114774acd554c0f0bc22899792911dabb7226d20b2460bfd6a4ea4",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-48000.png": "07b2b3a91ae719113f8b651cc04dffcb364bc42b5153e116aa47ba4df6c2250a",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-48000.png": "cb9deab01185f48277c4f208b75b3cf65f82e5eec69050c6f3ee178c0f4dd500",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-49000.png": "d75d45a73335f32e70dd4bb88d4becd9d603424f308cbaf3762f8cddf38af47e",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-49000.png": "e8103a0c6b5adf058ad86fd2c39a9fcf4fe8858bc0545adb8f59c965703a7d83",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-51000.png": "45c42c80d368d8a556815f0382791cd4bf0253b3c9f0264e7e8151d76ca6edcd",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-51000.png": "10b18433175eec3f55e66eca6098478b625c8815ae6090f6d77c25561088abce",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-60000.png": "5630937f04ba3d2110b35f9c84441fc65e1bd7ecf582adaedc9d28e8c1098e7a",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-60000.png": "4eb4a24e2f03e5314ea09778f8e4a14aa6c68da5a598d6df87d2b73da566b441",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-7000.png": "41b80e406a3fb76be35e8bd26c5b8e7cfbac38a94bd7a38d0f69d33db3c35369",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-7000.png": "f8c60334decfa01e1e99c084f62e244e647490489d3384c951a04b93a607b2bb",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-70000.png": "a25ea3fef7f3f5fef0a44c0c66b2606f2fb15c7d6e6a83c218f1b507b88df0cf",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-70000.png": "76644be9c1c5e1db2eaf5c3163bdc7af8f0285f78d8b25da3038059ce99f5b31",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-7200.png": "691867f5407406728e907910cd2e2a479ab3888ecbabb5e3de87ff08b3938a1d",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-7200.png": "2f3c400e461548d8eb8ef6c8401165611dfe99d1c6a7592165b9cf38d2f3843c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-73000.png": "bd02b81cd7ad328212b7f52fa9a77d1077df9bd88566d6081a80a3f4f8010629",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-73000.png": "08edc93cdf7e364f5800100cbdd6e604b012fb2f40c6d0f993ec39e3971dada8",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-7500.png": "ee942294f0d1a27da8e6b8cc73b9f2fd9c489b58aea310801bce8f65acaedb1a",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-7500.png": "1780f1c1c3b4f432b46704e434516be6e8fc2ce4204abd2f1dfcd6c2763ecb6c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-8000.png": "7dbcfea27e0312ea016ff70549c2445a4ddb734264da373e778068c62c27506c",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-8000.png": "013e5e4c6e1238cac8c1de317184925dca5f42cff893cc202e847b114c7544bb",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-87000.png": "4376463de4179c6b21e84f65f0c58a6174c1033c0bbad4013bbe59e2f2d07a9d",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-87000.png": "654bd601cd0bce6b6533c7bb8929129466c08415519b211bf49f6664b77b2ec3",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-87500.png": "ee2fb09ec8e4d5b1ceaccc0816a5b328dc0ce60edb6eea2d8215760cf191ab88",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-87500.png": "0f0e38be87c90d23d6fbd2b901ea1adcc8f54b062e6ae1b52d8c9663ff3825da",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-9000.png": "e7a17ed6a3de82ae08e79052bb437ceaf35d5b25e5851f79fcba5c20b9854170",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-9000.png": "21ba1162d5914ad7767c06d8daa313d87d751a4f435a74a4ab5dd7fa6e929dd6",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-chaotic-spaced-90000.png": "e998f635e4b7eb0e418df15012cfa77e107410ee73728a87d4e4d56971fbea20",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-chaotic-spaced-90000.png": "45b9bcb4577af5107db811c5f3f35739eade03639cbd07d763d2468e1cbeedca",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-0.png": "d546f495c4160b9277af1d0a0c96b1efee98ad3593b477b791269125425439f0",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-0.png": "34952dbe1deab2adcd267353bb5646ef62cdb02c7e0eb1876f2423fa8e182d05",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-11000.png": "bc484eda2babd15812945ad3f37600e6642f6d68c24308c86df5e3caf2177ebc",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-11000.png": "e25e534a996e50ec7447c403586fdc06e934210f7233a5ab1e022746889e8d7f",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-28000.png": "80f9db6bcbc1399f38fc05c77ebabdd9b4661e31d8ae27114721000f1b0e6de9",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-28000.png": "f2cc102f50b6deac64dc2163e048ee47e7d46dc7f541b178b1bd57a92f493cb7",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-28001.png": "c523820e8a799e6cc4ecf953dda220b9ba814099be6d0952478e12aaa9232de9",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-28001.png": "3478a345d40bee6b8d86afa6a78772428ed73bf969e758fa6c5a00529b44dbb0",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-28200.png": "e662658a01ce16e071d6cb2c52cafeabea51a6b10ebb4bfba675824d9c5b0ffc",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-28200.png": "6ea80ebaeee3058a08d9ae9438416f666bc586c1e7df76a7eaffdebbcb70a6ab",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-29000.png": "65924bf612ff500a6353d74005aa6d49a8f9307dad7c49c4f75c428a209a7298",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-29000.png": "9c99706ef7c5e79472c3eb8ce16d5178a60cec2d5dfafc314ee4a66f0b0de2bd",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-31000.png": "c80485f6893ac25364899507eaf30fd4b524b3be1f135ea1aef6e98a708ed5a1",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-31000.png": "4b9ab2aa211152ed30895b3780fa82cd19fd6e7a2e1780dd37c6aaab62d6a8d6",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-35000.png": "6672f4c27257bb1db5a8760c57d9d4a91da877447def87e04ac3c9b9a173a26c",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-35000.png": "dba43ddc471828b48b08f3e6487fe7eeae0057402aa29d911b27adf4fd838501",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-47000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-47000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-47200.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-47200.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-48000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-48000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-49000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-49000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-51000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-51000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-60000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-60000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-7000.png": "cf97f76a1cc80573b88e7051e95016af5449b7bc86f33680602e1817685f8b4c",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-7000.png": "8220477856153666d8a19c2b51cecfc8f2380cbbc64f6b9b496d25013f58baf8",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-70000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-70000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-7200.png": "c9cba892f0acae5cb8d39fcd053ee0a2d2e976634e5b1a5c30901e72baf28389",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-7200.png": "f5e37303022310936bfbe57784d3194a26dc09a960b265f5ade81dace50fe0b3",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-73000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-73000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-7500.png": "81a1e0fd98d6eafb3ec4838dc09b3969eb73cc727037de66e3441f4525abd7e9",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-7500.png": "f33a7df2930d782bdd39342e77088ff82c5fc8a835191a701cf728ebad873190",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-8000.png": "f88ff5ae9f4bf17519a4e4286253b03b3ae1958ae78a77413a2fe2157d038750",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-8000.png": "bf2616741fb63e2e65e0e5f2c4f2a629872912286c314bbecff36c5bcebce93f",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-87000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-87000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-87500.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-87500.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-9000.png": "04307a850cc5326de93f0df223d10f07464fa90225d77b72e3e7b6fc3d042730",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-9000.png": "4e7e72f1e07a2bf1f77025ff0f2afb9a34c3077aa2fe1e2071e5164fd4509e98",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-dense-90000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-dense-90000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-0.png": "d546f495c4160b9277af1d0a0c96b1efee98ad3593b477b791269125425439f0",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-0.png": "34952dbe1deab2adcd267353bb5646ef62cdb02c7e0eb1876f2423fa8e182d05",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-11000.png": "fb96196a7cfb4486f772665178c8df8a19b9f101c42edf3fd3519c2dc4d32911",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-11000.png": "8187a67711b428e86372f132af03e0b55468ee84a6919784e37ce5547559f5fa",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-28000.png": "a82a1b4de6e23e04094a95c43114bfef6abb2a5dfaba4a62299b8f73c60c2df5",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-28000.png": "96ba5b1feba4d14a15c89e310cac34e50890ac742555f9e808d12b351d3c9fae",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-28001.png": "819779764e4bc40be630b497929c6600846603e371b65f2b512b06f4eda8197d",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-28001.png": "5f586bb14452d89ae8a5d837ccf06757a1881a2eb5fac205af9079f642efa429",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-28200.png": "632d67d3ab6566089ddfac6b18e652b67cd1378cece7d96db95041c4f69e964b",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-28200.png": "b55ef6e7041b16e904195e2be1053d19ada8d2a2ca35bd08dac2d4fdf0f9fc2d",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-29000.png": "3766e1dba74da0041830b116f75f3c425829c60be287438ac5ddc03db99ba99c",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-29000.png": "214a276b2d4bb1bbbfacdf5b5d63e2543991762f55f3a26d1d427cb4b3cd160a",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-31000.png": "8cc41f9ee3a3039e121a0caafb31def82e443b60e87c476eb81b3029d19e3ff5",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-31000.png": "19c33a6a41a6abd23286c1dc1cffe502e067c199e9cea094bb5ce118a9930ad9",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-35000.png": "acbd65b1817c59f6395cbb68b325f9aee84776de3377aae11a2e673e1277216e",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-35000.png": "ffc74c6f7f22990c0a4efa4c37fce69a62f1bed47f02f7ad6585dd35ef9cd4ba",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-47000.png": "13425ed6236114b1532f7f5d79088c523f7265cf57d765bb46660e59db60e0db",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-47000.png": "56880bcf05fcf63526135863e53c3890197e5a87f08eb1d5ef40d8a5b451154c",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-47200.png": "7b764591234f8aa33c338940b8a2c13857fe2ce9d270a911e2e3fc900276e69a",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-47200.png": "5e2811a6384b6f770009affa2b8e964594a28d0c2eddae2fe5a6f5b51b3c6f81",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-48000.png": "55cd66af543f10a7938f2aac80668b546be3450d798ae55613d143dfe25ca0b9",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-48000.png": "4801fe94af3cc6b2d445eb7cf707ee39627cc07b1153cea6e04485ef5ef61c4b",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-49000.png": "974754f694530ac82f599be16dc3c2ccbc22cb47407c30f6451cc1406d8ca53d",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-49000.png": "23c5eea3df02a6a9137cde5c99c14efc0e1b3ca83153385d54a4b050d0be8b00",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-51000.png": "063121a33d3e25938ec8ddf3d374fa66c643c25452e19ab9bd3fbc874eed46eb",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-51000.png": "d270e2d888a47e07219067af8b34d52033be3df002ccbbcf054fb0b19d363cf4",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-60000.png": "5630937f04ba3d2110b35f9c84441fc65e1bd7ecf582adaedc9d28e8c1098e7a",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-60000.png": "4eb4a24e2f03e5314ea09778f8e4a14aa6c68da5a598d6df87d2b73da566b441",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-7000.png": "cf97f76a1cc80573b88e7051e95016af5449b7bc86f33680602e1817685f8b4c",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-7000.png": "8220477856153666d8a19c2b51cecfc8f2380cbbc64f6b9b496d25013f58baf8",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-70000.png": "ca6892ff52c1f2bc8fdb26e67a961365512812c362ca37d6283b0340b567e02f",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-70000.png": "96207328ce64b6b3caecfdd4b1d44d1c30801096b7568cb1909558f2e0bb3fc7",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-7200.png": "c9cba892f0acae5cb8d39fcd053ee0a2d2e976634e5b1a5c30901e72baf28389",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-7200.png": "f5e37303022310936bfbe57784d3194a26dc09a960b265f5ade81dace50fe0b3",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-73000.png": "60f8dff50d89f3af228a25b9fd7e76ff6bff03489b99d2d1cb8bafbb1905aa44",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-73000.png": "196b1db8cc3f81c8b4ac129567501cc916e3b1ce48f6346db1c003a238c9cf7d",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-7500.png": "81a1e0fd98d6eafb3ec4838dc09b3969eb73cc727037de66e3441f4525abd7e9",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-7500.png": "f33a7df2930d782bdd39342e77088ff82c5fc8a835191a701cf728ebad873190",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-8000.png": "f88ff5ae9f4bf17519a4e4286253b03b3ae1958ae78a77413a2fe2157d038750",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-8000.png": "bf2616741fb63e2e65e0e5f2c4f2a629872912286c314bbecff36c5bcebce93f",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-87000.png": "a09de355dea2f5a8094d74546fb23d6d40ed2053b1fd56ca7043b66387e315e1",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-87000.png": "ecf349373744cd64f7871fb4fa6847238cd087d6f259851c27d138c9d43a163f",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-87500.png": "5f4bff52d87aa36be3bb43b2a157991537094a086aea90816afaee5240f83dcb",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-87500.png": "32ef03fdc6c31a87a45f1f7e539f33f1bf2a981fa35c0762367cf865eb589c70",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-9000.png": "84d94bc1ff199d61415643c6b180bf60d9775a8ce82d67e0893d3abcddaed8cf",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-9000.png": "ec19e7880e3beff49bd5d450b71fed6608722d8fe176a3d2aef99f8f93cb8763",
+      "build/verification/pendolo-chorus-stage-browser/latin-380-normal-spaced-90000.png": "6f2d9e73b30fc8f4771bd021989f6451500edb54bc2207b12bce0631cc6b1ad3",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/latin-380-normal-spaced-90000.png": "d74455db339deaac909ed9f453d765bd59417f26217c9283850679a4d137130d",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-0.png": "10bf360806398b10db1f5732a957e5c29b7892ebeb87af24236b17111b449ca6",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-0.png": "937eddedb6714ca55cdd77fbb16b3fa6c3778880f11fa60c888dc09c3a30f4d8",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-11000.png": "55d36f375d715f79b35aca159bfeb8cc27c8b33ceb88b9b46afb8fadfcb9a61d",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-11000.png": "4780d2a8b21e1e36af9eb6605ea49b6c212239e3b229f15e56e12be75e6b89db",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-28000.png": "da352fe003720b2ac66878a0cf2a506d44aeb8465fc7eea82e8963de5e29452f",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-28000.png": "98d95d9fc857466807ec78871d9fbfbf1c20d460fba6528c7bc69665a2f73fd3",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-28001.png": "a8631e887d9302eeeae9e0a33948696e5119c484c096f5cde91b7a3f0beab413",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-28001.png": "ae81032a4e5e0a8f31b20a8aa63dfc4d59b2cd47d83fb2e6dcc6aac758dfcd23",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-28200.png": "ed68cddbe3d82577b15a60c982ccaaef921ea405ddcafd660347f49a137d3317",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-28200.png": "7d4ef632cb227e6f496a6e728072c7db8cc316205241d4b0460d24c20a4040ad",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-29000.png": "e194c4fbea357799d6e030882c4876d1484bcce99b8ece0d099ff50c786ddc5d",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-29000.png": "3dffcde6eff8b2b918e7a74ab378560cdfcbd0f64cfc183290a19fa0db244881",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-31000.png": "9455929981a835e8dc64e6b9c518f67c57e215fb839cc2c1083834ea50e38553",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-31000.png": "914f1bd428d1c3858af2fc1ecf6e1bbe5bdda56b3bf168a035ecff4a6b0bd3e6",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-35000.png": "6d52c9fe2633fcd9d2e53a475badf22da08ab7de825ab8dfd1adba97834071d9",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-35000.png": "a21a82fe6a01e33cc5f09f7dd4a766518ab9aee92146a34b504d3fc03adf4858",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-47000.png": "771328c5d5e9c7e8212661e55835fa8235d862616f45b710de66804e25f014a6",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-47000.png": "77bd8bc2c9e057bc23c9d8634a9c7c7e98bb64c376406b4e6d5d5d1c96eab394",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-47200.png": "268404d6de6ed7696625bcca8c46aeb9fd00bafd88d4915e407c7792534725d7",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-47200.png": "8589f725819f7116ba974931e18f0cc9e22b0b5fee0dff77f8e725ed25588dca",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-48000.png": "289cd416347ed6eab184d89e576bf3dcad5bfeb4aa3c7cd8f1fcb2cc4d1e4240",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-48000.png": "c6ef77fb47d8b73693f3da6469e0749929c2e9dadf92132674f225d0be39cf1a",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-49000.png": "2f709e82ddbc4f3c4d7924c7e7b5b111367641663d0e390a5b7ecdb77aabdf0e",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-49000.png": "148f773891f815d03625c4f6383874d641acb641bbe346fab5a27af72744fa3a",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-51000.png": "76f6a0c5000130a861660ec660abaddd67928308f48c00f9d7d63f0736c47bb9",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-51000.png": "09cd4107236fa947c3135c4a7a6380ec55348d077c158e9ee06d4dfc42e8c951",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-60000.png": "a3eda074b2a8d5a3e63db9a3ce2b2ed8ab8772f1af53d956a52228fc94ada446",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-60000.png": "7cbebde3881c51ecf23c4da8985734fe3f5240b17d103e776dc802c49e99ae9b",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-7000.png": "d18de2102e4cab73b7267118a91244a84966e53318392e852e41d048b8330570",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-7000.png": "9a88c974ea30bd3e94aaaff5d9497cfcdc0a7781b6539d7d65a3b064f9acee8a",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-70000.png": "93f1065c0db136dae7fbdcf916ce249379214635c5ee6eee04247ad8eec1e8ca",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-70000.png": "75fe2442cf6f88e34ba2207b922c26809616e509188770d2d82d4dafdf188edc",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-7200.png": "7e5eb21f2921d59612977a8d0f2ed7e77d4a8ba187ab5164239da10f858a3e6c",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-7200.png": "0b1f6fb32e6432cf18c27eb8751c995c2e90ddfd9f871052565267a4b6fa85d2",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-73000.png": "ceec95354d9b8fe080d61be518a0f06ad0a9dca5dc0d34b5dba07c2bd99ff2fe",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-73000.png": "edb819c1bdc8fb39a28c1245d2ef8b9ba2329bc4ec8cfa6102ceda900155028b",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-7500.png": "4fe08b9d8fceaa491ead7ec402160e9959ba6c4cfabbde1eca71e49724d8ca13",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-7500.png": "3d5608cbe1963d1d7391489bf4e49aa9bb2782784ff3ac61489f076ef611576f",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-8000.png": "6531a6c4b653c34557228d81ad6d944ccb9b7726f187ec8b3adc81f869bb34c0",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-8000.png": "3b291802248ccfa96dee0edcb55bf37df6140e2d6830116cc0440fc83ff08d06",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-87000.png": "77b168481ce6c23d73935729007236bdd77e93d66780180f4b2c3ca7de0ff7a9",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-87000.png": "3e2ac80851ff0162cf424763022c1a86a3392980198025352270b661600fb84e",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-87500.png": "e89ce33bec9ab8e80303b41612fdaee293b897007edaa2e115e93954d919bd50",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-87500.png": "351c7230e74c1930733af7eee89a253299767036ac4b37cfb42e4042ec9b8d27",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-9000.png": "c72062132b5e342ae72c9981ed95fab662e24cb3e9112d670392e7fcab24066a",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-9000.png": "9f987682c548dd96b93f83e6560155683e75353188f7e621d1af945ff812fe80",
+      "build/verification/pendolo-chorus-stage-browser/wrap-380-normal-spaced-90000.png": "09cd75eedb1402ac781b54c2d657f878955cf491acdf6295291ded70377f360f",
+      "build/verification/pendolo-chorus-stage-source-rotation-kotlin/wrap-380-normal-spaced-90000.png": "afea8ed97fe25252749831eb26a3613d0bd6fe7dc4236830bebf6cf965ec18c1"
+    },
+    "numeric_fields": 5628,
+    "chorus_maximum_errors": {
+      "0": 0.0011690024137498423,
+      "1": 0.015720154641342174,
+      "2": 0.0017954652519226455
+    },
+    "max_content_rect_error": 0.23150176341079032,
+    "mean_foreground_mae": 11.457310668942352,
+    "max_foreground_mae": 20.50286447199658
+  },
+  "unchanged_prior_native_pngs": 1034
+}

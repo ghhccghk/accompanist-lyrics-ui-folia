@@ -1,0 +1,71 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "scope": "Actual source current-line changes under the SAME60Hz plus exact probes as primary matrix; no forced phase correction.",
+  "semanticStarts": [
+    0.7,
+    0.86,
+    1.02,
+    1.18,
+    1.3399999999999999,
+    1.5,
+    1.66,
+    1.82
+  ],
+  "observedChanges": [
+    {
+      "current": 0,
+      "target": 0,
+      "before": -1,
+      "time": 0.7
+    },
+    {
+      "current": 1,
+      "target": 1,
+      "before": 0,
+      "time": 0.8666666666666667
+    },
+    {
+      "current": 2,
+      "target": 2,
+      "before": 1,
+      "time": 1.0333333333333334
+    }
+  ],
+  "at1p1": [
+    {
+      "index": 2,
+      "opacity": "0.0845668",
+      "animations": [
+        {
+          "currentTime": 66.66666666666652,
+          "timing": {
+            "delay": 0,
+            "direction": "normal",
+            "duration": 420,
+            "easing": "ease-out",
+            "endDelay": 0,
+            "fill": "both",
+            "iterationStart": 0,
+            "iterations": 1
+          },
+          "keyframes": [
+            {
+              "offset": null,
+              "easing": "linear",
+              "composite": "auto",
+              "opacity": "0",
+              "computedOffset": 0
+            },
+            {
+              "offset": null,
+              "easing": "linear",
+              "composite": "auto",
+              "opacity": "0.34",
+              "computedOffset": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

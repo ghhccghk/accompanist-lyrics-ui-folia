@@ -16,7 +16,7 @@ class CappellaMessagesTest {
         for ((key, expected) in rows("messages").groupBy { it[1] }) {
             val input = inputs.getValue(key)
             val lines = input.filter { it[0] == "L" }.map { l ->
-                CappellaLine(decode(l[3]), l[4].toDouble(), l[5].toDouble(), emptyList(), decode(l[6]))
+                CappellaLine(decode(l[3]), l[4].toDouble(), l[5].toDouble(), emptyList(), if (l[6] == "-") null else decode(l[6]))
             }
             val config = input.single { it[0] == "C" }
             val messages = buildCappellaMessages(lines, decode(config[3]), CappellaIntensity.valueOf(config[2].uppercase()))

@@ -23,7 +23,7 @@ try{
    const agentId=scenario===4?[' lead ','guest','third','fourth','fifth','sixth','seventh',undefined][i%8]:
     scenario===5?['solo',' solo ',undefined,'\ufeff'][i%4]:scenario===6?['\ufeffalpha\u3000','beta','\u0085',''][i%4]:undefined;
    const l={fullText,startTime,endTime:startTime+.8,words:[],agentId};lines.push(l);
-   inputs.push(['L',key,i,b(fullText),l.startTime,l.endTime,b(agentId??'')].join('\t'));
+   inputs.push(['L',key,i,b(fullText),l.startTime,l.endTime,b(agentId??'')||'-'].join('\t'));
   }
   inputs.push(['C',key,intensity,b('Synthetic title')].join('\t'));
   const config=getCappellaIntensityConfig(intensity),messages=buildCappellaMessages(lines,'Synthetic title',config,{showEmoMessages:false},[],false);

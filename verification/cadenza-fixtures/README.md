@@ -32,3 +32,23 @@ Fragment geometry is an EXPLICIT input seam; this does not establish actual
 browser-vs-Compose wrapping, word-fragment construction or visual equivalence.
 Source fallback may overlap when space is exhausted; the port must not
 rewrite expectations as a blanket no-overlap invariant.
+
+## Actual browser preparation / fragment bridge
+
+With the local headless fixture server, run
+`node verification/classic-browser/capture-cadenza-geometry.mjs`, then
+`:library:jvmTest --tests '*CadenzaFragmentsTest'`.114 preparations of19
+synthetic lyrics use180/380/800px and font scales1.12/.85, same bundled OFL
+Latin/Arabic/CJK fonts as recorded in geometry-conditions.json. Source
+buildPreparedState/pretext0.0.9 supply actual segments, widths, wrapping,
+word ranges and final placements. Kotlin independently reconstructs ranges,
+word-relative indices, split identities and placements FROM those explicit
+source segment/wrap inputs.205 final placements (2 split fragments), maximum
+numeric error1.137e-13. This is NOT independent native font layout evidence.
+
+The lyrics-core adapter retains raw syllables and only joins parser fragments
+that cut a single EGC; combining accent and astronaut ZWJ tests preserve
+source times. Whole words still remain available for shaping. Default tuning
+fontScale1.12/widthRatio.72 matches the source. Source ingestion annotations
+are a separate explicit step; resolveLineRenderTiming absent-hint behavior
+remains unchanged.

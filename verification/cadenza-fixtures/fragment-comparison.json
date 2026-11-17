@@ -1,0 +1,18 @@
+{
+  "reference": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "scenarios": 114,
+  "source_lyrics": 19,
+  "placements": "205",
+  "split_fragments": "2",
+  "maximum_absolute_error": "1.1368683772161603E-13",
+  "scope": "Actual original browser segments/line breaks are explicit inputs to Kotlin; verifies mapping and placement, NOT independent native font layout",
+  "files": {
+    "annotations.tsv": "3171a78f28cf3f411a4fdf0174e93b475d3b4075909e44b16af2a4c8c2f66971",
+    "fragmentInputs.tsv": "c186a5db2a5d682df085f79be93417f65b206f8f2a10a32ec0a93b76b5d98ebb",
+    "geometryInputs.tsv": "810ca8a8605ae45fe741faaeee810adbb68543b7b23a14991dc51165013ebae3",
+    "realPlacements.tsv": "595d22eb64951c25b0be857a1ea9e18dd5873f1634ef2b1dbdf1c6550e9ebd82",
+    "segments.tsv": "c7768c60365823cd8a5338a4ba1d211029a2fb002365518d5df3dbcb533a97b4",
+    "wordRanges.tsv": "e167992465db73f188a50a62677c9f62c555651fab7c4d741977972f0808bf5e",
+    "wraps.tsv": "42d39d62c6e0a02c2fde35de1f99565da934c3426f9e0e8a2e362c78dee1dac9"
+  }
+}

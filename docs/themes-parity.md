@@ -16,7 +16,7 @@
 | 云阶 | partita；`partitaLayout.ts`、`PartitaChunk.tsx`、`partitaOverlap.ts` | 依高度拆块、交替阶梯错位、块级入场、引导线、GlowWord | **移植校准中**：已接FoliaStyle.Partita与示例，完整画面尚有残差，未最终验收 |
 | 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 已接 FoliaStyle.Tilt 和示例，明确标注校准预览；450ms 公共退场、Latin 段宽已补，Arabic shaping、CSS transform 延迟和全局字体缓存仍未验收 |
 | 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部时序、文章布局、拟合、Latin静态与实时文字已移植并有原Canvas对照；镜头未完成，文字栅格/复杂字体仍校准，未开放选择器，背景不纳入 |
-| 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 内部包络已移植：30输入/2952时刻与原模块1e-10通过；原落点108场景/450片段≤3.638e-11；实际分词/换行、文字层与帧平滑仍待实现，无公开入口 |
+| 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 内部包络已移植：30输入/2952时刻与原模块1e-10通过；原落点108场景/450片段≤3.638e-11；实际原分段输入的词范围/片段桥接已实现；独立字体测量、文字层与帧平滑仍待实现，无公开入口 |
 | 群唱 | cappella；`VisualizerCappella.tsx`、`cappellaMessages.ts`、`cappellaMessageLayout.ts`、`cappellaReveal.ts` | 多发送者对话、气泡、消息保留与逐字揭示 | 未实现；明确core声部与发送者映射；先文字消息，不复制未知来源头像/emoji |
 | 时计 | pendolo；`VisualizerPendolo.tsx`、`pendoloGeometry.ts`、`pendoloTimeline.ts`、`PendoloActiveLyricSweep.tsx` | 圆弧歌词轨、机械跳步、当前句扫描、字幕轨 | 未实现；先文字几何/跳步/扫描；音频鼓点与节拍增强单列，不伪造输入 |
 | 镜台 | diorama；`VisualizerDiorama.tsx`、`cameraPath.ts`、`DioramaSceneLayout.ts` | 文字沿三维路径排列、镜头穿行与曲间连续过渡 | 未实现；核心镜头涉及旧“不做整套三维场景”边界，先调查最小平台能力；若必须改变边界单独请求决定，不以2D假效果验收 |
@@ -336,3 +336,12 @@ Android APK和Desktop编译通过；未做文字/落点视觉验收，无主题�
 这是显式片段几何输入下的数值证据；实际字体换行/片段构建/画面还未验收。
 源fallback在空间不足时允许重叠，不擅改为“绝不重叠”的不同算法。
 下一项：真实歌词词范围、跨行片段与保留shaping的文字准备。
+
+### 心象：词范围、跨行身份与core适配
+
+已接原版前向匹配/未匹配兜底、源段宽/内部advance映射与跨行片段身份。
+原浏览器114次真实准备给出的段宽/换行作为显式输入，Kotlin重建词范围及
+205个落点最大差1.137e-13（其中2个跨行片段）；不冒称独立Compose换行一致。
+已接发布core模型，跨源片段的EGC仅安全合并且保留原syllables与内部时间。
+字体选择默认1.12/.72、显式行注解与缺省hint语义分开保留。
+下一项：独立Compose实际测量/文字层、原DOM+Canvas完整场景及媒体时间平滑。

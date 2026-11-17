@@ -878,3 +878,23 @@ immutable. Android/Desktop build passed. Explicit input fragment geometry
 seam only: text measurement/wrapping, rendered blur/transforms and full
 theme/sample integration remain. Source comment directives about hiding
 comments are not behavior and were not copied as instructions.
+
+## 2026-11-17 Cadenza source fragment bridge and core adapter
+
+Pinned `cadenzaFragments.ts`, chooseFontPx/sizing in `cadenzaPreparedState.ts`,
+`graphemeTiming.ts:buildWordGraphemeTimings` and explicit annotations from
+`renderHints.ts` → `CadenzaFragments.kt`. Native geometry inputs are immutable
+segment widths/optional EGC advances and global wrapped ranges, replacing
+pretext cursor objects. The source fallback proportional partial width and
+forward unmatched-word placement are retained. Fragment objects preserve
+original word, relative EGC indices, complete timing and split/primary identity.
+Published-core NormalizedLine maps without classic sticky/semantic grouping.
+Only unsafe parser EGC boundaries coalesce; raw pieces retained as syllables,
+covering time envelope used for that single EGC (documented platform adaptation).
+No arbitrary UTF-16 drawing or dropping internal timing. Source default font
+scale1.12/width ratio.72 retained.19 synthetic lines include zero/reversed
+syllables, combining/ZWJ, Arabic/CJK, unmatched/empty tokens and no-no wrap.
+114 browser source preparations/205 placements match1.137e-13 from explicit
+source segment+wrap inputs. Two actual split fragments covered. Independent
+Compose text measurement/wrapping and full visual layer still pending.
+JVM logic and both builds passed; Android runtime not checked.

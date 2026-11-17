@@ -62,13 +62,15 @@ class PublicFumeTest {
         val rowCenter=Offset(((block.x+row.left+row.width/2-camera.x)*camera.scale+400).toFloat(),
             ((block.y+row.top+block.lineHeight/2-camera.y)*camera.scale+300).toFloat())
         val grid=(0..59).flatMap{y->(0..79).map{x->Offset(x*10f+2,y*10f+2)}}
-        val center=grid.firstOrNull{fumeHitTest(p,frame,it)==0}?:rowCenter
-        val hit=assertNotNull(fumeHitTest(p,frame,center));assertNull(fumeHitTest(p,frame,Offset(-100000f,-100000f)))
+        val localCenter=grid.firstOrNull{fumeHitTest(p,frame,it)==0}?:rowCenter
+        val hit=assertNotNull(fumeHitTest(p,frame,localCenter));assertNull(fumeHitTest(p,frame,Offset(-100000f,-100000f)))
+        fun rootPoint(local:Offset)=(local-Offset(400f,300f))*fumeStageEntryScale(1.0,p.article.firstStart).toFloat()+Offset(400f,300f)
+        val center=rootPoint(localCenter)
         val expected=pixels();runOnIdle{public=true};awaitReady();assertTrue(expected.contentEquals(pixels()),"public actual core")
         onRoot().performTouchInput{click(center)};runOnIdle{assertSame(core.lines[hit],clicked);assertEquals(0,parents);clicked=null}
         onRoot().performTouchInput{longClick(center)};runOnIdle{assertSame(core.lines[hit],pressed);assertNull(clicked)}
         // Find empty stage space using the same inverse transform, not a hardcoded text corner.
-        val blank=grid.first{fumeHitTest(p,frame,it)==null}
+        val blank=rootPoint(grid.first{fumeHitTest(p,frame,it)==null})
         onRoot().performTouchInput{click(blank)};runOnIdle{assertEquals(1,parents);assertNull(clicked)}
         mainClock.advanceTimeBy(2000);assertTrue(expected.contentEquals(pixels()),"pause")
         runOnIdle{time=10200};pixels();runOnIdle{time=1000};assertTrue(expected.contentEquals(pixels()),"reverse seek")

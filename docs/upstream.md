@@ -1525,3 +1525,17 @@ isolate real projective Canvas support. PNG font is existing OFL verification fo
 no project sample/runtime asset introduced. Source scripts run untouched original
 functions/materials and explicitly frozen view, not full VisualizerDiorama.
 Evidence/limitations: docs/diorama-investigation.md, verification/diorama-projection.
+
+### Fume original parent entry (2026-11-18)
+VisualizerFume.tsx:340–346 at cc6226e4 -> FumeStageEntry.kt and
+FumeArticleStage.kt graphicsLayer/Canvas clip: .985→1/.45s first-print parent
+scale, media-time reconstruction for freeze/seek/remount. Pointer input shares
+the transformed layer. First-print history is reconstructed, not accumulated.
+motion-utils13.3.0 dist/es/easing/cubic-bezier.mjs / ease.mjs -> FumeEntryEasing.kt,
+specialised easeOut with original12-step/1e-7 bisection, MIT Motion B.V. and
+original Gaëtan Renaudeau BezierEasing notices retained. No new runtime dependency.
+Verification mounts actual original React/canvas stage with isolated shell,
+background/subtitle/loading UI; no upstream edits. Exact original Motion-dom13.4.2
+and utils13.3.0 transitive lock restored, checked on every oracle invocation.
+Historical newer-transitive Motion evidence remains provisional; Fume92 frames
+were recaptured unchanged. See verification/fume-mounted for full scope/failures.

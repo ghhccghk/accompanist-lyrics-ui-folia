@@ -1,0 +1,6360 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "browser": "151.0.7922.34",
+  "observations": [
+    {
+      "file": "380-1-false-0.png",
+      "time": 0,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 786.8,
+        "y": 622.5,
+        "velocityX": 0,
+        "velocityY": 0,
+        "focusX": 786.8,
+        "focusY": 622.5,
+        "scale": 1.18,
+        "velocityScale": 0,
+        "focusScale": 1.18
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.9850001284950658,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-690.png",
+      "time": 0.69,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 321.8991299186381,
+        "y": 631.6312425030173,
+        "velocityX": -1.9977358089072348,
+        "velocityY": -16.546563200190196,
+        "focusX": 321.74733317194165,
+        "focusY": 629.9952433544726,
+        "scale": 0.8963886260327243,
+        "velocityScale": -0.052299249301919176,
+        "focusScale": 0.8894443507639253
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.9850001284950658,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-700.png",
+      "time": 0.7,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 321.88045153870405,
+        "y": 631.4682354938969,
+        "velocityX": -1.867837993406682,
+        "velocityY": -16.30070091203825,
+        "focusX": 321.73107281352407,
+        "focusY": 629.8402266953761,
+        "scale": 0.8958988028540966,
+        "velocityScale": -0.04898231786277225,
+        "focusScale": 0.8894562793352944
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.9850001284950658,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-717.png",
+      "time": 0.717,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 321.9887876017358,
+        "y": 631.1284638911326,
+        "velocityX": 6.258732870952013,
+        "velocityY": -16.16650007648715,
+        "focusX": 324.0590176594931,
+        "focusY": 629.5154827184023,
+        "scale": 0.8949924180390606,
+        "velocityScale": -0.042562269387419874,
+        "focusScale": 0.889479695629938
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985941)",
+      "parentScale": 0.9859411942331414,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-750.png",
+      "time": 0.75,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 323.14267238085074,
+        "y": 630.5963060386097,
+        "velocityX": 47.43293097489163,
+        "velocityY": -16.10119052876247,
+        "focusX": 332.18459377033633,
+        "focusY": 629.0155035004067,
+        "scale": 0.8938073116654938,
+        "velocityScale": -0.033842223223539115,
+        "focusScale": 0.8895123290066851
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.98766)",
+      "parentScale": 0.9876601369757402,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-800.png",
+      "time": 0.8,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 329.1924210123357,
+        "y": 629.8020954187813,
+        "velocityX": 164.05924467122048,
+        "velocityY": -15.754061241781006,
+        "focusX": 353.23011113500223,
+        "focusY": 628.2703711101362,
+        "scale": 0.8924663779918517,
+        "velocityScale": -0.023673514641206737,
+        "focusScale": 0.8895505696981144
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.990094)",
+      "parentScale": 0.990093994140625,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-900.png",
+      "time": 0.9,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 364.8162476320735,
+        "y": 628.2805619844607,
+        "velocityX": 490.9612547949583,
+        "velocityY": -14.812104195586308,
+        "focusX": 421.6052834234286,
+        "focusY": 626.8469074859585,
+        "scale": 0.8908945755110391,
+        "velocityScale": -0.011226913171723599,
+        "focusScale": 0.8895816481937319
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.994345)",
+      "parentScale": 0.9943452533922698,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-1000.png",
+      "time": 1,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 423.96544163302394,
+        "y": 626.8599817361071,
+        "velocityX": 631.2253288089576,
+        "velocityY": -13.755578397403609,
+        "focusX": 487.7568076590518,
+        "focusY": 625.5340695556322,
+        "scale": 0.8901593408192114,
+        "velocityScale": -0.005223512117587848,
+        "focusScale": 0.8895461800642895
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.99766)",
+      "parentScale": 0.9976604260896381,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-1150.png",
+      "time": 1.15,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 516.0031095058999,
+        "y": 624.9457005099034,
+        "velocityX": 566.8279191345794,
+        "velocityY": -11.923480106558664,
+        "focusX": 568.9059073032513,
+        "focusY": 623.8063059384552,
+        "scale": 0.8896982460285517,
+        "velocityScale": -0.0020307212735024165,
+        "focusScale": 0.8893598367212975
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-1300.png",
+      "time": 1.3,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 586.6035689304716,
+        "y": 623.3285855239752,
+        "velocityX": 416.7591363624847,
+        "velocityY": -9.833791922270903,
+        "focusX": 626.5235045809865,
+        "focusY": 622.3998200385056,
+        "scale": 0.8894392834390213,
+        "velocityScale": -0.0017168826407921746,
+        "focusScale": 0.8890104423319446
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-2600.png",
+      "time": 2.6,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 1079.874139709486,
+        "y": 624.5597480813782,
+        "velocityX": 375.6771411513049,
+        "velocityY": 11.380751318288773,
+        "focusX": 1117.413233273043,
+        "focusY": 625.7247475529298,
+        "scale": 0.8825517560977905,
+        "velocityScale": -0.00813712351989016,
+        "focusScale": 0.8806220299274574
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-3000.png",
+      "time": 3,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 1210.5606414957576,
+        "y": 629.925292125268,
+        "velocityX": 124.08463272315664,
+        "velocityY": 11.62870706088658,
+        "focusX": 1210.5606414957576,
+        "focusY": 629.925292125268,
+        "scale": 0.8793376170312162,
+        "velocityScale": -0.005748215836780216,
+        "focusScale": 0.8793376170312162
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.4287122786585575,
+        "fromX": 1210.5606414957576,
+        "fromY": 629.925292125268,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "overview",
+        "bridgeWaypointX": 772.089326243631,
+        "bridgeWaypointY": 662.6888915698623,
+        "bridgeWaypointScale": 0.8258953327516491,
+        "bridgeWaypointPhase": 0.3775672477073188
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-3150.png",
+      "time": 3.15,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 720.8600583914036,
+        "y": 675.535229766863,
+        "velocityX": 6.452239320361011,
+        "velocityY": 0.604677624429232,
+        "focusX": 578.9154735197027,
+        "focusY": 690.8599170230484,
+        "scale": 1.0452002665078957,
+        "velocityScale": -0.0001786953622435115,
+        "focusScale": 1.139023293324062
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.4287122786585575,
+        "fromX": 1210.5606414957576,
+        "fromY": 629.925292125268,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "overview",
+        "bridgeWaypointX": 772.089326243631,
+        "bridgeWaypointY": 662.6888915698623,
+        "bridgeWaypointScale": 0.8258953327516491,
+        "bridgeWaypointPhase": 0.3775672477073188
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-4200.png",
+      "time": 4.2,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 505.03207790981645,
+        "y": 731.5143190743211,
+        "velocityX": 160.13023605307453,
+        "velocityY": 11.328339062718129,
+        "focusX": 519.4594178542816,
+        "focusY": 732.6205966409877,
+        "scale": 1.4077868707759307,
+        "velocityScale": -0.002518498322053314,
+        "focusScale": 1.407067924129539
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.4287122786585575,
+        "fromX": 1210.5606414957576,
+        "fromY": 629.925292125268,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "overview",
+        "bridgeWaypointX": 772.089326243631,
+        "bridgeWaypointY": 662.6888915698623,
+        "bridgeWaypointScale": 0.8258953327516491,
+        "bridgeWaypointPhase": 0.3775672477073188
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-5400.png",
+      "time": 5.4,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 674.2137785032169,
+        "y": 739.8815109413248,
+        "velocityX": 9.315624020884579,
+        "velocityY": 1.2600850044144822,
+        "focusX": 674.2137785032169,
+        "focusY": 739.8815109413248,
+        "scale": 1.4101152999248394,
+        "velocityScale": 0.005606491136146867,
+        "focusScale": 1.4101152999248394
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 674.2137785032169,
+        "fromY": 739.8815109413248,
+        "fromScale": 1.4101152999248394,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 330.8770512196253,
+        "bridgeWaypointY": 528.0794566774663,
+        "bridgeWaypointScale": 1.4142304811696773,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-5600.png",
+      "time": 5.6,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 442.1023035940419,
+        "y": 584.8523189021537,
+        "velocityX": -872.3519027704343,
+        "velocityY": -623.2806082593329,
+        "focusX": 365.28624961394024,
+        "focusY": 528.2622173211605,
+        "scale": 1.4133039586996037,
+        "velocityScale": 0.008172363541471939,
+        "focusScale": 1.4159127640681457
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 674.2137785032169,
+        "fromY": 739.8815109413248,
+        "fromScale": 1.4101152999248394,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 330.8770512196253,
+        "bridgeWaypointY": 528.0794566774663,
+        "bridgeWaypointScale": 1.4142304811696773,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-6300.png",
+      "time": 6.3,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 444.96983892824517,
+        "y": 525.2391201778937,
+        "velocityX": 105.44064955476196,
+        "velocityY": -6.92075372606031,
+        "focusX": 454.91555984417215,
+        "focusY": 524.5328174594414,
+        "scale": 1.4209451110479996,
+        "velocityScale": 0.012880518805967259,
+        "focusScale": 1.424012040182212
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 674.2137785032169,
+        "fromY": 739.8815109413248,
+        "fromScale": 1.4101152999248394,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 330.8770512196253,
+        "bridgeWaypointY": 528.0794566774663,
+        "bridgeWaypointScale": 1.4142304811696773,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-7600.png",
+      "time": 7.6,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 625.1881748808438,
+        "y": 512.5334650040305,
+        "velocityX": 189.64722045176958,
+        "velocityY": -10.18250953442753,
+        "focusX": 644.9368479239067,
+        "focusY": 511.5370890571134,
+        "scale": 1.435619013447022,
+        "velocityScale": 0.006630106934435644,
+        "focusScale": 1.4370125006638996
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 674.2137785032169,
+        "fromY": 739.8815109413248,
+        "fromScale": 1.4101152999248394,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 330.8770512196253,
+        "bridgeWaypointY": 528.0794566774663,
+        "bridgeWaypointScale": 1.4142304811696773,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-8300.png",
+      "time": 8.3,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 454.30091845174917,
+        "y": 540.6283764709053,
+        "velocityX": 103.91678474217194,
+        "velocityY": 39.64429647016762,
+        "focusX": 482.67961966227637,
+        "focusY": 542.9815561566804,
+        "scale": 2.0090149487026654,
+        "velocityScale": 1.0443628039807458,
+        "focusScale": 2.2210225748821997
+      },
+      "retarget": {
+        "sourceLineIndex": 3,
+        "startedAt": 8,
+        "duration": 0.13,
+        "fromX": 661.1712993982792,
+        "fromY": 508.9509332406099,
+        "fromScale": 1.4372920055450897,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 327.269005139658,
+        "bridgeWaypointY": 543.9027614830787,
+        "bridgeWaypointScale": 2.223580252100958,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-9500.png",
+      "time": 9.5,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 985.2020685140434,
+        "y": 547.4959319701213,
+        "velocityX": -1320,
+        "velocityY": 62.692314677765,
+        "focusX": 590.2736523310824,
+        "focusY": 554.179393219926,
+        "scale": 2.2083488271400222,
+        "velocityScale": -0.019378124806561675,
+        "focusScale": 2.2036819000150616
+      },
+      "retarget": {
+        "sourceLineIndex": 3,
+        "startedAt": 8,
+        "duration": 0.13,
+        "fromX": 661.1712993982792,
+        "fromY": 508.9509332406099,
+        "fromScale": 1.4372920055450897,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 327.269005139658,
+        "bridgeWaypointY": 543.9027614830787,
+        "bridgeWaypointScale": 2.223580252100958,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-10000.png",
+      "time": 10,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 753.6922654896008,
+        "y": 609.3696327061677,
+        "velocityX": 194.2383409927684,
+        "velocityY": 52.42305234867936,
+        "focusX": 766.8902314508576,
+        "focusY": 613.0636838114631,
+        "scale": 1.7151613937156343,
+        "velocityScale": -1.6,
+        "focusScale": 0.48472527454220055
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.38,
+        "fromX": 743.2020685140426,
+        "fromY": 556.2531646113894,
+        "fromScale": 2.204654998901645,
+        "bridgeMode": "none",
+        "bridgeWaypointX": 771.4982156379384,
+        "bridgeWaypointY": 610.6961492691339,
+        "bridgeWaypointScale": 0.32735151015012914,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-10700.png",
+      "time": 10.7,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 768.2088298331998,
+        "y": 622.7941076652364,
+        "velocityX": -0.8175526246918452,
+        "velocityY": 15.925824815393653,
+        "focusX": 768.1492947163563,
+        "focusY": 624.3645928551158,
+        "scale": 0.6022441856000678,
+        "velocityScale": -1.4067503938741823,
+        "focusScale": 0.3301580799702342
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.38,
+        "fromX": 743.2020685140426,
+        "fromY": 556.2531646113894,
+        "fromScale": 2.204654998901645,
+        "bridgeMode": "none",
+        "bridgeWaypointX": 771.4982156379384,
+        "bridgeWaypointY": 610.6961492691339,
+        "bridgeWaypointScale": 0.32735151015012914,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-false-11500.png",
+      "time": 11.5,
+      "width": 380,
+      "stepped": false,
+      "camera": {
+        "x": 770.1526772644085,
+        "y": 634.1576005634008,
+        "velocityX": 5.488294394514614,
+        "velocityY": 11.233077549453675,
+        "focusX": 770.7157728089642,
+        "focusY": 635.2360342713009,
+        "scale": 0.3276740173729452,
+        "velocityScale": -0.010833272374036544,
+        "focusScale": 0.32635736596436143
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.38,
+        "fromX": 743.2020685140426,
+        "fromY": 556.2531646113894,
+        "fromScale": 2.204654998901645,
+        "bridgeMode": "none",
+        "bridgeWaypointX": 771.4982156379384,
+        "bridgeWaypointY": 610.6961492691339,
+        "bridgeWaypointScale": 0.32735151015012914,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-0.png",
+      "time": 0,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 786.8,
+        "y": 622.5,
+        "velocityX": 0,
+        "velocityY": 0,
+        "focusX": 786.8,
+        "focusY": 622.5,
+        "scale": 1.18,
+        "velocityScale": 0,
+        "focusScale": 1.18
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.9850001284950658,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-690.png",
+      "time": 0.69,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 321.8991299186381,
+        "y": 631.6312425030173,
+        "velocityX": -1.9977358089072348,
+        "velocityY": -16.546563200190196,
+        "focusX": 321.74733317194165,
+        "focusY": 629.9952433544726,
+        "scale": 0.8963886260327243,
+        "velocityScale": -0.052299249301919176,
+        "focusScale": 0.8894443507639253
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.9850001284950658,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-700.png",
+      "time": 0.7,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 321.88045153870405,
+        "y": 631.4682354938969,
+        "velocityX": -1.867837993406682,
+        "velocityY": -16.30070091203825,
+        "focusX": 321.73107281352407,
+        "focusY": 629.8402266953761,
+        "scale": 0.8958988028540966,
+        "velocityScale": -0.04898231786277225,
+        "focusScale": 0.8894562793352944
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.9850001284950658,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-717.png",
+      "time": 0.717,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 322.5656945961821,
+        "y": 631.1284638911326,
+        "velocityX": 38.02097347977641,
+        "velocityY": -16.16650007648715,
+        "focusX": 333.4525439605544,
+        "focusY": 629.5154827184023,
+        "scale": 0.8949924180390606,
+        "velocityScale": -0.042562269387419874,
+        "focusScale": 0.889479695629938
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985941)",
+      "parentScale": 0.9859411942331414,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-750.png",
+      "time": 0.75,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 326.1592210641034,
+        "y": 630.5963060386097,
+        "velocityX": 131.89765673833122,
+        "velocityY": -16.10119052876247,
+        "focusX": 347.2236852627792,
+        "focusY": 629.0155035004067,
+        "scale": 0.8938073116654938,
+        "velocityScale": -0.033842223223539115,
+        "focusScale": 0.8895123290066851
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.98766)",
+      "parentScale": 0.9876601369757402,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-800.png",
+      "time": 0.8,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 335.91739334815463,
+        "y": 629.8020954187813,
+        "velocityX": 216.5691385519669,
+        "velocityY": -15.754061241781006,
+        "focusX": 360.407209349556,
+        "focusY": 628.2703711101362,
+        "scale": 0.8924663779918517,
+        "velocityScale": -0.023673514641206737,
+        "focusScale": 0.8895505696981144
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.990094)",
+      "parentScale": 0.990093994140625,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-900.png",
+      "time": 0.9,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 366.446548985298,
+        "y": 628.2805619844607,
+        "velocityX": 415.2867104102077,
+        "velocityY": -14.812104195586308,
+        "focusX": 414.4716490371279,
+        "focusY": 626.8469074859585,
+        "scale": 0.8908945755110391,
+        "velocityScale": -0.011226913171723599,
+        "focusScale": 0.8895816481937319
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.994345)",
+      "parentScale": 0.9943452533922698,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-1000.png",
+      "time": 1,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 418.84590501634057,
+        "y": 626.8599817361071,
+        "velocityX": 570.7359888840863,
+        "velocityY": -13.755578397403609,
+        "focusX": 475.3725985358097,
+        "focusY": 625.5340695556322,
+        "scale": 0.8901593408192114,
+        "velocityScale": -0.005223512117587848,
+        "focusScale": 0.8895461800642895
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.99766)",
+      "parentScale": 0.9976604260896381,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-1150.png",
+      "time": 1.15,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 508.2806606101559,
+        "y": 624.9457005099034,
+        "velocityX": 573.9049259211995,
+        "velocityY": -11.923480106558664,
+        "focusX": 562.4318324939138,
+        "focusY": 623.8063059384552,
+        "scale": 0.8896982460285517,
+        "velocityScale": -0.0020307212735024165,
+        "focusScale": 0.8893598367212975
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-1300.png",
+      "time": 1.3,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 589.1795943005432,
+        "y": 623.3285855239752,
+        "velocityX": 529.2163543046563,
+        "velocityY": -9.833791922270903,
+        "focusX": 638.448297131571,
+        "focusY": 622.3998200385056,
+        "scale": 0.8894392834390213,
+        "velocityScale": -0.0017168826407921746,
+        "focusScale": 0.8890104423319446
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-2600.png",
+      "time": 2.6,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 1065.47173077219,
+        "y": 624.5597480813782,
+        "velocityX": 370.7327114726247,
+        "velocityY": 11.380751318288773,
+        "focusX": 1101.3027169969437,
+        "focusY": 625.7247475529298,
+        "scale": 0.8825517560977905,
+        "velocityScale": -0.00813712351989016,
+        "focusScale": 0.8806220299274574
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 786.8,
+        "fromY": 622.5,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 323.23679805249424,
+        "bridgeWaypointY": 640.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-3000.png",
+      "time": 3,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 1203.9596278052397,
+        "y": 629.925292125268,
+        "velocityX": 164.58966250203042,
+        "velocityY": 11.62870706088658,
+        "focusX": 1203.9596278052397,
+        "focusY": 629.925292125268,
+        "scale": 0.8793376170312162,
+        "velocityScale": -0.005748215836780216,
+        "focusScale": 0.8793376170312162
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.42746694215604686,
+        "fromX": 1203.9596278052397,
+        "fromY": 629.925292125268,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "overview",
+        "bridgeWaypointX": 769.4760505946435,
+        "bridgeWaypointY": 662.7822647333021,
+        "bridgeWaypointScale": 0.8281356756191897,
+        "bridgeWaypointPhase": 0.37679929652462046
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-3150.png",
+      "time": 3.15,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 718.3625820442728,
+        "y": 675.6754875536902,
+        "velocityX": 8.558448123789013,
+        "velocityY": 0.604677624429232,
+        "focusX": 578.9753427552398,
+        "focusY": 691.0293512253347,
+        "scale": 1.0468612088942615,
+        "velocityScale": -0.0001786953622435115,
+        "focusScale": 1.140976678109467
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.42746694215604686,
+        "fromX": 1203.9596278052397,
+        "fromY": 629.925292125268,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "overview",
+        "bridgeWaypointX": 769.4760505946435,
+        "bridgeWaypointY": 662.7822647333021,
+        "bridgeWaypointScale": 0.8281356756191897,
+        "bridgeWaypointPhase": 0.37679929652462046
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-4200.png",
+      "time": 4.2,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 513.770306531746,
+        "y": 731.5143192403898,
+        "velocityX": 142.99954749271149,
+        "velocityY": 11.328339026426642,
+        "focusX": 528.6814399242365,
+        "focusY": 732.6205967567248,
+        "scale": 1.4077906327748557,
+        "velocityScale": -0.0025468768249245206,
+        "focusScale": 1.4070680282061707
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.42746694215604686,
+        "fromX": 1203.9596278052397,
+        "fromY": 629.925292125268,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "overview",
+        "bridgeWaypointX": 769.4760505946435,
+        "bridgeWaypointY": 662.7822647333021,
+        "bridgeWaypointScale": 0.8281356756191897,
+        "bridgeWaypointPhase": 0.37679929652462046
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-5400.png",
+      "time": 5.4,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 674.7301524665281,
+        "y": 739.8815109413257,
+        "velocityX": 4.892018160938565,
+        "velocityY": 1.260085004406049,
+        "focusX": 674.7301524665281,
+        "focusY": 739.8815109413257,
+        "scale": 1.4101153010550307,
+        "velocityScale": 0.005606486563175561,
+        "focusScale": 1.4101153010550307
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 674.7301524665281,
+        "fromY": 739.8815109413257,
+        "fromScale": 1.4101153010550307,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 330.8770512196253,
+        "bridgeWaypointY": 528.0794566774663,
+        "bridgeWaypointScale": 1.4142304811696773,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-5600.png",
+      "time": 5.6,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 449.88078448082405,
+        "y": 584.852318902154,
+        "velocityX": -819.2067523235914,
+        "velocityY": -623.2806082593358,
+        "focusX": 379.6045983255853,
+        "focusY": 528.2622173211605,
+        "scale": 1.4133039591527028,
+        "velocityScale": 0.00817236199363247,
+        "focusScale": 1.4159127640712554
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 674.7301524665281,
+        "fromY": 739.8815109413257,
+        "fromScale": 1.4101153010550307,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 330.8770512196253,
+        "bridgeWaypointY": 528.0794566774663,
+        "bridgeWaypointScale": 1.4142304811696773,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-6300.png",
+      "time": 6.3,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 452.71773673658913,
+        "y": 525.2391201778937,
+        "velocityX": 109.87510386415218,
+        "velocityY": -6.92075372606031,
+        "focusX": 465.7074853180644,
+        "focusY": 524.5328174594414,
+        "scale": 1.4209451110540856,
+        "velocityScale": 0.012880518758043375,
+        "focusScale": 1.424012040182283
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 674.7301524665281,
+        "fromY": 739.8815109413257,
+        "fromScale": 1.4101153010550307,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 330.8770512196253,
+        "bridgeWaypointY": 528.0794566774663,
+        "bridgeWaypointScale": 1.4142304811696773,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-7600.png",
+      "time": 7.6,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 639.0430464090304,
+        "y": 512.5334650040305,
+        "velocityX": 185.7460692508384,
+        "velocityY": -10.18250953442753,
+        "focusX": 655.5832173250421,
+        "focusY": 511.5370890571134,
+        "scale": 1.4356190134470221,
+        "velocityScale": 0.006630106934433134,
+        "focusScale": 1.4370125006638996
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 674.7301524665281,
+        "fromY": 739.8815109413257,
+        "fromScale": 1.4101153010550307,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 330.8770512196253,
+        "bridgeWaypointY": 528.0794566774663,
+        "bridgeWaypointScale": 1.4142304811696773,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-8300.png",
+      "time": 8.3,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 458.64724433638514,
+        "y": 540.6283764709053,
+        "velocityX": 101.99958211818573,
+        "velocityY": 39.64429647016762,
+        "focusX": 486.743591801378,
+        "focusY": 542.9815561566804,
+        "scale": 2.0090149487026654,
+        "velocityScale": 1.0443628039807458,
+        "focusScale": 2.2210225748821997
+      },
+      "retarget": {
+        "sourceLineIndex": 3,
+        "startedAt": 8,
+        "duration": 0.13,
+        "fromX": 661.8829497395222,
+        "fromY": 508.9509332406099,
+        "fromScale": 1.4372920055450897,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 327.269005139658,
+        "bridgeWaypointY": 543.9027614830787,
+        "bridgeWaypointScale": 2.223580252100958,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-9500.png",
+      "time": 9.5,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 988.4800816230164,
+        "y": 547.4959319701213,
+        "velocityX": -1320,
+        "velocityY": 62.692314677765,
+        "focusX": 594.1777500379202,
+        "focusY": 554.179393219926,
+        "scale": 2.2083488271400222,
+        "velocityScale": -0.019378124806561675,
+        "focusScale": 2.2036819000150616
+      },
+      "retarget": {
+        "sourceLineIndex": 3,
+        "startedAt": 8,
+        "duration": 0.13,
+        "fromX": 661.8829497395222,
+        "fromY": 508.9509332406099,
+        "fromScale": 1.4372920055450897,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 327.269005139658,
+        "bridgeWaypointY": 543.9027614830787,
+        "bridgeWaypointScale": 2.223580252100958,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-10000.png",
+      "time": 10,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 753.9020145287561,
+        "y": 609.3696327061677,
+        "velocityX": 191.51511081006555,
+        "velocityY": 52.42305234867936,
+        "focusX": 766.9301988726368,
+        "focusY": 613.0636838114631,
+        "scale": 1.7151613937156343,
+        "velocityScale": -1.6,
+        "focusScale": 0.48472527454220055
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.38,
+        "fromX": 746.4800816230156,
+        "fromY": 556.2531646113894,
+        "fromScale": 2.204654998901645,
+        "bridgeMode": "none",
+        "bridgeWaypointX": 771.4982156379384,
+        "bridgeWaypointY": 610.6961492691339,
+        "bridgeWaypointScale": 0.32735151015012914,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-10700.png",
+      "time": 10.7,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 768.2089002606074,
+        "y": 622.7941076652364,
+        "velocityX": -0.8184141748649756,
+        "velocityY": 15.925824815393653,
+        "focusX": 768.1493104341084,
+        "focusY": 624.3645928551158,
+        "scale": 0.6022441856000678,
+        "velocityScale": -1.4067503938741823,
+        "focusScale": 0.3301580799702342
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.38,
+        "fromX": 746.4800816230156,
+        "fromY": 556.2531646113894,
+        "fromScale": 2.204654998901645,
+        "bridgeMode": "none",
+        "bridgeWaypointX": 771.4982156379384,
+        "bridgeWaypointY": 610.6961492691339,
+        "bridgeWaypointScale": 0.32735151015012914,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "380-1-true-11500.png",
+      "time": 11.5,
+      "width": 380,
+      "stepped": true,
+      "camera": {
+        "x": 770.1526772735084,
+        "y": 634.1576005634008,
+        "velocityX": 5.488294282452451,
+        "velocityY": 11.233077549453675,
+        "focusX": 770.7157728109829,
+        "focusY": 635.2360342713009,
+        "scale": 0.3276740173729452,
+        "velocityScale": -0.010833272374036544,
+        "focusScale": 0.32635736596436143
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.38,
+        "fromX": 746.4800816230156,
+        "fromY": 556.2531646113894,
+        "fromScale": 2.204654998901645,
+        "bridgeMode": "none",
+        "bridgeWaypointX": 771.4982156379384,
+        "bridgeWaypointY": 610.6961492691339,
+        "bridgeWaypointScale": 0.32735151015012914,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        380,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 2,
+          "x": 326.8,
+          "y": 491.99999999999994,
+          "width": 920,
+          "height": 45
+        },
+        {
+          "index": 3,
+          "x": 326.8,
+          "y": 541,
+          "width": 920,
+          "height": 60
+        },
+        {
+          "index": 0,
+          "x": 326.8,
+          "y": 603,
+          "width": 920,
+          "height": 84
+        },
+        {
+          "index": 1,
+          "x": 326.8,
+          "y": 704,
+          "width": 920,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-0.png",
+      "time": 0,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 1468,
+        "y": 615,
+        "velocityX": 0,
+        "velocityY": 0,
+        "focusX": 1468,
+        "focusY": 615,
+        "scale": 1.18,
+        "velocityScale": 0,
+        "focusScale": 1.18
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.985,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-690.png",
+      "time": 0.69,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 734.374431046061,
+        "y": 616.6307799466208,
+        "velocityX": -5.635090703973578,
+        "velocityY": -16.54668396051369,
+        "focusX": 734.1492199715416,
+        "focusY": 614.9952959995506,
+        "scale": 0.8963886260327243,
+        "velocityScale": -0.052299249301919176,
+        "focusScale": 0.8894443507639253
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.985,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-700.png",
+      "time": 0.7,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 734.3265775926268,
+        "y": 616.4677826198892,
+        "velocityX": -4.78534534341421,
+        "velocityY": -16.299732673157408,
+        "focusX": 734.1327596958714,
+        "focusY": 614.8402737624059,
+        "scale": 0.8958988028540966,
+        "velocityScale": -0.04898231786277225,
+        "focusScale": 0.8894562793352944
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.985,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-717.png",
+      "time": 0.717,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 734.3959614982128,
+        "y": 616.1280593278846,
+        "velocityX": 4.532438990597362,
+        "velocityY": -16.164050647941654,
+        "focusX": 736.4603534840237,
+        "focusY": 614.515519990292,
+        "scale": 0.8949924180390606,
+        "velocityScale": -0.042562269387419874,
+        "focusScale": 0.889479695629938
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985941)",
+      "parentScale": 0.985941162109375,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-750.png",
+      "time": 0.75,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 735.5223136638119,
+        "y": 615.5960017237037,
+        "velocityX": 46.829749821263974,
+        "velocityY": -16.098085390426018,
+        "focusX": 744.5855168393531,
+        "focusY": 614.0155292556806,
+        "scale": 0.8938073116654938,
+        "velocityScale": -0.033842223223539115,
+        "focusScale": 0.8895123290066851
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.98766)",
+      "parentScale": 0.9876602172851563,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-800.png",
+      "time": 0.8,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 741.5665831372315,
+        "y": 614.8019269217701,
+        "velocityX": 164.1029189854617,
+        "velocityY": -15.751643111776575,
+        "focusX": 765.6306384003911,
+        "focusY": 613.2703858217822,
+        "scale": 0.8924663779918517,
+        "velocityScale": -0.023673514641206737,
+        "focusScale": 0.8895505696981144
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.990094)",
+      "parentScale": 0.990093994140625,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-900.png",
+      "time": 0.9,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 777.2053880013717,
+        "y": 613.2805284799589,
+        "velocityX": 491.1003552039539,
+        "velocityY": -14.811368838035076,
+        "focusX": 834.0054554594714,
+        "focusY": 611.8469122860712,
+        "scale": 0.8908945755110391,
+        "velocityScale": -0.011226913171723599,
+        "focusScale": 0.8895816481937319
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.994345)",
+      "parentScale": 0.9943450927734375,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-1000.png",
+      "time": 1,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 836.3627777561705,
+        "y": 611.8599796890155,
+        "velocityX": 631.2728941840805,
+        "velocityY": -13.755451762734165,
+        "focusX": 900.1568637909363,
+        "focusY": 610.5340711218121,
+        "scale": 0.8901593408192114,
+        "velocityScale": -0.005223512117587848,
+        "focusScale": 0.8895461800642895
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.99766)",
+      "parentScale": 0.9976603698730468,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-1150.png",
+      "time": 1.15,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 928.4029722529497,
+        "y": 609.945701820603,
+        "velocityX": 566.8321652968758,
+        "velocityY": -11.923487353316826,
+        "focusX": 981.3059177647737,
+        "focusY": 608.8063062303504,
+        "scale": 0.8896982460285517,
+        "velocityScale": -0.0020307212735024165,
+        "focusScale": 0.8893598367212975
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-1300.png",
+      "time": 1.3,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 999.0035827947306,
+        "y": 608.3285858603318,
+        "velocityX": 416.75915397359967,
+        "velocityY": -9.833795913360035,
+        "focusX": 1038.9235065307419,
+        "focusY": 607.3998200929074,
+        "scale": 0.8894392834390213,
+        "velocityScale": -0.0017168826407921746,
+        "focusScale": 0.8890104423319446
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-2600.png",
+      "time": 2.6,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 1492.2741397094899,
+        "y": 609.5597480813785,
+        "velocityX": 375.6771411512514,
+        "velocityY": 11.3807513182867,
+        "focusX": 1529.8132332730436,
+        "focusY": 610.7247475529299,
+        "scale": 0.8825517560977905,
+        "velocityScale": -0.00813712351989016,
+        "focusScale": 0.8806220299274574
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-3000.png",
+      "time": 3,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 1622.9606414957577,
+        "y": 614.9252921252681,
+        "velocityX": 124.0846327231552,
+        "velocityY": 11.628707060886127,
+        "focusX": 1622.9606414957577,
+        "focusY": 614.9252921252681,
+        "scale": 0.8793376170312162,
+        "velocityScale": -0.005748215836780216,
+        "focusScale": 0.8793376170312162
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.13,
+        "fromX": 1622.9606414957577,
+        "fromY": 614.9252921252681,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 686.6354206266677,
+        "bridgeWaypointY": 554.7523288305138,
+        "bridgeWaypointScale": 1.525978678965359,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-3150.png",
+      "time": 3.15,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 1111.4210119177171,
+        "y": 580.5963550959467,
+        "velocityX": -1320,
+        "velocityY": -152.10593882605087,
+        "focusX": 716.2571411628454,
+        "focusY": 556.2544436875114,
+        "scale": 1.2212659184239238,
+        "velocityScale": 0.49664852849715335,
+        "focusScale": 1.5220536399854605
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.13,
+        "fromX": 1622.9606414957577,
+        "fromY": 614.9252921252681,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 686.6354206266677,
+        "bridgeWaypointY": 554.7523288305138,
+        "bridgeWaypointScale": 1.525978678965359,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-4200.png",
+      "time": 4.2,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 866.1232659714215,
+        "y": 566.1503002821701,
+        "velocityX": 160.0425386356144,
+        "velocityY": 10.51600766974876,
+        "focusX": 880.5380002173963,
+        "focusY": 567.1769385859172,
+        "scale": 1.5178283548433888,
+        "velocityScale": -0.0025697328207679878,
+        "focusScale": 1.5170108347839668
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.13,
+        "fromX": 1622.9606414957577,
+        "fromY": 614.9252921252681,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 686.6354206266677,
+        "bridgeWaypointY": 554.7523288305138,
+        "bridgeWaypointScale": 1.525978678965359,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-5400.png",
+      "time": 5.4,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 1035.134666214379,
+        "y": 573.9118362343511,
+        "velocityX": 9.249403181633843,
+        "velocityY": 1.168774506432336,
+        "focusX": 1035.134666214379,
+        "focusY": 573.9118362343511,
+        "scale": 1.5202807684231794,
+        "velocityScale": 0.006043648792798897,
+        "focusScale": 1.5202807684231794
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 1035.134666214379,
+        "fromY": 573.9118362343511,
+        "fromScale": 1.5202807684231794,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 691.7816127254496,
+        "bridgeWaypointY": 724.0954380776499,
+        "bridgeWaypointScale": 1.5247172375110585,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-5600.png",
+      "time": 5.6,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 803.0061294457512,
+        "y": 683.7012337068719,
+        "velocityX": -872.4314121860123,
+        "velocityY": 440.7192087155926,
+        "focusX": 726.1824329938095,
+        "focusY": 723.6766801881839,
+        "scale": 1.523718414948091,
+        "velocityScale": 0.008810540936040468,
+        "focusScale": 1.5265309493407466
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 1035.134666214379,
+        "fromY": 573.9118362343511,
+        "fromScale": 1.5202807684231794,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 691.7816127254496,
+        "bridgeWaypointY": 724.0954380776499,
+        "bridgeWaypointScale": 1.5247172375110585,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-6300.png",
+      "time": 6.3,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 805.8625674293137,
+        "y": 721.4624488669117,
+        "velocityX": 105.47099426200762,
+        "velocityY": -6.453077857775015,
+        "focusX": 815.8116738910169,
+        "focusY": 720.8055701158527,
+        "scale": 1.531956448983492,
+        "velocityScale": 0.013886800401850691,
+        "focusScale": 1.5352629808346792
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 1035.134666214379,
+        "fromY": 573.9118362343511,
+        "fromScale": 1.5202807684231794,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 691.7816127254496,
+        "bridgeWaypointY": 724.0954380776499,
+        "bridgeWaypointScale": 1.5247172375110585,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-7600.png",
+      "time": 7.6,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 986.2244813342544,
+        "y": 709.6759675394762,
+        "velocityX": 189.82217191381034,
+        "velocityY": -9.444646518650957,
+        "focusX": 1005.9906372630113,
+        "focusY": 708.7517927485169,
+        "scale": 1.547776748872628,
+        "velocityScale": 0.00714808403835097,
+        "focusScale": 1.5492791022782786
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 1035.134666214379,
+        "fromY": 573.9118362343511,
+        "fromScale": 1.5202807684231794,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 691.7816127254496,
+        "bridgeWaypointY": 724.0954380776499,
+        "bridgeWaypointScale": 1.5247172375110585,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-8300.png",
+      "time": 8.3,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 815.4940757482208,
+        "y": 510.25718858011953,
+        "velocityX": 104.02665042242752,
+        "velocityY": -258.58672823265556,
+        "focusX": 843.879568805897,
+        "focusY": 494.1179953754346,
+        "scale": 2.0395780081736588,
+        "velocityScale": 0.8948673335472183,
+        "focusScale": 2.221202640024044
+      },
+      "retarget": {
+        "sourceLineIndex": 3,
+        "startedAt": 8,
+        "duration": 0.13,
+        "fromX": 1022.279455431944,
+        "fromY": 706.3530395275155,
+        "fromScale": 1.549580443478308,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 688.4690051396581,
+        "bridgeWaypointY": 494.90276148307873,
+        "bridgeWaypointScale": 2.223580252100958,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-9500.png",
+      "time": 9.5,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 1541.9328979428421,
+        "y": 493.91873842978157,
+        "velocityX": 670.8680464125914,
+        "velocityY": 3.0969887741932793,
+        "focusX": 1608.0897242173598,
+        "focusY": 494.2402077771436,
+        "scale": 2.2083542759285506,
+        "velocityScale": -0.019426892290555473,
+        "focusScale": 2.2036821762008993
+      },
+      "retarget": {
+        "sourceLineIndex": 3,
+        "startedAt": 8,
+        "duration": 0.13,
+        "fromX": 1022.279455431944,
+        "fromY": 706.3530395275155,
+        "fromScale": 1.549580443478308,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 688.4690051396581,
+        "bridgeWaypointY": 494.90276148307873,
+        "bridgeWaypointScale": 2.223580252100958,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-10000.png",
+      "time": 10,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 1522.088194331309,
+        "y": 571.4348863578103,
+        "velocityX": 1.2664880890347616,
+        "velocityY": 0.007869523811491037,
+        "focusX": 1467.8127531721345,
+        "focusY": 601.4164626497341,
+        "scale": 0.9998637791464311,
+        "velocityScale": -0.00001357465472218165,
+        "focusScale": 0.5360383205500798
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.4,
+        "fromX": 1662.7031182585717,
+        "fromY": 494.5826641583453,
+        "fromScale": 2.2046561816006838,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 1456.2202642798957,
+        "bridgeWaypointY": 605.4527252563247,
+        "bridgeWaypointScale": 0.42522704565974223,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-10700.png",
+      "time": 10.7,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 1453.6873646769993,
+        "y": 614.7729965049713,
+        "velocityX": -0.6312180417865711,
+        "velocityY": 12.179475465636825,
+        "focusX": 1453.6429025356172,
+        "focusY": 615.9760950222292,
+        "scale": 0.43326426914433447,
+        "velocityScale": -0.0671773733556102,
+        "focusScale": 0.4242167844258106
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.4,
+        "fromX": 1662.7031182585717,
+        "fromY": 494.5826641583453,
+        "fromScale": 2.2046561816006838,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 1456.2202642798957,
+        "bridgeWaypointY": 605.4527252563247,
+        "bridgeWaypointScale": 0.42522704565974223,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-false-11500.png",
+      "time": 11.5,
+      "width": 800,
+      "stepped": false,
+      "camera": {
+        "x": 1455.1844321655014,
+        "y": 623.5139982568256,
+        "velocityX": 4.22503474553504,
+        "velocityY": 8.647525936474523,
+        "focusX": 1455.6179182992826,
+        "focusY": 624.3442058249735,
+        "scale": 0.42391658783138364,
+        "velocityScale": -0.00033921979383555695,
+        "focusScale": 0.4238737362508743
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.4,
+        "fromX": 1662.7031182585717,
+        "fromY": 494.5826641583453,
+        "fromScale": 2.2046561816006838,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 1456.2202642798957,
+        "bridgeWaypointY": 605.4527252563247,
+        "bridgeWaypointScale": 0.42522704565974223,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-0.png",
+      "time": 0,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1468,
+        "y": 615,
+        "velocityX": 0,
+        "velocityY": 0,
+        "focusX": 1468,
+        "focusY": 615,
+        "scale": 1.18,
+        "velocityScale": 0,
+        "focusScale": 1.18
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.985,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-690.png",
+      "time": 0.69,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 734.374431046061,
+        "y": 616.6307799466208,
+        "velocityX": -5.635090703973578,
+        "velocityY": -16.54668396051369,
+        "focusX": 734.1492199715416,
+        "focusY": 614.9952959995506,
+        "scale": 0.8963886260327243,
+        "velocityScale": -0.052299249301919176,
+        "focusScale": 0.8894443507639253
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.985,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-700.png",
+      "time": 0.7,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 734.3265775926268,
+        "y": 616.4677826198892,
+        "velocityX": -4.78534534341421,
+        "velocityY": -16.299732673157408,
+        "focusX": 734.1327596958714,
+        "focusY": 614.8402737624059,
+        "scale": 0.8958988028540966,
+        "velocityScale": -0.04898231786277225,
+        "focusScale": 0.8894562793352944
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985)",
+      "parentScale": 0.985,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-717.png",
+      "time": 0.717,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 734.9728684926591,
+        "y": 616.1280593278846,
+        "velocityX": 36.294679599421585,
+        "velocityY": -16.164050647941654,
+        "focusX": 745.8538797850849,
+        "focusY": 614.515519990292,
+        "scale": 0.8949924180390606,
+        "velocityScale": -0.042562269387419874,
+        "focusScale": 0.889479695629938
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.985941)",
+      "parentScale": 0.985941162109375,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-750.png",
+      "time": 0.75,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 738.5388623470645,
+        "y": 615.5960017237037,
+        "velocityX": 131.29447558470306,
+        "velocityY": -16.098085390426018,
+        "focusX": 759.6246083317959,
+        "focusY": 614.0155292556806,
+        "scale": 0.8938073116654938,
+        "velocityScale": -0.033842223223539115,
+        "focusScale": 0.8895123290066851
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.98766)",
+      "parentScale": 0.9876602172851563,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-800.png",
+      "time": 0.8,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 748.2915554730505,
+        "y": 614.8019269217701,
+        "velocityX": 216.6128128662081,
+        "velocityY": -15.751643111776575,
+        "focusX": 772.8077366149449,
+        "focusY": 613.2703858217822,
+        "scale": 0.8924663779918517,
+        "velocityScale": -0.023673514641206737,
+        "focusScale": 0.8895505696981144
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.990094)",
+      "parentScale": 0.990093994140625,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-900.png",
+      "time": 0.9,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 778.8356893545963,
+        "y": 613.2805284799589,
+        "velocityX": 415.4258108192032,
+        "velocityY": -14.811368838035076,
+        "focusX": 826.8718210731707,
+        "focusY": 611.8469122860712,
+        "scale": 0.8908945755110391,
+        "velocityScale": -0.011226913171723599,
+        "focusScale": 0.8895816481937319
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.994345)",
+      "parentScale": 0.9943450927734375,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-1000.png",
+      "time": 1,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 831.2432411394873,
+        "y": 611.8599796890155,
+        "velocityX": 570.7835542592096,
+        "velocityY": -13.755451762734165,
+        "focusX": 887.7726546676943,
+        "focusY": 610.5340711218121,
+        "scale": 0.8901593408192114,
+        "velocityScale": -0.005223512117587848,
+        "focusScale": 0.8895461800642895
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "scale(0.99766)",
+      "parentScale": 0.9976603698730468,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-1150.png",
+      "time": 1.15,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 920.6805233572055,
+        "y": 609.945701820603,
+        "velocityX": 573.9091720834963,
+        "velocityY": -11.923487353316826,
+        "focusX": 974.8318429554362,
+        "focusY": 608.8063062303504,
+        "scale": 0.8896982460285517,
+        "velocityScale": -0.0020307212735024165,
+        "focusScale": 0.8893598367212975
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-1300.png",
+      "time": 1.3,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1001.579608164802,
+        "y": 608.3285858603318,
+        "velocityX": 529.2163719157745,
+        "velocityY": -9.833795913360035,
+        "focusX": 1050.8482990813266,
+        "focusY": 607.3998200929074,
+        "scale": 0.8894392834390213,
+        "velocityScale": -0.0017168826407921746,
+        "focusScale": 0.8890104423319446
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-2600.png",
+      "time": 2.6,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1477.871730772194,
+        "y": 609.5597480813785,
+        "velocityX": 370.73271147257066,
+        "velocityY": 11.3807513182867,
+        "focusX": 1513.7027169969442,
+        "focusY": 610.7247475529299,
+        "scale": 0.8825517560977905,
+        "velocityScale": -0.00813712351989016,
+        "focusScale": 0.8806220299274574
+      },
+      "retarget": {
+        "sourceLineIndex": 0,
+        "startedAt": 0,
+        "duration": 0.13,
+        "fromX": 1468,
+        "fromY": 615,
+        "fromScale": 1.18,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 735.6367980524942,
+        "bridgeWaypointY": 625.9895668797235,
+        "bridgeWaypointScale": 0.8875826044851941,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-3000.png",
+      "time": 3,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1616.3596278052396,
+        "y": 614.9252921252681,
+        "velocityX": 164.58966250202963,
+        "velocityY": 11.628707060886127,
+        "focusX": 1616.3596278052396,
+        "focusY": 614.9252921252681,
+        "scale": 0.8793376170312162,
+        "velocityScale": -0.005748215836780216,
+        "focusScale": 0.8793376170312162
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.13,
+        "fromX": 1616.3596278052396,
+        "fromY": 614.9252921252681,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 686.6354206266677,
+        "bridgeWaypointY": 554.7523288305138,
+        "bridgeWaypointScale": 1.525978678965359,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-3150.png",
+      "time": 3.15,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1111.6517732908333,
+        "y": 580.5963550959467,
+        "velocityX": -1320,
+        "velocityY": -152.10593882605087,
+        "focusX": 720.3333169001569,
+        "focusY": 556.2544436875114,
+        "scale": 1.2212659184239238,
+        "velocityScale": 0.49664852849715335,
+        "focusScale": 1.5220536399854605
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.13,
+        "fromX": 1616.3596278052396,
+        "fromY": 614.9252921252681,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 686.6354206266677,
+        "bridgeWaypointY": 554.7523288305138,
+        "bridgeWaypointScale": 1.525978678965359,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-4200.png",
+      "time": 4.2,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 874.8519981665596,
+        "y": 566.1503002821701,
+        "velocityX": 143.03217985224862,
+        "velocityY": 10.51600766974876,
+        "focusX": 889.7579801054466,
+        "focusY": 567.1769385859172,
+        "scale": 1.5178283548433888,
+        "velocityScale": -0.0025697328207679878,
+        "focusScale": 1.5170108347839668
+      },
+      "retarget": {
+        "sourceLineIndex": 1,
+        "startedAt": 3,
+        "duration": 0.13,
+        "fromX": 1616.3596278052396,
+        "fromY": 614.9252921252681,
+        "fromScale": 0.8793376170312162,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 686.6354206266677,
+        "bridgeWaypointY": 554.7523288305138,
+        "bridgeWaypointScale": 1.525978678965359,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-5400.png",
+      "time": 5.4,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1035.6510401615349,
+        "y": 573.9118362343511,
+        "velocityX": 4.82579746494872,
+        "velocityY": 1.168774506432336,
+        "focusX": 1035.6510401615349,
+        "focusY": 573.9118362343511,
+        "scale": 1.5202807684231794,
+        "velocityScale": 0.006043648792798897,
+        "focusScale": 1.5202807684231794
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 1035.6510401615349,
+        "fromY": 573.9118362343511,
+        "fromScale": 1.5202807684231794,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 691.7816127254496,
+        "bridgeWaypointY": 724.0954380776499,
+        "bridgeWaypointScale": 1.5247172375110585,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-5600.png",
+      "time": 5.6,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 810.7846103284458,
+        "y": 683.7012337068719,
+        "velocityX": -819.2862616923891,
+        "velocityY": 440.7192087155926,
+        "focusX": 740.500781705427,
+        "focusY": 723.6766801881839,
+        "scale": 1.523718414948091,
+        "velocityScale": 0.008810540936040468,
+        "focusScale": 1.5265309493407466
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 1035.6510401615349,
+        "fromY": 573.9118362343511,
+        "fromScale": 1.5202807684231794,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 691.7816127254496,
+        "bridgeWaypointY": 724.0954380776499,
+        "bridgeWaypointScale": 1.5247172375110585,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-6300.png",
+      "time": 6.3,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 813.6104652376578,
+        "y": 721.4624488669117,
+        "velocityX": 109.90544857139656,
+        "velocityY": -6.453077857775015,
+        "focusX": 826.6035993649092,
+        "focusY": 720.8055701158527,
+        "scale": 1.531956448983492,
+        "velocityScale": 0.013886800401850691,
+        "focusScale": 1.5352629808346792
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 1035.6510401615349,
+        "fromY": 573.9118362343511,
+        "fromScale": 1.5202807684231794,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 691.7816127254496,
+        "bridgeWaypointY": 724.0954380776499,
+        "bridgeWaypointScale": 1.5247172375110585,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-7600.png",
+      "time": 7.6,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1000.0793528624413,
+        "y": 709.6759675394762,
+        "velocityX": 185.9210207128771,
+        "velocityY": -9.444646518650957,
+        "focusX": 1016.6370066641467,
+        "focusY": 708.7517927485169,
+        "scale": 1.547776748872628,
+        "velocityScale": 0.00714808403835097,
+        "focusScale": 1.5492791022782786
+      },
+      "retarget": {
+        "sourceLineIndex": 2,
+        "startedAt": 5.4,
+        "duration": 0.13,
+        "fromX": 1035.6510401615349,
+        "fromY": 573.9118362343511,
+        "fromScale": 1.5202807684231794,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 691.7816127254496,
+        "bridgeWaypointY": 724.0954380776499,
+        "bridgeWaypointScale": 1.5247172375110585,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-8300.png",
+      "time": 8.3,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 819.8404016328568,
+        "y": 510.25718858011953,
+        "velocityX": 102.10944779844102,
+        "velocityY": -258.58672823265556,
+        "focusX": 847.9435409449985,
+        "focusY": 494.1179953754346,
+        "scale": 2.0395780081736588,
+        "velocityScale": 0.8948673335472183,
+        "focusScale": 2.221202640024044
+      },
+      "retarget": {
+        "sourceLineIndex": 3,
+        "startedAt": 8,
+        "duration": 0.13,
+        "fromX": 1022.991105773187,
+        "fromY": 706.3530395275155,
+        "fromScale": 1.549580443478308,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 688.4690051396581,
+        "bridgeWaypointY": 494.90276148307873,
+        "bridgeWaypointScale": 2.223580252100958,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-9500.png",
+      "time": 9.5,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1545.386798227674,
+        "y": 493.91873842978157,
+        "velocityX": 674.5556776067823,
+        "velocityY": 3.0969887741932793,
+        "focusX": 1611.9938219241974,
+        "focusY": 494.2402077771436,
+        "scale": 2.2083542759285506,
+        "velocityScale": -0.019426892290555473,
+        "focusScale": 2.2036821762008993
+      },
+      "retarget": {
+        "sourceLineIndex": 3,
+        "startedAt": 8,
+        "duration": 0.13,
+        "fromX": 1022.991105773187,
+        "fromY": 706.3530395275155,
+        "fromScale": 1.549580443478308,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 688.4690051396581,
+        "bridgeWaypointY": 494.90276148307873,
+        "bridgeWaypointScale": 2.223580252100958,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-10000.png",
+      "time": 10,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1523.1559384081336,
+        "y": 571.4348863578103,
+        "velocityX": 1.268021080563559,
+        "velocityY": 0.007869523811491037,
+        "focusX": 1468.0193111579138,
+        "focusY": 601.4164626497341,
+        "scale": 0.9998637791464311,
+        "velocityScale": -0.00001357465472218165,
+        "focusScale": 0.5360383205500798
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.4,
+        "fromX": 1666.0080460310385,
+        "fromY": 494.5826641583453,
+        "fromScale": 2.2046561816006838,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 1456.2202642798957,
+        "bridgeWaypointY": 605.4527252563247,
+        "bridgeWaypointScale": 0.42522704565974223,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-10700.png",
+      "time": 10.7,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1453.6873087094916,
+        "y": 614.7729965049713,
+        "velocityX": -0.6306938072269852,
+        "velocityY": 12.179475465636825,
+        "focusX": 1453.6429034929456,
+        "focusY": 615.9760950222292,
+        "scale": 0.43326426914433447,
+        "velocityScale": -0.0671773733556102,
+        "focusScale": 0.4242167844258106
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.4,
+        "fromX": 1666.0080460310385,
+        "fromY": 494.5826641583453,
+        "fromScale": 2.2046561816006838,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 1456.2202642798957,
+        "bridgeWaypointY": 605.4527252563247,
+        "bridgeWaypointScale": 0.42522704565974223,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    },
+    {
+      "file": "800-1-true-11500.png",
+      "time": 11.5,
+      "width": 800,
+      "stepped": true,
+      "camera": {
+        "x": 1455.1844321663898,
+        "y": 623.5139982568256,
+        "velocityX": 4.225034731258109,
+        "velocityY": 8.647525936474523,
+        "focusX": 1455.6179182994058,
+        "focusY": 624.3442058249735,
+        "scale": 0.42391658783138364,
+        "velocityScale": -0.00033921979383555695,
+        "focusScale": 0.4238737362508743
+      },
+      "retarget": {
+        "sourceLineIndex": -2,
+        "startedAt": 9.7,
+        "duration": 0.4,
+        "fromX": 1666.0080460310385,
+        "fromY": 494.5826641583453,
+        "fromScale": 2.2046561816006838,
+        "bridgeMode": "direct",
+        "bridgeWaypointX": 1456.2202642798957,
+        "bridgeWaypointY": 605.4527252563247,
+        "bridgeWaypointScale": 0.42522704565974223,
+        "bridgeWaypointPhase": 0.5
+      },
+      "parentTransform": "none",
+      "parentScale": 1,
+      "canvasSize": [
+        800,
+        600
+      ],
+      "blocks": 4,
+      "firstStart": 0.7,
+      "overviewStart": 9.690000000000001,
+      "layout": [
+        {
+          "index": 3,
+          "x": 688,
+          "y": 491.99999999999994,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 1,
+          "x": 688,
+          "y": 539,
+          "width": 1560,
+          "height": 45
+        },
+        {
+          "index": 0,
+          "x": 688,
+          "y": 588,
+          "width": 1560,
+          "height": 84
+        },
+        {
+          "index": 2,
+          "x": 688,
+          "y": 689,
+          "width": 1560,
+          "height": 45
+        }
+      ]
+    }
+  ],
+  "scope": "actual unmodified VisualizerFume/useFumeCanvasStage, real source layout/RAF/Motion. BackgroundOpacity0; no-subtitle/shell/setting/loading-icon isolation. Original native animation startTime driven as existing Cappella harness; media origin0. No source formula rewrite."
+}

@@ -1,0 +1,4 @@
+# Match the original cc6226e4 package-lock.json, including transitive Motion.
+overrides:
+  motion-utils: 13.3.0
+  motion-dom: 13.4.2

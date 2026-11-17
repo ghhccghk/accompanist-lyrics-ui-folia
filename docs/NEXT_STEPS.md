@@ -7,13 +7,14 @@
 | Classic / Partita / Tilt / Cadenza | 已接入 | 可从 sample 选择 | 未完成，保留各自残差 |
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
-| Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及原React生命周期未最终验收 |
+| Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | 有界调查、路径/摆位/冻结透视探针 | 无 | 运镜/揭示/合成与设备尚未实现 |
 
-当前唯一下一项：挂载原始Fume React文字舞台，核对函数壳未覆盖的父层入场与连续播放。
-完成条件：保持上游组件/Canvas hook原样，记录仅隔离背景/字幕/设置的壳边界，
-用公共core同输入建立连续时间证据；定位并修复实际父层/事件差异，保留镜头残差。
-Diorama有界调查已建立最小数值/真实投影探针，后续运镜/深度/雾仍未实现。
+当前唯一下一项：定位Fume短direct bridge/总览的连续相机响应残差。
+完成条件：沿用mounted92帧的原输入/固定依赖/媒体时间，检查原step与连续重建的
+状态/边界；按原因修正并保留同矩阵前后证据，不加固定帧延迟或降低验收标准。
+原React父层入场已实现并以真实挂载核对，结果见verification/fume-mounted。
+Diorama有界探针dc5e02f已完成，运镜/深度/雾仍未实现。
 上一项Fume公共闭环e532ff2只交付校准预览，不是最终效果通过（fume-preview.md）。
 
 已完成（起点295d260）：
@@ -66,11 +67,18 @@ MAE12.016782、镜头峰15.933273px、scale .056221。不是旧矩阵改善比�
 完整挂载，正式视觉验收未过。120行字号恢复、六个旧公开主题回归、sample设置与两端
 构建通过。未启动真实窗口/Android设备。证据verification/fume-public。
 
-Diorama有界调查：3719真实原函数/Three.js0.185.1数值峰1.3059e-9，
+dc5e02f Diorama有界调查：3719真实原函数/Three.js0.185.1数值峰1.3059e-9，
 9组原纹理真实WebGL与JVM Compose透视图已运行；含低alpha MAE14.518306，边缘盒差
 最多2px，采样差未过最终标准。不是CameraRig/深度/文字塑形/公开主题验收；
 无Android绘制运行。源码逐层依赖/最小可行路径见docs/diorama-investigation.md，
 verification/diorama-projection。没有引入Kotlin native/3D背景引擎。
+
+Fume首次打印父层入场：实际原React/canvas挂载92帧；.985→1/.45s媒体重建、
+画布裁切和实际变换命中。原依赖motion-dom13.4.2/utils13.3.0重新锁定，92原图hash/
+状态均不变；旧其他主题Motion证据需精确lock复核，不自动追认。入场scale峰1.285e-7，
+同矩阵入场前景MAE3.699709→2.510674、全部8.553688→8.140111，镜头峰15.933273px/
+.056221不变。暂停/seek/重挂/点击/120行及两端构建通过，未运行设备/真实窗口。
+初次40步数学反解不符原12步近似的失败保留；证据verification/fume-mounted。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

@@ -1,3 +1,8 @@
+> Historical pre-entry function-shell baseline at e532ff2. The actual React
+> parent entry correction and exact Motion dependency audit are in ../fume-mounted.
+> PublicFumeStageTest now writes fume-public-kotlin-entry; do not overwrite this
+> baseline with those changed screenshots using the historical comparison command.
+
 # Fume public actual-core article stage
 
 Baseline: Folia v0.7.26 cc6226e464050a456a2913e062374f23d3844cc5.

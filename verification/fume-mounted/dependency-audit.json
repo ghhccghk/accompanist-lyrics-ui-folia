@@ -1,0 +1,38 @@
+{
+  "original": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "previous": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.5.1",
+    "motion-utils": "13.5.0"
+  },
+  "frames": 92,
+  "changedOriginalPngs": [],
+  "observationsIdentical": true,
+  "cubicBezierSourceIdentical": true,
+  "archiveSha256": {
+    "motion-utils-13.3.0.tgz": "5bbbb69a70e36cf2c2e0056d39bb19e619c4709e996e39bf40dad41bfa328999",
+    "motion-dom-13.4.2.tgz": "015e71be2292565cb8c4b06ca1cea4a36b00531743aa18bc7dc76ce9ff86cdbc"
+  },
+  "previousComparison": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "scope": "actual unmodified VisualizerFume/useFumeCanvasStage, real source layout/RAF/Motion. BackgroundOpacity0; no-subtitle/shell/setting/loading-icon isolation. Original native animation startTime driven as existing Cappella harness; media origin0. No source formula rewrite.",
+    "foreground": "same all-nonbackground union of original/before/after; includes low alpha; unregistered",
+    "before": "same current Kotlin pipeline with only stageEntryEnabled=false, reproduces missing parent scale",
+    "after": "actual-core FoliaLyricsView/Fume with media parent entry and Canvas clipping",
+    "mean_before": 8.553688383089717,
+    "mean_after": 8.140110867720699,
+    "max_parent_scale_error": 1.284950658098083e-07,
+    "max_camera_screen_error": 15.9332727520356,
+    "max_scale_error": 0.05622125350797391,
+    "status": "Entry behavior verified independently. Camera/raster differences remain; NOT final visual or Android runtime acceptance.",
+    "entry_frames": {
+      "before": 3.6997089576545514,
+      "after": 2.5106736009686212
+    }
+  },
+  "scope": "All92 Fume original React frames recaptured unchanged; does not certify earlier Cappella/Pendolo Motion captures with newer transitive dependencies."
+}

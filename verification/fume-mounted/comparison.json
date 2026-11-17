@@ -1,0 +1,2508 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "scope": "actual unmodified VisualizerFume/useFumeCanvasStage, real source layout/RAF/Motion. BackgroundOpacity0; no-subtitle/shell/setting/loading-icon isolation. Original native animation startTime driven as existing Cappella harness; media origin0. No source formula rewrite.",
+  "foreground": "same all-nonbackground union of original/before/after; includes low alpha; unregistered",
+  "before": "same current Kotlin pipeline with only stageEntryEnabled=false, reproduces missing parent scale",
+  "after": "actual-core FoliaLyricsView/Fume with media parent entry and Canvas clipping",
+  "frames": [
+    {
+      "file": "380-1-false-0.png",
+      "time": 0,
+      "mask_pixels": 23851,
+      "before": {
+        "foreground_mae": 2.443321733540173,
+        "full_mae": 0.25559502923976607,
+        "channel_peak": 13,
+        "worst64": 3.8242063492063494
+      },
+      "after": {
+        "foreground_mae": 1.2161055441421045,
+        "full_mae": 0.12721637426900584,
+        "channel_peak": 5,
+        "worst64": 1.4965831435079726
+      },
+      "camera_screen_error": 0.0,
+      "scale_error": 0.0,
+      "source_parent_scale": 0.9850001284950658,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 1.284950658098083e-07,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-0.png": "e52cf3184f930fa701a7553d9ba18499c003f1dc1cd1eb0f700b05022ac7aefc",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-0.png": "4591ddcfddccee41a60b6f79c73e155df9d8c5b412bedcdd599f99f2291134b4",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-0.png": "63d0f06084c683c55e93ec5bb438ab6f89d8285cff114233c447c152efb4b429"
+      }
+    },
+    {
+      "file": "380-1-false-690.png",
+      "time": 0.69,
+      "mask_pixels": 16475,
+      "before": {
+        "foreground_mae": 2.636661608497724,
+        "full_mae": 0.1905219298245614,
+        "channel_peak": 13,
+        "worst64": 3.717809867629362
+      },
+      "after": {
+        "foreground_mae": 1.2209408194233689,
+        "full_mae": 0.08822368421052632,
+        "channel_peak": 6,
+        "worst64": 1.398370161416706
+      },
+      "camera_screen_error": 0.011233481833954595,
+      "scale_error": 3.379493967092806e-05,
+      "source_parent_scale": 0.9850001284950658,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 1.284950658098083e-07,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-690.png": "74166fbd3e27a49773c51b4c460ff2d7aaaad2f674356034f6f606552c08e6bf",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-690.png": "490a0ba13fa8751802edb28baf110a3a176e3fa64471debbbcfb9bc2ee16706b",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-690.png": "5cba62510616abfd372999fb56eb2439a6245d4b64afa00b693255bd8e2aaa57"
+      }
+    },
+    {
+      "file": "380-1-false-700.png",
+      "time": 0.7,
+      "mask_pixels": 26722,
+      "before": {
+        "foreground_mae": 3.4387021929496293,
+        "full_mae": 0.4030219298245614,
+        "channel_peak": 118,
+        "worst64": 6.031314379892872
+      },
+      "after": {
+        "foreground_mae": 1.8166679140782875,
+        "full_mae": 0.21291666666666667,
+        "channel_peak": 58,
+        "worst64": 3.3850607990735377
+      },
+      "camera_screen_error": 0.005879070453539189,
+      "scale_error": 2.4693209835224827e-05,
+      "source_parent_scale": 0.9850001284950658,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 1.284950658098083e-07,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-700.png": "012100ef0fc3fc8fe04aa42462af380ceb4547c8a5f35396d6c4f338dedca892",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-700.png": "1e5bde5b9ab1d166a97538b1e0834fca9b0fbd389cba568d28c1d5e574d8fe7e",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-700.png": "f309db5c7742fac82e408d5a75e2d7aa114baaf962eb33698946c2d8da26b9cc"
+      }
+    },
+    {
+      "file": "380-1-false-717.png",
+      "time": 0.717,
+      "mask_pixels": 26929,
+      "before": {
+        "foreground_mae": 3.438065530345229,
+        "full_mae": 0.4060687134502924,
+        "channel_peak": 152,
+        "worst64": 5.943530041482671
+      },
+      "after": {
+        "foreground_mae": 1.8626883038112567,
+        "full_mae": 0.2200014619883041,
+        "channel_peak": 131,
+        "worst64": 4.1419576416714365
+      },
+      "camera_screen_error": 0.04890503648208365,
+      "scale_error": 0.00013606466468762957,
+      "source_parent_scale": 0.9859411942331414,
+      "native_parent_scale": 0.9859411564860784,
+      "parent_scale_error": 3.774706303083519e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-717.png": "12684abb4a981f49af41e963d61b0fa0902a5147a8906930cc4b58502eadbc13",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-717.png": "9fb329df329a1fe8f6257b3bfa373b855a640e0d29234ea894d96a4822d8f513",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-717.png": "e004e47e0ac1797f6f04e56937f83c20a1f5c22b8c5d51e9f673fde7f8013d56"
+      }
+    },
+    {
+      "file": "380-1-false-750.png",
+      "time": 0.75,
+      "mask_pixels": 26728,
+      "before": {
+        "foreground_mae": 3.53525641025641,
+        "full_mae": 0.4144312865497076,
+        "channel_peak": 129,
+        "worst64": 5.392794683455754
+      },
+      "after": {
+        "foreground_mae": 1.999613389204829,
+        "full_mae": 0.2344108187134503,
+        "channel_peak": 122,
+        "worst64": 3.085200996086802
+      },
+      "camera_screen_error": 0.05769109382955181,
+      "scale_error": 0.0001017784931085508,
+      "source_parent_scale": 0.9876601369757402,
+      "native_parent_scale": 0.9876601000186929,
+      "parent_scale_error": 3.695704731132565e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-750.png": "83cfbc20a462bf2eec978c57b4aab6f04287ed20bc82c0b6bb3bb393b7f551bc",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-750.png": "70d38313aeca38ebf6d17456e0cf62d29e6b35b473e620b0f8313e049feddb54",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-750.png": "61965ebd299a45bf34ecac3177c5a8070ff81b0b028cad05971770783935bdea"
+      }
+    },
+    {
+      "file": "380-1-false-800.png",
+      "time": 0.8,
+      "mask_pixels": 28558,
+      "before": {
+        "foreground_mae": 3.571071737049747,
+        "full_mae": 0.4472923976608187,
+        "channel_peak": 174,
+        "worst64": 6.4553318419090235
+      },
+      "after": {
+        "foreground_mae": 2.4275859654037397,
+        "full_mae": 0.30406578947368423,
+        "channel_peak": 166,
+        "worst64": 4.480857836977465
+      },
+      "camera_screen_error": 0.08230094784117649,
+      "scale_error": 6.166676377494795e-05,
+      "source_parent_scale": 0.990093994140625,
+      "native_parent_scale": 0.9900940119264123,
+      "parent_scale_error": 1.7785787287394328e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-800.png": "d3cc4567c004d29d2ac3a9b86344db030ad89d0408eec841ec885fd32892a03f",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-800.png": "3647dfd29f4329339d5bdbf4d3e9c04326cc47e3d2b4310a303bc6d29302b8fd",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-800.png": "21c4387aa630bd68e468c3b72c9f1f611c239d2a1ab4017e63c04f528b607b26"
+      }
+    },
+    {
+      "file": "380-1-false-900.png",
+      "time": 0.9,
+      "mask_pixels": 34412,
+      "before": {
+        "foreground_mae": 2.9716184276802666,
+        "full_mae": 0.44850584795321635,
+        "channel_peak": 123,
+        "worst64": 5.155065230715349
+      },
+      "after": {
+        "foreground_mae": 2.491078693479019,
+        "full_mae": 0.3759780701754386,
+        "channel_peak": 151,
+        "worst64": 3.571609632446134
+      },
+      "camera_screen_error": 0.07402231617047567,
+      "scale_error": 1.566778662742685e-05,
+      "source_parent_scale": 0.9943452533922698,
+      "native_parent_scale": 0.9943451751161774,
+      "parent_scale_error": 7.827609238564293e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-900.png": "5849e4ebe378a798158e7c7ac6ffde8153197685c8e08d4b8740d735ebfca469",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-900.png": "071f2277c40bc3006943d1b38f2f05adf8d55342c6d05d242260bb6e95e4fe65",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-900.png": "51a24dafdc6c8a62a6113847680b1165952678d77fefbb746c18ee8bf66c2439"
+      }
+    },
+    {
+      "file": "380-1-false-1000.png",
+      "time": 1,
+      "mask_pixels": 44466,
+      "before": {
+        "foreground_mae": 2.2796218833865574,
+        "full_mae": 0.4445862573099415,
+        "channel_peak": 76,
+        "worst64": 3.1851465344812593
+      },
+      "after": {
+        "foreground_mae": 2.163518193676067,
+        "full_mae": 0.42194298245614037,
+        "channel_peak": 83,
+        "worst64": 3.2037568484216017
+      },
+      "camera_screen_error": 0.04570418819910038,
+      "scale_error": 2.8898119911469067e-06,
+      "source_parent_scale": 0.9976604260896381,
+      "native_parent_scale": 0.9976603685315057,
+      "parent_scale_error": 5.7558132371404724e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-1000.png": "a2b8e21dacea7a276623ed821da59ade25b362061be396f176c1ae81d5571e3a",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-1000.png": "70555e4a891eca640a3f24b8c25caaf1b00f2e7b53939611a014f09f30e53efa",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-1000.png": "cf940f62e2288ec6159bf4737788edf4785b9c61148b64ae40f158610ce54433"
+      }
+    },
+    {
+      "file": "380-1-false-1150.png",
+      "time": 1.15,
+      "mask_pixels": 60188,
+      "before": {
+        "foreground_mae": 2.067809751666999,
+        "full_mae": 0.5458654970760234,
+        "channel_peak": 68,
+        "worst64": 3.0154513888888888
+      },
+      "after": {
+        "foreground_mae": 2.067809751666999,
+        "full_mae": 0.5458654970760234,
+        "channel_peak": 68,
+        "worst64": 3.0154513888888888
+      },
+      "camera_screen_error": 0.023382165679912147,
+      "scale_error": 8.69785677282131e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 0.9999999973182275,
+      "parent_scale_error": 2.6817724707584034e-09,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-1150.png": "4bf29423bddc7dc75e72ffc3b106b219d4a9f90bfcc8de2a59ec664e6e1e1b37",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-1150.png": "ee296c2cd7b817cb31be3bc98a1e3c6fcba5e8ae864f38ce3412284a3b642d5d",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-1150.png": "ee296c2cd7b817cb31be3bc98a1e3c6fcba5e8ae864f38ce3412284a3b642d5d"
+      }
+    },
+    {
+      "file": "380-1-false-1300.png",
+      "time": 1.3,
+      "mask_pixels": 63259,
+      "before": {
+        "foreground_mae": 2.1714380562449613,
+        "full_mae": 0.602469298245614,
+        "channel_peak": 66,
+        "worst64": 3.0936631944444444
+      },
+      "after": {
+        "foreground_mae": 2.1714380562449613,
+        "full_mae": 0.602469298245614,
+        "channel_peak": 66,
+        "worst64": 3.0936631944444444
+      },
+      "camera_screen_error": 0.0033441437945900304,
+      "scale_error": 6.591079965923008e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-1300.png": "47a70cb44ef322b52aaf2e5e298396377396378325306245003e35f722c9e460",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-1300.png": "ecbd6bd57191db1494c7e44f1addb9b0757bdfa71592c4a9f01cb2471fa6390c",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-1300.png": "ecbd6bd57191db1494c7e44f1addb9b0757bdfa71592c4a9f01cb2471fa6390c"
+      }
+    },
+    {
+      "file": "380-1-false-2600.png",
+      "time": 2.6,
+      "mask_pixels": 64143,
+      "before": {
+        "foreground_mae": 4.883323199725613,
+        "full_mae": 1.3738201754385966,
+        "channel_peak": 181,
+        "worst64": 8.792399088541666
+      },
+      "after": {
+        "foreground_mae": 4.883323199725613,
+        "full_mae": 1.3738201754385966,
+        "channel_peak": 181,
+        "worst64": 8.792399088541666
+      },
+      "camera_screen_error": 1.3625514962511018,
+      "scale_error": 7.033271631762261e-09,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-2600.png": "acc532bff1681aad6b643d277801c1f58b480387216f0a97c731f36112d432c0",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-2600.png": "e0e761a636306b48a00565a096394a1e41210763c8f4a5616b71e38cde3dee8e",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-2600.png": "e0e761a636306b48a00565a096394a1e41210763c8f4a5616b71e38cde3dee8e"
+      }
+    },
+    {
+      "file": "380-1-false-3000.png",
+      "time": 3,
+      "mask_pixels": 15077,
+      "before": {
+        "foreground_mae": 13.877672392827927,
+        "full_mae": 0.9176915204678363,
+        "channel_peak": 157,
+        "worst64": 19.21927920104212
+      },
+      "after": {
+        "foreground_mae": 13.877672392827927,
+        "full_mae": 0.9176915204678363,
+        "channel_peak": 157,
+        "worst64": 19.21927920104212
+      },
+      "camera_screen_error": 1.9214763353594064,
+      "scale_error": 0.0001407530413357616,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-3000.png": "5d39a86f65bfeb86c255b4add0b9f4fc9426c63340501f1b808dbd73b3163f9b",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-3000.png": "fd8b4e82076de4a5d3ed048fa5a6594569340b4898a882835efb67d5128da685",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-3000.png": "fd8b4e82076de4a5d3ed048fa5a6594569340b4898a882835efb67d5128da685"
+      }
+    },
+    {
+      "file": "380-1-false-3150.png",
+      "time": 3.15,
+      "mask_pixels": 31417,
+      "before": {
+        "foreground_mae": 8.712257694878568,
+        "full_mae": 1.2004956140350878,
+        "channel_peak": 148,
+        "worst64": 17.86659877800407
+      },
+      "after": {
+        "foreground_mae": 8.712257694878568,
+        "full_mae": 1.2004956140350878,
+        "channel_peak": 148,
+        "worst64": 17.86659877800407
+      },
+      "camera_screen_error": 1.5310671709708394,
+      "scale_error": 0.0005763038242729834,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-3150.png": "e85396de368acc38ebd7442549d39ff613b2c24fb6b4cdf6fea20cb73bd46096",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-3150.png": "6bea868a59d1749927e91c015a979ab6917056c4667ed5e34e7f8b86fa72bb7a",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-3150.png": "6bea868a59d1749927e91c015a979ab6917056c4667ed5e34e7f8b86fa72bb7a"
+      }
+    },
+    {
+      "file": "380-1-false-4200.png",
+      "time": 4.2,
+      "mask_pixels": 63206,
+      "before": {
+        "foreground_mae": 2.311463046757164,
+        "full_mae": 0.64078216374269,
+        "channel_peak": 97,
+        "worst64": 4.1904296875
+      },
+      "after": {
+        "foreground_mae": 2.311463046757164,
+        "full_mae": 0.64078216374269,
+        "channel_peak": 97,
+        "worst64": 4.1904296875
+      },
+      "camera_screen_error": 0.003985517451652626,
+      "scale_error": 9.3325527785737e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-4200.png": "8f1b74fc5fba980f88a63e3a262a4d433efd84032bdc0cabe4412d454cbd611c",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-4200.png": "32994ee4b60213c6d994126ebb71f80e814d1ac918b8624c86466fc5f7051754",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-4200.png": "32994ee4b60213c6d994126ebb71f80e814d1ac918b8624c86466fc5f7051754"
+      }
+    },
+    {
+      "file": "380-1-false-5400.png",
+      "time": 5.4,
+      "mask_pixels": 33915,
+      "before": {
+        "foreground_mae": 3.7163202122954444,
+        "full_mae": 0.5528026315789474,
+        "channel_peak": 128,
+        "worst64": 9.111979166666666
+      },
+      "after": {
+        "foreground_mae": 3.7163202122954444,
+        "full_mae": 0.5528026315789474,
+        "channel_peak": 128,
+        "worst64": 9.111979166666666
+      },
+      "camera_screen_error": 0.2292244688312355,
+      "scale_error": 0.00014001311690114981,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-5400.png": "2e881cacf31184e6a1f6b1a5a31e7b143000daee5c82f2a2e709c07896ad4530",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-5400.png": "7f3d5fcc22e9b4f5c821c39691a957843dab968fbfbd4421ad835f32f2f9d0a7",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-5400.png": "7f3d5fcc22e9b4f5c821c39691a957843dab968fbfbd4421ad835f32f2f9d0a7"
+      }
+    },
+    {
+      "file": "380-1-false-5600.png",
+      "time": 5.6,
+      "mask_pixels": 59343,
+      "before": {
+        "foreground_mae": 6.668913491622152,
+        "full_mae": 1.7357602339181286,
+        "channel_peak": 169,
+        "worst64": 21.65109034267913
+      },
+      "after": {
+        "foreground_mae": 6.668913491622152,
+        "full_mae": 1.7357602339181286,
+        "channel_peak": 169,
+        "worst64": 21.65109034267913
+      },
+      "camera_screen_error": 0.7463069928791934,
+      "scale_error": 2.8665291773588564e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-5600.png": "145084805478e0652b1cbf22fa4eac16c33de059d2fd4cea0b44dc69f4d4ac0e",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-5600.png": "2547d0af1b9f9230da719985ecdf68e8cf77b3aa9fa4f4e0d1dfee1259c0ab5e",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-5600.png": "2547d0af1b9f9230da719985ecdf68e8cf77b3aa9fa4f4e0d1dfee1259c0ab5e"
+      }
+    },
+    {
+      "file": "380-1-false-6300.png",
+      "time": 6.3,
+      "mask_pixels": 70333,
+      "before": {
+        "foreground_mae": 2.6817520462182287,
+        "full_mae": 0.8272616959064327,
+        "channel_peak": 113,
+        "worst64": 7.719717064544651
+      },
+      "after": {
+        "foreground_mae": 2.6817520462182287,
+        "full_mae": 0.8272616959064327,
+        "channel_peak": 113,
+        "worst64": 7.719717064544651
+      },
+      "camera_screen_error": 0.003570387420215572,
+      "scale_error": 6.955478581316399e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-6300.png": "8f95569bdd0da4b5aaf9633a6ef16e528430d40a071be1110d34b36c145c6f28",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-6300.png": "26d5e691bfe3cbe16d34b69f49253fd594ee0f0bbb9ea3d5bb62ca030a8c56aa",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-6300.png": "26d5e691bfe3cbe16d34b69f49253fd594ee0f0bbb9ea3d5bb62ca030a8c56aa"
+      }
+    },
+    {
+      "file": "380-1-false-7600.png",
+      "time": 7.6,
+      "mask_pixels": 50196,
+      "before": {
+        "foreground_mae": 5.391936940526469,
+        "full_mae": 1.187077485380117,
+        "channel_peak": 183,
+        "worst64": 12.718767920045876
+      },
+      "after": {
+        "foreground_mae": 5.391936940526469,
+        "full_mae": 1.187077485380117,
+        "channel_peak": 183,
+        "worst64": 12.718767920045876
+      },
+      "camera_screen_error": 1.0974554608830185,
+      "scale_error": 1.340909288050085e-07,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-7600.png": "2a89426e527ab0c3f438f102b816592a20aeb5a1de5b0f0d797b557d4a93d314",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-7600.png": "4a15b43b64eb9f0f2bdc097848b65f61e20503ae3ea3f89e2c89dbeb9f1590fb",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-7600.png": "4a15b43b64eb9f0f2bdc097848b65f61e20503ae3ea3f89e2c89dbeb9f1590fb"
+      }
+    },
+    {
+      "file": "380-1-false-8300.png",
+      "time": 8.3,
+      "mask_pixels": 63872,
+      "before": {
+        "foreground_mae": 14.797626503006011,
+        "full_mae": 4.145412280701755,
+        "channel_peak": 189,
+        "worst64": 48.89590379556558
+      },
+      "after": {
+        "foreground_mae": 14.797626503006011,
+        "full_mae": 4.145412280701755,
+        "channel_peak": 189,
+        "worst64": 48.89590379556558
+      },
+      "camera_screen_error": 2.0263714962954285,
+      "scale_error": 0.004283022674564485,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-8300.png": "130f501c214be57dd2a58e5571c49371ddb31ac3367fb1c8930775de1a85c702",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-8300.png": "0582abed2b9f920a219427984f9385d2485b4954ed40a977770f42ea9a48a066",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-8300.png": "0582abed2b9f920a219427984f9385d2485b4954ed40a977770f42ea9a48a066"
+      }
+    },
+    {
+      "file": "380-1-false-9500.png",
+      "time": 9.5,
+      "mask_pixels": 54603,
+      "before": {
+        "foreground_mae": 12.933800951107692,
+        "full_mae": 3.0974751461988306,
+        "channel_peak": 190,
+        "worst64": 39.43208430913349
+      },
+      "after": {
+        "foreground_mae": 12.933800951107692,
+        "full_mae": 3.0974751461988306,
+        "channel_peak": 190,
+        "worst64": 39.43208430913349
+      },
+      "camera_screen_error": 2.5830204568123345,
+      "scale_error": 1.0140470991792938e-05,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-9500.png": "86716b9c02467c5ee3bd301a11fa5c49ffebfe2ab38c299397d140647af75999",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-9500.png": "0b39cdaca5dd740ace38aec7263b2bbb0b9cf12c92be5a31b40d898efc8e38b2",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-9500.png": "0b39cdaca5dd740ace38aec7263b2bbb0b9cf12c92be5a31b40d898efc8e38b2"
+      }
+    },
+    {
+      "file": "380-1-false-10000.png",
+      "time": 10,
+      "mask_pixels": 59624,
+      "before": {
+        "foreground_mae": 35.274945212218796,
+        "full_mae": 9.224707602339182,
+        "channel_peak": 190,
+        "worst64": 61.012042389210016
+      },
+      "after": {
+        "foreground_mae": 35.274945212218796,
+        "full_mae": 9.224707602339182,
+        "channel_peak": 190,
+        "worst64": 61.012042389210016
+      },
+      "camera_screen_error": 5.677870655951064,
+      "scale_error": 0.01301837518190796,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-10000.png": "b59beaff3f103b7e60973f32a6e1bb32218b236150293588afbf23e8991b9fe6",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-10000.png": "5d6e33a8d7ac2556b263913d17080c7b7b95c7796d605623ac437bb53608245f",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-10000.png": "5d6e33a8d7ac2556b263913d17080c7b7b95c7796d605623ac437bb53608245f"
+      }
+    },
+    {
+      "file": "380-1-false-10700.png",
+      "time": 10.7,
+      "mask_pixels": 29406,
+      "before": {
+        "foreground_mae": 33.135743272348044,
+        "full_mae": 4.273638888888889,
+        "channel_peak": 192,
+        "worst64": 55.42921835006891
+      },
+      "after": {
+        "foreground_mae": 33.135743272348044,
+        "full_mae": 4.273638888888889,
+        "channel_peak": 192,
+        "worst64": 55.42921835006891
+      },
+      "camera_screen_error": 0.0008814801523746371,
+      "scale_error": 0.011448675935884278,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-10700.png": "40fd07404fd313ccbd1211976a26918388d15169c789d6ca2f978e37cc7e7731",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-10700.png": "135272156a00305795b184c2e56c2147e82caadc5224218ec8b05989eb2aef31",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-10700.png": "135272156a00305795b184c2e56c2147e82caadc5224218ec8b05989eb2aef31"
+      }
+    },
+    {
+      "file": "380-1-false-11500.png",
+      "time": 11.5,
+      "mask_pixels": 7942,
+      "before": {
+        "foreground_mae": 7.130026021992781,
+        "full_mae": 0.2483625730994152,
+        "channel_peak": 129,
+        "worst64": 9.31798561151079
+      },
+      "after": {
+        "foreground_mae": 7.130026021992781,
+        "full_mae": 0.2483625730994152,
+        "channel_peak": 129,
+        "worst64": 9.31798561151079
+      },
+      "camera_screen_error": 5.846905520210842e-05,
+      "scale_error": 0.00012018122623025373,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-11500.png": "34065b5e5e2dbb3d579b6f175b10dc821da0700a62a86d06c25514217e19f4f5",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-false-11500.png": "4251353827a469b6bd193e785427a1c428b8a79d5875c0ee04a29f77d27d2902",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-11500.png": "4251353827a469b6bd193e785427a1c428b8a79d5875c0ee04a29f77d27d2902"
+      }
+    },
+    {
+      "file": "380-1-true-0.png",
+      "time": 0,
+      "mask_pixels": 23851,
+      "before": {
+        "foreground_mae": 2.443321733540173,
+        "full_mae": 0.25559502923976607,
+        "channel_peak": 13,
+        "worst64": 3.8242063492063494
+      },
+      "after": {
+        "foreground_mae": 1.2161055441421045,
+        "full_mae": 0.12721637426900584,
+        "channel_peak": 5,
+        "worst64": 1.4965831435079726
+      },
+      "camera_screen_error": 0.0,
+      "scale_error": 0.0,
+      "source_parent_scale": 0.9850001284950658,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 1.284950658098083e-07,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-0.png": "e52cf3184f930fa701a7553d9ba18499c003f1dc1cd1eb0f700b05022ac7aefc",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-0.png": "4591ddcfddccee41a60b6f79c73e155df9d8c5b412bedcdd599f99f2291134b4",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-0.png": "63d0f06084c683c55e93ec5bb438ab6f89d8285cff114233c447c152efb4b429"
+      }
+    },
+    {
+      "file": "380-1-true-690.png",
+      "time": 0.69,
+      "mask_pixels": 16475,
+      "before": {
+        "foreground_mae": 2.636661608497724,
+        "full_mae": 0.1905219298245614,
+        "channel_peak": 13,
+        "worst64": 3.717809867629362
+      },
+      "after": {
+        "foreground_mae": 1.2209408194233689,
+        "full_mae": 0.08822368421052632,
+        "channel_peak": 6,
+        "worst64": 1.398370161416706
+      },
+      "camera_screen_error": 0.011233481833954595,
+      "scale_error": 3.379493967092806e-05,
+      "source_parent_scale": 0.9850001284950658,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 1.284950658098083e-07,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-690.png": "74166fbd3e27a49773c51b4c460ff2d7aaaad2f674356034f6f606552c08e6bf",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-690.png": "490a0ba13fa8751802edb28baf110a3a176e3fa64471debbbcfb9bc2ee16706b",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-690.png": "5cba62510616abfd372999fb56eb2439a6245d4b64afa00b693255bd8e2aaa57"
+      }
+    },
+    {
+      "file": "380-1-true-700.png",
+      "time": 0.7,
+      "mask_pixels": 26739,
+      "before": {
+        "foreground_mae": 3.34429111036314,
+        "full_mae": 0.3922061403508772,
+        "channel_peak": 95,
+        "worst64": 5.825017182130584
+      },
+      "after": {
+        "foreground_mae": 1.8772205392871835,
+        "full_mae": 0.22015350877192982,
+        "channel_peak": 58,
+        "worst64": 3.482232522209347
+      },
+      "camera_screen_error": 0.1596159989098427,
+      "scale_error": 2.4693209838111407e-05,
+      "source_parent_scale": 0.9850001284950658,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 1.284950658098083e-07,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-700.png": "012100ef0fc3fc8fe04aa42462af380ceb4547c8a5f35396d6c4f338dedca892",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-700.png": "8a0755e7cc1ad7ec58a6addbd0e9d2709d08d0c18568a069f000478770ef8c10",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-700.png": "21a431bb0637fb73558a4e66223547f73525b59b8625c45637796d653c9be549"
+      }
+    },
+    {
+      "file": "380-1-true-717.png",
+      "time": 0.717,
+      "mask_pixels": 27013,
+      "before": {
+        "foreground_mae": 3.2023223386270807,
+        "full_mae": 0.37940497076023394,
+        "channel_peak": 136,
+        "worst64": 5.354461041582559
+      },
+      "after": {
+        "foreground_mae": 2.0333666506250077,
+        "full_mae": 0.2409093567251462,
+        "channel_peak": 131,
+        "worst64": 4.276989979202118
+      },
+      "camera_screen_error": 0.3769607483062646,
+      "scale_error": 0.00013606466467896983,
+      "source_parent_scale": 0.9859411942331414,
+      "native_parent_scale": 0.9859411564860784,
+      "parent_scale_error": 3.774706303083519e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-717.png": "398cac7a4b34614a70991a1cce0c3607f456584bfda324a4f1886536cc733d00",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-717.png": "0ea23b18ee78e898b809136ea2c16c034bd2103cbd9c9d4b6b15e89a70a67fab",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-717.png": "500da967ff541b65a9f5a2e765d314c9bc195be8bae2c3ce4a70e732b048092c"
+      }
+    },
+    {
+      "file": "380-1-true-750.png",
+      "time": 0.75,
+      "mask_pixels": 27232,
+      "before": {
+        "foreground_mae": 3.0343468468468466,
+        "full_mae": 0.36241812865497075,
+        "channel_peak": 156,
+        "worst64": 4.1423763914056435
+      },
+      "after": {
+        "foreground_mae": 2.9619687622405015,
+        "full_mae": 0.3537733918128655,
+        "channel_peak": 160,
+        "worst64": 5.957287082578307
+      },
+      "camera_screen_error": 0.7901411987596835,
+      "scale_error": 0.00010177849307213549,
+      "source_parent_scale": 0.9876601369757402,
+      "native_parent_scale": 0.9876601000186929,
+      "parent_scale_error": 3.695704731132565e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-750.png": "d897ec06b2aa6fc55998c06300a1de4b2eb7780e75a3b88d5ee660e651b92dce",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-750.png": "7253b356d03dd2e8aa452546cc114b6bb389e71d41f8d1f2c7d1675108a7701f",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-750.png": "6bf360fadc5856639713a7ca9662f77c9047412ee909b2962b06032c5df0fea0"
+      }
+    },
+    {
+      "file": "380-1-true-800.png",
+      "time": 0.8,
+      "mask_pixels": 29696,
+      "before": {
+        "foreground_mae": 3.3964507004310347,
+        "full_mae": 0.44237280701754383,
+        "channel_peak": 170,
+        "worst64": 6.688686221345822
+      },
+      "after": {
+        "foreground_mae": 4.058212104885057,
+        "full_mae": 0.5285643274853801,
+        "channel_peak": 164,
+        "worst64": 8.280338509571934
+      },
+      "camera_screen_error": 1.0296871657768203,
+      "scale_error": 6.16667635745527e-05,
+      "source_parent_scale": 0.990093994140625,
+      "native_parent_scale": 0.9900940119264123,
+      "parent_scale_error": 1.7785787287394328e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-800.png": "2033ec6af62c247be2170a6e946b1238bb2f00e42e7b0f36cc124894ec926980",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-800.png": "04cc435fee7dab0087c3ecbc84095e091129058153413c8411388e3f76cc6144",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-800.png": "6c643f8d94385d1e1d0cc501f19cf1999209fa032de09b997884cfa2cf09227c"
+      }
+    },
+    {
+      "file": "380-1-true-900.png",
+      "time": 0.9,
+      "mask_pixels": 35072,
+      "before": {
+        "foreground_mae": 5.223796760948905,
+        "full_mae": 0.803548245614035,
+        "channel_peak": 167,
+        "worst64": 9.532318726493484
+      },
+      "after": {
+        "foreground_mae": 4.386709245742092,
+        "full_mae": 0.6747836257309942,
+        "channel_peak": 167,
+        "worst64": 7.181754570104085
+      },
+      "camera_screen_error": 1.0911956521898831,
+      "scale_error": 1.566778648420808e-05,
+      "source_parent_scale": 0.9943452533922698,
+      "native_parent_scale": 0.9943451751161774,
+      "parent_scale_error": 7.827609238564293e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-900.png": "c15a07b1b9989bb02cf2a56b0997d44f83270ff93f58ef3a58bee99dac788873",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-900.png": "13f49ee55268cb29d1a420f0513eb953705682a0ab973dd2c331d3c3b490a37b",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-900.png": "b7c44f814955c4a9a0ede08eeb3f9628dec8bc527ccbcb4c7dfe218db09b6867"
+      }
+    },
+    {
+      "file": "380-1-true-1000.png",
+      "time": 1,
+      "mask_pixels": 46141,
+      "before": {
+        "foreground_mae": 9.274333022691316,
+        "full_mae": 1.8768728070175438,
+        "channel_peak": 192,
+        "worst64": 17.636695334897055
+      },
+      "after": {
+        "foreground_mae": 9.083418218070696,
+        "full_mae": 1.838236842105263,
+        "channel_peak": 189,
+        "worst64": 17.237772565372254
+      },
+      "camera_screen_error": 3.2463141296472733,
+      "scale_error": 2.8898124971865613e-06,
+      "source_parent_scale": 0.9976604260896381,
+      "native_parent_scale": 0.9976603685315057,
+      "parent_scale_error": 5.7558132371404724e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-1000.png": "a162646800cf105fcff66cbcbe0d02ca35038633d61798339c353b1e0d3325ed",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-1000.png": "64d497fad0bc77d23f6c205541b080f6babcddb5137b620c5773cd9362bee3d9",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-1000.png": "9739786e8b365c191b647c68880048f34a72ed5f5dcd48eb514694ffc71ca88b"
+      }
+    },
+    {
+      "file": "380-1-true-1150.png",
+      "time": 1.15,
+      "mask_pixels": 63086,
+      "before": {
+        "foreground_mae": 9.662133172706042,
+        "full_mae": 2.6734444444444443,
+        "channel_peak": 194,
+        "worst64": 18.803629557291668
+      },
+      "after": {
+        "foreground_mae": 9.662133172706042,
+        "full_mae": 2.6734444444444443,
+        "channel_peak": 194,
+        "worst64": 18.803629557291668
+      },
+      "camera_screen_error": 4.000955903450743,
+      "scale_error": 8.697857190043123e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 0.9999999973182275,
+      "parent_scale_error": 2.6817724707584034e-09,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-1150.png": "07060d15a447b1e021eb15e152a3620ce36bad7c69f33f116760a2a64d0adc4c",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-1150.png": "876b0c0bd3a9779abe7f5decaebd4780e829fcafe19b7ef5e95183f7e59114b8",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-1150.png": "876b0c0bd3a9779abe7f5decaebd4780e829fcafe19b7ef5e95183f7e59114b8"
+      }
+    },
+    {
+      "file": "380-1-true-1300.png",
+      "time": 1.3,
+      "mask_pixels": 64040,
+      "before": {
+        "foreground_mae": 3.7590724547158025,
+        "full_mae": 1.0558377192982455,
+        "channel_peak": 155,
+        "worst64": 6.052408854166667
+      },
+      "after": {
+        "foreground_mae": 3.7590724547158025,
+        "full_mae": 1.0558377192982455,
+        "channel_peak": 155,
+        "worst64": 6.052408854166667
+      },
+      "camera_screen_error": 1.0444475324321698,
+      "scale_error": 6.591080256024284e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-1300.png": "9d33fa6d7e32e9860e54ccb301bfa420c5f9a74668659c6e3e14785df65a433c",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-1300.png": "acfe3f6fbaa902deb5d3efc82e31b20612cdb21b13bc3907dc25bda2c2d78a22",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-1300.png": "acfe3f6fbaa902deb5d3efc82e31b20612cdb21b13bc3907dc25bda2c2d78a22"
+      }
+    },
+    {
+      "file": "380-1-true-2600.png",
+      "time": 2.6,
+      "mask_pixels": 65188,
+      "before": {
+        "foreground_mae": 3.9783600253625413,
+        "full_mae": 1.1374619883040935,
+        "channel_peak": 174,
+        "worst64": 6.373209635416667
+      },
+      "after": {
+        "foreground_mae": 3.9783600253625413,
+        "full_mae": 1.1374619883040935,
+        "channel_peak": 174,
+        "worst64": 6.373209635416667
+      },
+      "camera_screen_error": 0.7884606969559689,
+      "scale_error": 7.033218452079382e-09,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-2600.png": "407dd5da139be87cb41ec82a3688a1f7418744daa5846432fd43a6a86e6b6986",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-2600.png": "6c2df91687de864f1db1f419bc701079e94b8afbcc1795ebf932631bccf6be04",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-2600.png": "6c2df91687de864f1db1f419bc701079e94b8afbcc1795ebf932631bccf6be04"
+      }
+    },
+    {
+      "file": "380-1-true-3000.png",
+      "time": 3,
+      "mask_pixels": 15573,
+      "before": {
+        "foreground_mae": 20.552366274963077,
+        "full_mae": 1.403780701754386,
+        "channel_peak": 159,
+        "worst64": 33.45552477685442
+      },
+      "after": {
+        "foreground_mae": 20.552366274963077,
+        "full_mae": 1.403780701754386,
+        "channel_peak": 159,
+        "worst64": 33.45552477685442
+      },
+      "camera_screen_error": 2.842775894010232,
+      "scale_error": 0.00014075304126570654,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-3000.png": "6d63aceb8e6569096489764252b1737f0969ca09da02ff9d8a63cd471da87e71",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-3000.png": "ad710596208d091c04ae31f7f172588efc46e4524301f4c37a7def5dfb0f34b8",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-3000.png": "ad710596208d091c04ae31f7f172588efc46e4524301f4c37a7def5dfb0f34b8"
+      }
+    },
+    {
+      "file": "380-1-true-3150.png",
+      "time": 3.15,
+      "mask_pixels": 32299,
+      "before": {
+        "foreground_mae": 12.780994251628018,
+        "full_mae": 1.8105847953216374,
+        "channel_peak": 150,
+        "worst64": 27.62671905697446
+      },
+      "after": {
+        "foreground_mae": 12.780994251628018,
+        "full_mae": 1.8105847953216374,
+        "channel_peak": 150,
+        "worst64": 27.62671905697446
+      },
+      "camera_screen_error": 2.388472063163121,
+      "scale_error": 0.0008435281018086549,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-3150.png": "468476828dc95832837f43dec9bffac494a5947a3bab1aa0d2b113bdb9ae7bfb",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-3150.png": "bae534757355899fdc8dca963858e6034d344cb0fd09c4846e0da75e4ab11c50",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-3150.png": "bae534757355899fdc8dca963858e6034d344cb0fd09c4846e0da75e4ab11c50"
+      }
+    },
+    {
+      "file": "380-1-true-4200.png",
+      "time": 4.2,
+      "mask_pixels": 63939,
+      "before": {
+        "foreground_mae": 7.128189889321593,
+        "full_mae": 1.9989883040935672,
+        "channel_peak": 180,
+        "worst64": 13.49658203125
+      },
+      "after": {
+        "foreground_mae": 7.128189889321593,
+        "full_mae": 1.9989883040935672,
+        "channel_peak": 180,
+        "worst64": 13.49658203125
+      },
+      "camera_screen_error": 1.1150981965695366,
+      "scale_error": 1.0901679271313469e-05,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-4200.png": "1bb7ebbf0a04a73d3b7acda3550faf9035eec86c604e33d92a0c80993ea2e8a9",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-4200.png": "08c6f033c53a0b0bfa229f88ae188bdca770284435337ea0d6f56da11b5b0cb3",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-4200.png": "08c6f033c53a0b0bfa229f88ae188bdca770284435337ea0d6f56da11b5b0cb3"
+      }
+    },
+    {
+      "file": "380-1-true-5400.png",
+      "time": 5.4,
+      "mask_pixels": 33923,
+      "before": {
+        "foreground_mae": 3.678330336349969,
+        "full_mae": 0.5472807017543859,
+        "channel_peak": 137,
+        "worst64": 9.847874720357941
+      },
+      "after": {
+        "foreground_mae": 3.678330336349969,
+        "full_mae": 0.5472807017543859,
+        "channel_peak": 137,
+        "worst64": 9.847874720357941
+      },
+      "camera_screen_error": 0.16175542593376085,
+      "scale_error": 0.00014001354280512857,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-5400.png": "c74081638ec86183d3f0696042fae57bac66c3e921ad9c343af1ac95562b8e88",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-5400.png": "af2f42a7aa05f212f59b3598018d4e1e49bbe335a07d8ea723cf5a23c8e5e4e6",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-5400.png": "af2f42a7aa05f212f59b3598018d4e1e49bbe335a07d8ea723cf5a23c8e5e4e6"
+      }
+    },
+    {
+      "file": "380-1-true-5600.png",
+      "time": 5.6,
+      "mask_pixels": 60518,
+      "before": {
+        "foreground_mae": 4.264461262213997,
+        "full_mae": 1.1319152046783625,
+        "channel_peak": 143,
+        "worst64": 15.884615384615385
+      },
+      "after": {
+        "foreground_mae": 4.264461262213997,
+        "full_mae": 1.1319152046783625,
+        "channel_peak": 143,
+        "worst64": 15.884615384615385
+      },
+      "camera_screen_error": 0.38114366171987146,
+      "scale_error": 2.8682768744570097e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-5600.png": "0c632fa4154827be29b3d45492ae2f182d9e228adffb4a13289ff8794eb6fa0d",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-5600.png": "44a703215532a4d1467680f5d4d4dd596e59b46f77ffc42ccf95fed3827c8df6",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-5600.png": "44a703215532a4d1467680f5d4d4dd596e59b46f77ffc42ccf95fed3827c8df6"
+      }
+    },
+    {
+      "file": "380-1-true-6300.png",
+      "time": 6.3,
+      "mask_pixels": 72446,
+      "before": {
+        "foreground_mae": 5.041405552641508,
+        "full_mae": 1.6018845029239765,
+        "channel_peak": 165,
+        "worst64": 21.513227513227513
+      },
+      "after": {
+        "foreground_mae": 5.041405552641508,
+        "full_mae": 1.6018845029239765,
+        "channel_peak": 165,
+        "worst64": 21.513227513227513
+      },
+      "camera_screen_error": 0.5808171955505548,
+      "scale_error": 6.95634747316376e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-6300.png": "a7f4c996ccdb02c421618b1e8bc066455a7b6a8f167a7024b83cc08431130f59",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-6300.png": "773efa3ea42f475b6e983b957de3a6071e23c8dd6cbb95f3028c3063d8c6b636",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-6300.png": "773efa3ea42f475b6e983b957de3a6071e23c8dd6cbb95f3028c3063d8c6b636"
+      }
+    },
+    {
+      "file": "380-1-true-7600.png",
+      "time": 7.6,
+      "mask_pixels": 46753,
+      "before": {
+        "foreground_mae": 2.501443757619832,
+        "full_mae": 0.5129385964912281,
+        "channel_peak": 117,
+        "worst64": 5.290247742149308
+      },
+      "after": {
+        "foreground_mae": 2.501443757619832,
+        "full_mae": 0.5129385964912281,
+        "channel_peak": 117,
+        "worst64": 5.290247742149308
+      },
+      "camera_screen_error": 0.23604996319061788,
+      "scale_error": 1.3409193022617671e-07,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-7600.png": "293ca2171980ab68037cf2a85fb8a05a259383b25e382e779982b9117c98c78b",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-7600.png": "02663d585237b9f77166550aef3916840f01c66b3454f679c495eb6309c42fe6",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-7600.png": "02663d585237b9f77166550aef3916840f01c66b3454f679c495eb6309c42fe6"
+      }
+    },
+    {
+      "file": "380-1-true-8300.png",
+      "time": 8.3,
+      "mask_pixels": 61784,
+      "before": {
+        "foreground_mae": 3.183720704389486,
+        "full_mae": 0.8627324561403509,
+        "channel_peak": 152,
+        "worst64": 10.98324958123953
+      },
+      "after": {
+        "foreground_mae": 3.183720704389486,
+        "full_mae": 0.8627324561403509,
+        "channel_peak": 152,
+        "worst64": 10.98324958123953
+      },
+      "camera_screen_error": 0.115844557526753,
+      "scale_error": 0.0042830226902377255,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-8300.png": "fe99a5642fc1146b1e19256cf5f6f57e06c8b0f7fe29f469968edc91959cd4e2",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-8300.png": "f58d3d27409903459c6df27b6e4a392605d14e5162b0ce282e195944b189516b",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-8300.png": "f58d3d27409903459c6df27b6e4a392605d14e5162b0ce282e195944b189516b"
+      }
+    },
+    {
+      "file": "380-1-true-9500.png",
+      "time": 9.5,
+      "mask_pixels": 53188,
+      "before": {
+        "foreground_mae": 3.28656213180918,
+        "full_mae": 0.7666915204678363,
+        "channel_peak": 104,
+        "worst64": 6.704944830404577
+      },
+      "after": {
+        "foreground_mae": 3.28656213180918,
+        "full_mae": 0.7666915204678363,
+        "channel_peak": 104,
+        "worst64": 6.704944830404577
+      },
+      "camera_screen_error": 0.13659504089405416,
+      "scale_error": 1.0140471017550112e-05,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-9500.png": "a762e64add026cacd2e5ef347177bd022dfdcfe51b3aeff598520fc4da1d0f6d",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-9500.png": "746a3db97d268144a309ad558229b014871eb1620710aba0b7ef3291dc763652",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-9500.png": "746a3db97d268144a309ad558229b014871eb1620710aba0b7ef3291dc763652"
+      }
+    },
+    {
+      "file": "380-1-true-10000.png",
+      "time": 10,
+      "mask_pixels": 59570,
+      "before": {
+        "foreground_mae": 35.22045772480555,
+        "full_mae": 9.202116959064327,
+        "channel_peak": 190,
+        "worst64": 61.037401195295935
+      },
+      "after": {
+        "foreground_mae": 35.22045772480555,
+        "full_mae": 9.202116959064327,
+        "channel_peak": 190,
+        "worst64": 61.037401195295935
+      },
+      "camera_screen_error": 5.61322940551265,
+      "scale_error": 0.013018375182003439,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-10000.png": "077bed79f9c390f71ae87823dbddcb19596201336d27d8dcddb87755f5118807",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-10000.png": "f53d29c9c20047aca3c202726de923b3e85673ce7e1a266525d82075152bc1a5",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-10000.png": "f53d29c9c20047aca3c202726de923b3e85673ce7e1a266525d82075152bc1a5"
+      }
+    },
+    {
+      "file": "380-1-true-10700.png",
+      "time": 10.7,
+      "mask_pixels": 29406,
+      "before": {
+        "foreground_mae": 33.13564125235213,
+        "full_mae": 4.273625730994152,
+        "channel_peak": 192,
+        "worst64": 55.42547745619216
+      },
+      "after": {
+        "foreground_mae": 33.13564125235213,
+        "full_mae": 4.273625730994152,
+        "channel_peak": 192,
+        "worst64": 55.42547745619216
+      },
+      "camera_screen_error": 0.0008744854287018059,
+      "scale_error": 0.011448675935957553,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-10700.png": "c6622ba9557f512ecccd9a1ff9ff0b42a6a2705dfea0022d396585916c5231ad",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-10700.png": "9dc5dcca42134cc231f040c8e0788733cb37f73f4261a547356e3516220a2834",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-10700.png": "9dc5dcca42134cc231f040c8e0788733cb37f73f4261a547356e3516220a2834"
+      }
+    },
+    {
+      "file": "380-1-true-11500.png",
+      "time": 11.5,
+      "mask_pixels": 7942,
+      "before": {
+        "foreground_mae": 7.130026021992781,
+        "full_mae": 0.2483625730994152,
+        "channel_peak": 129,
+        "worst64": 9.31798561151079
+      },
+      "after": {
+        "foreground_mae": 7.130026021992781,
+        "full_mae": 0.2483625730994152,
+        "channel_peak": 129,
+        "worst64": 9.31798561151079
+      },
+      "camera_screen_error": 5.846892440334216e-05,
+      "scale_error": 0.00012018122623080885,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-11500.png": "34065b5e5e2dbb3d579b6f175b10dc821da0700a62a86d06c25514217e19f4f5",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\380-1-true-11500.png": "4251353827a469b6bd193e785427a1c428b8a79d5875c0ee04a29f77d27d2902",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-11500.png": "4251353827a469b6bd193e785427a1c428b8a79d5875c0ee04a29f77d27d2902"
+      }
+    },
+    {
+      "file": "800-1-false-0.png",
+      "time": 0,
+      "mask_pixels": 32753,
+      "before": {
+        "foreground_mae": 2.97740664977254,
+        "full_mae": 0.20316458333333334,
+        "channel_peak": 13,
+        "worst64": 5.758787878787879
+      },
+      "after": {
+        "foreground_mae": 1.1186659746181011,
+        "full_mae": 0.07633263888888889,
+        "channel_peak": 5,
+        "worst64": 1.338855421686747
+      },
+      "camera_screen_error": 0.0,
+      "scale_error": 0.0,
+      "source_parent_scale": 0.985,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-0.png": "694e229284ffed198485b32350eb78f9622536cc1226da0a37c5822fd6fa0a23",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-0.png": "8ab9956d236842fe122dd8d91d83a84e213e4e704cca2b5b51b29384b0a68a21",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-0.png": "d1046cbc49e864d9e4b4dabcd92a2259743593fa1937216a92a2397b7e0ef152"
+      }
+    },
+    {
+      "file": "800-1-false-690.png",
+      "time": 0.69,
+      "mask_pixels": 29298,
+      "before": {
+        "foreground_mae": 3.1283932919198123,
+        "full_mae": 0.19094930555555556,
+        "channel_peak": 13,
+        "worst64": 7.0085470085470085
+      },
+      "after": {
+        "foreground_mae": 1.1919698728013288,
+        "full_mae": 0.07275486111111111,
+        "channel_peak": 6,
+        "worst64": 1.505012531328321
+      },
+      "camera_screen_error": 0.004733244916417871,
+      "scale_error": 3.3794946012633e-05,
+      "source_parent_scale": 0.985,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-690.png": "d42df4d97a14d2c38ca8b8c93a985a609bc22c7a397256115aee4db9a64d3793",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-690.png": "26184c5fbab35c58daa7559b9a4e359ac1e6cf05d328abba7e469dd82c9e38ca",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-690.png": "fc15eafbe4aaf26f4d5d84b522cefacfc7f8591217510c7fc733c066b8a34a47"
+      }
+    },
+    {
+      "file": "800-1-false-700.png",
+      "time": 0.7,
+      "mask_pixels": 45007,
+      "before": {
+        "foreground_mae": 4.174069218862251,
+        "full_mae": 0.3913798611111111,
+        "channel_peak": 108,
+        "worst64": 9.167625623321825
+      },
+      "after": {
+        "foreground_mae": 1.770324616170818,
+        "full_mae": 0.16599375,
+        "channel_peak": 58,
+        "worst64": 2.915574096146206
+      },
+      "camera_screen_error": 0.012739935575904322,
+      "scale_error": 2.469321656484169e-05,
+      "source_parent_scale": 0.985,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-700.png": "fe48448bc4739a270fd6d52621b46814175b5ae1322da4acb3e64a382ea5d9ad",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-700.png": "863d10969429f734b5a6b9636b0c9c2f67ab5edd5693ad04614e7d52c307384c",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-700.png": "7a19861298bc851910fee688fb3788b847b15bed7dfb24fc2b0409cfc68e5aa1"
+      }
+    },
+    {
+      "file": "800-1-false-717.png",
+      "time": 0.717,
+      "mask_pixels": 45706,
+      "before": {
+        "foreground_mae": 4.135058854417363,
+        "full_mae": 0.39374375,
+        "channel_peak": 153,
+        "worst64": 9.087292679885273
+      },
+      "after": {
+        "foreground_mae": 1.8486704881926517,
+        "full_mae": 0.17603194444444445,
+        "channel_peak": 131,
+        "worst64": 3.6776776776776776
+      },
+      "camera_screen_error": 0.04624232911621137,
+      "scale_error": 0.0001360646579590119,
+      "source_parent_scale": 0.985941162109375,
+      "native_parent_scale": 0.9859411564860784,
+      "parent_scale_error": 5.623296606138695e-09,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-717.png": "c51603081733f6143b462c043de6d6452d97e8016c4f87be3a852099a598d428",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-717.png": "f400b855a48e46dd2acea5990a52466c16b36a0ff4244b91997924c8747d8c86",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-717.png": "e476384f5087edbf3ce21036e0a240d2281d380068c4bcce9b81ca358706a60a"
+      }
+    },
+    {
+      "file": "800-1-false-750.png",
+      "time": 0.75,
+      "mask_pixels": 46120,
+      "before": {
+        "foreground_mae": 3.9973619543220584,
+        "full_mae": 0.3840798611111111,
+        "channel_peak": 129,
+        "worst64": 7.820567125544182
+      },
+      "after": {
+        "foreground_mae": 1.9296689794738364,
+        "full_mae": 0.1854090277777778,
+        "channel_peak": 123,
+        "worst64": 2.803470388532629
+      },
+      "camera_screen_error": 0.05223974519129235,
+      "scale_error": 0.00010177848661552247,
+      "source_parent_scale": 0.9876602172851563,
+      "native_parent_scale": 0.9876601000186929,
+      "parent_scale_error": 1.1726646342857805e-07,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-750.png": "462bf3070cff81886ada82d2abc9deafa0e2cc9fcabafe81313705b3b482a8b4",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-750.png": "6f6dc292f37e28e5f6a7e14c388aaf174750df3ff3a82871873fa28b1b74cad0",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-750.png": "776f50ea80987c8e10cdce2df06e0656347c03f2034f1b9afeceafbd4c429360"
+      }
+    },
+    {
+      "file": "800-1-false-800.png",
+      "time": 0.8,
+      "mask_pixels": 48988,
+      "before": {
+        "foreground_mae": 3.9197558585776107,
+        "full_mae": 0.40004375,
+        "channel_peak": 174,
+        "worst64": 8.468947113051916
+      },
+      "after": {
+        "foreground_mae": 2.1690277891184238,
+        "full_mae": 0.2213673611111111,
+        "channel_peak": 167,
+        "worst64": 4.771534424205002
+      },
+      "camera_screen_error": 0.08083916712392399,
+      "scale_error": 6.166675799934573e-05,
+      "source_parent_scale": 0.990093994140625,
+      "native_parent_scale": 0.9900940119264123,
+      "parent_scale_error": 1.7785787287394328e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-800.png": "876ac7dae313979b57a21b0e79639e49d70d8d4dc4a4095f21a872740188ace5",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-800.png": "5f548aa85a5fafb65ff0641f5646f00580628621f24d0af97938a46ae9e67627",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-800.png": "31ee36c3706a6422a7fae8460b1dad3a7afcc75d877f2b1a0a68df76558ddede"
+      }
+    },
+    {
+      "file": "800-1-false-900.png",
+      "time": 0.9,
+      "mask_pixels": 56393,
+      "before": {
+        "foreground_mae": 3.086210463473599,
+        "full_mae": 0.3625847222222222,
+        "channel_peak": 123,
+        "worst64": 4.983867451493351
+      },
+      "after": {
+        "foreground_mae": 2.351066030653923,
+        "full_mae": 0.2762159722222222,
+        "channel_peak": 151,
+        "worst64": 3.495606527444939
+      },
+      "camera_screen_error": 0.07467001305853425,
+      "scale_error": 1.5667782593653534e-05,
+      "source_parent_scale": 0.9943450927734375,
+      "native_parent_scale": 0.9943451751161774,
+      "parent_scale_error": 8.234273984886187e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-900.png": "c73dc83f1addf2493daae99c51e44a95c00bae62d805f07cbe83be2db5fd75e6",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-900.png": "60ad8feb8d07bf643fb665a54f2f2a4ec42b17c2c5848594e76f71074da03f2a",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-900.png": "e8f1803cc8541c30c06760ff4c624b0a7227fef9d8efed4768c85db7ea256c1d"
+      }
+    },
+    {
+      "file": "800-1-false-1000.png",
+      "time": 1,
+      "mask_pixels": 67574,
+      "before": {
+        "foreground_mae": 2.4221446118329535,
+        "full_mae": 0.3409875,
+        "channel_peak": 75,
+        "worst64": 3.7649866361206565
+      },
+      "after": {
+        "foreground_mae": 2.199628062075157,
+        "full_mae": 0.30966180555555556,
+        "channel_peak": 83,
+        "worst64": 3.0259556000667667
+      },
+      "camera_screen_error": 0.046068532275363394,
+      "scale_error": 2.8898145506550676e-06,
+      "source_parent_scale": 0.9976603698730468,
+      "native_parent_scale": 0.9976603685315057,
+      "parent_scale_error": 1.3415411004302769e-09,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-1000.png": "777e693ef48a43fca29d45d44c040179abf2bf3368e50889408be6da502b0dc8",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-1000.png": "fb9695689ede9108d230a58310ada33633d2ce1d3b33c572f1760ebd2db09b8e",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-1000.png": "31046042e131baf776984c485dcfd896f26a7a65af876c1f1d71366a35f469f4"
+      }
+    },
+    {
+      "file": "800-1-false-1150.png",
+      "time": 1.15,
+      "mask_pixels": 85590,
+      "before": {
+        "foreground_mae": 2.2114655138840207,
+        "full_mae": 0.39433194444444447,
+        "channel_peak": 68,
+        "worst64": 2.9855143229166665
+      },
+      "after": {
+        "foreground_mae": 2.2114655138840207,
+        "full_mae": 0.39433194444444447,
+        "channel_peak": 68,
+        "worst64": 2.9855143229166665
+      },
+      "camera_screen_error": 0.023445931483511026,
+      "scale_error": 8.697857950545895e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 0.9999999973182275,
+      "parent_scale_error": 2.6817724707584034e-09,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-1150.png": "fbd5c74bed5bcce3e461a412845f27552666874491f371b5e5e239558bb45d55",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-1150.png": "2d3a1875593e989b08ba91d86cbd53d22920809f625327aa2e21d4807412c798",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-1150.png": "2d3a1875593e989b08ba91d86cbd53d22920809f625327aa2e21d4807412c798"
+      }
+    },
+    {
+      "file": "800-1-false-1300.png",
+      "time": 1.3,
+      "mask_pixels": 101536,
+      "before": {
+        "foreground_mae": 2.2286709475785274,
+        "full_mae": 0.47143819444444446,
+        "channel_peak": 67,
+        "worst64": 3.1435546875
+      },
+      "after": {
+        "foreground_mae": 2.2286709475785274,
+        "full_mae": 0.47143819444444446,
+        "channel_peak": 67,
+        "worst64": 3.1435546875
+      },
+      "camera_screen_error": 0.0033522836550046956,
+      "scale_error": 6.591080476292532e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-1300.png": "73ba83aa653bb529068bdb4216990ed6087a3afe183e0f56291d8ca0ce024a64",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-1300.png": "051457d34fa4dae6a74a9dbd2d8a51438de49ab31d71c925be90c0ce29a7cfa7",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-1300.png": "051457d34fa4dae6a74a9dbd2d8a51438de49ab31d71c925be90c0ce29a7cfa7"
+      }
+    },
+    {
+      "file": "800-1-false-2600.png",
+      "time": 2.6,
+      "mask_pixels": 105918,
+      "before": {
+        "foreground_mae": 4.973133304380118,
+        "full_mae": 1.0973840277777778,
+        "channel_peak": 180,
+        "worst64": 9.482584635416666
+      },
+      "after": {
+        "foreground_mae": 4.973133304380118,
+        "full_mae": 1.0973840277777778,
+        "channel_peak": 180,
+        "worst64": 9.482584635416666
+      },
+      "camera_screen_error": 1.362551496253108,
+      "scale_error": 7.033271298695354e-09,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-2600.png": "edf6c17fe044bc9db1f2dcd0dbe47943dc05c008936e6aac5b9bdb56c827a004",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-2600.png": "f5e35b4d03887f8be1982636098249fd23e287e41e098de6ae24b5e43b57331c",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-2600.png": "f5e35b4d03887f8be1982636098249fd23e287e41e098de6ae24b5e43b57331c"
+      }
+    },
+    {
+      "file": "800-1-false-3000.png",
+      "time": 3,
+      "mask_pixels": 29450,
+      "before": {
+        "foreground_mae": 13.379977362761743,
+        "full_mae": 0.8209173611111111,
+        "channel_peak": 158,
+        "worst64": 20.198347107438018
+      },
+      "after": {
+        "foreground_mae": 13.379977362761743,
+        "full_mae": 0.8209173611111111,
+        "channel_peak": 158,
+        "worst64": 20.198347107438018
+      },
+      "camera_screen_error": 1.9214763353594435,
+      "scale_error": 0.00014075304133598365,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-3000.png": "835edca682650a38a6e8e3effcfd04c3d6bec064bcd41722fd9095708c2f182e",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-3000.png": "75c10f114fb9f1509507ced8db85488e1f5bbd422ca93824d86a097d4529b3be",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-3000.png": "75c10f114fb9f1509507ced8db85488e1f5bbd422ca93824d86a097d4529b3be"
+      }
+    },
+    {
+      "file": "800-1-false-3150.png",
+      "time": 3.15,
+      "mask_pixels": 81883,
+      "before": {
+        "foreground_mae": 53.336573729182696,
+        "full_mae": 9.09866388888889,
+        "channel_peak": 153,
+        "worst64": 104.2687134502924
+      },
+      "after": {
+        "foreground_mae": 53.336573729182696,
+        "full_mae": 9.09866388888889,
+        "channel_peak": 153,
+        "worst64": 104.2687134502924
+      },
+      "camera_screen_error": 15.3443974978264,
+      "scale_error": 0.010091546848274069,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-3150.png": "1b2143e15dbed6f9d4af4b6a32cd7c0b890757d10749ed2d4fa404c843738739",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-3150.png": "05bfc0d8902527d551d1b78c15d769d09fbc01107b2bb365eb09c9989965d4cc",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-3150.png": "05bfc0d8902527d551d1b78c15d769d09fbc01107b2bb365eb09c9989965d4cc"
+      }
+    },
+    {
+      "file": "800-1-false-4200.png",
+      "time": 4.2,
+      "mask_pixels": 107637,
+      "before": {
+        "foreground_mae": 2.015849568456943,
+        "full_mae": 0.4520416666666667,
+        "channel_peak": 79,
+        "worst64": 3.33642578125
+      },
+      "after": {
+        "foreground_mae": 2.015849568456943,
+        "full_mae": 0.4520416666666667,
+        "channel_peak": 79,
+        "worst64": 3.33642578125
+      },
+      "camera_screen_error": 0.005463130783680913,
+      "scale_error": 3.463894408417545e-05,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-4200.png": "1f37145f78b45d9d56b15310f3f6b2031bf73438ba9f9cb5758f16d870e8f800",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-4200.png": "9a22a3f1f0e313ee8b16650e70772cc79cac204149559368fae70779d40a6298",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-4200.png": "9a22a3f1f0e313ee8b16650e70772cc79cac204149559368fae70779d40a6298"
+      }
+    },
+    {
+      "file": "800-1-false-5400.png",
+      "time": 5.4,
+      "mask_pixels": 88502,
+      "before": {
+        "foreground_mae": 3.6697475763259586,
+        "full_mae": 0.676625,
+        "channel_peak": 143,
+        "worst64": 11.656521739130435
+      },
+      "after": {
+        "foreground_mae": 3.6697475763259586,
+        "full_mae": 0.676625,
+        "channel_peak": 143,
+        "worst64": 11.656521739130435
+      },
+      "camera_screen_error": 0.2444211355714143,
+      "scale_error": 0.00015100232807374603,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-5400.png": "7a3fb31b4879a643ed7930c1c0105c2b00574ce46bfa9ee96a24cf8222ee4c80",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-5400.png": "d99bc23f5e2cdf83c07b6c62b04f506b57daade17f6bb2777d71a0f62fdcd096",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-5400.png": "d99bc23f5e2cdf83c07b6c62b04f506b57daade17f6bb2777d71a0f62fdcd096"
+      }
+    },
+    {
+      "file": "800-1-false-5600.png",
+      "time": 5.6,
+      "mask_pixels": 86609,
+      "before": {
+        "foreground_mae": 6.727133823659589,
+        "full_mae": 1.2138131944444444,
+        "channel_peak": 181,
+        "worst64": 26.760953382404487
+      },
+      "after": {
+        "foreground_mae": 6.727133823659589,
+        "full_mae": 1.2138131944444444,
+        "channel_peak": 181,
+        "worst64": 26.760953382404487
+      },
+      "camera_screen_error": 0.8030782516103173,
+      "scale_error": 3.113540969490458e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-5600.png": "65bbd9d8d9715a92af0ec6c8ed30eff054667673b62ff57af65e1e7bbccb41ae",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-5600.png": "83b25db63316c59993ffdadfab66abbaf0508f2d38aa022e20ac55ea6b09ccd8",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-5600.png": "83b25db63316c59993ffdadfab66abbaf0508f2d38aa022e20ac55ea6b09ccd8"
+      }
+    },
+    {
+      "file": "800-1-false-6300.png",
+      "time": 6.3,
+      "mask_pixels": 91743,
+      "before": {
+        "foreground_mae": 2.8009330412129536,
+        "full_mae": 0.5353458333333333,
+        "channel_peak": 94,
+        "worst64": 5.767150583546826
+      },
+      "after": {
+        "foreground_mae": 2.8009330412129536,
+        "full_mae": 0.5353458333333333,
+        "channel_peak": 94,
+        "worst64": 5.767150583546826
+      },
+      "camera_screen_error": 0.003834079423056152,
+      "scale_error": 7.499097914864805e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-6300.png": "0314374563bc694581949fd1307936f5e5ffc1bf17a06153d4b9bb185997cca4",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-6300.png": "a26bf9a81192c38f8bba55e3603cd9a028206bb272d386272dc083c89db7c29c",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-6300.png": "a26bf9a81192c38f8bba55e3603cd9a028206bb272d386272dc083c89db7c29c"
+      }
+    },
+    {
+      "file": "800-1-false-7600.png",
+      "time": 7.6,
+      "mask_pixels": 100820,
+      "before": {
+        "foreground_mae": 6.132364610196389,
+        "full_mae": 1.2880520833333333,
+        "channel_peak": 176,
+        "worst64": 13.749375936095856
+      },
+      "after": {
+        "foreground_mae": 6.132364610196389,
+        "full_mae": 1.2880520833333333,
+        "channel_peak": 176,
+        "worst64": 13.749375936095856
+      },
+      "camera_screen_error": 1.1831939202190802,
+      "scale_error": 1.4456670816009876e-07,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-7600.png": "35c68a4f92fefc97b61c3d87f9f139b81457cf868afe4301e0703b78bbdf1f29",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-7600.png": "f114513a0a4ce492b92df48e8e7802c3f8618ca7baaa2c6576cc2a612a1d3f05",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-7600.png": "f114513a0a4ce492b92df48e8e7802c3f8618ca7baaa2c6576cc2a612a1d3f05"
+      }
+    },
+    {
+      "file": "800-1-false-8300.png",
+      "time": 8.3,
+      "mask_pixels": 108514,
+      "before": {
+        "foreground_mae": 12.002841415239816,
+        "full_mae": 2.7134923611111113,
+        "channel_peak": 189,
+        "worst64": 27.989764003412
+      },
+      "after": {
+        "foreground_mae": 12.002841415239816,
+        "full_mae": 2.7134923611111113,
+        "channel_peak": 189,
+        "worst64": 27.989764003412
+      },
+      "camera_screen_error": 2.187455005633006,
+      "scale_error": 0.003670195327831749,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-8300.png": "e610c8a23899b10e0e5fd2b5e759797a4aceb9aeff83356b236c704b1981263e",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-8300.png": "e09083b515cecbf0c43e5bf9d6df591242674f4cac08baff4f0c7426a5c4f484",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-8300.png": "e09083b515cecbf0c43e5bf9d6df591242674f4cac08baff4f0c7426a5c4f484"
+      }
+    },
+    {
+      "file": "800-1-false-9500.png",
+      "time": 9.5,
+      "mask_pixels": 56989,
+      "before": {
+        "foreground_mae": 5.260769622207794,
+        "full_mae": 0.6245958333333334,
+        "channel_peak": 160,
+        "worst64": 14.523183643665572
+      },
+      "after": {
+        "foreground_mae": 5.260769622207794,
+        "full_mae": 0.6245958333333334,
+        "channel_peak": 160,
+        "worst64": 14.523183643665572
+      },
+      "camera_screen_error": 0.5824179845813949,
+      "scale_error": 8.678766566738716e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-9500.png": "1fdd9cc211c2810659cb430445421f6aacb2aecd315b442515f369f5cc9fc44e",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-9500.png": "18a108b3ed9ed885e9e7f2af73af2218b03a1fe5be93714ee041a7f4221fe4f6",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-9500.png": "18a108b3ed9ed885e9e7f2af73af2218b03a1fe5be93714ee041a7f4221fe4f6"
+      }
+    },
+    {
+      "file": "800-1-false-10000.png",
+      "time": 10,
+      "mask_pixels": 54178,
+      "before": {
+        "foreground_mae": 47.77610838347669,
+        "full_mae": 5.392529166666667,
+        "channel_peak": 191,
+        "worst64": 94.28020593712345
+      },
+      "after": {
+        "foreground_mae": 47.77610838347669,
+        "full_mae": 5.392529166666667,
+        "channel_peak": 191,
+        "worst64": 94.28020593712345
+      },
+      "camera_screen_error": 6.406726325736688,
+      "scale_error": 0.05622125350797391,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-10000.png": "7b9057c78f39f92125fbf478961df379b061fe038ce4ede702e82518126abc6e",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-10000.png": "65ce92e89e719c5b7a1303ac3ef18483929117d1107bf8b057faa5b32c12c251",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-10000.png": "65ce92e89e719c5b7a1303ac3ef18483929117d1107bf8b057faa5b32c12c251"
+      }
+    },
+    {
+      "file": "800-1-false-10700.png",
+      "time": 10.7,
+      "mask_pixels": 29790,
+      "before": {
+        "foreground_mae": 6.686953116258252,
+        "full_mae": 0.41500902777777776,
+        "channel_peak": 158,
+        "worst64": 15.643372157515252
+      },
+      "after": {
+        "foreground_mae": 6.686953116258252,
+        "full_mae": 0.41500902777777776,
+        "channel_peak": 158,
+        "worst64": 15.643372157515252
+      },
+      "camera_screen_error": 1.9569311495238086e-05,
+      "scale_error": 0.0006545936971091293,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-10700.png": "826758757b822c58be01043057d2f1c54884b522268ad744b7d00330d42956ff",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-10700.png": "52d22ddf8d811e5d3ee37b6db9f08b575214faee136fc4e97806a9b3f9554156",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-10700.png": "52d22ddf8d811e5d3ee37b6db9f08b575214faee136fc4e97806a9b3f9554156"
+      }
+    },
+    {
+      "file": "800-1-false-11500.png",
+      "time": 11.5,
+      "mask_pixels": 13221,
+      "before": {
+        "foreground_mae": 7.013413004563447,
+        "full_mae": 0.19317569444444443,
+        "channel_peak": 129,
+        "worst64": 25.409488139825218
+      },
+      "after": {
+        "foreground_mae": 7.013413004563447,
+        "full_mae": 0.19317569444444443,
+        "channel_peak": 129,
+        "worst64": 25.409488139825218
+      },
+      "camera_screen_error": 5.821906325906276e-05,
+      "scale_error": 2.5712965508462027e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-11500.png": "2bf36cdd62d01d8df3af8e0488638321768975a230ec1ad71ce17767744d5f54",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-false-11500.png": "5e968dac0b707f8aaa33c3fc8d16aef4cb5f428f05d6448e53da9c0a85ac67ab",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-11500.png": "5e968dac0b707f8aaa33c3fc8d16aef4cb5f428f05d6448e53da9c0a85ac67ab"
+      }
+    },
+    {
+      "file": "800-1-true-0.png",
+      "time": 0,
+      "mask_pixels": 32753,
+      "before": {
+        "foreground_mae": 2.97740664977254,
+        "full_mae": 0.20316458333333334,
+        "channel_peak": 13,
+        "worst64": 5.758787878787879
+      },
+      "after": {
+        "foreground_mae": 1.1186659746181011,
+        "full_mae": 0.07633263888888889,
+        "channel_peak": 5,
+        "worst64": 1.338855421686747
+      },
+      "camera_screen_error": 0.0,
+      "scale_error": 0.0,
+      "source_parent_scale": 0.985,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-0.png": "694e229284ffed198485b32350eb78f9622536cc1226da0a37c5822fd6fa0a23",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-0.png": "8ab9956d236842fe122dd8d91d83a84e213e4e704cca2b5b51b29384b0a68a21",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-0.png": "d1046cbc49e864d9e4b4dabcd92a2259743593fa1937216a92a2397b7e0ef152"
+      }
+    },
+    {
+      "file": "800-1-true-690.png",
+      "time": 0.69,
+      "mask_pixels": 29298,
+      "before": {
+        "foreground_mae": 3.1283932919198123,
+        "full_mae": 0.19094930555555556,
+        "channel_peak": 13,
+        "worst64": 7.0085470085470085
+      },
+      "after": {
+        "foreground_mae": 1.1919698728013288,
+        "full_mae": 0.07275486111111111,
+        "channel_peak": 6,
+        "worst64": 1.505012531328321
+      },
+      "camera_screen_error": 0.004733244916417871,
+      "scale_error": 3.3794946012633e-05,
+      "source_parent_scale": 0.985,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-690.png": "d42df4d97a14d2c38ca8b8c93a985a609bc22c7a397256115aee4db9a64d3793",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-690.png": "26184c5fbab35c58daa7559b9a4e359ac1e6cf05d328abba7e469dd82c9e38ca",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-690.png": "fc15eafbe4aaf26f4d5d84b522cefacfc7f8591217510c7fc733c066b8a34a47"
+      }
+    },
+    {
+      "file": "800-1-true-700.png",
+      "time": 0.7,
+      "mask_pixels": 45004,
+      "before": {
+        "foreground_mae": 4.042196249222291,
+        "full_mae": 0.3789895833333333,
+        "channel_peak": 86,
+        "worst64": 8.962849482956722
+      },
+      "after": {
+        "foreground_mae": 1.8396883240008295,
+        "full_mae": 0.17248611111111112,
+        "channel_peak": 58,
+        "worst64": 3.0147439729029686
+      },
+      "camera_screen_error": 0.17394553754222433,
+      "scale_error": 2.469321656761725e-05,
+      "source_parent_scale": 0.985,
+      "native_parent_scale": 0.985,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-700.png": "fe48448bc4739a270fd6d52621b46814175b5ae1322da4acb3e64a382ea5d9ad",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-700.png": "75360bfca466e2a22ded18aca3b20674e230f4d96fe8021b15f7c57ec214aff8",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-700.png": "0fb16a32b385a1fc3f84e6f7c873011b3a66d1ba7f16776455b06a5e2e1bb03f"
+      }
+    },
+    {
+      "file": "800-1-true-717.png",
+      "time": 0.717,
+      "mask_pixels": 45856,
+      "before": {
+        "foreground_mae": 3.8795286694580136,
+        "full_mae": 0.37062430555555553,
+        "channel_peak": 137,
+        "worst64": 8.510358516313113
+      },
+      "after": {
+        "foreground_mae": 2.029759827866946,
+        "full_mae": 0.19390972222222222,
+        "channel_peak": 131,
+        "worst64": 4.108669833729216
+      },
+      "camera_screen_error": 0.39273848713269766,
+      "scale_error": 0.00013606465795046319,
+      "source_parent_scale": 0.985941162109375,
+      "native_parent_scale": 0.9859411564860784,
+      "parent_scale_error": 5.623296606138695e-09,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-717.png": "e071f88ffc78f636a35b6159493175ab5512484d708c7d57d7cb5a19d42c523d",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-717.png": "cc0a6d6c9edbda7d981f9c0eca1214dfad1e55d1d7bc01677076a26f44ce51d0",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-717.png": "898dbd11e27434e7844ac531da871f88486d06299243693e3d20107283076ce0"
+      }
+    },
+    {
+      "file": "800-1-true-750.png",
+      "time": 0.75,
+      "mask_pixels": 46448,
+      "before": {
+        "foreground_mae": 3.503961419221495,
+        "full_mae": 0.3390666666666667,
+        "channel_peak": 155,
+        "worst64": 7.218635170603674
+      },
+      "after": {
+        "foreground_mae": 2.707479331725801,
+        "full_mae": 0.26199375,
+        "channel_peak": 159,
+        "worst64": 5.876028270188854
+      },
+      "camera_screen_error": 0.7975616345342202,
+      "scale_error": 0.00010177848657999533,
+      "source_parent_scale": 0.9876602172851563,
+      "native_parent_scale": 0.9876601000186929,
+      "parent_scale_error": 1.1726646342857805e-07,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-750.png": "f07197ba7d8afb5b85ff2e57a5af1cee956aab4b09585d950d6300b1f1ed8860",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-750.png": "f1d95ae27fcd41d23089643a4729427702b6b88d3dc2f997eba32b374d6fc375",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-750.png": "9a7eb859879b5d3741bd37b50c39bf74d8ac8215bd18b02957b592da397da51a"
+      }
+    },
+    {
+      "file": "800-1-true-800.png",
+      "time": 0.8,
+      "mask_pixels": 49799,
+      "before": {
+        "foreground_mae": 3.4095932314571242,
+        "full_mae": 0.35373819444444443,
+        "channel_peak": 150,
+        "worst64": 7.143036701860232
+      },
+      "after": {
+        "foreground_mae": 3.4390181864428335,
+        "full_mae": 0.3567909722222222,
+        "channel_peak": 165,
+        "worst64": 8.765906802160579
+      },
+      "camera_screen_error": 1.031232729589972,
+      "scale_error": 6.166675778995767e-05,
+      "source_parent_scale": 0.990093994140625,
+      "native_parent_scale": 0.9900940119264123,
+      "parent_scale_error": 1.7785787287394328e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-800.png": "9e5e59382b517d61f3890667c36aef624e14260d0fb194f3ca4cd5dd290e1ac6",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-800.png": "b352111a6a0dd30f240ae1d9b2f22229c2f41a57167d022bb9482160df6e83bb",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-800.png": "3f5cb78940dbb07e7b76b14afcbde2eda8b5b5486ab94e562fa5351114e109c8"
+      }
+    },
+    {
+      "file": "800-1-true-900.png",
+      "time": 0.9,
+      "mask_pixels": 57128,
+      "before": {
+        "foreground_mae": 4.76711361620688,
+        "full_mae": 0.5673659722222222,
+        "channel_peak": 166,
+        "worst64": 8.752884031572556
+      },
+      "after": {
+        "foreground_mae": 3.7532500116697007,
+        "full_mae": 0.44669930555555554,
+        "channel_peak": 167,
+        "worst64": 6.958698151587512
+      },
+      "camera_screen_error": 1.0918607625397543,
+      "scale_error": 1.5667782447215117e-05,
+      "source_parent_scale": 0.9943450927734375,
+      "native_parent_scale": 0.9943451751161774,
+      "parent_scale_error": 8.234273984886187e-08,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-900.png": "f3c16bbcf3579a59b49961e2907621cda6ebbd4a0546af9d0df5fa717b948527",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-900.png": "b1d189b6532a531cc31760f3df2f48648d750bbf4ca85aecd81ad2c54417d45e",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-900.png": "ff43ab5f9442af0a598d773113f2d929c387af75af868f08efb06df06ed38e5f"
+      }
+    },
+    {
+      "file": "800-1-true-1000.png",
+      "time": 1,
+      "mask_pixels": 69583,
+      "before": {
+        "foreground_mae": 7.972248968857336,
+        "full_mae": 1.15569375,
+        "channel_peak": 192,
+        "worst64": 15.979207758053912
+      },
+      "after": {
+        "foreground_mae": 7.646561181131407,
+        "full_mae": 1.1084805555555555,
+        "channel_peak": 189,
+        "worst64": 16.080473957047644
+      },
+      "camera_screen_error": 3.2466826883002335,
+      "scale_error": 2.8898150586931237e-06,
+      "source_parent_scale": 0.9976603698730468,
+      "native_parent_scale": 0.9976603685315057,
+      "parent_scale_error": 1.3415411004302769e-09,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-1000.png": "de9798631f14fbee2e8bc49f5657fcd8735204e3025455f59d166f8e483a61c5",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-1000.png": "9c807a735515fe311a018fe6158cc215a7f0a4a1af2434b1b28f7c8bac4573d1",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-1000.png": "79ec62347d72a5e45daa24262564c62286fc5a3f04afae185f295f790a5d6876"
+      }
+    },
+    {
+      "file": "800-1-true-1150.png",
+      "time": 1.15,
+      "mask_pixels": 87607,
+      "before": {
+        "foreground_mae": 8.650446501611363,
+        "full_mae": 1.578832638888889,
+        "channel_peak": 194,
+        "worst64": 20.506998697916668
+      },
+      "after": {
+        "foreground_mae": 8.650446501611363,
+        "full_mae": 1.578832638888889,
+        "channel_peak": 194,
+        "worst64": 20.506998697916668
+      },
+      "camera_screen_error": 4.001019685867115,
+      "scale_error": 8.697858368766909e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 0.9999999973182275,
+      "parent_scale_error": 2.6817724707584034e-09,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-1150.png": "c4fb1dbd50e71dc0d18e30d0b55816f1e30a9e56caf1d66ba5e3f4e58ea465b7",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-1150.png": "a83e46689e212bc5d0069e26b39768526944ac74e44e433d28e0cd3ec80b2444",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-1150.png": "a83e46689e212bc5d0069e26b39768526944ac74e44e433d28e0cd3ec80b2444"
+      }
+    },
+    {
+      "file": "800-1-true-1300.png",
+      "time": 1.3,
+      "mask_pixels": 102721,
+      "before": {
+        "foreground_mae": 3.586741432293948,
+        "full_mae": 0.7675701388888889,
+        "channel_peak": 165,
+        "worst64": 6.13916015625
+      },
+      "after": {
+        "foreground_mae": 3.586741432293948,
+        "full_mae": 0.7675701388888889,
+        "channel_peak": 165,
+        "worst64": 6.13916015625
+      },
+      "camera_screen_error": 1.0444545187100691,
+      "scale_error": 6.591080766504831e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-1300.png": "437c550d6bbc6e53af33b9c00f29b1e7fc70c91994948f285bf3e3994a5b7637",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-1300.png": "1924b8ecc790082e3ca00f29aa75e6b75aa57f2c615f830f9c594d9952d77333",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-1300.png": "1924b8ecc790082e3ca00f29aa75e6b75aa57f2c615f830f9c594d9952d77333"
+      }
+    },
+    {
+      "file": "800-1-true-2600.png",
+      "time": 2.6,
+      "mask_pixels": 107430,
+      "before": {
+        "foreground_mae": 3.9344906760991654,
+        "full_mae": 0.8805881944444445,
+        "channel_peak": 176,
+        "worst64": 6.833658854166667
+      },
+      "after": {
+        "foreground_mae": 3.9344906760991654,
+        "full_mae": 0.8805881944444445,
+        "channel_peak": 176,
+        "worst64": 6.833658854166667
+      },
+      "camera_screen_error": 0.7884606995781113,
+      "scale_error": 7.033218563101684e-09,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-2600.png": "83d8970c88e3904d31bb01bfcef5678a498a5f94bd604c80cd96cc2a39818ee5",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-2600.png": "307b56cd33eba71a461a43499098db31e62834d71b008cce28959faf4be8cf5e",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-2600.png": "307b56cd33eba71a461a43499098db31e62834d71b008cce28959faf4be8cf5e"
+      }
+    },
+    {
+      "file": "800-1-true-3000.png",
+      "time": 3,
+      "mask_pixels": 29963,
+      "before": {
+        "foreground_mae": 19.10160308825329,
+        "full_mae": 1.1923777777777778,
+        "channel_peak": 160,
+        "worst64": 29.144693003331746
+      },
+      "after": {
+        "foreground_mae": 19.10160308825329,
+        "full_mae": 1.1923777777777778,
+        "channel_peak": 160,
+        "worst64": 29.144693003331746
+      },
+      "camera_screen_error": 2.8427758710944566,
+      "scale_error": 0.00014075304126592858,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-3000.png": "bcf55b3da444c1b4d26ffc9cae292487f351dfd8b8aeb5062cbbb06d0606df9b",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-3000.png": "debce07c21d241bf26e4c8a85d84e74263377093963287d6733b06dcb9d8ce5b",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-3000.png": "debce07c21d241bf26e4c8a85d84e74263377093963287d6733b06dcb9d8ce5b"
+      }
+    },
+    {
+      "file": "800-1-true-3150.png",
+      "time": 3.15,
+      "mask_pixels": 82055,
+      "before": {
+        "foreground_mae": 53.713395486767006,
+        "full_mae": 9.182193055555556,
+        "channel_peak": 153,
+        "worst64": 105.06112469437653
+      },
+      "after": {
+        "foreground_mae": 53.713395486767006,
+        "full_mae": 9.182193055555556,
+        "channel_peak": 153,
+        "worst64": 105.06112469437653
+      },
+      "camera_screen_error": 15.9332727520356,
+      "scale_error": 0.010091546824294806,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-3150.png": "e5416ed85c20ab2b5f856e45b7f3d0f066206b952757828d8abef849426d9add",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-3150.png": "46e0e79af7b8ee83a3b0b8a4eef458fb06984094b2a99106eb55938119b83b38",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-3150.png": "46e0e79af7b8ee83a3b0b8a4eef458fb06984094b2a99106eb55938119b83b38"
+      }
+    },
+    {
+      "file": "800-1-true-4200.png",
+      "time": 4.2,
+      "mask_pixels": 110670,
+      "before": {
+        "foreground_mae": 6.499746995572423,
+        "full_mae": 1.4985979166666668,
+        "channel_peak": 185,
+        "worst64": 13.017985026041666
+      },
+      "after": {
+        "foreground_mae": 6.499746995572423,
+        "full_mae": 1.4985979166666668,
+        "channel_peak": 185,
+        "worst64": 13.017985026041666
+      },
+      "camera_screen_error": 1.2045460521720293,
+      "scale_error": 3.463895383304383e-05,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-4200.png": "788eed53c60e9ccb6616b4012a6df311fe49bea4c474c748af126e2be8288568",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-4200.png": "6b4df549a5cb64becb7ca754f16a9adb38d9665fcde90bce7133c0179e2d5f29",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-4200.png": "6b4df549a5cb64becb7ca754f16a9adb38d9665fcde90bce7133c0179e2d5f29"
+      }
+    },
+    {
+      "file": "800-1-true-5400.png",
+      "time": 5.4,
+      "mask_pixels": 88553,
+      "before": {
+        "foreground_mae": 3.3505546584154877,
+        "full_mae": 0.6181284722222222,
+        "channel_peak": 121,
+        "worst64": 10.76537216828479
+      },
+      "after": {
+        "foreground_mae": 3.3505546584154877,
+        "full_mae": 0.6181284722222222,
+        "channel_peak": 121,
+        "worst64": 10.76537216828479
+      },
+      "camera_screen_error": 0.1715174137672875,
+      "scale_error": 0.0001510023279147621,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-5400.png": "ebeeba3771dcf5378973bee92f10ce20af62a78a4397a569bf66db713e2a3651",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-5400.png": "9913bc84aaf6c6a25bff2c6bfde3630d56acdf0f76386de33d6d97e667d0120c",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-5400.png": "9913bc84aaf6c6a25bff2c6bfde3630d56acdf0f76386de33d6d97e667d0120c"
+      }
+    },
+    {
+      "file": "800-1-true-5600.png",
+      "time": 5.6,
+      "mask_pixels": 86763,
+      "before": {
+        "foreground_mae": 3.7851618777589526,
+        "full_mae": 0.6841916666666666,
+        "channel_peak": 155,
+        "worst64": 12.497472732109603
+      },
+      "after": {
+        "foreground_mae": 3.7851618777589526,
+        "full_mae": 0.6841916666666666,
+        "channel_peak": 155,
+        "worst64": 12.497472732109603
+      },
+      "camera_screen_error": 0.41010183408784445,
+      "scale_error": 3.115204729731147e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-5600.png": "3f93a2b987ba28c2775c85f2693eb4406dc097e145bb6236b41d7f7b9ed34a3d",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-5600.png": "5ca91b3c2730e15336f0653d5b0ca359700630e33392aa5090f7b9464621eab9",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-5600.png": "5ca91b3c2730e15336f0653d5b0ca359700630e33392aa5090f7b9464621eab9"
+      }
+    },
+    {
+      "file": "800-1-true-6300.png",
+      "time": 6.3,
+      "mask_pixels": 92864,
+      "before": {
+        "foreground_mae": 5.459040460601884,
+        "full_mae": 1.0561423611111111,
+        "channel_peak": 165,
+        "worst64": 21.02827380952381
+      },
+      "after": {
+        "foreground_mae": 5.459040460601884,
+        "full_mae": 1.0561423611111111,
+        "channel_peak": 165,
+        "worst64": 21.02827380952381
+      },
+      "camera_screen_error": 0.626196048744205,
+      "scale_error": 7.5000224746268884e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-6300.png": "17e7ec96945d0f477d3d59ccb184d55cd7b14ea4c7f741b8d017c058d5363e6a",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-6300.png": "848350dcc44c7328d0adb7fe7fd8ab36a49cfe78cbde6f4400ad09ae10fb108e",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-6300.png": "848350dcc44c7328d0adb7fe7fd8ab36a49cfe78cbde6f4400ad09ae10fb108e"
+      }
+    },
+    {
+      "file": "800-1-true-7600.png",
+      "time": 7.6,
+      "mask_pixels": 97787,
+      "before": {
+        "foreground_mae": 2.6515794533015637,
+        "full_mae": 0.5401875,
+        "channel_peak": 116,
+        "worst64": 6.89740202553941
+      },
+      "after": {
+        "foreground_mae": 2.6515794533015637,
+        "full_mae": 0.5401875,
+        "channel_peak": 116,
+        "worst64": 6.89740202553941
+      },
+      "camera_screen_error": 0.25449297619882005,
+      "scale_error": 1.4456778196780817e-07,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-7600.png": "13227aa0c41b978699c4e82cd73a8c912d9da9ec6cb55377c519aad2ac1bdd62",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-7600.png": "885f9c64258b045c3d30e78923244953aae34ab6b4b121c9806b4de3f133e79f",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-7600.png": "885f9c64258b045c3d30e78923244953aae34ab6b4b121c9806b4de3f133e79f"
+      }
+    },
+    {
+      "file": "800-1-true-8300.png",
+      "time": 8.3,
+      "mask_pixels": 107569,
+      "before": {
+        "foreground_mae": 5.19711379052825,
+        "full_mae": 1.1646840277777777,
+        "channel_peak": 189,
+        "worst64": 12.827537058152794
+      },
+      "after": {
+        "foreground_mae": 5.19711379052825,
+        "full_mae": 1.1646840277777777,
+        "channel_peak": 189,
+        "worst64": 12.827537058152794
+      },
+      "camera_screen_error": 0.7506810407615798,
+      "scale_error": 0.0036701953381084174,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-8300.png": "e72ab3427189fd06b19f43a85475c882da97bc00dbf0b8b881805a2e0f728cf7",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-8300.png": "a12be49346e147ce7485e5284f06f52c56118ac440ee5f2914c2db6109779aec",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-8300.png": "a12be49346e147ce7485e5284f06f52c56118ac440ee5f2914c2db6109779aec"
+      }
+    },
+    {
+      "file": "800-1-true-9500.png",
+      "time": 9.5,
+      "mask_pixels": 56563,
+      "before": {
+        "foreground_mae": 3.8788548462186707,
+        "full_mae": 0.4570826388888889,
+        "channel_peak": 145,
+        "worst64": 7.841429074269623
+      },
+      "after": {
+        "foreground_mae": 3.8788548462186707,
+        "full_mae": 0.4570826388888889,
+        "channel_peak": 145,
+        "worst64": 7.841429074269623
+      },
+      "camera_screen_error": 0.2459242654631297,
+      "scale_error": 8.678766615588529e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-9500.png": "706853d40c3b84ce7169b3e325a923f04d977ce077dfd3aaaebdd39bce3e2bd1",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-9500.png": "1c65f22c0d5fb1805c991ac3be9c15ddea29b7fe0a7c91dd52f98b5eac572379",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-9500.png": "1c65f22c0d5fb1805c991ac3be9c15ddea29b7fe0a7c91dd52f98b5eac572379"
+      }
+    },
+    {
+      "file": "800-1-true-10000.png",
+      "time": 10,
+      "mask_pixels": 54101,
+      "before": {
+        "foreground_mae": 47.76524155437669,
+        "full_mae": 5.383640277777777,
+        "channel_peak": 191,
+        "worst64": 94.47268746579091
+      },
+      "after": {
+        "foreground_mae": 47.76524155437669,
+        "full_mae": 5.383640277777777,
+        "channel_peak": 191,
+        "worst64": 94.47268746579091
+      },
+      "camera_screen_error": 6.403402929207679,
+      "scale_error": 0.056221253507940494,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-10000.png": "5a642cbf1291b26d5c6f8a96a452c51024d78ead7668c81907553082b47980a7",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-10000.png": "121b98e76920a77c40ade8bc73166bf1c5688f1a1f269e9333e06592c4775b43",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-10000.png": "121b98e76920a77c40ade8bc73166bf1c5688f1a1f269e9333e06592c4775b43"
+      }
+    },
+    {
+      "file": "800-1-true-10700.png",
+      "time": 10.7,
+      "mask_pixels": 29790,
+      "before": {
+        "foreground_mae": 6.687132147252993,
+        "full_mae": 0.4150201388888889,
+        "channel_peak": 158,
+        "worst64": 15.644481419855795
+      },
+      "after": {
+        "foreground_mae": 6.687132147252993,
+        "full_mae": 0.4150201388888889,
+        "channel_peak": 158,
+        "worst64": 15.644481419855795
+      },
+      "camera_screen_error": 2.1580075853491996e-05,
+      "scale_error": 0.0006545937120475132,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-10700.png": "826758757b822c58be01043057d2f1c54884b522268ad744b7d00330d42956ff",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-10700.png": "b79930ee1668c2afa4bb60106b388176eebe777d28f9f8320286c515a04450f3",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-10700.png": "b79930ee1668c2afa4bb60106b388176eebe777d28f9f8320286c515a04450f3"
+      }
+    },
+    {
+      "file": "800-1-true-11500.png",
+      "time": 11.5,
+      "mask_pixels": 13221,
+      "before": {
+        "foreground_mae": 7.013413004563447,
+        "full_mae": 0.19317569444444443,
+        "channel_peak": 129,
+        "worst64": 25.409488139825218
+      },
+      "after": {
+        "foreground_mae": 7.013413004563447,
+        "full_mae": 0.19317569444444443,
+        "channel_peak": 129,
+        "worst64": 25.409488139825218
+      },
+      "camera_screen_error": 5.821912283037892e-05,
+      "scale_error": 2.57129687908364e-06,
+      "source_parent_scale": 1,
+      "native_parent_scale": 1.0,
+      "parent_scale_error": 0.0,
+      "png_sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-11500.png": "2bf36cdd62d01d8df3af8e0488638321768975a230ec1ad71ce17767744d5f54",
+        "build\\verification\\fume-mounted-kotlin-before-entry\\800-1-true-11500.png": "5e968dac0b707f8aaa33c3fc8d16aef4cb5f428f05d6448e53da9c0a85ac67ab",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-11500.png": "5e968dac0b707f8aaa33c3fc8d16aef4cb5f428f05d6448e53da9c0a85ac67ab"
+      }
+    }
+  ],
+  "mean_before": 8.553688383089717,
+  "mean_after": 8.140110867720699,
+  "max_parent_scale_error": 1.284950658098083e-07,
+  "max_camera_screen_error": 15.9332727520356,
+  "max_scale_error": 0.05622125350797391,
+  "status": "Entry behavior verified independently. Camera/raster differences remain; NOT final visual or Android runtime acceptance.",
+  "entry_frames": {
+    "before": 3.6997089576545514,
+    "after": 2.5106736009686212
+  }
+}

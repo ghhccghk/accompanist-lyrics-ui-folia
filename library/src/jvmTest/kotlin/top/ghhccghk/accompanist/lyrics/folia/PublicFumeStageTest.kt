@@ -69,7 +69,7 @@ class PublicFumeStageTest {
         waitUntil(timeoutMillis=30000){ready};waitForIdle();val track=assertNotNull(prepared).track!!
         val expected=times.associateWith{t->runOnIdle{time=t};waitForIdle();hash()}
         runOnIdle{time=1000;public=true};waitUntil(timeoutMillis=30000){(status?.mainUnitCount?:0)>0};waitForIdle()
-        val out=File("../build/verification/fume-public-kotlin").apply{mkdirs()}
+        val out=File("../build/verification/fume-public-kotlin-entry").apply{mkdirs()}
         val report=mutableListOf("# time\tx\ty\tscale\trestore\tnodes")
         for(t in times){
             runOnIdle{time=t};waitForIdle();assertEquals(expected[t],hash(),"actual-core public/internal whole article $width/$glow/$stepped/$t")

@@ -12,6 +12,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.*
 import androidx.compose.ui.semantics.*
@@ -43,6 +45,7 @@ internal fun FumeArticleStage(lines:List<FumeLyric>,time:()->Double,currentLine:
     textStyle:TextStyle,theme:FumeFrameTheme,modifier:Modifier=Modifier,fontScale:Double=1.0,
     heroScale:Double=1.0,hold:Double=1.0,cameraSpeed:Double=1.0,stepped:Boolean=false,
     reducedMotion:Boolean=false,showStamp:Boolean=true,layoutSeed:String="Fume",floatOrigin:Double=0.0,
+    stageEntryEnabled:Boolean=true,
     onClick:((Int)->Unit)?=null,onLongPress:((Int)->Unit)?=null,
     onState:(Boolean,String?)->Unit={_,_->},onPrepared:(FumePreparedStage)->Unit={}) {
     val density=LocalDensity.current;val resolver=LocalFontFamilyResolver.current;val direction=LocalLayoutDirection.current
@@ -111,12 +114,15 @@ internal fun FumeArticleStage(lines:List<FumeLyric>,time:()->Double,currentLine:
                 }else outcome.second?.let{up->if(hit(up.position)==i)click?.invoke(i);up.consume()}
             }
         }
-        Canvas(Modifier.fillMaxSize().then(input).semantics{
+        Canvas(Modifier.fillMaxSize().graphicsLayer{
+            val scale=if(stageEntryEnabled)fumeStageEntryScale(clock(),p.article.firstStart,reducedMotion).toFloat()else 1f
+            scaleX=scale;scaleY=scale
+        }.then(input).semantics{
             contentDescription=visible.joinToString("\n"){it.line.text}
             customActions=visible.flatMap{b->buildList{
                 if(onClick!=null)add(CustomAccessibilityAction(b.line.text){click?.invoke(b.sourceIndex);true})
                 if(onLongPress!=null)add(CustomAccessibilityAction("长按 ${b.line.text}"){longPress?.invoke(b.sourceIndex);true})
             }}
-        }){val t=clock();p.drawing.draw(this,viewport,t,frame(t),theme,hold,showStamp&&!reducedMotion)}
+        }){val t=clock();clipRect{p.drawing.draw(this,viewport,t,frame(t),theme,hold,showStamp&&!reducedMotion)}}
     }
 }

@@ -20,7 +20,7 @@ import PendoloActiveLyricSweep from'./folia-major/src/components/visualizer/pend
 export default function Reference(p:any){
  const{lines,targetLineIndex,currentLineIndex,currentTime,theme,viewportSize,pendoloTuning,resolvedMode}=p;
  const fontFamily=theme.fontFamily,fontWeight=theme.fontWeight,subtitleFontFamily=fontFamily,subtitleTheme=theme;
- const subtitleFontScale=1,lyricsFontScale=1,hideTranslationSubtitle=false,manualScrollAnchorIndex=null;
+ const subtitleFontScale=p.subtitleFontScale??1,lyricsFontScale=p.lyricsFontScale??1,hideTranslationSubtitle=false,manualScrollAnchorIndex=null;
  const primaryTextColor=theme.primaryColor,secondaryTextColor=theme.secondaryColor,accentTextColor=theme.accentColor;
  const motionProfile=resolvePendoloMotionProfile(theme.animationIntensity),wheelRailRef=useRef(null);
  const wheelRotationDeg=useMemo(()=>motionValue(0),[]),textRotationCorrectionDeg=useTransform(wheelRotationDeg,value=>-value*.65);

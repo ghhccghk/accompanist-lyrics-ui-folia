@@ -1,0 +1,267 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "DPR": 1,
+    "frames": 16,
+    "rows": 58,
+    "height": 600,
+    "scope": "Independent caller lyric/subtitle scales. Actual original useSpring/angle declarations and text-wheel JSX remain mounted. Controlled performance/RAF60Hz plus exact probes,one browser task per frame; original WAAPI/CSS transitions media-anchored at their start/creation times. Source target selection only rerenders on changes. Smart-beat zero; explicit alternating chorus and keyword palette; no audio/gears. Native uses semantic media history and exact derivative; differences are reported, not accepted as parity."
+  },
+  "status": "Actual original independent font scales vs native wheel; not theme acceptance or a claim of improved raster parity.",
+  "pendolo-typography-stage-kotlin": {
+    "frames": [
+      {
+        "file": "arabic-800-0.75-1.5-0.png",
+        "foreground_mae": 6.920399022801303,
+        "full_mae": 0.08028472222222222
+      },
+      {
+        "file": "arabic-800-0.75-1.5-24000.png",
+        "foreground_mae": 4.494819257038148,
+        "full_mae": 0.14907291666666667
+      },
+      {
+        "file": "arabic-800-0.75-1.5-48000.png",
+        "foreground_mae": 9.394255396999634,
+        "full_mae": 0.1497375
+      },
+      {
+        "file": "arabic-800-0.75-1.5-9000.png",
+        "foreground_mae": 7.7362335323666,
+        "full_mae": 0.30102986111111113
+      },
+      {
+        "file": "cjk-380-1-1.75-0.png",
+        "foreground_mae": 8.37198136868506,
+        "full_mae": 0.5500862573099415
+      },
+      {
+        "file": "cjk-380-1-1.75-24000.png",
+        "foreground_mae": 4.634552564987348,
+        "full_mae": 0.5322997076023391
+      },
+      {
+        "file": "cjk-380-1-1.75-48000.png",
+        "foreground_mae": 9.840166813988803,
+        "full_mae": 0.6586461988304093
+      },
+      {
+        "file": "cjk-380-1-1.75-9000.png",
+        "foreground_mae": 9.44000819000819,
+        "full_mae": 0.8943391812865497
+      },
+      {
+        "file": "latin-380-1.5-1-0.png",
+        "foreground_mae": 5.099345488546049,
+        "full_mae": 0.4640716374269006
+      },
+      {
+        "file": "latin-380-1.5-1-24000.png",
+        "foreground_mae": 2.4660664092258386,
+        "full_mae": 0.6832251461988305
+      },
+      {
+        "file": "latin-380-1.5-1-48000.png",
+        "foreground_mae": 10.09289897510981,
+        "full_mae": 0.6157119883040936
+      },
+      {
+        "file": "latin-380-1.5-1-9000.png",
+        "foreground_mae": 6.83831715210356,
+        "full_mae": 1.0848947368421054
+      },
+      {
+        "file": "latin-800-1.5-1-0.png",
+        "foreground_mae": 7.673807167665949,
+        "full_mae": 0.2944673611111111
+      },
+      {
+        "file": "latin-800-1.5-1-24000.png",
+        "foreground_mae": 1.2359524463120553,
+        "full_mae": 0.20975
+      },
+      {
+        "file": "latin-800-1.5-1-48000.png",
+        "foreground_mae": 6.567068588046923,
+        "full_mae": 0.29230208333333335
+      },
+      {
+        "file": "latin-800-1.5-1-9000.png",
+        "foreground_mae": 4.862012309266966,
+        "full_mae": 0.5730729166666667
+      }
+    ],
+    "png_sha256": {
+      "build/verification/pendolo-typography-stage-browser/arabic-800-0.75-1.5-0.png": "9279091e77309c31bc05d3410fb47cb0057c898c371fdbc3031a1084555c7ed8",
+      "build/verification/pendolo-typography-stage-kotlin/arabic-800-0.75-1.5-0.png": "67f8ec0a19c0cfa4d13facbaae8f067a7b8212b88743af89fc79fec51dc614f1",
+      "build/verification/pendolo-typography-stage-browser/arabic-800-0.75-1.5-24000.png": "a6e17234bf4e5ddd91388bf933e6f8b67d0241d23e2bb3fa8ceb57087e64611b",
+      "build/verification/pendolo-typography-stage-kotlin/arabic-800-0.75-1.5-24000.png": "89a18caf905c34b60442aa134a9b06f37b97f938d8972de5691dc602b9e722bd",
+      "build/verification/pendolo-typography-stage-browser/arabic-800-0.75-1.5-48000.png": "81511a5f5ea725c4392c7b291a9689f4faf83a0b1bcb427c9028c9294dff6f22",
+      "build/verification/pendolo-typography-stage-kotlin/arabic-800-0.75-1.5-48000.png": "2e24526e4d46c66b1cfd358922402034afc28cb6d44d52b2e4576c1d255a9b0b",
+      "build/verification/pendolo-typography-stage-browser/arabic-800-0.75-1.5-9000.png": "a9b8a27cc4cab93e97da7b40d77a2329a97b739a1c40c69e4a2d35ae9c6f64fd",
+      "build/verification/pendolo-typography-stage-kotlin/arabic-800-0.75-1.5-9000.png": "17b2857b330cf789a949ad2471ab1d5426ada67bec4efc48c6ba76239b3aec64",
+      "build/verification/pendolo-typography-stage-browser/cjk-380-1-1.75-0.png": "8cb4263a439ebe041eaa42640e87eb4d479767d2d4be910c600d0cd48b5598f9",
+      "build/verification/pendolo-typography-stage-kotlin/cjk-380-1-1.75-0.png": "02ad726e77d9645648e0e4d427c31b160dbcd56a1114b0c9a1fad1bf5e20643f",
+      "build/verification/pendolo-typography-stage-browser/cjk-380-1-1.75-24000.png": "a89b6468468aa10f7502f09cc9b30113eaa49f1eb9342acf54296a8985570bbf",
+      "build/verification/pendolo-typography-stage-kotlin/cjk-380-1-1.75-24000.png": "df4a7afee009d6c4d20bb348687d327a0891eb03cb89006efef69364e107c982",
+      "build/verification/pendolo-typography-stage-browser/cjk-380-1-1.75-48000.png": "38ae597539fdc64d46fd2324e1984c8774e12708ce011dd1f83b88d97974c1cd",
+      "build/verification/pendolo-typography-stage-kotlin/cjk-380-1-1.75-48000.png": "14fe6ba9765609311b2387d90b0a24e100794d3e98a8234ee85dd5c16ad89219",
+      "build/verification/pendolo-typography-stage-browser/cjk-380-1-1.75-9000.png": "7fd910a4176778c226375f37b27eae6f5bcf862e949d995b0fef8ff9ac33d264",
+      "build/verification/pendolo-typography-stage-kotlin/cjk-380-1-1.75-9000.png": "280b720c61e1f0e78416416edda3ba74bd4d4be444b7247f01a444a42acd8a8e",
+      "build/verification/pendolo-typography-stage-browser/latin-380-1.5-1-0.png": "30705c1f73bf0bd64943e2aaffc00aaaf5c7996ee9a6eaec37c156bcdb86c40f",
+      "build/verification/pendolo-typography-stage-kotlin/latin-380-1.5-1-0.png": "4a39ba344658eee1332ac97e3354b545bf13a14584b4bb422d709cf5d17f7ed4",
+      "build/verification/pendolo-typography-stage-browser/latin-380-1.5-1-24000.png": "84aad8d10317c1c3a8eab8045e58b36c2d19f59c2620b4aae5b3d3351ba2a91d",
+      "build/verification/pendolo-typography-stage-kotlin/latin-380-1.5-1-24000.png": "dd8d778baed92f1263c2634618983c6d1e921a0ac6be50bda09306e760cc9c04",
+      "build/verification/pendolo-typography-stage-browser/latin-380-1.5-1-48000.png": "ef6cf0915a1093017b56b2f484008cd20580ad871f909e7e2be36b19735051bd",
+      "build/verification/pendolo-typography-stage-kotlin/latin-380-1.5-1-48000.png": "bbbdca2cab7e6edb22f6387cc12eab6babc0254c6bda44e8b04115c36ad6296f",
+      "build/verification/pendolo-typography-stage-browser/latin-380-1.5-1-9000.png": "3ef2def3a9e2681155bbfa3c0e7940f95534c4e6cfc44750c5985f95fbaf7c8a",
+      "build/verification/pendolo-typography-stage-kotlin/latin-380-1.5-1-9000.png": "58d5bbad141368986e1b5861641b9cbd04eb84a67f05249009c142cb98686ff6",
+      "build/verification/pendolo-typography-stage-browser/latin-800-1.5-1-0.png": "add243e803cb59dcc5fce2e4aa0b41a3f1bad546e364ebcc0f1f6177c1672f4c",
+      "build/verification/pendolo-typography-stage-kotlin/latin-800-1.5-1-0.png": "82a81951d23f6929a4834b392fc9c9d4b6ea7efc3aa96adbb477bb19679c0c19",
+      "build/verification/pendolo-typography-stage-browser/latin-800-1.5-1-24000.png": "cf654c047c6eb3964ca9716c1280c563e5d4faff8b556fedf2c929ff59359046",
+      "build/verification/pendolo-typography-stage-kotlin/latin-800-1.5-1-24000.png": "017e4df7f4e66a755e95d72f970484874cfcb1c9549295cd53470aee89b2adbf",
+      "build/verification/pendolo-typography-stage-browser/latin-800-1.5-1-48000.png": "ad429b065f27b90f6231b9cd337e2b5dfd03c39439e706a96ba467f0a2bc719d",
+      "build/verification/pendolo-typography-stage-kotlin/latin-800-1.5-1-48000.png": "da0e8512d6dae9ef2b4a38fa9759e77be0aab4488348d8576ba3cb8feed1c330",
+      "build/verification/pendolo-typography-stage-browser/latin-800-1.5-1-9000.png": "7f89d28d07099470ed166a2efe00b140df2fce9d86e04aa8b7bd6ed2a2bc8eb1",
+      "build/verification/pendolo-typography-stage-kotlin/latin-800-1.5-1-9000.png": "fc7c890d5e882f70072ac68e34912227188bc0fb4d79cc6bcf26d1702b6f8529"
+    },
+    "numeric_fields": 406,
+    "chorus_maximum_errors": {
+      "0": 4.0754032133438756e-06,
+      "1": 0.000102986042022718,
+      "2": 1.1600494376207138e-07
+    },
+    "max_content_rect_error": 0.010181813638183712,
+    "mean_foreground_mae": 6.604242792697015,
+    "max_foreground_mae": 10.09289897510981
+  },
+  "pendolo-typography-stage-source-rotation-kotlin": {
+    "frames": [
+      {
+        "file": "arabic-800-0.75-1.5-0.png",
+        "foreground_mae": 6.920399022801303,
+        "full_mae": 0.08028472222222222
+      },
+      {
+        "file": "arabic-800-0.75-1.5-24000.png",
+        "foreground_mae": 4.494819257038148,
+        "full_mae": 0.14907291666666667
+      },
+      {
+        "file": "arabic-800-0.75-1.5-48000.png",
+        "foreground_mae": 9.394255396999634,
+        "full_mae": 0.1497375
+      },
+      {
+        "file": "arabic-800-0.75-1.5-9000.png",
+        "foreground_mae": 7.7362335323666,
+        "full_mae": 0.30102986111111113
+      },
+      {
+        "file": "cjk-380-1-1.75-0.png",
+        "foreground_mae": 8.37198136868506,
+        "full_mae": 0.5500862573099415
+      },
+      {
+        "file": "cjk-380-1-1.75-24000.png",
+        "foreground_mae": 4.634552564987348,
+        "full_mae": 0.5322997076023391
+      },
+      {
+        "file": "cjk-380-1-1.75-48000.png",
+        "foreground_mae": 9.840166813988803,
+        "full_mae": 0.6586461988304093
+      },
+      {
+        "file": "cjk-380-1-1.75-9000.png",
+        "foreground_mae": 9.44000819000819,
+        "full_mae": 0.8943391812865497
+      },
+      {
+        "file": "latin-380-1.5-1-0.png",
+        "foreground_mae": 5.099345488546049,
+        "full_mae": 0.4640716374269006
+      },
+      {
+        "file": "latin-380-1.5-1-24000.png",
+        "foreground_mae": 2.4660664092258386,
+        "full_mae": 0.6832251461988305
+      },
+      {
+        "file": "latin-380-1.5-1-48000.png",
+        "foreground_mae": 10.09289897510981,
+        "full_mae": 0.6157119883040936
+      },
+      {
+        "file": "latin-380-1.5-1-9000.png",
+        "foreground_mae": 6.83831715210356,
+        "full_mae": 1.0848947368421054
+      },
+      {
+        "file": "latin-800-1.5-1-0.png",
+        "foreground_mae": 7.673807167665949,
+        "full_mae": 0.2944673611111111
+      },
+      {
+        "file": "latin-800-1.5-1-24000.png",
+        "foreground_mae": 1.2359524463120553,
+        "full_mae": 0.20975
+      },
+      {
+        "file": "latin-800-1.5-1-48000.png",
+        "foreground_mae": 6.567068588046923,
+        "full_mae": 0.29230208333333335
+      },
+      {
+        "file": "latin-800-1.5-1-9000.png",
+        "foreground_mae": 4.862012309266966,
+        "full_mae": 0.5730729166666667
+      }
+    ],
+    "png_sha256": {
+      "build/verification/pendolo-typography-stage-browser/arabic-800-0.75-1.5-0.png": "9279091e77309c31bc05d3410fb47cb0057c898c371fdbc3031a1084555c7ed8",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/arabic-800-0.75-1.5-0.png": "67f8ec0a19c0cfa4d13facbaae8f067a7b8212b88743af89fc79fec51dc614f1",
+      "build/verification/pendolo-typography-stage-browser/arabic-800-0.75-1.5-24000.png": "a6e17234bf4e5ddd91388bf933e6f8b67d0241d23e2bb3fa8ceb57087e64611b",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/arabic-800-0.75-1.5-24000.png": "89a18caf905c34b60442aa134a9b06f37b97f938d8972de5691dc602b9e722bd",
+      "build/verification/pendolo-typography-stage-browser/arabic-800-0.75-1.5-48000.png": "81511a5f5ea725c4392c7b291a9689f4faf83a0b1bcb427c9028c9294dff6f22",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/arabic-800-0.75-1.5-48000.png": "2e24526e4d46c66b1cfd358922402034afc28cb6d44d52b2e4576c1d255a9b0b",
+      "build/verification/pendolo-typography-stage-browser/arabic-800-0.75-1.5-9000.png": "a9b8a27cc4cab93e97da7b40d77a2329a97b739a1c40c69e4a2d35ae9c6f64fd",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/arabic-800-0.75-1.5-9000.png": "17b2857b330cf789a949ad2471ab1d5426ada67bec4efc48c6ba76239b3aec64",
+      "build/verification/pendolo-typography-stage-browser/cjk-380-1-1.75-0.png": "8cb4263a439ebe041eaa42640e87eb4d479767d2d4be910c600d0cd48b5598f9",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/cjk-380-1-1.75-0.png": "02ad726e77d9645648e0e4d427c31b160dbcd56a1114b0c9a1fad1bf5e20643f",
+      "build/verification/pendolo-typography-stage-browser/cjk-380-1-1.75-24000.png": "a89b6468468aa10f7502f09cc9b30113eaa49f1eb9342acf54296a8985570bbf",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/cjk-380-1-1.75-24000.png": "df4a7afee009d6c4d20bb348687d327a0891eb03cb89006efef69364e107c982",
+      "build/verification/pendolo-typography-stage-browser/cjk-380-1-1.75-48000.png": "38ae597539fdc64d46fd2324e1984c8774e12708ce011dd1f83b88d97974c1cd",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/cjk-380-1-1.75-48000.png": "14fe6ba9765609311b2387d90b0a24e100794d3e98a8234ee85dd5c16ad89219",
+      "build/verification/pendolo-typography-stage-browser/cjk-380-1-1.75-9000.png": "7fd910a4176778c226375f37b27eae6f5bcf862e949d995b0fef8ff9ac33d264",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/cjk-380-1-1.75-9000.png": "280b720c61e1f0e78416416edda3ba74bd4d4be444b7247f01a444a42acd8a8e",
+      "build/verification/pendolo-typography-stage-browser/latin-380-1.5-1-0.png": "30705c1f73bf0bd64943e2aaffc00aaaf5c7996ee9a6eaec37c156bcdb86c40f",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/latin-380-1.5-1-0.png": "4a39ba344658eee1332ac97e3354b545bf13a14584b4bb422d709cf5d17f7ed4",
+      "build/verification/pendolo-typography-stage-browser/latin-380-1.5-1-24000.png": "84aad8d10317c1c3a8eab8045e58b36c2d19f59c2620b4aae5b3d3351ba2a91d",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/latin-380-1.5-1-24000.png": "dd8d778baed92f1263c2634618983c6d1e921a0ac6be50bda09306e760cc9c04",
+      "build/verification/pendolo-typography-stage-browser/latin-380-1.5-1-48000.png": "ef6cf0915a1093017b56b2f484008cd20580ad871f909e7e2be36b19735051bd",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/latin-380-1.5-1-48000.png": "bbbdca2cab7e6edb22f6387cc12eab6babc0254c6bda44e8b04115c36ad6296f",
+      "build/verification/pendolo-typography-stage-browser/latin-380-1.5-1-9000.png": "3ef2def3a9e2681155bbfa3c0e7940f95534c4e6cfc44750c5985f95fbaf7c8a",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/latin-380-1.5-1-9000.png": "58d5bbad141368986e1b5861641b9cbd04eb84a67f05249009c142cb98686ff6",
+      "build/verification/pendolo-typography-stage-browser/latin-800-1.5-1-0.png": "add243e803cb59dcc5fce2e4aa0b41a3f1bad546e364ebcc0f1f6177c1672f4c",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/latin-800-1.5-1-0.png": "82a81951d23f6929a4834b392fc9c9d4b6ea7efc3aa96adbb477bb19679c0c19",
+      "build/verification/pendolo-typography-stage-browser/latin-800-1.5-1-24000.png": "cf654c047c6eb3964ca9716c1280c563e5d4faff8b556fedf2c929ff59359046",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/latin-800-1.5-1-24000.png": "017e4df7f4e66a755e95d72f970484874cfcb1c9549295cd53470aee89b2adbf",
+      "build/verification/pendolo-typography-stage-browser/latin-800-1.5-1-48000.png": "ad429b065f27b90f6231b9cd337e2b5dfd03c39439e706a96ba467f0a2bc719d",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/latin-800-1.5-1-48000.png": "da0e8512d6dae9ef2b4a38fa9759e77be0aab4488348d8576ba3cb8feed1c330",
+      "build/verification/pendolo-typography-stage-browser/latin-800-1.5-1-9000.png": "7f89d28d07099470ed166a2efe00b140df2fce9d86e04aa8b7bd6ed2a2bc8eb1",
+      "build/verification/pendolo-typography-stage-source-rotation-kotlin/latin-800-1.5-1-9000.png": "fc7c890d5e882f70072ac68e34912227188bc0fb4d79cc6bcf26d1702b6f8529"
+    },
+    "numeric_fields": 406,
+    "chorus_maximum_errors": {
+      "0": 4.0754032133438756e-06,
+      "1": 0.000102986042022718,
+      "2": 1.1600494376207138e-07
+    },
+    "max_content_rect_error": 0.010181813638183712,
+    "mean_foreground_mae": 6.604242792697015,
+    "max_foreground_mae": 10.09289897510981
+  },
+  "unchanged_prior_native_pngs": 24
+}

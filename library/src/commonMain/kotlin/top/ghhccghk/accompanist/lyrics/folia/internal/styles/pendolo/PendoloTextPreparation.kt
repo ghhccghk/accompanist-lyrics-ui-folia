@@ -46,16 +46,26 @@ internal fun preparePendoloText(text: String, fontPx: Double, width: Double, mea
         return segments.sumOf { value -> cappellaCanvasAdvance(value, style, resolver, density) ?:
             (measurer.measure(value, style, softWrap = false).getPathForRange(0, value.length).getBounds().width / density.density.toDouble()) }
     }
-    val fits = safe.split('\n').all { advance(it) <= width }
-    val layout = if (fits) measurer.measure(safe, style, softWrap = false) else
-        measurer.measure(safe, style, constraints = Constraints(maxWidth =
-            floor(max(1.0, width) * density.density).toInt().coerceAtLeast(1)))
+    // Active source uses pretext, whereas idle nodes use CSS wrapping. In
+    // particular, after splitting an oversized word pretext tests the NEXT
+    // WHOLE word against the residual space, instead of packing its prefix.
+    // Restrict this independent segment walk to ASCII: complex scripts retain
+    // platform line breaking and complete shaping until separately calibrated.
+    val asciiActive = style.letterSpacing == TextUnit.Unspecified && safe.all { it in ' '..'~' || it == '\n' }
+    val strings = if(asciiActive) pendoloAsciiWrap(safe,width,::advance) else {
+        val fits = safe.split('\n').all { advance(it) <= width }
+        val layout = if (fits) measurer.measure(safe, style, softWrap = false) else
+            measurer.measure(safe, style, constraints = Constraints(maxWidth =
+                floor(max(1.0, width) * density.density).toInt().coerceAtLeast(1)))
+        (0 until layout.lineCount).map { i ->
+            val a=layout.getLineStart(i)
+            val b=layout.getLineEnd(i).let { e -> if(e>a && safe[e-1]=='\n')e-1 else e }
+            check(a in graphemeBoundaries(safe) && b in graphemeBoundaries(safe)) { "Pendolo platform wrap cuts a grapheme" }
+            safe.substring(a,b)
+        }
+    }
     var cursor = 0
-    val rows = (0 until layout.lineCount).map { i ->
-        val a = layout.getLineStart(i)
-        val b = layout.getLineEnd(i).let { e -> if (e > a && safe[e - 1] == '\n') e - 1 else e }
-        check(a in graphemeBoundaries(safe) && b in graphemeBoundaries(safe)) { "Pendolo platform wrap cuts a grapheme" }
-        val row = safe.substring(a, b)
+    val rows = strings.map { row ->
         val chars = pendoloGraphemes(row)
         val start = cursor
         cursor += chars.size
@@ -75,4 +85,41 @@ internal fun preparePendoloText(text: String, fontPx: Double, width: Double, mea
         PendoloTextRow(row, advance(row), start, cursor, offsets, paragraph, runs)
     }
     return PendoloPreparedText(rows, lineHeight, max(rows.size, 1) * lineHeight, naturalFontMetrics(style, resolver, density))
+}
+
+/** Independent ASCII segment walker for the source pre-wrap active layout.
+ * Whole words use shaped advance; emergency cuts use individual grapheme fit
+ * advances like pretext0.0.9. This determines line boundaries only: drawing
+ * and prefix masks still shape complete rows, including ligatures. */
+internal fun pendoloAsciiWrap(text:String,width:Double,advance:(String)->Double):List<String> {
+    val limit=max(1.0,width)
+    return text.split('\n').flatMap { paragraph ->
+        val result=mutableListOf<String>()
+        var line=""; var used=0.0
+        fun flush(){ result+=line;line="";used=0.0 }
+        for(token in Regex(" +|[^ ]+").findAll(paragraph).map{it.value}) {
+            if(token.all{it==' '}) { line+=token;used+=advance(token);continue }
+            val whole=advance(token)
+            if(line.isNotEmpty() && used+whole>limit)flush()
+            if(whole<=limit){line+=token;used+=whole;continue}
+            val chars=pendoloGraphemes(token)
+            var cursor=0
+            while(cursor<chars.size){
+                var end=cursor;var fit=0.0;var preferred=-1
+                while(end<chars.size){
+                    val part=advance(chars[end])
+                    if(end>cursor && fit+part>limit)break
+                    fit+=part;end++
+                    if(chars[end-1]=="-")preferred=end
+                }
+                if(end<chars.size && preferred>cursor)end=preferred
+                line+=chars.subList(cursor,end).joinToString("")
+                used=chars.subList(cursor,end).sumOf(advance)
+                cursor=end
+                if(cursor<chars.size)flush()
+            }
+        }
+        if(line.isNotEmpty()||result.isEmpty())flush()
+        result
+    }
 }

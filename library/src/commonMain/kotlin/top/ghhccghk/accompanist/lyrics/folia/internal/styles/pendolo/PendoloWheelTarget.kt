@@ -24,9 +24,16 @@ internal data class PendoloStageLine(val lyric: PendoloLyric, val subtitles: Pen
 internal data class PendoloPreparedSubtitle(val track: PendoloSubtitleTrack, val text: PendoloPreparedText)
 internal data class PendoloPalette(val primary:Color=Color(0xffdfe5ec),val secondary:Color=Color(0xffadb9c8),
     val accent:Color=Color(0xfff17b4d))
+/** Source lyric and subtitle scales are independent. Round font sizes before
+ * deriving line heights, as VisualizerPendolo does (not a scaled canvas). */
+internal data class PendoloTypeScale(val lyrics: Double = 1.0, val subtitles: Double = 1.0) {
+    init { require(lyrics.isFinite() && lyrics > 0 && subtitles.isFinite() && subtitles > 0) }
+    fun main(active: Boolean): Double = floor((if(active) 28 else 22) * lyrics + .5)
+    fun lineHeight(active: Boolean): Double = if(active) floor(main(true) * 1.2 + .5) else main(false) * 1.5
+}
 internal data class PendoloStageRow(val item: PendoloWheelItem, val main: PendoloPreparedText,
     val subtitles: List<PendoloPreparedSubtitle>, val blockHeight: Double, val reservedHeight: Double,
-    val width: Double, val contentRect: List<Double>)
+    val width: Double, val contentRect: List<Double>, val fontPx: Double = 28.0)
 
 /** The original wheel hub rotates first, then each left-center text block
  * counter-rotates by -.65 of that angle. No modulo/culling of the rotation. */
@@ -55,6 +62,7 @@ internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Dou
     mode: PendoloSubtitleMode = PendoloSubtitleMode.BOTH,
     wordColors: List<FoliaWordColor> = emptyList(),
     palette: PendoloPalette = PendoloPalette(),
+    typeScale: PendoloTypeScale = PendoloTypeScale(), subtitleStyle: TextStyle = style,
     haloOnly: Boolean = false,
     wheelRotationOverride: (() -> Double)? = null, onRows: (List<PendoloStageRow>) -> Unit = {}) {
     val clock by rememberUpdatedState(time)
@@ -63,12 +71,12 @@ internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Dou
     val density = LocalDensity.current; val resolver = LocalFontFamilyResolver.current
     val measurer = rememberTextMeasurer(cacheSize = 128)
     BoxWithConstraints(modifier) {
-        val heights = remember(lines,style,mode,maxWidth,maxHeight,density,resolver,measurer) {
+        val heights = remember(lines,style,subtitleStyle,typeScale,mode,maxWidth,maxHeight,density,resolver,measurer) {
             val available=pendoloAvailableTextWidth(maxWidth.value.toDouble(),maxHeight.value.toDouble())/1.25
             lines.map { line ->
-                val main=preparePendoloText(line.lyric.text,28.0,available,measurer,style.copy(letterSpacing=TextUnit.Unspecified),density,resolver,34.0)
-                (main.height+pendoloSubtitleHeight(pendoloSubtitleTracks(line.subtitles,mode)) { sub ->
-                    preparePendoloText(sub.text,sub.fontPx,available,measurer,style.copy(letterSpacing=TextUnit.Unspecified),density,resolver,sub.lineHeight).height
+                val main=preparePendoloText(line.lyric.text,typeScale.main(true),available,measurer,style.copy(letterSpacing=TextUnit.Unspecified),density,resolver,typeScale.lineHeight(true))
+                (main.height+pendoloSubtitleHeight(pendoloSubtitleTracks(line.subtitles,mode,fontScale=typeScale.subtitles)) { sub ->
+                    preparePendoloText(sub.text,sub.fontPx,available,measurer,subtitleStyle.copy(letterSpacing=TextUnit.Unspecified),density,resolver,sub.lineHeight).height
                 })*1.25
             }
         }
@@ -80,7 +88,7 @@ internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Dou
         val limits by remember(widthTrack,reducedMotion) { derivedStateOf { widthTrack.at(clock(),reducedMotion).mapValues { (_,v)->floor(v*64)/64 } } }
         PendoloWheelTarget(lines, { clock() }, target, style, Modifier.fillMaxSize(), mode,
             wheelRotation = wheelRotationOverride ?: { track.at(clock(),reducedMotion).wheelRotation }, idleMainLimits=limits,
-            reservedHeights=heights,wordColors=wordColors,palette=palette,chorusTrack=chorusTrack,intensity=intensity,reducedMotion=reducedMotion,haloOnly=haloOnly,onRows = onRows)
+            reservedHeights=heights,wordColors=wordColors,palette=palette,typeScale=typeScale,subtitleStyle=subtitleStyle,chorusTrack=chorusTrack,intensity=intensity,reducedMotion=reducedMotion,haloOnly=haloOnly,onRows = onRows)
     }
 }
 
@@ -89,18 +97,19 @@ internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Dou
 internal fun preparePendoloWheel(lines: List<PendoloStageLine>, target: Double, width: Double, height: Double,
     style: TextStyle, measurer: TextMeasurer, density: Density, resolver: FontFamily.Resolver,
     mode: PendoloSubtitleMode, tuning: PendoloGeometryTuning = PendoloGeometryTuning(),
-    idleMainLimits: Map<Int,Double> = emptyMap(), reservedHeights: List<Double>? = null): List<PendoloStageRow> {
+    idleMainLimits: Map<Int,Double> = emptyMap(), reservedHeights: List<Double>? = null,
+    typeScale: PendoloTypeScale = PendoloTypeScale(), subtitleStyle: TextStyle = style): List<PendoloStageRow> {
     val available = pendoloAvailableTextWidth(width, height, tuning)
-    fun prepare(text: String, font: Double, limit: Double, lineHeight: Double, tracking: Boolean = false) =
+    fun prepare(text: String, font: Double, limit: Double, lineHeight: Double, tracking: Boolean = false, textStyle: TextStyle = style) =
         preparePendoloText(text, font, limit, measurer,
-            if (tracking) style.copy(letterSpacing = (font * .01).sp) else style.copy(letterSpacing = TextUnit.Unspecified),
+            if (tracking) textStyle.copy(letterSpacing = (font * .01).sp) else textStyle.copy(letterSpacing = TextUnit.Unspecified),
             density, resolver, lineHeight)
     val heights = reservedHeights ?: lines.mapIndexed { i, line ->
         if (abs(i - target) > 10) 0.0 else {
-            val tracks = pendoloSubtitleTracks(line.subtitles, mode)
-            val main = prepare(line.lyric.text, 28.0, available / tuning.activeScale, 34.0)
+            val tracks = pendoloSubtitleTracks(line.subtitles, mode, fontScale = typeScale.subtitles)
+            val main = prepare(line.lyric.text, typeScale.main(true), available / tuning.activeScale, typeScale.lineHeight(true))
             (main.height + pendoloSubtitleHeight(tracks) { t ->
-                prepare(t.text, t.fontPx, available / tuning.activeScale, t.lineHeight).height
+                prepare(t.text, t.fontPx, available / tuning.activeScale, t.lineHeight, textStyle=subtitleStyle).height
             }) * tuning.activeScale
         }
     }
@@ -108,18 +117,18 @@ internal fun preparePendoloWheel(lines: List<PendoloStageLine>, target: Double, 
         min(width, height) * .06, heights).map { item ->
         val line = lines[item.index]
         val limit = available / item.scale
-        val font = if (item.active) 28.0 else 22.0
-        val tracks = pendoloSubtitleTracks(line.subtitles, mode, focal = item.active)
+        val font = typeScale.main(item.active)
+        val tracks = pendoloSubtitleTracks(line.subtitles, mode, focal = item.active, fontScale = typeScale.subtitles)
         // CSS shrink-to-fit starts from max-content, not the longest already
         // wrapped row. Intrinsic widths round upward; explicit maxima truncate.
         val mainLimit = if (item.active) limit else idleMainLimits[item.index] ?: limit
-        val naturalMain = if (item.active) limit else prepare(line.lyric.text, font, 100000.0, 33.0, true).rows.maxOfOrNull { it.width } ?: 0.0
-        val naturalSub = tracks.flatMap { prepare(it.text, it.fontPx, 100000.0, it.lineHeight, true).rows.map { row -> row.width } }.maxOrNull() ?: 0.0
+        val naturalMain = if (item.active) limit else prepare(line.lyric.text, font, 100000.0, typeScale.lineHeight(false), true).rows.maxOfOrNull { it.width } ?: 0.0
+        val naturalSub = tracks.flatMap { prepare(it.text, it.fontPx, 100000.0, it.lineHeight, true, subtitleStyle).rows.map { row -> row.width } }.maxOrNull() ?: 0.0
         fun intrinsic(natural: Double, maximum: Double) = min(ceil(natural * 64) / 64,floor(maximum * 64) / 64)
         val rowWidth = if (item.active) floor(limit * 64) / 64 else max(intrinsic(naturalMain,mainLimit),intrinsic(naturalSub,limit))
-        val main = prepare(line.lyric.text, font, if (item.active) limit else min(rowWidth,floor(mainLimit * 64) / 64), if (item.active) 34.0 else 33.0, !item.active)
+        val main = prepare(line.lyric.text, font, if (item.active) limit else min(rowWidth,floor(mainLimit * 64) / 64), typeScale.lineHeight(item.active), !item.active)
         val subs = tracks.map { t ->
-            PendoloPreparedSubtitle(t, prepare(t.text, t.fontPx, min(rowWidth,floor(limit * 64) / 64), t.lineHeight, true))
+            PendoloPreparedSubtitle(t, prepare(t.text, t.fontPx, min(rowWidth,floor(limit * 64) / 64), t.lineHeight, true, subtitleStyle))
         }
         val blockHeight = main.height + subs.sumOf { it.text.height + it.track.fontPx * it.track.gapEm }
         // CSS lays out left/top/max-width in 1/64px units before applying its
@@ -135,7 +144,7 @@ internal fun preparePendoloWheel(lines: List<PendoloStageLine>, target: Double, 
         }
         val left = corners.minOf { it.first }; val top = corners.minOf { it.second }
         PendoloStageRow(item, main, subs, blockHeight, heights[item.index], rowWidth,
-            listOf(left, top, corners.maxOf { it.first } - left, corners.maxOf { it.second } - top))
+            listOf(left, top, corners.maxOf { it.first } - left, corners.maxOf { it.second } - top), font)
     }
 }
 
@@ -148,6 +157,7 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
     idleMainLimits: Map<Int,Double> = emptyMap(), reservedHeights: List<Double>? = null,
     wordColors: List<FoliaWordColor> = emptyList(),
     palette: PendoloPalette = PendoloPalette(),
+    typeScale: PendoloTypeScale = PendoloTypeScale(), subtitleStyle: TextStyle = style,
     chorusTrack: PendoloChorusTrack? = null, intensity:PendoloIntensity = PendoloIntensity.NORMAL,
     reducedMotion:Boolean = false, haloOnly:Boolean = false,
     onRows: (List<PendoloStageRow>) -> Unit = {}) {
@@ -156,9 +166,9 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
     val rotation by rememberUpdatedState(wheelRotation)
     val timelines = remember(lines) { lines.map { pendoloLineTimeline(it.lyric) } }
     BoxWithConstraints(modifier.fillMaxSize()) {
-        val rows = remember(lines, target, style, mode, maxWidth, maxHeight, density, resolver, measurer,idleMainLimits,reservedHeights) {
+        val rows = remember(lines, target, style, subtitleStyle, typeScale, mode, maxWidth, maxHeight, density, resolver, measurer,idleMainLimits,reservedHeights) {
             preparePendoloWheel(lines, target, maxWidth.value.toDouble(), maxHeight.value.toDouble(), style, measurer, density, resolver, mode,
-                idleMainLimits=idleMainLimits,reservedHeights=reservedHeights)
+                idleMainLimits=idleMainLimits,reservedHeights=reservedHeights,typeScale=typeScale,subtitleStyle=subtitleStyle)
         }
         val presentations=remember(rows,lines,intensity) { rows.associate { row ->
             row.item.index to pendoloChorus(lines[row.item.index].isChorus,row.item.active,intensity)
@@ -187,13 +197,13 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
                         scale((item.scale*chorus.scale).toFloat(), (item.scale*chorus.scale).toFloat(), Offset.Zero)
                         translate(0f, (-row.blockHeight * d).toFloat())
                     }) {
-                        val filter=pendoloChorusFilter(28.0,p.glowMultiplier)
+                        val filter=pendoloChorusFilter(row.fontPx,p.glowMultiplier)
                         val margin=if(p.active)max(64.0,3*(filter.firstSigma+filter.secondSigma)+filter.padding+2).toFloat() else 64f
                         drawContext.canvas.saveLayer(Rect(-margin*d, -margin*d, (row.width.toFloat()+margin)*d, (row.blockHeight.toFloat()+margin)*d), Paint().apply { this.alpha = alpha })
                         chorusLayers[item.index]?.second?.let { drawPendoloHalo(it,row.width,row.blockHeight,chorus,palette.accent) }
                         if(!haloOnly) {
                         if (item.active) drawPendoloSweep(row.main, timelines[item.index],
-                            lines[item.index].lyric.end, 28.0, t, palette.primary, palette.accent,inks[item.index],p,chorusLayers[item.index]?.first.orEmpty())
+                            lines[item.index].lyric.end, row.fontPx, t, palette.primary, palette.accent,inks[item.index],p,chorusLayers[item.index]?.first.orEmpty())
                         else drawPendoloRows(row.main, palette.primary.copy(alpha = .75f))
                         var top = row.main.height
                         for (sub in row.subtitles) {

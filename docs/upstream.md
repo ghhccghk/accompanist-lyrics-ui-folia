@@ -1422,3 +1422,17 @@ visual acceptance still pending, no public selector.
 - Existing published package com.mocharealm is an external model import, not an
   unrenamed project package. No original Apache implementation is copied/modified.
 - Details/failure evidence/remaining public-entry work: `verification/pendolo-core`.
+
+### Pendolo typography integration (2026-11-17)
+Pinned cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only:
+`VisualizerPendolo.tsx:402–433,599–722` → `PendoloWheelTarget.kt`:
+independent caller lyric/subtitle scales, Math.round font sizes before line-height,
+focal reserved heights, idle tracking, sweep edge/filter sizes. Optional subtitle
+TextStyle remains separate from main font; defaults preserve previous rendering.
+`PendoloTextPreparation.kt` now independently handles ASCII active overflow words:
+whole following words must fit, emergency EGC cuts prefer hyphen boundaries.
+Behavior checked against actual pinned `PendoloActiveLyricSweep` DOM rows and
+pretext0.0.9 `line-break.ts` segment/overflow behavior (MIT notice already retained
+in LICENSES/MIT-pretext-0.0.9.txt). Not a full pretext port: non-ASCII/idle keeps
+platform wrapping; whole-row shaping/prefix timing remain intact. No dependency
+on pretext at runtime. Evidence: verification/pendolo-typography-stage.

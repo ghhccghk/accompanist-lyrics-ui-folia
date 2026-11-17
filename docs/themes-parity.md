@@ -382,3 +382,11 @@ Arabic空格tracking失败证据保留；修复仍以完整段落塑形，不逐
 边缘覆盖/混排tracking待校准。Android APK/Desktop编译通过，无新增设备结果。
 本项明确固定wheelRotation=0；机械tick/反向校正/chorus/公共入口尚缺。
 来源、失败与复现见verification/pendolo-stage；下一项先完成媒体可重建tick。
+
+### 时计：机械跳步媒体响应（内部数值）
+
+已保留原三强度/.5到2锐度弹簧、旋转与-.65文字反校正；歌词起止事件准备
+携速度改向，任意查询无帧累计。1134原Motion物理响应/2304事件轨迹查询，
+最大数值误差4.25e-14，暂停/seek/重挂/减少动态通过。原版`useSpring`挂载
+时的RAF量化/速度估计和整屏动态画面仍需比较，不据内核通过宣告转场验收。
+末句精确结束与右极限分开保留；详见verification/pendolo-tick。

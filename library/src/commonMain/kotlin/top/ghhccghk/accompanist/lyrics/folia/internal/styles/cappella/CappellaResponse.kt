@@ -4,6 +4,7 @@
 package top.ghhccghk.accompanist.lyrics.folia.internal.styles.cappella
 
 import kotlin.math.*
+import top.ghhccghk.accompanist.lyrics.folia.internal.motion.DampedSpring
 
 internal data class CappellaTransition(val enterY:Double,val enterScale:Double,val enterDuration:Double,
     val exitY:Double,val exitScale:Double,val exitDuration:Double,val stiffness:Double,val damping:Double,val mass:Double)
@@ -14,44 +15,12 @@ internal fun cappellaTransition(i:CappellaIntensity)=when(i) {
 }
 internal data class CappellaScalar(val value:Double,val velocity:Double,val done:Boolean)
 
-/** Analytic damped oscillator. Samples depend on media elapsed time, never the
- * number/order of calls. Includes the slightly overdamped original calm profile. */
-internal class CappellaSpring(private val from:Double,private val to:Double,
-    private val initialVelocity:Double,private val config:CappellaTransition) {
-    private val a=config.damping/(2*config.mass)
-    private val omega2=config.stiffness/config.mass
-    private val discriminant=a*a-omega2
-    private val restSpeed=if(abs(to-from)<5).01 else 2.0
-    private val restDelta=if(abs(to-from)<5).005 else .5
-    private fun raw(seconds:Double):Pair<Double,Double> {
-        val t=seconds.coerceAtLeast(0.0);val y=from-to
-        if(discriminant>0) {
-            val b=sqrt(discriminant);val slow=-a+b;val fast=-a-b
-            val c=(initialVelocity-fast*y)/(slow-fast);val f=y-c
-            val s=c*exp(slow*t);val q=f*exp(fast*t)
-            return to+s+q to slow*s+fast*q
-        }
-        if(discriminant<0) {
-            val b=sqrt(-discriminant);val c=(initialVelocity+a*y)/b
-            val cos=cos(b*t);val sin=sin(b*t);val e=exp(-a*t)
-            return to+e*(y*cos+c*sin) to e*((-a*y+b*c)*cos+(-a*c-b*y)*sin)
-        }
-        val c=initialVelocity+a*y;val e=exp(-a*t)
-        return to+e*(y+c*t) to e*(c-a*(y+c*t))
-    }
-    fun generator(seconds:Double):CappellaScalar {
-        val(x,v)=raw(seconds)
-        val done=abs(x-to)<=restDelta&&abs(v)<=restSpeed
-        return CappellaScalar(if(done)to else x,v,done)
-    }
-    // Motion resolves duration with 50ms probes. This is a one-time resolution
-    // of the analytic response, not a playback/render clock or frame replay.
-    val duration:Double=(0..400).firstOrNull{generator(it*.05).done}?.times(.05)?:Double.POSITIVE_INFINITY
-    fun sample(seconds:Double):CappellaScalar {
-        val t=seconds.coerceAtLeast(0.0)
-        if(t>=duration)return CappellaScalar(to,0.0,true)
-        return generator(t).let{if(it.done)it.copy(velocity=0.0)else it}
-    }
+/** Compatibility wrapper around the independently verified physical response. */
+internal class CappellaSpring(from:Double,to:Double,initialVelocity:Double,config:CappellaTransition) {
+    private val spring=DampedSpring(from,to,initialVelocity,config.stiffness,config.damping,config.mass)
+    val duration get()=spring.duration
+    fun generator(seconds:Double)=spring.generator(seconds).let{CappellaScalar(it.value,it.velocity,it.done)}
+    fun sample(seconds:Double)=spring.sample(seconds).let{CappellaScalar(it.value,it.velocity,it.done)}
 }
 
 internal enum class CappellaCurve { ENTER,EXIT,RESIZE,TIMESTAMP,SPRING }

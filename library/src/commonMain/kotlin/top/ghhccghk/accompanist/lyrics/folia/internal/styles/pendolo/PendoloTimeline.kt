@@ -26,13 +26,14 @@ internal fun pendoloRotatingOpacity(baseAngle: Double, rotation: Double, baseOpa
  * or most-recent-start shortcut. Exact render ends are inclusive, their right
  * limits are separate; source source-array priority is preserved. */
 internal class PendoloTimeline(private val lines: List<PendoloLineTime>) {
+    val boundaries: List<Double> = lines.flatMap { listOf(it.start, it.renderEnd) }.distinct().sorted()
     private data class Event(val time: Double, val after: Boolean, val lastValid: Int)
     private val history: List<Event>
     init {
         require(lines.all { it.start.isFinite() && it.end.isFinite() && it.renderEnd.isFinite() })
         var last = -1
         history = buildList {
-            for (t in lines.flatMap { listOf(it.start, it.renderEnd) }.distinct().sorted()) {
+            for (t in boundaries) {
                 for (after in listOf(false, true)) {
                     val current = current(t, after)
                     if (current >= 0) last = current
@@ -54,6 +55,10 @@ internal class PendoloTimeline(private val lines: List<PendoloLineTime>) {
             if (e.time < time || e.time == time && (!e.after || after)) lo = m + 1 else hi = m
         }
         val last = history.getOrNull(lo - 1)?.lastValid ?: -1
+        // The exact final end is inclusive; its right limit is already past
+        // that end. Preserve this distinction without nudging media time.
+        if (after && last >= 0 && current(time, true) < 0 && time == lines.lastOrNull()?.renderEnd)
+            return lines.size.toDouble()
         return pendoloFallbackAnchor(lines, current(time, after), max(last, 0), last >= 0, time)
     }
 }

@@ -1,0 +1,79 @@
+{
+  "reference": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "configs": {
+      "calm-0.5": {
+        "stiffness": 64.8,
+        "damping": 31.2,
+        "mass": 0.8
+      },
+      "calm-1": {
+        "stiffness": 129.6,
+        "damping": 26.4,
+        "mass": 0.8
+      },
+      "calm-2": {
+        "stiffness": 259.2,
+        "damping": 24,
+        "mass": 0.8
+      },
+      "normal-0.5": {
+        "stiffness": 90,
+        "damping": 26,
+        "mass": 0.8
+      },
+      "normal-1": {
+        "stiffness": 180,
+        "damping": 22,
+        "mass": 0.8
+      },
+      "normal-2": {
+        "stiffness": 360,
+        "damping": 20,
+        "mass": 0.8
+      },
+      "chaotic-0.5": {
+        "stiffness": 117,
+        "damping": 21.84,
+        "mass": 0.8
+      },
+      "chaotic-1": {
+        "stiffness": 234,
+        "damping": 18.48,
+        "mass": 0.8
+      },
+      "chaotic-2": {
+        "stiffness": 468,
+        "damping": 16.8,
+        "mass": 0.8
+      }
+    },
+    "source": "src/components/visualizer/pendolo/VisualizerPendolo.tsx",
+    "extracts": [
+      {
+        "sha256": "0be161c3c722b8f6ba8fe165231d7bdad56bee60885234fa48b806cd0ad32459",
+        "characters": 217
+      },
+      {
+        "sha256": "1aefa2125e659f264878024abed110b81f50a32ed39f7ab48a852121e69d484c",
+        "characters": 68
+      },
+      {
+        "sha256": "146ebd0b6a5fbdbed5e119a3b80bfb488e1f5d8ff7081d76e3c9bab0de11fd72",
+        "characters": 22
+      }
+    ],
+    "responses": 1134,
+    "trackQueries": 2304,
+    "scope": "Actual Motion dispatcher/generator, unchanged original options/profiles/rotation/fallback. Event history uses exact physical derivative on retarget; not mounted useSpring frame-velocity, DOM or device acceptance."
+  },
+  "status": "Physical kernel only; mounted useSpring/frame-velocity and UI acceptance pending.",
+  "response": {
+    "fields": 3402,
+    "maximum_error": 4.246603069191224e-14
+  },
+  "track": {
+    "fields": 23040,
+    "maximum_error": 3.197442310920451e-14
+  }
+}

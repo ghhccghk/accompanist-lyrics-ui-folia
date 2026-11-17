@@ -1298,3 +1298,19 @@ Initial four-scene failures/PNGs retained. All88 isolated sweep hashes unchanged
 Image MAE10.650323/peak21.807819 still open; target-only/no tick/chorus/gear
 acceptance. Details/reproduction/contact: verification/pendolo-stage. Android
 APK/Desktop compile pass, no connected-device claim or public theme entry.
+
+## 2026-11-17 Pendolo mechanical tick response
+
+cc6226e4 `VisualizerPendolo.tsx` tickSpring/wheelRotationDeg/
+textRotationCorrectionDeg and `pendoloMotionProfile.ts` → `PendoloTick.kt`.
+Original options/transforms extracted unchanged and hashed, actual Motion
+runtime1134 responses and2304 canonical event-history queries. Shared analytic
+oscillator extracted unchanged from CappellaResponse to `internal/motion/
+DampedSpring.kt`; Cappella retains its exact wrapper/config/result contract.
+AGPL-3.0-only and attribution retained. Media adaptation carries analytic
+velocity on lyric-boundary retargets; no native dependency or display-frame
+replay. `PendoloTimeline.kt` now distinguishes exact final inclusive end from
+its right limit without a time epsilon. Reference uses explicit t+ probes only.
+Source mounted RAF velocity is not silently claimed equivalent. Residual peak
+4.25e-14; initial stateful-dispatcher oracle failure preserved, see
+verification/pendolo-tick for scope/reproduction and remaining UI acceptance.

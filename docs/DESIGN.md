@@ -1,5 +1,8 @@
 # lyrics-ui-folia 详细设计
 
+2026-11-17：新增FoliaStyle.Cadenza(CadenzaTuning())校准预览；仍从宿主快照取时间，
+不增加库内时钟。实际契约、原版证据、行计时降级和未验收项见cadenza-preview.md。
+
 2026-11-16 最新：示例已增加可选 Rust CPU 辉光遮罩开关和真实 JNI 接入，默认 Kotlin。
 Android debug 可选 arm64/x86_64，Windows 真实 JNI/同帧对照通过；
 后续arm64/API37真机加载/15组CPU像素通过，设备帧率及完整AndroidUI仍未验证；

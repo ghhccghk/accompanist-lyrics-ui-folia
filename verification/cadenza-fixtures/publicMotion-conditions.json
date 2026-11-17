@@ -1,0 +1,24 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "height": 600,
+  "DPR": 1,
+  "energy": 0,
+  "glow": 1,
+  "mediaClock": "Same integer-millisecond snapshots on both sides; original wall RAF60Hz. No settled target convergence, geometry registration, phase fit or time offset.",
+  "fonts": [
+    {
+      "name": "FoliaParityLatin-Bold.ttf",
+      "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+    },
+    {
+      "name": "NotoSansArabic-Bold.ttf",
+      "sha256": "ed2711b387750ae991b6a980b8dd16fdd65e6702b97e9f52adf3a8edf09ef4df"
+    },
+    {
+      "name": "FoliaParityCJK-Bold.otf",
+      "sha256": "bba3466c258edbef68075a274af31b18697ac5afd61987b4170dc871d952174d"
+    }
+  ],
+  "scope": "Actual original mounted Cadenza versus public FoliaLyricsView/Cadenza using published core model; synthetic same-font sceneInputs.tsv."
+}

@@ -1,5 +1,20 @@
 # Cadenza fixed-source calibration
 
+## Public Cadenza preview (2026-11-17)
+
+With fixture server, run `capture-cadenza-public.mjs`,
+`:library:jvmTest --tests '*Cadenza*'`, and
+`python verification/compare-cadenza-motion.py --public`.
+32 actual original RAF/public FoliaLyricsView pairs share integer-millisecond
+media snapshots,exact OFL font bytes,DPR1 and viewport. No rate-specific phase
+fit, target settling, image registration or source function replacement.
+Source state snapshots and PNGs are retained in build/verification; reports and
+contact sheet in verification/cadenza-public. Repeated source raster captures
+have a small MAE fluctuation near6; do not treat rerunning source images as a
+native improvement or acceptance threshold. Public preview/lifecycle tests,
+data fallbacks,quality/memory scope and unresolved original cross-line shared-id
+state are documented in docs/cadenza-preview.md. Preview is not final parity.
+
 ## Original line selection (2026-11-17)
 
 Run `node verification/classic-browser/generate-cadenza-timeline.mjs` (Node24,

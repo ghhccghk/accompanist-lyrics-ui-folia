@@ -4,6 +4,17 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 import kotlin.test.*
 
 class SettingsTest {
+    @Test fun cadenzaPreferencesAndKeywordsRoundTripWithoutEnablingUnimplementedThemes() {
+        val tuning=CadenzaTuning(.8f,.6f,.4f,0f,setOf(0,5),listOf(FoliaWordColor("星光\nAmber|~",androidx.compose.ui.graphics.Color(0xff5bcefa))))
+        val settings=SampleSettings(lyricTheme=SampleLyricTheme.Cadenza,cadenzaTuning=tuning)
+        assertEquals(settings,SampleSettings.decode(settings.encode()))
+        val session=SampleSession();session.applySettings(settings)
+        assertEquals(FoliaStyle.Cadenza(tuning),session.lyricStyle);assertEquals(settings,session.settings())
+        assertEquals(CadenzaTuning(),SampleSettings.decode("version=1").cadenzaTuning)
+        assertEquals(CadenzaTuning(),SampleSettings.decode("version=1\ncadenzaFont=NaN\ncadenzaWidth=2\ncadenzaGlow=-1\ncadenzaMotion=Infinity\ncadenzaWords=bad\ncadenzaChorus=-1,no").cadenzaTuning)
+        assertFailsWith<IllegalArgumentException>{CadenzaTuning(fontScale=Float.NaN)}
+        assertFailsWith<IllegalArgumentException>{CadenzaTuning(widthRatio=.1f)}
+    }
     @Test fun tiltPreferencesRoundTripAndOldSettingsRemainCompatible() {
         for(colors in TiltColorScheme.entries) {
             val settings=SampleSettings(lyricTheme=SampleLyricTheme.Tilt,tiltTuning=TiltTuning(.2f,.9f,colors))

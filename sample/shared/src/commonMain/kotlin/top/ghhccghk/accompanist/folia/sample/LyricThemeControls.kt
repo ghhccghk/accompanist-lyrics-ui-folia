@@ -21,6 +21,20 @@ internal fun LyricThemeControls(session: SampleSession) {
             Text("倾诉${if(session.lyricTheme==SampleLyricTheme.Tilt)" ✓" else ""}")
         }
     }
+    TextButton({session.lyricTheme=SampleLyricTheme.Cadenza}) {
+        Text("心象${if(session.lyricTheme==SampleLyricTheme.Cadenza)" ✓" else ""}")
+    }
+    if(session.lyricTheme==SampleLyricTheme.Cadenza) {
+        Text("心象：移植校准预览。原版刷新率响应、CJK 字形及辉光栅格仍有差异。",style=MaterialTheme.typography.bodySmall)
+        Text("主题字号倍率 ${session.cadenzaTuning.fontScale}")
+        Slider(session.cadenzaTuning.fontScale,{session.cadenzaTuning=session.cadenzaTuning.copy(fontScale=it)},valueRange=.5f..2f)
+        Text("排版宽度 ${(session.cadenzaTuning.widthRatio*100).toInt()}%")
+        Slider(session.cadenzaTuning.widthRatio,{session.cadenzaTuning=session.cadenzaTuning.copy(widthRatio=it)},valueRange=.35f..1f)
+        Text("辉光强度 ${session.cadenzaTuning.glowIntensity}")
+        Slider(session.cadenzaTuning.glowIntensity,{session.cadenzaTuning=session.cadenzaTuning.copy(glowIntensity=it)},valueRange=0f..2f)
+        Text("脉动幅度 ${session.cadenzaTuning.motionAmount}")
+        Slider(session.cadenzaTuning.motionAmount,{session.cadenzaTuning=session.cadenzaTuning.copy(motionAmount=it)},valueRange=0f..2f)
+    }
     if(session.lyricTheme==SampleLyricTheme.Partita) {
         Text("云阶移植校准中。",style=MaterialTheme.typography.bodySmall)
         fun tune(block: (top.ghhccghk.accompanist.lyrics.folia.PartitaTuning)->top.ghhccghk.accompanist.lyrics.folia.PartitaTuning) {

@@ -1,5 +1,8 @@
 # lyrics-ui-folia 示例项目设计
 
+2026-11-17：显示设置已增加心象Cadenza校准预览，可调主题字号/排版宽度/辉光/脉动，
+持久化并兼容旧设置。真实歌曲与开发/演示共用入口；原版证据/限制见cadenza-preview.md。
+
 2026-11-16 最新：示例已增加可选 Rust CPU 辉光遮罩开关和真实 JNI 接入，默认 Kotlin。
 Android debug 可选 arm64/x86_64，Windows 真实 JNI/同帧对照通过；
 后续arm64/API37真机加载/15组CPU像素通过，设备帧率及完整AndroidUI仍未验证；

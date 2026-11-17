@@ -1,5 +1,9 @@
 # lyrics-ui-folia 实施计划
 
+2026-11-17：心象Cadenza已接公开入口和sample校准预览；原版实际播放对照及
+尚存差异见docs/cadenza-preview.md。浮名仍为内部校准；群唱/时计/镜台尚未开放。
+继续按固定上游行为实现，预览入口不代表视觉验收完成。
+
 2026-11-16：按用户要求提供示例 Rust CPU 辉光遮罩 A/B 开关；默认 Kotlin，
 可选 Android debug 包含 arm64/x86_64 JNI。实际入口、构建和设备未验证项见
 docs/native-mask-sample.md；不代表完整 native 渲染或设备性能已通过。

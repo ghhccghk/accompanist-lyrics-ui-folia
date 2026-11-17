@@ -1,5 +1,25 @@
 # Source ledger
 
+## 2026-11-17 Cadenza public calibration integration
+
+CadenzaTimeline/TargetStage and core adapter now back FoliaStyle.Cadenza,
+CadenzaTuning and independently written sample settings/controls. Whole-run
+shaping and source word/glyph time maps remain; public playback time is sampled
+once with offset. No renderer clock or Rust dependency is added. Original
+runtime selects one latest active line; overlapping main lyrics no longer leak
+through the generic secondary footer, while explicit core accompaniment remains
+a native subtitle integration. Core lacks source chorus metadata: explicit
+top-level chorusLineIndices default empty, never inferred from accompaniment.
+Line-only core content is shown as an immediate whole phrase, with NONE/INSTANT
+hints and its actual line interval, not source parser's invented word splits.
+This is a documented native data fallback rather than source word-timing parity.
+Reduced motion removes geometry/pulse/rings while preserving media-driven color;
+Standard shadows retain original layers,Reduced uses whole-fragment shadows,
+Minimal none. Cached mask estimate <=16MiB, not total native/process memory.
+Public/core32 playback image pairs and source browser repeatability limitations,
+interactive/lifecycle regression and unresolved state-history differences are
+documented in cadenza-preview.md and verification/cadenza-public.
+
 ## 2026-11-17 Cadenza line selection timeline
 
 Pinned cc6226e4, AGPL-3.0-only. appPlaybackHelpers.ts:21–32

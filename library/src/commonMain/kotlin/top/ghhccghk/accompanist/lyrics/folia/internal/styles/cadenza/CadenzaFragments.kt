@@ -123,6 +123,13 @@ internal fun annotateCadenzaLine(line: CadenzaLyric): CadenzaLyric {
 
 /** Published lyrics-core normalization only; no dependency on classic grouping or lyrics-ui. */
 internal fun cadenzaLyric(line: NormalizedLine): CadenzaLyric {
+    if(line.fragments.isEmpty()&&line.text.isNotBlank()) {
+        // Core line-only lyrics have no word clock. Show one static, immediately
+        // highlighted phrase for its actual interval; never invent per-word times.
+        val start=line.startUs/1e6;val end=line.endUs/1e6
+        return CadenzaLyric(line.text,start,end,listOf(CadenzaWord(line.text,start,end)),
+            CadenzaHints(max(end-start,0.0),max(end,start+.067),CadenzaTransition.NONE,CadenzaReveal.INSTANT))
+    }
     val edges=graphemeBoundaries(line.text);val words=mutableListOf<CadenzaWord>();val pending=mutableListOf<CadenzaWord>()
     line.fragments.forEachIndexed{i,f->
         pending+=CadenzaWord(line.text.substring(f.begin,f.end),f.startUs/1e6,f.endUs/1e6)

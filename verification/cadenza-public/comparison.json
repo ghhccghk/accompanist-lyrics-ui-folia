@@ -1,0 +1,296 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "height": 600,
+    "DPR": 1,
+    "energy": 0,
+    "glow": 1,
+    "mediaClock": "Same integer-millisecond snapshots on both sides; original wall RAF60Hz. No settled target convergence, geometry registration, phase fit or time offset.",
+    "fonts": [
+      {
+        "name": "FoliaParityLatin-Bold.ttf",
+        "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+      },
+      {
+        "name": "NotoSansArabic-Bold.ttf",
+        "sha256": "ed2711b387750ae991b6a980b8dd16fdd65e6702b97e9f52adf3a8edf09ef4df"
+      },
+      {
+        "name": "FoliaParityCJK-Bold.otf",
+        "sha256": "bba3466c258edbef68075a274af31b18697ac5afd61987b4170dc871d952174d"
+      }
+    ],
+    "scope": "Actual original mounted Cadenza versus public FoliaLyricsView/Cadenza using published core model; synthetic same-font sceneInputs.tsv."
+  },
+  "scope": "Original unmodified RAF target updates compared with event-based continuous forcing. Native frozen/reverse queries do not replay frames.",
+  "status": "Public calibration preview. Original cadence-dependent step response and font/coverage residuals remain; no final theme acceptance.",
+  "mean_foreground_mae": 6.02681909922945,
+  "by_scene": {
+    "latin": 5.543069588593221,
+    "wrap": 5.406684590810016,
+    "arabic": 3.8951635595676346,
+    "cjk": 9.26235865794693
+  },
+  "source_trajectory_residuals": [],
+  "frames": [
+    {
+      "file": "arabic-800-60-0.png",
+      "foreground_pixels": 2862,
+      "foreground_mae": 1.3605870020964361,
+      "full_mae": 0.028257638888888888
+    },
+    {
+      "file": "arabic-800-60-1.png",
+      "foreground_pixels": 12414,
+      "foreground_mae": 1.8809945760163256,
+      "full_mae": 0.0981951388888889
+    },
+    {
+      "file": "arabic-800-60-2.png",
+      "foreground_pixels": 30086,
+      "foreground_mae": 4.186144164506193,
+      "full_mae": 0.33806597222222223
+    },
+    {
+      "file": "arabic-800-60-3.png",
+      "foreground_pixels": 73962,
+      "foreground_mae": 5.469092236553906,
+      "full_mae": 0.9423576388888889
+    },
+    {
+      "file": "arabic-800-60-4.png",
+      "foreground_pixels": 86503,
+      "foreground_mae": 5.42124550593621,
+      "full_mae": 1.0881055555555557
+    },
+    {
+      "file": "arabic-800-60-5.png",
+      "foreground_pixels": 37228,
+      "foreground_mae": 6.868253286057089,
+      "full_mae": 0.6160958333333333
+    },
+    {
+      "file": "arabic-800-60-6.png",
+      "foreground_pixels": 48224,
+      "foreground_mae": 5.974991705374917,
+      "full_mae": 0.6436743055555556
+    },
+    {
+      "file": "arabic-800-60-7.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.17873611111111112
+    },
+    {
+      "file": "cjk-800-60-0.png",
+      "foreground_pixels": 4143,
+      "foreground_mae": 2.1576152546463914,
+      "full_mae": 0.03796597222222222
+    },
+    {
+      "file": "cjk-800-60-1.png",
+      "foreground_pixels": 18912,
+      "foreground_mae": 6.137919486745629,
+      "full_mae": 0.3066715277777778
+    },
+    {
+      "file": "cjk-800-60-2.png",
+      "foreground_pixels": 48653,
+      "foreground_mae": 9.923362040024939,
+      "full_mae": 1.0621854166666667
+    },
+    {
+      "file": "cjk-800-60-3.png",
+      "foreground_pixels": 83468,
+      "foreground_mae": 10.302091819619495,
+      "full_mae": 1.8408381944444445
+    },
+    {
+      "file": "cjk-800-60-4.png",
+      "foreground_pixels": 110546,
+      "foreground_mae": 12.521022922584264,
+      "full_mae": 2.972321527777778
+    },
+    {
+      "file": "cjk-800-60-5.png",
+      "foreground_pixels": 115272,
+      "foreground_mae": 14.709874615402411,
+      "full_mae": 3.6618243055555557
+    },
+    {
+      "file": "cjk-800-60-6.png",
+      "foreground_pixels": 84458,
+      "foreground_mae": 16.702554326805434,
+      "full_mae": 2.9953826388888887
+    },
+    {
+      "file": "cjk-800-60-7.png",
+      "foreground_pixels": 5681,
+      "foreground_mae": 1.6444287977468754,
+      "full_mae": 0.35717430555555557
+    },
+    {
+      "file": "latin-380-60-0.png",
+      "foreground_pixels": 4,
+      "foreground_mae": 1.6666666666666667,
+      "full_mae": 0.013366959064327485
+    },
+    {
+      "file": "latin-380-60-1.png",
+      "foreground_pixels": 2558,
+      "foreground_mae": 1.6488141777430283,
+      "full_mae": 0.0521359649122807
+    },
+    {
+      "file": "latin-380-60-2.png",
+      "foreground_pixels": 9171,
+      "foreground_mae": 5.586013884345582,
+      "full_mae": 0.2876520467836257
+    },
+    {
+      "file": "latin-380-60-3.png",
+      "foreground_pixels": 23225,
+      "foreground_mae": 7.991560818083961,
+      "full_mae": 0.8818611111111111
+    },
+    {
+      "file": "latin-380-60-4.png",
+      "foreground_pixels": 31917,
+      "foreground_mae": 9.974089043456464,
+      "full_mae": 1.498906432748538
+    },
+    {
+      "file": "latin-380-60-5.png",
+      "foreground_pixels": 26746,
+      "foreground_mae": 7.923178543832099,
+      "full_mae": 1.0840292397660818
+    },
+    {
+      "file": "latin-380-60-6.png",
+      "foreground_pixels": 24038,
+      "foreground_mae": 9.554233574617966,
+      "full_mae": 1.0573801169590644
+    },
+    {
+      "file": "latin-380-60-7.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.20740058479532164
+    },
+    {
+      "file": "wrap-380-60-0.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.040058479532163745
+    },
+    {
+      "file": "wrap-380-60-1.png",
+      "foreground_pixels": 7463,
+      "foreground_mae": 1.8005270445307964,
+      "full_mae": 0.12993567251461988
+    },
+    {
+      "file": "wrap-380-60-2.png",
+      "foreground_pixels": 17285,
+      "foreground_mae": 6.712371034615756,
+      "full_mae": 0.5836578947368422
+    },
+    {
+      "file": "wrap-380-60-3.png",
+      "foreground_pixels": 23867,
+      "foreground_mae": 8.071367718327956,
+      "full_mae": 0.8944941520467836
+    },
+    {
+      "file": "wrap-380-60-4.png",
+      "foreground_pixels": 31537,
+      "foreground_mae": 8.997695828180655,
+      "full_mae": 1.3529473684210527
+    },
+    {
+      "file": "wrap-380-60-5.png",
+      "foreground_pixels": 29869,
+      "foreground_mae": 8.374022118807682,
+      "full_mae": 1.2485116959064329
+    },
+    {
+      "file": "wrap-380-60-6.png",
+      "foreground_pixels": 23986,
+      "foreground_mae": 9.297492982017287,
+      "full_mae": 1.0337704678362574
+    },
+    {
+      "file": "wrap-380-60-7.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.2974415204678363
+    }
+  ],
+  "png_sha256": {
+    "build/verification/cadenza-public-browser/arabic-800-60-0.png": "525f182220c74d79e1daf43a5fad06a1abbcb602e76cc60e5488a785f823dba2",
+    "build/verification/cadenza-public-kotlin/arabic-800-60-0.png": "c5a6bd44b1609e946846d4cae42b81bae4b49ba6e809b30d69a0eec9702618e9",
+    "build/verification/cadenza-public-browser/arabic-800-60-1.png": "3873393819ece6efda30010db9e2b192ce317ac19af373e07b4c0222e2ed2296",
+    "build/verification/cadenza-public-kotlin/arabic-800-60-1.png": "2ffb8de349f3a9eeb65287bfe4943953a5f0f68dd41566ec88968e372af016f7",
+    "build/verification/cadenza-public-browser/arabic-800-60-2.png": "b69c4c1b46f1ace14ba67af6e4e5cca7df28722746f3cb52a41792f081465f4b",
+    "build/verification/cadenza-public-kotlin/arabic-800-60-2.png": "bc13e7b1ffb9ad90d0465c2042f53bd0f6287d1adc6e23c1533a917176362887",
+    "build/verification/cadenza-public-browser/arabic-800-60-3.png": "756e1481cb24f678567548708ab7aff67a880930f02aa8e04674413027c70e65",
+    "build/verification/cadenza-public-kotlin/arabic-800-60-3.png": "a660672bb6eb17e7f45d44d4521a59edf153b0c323ecfe69bee52b650454e3f4",
+    "build/verification/cadenza-public-browser/arabic-800-60-4.png": "643ddfe40483fe18ff6bc04ee3f9ea1b7bb4ce0e47ccccf6d835957450e2bb16",
+    "build/verification/cadenza-public-kotlin/arabic-800-60-4.png": "a315a2299a7088870a8d4e6ceb871d0971bebe7c24f90ec6adb56fe9b09cc3e2",
+    "build/verification/cadenza-public-browser/arabic-800-60-5.png": "e0b8191195926b5c2c538d1e69f51d3db31dbde4c5ef7187e8dc33a585cf3d59",
+    "build/verification/cadenza-public-kotlin/arabic-800-60-5.png": "d68aa992372feb949ecb3259205c87682bd921013c50fcf8dd75a77709bba59e",
+    "build/verification/cadenza-public-browser/arabic-800-60-6.png": "6c480c9d72ec019b888c8001a5eb0b1579f1855fdb560fc69918890c6ea59c29",
+    "build/verification/cadenza-public-kotlin/arabic-800-60-6.png": "b31a7ae37cf79be3906a6b940fe288ff9ae8625b8eafbedd9e3a9d79e0b4bc6c",
+    "build/verification/cadenza-public-browser/arabic-800-60-7.png": "6a6d070895d89f71c6dc72b845b9ed25e7ebfc7eb3519f60c916fd83f86d1f49",
+    "build/verification/cadenza-public-kotlin/arabic-800-60-7.png": "aacc46e6dc25a51efbd68df263ff93751759c5dce5a4ebba59f877e3430a1cbc",
+    "build/verification/cadenza-public-browser/cjk-800-60-0.png": "97e170cf1ca7bc2f3656d956188c6d71d6d4d3162b0bf72015226c25052d9f7b",
+    "build/verification/cadenza-public-kotlin/cjk-800-60-0.png": "23bf011bdc5b8b8cb0f6486f61a095081b9f0defc011c7a926a55510eecd9e4e",
+    "build/verification/cadenza-public-browser/cjk-800-60-1.png": "2c93180ff3ecf46855a3ef08121b02588569e3baea641b268358a192a204cdf0",
+    "build/verification/cadenza-public-kotlin/cjk-800-60-1.png": "59a92a62ad725c7e19ce590de1c077c24aac5bf642317bef549cc7eea7c02249",
+    "build/verification/cadenza-public-browser/cjk-800-60-2.png": "f8ace9c85de0eb054f74c82ea5485040ad056f5c9d4c0281b3c3a45b2d64a572",
+    "build/verification/cadenza-public-kotlin/cjk-800-60-2.png": "1abe88f26e350e4f8db8e616f853a6f458317d53b43597fde4e37ce9528b1cb5",
+    "build/verification/cadenza-public-browser/cjk-800-60-3.png": "455a871a85a829a878c6bfcee5beb6ee6f82ea9cf7176bef9fa0214ecab4a8a6",
+    "build/verification/cadenza-public-kotlin/cjk-800-60-3.png": "29662787f0ca1245142a4f0fbcf6e48fac64c8b72ad986aac9131648314d4af4",
+    "build/verification/cadenza-public-browser/cjk-800-60-4.png": "2e9590dcf47abf169fa9601ba0ab43b5f6236f810d9b96bd97bcb898291b5d1e",
+    "build/verification/cadenza-public-kotlin/cjk-800-60-4.png": "16ac293d41452f07d390c8df2c5b4c157eadaa97af3d6398a0d625cf74455504",
+    "build/verification/cadenza-public-browser/cjk-800-60-5.png": "0b9d7dc87f5e2defbfe381abf312b37aaf43e13a250bbdc126051d791b78fe35",
+    "build/verification/cadenza-public-kotlin/cjk-800-60-5.png": "9821fb66239885d71cb9e20490dcb7d26d464929e73c970adc0c35dcf2d63817",
+    "build/verification/cadenza-public-browser/cjk-800-60-6.png": "2eb4a2109890f22d983a36b2921408f2e7f7e275a32cac936c227d739f621002",
+    "build/verification/cadenza-public-kotlin/cjk-800-60-6.png": "42e171c5660bf64fd9047839c5092b82035b8dd4f057bb21d6ceb3404a0c04e5",
+    "build/verification/cadenza-public-browser/cjk-800-60-7.png": "2d5f81afb42a9034cb3392929b553b9b027e2f402ff1199a3b011d214b7c0609",
+    "build/verification/cadenza-public-kotlin/cjk-800-60-7.png": "60698f59c3c6f1a5cc20a5405b41e733fe59f0106826d79712236394de0eba75",
+    "build/verification/cadenza-public-browser/latin-380-60-0.png": "014f61d41ac59076afaa80bc319a78e3b3116fbdab46a6c70081f926896aa719",
+    "build/verification/cadenza-public-kotlin/latin-380-60-0.png": "ee243a11ae95eb0fc8e9ce2ba1f756c61c665b26afeb11e365b591da884b1593",
+    "build/verification/cadenza-public-browser/latin-380-60-1.png": "7f8c0e01111c01cf87b520fe393dc1e08f5ceb914387e97d75cde9a9dfeacf47",
+    "build/verification/cadenza-public-kotlin/latin-380-60-1.png": "0487aade173888982c59e76137319267b8f957622013da4735aa23410c4d67dd",
+    "build/verification/cadenza-public-browser/latin-380-60-2.png": "be03ed9be1c334924fab76173ca6865ce9540f5b4fa4ea51861ae2d0b78e5f42",
+    "build/verification/cadenza-public-kotlin/latin-380-60-2.png": "c431a5d131619e27c81364983453c95a47803178fb093ad3cf9a46b46c177ac8",
+    "build/verification/cadenza-public-browser/latin-380-60-3.png": "ad9174625e2e69529959c57343a625cedb6308957a7d9135f5eccf7e49bda03c",
+    "build/verification/cadenza-public-kotlin/latin-380-60-3.png": "0234ac23794f0401bfec9c280d8eeb346f60b1cbe83872e857701cb649790bfc",
+    "build/verification/cadenza-public-browser/latin-380-60-4.png": "9cc9458e0882892fe2cbcb0d53a23fb8975d1686ddb0bb3e8d26003f6ca17e4d",
+    "build/verification/cadenza-public-kotlin/latin-380-60-4.png": "f6f3e6b250a6e92a91e16694d05abebcdcbbd639f7965301d1207e6efa665f2a",
+    "build/verification/cadenza-public-browser/latin-380-60-5.png": "5cf31f72fedceebbb653e89ec47dea8d59681c9d56c2bc572f55d96c68427a0f",
+    "build/verification/cadenza-public-kotlin/latin-380-60-5.png": "3e361fb8ad5b0b4c4bf718d763dd76f74461087c6c7e6a6853119aa9b0c6aa65",
+    "build/verification/cadenza-public-browser/latin-380-60-6.png": "e3c82dc5fd9296dc41a36000c78b6f5114b2dac5b3b7095789859e982be7cf4d",
+    "build/verification/cadenza-public-kotlin/latin-380-60-6.png": "b85286dd02730ab384318fb42df585a84702be6743662440f96512bf933b526e",
+    "build/verification/cadenza-public-browser/latin-380-60-7.png": "a84b5d847cc9bc1c2774bfcfc547a529add7f2ac3d0923e19c74208ac11551b4",
+    "build/verification/cadenza-public-kotlin/latin-380-60-7.png": "7160bbd6aaf74f1e0a8a36e04bc5423a44213073a7b83749ff42e8c5c88538f9",
+    "build/verification/cadenza-public-browser/wrap-380-60-0.png": "afc11cb15f8fb6757790fe28a71ad84f44ba9c3949e4cfd1a99746416c044297",
+    "build/verification/cadenza-public-kotlin/wrap-380-60-0.png": "1a89facb3d8092540c157cf1e2cf9d227e6d80ec19dcb8823d62ac0da208fcd8",
+    "build/verification/cadenza-public-browser/wrap-380-60-1.png": "cce8e9bb66b3f9cee717f2bf932e2eea8b57be94771db4852b74d33a3c76dd54",
+    "build/verification/cadenza-public-kotlin/wrap-380-60-1.png": "7fd0b4bd3706c9218229b27775484d337abe4470b0416ed0e6c9fd1b8df01714",
+    "build/verification/cadenza-public-browser/wrap-380-60-2.png": "e995b2fdbe400f2261cf51c970b2e55026c44984fb39cb53f3fe03b83703b50f",
+    "build/verification/cadenza-public-kotlin/wrap-380-60-2.png": "10f6cb5607ba84c8dd38ae6bf3b3a4452877229192447c8685867f2cff32908f",
+    "build/verification/cadenza-public-browser/wrap-380-60-3.png": "3a3b94d2e7b5decb7ebb4f54c30f699ef03997eda1bff7ede6817a8916d9a10d",
+    "build/verification/cadenza-public-kotlin/wrap-380-60-3.png": "27c4dad041fe818ab68b2ee85aeb51583c66c1231fd4eb8ba1b3b6518c8133aa",
+    "build/verification/cadenza-public-browser/wrap-380-60-4.png": "a69c1a7db2f88c57a0cedd6cc27bca800226434ec82ccde1b39dc19d40dd7eb5",
+    "build/verification/cadenza-public-kotlin/wrap-380-60-4.png": "61e4f196727cd347e8802651a81888b7f99f2cdc389d3bd93595be3858ec4a5d",
+    "build/verification/cadenza-public-browser/wrap-380-60-5.png": "1449b2ee8527d2876af77a2faefb9fa702505fcee3589d97f9dd62d27c3bf2fd",
+    "build/verification/cadenza-public-kotlin/wrap-380-60-5.png": "0626ed8ee70e641d40fee1bd6b2a1b9eedcb472462915d6798c82c3f6cf203f8",
+    "build/verification/cadenza-public-browser/wrap-380-60-6.png": "96d162cf9b550151cd342306d0e9d2eecff1fcc041011a76c1e6ac54c6925dde",
+    "build/verification/cadenza-public-kotlin/wrap-380-60-6.png": "70e0879dc332036dd445eaec2fe44fbc2f4d44faf4a9ed5d776a3a570a964c4e",
+    "build/verification/cadenza-public-browser/wrap-380-60-7.png": "57f3475762e404ca4d40fd4713738727e4c1e94772224d0abd72c745f579297c",
+    "build/verification/cadenza-public-kotlin/wrap-380-60-7.png": "9b9fdb04e433f82870264a8175fba681e107a1511bb4b2b2c34404b2112aa5a7"
+  }
+}

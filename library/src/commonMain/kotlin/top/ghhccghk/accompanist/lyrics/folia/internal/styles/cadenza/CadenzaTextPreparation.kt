@@ -6,6 +6,7 @@ import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextMotion
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.text.cssWordText
 import top.ghhccghk.accompanist.lyrics.folia.internal.text.graphemeBoundaries
@@ -22,6 +23,7 @@ internal fun prepareCadenzaText(line: CadenzaLyric, viewportWidth: Double, measu
     val size=cadenzaPreparationSize(line,viewportWidth,text,fontScale,widthRatio)
     val style=baseStyle.copy(fontSize=(floor(size.fontPx*100+1e-9)/100).sp,
         fontWeight=baseStyle.fontWeight?:FontWeight.Bold,textAlign=TextAlign.Left,
+        textDirection=baseStyle.textDirection.takeUnless{it==TextDirection.Unspecified}?:TextDirection.Ltr,
         textMotion=baseStyle.textMotion?:TextMotion.Animated,lineHeight=TextUnit.Unspecified)
     fun natural(value: String)=measurer.measure(value,style,softWrap=false)
     fun width(value: String): Double {

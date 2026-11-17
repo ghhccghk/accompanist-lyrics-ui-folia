@@ -27,6 +27,8 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.PartitaLine
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.PartitaConfig
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.partitaGraphemeCount
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.tilt.*
+import top.ghhccghk.accompanist.lyrics.folia.internal.styles.cadenza.*
+import top.ghhccghk.accompanist.lyrics.folia.internal.timeline.PrimaryEpoch
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.GlowBudget
 import top.ghhccghk.accompanist.lyrics.folia.internal.waiting.*
 import androidx.compose.ui.semantics.contentDescription
@@ -51,22 +53,35 @@ fun FoliaLyricsView(
     val document = remember(IdentityKey(lyrics), contentKey) { normalize(lyrics) }
     val tilt = style is FoliaStyle.Tilt
     val index = remember(document,tilt) { VisualTimeline(document.lines,if(tilt)450_000 else null) }
+    val cadenzaLines=remember(document,style is FoliaStyle.Cadenza){
+        if(style is FoliaStyle.Cadenza)document.lines.map(::cadenzaLyric)else null
+    }
+    val cadenzaIndex=remember(cadenzaLines){cadenzaLines?.let(::CadenzaTimeline)}
     // Unknown/invalid vocal intervals cannot safely establish silence.
     val waitingTimeline = remember(document) {
         WaitingTimeline(if(document.diagnostics.isEmpty()) document.lines else emptyList())
     }
     val subtitleHistory = remember(document) { SubtitleHistory(document.lines) }
     val currentPlayback by rememberUpdatedState(playback)
-    val selection by remember(index, options.offsetMillis) { derivedStateOf {
-        index.at((currentPlayback().positionMillis - options.offsetMillis) * 1000)
+    val selection by remember(index, cadenzaIndex, options.offsetMillis) { derivedStateOf {
+        val us=(currentPlayback().positionMillis-options.offsetMillis)*1000
+        val classic=index.at(us)
+        if(cadenzaIndex==null)classic else {
+            val selected=cadenzaIndex.at(us/1e6)
+            classic.copy(primary=selected.active?.let{i->PrimaryEpoch(i,(selected.entered!!*1e6).toLong(),
+                (cadenzaTiming(cadenzaLines!![i]).end*1e6).toLong())},exiting=emptyList(),
+                secondary=(classic.secondary+listOfNotNull(classic.primary?.line)).distinct().filter{
+                    it!=selected.active&&document.lines[it].accompaniment&&
+                        us>=document.lines[it].startUs&&us<=document.lines[it].endUs},next=selected.upcoming)
+        }
     } }
-    val waiting by remember(waitingTimeline,index,options.offsetMillis) { derivedStateOf {
+    val waiting by remember(waitingTimeline,index,cadenzaIndex,options.offsetMillis) { derivedStateOf {
         val time=(currentPlayback().positionMillis-options.offsetMillis)*1000
-        waitingTimeline.visibleAt(time,index.at(time))
+        waitingTimeline.visibleAt(time,selection)
     } }
-    val subtitles by remember(index,subtitleHistory,options) {derivedStateOf {
+    val subtitles by remember(index,cadenzaIndex,subtitleHistory,options) {derivedStateOf {
         val time=(currentPlayback().positionMillis-options.offsetMillis)*1000
-        val active=index.at(time).primary?.line
+        val active=selection.primary?.line
         resolveSubtitleContent(document.lines,active,subtitleHistory.recent(time,active),buildList {
             if(options.showTranslation) add(SubtitleSource.Translation)
             if(options.showPhonetic) add(SubtitleSource.Phonetic)
@@ -144,6 +159,32 @@ fun FoliaLyricsView(
                         Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
                         defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
                 }
+            }
+        } else if(style is FoliaStyle.Cadenza) {
+            val tuning=style.tuning
+            Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center) {
+                if(document.lines.isEmpty())BasicText("暂无可显示歌词",style=mainStyle.copy(color=colors.secondary))
+                else if(main!=null)key(selection.primary) {
+                    val primary=selection.primary!!
+                    val source=cadenzaLines!![primary.line].copy(chorus=main.ref.index in tuning.chorusLineIndices)
+                    val palette=remember(colors,tuning.wordColors){CadenzaPalette(colors.text,colors.active,tuning.wordColors.map{it.word to it.color})}
+                    val intensity=when(options.animationIntensity){
+                        FoliaAnimationIntensity.Calm->CadenzaIntensity.CALM
+                        FoliaAnimationIntensity.Normal->CadenzaIntensity.NORMAL
+                        FoliaAnimationIntensity.Chaotic->CadenzaIntensity.CHAOTIC
+                    }
+                    CadenzaTargetStage(source,{(currentPlayback().positionMillis-options.offsetMillis)/1000.0},
+                        typography.main?:typography.secondary.copy(fontWeight=FontWeight.Bold),Modifier.fillMaxSize(),
+                        glow=tuning.glowIntensity.toDouble(),intensity=intensity,fontScale=tuning.fontScale.toDouble()*typography.scale,
+                        widthRatio=tuning.widthRatio.toDouble(),motion=true,motionAmount=tuning.motionAmount.toDouble(),palette=palette,
+                        reducedMotion=options.reducedMotion,quality=options.quality,motionStart=primary.enterUs/1e6,
+                        onQuality={actual,count->quality=actual;unitCount=count},
+                        onClick={onLineClicked(main.source)},onLongPress={onLinePressed(main.source)})
+                }
+                waiting?.let{gap->WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
+                    {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
+                    Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
+                    defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))}
             }
         } else if(style is FoliaStyle.Tilt) {
             val t=style.tuning

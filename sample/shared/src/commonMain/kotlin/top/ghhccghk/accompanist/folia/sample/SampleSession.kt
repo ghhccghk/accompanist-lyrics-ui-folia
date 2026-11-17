@@ -19,10 +19,12 @@ class SampleSession(demoInitially: Boolean = false) {
     var lyricTheme by mutableStateOf(SampleLyricTheme.Classic)
     var partitaTuning by mutableStateOf(PartitaTuning())
     var tiltTuning by mutableStateOf(TiltTuning())
+    var cadenzaTuning by mutableStateOf(CadenzaTuning())
     val lyricStyle: FoliaStyle get() = when(lyricTheme) {
         SampleLyricTheme.Classic -> FoliaStyle.Classic(tuning)
         SampleLyricTheme.Partita -> FoliaStyle.Partita(partitaTuning)
         SampleLyricTheme.Tilt -> FoliaStyle.Tilt(tiltTuning)
+        SampleLyricTheme.Cadenza -> FoliaStyle.Cadenza(cadenzaTuning)
     }
     var fontScale by mutableFloatStateOf(1f)
     var renderResolution by mutableStateOf(RenderResolution.Full)
@@ -30,4 +32,4 @@ class SampleSession(demoInitially: Boolean = false) {
     var preferencesLoaded = false
 }
 
-enum class SampleLyricTheme { Classic, Partita, Tilt }
+enum class SampleLyricTheme { Classic, Partita, Tilt, Cadenza }

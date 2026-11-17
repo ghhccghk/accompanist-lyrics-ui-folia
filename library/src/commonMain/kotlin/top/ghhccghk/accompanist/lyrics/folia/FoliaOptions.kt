@@ -47,6 +47,33 @@ sealed interface FoliaStyle {
      * remain tracked in docs/themes-parity.md. */
     @Immutable
     data class Tilt(val tuning: TiltTuning = TiltTuning()) : FoliaStyle
+
+    /** Cadenza fragment-cloud stage. Calibration preview; measured differences
+     * and source refresh-rate adaptation are recorded in docs/themes-parity.md. */
+    @Immutable
+    data class Cadenza(val tuning:CadenzaTuning=CadenzaTuning()) : FoliaStyle
+}
+
+@Immutable
+data class FoliaWordColor(val word:String,val color:Color)
+
+@Immutable
+data class CadenzaTuning(
+    val fontScale:Float=1.12f,
+    val widthRatio:Float=.72f,
+    val glowIntensity:Float=1f,
+    val motionAmount:Float=1f,
+    /** Explicit top-level lyrics-core line indices, not inferred from accompaniment. */
+    val chorusLineIndices:Set<Int> = emptySet(),
+    val wordColors:List<FoliaWordColor> = emptyList(),
+) {
+    init {
+        require(fontScale.isFinite()&&fontScale in .5f..2f)
+        require(widthRatio.isFinite()&&widthRatio in .35f..1f)
+        require(glowIntensity.isFinite()&&glowIntensity in 0f..2f)
+        require(motionAmount.isFinite()&&motionAmount in 0f..2f)
+        require(chorusLineIndices.all{it>=0})
+    }
 }
 
 enum class TiltColorScheme { Default, Swap, AccentAll, PrimaryAll }

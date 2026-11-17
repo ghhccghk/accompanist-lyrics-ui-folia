@@ -43,3 +43,8 @@ Paint度量，中文middle一致性未实现/未验证，不能称平台有意�
 渐变/显现/辉光/灵魂层13字段峰差0，finite operator门槛1e-10。媒体包络独立使用
 事件分段指数解，不按显示帧累加，原RAF右端采样/Float32连续差异尚待整屏比较。
 未伪造音频；无活动文字三层画面验收，详见verification/diorama-unit-frame。
+
+活动正文/渐变已独立绘制：完整段落塑形切片、原单位时钟/线性色及实际透视。
+90原active layout/material/WebGL图（明确glow/soul0隔离）MAE6.605919、盒峰2px；
+暂停/seek/重挂通过，不以此冒充三层/CameraRig。跨单元overhang/混合bidi还需补，
+详见verification/diorama-active-base。两端构建/JVM离屏通过，无设备。

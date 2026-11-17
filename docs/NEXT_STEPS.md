@@ -10,10 +10,10 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | 路径/摆位/冻结透视、core文字分组/内部时钟 | 无 | 运镜/揭示/合成与设备尚未实现 |
 
-当前唯一下一项：镜台活动文字单元的完整塑形切片/原媒体跟唱与三层合成。
-完成条件：复用已核对的core内部时钟和真实透视，逐单元外观对照实际原函数/材质，
-不把邻行完整段落当作活动主题；暂停/seek可重建。CameraRig/深度/雾和Android
-中线度量仍是未完成验收项，Diorama不开放sample入口。
+当前唯一下一项：镜台活动文字注册辉光/灵魂层实际三层透视合成。
+完成条件：在已运行的完整塑形切片/原媒体跟唱上增加原halo栅格、原层序/深度偏移、
+phase-correct ghost；同输入/字体/媒体/实际源材质连续或隔离对照，保留非线性混色/
+采样残差。CameraRig/深度/雾/Android中线度量仍未完成，Diorama不开放sample。
 Fume短bridge/总览仍未修复：mounted原版与当前连续模型在3.15s、10s差最大；
 扩展完整pose的本地诊断保存在.work/FumeMountedPublicTest-diagnostic.kt及
 .work/fume-camera-diagnostic.log、build/verification/fume-mounted-kotlin/*.tsv。
@@ -97,10 +97,15 @@ e3bb67c 镜台独立完整文字透视：同字体/视点24原WebGL对Kotlin自�
 原失败CJK图/报告保留；JVM离屏/两端构建通过，无设备/真实窗口。Android字体表度量
 暂缺，不能宣称其中文基线通过。证据verification/diorama-text-plane。
 
-镜台活动材质内核：实际原updateDioramaActiveUnits/Three对象832组13字段峰0，
+e7037f7 镜台活动材质内核：实际原updateDioramaActiveUnits/Three对象832组13字段峰0，
 原Float32写入/线性色/关键词/渐变/显现/注册辉光/灵魂层阶段均核对。独立媒体指数
 包络可逆/暂停，事件边界原指数1e-12；不是原RAF连续画面等价或视觉验收。
 两端构建通过，下一项仍是完整塑形切片/三层实际绘制，证据verification/diorama-unit-frame。
+
+镜台活动正文/渐变绘制：ONE完整塑形段落按显示单元切片、内部EGC时钟保留，
+原版真实active layout/material/WebGL（glow/soul0）90对，前景MAE6.605919/盒峰2px。
+字号/原线性色/逐单元时间、暂停/seek/重挂、时间变化不重备文字通过；两端构建通过。
+无设备/真实窗口；混合bidi与跨单元overhang未完成验收，证据verification/diorama-active-base。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

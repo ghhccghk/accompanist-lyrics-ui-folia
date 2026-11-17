@@ -1572,3 +1572,13 @@ explicit test seam. Independent analytic media envelopes reconstruct event-defin
 attack/release with no frame replay. No audio analysis, beat or body raster copied.
 Original RAF-boundary quantization is not claimed identical.832 actual original
 Three material/mesh controls and scope: verification/diorama-unit-frame.
+
+### Diorama active base reveal / full-shaped slices (2026-11-18)
+Pinned cc6226e4 layoutDioramaActiveUnits / rasterDioramaUnit / active material
+assignment -> DioramaActiveText.kt: own128px complete paragraph cropped into
+source display units, original unit timeline retained, real projected unit planes,
+base reveal/own-unit gradient and explicit linear→sRGB conversion. Complete-run
+selection replaces isolated-unit shaping/prefix geometry to protect joining;
+advance-clipped boundary overhang is still unresolved. No source textures copied.
+Source explicitly disables glow/soul for the90-frame isolated base comparison;
+this does not validate original full scene/RAF. Evidence: verification/diorama-active-base.

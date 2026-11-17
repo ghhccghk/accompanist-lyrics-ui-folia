@@ -24,6 +24,7 @@ internal fun CappellaTargetStage(lines:List<CappellaLine>,title:String,time:()->
     currentLine:()->Int,textStyle:TextStyle,modifier:Modifier=Modifier,
     intensity:CappellaIntensity=CappellaIntensity.NORMAL,palette:CappellaPalette=CappellaPalette(),
     fontScale:Double=1.0,reducedMotion:Boolean=false,playbackMotion:Boolean=false,
+    glowEnabled:Boolean=true,onClick:((Int)->Unit)?=null,onLongPress:((Int)->Unit)?=null,
     onRows:(List<CappellaRowLayout>)->Unit={}) {
     val density=LocalDensity.current;val resolver=LocalFontFamilyResolver.current
     val measurer=rememberTextMeasurer(cacheSize=32)
@@ -54,7 +55,7 @@ internal fun CappellaTargetStage(lines:List<CappellaLine>,title:String,time:()->
             val box=motion?.size?:CappellaBubbleSize(row.bubbleWidth/row.scale,row.bubbleHeight/row.scale)
             val placement=CappellaPlacement(row.bubbleX,row.bubbleY,row.scale,row.opacity)
             val epoch=motion?.glowEpoch?:line?.start?:0.0
-            val decoration=remember(palette,intensity,epoch) { CappellaDecoration(palette,intensity,epoch) }
+        val decoration=remember(palette,intensity,epoch,glowEnabled) { if(glowEnabled)CappellaDecoration(palette,intensity,epoch)else null }
             CappellaBubbleTarget(line?:CappellaLine(m.text,0.0,0.0,emptyList()),{media()},textStyle,
                 cappellaBubbleColors(m.sender,palette.primary,palette.accent,palette.secondary,palette.background),
                 Modifier.fillMaxSize(),config,right,active,reducedMotion,box,placement,decoration)
@@ -70,12 +71,13 @@ internal fun CappellaTargetStage(lines:List<CappellaLine>,title:String,time:()->
                     box,placement,right,Modifier.fillMaxSize(),stamp)
             }
         }
+        CappellaInput(rows,lines,density,Modifier.fillMaxSize(),onClick,onLongPress)
     }
 }
 
 @Composable
 private fun CappellaAvatarTarget(placement:CappellaPlacement,sender:CappellaSender,palette:CappellaPalette,
-    decoration:CappellaDecoration,modifier:Modifier) {
+    decoration:CappellaDecoration?,modifier:Modifier) {
     val density=LocalDensity.current
     val shadows=remember(density,decoration) { cappellaShadows(40.0,40.0,density,false,false,decoration,true) }
     Canvas(modifier) { withCappellaPlacement(placement) {

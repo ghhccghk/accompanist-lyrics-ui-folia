@@ -6,14 +6,14 @@
 | --- | --- | --- | --- |
 | Classic / Partita / Tilt / Cadenza | 已接入 | 可从 sample 选择 | 未完成，保留各自残差 |
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
-| Cappella | 消息与动态presence舞台 | 未接入 | 压力布局差未解决 |
+| Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
 | Fume | 文章/揭示/镜头实验 | 未接入 | 镜头残差未解决 |
 | Diorama | 待有界能力调查 | 无 | 未开始 |
 
-当前唯一下一项：Cappella公共组件/sample校准闭环，保留密集projection未通过状态。
-完成条件：复用原240压力矩阵，区分真实算法错误与原Motion布局提交采样；
-不靠固定延迟/提高容差。来源对象/agent桥接已具备，接公共交互/sample/原版整屏。
-若投影暂时无解继续其他独立闭环，不将40px残差写成最终标准。
+当前唯一下一项：Fume镜头边界/分数尺寸调查，再接真实core→公开组件→sample。
+完成条件：先复用原短桥接/总览镜头矩阵定位14.867px/scale.055319残差；
+保留整曲文章/打印/读后保留，不借classic舞台；公共命中/偏好/生命周期及整曲准备验证后
+才开放校准预览。保留Cappella密集projection差异，不将其改称正式验收通过。
 
 已完成（起点295d260）：
 - c59a70f 正文/字幕独立缩放、源字号取整/行高、重排/避让/扫描/辉光尺寸贯通。
@@ -36,10 +36,17 @@
   32原源行/96sender/56renderHints阈值及原reveal/messages控制通过，两端构建通过。
   原last-end不被EGC合并的最大end覆盖；没有新画面/设备结论，见verification/cappella-core。
 
-Cappella projection：同240压力矩阵MAE11.890488→9.173245，盒峰40.109467→22.188593px；
+73085e6 Cappella projection：同240压力矩阵MAE11.890488→9.173245，盒峰40.109467→22.188593px；
 常规210图hash不变。原局部提交snapshot实测确认漏算前行连续高度位移，已补；
 已稳定布局的旧测量不产生伪位移。仍有React/RAF提交残差，不能宣称正式验收。
 原失败证据及原版被动事件探针见verification/cappella-presence。
+
+Cappella公共闭环（本次提交）：真实core、显式嵌套agent、原对象点击/长按、offset、
+暂停/seek/resize/切主题/切歌/卸载重挂、Minimal无辉光、sample真实播放与演示主题入口。
+210完整公共帧先与内部逐像素一致，再对实际原JSX；全非背景含低alpha MAE2.325954/
+盒峰3.637201px/opacity峰.013716，不能与旧>8口径直接比较。密集仍差22.188593px，
+未最终视觉验收。共享五个公开主题回归、sample选主题/设置、Android APK/Desktop编译通过；
+无设备/真实窗口/性能结论。证据verification/cappella-public及docs/cappella-preview.md。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

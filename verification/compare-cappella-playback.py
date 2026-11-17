@@ -6,8 +6,9 @@ import json,hashlib,sys
 import numpy as np
 from PIL import Image,ImageDraw
 root=Path(__file__).resolve().parents[1]
-matrix='presence'if'--presence'in sys.argv else'playback'
-source=root/f'build/verification/cappella-{matrix}-browser';native=root/f'build/verification/cappella-{matrix}-kotlin'
+matrix='public'if'--public'in sys.argv else'presence'if'--presence'in sys.argv else'playback'
+fixture='playback'if matrix=='public'else matrix
+source=root/f'build/verification/cappella-{fixture}-browser';native=root/f'build/verification/cappella-{matrix}-kotlin'
 out=root/f'verification/cappella-{matrix}';out.mkdir(exist_ok=True)
 background=np.array([22,36,53]);frames=[];hashes={};numeric=[];mismatches=[]
 for f in sorted(source.glob('*.png')):
@@ -15,14 +16,16 @@ for f in sorted(source.glob('*.png')):
     assert other.exists(),f'Missing native {f.name}'
     a,b=[np.asarray(Image.open(p).convert('RGB')).astype(np.int16)for p in[f,other]]
     assert a.shape==b.shape
-    mask=np.any(abs(a-background)>8,axis=2)|np.any(abs(b-background)>8,axis=2)
+    cutoff=0 if matrix=='public'else 8
+    mask=np.any(abs(a-background)>cutoff,axis=2)|np.any(abs(b-background)>cutoff,axis=2)
     diff=abs(a-b)
-    frames.append(dict(file=f.name,foreground_mae=float(diff[mask].mean())if mask.any()else 0,full_mae=float(diff.mean())))
+    frames.append(dict(file=f.name,foreground_mae=float(diff[mask].mean())if mask.any()else 0,full_mae=float(diff.mean()),
+        rgb_peak=int(diff.max()),worst_64px_tile_mae=max(float(diff[y:y+64,x:x+64].mean())for y in range(0,a.shape[0],64)for x in range(0,a.shape[1],64))))
     for p in[f,other]:hashes[p.relative_to(root).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
-expected=sum(1 for r in(root/f'verification/cappella-fixtures/{matrix}-frames.tsv').read_text().splitlines()if r and not r.startswith('#'))
+expected=sum(1 for r in(root/f'verification/cappella-fixtures/{fixture}-frames.tsv').read_text().splitlines()if r and not r.startswith('#'))
 assert len(frames)==expected,(len(frames),expected)
 def rows(path):return[r.split('\t')for r in path.read_text(encoding='utf-8').splitlines()if r and not r.startswith('#')]
-original=rows(root/f'verification/cappella-fixtures/{matrix}-observations.tsv')
+original=rows(root/f'verification/cappella-fixtures/{fixture}-observations.tsv')
 actual=[r for p in native.glob('*-geometry.tsv')for r in rows(p)]
 for file in sorted(set(r[0]for r in original)):
     a=[r for r in original if r[0]==file];b=[r for r in actual if r[0]==file]
@@ -35,7 +38,7 @@ for file in sorted(set(r[0]for r in original)):
         for i,(s,v)in enumerate(zip(source_values,native_values)):numeric.append([file,r[2],i,s,v,abs(s-v)])
 (out/'residual.tsv').write_text('# file message field original native error\n'+'\n'.join('\t'.join(map(str,r))for r in numeric)+'\n',encoding='utf-8')
 report=dict(conditions=json.loads((source/'conditions.json').read_text(encoding='utf-8')),
-    status='Internal moving-stage calibration, not final Cappella acceptance. Full mounted transition/layout residuals below remain required work.',
+    status=('Published core/public FoliaLyricsView calibration preview; public/internal pixels checked exactly. All nonbackground pixels including low alpha; not comparable to prior >8 foreground metric. Not final visual acceptance.'if matrix=='public'else'Internal moving-stage calibration, not final Cappella acceptance. Full mounted transition/layout residuals below remain required work.'),
     mean_foreground_mae=sum(r['foreground_mae']for r in frames)/len(frames),
     maximum_geometry_error=max(r[-1]for r in numeric if r[2]!=8),maximum_opacity_error=max(r[-1]for r in numeric if r[2]==8),
     presence_mismatches=mismatches,frames=frames,png_sha256=hashes)

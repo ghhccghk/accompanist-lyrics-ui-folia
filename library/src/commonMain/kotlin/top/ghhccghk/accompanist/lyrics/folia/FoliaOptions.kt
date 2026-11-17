@@ -35,6 +35,10 @@ data class FoliaStatus(
 )
 
 sealed interface FoliaStyle {
+    /** Text-only chat calibration preview; no bundled emoji/cover assets. */
+    @Immutable
+    data class Cappella(val tuning:CappellaTuning=CappellaTuning()):FoliaStyle
+
     /** Text-wheel calibration preview. No invented beats/gears or audio analysis. */
     @Immutable
     data class Pendolo(val tuning:PendoloTuning=PendoloTuning()):FoliaStyle
@@ -56,6 +60,24 @@ sealed interface FoliaStyle {
      * and source refresh-rate adaptation are recorded in docs/themes-parity.md. */
     @Immutable
     data class Cadenza(val tuning:CadenzaTuning=CadenzaTuning()) : FoliaStyle
+}
+
+/** Explicit identity of a core source line; null accompanimentIndex is the main
+ * line. No identity is inferred from left/right alignment. Last duplicate wins. */
+@Immutable
+data class CappellaLineAgent(val lineIndex:Int,val agentId:String,val accompanimentIndex:Int?=null) {
+    init { require(lineIndex>=0);require(accompanimentIndex==null||accompanimentIndex>=0) }
+}
+
+@Immutable
+data class CappellaTuning(
+    val fontScale:Float=1f,
+    /** Host-supplied title; blank uses the explicit local fallback "歌词". */
+    val title:String="歌词",
+    val background:Color=Color(0xff162435),
+    val agents:List<CappellaLineAgent> = emptyList(),
+) {
+    init { require(fontScale.isFinite()&&fontScale in .5f..2f) }
 }
 
 @Immutable

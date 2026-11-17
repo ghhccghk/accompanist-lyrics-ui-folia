@@ -30,6 +30,8 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita.partitaGrap
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.tilt.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.cadenza.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.pendolo.*
+import top.ghhccghk.accompanist.lyrics.folia.internal.styles.cappella.*
+import top.ghhccghk.accompanist.lyrics.folia.internal.model.SourceRef
 import top.ghhccghk.accompanist.lyrics.folia.internal.timeline.PrimaryEpoch
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.GlowBudget
 import top.ghhccghk.accompanist.lyrics.folia.internal.waiting.*
@@ -59,16 +61,25 @@ fun FoliaLyricsView(
         if(style is FoliaStyle.Cadenza)document.lines.map(::cadenzaLyric)else null
     }
     val cadenzaIndex=remember(cadenzaLines){cadenzaLines?.let(::CadenzaTimeline)}
+    val cappellaCore=remember(document,style){(style as? FoliaStyle.Cappella)?.let{c->
+        cappellaCoreLines(document,c.tuning.agents.associate{SourceRef(it.lineIndex,it.accompanimentIndex) to it.agentId})
+    }}
+    val cappellaLines=remember(cappellaCore){cappellaCore?.map{it.stage}}
+    val cappellaCounts=remember(cappellaLines){cappellaLines?.map{CappellaRevealPlan(it).characters.size}}
     // Unknown/invalid vocal intervals cannot safely establish silence.
     val waitingTimeline = remember(document) {
         WaitingTimeline(if(document.diagnostics.isEmpty()) document.lines else emptyList())
     }
     val subtitleHistory = remember(document) { SubtitleHistory(document.lines) }
     val currentPlayback by rememberUpdatedState(playback)
-    val selection by remember(index, cadenzaIndex, options.offsetMillis) { derivedStateOf {
+    val selection by remember(index, cadenzaIndex, cappellaLines, options.offsetMillis) { derivedStateOf {
         val us=(currentPlayback().positionMillis-options.offsetMillis)*1000
         val classic=index.at(us)
-        if(cadenzaIndex==null)classic else {
+        if(cappellaLines!=null){
+            val i=cappellaCurrentLine(cappellaLines,us/1e6)
+            classic.copy(primary=if(i<0)null else PrimaryEpoch(i,(cappellaLines[i].start*1e6).toLong(),
+                (cappellaLines[i].renderEnd*1e6).toLong()),exiting=emptyList(),secondary=emptyList())
+        }else if(cadenzaIndex==null)classic else {
             val selected=cadenzaIndex.at(us/1e6)
             classic.copy(primary=selected.active?.let{i->PrimaryEpoch(i,(selected.entered!!*1e6).toLong(),
                 (cadenzaTiming(cadenzaLines!![i]).end*1e6).toLong())},exiting=emptyList(),
@@ -77,11 +88,11 @@ fun FoliaLyricsView(
                         us>=document.lines[it].startUs&&us<=document.lines[it].endUs},next=selected.upcoming)
         }
     } }
-    val waiting by remember(waitingTimeline,index,cadenzaIndex,options.offsetMillis) { derivedStateOf {
+    val waiting by remember(waitingTimeline,index,cadenzaIndex,cappellaLines,options.offsetMillis) { derivedStateOf {
         val time=(currentPlayback().positionMillis-options.offsetMillis)*1000
         waitingTimeline.visibleAt(time,selection)
     } }
-    val subtitles by remember(index,cadenzaIndex,subtitleHistory,options) {derivedStateOf {
+    val subtitles by remember(index,cadenzaIndex,cappellaLines,subtitleHistory,options) {derivedStateOf {
         val time=(currentPlayback().positionMillis-options.offsetMillis)*1000
         val active=selection.primary?.line
         resolveSubtitleContent(document.lines,active,subtitleHistory.recent(time,active),buildList {
@@ -112,7 +123,35 @@ fun FoliaLyricsView(
         // its missing size before switching to classic/Partita text preparation.
         val mainStyle=typography.main?.let { if(it.fontSize==TextUnit.Unspecified)it.copy(fontSize=responsiveMain.fontSize)else it }?:responsiveMain
         val main = selection.primary?.line?.let(document.lines::get)
-        if(style is FoliaStyle.Pendolo) {
+        if(style is FoliaStyle.Cappella) {
+            val tuning=style.tuning
+            val core=cappellaCore!!;val lines=cappellaLines!!
+            val intensity=when(options.animationIntensity){
+                FoliaAnimationIntensity.Calm->CappellaIntensity.CALM
+                FoliaAnimationIntensity.Normal->CappellaIntensity.NORMAL
+                FoliaAnimationIntensity.Chaotic->CappellaIntensity.CHAOTIC
+            }
+            if(core.isEmpty())BasicText("暂无可显示歌词",style=mainStyle.copy(color=colors.secondary))
+            else CappellaTargetStage(lines,tuning.title.trim().ifEmpty{"歌词"},
+                {(currentPlayback().positionMillis-options.offsetMillis)/1000.0},
+                {cappellaCurrentLine(lines,(currentPlayback().positionMillis-options.offsetMillis)/1000.0)},
+                typography.main?:typography.secondary.copy(fontWeight=FontWeight.Bold),Modifier.fillMaxSize(),
+                intensity=intensity,palette=CappellaPalette(colors.text,colors.active,colors.secondary,tuning.background),
+                fontScale=tuning.fontScale.toDouble()*typography.scale,reducedMotion=options.reducedMotion,
+                playbackMotion=true,glowEnabled=options.quality!=FoliaQuality.Minimal,
+                onClick={onLineClicked(core[it].source)},onLongPress={onLinePressed(core[it].source)},
+                onRows={
+                    val i=cappellaCurrentLine(lines,(currentPlayback().positionMillis-options.offsetMillis)/1000.0)
+                    unitCount=if(i<0)0 else cappellaCounts!![i]
+                    quality=if(unitCount==0)FoliaQuality.Minimal else options.quality
+                })
+            waiting?.let{gap->Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center){
+                WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
+                    {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
+                    Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
+                    defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
+            }}
+        } else if(style is FoliaStyle.Pendolo) {
             val tuning=style.tuning
             val core=remember(document,tuning.chorusLineIndices){pendoloCoreLines(document,tuning.chorusLineIndices)}
             val lines=remember(core){core.map{it.stage}}

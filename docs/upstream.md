@@ -1459,3 +1459,20 @@ now accept the unmerged raw final fragment end without changing existing callers
 Original `cappellaMessageSenders/cappellaMessages` fallback remains unchanged;
 no identity inferred from core alignment. Four core/source tests and conditions
 in verification/cappella-core; not a public preview or visual acceptance.
+
+### Public Cappella integration (2026-11-18)
+Pinned cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only:
+VisualizerCappella.tsx / CappellaMessageRow.tsx / CappellaBubbleParts.tsx ->
+FoliaLyricsView.kt branch, FoliaOptions.kt configuration, CappellaTargetStage.kt
+optional decoration suppression. CappellaInput.kt is independently written for
+inverse transformed rounded-bubble input, original source callbacks, accessibility
+and zero-alpha exclusion. Original backdrop color role exposed explicitly; title
+comes from the sample's actual metadata. No image assets copied. The existing
+CappellaCoreAdapter preserves exact refs with optional explicit agent input.
+
+CappellaPlaybackPreparation.kt continuous-flow projection fix was checked with
+passive original Motion didUpdate observations; no Motion source is bundled or
+modified. Original source/node snapshots, rejected trial, remaining React/RAF
+differences: verification/cappella-presence. Complete actual-core public vs original
+JSX evidence: verification/cappella-public. All shader/blur/raster and dense-layout
+limits remain open; see docs/cappella-preview.md.

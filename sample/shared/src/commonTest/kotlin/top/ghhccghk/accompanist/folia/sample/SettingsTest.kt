@@ -4,6 +4,17 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 import kotlin.test.*
 
 class SettingsTest {
+    @Test fun cappellaDisplayPreferenceAndContentTitleRemainSeparate() {
+        val settings=SampleSettings(lyricTheme=SampleLyricTheme.Cappella,cappellaTuning=CappellaTuning(fontScale=1.5f))
+        assertEquals(settings,SampleSettings.decode(settings.encode()))
+        val session=SampleSession();session.applySettings(settings)
+        val style=assertIs<FoliaStyle.Cappella>(session.lyricStyleForTitle("Track title"))
+        assertEquals("Track title",style.tuning.title);assertEquals(1.5f,style.tuning.fontScale)
+        assertEquals(settings,session.settings());assertFalse(session.demo)
+        assertEquals(CappellaTuning(),SampleSettings.decode("version=1\ncappellaFont=NaN").cappellaTuning)
+        assertFailsWith<IllegalArgumentException>{CappellaTuning(fontScale=Float.NaN)}
+        assertFailsWith<IllegalArgumentException>{CappellaLineAgent(-1,"guest")}
+    }
     @Test fun pendoloTuningAndSourceHintsRoundTrip() {
         val tuning=PendoloTuning(1.5f,.75f,setOf(1,4),listOf(FoliaWordColor("星光|~\n",androidx.compose.ui.graphics.Color(0xff71b8ed))))
         val settings=SampleSettings(lyricTheme=SampleLyricTheme.Pendolo,pendoloTuning=tuning)

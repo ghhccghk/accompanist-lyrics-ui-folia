@@ -556,3 +556,11 @@ P0 需要通过实验证实的事项：所选工具链的最低 Android 要求�
 - core 实际字段：本地 `lyrics-core 0.5.0` sources JAR 的 `commonMain/.../model`，在本次设计阶段只读核对；不依赖原 UI 的内部类型。
 - [Compose 性能阶段](https://developer.android.com/develop/ui/compose/performance/phases)：用于区分 composition、layout 与 draw 的状态读取。
 - [Android JNI tips](https://developer.android.com/ndk/guides/jni-tips)、[Rust FFI](https://doc.rust-lang.org/nomicon/ffi.html)、[Kotlin C interop](https://kotlinlang.org/docs/native-c-interop.html)：用于 native 边界设计。设计阶段已核对后三个官方页面可访问；实际工具链行为在 P0 / P3 验证。
+
+### Cappella public calibration contract (2026-11-18)
+
+FoliaStyle.Cappella uses the actual core source objects and the independent chat
+stage. CappellaTuning exposes fontScale, host title, background mixing color and
+explicit CappellaLineAgent entries for top-level/nested sources. Missing agent
+identities keep the pinned seeded sender fallback. Color avatars/text messages
+only; no emoji assets or fabricated identities. Details: cappella-preview.md.

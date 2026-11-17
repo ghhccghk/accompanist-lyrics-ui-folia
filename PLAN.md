@@ -320,3 +320,7 @@ GPU 填充、模糊合成或纹理上传成为瓶颈时，先评估降低图层�
 - Android 官方 JNI 指南：<https://developer.android.com/ndk/guides/jni-tips>，用于批量边界、线程与资源传递设计。
 - Rust 官方 FFI 指南：<https://doc.rust-lang.org/nomicon/ffi.html>，用于 C ABI、所有权与边界封装。
 - Kotlin 官方 C interop 指南：<https://kotlinlang.org/docs/native-c-interop.html>，用于未来 Kotlin/Native 平台接入；它不替代 Android / JVM 的 JNI 路径。
+
+2026-11-18 集成结果：群唱已接真实core/public/sample文字对话校准预览；
+原版整屏与密集残差仍分别保留，详见docs/cappella-preview.md。唯一后续执行项
+仍在docs/NEXT_STEPS.md，不以公共入口/构建通过替代最终效果验收。

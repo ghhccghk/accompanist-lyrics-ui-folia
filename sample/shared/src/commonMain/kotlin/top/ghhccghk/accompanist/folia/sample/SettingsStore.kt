@@ -20,7 +20,8 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
     val renderResolution: RenderResolution = RenderResolution.Full,
     val tiltTuning: TiltTuning = TiltTuning(),
     val cadenzaTuning:CadenzaTuning=CadenzaTuning(),
-    val pendoloTuning:PendoloTuning=PendoloTuning()) {
+    val pendoloTuning:PendoloTuning=PendoloTuning(),
+    val cappellaTuning:CappellaTuning=CappellaTuning()) {
     fun encode(): String = listOf("version=1", "translation=${options.showTranslation}",
         "phonetic=${options.showPhonetic}", "next=${options.showNextLine}", "motion=${options.reducedMotion}",
         "quality=${options.quality}", "offset=${options.offsetMillis}", "rotation=${tuning.enableWordRotation}",
@@ -32,6 +33,7 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
         "tiltSplit=${tiltTuning.splitProbability}","tiltProbability=${tiltTuning.tiltStyleProbability}",
         "tiltColors=${tiltTuning.colorScheme}","cadenzaFont=${cadenzaTuning.fontScale}",
         "pendoloLyricsFont=${pendoloTuning.lyricsFontScale}","pendoloSubtitleFont=${pendoloTuning.subtitleFontScale}",
+        "cappellaFont=${cappellaTuning.fontScale}",
         "pendoloChorus=${pendoloTuning.chorusLineIndices.sorted().joinToString(",")}",
         "pendoloWords=${pendoloTuning.wordColors.joinToString("|"){entry->
             entry.word.map{it.code.toString(16).padStart(4,'0')}.joinToString("")+"~"+entry.color.toArgb().toUInt().toString(16)
@@ -81,12 +83,12 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
                         val chars=parts[0].chunked(4).map{it.toIntOrNull(16)?:return@mapNotNull null}
                         val color=parts[1].toUIntOrNull(16)?:return@mapNotNull null
                         FoliaWordColor(chars.map{it.toChar()}.joinToString(""),Color(color.toInt()))
-                    }))
+                    }),CappellaTuning(fontScale=number("cappellaFont",1f,.5f..2f)))
         }
     }
 }
 
-fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning, renderResolution, tiltTuning,cadenzaTuning,pendoloTuning)
+fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning, renderResolution, tiltTuning,cadenzaTuning,pendoloTuning,cappellaTuning.copy(title="歌词",agents=emptyList()))
 fun SampleSession.applySettings(value: SampleSettings) {
     options = value.options; tuning = value.tuning; fontScale = value.fontScale
     lyricTheme=value.lyricTheme;partitaTuning=value.partitaTuning
@@ -94,4 +96,5 @@ fun SampleSession.applySettings(value: SampleSettings) {
     tiltTuning=value.tiltTuning
     cadenzaTuning=value.cadenzaTuning
     pendoloTuning=value.pendoloTuning
+    cappellaTuning=value.cappellaTuning
 }

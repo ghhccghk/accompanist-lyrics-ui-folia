@@ -182,7 +182,7 @@ fun FoliaSampleApp(
                                 contentKey = song.revision,
                                 options = session.options,
                                 typography = FoliaTypography(scale = session.fontScale),
-                                style = session.lyricStyle,
+                                style = session.lyricStyleForTitle(song.player.metadata.title),
                                 onLineClicked = { line -> songs.control { it.seek(line.start.toLong() + session.options.offsetMillis) } })
                         } }
                     }

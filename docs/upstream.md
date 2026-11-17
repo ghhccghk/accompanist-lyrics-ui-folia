@@ -1,5 +1,20 @@
 # Source ledger
 
+## 2026-11-17 Cadenza line selection timeline
+
+Pinned cc6226e4, AGPL-3.0-only. appPlaybackHelpers.ts:21–32
+findLatestActiveLineIndex and runtime.ts getRecentCompletedLine/getUpcomingLine
+-> CadenzaTimeline.kt. Source reverse array-order priority and inclusive ends
+are retained. Native prepares exact-boundary/open-interval selections using a
+max heap; queries binary-search immutable events, including resumed overlap
+mount epochs. It does not add classic's AnimatePresence exit retention.
+1269 source observations/12 scenarios include unsorted inputs and exact ends.
+Generator extracts the unchanged original selector declaration, erases only
+TypeScript annotations using Node24's stripTypeScriptTypes, then imports that
+exact ESM; it avoids executing unrelated app/i18n/network registries. Declaration
+SHA256 and limitations retained in timeline-conditions.json. No native source
+fixture is used at runtime. Host draw/selection integration not yet covered.
+
 ## 2026-11-17 Cadenza chorus rings and colors
 
 Same pinned Folia cc6226e4, AGPL-3.0-only. VisualizerCadenza.tsx:398–413

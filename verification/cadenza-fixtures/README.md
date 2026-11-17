@@ -1,5 +1,20 @@
 # Cadenza fixed-source calibration
 
+## Original line selection (2026-11-17)
+
+Run `node verification/classic-browser/generate-cadenza-timeline.mjs` (Node24,
+builtin stripTypeScriptTypes), then `:library:jvmTest --tests '*CadenzaTimelineTest'`.
+The exact original findLatestActiveLineIndex declaration is extracted from the
+clean pinned source and only TS annotations are erased. Its SHA256 is recorded;
+no app settings, i18n or network module initialization is needed.12 scenarios/
+1269 source observations cover absent/annotated hints, empty, gaps, zero/micro/
+short lines, overlaps/resumption, same starts, unsorted arrays and inclusive ends.
+Native active/recent/upcoming indices agree exactly in sequential, randomized
+and reverse queries. Mount epoch on resumed older lines is reconstructed from
+canonical media boundaries rather than prior screen history. No classic extra
+exit retention. Logic verification only; host composition and actual multi-line
+source/native rendering are separate work, not claimed by this fixture.
+
 ## Chorus circles and keyword colors (2026-11-17)
 
 Run `node verification/classic-browser/capture-cadenza-accents.mjs`,

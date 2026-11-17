@@ -59,6 +59,7 @@ internal class CappellaPlaybackPreparation(private val stage:CappellaStagePrepar
         val projections=mutableListOf<Pair<Double,Double>>()
         val exitTops=mutableMapOf<Double,Double>()
         val exitHeights=mutableMapOf<Double,Double>()
+        var measured:Pair<Double,Double>?=null
         fun phase(time:Double,leftLimit:Boolean=false)=presence.lastOrNull {
             it.first<time||(!leftLimit&&it.first==time)
         }
@@ -75,7 +76,7 @@ internal class CappellaPlaybackPreparation(private val stage:CappellaStagePrepar
     init {
         require(stage.lines.all{it.start.isFinite()&&it.renderEnd.isFinite()})
         val events=(listOf(0.0)+stage.lines.flatMap{listOf(it.start,it.renderEnd)}+
-            plans.flatMap{it.bubbleTargetTimes+it.timestampReady}).filter{it.isFinite()&&it>=0}.distinct().sorted()
+            plans.flatMap{it.bubbleTargetTimes+it.revealTimes+it.timestampReady}).filter{it.isFinite()&&it>=0}.distinct().sorted()
         val all=mutableListOf<Episode>();val live=linkedMapOf<String,Episode>()
         val retiring=linkedMapOf<String,Episode>()
         // AnimatePresence clears the completed exit batch together, rather
@@ -138,7 +139,11 @@ internal class CappellaPlaybackPreparation(private val stage:CappellaStagePrepar
         // compensate surviving rows from their pre-commit visual positions.
         // A new structural change retargets the current projection, not its
         // old initial offset. Exiting popLayout rows freeze that same position.
-        for(t in episodes.flatMap{e->e.presence.map{it.first}}.distinct().sorted()) {
+        val parentCommits=stage.lines.flatMap{listOf(it.start,it.renderEnd)}.filter { t->
+            stage.lines.indexOfLast{it.start<t&&t<=it.renderEnd}!=cappellaCurrentLine(stage.lines,t,after=true)||
+                stage.lines.indexOfLast{it.start<t}!=cappellaVisibleLine(stage.lines,t)
+        }.toSet()
+        for(t in events) {
             val before=flow(t,leftLimit=true).toMap()
             val after=flow(t).toMap()
             for((e,top)in before) {
@@ -159,6 +164,29 @@ internal class CappellaPlaybackPreparation(private val stage:CappellaStagePrepar
                     val visual=e.exitTops.getValue(previous.first)+e.projection(t)
                     e.projections+=t to (visual-next)
                 }
+            }
+            for(e in episodes) {
+                if(t<e.enter||e.unmount?.let{t>=it}==true)continue
+                val line=e.message.line
+                val localCommit=line!=null&&(
+                    e.active(t)&&(t in plans[line].bubbleTargetTimes||t in plans[line].revealTimes)||
+                    e.timestamps.any{it.first==t})
+                if(t!=e.enter&&t !in parentCommits&&!localCommit)continue
+                val phase=e.phase(t)?:continue
+                val top=if(phase.second)after[e]?:continue else e.exitTops[phase.first]?:continue
+                val h=if(phase.second)max(40.0,e.height.at(t).value)+e.margin.at(t).value
+                    else e.exitHeights.getValue(phase.first)
+                val previous=e.measured
+                // Motion compares rounded target boxes, including the row's
+                // animated height even for layout="position". A local reveal
+                // commit can therefore retarget a still-running projection.
+                val targetChanged=previous!=null&&(floor(previous.first+.5)!=floor(top+.5)||
+                    floor(previous.first+previous.second+.5)!=floor(top+h+.5))
+                if(targetChanged&&e.projections.lastOrNull()?.first!=t) {
+                    val offset=e.projection(t)
+                    if(offset!=0.0)e.projections+=t to offset
+                }
+                e.measured=top to h
             }
         }
     }

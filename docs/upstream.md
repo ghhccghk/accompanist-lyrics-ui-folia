@@ -1216,3 +1216,17 @@ Pause/random revisit/remount are deterministic. Visual projection still differs
 up to40.109467px (MAE13.291426), explicitly not accepted. See
 verification/cappella-presence. Regular geometry remains3.637201px, not a device
 claim or a relaxed acceptance threshold.
+
+## 2026-11-17 Cappella semantic layout commits
+
+Same cc6226e4 row subscriptions and original Motion projection target-box
+comparison → `CappellaPlaybackPreparation.kt`: include reveal/size/timestamp
+events, restrict parent commits to changed selection/visible index, compare
+rounded measured top/bottom and retarget ongoing compensation. Preparatory
+state only; no per-frame accumulation, guessed timing delay or runtime dependency.
+The original reference checkout is unchanged. Pressure matrix MAE improves
+13.2914256564→11.8904876599 with identical presence/order; geometry40.109467px
+and opacity0.050386 peaks remain. Every regular-matrix PNG hash is unchanged.
+Contact inspected; all Cappella JVM tests, Android debug assembly and Desktop
+compilation pass. This does not resolve the remaining mounted projection/flow
+differences or establish full theme/device acceptance.

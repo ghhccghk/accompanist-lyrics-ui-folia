@@ -30,7 +30,7 @@ shuffled order; fixed-media pause and unmount/remount are pixel identical.
 Pure response tests cover continuity through multiple exit cancellations.
 
 **This is not full rapid-transition visual acceptance.** The current foreground
-RGB MAE is **13.291425656391402**, geometry peak **40.10946682468773 px** and
+RGB MAE is **11.890487659876555**, geometry peak **40.10946682468773 px** and
 group×row opacity peak **0.05038571441375628**. Interrupted layout projection,
 React effect/RAF sequencing and CSS flow remain materially different, especially
 rapid changes while a prior frame size is still animating. No new tolerances
@@ -42,3 +42,13 @@ mean MAE3.393810 after respecting integer popLayout offsetTop. These two matrice
 must not be averaged together or compared as if they were the same scenario.
 No Android device is connected; only Android build and Desktop offscreen execution
 are verified. No public Cappella entry has been added yet.
+
+Semantic-layout follow-up: prepare layout commits on actual parent selection or
+visible-line changes and local reveal/target/timestamp updates. Like original
+Motion, compare rounded top/bottom boxes, including animated height for
+`layout="position"`; a changed measurement can interrupt a running compensation.
+Pressure MAE decreased from 13.291425656391402 to 11.890487659876555. The peak
+geometry and opacity errors did not improve. All regular-matrix PNG hashes are
+unchanged. The contact sheet was inspected; rapid stacking remains visibly
+different. All Cappella JVM tests, Android debug assembly and Desktop compilation
+passed (.work/cappella-semantic-layout-final.log); no device runtime claim.

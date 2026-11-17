@@ -66,3 +66,45 @@ image hash/MAE/tile/channel peak and the unchanged conditions are tracked.
 No Android/real Desktop-window/device performance claim. Original user-owned
 Gradle/signing/daemon changes are excluded. Continue independent Pendolo exact-lock
 and runtime work rather than repeat this rejected freeze rule.
+
+## Two-commit original boundary observation v1 (2026-11-18)
+
+`commit-boundary-v1.json` retains the unchanged original rapid/chaotic schedule
+prefix through1.1s, with a control and an instrumented run.17 records wrap original
+`willUpdate`/`updateLayout` with unchanged this/arguments and observe `didUpdate`;
+no Motion projection method, clock or DOM state is replaced. Source/lock/font
+hashes, Chromium151 and exact Motion versions are recorded. Both runs' geometry
+equals the existing original pressure baseline. A separate repeat in
+`.work/cappella-commit-boundary-repeat.json` reproduces ALL states and trace records
+exactly; its checked log is `.work/cappella-commit-boundary-repeat.log`.
+
+At1.0166666666666666s the original first commit measures height61.265625,
+then the local inline frame returns from49px to110px and the second commit
+measures122.265625. The snapshot tops are164.18219912323443 and164.18220135160144
+(2.23e-6px round-trip difference), BOTH projection progress0 at the two didUpdates.
+The second commit changes the bottom, not a second elapsed-time decay of the top.
+This falsifies the simple double-decay explanation; it does NOT validate the
+rejected measuredAt/freezing candidate or remove the22.188593px residual.
+
+The first snapshot is taken BEFORE the current RAF projection advances progress
+from.1030175197 to.1403623690. At1.02s the precommit DOM has also moved with
+preceding frame height while projection progress is still0; updateLayout sees
+.0133801252 before didUpdate resets it. Thus a further valid comparison must
+separate pre-render DOM transform, continuous flow and post-RAF projection for
+the SAME original prior commit, rather than evaluating every value at one t.
+That schedule-dependent transport is not yet a media-reconstructible repair.
+Production is unchanged. Do not add a fixed display-frame delay.
+
+The first log reported false because the baseline lookup incorrectly relied on
+numeric-property enumeration order. The retained oracleLookupNote describes
+that reader correction. The independent repeat uses explicit time matching and
+fails closed if either baseline or observer geometry differs; no source data,
+threshold or failed geometry was changed. Node syntax check and repeat passed.
+No new product build is claimed from this observation-only change.
+
+```
+node verification/classic-browser/probe-cappella-commit-boundary.mjs .work/cappella-commit-boundary-repeat-2.json
+```
+The default output refuses overwrite; use a fresh path for an audit. No new full
+pressure matrix was run. Continue the independent, already authorised Diorama
+text follower rather than retry a disproved Cappella compensation rule.

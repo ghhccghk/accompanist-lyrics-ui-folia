@@ -16,7 +16,7 @@
 | 云阶 | partita；`partitaLayout.ts`、`PartitaChunk.tsx`、`partitaOverlap.ts` | 依高度拆块、交替阶梯错位、块级入场、引导线、GlowWord | **移植校准中**：已接FoliaStyle.Partita与示例，完整画面尚有残差，未最终验收 |
 | 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 已接 FoliaStyle.Tilt 和示例，明确标注校准预览；450ms 公共退场、Latin 段宽已补，Arabic shaping、CSS transform 延迟和全局字体缓存仍未验收 |
 | 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部时序、文章布局、拟合、Latin静态与实时文字已移植并有原Canvas对照；镜头未完成，文字栅格/复杂字体仍校准，未开放选择器，背景不纳入 |
-| 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 未实现；先同种子布局/包络，再文字层，不引入原DOM依赖 |
+| 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 内部包络已移植：30输入/2952时刻与原模块1e-10通过；落点/分词与文字层仍待实现，无公开入口 |
 | 群唱 | cappella；`VisualizerCappella.tsx`、`cappellaMessages.ts`、`cappellaMessageLayout.ts`、`cappellaReveal.ts` | 多发送者对话、气泡、消息保留与逐字揭示 | 未实现；明确core声部与发送者映射；先文字消息，不复制未知来源头像/emoji |
 | 时计 | pendolo；`VisualizerPendolo.tsx`、`pendoloGeometry.ts`、`pendoloTimeline.ts`、`PendoloActiveLyricSweep.tsx` | 圆弧歌词轨、机械跳步、当前句扫描、字幕轨 | 未实现；先文字几何/跳步/扫描；音频鼓点与节拍增强单列，不伪造输入 |
 | 镜台 | diorama；`VisualizerDiorama.tsx`、`cameraPath.ts`、`DioramaSceneLayout.ts` | 文字沿三维路径排列、镜头穿行与曲间连续过渡 | 未实现；核心镜头涉及旧“不做整套三维场景”边界，先调查最小平台能力；若必须改变边界单独请求决定，不以2D假效果验收 |
@@ -318,3 +318,12 @@ FumeCameraTrack按歌词/打印/飞行事件准备不可变节点，以连续响
 这项尺寸语义修复不声称画质指标改善。fractional-contact.png已目视检查。
 随机重访/暂停一致，两端构建通过；14.8672px/scale0.055319镜头差异未解决。
 下一项独立推进心象Cadenza原包络/落点，Fume保持内部校准且未验收。
+
+### 心象 Cadenza：媒体时间包络（内部）
+
+CadenzaEnvelopes.kt按原模块保留normal/fast/instant词预揭示、进度、正文混色、
+词/字素6倍时长辉光、整句入退场、passed漂移和三层40px阴影alpha。
+特别保留“未注解的短句仍为normal”，不套用classic自动短句推断。
+30组合、2952时刻及随机重访1e-10通过，20原CSS阴影阈值/层检查通过。
+Android APK和Desktop编译通过；未做文字/落点视觉验收，无主题入口。
+下一项：原版完整词hero筛选、跨行片段身份、种子落点与碰撞搜索。

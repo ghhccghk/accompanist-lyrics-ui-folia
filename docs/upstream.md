@@ -847,3 +847,18 @@ Fractional contact sheet inspected; camera residual14.867149px/scale0.055318
 still blocks acceptance. Tests cover432 random revisits and pause frames;
 FumeSceneTest/FumeLiveTextTest, Android assembleDebug and Desktop compile
 passed. No Android runtime or visible application window tested.
+
+## 2026-11-17 Cadenza pure envelopes
+
+Pinned `cadenzaEnvelopes.ts`, timing subset of `cadenzaTypes.ts` and
+`utils/lyrics/renderHints.ts:getLineTransitionTiming` →
+`internal/styles/cadenza/CadenzaEnvelopes.kt`. AGPL-3.0-only source attribution
+retained. Internal immutable seconds-based models replace TS/DOM types.
+No automatic hint inference, source lookahead/end inclusivity and duration
+floors preserved. Shadow layer alphas returned as numbers instead of CSS;
+original blurScale parameter is unused, all three source radii40px.
+No DOM copying, isolated UTF-16 glyph drawing or new public theme contract.
+Generator directly records untouched source;30 scenarios/2952 observations
+and20 shadow probes agree1e-10 including reverse/random queries. Android
+assembleDebug/Desktop compileKotlin passed; pure logic evidence is not
+rendered-theme acceptance. Fixtures and reproduction: verification/cadenza-fixtures.

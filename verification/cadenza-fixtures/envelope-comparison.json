@@ -1,0 +1,15 @@
+{
+  "reference": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "source": "src/components/visualizer/cadenza/cadenzaEnvelopes.ts; src/utils/lyrics/renderHints.ts",
+  "scenarios": 30,
+  "frames": 2952,
+  "shadow_probes": 20,
+  "numeric_tolerance": 1e-10,
+  "scope": "Original pure envelope outputs only; no rendering, theme entry or runtime acceptance",
+  "files": {
+    "envelopeInputs.tsv": "cca711c26c3be48209f20d71d0ac4ac87511dfa342170d301f8048889076e3cb",
+    "envelopes.tsv": "c35569257a1e3c76b450bc6fecbe5026a7d5e9787069edcbdce142b5f73dbd9d",
+    "shadows.tsv": "302ee3807a8a2edeba1e051838fe79df8a22eb990cf1fd78541d0081f5e690d7",
+    "timings.tsv": "4354905a9ccaccef390eb330d2b8331f8812b0854281550a8bf4a297cb6f2ed6"
+  }
+}

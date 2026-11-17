@@ -10,8 +10,8 @@
 | Fume | 文章/揭示/镜头实验 | 未接入 | 镜头残差未解决 |
 | Diorama | 待有界能力调查 | 无 | 未开始 |
 
-当前唯一下一项：Fume镜头边界/分数尺寸调查，再接真实core→公开组件→sample。
-完成条件：先复用原短桥接/总览镜头矩阵定位14.867px/scale.055319残差；
+当前唯一下一项：Fume整曲可取消准备与公共组件→sample闭环。
+完成条件：将已测约3.4s整曲准备移出UI线程，按输入/尺寸取消，保留原镜头残差；
 保留整曲文章/打印/读后保留，不借classic舞台；公共命中/偏好/生命周期及整曲准备验证后
 才开放校准预览。保留Cappella密集projection差异，不将其改称正式验收通过。
 
@@ -48,9 +48,15 @@ aefca39 Cappella公共闭环：真实core、显式嵌套agent、原对象点击/
 未最终视觉验收。共享五个公开主题回归、sample选主题/设置、Android APK/Desktop编译通过；
 无设备/真实窗口/性能结论。证据verification/cappella-public及docs/cappella-preview.md。
 
-Fume raw core计时修复：声明start/end与raw末片段end独立保留，不再使用
+f20c1a2 Fume raw core计时修复：声明start/end与raw末片段end独立保留，不再使用
 归一化范围或EGC union末端替代。56原renderHints阈值/完整EGC时钟控制、
 已有FumeReveal/原逐步camera与两端构建通过；没有新画面/设备结论。
+
+Fume整曲准备：120合成行，同字体/800×600/360s/114371节点，原74.202s
+触发既有超时；每block缓存EGC/时间计划后相机1.308s，布局1.992s、绘制准备.119s。
+原数值门槛未改，432张旧scene/隔离PNG hash全部相同，两端构建通过。单次桌面
+观测非设备统计收益；证据verification/fume-preparation。原短bridge/总览边界已被动
+记录：总览阈9.69，原60Hz首次9.7；14.867px/.055318仍是未解决校准残差。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

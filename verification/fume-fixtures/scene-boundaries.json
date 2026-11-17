@@ -1,0 +1,951 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "viewport": [
+    800,
+    600
+  ],
+  "rate": 60,
+  "scope": "Original fixture operator, no retarget modification or delay fitting",
+  "scenes": [
+    {
+      "stepped": false,
+      "overviewStart": 9.690000000000001,
+      "frames": [
+        {
+          "t": 2.783333333333333,
+          "camera": {
+            "x": 1562.6238947710008,
+            "y": 648.457282993128,
+            "velocityX": 390.80248137697004,
+            "velocityY": 4.488769779582794,
+            "focusX": 1601.1237178079457,
+            "focusY": 648.8566746844192,
+            "scale": 0.8711024127895322,
+            "velocityScale": 0.0027610730010796105,
+            "focusScale": 0.8718500752804668
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 0,
+            "startedAt": 0,
+            "duration": 0.13,
+            "fromX": 1468,
+            "fromY": 615,
+            "fromScale": 1.18,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 736.3569436130925,
+            "bridgeWaypointY": 615.4330890561582,
+            "bridgeWaypointScale": 0.8821313271142065,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 0
+        },
+        {
+          "t": 2.8,
+          "camera": {
+            "x": 1569.126621486046,
+            "y": 648.5278624070045,
+            "velocityX": 390.16360290271217,
+            "velocityY": 4.2347648325880165,
+            "focusX": 1607.5321969084614,
+            "focusY": 648.9019473099083,
+            "scale": 0.8711504219013997,
+            "velocityScale": 0.002880546712048998,
+            "focusScale": 0.8719254296075458
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 0,
+            "startedAt": 0,
+            "duration": 0.13,
+            "fromX": 1468,
+            "fromY": 615,
+            "fromScale": 1.18,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 736.3569436130925,
+            "bridgeWaypointY": 615.4330890561582,
+            "bridgeWaypointScale": 0.8821313271142065,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": -1
+        },
+        {
+          "t": 2.816666666666667,
+          "camera": {
+            "x": 1575.555083420259,
+            "y": 648.5941870232047,
+            "velocityX": 385.70771605278867,
+            "velocityY": 3.9794769720096577,
+            "focusX": 1612.8601467681117,
+            "focusY": 648.942848389444,
+            "scale": 0.871200411499479,
+            "velocityScale": 0.0029993758847599054,
+            "focusScale": 0.8720025909935352
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 0,
+            "startedAt": 0,
+            "duration": 0.13,
+            "fromX": 1468,
+            "fromY": 615,
+            "fromScale": 1.18,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 736.3569436130925,
+            "bridgeWaypointY": 615.4330890561582,
+            "bridgeWaypointScale": 0.8821313271142065,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": -1
+        },
+        {
+          "t": 2.9833333333333334,
+          "camera": {
+            "x": 1622.1383779890534,
+            "y": 649.0194063712089,
+            "velocityX": 172.00265896769517,
+            "velocityY": 1.3688219815030958,
+            "focusX": 1635.1890112299911,
+            "focusY": 649.1086837458279,
+            "scale": 0.8718065572821266,
+            "velocityScale": 0.004146444363943804,
+            "focusScale": 0.8728695989895778
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 0,
+            "startedAt": 0,
+            "duration": 0.13,
+            "fromX": 1468,
+            "fromY": 615,
+            "fromScale": 1.18,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 736.3569436130925,
+            "bridgeWaypointY": 615.4330890561582,
+            "bridgeWaypointScale": 0.8821313271142065,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": -1
+        },
+        {
+          "t": 3,
+          "camera": {
+            "x": 1622.1383779890534,
+            "y": 649.0194063712089,
+            "velocityX": 123.84191445674051,
+            "velocityY": 0.985551826682229,
+            "focusX": 1622.1383779890534,
+            "focusY": 649.0194063712089,
+            "scale": 0.8718065572821266,
+            "velocityScale": 0.002819582167481787,
+            "focusScale": 0.8718065572821266
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 1,
+            "startedAt": 3,
+            "duration": 0.13,
+            "fromX": 1622.1383779890534,
+            "fromY": 649.0194063712089,
+            "fromScale": 0.8718065572821266,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 686.1284491147858,
+            "bridgeWaypointY": 572.439973489689,
+            "bridgeWaypointScale": 1.522848845201835,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 1
+        },
+        {
+          "t": 3.0166666666666666,
+          "camera": {
+            "x": 1620.2329156622986,
+            "y": 648.863335552198,
+            "velocityX": 89.16617840885317,
+            "velocityY": 0.7095973152112048,
+            "focusX": 1614.2556149494928,
+            "focusY": 648.3737524181612,
+            "scale": 0.873133462444843,
+            "velocityScale": 0.0019173158738876152,
+            "focusScale": 0.8772958702046636
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 1,
+            "startedAt": 3,
+            "duration": 0.13,
+            "fromX": 1622.1383779890534,
+            "fromY": 649.0194063712089,
+            "fromScale": 0.8718065572821266,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 686.1284491147858,
+            "bridgeWaypointY": 572.439973489689,
+            "bridgeWaypointScale": 1.522848845201835,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 1
+        },
+        {
+          "t": 3.0833333333333335,
+          "camera": {
+            "x": 1355.4968306669277,
+            "y": 626.8775070381416,
+            "velocityX": 23.962390386298292,
+            "velocityY": 0.19069616066972525,
+            "focusX": 871.8606418875884,
+            "focusY": 586.5085991648605,
+            "scale": 1.0600427626886861,
+            "velocityScale": 0.00040994851610359696,
+            "focusScale": 1.403212779295135
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 1,
+            "startedAt": 3,
+            "duration": 0.13,
+            "fromX": 1622.1383779890534,
+            "fromY": 649.0194063712089,
+            "fromScale": 0.8718065572821266,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 686.1284491147858,
+            "bridgeWaypointY": 572.439973489689,
+            "bridgeWaypointScale": 1.522848845201835,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 1
+        },
+        {
+          "t": 3.15,
+          "camera": {
+            "x": 1110.752735056459,
+            "y": 604.4159852787336,
+            "velocityX": -1320,
+            "velocityY": -200.09278353805598,
+            "focusX": 715.7323826391452,
+            "focusY": 572.4577364601583,
+            "scale": 1.217394878525252,
+            "velocityScale": 0.5032463588662606,
+            "focusScale": 1.5219891364784113
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 1,
+            "startedAt": 3,
+            "duration": 0.13,
+            "fromX": 1622.1383779890534,
+            "fromY": 649.0194063712089,
+            "fromScale": 0.8718065572821266,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 686.1284491147858,
+            "bridgeWaypointY": 572.439973489689,
+            "bridgeWaypointScale": 1.522848845201835,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 1
+        },
+        {
+          "t": 9.65,
+          "camera": {
+            "x": 1641.2402777714703,
+            "y": 506.87272067797215,
+            "velocityX": 655.8617603684814,
+            "velocityY": 4.196292531619764,
+            "focusX": 1705.97670140159,
+            "focusY": 507.2702152462208,
+            "scale": 2.1769623234211033,
+            "velocityScale": 0.004576257683924264,
+            "focusScale": 2.178284078973703
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 3,
+            "startedAt": 8,
+            "duration": 0.13,
+            "fromX": 1022.7953231572999,
+            "fromY": 705.342563753199,
+            "fromScale": 1.5285584449028018,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 688.8447314263543,
+            "bridgeWaypointY": 496.6884245518199,
+            "bridgeWaypointScale": 2.18486614188372,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.666666666666666,
+          "camera": {
+            "x": 1652.1430099663933,
+            "y": 506.9410320562124,
+            "velocityX": 654.1639316953782,
+            "velocityY": 4.098682694413805,
+            "focusX": 1716.4268764659769,
+            "focusY": 507.328751593965,
+            "scale": 2.1770435238928254,
+            "velocityScale": 0.004872028303338844,
+            "focusScale": 2.178435021863656
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 3,
+            "startedAt": 8,
+            "duration": 0.13,
+            "fromX": 1022.7953231572999,
+            "fromY": 705.342563753199,
+            "fromScale": 1.5285584449028018,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 688.8447314263543,
+            "bridgeWaypointY": 496.6884245518199,
+            "bridgeWaypointScale": 2.18486614188372,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.683333333333334,
+          "camera": {
+            "x": 1662.982662312437,
+            "y": 507.00770356374966,
+            "velocityX": 650.3791407626311,
+            "velocityY": 4.000290452236152,
+            "focusX": 1726.5316970083368,
+            "focusY": 507.3855746049397,
+            "scale": 2.1771296630923804,
+            "velocityScale": 0.005168351973311642,
+            "focusScale": 2.178590779490852
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 3,
+            "startedAt": 8,
+            "duration": 0.13,
+            "fromX": 1022.7953231572999,
+            "fromY": 705.342563753199,
+            "fromScale": 1.5285584449028018,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 688.8447314263543,
+            "bridgeWaypointY": 496.6884245518199,
+            "bridgeWaypointScale": 2.18486614188372,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.7,
+          "camera": {
+            "x": 1662.982662312437,
+            "y": 507.00770356374966,
+            "velocityX": 468.2729813490944,
+            "velocityY": 2.8802091256100293,
+            "focusX": 1662.982662312437,
+            "focusY": 507.00770356374966,
+            "scale": 2.1771296630923804,
+            "velocityScale": 0.003514479341851917,
+            "focusScale": 2.1771296630923804
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": -2,
+            "startedAt": 9.7,
+            "duration": 0.4,
+            "fromX": 1662.982662312437,
+            "fromY": 507.00770356374966,
+            "fromScale": 2.1771296630923804,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 1457.4783367489745,
+            "bridgeWaypointY": 628.2788794078513,
+            "bridgeWaypointScale": 0.42417101835591037,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.716666666666667,
+          "camera": {
+            "x": 1662.96782787103,
+            "y": 507.01645902714426,
+            "velocityX": 337.1565465713479,
+            "velocityY": 2.073750570439221,
+            "focusX": 1662.9231680350083,
+            "focusY": 507.04281779245065,
+            "scale": 2.1770031923059463,
+            "velocityScale": 0.002389845952459304,
+            "focusScale": 2.176622445607859
+          },
+          "restore": 0.00028935185185189504,
+          "retarget": {
+            "sourceLineIndex": -2,
+            "startedAt": 9.7,
+            "duration": 0.4,
+            "fromX": 1662.982662312437,
+            "fromY": 507.00770356374966,
+            "fromScale": 2.1771296630923804,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 1457.4783367489745,
+            "bridgeWaypointY": 628.2788794078513,
+            "bridgeWaypointScale": 0.42417101835591037,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.733333333333333,
+          "camera": {
+            "x": 1662.8544773085232,
+            "y": 507.0833697428034,
+            "velocityX": 242.7527135313705,
+            "velocityY": 1.4931004107162391,
+            "focusX": 1662.506461346348,
+            "focusY": 507.2888031925806,
+            "scale": 2.176037349490635,
+            "velocityScale": 0.0016250952476723269,
+            "focusScale": 2.1730719586778613
+          },
+          "restore": 0.0023148148148147904,
+          "retarget": {
+            "sourceLineIndex": -2,
+            "startedAt": 9.7,
+            "duration": 0.4,
+            "fromX": 1662.982662312437,
+            "fromY": 507.00770356374966,
+            "fromScale": 2.1771296630923804,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 1457.4783367489745,
+            "bridgeWaypointY": 628.2788794078513,
+            "bridgeWaypointScale": 0.42417101835591037,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.75,
+          "camera": {
+            "x": 1662.4963490654761,
+            "y": 507.2947996484863,
+            "velocityX": 174.78195374258675,
+            "velocityY": 1.0750322957156921,
+            "focusX": 1661.3746615611028,
+            "focusY": 507.9570157340917,
+            "scale": 2.1729874795474267,
+            "velocityScale": 0.0011050647684171823,
+            "focusScale": 2.163435032702813
+          },
+          "restore": 0.007812500000000333,
+          "retarget": {
+            "sourceLineIndex": -2,
+            "startedAt": 9.7,
+            "duration": 0.4,
+            "fromX": 1662.982662312437,
+            "fromY": 507.00770356374966,
+            "fromScale": 2.1771296630923804,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 1457.4783367489745,
+            "bridgeWaypointY": 628.2788794078513,
+            "bridgeWaypointScale": 0.42417101835591037,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 10,
+          "camera": {
+            "x": 1522.8354893536534,
+            "y": 589.7162933836655,
+            "velocityX": 1.2661467254070162,
+            "velocityY": 0.007787695421529995,
+            "focusX": 1468.6979620764907,
+            "focusY": 621.6236062125865,
+            "scale": 0.9906925201764193,
+            "velocityScale": 0.000003396420265915597,
+            "focusScale": 0.5340247626636097
+          },
+          "restore": 0.9375000000000013,
+          "retarget": {
+            "sourceLineIndex": -2,
+            "startedAt": 9.7,
+            "duration": 0.4,
+            "fromX": 1662.982662312437,
+            "fromY": 507.00770356374966,
+            "fromScale": 2.1771296630923804,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 1457.4783367489745,
+            "bridgeWaypointY": 628.2788794078513,
+            "bridgeWaypointScale": 0.42417101835591037,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        }
+      ]
+    },
+    {
+      "stepped": true,
+      "overviewStart": 9.690000000000001,
+      "frames": [
+        {
+          "t": 2.783333333333333,
+          "camera": {
+            "x": 1546.195032322844,
+            "y": 648.457282993128,
+            "velocityX": 372.6544540492443,
+            "velocityY": 4.488769779582794,
+            "focusX": 1584.0752922093327,
+            "focusY": 648.8566746844192,
+            "scale": 0.8711024127895322,
+            "velocityScale": 0.0027610730010796105,
+            "focusScale": 0.8718500752804668
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 0,
+            "startedAt": 0,
+            "duration": 0.13,
+            "fromX": 1468,
+            "fromY": 615,
+            "fromScale": 1.18,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 736.3569436130925,
+            "bridgeWaypointY": 615.4330890561582,
+            "bridgeWaypointScale": 0.8821313271142065,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 0
+        },
+        {
+          "t": 2.8,
+          "camera": {
+            "x": 1552.6482107532293,
+            "y": 648.5278624070045,
+            "velocityX": 387.19070582311207,
+            "velocityY": 4.2347648325880165,
+            "focusX": 1593.3867727248341,
+            "focusY": 648.9019473099083,
+            "scale": 0.8711504219013997,
+            "velocityScale": 0.002880546712048998,
+            "focusScale": 0.8719254296075458
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 0,
+            "startedAt": 0,
+            "duration": 0.13,
+            "fromX": 1468,
+            "fromY": 615,
+            "fromScale": 1.18,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 736.3569436130925,
+            "bridgeWaypointY": 615.4330890561582,
+            "bridgeWaypointScale": 0.8821313271142065,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": -1
+        },
+        {
+          "t": 2.816666666666667,
+          "camera": {
+            "x": 1559.3209066207992,
+            "y": 648.5941870232047,
+            "velocityX": 400.3617520542023,
+            "velocityY": 3.9794769720096577,
+            "focusX": 1601.1234016840951,
+            "focusY": 648.942848389444,
+            "scale": 0.871200411499479,
+            "velocityScale": 0.0029993758847599054,
+            "focusScale": 0.8720025909935352
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 0,
+            "startedAt": 0,
+            "duration": 0.13,
+            "fromX": 1468,
+            "fromY": 615,
+            "fromScale": 1.18,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 736.3569436130925,
+            "bridgeWaypointY": 615.4330890561582,
+            "bridgeWaypointScale": 0.8821313271142065,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": -1
+        },
+        {
+          "t": 2.9833333333333334,
+          "camera": {
+            "x": 1615.5373642984669,
+            "y": 649.0194063712089,
+            "velocityX": 228.2596447725332,
+            "velocityY": 1.3688219815030958,
+            "focusX": 1633.3740613387417,
+            "focusY": 649.1086837458279,
+            "scale": 0.8718065572821266,
+            "velocityScale": 0.004146444363943804,
+            "focusScale": 0.8728695989895778
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 0,
+            "startedAt": 0,
+            "duration": 0.13,
+            "fromX": 1468,
+            "fromY": 615,
+            "fromScale": 1.18,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 736.3569436130925,
+            "bridgeWaypointY": 615.4330890561582,
+            "bridgeWaypointScale": 0.8821313271142065,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": -1
+        },
+        {
+          "t": 3,
+          "camera": {
+            "x": 1615.5373642984669,
+            "y": 649.0194063712089,
+            "velocityX": 164.3469442362239,
+            "velocityY": 0.985551826682229,
+            "focusX": 1615.5373642984669,
+            "focusY": 649.0194063712089,
+            "scale": 0.8718065572821266,
+            "velocityScale": 0.002819582167481787,
+            "focusScale": 0.8718065572821266
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 1,
+            "startedAt": 3,
+            "duration": 0.13,
+            "fromX": 1615.5373642984669,
+            "fromY": 649.0194063712089,
+            "fromScale": 0.8718065572821266,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 686.1284491147858,
+            "bridgeWaypointY": 572.439973489689,
+            "bridgeWaypointScale": 1.522848845201835,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 1
+        },
+        {
+          "t": 3.0166666666666666,
+          "camera": {
+            "x": 1613.6564128023058,
+            "y": 648.863335552198,
+            "velocityX": 118.3297998500812,
+            "velocityY": 0.7095973152112048,
+            "focusX": 1607.7560008335713,
+            "focusY": 648.3737524181612,
+            "scale": 0.873133462444843,
+            "velocityScale": 0.0019173158738876152,
+            "focusScale": 0.8772958702046636
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 1,
+            "startedAt": 3,
+            "duration": 0.13,
+            "fromX": 1615.5373642984669,
+            "fromY": 649.0194063712089,
+            "fromScale": 0.8718065572821266,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 686.1284491147858,
+            "bridgeWaypointY": 572.439973489689,
+            "bridgeWaypointScale": 1.522848845201835,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 1
+        },
+        {
+          "t": 3.0833333333333335,
+          "camera": {
+            "x": 1353.5869380770257,
+            "y": 626.8775070381416,
+            "velocityX": 31.79978001679903,
+            "velocityY": 0.19069616066972525,
+            "focusX": 878.0658851996054,
+            "focusY": 586.5085991648605,
+            "scale": 1.0600427626886861,
+            "velocityScale": 0.00040994851610359696,
+            "focusScale": 1.403212779295135
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 1,
+            "startedAt": 3,
+            "duration": 0.13,
+            "fromX": 1615.5373642984669,
+            "fromY": 649.0194063712089,
+            "fromScale": 0.8718065572821266,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 686.1284491147858,
+            "bridgeWaypointY": 572.439973489689,
+            "bridgeWaypointScale": 1.522848845201835,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 1
+        },
+        {
+          "t": 3.15,
+          "camera": {
+            "x": 1110.9834964295412,
+            "y": 604.4159852787336,
+            "velocityX": -1320,
+            "velocityY": -200.09278353805598,
+            "focusX": 719.8085583764565,
+            "focusY": 572.4577364601583,
+            "scale": 1.217394878525252,
+            "velocityScale": 0.5032463588662606,
+            "focusScale": 1.5219891364784113
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 1,
+            "startedAt": 3,
+            "duration": 0.13,
+            "fromX": 1615.5373642984669,
+            "fromY": 649.0194063712089,
+            "fromScale": 0.8718065572821266,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 686.1284491147858,
+            "bridgeWaypointY": 572.439973489689,
+            "bridgeWaypointScale": 1.522848845201835,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 1
+        },
+        {
+          "t": 9.65,
+          "camera": {
+            "x": 1644.524948263559,
+            "y": 506.87272067797215,
+            "velocityX": 655.6486145300221,
+            "velocityY": 4.196292531619764,
+            "focusX": 1709.3414357562353,
+            "focusY": 507.2702152462208,
+            "scale": 2.1769623234211033,
+            "velocityScale": 0.004576257683924264,
+            "focusScale": 2.178284078973703
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 3,
+            "startedAt": 8,
+            "duration": 0.13,
+            "fromX": 1023.5069734985428,
+            "fromY": 705.342563753199,
+            "fromScale": 1.5285584449028018,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 688.8447314263543,
+            "bridgeWaypointY": 496.6884245518199,
+            "bridgeWaypointScale": 2.18486614188372,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.666666666666666,
+          "camera": {
+            "x": 1655.4348135922762,
+            "y": 506.9410320562124,
+            "velocityX": 654.5919197230247,
+            "velocityY": 4.098682694413805,
+            "focusX": 1719.8718956688508,
+            "focusY": 507.328751593965,
+            "scale": 2.1770435238928254,
+            "velocityScale": 0.004872028303338844,
+            "focusScale": 2.178435021863656
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 3,
+            "startedAt": 8,
+            "duration": 0.13,
+            "fromX": 1023.5069734985428,
+            "fromY": 705.342563753199,
+            "fromScale": 1.5285584449028018,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 688.8447314263543,
+            "bridgeWaypointY": 496.6884245518199,
+            "bridgeWaypointScale": 2.18486614188372,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.683333333333334,
+          "camera": {
+            "x": 1666.2875900849044,
+            "y": 507.00770356374966,
+            "velocityX": 651.1665895576915,
+            "velocityY": 4.000290452236152,
+            "focusX": 1729.9765744741637,
+            "focusY": 507.3855746049397,
+            "scale": 2.1771296630923804,
+            "velocityScale": 0.005168351973311642,
+            "focusScale": 2.178590779490852
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": 3,
+            "startedAt": 8,
+            "duration": 0.13,
+            "fromX": 1023.5069734985428,
+            "fromY": 705.342563753199,
+            "fromScale": 1.5285584449028018,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 688.8447314263543,
+            "bridgeWaypointY": 496.6884245518199,
+            "bridgeWaypointScale": 2.18486614188372,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.7,
+          "camera": {
+            "x": 1666.2875900849044,
+            "y": 507.00770356374966,
+            "velocityX": 468.8399444815379,
+            "velocityY": 2.8802091256100293,
+            "focusX": 1666.2875900849044,
+            "focusY": 507.00770356374966,
+            "scale": 2.1771296630923804,
+            "velocityScale": 0.003514479341851917,
+            "focusScale": 2.1771296630923804
+          },
+          "restore": 0,
+          "retarget": {
+            "sourceLineIndex": -2,
+            "startedAt": 9.7,
+            "duration": 0.4,
+            "fromX": 1666.2875900849044,
+            "fromY": 507.00770356374966,
+            "fromScale": 2.1771296630923804,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 1457.4783367489745,
+            "bridgeWaypointY": 628.2788794078513,
+            "bridgeWaypointScale": 0.42417101835591037,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.716666666666667,
+          "camera": {
+            "x": 1666.2725172006815,
+            "y": 507.01645902714426,
+            "velocityX": 337.5647600267073,
+            "velocityY": 2.073750570439221,
+            "focusX": 1666.2271395205046,
+            "focusY": 507.04281779245065,
+            "scale": 2.1770031923059463,
+            "velocityScale": 0.002389845952459304,
+            "focusScale": 2.176622445607859
+          },
+          "restore": 0.00028935185185189504,
+          "retarget": {
+            "sourceLineIndex": -2,
+            "startedAt": 9.7,
+            "duration": 0.4,
+            "fromX": 1666.2875900849044,
+            "fromY": 507.00770356374966,
+            "fromScale": 2.1771296630923804,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 1457.4783367489745,
+            "bridgeWaypointY": 628.2788794078513,
+            "bridgeWaypointScale": 0.42417101835591037,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.733333333333333,
+          "camera": {
+            "x": 1666.1573456614533,
+            "y": 507.0833697428034,
+            "velocityX": 243.04662721922924,
+            "velocityY": 1.4931004107162391,
+            "focusX": 1665.803738823046,
+            "focusY": 507.2888031925806,
+            "scale": 2.176037349490635,
+            "velocityScale": 0.0016250952476723269,
+            "focusScale": 2.1730719586778613
+          },
+          "restore": 0.0023148148148147904,
+          "retarget": {
+            "sourceLineIndex": -2,
+            "startedAt": 9.7,
+            "duration": 0.4,
+            "fromX": 1666.2875900849044,
+            "fromY": 507.00770356374966,
+            "fromScale": 2.1771296630923804,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 1457.4783367489745,
+            "bridgeWaypointY": 628.2788794078513,
+            "bridgeWaypointScale": 0.42417101835591037,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 9.75,
+          "camera": {
+            "x": 1665.7934672128276,
+            "y": 507.2947996484863,
+            "velocityX": 174.99357159784503,
+            "velocityY": 1.0750322957156921,
+            "focusX": 1664.6537695853478,
+            "focusY": 507.9570157340917,
+            "scale": 2.1729874795474267,
+            "velocityScale": 0.0011050647684171823,
+            "focusScale": 2.163435032702813
+          },
+          "restore": 0.007812500000000333,
+          "retarget": {
+            "sourceLineIndex": -2,
+            "startedAt": 9.7,
+            "duration": 0.4,
+            "fromX": 1666.2875900849044,
+            "fromY": 507.00770356374966,
+            "fromScale": 2.1771296630923804,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 1457.4783367489745,
+            "bridgeWaypointY": 628.2788794078513,
+            "bridgeWaypointScale": 0.42417101835591037,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        },
+        {
+          "t": 10,
+          "camera": {
+            "x": 1523.9032334304784,
+            "y": 589.7162933836655,
+            "velocityX": 1.2676797169358074,
+            "velocityY": 0.007787695421529995,
+            "focusX": 1468.90452006227,
+            "focusY": 621.6236062125865,
+            "scale": 0.9906925201764193,
+            "velocityScale": 0.000003396420265915597,
+            "focusScale": 0.5340247626636097
+          },
+          "restore": 0.9375000000000013,
+          "retarget": {
+            "sourceLineIndex": -2,
+            "startedAt": 9.7,
+            "duration": 0.4,
+            "fromX": 1666.2875900849044,
+            "fromY": 507.00770356374966,
+            "fromScale": 2.1771296630923804,
+            "bridgeMode": "direct",
+            "bridgeWaypointX": 1457.4783367489745,
+            "bridgeWaypointY": 628.2788794078513,
+            "bridgeWaypointScale": 0.42417101835591037,
+            "bridgeWaypointPhase": 0.5
+          },
+          "focus": 3
+        }
+      ]
+    }
+  ]
+}

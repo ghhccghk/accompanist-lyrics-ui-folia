@@ -100,11 +100,12 @@ internal fun fumeOverview(article: FumeArticle, viewport: FumeViewport): FumeCam
     val scale = min(viewport.width / max(right - left + padX * 2, 1.0), viewport.height / max(bottom - top + padY * 2, 1.0)).coerceIn(.22, .72)
     return FumeCameraView((left + right) * .5, (top + bottom) * .5, scale)
 }
-internal fun fumeFocusBlock(article: FumeArticle, lineIndex: Int, time: Double): FumeArticleBlock? {
+internal fun fumeFocusBlock(article: FumeArticle, lineIndex: Int, time: Double,
+    reveals:Map<Int,FumeReveal> = emptyMap()): FumeArticleBlock? {
     if (lineIndex >= 0) article.blocks.firstOrNull { it.sourceIndex == lineIndex }?.let { return it }
     val last = article.chronological.lastOrNull()
     if (last != null && time >= article.lastRenderEnd) return last
-    return article.chronological.asReversed().firstOrNull { FumeReveal(it.line).count(time) > 0 }
+    return article.chronological.asReversed().firstOrNull { (reveals[it.sourceIndex]?:FumeReveal(it.line)).count(time) > 0 }
         ?: article.chronological.firstOrNull()
 }
 internal fun fumeBlockOnScreen(block: FumeArticleBlock, camera: FumeCameraView, viewport: FumeViewport, overscan: Double = 180.0): Boolean {

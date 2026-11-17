@@ -35,10 +35,11 @@ internal data class FumeCameraIntent(val retarget: FumeRetarget, val target: Fum
 }
 
 internal fun fumeCameraIntent(before: FumeCameraState, article: FumeArticle,
-    geometry: Map<Int,FumeFocusBlock>, input: FumeCameraInput): FumeCameraIntent {
+    geometry: Map<Int,FumeFocusBlock>, input: FumeCameraInput,
+    reveals:Map<Int,FumeReveal> = emptyMap()): FumeCameraIntent {
     val time=input.time;val old=before.pose
     var retarget=before.retarget
-    val focus=fumeFocusBlock(article,input.lineIndex,time)
+    val focus=fumeFocusBlock(article,input.lineIndex,time,reveals)
     val overview=input.overview!=null&&time>=input.overviewStart
     var tx=article.width*.5;var ty=article.height*.5;var ts=1.18
     var entry:FumePoint?=null;var changed=false
@@ -49,7 +50,7 @@ internal fun fumeCameraIntent(before: FumeCameraState, article: FumeArticle,
         tx=input.overview.x;ty=input.overview.y;ts=input.overview.scale
         if(retarget.source != -2)retarget(-2,(fumeOverviewRetarget(input.viewport)/input.speed).coerceIn(.12,1.2))
     } else if(focus!=null) {
-        val g=geometry.getValue(focus.sourceIndex);val reveal=FumeReveal(focus.line)
+        val g=geometry.getValue(focus.sourceIndex);val reveal=reveals[focus.sourceIndex]?:FumeReveal(focus.line)
         val point=if(input.stepped)g.stepped(reveal.count(time))else g.smooth(reveal.progress(time))
         entry=g.entry();tx=point.x;ty=point.y;ts=fumeCameraScale(focus,input.viewport)
         if(retarget.source!=focus.sourceIndex)retarget(focus.sourceIndex,(fumeCameraRetarget(focus.line)/input.speed).coerceIn(.03,.3))

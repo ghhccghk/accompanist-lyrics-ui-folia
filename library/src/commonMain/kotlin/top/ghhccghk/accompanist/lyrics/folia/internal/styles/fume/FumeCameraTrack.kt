@@ -28,6 +28,10 @@ internal class FumeCameraTrack(private val article: FumeArticle,
     private val calibration = 1.0 / 60
     private val pixelError = .0000001
     private val overview = fumeOverview(article, config.viewport)
+    // A camera derivative used to rebuild every candidate line's grapheme and
+    // timing plan, including scanning the entire article in gaps. These plans
+    // depend only on content; keep one per block for this track's lifetime.
+    private val reveals=article.blocks.associate{it.sourceIndex to FumeReveal(it.line)}
     private val nodes: List<FumeMediaCameraNode>
     val preparedNodeCount: Int get() = nodes.size
 
@@ -54,7 +58,7 @@ internal class FumeCameraTrack(private val article: FumeArticle,
                 time = end
             }
             val input = input(time, epochAt(time), time >= config.overviewStart)
-            if (fumeCameraIntent(state, article, geometry, input).retarget != state.retarget)
+            if (fumeCameraIntent(state, article, geometry, input,reveals).retarget != state.retarget)
                 state = fumeCameraStep(state, article, geometry, input).state
             if (prepared.lastOrNull()?.time == time) prepared[prepared.lastIndex] = FumeMediaCameraNode(time, state)
             else prepared += FumeMediaCameraNode(time, state)
@@ -71,7 +75,7 @@ internal class FumeCameraTrack(private val article: FumeArticle,
         time + config.floatOrigin, 0.0, line, config.viewport, overview,
         if (show) config.overviewStart else Double.POSITIVE_INFINITY, config.speed, config.stepped, config.static, config.intensity)
     private fun intent(state: FumeCameraState, time: Double, line: Int, show: Boolean) =
-        fumeCameraIntent(state, article, geometry, input(time, line, show))
+        fumeCameraIntent(state, article, geometry, input(time, line, show),reveals)
 
     private fun anticipated(state: FumeCameraState, time: Double, line: Int, show: Boolean): FumeCameraIntent {
         val middle = intent(state, time + calibration * .5, line, show)

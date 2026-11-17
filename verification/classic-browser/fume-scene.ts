@@ -51,6 +51,6 @@ const bases=resolveFumeGlowBases(theme.animationIntensity,glow);
   if(layers)for(const {snapshot,alpha}of layers){ctx.save();ctx.globalAlpha=alpha;ctx.drawImage(snapshot.canvas,block.x-snapshot.padding,block.y-snapshot.padding,block.width+snapshot.padding*2,block.height+snapshot.padding*2);ctx.restore();}
   else drawFumeLiveBlock(ctx,block,timing,{time,theme,glowIntensity:glow,...bases,showPrintStamp:true});
  }
- ctx.restore();return{camera:camera.camera,restore};
+ ctx.restore();return{camera:camera.camera,restore,retarget:{...camera.retarget},focus:focusAt(time)};
 };
 (window as any).ready=true;

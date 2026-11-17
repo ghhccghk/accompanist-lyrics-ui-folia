@@ -1485,3 +1485,12 @@ FumeCoreTimingTest reuses56 actual-source threshold observations and verifies
 malformed/overlapping parser fragments keep their complete EGC and inner clocks.
 No source assets copied. Original source identity/ref stays in NormalizedLine
 for public callbacks; line-only reveal remains source-derived uniform EGC time.
+
+### Fume content-plan reuse (2026-11-18)
+FumeCameraTrack.kt reuses one FumeReveal per block; optional internal prepared
+reveal maps in FumeCameraStep.kt/FumeCameraTargets.kt keep original target and
+operator defaults intact. Independent cache optimization, no source algorithm
+changes or new runtime dependency. Same numerical fixtures/432 existing PNG
+hashes preserved. Original boundary state is exposed only by the test-shell
+fume-scene.ts return object, not altered upstream logic. Evidence, retained
+failed timeout, limits and original retarget records: verification/fume-preparation.

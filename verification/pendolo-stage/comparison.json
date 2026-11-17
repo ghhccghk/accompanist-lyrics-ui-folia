@@ -1,0 +1,584 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "DPR": 1,
+    "widths": [
+      380,
+      800
+    ],
+    "height": 600,
+    "frames": 80,
+    "scope": "Original text-wheel JSX subtree and actual source measurement/rotating-line/sweep/subtitle helpers. Target-only remounts, no audio/gears/chorus. Source declaration hashes in stage-reference.json; no tick/history/manual-scroll acceptance."
+  },
+  "status": "Target-only lyric wheel/subtitle calibration; tick/chorus/whole-theme/device acceptance pending.",
+  "numeric_fields": 5808,
+  "maximum_numeric_error": 0.0004999999999881766,
+  "maximum_math_or_reserved_height_error": 0.0,
+  "mean_foreground_mae": 10.650323084675742,
+  "max_foreground_mae": 21.80781924346281,
+  "frames": [
+    {
+      "file": "arabic-380-both-0.png",
+      "foreground_mae": 7.909205321826681,
+      "full_mae": 0.21731432748538013
+    },
+    {
+      "file": "arabic-380-both-1600.png",
+      "foreground_mae": 11.002768903088391,
+      "full_mae": 0.23185087719298245
+    },
+    {
+      "file": "arabic-380-both-33000.png",
+      "foreground_mae": 8.626594126594126,
+      "full_mae": 0.24323391812865497
+    },
+    {
+      "file": "arabic-380-both-6000.png",
+      "foreground_mae": 11.188436830835117,
+      "full_mae": 0.30656578947368424
+    },
+    {
+      "file": "arabic-380-both-7000.png",
+      "foreground_mae": 10.970267388451443,
+      "full_mae": 0.41492105263157897
+    },
+    {
+      "file": "arabic-380-none-0.png",
+      "foreground_mae": 8.392659421775681,
+      "full_mae": 0.19923538011695907
+    },
+    {
+      "file": "arabic-380-none-1600.png",
+      "foreground_mae": 10.525126375260184,
+      "full_mae": 0.2124546783625731
+    },
+    {
+      "file": "arabic-380-none-33000.png",
+      "foreground_mae": 7.513750254634345,
+      "full_mae": 0.18128508771929824
+    },
+    {
+      "file": "arabic-380-none-6000.png",
+      "foreground_mae": 11.704234605506779,
+      "full_mae": 0.29384649122807016
+    },
+    {
+      "file": "arabic-380-none-7000.png",
+      "foreground_mae": 11.950814984272233,
+      "full_mae": 0.38339181286549706
+    },
+    {
+      "file": "arabic-800-both-0.png",
+      "foreground_mae": 9.492764332779112,
+      "full_mae": 0.11763819444444444
+    },
+    {
+      "file": "arabic-800-both-1600.png",
+      "foreground_mae": 6.50940817828235,
+      "full_mae": 0.09098541666666667
+    },
+    {
+      "file": "arabic-800-both-33000.png",
+      "foreground_mae": 7.224041704998466,
+      "full_mae": 0.0944611111111111
+    },
+    {
+      "file": "arabic-800-both-6000.png",
+      "foreground_mae": 7.741444216290212,
+      "full_mae": 0.13208125
+    },
+    {
+      "file": "arabic-800-both-7000.png",
+      "foreground_mae": 13.11668165467626,
+      "full_mae": 0.2560861111111111
+    },
+    {
+      "file": "arabic-800-none-0.png",
+      "foreground_mae": 10.539781953143121,
+      "full_mae": 0.10147569444444444
+    },
+    {
+      "file": "arabic-800-none-1600.png",
+      "foreground_mae": 7.78019251761437,
+      "full_mae": 0.11576041666666667
+    },
+    {
+      "file": "arabic-800-none-33000.png",
+      "foreground_mae": 6.7877669200144775,
+      "full_mae": 0.07278611111111111
+    },
+    {
+      "file": "arabic-800-none-6000.png",
+      "foreground_mae": 8.394964493221433,
+      "full_mae": 0.14274583333333332
+    },
+    {
+      "file": "arabic-800-none-7000.png",
+      "foreground_mae": 13.808764183639557,
+      "full_mae": 0.20983333333333334
+    },
+    {
+      "file": "cjk-380-both-0.png",
+      "foreground_mae": 10.041670241670241,
+      "full_mae": 0.5482660818713451
+    },
+    {
+      "file": "cjk-380-both-1600.png",
+      "foreground_mae": 13.478297417086964,
+      "full_mae": 0.5224956140350877
+    },
+    {
+      "file": "cjk-380-both-33000.png",
+      "foreground_mae": 8.26977918331114,
+      "full_mae": 0.4750394736842105
+    },
+    {
+      "file": "cjk-380-both-6000.png",
+      "foreground_mae": 13.159663619315518,
+      "full_mae": 0.6685804093567251
+    },
+    {
+      "file": "cjk-380-both-7000.png",
+      "foreground_mae": 13.458566788469346,
+      "full_mae": 1.0025657894736841
+    },
+    {
+      "file": "cjk-380-none-0.png",
+      "foreground_mae": 11.515427949555086,
+      "full_mae": 0.5529619883040936
+    },
+    {
+      "file": "cjk-380-none-1600.png",
+      "foreground_mae": 14.794099253209726,
+      "full_mae": 0.5951096491228071
+    },
+    {
+      "file": "cjk-380-none-33000.png",
+      "foreground_mae": 7.439373028391167,
+      "full_mae": 0.3570497076023392
+    },
+    {
+      "file": "cjk-380-none-6000.png",
+      "foreground_mae": 14.737011738963306,
+      "full_mae": 0.7391388888888889
+    },
+    {
+      "file": "cjk-380-none-7000.png",
+      "foreground_mae": 14.474864334372475,
+      "full_mae": 0.9409751461988304
+    },
+    {
+      "file": "cjk-800-both-0.png",
+      "foreground_mae": 10.615707780129561,
+      "full_mae": 0.2430138888888889
+    },
+    {
+      "file": "cjk-800-both-1600.png",
+      "foreground_mae": 8.080861368157052,
+      "full_mae": 0.20100208333333333
+    },
+    {
+      "file": "cjk-800-both-33000.png",
+      "foreground_mae": 9.525038460330915,
+      "full_mae": 0.22682569444444445
+    },
+    {
+      "file": "cjk-800-both-6000.png",
+      "foreground_mae": 10.46686614246283,
+      "full_mae": 0.3215173611111111
+    },
+    {
+      "file": "cjk-800-both-7000.png",
+      "foreground_mae": 15.149372728338609,
+      "full_mae": 0.5548979166666667
+    },
+    {
+      "file": "cjk-800-none-0.png",
+      "foreground_mae": 12.527149321266968,
+      "full_mae": 0.22748541666666666
+    },
+    {
+      "file": "cjk-800-none-1600.png",
+      "foreground_mae": 8.930590668811767,
+      "full_mae": 0.2512298611111111
+    },
+    {
+      "file": "cjk-800-none-33000.png",
+      "foreground_mae": 9.799955815751684,
+      "full_mae": 0.19493402777777777
+    },
+    {
+      "file": "cjk-800-none-6000.png",
+      "foreground_mae": 9.698951671391837,
+      "full_mae": 0.31609375
+    },
+    {
+      "file": "cjk-800-none-7000.png",
+      "foreground_mae": 15.952408463927204,
+      "full_mae": 0.47029444444444446
+    },
+    {
+      "file": "latin-380-both-0.png",
+      "foreground_mae": 8.02020202020202,
+      "full_mae": 0.4532719298245614
+    },
+    {
+      "file": "latin-380-both-1600.png",
+      "foreground_mae": 11.435948165001484,
+      "full_mae": 0.5169766081871345
+    },
+    {
+      "file": "latin-380-both-33000.png",
+      "foreground_mae": 8.990730808372527,
+      "full_mae": 0.5292543859649123
+    },
+    {
+      "file": "latin-380-both-6000.png",
+      "foreground_mae": 10.87942275479964,
+      "full_mae": 0.6357997076023392
+    },
+    {
+      "file": "latin-380-both-7000.png",
+      "foreground_mae": 11.245037088683594,
+      "full_mae": 0.8897324561403509
+    },
+    {
+      "file": "latin-380-none-0.png",
+      "foreground_mae": 8.281803859787319,
+      "full_mae": 0.40151169590643276
+    },
+    {
+      "file": "latin-380-none-1600.png",
+      "foreground_mae": 8.688049758934158,
+      "full_mae": 0.3588421052631579
+    },
+    {
+      "file": "latin-380-none-33000.png",
+      "foreground_mae": 7.450289462236054,
+      "full_mae": 0.35836111111111113
+    },
+    {
+      "file": "latin-380-none-6000.png",
+      "foreground_mae": 9.577063142437591,
+      "full_mae": 0.4943845029239766
+    },
+    {
+      "file": "latin-380-none-7000.png",
+      "foreground_mae": 11.319507820835888,
+      "full_mae": 0.75925
+    },
+    {
+      "file": "latin-800-both-0.png",
+      "foreground_mae": 9.967619757225792,
+      "full_mae": 0.24014375
+    },
+    {
+      "file": "latin-800-both-1600.png",
+      "foreground_mae": 7.498528138528139,
+      "full_mae": 0.18603611111111112
+    },
+    {
+      "file": "latin-800-both-33000.png",
+      "foreground_mae": 9.216980274520498,
+      "full_mae": 0.23336527777777777
+    },
+    {
+      "file": "latin-800-both-6000.png",
+      "foreground_mae": 8.60702234382125,
+      "full_mae": 0.2699479166666667
+    },
+    {
+      "file": "latin-800-both-7000.png",
+      "foreground_mae": 16.30172684458399,
+      "full_mae": 0.6717951388888889
+    },
+    {
+      "file": "latin-800-none-0.png",
+      "foreground_mae": 11.410950002030786,
+      "full_mae": 0.20486180555555555
+    },
+    {
+      "file": "latin-800-none-1600.png",
+      "foreground_mae": 6.481005985052873,
+      "full_mae": 0.15050208333333334
+    },
+    {
+      "file": "latin-800-none-33000.png",
+      "foreground_mae": 9.756033994334278,
+      "full_mae": 0.19076458333333332
+    },
+    {
+      "file": "latin-800-none-6000.png",
+      "foreground_mae": 7.471896925628269,
+      "full_mae": 0.21008680555555556
+    },
+    {
+      "file": "latin-800-none-7000.png",
+      "foreground_mae": 18.81480734767025,
+      "full_mae": 0.5954201388888889
+    },
+    {
+      "file": "wrap-380-both-0.png",
+      "foreground_mae": 8.125421093547551,
+      "full_mae": 0.6093333333333333
+    },
+    {
+      "file": "wrap-380-both-1600.png",
+      "foreground_mae": 12.610913500404203,
+      "full_mae": 0.701953216374269
+    },
+    {
+      "file": "wrap-380-both-33000.png",
+      "foreground_mae": 8.853955112864627,
+      "full_mae": 0.6654078947368421
+    },
+    {
+      "file": "wrap-380-both-6000.png",
+      "foreground_mae": 11.197954584850061,
+      "full_mae": 0.7877558479532164
+    },
+    {
+      "file": "wrap-380-both-7000.png",
+      "foreground_mae": 20.44966146390136,
+      "full_mae": 2.1496652046783624
+    },
+    {
+      "file": "wrap-380-none-0.png",
+      "foreground_mae": 8.497373620548407,
+      "full_mae": 0.5650643274853802
+    },
+    {
+      "file": "wrap-380-none-1600.png",
+      "foreground_mae": 11.594823438853075,
+      "full_mae": 0.536485380116959
+    },
+    {
+      "file": "wrap-380-none-33000.png",
+      "foreground_mae": 7.207800721075057,
+      "full_mae": 0.4653172514619883
+    },
+    {
+      "file": "wrap-380-none-6000.png",
+      "foreground_mae": 10.738865588176553,
+      "full_mae": 0.6438084795321637
+    },
+    {
+      "file": "wrap-380-none-7000.png",
+      "foreground_mae": 21.80781924346281,
+      "full_mae": 2.0537397660818715
+    },
+    {
+      "file": "wrap-800-both-0.png",
+      "foreground_mae": 10.536658303555589,
+      "full_mae": 0.3081659722222222
+    },
+    {
+      "file": "wrap-800-both-1600.png",
+      "foreground_mae": 6.894684550422255,
+      "full_mae": 0.2088701388888889
+    },
+    {
+      "file": "wrap-800-both-33000.png",
+      "foreground_mae": 9.485115491835922,
+      "full_mae": 0.289525
+    },
+    {
+      "file": "wrap-800-both-6000.png",
+      "foreground_mae": 8.022602015253577,
+      "full_mae": 0.30946944444444446
+    },
+    {
+      "file": "wrap-800-both-7000.png",
+      "foreground_mae": 16.76720972763189,
+      "full_mae": 0.8609861111111111
+    },
+    {
+      "file": "wrap-800-none-0.png",
+      "foreground_mae": 11.688084149161993,
+      "full_mae": 0.2681236111111111
+    },
+    {
+      "file": "wrap-800-none-1600.png",
+      "foreground_mae": 6.73258582107318,
+      "full_mae": 0.2027423611111111
+    },
+    {
+      "file": "wrap-800-none-33000.png",
+      "foreground_mae": 9.714341085271318,
+      "full_mae": 0.24031527777777778
+    },
+    {
+      "file": "wrap-800-none-6000.png",
+      "foreground_mae": 7.846038602225854,
+      "full_mae": 0.2881472222222222
+    },
+    {
+      "file": "wrap-800-none-7000.png",
+      "foreground_mae": 18.543987823439878,
+      "full_mae": 0.7766486111111112
+    }
+  ],
+  "png_sha256": {
+    "build/verification/pendolo-stage-browser/arabic-380-both-0.png": "e4a0d7b603674f43c9040ea3ee05983d5cdb03b0f3da87f6ef64ac0e99d42096",
+    "build/verification/pendolo-stage-kotlin/arabic-380-both-0.png": "241ba312a145bbf509a4e3a5bf7d2a5f823b7df76a4dec33d04a62ad3a2320f7",
+    "build/verification/pendolo-stage-browser/arabic-380-both-1600.png": "f779dbcd06ff9b5a30c544e8e67635da7c9bc01aa23b96054dba8853a6303b76",
+    "build/verification/pendolo-stage-kotlin/arabic-380-both-1600.png": "eb3b1a656c20446987265f79fca39e13930b965089d02f6342bbbf464f930917",
+    "build/verification/pendolo-stage-browser/arabic-380-both-33000.png": "c0838a4cb7c4126f7f51d0feec7b9fd7fb231264acac9e4ee69582ef3ead700d",
+    "build/verification/pendolo-stage-kotlin/arabic-380-both-33000.png": "13fcce3e6c52b80ebb11a0492b473b04d7d11e797edeca1f9db61314854f0b99",
+    "build/verification/pendolo-stage-browser/arabic-380-both-6000.png": "238fdc13b6d81acf070d894a2c6f97b293b084b1023095a05a05ace48dc087c8",
+    "build/verification/pendolo-stage-kotlin/arabic-380-both-6000.png": "0bcb63a2cbe45337db8f10a09148dd9b56045f4c23ef638b233bfa3ee5c0bb3a",
+    "build/verification/pendolo-stage-browser/arabic-380-both-7000.png": "f5f7faffd448b4253074bec55cfdb1f128d81f22a824f5dfed7820dbe32557e7",
+    "build/verification/pendolo-stage-kotlin/arabic-380-both-7000.png": "ee132dc8bc2f284823b4cabcf1c1a10720446dde3dbd737dbb14319a95ed1328",
+    "build/verification/pendolo-stage-browser/arabic-380-none-0.png": "d376cc9899efbe745ed878c78f56f994f0f6160fdda8fd79ec1bf41503d5021f",
+    "build/verification/pendolo-stage-kotlin/arabic-380-none-0.png": "dcd4c09a92d2fe86db18f968d5c2c612450a466457f3630d1a762f8fe9858170",
+    "build/verification/pendolo-stage-browser/arabic-380-none-1600.png": "c61e58af853190a276a3f14bc9a622b83b4cb65bbf9aaa27b7a7810ca61ca718",
+    "build/verification/pendolo-stage-kotlin/arabic-380-none-1600.png": "7f5a225930c6d05dfa6120bfc2434be393b836bfb804794ed285a9090f2050bd",
+    "build/verification/pendolo-stage-browser/arabic-380-none-33000.png": "af78af049224529b8e73b72e0b09965c35b2185ea7f34a6aa6f6a90ea92053de",
+    "build/verification/pendolo-stage-kotlin/arabic-380-none-33000.png": "1a75f0b3ad740d8760013dc786b88eef9fecc2a4c5a62c6a4a0852db2129c33b",
+    "build/verification/pendolo-stage-browser/arabic-380-none-6000.png": "a669f14326d0d5eda14b2650d364dd6561aea647c675c2c2141ffb751b484aff",
+    "build/verification/pendolo-stage-kotlin/arabic-380-none-6000.png": "78329f9a5e9407ad1ff7abc37fa5bded027d2c010963b56dea0f37b6fe6e54dd",
+    "build/verification/pendolo-stage-browser/arabic-380-none-7000.png": "94c579915cf3c9ac84eec04c5c7d663469e0e6becf7a56484daaf5c9b0d262b1",
+    "build/verification/pendolo-stage-kotlin/arabic-380-none-7000.png": "84b44ee115e5e9bfea497bacb9dfe077cdbc7fa346973e40c26cd11b83564a3b",
+    "build/verification/pendolo-stage-browser/arabic-800-both-0.png": "779657b9c3b6ff7a6528811e815bb8e80b8e04a898c79af061b868f05c3f898d",
+    "build/verification/pendolo-stage-kotlin/arabic-800-both-0.png": "b10bc3b36fa7b81055c477cc04e5e6b33bf10b47fa02253b4cbae845e4ec09f2",
+    "build/verification/pendolo-stage-browser/arabic-800-both-1600.png": "6b3a650154b1df0ef05fa0426b81433b64383f7b6cddab9ec5ff0176cecaa3f6",
+    "build/verification/pendolo-stage-kotlin/arabic-800-both-1600.png": "e78d7b5328be1bf2097b0693cf4ca37cc5f28c66175a90add5ce3722d7aa7d1b",
+    "build/verification/pendolo-stage-browser/arabic-800-both-33000.png": "02f5ca3bf3415e9e8dceb9a07543d43c98c754c26ed695d6d0b78742ad4f1180",
+    "build/verification/pendolo-stage-kotlin/arabic-800-both-33000.png": "5e30f28675000a34d2ad092185ef1fb141af54390a638b84cbd52c152be0fe5a",
+    "build/verification/pendolo-stage-browser/arabic-800-both-6000.png": "dac3079b272dbc61f6fd71a314f876d10f3d179e999e3e7209958913a3ca2541",
+    "build/verification/pendolo-stage-kotlin/arabic-800-both-6000.png": "24c0a5658aea65ca1d481e14fb469e9b253ee4c39a513e9d7cc5995e73035035",
+    "build/verification/pendolo-stage-browser/arabic-800-both-7000.png": "81ace4b887ad0be3a809ce5dca4dd60b8cadf56f3a9392d169cfa82adb5fdfb6",
+    "build/verification/pendolo-stage-kotlin/arabic-800-both-7000.png": "ae35c561ef149e8ed612fbdd047bf21438339adfe7e4da7e65e3902bab254d69",
+    "build/verification/pendolo-stage-browser/arabic-800-none-0.png": "fe6cf2dcc94bb1ab8e77a6ae4dbea92ce7271515dfd2da1dd87037ec6034f8fc",
+    "build/verification/pendolo-stage-kotlin/arabic-800-none-0.png": "48b365a90ad2457d4b3775984cf2beaa882d8a11360cd54c1dfb8cfa622e623d",
+    "build/verification/pendolo-stage-browser/arabic-800-none-1600.png": "a52df5114df2ac4d07958739cfb24fc29dc3329331737339936786169dbb86c0",
+    "build/verification/pendolo-stage-kotlin/arabic-800-none-1600.png": "6de6e69d3bee628661789c403f68aa723a2eac0da5c76002d5315e8142097ba4",
+    "build/verification/pendolo-stage-browser/arabic-800-none-33000.png": "451f3355dae9c1e676f35cc02dee6d2e0eeb07316a5847a8a9f8e9bbc7483c7d",
+    "build/verification/pendolo-stage-kotlin/arabic-800-none-33000.png": "6384d250db0ca0f9b39e21711355278eebd589a5d55fd936700439142e33f1c5",
+    "build/verification/pendolo-stage-browser/arabic-800-none-6000.png": "b9885503fa605c31c1faedb7d6d2ed534c5dca80080c87edd4a6308c78e56459",
+    "build/verification/pendolo-stage-kotlin/arabic-800-none-6000.png": "2d21eae6d1f17d87125925d35526c63add7d6ed5620cb6ac9c61a498a5a0c8b2",
+    "build/verification/pendolo-stage-browser/arabic-800-none-7000.png": "32de5546785bb13a5d0129d35d651f94b0fcf7c9472148fe1ebadd0229f90078",
+    "build/verification/pendolo-stage-kotlin/arabic-800-none-7000.png": "6f72f40f182f29140ed59e8339166a5c52cb53631934b9ea42a11681d901b72d",
+    "build/verification/pendolo-stage-browser/cjk-380-both-0.png": "30e8fe3a57ada963b5be590c06c9fdf79b75342834efd37ba065983e087e6542",
+    "build/verification/pendolo-stage-kotlin/cjk-380-both-0.png": "e398639fbdb64cf310240d86286bbbb3a5879ef12a72b830932b7211466c125f",
+    "build/verification/pendolo-stage-browser/cjk-380-both-1600.png": "ad2d8f358f6281b39bd8b5a6fe59dedafa047f9eb1bbf6921e79e32bf743aad5",
+    "build/verification/pendolo-stage-kotlin/cjk-380-both-1600.png": "382ce14d4b38380f450c28971409999745e5888ef4c47a5ab4ae79a46c886ec5",
+    "build/verification/pendolo-stage-browser/cjk-380-both-33000.png": "4ea753c0abdb5bb8b8621b6e587b4249d7e4e79f2175a12f448a52e913e773a6",
+    "build/verification/pendolo-stage-kotlin/cjk-380-both-33000.png": "157c9727d67191408f09e2b3023d1e6c0aab30669cc2013dd63c961a2f55b761",
+    "build/verification/pendolo-stage-browser/cjk-380-both-6000.png": "30ffb34d23d9cf471fd75d2358f627758a728bc7d357a3d6246ab42ee3755f53",
+    "build/verification/pendolo-stage-kotlin/cjk-380-both-6000.png": "3798a863879914bfabf48b6b7c6f9eca08e5a0f80dc38d291ce693f4d1bf2f0a",
+    "build/verification/pendolo-stage-browser/cjk-380-both-7000.png": "50a166bade5af1facee4c10866c328c55f27a22075eee026d4749b08319e4335",
+    "build/verification/pendolo-stage-kotlin/cjk-380-both-7000.png": "5b89dd91af14ffccd9490b8324b1f6dc3c586dfd680d1165da4277e5534ac1f9",
+    "build/verification/pendolo-stage-browser/cjk-380-none-0.png": "f2b1fecb178bd51c59fc54f47c5c1335ad2d43bf580d507912a0f5dc382fb0be",
+    "build/verification/pendolo-stage-kotlin/cjk-380-none-0.png": "b35095206bedd4b91dad6a35fff23cad64ba541f79e9f9ed0410c5bf488b7a2d",
+    "build/verification/pendolo-stage-browser/cjk-380-none-1600.png": "be737ddf475efec1d2bfc7d6c3520ddfad0dbfd99d52d47c907da40966b109dc",
+    "build/verification/pendolo-stage-kotlin/cjk-380-none-1600.png": "415713d65b5874c3072b20e12b5f7d2e6355dca7b0dfa8c42625387373d51e23",
+    "build/verification/pendolo-stage-browser/cjk-380-none-33000.png": "42c0cffa946320e578ff6e9cecff30ec7499ef3b7782ffcb8d4ae13ee0884897",
+    "build/verification/pendolo-stage-kotlin/cjk-380-none-33000.png": "9d2466250e225e5136c89dfa4325fea866e2fc438bedfe78dd30a18ff91a6263",
+    "build/verification/pendolo-stage-browser/cjk-380-none-6000.png": "eb54ae02e5905376c311518177fe12d7f61df20169fa73369e2a755935f58124",
+    "build/verification/pendolo-stage-kotlin/cjk-380-none-6000.png": "66eece8a62cd13996554450f53854f996c584a12bfa64d155c233b0ce5e3d239",
+    "build/verification/pendolo-stage-browser/cjk-380-none-7000.png": "2389288c37e4092fafec71bf9adffdfc0ace7b8a82392840c062addd89e0400c",
+    "build/verification/pendolo-stage-kotlin/cjk-380-none-7000.png": "24862fa336a4494c61a969a5e6761e4245f9c8c1dfacee331a29da63868c3a9b",
+    "build/verification/pendolo-stage-browser/cjk-800-both-0.png": "8d5dbb0245aaf51a23c127e6c3321f86b8f053a4f270addd73bb60ea082a3291",
+    "build/verification/pendolo-stage-kotlin/cjk-800-both-0.png": "4c309e08a34f44e9b4d5f51f7c37a32acd8e6a4bd33cd9b94c8956e4a9f8b0e6",
+    "build/verification/pendolo-stage-browser/cjk-800-both-1600.png": "3b7959284cf824f377fc10663b36c391bb7575f4e4c51e554dfaf8e8db08d7b3",
+    "build/verification/pendolo-stage-kotlin/cjk-800-both-1600.png": "dd1c92158538805af05fc5acda5ffe8a0467f65872866de53bbf39b2975453ea",
+    "build/verification/pendolo-stage-browser/cjk-800-both-33000.png": "16ae070689a2c02452abd7cd8ba9699607e64dd57fbd977793b11d5628c77a0d",
+    "build/verification/pendolo-stage-kotlin/cjk-800-both-33000.png": "bcdd3fdc85283274d877e0c071a6c4c831a59c21e9a275d83932079f3f77089f",
+    "build/verification/pendolo-stage-browser/cjk-800-both-6000.png": "2336a21a92dd7fb5d5466fca0e0c5bfb7de159ccf9d2160823f585fb0d57d799",
+    "build/verification/pendolo-stage-kotlin/cjk-800-both-6000.png": "2077c866f2e7436daa1d12fbb5be7d9d66310ee3b7e26c204e985a49ef2a722f",
+    "build/verification/pendolo-stage-browser/cjk-800-both-7000.png": "a6f810dee1f996c5573363a5026352d54dda6a12d00eeb849c2ea6b3e6d390b6",
+    "build/verification/pendolo-stage-kotlin/cjk-800-both-7000.png": "1830fe1f9c6e6a6496c4704e35fcfac551765e265b30fdba9bb09efe69a99c65",
+    "build/verification/pendolo-stage-browser/cjk-800-none-0.png": "31a563fdf6dabdc2fbc8909cf94e9aaefe198eb46338fa7d9e0d16bea45e11ef",
+    "build/verification/pendolo-stage-kotlin/cjk-800-none-0.png": "56f8e0dfb38abce72908c148dbc471f4cffe1dd7c5772932aa339de437fe19ff",
+    "build/verification/pendolo-stage-browser/cjk-800-none-1600.png": "062715185a581491ba6a9adc2f6bca62023280a194d37d568666ad90ee1b7041",
+    "build/verification/pendolo-stage-kotlin/cjk-800-none-1600.png": "72e28a539cc50d06b18de918d3028fe9d2162a3ba139e693bca13b8a04e680db",
+    "build/verification/pendolo-stage-browser/cjk-800-none-33000.png": "be8324d6bc1ffa93c15a51a2638254f79d37c4864a4bae455beec8c989479b16",
+    "build/verification/pendolo-stage-kotlin/cjk-800-none-33000.png": "08fb6f32651fc1e8700568186038bac45f45a1264792d3fa675abc0b7b9e4c82",
+    "build/verification/pendolo-stage-browser/cjk-800-none-6000.png": "e136dd18c97b366b6871b0a69e04456dffb3de351f6179ead4e601e51008d294",
+    "build/verification/pendolo-stage-kotlin/cjk-800-none-6000.png": "de62cd6118f1a6b278112b20dc4612411c891b04ad06f65aff3c62741e937130",
+    "build/verification/pendolo-stage-browser/cjk-800-none-7000.png": "1a9aa44345bffb8ada6ca128c6a0f58684b50383cbb8a31c2e503a99c6f0dd17",
+    "build/verification/pendolo-stage-kotlin/cjk-800-none-7000.png": "2c868aab592393557af706c687a7de18f0619d7dd2e4da8b81aeac9507ae983f",
+    "build/verification/pendolo-stage-browser/latin-380-both-0.png": "d546f495c4160b9277af1d0a0c96b1efee98ad3593b477b791269125425439f0",
+    "build/verification/pendolo-stage-kotlin/latin-380-both-0.png": "34952dbe1deab2adcd267353bb5646ef62cdb02c7e0eb1876f2423fa8e182d05",
+    "build/verification/pendolo-stage-browser/latin-380-both-1600.png": "6fad19e55602980b0fb0239c0f34f4c899c514d9eeb183d86fe75010b3806ecc",
+    "build/verification/pendolo-stage-kotlin/latin-380-both-1600.png": "618fbf9715c543c2339672e04cb673ff305fddbb85c7775da613f1120701355f",
+    "build/verification/pendolo-stage-browser/latin-380-both-33000.png": "6faaf384dd162beec1b283567482853157f74ff57fe397fe3015f852f1eeef14",
+    "build/verification/pendolo-stage-kotlin/latin-380-both-33000.png": "a3af79e3d17a0bfb0b0d6c952c42830a0ba7c375edb167395c0a13e615ee24dc",
+    "build/verification/pendolo-stage-browser/latin-380-both-6000.png": "fa29478b4bc58ad3f56d6a6d887477db32470c9b039c4f6b702348d8612ab512",
+    "build/verification/pendolo-stage-kotlin/latin-380-both-6000.png": "6950915944d9f04366697e4240d74785381c593efec53605e01e0a80451a2713",
+    "build/verification/pendolo-stage-browser/latin-380-both-7000.png": "6a6be7c362a2665827df815ddfe51a3166c5ab4ddd66da51925627b9b576ca74",
+    "build/verification/pendolo-stage-kotlin/latin-380-both-7000.png": "14157bbb906a586b24923447e8ecaa573bee98b168eb205b0ede45d1359bbc68",
+    "build/verification/pendolo-stage-browser/latin-380-none-0.png": "d38d04049ab83655708056ad414a7186043ee13d2b624873425720a44bbc9d2f",
+    "build/verification/pendolo-stage-kotlin/latin-380-none-0.png": "873202333d1335057ede1380854ee03b22b9b6fdc99b6a4bce5b98752149b8c8",
+    "build/verification/pendolo-stage-browser/latin-380-none-1600.png": "ddcb25d447a247ed67875d506ef7f24caa73e892783325fe6c3b7031451d622b",
+    "build/verification/pendolo-stage-kotlin/latin-380-none-1600.png": "672e72079fd932472895a36d546c9f9ddc62fb3857203cd56fe81598d60ebdad",
+    "build/verification/pendolo-stage-browser/latin-380-none-33000.png": "745cc07d697511f6c116ebe1ae760bb269f1735ff497ad7e73491abb88be87cd",
+    "build/verification/pendolo-stage-kotlin/latin-380-none-33000.png": "7ad9be7f7958050527dc4ed5b2ac6aea4b4a6ad10523f89355139da09871b700",
+    "build/verification/pendolo-stage-browser/latin-380-none-6000.png": "dd9189c06ddde63d672ca1fc85cfecd0010ad790d6a4a7b86d7fcc6aa33801e2",
+    "build/verification/pendolo-stage-kotlin/latin-380-none-6000.png": "5037aa1d530c9176ec8d9bf90bc20257f9c109baae824df840a67c4ddb3babd9",
+    "build/verification/pendolo-stage-browser/latin-380-none-7000.png": "fa8f4ca1174f5ac475b88896e11fa13e4de884d29c5272f14d2c9ec1f25a0f86",
+    "build/verification/pendolo-stage-kotlin/latin-380-none-7000.png": "c2b09b049bfbd42290ea2c0fec3b60285107800362b78b464ceef9cb37efe7db",
+    "build/verification/pendolo-stage-browser/latin-800-both-0.png": "8bef2a739837afc319f6a869ce2566aa6fc3052bd1cc8cb0e12e809ad53c4e50",
+    "build/verification/pendolo-stage-kotlin/latin-800-both-0.png": "a26d02fd06b97f3a9e8e9ddf3ec0381d438c3ae220908855c5ab37b459ce416e",
+    "build/verification/pendolo-stage-browser/latin-800-both-1600.png": "94d94bb30a0e14a639de5ff5f951e2192300d1741d0e268bcd0ca37f10ae68a0",
+    "build/verification/pendolo-stage-kotlin/latin-800-both-1600.png": "073afa55ae9203bb80ab081bec20e0279a86ba33c47fbdafe5d03d07d85654e9",
+    "build/verification/pendolo-stage-browser/latin-800-both-33000.png": "faaf70f0842780278b292e02e201ad34ca92fadcc1e8d56d638148bbd252affc",
+    "build/verification/pendolo-stage-kotlin/latin-800-both-33000.png": "a68a52418edccbbae76591438ffc31e3d4f8ae63d4538ac83f31509f24d084fa",
+    "build/verification/pendolo-stage-browser/latin-800-both-6000.png": "02692d07bedeca984efe81efda0144da36063491443e5dae1614b993cfd2f9b3",
+    "build/verification/pendolo-stage-kotlin/latin-800-both-6000.png": "7242a9a129ff2f2e6531101c87f22972662f9dc72643afafb996435e4b5a3637",
+    "build/verification/pendolo-stage-browser/latin-800-both-7000.png": "0aa2d6ed31d8050d740ef68f463e0620b7865cc99013f28b9972b3ccea96e462",
+    "build/verification/pendolo-stage-kotlin/latin-800-both-7000.png": "dc28253ce7e967012887253770e192b015cecdbfaf923003594b1ccfb6a11bf0",
+    "build/verification/pendolo-stage-browser/latin-800-none-0.png": "a097f156b8304203acef23d0be735e034d47a1529efb52618a5e77d2adeaa5bb",
+    "build/verification/pendolo-stage-kotlin/latin-800-none-0.png": "413ddf97d351baee139c18e3fe5eb33ecc4df7ba9c8e9fc6b7ee8a677be6ec06",
+    "build/verification/pendolo-stage-browser/latin-800-none-1600.png": "02dcc8bff15d821a26d88a1164486adca18b82ea324bffe5e36d615947822451",
+    "build/verification/pendolo-stage-kotlin/latin-800-none-1600.png": "9699e0ce3bb05c61dea775e2c42941f882ea9f0c82da547d955a10b088f687da",
+    "build/verification/pendolo-stage-browser/latin-800-none-33000.png": "6e932b7576ddd17ab0d7059adaca12d780e98539941df21ee36d4f83dfb0d027",
+    "build/verification/pendolo-stage-kotlin/latin-800-none-33000.png": "c6a0293958ca8ed6827572dcae00a9dbbbe328d3f695578adbabc3d5506a3933",
+    "build/verification/pendolo-stage-browser/latin-800-none-6000.png": "fea3dfade84103b332df0b8fa7b9868e135416b2b05fb4aec9c6639932ffe2d9",
+    "build/verification/pendolo-stage-kotlin/latin-800-none-6000.png": "41e7fa7b06f22419463b8313ca6f9f1017a4146b93a5cf87b7c474de1ffa82ff",
+    "build/verification/pendolo-stage-browser/latin-800-none-7000.png": "e655d380b7a625079f9b4e96e3ba7b882eb35ccc98aa263b6e06b3b918bb0c82",
+    "build/verification/pendolo-stage-kotlin/latin-800-none-7000.png": "29e0c90306f9ec4a8ed9155ab163cf128ad0e4eae28fd6548fb9d05c7828b133",
+    "build/verification/pendolo-stage-browser/wrap-380-both-0.png": "10bf360806398b10db1f5732a957e5c29b7892ebeb87af24236b17111b449ca6",
+    "build/verification/pendolo-stage-kotlin/wrap-380-both-0.png": "937eddedb6714ca55cdd77fbb16b3fa6c3778880f11fa60c888dc09c3a30f4d8",
+    "build/verification/pendolo-stage-browser/wrap-380-both-1600.png": "4d8f964391db556176cbf5493823783fcc93b13549559ae274bb4d13e2e8487c",
+    "build/verification/pendolo-stage-kotlin/wrap-380-both-1600.png": "d9f626c0f2df79166c827cdde0fb163cbc99d19111a2214bc7cc27e6e4e7219b",
+    "build/verification/pendolo-stage-browser/wrap-380-both-33000.png": "ed54bfd9ee2d818ac113066340637c010bea72e6c23dc4828d1e0842df98e56f",
+    "build/verification/pendolo-stage-kotlin/wrap-380-both-33000.png": "76d676d7f5b72b725c148743ef2d5ff50e32cebb91aec58e17acebc443efa303",
+    "build/verification/pendolo-stage-browser/wrap-380-both-6000.png": "1a3017c1022551b21eb6ac16f4060d923328070810602ae713de534f3b6819a8",
+    "build/verification/pendolo-stage-kotlin/wrap-380-both-6000.png": "3ccd85abb2a008080f5027498d89c6f840499b6d429fbe000bee0677fa864c31",
+    "build/verification/pendolo-stage-browser/wrap-380-both-7000.png": "989186a75e551103a1455751c97ba84949f56b3694e2af808a6cff539677c79b",
+    "build/verification/pendolo-stage-kotlin/wrap-380-both-7000.png": "bdba2aa238f5410ef862de34020f7887ecb5c76bdaf6ed4c92b91815c6fe10e3",
+    "build/verification/pendolo-stage-browser/wrap-380-none-0.png": "f31e7d5d00bf5d23cdb1c0aa26c56b0f9899b6864993c42a7e1bed0b4773db2d",
+    "build/verification/pendolo-stage-kotlin/wrap-380-none-0.png": "eafbf3edd0a49cd979bbfe8b5c66e9c68d9801d176e36c1609a7c95563cbeb6a",
+    "build/verification/pendolo-stage-browser/wrap-380-none-1600.png": "628a508827c3c09f60a704d8117757789ceb8dd975443617137691024486d140",
+    "build/verification/pendolo-stage-kotlin/wrap-380-none-1600.png": "67449b131c07b079449f632d5efb8f53336ec04b00a9dd72e82abc993c8436a4",
+    "build/verification/pendolo-stage-browser/wrap-380-none-33000.png": "c033d859a88830826850c5ff7979298f72c9259658df924eb88447c100713e5e",
+    "build/verification/pendolo-stage-kotlin/wrap-380-none-33000.png": "8ba11eb986ab8e80fe8c0c480969133fe0ae37c5ba50d3d7931434253c17f0c9",
+    "build/verification/pendolo-stage-browser/wrap-380-none-6000.png": "119c1df837aeccdc3c3cc21dd056e3b0e959a9e34c85eafa3b8b826f24a918d2",
+    "build/verification/pendolo-stage-kotlin/wrap-380-none-6000.png": "fb7598dd9c34fd7309068cf4d1722487a361c498cb1e3e62240118a3870e4cc8",
+    "build/verification/pendolo-stage-browser/wrap-380-none-7000.png": "053e39be1743af087b159576dcf4bc49e0cbb1b67f03ce226b9e60585d6a0336",
+    "build/verification/pendolo-stage-kotlin/wrap-380-none-7000.png": "df6118a1ba4f2bac80ceb82cb760657b5cbfec8a351b85f1512e0e393afe4f2d",
+    "build/verification/pendolo-stage-browser/wrap-800-both-0.png": "4c5d905501bc7228796ee55ec559fcb21b6ffe8247d553b2a0a38ea9bb27e2e2",
+    "build/verification/pendolo-stage-kotlin/wrap-800-both-0.png": "7ec75733da489fa26bd511b2264b4baca64f3ae1d8a3d0ec38dc23bb278d6fcf",
+    "build/verification/pendolo-stage-browser/wrap-800-both-1600.png": "14f1bde135baf67692b87bf9e0fdbb805431b08bd1280911d17b3b0149ef64ce",
+    "build/verification/pendolo-stage-kotlin/wrap-800-both-1600.png": "ff7be5fb5458b6b9a2ef009fc4c5084aecc04cca6305ab63d759fb17ff66e75c",
+    "build/verification/pendolo-stage-browser/wrap-800-both-33000.png": "e5e3d6ac278aea50746bb7325c8b481f05b29b47b856995ca55af963b170215f",
+    "build/verification/pendolo-stage-kotlin/wrap-800-both-33000.png": "495b883ef287270dd6817adc8d90e4451b8c8c01e7880f8f88f54354caf48574",
+    "build/verification/pendolo-stage-browser/wrap-800-both-6000.png": "86c958a15af57f80c9d8a3ac39df9f2c93148c67546f7a5d4383ed9c95b89e4d",
+    "build/verification/pendolo-stage-kotlin/wrap-800-both-6000.png": "9ac3a49e87785fbf8ba6c5dd29d92dc624a68cbe2a8e563a93b656922f4408be",
+    "build/verification/pendolo-stage-browser/wrap-800-both-7000.png": "116bf16c3cd6a8ae62cd08ffaa612e884c18a968ad3a499c32b6d06cec2e9e78",
+    "build/verification/pendolo-stage-kotlin/wrap-800-both-7000.png": "8d60684a836bd541add37e57479ba5cdc12f4dacaeacf0835552fc760d5c1be9",
+    "build/verification/pendolo-stage-browser/wrap-800-none-0.png": "898b7adc9d0d2fe74b5ee531506d9d246eec4e1de7bd1e332dbb792d18e154d3",
+    "build/verification/pendolo-stage-kotlin/wrap-800-none-0.png": "5983d68df994c0bc3946cc3fa86aed2419fc4fc311ce661c3324a4b62a3ba517",
+    "build/verification/pendolo-stage-browser/wrap-800-none-1600.png": "7a4d961634243674bf4752faed3789c05f0018b73f3d32546dfde61f1f8407d1",
+    "build/verification/pendolo-stage-kotlin/wrap-800-none-1600.png": "3bbf0263a66f3c342fb2acdc5f16a561e85bec06cdad3fa1a8e6fdf4ae0ed17e",
+    "build/verification/pendolo-stage-browser/wrap-800-none-33000.png": "2771b1e5a27f48880c6f2849d2069fab1918ab0df8ce819c1d56b61f0c2d54b5",
+    "build/verification/pendolo-stage-kotlin/wrap-800-none-33000.png": "a8a4503278efa0e220e839eba964c8ca30d354a80b7af9acb12dcefddfffb0de",
+    "build/verification/pendolo-stage-browser/wrap-800-none-6000.png": "8bc51aeb5ea1a0fde38ed47318c06e894c9ccf4f51abff4398af25cad8042f21",
+    "build/verification/pendolo-stage-kotlin/wrap-800-none-6000.png": "e1d409191e5816796b977dd5d1ef476c4dfd1ca4a5f04ffb248098b97f349c00",
+    "build/verification/pendolo-stage-browser/wrap-800-none-7000.png": "f670382c0420456d51db0cab62ad1be74ef63bb399377ad2032c35e2eb93ebca",
+    "build/verification/pendolo-stage-kotlin/wrap-800-none-7000.png": "bcd0b6ccb3cdcf3a8cc9f28b23b31173f0b50c928a8714f4703192b6e0a25182"
+  }
+}

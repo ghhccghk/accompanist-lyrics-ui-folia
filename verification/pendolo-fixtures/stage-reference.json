@@ -1,0 +1,19 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "source": "src/components/visualizer/pendolo/VisualizerPendolo.tsx",
+  "extracts": [
+    {
+      "sha256": "8c00e4315d75cf11f1ba61fcf7a847db50dfbec5544ea4906ec974ad903613a6",
+      "characters": 574
+    },
+    {
+      "sha256": "d32ea3123e7e56f8022d465df53170171e865711d6d78c694d53cab79052addb",
+      "characters": 2161
+    },
+    {
+      "sha256": "1ffda266848a68a8a214e14ffc181748672a0d489522b4514bc213d88f69953b",
+      "characters": 11375
+    }
+  ],
+  "scope": "Unchanged original geometry/measurement declarations and complete lyric-wheel JSX subtree; original rotating-line/sweep/subtitle/color functions. Target-only host: rotation=0, smart-beat values=0, no clockwork/background/store/manual-scroll behavior. Not complete original app or animated tick acceptance."
+}

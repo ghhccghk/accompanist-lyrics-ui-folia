@@ -4,6 +4,7 @@
 package top.ghhccghk.accompanist.lyrics.folia.internal.styles.pendolo
 
 import androidx.compose.ui.text.*
+import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.*
 import androidx.compose.ui.unit.*
@@ -11,8 +12,10 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.styles.cappella.cappellaCa
 import top.ghhccghk.accompanist.lyrics.folia.internal.text.*
 import kotlin.math.*
 
+internal data class PendoloTextRun(val path: Path, val shift: Float)
 internal data class PendoloTextRow(val text: String, val width: Double, val graphemeStart: Int,
-    val graphemeEnd: Int, val offsets: List<Double>, val paragraph: TextLayoutResult)
+    val graphemeEnd: Int, val offsets: List<Double>, val paragraph: TextLayoutResult,
+    val trackingRuns: List<PendoloTextRun> = emptyList())
 internal data class PendoloPreparedText(val rows: List<PendoloTextRow>, val lineHeight: Double,
     val height: Double, val metrics: NaturalFontMetrics)
 
@@ -26,8 +29,15 @@ internal fun preparePendoloText(text: String, fontPx: Double, width: Double, mea
         textAlign = TextAlign.Left, textMotion = TextMotion.Animated,
         textDirection = base.textDirection.takeUnless { it == TextDirection.Unspecified } ?: TextDirection.Ltr))
     val safe = text.ifEmpty { " " }
+    fun missingSpaceTracking(s: String): Double = if (style.letterSpacing.isSp &&
+        s.any { it in '\u0600'..'\u06ff' || it in '\u0750'..'\u077f' || it in '\u08a0'..'\u08ff' } &&
+        s.none { it.isLetter() && it.code < 0x600 }) style.letterSpacing.value.toDouble() else 0.0
     fun advance(s: String): Double {
         if (s.isEmpty()) return 0.0
+        if (style.letterSpacing.isSp && style.letterSpacing.value != 0f) {
+            return measurer.measure(s, style, softWrap = false).getPathForRange(0, s.length).getBounds().width / density.density.toDouble() +
+                s.count { it == ' ' } * missingSpaceTracking(s)
+        }
         // pretext measures complete word segments and retains pre-wrap spaces.
         val segments = mutableListOf<String>()
         for (part in segmentWords(s)) {
@@ -36,8 +46,10 @@ internal fun preparePendoloText(text: String, fontPx: Double, width: Double, mea
         return segments.sumOf { value -> cappellaCanvasAdvance(value, style, resolver, density) ?:
             (measurer.measure(value, style, softWrap = false).getPathForRange(0, value.length).getBounds().width / density.density.toDouble()) }
     }
-    val layout = measurer.measure(safe, style, constraints = Constraints(maxWidth =
-        ceil(max(1.0, width) * density.density).toInt().coerceAtLeast(1)))
+    val fits = safe.split('\n').all { advance(it) <= width }
+    val layout = if (fits) measurer.measure(safe, style, softWrap = false) else
+        measurer.measure(safe, style, constraints = Constraints(maxWidth =
+            floor(max(1.0, width) * density.density).toInt().coerceAtLeast(1)))
     var cursor = 0
     val rows = (0 until layout.lineCount).map { i ->
         val a = layout.getLineStart(i)
@@ -51,8 +63,16 @@ internal fun preparePendoloText(text: String, fontPx: Double, width: Double, mea
         // Original prefix measurement uses normal whitespace, so a trailing
         // ASCII space has zero *additional* width; row layout uses pre-wrap.
         val offsets = edges.map { end -> advance(row.substring(0, end).trimEnd(' ')) }
-        PendoloTextRow(row, advance(row), start, cursor, offsets,
-            measurer.measure(row.ifEmpty { " " }, style, softWrap = false))
+        val paragraph = measurer.measure(row.ifEmpty { " " }, style, softWrap = false)
+        val spacing = missingSpaceTracking(row)
+        val runs = if (spacing == 0.0 || ' ' !in row) emptyList() else {
+            val spaces = row.indices.filter { row[it] == ' ' }.map { paragraph.getPathForRange(it, it + 1).getBounds().left }
+            Regex("[^ ]+").findAll(row).map { word ->
+                val path = paragraph.getPathForRange(word.range.first, word.range.last + 1)
+                PendoloTextRun(path, (spaces.count { it < path.getBounds().left } * spacing * density.density).toFloat())
+            }.toList()
+        }
+        PendoloTextRow(row, advance(row), start, cursor, offsets, paragraph, runs)
     }
     return PendoloPreparedText(rows, lineHeight, max(rows.size, 1) * lineHeight, naturalFontMetrics(style, resolver, density))
 }

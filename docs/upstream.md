@@ -1278,3 +1278,23 @@ height is a caller-supplied measurement, not guessed from character count in
 production. Original exports generate528 configurations/168 tracks; all fields
 and controlled sum heights match. See verification/pendolo-fixtures/SUBTITLES.md.
 Actual wrapped subtitle measurement/drawing and wheel integration remain open.
+
+## 2026-11-17 Pendolo measured target text wheel
+
+Pinned cc6226e4 `pendolo/VisualizerPendolo.tsx` geometry/lineBlockHeights/lineItems
+and complete wheel JSX subtree, `PendoloRotatingLine.tsx` and subtitle/text helpers
+→ `PendoloWheelTarget.kt`, shared `PendoloSweepTarget.kt` drawing and
+`PendoloTextPreparation.kt`. Retain AGPL-3.0-only and original attribution.
+Native layouts are independently measured, not fixture-fed. Preserve max-content
+intrinsic widths, fractional CSS1/64px rounding, active/pretext vs idle/CSS wrap,
+left-center transform nesting and actual subtitle gaps/heights. Complete shaped
+Arabic runs retain joining while restoring the source ASCII-space tracking;
+non-ASCII whitespace and mixed-script tracking remain unverified.
+
+Original extracts/hashes and real space-tracking probe are tracked in
+verification/pendolo-fixtures/stage-*. Native 80 targets/5808 geometry fields
+pass original strict thresholds; math/reserved-height peak0, all fields0.0005px.
+Initial four-scene failures/PNGs retained. All88 isolated sweep hashes unchanged.
+Image MAE10.650323/peak21.807819 still open; target-only/no tick/chorus/gear
+acceptance. Details/reproduction/contact: verification/pendolo-stage. Android
+APK/Desktop compile pass, no connected-device claim or public theme entry.

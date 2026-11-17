@@ -1,0 +1,26 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "frames": 48,
+  "viewport": [
+    480,
+    300
+  ],
+  "DPR": 1,
+  "fontPx": 24.12,
+  "scope": "Original AnimatedBubbleFrame/ActiveCappellaText + original pretext metrics/colors. Exact target frame, CSS fades explicitly re-anchored to media for comparison. Excludes stack, row scale/springs, resize transition, timestamp, shadows, glow and avatar. Not complete theme acceptance.",
+  "fonts": [
+    {
+      "name": "FoliaParityLatin-Bold.ttf",
+      "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+    },
+    {
+      "name": "NotoSansArabic-Bold.ttf",
+      "sha256": "ed2711b387750ae991b6a980b8dd16fdd65e6702b97e9f52adf3a8edf09ef4df"
+    },
+    {
+      "name": "FoliaParityCJK-Bold.otf",
+      "sha256": "bba3466c258edbef68075a274af31b18697ac5afd61987b4170dc871d952174d"
+    }
+  ]
+}

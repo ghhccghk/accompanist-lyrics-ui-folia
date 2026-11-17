@@ -23,3 +23,16 @@ heights:24 cases/774 messages/864 queries. `CappellaMessagesTest` compares exact
 sides/ids/avatar indices/selection/order; not pixel or text measurement acceptance.
 The no-image configuration is supported by the original itself. Agent IDs in these
 fixtures are explicit source inputs, not guessed from lyrics-core metadata.
+
+
+Bubble/text: run existing `node verification/classic-browser/serve.mjs`, then
+`node verification/classic-browser/capture-cappella-bubble.mjs`,
+`gradlew.bat :library:jvmTest --tests '*CappellaBubbleTest'`,
+`python verification/compare-cappella-bubble.py`.
+48 original-component/native pairs use identical synthetic cadenza scene inputs
+and OFL font bytes,480x300,DPR1, two sides/six times. Conditions record scope:
+frame TARGET size only, original CSS fades deliberately anchored with WAAPI to
+media elapsed time. Does not test original row/stack/springs/resize/shadow/glow.
+76 prefix sizes exact;233 computed CSS alpha samples within1e-6 (CSS serialization).
+Mean foreground-union RGB MAE0.95330035, residuals in report/contact. Raw images
+stay in build/verification; hashes and contact are versioned. Not a full theme.

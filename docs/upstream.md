@@ -1045,3 +1045,32 @@ intensities, single/multiple/blank agents, ECMA whitespace, short Unicode text,
 negative/decimal/exponent time seeds and unsorted starts. Random/reverse queries
 repeat exactly. Android APK/Desktop build pass; no theme UI/device acceptance.
 Reproduce generate-cappella-messages.mjs and CappellaMessagesTest.
+
+
+## 2026-11-17 Cappella real-font bubble/text calibration
+
+Source `cappellaBubbleMetrics.ts` → CappellaBubbleMeasure in CappellaBubble.kt;
+`CappellaBubbleParts.tsx` AnimatedBubbleFrame/ActiveCappellaText +
+`cappellaMessageLayout.ts:getBubbleColors` → CappellaBubbleTarget/colors.
+Pinned revision/licensing as above. Native uses independently measured complete
+shaped paragraphs, CSS natural baseline/line-height, source 24/6px corners,
+1px inset border, integer-channel color mixing, .2s width lookahead and original
+CSS ease-out cubic (0,0,.58,1). Widths preserve trailing space advances instead
+of native getLineRight hanging them. Prefix preparation retains dimensions,
+not quadratic text-layout objects; fade reads only media time in draw scope.
+
+Original actual AnimatedBubbleFrame and ActiveCappellaText are mounted with
+original pretext metrics/colors. Target size is mounted directly; original CSS
+character fades are explicitly re-anchored using WAAPI to the same media time.
+This is an ISOLATED target-frame/text check, not proof that original wall-time
+animations have native pause/seek semantics. Row springs, stack, .2s resize,
+shadow/glow, avatars/timestamp are excluded and remain required work.
+
+76 prefix sizes match exactly after fixing trailing-space measurement (no changed
+expectations/tolerance). 233 actual computed CSS opacity values match within1e-6
+(serialized six decimals). 48 same-font pairs at480x300,DPR1 have foreground
+RGB MAE0.95330035; contact checked. CJK1.322789/Arabic1.059661 and corner/coverage
+residuals remain, no final theme acceptance. Pause and shuffled/reverse media
+revisits produce identical pixels. Android APK/Desktop build passed; native
+Compose ran offscreen, no Android device present. No source artwork copied.
+Evidence/reproduction: verification/cappella-bubble, cappella-fixtures README.

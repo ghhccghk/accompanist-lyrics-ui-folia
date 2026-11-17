@@ -1023,3 +1023,25 @@ reverse queries exact. Unsafe parser cuts separately checked. Android APK and
 Desktop compilation passed; no device/UI/visual parity claim for this core.
 Reproduce: node verification/classic-browser/generate-cappella-reveal.mjs;
 gradlew.bat :library:jvmTest --tests '*CappellaRevealTest'.
+
+
+## 2026-11-17 Cappella deterministic text conversation
+
+Source cc6226e4 `cappellaMessages.ts`, `cappellaMessageSenders.ts`,
+`cappellaIntensity.ts` → `CappellaMessages.kt` in the same internal theme package.
+Implements the original empty-image-pool/showEmoMessages=false configuration:
+title-right/avatar8; UTF16 FNV1a; short-line codepoint limit12; carry/flip/force
+sequencing; normalized agent ids, first right, subsequent left modulo5. No source
+avatar/emoji assets copied, no invented identities from core alignment. Actual
+published core0.5.0 ISyncedLine/KaraokeLine have no TTML agentId. Future public
+mapping must be explicit or retain original no-agent seeded fallback.
+
+`cappellaMessageLayout.ts` → visibleCappellaMessages/cappellaVisibleLine:
+reverse source-array start lookup, max(200,height-240), at least2/max20 messages.
+The original viewport declaration is extracted unchanged for a controlled real
+height input seam; this does NOT verify independent text measurement/visual fit.
+24 cases/774 original messages/864 source viewport queries match, including all
+intensities, single/multiple/blank agents, ECMA whitespace, short Unicode text,
+negative/decimal/exponent time seeds and unsorted starts. Random/reverse queries
+repeat exactly. Android APK/Desktop build pass; no theme UI/device acceptance.
+Reproduce generate-cappella-messages.mjs and CappellaMessagesTest.

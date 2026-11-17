@@ -15,3 +15,11 @@ chronological, shuffled and reverse queries. Does not establish rendered parity.
 The conditions file records the source DOM codepoint/metrics grapheme discrepancy;
 native deliberately retains full EGC display and internal timing, not that bug.
 No ordinary-user theme selector exists until a real stage is verified.
+
+
+`node verification/classic-browser/generate-cappella-messages.mjs` records original
+text-only conversations and isolated original viewport decisions with controlled
+heights:24 cases/774 messages/864 queries. `CappellaMessagesTest` compares exact
+sides/ids/avatar indices/selection/order; not pixel or text measurement acceptance.
+The no-image configuration is supported by the original itself. Agent IDs in these
+fixtures are explicit source inputs, not guessed from lyrics-core metadata.

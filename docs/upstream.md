@@ -1247,3 +1247,21 @@ declaration verbatim. 252 controlled-height cases/781 rows,2476 timeline calls,
 initial incorrect handwritten width assertion and reproduction are recorded in
 verification/pendolo-fixtures. Android debug/desktop compilation pass; no new
 theme/public entry, complete drawing or connected-device claim.
+
+## 2026-11-17 Pendolo shaped text sweep
+
+Pinned cc6226e4 / AGPL-3.0-only, retaining chthollyphile/contributors attribution:
+
+| Original file/function | Native target | Adaptation |
+| --- | --- | --- |
+| `pendolo/PendoloActiveLyricSweep.tsx:PendoloSweepLine` | `internal/styles/pendolo/PendoloSweep.kt`, `PendoloSweepTarget.kt` | Exact interval scan, .001s denominator floor, .42em edge clamp, .84-alpha mask stop and visibility; complete shaped-row base/shader passes. Isolated non-chorus scope; chorus/keyword overrides not claimed. |
+| `utils/lyrics/graphemeTiming.ts:buildLineGraphemeTimeline` | `PendoloSweep.kt` | Forward match, gap/punctuation and syllable timings preserved. Merge covering intervals only if parser syllables cut an EGC, matching native shaping safety policy. Source parser intervals stay in the input. |
+| `pendolo/pendoloTextLayout.ts`, `monet/monetLyricsModel.ts:measureMonetGraphemeOffsets`, `textMeasureCache.ts:measurePrefixOffsets` | `PendoloTextPreparation.kt` | Independent Compose wrapping, whole-segment/prefix native metrics; shared Canvas-advance and Windows raster adapters already calibrated elsewhere. Preserve original non-monotone advances and normal-prefix vs pre-wrap-row whitespace semantics. No pretext runtime or browser fixtures in the library. |
+
+Paths above relative to src/components/visualizer except utils. Real original
+component mounted unchanged:88 image pairs,176 width/prefix observations exact,
+source glyph timeline/DOM masks pass; pause/random-seek/resize/remount pixels
+match themselves. Grayscale baseline8.461170→5.681259 MAE with established
+foreground adapter, peak9.120121 remains. Source/browser/native captures,
+conditions, source alias failure and before-image retention described in
+verification/pendolo-sweep. No whole-theme, device or full visual acceptance.

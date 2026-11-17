@@ -1,0 +1,31 @@
+# C case scene width fontPx text64 start end; W case index text64 start end
+C	latin-150	latin	150	28	QW1iZXIgZWNob2VzIGJleW9uZA==	0.7	2.8
+W	latin-150	0	QW1iZXIg	0.7	1.4
+W	latin-150	1	ZWNob2VzIA==	1.4	2.1
+W	latin-150	2	YmV5b25k	2.1	2.8
+C	latin-300	latin	300	28	QW1iZXIgZWNob2VzIGJleW9uZA==	0.7	2.8
+W	latin-300	0	QW1iZXIg	0.7	1.4
+W	latin-300	1	ZWNob2VzIA==	1.4	2.1
+W	latin-300	2	YmV5b25k	2.1	2.8
+C	wrap-150	wrap	150	28	bm8tbm8tbm8tbm8tbm8tbm8tbm8gYW1iZXIgZWNobw==	0.7	2.8
+W	wrap-150	0	bm8tbm8tbm8tbm8tbm8tbm8tbm8g	0.7	1.4
+W	wrap-150	1	YW1iZXIg	1.4	2.1
+W	wrap-150	2	ZWNobw==	2.1	2.8
+C	wrap-300	wrap	300	28	bm8tbm8tbm8tbm8tbm8tbm8tbm8gYW1iZXIgZWNobw==	0.7	2.8
+W	wrap-300	0	bm8tbm8tbm8tbm8tbm8tbm8tbm8g	0.7	1.4
+W	wrap-300	1	YW1iZXIg	1.4	2.1
+W	wrap-300	2	ZWNobw==	2.1	2.8
+C	arabic-150	arabic	150	28	2YXYsdit2KjYpyDYqNin2YTYudin2YTZhQ==	0.7	2.8
+W	arabic-150	0	2YXYsdit2KjYpyA=	0.7	1.75
+W	arabic-150	1	2KjYp9mE2LnYp9mE2YU=	1.75	2.8
+C	arabic-300	arabic	300	28	2YXYsdit2KjYpyDYqNin2YTYudin2YTZhQ==	0.7	2.8
+W	arabic-300	0	2YXYsdit2KjYpyA=	0.7	1.75
+W	arabic-300	1	2KjYp9mE2LnYp9mE2YU=	1.75	2.8
+C	cjk-150	cjk	150	28	5ZCR6L+c5pa5IOaYn+WFiSDlm57lk40=	0.7	2.8
+W	cjk-150	0	5ZCR6L+c5pa5IA==	0.7	1.4
+W	cjk-150	1	5pif5YWJIA==	1.4	2.1
+W	cjk-150	2	5Zue5ZON	2.1	2.8
+C	cjk-300	cjk	300	28	5ZCR6L+c5pa5IOaYn+WFiSDlm57lk40=	0.7	2.8
+W	cjk-300	0	5ZCR6L+c5pa5IA==	0.7	1.4
+W	cjk-300	1	5pif5YWJIA==	1.4	2.1
+W	cjk-300	2	5Zue5ZON	2.1	2.8

@@ -28,14 +28,22 @@ shared precommit snapshot. Exact candidate source/logs remain ignored as
 directory; the temporary reflective test is not a shipped test/API.
 
 The same source/before/after union includes ALL nonbackground pixels including
-low-alpha halos. Before6.376147986→after6.209810328 is a NEW paired metric, not
-comparable to historical >8 MAE9.172424. Geometry22.1885925→21.6506547px, opacity
+low-alpha halos. Before6.370006762→after6.047082910 is a NEW paired metric, not
+comparable to historical >8 MAE9.172424. Geometry22.1885925→32.1714781px, opacity
 peak unchanged.0503857, presence/order exact. However overlap/calm1.3s foreground
 MAE21.964217→35.801429, with further regressions at1.367/1.377s. The first worst
-row improves only.537938px. The mean cannot justify those failures. Contact sheet
+rapid/chaotic worst row improves only.537938px, while overlap/calm row
+line-1.11-3 reaches32.1714781px at1.3s. The mean cannot justify those failures. Contact sheet
 shows predefined worst rapid/overlap scenes; raw images/complete numeric geometry
 and source hashes are preserved. All6 pressure tests, pause, random seek, remount
 passed during the probe; those checks do not override visual rejection.
+
+Correction after9aa439a: the initial report compared frames while the candidate
+Gradle capture was still running. Its mean6.376147986→6.209810328 and claimed
+peak21.6506547px are INVALID partial-capture results, retained here as a failure
+record only. comparison.json was regenerated from the COMPLETE preserved frame
+directory after capture finished and already contains the final values above.
+Comparators must run only after the capture process has completed successfully.
 
 The candidate is insufficient: source snapshot transport must distinguish
 parent/local and repeated commits within ONE media update, not freeze every

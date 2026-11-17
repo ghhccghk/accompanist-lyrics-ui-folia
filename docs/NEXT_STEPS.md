@@ -15,8 +15,10 @@
 真实窗口检查暂停/seek/主题切换/字号/resize/卸载，离屏与窗口证据分开，Android无设备准确待验。
 
 Cappella240精确锁复核已完成（0844f4f）：999数值行与被动状态完全不变，38图有原始差异，
-见verification/motion-lock-audit/cappella-pressure.json。局部snapshot候选整体6.376148→6.209810，
-峰22.188593→21.650655px但overlap/calm1.3s明显倒退，已恢复且不作为修复合入；
+见verification/motion-lock-audit/cappella-pressure.json。局部snapshot候选完整采集配对均值6.370007→6.047083，
+峰22.188593→32.171478px，overlap/calm1.3s明显倒退，已恢复且不作为修复合入；
+9aa439a的说明曾误用采集中途结果（6.376148→6.209810/峰21.650655），该部分无效；
+同提交comparison.json已是完整结果，现更正文档，保留采集/读取重叠的失败记录。
 见verification/cappella-projection。下一条可检验假设为分离原同一媒体更新内的parent/local二次提交，
 同一DOM前态测量两次快照；不能把逐事件冻结补偿/固定一帧延迟当修复。当前残差仍22.188593px。
 设备2026-11-18检查一次：adb无设备，不重复轮询；私有播放进程实机验证仍待设备。

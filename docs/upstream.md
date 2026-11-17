@@ -1370,3 +1370,17 @@ Initial stale no-palette source-host capture rejected; source guards/reproductio
 and exact-start source PNG variability are documented in verification/pendolo-color-sweep.
 Android APK/Desktop compile pass; chorus, colored full-wheel and device/final
 visual acceptance still pending, no public selector.
+
+## Pendolo explicit chorus scan (2026-11-17)
+
+- Fixed source: `src/components/visualizer/pendolo/pendoloMotionProfile.ts` and
+  `PendoloActiveLyricSweep.tsx` at cc6226e464050a456a2913e062374f23d3844cc5.
+- Targets: `internal/styles/pendolo/PendoloChorus.kt`, `PendoloChorusLayer.kt`,
+  `PendoloSweepTarget.kt`; AGPL-3.0-only attribution retained.
+- Changes: typed intensity/presentation/filter parameters, complete shaped-row
+  color/mask retained, post-mask sequential drop-shadow through existing native
+  or software layers. No upstream files, fonts or external project modified.
+- Actual original functions/component:60 numeric cases,264 primary/132 software
+  image pairs.400 old native PNG hashes unchanged; residuals and reproduction
+  in `verification/pendolo-chorus-sweep`. Parent halo/scale and full-wheel effects
+  remain pending; no theme/device/performance acceptance claim.

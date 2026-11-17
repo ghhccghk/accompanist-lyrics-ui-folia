@@ -1,5 +1,5 @@
 // Copyright (c) 2026 chthollyphile and contributors
-// Folia cc6226e4 PendoloActiveLyricSweep.tsx, isolated non-chorus text scope.
+// Folia cc6226e4 PendoloActiveLyricSweep.tsx, isolated shaped text scope.
 // SPDX-License-Identifier: AGPL-3.0-only. See docs/upstream.md.
 package top.ghhccghk.accompanist.lyrics.folia.internal.styles.pendolo
 
@@ -24,6 +24,7 @@ internal fun PendoloSweepTarget(line: PendoloLyric, time: () -> Double, maxWidth
     style: TextStyle, modifier: Modifier = Modifier, fontPx: Double = 28.0,
     primary: Color = Color(0xffdfe5ec), accent: Color = Color(0xfff17b4d),
     wordColors: List<FoliaWordColor> = emptyList(),
+    chorus: PendoloChorusPresentation = pendoloChorus(false,false),
     onPrepared: (PendoloPreparedText) -> Unit = {}) {
     val density = LocalDensity.current
     val resolver = LocalFontFamilyResolver.current
@@ -32,12 +33,13 @@ internal fun PendoloSweepTarget(line: PendoloLyric, time: () -> Double, maxWidth
         preparePendoloText(line.text, fontPx, maxWidth, measurer, style, density, resolver)
     }
     val timings = remember(line) { pendoloLineTimeline(line) }
-    val inks = remember(line,prepared,wordColors,primary,accent) {
-        preparePendoloInk(line.text,prepared,wordColors,pendoloSweepColor(primary,accent))
+    val inks = remember(line,prepared,wordColors,primary,accent,chorus.accentMix) {
+        preparePendoloInk(line.text,prepared,wordColors,pendoloSweepColor(primary,accent,chorus.accentMix))
     }
+    val chorusLayers = if(chorus.active) prepared.rows.map { rememberPendoloChorusLayer() } else emptyList()
     val clock by rememberUpdatedState(time)
     SideEffect { onPrepared(prepared) }
-    Canvas(modifier) { drawPendoloSweep(prepared, timings, line.end, fontPx, clock(), primary, accent,inks) }
+    Canvas(modifier) { drawPendoloSweep(prepared, timings, line.end, fontPx, clock(), primary, accent,inks,chorus,chorusLayers) }
 }
 
 internal data class PendoloInkRun(val path: Path,val color: Color)
@@ -60,8 +62,9 @@ internal fun preparePendoloInk(text:String,prepared:PendoloPreparedText,words:Li
 
 internal fun DrawScope.drawPendoloSweep(prepared: PendoloPreparedText, timings: List<PendoloGlyphTime>,
     lineEnd: Double, fontPx: Double, t: Double, primary: Color, accent: Color,
-    inks:List<List<PendoloInkRun>>?=null) {
-    val fill = pendoloSweepColor(primary,accent)
+    inks:List<List<PendoloInkRun>>?=null,
+    chorus:PendoloChorusPresentation=pendoloChorus(false,false),chorusLayers:List<PendoloChorusLayer> = emptyList()) {
+    val fill = pendoloSweepColor(primary,accent,chorus.accentMix)
     val d = density
     for ((index, row) in prepared.rows.withIndex()) {
         val p = row.paragraph
@@ -82,8 +85,9 @@ internal fun DrawScope.drawPendoloSweep(prepared: PendoloPreparedText, timings: 
             1f to fill.copy(alpha = 0f), endX = end,
         )
         val runs=inks?.getOrNull(index)
-        if(runs==null)drawText(p, brush, origin, alpha = frame.opacity.toFloat(), shadow = Shadow.None)
-        else translate(origin.x,origin.y) {
+        val paintInk:DrawScope.()->Unit = {
+        if(runs==null)drawText(p, brush, Offset.Zero, alpha = frame.opacity.toFloat(), shadow = Shadow.None)
+        else {
             // Complete original shaped paragraph is painted through color-range
             // clips. Paint segmentation never reshapes an EGC/ligature/cursive run.
             val bounds=Rect(-64*d,-64*d,(row.width.toFloat()+64)*d,p.size.height+64*d)
@@ -94,6 +98,13 @@ internal fun DrawScope.drawPendoloSweep(prepared: PendoloPreparedText, timings: 
                 (frame.width*d/end).toFloat() to Color.White.copy(alpha=.84f),1f to Color.Transparent,endX=end)
             drawRect(mask,bounds.topLeft,bounds.size,blendMode=BlendMode.DstIn)
             drawContext.canvas.restore()
+        }
+        }
+        translate(origin.x,origin.y) {
+            val layer=chorusLayers.getOrNull(index)
+            if(chorus.active && layer!=null)layer.draw(this,(row.width*d).toFloat(),p.size.height.toFloat(),
+                pendoloChorusFilter(fontPx,chorus.glowMultiplier),fill,accent,paintInk)
+            else paintInk()
         }
     }
 }

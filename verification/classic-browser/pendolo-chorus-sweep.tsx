@@ -1,0 +1,24 @@
+import React from 'react';import{createRoot}from'react-dom/client';import{flushSync}from'react-dom';import{motionValue}from'framer-motion';
+import Sweep from'../../.work/folia-major/src/components/visualizer/pendolo/PendoloActiveLyricSweep';
+import{buildPendoloTextLayout}from'../../.work/folia-major/src/components/visualizer/pendolo/pendoloTextLayout';
+import{buildLineGraphemeTimeline}from'../../.work/folia-major/src/utils/lyrics/graphemeTiming';
+import{measureMonetGraphemeOffsets}from'../../.work/folia-major/src/components/visualizer/monet/monetLyricsModel';
+import{resolvePendoloChorusPresentation,resolvePendoloMotionProfile}from'../../.work/folia-major/src/components/visualizer/pendolo/pendoloMotionProfile';
+import raw from'../cadenza-fixtures/sceneInputs.tsv?raw';
+import latinUrl from'../assets/FoliaParityLatin-Bold.ttf?url';import arabicUrl from'../assets/FoliaParityBidi-Bold.ttf?url';import cjkUrl from'../assets/FoliaParityChatCJK-Bold.otf?url';
+for(const[name,url]of[['Pendolo Latin',latinUrl],['Pendolo Arabic',arabicUrl],['Pendolo CJK',cjkUrl]]){const f=new FontFace(name,`url(${url})`,{weight:'700'});await f.load();document.fonts.add(f)}
+const q=new URLSearchParams(location.search),scene=q.get('scene')??'latin',width=+(q.get('width')??'300');
+const decode=(s:string)=>new TextDecoder().decode(Uint8Array.from(atob(s),c=>c.charCodeAt(0)));
+const f=raw.split(/\r?\n/).find(r=>r.split('\t')[0]===scene)!.split('\t');
+const line={fullText:decode(f[1]),startTime:+f[2],endTime:+f[3],words:f[4].split('|').map(s=>{const w=s.split('~');return{text:decode(w[0]),startTime:+w[1],endTime:+w[2]}})};
+const family=scene==='arabic'?'Pendolo Arabic':scene==='cjk'?'Pendolo CJK':'Pendolo Latin',fontPx=28,spec=`700 ${fontPx}px "${family}"`;
+const root=createRoot(document.querySelector('#root')!),media=motionValue(0);
+const wordColors=q.get('colors')==='1'?(scene==='cjk'?[{word:'向远方',color:'#8ab4f8'},{word:'星光',color:'#ef55ae'}]:scene==='arabic'?[{word:'مرحبا',color:'#ef55ae'}]:[{word:'Amber',color:'#ed71b8'},{word:'echo',color:'#73dea1'},{word:'echoes',color:'#73dea1'},{word:'beyond',color:'#8ab4f8'}]):[];
+const chorus=resolvePendoloChorusPresentation(true,true,resolvePendoloMotionProfile(q.get('intensity')));
+flushSync(()=>root.render(<div style={{fontFamily:family,fontWeight:700}}><Sweep line={line} currentTime={media} fontFamily={family} fontWeight={700} maxWidth={width} fontPx={fontPx} primaryTextColor="#dfe5ec" accentTextColor="#f17b4d" wordColors={wordColors} isChorus={chorus.isActive} accentMix={chorus.accentMix} chorusGlowMultiplier={chorus.glowMultiplier}/></div>));
+const layout=buildPendoloTextLayout(line.fullText,spec,width,Math.round(fontPx*1.2));
+(window as any).sweepInputs={scene,width,line,fontPx,family,wordColors,chorus};
+(window as any).sweepLayout={...layout,lines:layout.lines.map(l=>({...l,offsets:measureMonetGraphemeOffsets(l.text,fontPx,spec)})),timings:buildLineGraphemeTimeline(line)};
+(window as any).setSweepTime=(t:number)=>{flushSync(()=>media.set(t))};
+(window as any).readSweep=()=>[...document.querySelectorAll('[style*="mask-image"]')].map((e:Element)=>({mask:(e as HTMLElement).style.maskImage,opacity:getComputedStyle(e).opacity}));
+(window as any).ready=true;

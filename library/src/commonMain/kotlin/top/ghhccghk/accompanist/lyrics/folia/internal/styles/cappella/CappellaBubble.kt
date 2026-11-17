@@ -24,7 +24,7 @@ internal data class CappellaBubbleStyle(val fontPx: Double = 24.12, val maxTextW
 internal data class CappellaBubbleColors(val background: Color, val border: Color, val text: Color)
 
 /** Source mixColors mixes integer sRGB channels (not Compose's perceptual lerp). */
-private fun mix(a: Color, b: Color, ratio: Double, alpha: Double): Color {
+internal fun cappellaMix(a: Color, b: Color, ratio: Double, alpha: Double): Color {
     val x = a.toArgb(); val y = b.toArgb()
     fun channel(shift: Int): Int = floor(((x ushr shift) and 255) +
         (((y ushr shift) and 255) - ((x ushr shift) and 255)) * ratio + .5).toInt().coerceIn(0,255)
@@ -32,12 +32,12 @@ private fun mix(a: Color, b: Color, ratio: Double, alpha: Double): Color {
 }
 internal fun cappellaBubbleColors(sender: CappellaSender, primary: Color, accent: Color,
     secondary: Color, background: Color): CappellaBubbleColors {
-    if (sender.side == CappellaSide.RIGHT) return CappellaBubbleColors(mix(accent,primary,.18,.94),
-        mix(accent,primary,.34,.3),background)
+    if (sender.side == CappellaSide.RIGHT) return CappellaBubbleColors(cappellaMix(accent,primary,.18,.94),
+        cappellaMix(accent,primary,.34,.3),background)
     val tone = (sender.avatar % 9) / 8.0
     val amount = .18 + tone * .62
-    return CappellaBubbleColors(mix(secondary,accent,amount,1.0),
-        mix(secondary,accent,min(amount + .18,1.0),.26),primary)
+    return CappellaBubbleColors(cappellaMix(secondary,accent,amount,1.0),
+        cappellaMix(secondary,accent,min(amount + .18,1.0),.26),primary)
 }
 
 /** Prepared sizes only retain dimensions. Paragraph objects are not cached for
@@ -54,7 +54,7 @@ internal class CappellaBubbleMeasure(private val measurer: TextMeasurer, base: T
     fun layout(text: String, width: Double = config.maxTextWidth): TextLayoutResult {
         val safe = text.ifEmpty { " " }
         return measurer.measure(safe, style, constraints = Constraints(maxWidth =
-            floor(width * density.density).toInt().coerceAtLeast(1)))
+            ceil(width * density.density).toInt().coerceAtLeast(1)))
     }
     private fun textBox(text: String): CappellaBubbleSize {
         val result = layout(text)
@@ -104,6 +104,7 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
     config: CappellaBubbleStyle = CappellaBubbleStyle(), right: Boolean = false,
     active: Boolean = true, reducedMotion: Boolean = false,
     sizeOverride: CappellaBubbleSize? = null,
+    placement: CappellaPlacement? = null, decoration: CappellaDecoration? = null,
     onPrepared: (CappellaBubblePrepared) -> Unit = {}) {
     val density = LocalDensity.current; val resolver = LocalFontFamilyResolver.current
     val measurer = rememberTextMeasurer(cacheSize = 32)
@@ -135,7 +136,11 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
         }
     }
     val edges = remember(shown) { graphemeBoundaries(shown).sorted() }
+    val shadows=remember(width,height,density,right,active,decoration) {
+        cappellaShadows(width,height,density,right,active,decoration)
+    }
     Canvas(modifier) {
+      withCappellaPlacement(placement) {
         val t = clock()
         val d = density.density
         val w = (width*d).toFloat(); val h = (height*d).toFloat()
@@ -143,6 +148,7 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
         val outline = Path().apply { addRoundRect(RoundRect(Rect(0f,0f,w,h),
             CornerRadius(radius),CornerRadius(radius),CornerRadius(if(right)small else radius),
             CornerRadius(if(right)radius else small))) }
+        drawCappellaShadows(shadows,outline)
         drawPath(outline,colors.background)
         // CSS borders are inset, so the stroke's center is half a pixel inside.
         val border = Path().apply { addRoundRect(RoundRect(Rect(.5f*d,.5f*d,w-.5f*d,h-.5f*d),
@@ -150,6 +156,7 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
             CornerRadius((if(right)small else radius)-.5f*d),CornerRadius((if(right)radius else small)-.5f*d))) }
         drawPath(border,colors.border,style=Stroke(d))
         clipPath(outline) {
+            if(active&&decoration!=null)drawCappellaSweep(w,h,t,right,decoration,reducedMotion)
             for ((row, entry) in rows.withIndex()) {
                 val (start,end,paragraph) = entry
                 val base = cssFontBaseline(metrics.ascent,metrics.descent,(measure.lineHeight*d).toFloat())
@@ -168,6 +175,7 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
                 }
             }
         }
+      }
     }
 }
 

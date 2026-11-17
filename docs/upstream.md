@@ -1118,3 +1118,26 @@ and reports remain unchanged; no cross-font before/after MAE improvement claimed
 Earlier Cadenza/isolated bubble CJK coverage was incomplete; identical selected
 font hashes did not exclude fallback, so those complex-font numbers remain
 limited evidence. Android APK/Desktop compilation passed; no device run.
+
+## 2026-11-17 Cappella native complete target stage (internal)
+
+Same pinned `CappellaBubbleParts.tsx`, `CappellaMessageRow.tsx`,
+`cappellaConstants.ts`, `cappellaIntensity.ts` → `CappellaDecorations.kt`,
+`CappellaTargetStage.kt` and localized additions to `CappellaBubble.kt`.
+Real shaped bubbles now use the independently measured full stack. Retains
+40px avatar,12px gap,source LEFT_AVATAR_INDICES [0,3,6,1,4],3x3 gradient crop,
+135deg avatar gradient,24% white border,11px tabular timestamp,source sRGB
+colors,outer box shadow parameters and105deg duplicated sweep. No artwork copied.
+Native sweep/fades use canonical media elapsed time: pause/seek reconstruct,
+reduced motion fixes sweep phase and reveals available EGCs without a fade.
+Group opacity composites overlapping operations as a group. Shadow masks are
+prepared on geometry changes and released with composition; no Rust dependency.
+
+Actual entire original JSX now has a separate visual capture seam: settled row
+targets plus WAAPI media-anchored original CSS fades/sweep. Source files and old
+target fixtures remain unchanged.60 image pairs plus native pause/random revisits
+and remount evidence in verification/cappella-stage-visual. Initial native title
+wrapped due fractional width truncation, now fixed with a ceil integer constraint;
+failure image/report retained. This is not dynamic row/layout spring,.2s frame
+resize or timestamp appearance parity. Raster/shadow/complex shaping residuals
+are measured, not excused by builds. No Android device/performance acceptance.

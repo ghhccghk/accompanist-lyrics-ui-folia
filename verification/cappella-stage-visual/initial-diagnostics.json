@@ -1,0 +1,524 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "coverage": {
+      "latin": {
+        "font": "FoliaParityLatin-Bold.ttf",
+        "required_codepoints": 28,
+        "missing": []
+      },
+      "wrap": {
+        "font": "FoliaParityLatin-Bold.ttf",
+        "required_codepoints": 27,
+        "missing": []
+      },
+      "arabic": {
+        "font": "FoliaParityBidi-Bold.ttf",
+        "required_codepoints": 28,
+        "missing": []
+      },
+      "cjk": {
+        "font": "FoliaParityChatCJK-Bold.otf",
+        "required_codepoints": 28,
+        "missing": []
+      }
+    },
+    "frames": 60,
+    "viewportHeight": 900,
+    "DPR": 1,
+    "scope": "Actual unchanged original whole Cappella JSX, text-only/color avatars. Fixed media,210 RAF convergence for geometry, CSS character fades/sweep explicitly media-anchored via WAAPI. Not dynamic row/size/spring/timestamp response acceptance."
+  },
+  "status": "Internal complete TARGET stage, not dynamic Cappella acceptance. CSS/Skia raster, shaping, row/resize/spring/timestamp response differences remain.",
+  "mean_foreground_mae": 4.198403307222121,
+  "by_scene": {
+    "latin": 4.008767101971533,
+    "wrap": 3.637693379288862,
+    "arabic": 4.5532814973689835,
+    "cjk": 4.593871250259107
+  },
+  "frames": [
+    {
+      "file": "arabic-800-calm-0.png",
+      "foreground_pixels": 9100,
+      "foreground_mae": 6.538278388278388,
+      "full_mae": 0.09149444444444445
+    },
+    {
+      "file": "arabic-800-calm-14000.png",
+      "foreground_pixels": 40768,
+      "foreground_mae": 3.7023073652537937,
+      "full_mae": 0.2642398148148148
+    },
+    {
+      "file": "arabic-800-calm-1600.png",
+      "foreground_pixels": 18800,
+      "foreground_mae": 4.9006028368794325,
+      "full_mae": 0.1780949074074074
+    },
+    {
+      "file": "arabic-800-calm-27500.png",
+      "foreground_pixels": 62869,
+      "foreground_mae": 3.184346286192983,
+      "full_mae": 0.33416111111111113
+    },
+    {
+      "file": "arabic-800-calm-6000.png",
+      "foreground_pixels": 26682,
+      "foreground_mae": 4.218674262299178,
+      "full_mae": 0.20699212962962962
+    },
+    {
+      "file": "arabic-800-chaotic-0.png",
+      "foreground_pixels": 8678,
+      "foreground_mae": 6.619343934854421,
+      "full_mae": 0.08850370370370371
+    },
+    {
+      "file": "arabic-800-chaotic-14000.png",
+      "foreground_pixels": 44849,
+      "foreground_mae": 4.0047195403836575,
+      "full_mae": 0.3279810185185185
+    },
+    {
+      "file": "arabic-800-chaotic-1600.png",
+      "foreground_pixels": 27356,
+      "foreground_mae": 4.206548228298484,
+      "full_mae": 0.22910787037037036
+    },
+    {
+      "file": "arabic-800-chaotic-27500.png",
+      "foreground_pixels": 57166,
+      "foreground_mae": 3.5950331782294835,
+      "full_mae": 0.34278935185185183
+    },
+    {
+      "file": "arabic-800-chaotic-6000.png",
+      "foreground_pixels": 34053,
+      "foreground_mae": 4.160553646766315,
+      "full_mae": 0.2710078703703704
+    },
+    {
+      "file": "arabic-800-normal-0.png",
+      "foreground_pixels": 9100,
+      "foreground_mae": 6.538278388278388,
+      "full_mae": 0.09149444444444445
+    },
+    {
+      "file": "arabic-800-normal-14000.png",
+      "foreground_pixels": 42882,
+      "foreground_mae": 4.438808824215289,
+      "full_mae": 0.3293833333333333
+    },
+    {
+      "file": "arabic-800-normal-1600.png",
+      "foreground_pixels": 23493,
+      "foreground_mae": 4.5079101576356075,
+      "full_mae": 0.20917175925925927
+    },
+    {
+      "file": "arabic-800-normal-27500.png",
+      "foreground_pixels": 60662,
+      "foreground_mae": 3.409866693042322,
+      "full_mae": 0.3440199074074074
+    },
+    {
+      "file": "arabic-800-normal-6000.png",
+      "foreground_pixels": 30688,
+      "foreground_mae": 4.273950729927007,
+      "full_mae": 0.24828564814814816
+    },
+    {
+      "file": "cjk-1200-calm-0.png",
+      "foreground_pixels": 9048,
+      "foreground_mae": 6.680776598880047,
+      "full_mae": 0.0618537037037037
+    },
+    {
+      "file": "cjk-1200-calm-14000.png",
+      "foreground_pixels": 50052,
+      "foreground_mae": 3.879631849543142,
+      "full_mae": 0.22291234567901236
+    },
+    {
+      "file": "cjk-1200-calm-1600.png",
+      "foreground_pixels": 21352,
+      "foreground_mae": 5.484872611464968,
+      "full_mae": 0.14697438271604937
+    },
+    {
+      "file": "cjk-1200-calm-27500.png",
+      "foreground_pixels": 75790,
+      "foreground_mae": 3.0370057615340635,
+      "full_mae": 0.25517716049382716
+    },
+    {
+      "file": "cjk-1200-calm-6000.png",
+      "foreground_pixels": 32268,
+      "foreground_mae": 4.601721003264328,
+      "full_mae": 0.17706944444444445
+    },
+    {
+      "file": "cjk-1200-chaotic-0.png",
+      "foreground_pixels": 8628,
+      "foreground_mae": 6.7515839901097205,
+      "full_mae": 0.05973086419753086
+    },
+    {
+      "file": "cjk-1200-chaotic-14000.png",
+      "foreground_pixels": 56884,
+      "foreground_mae": 3.7239762792114948,
+      "full_mae": 0.258354012345679
+    },
+    {
+      "file": "cjk-1200-chaotic-1600.png",
+      "foreground_pixels": 32794,
+      "foreground_mae": 3.7894126974446545,
+      "full_mae": 0.16688703703703703
+    },
+    {
+      "file": "cjk-1200-chaotic-27500.png",
+      "foreground_pixels": 68323,
+      "foreground_mae": 3.7903634208099763,
+      "full_mae": 0.28329351851851853
+    },
+    {
+      "file": "cjk-1200-chaotic-6000.png",
+      "foreground_pixels": 42520,
+      "foreground_mae": 4.054170586390718,
+      "full_mae": 0.21788333333333335
+    },
+    {
+      "file": "cjk-1200-normal-0.png",
+      "foreground_pixels": 9048,
+      "foreground_mae": 6.680776598880047,
+      "full_mae": 0.0618537037037037
+    },
+    {
+      "file": "cjk-1200-normal-14000.png",
+      "foreground_pixels": 52883,
+      "foreground_mae": 4.334285119981847,
+      "full_mae": 0.2635743827160494
+    },
+    {
+      "file": "cjk-1200-normal-1600.png",
+      "foreground_pixels": 27653,
+      "foreground_mae": 4.33432177340614,
+      "full_mae": 0.15729135802469135
+    },
+    {
+      "file": "cjk-1200-normal-27500.png",
+      "foreground_pixels": 72511,
+      "foreground_mae": 3.629991771363425,
+      "full_mae": 0.2864932098765432
+    },
+    {
+      "file": "cjk-1200-normal-6000.png",
+      "foreground_pixels": 37644,
+      "foreground_mae": 4.135178691602026,
+      "full_mae": 0.19609567901234567
+    },
+    {
+      "file": "latin-380-calm-0.png",
+      "foreground_pixels": 9100,
+      "foreground_mae": 6.33010989010989,
+      "full_mae": 0.18708089668615985
+    },
+    {
+      "file": "latin-380-calm-14000.png",
+      "foreground_pixels": 61147,
+      "foreground_mae": 3.277266259996402,
+      "full_mae": 0.7362729044834307
+    },
+    {
+      "file": "latin-380-calm-1600.png",
+      "foreground_pixels": 23653,
+      "foreground_mae": 3.899251680547922,
+      "full_mae": 0.3918401559454191
+    },
+    {
+      "file": "latin-380-calm-27500.png",
+      "foreground_pixels": 97157,
+      "foreground_mae": 2.6017648410991145,
+      "full_mae": 0.8919619883040936
+    },
+    {
+      "file": "latin-380-calm-6000.png",
+      "foreground_pixels": 37819,
+      "foreground_mae": 3.2607155133662973,
+      "full_mae": 0.4961208576998051
+    },
+    {
+      "file": "latin-380-chaotic-0.png",
+      "foreground_pixels": 8678,
+      "foreground_mae": 6.362871629407698,
+      "full_mae": 0.1798157894736842
+    },
+    {
+      "file": "latin-380-chaotic-14000.png",
+      "foreground_pixels": 68781,
+      "foreground_mae": 3.3496314389148165,
+      "full_mae": 0.8487319688109162
+    },
+    {
+      "file": "latin-380-chaotic-1600.png",
+      "foreground_pixels": 37456,
+      "foreground_mae": 3.4567314537946747,
+      "full_mae": 0.5402446393762184
+    },
+    {
+      "file": "latin-380-chaotic-27500.png",
+      "foreground_pixels": 88395,
+      "foreground_mae": 2.774908083036371,
+      "full_mae": 0.865869395711501
+    },
+    {
+      "file": "latin-380-chaotic-6000.png",
+      "foreground_pixels": 49821,
+      "foreground_mae": 3.8680877541598924,
+      "full_mae": 0.7223879142300195
+    },
+    {
+      "file": "latin-380-normal-0.png",
+      "foreground_pixels": 9100,
+      "foreground_mae": 6.33010989010989,
+      "full_mae": 0.18708089668615985
+    },
+    {
+      "file": "latin-380-normal-14000.png",
+      "foreground_pixels": 65068,
+      "foreground_mae": 3.850049179320096,
+      "full_mae": 0.9044444444444445
+    },
+    {
+      "file": "latin-380-normal-1600.png",
+      "foreground_pixels": 31200,
+      "foreground_mae": 3.816923076923077,
+      "full_mae": 0.4934142300194932
+    },
+    {
+      "file": "latin-380-normal-27500.png",
+      "foreground_pixels": 93736,
+      "foreground_mae": 2.870057039629029,
+      "full_mae": 0.93861306042885
+    },
+    {
+      "file": "latin-380-normal-6000.png",
+      "foreground_pixels": 44330,
+      "foreground_mae": 4.083028799157831,
+      "full_mae": 0.6873148148148148
+    },
+    {
+      "file": "wrap-800-calm-0.png",
+      "foreground_pixels": 9100,
+      "foreground_mae": 6.327765567765568,
+      "full_mae": 0.0888337962962963
+    },
+    {
+      "file": "wrap-800-calm-14000.png",
+      "foreground_pixels": 87933,
+      "foreground_mae": 2.765393348723839,
+      "full_mae": 0.4476925925925926
+    },
+    {
+      "file": "wrap-800-calm-1600.png",
+      "foreground_pixels": 35699,
+      "foreground_mae": 3.0841106660317283,
+      "full_mae": 0.24560648148148148
+    },
+    {
+      "file": "wrap-800-calm-27500.png",
+      "foreground_pixels": 134531,
+      "foreground_mae": 2.180751400544608,
+      "full_mae": 0.5153726851851852
+    },
+    {
+      "file": "wrap-800-calm-6000.png",
+      "foreground_pixels": 54722,
+      "foreground_mae": 2.637823909944812,
+      "full_mae": 0.29246944444444445
+    },
+    {
+      "file": "wrap-800-chaotic-0.png",
+      "foreground_pixels": 8678,
+      "foreground_mae": 6.360413305677191,
+      "full_mae": 0.08538287037037037
+    },
+    {
+      "file": "wrap-800-chaotic-14000.png",
+      "foreground_pixels": 104484,
+      "foreground_mae": 2.9012161351658308,
+      "full_mae": 0.5598351851851852
+    },
+    {
+      "file": "wrap-800-chaotic-1600.png",
+      "foreground_pixels": 62172,
+      "foreground_mae": 2.7827156919513607,
+      "full_mae": 0.363587962962963
+    },
+    {
+      "file": "wrap-800-chaotic-27500.png",
+      "foreground_pixels": 121729,
+      "foreground_mae": 2.3682633828695985,
+      "full_mae": 0.5017037037037037
+    },
+    {
+      "file": "wrap-800-chaotic-6000.png",
+      "foreground_pixels": 77176,
+      "foreground_mae": 3.760633703051035,
+      "full_mae": 0.5308328703703704
+    },
+    {
+      "file": "wrap-800-normal-0.png",
+      "foreground_pixels": 9100,
+      "foreground_mae": 6.327765567765568,
+      "full_mae": 0.0888337962962963
+    },
+    {
+      "file": "wrap-800-normal-14000.png",
+      "foreground_pixels": 96341,
+      "foreground_mae": 3.6629783788833414,
+      "full_mae": 0.6140587962962963
+    },
+    {
+      "file": "wrap-800-normal-1600.png",
+      "foreground_pixels": 50245,
+      "foreground_mae": 3.0305104985570703,
+      "full_mae": 0.3219912037037037
+    },
+    {
+      "file": "wrap-800-normal-27500.png",
+      "foreground_pixels": 129547,
+      "foreground_mae": 2.3984499834037067,
+      "full_mae": 0.5384365740740741
+    },
+    {
+      "file": "wrap-800-normal-6000.png",
+      "foreground_pixels": 66878,
+      "foreground_mae": 3.976609148997677,
+      "full_mae": 0.48397268518518516
+    }
+  ],
+  "png_sha256": {
+    "build/verification/cappella-stage-visual-browser/arabic-800-calm-0.png": "3ad67d234f3f71e8322428f838c92b169622eda59fc17bf902464e4f09144710",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-calm-0.png": "09d971e309fa102c7727292e6990147f92881caad017beb559b0f32d4c7beda2",
+    "build/verification/cappella-stage-visual-browser/arabic-800-calm-14000.png": "b6a47a7aa8c2cb78d437ac5112cc858fc9d7bdd9b81c4f44e5a8f7df1d5cd2ca",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-calm-14000.png": "4d3e6c756d6fcf726be5a094caafca5087a10e8e518d179d233def1ed9115206",
+    "build/verification/cappella-stage-visual-browser/arabic-800-calm-1600.png": "5a95e142b7c20aff129258cccac33bf80f113b9fc6a10c659ee9e2e4d0656083",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-calm-1600.png": "47ce215a0713f7833e5b4b0c8ca04dd876fe998910b86cdeab16d4f70982a413",
+    "build/verification/cappella-stage-visual-browser/arabic-800-calm-27500.png": "3e427e1e7b98b07d4bda85c2a13c78c54199f17545147071360e839b56620240",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-calm-27500.png": "a4b0eb40b991e22e549d00cd8d375a91e4ee9a07c7d1d6ad2c0ebc70923de5a7",
+    "build/verification/cappella-stage-visual-browser/arabic-800-calm-6000.png": "d648a7186e04fc8b1b569b94184115e84973b251525c4ee3dd36253ef7a7ded1",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-calm-6000.png": "984c1c4038a6dd0c34f5256eafbc11a12dc35da259389a9b819124c88282aaad",
+    "build/verification/cappella-stage-visual-browser/arabic-800-chaotic-0.png": "ce4074a613b0624b580e66d80cf8a235184dc7a6447d3358ae9afb37bf5c9378",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-chaotic-0.png": "bfb36aa6711ca9235248a9e489ef6e83693b26a49c2b135292670f74feb0aeb6",
+    "build/verification/cappella-stage-visual-browser/arabic-800-chaotic-14000.png": "2ad7aec531b24114d525248b81b53238dbfc2e57103c11d588812d2e6e85a13c",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-chaotic-14000.png": "cd7083d7fc732364adffb46ee5432b99169cb4fd7781a829ca4f872a61320636",
+    "build/verification/cappella-stage-visual-browser/arabic-800-chaotic-1600.png": "4028f4f05b195ff9391b441033c6b7332aed28dc7ed2cb75d303c1c5b9585a2f",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-chaotic-1600.png": "21cb47a6411b11d9a52e5b363a0bed40c79388ca9dd0673336e5e9eca571a5b1",
+    "build/verification/cappella-stage-visual-browser/arabic-800-chaotic-27500.png": "6dd39442511f54b55281fe82efe24a1d1267de0e73ba65c3638191bb8665ed6c",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-chaotic-27500.png": "2cbf64f3e9f778aeb1b0ee748330f76d5bdd5cdf5dd9c9bc5bc3758a289e2e1d",
+    "build/verification/cappella-stage-visual-browser/arabic-800-chaotic-6000.png": "c86f8ec8a3e37a29e34bba8d3c1e38817ef5dcc227c494b7e63daa7916d14de9",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-chaotic-6000.png": "51aea5ba599a2d7ab7bd36cad25682a133eb033abaa04dece96d3b921db15f47",
+    "build/verification/cappella-stage-visual-browser/arabic-800-normal-0.png": "3ad67d234f3f71e8322428f838c92b169622eda59fc17bf902464e4f09144710",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-normal-0.png": "09d971e309fa102c7727292e6990147f92881caad017beb559b0f32d4c7beda2",
+    "build/verification/cappella-stage-visual-browser/arabic-800-normal-14000.png": "f8f093a94e44df1af9ebe5aed7a1695696ad74184ffe1a093d31a0c1d2618777",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-normal-14000.png": "fe8e388c2eb1dab6220e2bcb819b0f152e381bd35d6ac06b4a7368fcaf89b110",
+    "build/verification/cappella-stage-visual-browser/arabic-800-normal-1600.png": "83f12a6d64a94c4bb6a66da8d21cb01fb7e199e21b8ee78e592c168a07daae7c",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-normal-1600.png": "351d655f1eeae68d8f135a547ae3f97caa0b881d7a15c9e340e8e05c6eb8de6e",
+    "build/verification/cappella-stage-visual-browser/arabic-800-normal-27500.png": "92977a8c6e3a3d502630bf0f6b19674810428529a029ed2da48e8531215c3345",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-normal-27500.png": "ea1ca4214a2d39ffde905c0543c99cd54a31f8b0364874ce82c70b22e4cf0ccc",
+    "build/verification/cappella-stage-visual-browser/arabic-800-normal-6000.png": "7b4b45f3ee014d7cd11e5ccde90295d794b8b16ebaddf60f3a0fbadf97647c41",
+    "build/verification/cappella-stage-visual-kotlin/arabic-800-normal-6000.png": "0773a48797ba86bdcc2df7e3b13617d238f89fc91b60ca9cc49b680ace7c23cd",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-calm-0.png": "75e2a045b8a8308b08c824ce43a78cf1155ae076a6b4ff668c266082a03166b6",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-calm-0.png": "5c0eeecb41a1e16f39bb25e661f00d84519253621df4b8e92d20e1e1ac137258",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-calm-14000.png": "431c1c2a6e7564af6e03b1b45d377c68949927e07161c4fa182e5be642e8be43",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-calm-14000.png": "dbcad1cb55052a4e699e8e4c58a4cd34e322d1bb3276817f3d8760fa2b828b33",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-calm-1600.png": "4174ad80490ae6f8b68d7e4957eb96e1a9a8eed167c4a144cdfb58b0b06a2497",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-calm-1600.png": "35ca5941c38a140025c5d5d0dad9de65d9df884cf171fd051643faead92b0278",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-calm-27500.png": "508d375c0c3333a30ba02a563d89b5c2f641d3fc1e577aac651ba7155cae7426",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-calm-27500.png": "29e266718919c8f29547af8208f157b538b3f07fc3033c2d8e32bd1549016ca3",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-calm-6000.png": "50ce1c758e3f86eb10be4a3db2721d642c8a2ea9111d0b29d4338ca0213db311",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-calm-6000.png": "1514155f71c450796070632a76a76bcb318fb443cbc86b86c181f156b288fb23",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-chaotic-0.png": "257160ac04dec66d7aea5e9118194ea1bc13242850fad9bfaf3e6593bd642c2c",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-chaotic-0.png": "2afbd7eab57331cf92756d8140d9776d26f9b1f3f5e28c26b2ebc1d2647c8b74",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-chaotic-14000.png": "083d8408ba699f08b4ba579be9499583273f8dee1fa673e855d5614e85dd8e64",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-chaotic-14000.png": "c95b4d0942f7abcad747aae816917b4a669cd61720cdab25a4e17c21ed4775a6",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-chaotic-1600.png": "26bab16ad0ea639fffb0dabfc8a8666e66a162ea3a330605f7641ac3bbd42cf3",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-chaotic-1600.png": "6eda87b0a5cc4524a3d2dbbe69107857798458b11678dacf781591b7903941cc",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-chaotic-27500.png": "c13857dcfcf50354fd4f547e06bc7ae3b545f2880c4055a1186cf90dd7737797",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-chaotic-27500.png": "793cbfd45325432f107376dc2c34fc4703b510f932cf26c47a58f230f2bd5ca5",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-chaotic-6000.png": "0e73f210c71152ee6fc2067779eb8681200bb8488775593a27c6c929145b1e2a",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-chaotic-6000.png": "7dcabc4bf4fc8ab37be1b49cd01261986562385b08fad9d72ee14b227d0c48c6",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-normal-0.png": "75e2a045b8a8308b08c824ce43a78cf1155ae076a6b4ff668c266082a03166b6",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-normal-0.png": "5c0eeecb41a1e16f39bb25e661f00d84519253621df4b8e92d20e1e1ac137258",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-normal-14000.png": "23dfea53d992a0097355af3f12253086c717b5e6c159d6fb444abe210c6ccdd8",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-normal-14000.png": "0928382a5d418e93f9195562f8289bcb85255c84bb7758a40bd21c2817610f98",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-normal-1600.png": "514eb437ab01a00d868d2373d8e259673fc49a1611485b2db577f7af59ddf077",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-normal-1600.png": "63bfb7dcfaf876170c3401710ebea752774b158d32fc9b9b2923cf0afe5159dd",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-normal-27500.png": "a0b92b9a3a73120f1c60737f148c924f729f4b14cb1a1d7c10ddde4e010a2cfc",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-normal-27500.png": "bd07fc3d3e1863f011f8e8a852eca17a536b05aa39efb680c5278d39022fcc6f",
+    "build/verification/cappella-stage-visual-browser/cjk-1200-normal-6000.png": "26168ee8b307f56ece168b4aaa3fbeaf9253159eb1e549784090d67cdd5d1e20",
+    "build/verification/cappella-stage-visual-kotlin/cjk-1200-normal-6000.png": "0f9621240365f9b3324481088777b97080b65004d2ad0e6f981ad04f67838f77",
+    "build/verification/cappella-stage-visual-browser/latin-380-calm-0.png": "85bdae900a48309131e24751085bce27eccd90d4240292c5aa13d6ec110b830e",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-calm-0.png": "f607226f5ff0413696d5503ad14cf5847172121e33be1648b6dc8af7d9f5baa2",
+    "build/verification/cappella-stage-visual-browser/latin-380-calm-14000.png": "8abcf1f5d4f52357b0db511e9437981e9217fa327f173b4d79ee1f329b259eda",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-calm-14000.png": "2024c18f567baec0f1d68f71c4926fedab1057b0209b04125181c93fc5c499eb",
+    "build/verification/cappella-stage-visual-browser/latin-380-calm-1600.png": "184ad6b6549c3099ab6a091a11784d4d4d149bd24df0ceed1dfa754698a67b67",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-calm-1600.png": "1d8b66ca735b8db8fe9e2b92705ce1dee20e12ee5ad21253cd8821935f9a3de4",
+    "build/verification/cappella-stage-visual-browser/latin-380-calm-27500.png": "97df36063914610597aed6673d7be77ccc7a120cdf588e0142732b611ccc94ca",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-calm-27500.png": "4d73e9dd523d128ef57d81a98dbd39ec48fe58e9feb90f124dd1d1ded0609dcf",
+    "build/verification/cappella-stage-visual-browser/latin-380-calm-6000.png": "60ca0e2d5f0919034c212921b8def685789ba3abcb9c056b8e9b5f456b06aaa0",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-calm-6000.png": "dc59e294719366c008885e3aac36b51f07dc4652fb99af6624f6589cc5b57c7b",
+    "build/verification/cappella-stage-visual-browser/latin-380-chaotic-0.png": "6c02b570208a3a3df0f1df0d53e470c00da0fb87c690d496d78487fc9b238e01",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-chaotic-0.png": "f377272c44de0f6210b0956fece0b7364451041fc58d031839d5c95954110175",
+    "build/verification/cappella-stage-visual-browser/latin-380-chaotic-14000.png": "55df69b0e3ba6c414007b4c5409a999afe8ac2ad244e8fbad675216f810f258b",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-chaotic-14000.png": "f0f1bf42362ed3f03c94e0f4e3b8af09cf389abda36bc2b360f0d52b3e2af9a1",
+    "build/verification/cappella-stage-visual-browser/latin-380-chaotic-1600.png": "ba36b8146e64e6f2b1e0c39f6a7561c8a1ac32e048782ab536db3d7fac708aed",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-chaotic-1600.png": "df0374fb92dccc70e77974b0e3b6b75163fbb8f6e309a7168e072dcbe39b7d18",
+    "build/verification/cappella-stage-visual-browser/latin-380-chaotic-27500.png": "0d32cf030bc8a0d056dab6da3322766d6cde12538ec317e8bcb911aaa5113bf4",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-chaotic-27500.png": "f4ad20907848d0d83df780fe335a289a332f3715982d0a1adfcbd7ad0e783eaa",
+    "build/verification/cappella-stage-visual-browser/latin-380-chaotic-6000.png": "10032605d2c9c6ca1d0b9dc5ebee785d7b06cf7b6b19aa974c278d13f5caa049",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-chaotic-6000.png": "0e0aaff9b50b6aca15cd143c4fb0cce5f1c70427fac2b012fe0ef62a688585cf",
+    "build/verification/cappella-stage-visual-browser/latin-380-normal-0.png": "85bdae900a48309131e24751085bce27eccd90d4240292c5aa13d6ec110b830e",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-normal-0.png": "f607226f5ff0413696d5503ad14cf5847172121e33be1648b6dc8af7d9f5baa2",
+    "build/verification/cappella-stage-visual-browser/latin-380-normal-14000.png": "f43b11b4ca40e870d837717d750a381dd6450416ef6093cdf415d50012e4f259",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-normal-14000.png": "5b1c46d61a30882d72c5a10e6cdd512fdbdc3b5c35f6f5b41b6157f0ea279c02",
+    "build/verification/cappella-stage-visual-browser/latin-380-normal-1600.png": "8aba28a86aace6aaded59b72cc76b92a69120fbc1864a5c5f368440fadf38a5d",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-normal-1600.png": "32ac36ac9fdbbd72b46eab3bc7c963cfc3f5a597d4bb5406e81d09ddee90adb9",
+    "build/verification/cappella-stage-visual-browser/latin-380-normal-27500.png": "cbbc5398f6582179139fc76777a865ff63ef7edec40f56a86f6af0b4ad006e6c",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-normal-27500.png": "a7802aeca3710e8a9844ae700fd6dc7de04a442e9d87cffd282207bfeebf5d5f",
+    "build/verification/cappella-stage-visual-browser/latin-380-normal-6000.png": "b547bda19483f7ae5f5ca27254e56980b99bac4f37986229951e07505c0c0fae",
+    "build/verification/cappella-stage-visual-kotlin/latin-380-normal-6000.png": "2d1830fe23415af4181c929ba11911b2b9b5239b9451980d7d40b44635e14476",
+    "build/verification/cappella-stage-visual-browser/wrap-800-calm-0.png": "75077832ded167109434ab79eb0975712591c71258565ce01b9e3a3f0522835d",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-calm-0.png": "84085cb85fefa9c820b87126d5cd678112001dbdd629878f45ec409f49d8c134",
+    "build/verification/cappella-stage-visual-browser/wrap-800-calm-14000.png": "c7cb8210e504feb7f3d139898f501ced26af582c2780702af17516cba0a9fbbd",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-calm-14000.png": "5934bab208ced6c8b875f24e5a63fb446825f5ac0dae463ea2f5d81fdb4cb2cc",
+    "build/verification/cappella-stage-visual-browser/wrap-800-calm-1600.png": "bf5adea500a29bb37fff83a15cd29e33b1c5ab0bfe97b760a213ca0f1db9e413",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-calm-1600.png": "5ad8b81419f8a990c7a8db9557dbcaa2df73bf5d530aa1eee03f05426e22febe",
+    "build/verification/cappella-stage-visual-browser/wrap-800-calm-27500.png": "247ac13c926530c44aafea08b3ea037933f142077fb6656d94691da7d868e98f",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-calm-27500.png": "11f61176778dda39ad5357fe60700a3ddca0ad272acd5df23b1416ac4f44d509",
+    "build/verification/cappella-stage-visual-browser/wrap-800-calm-6000.png": "03e39977261e5dd109536022bb07180b52fae3c7334397010c9373c5c66e9a54",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-calm-6000.png": "91c2a0f3072e9b8028df010571a45648003a74e45e1d5da87472eb2df562a452",
+    "build/verification/cappella-stage-visual-browser/wrap-800-chaotic-0.png": "8127f2aa8d5781e05562e0da55b9a2bf5e67fedc51043778dd2b06a70161be1f",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-chaotic-0.png": "eabb9e1b6b1d36c6fcc02b7ca7a2ba2ce7dc6d935febd0ad042fef4f3c15c0b3",
+    "build/verification/cappella-stage-visual-browser/wrap-800-chaotic-14000.png": "b9796816dc758fda0d9b4df4a92dcd7b0e516e42e0eccf5fb439c8aef7256e66",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-chaotic-14000.png": "f9b6bb8f1b4e25ffeed6f19b9ffc8f7b0778461297df8e9e8dc56ca5f9be573a",
+    "build/verification/cappella-stage-visual-browser/wrap-800-chaotic-1600.png": "d1531202f19f38da674e410006a6618457b29264ef272e5b17e9e1ed21c18d5e",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-chaotic-1600.png": "67358300e4c8be6eef1e4f289db00ee6fac40195d8a1bdccb53e0047f2350f43",
+    "build/verification/cappella-stage-visual-browser/wrap-800-chaotic-27500.png": "ac03ecb5bd8de40358bd8eefd3b590350f3e794ca8ecdc8c82a8e8f3048f66c4",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-chaotic-27500.png": "6e3c0fd48670d8a793f87aa9a22f846c986bf09ad145eec80b33c5fc80c9e865",
+    "build/verification/cappella-stage-visual-browser/wrap-800-chaotic-6000.png": "e9a864a9dc1a91b05e3ae0be2869f26bcdc834e4048215b10a57e56248204bc2",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-chaotic-6000.png": "f103da255dfca65c5fa4aa1ad22182515a174e9153c4fd28eb07311838376f18",
+    "build/verification/cappella-stage-visual-browser/wrap-800-normal-0.png": "75077832ded167109434ab79eb0975712591c71258565ce01b9e3a3f0522835d",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-normal-0.png": "84085cb85fefa9c820b87126d5cd678112001dbdd629878f45ec409f49d8c134",
+    "build/verification/cappella-stage-visual-browser/wrap-800-normal-14000.png": "2694b9640769d96197fb937ee2b57b0033678f00870ed8f1a9ed26ca334a9291",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-normal-14000.png": "2538c51c02cf3534b5cd1453679d05698173e247ac9f8e41c71b9c9dacb4be71",
+    "build/verification/cappella-stage-visual-browser/wrap-800-normal-1600.png": "b0017edb0f7f51448144110dc445182988e76c056a416e26ec8db26f39463126",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-normal-1600.png": "4dddd84b58d318b1410c68d881cca880ebacde2a63d187000e5cdee53cfd41f8",
+    "build/verification/cappella-stage-visual-browser/wrap-800-normal-27500.png": "35123d2a017f34b27b103b47bff0ab629d7ef038defbaef365ae133dd38d1e75",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-normal-27500.png": "d530f5fbfc33ba15ed57eee5fd0475caeb713fc138b4b5f1fc0d2742b7deb4cd",
+    "build/verification/cappella-stage-visual-browser/wrap-800-normal-6000.png": "4e9be6c6f2d0c936e25e96e34e9a3e128625af6ad34f3c7ef608447bcd64d9be",
+    "build/verification/cappella-stage-visual-kotlin/wrap-800-normal-6000.png": "ac8c75c446ed26bb49bfed77b0baf230b00e094721c23398226d76a516bd7e70"
+  }
+}

@@ -41,12 +41,16 @@
 已稳定布局的旧测量不产生伪位移。仍有React/RAF提交残差，不能宣称正式验收。
 原失败证据及原版被动事件探针见verification/cappella-presence。
 
-Cappella公共闭环（本次提交）：真实core、显式嵌套agent、原对象点击/长按、offset、
+aefca39 Cappella公共闭环：真实core、显式嵌套agent、原对象点击/长按、offset、
 暂停/seek/resize/切主题/切歌/卸载重挂、Minimal无辉光、sample真实播放与演示主题入口。
 210完整公共帧先与内部逐像素一致，再对实际原JSX；全非背景含低alpha MAE2.325954/
 盒峰3.637201px/opacity峰.013716，不能与旧>8口径直接比较。密集仍差22.188593px，
 未最终视觉验收。共享五个公开主题回归、sample选主题/设置、Android APK/Desktop编译通过；
 无设备/真实窗口/性能结论。证据verification/cappella-public及docs/cappella-preview.md。
+
+Fume raw core计时修复：声明start/end与raw末片段end独立保留，不再使用
+归一化范围或EGC union末端替代。56原renderHints阈值/完整EGC时钟控制、
+已有FumeReveal/原逐步camera与两端构建通过；没有新画面/设备结论。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

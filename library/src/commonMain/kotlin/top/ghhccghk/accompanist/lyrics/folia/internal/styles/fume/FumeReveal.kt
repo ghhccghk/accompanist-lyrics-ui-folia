@@ -10,7 +10,10 @@ import kotlin.math.*
 internal data class FumeWord(val text: String, val start: Double, val end: Double,
     val syllables: List<FumeWord> = emptyList())
 internal data class FumeLyric(val text: String, val start: Double, val end: Double,
-    val words: List<FumeWord> = emptyList(), val chorus: Boolean = false) {
+    val words: List<FumeWord> = emptyList(), val chorus: Boolean = false,
+    /** Raw last parser endpoint, distinct from the maximum endpoint of a
+     * display EGC coalesced from overlapping/unsorted parser pieces. */
+    val rawLastWordEnd:Double?=null) {
     // Keep source seconds through comparisons; rounding renderEnd to microseconds changes boundaries.
     val renderEnd: Double get() {
         val duration = max(end - start, 0.0)
@@ -20,7 +23,7 @@ internal data class FumeLyric(val text: String, val start: Double, val end: Doub
             else (max(duration, .12) * .34).coerceIn(.22, .42)
         val exit = if (fast) (duration * .22).coerceIn(.03, .04)
             else (max(duration, .12) * .18).coerceIn(.18, .32)
-        val passed = max(words.lastOrNull()?.end ?: end, start) + if (fast) .03 else .06
+        val passed = max(rawLastWordEnd ?: words.lastOrNull()?.end ?: end, start) + if (fast) .03 else .06
         val exitStart = if (fast) maxOf(start + enter + .01, passed, end - exit)
             else max(passed, end - exit)
         return max(end, exitStart + exit)
@@ -69,7 +72,8 @@ internal fun fumeLyric(line: NormalizedLine): FumeLyric {
             pending.clear()
         }
     }
-    return FumeLyric(line.text, line.startUs / 1e6, line.endUs / 1e6, words)
+    return FumeLyric(line.text, line.source.start / 1000.0, line.source.end / 1000.0, words,
+        rawLastWordEnd=line.fragments.lastOrNull()?.endUs?.div(1e6))
 }
 
 internal class FumeReveal(val line: FumeLyric) {

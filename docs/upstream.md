@@ -1476,3 +1476,12 @@ modified. Original source/node snapshots, rejected trial, remaining React/RAF
 differences: verification/cappella-presence. Complete actual-core public vs original
 JSX evidence: verification/cappella-public. All shader/blur/raster and dense-layout
 limits remain open; see docs/cappella-preview.md.
+
+### Fume raw core timing (2026-11-18)
+FumeReveal.kt's independent lyrics-core bridge now retains declared source line
+start/end and the raw final parser endpoint separately from normalization/EGC
+union bounds, matching pinned utils/lyrics/renderHints.ts last-word semantics.
+FumeCoreTimingTest reuses56 actual-source threshold observations and verifies
+malformed/overlapping parser fragments keep their complete EGC and inner clocks.
+No source assets copied. Original source identity/ref stays in NormalizedLine
+for public callbacks; line-only reveal remains source-derived uniform EGC time.

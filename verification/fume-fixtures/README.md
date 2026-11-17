@@ -209,3 +209,9 @@ PNGs remain locally in `build/verification/fume-scene-kotlin-first` and
 `fume-scene-kotlin-source-camera-first`. No time/position registration, fitted
 colors, user lyrics or unlicensed font resources. This is calibration evidence,
 not Android runtime or completed-theme acceptance.
+
+The fractional-destination follow-up adds801x600:216 scenes per camera path,
+432 random revisits and pause checks. Previous144-frame source PNG hashes
+remain unchanged. `fractional-contact.png` shows801px source/shared/native
+columns. Full/raster means15.811750/3.427406 belong to this expanded matrix;
+they must not be presented as improvements over the older144-frame matrix.

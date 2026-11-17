@@ -30,7 +30,7 @@ internal class FumeArticleDrawing private constructor(private val article: FumeA
                 val drawing = drawings.getValue(block.sourceIndex)
                 if (fumeBlockOnScreen(block, pose.view(), viewport)) drawing.draw(this, time,
                     lyrics.getOrNull(block.sourceIndex + 1)?.start, theme, hold, passedDuration, camera.restore, showStamp,
-                    liveShadowScale = pose.scale)
+                    liveShadowScale = pose.scale, fitSnapshotToBlock = true)
                 else drawing.releaseStaticSnapshots()
             }
         }

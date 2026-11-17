@@ -29,6 +29,10 @@ class FumeSceneTest {
     @Test fun wideSmoothGlow() = capture(800, false, 1.0)
     @Test fun wideStepped() = capture(800, true, 0.0)
     @Test fun wideSteppedGlow() = capture(800, true, 1.0)
+    @Test fun fractionalSmooth() = capture(801, false, 0.0)
+    @Test fun fractionalSmoothGlow() = capture(801, false, 1.0)
+    @Test fun fractionalStepped() = capture(801, true, 0.0)
+    @Test fun fractionalSteppedGlow() = capture(801, true, 1.0)
 
     private fun capture(width: Int, stepped: Boolean, glow: Double) = runDesktopComposeUiTest(width=width,height=600) {
         val lyrics = listOf(

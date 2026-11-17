@@ -58,6 +58,7 @@ private class FumePaintedSegment(val glyphs: List<FumePaintedGlyph>, val blank: 
 }
 private data class FumePaintedRow(val segments: List<FumePaintedSegment>, val whole: FumePaintedSegment,
     val baseline: Float)
+private data class FumePaintedSnapshot(val image: ImageBitmap, val origin: Offset, val worldSize: Size)
 
 /** Prepared rows retain the full TextLayoutResult for shaping and all original EGC times.
  * World coordinates are converted only at draw. This internal path is under visual calibration. */
@@ -65,10 +66,10 @@ internal class FumeLiveText private constructor(private val block: FumeArticleBl
     private val rasterDensity: Density, private val rows: List<FumePaintedRow>, val focus: FumeFocusBlock) {
     val reveal = FumeReveal(block.line)
     // At most the two static crossfade paints. Never key by frame time/camera scale.
-    private val snapshots = linkedMapOf<FumePaint, Pair<ImageBitmap, Offset>>()
+    private val snapshots = linkedMapOf<FumePaint, FumePaintedSnapshot>()
     internal fun releaseStaticSnapshots() { snapshots.clear() }
 
-    private fun snapshot(paint: FumePaint): Pair<ImageBitmap, Offset> {
+    private fun snapshot(paint: FumePaint): FumePaintedSnapshot {
         snapshots.remove(paint)?.let { snapshots[paint] = it; return it }
         val pixels = rasterDensity.density
         val padding = ceil(maxOf(block.fontPx * .32, paint.blur + block.fontPx * .08, 4.0))
@@ -80,7 +81,8 @@ internal class FumeLiveText private constructor(private val block: FumeArticleBl
                 for (row in rows) row.whole.draw(this, paint, row.whole.bounds.left, row.whole.bounds.right)
             }
         }
-        val result = image to origin
+        val result = FumePaintedSnapshot(image, origin,
+            Size(((block.width + 2 * padding) * pixels).toFloat(), ((block.height + 2 * padding) * pixels).toFloat()))
         if (snapshots.size >= 2) snapshots.remove(snapshots.keys.first())
         snapshots[paint] = result
         return result
@@ -88,15 +90,21 @@ internal class FumeLiveText private constructor(private val block: FumeArticleBl
 
     fun draw(scope: DrawScope, time: Double, nextStart: Double?, theme: FumeFrameTheme,
         hold: Double = 1.0, fadeDuration: Double = 2.4, overviewRestore: Double = 0.0, showStamp: Boolean = true,
-        liveShadowScale: Double = 1.0) = with(scope) {
+        liveShadowScale: Double = 1.0, fitSnapshotToBlock: Boolean = false) = with(scope) {
         require(liveShadowScale.isFinite() && liveShadowScale > 0)
         fun livePaint(paint: FumePaint) = if (liveShadowScale == 1.0) paint else paint.copy(blur = paint.blur / liveShadowScale)
         val timing = fumeBlockTiming(block, time, nextStart, hold)
         val layers = fumeStaticLayers(block, timing, theme, time, fadeDuration, overviewRestore)
         if (layers != null) {
             for (layer in layers) {
-                val (image, origin) = snapshot(layer.paint)
-                drawImage(image, origin, alpha = layer.alpha.toFloat())
+                val (image, origin, size) = snapshot(layer.paint)
+                // The original stage uses the explicit fractional destination size,
+                // whereas a raw drawImage(snapshot, x, y) uses ceil bitmap dimensions.
+                if (fitSnapshotToBlock) withTransform({
+                    translate(origin.x, origin.y)
+                    scale(size.width / image.width, size.height / image.height, Offset.Zero)
+                }) { drawImage(image, Offset.Zero, alpha = layer.alpha.toFloat()) }
+                else drawImage(image, origin, alpha = layer.alpha.toFloat())
             }
             return@with
         }

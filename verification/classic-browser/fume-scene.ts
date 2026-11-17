@@ -26,8 +26,8 @@ const epochs=[...new Set([0,...lines.flatMap(l=>[l.startTime,l.endTime])])].sort
 let camera=createFumeCameraState(), frame=-1, lastRestore=0;
 const canvas=document.querySelector('canvas')!;canvas.width=innerWidth;canvas.height=600;const ctx=canvas.getContext('2d')!;
 const bases=resolveFumeGlowBases(theme.animationIntensity,glow);
-(window as any).fumeScene={overviewStart,epochs,article:{width:article.width,height:article.height},
- blocks:article.blocks.map(b=>({index:b.sourceLineIndex,x:b.x,y:b.y,width:b.width,height:b.height,fontPx:b.fontPx,
+(window as any).fumeScene={overviewStart,epochs,lines,article:{width:article.width,height:article.height},
+ blocks:article.blocks.map(b=>({index:b.sourceLineIndex,x:b.x,y:b.y,width:b.width,height:b.height,fontPx:b.fontPx,lineHeight:b.lineHeight,
   rows:b.renderLines.map(r=>({start:r.start,end:r.end,left:r.left,top:r.top,width:r.width,offsets:r.glyphOffsets}))}))};
 (window as any).drawAt=(time:number)=>{
  const target=Math.round(time*60);if(Math.abs(target/60-time)>1e-9)throw Error('Capture must coincide with an original source frame');

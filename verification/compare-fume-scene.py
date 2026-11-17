@@ -42,6 +42,7 @@ report=dict(conditions=json.loads((source/'conditions.json').read_text(encoding=
     status='Integrated calibration evidence; source camera and raster residuals remain, NOT final acceptance or Android runtime',
     frames=rows, camera=camera, mean_foreground_mae=sum(r['foreground_mae']for r in rows)/len(rows),
     by_glow={str(g):sum(r['foreground_mae']for r in rows if r['file'].split('-')[1]==str(g))/sum(r['file'].split('-')[1]==str(g)for r in rows) for g in [0,1]},
+    by_width={str(w):sum(r['foreground_mae']for r in rows if r['file'].split('-')[0]==str(w))/sum(r['file'].split('-')[0]==str(w)for r in rows) for w in [380,800,801]},
     maximum_screen_distance=max(r['screen_distance']for r in camera),maximum_scale_error=max(r['scale_error']for r in camera),png_sha256=hashes)
 (out/'comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 names=['800-1-false-750.png','800-1-false-1300.png','380-1-true-3150.png',

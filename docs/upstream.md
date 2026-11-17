@@ -829,3 +829,21 @@ continuous camera/retarget boundary calibration and full-song preparation cost
 remain. No attached Android device; no device or visible-window claim.
 Evidence/reproduction: `verification/fume-scene`, `fume-scene-source-camera`,
 `capture-fume-scene.mjs`, `FumeSceneTest`, `compare-fume-scene.py`.
+
+## 2026-11-17 Fractional Fume snapshot destination
+
+Pinned `useFumeCanvasStage.ts` passes explicit block.width/height + padding to
+Canvas drawImage; allocation rounds up but destination does not.
+`FumeLiveText.kt` now retains both bitmap pixel extent and fractional target
+extent; `FumeArticleDrawing.kt` opts into the stage path. Raw standalone
+text probes intentionally retain intrinsic bitmap sizing, matching their source.
+The actual-scene matrix adds801x600 (fractional article widths), making216
+original/native scenes and216 explicit source-camera raster scenes. Old144
+original hashes are unchanged. Expanded full/raster MAE15.811750/3.427406;
+width801 alone18.026288/3.556037. These are a different matrix, NOT an
+improvement claim against prior144-frame means. Old380/800 full mean
+14.704481 vs14.704448; raster3.363090 vs3.363080, essentially unchanged.
+Fractional contact sheet inspected; camera residual14.867149px/scale0.055318
+still blocks acceptance. Tests cover432 random revisits and pause frames;
+FumeSceneTest/FumeLiveTextTest, Android assembleDebug and Desktop compile
+passed. No Android runtime or visible application window tested.

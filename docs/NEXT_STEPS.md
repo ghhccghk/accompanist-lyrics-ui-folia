@@ -10,9 +10,10 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core分组/内部时钟、完整文字透视、三层合成、13镜头目标隔离核对 | 无 | 完整rig/朝向/切曲、深度/栅格/设备尚未验收 |
 
-当前唯一下一项：修复已开放Fume短bridge/总览镜头的原版连续对照残差。
-完成条件：从真实源时序/公式定位差异，同一mounted矩阵复核位置/速度/滤波焦点，
-保留失败，不用固定延迟或改阈值通过；优先可用预览中影响观感的差异。
+当前唯一下一项：用相同原incoming九维状态建立Fume短bridge→spring局部交接对照。
+完成条件：固定原retarget/几何/目标，记录3.13附近最后bridge/首spring及5.4s对照组，
+拆开forcing/代数focus/限速顺序；有依据修复后才扩大到同92mounted矩阵。
+两种单因素候选均失败且撤回，禁止再只改focus或midpoint分支/改预期/固定延迟。
 镜台有界文字/透视/材质/镜头目标探针已完成；后续完整rig/回正/切曲、weighted picker、
 near/depth/fog、Android中线、overhang/混合bidi与设备仍未完成，不开放Diorama。
 Fume短bridge/总览仍未修复：mounted原版与当前连续模型在3.15s、10s差最大；
@@ -124,11 +125,18 @@ MAE8.175929→8.664704、屏幕峰15.933273→15.981226，旧适配断言失败�
 候选撤回、生产代码逐字恢复，原FumeCameraTrack/FumeMounted/PublicCappellaStage回归通过；
 完整失败/哈希/具体下一步见verification/fume-camera-handoff。不是视觉修复或验收通过。
 
-精确Motion lock复核：原13.4.3/dom13.4.2/utils13.3.0独立4177/server/cache顺序采集，
+3ae1376 精确Motion lock复核：原13.4.3/dom13.4.2/utils13.3.0独立4177/server/cache顺序采集，
 Pendolo公共45原图/四张输入表hash不变；Cappella常规210原图20变化（17..143pixels，
 channel峰34），输入/存在/盒/alpha表不变，三处被动glyphCount差异原样保留、不归因于版本。
 公共Cappella重新验证通过，MAE2.325973、盒3.637200px；旧报告与全hash保留。
 不是密集240或全部旧Pendolo矩阵复核，也不是视觉验收；见verification/motion-lock-audit。
+
+Fume第二个单因素（只去end-intent覆盖，保留midpoint）也已拒绝：92同mask
+MAE8.020819→8.806774，屏幕峰18.297365px，3.15/800也退化；旧适配断言失败。
+生产源码再度逐字恢复，完整9维差值/失败日志见verification/fume-camera-handoff；
+不重试这两种局部改动。接续应先用相同incoming状态校准，而非再从整曲误差猜公式。
+恢复后原FumeCameraTrack/Mounted及本轮Diorama Camera/Active回归全部通过，
+.work/theme-final-restored-check.log；本轮执行已保存并停止，未完成最终主题验收。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

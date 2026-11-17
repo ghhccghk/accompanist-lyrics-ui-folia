@@ -43,15 +43,16 @@ class FumeMountedPublicTest {
         val after=File("../build/verification/fume-mounted-kotlin").apply{mkdirs()}
         for(r in rows){runOnIdle{time=r[3].toLong()};waitForIdle();ImageIO.write(captureToImage().toAwtImage(),"png",before.resolve(r[0]))}
         runOnIdle{time=1000;public=true};waitUntil(timeoutMillis=30000){(status?.mainUnitCount?:0)>0};waitForIdle()
-        val report=mutableListOf("# file x y cameraScale parentScale")
+        val report=mutableListOf("# file x y cameraScale parentScale vx vy focusX focusY velocityScale focusScale retargetStart duration bridge")
         val expected=mutableMapOf<Long,IntArray>()
         fun pixels():IntArray{val im=captureToImage();return IntArray(im.width*im.height).also{im.readPixels(it)}}
         for(r in rows){
             val t=r[3].toLong();runOnIdle{time=t};waitForIdle()
             val s=fumeStageEntryScale(t/1000.0,p.article.firstStart)
             assertEquals(r[7].toDouble(),s,1e-6,"actual original parent scale $width/$stepped/$t")
-            val q=p.track!!.sample(t/1000.0).state.pose
-            report+=listOf(r[0],q.x,q.y,q.scale,s).joinToString("\t")
+            val state=p.track!!.sample(t/1000.0).state;val q=state.pose
+            report+=listOf(r[0],q.x,q.y,q.scale,s,q.vx,q.vy,q.fx,q.fy,q.vs,q.fs,
+                state.retarget.started,state.retarget.duration,state.retarget.bridge).joinToString("\t")
             expected[t]=pixels();ImageIO.write(captureToImage().toAwtImage(),"png",after.resolve(r[0]))
         }
         after.resolve("$width-$stepped.tsv").writeText(report.joinToString("\n")+"\n")

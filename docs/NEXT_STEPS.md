@@ -16,8 +16,8 @@
 镜台有界文字/透视/材质/镜头目标探针已完成；后续完整rig/回正/切曲、weighted picker、
 near/depth/fog、Android中线、overhang/混合bidi与设备仍未完成，不开放Diorama。
 Fume短bridge/总览仍未修复：mounted原版与当前连续模型在3.15s、10s差最大；
-扩展完整pose的本地诊断保存在.work/FumeMountedPublicTest-diagnostic.kt及
-.work/fume-camera-diagnostic.log、build/verification/fume-mounted-kotlin/*.tsv。
+FumeMountedPublicTest现正式输出完整9维pose/retarget；无需再替换忽略的诊断测试。
+原诊断.work/fume-camera-diagnostic.log保留，后续用build/verification/fume-mounted-kotlin/*.tsv。
 3s时两侧retarget一致(.13s direct)，3.15s位置/速度/滤波焦点均有差，不是文字布局；
 总览源60Hz首采9.7而连续起点9.69，禁止用固定延迟掩盖。原连续适配fixture门槛
 保持不变，尚无通过实际原帧矩阵的改进公式；并行推进不依赖它的文字层。
@@ -113,11 +113,16 @@ ffd64e2 镜台活动正文/渐变绘制：ONE完整塑形段落按显示单元�
 原shadowColor先于blur的量化顺序已校正，原失败保留；全前景MAE4.427326、范围峰21px
 未最终验收。两端构建/JVM离屏通过，无设备/真实窗口；见verification/diorama-active-layers。
 
-镜台镜头目标：13shot/read-head/hold/drift、缓存EGC/方向/renderEnd与原CameraRig
+c5ceac9 镜台镜头目标：13shot/read-head/hold/drift、缓存EGC/方向/renderEnd与原CameraRig
 私有块2808组11字段峰1.066e-14；132张同文字三层原Three与Kotlin自产镜头图，
 世界pose峰3.553e-15、全前景MAE5.773035/范围峰20px。非原完整rig、不是正式验收；
 原target极端位置也裁词，不能以此降低最终标准。两端构建/JVM离屏通过，无设备/
 真窗口；证据verification/diorama-camera-targets，source段落hash保留，未改原代码。
+
+Fume单因素焦点候选已拒绝：RK存储改当前B(t)但保留旧forcing/分支，92同mask
+MAE8.175929→8.664704、屏幕峰15.933273→15.981226，旧适配断言失败，未改预期。
+候选撤回、生产代码逐字恢复，原FumeCameraTrack/FumeMounted/PublicCappellaStage回归通过；
+完整失败/哈希/具体下一步见verification/fume-camera-handoff。不是视觉修复或验收通过。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

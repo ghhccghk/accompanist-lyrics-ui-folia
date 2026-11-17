@@ -1,0 +1,1392 @@
+{
+  "probe": "Only RK-accepted bridge focus reset uses B(now) instead of B(now+h/2); forcing and branch anticipation unchanged. NOT accepted production fix.",
+  "same_mask": "all nonbackground source/before/probe union including low alpha, no alignment",
+  "frames": [
+    {
+      "file": "380-1-false-0.png",
+      "time": 0,
+      "before_mae": 1.3705681299122683,
+      "probe_mae": 1.3705681299122683,
+      "before_camera": 0.0,
+      "probe_camera": 0.0,
+      "before_scale": 0.0,
+      "probe_scale": 0.0,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-0.png": "e52cf3184f930fa701a7553d9ba18499c003f1dc1cd1eb0f700b05022ac7aefc",
+        ".work\\fume-focus-before-public\\380-1-false-0.png": "63d0f06084c683c55e93ec5bb438ab6f89d8285cff114233c447c152efb4b429",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-0.png": "63d0f06084c683c55e93ec5bb438ab6f89d8285cff114233c447c152efb4b429"
+      }
+    },
+    {
+      "file": "380-1-false-690.png",
+      "time": 0.69,
+      "before_mae": 1.43095966422423,
+      "probe_mae": 1.4313390718740366,
+      "before_camera": 0.011233481833954595,
+      "probe_camera": 0.014877954488634508,
+      "before_scale": 3.379493967092806e-05,
+      "probe_scale": 7.788964272181786e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-690.png": "74166fbd3e27a49773c51b4c460ff2d7aaaad2f674356034f6f606552c08e6bf",
+        ".work\\fume-focus-before-public\\380-1-false-690.png": "5cba62510616abfd372999fb56eb2439a6245d4b64afa00b693255bd8e2aaa57",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-690.png": "46cf1f31be61158df9e8564bff314598455d2b5192120189d190c024bded984b"
+      }
+    },
+    {
+      "file": "380-1-false-700.png",
+      "time": 0.7,
+      "before_mae": 1.9786019971469329,
+      "probe_mae": 1.9771890496569526,
+      "before_camera": 0.005879070453539189,
+      "probe_camera": 0.008424940178695538,
+      "before_scale": 2.4693209835224827e-05,
+      "probe_scale": 6.735235309018872e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-700.png": "012100ef0fc3fc8fe04aa42462af380ceb4547c8a5f35396d6c4f338dedca892",
+        ".work\\fume-focus-before-public\\380-1-false-700.png": "f309db5c7742fac82e408d5a75e2d7aa114baaf962eb33698946c2d8da26b9cc",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-700.png": "551e0837f79cfa8515173f4187aa9cda06b645b4924cd4a8f76fa5035135eec8"
+      }
+    },
+    {
+      "file": "380-1-false-717.png",
+      "time": 0.717,
+      "before_mae": 2.0191745162761987,
+      "probe_mae": 2.01875855406167,
+      "before_camera": 0.04890503648208365,
+      "probe_camera": 0.049204320215873426,
+      "before_scale": 0.00013606466468762957,
+      "probe_scale": 9.579761750477811e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-717.png": "12684abb4a981f49af41e963d61b0fa0902a5147a8906930cc4b58502eadbc13",
+        ".work\\fume-focus-before-public\\380-1-false-717.png": "e004e47e0ac1797f6f04e56937f83c20a1f5c22b8c5d51e9f673fde7f8013d56",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-717.png": "ec12199c97696175029930be3c713c757525081b060d94b26e3aced16a7fdb55"
+      }
+    },
+    {
+      "file": "380-1-false-750.png",
+      "time": 0.75,
+      "before_mae": 2.1387677244654313,
+      "probe_mae": 2.1360598663411903,
+      "before_camera": 0.05769109382955181,
+      "probe_camera": 0.058795274257040134,
+      "before_scale": 0.0001017784931085508,
+      "probe_scale": 6.595180046331528e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-750.png": "83cfbc20a462bf2eec978c57b4aab6f04287ed20bc82c0b6bb3bb393b7f551bc",
+        ".work\\fume-focus-before-public\\380-1-false-750.png": "61965ebd299a45bf34ecac3177c5a8070ff81b0b028cad05971770783935bdea",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-750.png": "95d88226aa12854dba125ffe2dd5984574ae8e3593da6506ed13d7d13d595270"
+      }
+    },
+    {
+      "file": "380-1-false-800.png",
+      "time": 0.8,
+      "before_mae": 2.5676666666666668,
+      "probe_mae": 2.5665185185185186,
+      "before_camera": 0.08230094784117649,
+      "probe_camera": 0.08317615605851576,
+      "before_scale": 6.166676377494795e-05,
+      "probe_scale": 3.197487659545306e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-800.png": "d3cc4567c004d29d2ac3a9b86344db030ad89d0408eec841ec885fd32892a03f",
+        ".work\\fume-focus-before-public\\380-1-false-800.png": "21c4387aa630bd68e468c3b72c9f1f611c239d2a1ab4017e63c04f528b607b26",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-800.png": "b8c778249cd8a7a79d6264197f14167407110bec93a12e471b760f51abb7af58"
+      }
+    },
+    {
+      "file": "380-1-false-900.png",
+      "time": 0.9,
+      "before_mae": 2.583808059800464,
+      "probe_mae": 2.5833358451135826,
+      "before_camera": 0.07402231617047567,
+      "probe_camera": 0.07432337239538986,
+      "before_scale": 1.566778662742685e-05,
+      "probe_scale": 4.084203039877998e-06,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-900.png": "5849e4ebe378a798158e7c7ac6ffde8153197685c8e08d4b8740d735ebfca469",
+        ".work\\fume-focus-before-public\\380-1-false-900.png": "51a24dafdc6c8a62a6113847680b1165952678d77fefbb746c18ee8bf66c2439",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-900.png": "de45d4d572f1158e42ce5311ff3b2a47068ae5eb7974053b0358313754c1df1b"
+      }
+    },
+    {
+      "file": "380-1-false-1000.png",
+      "time": 1,
+      "before_mae": 2.1879733448566037,
+      "probe_mae": 2.187192491679744,
+      "before_camera": 0.04570418819910038,
+      "probe_camera": 0.045802238768467576,
+      "before_scale": 2.8898119911469067e-06,
+      "probe_scale": 1.5601519983143852e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-1000.png": "a2b8e21dacea7a276623ed821da59ade25b362061be396f176c1ae81d5571e3a",
+        ".work\\fume-focus-before-public\\380-1-false-1000.png": "cf940f62e2288ec6159bf4737788edf4785b9c61148b64ae40f158610ce54433",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-1000.png": "3b1ee8bda40caa26da736ca0ec743897f47492d05db7414d107be52805af9e79"
+      }
+    },
+    {
+      "file": "380-1-false-1150.png",
+      "time": 1.15,
+      "before_mae": 2.067809751666999,
+      "probe_mae": 2.0674497685031348,
+      "before_camera": 0.023382165679912147,
+      "probe_camera": 0.023400401927990006,
+      "before_scale": 8.69785677282131e-06,
+      "probe_scale": 1.4973635992121537e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-1150.png": "4bf29423bddc7dc75e72ffc3b106b219d4a9f90bfcc8de2a59ec664e6e1e1b37",
+        ".work\\fume-focus-before-public\\380-1-false-1150.png": "ee296c2cd7b817cb31be3bc98a1e3c6fcba5e8ae864f38ce3412284a3b642d5d",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-1150.png": "3315b7a81e5cdbfb0996777a79cfe56d50e7088ba92f9dcf55ab17bef97f03f5"
+      }
+    },
+    {
+      "file": "380-1-false-1300.png",
+      "time": 1.3,
+      "before_mae": 2.1714037306354728,
+      "probe_mae": 2.17125092212035,
+      "before_camera": 0.0033441437945900304,
+      "probe_camera": 0.0033475407365410955,
+      "before_scale": 6.591079965923008e-06,
+      "probe_scale": 9.57465869655394e-06,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-1300.png": "47a70cb44ef322b52aaf2e5e298396377396378325306245003e35f722c9e460",
+        ".work\\fume-focus-before-public\\380-1-false-1300.png": "ecbd6bd57191db1494c7e44f1addb9b0757bdfa71592c4a9f01cb2471fa6390c",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-1300.png": "0c65d3b458c0cf17cb2e5e1a77dbc281bf0707477b547f28d845f26e26e09d09"
+      }
+    },
+    {
+      "file": "380-1-false-2600.png",
+      "time": 2.6,
+      "before_mae": 4.883323199725613,
+      "probe_mae": 4.883323199725613,
+      "before_camera": 1.3625514962511018,
+      "probe_camera": 1.3625514918148878,
+      "before_scale": 7.033271631762261e-09,
+      "probe_scale": 4.158287603139854e-09,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-2600.png": "acc532bff1681aad6b643d277801c1f58b480387216f0a97c731f36112d432c0",
+        ".work\\fume-focus-before-public\\380-1-false-2600.png": "e0e761a636306b48a00565a096394a1e41210763c8f4a5616b71e38cde3dee8e",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-2600.png": "e0e761a636306b48a00565a096394a1e41210763c8f4a5616b71e38cde3dee8e"
+      }
+    },
+    {
+      "file": "380-1-false-3000.png",
+      "time": 3,
+      "before_mae": 13.877672392827927,
+      "probe_mae": 13.877672392827927,
+      "before_camera": 1.9214763353594064,
+      "probe_camera": 1.9214763353604234,
+      "before_scale": 0.0001407530413357616,
+      "probe_scale": 0.0001407533713780884,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-3000.png": "5d39a86f65bfeb86c255b4add0b9f4fc9426c63340501f1b808dbd73b3163f9b",
+        ".work\\fume-focus-before-public\\380-1-false-3000.png": "fd8b4e82076de4a5d3ed048fa5a6594569340b4898a882835efb67d5128da685",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-3000.png": "fd8b4e82076de4a5d3ed048fa5a6594569340b4898a882835efb67d5128da685"
+      }
+    },
+    {
+      "file": "380-1-false-3150.png",
+      "time": 3.15,
+      "before_mae": 8.712257694878568,
+      "probe_mae": 8.712257694878568,
+      "before_camera": 1.5310671709708394,
+      "probe_camera": 1.5310671709824621,
+      "before_scale": 0.0005763038242729834,
+      "probe_scale": 0.0005763039008743753,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-3150.png": "e85396de368acc38ebd7442549d39ff613b2c24fb6b4cdf6fea20cb73bd46096",
+        ".work\\fume-focus-before-public\\380-1-false-3150.png": "6bea868a59d1749927e91c015a979ab6917056c4667ed5e34e7f8b86fa72bb7a",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-3150.png": "6bea868a59d1749927e91c015a979ab6917056c4667ed5e34e7f8b86fa72bb7a"
+      }
+    },
+    {
+      "file": "380-1-false-4200.png",
+      "time": 4.2,
+      "before_mae": 2.311426477025224,
+      "probe_mae": 2.312170065551811,
+      "before_camera": 0.003985517451652626,
+      "probe_camera": 0.0025510766932922784,
+      "before_scale": 9.3325527785737e-06,
+      "probe_scale": 1.426507669011201e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-4200.png": "8f1b74fc5fba980f88a63e3a262a4d433efd84032bdc0cabe4412d454cbd611c",
+        ".work\\fume-focus-before-public\\380-1-false-4200.png": "32994ee4b60213c6d994126ebb71f80e814d1ac918b8624c86466fc5f7051754",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-4200.png": "3c6f10fd69f7e050a9e559a238f5fa3959faa0b38ebaf886a9d86ebe485db791"
+      }
+    },
+    {
+      "file": "380-1-false-5400.png",
+      "time": 5.4,
+      "before_mae": 3.7163202122954444,
+      "probe_mae": 3.7163202122954444,
+      "before_camera": 0.2292244688312355,
+      "probe_camera": 0.22922446914455816,
+      "before_scale": 0.00014001311690114981,
+      "probe_scale": 0.0001400025990319076,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-5400.png": "2e881cacf31184e6a1f6b1a5a31e7b143000daee5c82f2a2e709c07896ad4530",
+        ".work\\fume-focus-before-public\\380-1-false-5400.png": "7f3d5fcc22e9b4f5c821c39691a957843dab968fbfbd4421ad835f32f2f9d0a7",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-5400.png": "7f3d5fcc22e9b4f5c821c39691a957843dab968fbfbd4421ad835f32f2f9d0a7"
+      }
+    },
+    {
+      "file": "380-1-false-5600.png",
+      "time": 5.6,
+      "before_mae": 6.5488463426607755,
+      "probe_mae": 9.681212181385932,
+      "before_camera": 0.7463069928791934,
+      "probe_camera": 1.2223040634566333,
+      "before_scale": 2.8665291773588564e-06,
+      "probe_scale": 1.2425787534686705e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-5600.png": "145084805478e0652b1cbf22fa4eac16c33de059d2fd4cea0b44dc69f4d4ac0e",
+        ".work\\fume-focus-before-public\\380-1-false-5600.png": "2547d0af1b9f9230da719985ecdf68e8cf77b3aa9fa4f4e0d1dfee1259c0ab5e",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-5600.png": "886cdbb9156e3cd0e1b0800cabaf56a4ae9f1aa307fcdfa09c36083225df41b7"
+      }
+    },
+    {
+      "file": "380-1-false-6300.png",
+      "time": 6.3,
+      "before_mae": 2.681561412986816,
+      "probe_mae": 2.653961348536116,
+      "before_camera": 0.003570387420215572,
+      "probe_camera": 0.0020928499426193167,
+      "before_scale": 6.955478581316399e-06,
+      "probe_scale": 1.4929902262039718e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-6300.png": "8f95569bdd0da4b5aaf9633a6ef16e528430d40a071be1110d34b36c145c6f28",
+        ".work\\fume-focus-before-public\\380-1-false-6300.png": "26d5e691bfe3cbe16d34b69f49253fd594ee0f0bbb9ea3d5bb62ca030a8c56aa",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-6300.png": "836c33c542fbcd6cb5517c55c3f6c43f36387bd89ca0618800117fd0e8110636"
+      }
+    },
+    {
+      "file": "380-1-false-7600.png",
+      "time": 7.6,
+      "before_mae": 5.391936940526469,
+      "probe_mae": 5.391936940526469,
+      "before_camera": 1.0974554608830185,
+      "probe_camera": 1.0974554677389114,
+      "before_scale": 1.340909288050085e-07,
+      "probe_scale": 1.4402928072421162e-07,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-7600.png": "2a89426e527ab0c3f438f102b816592a20aeb5a1de5b0f0d797b557d4a93d314",
+        ".work\\fume-focus-before-public\\380-1-false-7600.png": "4a15b43b64eb9f0f2bdc097848b65f61e20503ae3ea3f89e2c89dbeb9f1590fb",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-7600.png": "4a15b43b64eb9f0f2bdc097848b65f61e20503ae3ea3f89e2c89dbeb9f1590fb"
+      }
+    },
+    {
+      "file": "380-1-false-8300.png",
+      "time": 8.3,
+      "before_mae": 14.16385433837854,
+      "probe_mae": 26.704111094460263,
+      "before_camera": 2.0263714962954285,
+      "probe_camera": 4.302797768673447,
+      "before_scale": 0.004283022674564485,
+      "probe_scale": 0.004128301972875725,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-8300.png": "130f501c214be57dd2a58e5571c49371ddb31ac3367fb1c8930775de1a85c702",
+        ".work\\fume-focus-before-public\\380-1-false-8300.png": "0582abed2b9f920a219427984f9385d2485b4954ed40a977770f42ea9a48a066",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-8300.png": "e6ab2342a4b0ff4f14ad1533c19aff5d23ed7c81f4b3ffc123f6a2543a2cc988"
+      }
+    },
+    {
+      "file": "380-1-false-9500.png",
+      "time": 9.5,
+      "before_mae": 12.933800951107692,
+      "probe_mae": 12.93377653242496,
+      "before_camera": 2.5830204568123345,
+      "probe_camera": 2.5830050911938573,
+      "before_scale": 1.0140470991792938e-05,
+      "probe_scale": 1.3169816442282212e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-9500.png": "86716b9c02467c5ee3bd301a11fa5c49ffebfe2ab38c299397d140647af75999",
+        ".work\\fume-focus-before-public\\380-1-false-9500.png": "0b39cdaca5dd740ace38aec7263b2bbb0b9cf12c92be5a31b40d898efc8e38b2",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-9500.png": "2a4a7d125bf77d143e1a88098721221775a3ebb403ad22f2fecdae4dbb69afeb"
+      }
+    },
+    {
+      "file": "380-1-false-10000.png",
+      "time": 10,
+      "before_mae": 35.274945212218796,
+      "probe_mae": 35.27502907106758,
+      "before_camera": 5.677870655951064,
+      "probe_camera": 5.677873637119616,
+      "before_scale": 0.01301837518190796,
+      "probe_scale": 0.013019313536174248,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-10000.png": "b59beaff3f103b7e60973f32a6e1bb32218b236150293588afbf23e8991b9fe6",
+        ".work\\fume-focus-before-public\\380-1-false-10000.png": "5d6e33a8d7ac2556b263913d17080c7b7b95c7796d605623ac437bb53608245f",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-10000.png": "2f6b014a5aa9cbacd43c23e286783deed00cc50e19738a6106569783841f71fc"
+      }
+    },
+    {
+      "file": "380-1-false-10700.png",
+      "time": 10.7,
+      "before_mae": 33.135743272348044,
+      "probe_mae": 33.136740801197035,
+      "before_camera": 0.0008814801523746371,
+      "probe_camera": 0.0008814813300701693,
+      "before_scale": 0.011448675935884278,
+      "probe_scale": 0.011449497548338905,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-10700.png": "40fd07404fd313ccbd1211976a26918388d15169c789d6ca2f978e37cc7e7731",
+        ".work\\fume-focus-before-public\\380-1-false-10700.png": "135272156a00305795b184c2e56c2147e82caadc5224218ec8b05989eb2aef31",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-10700.png": "8f739a983902ea4aa09874b0523e860797f3fdf526971907b1a82a480510a965"
+      }
+    },
+    {
+      "file": "380-1-false-11500.png",
+      "time": 11.5,
+      "before_mae": 7.130026021992781,
+      "probe_mae": 7.130026021992781,
+      "before_camera": 5.846905520210842e-05,
+      "probe_camera": 5.846905624989434e-05,
+      "before_scale": 0.00012018122623025373,
+      "probe_scale": 0.00012018658440182683,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-false-11500.png": "34065b5e5e2dbb3d579b6f175b10dc821da0700a62a86d06c25514217e19f4f5",
+        ".work\\fume-focus-before-public\\380-1-false-11500.png": "4251353827a469b6bd193e785427a1c428b8a79d5875c0ee04a29f77d27d2902",
+        "build\\verification\\fume-mounted-kotlin\\380-1-false-11500.png": "4251353827a469b6bd193e785427a1c428b8a79d5875c0ee04a29f77d27d2902"
+      }
+    },
+    {
+      "file": "380-1-true-0.png",
+      "time": 0,
+      "before_mae": 1.3705681299122683,
+      "probe_mae": 1.3705681299122683,
+      "before_camera": 0.0,
+      "probe_camera": 0.0,
+      "before_scale": 0.0,
+      "probe_scale": 0.0,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-0.png": "e52cf3184f930fa701a7553d9ba18499c003f1dc1cd1eb0f700b05022ac7aefc",
+        ".work\\fume-focus-before-public\\380-1-true-0.png": "63d0f06084c683c55e93ec5bb438ab6f89d8285cff114233c447c152efb4b429",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-0.png": "63d0f06084c683c55e93ec5bb438ab6f89d8285cff114233c447c152efb4b429"
+      }
+    },
+    {
+      "file": "380-1-true-690.png",
+      "time": 0.69,
+      "before_mae": 1.43095966422423,
+      "probe_mae": 1.4313390718740366,
+      "before_camera": 0.011233481833954595,
+      "probe_camera": 0.014877954488634508,
+      "before_scale": 3.379493967092806e-05,
+      "probe_scale": 7.788964272181786e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-690.png": "74166fbd3e27a49773c51b4c460ff2d7aaaad2f674356034f6f606552c08e6bf",
+        ".work\\fume-focus-before-public\\380-1-true-690.png": "5cba62510616abfd372999fb56eb2439a6245d4b64afa00b693255bd8e2aaa57",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-690.png": "46cf1f31be61158df9e8564bff314598455d2b5192120189d190c024bded984b"
+      }
+    },
+    {
+      "file": "380-1-true-700.png",
+      "time": 0.7,
+      "before_mae": 2.0396180414465666,
+      "probe_mae": 2.0370039279425707,
+      "before_camera": 0.1596159989098427,
+      "probe_camera": 0.1564651918108003,
+      "before_scale": 2.4693209838111407e-05,
+      "probe_scale": 6.735235309351939e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-700.png": "012100ef0fc3fc8fe04aa42462af380ceb4547c8a5f35396d6c4f338dedca892",
+        ".work\\fume-focus-before-public\\380-1-true-700.png": "21a431bb0637fb73558a4e66223547f73525b59b8625c45637796d653c9be549",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-700.png": "0b27d96058bf769cd10f20d97c0ecec7d4f79a96fde5a1bd7e451d892fd95da9"
+      }
+    },
+    {
+      "file": "380-1-true-717.png",
+      "time": 0.717,
+      "before_mae": 2.197444924521257,
+      "probe_mae": 2.198978503227183,
+      "before_camera": 0.3769607483062646,
+      "probe_camera": 0.3742501155726525,
+      "before_scale": 0.00013606466467896983,
+      "probe_scale": 9.579761749567428e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-717.png": "398cac7a4b34614a70991a1cce0c3607f456584bfda324a4f1886536cc733d00",
+        ".work\\fume-focus-before-public\\380-1-true-717.png": "500da967ff541b65a9f5a2e765d314c9bc195be8bae2c3ce4a70e732b048092c",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-717.png": "9cda1d8281298c7f6006e06ba745e6235b396e122d3516c7401a2aaa3b7c9a2a"
+      }
+    },
+    {
+      "file": "380-1-true-750.png",
+      "time": 0.75,
+      "before_mae": 3.129037680709649,
+      "probe_mae": 3.127679933793674,
+      "before_camera": 0.7901411987596835,
+      "probe_camera": 0.7882697032844695,
+      "before_scale": 0.00010177849307213549,
+      "probe_scale": 6.595180042645588e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-750.png": "d897ec06b2aa6fc55998c06300a1de4b2eb7780e75a3b88d5ee660e651b92dce",
+        ".work\\fume-focus-before-public\\380-1-true-750.png": "6bf360fadc5856639713a7ca9662f77c9047412ee909b2962b06032c5df0fea0",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-750.png": "bbba608db2bea4afdc65205a0933d03d69c3d6c306eaa18ca483ad305cfe8da0"
+      }
+    },
+    {
+      "file": "380-1-true-800.png",
+      "time": 0.8,
+      "before_mae": 4.237584537665413,
+      "probe_mae": 4.239459896620837,
+      "before_camera": 1.0296871657768203,
+      "probe_camera": 1.0286145511143299,
+      "before_scale": 6.16667635745527e-05,
+      "probe_scale": 3.197487639416963e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-800.png": "2033ec6af62c247be2170a6e946b1238bb2f00e42e7b0f36cc124894ec926980",
+        ".work\\fume-focus-before-public\\380-1-true-800.png": "6c643f8d94385d1e1d0cc501f19cf1999209fa032de09b997884cfa2cf09227c",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-800.png": "ed8502415a23d755b85baff3cd804f43dc3a6eedcb8828598f75c398e21c400f"
+      }
+    },
+    {
+      "file": "380-1-true-900.png",
+      "time": 0.9,
+      "before_mae": 4.542521676656136,
+      "probe_mae": 4.541153660672985,
+      "before_camera": 1.0911956521898831,
+      "probe_camera": 1.0915011613028451,
+      "before_scale": 1.566778648420808e-05,
+      "probe_scale": 4.084203183762902e-06,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-900.png": "c15a07b1b9989bb02cf2a56b0997d44f83270ff93f58ef3a58bee99dac788873",
+        ".work\\fume-focus-before-public\\380-1-true-900.png": "b7c44f814955c4a9a0ede08eeb3f9628dec8bc527ccbcb4c7dfe218db09b6867",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-900.png": "d8a3c3fe85acec59c74fda3bd92836eff03de17b8bc00ee14889e6f139e7c45a"
+      }
+    },
+    {
+      "file": "380-1-true-1000.png",
+      "time": 1,
+      "before_mae": 9.163252366689258,
+      "probe_mae": 9.161729231800724,
+      "before_camera": 3.2463141296472733,
+      "probe_camera": 3.2464165921564057,
+      "before_scale": 2.8898124971865613e-06,
+      "probe_scale": 1.5601520489072485e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-1000.png": "a162646800cf105fcff66cbcbe0d02ca35038633d61798339c353b1e0d3325ed",
+        ".work\\fume-focus-before-public\\380-1-true-1000.png": "9739786e8b365c191b647c68880048f34a72ed5f5dcd48eb514694ffc71ca88b",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-1000.png": "191012f6de7eedeff54a8c5fb36e84c3f7d111306e931261bc8c0baaaf44c7bd"
+      }
+    },
+    {
+      "file": "380-1-true-1150.png",
+      "time": 1.15,
+      "before_mae": 9.662133172706042,
+      "probe_mae": 9.662090902366081,
+      "before_camera": 4.000955903450743,
+      "probe_camera": 4.000974340854693,
+      "before_scale": 8.697857190043123e-06,
+      "probe_scale": 1.4973636409121305e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-1150.png": "07060d15a447b1e021eb15e152a3620ce36bad7c69f33f116760a2a64d0adc4c",
+        ".work\\fume-focus-before-public\\380-1-true-1150.png": "876b0c0bd3a9779abe7f5decaebd4780e829fcafe19b7ef5e95183f7e59114b8",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-1150.png": "b73291fa135ec9c015a7c28af6afef594b02182c2f548277998280b6b3e18434"
+      }
+    },
+    {
+      "file": "380-1-true-1300.png",
+      "time": 1.3,
+      "before_mae": 3.7590137568120423,
+      "probe_mae": 3.7590033468142803,
+      "before_camera": 1.0444475324321698,
+      "probe_camera": 1.0444510906698365,
+      "before_scale": 6.591080256024284e-06,
+      "probe_scale": 9.574658984878859e-06,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-1300.png": "9d33fa6d7e32e9860e54ccb301bfa420c5f9a74668659c6e3e14785df65a433c",
+        ".work\\fume-focus-before-public\\380-1-true-1300.png": "acfe3f6fbaa902deb5d3efc82e31b20612cdb21b13bc3907dc25bda2c2d78a22",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-1300.png": "9d2b9681b91ef9eef2b9a7fdca15c474b5e9ae075ad6853243f970ca53db9575"
+      }
+    },
+    {
+      "file": "380-1-true-2600.png",
+      "time": 2.6,
+      "before_mae": 3.9783600253625413,
+      "probe_mae": 3.9783600253625413,
+      "before_camera": 0.7884606969559689,
+      "probe_camera": 0.7884607090680409,
+      "before_scale": 7.033218452079382e-09,
+      "probe_scale": 4.158235977769209e-09,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-2600.png": "407dd5da139be87cb41ec82a3688a1f7418744daa5846432fd43a6a86e6b6986",
+        ".work\\fume-focus-before-public\\380-1-true-2600.png": "6c2df91687de864f1db1f419bc701079e94b8afbcc1795ebf932631bccf6be04",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-2600.png": "6c2df91687de864f1db1f419bc701079e94b8afbcc1795ebf932631bccf6be04"
+      }
+    },
+    {
+      "file": "380-1-true-3000.png",
+      "time": 3,
+      "before_mae": 20.552366274963077,
+      "probe_mae": 20.552366274963077,
+      "before_camera": 2.842775894010232,
+      "probe_camera": 2.8427751168507105,
+      "before_scale": 0.00014075304126570654,
+      "probe_scale": 0.00014075337130758925,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-3000.png": "6d63aceb8e6569096489764252b1737f0969ca09da02ff9d8a63cd471da87e71",
+        ".work\\fume-focus-before-public\\380-1-true-3000.png": "ad710596208d091c04ae31f7f172588efc46e4524301f4c37a7def5dfb0f34b8",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-3000.png": "ad710596208d091c04ae31f7f172588efc46e4524301f4c37a7def5dfb0f34b8"
+      }
+    },
+    {
+      "file": "380-1-true-3150.png",
+      "time": 3.15,
+      "before_mae": 12.780994251628018,
+      "probe_mae": 12.780994251628018,
+      "before_camera": 2.388472063163121,
+      "probe_camera": 2.3884715708840805,
+      "before_scale": 0.0008435281018086549,
+      "probe_scale": 0.0008435279552883035,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-3150.png": "468476828dc95832837f43dec9bffac494a5947a3bab1aa0d2b113bdb9ae7bfb",
+        ".work\\fume-focus-before-public\\380-1-true-3150.png": "bae534757355899fdc8dca963858e6034d344cb0fd09c4846e0da75e4ab11c50",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-3150.png": "bae534757355899fdc8dca963858e6034d344cb0fd09c4846e0da75e4ab11c50"
+      }
+    },
+    {
+      "file": "380-1-true-4200.png",
+      "time": 4.2,
+      "before_mae": 7.128189889321593,
+      "probe_mae": 7.128492260852792,
+      "before_camera": 1.1150981965695366,
+      "probe_camera": 1.1152016775655569,
+      "before_scale": 1.0901679271313469e-05,
+      "probe_scale": 1.5807965001446433e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-4200.png": "1bb7ebbf0a04a73d3b7acda3550faf9035eec86c604e33d92a0c80993ea2e8a9",
+        ".work\\fume-focus-before-public\\380-1-true-4200.png": "08c6f033c53a0b0bfa229f88ae188bdca770284435337ea0d6f56da11b5b0cb3",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-4200.png": "9a1239c7d29a5a542b66c5154beeadcc72d646cd829ebe8c10b4b2e98a31aae7"
+      }
+    },
+    {
+      "file": "380-1-true-5400.png",
+      "time": 5.4,
+      "before_mae": 3.678330336349969,
+      "probe_mae": 3.678330336349969,
+      "before_camera": 0.16175542593376085,
+      "probe_camera": 0.16175544363675648,
+      "before_scale": 0.00014001354280512857,
+      "probe_scale": 0.00014000309274320166,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-5400.png": "c74081638ec86183d3f0696042fae57bac66c3e921ad9c343af1ac95562b8e88",
+        ".work\\fume-focus-before-public\\380-1-true-5400.png": "af2f42a7aa05f212f59b3598018d4e1e49bbe335a07d8ea723cf5a23c8e5e4e6",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-5400.png": "af2f42a7aa05f212f59b3598018d4e1e49bbe335a07d8ea723cf5a23c8e5e4e6"
+      }
+    },
+    {
+      "file": "380-1-true-5600.png",
+      "time": 5.6,
+      "before_mae": 4.260026520966419,
+      "probe_mae": 4.0367056777977695,
+      "before_camera": 0.38114366171987146,
+      "probe_camera": 0.3575923487215992,
+      "before_scale": 2.8682768744570097e-06,
+      "probe_scale": 1.2430145976738416e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-5600.png": "0c632fa4154827be29b3d45492ae2f182d9e228adffb4a13289ff8794eb6fa0d",
+        ".work\\fume-focus-before-public\\380-1-true-5600.png": "44a703215532a4d1467680f5d4d4dd596e59b46f77ffc42ccf95fed3827c8df6",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-5600.png": "99c00b18fc0ab5e2974224bc53a1d4d17d37a99677f21923d703ebedff29c4d5"
+      }
+    },
+    {
+      "file": "380-1-true-6300.png",
+      "time": 6.3,
+      "before_mae": 5.041266379564193,
+      "probe_mae": 5.041183561542992,
+      "before_camera": 0.5808171955505548,
+      "probe_camera": 0.5808609616654691,
+      "before_scale": 6.95634747316376e-06,
+      "probe_scale": 1.4933959450846856e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-6300.png": "a7f4c996ccdb02c421618b1e8bc066455a7b6a8f167a7024b83cc08431130f59",
+        ".work\\fume-focus-before-public\\380-1-true-6300.png": "773efa3ea42f475b6e983b957de3a6071e23c8dd6cbb95f3028c3063d8c6b636",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-6300.png": "9a3a1ee9ecc663783773acdf1ea525d5379bb1dc7ee703676432c1bfd17ad222"
+      }
+    },
+    {
+      "file": "380-1-true-7600.png",
+      "time": 7.6,
+      "before_mae": 2.501443757619832,
+      "probe_mae": 2.501443757619832,
+      "before_camera": 0.23604996319061788,
+      "probe_camera": 0.23605047820573846,
+      "before_scale": 1.3409193022617671e-07,
+      "probe_scale": 1.4403431403131606e-07,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-7600.png": "293ca2171980ab68037cf2a85fb8a05a259383b25e382e779982b9117c98c78b",
+        ".work\\fume-focus-before-public\\380-1-true-7600.png": "02663d585237b9f77166550aef3916840f01c66b3454f679c495eb6309c42fe6",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-7600.png": "02663d585237b9f77166550aef3916840f01c66b3454f679c495eb6309c42fe6"
+      }
+    },
+    {
+      "file": "380-1-true-8300.png",
+      "time": 8.3,
+      "before_mae": 3.0770903402424716,
+      "probe_mae": 14.61912658062834,
+      "before_camera": 0.115844557526753,
+      "probe_camera": 2.0287512102915874,
+      "before_scale": 0.0042830226902377255,
+      "probe_scale": 0.00412832256672635,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-8300.png": "fe99a5642fc1146b1e19256cf5f6f57e06c8b0f7fe29f469968edc91959cd4e2",
+        ".work\\fume-focus-before-public\\380-1-true-8300.png": "f58d3d27409903459c6df27b6e4a392605d14e5162b0ce282e195944b189516b",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-8300.png": "ad6b8cc99072975986507af40b1331d406816582ae942ea3c49aab00256252a9"
+      }
+    },
+    {
+      "file": "380-1-true-9500.png",
+      "time": 9.5,
+      "before_mae": 3.28656213180918,
+      "probe_mae": 3.2864242560978667,
+      "before_camera": 0.13659504089405416,
+      "probe_camera": 0.136612069011544,
+      "before_scale": 1.0140471017550112e-05,
+      "probe_scale": 1.316995741795779e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-9500.png": "a762e64add026cacd2e5ef347177bd022dfdcfe51b3aeff598520fc4da1d0f6d",
+        ".work\\fume-focus-before-public\\380-1-true-9500.png": "746a3db97d268144a309ad558229b014871eb1620710aba0b7ef3291dc763652",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-9500.png": "21ef3969a1f8201c4e830a65db4d5af114b0ec4d49db7f75246aca3d7b4c151c"
+      }
+    },
+    {
+      "file": "380-1-true-10000.png",
+      "time": 10,
+      "before_mae": 35.22045772480555,
+      "probe_mae": 35.220564042303174,
+      "before_camera": 5.61322940551265,
+      "probe_camera": 5.613232372267817,
+      "before_scale": 0.013018375182003439,
+      "probe_scale": 0.013019313579245129,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-10000.png": "077bed79f9c390f71ae87823dbddcb19596201336d27d8dcddb87755f5118807",
+        ".work\\fume-focus-before-public\\380-1-true-10000.png": "f53d29c9c20047aca3c202726de923b3e85673ce7e1a266525d82075152bc1a5",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-10000.png": "807ed31c649a72de128be7ddeb5c137c2acc5dd49037a5fac22517f173953627"
+      }
+    },
+    {
+      "file": "380-1-true-10700.png",
+      "time": 10.7,
+      "before_mae": 33.13564125235213,
+      "probe_mae": 33.1365594323154,
+      "before_camera": 0.0008744854287018059,
+      "probe_camera": 0.0008744865990329265,
+      "before_scale": 0.011448675935957553,
+      "probe_scale": 0.011449497586086155,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-10700.png": "c6622ba9557f512ecccd9a1ff9ff0b42a6a2705dfea0022d396585916c5231ad",
+        ".work\\fume-focus-before-public\\380-1-true-10700.png": "9dc5dcca42134cc231f040c8e0788733cb37f73f4261a547356e3516220a2834",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-10700.png": "1aa3a534415758510aeed6aef893647581e06bd57f64be9f1e0888daad51ecc4"
+      }
+    },
+    {
+      "file": "380-1-true-11500.png",
+      "time": 11.5,
+      "before_mae": 7.130026021992781,
+      "probe_mae": 7.130026021992781,
+      "before_camera": 5.846892440334216e-05,
+      "probe_camera": 5.846892544099995e-05,
+      "before_scale": 0.00012018122623080885,
+      "probe_scale": 0.00012018658464824084,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\380-1-true-11500.png": "34065b5e5e2dbb3d579b6f175b10dc821da0700a62a86d06c25514217e19f4f5",
+        ".work\\fume-focus-before-public\\380-1-true-11500.png": "4251353827a469b6bd193e785427a1c428b8a79d5875c0ee04a29f77d27d2902",
+        "build\\verification\\fume-mounted-kotlin\\380-1-true-11500.png": "4251353827a469b6bd193e785427a1c428b8a79d5875c0ee04a29f77d27d2902"
+      }
+    },
+    {
+      "file": "800-1-false-0.png",
+      "time": 0,
+      "before_mae": 1.308466061947956,
+      "probe_mae": 1.308466061947956,
+      "before_camera": 0.0,
+      "probe_camera": 0.0,
+      "before_scale": 0.0,
+      "probe_scale": 0.0,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-0.png": "694e229284ffed198485b32350eb78f9622536cc1226da0a37c5822fd6fa0a23",
+        ".work\\fume-focus-before-public\\800-1-false-0.png": "d1046cbc49e864d9e4b4dabcd92a2259743593fa1937216a92a2397b7e0ef152",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-0.png": "d1046cbc49e864d9e4b4dabcd92a2259743593fa1937216a92a2397b7e0ef152"
+      }
+    },
+    {
+      "file": "800-1-false-690.png",
+      "time": 0.69,
+      "before_mae": 1.443310189011958,
+      "probe_mae": 1.4428142392681986,
+      "before_camera": 0.004733244916417871,
+      "probe_camera": 0.0029111755732981375,
+      "before_scale": 3.3794946012633e-05,
+      "probe_scale": 7.790004447327803e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-690.png": "d42df4d97a14d2c38ca8b8c93a985a609bc22c7a397256115aee4db9a64d3793",
+        ".work\\fume-focus-before-public\\800-1-false-690.png": "fc15eafbe4aaf26f4d5d84b522cefacfc7f8591217510c7fc733c066b8a34a47",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-690.png": "dd709cdb27f4e09d4b29f6f5302cca85432fde63e31acc5ca52e277a5bed799e"
+      }
+    },
+    {
+      "file": "800-1-false-700.png",
+      "time": 0.7,
+      "before_mae": 1.9692782995551161,
+      "probe_mae": 1.9687592684132476,
+      "before_camera": 0.012739935575904322,
+      "probe_camera": 0.009312491932869659,
+      "before_scale": 2.469321656484169e-05,
+      "probe_scale": 6.736239364735219e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-700.png": "fe48448bc4739a270fd6d52621b46814175b5ae1322da4acb3e64a382ea5d9ad",
+        ".work\\fume-focus-before-public\\800-1-false-700.png": "7a19861298bc851910fee688fb3788b847b15bed7dfb24fc2b0409cfc68e5aa1",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-700.png": "5cd6b7373e0f000deae0bd06ed07409c87b61b32efbf2e633512b2a57dd88d72"
+      }
+    },
+    {
+      "file": "800-1-false-717.png",
+      "time": 0.717,
+      "before_mae": 2.042133926269657,
+      "probe_mae": 2.040232663057489,
+      "before_camera": 0.04624232911621137,
+      "probe_camera": 0.04569012020042683,
+      "before_scale": 0.0001360646579590119,
+      "probe_scale": 9.578817481148416e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-717.png": "c51603081733f6143b462c043de6d6452d97e8016c4f87be3a852099a598d428",
+        ".work\\fume-focus-before-public\\800-1-false-717.png": "e476384f5087edbf3ce21036e0a240d2281d380068c4bcce9b81ca358706a60a",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-717.png": "5fea7c5dc77dd684cc07f9cc92154ac05323a2fe23b8262478d39c19927306ed"
+      }
+    },
+    {
+      "file": "800-1-false-750.png",
+      "time": 0.75,
+      "before_mae": 2.096942422029013,
+      "probe_mae": 2.0950888684683835,
+      "before_camera": 0.05223974519129235,
+      "probe_camera": 0.05385610969410765,
+      "before_scale": 0.00010177848661552247,
+      "probe_scale": 6.594345383270639e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-750.png": "462bf3070cff81886ada82d2abc9deafa0e2cc9fcabafe81313705b3b482a8b4",
+        ".work\\fume-focus-before-public\\800-1-false-750.png": "776f50ea80987c8e10cdce2df06e0656347c03f2034f1b9afeceafbd4c429360",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-750.png": "6f61782d27dbffae897f765c67592fb3bbf61afe205ac132d9b868c0265ebaba"
+      }
+    },
+    {
+      "file": "800-1-false-800.png",
+      "time": 0.8,
+      "before_mae": 2.309518634440387,
+      "probe_mae": 2.3088738190459632,
+      "before_camera": 0.08083916712392399,
+      "probe_camera": 0.0822486124573881,
+      "before_scale": 6.166675799934573e-05,
+      "probe_scale": 3.1968018531447484e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-800.png": "876ac7dae313979b57a21b0e79639e49d70d8d4dc4a4095f21a872740188ace5",
+        ".work\\fume-focus-before-public\\800-1-false-800.png": "31ee36c3706a6422a7fae8460b1dad3a7afcc75d877f2b1a0a68df76558ddede",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-800.png": "5835e0c1e1378aecef3e5402d6fe5e2cb3eaf70ae3efac4a851e077fb968b18e"
+      }
+    },
+    {
+      "file": "800-1-false-900.png",
+      "time": 0.9,
+      "before_mae": 2.4433080249643715,
+      "probe_mae": 2.443111455108359,
+      "before_camera": 0.07467001305853425,
+      "probe_camera": 0.0751663139091925,
+      "before_scale": 1.5667782593653534e-05,
+      "probe_scale": 4.088703572047159e-06,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-900.png": "c73dc83f1addf2493daae99c51e44a95c00bae62d805f07cbe83be2db5fd75e6",
+        ".work\\fume-focus-before-public\\800-1-false-900.png": "e8f1803cc8541c30c06760ff4c624b0a7227fef9d8efed4768c85db7ea256c1d",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-900.png": "e5bb9db091243721fe889ce4372169503ed66866f0edbf13e8b1b40a8bc0ae9f"
+      }
+    },
+    {
+      "file": "800-1-false-1000.png",
+      "time": 1,
+      "before_mae": 2.2217555293144597,
+      "probe_mae": 2.221865144018774,
+      "before_camera": 0.046068532275363394,
+      "probe_camera": 0.046229403415781356,
+      "before_scale": 2.8898145506550676e-06,
+      "probe_scale": 1.5604387166412437e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-1000.png": "777e693ef48a43fca29d45d44c040179abf2bf3368e50889408be6da502b0dc8",
+        ".work\\fume-focus-before-public\\800-1-false-1000.png": "31046042e131baf776984c485dcfd896f26a7a65af876c1f1d71366a35f469f4",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-1000.png": "762194d34db6f2ee6f27bea3b225403d5207409d39c05c3cc412aec5b6f94902"
+      }
+    },
+    {
+      "file": "800-1-false-1150.png",
+      "time": 1.15,
+      "before_mae": 2.2114396762899524,
+      "probe_mae": 2.2116110338703834,
+      "before_camera": 0.023445931483511026,
+      "probe_camera": 0.02347504534516788,
+      "before_scale": 8.697857950545895e-06,
+      "probe_scale": 1.4975036268238817e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-1150.png": "fbd5c74bed5bcce3e461a412845f27552666874491f371b5e5e239558bb45d55",
+        ".work\\fume-focus-before-public\\800-1-false-1150.png": "2d3a1875593e989b08ba91d86cbd53d22920809f625327aa2e21d4807412c798",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-1150.png": "c900bcab86c31bac53bbd66a7b7af5e0871901d2b9bdb6221584a662f66d9972"
+      }
+    },
+    {
+      "file": "800-1-false-1300.png",
+      "time": 1.3,
+      "before_mae": 2.22864899823053,
+      "probe_mae": 2.228737635870011,
+      "before_camera": 0.0033522836550046956,
+      "probe_camera": 0.0033575937467566837,
+      "before_scale": 6.591080476292532e-06,
+      "probe_scale": 9.575319559695927e-06,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-1300.png": "73ba83aa653bb529068bdb4216990ed6087a3afe183e0f56291d8ca0ce024a64",
+        ".work\\fume-focus-before-public\\800-1-false-1300.png": "051457d34fa4dae6a74a9dbd2d8a51438de49ab31d71c925be90c0ce29a7cfa7",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-1300.png": "ea4d39e663d37f0e79931fb5e2bc978e74c1533351ad4274e0c03da7ff50880b"
+      }
+    },
+    {
+      "file": "800-1-false-2600.png",
+      "time": 2.6,
+      "before_mae": 4.973133304380118,
+      "probe_mae": 4.973133304380118,
+      "before_camera": 1.362551496253108,
+      "probe_camera": 1.3625514918167272,
+      "before_scale": 7.033271298695354e-09,
+      "probe_scale": 4.157659327930219e-09,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-2600.png": "edf6c17fe044bc9db1f2dcd0dbe47943dc05c008936e6aac5b9bdb56c827a004",
+        ".work\\fume-focus-before-public\\800-1-false-2600.png": "f5e35b4d03887f8be1982636098249fd23e287e41e098de6ae24b5e43b57331c",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-2600.png": "f5e35b4d03887f8be1982636098249fd23e287e41e098de6ae24b5e43b57331c"
+      }
+    },
+    {
+      "file": "800-1-false-3000.png",
+      "time": 3,
+      "before_mae": 13.379977362761743,
+      "probe_mae": 13.379977362761743,
+      "before_camera": 1.9214763353594435,
+      "probe_camera": 1.9214763353598652,
+      "before_scale": 0.00014075304133598365,
+      "probe_scale": 0.00014075337145036393,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-3000.png": "835edca682650a38a6e8e3effcfd04c3d6bec064bcd41722fd9095708c2f182e",
+        ".work\\fume-focus-before-public\\800-1-false-3000.png": "75c10f114fb9f1509507ced8db85488e1f5bbd422ca93824d86a097d4529b3be",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-3000.png": "75c10f114fb9f1509507ced8db85488e1f5bbd422ca93824d86a097d4529b3be"
+      }
+    },
+    {
+      "file": "800-1-false-3150.png",
+      "time": 3.15,
+      "before_mae": 53.31183294474758,
+      "probe_mae": 53.312724047151114,
+      "before_camera": 15.3443974978264,
+      "probe_camera": 15.376921182982045,
+      "before_scale": 0.010091546848274069,
+      "probe_scale": 0.010104546670891112,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-3150.png": "1b2143e15dbed6f9d4af4b6a32cd7c0b890757d10749ed2d4fa404c843738739",
+        ".work\\fume-focus-before-public\\800-1-false-3150.png": "05bfc0d8902527d551d1b78c15d769d09fbc01107b2bb365eb09c9989965d4cc",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-3150.png": "e2d3f0dda13e725442315ef5697dfeb7d0241cd08972951a2e3a06bf7c167434"
+      }
+    },
+    {
+      "file": "800-1-false-4200.png",
+      "time": 4.2,
+      "before_mae": 2.0157933853586028,
+      "probe_mae": 2.01644370122631,
+      "before_camera": 0.005463130783680913,
+      "probe_camera": 0.005428961129186556,
+      "before_scale": 3.463894408417545e-05,
+      "probe_scale": 4.512781559884438e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-4200.png": "1f37145f78b45d9d56b15310f3f6b2031bf73438ba9f9cb5758f16d870e8f800",
+        ".work\\fume-focus-before-public\\800-1-false-4200.png": "9a22a3f1f0e313ee8b16650e70772cc79cac204149559368fae70779d40a6298",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-4200.png": "3abe6277e969d569736c6b7b123dcda5ab5e5538c7ca880488f2b5c396c159f2"
+      }
+    },
+    {
+      "file": "800-1-false-5400.png",
+      "time": 5.4,
+      "before_mae": 3.6697475763259586,
+      "probe_mae": 3.6697475763259586,
+      "before_camera": 0.2444211355714143,
+      "probe_camera": 0.24442113853554456,
+      "before_scale": 0.00015100232807374603,
+      "probe_scale": 0.00015102045937265274,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-5400.png": "7a3fb31b4879a643ed7930c1c0105c2b00574ce46bfa9ee96a24cf8222ee4c80",
+        ".work\\fume-focus-before-public\\800-1-false-5400.png": "d99bc23f5e2cdf83c07b6c62b04f506b57daade17f6bb2777d71a0f62fdcd096",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-5400.png": "d99bc23f5e2cdf83c07b6c62b04f506b57daade17f6bb2777d71a0f62fdcd096"
+      }
+    },
+    {
+      "file": "800-1-false-5600.png",
+      "time": 5.6,
+      "before_mae": 6.619520471424081,
+      "probe_mae": 9.731286758997316,
+      "before_camera": 0.8030782516103173,
+      "probe_camera": 1.3172826123772732,
+      "before_scale": 3.113540969490458e-06,
+      "probe_scale": 1.3437218579825938e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-5600.png": "65bbd9d8d9715a92af0ec6c8ed30eff054667673b62ff57af65e1e7bbccb41ae",
+        ".work\\fume-focus-before-public\\800-1-false-5600.png": "83b25db63316c59993ffdadfab66abbaf0508f2d38aa022e20ac55ea6b09ccd8",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-5600.png": "fd9e187fefc0027d630dfe1d4a363dffbc1e5ad4b03fa02ebfa75fa7900ec89f"
+      }
+    },
+    {
+      "file": "800-1-false-6300.png",
+      "time": 6.3,
+      "before_mae": 2.800566726608904,
+      "probe_mae": 2.803160590703504,
+      "before_camera": 0.003834079423056152,
+      "probe_camera": 0.00218165472784927,
+      "before_scale": 7.499097914864805e-06,
+      "probe_scale": 1.6101061968143426e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-6300.png": "0314374563bc694581949fd1307936f5e5ffc1bf17a06153d4b9bb185997cca4",
+        ".work\\fume-focus-before-public\\800-1-false-6300.png": "a26bf9a81192c38f8bba55e3603cd9a028206bb272d386272dc083c89db7c29c",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-6300.png": "9078f1f857705dbee936f26268ae1cd748569d9b1a8408531a7978bbbc472dd2"
+      }
+    },
+    {
+      "file": "800-1-false-7600.png",
+      "time": 7.6,
+      "before_mae": 6.132364610196389,
+      "probe_mae": 6.132364610196389,
+      "before_camera": 1.1831939202190802,
+      "probe_camera": 1.1831939276115724,
+      "before_scale": 1.4456670816009876e-07,
+      "probe_scale": 1.5528695196387332e-07,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-7600.png": "35c68a4f92fefc97b61c3d87f9f139b81457cf868afe4301e0703b78bbdf1f29",
+        ".work\\fume-focus-before-public\\800-1-false-7600.png": "f114513a0a4ce492b92df48e8e7802c3f8618ca7baaa2c6576cc2a612a1d3f05",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-7600.png": "f114513a0a4ce492b92df48e8e7802c3f8618ca7baaa2c6576cc2a612a1d3f05"
+      }
+    },
+    {
+      "file": "800-1-false-8300.png",
+      "time": 8.3,
+      "before_mae": 11.49937167998352,
+      "probe_mae": 19.64297591194691,
+      "before_camera": 2.187455005633006,
+      "probe_camera": 4.45125636912614,
+      "before_scale": 0.003670195327831749,
+      "probe_scale": 0.0035395987017818875,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-8300.png": "e610c8a23899b10e0e5fd2b5e759797a4aceb9aeff83356b236c704b1981263e",
+        ".work\\fume-focus-before-public\\800-1-false-8300.png": "e09083b515cecbf0c43e5bf9d6df591242674f4cac08baff4f0c7426a5c4f484",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-8300.png": "81d81a33c90e5bd3cb17da32459215ccf23a66a4f934f07094c3baaa655057f3"
+      }
+    },
+    {
+      "file": "800-1-false-9500.png",
+      "time": 9.5,
+      "before_mae": 5.260769622207794,
+      "probe_mae": 5.260699433223955,
+      "before_camera": 0.5824179845813949,
+      "probe_camera": 0.5824104965292644,
+      "before_scale": 8.678766566738716e-06,
+      "probe_scale": 1.1242838871883265e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-9500.png": "1fdd9cc211c2810659cb430445421f6aacb2aecd315b442515f369f5cc9fc44e",
+        ".work\\fume-focus-before-public\\800-1-false-9500.png": "18a108b3ed9ed885e9e7f2af73af2218b03a1fe5be93714ee041a7f4221fe4f6",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-9500.png": "7d656e4cf3ae5345d4a78a30eb439275a6f42743a9ac1d7a7f49ae39bd1816ea"
+      }
+    },
+    {
+      "file": "800-1-false-10000.png",
+      "time": 10,
+      "before_mae": 47.77610838347669,
+      "probe_mae": 47.77604070532934,
+      "before_camera": 6.406726325736688,
+      "probe_camera": 6.406726214945738,
+      "before_scale": 0.05622125350797391,
+      "probe_scale": 0.05622097946848903,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-10000.png": "7b9057c78f39f92125fbf478961df379b061fe038ce4ede702e82518126abc6e",
+        ".work\\fume-focus-before-public\\800-1-false-10000.png": "65ce92e89e719c5b7a1303ac3ef18483929117d1107bf8b057faa5b32c12c251",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-10000.png": "82a08d2b21649391752a1e737be1f2eae57c0a43eb0913447dcb3ea30d436bfc"
+      }
+    },
+    {
+      "file": "800-1-false-10700.png",
+      "time": 10.7,
+      "before_mae": 6.686279774891194,
+      "probe_mae": 6.730708555701003,
+      "before_camera": 1.9569311495238086e-05,
+      "probe_camera": 0.00018614797698467708,
+      "before_scale": 0.0006545936971091293,
+      "probe_scale": 0.0006649075865274301,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-10700.png": "826758757b822c58be01043057d2f1c54884b522268ad744b7d00330d42956ff",
+        ".work\\fume-focus-before-public\\800-1-false-10700.png": "52d22ddf8d811e5d3ee37b6db9f08b575214faee136fc4e97806a9b3f9554156",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-10700.png": "b51b822032ac80d4270726d7927125500e793a875ec084c59b55fd38d694bf0f"
+      }
+    },
+    {
+      "file": "800-1-false-11500.png",
+      "time": 11.5,
+      "before_mae": 7.013413004563447,
+      "probe_mae": 7.013942465269899,
+      "before_camera": 5.821906325906276e-05,
+      "probe_camera": 5.823999117205851e-05,
+      "before_scale": 2.5712965508462027e-06,
+      "probe_scale": 2.8096591017656714e-06,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-false-11500.png": "2bf36cdd62d01d8df3af8e0488638321768975a230ec1ad71ce17767744d5f54",
+        ".work\\fume-focus-before-public\\800-1-false-11500.png": "5e968dac0b707f8aaa33c3fc8d16aef4cb5f428f05d6448e53da9c0a85ac67ab",
+        "build\\verification\\fume-mounted-kotlin\\800-1-false-11500.png": "498ef6ea59bfdfdc45e59301cfd38ee4183a7d4f172f929cd83a6b8684ea6b79"
+      }
+    },
+    {
+      "file": "800-1-true-0.png",
+      "time": 0,
+      "before_mae": 1.308466061947956,
+      "probe_mae": 1.308466061947956,
+      "before_camera": 0.0,
+      "probe_camera": 0.0,
+      "before_scale": 0.0,
+      "probe_scale": 0.0,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-0.png": "694e229284ffed198485b32350eb78f9622536cc1226da0a37c5822fd6fa0a23",
+        ".work\\fume-focus-before-public\\800-1-true-0.png": "d1046cbc49e864d9e4b4dabcd92a2259743593fa1937216a92a2397b7e0ef152",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-0.png": "d1046cbc49e864d9e4b4dabcd92a2259743593fa1937216a92a2397b7e0ef152"
+      }
+    },
+    {
+      "file": "800-1-true-690.png",
+      "time": 0.69,
+      "before_mae": 1.443310189011958,
+      "probe_mae": 1.4428142392681986,
+      "before_camera": 0.004733244916417871,
+      "probe_camera": 0.0029111755732981375,
+      "before_scale": 3.3794946012633e-05,
+      "probe_scale": 7.790004447327803e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-690.png": "d42df4d97a14d2c38ca8b8c93a985a609bc22c7a397256115aee4db9a64d3793",
+        ".work\\fume-focus-before-public\\800-1-true-690.png": "fc15eafbe4aaf26f4d5d84b522cefacfc7f8591217510c7fc733c066b8a34a47",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-690.png": "dd709cdb27f4e09d4b29f6f5302cca85432fde63e31acc5ca52e277a5bed799e"
+      }
+    },
+    {
+      "file": "800-1-true-700.png",
+      "time": 0.7,
+      "before_mae": 2.043472537598315,
+      "probe_mae": 2.0452742949287526,
+      "before_camera": 0.17394553754222433,
+      "probe_camera": 0.16938367668736953,
+      "before_scale": 2.469321656761725e-05,
+      "probe_scale": 6.736239365068286e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-700.png": "fe48448bc4739a270fd6d52621b46814175b5ae1322da4acb3e64a382ea5d9ad",
+        ".work\\fume-focus-before-public\\800-1-true-700.png": "0fb16a32b385a1fc3f84e6f7c873011b3a66d1ba7f16776455b06a5e2e1bb03f",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-700.png": "405bf52dbc9eb43a9052bdfc848df90be951032c74422803a7229e4355815803"
+      }
+    },
+    {
+      "file": "800-1-true-717.png",
+      "time": 0.717,
+      "before_mae": 2.238496071829405,
+      "probe_mae": 2.2430575597242264,
+      "before_camera": 0.39273848713269766,
+      "probe_camera": 0.38879465317266476,
+      "before_scale": 0.00013606465795046319,
+      "probe_scale": 9.578817480249135e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-717.png": "e071f88ffc78f636a35b6159493175ab5512484d708c7d57d7cb5a19d42c523d",
+        ".work\\fume-focus-before-public\\800-1-true-717.png": "898dbd11e27434e7844ac531da871f88486d06299243693e3d20107283076ce0",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-717.png": "4c0a41d0af54dac0e01b7507295a12c0a96057827797c1b5ec9926c307f64b7e"
+      }
+    },
+    {
+      "file": "800-1-true-750.png",
+      "time": 0.75,
+      "before_mae": 2.9057950921946487,
+      "probe_mae": 2.908590970007856,
+      "before_camera": 0.7975616345342202,
+      "probe_camera": 0.7947551259541863,
+      "before_scale": 0.00010177848657999533,
+      "probe_scale": 6.594345379684619e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-750.png": "f07197ba7d8afb5b85ff2e57a5af1cee956aab4b09585d950d6300b1f1ed8860",
+        ".work\\fume-focus-before-public\\800-1-true-750.png": "9a7eb859879b5d3741bd37b50c39bf74d8ac8215bd18b02957b592da397da51a",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-750.png": "89bb1fecbb7720201878cb830609db5852a9071970906865df7a06d4e74190bb"
+      }
+    },
+    {
+      "file": "800-1-true-800.png",
+      "time": 0.8,
+      "before_mae": 3.6078212447421825,
+      "probe_mae": 3.6101736571938177,
+      "before_camera": 1.031232729589972,
+      "probe_camera": 1.029578961110658,
+      "before_scale": 6.166675778995767e-05,
+      "probe_scale": 3.196801832139329e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-800.png": "9e5e59382b517d61f3890667c36aef624e14260d0fb194f3ca4cd5dd290e1ac6",
+        ".work\\fume-focus-before-public\\800-1-true-800.png": "3f5cb78940dbb07e7b76b14afcbde2eda8b5b5486ab94e562fa5351114e109c8",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-800.png": "3197f5e08001324f66122b898a0ffca703d86af365e90c766bd7ccf768129a85"
+      }
+    },
+    {
+      "file": "800-1-true-900.png",
+      "time": 0.9,
+      "before_mae": 3.882513067516508,
+      "probe_mae": 3.880485037240913,
+      "before_camera": 1.0918607625397543,
+      "probe_camera": 1.0923669035406083,
+      "before_scale": 1.5667782447215117e-05,
+      "probe_scale": 4.088703718596598e-06,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-900.png": "f3c16bbcf3579a59b49961e2907621cda6ebbd4a0546af9d0df5fa717b948527",
+        ".work\\fume-focus-before-public\\800-1-true-900.png": "ff43ab5f9442af0a598d773113f2d929c387af75af868f08efb06df06ed38e5f",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-900.png": "fd022806b05325acac7e15d6adf1e6b10cea67a6ac4d63f01da72297c91c4cc6"
+      }
+    },
+    {
+      "file": "800-1-true-1000.png",
+      "time": 1,
+      "before_mae": 7.697002136164837,
+      "probe_mae": 7.696129346468577,
+      "before_camera": 3.2466826883002335,
+      "probe_camera": 3.246849372444986,
+      "before_scale": 2.8898150586931237e-06,
+      "probe_scale": 1.5604387676004805e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-1000.png": "de9798631f14fbee2e8bc49f5657fcd8735204e3025455f59d166f8e483a61c5",
+        ".work\\fume-focus-before-public\\800-1-true-1000.png": "79ec62347d72a5e45daa24262564c62286fc5a3f04afae185f295f790a5d6876",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-1000.png": "dee412a8405490b8292895d1e8c2ea64214b4d76cc585ab7243e5e4d8db39692"
+      }
+    },
+    {
+      "file": "800-1-true-1150.png",
+      "time": 1.15,
+      "before_mae": 8.650150287257924,
+      "probe_mae": 8.649613818818247,
+      "before_camera": 4.001019685867115,
+      "probe_camera": 4.001049249497423,
+      "before_scale": 8.697858368766909e-06,
+      "probe_scale": 1.4975036687236987e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-1150.png": "c4fb1dbd50e71dc0d18e30d0b55816f1e30a9e56caf1d66ba5e3f4e58ea465b7",
+        ".work\\fume-focus-before-public\\800-1-true-1150.png": "a83e46689e212bc5d0069e26b39768526944ac74e44e433d28e0cd3ec80b2444",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-1150.png": "2d8565360817f1c480ad8a881bc2425133289473200517c73e44986c0c028909"
+      }
+    },
+    {
+      "file": "800-1-true-1300.png",
+      "time": 1.3,
+      "before_mae": 3.5867065153196656,
+      "probe_mae": 3.5863203598060784,
+      "before_camera": 1.0444545187100691,
+      "probe_camera": 1.044461571654009,
+      "before_scale": 6.591080766504831e-06,
+      "probe_scale": 9.575319849908226e-06,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-1300.png": "437c550d6bbc6e53af33b9c00f29b1e7fc70c91994948f285bf3e3994a5b7637",
+        ".work\\fume-focus-before-public\\800-1-true-1300.png": "1924b8ecc790082e3ca00f29aa75e6b75aa57f2c615f830f9c594d9952d77333",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-1300.png": "ac43d25e233585d1b871210ab019e8965bd2bba278971cc6a12af6b357bb5364"
+      }
+    },
+    {
+      "file": "800-1-true-2600.png",
+      "time": 2.6,
+      "before_mae": 3.9344906760991654,
+      "probe_mae": 3.9344906760991654,
+      "before_camera": 0.7884606995781113,
+      "probe_camera": 0.788460714235509,
+      "before_scale": 7.033218563101684e-09,
+      "probe_scale": 4.157606592336549e-09,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-2600.png": "83d8970c88e3904d31bb01bfcef5678a498a5f94bd604c80cd96cc2a39818ee5",
+        ".work\\fume-focus-before-public\\800-1-true-2600.png": "307b56cd33eba71a461a43499098db31e62834d71b008cce28959faf4be8cf5e",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-2600.png": "307b56cd33eba71a461a43499098db31e62834d71b008cce28959faf4be8cf5e"
+      }
+    },
+    {
+      "file": "800-1-true-3000.png",
+      "time": 3,
+      "before_mae": 19.10160308825329,
+      "probe_mae": 19.10160308825329,
+      "before_camera": 2.8427758710944566,
+      "probe_camera": 2.842775734319241,
+      "before_scale": 0.00014075304126592858,
+      "probe_scale": 0.0001407533713795317,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-3000.png": "bcf55b3da444c1b4d26ffc9cae292487f351dfd8b8aeb5062cbbb06d0606df9b",
+        ".work\\fume-focus-before-public\\800-1-true-3000.png": "debce07c21d241bf26e4c8a85d84e74263377093963287d6733b06dcb9d8ce5b",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-3000.png": "debce07c21d241bf26e4c8a85d84e74263377093963287d6733b06dcb9d8ce5b"
+      }
+    },
+    {
+      "file": "800-1-true-3150.png",
+      "time": 3.15,
+      "before_mae": 53.66891938514992,
+      "probe_mae": 53.66645966010334,
+      "before_camera": 15.9332727520356,
+      "probe_camera": 15.981225954624646,
+      "before_scale": 0.010091546824294806,
+      "probe_scale": 0.010104532572081215,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-3150.png": "e5416ed85c20ab2b5f856e45b7f3d0f066206b952757828d8abef849426d9add",
+        ".work\\fume-focus-before-public\\800-1-true-3150.png": "46e0e79af7b8ee83a3b0b8a4eef458fb06984094b2a99106eb55938119b83b38",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-3150.png": "00954209e5fb8aa11d94b845eb3eeb93a73ba7a76c1d15f62e16856a97a9ed22"
+      }
+    },
+    {
+      "file": "800-1-true-4200.png",
+      "time": 4.2,
+      "before_mae": 6.499746995572423,
+      "probe_mae": 6.500216860937924,
+      "before_camera": 1.2045460521720293,
+      "probe_camera": 1.2044840640120165,
+      "before_scale": 3.463895383304383e-05,
+      "probe_scale": 4.513100067837783e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-4200.png": "788eed53c60e9ccb6616b4012a6df311fe49bea4c474c748af126e2be8288568",
+        ".work\\fume-focus-before-public\\800-1-true-4200.png": "6b4df549a5cb64becb7ca754f16a9adb38d9665fcde90bce7133c0179e2d5f29",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-4200.png": "1f51a3d66cf1d884f8dfa7fe87fa2e5c4851a910dccdf54beec9d64062726196"
+      }
+    },
+    {
+      "file": "800-1-true-5400.png",
+      "time": 5.4,
+      "before_mae": 3.3505546584154877,
+      "probe_mae": 3.3505546584154877,
+      "before_camera": 0.1715174137672875,
+      "probe_camera": 0.17151739903017063,
+      "before_scale": 0.0001510023279147621,
+      "probe_scale": 0.00015102046455273133,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-5400.png": "ebeeba3771dcf5378973bee92f10ce20af62a78a4397a569bf66db713e2a3651",
+        ".work\\fume-focus-before-public\\800-1-true-5400.png": "9913bc84aaf6c6a25bff2c6bfde3630d56acdf0f76386de33d6d97e667d0120c",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-5400.png": "9913bc84aaf6c6a25bff2c6bfde3630d56acdf0f76386de33d6d97e667d0120c"
+      }
+    },
+    {
+      "file": "800-1-true-5600.png",
+      "time": 5.6,
+      "before_mae": 3.78211048794813,
+      "probe_mae": 3.547314960901961,
+      "before_camera": 0.41010183408784445,
+      "probe_camera": 0.3864283963749206,
+      "before_scale": 3.115204729731147e-06,
+      "probe_scale": 1.3435804909978089e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-5600.png": "3f93a2b987ba28c2775c85f2693eb4406dc097e145bb6236b41d7f7b9ed34a3d",
+        ".work\\fume-focus-before-public\\800-1-true-5600.png": "5ca91b3c2730e15336f0653d5b0ca359700630e33392aa5090f7b9464621eab9",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-5600.png": "541ae6e826c71530d92e609353f28d139809c2fd49bde917487561452af56512"
+      }
+    },
+    {
+      "file": "800-1-true-6300.png",
+      "time": 6.3,
+      "before_mae": 5.45845267064338,
+      "probe_mae": 5.460659962242752,
+      "before_camera": 0.626196048744205,
+      "probe_camera": 0.6262434939414752,
+      "before_scale": 7.5000224746268884e-06,
+      "probe_scale": 1.6101013697200628e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-6300.png": "17e7ec96945d0f477d3d59ccb184d55cd7b14ea4c7f741b8d017c058d5363e6a",
+        ".work\\fume-focus-before-public\\800-1-true-6300.png": "848350dcc44c7328d0adb7fe7fd8ab36a49cfe78cbde6f4400ad09ae10fb108e",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-6300.png": "e28641e59c603d10e3915231813be94928a2f2b102f9879888fa4acabe37e956"
+      }
+    },
+    {
+      "file": "800-1-true-7600.png",
+      "time": 7.6,
+      "before_mae": 2.6515794533015637,
+      "probe_mae": 2.6515794533015637,
+      "before_camera": 0.25449297619882005,
+      "probe_camera": 0.25449360897943746,
+      "before_scale": 1.4456778196780817e-07,
+      "probe_scale": 1.5528689800703432e-07,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-7600.png": "13227aa0c41b978699c4e82cd73a8c912d9da9ec6cb55377c519aad2ac1bdd62",
+        ".work\\fume-focus-before-public\\800-1-true-7600.png": "885f9c64258b045c3d30e78923244953aae34ab6b4b121c9806b4de3f133e79f",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-7600.png": "885f9c64258b045c3d30e78923244953aae34ab6b4b121c9806b4de3f133e79f"
+      }
+    },
+    {
+      "file": "800-1-true-8300.png",
+      "time": 8.3,
+      "before_mae": 5.0353373864745175,
+      "probe_mae": 11.929592434136456,
+      "before_camera": 0.7506810407615798,
+      "probe_camera": 2.2310085919918947,
+      "before_scale": 0.0036701953381084174,
+      "probe_scale": 0.0035396004638692524,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-8300.png": "e72ab3427189fd06b19f43a85475c882da97bc00dbf0b8b881805a2e0f728cf7",
+        ".work\\fume-focus-before-public\\800-1-true-8300.png": "a12be49346e147ce7485e5284f06f52c56118ac440ee5f2914c2db6109779aec",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-8300.png": "84af3c2ecf2050631fe59ef80b7296fa39f949d18a4fb3185cfd49af6968b20d"
+      }
+    },
+    {
+      "file": "800-1-true-9500.png",
+      "time": 9.5,
+      "before_mae": 3.8788548462186707,
+      "probe_mae": 3.878890205022129,
+      "before_camera": 0.2459242654631297,
+      "probe_camera": 0.24592930170675062,
+      "before_scale": 8.678766615588529e-06,
+      "probe_scale": 1.1242879259576455e-05,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-9500.png": "706853d40c3b84ce7169b3e325a923f04d977ce077dfd3aaaebdd39bce3e2bd1",
+        ".work\\fume-focus-before-public\\800-1-true-9500.png": "1c65f22c0d5fb1805c991ac3be9c15ddea29b7fe0a7c91dd52f98b5eac572379",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-9500.png": "076fd019c0ac931d529259f633d58eec00af80e8cf07fc742644c22a3c984e0a"
+      }
+    },
+    {
+      "file": "800-1-true-10000.png",
+      "time": 10,
+      "before_mae": 47.76524155437669,
+      "probe_mae": 47.76526003832338,
+      "before_camera": 6.403402929207679,
+      "probe_camera": 6.403402874277482,
+      "before_scale": 0.056221253507940494,
+      "probe_scale": 0.056220979464103316,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-10000.png": "5a642cbf1291b26d5c6f8a96a452c51024d78ead7668c81907553082b47980a7",
+        ".work\\fume-focus-before-public\\800-1-true-10000.png": "121b98e76920a77c40ade8bc73166bf1c5688f1a1f269e9333e06592c4775b43",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-10000.png": "169e4cbae000ece2fbacdd773f7988cf015f1f73ca3eeb3d0956dc4bd30101a1"
+      }
+    },
+    {
+      "file": "800-1-true-10700.png",
+      "time": 10.7,
+      "before_mae": 6.686458787858445,
+      "probe_mae": 6.730708555701003,
+      "before_camera": 2.1580075853491996e-05,
+      "probe_camera": 0.00018716897669487809,
+      "before_scale": 0.0006545937120475132,
+      "probe_scale": 0.0006649075775444491,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-10700.png": "826758757b822c58be01043057d2f1c54884b522268ad744b7d00330d42956ff",
+        ".work\\fume-focus-before-public\\800-1-true-10700.png": "b79930ee1668c2afa4bb60106b388176eebe777d28f9f8320286c515a04450f3",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-10700.png": "b51b822032ac80d4270726d7927125500e793a875ec084c59b55fd38d694bf0f"
+      }
+    },
+    {
+      "file": "800-1-true-11500.png",
+      "time": 11.5,
+      "before_mae": 7.013413004563447,
+      "probe_mae": 7.013942465269899,
+      "before_camera": 5.821912283037892e-05,
+      "probe_camera": 5.8240058306668695e-05,
+      "before_scale": 2.57129687908364e-06,
+      "probe_scale": 2.8096590850013037e-06,
+      "sha256": {
+        "build\\verification\\fume-mounted-browser\\800-1-true-11500.png": "2bf36cdd62d01d8df3af8e0488638321768975a230ec1ad71ce17767744d5f54",
+        ".work\\fume-focus-before-public\\800-1-true-11500.png": "5e968dac0b707f8aaa33c3fc8d16aef4cb5f428f05d6448e53da9c0a85ac67ab",
+        "build\\verification\\fume-mounted-kotlin\\800-1-true-11500.png": "498ef6ea59bfdfdc45e59301cfd38ee4183a7d4f172f929cd83a6b8684ea6b79"
+      }
+    }
+  ],
+  "mean_before": 8.175929496960679,
+  "mean_probe": 8.664703765603548,
+  "peak_before_camera": 15.9332727520356,
+  "peak_probe_camera": 15.981225954624646,
+  "peak_before_scale": 0.05622125350797391,
+  "peak_probe_scale": 0.05622097946848903
+}

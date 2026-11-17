@@ -38,3 +38,8 @@ Three/OpenGL场景引擎。共同Double数学无native依赖；JVM Skia的Compos
 JVM公开Skia表接口可读OS/2；Android此适配尚无法读取resolved Typeface字表，退回
 Paint度量，中文middle一致性未实现/未验证，不能称平台有意差异或开放镜台。
 无源PNG复用；证据verification/diorama-text-plane。两端构建/JVM离屏通过，无设备。
+
+活动材质内核追加：原updateDioramaActiveUnits实际Three对象832组，统一线性色/
+渐变/显现/辉光/灵魂层13字段峰差0，finite operator门槛1e-10。媒体包络独立使用
+事件分段指数解，不按显示帧累加，原RAF右端采样/Float32连续差异尚待整屏比较。
+未伪造音频；无活动文字三层画面验收，详见verification/diorama-unit-frame。

@@ -1562,3 +1562,13 @@ Android fallback/remaining parity is explicit. No source raster/font assets or
 full 3D/background engine copied. Source diagnostics only observe Canvas baseline
 metrics. Original24 WebGL vs independent24 Kotlin text frames and residuals are
 in verification/diorama-text-plane. Does not cover active planes/CameraRig/fog.
+
+### Diorama active-unit material kernel (2026-11-18)
+Pinned cc6226e4 dioramaSceneFrame.ts:updateDioramaActiveUnits,
+dioramaSceneUnits.ts:resolveGradientEnergy/resolveDioramaUnitFill and
+sceneConstants.ts -> DioramaUnitFrame.kt: linear unified fill/neutral separation,
+reveal, glow and soul transform/opacity; source Float32 finite operator kept as
+explicit test seam. Independent analytic media envelopes reconstruct event-defined
+attack/release with no frame replay. No audio analysis, beat or body raster copied.
+Original RAF-boundary quantization is not claimed identical.832 actual original
+Three material/mesh controls and scope: verification/diorama-unit-frame.

@@ -91,11 +91,16 @@ fbbf7f6 Fume首次打印父层入场：实际原React/canvas挂载92帧；.985�
 EGC跨parser片段保留全部内部clock。只是内部内核，没有新公开主题/视觉结论。
 两端构建/原透视数值回归通过，证据verification/diorama-text。
 
-镜台独立完整文字透视：同字体/视点24原WebGL对Kotlin自产纹理，advance/缩图字号/
+e3bb67c 镜台独立完整文字透视：同字体/视点24原WebGL对Kotlin自产纹理，advance/缩图字号/
 画布尺寸精确一致、middle基线1e-6内；修复悬挂空格漏算11px与中文hhea/OS2错位。
 全非背景MAE13.081760/墨迹盒峰2px，仍有采样差。没有共享原PNG、没有图像配准。
 原失败CJK图/报告保留；JVM离屏/两端构建通过，无设备/真实窗口。Android字体表度量
 暂缺，不能宣称其中文基线通过。证据verification/diorama-text-plane。
+
+镜台活动材质内核：实际原updateDioramaActiveUnits/Three对象832组13字段峰0，
+原Float32写入/线性色/关键词/渐变/显现/注册辉光/灵魂层阶段均核对。独立媒体指数
+包络可逆/暂停，事件边界原指数1e-12；不是原RAF连续画面等价或视觉验收。
+两端构建通过，下一项仍是完整塑形切片/三层实际绘制，证据verification/diorama-unit-frame。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

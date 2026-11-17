@@ -183,7 +183,17 @@ internal class CappellaPlaybackPreparation(private val stage:CappellaStagePrepar
                 val targetChanged=previous!=null&&(floor(previous.first+.5)!=floor(top+.5)||
                     floor(previous.first+previous.second+.5)!=floor(top+h+.5))
                 if(targetChanged&&e.projections.lastOrNull()?.first!=t) {
-                    val offset=e.projection(t)
+                    // A reveal commit while preceding frame heights still
+                    // animate must retain the measured position as well as
+                    // its running projection. Restarting only the projection
+                    // loses that flow displacement (source trace: row 7,
+                    // overlap/chaotic at 2.0167..2.09). Once flow has settled,
+                    // the snapshot is the current box, not the stale commit.
+                    // This semantic reconstruction still differs from React's
+                    // RAF batching; see verification/cappella-presence.
+                    val priorRows=after.keys.takeWhile{it!==e}
+                    val movingFlow=priorRows.any{!it.height.at(t).done||!it.margin.at(t).done}
+                    val offset=e.projection(t)+if(movingFlow)previous.first-top else 0.0
                     if(offset!=0.0)e.projections+=t to offset
                 }
                 e.measured=top to h

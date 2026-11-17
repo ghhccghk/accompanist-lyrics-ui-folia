@@ -10,9 +10,9 @@
 | Fume | 文章/揭示/镜头实验 | 未接入 | 镜头残差未解决 |
 | Diorama | 待有界能力调查 | 无 | 未开始 |
 
-当前唯一下一项：Cappella密集消息projection定位，接公共预览前先排查存在/顺序/可读性。
+当前唯一下一项：Cappella公共组件/sample校准闭环，保留密集projection未通过状态。
 完成条件：复用原240压力矩阵，区分真实算法错误与原Motion布局提交采样；
-不靠固定延迟/提高容差。来源对象/agent桥接已具备，之后接公共交互/sample/原版整屏。
+不靠固定延迟/提高容差。来源对象/agent桥接已具备，接公共交互/sample/原版整屏。
 若投影暂时无解继续其他独立闭环，不将40px残差写成最终标准。
 
 已完成（起点295d260）：
@@ -35,6 +35,11 @@
   agent按显式SourceRef映射，缺失/单agent使用原seed fallback，无alignment推断。
   32原源行/96sender/56renderHints阈值及原reveal/messages控制通过，两端构建通过。
   原last-end不被EGC合并的最大end覆盖；没有新画面/设备结论，见verification/cappella-core。
+
+Cappella projection：同240压力矩阵MAE11.890488→9.173245，盒峰40.109467→22.188593px；
+常规210图hash不变。原局部提交snapshot实测确认漏算前行连续高度位移，已补；
+已稳定布局的旧测量不产生伪位移。仍有React/RAF提交残差，不能宣称正式验收。
+原失败证据及原版被动事件探针见verification/cappella-presence。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

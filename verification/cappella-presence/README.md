@@ -52,3 +52,29 @@ geometry and opacity errors did not improve. All regular-matrix PNG hashes are
 unchanged. The contact sheet was inspected; rapid stacking remains visibly
 different. All Cappella JVM tests, Android debug assembly and Desktop compilation
 passed (.work/cappella-semantic-layout-final.log); no device runtime claim.
+
+## Continuous-flow snapshot correction (2026-11-18)
+
+Passive `didUpdate` observation of original Motion projection nodes is reproducible
+with `node verification/classic-browser/probe-cappella-layout-commits.mjs`. It
+uses the exact pressure probes/60Hz observation sequence and original JSX; no
+layout function or delta is patched. JSON stays in build/verification. Original
+source: CappellaMessageRow.tsx outer layout=position, local visible/target count
+subscriptions; Motion projection node notifyLayoutUpdate/didUpdate snapshot.
+
+For overlap/chaotic row7, source layout top at2.016667 is167.203125 while
+snapshot top170.468760 gives3.265635px compensation; at2.09 it is136.03125
+against170.468740, giving34.437490px. Previously native restarted only its
+existing offset and discarded displacement while preceding heights changed.
+Now retain that measured-flow displacement during ongoing size/margin response.
+Settled flow uses its current box: using a stale commit there produced a false
+26.466px displacement at3.0364; rejected trial log .work/cappella-flow-snapshot.log
+and preserved initial captures build/verification/cappella-presence-before-flow-snapshot.
+
+Same240 pairs/999 rows: MAE11.890488 ->9.173245, geometry peak40.109467
+->22.188593px; opacity peak remains.050386, presence/order exact. Prior worst
+row7 avatar at2.1 improves40.109467 ->14.422399px. All210 regular-matrix source
+and native PNG hashes remain identical. Random seek/pause/remount checks pass.
+Contact sheet inspected: rapid stacking still visibly differs; semantic commit
+reconstruction does not reproduce all original React/RAF batching. This is a
+partial correction, not final visual acceptance or a new acceptance threshold.

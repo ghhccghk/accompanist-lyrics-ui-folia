@@ -39,7 +39,8 @@ rotation to distinguish text/layout errors from response errors. It is not
 counted as independent full-wheel parity. Images are not registered, phase-fit
 or color-fit. Foreground MAE uses union distance>8 from RGB22/36/53.
 
-Current residuals: value0.026009, velocity1.825387 indices/s, wheel0.325107°,
+Baseline at35ef276 (idle width subsequently fixed; latest below):
+value0.026009, velocity1.825387 indices/s, wheel0.325107°,
 counter-rotation0.211319° peak. Primary mean foreground MAE13.235468, peak23.317442;
 source-rotation isolation mean13.087258/peak20.502865. Geometry box peak17.652888px
 persists with the same rotation, alpha4.90e-7 (serialized CSS opacity).
@@ -56,3 +57,15 @@ and `.work/pendolo-tick-stage-before-css-easing.json`. Initial Kotlin test synta
 failure log is preserved; final full Pendolo tests/Android APK/Desktop compilation
 pass in `.work/pendolo-tick-stage-final.log`. No connected-device or public theme
 acceptance is claimed.
+
+## Retained idle-width repair
+
+Latest `comparison.json` uses the same current source for before/after native.
+Box peak17.652888→1.364707px, same-rotation box17.652888→0.105115px;
+untransformed width peak0.03125px. Primary MAE13.235477→13.137682 and same-rotation
+MAE13.087267→12.989472; pixel peaks remain. Original88 isolated/80 static targets
+remain unchanged. Actual CSS interruption/reversal control and source-observer
+hash changes are documented in `verification/pendolo-width/README.md`.
+Idle width is no longer the next task; continue chorus/keywords and remaining
+raster/clock discrepancies before public preview. Full Pendolo tests/Android APK/
+Desktop compile pass, no device acceptance.

@@ -1,0 +1,88 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "inputs": {
+    "settled": [
+      [
+        0,
+        190.123456
+      ],
+      [
+        0.3,
+        211.9
+      ],
+      [
+        0.7,
+        140.23
+      ]
+    ],
+    "interrupt": [
+      [
+        0,
+        200
+      ],
+      [
+        0.3,
+        100
+      ],
+      [
+        0.35,
+        170
+      ],
+      [
+        0.39,
+        110
+      ],
+      [
+        0.43,
+        190
+      ]
+    ],
+    "reverse": [
+      [
+        0,
+        200
+      ],
+      [
+        0.3,
+        100
+      ],
+      [
+        0.35,
+        200
+      ],
+      [
+        0.38,
+        100
+      ],
+      [
+        0.41,
+        200
+      ]
+    ],
+    "nochange": [
+      [
+        0,
+        200
+      ],
+      [
+        0.3,
+        100
+      ],
+      [
+        0.35,
+        100
+      ],
+      [
+        0.38,
+        100
+      ],
+      [
+        0.41,
+        100
+      ]
+    ]
+  },
+  "style": "Original idle DIV transition-all duration-200 + locked Tailwind4 default cubic-bezier(.4,0,.2,1)",
+  "scope": "Isolated actual Blink CSS max-width interpolation/interruption/reversal. Original complete subtree remains separately tested in tick-stage. Animations driven at controlled media style-change times, not source frames."
+}

@@ -1,0 +1,143 @@
+# E scenario time target; Q scenario time maxWidth durationSeconds
+E	settled	0	190.123456
+E	settled	0.3	211.9
+E	settled	0.7	140.23
+Q	settled	0	190.123	0
+Q	settled	0.01	190.123	0
+Q	settled	0.2	190.123	0
+Q	settled	0.25	190.123	0
+Q	settled	0.3	190.123	0.2
+Q	settled	0.31	190.249	0.2
+Q	settled	0.34	193.04	0.2
+Q	settled	0.35	195.276	0.2
+Q	settled	0.36	198.122	0.2
+Q	settled	0.37	201.012	0.2
+Q	settled	0.38	203.485	0.2
+Q	settled	0.39	205.46	0.2
+Q	settled	0.4	207.012	0.2
+Q	settled	0.41	208.235	0.2
+Q	settled	0.42	209.199	0.2
+Q	settled	0.43	209.96	0.2
+Q	settled	0.44	210.555	0.2
+Q	settled	0.45	211.015	0.2
+Q	settled	0.46	211.361	0.2
+Q	settled	0.47	211.611	0.2
+Q	settled	0.49	211.87	0.2
+Q	settled	0.5	211.9	0
+Q	settled	0.55	211.9	0
+Q	settled	0.6	211.9	0
+Q	settled	0.65	211.9	0
+Q	settled	0.7	211.9	0.2
+Q	settled	0.72	210.046	0.2
+Q	settled	0.75	194.944	0.2
+Q	settled	0.8	156.316	0.2
+Q	settled	1	140.23	0
+Q	settled	2	140.23	0
+E	interrupt	0	200
+E	interrupt	0.3	100
+E	interrupt	0.35	170
+E	interrupt	0.39	110
+E	interrupt	0.43	190
+Q	interrupt	0	200	0
+Q	interrupt	0.01	200	0
+Q	interrupt	0.2	200	0
+Q	interrupt	0.25	200	0
+Q	interrupt	0.3	200	0.2
+Q	interrupt	0.31	199.423	0.2
+Q	interrupt	0.34	186.605	0.2
+Q	interrupt	0.35	176.341	0.2
+Q	interrupt	0.36	176.305	0.2
+Q	interrupt	0.37	176.177	0.2
+Q	interrupt	0.38	175.923	0.2
+Q	interrupt	0.39	175.492	0.2
+Q	interrupt	0.4	175.114	0.2
+Q	interrupt	0.41	173.798	0.2
+Q	interrupt	0.42	171.171	0.2
+Q	interrupt	0.43	166.719	0.2
+Q	interrupt	0.44	166.854	0.2
+Q	interrupt	0.45	167.322	0.2
+Q	interrupt	0.46	168.255	0.2
+Q	interrupt	0.47	169.838	0.2
+Q	interrupt	0.49	175.27	0.2
+Q	interrupt	0.5	178.36	0.2
+Q	interrupt	0.55	187.112	0.2
+Q	interrupt	0.6	189.691	0.2
+Q	interrupt	0.65	190	0
+Q	interrupt	0.7	190	0
+Q	interrupt	0.72	190	0
+Q	interrupt	0.75	190	0
+Q	interrupt	0.8	190	0
+Q	interrupt	1	190	0
+Q	interrupt	2	190	0
+E	reverse	0	200
+E	reverse	0.3	100
+E	reverse	0.35	200
+E	reverse	0.38	100
+E	reverse	0.41	200
+Q	reverse	0	200	0
+Q	reverse	0.01	200	0
+Q	reverse	0.2	200	0
+Q	reverse	0.25	200	0
+Q	reverse	0.3	200	0.2
+Q	reverse	0.31	199.423	0.2
+Q	reverse	0.34	186.605	0.2
+Q	reverse	0.35	176.341	0.04731744571374134
+Q	reverse	0.36	179.987	0.04731744571374134
+Q	reverse	0.37	191.895	0.04731744571374134
+Q	reverse	0.38	197.649	0.19529779489654098
+Q	reverse	0.39	197.056	0.19529779489654098
+Q	reverse	0.4	194.985	0.19529779489654098
+Q	reverse	0.41	190.829	0.018342582612045015
+Q	reverse	0.42	198.412	0.018342582612045015
+Q	reverse	0.43	200	0
+Q	reverse	0.44	200	0
+Q	reverse	0.45	200	0
+Q	reverse	0.46	200	0
+Q	reverse	0.47	200	0
+Q	reverse	0.49	200	0
+Q	reverse	0.5	200	0
+Q	reverse	0.55	200	0
+Q	reverse	0.6	200	0
+Q	reverse	0.65	200	0
+Q	reverse	0.7	200	0
+Q	reverse	0.72	200	0
+Q	reverse	0.75	200	0
+Q	reverse	0.8	200	0
+Q	reverse	1	200	0
+Q	reverse	2	200	0
+E	nochange	0	200
+E	nochange	0.3	100
+E	nochange	0.35	100
+E	nochange	0.38	100
+E	nochange	0.41	100
+Q	nochange	0	200	0
+Q	nochange	0.01	200	0
+Q	nochange	0.2	200	0
+Q	nochange	0.25	200	0
+Q	nochange	0.3	200	0.2
+Q	nochange	0.31	199.423	0.2
+Q	nochange	0.34	186.605	0.2
+Q	nochange	0.35	176.341	0.2
+Q	nochange	0.36	163.27	0.2
+Q	nochange	0.37	150	0.2
+Q	nochange	0.38	138.641	0.2
+Q	nochange	0.39	129.573	0.2
+Q	nochange	0.4	122.444	0.2
+Q	nochange	0.41	116.832	0.2
+Q	nochange	0.42	112.403	0.2
+Q	nochange	0.43	108.911	0.2
+Q	nochange	0.44	106.175	0.2
+Q	nochange	0.45	104.063	0.2
+Q	nochange	0.46	102.473	0.2
+Q	nochange	0.47	101.328	0.2
+Q	nochange	0.49	100.135	0.2
+Q	nochange	0.5	100	0
+Q	nochange	0.55	100	0
+Q	nochange	0.6	100	0
+Q	nochange	0.65	100	0
+Q	nochange	0.7	100	0
+Q	nochange	0.72	100	0
+Q	nochange	0.75	100	0
+Q	nochange	0.8	100	0
+Q	nochange	1	100	0
+Q	nochange	2	100	0

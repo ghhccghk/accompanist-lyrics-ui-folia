@@ -11,7 +11,8 @@ out = root / 'verification/pendolo-tick-stage'
 out.mkdir(exist_ok=True)
 report = dict(conditions=conditions, status='Mounted tick/text calibration; remaining numeric/pixel differences are not final theme acceptance.')
 folders = ['pendolo-tick-stage-kotlin', 'pendolo-tick-stage-source-rotation-kotlin']
-for folder in folders:
+before_folders = [n + '-before-width-transition' for n in folders]
+for folder in folders + [n for n in before_folders if (root / 'build/verification' / n).exists()]:
     native = root / 'build/verification' / folder
     frames, hashes = [], {}
     for file in sorted(source.glob('*.png')):
@@ -25,7 +26,7 @@ for folder in folders:
         for p in (file, other): hashes[p.relative_to(root).as_posix()] = hashlib.sha256(p.read_bytes()).hexdigest()
     assert len(frames) == conditions['frames'] == 144
     rows = [r.split('\t') for p in native.glob('*-residual.tsv') for r in p.read_text(encoding='utf8').splitlines() if r and not r.startswith('#')]
-    tick = {f'tick{i}': max(float(r[-1]) for r in rows if r[1] == f'tick{i}') for i in range(4)} if folder == folders[0] else {}
+    tick = {f'tick{i}': max(float(r[-1]) for r in rows if r[1] == f'tick{i}') for i in range(4)} if folder in [folders[0], before_folders[0]] else {}
     geometry = [r for r in rows if not r[1].startswith('tick')]
     entry = dict(frames=frames, png_sha256=hashes, numeric_fields=len(rows),
                  tick_maximum_errors=tick,
@@ -33,6 +34,8 @@ for folder in folders:
                  max_opacity_error=max(float(r[-1]) for r in geometry if int(r[2]) == 4),
                  mean_foreground_mae=sum(r['foreground_mae'] for r in frames) / len(frames),
                  max_foreground_mae=max(r['foreground_mae'] for r in frames))
+    widths = [r.split('\t') for p in native.glob('*-widths.tsv') for r in p.read_text(encoding='utf8').splitlines() if r and not r.startswith('#')]
+    if widths: entry['maximum_untransformed_box_error'] = max(float(r[-1]) for r in widths)
     report[folder] = entry
     print(folder, json.dumps({k: v for k, v in entry.items() if k not in ['frames', 'png_sha256']}))
 (out / 'comparison.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf8')

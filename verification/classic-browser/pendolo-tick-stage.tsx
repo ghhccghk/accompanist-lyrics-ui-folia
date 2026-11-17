@@ -23,5 +23,7 @@ const render=(target:number,current:number)=>root.render(<Reference lines={lines
 const rect=(e:Element)=>{const r=e.getBoundingClientRect();return[r.x,r.y,r.width,r.height]};
 (window as any).readTickWheel=()=>{const wheel=document.querySelector('#pendolo-reference')!.firstElementChild!;const tick=(window as any).tickSource;
  return{...window.stageModel,value:tick.tickSpring.get(),velocity:tick.tickSpring.getVelocity(),rotation:tick.wheelRotationDeg.get(),correction:tick.textRotationCorrectionDeg.get(),
-  rows:[...wheel.children].map((row,i)=>({index:window.stageModel.items[i].index,opacity:+getComputedStyle(row).opacity,content:rect(row.firstElementChild!.firstElementChild!.firstElementChild!.firstElementChild!)}))};};
+  rows:[...wheel.children].map((row,i)=>{const content=row.firstElementChild!.firstElementChild!.firstElementChild!.firstElementChild!,main=content.firstElementChild!.firstElementChild!;
+   return{index:window.stageModel.items[i].index,opacity:+getComputedStyle(row).opacity,content:rect(content),mainMax:parseFloat(getComputedStyle(main).maxWidth),
+    mainWidth:parseFloat(getComputedStyle(main).width),mainHeight:parseFloat(getComputedStyle(main).height),contentWidth:parseFloat(getComputedStyle(content).width),contentHeight:parseFloat(getComputedStyle(content).height)};})};};
 flushSync(()=>render(-1,-1));(window as any).tickInputs={lines,tuning,scene,intensity};(window as any).ready=true;

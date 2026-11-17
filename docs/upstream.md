@@ -1331,3 +1331,22 @@ MAE13.235468 remain. Original idle `transition-all duration-200` max-width is
 not yet reconstructed, a concrete missing behavior rather than an accepted
 platform difference. Evidence/reproduction/failures: verification/pendolo-tick-stage.
 Android APK/Desktop compile pass; no connected-device/public-theme claim.
+
+## 2026-11-17 Pendolo retained idle-node width transitions
+
+cc6226e4 `VisualizerPendolo.tsx` idle main `transition-all duration-200` vs
+subtitle `transition-opacity`, locked Tailwind4 `.4,0,.2,1` →
+`PendoloWidthTrack.kt` / `PendoloWheelTarget.kt`. AGPL-3.0-only attribution
+retained. Independent event-prepared CSS responses preserve continued idle
+identity, remount/active element replacement, interruption/reversing shortening
+and separate main/subtitle shrink-to-fit constraints. Focal heights are measured
+once per configuration; width-layout work/all-song cost remains unmeasured.
+
+Actual Blink CSS control248 widths/138 durations peak0.000511px/2.638e-8s;
+actual unchanged original JSX144 pairs box17.652888→1.364707px, source-rotation
+isolation→0.105115px. Width0.03125px and wheel0.325107° remain due in part to
+source observed-frame vs native semantic-event times; not accepted as exact
+parity. Same-current-source image comparisons, source4-hash observer variation,
+unchanged168 static/sweep native PNGs and reproduction are documented in
+verification/pendolo-width. Android APK/Desktop compile and full Pendolo tests
+pass; no public theme/device/whole-theme acceptance.

@@ -47,7 +47,7 @@ class PendoloPlaybackWheelTest {
                 if(mounted) {
                     val r=sourceRotation
                     if(r==null) PendoloPlaybackWheel(lines,{t},style,Modifier.width(width.dp).height(600.dp),intensity,onRows={observed=it})
-                    else PendoloWheelTarget(lines,{t},track.at(t).target,style,Modifier.width(width.dp).height(600.dp),wheelRotation={r},onRows={observed=it})
+                    else PendoloPlaybackWheel(lines,{t},style,Modifier.width(width.dp).height(600.dp),intensity,wheelRotationOverride={r},onRows={observed=it})
                 }
             }
         }
@@ -56,7 +56,9 @@ class PendoloPlaybackWheelTest {
         val frames=File("../verification/pendolo-fixtures/tick-stage-frames.tsv").readLines().filterNot { it.startsWith('#')||it.isBlank() }.map { it.split('\t') }
             .filter { it[1]==scene&&it[2].toInt()==width&&it[3]==intensityName }
         val source=File("../verification/pendolo-fixtures/tick-stage-rows.tsv").readLines().filterNot { it.startsWith('#')||it.isBlank() }.map { it.split('\t') }.groupBy { it[0] }
+        val sourceWidths=File("../verification/pendolo-fixtures/tick-stage-widths.tsv").readLines().filterNot { it.startsWith('#')||it.isBlank() }.map { it.split('\t') }.groupBy { it[0] }
         val residual=mutableListOf("# file field original native error"); val isolatedResidual=mutableListOf("# file row field original native error")
+        val widthResidual=mutableListOf("# file row field original native error")
         val hashes=linkedMapOf<String,String>()
         fun image()=captureToImage().toAwtImage().getSubimage(0,0,width,600)
         fun hash():String {
@@ -69,6 +71,10 @@ class PendoloPlaybackWheelTest {
             set(f);val key=f[0];val actual=track.at(t)
             assertEquals(f[5].toDouble(),actual.target,"$key target")
             assertEquals(source.getValue(key).map{it[1].toInt()},observed.map{it.item.index},"$key indices")
+            for((e,row)in sourceWidths.getValue(key).zip(observed)) {
+                for((field,pair)in listOf(e[6].toDouble(),e[7].toDouble()).zip(listOf(row.width,row.blockHeight)).withIndex())
+                    widthResidual+=listOf(key,row.item.index,field,pair.first,pair.second,abs(pair.first-pair.second)).joinToString("\t")
+            }
             val values=listOf(actual.value,actual.velocity,actual.wheelRotation,actual.textCorrection)
             for((field,pair)in f.drop(6).map(String::toDouble).zip(values).withIndex())
                 residual+=listOf(key,"tick$field",pair.first,pair.second,abs(pair.first-pair.second)).joinToString("\t")
@@ -85,6 +91,7 @@ class PendoloPlaybackWheelTest {
             geometry(rotation,isolatedResidual);ImageIO.write(image(),"png",isolated.resolve("$key.png"))
         }
         output.resolve("$scene-$intensityName-residual.tsv").writeText(residual.joinToString("\n")+"\n")
+        output.resolve("$scene-$intensityName-widths.tsv").writeText(widthResidual.joinToString("\n")+"\n")
         isolated.resolve("$scene-$intensityName-residual.tsv").writeText(isolatedResidual.joinToString("\n")+"\n")
         for(f in frames.shuffled(Random(419))){set(f);assertEquals(hashes[f[0]],hash(),"seek ${f[0]}")}
         val paused=hash();mainClock.advanceTimeBy(2000);waitForIdle();assertEquals(paused,hash(),"pause")

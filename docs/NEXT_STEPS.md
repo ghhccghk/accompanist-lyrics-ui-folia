@@ -10,9 +10,15 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core分组/内部时钟、完整文字透视、三层合成、13镜头目标隔离核对 | 无 | 完整rig/朝向/切曲、深度/栅格/设备尚未验收 |
 
-当前唯一下一项：Pendolo旧tick/chorus/resize矩阵精确Motion锁补验，接着做七主题真实Desktop窗口运行验证。
-完成条件：旧输入/原图/表/报告先完整保留；专用实例采集并记录实际依赖及变化；
-真实窗口检查暂停/seek/主题切换/字号/resize/卸载，离屏与窗口证据分开，Android无设备准确待验。
+当前唯一下一项：七主题真实Desktop窗口重建验证，定位并修复由窗口/切换触发的实际问题。
+完成条件：公开入口和真实core输入，检查暂停/seek/主题切换/字号/resize/卸载，
+记录真实窗口后端/条件和失败；离屏、原版视觉与实际选歌音频证据分开，Android无设备准确待验。
+
+Pendolo旧tick/chorus/CSS-width精确Motion锁补验已完成：144/168/168原帧，全部fixture/
+被动状态相同；4张tick和6张chorus图有2..19像素微差，峰通道4，光晕168图不变。
+旧源图/native/报告完整保存在.work/pendolo-motion-lock-v1，专用4184实例已关闭。
+13个wheel案例与单独width回归通过；仍有tick盒1.364706px/旋转.325106°、chorus盒6.019072px。
+见verification/motion-lock-audit/pendolo-dense.json；这是精确基线复核，没有新生产行为修复。
 
 Cappella240精确锁复核已完成（0844f4f）：999数值行与被动状态完全不变，38图有原始差异，
 见verification/motion-lock-audit/cappella-pressure.json。局部snapshot候选完整采集配对均值6.370007→6.047083，

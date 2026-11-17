@@ -56,3 +56,9 @@ Full Pendolo tests, Android debug APK and Desktop compile pass
 (`.work/pendolo-width-final.log`). No connected-device claim or public selector.
 Chorus/keywords, residual text coverage, mounted clock sampling and public/core
 integration remain open; not full theme acceptance.
+
+The preceding integration/chorus status is historical before b0ed98e. Pendolo is
+now public/sample calibration preview. 2026-11-18 exact-lock audit retained all
+old evidence and reproduced byte-identical CSS-width fixtures; see
+`verification/motion-lock-audit/pendolo-dense.json`. Width probes do not certify
+the mounted Motion spring or resolve its remaining rotation discrepancy.

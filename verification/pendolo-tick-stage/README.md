@@ -48,7 +48,7 @@ These are **unresolved**, not new acceptance thresholds. Tests enforce source
 target/visible index identities and determinism; the report records remaining
 visual/numeric deltas instead of disguising them as passed parity assertions.
 
-Source review identifies idle main text's `transition-all duration-200` max-width
+Historical next task at35ef276 (resolved below): source review identifies idle main text's `transition-all duration-200` max-width
 transition, while native currently uses the target immediately. This is the next
 specific repair. Mounted browser velocity/RAF quantization also differs from the
 canonical continuous derivative. Before native-clock/easing corrections evidence
@@ -66,6 +66,10 @@ untransformed width peak0.03125px. Primary MAE13.235477→13.137682 and same-rot
 MAE13.087267→12.989472; pixel peaks remain. Original88 isolated/80 static targets
 remain unchanged. Actual CSS interruption/reversal control and source-observer
 hash changes are documented in `verification/pendolo-width/README.md`.
-Idle width is no longer the next task; continue chorus/keywords and remaining
+Historical integration status before b0ed98e: idle width is no longer the next task; continue chorus/keywords and remaining
 raster/clock discrepancies before public preview. Full Pendolo tests/Android APK/
 Desktop compile pass, no device acceptance.
+
+2026-11-18: exact Motion-lock144-frame audit and targeted JVM recapture completed;
+see `verification/motion-lock-audit/README.md` and `pendolo-dense.json`. Public
+Pendolo already exists; remaining geometry/rotation/raster differences remain open.

@@ -68,6 +68,12 @@ python verification/compare-pendolo-chorus-halo.py
 ```
 
 Raw full/isolated/halo images live in `build/verification/pendolo-chorus-*`.
-Next: resolve dense wheel sampling and remaining whole-text/raster differences,
+Historical next task before b0ed98e: resolve dense wheel sampling and remaining whole-text/raster differences,
 then wire a clearly labelled public/core calibration preview and interaction.
 No Pendolo selector or final-theme claim is introduced by this commit.
+
+2026-11-18: exact Motion-lock168 full/168 halo source frames and targeted native
+recapture completed. Fixtures/states unchanged;6 full PNGs have tiny raw edge
+differences, halo hashes all identical. See `verification/motion-lock-audit`.
+Pendolo has been a public/sample calibration preview since b0ed98e; the recorded
+6.019072px/rotation/halo/raster residuals are still not final visual acceptance.

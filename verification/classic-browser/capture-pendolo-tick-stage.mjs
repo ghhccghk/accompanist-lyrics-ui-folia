@@ -5,7 +5,7 @@ const probes=[0,.7,.72,.75,.8,.9,1.1,2.8,2.8001,2.82,2.9,3.1,3.5,4.7,4.72,4.8,4.
 try{
  for(const[scene,width,intensity]of[['latin',380,'calm'],['latin',380,'normal'],['latin',380,'chaotic'],['wrap',380,'normal'],['arabic',800,'normal'],['cjk',800,'normal']]){
   const page=await browser.newPage({viewport:{width,height:600},deviceScaleFactor:1}),errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(`http://127.0.0.1:4173/pendolo-tick-stage.html?scene=${scene}&intensity=${intensity}`);await page.waitForFunction(()=>window.ready,null,{polling:100});
+  await page.goto(`${process.env.FOLIA_REFERENCE_URL??'http://127.0.0.1:4173'}/pendolo-tick-stage.html?scene=${scene}&intensity=${intensity}`);await page.waitForFunction(()=>window.ready,null,{polling:100});
   for(let i=0;i<10;i++)await page.evaluate(()=>window.advanceSourceFrame());
   const base=await page.evaluate(()=>window.testNow),times=[...new Set([...probes,...Array.from({length:541},(_,i)=>i/60)])].sort((a,b)=>a-b);let last=-1;
   for(const t of probes){

@@ -89,3 +89,41 @@ metric for continuity; it is not sufficient for current low-alpha visual accepta
 Any repair comparison must use a SINGLE original/before/after all-nonbackground
 union (including halo), retaining the old report and numeric geometry failures.
 No Android/device/real Desktop-window/performance conclusion from this audit.
+
+## Pendolo dense tick / chorus / CSS-width follow-up (2026-11-18)
+
+The earlier pending statements for these three matrices are historical as of
+this section. `audit-pendolo-motion-lock.mjs` preserves complete old source/native
+images, states, fixtures and reports under `.work/pendolo-motion-lock-v1` before
+capture. A dedicated4184 server/cache and one sequential browser capture at a
+time leave existing servers untouched. The actual original hook/subtree generator
+is unchanged. Motion13.4.3/dom13.4.2/utils13.3.0, Chromium151.0.7922.34, both lock
+hashes, all three font hashes, generated-source hash and original conditions are
+recorded in `pendolo-dense.json`.
+
+All numeric/input/condition fixture bytes and observed states are identical.
+Tick144 frames:4 PNGs differ3..19 pixels. Chorus168 full frames:6 PNGs differ2..19
+pixels. The168 halo-only PNGs are identical. Maximum raw channel difference4,
+full-image MAE0.0000486112. No registration, alpha cutoff or selected recapture;
+the contact shows the first two changed names per matrix. Small edge differences
+are retained and are NOT proven to result from a dependency change. Isolated
+width-response probes are actual Blink CSS interpolation/reversal, not a Motion
+spring matrix; their142 event/query rows are byte-identical as well.
+
+JVM recapture:6 tick-wheel and7 chorus-wheel cases, plus the separate width tests,
+pass with existing pause/random-seek/remount assertions. Logs:
+`.work/pendolo-exact-lock-wheel-test.log`, `.work/pendolo-exact-lock-test.log`.
+Same residuals remain: primary tick geometry1.364706px, wheel0.325106deg,
+source-rotation isolation0.105115px; chorus6.019072px/isolation0.231502px.
+Recomputed historical>8 foreground means13.137673/11.918339 are not a production
+improvement or new acceptance gate. Full results replace only current comparison
+reports; complete old reports are preserved. No Android/visible-window/physical
+performance conclusion. The public theme was already integrated in b0ed98e.
+
+```
+node verification/classic-browser/audit-pendolo-motion-lock.mjs
+python verification/compare-pendolo-motion-lock.py
+```
+
+The audit refuses to overwrite its baseline. Do not rerun the full capture without
+a new concrete reason. Comparators run AFTER capture completion, never concurrently.

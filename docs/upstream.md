@@ -1,5 +1,20 @@
 # Source ledger
 
+## 2026-11-17 Cadenza chorus rings and colors
+
+Same pinned Folia cc6226e4, AGPL-3.0-only. VisualizerCadenza.tsx:398–413
+-> cadenzaChorusRipple in CadenzaFrame.kt and CadenzaTargetStage.kt:
+stage-space Canvas circles retain original center/radius/1.2px stroke/alpha,
+outside each rotated/scaled DOM-equivalent word. wordColoring.ts's default
+resolveWordColor branch -> CadenzaColoring.kt: first-match CJK target-contains-
+token and ASCII lowercase word normalization, ECMAScript trim, same fallback.
+Typed Compose colors replace arbitrary CSS string parsing; per-word colors
+feed body RGB interpolation, original three shadows and ring consistently.
+Internal CadenzaLyric.chorus defaults false; no chorus metadata is invented
+from lyrics-core accompaniment. Existing default128 target PNGs unchanged.
+38 actual original Canvas arc/stroke calls,17 original module resolver probes,
+32 paired actual drawings and limitations:verification/cadenza-accents.
+
 ## 2026-11-17 Cadenza continuous media response
 
 Pinned cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only:

@@ -14,9 +14,12 @@ const query=new URLSearchParams(location.search),scene=query.get('scene')??'lati
 const fields=raw.split(/\r?\n/).find(r=>r.split('\t')[0]===scene)!.split('\t');
 const decode=(v:string)=>new TextDecoder().decode(Uint8Array.from(atob(v),c=>c.charCodeAt(0)));
 const line={fullText:decode(fields[1]),startTime:+fields[2],endTime:+fields[3],words:fields[4].split('|').map(s=>{const w=s.split('~');return{text:decode(w[0]),startTime:+w[1],endTime:+w[2]}})};
+if(query.get('chorus')==='1')(line as any).isChorus=true;
 const lines=annotateLyricLines([line]);
 const theme={fontStyle:'sans',fontFamily:scene==='arabic'?'Cadenza Arabic':scene==='cjk'?'Cadenza CJK':'Cadenza Latin',
- fontWeight:700,animationIntensity:'normal',primaryColor:'#dfe5ec',accentColor:'#f17b4d',secondaryColor:'#adb9c8',wordColors:[]};
+ fontWeight:700,animationIntensity:'normal',primaryColor:'#dfe5ec',accentColor:'#f17b4d',secondaryColor:'#adb9c8',wordColors:[] as {word:string,color:string}[]};
+if(query.get('palette')==='alternate')Object.assign(theme,{primaryColor:'#8ab3df',accentColor:'#d6f456',wordColors:[
+ {word:'Amber amber',color:'#5bcefa'},{word:'echoes echo',color:'#f5a9b8'},{word:'向远方',color:'#5bcefa'},{word:'星光 回响',color:'#f5a9b8'}]});
 const tuning={fontScale:1.12,widthRatio:.72,motionAmount:1,glowIntensity:glow,beamIntensity:0,render:{scale:'global',antialias:'global'}};
 const currentTime=motionValue(.7),audioPower=motionValue(0);const root=createRoot(document.querySelector('#root')!);
 flushSync(()=>root.render(<Cadenza currentTime={currentTime} currentLineIndex={0} lines={lines} theme={theme} audioPower={audioPower} audioBands={{}} cadenzaTuning={tuning}/>));

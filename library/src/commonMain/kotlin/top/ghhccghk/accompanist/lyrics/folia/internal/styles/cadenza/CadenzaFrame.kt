@@ -9,6 +9,16 @@ internal data class CadenzaWordState(val x: Double, val y: Double, val rotation:
     val bodyAlpha: Double, val blur: Double, val activeMix: Double, val glowAlpha: Double)
 internal data class CadenzaWordTarget(val placement: CadenzaPlacement, val status: CadenzaStatus,
     val progress: Double, val state: CadenzaWordState)
+internal data class CadenzaRipple(val x:Double,val y:Double,val radius:Double,val alpha:Double,val stroke:Double=1.2)
+
+/** Original Canvas ring is in stage space, outside the rotated/scaled DOM word. */
+internal fun cadenzaChorusRipple(line:CadenzaLyric,target:CadenzaWordTarget):CadenzaRipple? {
+    val p=target.placement;val s=target.state
+    if(!line.chorus||p.interlude||target.status!=CadenzaStatus.ACTIVE||s.bodyAlpha<.015&&s.glowAlpha<.015)return null
+    val width=p.width*s.scale;val height=p.height*s.scale
+    return CadenzaRipple(s.x+p.width/2,s.y-height*.42,max(width,height*1.08)*(.55+target.progress*.45),
+        .45*(1-target.progress)*s.bodyAlpha)
+}
 
 /** Pure target state only: the source's RAF smoothing is a distinct, still required layer. */
 internal fun cadenzaTargets(time: Double, line: CadenzaLyric, placements: List<CadenzaPlacement>,

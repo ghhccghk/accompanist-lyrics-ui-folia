@@ -14,7 +14,7 @@ internal data class CadenzaWord(val text: String, val start: Double, val end: Do
 internal data class CadenzaHints(val rawDuration: Double, val renderEnd: Double,
     val transition: CadenzaTransition, val reveal: CadenzaReveal)
 internal data class CadenzaLyric(val text: String, val start: Double, val end: Double,
-    val words: List<CadenzaWord>, val hints: CadenzaHints? = null)
+    val words: List<CadenzaWord>, val hints: CadenzaHints? = null, val chorus: Boolean = false)
 internal data class CadenzaGlyphTime(val text: String, val start: Double, val end: Double)
 internal data class CadenzaTransitionTiming(val enter: Double, val exit: Double, val hold: Double)
 internal data class CadenzaTiming(val hints: CadenzaHints?, val end: Double, val reveal: CadenzaReveal,

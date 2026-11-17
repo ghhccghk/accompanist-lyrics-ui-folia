@@ -1,5 +1,27 @@
 # Cadenza fixed-source calibration
 
+## Chorus circles and keyword colors (2026-11-17)
+
+Run `node verification/classic-browser/capture-cadenza-accents.mjs`,
+`:library:jvmTest --tests '*Cadenza*'`, and
+`python verification/compare-cadenza-accents.py` with the fixture server.
+Original Canvas.arc parameters and unrounded strokeStyle assignments are
+observed while the original component remains unchanged.38 stage-space circles
+agree in center/radius/Canvas-stored float stroke within1.706e-13,alpha1e-10.
+The source writes1.2px but Canvas reads1.2000000476837158; native Stroke also
+uses Float. Initial test compared Double1.2 with the Canvas getter and failed;
+the actual Float drawing representation is now compared, not a looser epsilon.
+17 keyword probes import the actual original resolver, including CJK containment,
+Latin punctuation/case,FEFF trim,NEL nontrim,Arabic/accent and empty fallbacks.
+
+Four same-font synthetic scenes,380/800x600,DPR1,chorus=true,energy0,glow1,
+alternate primary/accent and4 keyword colors,8 settled times each:32 pairs.
+Mean foreground RGB MAE6.991457 (Latin6.507372,wrap6.715800,Arabic4.373869,
+CJK10.368786). Contact sheet inspected; no transform/time registration.
+Pause/random native revisits are pixel identical. All128 earlier default
+target PNGs stay byte identical. Not an acceptance threshold or completed theme;
+internal chorus is explicit/defaultfalse, not inferred from core accompaniment.
+
 ## Continuous playback response (2026-11-17)
 
 Run the local fixture server, then

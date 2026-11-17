@@ -45,14 +45,16 @@ private data class CadenzaPiece(val body: BodyParagraphRaster, val baselineOffse
 internal fun CadenzaTargetStage(line: CadenzaLyric, time: ()->Double, textStyle: TextStyle,
     modifier: Modifier=Modifier, glow: Double=1.0, intensity: CadenzaIntensity=CadenzaIntensity.NORMAL,
     fontScale: Double=1.12, motion: Boolean=false, motionAmount: Double=1.0,
+    palette:CadenzaPalette=CadenzaPalette(), widthRatio:Double=.72,
     onPrepared: (CadenzaPreparedText)->Unit={}) {
     val density=LocalDensity.current;val resolver=LocalFontFamilyResolver.current
     val measurer=rememberTextMeasurer(cacheSize=128)
     val currentTime by rememberUpdatedState(time)
     BoxWithConstraints(modifier.fillMaxSize()) {
         val width=maxWidth.value.toDouble();val height=maxHeight.value.toDouble()
-        val prepared=remember(line,width,textStyle,density,measurer,intensity,fontScale){
-            prepareCadenzaText(line,width,measurer,textStyle,density,fontScale=fontScale,intensity=intensity)
+        val prepared=remember(line,width,textStyle,density,measurer,intensity,fontScale,palette,widthRatio){
+            prepareCadenzaText(line,width,measurer,textStyle,density,fontScale=fontScale,intensity=intensity,
+                widthRatio=widthRatio,color=palette::encoded)
         }
         val nativeInk=LocalClassicNativeBodyInk.current
         val pieces=remember(prepared,resolver,density,measurer,nativeInk){
@@ -94,10 +96,14 @@ internal fun CadenzaTargetStage(line: CadenzaLyric, time: ()->Double, textStyle:
                     for(target in targets) {
                         val p=target.placement;val state=target.state;val piece=pieces.getValue(p.id)
                         if(state.bodyAlpha<.015&&state.glowAlpha<.015)continue
+                        val ink=cadenzaInk(p.fragment.color)
+                        cadenzaChorusRipple(line,target)?.let{ring->
+                            drawCircle(ink, (ring.radius*d).toFloat(),Offset((ring.x*d).toFloat(),(ring.y*d).toFloat()),
+                                alpha=ring.alpha.toFloat(),style=Stroke((ring.stroke*d).toFloat()))
+                        }
                         val anchor=Offset(((state.x+p.width/2)*d).toFloat(),((state.y-p.height*.42)*d).toFloat())
                         withTransform({translate(anchor.x,anchor.y);rotate(state.rotation.toFloat(),Offset.Zero);scale(state.scale.toFloat(),state.scale.toFloat(),Offset.Zero)
                             translate((-p.width/2*d).toFloat(),(p.height*.42*d).toFloat()+piece.baselineOffset)}) {
-                            val ink=Color(0xfff17b4d)
                             for((index,shadow)in piece.shadows.withIndex()) {
                                 val value=if(piece.splitGlow)cadenzaCharGlow(t,p.fragment.word,p.fragment.startInWord+index,
                                     max(p.fragment.graphemeCount,piece.shadows.size),p.fragment.timings)else cadenzaWordGlow(t,cadenzaTiming(line),p.fragment.word)
@@ -111,8 +117,8 @@ internal fun CadenzaTargetStage(line: CadenzaLyric, time: ()->Double, textStyle:
                             layer.alpha=state.bodyAlpha.toFloat();layer.blurSigma=if(state.blur>.05)(floor(state.blur*100+.5)/100*d).toFloat()else 0f
                             val pad=ceil(64*d).toInt()
                             layer.record(this,IntSize(piece.layoutSize.width+2*pad,piece.layoutSize.height+2*pad)) {
-                                fun channel(a:Int,b:Int)=floor(a+(b-a)*state.activeMix.coerceIn(0.0,1.0)+.5).toInt()
-                                val color=Color(channel(223,241),channel(229,123),channel(236,77))
+                                fun channel(a:Float,b:Float)=floor((a+(b-a)*state.activeMix.coerceIn(0.0,1.0))*255+.5).toInt()
+                                val color=Color(channel(palette.primary.red,ink.red),channel(palette.primary.green,ink.green),channel(palette.primary.blue,ink.blue))
                                 piece.body.draw(this,color,Offset(pad.toFloat(),pad.toFloat()))
                             }
                             withTransform({translate(-pad.toFloat(),-pad.toFloat())}){drawClassicLayer(layer)}

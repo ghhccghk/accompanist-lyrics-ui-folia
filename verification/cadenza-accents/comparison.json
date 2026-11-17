@@ -1,0 +1,275 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "widths": [
+      380,
+      800
+    ],
+    "height": 600,
+    "DPR": 1,
+    "chorus": true,
+    "energy": 0,
+    "glow": 1,
+    "palette": {
+      "primary": "#8ab3df",
+      "accent": "#d6f456",
+      "colors": [
+        {
+          "word": "Amber amber",
+          "color": "#5bcefa"
+        },
+        {
+          "word": "echoes echo",
+          "color": "#f5a9b8"
+        },
+        {
+          "word": "向远方",
+          "color": "#5bcefa"
+        },
+        {
+          "word": "星光 回响",
+          "color": "#f5a9b8"
+        }
+      ]
+    },
+    "driver": "Actual original mounted component; settled targets. Observe original Canvas.arc arguments and raw strokeStyle assignment. Not transition acceptance."
+  },
+  "status": "Internal calibration. Original settled Canvas chorus circles and DOM text; native whole-run shaping. Not full theme/transition acceptance.",
+  "mean_foreground_mae": 6.991456599675367,
+  "by_scene": {
+    "latin": 6.507372083492623,
+    "wrap": 6.7157999364067695,
+    "arabic": 4.3738685829967645,
+    "cjk": 10.368785795805309
+  },
+  "rings": "rings=38\nmaximum_geometry_delta=1.7053025658242404E-13\n",
+  "frames": [
+    {
+      "file": "arabic-800-1300.png",
+      "foreground_pixels": 72317,
+      "foreground_mae": 5.869320722190725
+    },
+    {
+      "file": "arabic-800-1600.png",
+      "foreground_pixels": 96329,
+      "foreground_mae": 6.605930370570302
+    },
+    {
+      "file": "arabic-800-2200.png",
+      "foreground_pixels": 39347,
+      "foreground_mae": 5.580476275192518
+    },
+    {
+      "file": "arabic-800-2800.png",
+      "foreground_pixels": 47569,
+      "foreground_mae": 6.770564863671719
+    },
+    {
+      "file": "arabic-800-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0
+    },
+    {
+      "file": "arabic-800-700.png",
+      "foreground_pixels": 17990,
+      "foreground_mae": 2.7117287381878823
+    },
+    {
+      "file": "arabic-800-750.png",
+      "foreground_pixels": 25413,
+      "foreground_mae": 3.2826637285378872
+    },
+    {
+      "file": "arabic-800-850.png",
+      "foreground_pixels": 40725,
+      "foreground_mae": 4.170263965623081
+    },
+    {
+      "file": "cjk-800-1300.png",
+      "foreground_pixels": 81696,
+      "foreground_mae": 18.163516777647214
+    },
+    {
+      "file": "cjk-800-1600.png",
+      "foreground_pixels": 106552,
+      "foreground_mae": 9.4975066946968
+    },
+    {
+      "file": "cjk-800-2200.png",
+      "foreground_pixels": 115665,
+      "foreground_mae": 12.679643798902001
+    },
+    {
+      "file": "cjk-800-2800.png",
+      "foreground_pixels": 84564,
+      "foreground_mae": 17.27113586553774
+    },
+    {
+      "file": "cjk-800-3050.png",
+      "foreground_pixels": 494,
+      "foreground_mae": 2.1012145748987856
+    },
+    {
+      "file": "cjk-800-700.png",
+      "foreground_pixels": 22925,
+      "foreground_mae": 6.665488913122501
+    },
+    {
+      "file": "cjk-800-750.png",
+      "foreground_pixels": 47737,
+      "foreground_mae": 7.501867873277891
+    },
+    {
+      "file": "cjk-800-850.png",
+      "foreground_pixels": 64033,
+      "foreground_mae": 9.069911868359544
+    },
+    {
+      "file": "latin-380-1300.png",
+      "foreground_pixels": 24185,
+      "foreground_mae": 12.671338984218869
+    },
+    {
+      "file": "latin-380-1600.png",
+      "foreground_pixels": 32224,
+      "foreground_mae": 8.893774826216484
+    },
+    {
+      "file": "latin-380-2200.png",
+      "foreground_pixels": 24969,
+      "foreground_mae": 8.419093008664078
+    },
+    {
+      "file": "latin-380-2800.png",
+      "foreground_pixels": 24824,
+      "foreground_mae": 10.095955526909442
+    },
+    {
+      "file": "latin-380-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0
+    },
+    {
+      "file": "latin-380-700.png",
+      "foreground_pixels": 3999,
+      "foreground_mae": 1.8201216970909393
+    },
+    {
+      "file": "latin-380-750.png",
+      "foreground_pixels": 5496,
+      "foreground_mae": 3.410844250363901
+    },
+    {
+      "file": "latin-380-850.png",
+      "foreground_pixels": 12355,
+      "foreground_mae": 6.74784837447727
+    },
+    {
+      "file": "wrap-380-1300.png",
+      "foreground_pixels": 25925,
+      "foreground_mae": 12.392079717132754
+    },
+    {
+      "file": "wrap-380-1600.png",
+      "foreground_pixels": 30837,
+      "foreground_mae": 8.088908346034525
+    },
+    {
+      "file": "wrap-380-2200.png",
+      "foreground_pixels": 28328,
+      "foreground_mae": 9.049185729078415
+    },
+    {
+      "file": "wrap-380-2800.png",
+      "foreground_pixels": 24610,
+      "foreground_mae": 9.84568603548693
+    },
+    {
+      "file": "wrap-380-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0
+    },
+    {
+      "file": "wrap-380-700.png",
+      "foreground_pixels": 11423,
+      "foreground_mae": 2.0614257784003036
+    },
+    {
+      "file": "wrap-380-750.png",
+      "foreground_pixels": 16987,
+      "foreground_mae": 4.141892819999607
+    },
+    {
+      "file": "wrap-380-850.png",
+      "foreground_pixels": 26407,
+      "foreground_mae": 8.147221065121622
+    }
+  ],
+  "png_sha256": {
+    "build/verification/cadenza-accents-browser/arabic-800-1300.png": "892d4614b10522cd4385afe1d9b55e3e58ea4545bf99512ed1af247de202fbcb",
+    "build/verification/cadenza-accents-kotlin/arabic-800-1300.png": "215ad1073ecf7e2afc0f161ad8ad0754d30e2c33ea215f2cace80eca5d7c7253",
+    "build/verification/cadenza-accents-browser/arabic-800-1600.png": "aeb0c489bfaed470f01e1209ce6abca898adaf513f43b74ce5eaa192747b9082",
+    "build/verification/cadenza-accents-kotlin/arabic-800-1600.png": "4f01dc230d8f0f0cd93fe8b9f8043afc940d8dd1ddbd517efdde5fb855b066d3",
+    "build/verification/cadenza-accents-browser/arabic-800-2200.png": "d34d2cd258078d3d33de80ba655506822fd558189560c29b10441df78c4a385d",
+    "build/verification/cadenza-accents-kotlin/arabic-800-2200.png": "72ecee737e25792458478cae8c8a7c834abf17585b8fd3fc71a91f72fc295eda",
+    "build/verification/cadenza-accents-browser/arabic-800-2800.png": "5f8dad07acfa05c3ea9074842e9e084747def392865b6a1c4cde357e86c4066a",
+    "build/verification/cadenza-accents-kotlin/arabic-800-2800.png": "b775f4aa222d3ff124a5dcd64885c5e9a465827689ddb9f2e45f57043471f154",
+    "build/verification/cadenza-accents-browser/arabic-800-3050.png": "e71a1a0b3d968c0a0c6e394a5fdb9055b4fec8ec8f263da8bd8540e04d1fcaab",
+    "build/verification/cadenza-accents-kotlin/arabic-800-3050.png": "d3449cdd2ae0d477b19184053022c631f0a10a4cd1bb6a478f4f7db08429e03e",
+    "build/verification/cadenza-accents-browser/arabic-800-700.png": "1437fffdc469247549af61214902f064eb1879766bb8f4bbbe1c5f6cb70b6060",
+    "build/verification/cadenza-accents-kotlin/arabic-800-700.png": "b7dcf2328f6bd318affbcc4ee604aaf297c29be04568fe3f2a17b610eaa8586a",
+    "build/verification/cadenza-accents-browser/arabic-800-750.png": "06024f649d946b9ec64939f4a308f872c273d59a0bdf5a212159f585cc6cb0d8",
+    "build/verification/cadenza-accents-kotlin/arabic-800-750.png": "15ab2f7122dc4b0db61f96bcbca72d5d5eaaa42eb94f5fa9aefeab6e8c192be9",
+    "build/verification/cadenza-accents-browser/arabic-800-850.png": "08b13b04d691f7e9bb7d620597c013998b06fe5350387a16f40a0e02dca6e349",
+    "build/verification/cadenza-accents-kotlin/arabic-800-850.png": "f5b9248b240ce812e53e0c9770a0e43981b1f2be37cb90a773f18ae759cd0d54",
+    "build/verification/cadenza-accents-browser/cjk-800-1300.png": "5e5e6c852810d2ba61694d27894fbc2a1a6816806a3466ec10af7d96d4560469",
+    "build/verification/cadenza-accents-kotlin/cjk-800-1300.png": "02e86f8267e4a52b467751123e0a27fcc38ea80478bdbda7c4ef0ec4ada3b6dc",
+    "build/verification/cadenza-accents-browser/cjk-800-1600.png": "0c4a290c162283390f0a543c990a09f88eb8b6387fefcd9dbf764f89acc25f3d",
+    "build/verification/cadenza-accents-kotlin/cjk-800-1600.png": "78ce633264bf22758a06ae21984760f342d1b3f491057c5fcd348d37b4baacaa",
+    "build/verification/cadenza-accents-browser/cjk-800-2200.png": "f2209045b8dfb3ddf7e6d431d73866455ee2f413ccf9e63440de39cd19feb957",
+    "build/verification/cadenza-accents-kotlin/cjk-800-2200.png": "2bee1c6fbe5972fad41c4483124568ffb70209ba48ef4274a74d2fa5a1f1b985",
+    "build/verification/cadenza-accents-browser/cjk-800-2800.png": "cbcca20681c1c790d055b5d7da8bb95e287cb91283e6d77d12d9de2a8746aaf6",
+    "build/verification/cadenza-accents-kotlin/cjk-800-2800.png": "959f5a415b21f513ff1c55174abe6a71a3b11b97168ca536d86269dbacb9d6d0",
+    "build/verification/cadenza-accents-browser/cjk-800-3050.png": "2b83a6a6fe869bba254fb1aa49e6682754d290d7ec1bd2bc53ee96e10afba6b7",
+    "build/verification/cadenza-accents-kotlin/cjk-800-3050.png": "fa794df24c23d56637fd46c1c83af8b139e0cc18674b72d788b4c56296af3756",
+    "build/verification/cadenza-accents-browser/cjk-800-700.png": "0beab44fa513eb1212e64db50911c4cb4d72b75f94bed3906f814fa8ec653204",
+    "build/verification/cadenza-accents-kotlin/cjk-800-700.png": "10f420a1339276049a4bc14114f4aab1b73ee37c74c6a002aafcb932008d8f85",
+    "build/verification/cadenza-accents-browser/cjk-800-750.png": "053dbacbe2d888c1214d4b7832a118e1c3212670e6853c1a878a8ed7c9ecf3b0",
+    "build/verification/cadenza-accents-kotlin/cjk-800-750.png": "45a9f922aa030266ae42c4436ab44e541b20901321a32705e404fa7f07a80e4b",
+    "build/verification/cadenza-accents-browser/cjk-800-850.png": "7929f87325bedfc98e02c6c38292e3e79e56f79914c56bf0d3c9008691b46f81",
+    "build/verification/cadenza-accents-kotlin/cjk-800-850.png": "1e6146ba3300287b7467722a0939cb5fbfd67fa2c741987e861bb037b498a0b4",
+    "build/verification/cadenza-accents-browser/latin-380-1300.png": "223883f2af047e441ceb5b9cd0e33e08810a743ee4a973db4988815773516428",
+    "build/verification/cadenza-accents-kotlin/latin-380-1300.png": "f418e750d928668be7283f40f1beae6eee6857185a65458b129a95034a533e00",
+    "build/verification/cadenza-accents-browser/latin-380-1600.png": "45fc23d11b9f211dc499e24d4f1417bfdeeb9d9a289ae41c8fc8530f2368c337",
+    "build/verification/cadenza-accents-kotlin/latin-380-1600.png": "dfa08de1cffd38dfc676b6264a84e9cdd9ab22e00237608b067889bcc034ce52",
+    "build/verification/cadenza-accents-browser/latin-380-2200.png": "464f8ba03a782ead1433b688d18a08afc88bbb009f24c5c266612082c7eef70a",
+    "build/verification/cadenza-accents-kotlin/latin-380-2200.png": "30e1ef34e2424dfc1fcbcd1441a1aca4e1b1cf180a175f2bfc140a968f4cf69d",
+    "build/verification/cadenza-accents-browser/latin-380-2800.png": "2cfcc70ef271ce33200a2def07b6b15e8d3aff25920f94232f91f5c3b3bf4494",
+    "build/verification/cadenza-accents-kotlin/latin-380-2800.png": "3f0aa6f244fb6212d785d577426aba93cf95b6fc70b57d1a746f4e2b6d36d154",
+    "build/verification/cadenza-accents-browser/latin-380-3050.png": "cea9e9e21f78253f8401f18842a2afe0115727328c6ef3d888c1628026daf77f",
+    "build/verification/cadenza-accents-kotlin/latin-380-3050.png": "0abfe7ec19eec3a363c768ce7ba49f923b516cb6a6ad55011eea1ad37344aef3",
+    "build/verification/cadenza-accents-browser/latin-380-700.png": "356f40b8f3029a92730e7aa1eabf0aff760c9c9a2388c9d1c6a4c76722e4eeeb",
+    "build/verification/cadenza-accents-kotlin/latin-380-700.png": "a172f2adb2655863661847468980e6593d1465b63e646c00a81adfec4d9b0a7b",
+    "build/verification/cadenza-accents-browser/latin-380-750.png": "29e186c13256ee5ec25651e68947368c2bcaac9792b664f8806276aba7de937a",
+    "build/verification/cadenza-accents-kotlin/latin-380-750.png": "3c1674c87293c32a4efb4f746b501b46477abc7af8d439fbb79b30e99b804a96",
+    "build/verification/cadenza-accents-browser/latin-380-850.png": "6ac6dd40f02480cd03db8a0fba3043c4ed9cc2ffab836162a59ec331b55c6d5a",
+    "build/verification/cadenza-accents-kotlin/latin-380-850.png": "667f65ccdadc32dfeeec824f2c12b24cf3b0f4b7bac9b24869cbbaa8386284f7",
+    "build/verification/cadenza-accents-browser/wrap-380-1300.png": "5751123b8013e540f40bd0883ea667a1ccad5c204ab14e824f05a3d3005af93f",
+    "build/verification/cadenza-accents-kotlin/wrap-380-1300.png": "0287af8e7aa06e634e8197e09ece4ef2b8012bdf2db26438464660c468b317a0",
+    "build/verification/cadenza-accents-browser/wrap-380-1600.png": "8e801c3faedcf1b9d3293579e199199af704ffb7ef9c8999e743863bfe6b16a3",
+    "build/verification/cadenza-accents-kotlin/wrap-380-1600.png": "4b8f8d5ff07672bb7e37e1a0903ceb9f330305566426ca838dfacdd4eb42795d",
+    "build/verification/cadenza-accents-browser/wrap-380-2200.png": "91feca03454fcab2dd18bcf1e3bfdae9cdf358b9747f97e87c1b332f2aa0c4ed",
+    "build/verification/cadenza-accents-kotlin/wrap-380-2200.png": "62d876a18e681dafdd9c070c914bd6ba0464b42f300e5365363ec09604859057",
+    "build/verification/cadenza-accents-browser/wrap-380-2800.png": "992c1aa754d9e3bcde17a3e166cef476fd23eb0b29ed67ab6f515a3d1009f862",
+    "build/verification/cadenza-accents-kotlin/wrap-380-2800.png": "b964175f53afd8e8bbb24b4c9b97744927d23875ed2f0de7d3790adadc1fd387",
+    "build/verification/cadenza-accents-browser/wrap-380-3050.png": "ce025b8779c14bbb96c639a44c60b2a0d0e005bc37711cc72018cf8bca07247a",
+    "build/verification/cadenza-accents-kotlin/wrap-380-3050.png": "ead368423af5826e33a2287d1f7b3b7c1e99d34c8130168b0c725c07553f8c3a",
+    "build/verification/cadenza-accents-browser/wrap-380-700.png": "55b00892ee2550130b1ea90164a332c07aca7f4b09903bf7fefaf0b3a16ba862",
+    "build/verification/cadenza-accents-kotlin/wrap-380-700.png": "4a06df1db7d25defc3e043388b2b2844ec7d438211316952d913460dc6f7815d",
+    "build/verification/cadenza-accents-browser/wrap-380-750.png": "4009494677517bd6efe83afda6cf71c3e5aac0b30a40449986ad27167ae015c2",
+    "build/verification/cadenza-accents-kotlin/wrap-380-750.png": "047c016c1d0676a0446ecf447e568abc3a56eed4a46e2b3501a4518772f68b3f",
+    "build/verification/cadenza-accents-browser/wrap-380-850.png": "84b8e1c6c280de173404936a2e31b4e01ffe9c742edfd5445eb3714bb6c4e8ad",
+    "build/verification/cadenza-accents-kotlin/wrap-380-850.png": "c77632eaf1912adcdb6ba323c8352853143691f887f7372780afb591f0366a13"
+  }
+}

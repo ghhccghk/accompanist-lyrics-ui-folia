@@ -23,7 +23,8 @@ import kotlin.math.*
 internal fun CappellaTargetStage(lines:List<CappellaLine>,title:String,time:()->Double,
     currentLine:()->Int,textStyle:TextStyle,modifier:Modifier=Modifier,
     intensity:CappellaIntensity=CappellaIntensity.NORMAL,palette:CappellaPalette=CappellaPalette(),
-    fontScale:Double=1.0,reducedMotion:Boolean=false,onRows:(List<CappellaRowLayout>)->Unit={}) {
+    fontScale:Double=1.0,reducedMotion:Boolean=false,playbackMotion:Boolean=false,
+    onRows:(List<CappellaRowLayout>)->Unit={}) {
     val density=LocalDensity.current;val resolver=LocalFontFamilyResolver.current
     val measurer=rememberTextMeasurer(cacheSize=32)
     val media by rememberUpdatedState(time);val selected by rememberUpdatedState(currentLine)
@@ -33,30 +34,40 @@ internal fun CappellaTargetStage(lines:List<CappellaLine>,title:String,time:()->
         val prep=remember(lines,title,width,fontScale,intensity,measurer,textStyle,density,resolver) {
             CappellaStagePreparation(lines,title,cappellaStageSize(width,fontScale),intensity,measurer,textStyle,density,resolver)
         }
-        // Recompose only at selection/prefix/target geometry boundaries, not for fades/sweep.
-        val rows by remember(prep,height) { derivedStateOf { prep.at(media(),selected(),height) } }
+        val animation=remember(prep,height,playbackMotion) {
+            if(playbackMotion)CappellaPlaybackPreparation(prep,height)else null
+        }
+        val moving by remember(animation,reducedMotion) { derivedStateOf { animation?.at(media(),reducedMotion) } }
+        // Target mode recomposes at geometry boundaries; moving frame sizes
+        // necessarily update layout during their finite media-time responses.
+        val rows by remember(prep,height,animation,reducedMotion) { derivedStateOf {
+            moving?.map{it.layout}?:prep.at(media(),selected(),height)
+        } }
         val current by remember { derivedStateOf { selected() } }
         SideEffect { observer(rows) }
-        for(row in rows) key(row.message.id) {
+        for((index,row) in rows.withIndex()) key(row.message.id,index) {
+            val motion=moving?.get(index)
             val m=row.message;val line=m.line?.let(lines::get)
-            val active=line!=null&&m.line==current
+            val active=motion?.active?:(line!=null&&m.line==current)
             val right=m.sender.side==CappellaSide.RIGHT
-            val config=cappellaBubbleStyle(prep.size,prep.motion,active,line==null)
-            val box=CappellaBubbleSize(row.bubbleWidth/row.scale,row.bubbleHeight/row.scale)
+            val config=motion?.style?:cappellaBubbleStyle(prep.size,prep.motion,active,line==null)
+            val box=motion?.size?:CappellaBubbleSize(row.bubbleWidth/row.scale,row.bubbleHeight/row.scale)
             val placement=CappellaPlacement(row.bubbleX,row.bubbleY,row.scale,row.opacity)
-            val decoration=remember(palette,intensity,line?.start) { CappellaDecoration(palette,intensity,line?.start?:0.0) }
+            val epoch=motion?.glowEpoch?:line?.start?:0.0
+            val decoration=remember(palette,intensity,epoch) { CappellaDecoration(palette,intensity,epoch) }
             CappellaBubbleTarget(line?:CappellaLine(m.text,0.0,0.0,emptyList()),{media()},textStyle,
                 cappellaBubbleColors(m.sender,palette.primary,palette.accent,palette.secondary,palette.background),
                 Modifier.fillMaxSize(),config,right,active,reducedMotion,box,placement,decoration)
-            CappellaAvatarTarget(CappellaPlacement(row.avatarX,row.avatarY,row.scale,row.opacity),m.sender,
+            CappellaAvatarTarget(CappellaPlacement(row.avatarX,row.avatarY,row.scale,row.opacity*(motion?.avatarOpacity?:1.0)),m.sender,
                 palette,decoration,Modifier.fillMaxSize())
             if(line!=null) {
                 val plan=remember(line){CappellaRevealPlan(line)}
                 val ready by remember(plan,m.line,active) { derivedStateOf {
                     m.line<selected() || media()>=(if(active)plan.timestampReady else line.end)
                 } }
-                if(ready)CappellaTimestampTarget(cappellaTimestamp(line.end),textStyle,palette.secondary,
-                    box,placement,right,Modifier.fillMaxSize())
+                val stamp=if(animation!=null)motion?.timestamp else if(ready)CappellaTimestampFrame(.62,0.0)else null
+                if(stamp!=null)CappellaTimestampTarget(cappellaTimestamp(line.end),textStyle,palette.secondary,
+                    box,placement,right,Modifier.fillMaxSize(),stamp)
             }
         }
     }
@@ -87,7 +98,7 @@ private fun CappellaAvatarTarget(placement:CappellaPlacement,sender:CappellaSend
 
 @Composable
 private fun CappellaTimestampTarget(text:String,base:TextStyle,color:Color,box:CappellaBubbleSize,
-    placement:CappellaPlacement,right:Boolean,modifier:Modifier) {
+    placement:CappellaPlacement,right:Boolean,modifier:Modifier,frame:CappellaTimestampFrame) {
     val density=LocalDensity.current;val resolver=LocalFontFamilyResolver.current
     val measurer=rememberTextMeasurer(cacheSize=8)
     val style=remember(base){base.copy(fontSize=11.sp,fontWeight=FontWeight.Medium,
@@ -102,6 +113,6 @@ private fun CappellaTimestampTarget(text:String,base:TextStyle,color:Color,box:C
         val x=if(right)-advance-8 else box.width+8
         // CSS normal line box uses the font's natural ascent/descent.
         val top=((box.height-4)*d).toFloat()-metrics.descent-paintedNaturalBaseline(paragraph,metrics)
-        drawText(paragraph,color,Offset((x*d).toFloat(),top),alpha=.62f,shadow=Shadow.None)
+        drawText(paragraph,color,Offset((x*d).toFloat(),top+(frame.y*d).toFloat()),alpha=frame.opacity.toFloat(),shadow=Shadow.None)
     } }
 }

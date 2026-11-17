@@ -10,7 +10,7 @@ internal data class CappellaSyllable(val text: String, val start: Double, val en
 internal data class CappellaWord(val text: String, val start: Double, val end: Double,
     val syllables: List<CappellaSyllable> = emptyList())
 internal data class CappellaLine(val text: String, val start: Double, val end: Double,
-    val words: List<CappellaWord>, val agent: String? = null)
+    val words: List<CappellaWord>, val agent: String? = null, val renderEnd: Double = end)
 internal data class CappellaGlyph(val text: String, val start: Double, val end: Double)
 
 internal fun cappellaGraphemes(text: String): List<String> =

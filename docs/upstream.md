@@ -1177,3 +1177,23 @@ No phase fitting,registration,changed expected target values or relaxed0.001px
 target geometry bound. RAF quantization/layout and raster residuals remain;
 this does not claim an exact continuous geometry pass. Scope is isolated,
 continuously active message,not active→passed/group/stack/presence integration.
+
+## 2026-11-17 Cappella mounted media-event stage
+
+cc6226e4 `VisualizerCappella.tsx`, `CappellaMessageRow.tsx`,
+`CappellaBubbleParts.tsx`, `utils/lyrics/renderHints.ts` →
+`CappellaPlaybackPreparation.kt`, internal `CappellaTargetStage.playbackMotion`
+and `CappellaLine.renderEnd`. Preserve original line annotation/last-word end,
+inclusive selection, finite row presence/exit order, width/height tween, group
+spring/margin, row position compensation, avatar fade and timestamp response.
+Adaptation prepares immutable media events, not a display-frame or wall-clock
+animation. Default target-only stage is retained, no public contract yet.
+
+Original installed Motion projection code was inspected as a runtime behavior
+reference (MIT); no Motion implementation is bundled. Source JSX remains
+unchanged. Controlled WAAPI startTime/completion and separate browser tasks are
+documented in verification/cappella-playback/README.md. Original store's guarded
+selected-line React updates are preserved; forced parent-RAF stress diagnostics
+remain separately reproducible.210 original/native pairs,594 row observations,
+exact presence/order and deterministic revisit/pause; geometry3.637201px and
+opacity0.013716 residuals remain. This is not full theme/device acceptance.

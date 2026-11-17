@@ -862,3 +862,19 @@ Generator directly records untouched source;30 scenarios/2952 observations
 and20 shadow probes agree1e-10 including reverse/random queries. Android
 assembleDebug/Desktop compileKotlin passed; pure logic evidence is not
 rendered-theme acceptance. Fixtures and reproduction: verification/cadenza-fixtures.
+
+## 2026-11-17 Cadenza deterministic placements
+
+Pinned `cadenzaPlacements.ts` and fragment/placement subset of
+`cadenzaTypes.ts` → `CadenzaPlacements.kt`. Intact primary hero scoring,
+source ordering, seeded sine offsets, y-band collision-query deduplication,
+elliptical candidates and least-overlap fallback are retained. Same source
+axis-aligned collision rectangles (not a new rotated-box solver), drift and
+ECMAScript trim/CJK ranges. JS rounding uses floor(x+.5). Placement stores
+the entire input fragment including word-relative EGC indices and original
+timings; no timer/text merge discards them.108 original scenarios/450
+placements, maximum field error3.638e-11; repeated preparation equal, input
+immutable. Android/Desktop build passed. Explicit input fragment geometry
+seam only: text measurement/wrapping, rendered blur/transforms and full
+theme/sample integration remain. Source comment directives about hiding
+comments are not behavior and were not copied as instructions.

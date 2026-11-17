@@ -5,5 +5,14 @@ window.testNow=0;let serial=0;window.testRafs=new Map();
 Object.defineProperty(performance,'now',{value:()=>window.testNow});
 window.requestAnimationFrame=cb=>{const id=++serial;window.testRafs.set(id,cb);return id};
 window.cancelAnimationFrame=id=>window.testRafs.delete(id);
-window.advanceSourceFrame=()=>{window.testNow+=1000/60;const cbs=[...window.testRafs.values()];window.testRafs.clear();for(const cb of cbs)cb(window.testNow)};
+window.advanceSourceFrame=(dt=1000/60)=>{window.testNow+=dt;const cbs=[...window.testRafs.values()];window.testRafs.clear();for(const cb of cbs)cb(window.testNow)};
+// Observe copies only; neither source state nor equations are replaced.
+const originalSet=Map.prototype.set;window.observedCadenza=new Map();window.cadenzaObservations=[];
+Map.prototype.set=function(key,value){
+ if(value&&typeof value==='object'&&['x','y','rotation','scale','bodyAlpha','blur','activeMix','glowAlpha'].every(k=>typeof value[k]==='number')){
+  const snapshot={...value};originalSet.call(window.observedCadenza,key,snapshot);
+  window.cadenzaObservations.push({now:window.testNow,id:key,state:snapshot});
+ }
+ return originalSet.call(this,key,value);
+};
 </script><script type="module" src="/cadenza-mounted.tsx"></script></body></html>

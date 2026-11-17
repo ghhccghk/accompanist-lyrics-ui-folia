@@ -28,4 +28,8 @@ flushSync(()=>root.render(<Cadenza currentTime={currentTime} currentLineIndex={0
   inner:(el.firstElementChild as HTMLElement).style.transform,body:(el.querySelector('span')as HTMLElement).style.cssText}));
 };
 (window as any).prepared=buildPreparedState(lines[0],{showText:true,viewport:{width:innerWidth,height:600},theme,tuning});
+(window as any).advanceAt=(t:number,dt:number)=>{
+ flushSync(()=>currentTime.set(t));(window as any).advanceSourceFrame(dt);
+ return Object.fromEntries((window as any).observedCadenza);
+};
 (window as any).ready=true;

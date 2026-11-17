@@ -14,8 +14,12 @@ internal data class CadenzaWordTarget(val placement: CadenzaPlacement, val statu
 internal fun cadenzaTargets(time: Double, line: CadenzaLyric, placements: List<CadenzaPlacement>,
     width: Double, height: Double, intensity: CadenzaIntensity = CadenzaIntensity.NORMAL,
     motionAmount: Double = 1.0): List<CadenzaWordTarget> {
-    val timing=cadenzaTiming(line);val instant=timing.reveal==CadenzaReveal.INSTANT
-    return placements.map{it to cadenzaWordStatus(time,timing,it.fragment.word)}.sortedBy{it.second.ordinal}.map{(p,status)->
+    return placements.map{cadenzaTarget(time,line,it,width,height,intensity,motionAmount)}.sortedBy{it.status.ordinal}
+}
+internal fun cadenzaTarget(time: Double, line: CadenzaLyric, p: CadenzaPlacement, width: Double, height: Double,
+    intensity: CadenzaIntensity=CadenzaIntensity.NORMAL, motionAmount: Double=1.0): CadenzaWordTarget {
+        val timing=cadenzaTiming(line);val instant=timing.reveal==CadenzaReveal.INSTANT
+        val status=cadenzaWordStatus(time,timing,p.fragment.word)
         val word=p.fragment.word
         val pulse=if(status==CadenzaStatus.ACTIVE&&!instant)1+sin(time*10+word.start*5)*.04*motionAmount else 1.0
         val drift=if(instant)0.0 else cadenzaPassedDrift(time,word)
@@ -27,7 +31,6 @@ internal fun cadenzaTargets(time: Double, line: CadenzaLyric, placements: List<C
         // Audio energy is explicitly zero in this text-only/no-analysis port.
         val y=height*.42+sin(time*2.3)*3+p.y+(if(status==CadenzaStatus.PASSED)p.passedDriftY*drift else 0.0)+(if(status==CadenzaStatus.WAITING)p.entryY else 0.0)
         val alpha=when(status){CadenzaStatus.WAITING->0.0;CadenzaStatus.ACTIVE->1.0;else->if(instant)0.0 else if(intensity==CadenzaIntensity.CHAOTIC).9 else .82}
-        CadenzaWordTarget(p,status,cadenzaWordProgress(time,timing.reveal,word),CadenzaWordState(x,y,rotation,scale,alpha,
+        return CadenzaWordTarget(p,status,cadenzaWordProgress(time,timing.reveal,word),CadenzaWordState(x,y,rotation,scale,alpha,
             if(status==CadenzaStatus.WAITING&&!instant)10.0 else 0.0,cadenzaBodyMix(time,timing,word),cadenzaWordGlow(time,timing,word)))
-    }
 }

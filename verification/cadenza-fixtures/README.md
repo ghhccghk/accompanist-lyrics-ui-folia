@@ -1,5 +1,36 @@
 # Cadenza fixed-source calibration
 
+## Continuous playback response (2026-11-17)
+
+Run the local fixture server, then
+`node verification/classic-browser/capture-cadenza-motion.mjs`,
+`:library:jvmTest --tests '*Cadenza*'`, and
+`python verification/compare-cadenza-motion.py`.
+Original component formulas/drawing are unchanged. A test-only Map.set observer
+copies the eight animated fields after original updates; the harness advances
+RAF and media together, unlike settled target probes. Initial mount must have
+exactly one original1/60 update per word. Four synthetic scenes at380/800x600,
+same OFL fonts/DPR1,energy0/glow1;30/60/144Hz and irregular cadences produce
+16 trajectories/9113 word observations and32 actual60Hz/native screenshot pairs.
+
+Native piecewise cubic/sinusoidal forcing uses analytic exponential integration;
+event nodes are independent of display cadence. Immediate mount matches1e-10,
+constant channels1e-12, integral moments against independent Simpson quadrature
+1e-10; finite long/reversed/zero/instant timing and randomized revisit/freeze pass.
+Truncating preparation at each query gives identical response. No source-rate
+phase correction or fixed-FPS frame replay is used. Original RAF endpoint sampling
+remains cadence-dependent:60Hz maximum position0.14666px/rotation0.62183deg/
+scale0.04071/alpha0.03784/blur0.37831px/mix0.02617/glow0.06084;
+other rates and each scene are fully reported in comparison.json.
+
+32 image pairs mean foreground-union RGB MAE6.024388 (Latin5.539713,
+wrap5.406618,Arabic3.888200,CJK9.263023). Contact sheet inspected. Native
+random revisits and pause images strictly identical. This is a distinct playback
+matrix, NOT an improvement comparison against128 settled target images.
+Cadence differences, CJK/raster/coverage differences, chorus ripple, configurable
+colors and host line switching remain unresolved. Internal calibration only,
+no public/sample entry or final theme acceptance; Android runtime unverified.
+
 Reference: Folia v0.7.26 / cc6226e464050a456a2913e062374f23d3844cc5.
 All text is synthetic, no application lyrics or SF Pro resources.
 

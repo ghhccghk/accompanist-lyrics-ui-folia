@@ -1,5 +1,22 @@
 # Source ledger
 
+## 2026-11-17 Cadenza continuous media response
+
+Pinned cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only:
+VisualizerCadenza.tsx:258–386 -> CadenzaMotionTrack.kt / CadenzaFrame.kt.
+Original eight target fields, initialization and rates11/14/16 are retained.
+Original RAF updates sample the current endpoint with clamped dt; native uses
+analytic exponential integrals of piecewise cubic targets plus sinusoids, with
+nodes only at target events and binary-search reconstruction. This intentional
+media-time adaptation freezes at pause and can seek without frame replay; it
+does not reproduce every source refresh-rate-dependent step response.
+Actual unchanged mounted source is observed via copies after Map.set, never
+state mutation.16 trajectories/9113 states,32 same-font/time/viewport image
+pairs record the remaining rate/raster differences, not an equivalence claim.
+Capture scripts, fonts/conditions, reports and reproduction instructions:
+verification/cadenza-fixtures/README.md and verification/cadenza-motion.
+No source/demo assets, source checkout modifications, or runtime JS dependency.
+
 ## Tilt public calibration preview — 2026-11-16
 
 Same fixed Folia cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only.

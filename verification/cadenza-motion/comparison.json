@@ -1,0 +1,480 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "height": 600,
+    "DPR": 1,
+    "energy": 0,
+    "glow": 1,
+    "start": 0.7,
+    "end": 3.15,
+    "cadences": [
+      "30",
+      "60",
+      "144",
+      "irregular"
+    ],
+    "observer": "Map.set copies original animated state after untouched RAF update; no target convergence, phase fit or source-state mutation.",
+    "fonts": [
+      {
+        "name": "FoliaParityLatin-Bold.ttf",
+        "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+      },
+      {
+        "name": "NotoSansArabic-Bold.ttf",
+        "sha256": "ed2711b387750ae991b6a980b8dd16fdd65e6702b97e9f52adf3a8edf09ef4df"
+      },
+      {
+        "name": "FoliaParityCJK-Bold.otf",
+        "sha256": "bba3466c258edbef68075a274af31b18697ac5afd61987b4170dc871d952174d"
+      }
+    ]
+  },
+  "scope": "Original unmodified RAF target updates compared with event-based continuous forcing. Native frozen/reverse queries do not replay frames.",
+  "status": "Internal calibration only. Original cadence-dependent step response and font/coverage residuals remain; no final theme acceptance.",
+  "mean_foreground_mae": 6.024388459480998,
+  "by_scene": {
+    "latin": 5.539713293583572,
+    "wrap": 5.406617829541638,
+    "arabic": 3.8881999688178808,
+    "cjk": 9.263022745980901
+  },
+  "source_trajectory_residuals": [
+    {
+      "case": "latin-380-30",
+      "observations": "225",
+      "max_position_px": "0.18221850882531498",
+      "max_rotation_deg": "3.410823399102359",
+      "max_scale": "0.22035460443415844",
+      "max_alpha": "0.20263117844313183",
+      "max_blur_px": "2.026311784431318",
+      "max_mix": "0.03174383304512585",
+      "max_glow": "0.10586632652693356"
+    },
+    {
+      "case": "latin-380-60",
+      "observations": "447",
+      "max_position_px": "0.14665544358450688",
+      "max_rotation_deg": "0.6218235485997319",
+      "max_scale": "0.04070588509128337",
+      "max_alpha": "0.03783069737944278",
+      "max_blur_px": "0.37830697379442757",
+      "max_mix": "0.026086639619720575",
+      "max_glow": "0.06083939249485831"
+    },
+    {
+      "case": "latin-380-144",
+      "observations": "1062",
+      "max_position_px": "0.031529433809112106",
+      "max_rotation_deg": "1.2883874206255541",
+      "max_scale": "0.08239530687583807",
+      "max_alpha": "0.08104677557062077",
+      "max_blur_px": "0.8104677557062079",
+      "max_mix": "0.005752491201002852",
+      "max_glow": "0.02776237369842377"
+    },
+    {
+      "case": "latin-380-irregular",
+      "observations": "369",
+      "max_position_px": "0.1823653034013546",
+      "max_rotation_deg": "0.9415219643147914",
+      "max_scale": "0.07449865682025703",
+      "max_alpha": "0.05836586232149295",
+      "max_blur_px": "0.5836586232149301",
+      "max_mix": "0.031881169848266167",
+      "max_glow": "0.11076914068350968"
+    },
+    {
+      "case": "wrap-380-30",
+      "observations": "300",
+      "max_position_px": "0.17010339108981043",
+      "max_rotation_deg": "3.410823399102359",
+      "max_scale": "0.22035460443415844",
+      "max_alpha": "0.20263117844313183",
+      "max_blur_px": "2.026311784431318",
+      "max_mix": "0.03174383304512585",
+      "max_glow": "0.10586632652693356"
+    },
+    {
+      "case": "wrap-380-60",
+      "observations": "596",
+      "max_position_px": "0.1368659269992918",
+      "max_rotation_deg": "0.6218235485997319",
+      "max_scale": "0.04070588509128337",
+      "max_alpha": "0.03783069737944278",
+      "max_blur_px": "0.37830697379442757",
+      "max_mix": "0.026086639619720575",
+      "max_glow": "0.06083939249485831"
+    },
+    {
+      "case": "wrap-380-144",
+      "observations": "1416",
+      "max_position_px": "0.02942799087657022",
+      "max_rotation_deg": "1.2883874206255541",
+      "max_scale": "0.08239530687583807",
+      "max_alpha": "0.08104677557062077",
+      "max_blur_px": "0.8104677557062079",
+      "max_mix": "0.005752491201002852",
+      "max_glow": "0.02776237369842377"
+    },
+    {
+      "case": "wrap-380-irregular",
+      "observations": "492",
+      "max_position_px": "0.17022646741156677",
+      "max_rotation_deg": "0.9415219643147914",
+      "max_scale": "0.07449865682025703",
+      "max_alpha": "0.05836586232149295",
+      "max_blur_px": "0.5836586232149301",
+      "max_mix": "0.031881169848266167",
+      "max_glow": "0.11076914068350968"
+    },
+    {
+      "case": "arabic-800-30",
+      "observations": "150",
+      "max_position_px": "0.13827155267841817",
+      "max_rotation_deg": "0.5176622669094453",
+      "max_scale": "0.07043024047726187",
+      "max_alpha": "0.02995773454198647",
+      "max_blur_px": "0.29957734541986447",
+      "max_mix": "0.0318397021165957",
+      "max_glow": "0.10342213324763289"
+    },
+    {
+      "case": "arabic-800-60",
+      "observations": "298",
+      "max_position_px": "0.11116561614346665",
+      "max_rotation_deg": "0.6218235485994548",
+      "max_scale": "0.024655145347927787",
+      "max_alpha": "0.03783069737942607",
+      "max_blur_px": "0.3783069737942606",
+      "max_mix": "0.026161829548701276",
+      "max_glow": "0.05116075040828344"
+    },
+    {
+      "case": "arabic-800-144",
+      "observations": "708",
+      "max_position_px": "0.023909360621871656",
+      "max_rotation_deg": "0.4005859968933656",
+      "max_scale": "0.01561705076339881",
+      "max_alpha": "0.02503947047806128",
+      "max_blur_px": "0.2503947047806143",
+      "max_mix": "0.005768975545102917",
+      "max_glow": "0.022627512046285603"
+    },
+    {
+      "case": "arabic-800-irregular",
+      "observations": "246",
+      "max_position_px": "0.13834013530470202",
+      "max_rotation_deg": "0.5256024539206656",
+      "max_scale": "0.12435667341051171",
+      "max_alpha": "0.05333950734309667",
+      "max_blur_px": "0.32748852523014627",
+      "max_mix": "0.031970194696102405",
+      "max_glow": "0.08037261276170121"
+    },
+    {
+      "case": "cjk-800-30",
+      "observations": "300",
+      "max_position_px": "0.17212793697933648",
+      "max_rotation_deg": "3.410823399102359",
+      "max_scale": "0.2078817022963757",
+      "max_alpha": "0.20263117844313183",
+      "max_blur_px": "2.026311784431318",
+      "max_mix": "0.03174383304512585",
+      "max_glow": "0.10586632652693356"
+    },
+    {
+      "case": "cjk-800-60",
+      "observations": "596",
+      "max_position_px": "0.13850184387558784",
+      "max_rotation_deg": "0.6218235485997319",
+      "max_scale": "0.03840177838800318",
+      "max_alpha": "0.03783069737944278",
+      "max_blur_px": "0.37830697379442757",
+      "max_mix": "0.026086639619720575",
+      "max_glow": "0.06083939249485831"
+    },
+    {
+      "case": "cjk-800-144",
+      "observations": "1416",
+      "max_position_px": "0.02977916102116751",
+      "max_rotation_deg": "1.2883874206255541",
+      "max_scale": "0.07773142158097923",
+      "max_alpha": "0.08104677557062077",
+      "max_blur_px": "0.8104677557062079",
+      "max_mix": "0.005752491201002852",
+      "max_glow": "0.02776237369842377"
+    },
+    {
+      "case": "cjk-800-irregular",
+      "observations": "492",
+      "max_position_px": "0.17225497683620006",
+      "max_rotation_deg": "0.9415219643147914",
+      "max_scale": "0.07028175171722295",
+      "max_alpha": "0.05836586232149295",
+      "max_blur_px": "0.5836586232149301",
+      "max_mix": "0.031881169848266167",
+      "max_glow": "0.11076914068350968"
+    }
+  ],
+  "frames": [
+    {
+      "file": "arabic-800-60-0.png",
+      "foreground_pixels": 2862,
+      "foreground_mae": 1.3605870020964361,
+      "full_mae": 0.028257638888888888
+    },
+    {
+      "file": "arabic-800-60-1.png",
+      "foreground_pixels": 12414,
+      "foreground_mae": 1.8812093872509532,
+      "full_mae": 0.09819930555555556
+    },
+    {
+      "file": "arabic-800-60-2.png",
+      "foreground_pixels": 30086,
+      "foreground_mae": 4.185390768685324,
+      "full_mae": 0.33801805555555553
+    },
+    {
+      "file": "arabic-800-60-3.png",
+      "foreground_pixels": 73962,
+      "foreground_mae": 5.470119791244152,
+      "full_mae": 0.9425173611111111
+    },
+    {
+      "file": "arabic-800-60-4.png",
+      "foreground_pixels": 86503,
+      "foreground_mae": 5.4210104466511755,
+      "full_mae": 1.0880645833333333
+    },
+    {
+      "file": "arabic-800-60-5.png",
+      "foreground_pixels": 37191,
+      "foreground_mae": 6.811979600799477,
+      "full_mae": 0.6096381944444444
+    },
+    {
+      "file": "arabic-800-60-6.png",
+      "foreground_pixels": 48224,
+      "foreground_mae": 5.9753027538155274,
+      "full_mae": 0.6437055555555555
+    },
+    {
+      "file": "arabic-800-60-7.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.17873472222222223
+    },
+    {
+      "file": "cjk-800-60-0.png",
+      "foreground_pixels": 4143,
+      "foreground_mae": 2.1576152546463914,
+      "full_mae": 0.03796597222222222
+    },
+    {
+      "file": "cjk-800-60-1.png",
+      "foreground_pixels": 18912,
+      "foreground_mae": 6.137796108291032,
+      "full_mae": 0.30666597222222225
+    },
+    {
+      "file": "cjk-800-60-2.png",
+      "foreground_pixels": 48653,
+      "foreground_mae": 9.922354907885092,
+      "full_mae": 1.0620833333333333
+    },
+    {
+      "file": "cjk-800-60-3.png",
+      "foreground_pixels": 83468,
+      "foreground_mae": 10.302079838980209,
+      "full_mae": 1.8408409722222223
+    },
+    {
+      "file": "cjk-800-60-4.png",
+      "foreground_pixels": 110546,
+      "foreground_mae": 12.526242469198342,
+      "full_mae": 2.973536111111111
+    },
+    {
+      "file": "cjk-800-60-5.png",
+      "foreground_pixels": 115272,
+      "foreground_mae": 14.711592291854627,
+      "full_mae": 3.6622416666666666
+    },
+    {
+      "file": "cjk-800-60-6.png",
+      "foreground_pixels": 84458,
+      "foreground_mae": 16.702013624128757,
+      "full_mae": 2.9952833333333335
+    },
+    {
+      "file": "cjk-800-60-7.png",
+      "foreground_pixels": 5681,
+      "foreground_mae": 1.644487472862759,
+      "full_mae": 0.35716805555555553
+    },
+    {
+      "file": "latin-380-60-0.png",
+      "foreground_pixels": 4,
+      "foreground_mae": 1.6666666666666667,
+      "full_mae": 0.013366959064327485
+    },
+    {
+      "file": "latin-380-60-1.png",
+      "foreground_pixels": 2558,
+      "foreground_mae": 1.6489444878811572,
+      "full_mae": 0.052137426900584795
+    },
+    {
+      "file": "latin-380-60-2.png",
+      "foreground_pixels": 9171,
+      "foreground_mae": 5.584560026169447,
+      "full_mae": 0.28758479532163744
+    },
+    {
+      "file": "latin-380-60-3.png",
+      "foreground_pixels": 23225,
+      "foreground_mae": 7.991331180480803,
+      "full_mae": 0.8818274853801169
+    },
+    {
+      "file": "latin-380-60-4.png",
+      "foreground_pixels": 31917,
+      "foreground_mae": 9.974893212603524,
+      "full_mae": 1.4990175438596491
+    },
+    {
+      "file": "latin-380-60-5.png",
+      "foreground_pixels": 26742,
+      "foreground_mae": 7.915825293545733,
+      "full_mae": 1.0831067251461988
+    },
+    {
+      "file": "latin-380-60-6.png",
+      "foreground_pixels": 24038,
+      "foreground_mae": 9.535485481321242,
+      "full_mae": 1.055422514619883
+    },
+    {
+      "file": "latin-380-60-7.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.20711988304093568
+    },
+    {
+      "file": "wrap-380-60-0.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.040058479532163745
+    },
+    {
+      "file": "wrap-380-60-1.png",
+      "foreground_pixels": 7463,
+      "foreground_mae": 1.8005270445307964,
+      "full_mae": 0.129937134502924
+    },
+    {
+      "file": "wrap-380-60-2.png",
+      "foreground_pixels": 17285,
+      "foreground_mae": 6.711831067399479,
+      "full_mae": 0.5836125730994152
+    },
+    {
+      "file": "wrap-380-60-3.png",
+      "foreground_pixels": 23867,
+      "foreground_mae": 8.070795100627086,
+      "full_mae": 0.8944400584795321
+    },
+    {
+      "file": "wrap-380-60-4.png",
+      "foreground_pixels": 31537,
+      "foreground_mae": 8.997769815349166,
+      "full_mae": 1.3529561403508772
+    },
+    {
+      "file": "wrap-380-60-5.png",
+      "foreground_pixels": 29869,
+      "foreground_mae": 8.374401553450065,
+      "full_mae": 1.248562865497076
+    },
+    {
+      "file": "wrap-380-60-6.png",
+      "foreground_pixels": 23986,
+      "foreground_mae": 9.297618054976514,
+      "full_mae": 1.0337850877192982
+    },
+    {
+      "file": "wrap-380-60-7.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.29743713450292397
+    }
+  ],
+  "png_sha256": {
+    "build/verification/cadenza-motion-browser/arabic-800-60-0.png": "525f182220c74d79e1daf43a5fad06a1abbcb602e76cc60e5488a785f823dba2",
+    "build/verification/cadenza-motion-kotlin/arabic-800-60-0.png": "c5a6bd44b1609e946846d4cae42b81bae4b49ba6e809b30d69a0eec9702618e9",
+    "build/verification/cadenza-motion-browser/arabic-800-60-1.png": "02818ee92877f43fe934c2de2d3cab04cf01bf5493055fdb1ac306b141a20e3f",
+    "build/verification/cadenza-motion-kotlin/arabic-800-60-1.png": "2ffb8de349f3a9eeb65287bfe4943953a5f0f68dd41566ec88968e372af016f7",
+    "build/verification/cadenza-motion-browser/arabic-800-60-2.png": "25a4f9924b703582835265bee0c939c491fc6b8a7b804ba5f201c69d02194ea5",
+    "build/verification/cadenza-motion-kotlin/arabic-800-60-2.png": "bc13e7b1ffb9ad90d0465c2042f53bd0f6287d1adc6e23c1533a917176362887",
+    "build/verification/cadenza-motion-browser/arabic-800-60-3.png": "3a11fb01ba36225113a6c277d1fe230fe928b9bee98caa796489f459ae11ef83",
+    "build/verification/cadenza-motion-kotlin/arabic-800-60-3.png": "8d57f74eb04fe394a5ee53c9de33b8d19d1bf9abe577f764a30b2dfdb51de101",
+    "build/verification/cadenza-motion-browser/arabic-800-60-4.png": "b4cc753b24653c595dd79263a0f519baee5bc8246ecbb6d3a3b69e9cc057d590",
+    "build/verification/cadenza-motion-kotlin/arabic-800-60-4.png": "a315a2299a7088870a8d4e6ceb871d0971bebe7c24f90ec6adb56fe9b09cc3e2",
+    "build/verification/cadenza-motion-browser/arabic-800-60-5.png": "ef97ea80ab40a7aa15190d09b389b2a073509aeab9c8a4a9b4862a6194c6836d",
+    "build/verification/cadenza-motion-kotlin/arabic-800-60-5.png": "25346a5334d7e1b4d13978f53bc3d93a8b2a88611784b295088b43b950dd237d",
+    "build/verification/cadenza-motion-browser/arabic-800-60-6.png": "55c6b9de9e4e906761508684aeecd9215bbd09d1d5b175788078fdd0e82de7e2",
+    "build/verification/cadenza-motion-kotlin/arabic-800-60-6.png": "b31a7ae37cf79be3906a6b940fe288ff9ae8625b8eafbedd9e3a9d79e0b4bc6c",
+    "build/verification/cadenza-motion-browser/arabic-800-60-7.png": "d39edf67b6d8f4c018a3200c91d8702a5e2efb069a125eb0cf459ba3c761ac61",
+    "build/verification/cadenza-motion-kotlin/arabic-800-60-7.png": "8daa70e717ba53eab74ce8a951ace8134af5c5132184240be5f38ba9e1f15f97",
+    "build/verification/cadenza-motion-browser/cjk-800-60-0.png": "97e170cf1ca7bc2f3656d956188c6d71d6d4d3162b0bf72015226c25052d9f7b",
+    "build/verification/cadenza-motion-kotlin/cjk-800-60-0.png": "23bf011bdc5b8b8cb0f6486f61a095081b9f0defc011c7a926a55510eecd9e4e",
+    "build/verification/cadenza-motion-browser/cjk-800-60-1.png": "0f2e7dbb0aad89a92c2791b0adfca8f42d3aa9dc31aceccaa2e6ad00107d88c6",
+    "build/verification/cadenza-motion-kotlin/cjk-800-60-1.png": "59a92a62ad725c7e19ce590de1c077c24aac5bf642317bef549cc7eea7c02249",
+    "build/verification/cadenza-motion-browser/cjk-800-60-2.png": "738e92fe54daa7ab1118664734755ffb8133e5b23637cda757d4b2d5e1b99de6",
+    "build/verification/cadenza-motion-kotlin/cjk-800-60-2.png": "1abe88f26e350e4f8db8e616f853a6f458317d53b43597fde4e37ce9528b1cb5",
+    "build/verification/cadenza-motion-browser/cjk-800-60-3.png": "10148075ecba02b9a557a7afce57a24c5ee75b95b7919f0eebba3a22554a00f2",
+    "build/verification/cadenza-motion-kotlin/cjk-800-60-3.png": "29662787f0ca1245142a4f0fbcf6e48fac64c8b72ad986aac9131648314d4af4",
+    "build/verification/cadenza-motion-browser/cjk-800-60-4.png": "288ce6122634046bae1bcfd5a5e76373e116fb48bde7c772694cc97c43252536",
+    "build/verification/cadenza-motion-kotlin/cjk-800-60-4.png": "16ac293d41452f07d390c8df2c5b4c157eadaa97af3d6398a0d625cf74455504",
+    "build/verification/cadenza-motion-browser/cjk-800-60-5.png": "e18ccae4dcd801fff0aa19b0ff3b48bc97cd399f3e45cdc654237ad569477b48",
+    "build/verification/cadenza-motion-kotlin/cjk-800-60-5.png": "9821fb66239885d71cb9e20490dcb7d26d464929e73c970adc0c35dcf2d63817",
+    "build/verification/cadenza-motion-browser/cjk-800-60-6.png": "8c615143fefc9e336c50c92d611d7550d63f2d97a61d16f0513f37d0ee1a66d8",
+    "build/verification/cadenza-motion-kotlin/cjk-800-60-6.png": "42e171c5660bf64fd9047839c5092b82035b8dd4f057bb21d6ceb3404a0c04e5",
+    "build/verification/cadenza-motion-browser/cjk-800-60-7.png": "482a7c56b3bde4b7d253e1ce165d27e55781519ed1b1caceb68d5f9ee7027ef2",
+    "build/verification/cadenza-motion-kotlin/cjk-800-60-7.png": "60698f59c3c6f1a5cc20a5405b41e733fe59f0106826d79712236394de0eba75",
+    "build/verification/cadenza-motion-browser/latin-380-60-0.png": "014f61d41ac59076afaa80bc319a78e3b3116fbdab46a6c70081f926896aa719",
+    "build/verification/cadenza-motion-kotlin/latin-380-60-0.png": "ee243a11ae95eb0fc8e9ce2ba1f756c61c665b26afeb11e365b591da884b1593",
+    "build/verification/cadenza-motion-browser/latin-380-60-1.png": "a7fa0d23791d59c188d6c8cd9b068d70996a6d34e06699eeb750e7dafa5f5f3a",
+    "build/verification/cadenza-motion-kotlin/latin-380-60-1.png": "0487aade173888982c59e76137319267b8f957622013da4735aa23410c4d67dd",
+    "build/verification/cadenza-motion-browser/latin-380-60-2.png": "c5281da96ab37f372b44578ef9eda313c4aec5d59d98f374009c707639ddf82a",
+    "build/verification/cadenza-motion-kotlin/latin-380-60-2.png": "c431a5d131619e27c81364983453c95a47803178fb093ad3cf9a46b46c177ac8",
+    "build/verification/cadenza-motion-browser/latin-380-60-3.png": "fa4a9cec6ea4e8db3c149af64275770bac64eb2418d6348cbbcd9ef84e0b0449",
+    "build/verification/cadenza-motion-kotlin/latin-380-60-3.png": "0234ac23794f0401bfec9c280d8eeb346f60b1cbe83872e857701cb649790bfc",
+    "build/verification/cadenza-motion-browser/latin-380-60-4.png": "62b300b8f8c2bb1f63b5c49eadc46154559db1aa411a9bcb36b8e2c7b4750085",
+    "build/verification/cadenza-motion-kotlin/latin-380-60-4.png": "f6f3e6b250a6e92a91e16694d05abebcdcbbd639f7965301d1207e6efa665f2a",
+    "build/verification/cadenza-motion-browser/latin-380-60-5.png": "f5a3449d148e6111838f9fcb84550240569e53e2fe39de600bd6fdf126f9bb59",
+    "build/verification/cadenza-motion-kotlin/latin-380-60-5.png": "3e361fb8ad5b0b4c4bf718d763dd76f74461087c6c7e6a6853119aa9b0c6aa65",
+    "build/verification/cadenza-motion-browser/latin-380-60-6.png": "b8195159c860935669df25dd5b05859f93dce4b16307d6629e36f3f1d82cb1c4",
+    "build/verification/cadenza-motion-kotlin/latin-380-60-6.png": "b85286dd02730ab384318fb42df585a84702be6743662440f96512bf933b526e",
+    "build/verification/cadenza-motion-browser/latin-380-60-7.png": "a0003c59db4b41be73226bacf585fcca76f9d9c7450f29578548b1dcff13f663",
+    "build/verification/cadenza-motion-kotlin/latin-380-60-7.png": "7160bbd6aaf74f1e0a8a36e04bc5423a44213073a7b83749ff42e8c5c88538f9",
+    "build/verification/cadenza-motion-browser/wrap-380-60-0.png": "afc11cb15f8fb6757790fe28a71ad84f44ba9c3949e4cfd1a99746416c044297",
+    "build/verification/cadenza-motion-kotlin/wrap-380-60-0.png": "1a89facb3d8092540c157cf1e2cf9d227e6d80ec19dcb8823d62ac0da208fcd8",
+    "build/verification/cadenza-motion-browser/wrap-380-60-1.png": "9bf0d79c5449f9293a87349cbe2ee9b4e6b9d4bd91ec759256f43ccd3b308c4f",
+    "build/verification/cadenza-motion-kotlin/wrap-380-60-1.png": "7fd0b4bd3706c9218229b27775484d337abe4470b0416ed0e6c9fd1b8df01714",
+    "build/verification/cadenza-motion-browser/wrap-380-60-2.png": "18d39fe0f948ccd82955a5a8716f29673155d8625c131585879d58b064acf102",
+    "build/verification/cadenza-motion-kotlin/wrap-380-60-2.png": "10f6cb5607ba84c8dd38ae6bf3b3a4452877229192447c8685867f2cff32908f",
+    "build/verification/cadenza-motion-browser/wrap-380-60-3.png": "6b673f2a7667963506596909767a1f1fd90dd58adef5b48c39e0ca111253e8d0",
+    "build/verification/cadenza-motion-kotlin/wrap-380-60-3.png": "27c4dad041fe818ab68b2ee85aeb51583c66c1231fd4eb8ba1b3b6518c8133aa",
+    "build/verification/cadenza-motion-browser/wrap-380-60-4.png": "d29524e43721ca5a245e139dc086f25ae01a6e52dcbd304e87cae50f22ea810a",
+    "build/verification/cadenza-motion-kotlin/wrap-380-60-4.png": "61e4f196727cd347e8802651a81888b7f99f2cdc389d3bd93595be3858ec4a5d",
+    "build/verification/cadenza-motion-browser/wrap-380-60-5.png": "cb31708d78f3c171e220fd3d5f75f693b5b2603f05083074264fccf5b31c3411",
+    "build/verification/cadenza-motion-kotlin/wrap-380-60-5.png": "0626ed8ee70e641d40fee1bd6b2a1b9eedcb472462915d6798c82c3f6cf203f8",
+    "build/verification/cadenza-motion-browser/wrap-380-60-6.png": "556f5bf4d2791cb20dabb5af77be048499d9b8eef1be7335273b19d0849233b1",
+    "build/verification/cadenza-motion-kotlin/wrap-380-60-6.png": "70e0879dc332036dd445eaec2fe44fbc2f4d44faf4a9ed5d776a3a570a964c4e",
+    "build/verification/cadenza-motion-browser/wrap-380-60-7.png": "4f55a1900c365eacbc72d51c3484df4c18f358b891a8171e6b363e180c4b4859",
+    "build/verification/cadenza-motion-kotlin/wrap-380-60-7.png": "9b9fdb04e433f82870264a8175fba681e107a1511bb4b2b2c34404b2112aa5a7"
+  }
+}

@@ -1,5 +1,5 @@
 // Copyright (c) 2026 chthollyphile and contributors
-// Text-only target/settled-state adaptation of VisualizerCadenza.tsx cc6226e4.
+// Text-only target/continuous-response adaptation of VisualizerCadenza.tsx cc6226e4.
 // SPDX-License-Identifier: AGPL-3.0-only. This is INTERNAL calibration, not a public theme.
 package top.ghhccghk.accompanist.lyrics.folia.internal.styles.cadenza
 
@@ -44,7 +44,8 @@ private data class CadenzaPiece(val body: BodyParagraphRaster, val baselineOffse
 @Composable
 internal fun CadenzaTargetStage(line: CadenzaLyric, time: ()->Double, textStyle: TextStyle,
     modifier: Modifier=Modifier, glow: Double=1.0, intensity: CadenzaIntensity=CadenzaIntensity.NORMAL,
-    fontScale: Double=1.12, onPrepared: (CadenzaPreparedText)->Unit={}) {
+    fontScale: Double=1.12, motion: Boolean=false, motionAmount: Double=1.0,
+    onPrepared: (CadenzaPreparedText)->Unit={}) {
     val density=LocalDensity.current;val resolver=LocalFontFamilyResolver.current
     val measurer=rememberTextMeasurer(cacheSize=128)
     val currentTime by rememberUpdatedState(time)
@@ -75,10 +76,14 @@ internal fun CadenzaTargetStage(line: CadenzaLyric, time: ()->Double, textStyle:
         }
         val observer by rememberUpdatedState(onPrepared)
         LaunchedEffect(prepared){observer(prepared)}
+        val response=remember(prepared,height,intensity,motionAmount,motion){
+            if(motion)CadenzaMotionTrack(line,prepared.placements,width,height,intensity,motionAmount,
+                endTime=max(max(line.end,cadenzaTiming(line).end),line.start)+1.0)else null
+        }
         val lineLayer=rememberClassicLayer()
         val bodyLayers=prepared.placements.associate{it.id to rememberClassicLayer()}
         Canvas(Modifier.fillMaxSize()) {
-            val t=currentTime();val targets=cadenzaTargets(t,line,prepared.placements,width,height,intensity)
+            val t=currentTime();val targets=response?.sample(t)?:cadenzaTargets(t,line,prepared.placements,width,height,intensity,motionAmount)
             val envelope=cadenzaLineEnvelope(t,line,cadenzaTiming(line))
             val d=density.density
             val padding=ceil(160*d).toInt()

@@ -1449,3 +1449,13 @@ SampleSession/LyricThemeControls/SettingsStore select/persist actual theme for b
 local playback and demo. Explicit chorus/keywords only; no inferred beats or
 accompaniment-to-chorus conversion. See docs/pendolo-preview.md for adaptation and
 remaining differences. Real-core/full-source evidence: verification/pendolo-public-stage.
+
+### Cappella published-core bridge (2026-11-18)
+`CappellaCoreAdapter.kt` is independent integration against actual lyrics-core0.5.0:
+original objects/SourceRef, explicit optional exact-ref agent inputs, raw bounds,
+translation/phonetic and EGC-safe display grouping with nested raw pieces.
+Pinned `utils/lyrics/renderHints.ts` semantics in `CappellaPlaybackPreparation.kt`
+now accept the unmerged raw final fragment end without changing existing callers.
+Original `cappellaMessageSenders/cappellaMessages` fallback remains unchanged;
+no identity inferred from core alignment. Four core/source tests and conditions
+in verification/cappella-core; not a public preview or visual acceptance.

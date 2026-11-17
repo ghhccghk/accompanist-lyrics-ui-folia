@@ -18,13 +18,13 @@ internal fun cappellaCurrentLine(lines:List<CappellaLine>,time:Double,after:Bool
 
 /** Source utils/lyrics/renderHints.ts buildLineRenderHints; keep last-word
  * semantics (not maximum word end), including micro-line render floor. */
-internal fun cappellaAnnotated(line:CappellaLine):CappellaLine {
+internal fun cappellaAnnotated(line:CappellaLine,lastWordEnd:Double=line.words.lastOrNull()?.end?:line.end):CappellaLine {
     val raw=max(line.end-line.start,0.0)
     if(raw<.1)return line.copy(renderEnd=max(line.end,line.start+.067))
     val fast=raw<.18
     val enter=if(fast)(raw*.45).coerceIn(.045,.06)else(raw*.34).coerceIn(.22,.42)
     val exit=if(fast)(raw*.22).coerceIn(.03,.04)else(raw*.18).coerceIn(.18,.32)
-    val pass=max(line.words.lastOrNull()?.end?:line.end,line.start)+if(fast).03 else .06
+    val pass=max(lastWordEnd,line.start)+if(fast).03 else .06
     val start=max(pass,line.end-exit).let{if(fast)max(it,line.start+enter+.01)else it}
     return line.copy(renderEnd=max(line.end,start+exit))
 }

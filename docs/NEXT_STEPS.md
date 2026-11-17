@@ -10,10 +10,10 @@
 | Fume | 文章/揭示/镜头实验 | 未接入 | 镜头残差未解决 |
 | Diorama | 待有界能力调查 | 无 | 未开始 |
 
-当前唯一下一项：Cappella真实core桥接与来源/agent契约核对。
-完成条件：保留原对象/ref、source/render时间、显示EGC和内部原片段时钟；
-缺agent使用原版已实现的seed fallback，不从alignment猜身份；真实core/原函数数值验证。
-再接公共组件/交互/sample，同时保留压力projection失败矩阵并继续定位。
+当前唯一下一项：Cappella密集消息projection定位，接公共预览前先排查存在/顺序/可读性。
+完成条件：复用原240压力矩阵，区分真实算法错误与原Motion布局提交采样；
+不靠固定延迟/提高容差。来源对象/agent桥接已具备，之后接公共交互/sample/原版整屏。
+若投影暂时无解继续其他独立闭环，不将40px残差写成最终标准。
 
 已完成（起点295d260）：
 - c59a70f 正文/字幕独立缩放、源字号取整/行高、重排/避让/扫描/辉光尺寸贯通。
@@ -30,7 +30,11 @@
   偏好通过；Android APK/Desktop编译通过。未启动真窗口、未运行Android设备，不报性能。
   当前可实际选择五主题；正式视觉验收仍未通过。证据docs/pendolo-preview.md及
   verification/pendolo-public-stage；最后构建.work/pendolo-public-final.log。
-  本项提交哈希由git log取得（提交时不预填）。
+  提交b0ed98e。
+- Cappella core桥接：保留原对象/ref/嵌套伴唱、raw时间与字幕、完整EGC/内部时钟；
+  agent按显式SourceRef映射，缺失/单agent使用原seed fallback，无alignment推断。
+  32原源行/96sender/56renderHints阈值及原reveal/messages控制通过，两端构建通过。
+  原last-end不被EGC合并的最大end覆盖；没有新画面/设备结论，见verification/cappella-core。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

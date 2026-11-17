@@ -1230,3 +1230,20 @@ and opacity0.050386 peaks remain. Every regular-matrix PNG hash is unchanged.
 Contact inspected; all Cappella JVM tests, Android debug assembly and Desktop
 compilation pass. This does not resolve the remaining mounted projection/flow
 differences or establish full theme/device acceptance.
+
+## 2026-11-17 Pendolo wheel and timeline kernel
+
+All references pinned at cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only:
+
+| Original file | Native target | Adaptation |
+| --- | --- | --- |
+| `src/components/visualizer/pendolo/pendoloGeometry.ts:calculatePendoloWheelLayout` | `internal/styles/pendolo/PendoloGeometry.kt` | Index-only output references native input; original candidate window, measured block-height spacing, strict half-circle cutoff, opacity/scale and fractional anchor rules preserved. No pretext dependency. |
+| `src/components/visualizer/pendolo/VisualizerPendolo.tsx:availableTextWidth` and `src/types.ts:DEFAULT_PENDOLO_TUNING` | same | Text-wheel defaults and actual width bounds; omit unrelated gears/background/audio tuning from this internal kernel. |
+| `src/components/visualizer/pendolo/pendoloTimeline.ts` | `internal/styles/pendolo/PendoloTimeline.kt` | Pure fallback/opacity preserved; rebuild source observed-line ref from media semantic boundaries for pause/seek/remount, including overlap resumption. No independent clock. |
+
+Generator imports unchanged source exports and extracts original caller width
+declaration verbatim. 252 controlled-height cases/781 rows,2476 timeline calls,
+273 opacity calls and252 width observations pass. Source hashes, exact scope,
+initial incorrect handwritten width assertion and reproduction are recorded in
+verification/pendolo-fixtures. Android debug/desktop compilation pass; no new
+theme/public entry, complete drawing or connected-device claim.

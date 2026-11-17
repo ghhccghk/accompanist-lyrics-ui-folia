@@ -1,0 +1,25 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "cases": 252,
+  "items": 781,
+  "timelineQueries": 2476,
+  "opacityQueries": 273,
+  "defaults": {
+    "arcRadius": 0.42,
+    "arcAngleDeg": 100,
+    "wheelCenterX": 0,
+    "wheelCenterY": 0.5,
+    "activeScale": 1.25
+  },
+  "sources": [
+    {
+      "path": "src/components/visualizer/pendolo/pendoloGeometry.ts",
+      "sha256": "896e277de978909cb46f9c1b53e91c6fff3158fbd6b599feeb54fc36c587d14d"
+    },
+    {
+      "path": "src/components/visualizer/pendolo/pendoloTimeline.ts",
+      "sha256": "1eee502dd0a2f42da279195b3e4ba7e57b67448eedc2f1635117ec005f4240f6"
+    }
+  ],
+  "scope": "Unchanged pinned pure exports via locked Vite/pretext. Controlled measured block-height inputs, not real text wrapping or full browser/Compose rendering. Latest-source-array-order inclusive host selector; deterministic native history reconstructed from semantic boundaries."
+}

@@ -16,7 +16,7 @@
 | 云阶 | partita；`partitaLayout.ts`、`PartitaChunk.tsx`、`partitaOverlap.ts` | 依高度拆块、交替阶梯错位、块级入场、引导线、GlowWord | **移植校准中**：已接FoliaStyle.Partita与示例，完整画面尚有残差，未最终验收 |
 | 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 已接 FoliaStyle.Tilt 和示例，明确标注校准预览；450ms 公共退场、Latin 段宽已补，Arabic shaping、CSS transform 延迟和全局字体缓存仍未验收 |
 | 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部时序、文章布局、拟合、Latin静态与实时文字已移植并有原Canvas对照；镜头未完成，文字栅格/复杂字体仍校准，未开放选择器，背景不纳入 |
-| 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 内部包络已移植：30输入/2952时刻与原模块1e-10通过；原落点108场景/450片段≤3.638e-11；实际原分段输入的词范围/片段桥接已实现；独立字体测量、文字层与帧平滑仍待实现，无公开入口 |
+| 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 内部包络已移植：30输入/2952时刻与原模块1e-10通过；原落点108场景/450片段≤3.638e-11；实际原分段输入的词范围/片段桥接已实现；独立字体/定格文字层128对已对照，CJK栅格/基线、媒体平滑仍未完成，无公开入口 |
 | 群唱 | cappella；`VisualizerCappella.tsx`、`cappellaMessages.ts`、`cappellaMessageLayout.ts`、`cappellaReveal.ts` | 多发送者对话、气泡、消息保留与逐字揭示 | 未实现；明确core声部与发送者映射；先文字消息，不复制未知来源头像/emoji |
 | 时计 | pendolo；`VisualizerPendolo.tsx`、`pendoloGeometry.ts`、`pendoloTimeline.ts`、`PendoloActiveLyricSweep.tsx` | 圆弧歌词轨、机械跳步、当前句扫描、字幕轨 | 未实现；先文字几何/跳步/扫描；音频鼓点与节拍增强单列，不伪造输入 |
 | 镜台 | diorama；`VisualizerDiorama.tsx`、`cameraPath.ts`、`DioramaSceneLayout.ts` | 文字沿三维路径排列、镜头穿行与曲间连续过渡 | 未实现；核心镜头涉及旧“不做整套三维场景”边界，先调查最小平台能力；若必须改变边界单独请求决定，不以2D假效果验收 |
@@ -345,3 +345,14 @@ Android APK和Desktop编译通过；未做文字/落点视觉验收，无主题�
 已接发布core模型，跨源片段的EGC仅安全合并且保留原syllables与内部时间。
 字体选择默认1.12/.72、显式行注解与缺省hint语义分开保留。
 下一项：独立Compose实际测量/文字层、原DOM+Canvas完整场景及媒体时间平滑。
+
+### 心象：独立字体测量与实际原版定格文字
+
+CadenzaTextPreparation/Frame/TargetStage已建立，未开放公共入口。原版真实挂载组件
+（布局/绘制未改），固定媒体时间让RAF收敛，只校准目标和栅格，不冒充过渡动画。
+128对同字体/同视口画面，8组独立布局id/顺序一致、几何最大差9.156e-5px。
+最初尾随空格被getLineRight省略，改为完整选区advance；原图散列全部不变，
+平均MAE26.428939→9.971613，Latin7.070232/wrap7.404520/Arabic5.754925/CJK19.656774。
+初版与修正报告/接触表均保留并已目视。随机重访与媒体冻结一致，两端构建通过。
+CJK基线/AA、glow栅格、原RAF平滑到媒体时间、chorus与正式入口仍未完成；
+当前仅定格文字闭环，不称心象主题已移植达标。

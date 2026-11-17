@@ -1,0 +1,1455 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "scenes": [
+      "latin",
+      "wrap",
+      "arabic",
+      "cjk"
+    ],
+    "widths": [
+      380,
+      800
+    ],
+    "height": 600,
+    "DPR": 1,
+    "glow": [
+      0,
+      1
+    ],
+    "times": [
+      0.7,
+      0.75,
+      0.85,
+      1.3,
+      1.6,
+      2.2,
+      2.8,
+      3.05
+    ],
+    "fonts": [
+      {
+        "name": "FoliaParityLatin-Bold.ttf",
+        "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+      },
+      {
+        "name": "NotoSansArabic-Bold.ttf",
+        "sha256": "ed2711b387750ae991b6a980b8dd16fdd65e6702b97e9f52adf3a8edf09ef4df"
+      },
+      {
+        "name": "FoliaParityCJK-Bold.otf",
+        "sha256": "bba3466c258edbef68075a274af31b18697ac5afd61987b4170dc871d952174d"
+      }
+    ],
+    "driver": "Actual untouched mounted Cadenza. Fixed media time;210 original RAF iterations converge to target. NOT transition/pause acceptance.",
+    "scope": "Original DOM text and Canvas; shell/background/subtitle omitted; energy0."
+  },
+  "scope": "Actual mounted DOM/Canvas converged targets; native independently measures/wraps and paints whole shaped fragments. NO smoothing/host line-switch acceptance.",
+  "status": "Calibration only; glyph and geometry residuals are NOT accepted theme equivalence. No public selector.",
+  "mean_foreground_mae": 9.971612827072713,
+  "by_scene": {
+    "latin": 7.070232284537676,
+    "wrap": 7.4045197996132615,
+    "arabic": 5.7549253912625895,
+    "cjk": 19.656773832877324
+  },
+  "by_glow": {
+    "0": 12.564518620289176,
+    "1": 7.37870703385625
+  },
+  "frames": [
+    {
+      "file": "arabic-380-0-1300.png",
+      "foreground_pixels": 3834,
+      "foreground_mae": 9.422013562858634,
+      "full_mae": 0.1614342105263158
+    },
+    {
+      "file": "arabic-380-0-1600.png",
+      "foreground_pixels": 6903,
+      "foreground_mae": 10.269544642425998,
+      "full_mae": 0.31530701754385965
+    },
+    {
+      "file": "arabic-380-0-2200.png",
+      "foreground_pixels": 5169,
+      "foreground_mae": 9.890243116012124,
+      "full_mae": 0.2280453216374269
+    },
+    {
+      "file": "arabic-380-0-2800.png",
+      "foreground_pixels": 5137,
+      "foreground_mae": 8.725974952955681,
+      "full_mae": 0.20065497076023392
+    },
+    {
+      "file": "arabic-380-0-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.12126315789473684
+    },
+    {
+      "file": "arabic-380-0-700.png",
+      "foreground_pixels": 6076,
+      "foreground_mae": 1.858569234145271,
+      "full_mae": 0.06325584795321637
+    },
+    {
+      "file": "arabic-380-0-750.png",
+      "foreground_pixels": 5824,
+      "foreground_mae": 2.1117216117216118,
+      "full_mae": 0.0673859649122807
+    },
+    {
+      "file": "arabic-380-0-850.png",
+      "foreground_pixels": 4638,
+      "foreground_mae": 4.96248382923674,
+      "full_mae": 0.11168859649122807
+    },
+    {
+      "file": "arabic-380-1-1300.png",
+      "foreground_pixels": 31580,
+      "foreground_mae": 9.14838505383154,
+      "full_mae": 1.4800146198830408
+    },
+    {
+      "file": "arabic-380-1-1600.png",
+      "foreground_pixels": 38745,
+      "foreground_mae": 9.765260033552716,
+      "full_mae": 1.875138888888889
+    },
+    {
+      "file": "arabic-380-1-2200.png",
+      "foreground_pixels": 14877,
+      "foreground_mae": 7.86352535233358,
+      "full_mae": 0.5713377192982456
+    },
+    {
+      "file": "arabic-380-1-2800.png",
+      "foreground_pixels": 18440,
+      "foreground_mae": 10.025054229934923,
+      "full_mae": 0.8694078947368421
+    },
+    {
+      "file": "arabic-380-1-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.13357017543859648
+    },
+    {
+      "file": "arabic-380-1-700.png",
+      "foreground_pixels": 6076,
+      "foreground_mae": 1.858569234145271,
+      "full_mae": 0.06325584795321637
+    },
+    {
+      "file": "arabic-380-1-750.png",
+      "foreground_pixels": 6174,
+      "foreground_mae": 2.8262066731454487,
+      "full_mae": 0.2186622807017544
+    },
+    {
+      "file": "arabic-380-1-850.png",
+      "foreground_pixels": 15969,
+      "foreground_mae": 3.9171102344125077,
+      "full_mae": 0.4269342105263158
+    },
+    {
+      "file": "arabic-800-0-1300.png",
+      "foreground_pixels": 14497,
+      "foreground_mae": 10.523418638338967,
+      "full_mae": 0.32072708333333333
+    },
+    {
+      "file": "arabic-800-0-1600.png",
+      "foreground_pixels": 26813,
+      "foreground_mae": 8.632988973010605,
+      "full_mae": 0.4870375
+    },
+    {
+      "file": "arabic-800-0-2200.png",
+      "foreground_pixels": 19433,
+      "foreground_mae": 8.291342904681041,
+      "full_mae": 0.33980347222222224
+    },
+    {
+      "file": "arabic-800-0-2800.png",
+      "foreground_pixels": 19201,
+      "foreground_mae": 7.965036543235596,
+      "full_mae": 0.32250833333333334
+    },
+    {
+      "file": "arabic-800-0-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.1636402777777778
+    },
+    {
+      "file": "arabic-800-0-700.png",
+      "foreground_pixels": 18779,
+      "foreground_mae": 3.5337877416262846,
+      "full_mae": 0.15474027777777777
+    },
+    {
+      "file": "arabic-800-0-750.png",
+      "foreground_pixels": 18191,
+      "foreground_mae": 5.047807523867114,
+      "full_mae": 0.2077159722222222
+    },
+    {
+      "file": "arabic-800-0-850.png",
+      "foreground_pixels": 16131,
+      "foreground_mae": 9.19506953485008,
+      "full_mae": 0.3192979166666667
+    },
+    {
+      "file": "arabic-800-1-1300.png",
+      "foreground_pixels": 70263,
+      "foreground_mae": 6.1038052270279755,
+      "full_mae": 1.0402048611111112
+    },
+    {
+      "file": "arabic-800-1-1600.png",
+      "foreground_pixels": 93988,
+      "foreground_mae": 6.6769481210367285,
+      "full_mae": 1.4724381944444445
+    },
+    {
+      "file": "arabic-800-1-2200.png",
+      "foreground_pixels": 37263,
+      "foreground_mae": 6.277639123706268,
+      "full_mae": 0.5707361111111111
+    },
+    {
+      "file": "arabic-800-1-2800.png",
+      "foreground_pixels": 47740,
+      "foreground_mae": 6.70104035749197,
+      "full_mae": 0.729175
+    },
+    {
+      "file": "arabic-800-1-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.1748611111111111
+    },
+    {
+      "file": "arabic-800-1-700.png",
+      "foreground_pixels": 18779,
+      "foreground_mae": 3.5337877416262846,
+      "full_mae": 0.15474027777777777
+    },
+    {
+      "file": "arabic-800-1-750.png",
+      "foreground_pixels": 24595,
+      "foreground_mae": 3.9161618215084366,
+      "full_mae": 0.30235069444444446
+    },
+    {
+      "file": "arabic-800-1-850.png",
+      "foreground_pixels": 38893,
+      "foreground_mae": 5.114116507683473,
+      "full_mae": 0.4897020833333333
+    },
+    {
+      "file": "cjk-380-0-1300.png",
+      "foreground_pixels": 13388,
+      "foreground_mae": 46.79720645354048,
+      "full_mae": 2.752437134502924
+    },
+    {
+      "file": "cjk-380-0-1600.png",
+      "foreground_pixels": 10223,
+      "foreground_mae": 42.73628093514624,
+      "full_mae": 1.9207573099415205
+    },
+    {
+      "file": "cjk-380-0-2200.png",
+      "foreground_pixels": 12307,
+      "foreground_mae": 48.72744508545272,
+      "full_mae": 2.6350701754385963
+    },
+    {
+      "file": "cjk-380-0-2800.png",
+      "foreground_pixels": 12198,
+      "foreground_mae": 44.14879488440728,
+      "full_mae": 2.368049707602339
+    },
+    {
+      "file": "cjk-380-0-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.23754970760233918
+    },
+    {
+      "file": "cjk-380-0-700.png",
+      "foreground_pixels": 7296,
+      "foreground_mae": 8.68485014619883,
+      "full_mae": 0.29848976608187133
+    },
+    {
+      "file": "cjk-380-0-750.png",
+      "foreground_pixels": 7232,
+      "foreground_mae": 13.796644542772862,
+      "full_mae": 0.45432163742690057
+    },
+    {
+      "file": "cjk-380-0-850.png",
+      "foreground_pixels": 6479,
+      "foreground_mae": 39.153675978803314,
+      "full_mae": 1.121763157894737
+    },
+    {
+      "file": "cjk-380-1-1300.png",
+      "foreground_pixels": 28941,
+      "foreground_mae": 23.262522603457608,
+      "full_mae": 3.0148523391812865
+    },
+    {
+      "file": "cjk-380-1-1600.png",
+      "foreground_pixels": 49472,
+      "foreground_mae": 11.365203212591634,
+      "full_mae": 2.5816476608187133
+    },
+    {
+      "file": "cjk-380-1-2200.png",
+      "foreground_pixels": 47618,
+      "foreground_mae": 13.754119590630994,
+      "full_mae": 2.9922105263157897
+    },
+    {
+      "file": "cjk-380-1-2800.png",
+      "foreground_pixels": 31799,
+      "foreground_mae": 16.633258907512815,
+      "full_mae": 2.4100409356725145
+    },
+    {
+      "file": "cjk-380-1-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.2558581871345029
+    },
+    {
+      "file": "cjk-380-1-700.png",
+      "foreground_pixels": 7296,
+      "foreground_mae": 8.68485014619883,
+      "full_mae": 0.29848976608187133
+    },
+    {
+      "file": "cjk-380-1-750.png",
+      "foreground_pixels": 17763,
+      "foreground_mae": 8.805888644936104,
+      "full_mae": 0.78971783625731
+    },
+    {
+      "file": "cjk-380-1-850.png",
+      "foreground_pixels": 22898,
+      "foreground_mae": 13.917780301045214,
+      "full_mae": 1.4626754385964913
+    },
+    {
+      "file": "cjk-800-0-1300.png",
+      "foreground_pixels": 43590,
+      "foreground_mae": 38.2079452473809,
+      "full_mae": 3.4773875
+    },
+    {
+      "file": "cjk-800-0-1600.png",
+      "foreground_pixels": 34937,
+      "foreground_mae": 34.42314260907729,
+      "full_mae": 2.5113944444444445
+    },
+    {
+      "file": "cjk-800-0-2200.png",
+      "foreground_pixels": 42545,
+      "foreground_mae": 39.608250088141965,
+      "full_mae": 3.5151104166666665
+    },
+    {
+      "file": "cjk-800-0-2800.png",
+      "foreground_pixels": 42628,
+      "foreground_mae": 34.72588439523318,
+      "full_mae": 3.0896256944444445
+    },
+    {
+      "file": "cjk-800-0-3050.png",
+      "foreground_pixels": 2164,
+      "foreground_mae": 1.5814849044978434,
+      "full_mae": 0.3327291666666667
+    },
+    {
+      "file": "cjk-800-0-700.png",
+      "foreground_pixels": 23627,
+      "foreground_mae": 8.605959283870149,
+      "full_mae": 0.44424722222222224
+    },
+    {
+      "file": "cjk-800-0-750.png",
+      "foreground_pixels": 23158,
+      "foreground_mae": 12.60704724069436,
+      "full_mae": 0.6269340277777777
+    },
+    {
+      "file": "cjk-800-0-850.png",
+      "foreground_pixels": 20064,
+      "foreground_mae": 22.75139553429027,
+      "full_mae": 0.9657451388888889
+    },
+    {
+      "file": "cjk-800-1-1300.png",
+      "foreground_pixels": 81344,
+      "foreground_mae": 22.723991115919222,
+      "full_mae": 3.909472222222222
+    },
+    {
+      "file": "cjk-800-1-1600.png",
+      "foreground_pixels": 106477,
+      "foreground_mae": 11.623849908117872,
+      "full_mae": 2.6596993055555553
+    },
+    {
+      "file": "cjk-800-1-2200.png",
+      "foreground_pixels": 115779,
+      "foreground_mae": 14.747153340991602,
+      "full_mae": 3.66159375
+    },
+    {
+      "file": "cjk-800-1-2800.png",
+      "foreground_pixels": 84736,
+      "foreground_mae": 16.985960315961734,
+      "full_mae": 3.074871527777778
+    },
+    {
+      "file": "cjk-800-1-3050.png",
+      "foreground_pixels": 4394,
+      "foreground_mae": 1.6474738279472008,
+      "full_mae": 0.3514263888888889
+    },
+    {
+      "file": "cjk-800-1-700.png",
+      "foreground_pixels": 23627,
+      "foreground_mae": 8.605959283870149,
+      "full_mae": 0.44424722222222224
+    },
+    {
+      "file": "cjk-800-1-750.png",
+      "foreground_pixels": 49215,
+      "foreground_mae": 8.773348233939517,
+      "full_mae": 0.9967277777777778
+    },
+    {
+      "file": "cjk-800-1-850.png",
+      "foreground_pixels": 62003,
+      "foreground_mae": 10.92939588944621,
+      "full_mae": 1.474236111111111
+    },
+    {
+      "file": "latin-380-0-1300.png",
+      "foreground_pixels": 9507,
+      "foreground_mae": 23.193997405420568,
+      "full_mae": 0.977701754385965
+    },
+    {
+      "file": "latin-380-0-1600.png",
+      "foreground_pixels": 7621,
+      "foreground_mae": 20.68525565323886,
+      "full_mae": 0.6983567251461988
+    },
+    {
+      "file": "latin-380-0-2200.png",
+      "foreground_pixels": 8447,
+      "foreground_mae": 12.742038593583521,
+      "full_mae": 0.4803377192982456
+    },
+    {
+      "file": "latin-380-0-2800.png",
+      "foreground_pixels": 8485,
+      "foreground_mae": 15.286505598114319,
+      "full_mae": 0.5777880116959064
+    },
+    {
+      "file": "latin-380-0-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.2042763157894737
+    },
+    {
+      "file": "latin-380-0-700.png",
+      "foreground_pixels": 4206,
+      "foreground_mae": 2.2937866539863685,
+      "full_mae": 0.05300438596491228
+    },
+    {
+      "file": "latin-380-0-750.png",
+      "foreground_pixels": 4114,
+      "foreground_mae": 3.8187489871981852,
+      "full_mae": 0.07839473684210527
+    },
+    {
+      "file": "latin-380-0-850.png",
+      "foreground_pixels": 3428,
+      "foreground_mae": 11.095001944768573,
+      "full_mae": 0.17255409356725146
+    },
+    {
+      "file": "latin-380-1-1300.png",
+      "foreground_pixels": 22472,
+      "foreground_mae": 15.868666192001898,
+      "full_mae": 1.6363479532163743
+    },
+    {
+      "file": "latin-380-1-1600.png",
+      "foreground_pixels": 30634,
+      "foreground_mae": 8.862440425670822,
+      "full_mae": 1.2894035087719298
+    },
+    {
+      "file": "latin-380-1-2200.png",
+      "foreground_pixels": 24205,
+      "foreground_mae": 6.8018866625352885,
+      "full_mae": 0.8531783625730994
+    },
+    {
+      "file": "latin-380-1-2800.png",
+      "foreground_pixels": 25010,
+      "foreground_mae": 9.245954951352791,
+      "full_mae": 1.066295321637427
+    },
+    {
+      "file": "latin-380-1-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.20792105263157895
+    },
+    {
+      "file": "latin-380-1-700.png",
+      "foreground_pixels": 4206,
+      "foreground_mae": 2.2937866539863685,
+      "full_mae": 0.05300438596491228
+    },
+    {
+      "file": "latin-380-1-750.png",
+      "foreground_pixels": 5204,
+      "foreground_mae": 4.101396361772995,
+      "full_mae": 0.1771140350877193
+    },
+    {
+      "file": "latin-380-1-850.png",
+      "foreground_pixels": 11787,
+      "foreground_mae": 7.511043239727384,
+      "full_mae": 0.46328508771929827
+    },
+    {
+      "file": "latin-800-0-1300.png",
+      "foreground_pixels": 31189,
+      "foreground_mae": 10.473339959601141,
+      "full_mae": 0.6883631944444445
+    },
+    {
+      "file": "latin-800-0-1600.png",
+      "foreground_pixels": 24803,
+      "foreground_mae": 9.182477926057333,
+      "full_mae": 0.4822034722222222
+    },
+    {
+      "file": "latin-800-0-2200.png",
+      "foreground_pixels": 27646,
+      "foreground_mae": 7.426619884733174,
+      "full_mae": 0.43517361111111114
+    },
+    {
+      "file": "latin-800-0-2800.png",
+      "foreground_pixels": 27592,
+      "foreground_mae": 7.7838866338069,
+      "full_mae": 0.4552979166666667
+    },
+    {
+      "file": "latin-800-0-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.2321263888888889
+    },
+    {
+      "file": "latin-800-0-700.png",
+      "foreground_pixels": 12833,
+      "foreground_mae": 1.7176550040260785,
+      "full_mae": 0.053720833333333336
+    },
+    {
+      "file": "latin-800-0-750.png",
+      "foreground_pixels": 12434,
+      "foreground_mae": 2.1704734330598896,
+      "full_mae": 0.06354583333333333
+    },
+    {
+      "file": "latin-800-0-850.png",
+      "foreground_pixels": 10198,
+      "foreground_mae": 4.565764528992613,
+      "full_mae": 0.10324791666666666
+    },
+    {
+      "file": "latin-800-1-1300.png",
+      "foreground_pixels": 56944,
+      "foreground_mae": 9.927174065748806,
+      "full_mae": 1.2442229166666667
+    },
+    {
+      "file": "latin-800-1-1600.png",
+      "foreground_pixels": 63828,
+      "foreground_mae": 6.526618411982202,
+      "full_mae": 0.9314666666666667
+    },
+    {
+      "file": "latin-800-1-2200.png",
+      "foreground_pixels": 59863,
+      "foreground_mae": 6.062214278157348,
+      "full_mae": 0.8244076388888889
+    },
+    {
+      "file": "latin-800-1-2800.png",
+      "foreground_pixels": 61816,
+      "foreground_mae": 6.703987101505543,
+      "full_mae": 0.9171965277777778
+    },
+    {
+      "file": "latin-800-1-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.24183888888888888
+    },
+    {
+      "file": "latin-800-1-700.png",
+      "foreground_pixels": 12833,
+      "foreground_mae": 1.7176550040260785,
+      "full_mae": 0.053720833333333336
+    },
+    {
+      "file": "latin-800-1-750.png",
+      "foreground_pixels": 17471,
+      "foreground_mae": 3.0649266403373208,
+      "full_mae": 0.15793055555555555
+    },
+    {
+      "file": "latin-800-1-850.png",
+      "foreground_pixels": 26848,
+      "foreground_mae": 5.12413090981327,
+      "full_mae": 0.3346659722222222
+    },
+    {
+      "file": "wrap-380-0-1300.png",
+      "foreground_pixels": 13431,
+      "foreground_mae": 19.994539994539995,
+      "full_mae": 1.1869956140350877
+    },
+    {
+      "file": "wrap-380-0-1600.png",
+      "foreground_pixels": 9924,
+      "foreground_mae": 17.304077656858794,
+      "full_mae": 0.7591345029239767
+    },
+    {
+      "file": "wrap-380-0-2200.png",
+      "foreground_pixels": 9843,
+      "foreground_mae": 14.828101188661993,
+      "full_mae": 0.6466491228070176
+    },
+    {
+      "file": "wrap-380-0-2800.png",
+      "foreground_pixels": 9769,
+      "foreground_mae": 16.398914934998466,
+      "full_mae": 0.712156432748538
+    },
+    {
+      "file": "wrap-380-0-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.28427485380116957
+    },
+    {
+      "file": "wrap-380-0-700.png",
+      "foreground_pixels": 12070,
+      "foreground_mae": 2.4053300193316764,
+      "full_mae": 0.15970906432748538
+    },
+    {
+      "file": "wrap-380-0-750.png",
+      "foreground_pixels": 11734,
+      "foreground_mae": 3.575791148230214,
+      "full_mae": 0.21172368421052631
+    },
+    {
+      "file": "wrap-380-0-850.png",
+      "foreground_pixels": 9488,
+      "foreground_mae": 11.020727937043283,
+      "full_mae": 0.47526754385964914
+    },
+    {
+      "file": "wrap-380-1-1300.png",
+      "foreground_pixels": 23456,
+      "foreground_mae": 14.268616416552979,
+      "full_mae": 1.5284853801169591
+    },
+    {
+      "file": "wrap-380-1-1600.png",
+      "foreground_pixels": 30414,
+      "foreground_mae": 8.610628877052235,
+      "full_mae": 1.2545584795321638
+    },
+    {
+      "file": "wrap-380-1-2200.png",
+      "foreground_pixels": 28167,
+      "foreground_mae": 7.779600241417262,
+      "full_mae": 1.0906754385964912
+    },
+    {
+      "file": "wrap-380-1-2800.png",
+      "foreground_pixels": 24861,
+      "foreground_mae": 9.32255339688669,
+      "full_mae": 1.0741652046783625
+    },
+    {
+      "file": "wrap-380-1-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.29596491228070176
+    },
+    {
+      "file": "wrap-380-1-700.png",
+      "foreground_pixels": 12070,
+      "foreground_mae": 2.4053300193316764,
+      "full_mae": 0.15970906432748538
+    },
+    {
+      "file": "wrap-380-1-750.png",
+      "foreground_pixels": 16190,
+      "foreground_mae": 4.37514926909615,
+      "full_mae": 0.3871812865497076
+    },
+    {
+      "file": "wrap-380-1-850.png",
+      "foreground_pixels": 21520,
+      "foreground_mae": 9.55167286245353,
+      "full_mae": 0.9696900584795322
+    },
+    {
+      "file": "wrap-800-0-1300.png",
+      "foreground_pixels": 18595,
+      "foreground_mae": 11.68174240387201,
+      "full_mae": 0.4582791666666667
+    },
+    {
+      "file": "wrap-800-0-1600.png",
+      "foreground_pixels": 13920,
+      "foreground_mae": 10.916882183908045,
+      "full_mae": 0.32060555555555553
+    },
+    {
+      "file": "wrap-800-0-2200.png",
+      "foreground_pixels": 13868,
+      "foreground_mae": 8.947096433035284,
+      "full_mae": 0.26292430555555557
+    },
+    {
+      "file": "wrap-800-0-2800.png",
+      "foreground_pixels": 13940,
+      "foreground_mae": 9.75117168818747,
+      "full_mae": 0.28791041666666667
+    },
+    {
+      "file": "wrap-800-0-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.1972951388888889
+    },
+    {
+      "file": "wrap-800-0-700.png",
+      "foreground_pixels": 16838,
+      "foreground_mae": 1.6711208773805282,
+      "full_mae": 0.07672708333333333
+    },
+    {
+      "file": "wrap-800-0-750.png",
+      "foreground_pixels": 16304,
+      "foreground_mae": 1.9254375204448806,
+      "full_mae": 0.08164513888888889
+    },
+    {
+      "file": "wrap-800-0-850.png",
+      "foreground_pixels": 13008,
+      "foreground_mae": 4.286695366953669,
+      "full_mae": 0.1272875
+    },
+    {
+      "file": "wrap-800-1-1300.png",
+      "foreground_pixels": 34488,
+      "foreground_mae": 11.964277429830666,
+      "full_mae": 0.93884375
+    },
+    {
+      "file": "wrap-800-1-1600.png",
+      "foreground_pixels": 39637,
+      "foreground_mae": 7.06126430691862,
+      "full_mae": 0.6329888888888889
+    },
+    {
+      "file": "wrap-800-1-2200.png",
+      "foreground_pixels": 35786,
+      "foreground_mae": 6.625523947912591,
+      "full_mae": 0.5701791666666667
+    },
+    {
+      "file": "wrap-800-1-2800.png",
+      "foreground_pixels": 32722,
+      "foreground_mae": 8.829462339302813,
+      "full_mae": 0.6363361111111111
+    },
+    {
+      "file": "wrap-800-1-3050.png",
+      "foreground_pixels": 0,
+      "foreground_mae": 0,
+      "full_mae": 0.20328680555555556
+    },
+    {
+      "file": "wrap-800-1-700.png",
+      "foreground_pixels": 16838,
+      "foreground_mae": 1.6711208773805282,
+      "full_mae": 0.07672708333333333
+    },
+    {
+      "file": "wrap-800-1-750.png",
+      "foreground_pixels": 22374,
+      "foreground_mae": 3.2204940258037604,
+      "full_mae": 0.19637013888888888
+    },
+    {
+      "file": "wrap-800-1-850.png",
+      "foreground_pixels": 28214,
+      "foreground_mae": 6.5513102242385575,
+      "full_mae": 0.43130277777777776
+    }
+  ],
+  "geometry": [
+    {
+      "scene": "latin",
+      "width": 380,
+      "size_delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_only": [],
+      "native_only": [],
+      "shared": [
+        {
+          "id": "echoes -1-1-0-0",
+          "delta": [
+            -2.288818359375e-05,
+            0.0,
+            4.57763671875e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "Amber -0-0-0-0",
+          "delta": [
+            -1.2632036728632556e-05,
+            -5.346936262640156e-07,
+            3.0517578125e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "beyond-2-2-0-0",
+          "delta": [
+            -1.6924021707609427e-05,
+            -1.8493097257987756e-05,
+            1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "latin",
+      "width": 800,
+      "size_delta": [
+        0.0,
+        0.0,
+        5.684341886080802e-14
+      ],
+      "source_only": [],
+      "native_only": [],
+      "shared": [
+        {
+          "id": "echoes -1-0-1-0",
+          "delta": [
+            7.62939453125e-06,
+            0.0,
+            -1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "Amber -0-0-0-0",
+          "delta": [
+            -2.288818359375e-05,
+            0.0,
+            4.57763671875e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "beyond-2-1-0-0",
+          "delta": [
+            5.044059324177397e-05,
+            -2.859665670484901e-05,
+            -6.103515625e-05,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "wrap",
+      "width": 380,
+      "size_delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_only": [],
+      "native_only": [],
+      "shared": [
+        {
+          "id": "amber -1-2-0-0",
+          "delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "no-no-no-no-no-no-no -0-0-0-0",
+          "delta": [
+            -5.684341886080802e-14,
+            -2.1316282072803006e-14,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "no-no-no-no-no-no-no -0-1-0-1",
+          "delta": [
+            -3.228862195214788e-05,
+            1.1480422436704885e-05,
+            3.0517578125e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "echo-2-2-1-0",
+          "delta": [
+            -2.6305411736871065e-05,
+            -9.81900204521935e-06,
+            -1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "wrap",
+      "width": 800,
+      "size_delta": [
+        0.0,
+        0.0,
+        5.684341886080802e-14
+      ],
+      "source_only": [],
+      "native_only": [],
+      "shared": [
+        {
+          "id": "amber -1-1-1-0",
+          "delta": [
+            -4.57763671875e-05,
+            0.0,
+            9.1552734375e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "no-no-no-no-no-no-no -0-0-0-0",
+          "delta": [
+            -4.1778840852657595e-05,
+            -2.149341540302885e-06,
+            6.103515625e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "no-no-no-no-no-no-no -0-1-0-1",
+          "delta": [
+            -4.103104510022604e-05,
+            -5.993697314465862e-06,
+            1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "echo-2-1-2-0",
+          "delta": [
+            6.14588929721549e-05,
+            5.033463087755763e-05,
+            -1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "arabic",
+      "width": 380,
+      "size_delta": [
+        0.0,
+        0.0,
+        -2.842170943040401e-14
+      ],
+      "source_only": [],
+      "native_only": [],
+      "shared": [
+        {
+          "id": "مرحبا -0-0-0-0",
+          "delta": [
+            -3.814697265625e-05,
+            0.0,
+            7.62939453125e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "بالعالم-1-0-1-0",
+          "delta": [
+            -5.897746490290956e-05,
+            -9.60215426459854e-06,
+            7.62939453125e-05,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "arabic",
+      "width": 800,
+      "size_delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_only": [],
+      "native_only": [],
+      "shared": [
+        {
+          "id": "مرحبا -0-0-0-0",
+          "delta": [
+            -2.288818359375e-05,
+            0.0,
+            4.57763671875e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "بالعالم-1-0-1-0",
+          "delta": [
+            -1.284981772187166e-05,
+            1.0014696115945299e-05,
+            1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "cjk",
+      "width": 380,
+      "size_delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_only": [],
+      "native_only": [],
+      "shared": [
+        {
+          "id": "星光 -1-0-1-0",
+          "delta": [
+            -7.62939453125e-06,
+            0.0,
+            1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "向远方 -0-0-0-0",
+          "delta": [
+            -1.386698326655278e-05,
+            6.771497567115148e-07,
+            1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "回响-2-0-2-0",
+          "delta": [
+            1.8218245230627872e-05,
+            9.444697468552476e-08,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "回响-2-1-0-1",
+          "delta": [
+            8.630739742443438e-06,
+            2.068351065531715e-06,
+            -1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "cjk",
+      "width": 800,
+      "size_delta": [
+        0.0,
+        0.0,
+        1.1368683772161603e-13
+      ],
+      "source_only": [],
+      "native_only": [],
+      "shared": [
+        {
+          "id": "星光 -1-0-1-0",
+          "delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "向远方 -0-0-0-0",
+          "delta": [
+            -1.1939682167394494e-06,
+            3.833551431853266e-07,
+            1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "回响-2-0-2-0",
+          "delta": [
+            -1.7196995827362116e-07,
+            3.0025911712527886e-07,
+            -1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "回响-2-1-0-1",
+          "delta": [
+            7.839898358952269e-06,
+            -1.543143598325969e-05,
+            -1.52587890625e-05,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ],
+  "png_sha256": {
+    "build/verification/cadenza-target-browser/arabic-380-0-1300.png": "95dcbc6f0322c9b4019e30029b607486142a4442feb230eb9854b05b0dc38117",
+    "build/verification/cadenza-target-kotlin/arabic-380-0-1300.png": "d5d32ecba11f69490e14e68de1f8103a1a8fa78e405ba40931d984889b7b44d0",
+    "build/verification/cadenza-target-browser/arabic-380-0-1600.png": "3e42501d74ec4c9d98b1c430002960b622aaf52f4a25715f42e30515e5bde06c",
+    "build/verification/cadenza-target-kotlin/arabic-380-0-1600.png": "e8233cf1b84713ee57762973388fcf2cb9792f8738134e760ca30e80dd78943e",
+    "build/verification/cadenza-target-browser/arabic-380-0-2200.png": "d2fecaddab82fb7af82af2bcda301cc797f6ef0448da033556aa7cf35c0e07be",
+    "build/verification/cadenza-target-kotlin/arabic-380-0-2200.png": "42ea370f1f0dc7754eec0dcc1520eed4b247f1a5f3bc93cc1bb4490c02ce79cc",
+    "build/verification/cadenza-target-browser/arabic-380-0-2800.png": "bdfc95135d9230337e8b2ff18c96f275001b094a779f0b824d22130b68d1f4e9",
+    "build/verification/cadenza-target-kotlin/arabic-380-0-2800.png": "a617b5ad6a0a73230057290cb5cee749df7067808d393ac59001eebd7eada2c2",
+    "build/verification/cadenza-target-browser/arabic-380-0-3050.png": "457fe5025553fbfd6518a0c8a59ecc0ab4d7100f948385e4a308fa3bc86df673",
+    "build/verification/cadenza-target-kotlin/arabic-380-0-3050.png": "6d61a2ae1e1c644c5818112795b48e8a0458a86b19410bc9e63c25b104ab1b0b",
+    "build/verification/cadenza-target-browser/arabic-380-0-700.png": "36c9685470bddc3c01f41704f2d9b60caf4d3a6634c34b382251d67244a7088c",
+    "build/verification/cadenza-target-kotlin/arabic-380-0-700.png": "85859322053da9b80006960107409a8e12ffe2dc713bd44323775e2ecd42a069",
+    "build/verification/cadenza-target-browser/arabic-380-0-750.png": "736e0f27ffa77af605a62a3dd0314127348abb9f610ad12809ca23cf04a07817",
+    "build/verification/cadenza-target-kotlin/arabic-380-0-750.png": "541403fb91e59621a56f8590fd3c92d8080b01e7f621ed8c60a92b898ea416a6",
+    "build/verification/cadenza-target-browser/arabic-380-0-850.png": "e1f608fdfb216dc274d3c20f879323c68a0bc16bcbc227269b997f18f696fc95",
+    "build/verification/cadenza-target-kotlin/arabic-380-0-850.png": "422ed4a01360d9cb0c1f98181e9ed5f443ca0a59276cb0863d8f7e931fd22aa5",
+    "build/verification/cadenza-target-browser/arabic-380-1-1300.png": "b9528398aee0b941d9459cd300b13986cfc89dee1a412f55198dfc15ee9e2990",
+    "build/verification/cadenza-target-kotlin/arabic-380-1-1300.png": "3883518b67924433c973820a497bf1dd84f49122e42f769ce9a0d4b82a8024a3",
+    "build/verification/cadenza-target-browser/arabic-380-1-1600.png": "6edf9e200311788bed8346f390e4fcb8d7be6422afa7dd9fb5b4a7efed465338",
+    "build/verification/cadenza-target-kotlin/arabic-380-1-1600.png": "90c036adfdad92d53094b7d0e4cdaaf3490a3ed489771a4b20be0d12fcdf4792",
+    "build/verification/cadenza-target-browser/arabic-380-1-2200.png": "a74ba8dfa46bfd2e32f722760fe0ffbe4bd8f47f738bc78a09d44bd1b86d1591",
+    "build/verification/cadenza-target-kotlin/arabic-380-1-2200.png": "3a3fea6a71e37e7b5ce0e88fcb69bff2e038dcc400c76862566098623e4b5159",
+    "build/verification/cadenza-target-browser/arabic-380-1-2800.png": "b4c177b6879b5b72efc6c2f5fed5865b1e3e80c2e33f3125e8e220eade3c87b1",
+    "build/verification/cadenza-target-kotlin/arabic-380-1-2800.png": "7c27158435884dfbd5afdcaab6f7f6f53ba140e5db7574afe9aa4208c98d9e91",
+    "build/verification/cadenza-target-browser/arabic-380-1-3050.png": "6e6ff40e0101e38a26be505aef70c96e4fabf81cb773059891937fce4da91db2",
+    "build/verification/cadenza-target-kotlin/arabic-380-1-3050.png": "3b5e8a47b7fed41a3a441e058ae83287cd69f570b6baf675561dafb2a2c21412",
+    "build/verification/cadenza-target-browser/arabic-380-1-700.png": "36c9685470bddc3c01f41704f2d9b60caf4d3a6634c34b382251d67244a7088c",
+    "build/verification/cadenza-target-kotlin/arabic-380-1-700.png": "85859322053da9b80006960107409a8e12ffe2dc713bd44323775e2ecd42a069",
+    "build/verification/cadenza-target-browser/arabic-380-1-750.png": "1083b9ac80e13e1e5f148ea1d7543211622d86ed7dc9fa002efa3562a68be09f",
+    "build/verification/cadenza-target-kotlin/arabic-380-1-750.png": "fe06a5dd16a5486f058997c935a981fe5d20bfb77077ed371b8cee4be240c829",
+    "build/verification/cadenza-target-browser/arabic-380-1-850.png": "0f24b7e1632f978166762fb636c035143fae6333841a0b3b558d2f72c8df7073",
+    "build/verification/cadenza-target-kotlin/arabic-380-1-850.png": "cbd23260834f87848236fde4da4f0b54878392790b767edac771d0187d854c49",
+    "build/verification/cadenza-target-browser/arabic-800-0-1300.png": "19aaf3f0c68f57c484727f3ca020d8f5850b0154565f1d95780c8c7563b76e05",
+    "build/verification/cadenza-target-kotlin/arabic-800-0-1300.png": "1d039dfb239e99cd4a62aa05962fe5a00d0c3ede54c73809d162b23c28c4b07f",
+    "build/verification/cadenza-target-browser/arabic-800-0-1600.png": "d0aaece15ce0b2bb570ee05551a9db0a144c3dcc1c1d53766a1eb329aa10fd85",
+    "build/verification/cadenza-target-kotlin/arabic-800-0-1600.png": "78bb2bfe53ff262c02842fa1e2bfee52ba1ed0ae801f188ece4f3dabcba69cab",
+    "build/verification/cadenza-target-browser/arabic-800-0-2200.png": "06a762ee9b25b5c3a8137450d93853c66ae3f3c32885117defcf803323d6dcd2",
+    "build/verification/cadenza-target-kotlin/arabic-800-0-2200.png": "cfff2d237c74d19b07d5f944d3e864a4771315610252cf1036c76ed699836774",
+    "build/verification/cadenza-target-browser/arabic-800-0-2800.png": "e14c9285d3d403371b09d4709b4eb66732863bec7547066745b6db8899a1063e",
+    "build/verification/cadenza-target-kotlin/arabic-800-0-2800.png": "b502929b3f02785a8ffa163411ef4df1377b5ebcd73360d17bba999aa120a6d5",
+    "build/verification/cadenza-target-browser/arabic-800-0-3050.png": "27c2af0e3c4d7d9dc07985db217a284008ad4b8d406f9be2c1ee9e24ead9fd72",
+    "build/verification/cadenza-target-kotlin/arabic-800-0-3050.png": "232a9cf8ebce50704c911a2208ceb5ca2daefc58b8c0336576c64cbf26d75696",
+    "build/verification/cadenza-target-browser/arabic-800-0-700.png": "95dc7bd9f42fce407bd9fe9253434f207ab4f01698ad062de1ff68540ddd59af",
+    "build/verification/cadenza-target-kotlin/arabic-800-0-700.png": "9de42987d7942d7e49f6883b993cbdba10f110e5beaf22452fd7205fe97c4076",
+    "build/verification/cadenza-target-browser/arabic-800-0-750.png": "d8fd911be3a2b0edfd0c0f38d2ac29a428504155e69cd8294909afd7b5408093",
+    "build/verification/cadenza-target-kotlin/arabic-800-0-750.png": "dab42eb8a38ae5d44cd80abb503124eca6272602eae6dd1070b8cf16f00f7be8",
+    "build/verification/cadenza-target-browser/arabic-800-0-850.png": "1db9d7118f648d2ed4ec84557acd48e32cf208def8be7ce913423eee5aecff8e",
+    "build/verification/cadenza-target-kotlin/arabic-800-0-850.png": "5b8c2c0c7f78d1ce9b3fc71a6bc4c2aecf703e81d9dcc44edb3ccdfd3be7bcae",
+    "build/verification/cadenza-target-browser/arabic-800-1-1300.png": "b5174ff0e0d8e0a84a01b0d95a8a2054e59057f59b805da0ea8da45e8332a121",
+    "build/verification/cadenza-target-kotlin/arabic-800-1-1300.png": "56cab133143a5b5519231117a43bf1b8f497856c6747d98a500a2a9d31a0ca27",
+    "build/verification/cadenza-target-browser/arabic-800-1-1600.png": "bf04b08f2285f1e76c771b58077e6bce50c487ee4e3457093840ce835c1769e5",
+    "build/verification/cadenza-target-kotlin/arabic-800-1-1600.png": "63535886f3c022d20c38fd1feab6e1630019d1afb19d13e1bceefec6d572c541",
+    "build/verification/cadenza-target-browser/arabic-800-1-2200.png": "647bdcf73db49c6dc15fa5b63bc0536383676936d6a3649cdc04f0b5cb52b620",
+    "build/verification/cadenza-target-kotlin/arabic-800-1-2200.png": "46aee21eff78982b5a495fd442b53271606555f9ae47a9a65825d22bf22a44ff",
+    "build/verification/cadenza-target-browser/arabic-800-1-2800.png": "a6e062eac498a556f2f11e3a31c8a4e19ea7c5032279be870cea509057515b11",
+    "build/verification/cadenza-target-kotlin/arabic-800-1-2800.png": "cd840e5655b7a24fe77a434f5b817700356028ed1f25be8476d3b4bccf200298",
+    "build/verification/cadenza-target-browser/arabic-800-1-3050.png": "2752acfa7c4f6de8e5cc07ea410bf26942e814069a9367c713f59c142574061b",
+    "build/verification/cadenza-target-kotlin/arabic-800-1-3050.png": "f0cc79ed14061ae4660f6bc3e92bb07c37ea7b1aa674c90e20049f5355e036c2",
+    "build/verification/cadenza-target-browser/arabic-800-1-700.png": "95dc7bd9f42fce407bd9fe9253434f207ab4f01698ad062de1ff68540ddd59af",
+    "build/verification/cadenza-target-kotlin/arabic-800-1-700.png": "9de42987d7942d7e49f6883b993cbdba10f110e5beaf22452fd7205fe97c4076",
+    "build/verification/cadenza-target-browser/arabic-800-1-750.png": "405195a83c6f47b0ea5d69d0b8fb25c22edbd46e497cc35197feb461dd135a35",
+    "build/verification/cadenza-target-kotlin/arabic-800-1-750.png": "330f49fece138fcde23ab1dc7de64449c03b245a6788e4be7f1f79aa502b67c5",
+    "build/verification/cadenza-target-browser/arabic-800-1-850.png": "e2b83e243ad27fb8993dbc8ed2d80f6baf715bc12a7d297eb8e224fd6347c2b9",
+    "build/verification/cadenza-target-kotlin/arabic-800-1-850.png": "db75aae06a6f1c677ab404c9cc80a45c530b9a6204fddaf539ba8aaaf62cb2ce",
+    "build/verification/cadenza-target-browser/cjk-380-0-1300.png": "5b138dfabe46e90701598409ec2ad3ba920c6b61fa07f8f384c7cda8dd6212d6",
+    "build/verification/cadenza-target-kotlin/cjk-380-0-1300.png": "f3662165cac1a9dc877c685d4d091450b9440165e78f4600b55afa80bf21d950",
+    "build/verification/cadenza-target-browser/cjk-380-0-1600.png": "af77a914fcca659ffc1c2019bbf8956ba75016ac7325c17910aa85773eaf0e57",
+    "build/verification/cadenza-target-kotlin/cjk-380-0-1600.png": "fe0ea7f6d0a2cd1025b30e4899f2d3130100147a16072504c7f7ed8975a66f19",
+    "build/verification/cadenza-target-browser/cjk-380-0-2200.png": "faef14cf0f10522a7891cb191f5ced11edb381ec3c7d90b01b0fae44f613079b",
+    "build/verification/cadenza-target-kotlin/cjk-380-0-2200.png": "e77ba8ddfc761d5d0b2cf6eb5bdd1cf72fb65db4b048e2531b61be0913b1c0d6",
+    "build/verification/cadenza-target-browser/cjk-380-0-2800.png": "238ba7f398c2a573dbc7759563bc313c50e072feba14a88b3bdb160cc3ae87ae",
+    "build/verification/cadenza-target-kotlin/cjk-380-0-2800.png": "124347a042f1f9f210d98abb414b3f16b839168d664d55812fc27795c0eaad8e",
+    "build/verification/cadenza-target-browser/cjk-380-0-3050.png": "73d90788d6af7581bd31e47e470f607b47fe8803e5e9f2c951773dd0ae631f08",
+    "build/verification/cadenza-target-kotlin/cjk-380-0-3050.png": "528edcad58a043246fc6c839040ade11e963e9206756af36a335eb5d86754454",
+    "build/verification/cadenza-target-browser/cjk-380-0-700.png": "36f5b81db9ba24b182fc032c2b93293c4ede3becb3e23a283dfdad98dca511f3",
+    "build/verification/cadenza-target-kotlin/cjk-380-0-700.png": "1c49a7d0778fdc048547050ad97256f65275b68d4a01aa4ac52b163202c0cb30",
+    "build/verification/cadenza-target-browser/cjk-380-0-750.png": "8a0c40d7c7d8aa7ceb729404ae36740c854b423d5174ec9d4919926eb54df007",
+    "build/verification/cadenza-target-kotlin/cjk-380-0-750.png": "4e93739354e0cf4ad9c8ea924d213844709434fa1747ad33846e81107e8c1b44",
+    "build/verification/cadenza-target-browser/cjk-380-0-850.png": "78ca87f85d6c3ed9eaca4c35a9c41aa129a8dd059314706502075d1d4b5d94da",
+    "build/verification/cadenza-target-kotlin/cjk-380-0-850.png": "6513b881f9bdc81dead0a05d0bf9002f7b05b306c89077af894f1ca50a053725",
+    "build/verification/cadenza-target-browser/cjk-380-1-1300.png": "a377ef79a28fd759076d06a317179add02940532959f24e1eef9d9a99b1b0b3e",
+    "build/verification/cadenza-target-kotlin/cjk-380-1-1300.png": "499dc449966eac5245103f780604461f6f5fcf9134e261627133327bbb167613",
+    "build/verification/cadenza-target-browser/cjk-380-1-1600.png": "eeaed176bb4e29c0c5cc57dfa3fe8bf63f632ca602933ffc8a8d258a5ed035e5",
+    "build/verification/cadenza-target-kotlin/cjk-380-1-1600.png": "0539569b4fc22fef1c3108a97d919012c19ad15e7d9737d97b64ba91c111d423",
+    "build/verification/cadenza-target-browser/cjk-380-1-2200.png": "ef5a0eb4c1b53ab9e7b91d78843e48ddf78befbb7402b92b4dacdcbeb8737089",
+    "build/verification/cadenza-target-kotlin/cjk-380-1-2200.png": "a1e7fa6c4b00bd1960fe332a004c7e501d22ce71f428a89eab38cdb3ca09b1a4",
+    "build/verification/cadenza-target-browser/cjk-380-1-2800.png": "cd772c498aa086f3abb8eb63286abefd2997708c19fdf4292b77ca449bd0549f",
+    "build/verification/cadenza-target-kotlin/cjk-380-1-2800.png": "02de8ed1ae097bc1a80b9d94cf7f2727eeb97adb6557b30e373f133e57cf4bdc",
+    "build/verification/cadenza-target-browser/cjk-380-1-3050.png": "2fae8c1ed01fb484f4d1b519a0a97dbef2b43ecdfcd476f10857fe5de759aaaf",
+    "build/verification/cadenza-target-kotlin/cjk-380-1-3050.png": "efb4eba767142dfb989387462ba5269ffb3cceec4a91fc818048fe41f65d1a42",
+    "build/verification/cadenza-target-browser/cjk-380-1-700.png": "36f5b81db9ba24b182fc032c2b93293c4ede3becb3e23a283dfdad98dca511f3",
+    "build/verification/cadenza-target-kotlin/cjk-380-1-700.png": "1c49a7d0778fdc048547050ad97256f65275b68d4a01aa4ac52b163202c0cb30",
+    "build/verification/cadenza-target-browser/cjk-380-1-750.png": "d2c0c2f1921bcd97e56708fdebdadf48523b70468cbd80de7089900d0b6a5b98",
+    "build/verification/cadenza-target-kotlin/cjk-380-1-750.png": "38b2fbb69234e19835f871fa1ac8291737b20f5019a262ef93f68c0d849cc8d6",
+    "build/verification/cadenza-target-browser/cjk-380-1-850.png": "f7fa6b5c3670bcf744995f428a1d6f68c886b34bdcb0cc8fb6d9ebf1f9d9f7da",
+    "build/verification/cadenza-target-kotlin/cjk-380-1-850.png": "5b3b105b4c01396e72e83c92fd3d04a3a4502d26702acf7e55eee26f1a88c665",
+    "build/verification/cadenza-target-browser/cjk-800-0-1300.png": "af16e3719eddc26f6949e8410c2bde34062c687b36dab8206add164e140ee76d",
+    "build/verification/cadenza-target-kotlin/cjk-800-0-1300.png": "ef777e2b5149bf41582c6b0d8045dcc10293a78411da5ab0621a33b8fbd75c28",
+    "build/verification/cadenza-target-browser/cjk-800-0-1600.png": "6dd9c202bcf4bcec71f6999a5385b06f7fd31d91fffe0158ee614c67c95c43b3",
+    "build/verification/cadenza-target-kotlin/cjk-800-0-1600.png": "e00874fe6d010e801b12dbe678dd63fe2b4f739db783a5861cafffd53448e26d",
+    "build/verification/cadenza-target-browser/cjk-800-0-2200.png": "a6934ed44feb7f5005c150fc283b39c707aea8a2ff3e7df2c4192426babf36c0",
+    "build/verification/cadenza-target-kotlin/cjk-800-0-2200.png": "7b2b8d41ba3970acb9cfb389feb485266de137a657873fd71d3c01a89ec6d0b1",
+    "build/verification/cadenza-target-browser/cjk-800-0-2800.png": "88383e21eb6ba2b6cacb2c89a3cd57db0b20c6399acf6456b23d102a5c24ba97",
+    "build/verification/cadenza-target-kotlin/cjk-800-0-2800.png": "452ad24421be480ff4ce8e43c94c32461d5d35b09137f2b7c5269ce174a3d253",
+    "build/verification/cadenza-target-browser/cjk-800-0-3050.png": "ba935a733d0a2e9ad56fa40ceb051c31b493c5fdb662a665ce6c836e43f48af7",
+    "build/verification/cadenza-target-kotlin/cjk-800-0-3050.png": "39a48d7efabed4271e9eaa4914941e7bfbd7362ce9700f74049083d2075a3148",
+    "build/verification/cadenza-target-browser/cjk-800-0-700.png": "0e31d44b38d9244b6e236894ecf9fdbb41a7c28f2c7d19eedc24adb2dd237494",
+    "build/verification/cadenza-target-kotlin/cjk-800-0-700.png": "97502d43388fc09d0d50490c02c56cc4d618e5fdaf66d131b7260c8de3182c12",
+    "build/verification/cadenza-target-browser/cjk-800-0-750.png": "222459eb5a2ffd24c9a82659cbfb7c92b6b778e68f546e6785be4a54a69c4560",
+    "build/verification/cadenza-target-kotlin/cjk-800-0-750.png": "e98f7b9747cd40b42ae87018ad0b14294ab2cabb30f475bc01004080597c1953",
+    "build/verification/cadenza-target-browser/cjk-800-0-850.png": "92b11f592a33b06aabc800ed9f6d172017d5b6291ea0dd86c9b94d7ba8d81e20",
+    "build/verification/cadenza-target-kotlin/cjk-800-0-850.png": "381dac090abe1b87181dc3b33f8a5eb051319bd5541b9a26836d10a50b01cfc3",
+    "build/verification/cadenza-target-browser/cjk-800-1-1300.png": "32ab6461465268ee4594031ecc8775c7f2445cf4d65cf9df4ce94db4757284ce",
+    "build/verification/cadenza-target-kotlin/cjk-800-1-1300.png": "9a79d1339a189e0a01083bd33158222b2476ceec4ba78500d4b18ec2a34da10e",
+    "build/verification/cadenza-target-browser/cjk-800-1-1600.png": "f19c67185df674966d64f4c0a84039620b84db2ba320eab559c5cab85fc40922",
+    "build/verification/cadenza-target-kotlin/cjk-800-1-1600.png": "d51a141a2effdf09e602fba39811dbeccb179eac86ff576fe3c530f8081278ce",
+    "build/verification/cadenza-target-browser/cjk-800-1-2200.png": "bd8eb0c35fbeae3b7bc95a2881c9cde84fac767836b08bc11e8bac21d144c2b5",
+    "build/verification/cadenza-target-kotlin/cjk-800-1-2200.png": "349f7424de8f630a8c322e6b23cf528ca2e68a3a16b954822dbb8eb62fc35daa",
+    "build/verification/cadenza-target-browser/cjk-800-1-2800.png": "f2a91b3cfd6777e11dd798539981e11e5654c8f47f9c11887a1c99c9b347b8df",
+    "build/verification/cadenza-target-kotlin/cjk-800-1-2800.png": "f1d22c7e6aae4fe5e140b322d1de6bad6f5954fd6369c16e7030d7954c4a30df",
+    "build/verification/cadenza-target-browser/cjk-800-1-3050.png": "21f9c1fb96d0c0481e254861b063f028c6ad134ec4304cfd8ef08ad34e8af0cd",
+    "build/verification/cadenza-target-kotlin/cjk-800-1-3050.png": "373a6ede117ddb4c685112e2f959e4734b2374a8383085e0881f5b74d4241009",
+    "build/verification/cadenza-target-browser/cjk-800-1-700.png": "0e31d44b38d9244b6e236894ecf9fdbb41a7c28f2c7d19eedc24adb2dd237494",
+    "build/verification/cadenza-target-kotlin/cjk-800-1-700.png": "97502d43388fc09d0d50490c02c56cc4d618e5fdaf66d131b7260c8de3182c12",
+    "build/verification/cadenza-target-browser/cjk-800-1-750.png": "a6f0ada64416c1c3457c4451867a8961c20dc8a55e6409ae1beb7870dcaeca92",
+    "build/verification/cadenza-target-kotlin/cjk-800-1-750.png": "54e49692c1d633960ce9dc25ad8c0cf27e5670fda824602b0667f0853788d2f8",
+    "build/verification/cadenza-target-browser/cjk-800-1-850.png": "af15ec9c353c0a215caf2b6ef5b15ddc53c5c35875786311f635fc1e6fd4029d",
+    "build/verification/cadenza-target-kotlin/cjk-800-1-850.png": "788abf0897252d44f5e72952f50bbda94547a769b7c24aa4153514415790d5f8",
+    "build/verification/cadenza-target-browser/latin-380-0-1300.png": "a606193abc8a78697d7992d69e3434acb464a9fb61c084f640ad64e409caebbe",
+    "build/verification/cadenza-target-kotlin/latin-380-0-1300.png": "8f00ecdc2e54c16b9c1b9191b073151231952dcfdb8aab218b712637562f3db3",
+    "build/verification/cadenza-target-browser/latin-380-0-1600.png": "f2646e9de4f3557aeae94843f4afbe824877c9b006bda869698f8751f3dd6980",
+    "build/verification/cadenza-target-kotlin/latin-380-0-1600.png": "16a92147209d541b231e090f2be247b52e83d9bd679bb8344d49b389439f0919",
+    "build/verification/cadenza-target-browser/latin-380-0-2200.png": "158290f0472e159a43c139c35cc1676789183ea2c23b038fa3d4a65215d565eb",
+    "build/verification/cadenza-target-kotlin/latin-380-0-2200.png": "fbb5f8455f15bc6390a9c0f8d3d60c34dcf1b206f0c528c7f9001c39fa817dbd",
+    "build/verification/cadenza-target-browser/latin-380-0-2800.png": "457311c508afdf3619a47dba6b462c56b46ae9887f7dc52d8782e7c86ba420cc",
+    "build/verification/cadenza-target-kotlin/latin-380-0-2800.png": "7289fb494a1c890ca523c45b6a0b8843fce64c3a62261a6fcdf8864200091389",
+    "build/verification/cadenza-target-browser/latin-380-0-3050.png": "03aad45af1a5c3926e5bdc87513d487a515efddbc52b407390f5701469cd3684",
+    "build/verification/cadenza-target-kotlin/latin-380-0-3050.png": "79961af6df5e50c15796f30e67bd77b6861f8ebd095ac0b7a8a9ebf95fb5c18d",
+    "build/verification/cadenza-target-browser/latin-380-0-700.png": "40876e16829f638930a1daa643aee0dff283afd3aaee94a24d6ef5489a7ac040",
+    "build/verification/cadenza-target-kotlin/latin-380-0-700.png": "db294601f474c1dc596e2c4792a484eac94d51a4be660fe91bf446dcc614e124",
+    "build/verification/cadenza-target-browser/latin-380-0-750.png": "71b9bf3102d7ab583aeb3e0139fc84a883083671a352eec77b101ca1c5eda799",
+    "build/verification/cadenza-target-kotlin/latin-380-0-750.png": "031b7a887bc8004150697e0384d99afd215bb140fd1c3609d9c1579a431ebc6a",
+    "build/verification/cadenza-target-browser/latin-380-0-850.png": "45fc6cacb301a24bb56c2d8312bf74de966b16489fa2f07aa1f5dad23bd46d56",
+    "build/verification/cadenza-target-kotlin/latin-380-0-850.png": "404b00022f6d5202e79969307ec6e7d2571c76988c52da9a3063355f76ce92f5",
+    "build/verification/cadenza-target-browser/latin-380-1-1300.png": "09d74116c3c15eed458d3bc2c39367777b7f5265ade657bf8e48b05a9d22588b",
+    "build/verification/cadenza-target-kotlin/latin-380-1-1300.png": "475e82a968531f75889b6c89c12bb34a486c753f2437ca5ecb203aca0b7066cf",
+    "build/verification/cadenza-target-browser/latin-380-1-1600.png": "6d196124553c1ee5bc18f5c8511508751f58758270562168f846e967a94c3ef1",
+    "build/verification/cadenza-target-kotlin/latin-380-1-1600.png": "83a7891f1d296bc6e40dda089c284a3ed9dcee8a893e2c9912c33c0dc1a5e5db",
+    "build/verification/cadenza-target-browser/latin-380-1-2200.png": "0c78f89834c5da812ebac9e812e3187c0e507be380a18944d367ac6640d8ed9b",
+    "build/verification/cadenza-target-kotlin/latin-380-1-2200.png": "364959d6e925dd5a23b1ec39df162c0154bbe0bbeddaf293051d0339acae4170",
+    "build/verification/cadenza-target-browser/latin-380-1-2800.png": "fe9e6004ed3216b81df8d268bdac42e0b2a67e50ba87b519c04192be9cf54565",
+    "build/verification/cadenza-target-kotlin/latin-380-1-2800.png": "f29c92c238a58efda514090563b620ff1f7e1234a0683869e345f8fece78f57e",
+    "build/verification/cadenza-target-browser/latin-380-1-3050.png": "02c353939d4741f52abb6c3cdf4c0152faa7a493491cb1bb0c4fb7daceb90b16",
+    "build/verification/cadenza-target-kotlin/latin-380-1-3050.png": "e3b9be446f4d239da988e6ab0652caa2a9858981cc3db319b4cd9af849398c7e",
+    "build/verification/cadenza-target-browser/latin-380-1-700.png": "40876e16829f638930a1daa643aee0dff283afd3aaee94a24d6ef5489a7ac040",
+    "build/verification/cadenza-target-kotlin/latin-380-1-700.png": "db294601f474c1dc596e2c4792a484eac94d51a4be660fe91bf446dcc614e124",
+    "build/verification/cadenza-target-browser/latin-380-1-750.png": "08372b9206f3184d45c98830c7326aec3013150d9522c0410205224e4fedc5ed",
+    "build/verification/cadenza-target-kotlin/latin-380-1-750.png": "55164373390bb5de520db93f908035895e52a396111987bf4b2906d0b5117b90",
+    "build/verification/cadenza-target-browser/latin-380-1-850.png": "dc084fdf2174e13a9f34a690c74d90204259e78b4cd8f72ae57748f693c1380d",
+    "build/verification/cadenza-target-kotlin/latin-380-1-850.png": "c3bbcb0e19ef1baa457ce464e69fee7ffd2e6cc06ad539bfd99d847c6468d735",
+    "build/verification/cadenza-target-browser/latin-800-0-1300.png": "297fc44d1826daefb8ba06c76268184649edc4a942ecd8cfb883551d4a19163a",
+    "build/verification/cadenza-target-kotlin/latin-800-0-1300.png": "72dddd981340d3b71786d30711a6c9e2914dc7cb08c974fb54e1b00764eede8b",
+    "build/verification/cadenza-target-browser/latin-800-0-1600.png": "79af92ad2d91612fd44b40029bdd6361ac47c928a45633de5bbfb8628c7568cc",
+    "build/verification/cadenza-target-kotlin/latin-800-0-1600.png": "f03a730121e30596a94e88ba3d141ef1a27ce44353c12d9072aadd73bb5660bd",
+    "build/verification/cadenza-target-browser/latin-800-0-2200.png": "1c52e2a7e09171b116985f3f96f87bc7b41c49a8d43f33e41e5f169e515d8e54",
+    "build/verification/cadenza-target-kotlin/latin-800-0-2200.png": "cb57bd0b4643ffca20d87e6f71381359775ec9931a9d3f15c2f519604f00b4db",
+    "build/verification/cadenza-target-browser/latin-800-0-2800.png": "d084e3b4f57affd789891a32771b49ffb334016b4d1d6d7f83a2616c8719446c",
+    "build/verification/cadenza-target-kotlin/latin-800-0-2800.png": "fdc6360bae456021604d25eff194812c1ca833cd3b38580e05b2b777e77dc2b8",
+    "build/verification/cadenza-target-browser/latin-800-0-3050.png": "5c8b2119f8dda1d61e9179a48b4533362c36b5b3ee225dc3548f1b8a610de130",
+    "build/verification/cadenza-target-kotlin/latin-800-0-3050.png": "9d2ad21b5c02d8de0f28e05b52f5e8088963063f842a55537572974052733d38",
+    "build/verification/cadenza-target-browser/latin-800-0-700.png": "a5fd3580aa8f40130119f8f458f98387b45ba2294a50b244dd4ebb8e3de2aaac",
+    "build/verification/cadenza-target-kotlin/latin-800-0-700.png": "bee7e11db5be5ab2b277fad930f19467b5eb21b71d5c38d0c67d6a6d5aa93d53",
+    "build/verification/cadenza-target-browser/latin-800-0-750.png": "ee3952e0842db441b6ed60ca12a7a7a7e89c55dc1101742602b4541d69fa49d5",
+    "build/verification/cadenza-target-kotlin/latin-800-0-750.png": "49d1b9a4222977e391b9e567f67e48f854dbf25c29df942c208dc4821728732a",
+    "build/verification/cadenza-target-browser/latin-800-0-850.png": "dfba27668757d693900e03828dadb7088c1f029dde104e04de4c1b5b3413c03b",
+    "build/verification/cadenza-target-kotlin/latin-800-0-850.png": "7f71719258ae2b2044f465ee9676a1e8e151c4156dd0ac51ac603a1b924f58f8",
+    "build/verification/cadenza-target-browser/latin-800-1-1300.png": "b63a7c0387498d3aa6b695090cda5c4ae8a8fc70c92476dd4f1ce76c6ae66407",
+    "build/verification/cadenza-target-kotlin/latin-800-1-1300.png": "9075f604511d33ccd82b4c9797e8e03ba8625680125955c7b0c9f38bc9fe28bb",
+    "build/verification/cadenza-target-browser/latin-800-1-1600.png": "cc31ec714953857e7bcea98313789fa5133691a375085f5c01645ae29bf4b5c9",
+    "build/verification/cadenza-target-kotlin/latin-800-1-1600.png": "e67cd58f758cb259c12c6175209a8d20d6d2262448c8b9e6127d5afe69bd1883",
+    "build/verification/cadenza-target-browser/latin-800-1-2200.png": "7c97d1d5200e6a794cbae47e16109071059adf47887373b83a37203c113157c9",
+    "build/verification/cadenza-target-kotlin/latin-800-1-2200.png": "f4b8f3173a73230b7d6af069d1de867b35b18598041b23795636efdd47eda7e8",
+    "build/verification/cadenza-target-browser/latin-800-1-2800.png": "d620ab0d9bc0ac1e3cc0104a13e161e5ec5c1d0cf639524d229560e03491b8ff",
+    "build/verification/cadenza-target-kotlin/latin-800-1-2800.png": "49bf3646fec0c2b9bc2e518351854317c7899896973293752f9a637550eafe1a",
+    "build/verification/cadenza-target-browser/latin-800-1-3050.png": "fda222c54266ecf8d28c5e116805606c9785af99864dde2b1f7a013970dc3f2f",
+    "build/verification/cadenza-target-kotlin/latin-800-1-3050.png": "4ec91e6726189bf23aa08d4499ff1a977bd9bbd9bf7d7ef5103c958f66a23e70",
+    "build/verification/cadenza-target-browser/latin-800-1-700.png": "a5fd3580aa8f40130119f8f458f98387b45ba2294a50b244dd4ebb8e3de2aaac",
+    "build/verification/cadenza-target-kotlin/latin-800-1-700.png": "bee7e11db5be5ab2b277fad930f19467b5eb21b71d5c38d0c67d6a6d5aa93d53",
+    "build/verification/cadenza-target-browser/latin-800-1-750.png": "f8ee03cdac83b7f6e2277144a6987bc42ab0daeee7b5bbbb78a3581a250e2bc8",
+    "build/verification/cadenza-target-kotlin/latin-800-1-750.png": "d64b6fc296ad21c0bee742b62b4dc34acaa0205e7ae06d7390af17d71fda9d95",
+    "build/verification/cadenza-target-browser/latin-800-1-850.png": "a036a6f918270bde09c6744a4e014a801108e368233637bef0a5abd66b0a200b",
+    "build/verification/cadenza-target-kotlin/latin-800-1-850.png": "b3b6b30adbdd99e476c72cf90f8dcdfbb77f108e26a4ac0fc0dfa72fd42cd1c1",
+    "build/verification/cadenza-target-browser/wrap-380-0-1300.png": "0040ddeeea27c3a16141fc8785741086c5b912b592cd13540d6d8083978c38b6",
+    "build/verification/cadenza-target-kotlin/wrap-380-0-1300.png": "512ca12432ff8e32aa4248a97031b9b996f7648d9d483704d5c2d54034650b95",
+    "build/verification/cadenza-target-browser/wrap-380-0-1600.png": "a0e1746a026787a81980359fe08c9224eacb130de04651700ac12be599504bf9",
+    "build/verification/cadenza-target-kotlin/wrap-380-0-1600.png": "262785a874c69e26823ec91852ed716417fcaa3d4f9fec96fd45d376e75d0ad9",
+    "build/verification/cadenza-target-browser/wrap-380-0-2200.png": "ba5809d28277b4d37de0f670cc6a0fbcb56a956266472d151bf207758672d7f5",
+    "build/verification/cadenza-target-kotlin/wrap-380-0-2200.png": "141dbc7fdc02e3896579c48dba3cc6cbf3991801beb56e47c94275e6814ce4da",
+    "build/verification/cadenza-target-browser/wrap-380-0-2800.png": "d1239e4d1af6d52de3c3dc0c1361493d648b83dfc7e093f99010c7f9a8cbb6d8",
+    "build/verification/cadenza-target-kotlin/wrap-380-0-2800.png": "4fa659444572255a87ea5887bb00d32e1fa672d8a919981c85aa0b4b55062a6a",
+    "build/verification/cadenza-target-browser/wrap-380-0-3050.png": "da0b5bc462d7024bd1489a7dc3f1b67d4d4e1006bf38e980c53cd327ba6ece7f",
+    "build/verification/cadenza-target-kotlin/wrap-380-0-3050.png": "853d7a2da5c4b47c3d0410b178df100d4dbd69d4ad9376ff4fb35dc3db974216",
+    "build/verification/cadenza-target-browser/wrap-380-0-700.png": "9450e9d8695183bbbec335847943c4f0fabd7189a225fd172abd4e7b932f7636",
+    "build/verification/cadenza-target-kotlin/wrap-380-0-700.png": "014c47686d6d6c56885ea16a2509206a075a1b5a4357a75ea6cbbf757d4471c4",
+    "build/verification/cadenza-target-browser/wrap-380-0-750.png": "4a7878ad978d4109148d63c9076aaee38b6c8eff5df87ffc63df2c03699e25e8",
+    "build/verification/cadenza-target-kotlin/wrap-380-0-750.png": "bea94f9f587bfd9025c0232dc8473dc83e60e204541abc449efebc55190e7c9d",
+    "build/verification/cadenza-target-browser/wrap-380-0-850.png": "5184e05140ffedc43c40be4bb932ce687c0d7570afea441ff535ec2529ddac8b",
+    "build/verification/cadenza-target-kotlin/wrap-380-0-850.png": "d16c014762a75f1f739d194c9a1d3d5a0ccda78504d864b54ee88fc21d3d40bc",
+    "build/verification/cadenza-target-browser/wrap-380-1-1300.png": "ad3792847b0e7aac06bbaae2d801a231d05296a8145f828342ae2fb2daf2884d",
+    "build/verification/cadenza-target-kotlin/wrap-380-1-1300.png": "29303beba24dbc534f844bbefcbc2bd88aa5e183bf562953bf5f5286651462ad",
+    "build/verification/cadenza-target-browser/wrap-380-1-1600.png": "b8c26d9d3f5dee51114eea123a4ba431dc19fd12945bdddf726f8c2f3ceb4e7b",
+    "build/verification/cadenza-target-kotlin/wrap-380-1-1600.png": "de7a8235fe1904e50ddfefe2ae6ba09485eb2f731082836bdbadede31604678c",
+    "build/verification/cadenza-target-browser/wrap-380-1-2200.png": "989e937be3bea8e7a64b945e0205dbcdad9ad80dab308a95ea3aeebee94c122b",
+    "build/verification/cadenza-target-kotlin/wrap-380-1-2200.png": "da56ca64c0de70a795ca3092479b828b423f1c6b38d1dbe1e0a0fbb3828a5d74",
+    "build/verification/cadenza-target-browser/wrap-380-1-2800.png": "44f5ae752a5acb8fb49080df1bac2a9d6ff86d86a7a0fa5557662de7903e7dfe",
+    "build/verification/cadenza-target-kotlin/wrap-380-1-2800.png": "f02aff298d67499b92e3c5c74322d6b9ef8fe36f4bf4116c3bfddbd1333c64e8",
+    "build/verification/cadenza-target-browser/wrap-380-1-3050.png": "940a5da3be1be93848886a6513e32558294ac4f9930da9dd48a6ea71c4fa8faa",
+    "build/verification/cadenza-target-kotlin/wrap-380-1-3050.png": "471bd221f176d4d73bcdef0ef7dbe17af61754698b63b9feda074ff2aa099d97",
+    "build/verification/cadenza-target-browser/wrap-380-1-700.png": "9450e9d8695183bbbec335847943c4f0fabd7189a225fd172abd4e7b932f7636",
+    "build/verification/cadenza-target-kotlin/wrap-380-1-700.png": "014c47686d6d6c56885ea16a2509206a075a1b5a4357a75ea6cbbf757d4471c4",
+    "build/verification/cadenza-target-browser/wrap-380-1-750.png": "da5a771dcd552732a045baf41f32fb428be3d6cc266223aebadaf68a206d8b74",
+    "build/verification/cadenza-target-kotlin/wrap-380-1-750.png": "e0327c47fadb70adc801ced7ccff1c463c852288132a25455005be248e704b4a",
+    "build/verification/cadenza-target-browser/wrap-380-1-850.png": "2a856ad9b7c292f8f890588b7945b97da806acf46226c9005ef75a59a3627497",
+    "build/verification/cadenza-target-kotlin/wrap-380-1-850.png": "ffddf0e1b6dc438e4b795c4a598f07227260c86805d43ac33f1f73c74146c2b5",
+    "build/verification/cadenza-target-browser/wrap-800-0-1300.png": "ffd396c4d16afc79b54799f0a963080b0a72e887467dbd4b02fce40c9d2b2571",
+    "build/verification/cadenza-target-kotlin/wrap-800-0-1300.png": "94bd15e35a36b10bedcd3b86fce09fa382bd3a907632f9c17f662e33c6c66876",
+    "build/verification/cadenza-target-browser/wrap-800-0-1600.png": "373cc25bc69e7f478fbb8587ac46416638dc6b207f280847e54ed4457e5cb4bb",
+    "build/verification/cadenza-target-kotlin/wrap-800-0-1600.png": "43bc0d5817163b01bcdff60bb79b93aab71865c252e1a9da7e601975c5829f42",
+    "build/verification/cadenza-target-browser/wrap-800-0-2200.png": "bc54b720692dcbd485688764cff51268f27cadb2a176b03deab0a1a574a247ed",
+    "build/verification/cadenza-target-kotlin/wrap-800-0-2200.png": "4a1c181b3cfe1b1749a5c89ea18d77884ebe0c11cb5f2a061ef85b002b6320c7",
+    "build/verification/cadenza-target-browser/wrap-800-0-2800.png": "ca8df97a80817c84320a49f4764abd917b26db43249523c2e4eae802d10a9ced",
+    "build/verification/cadenza-target-kotlin/wrap-800-0-2800.png": "041e063bce95d6edcc73ccfccdabc3e2c65f24d2076b23a682c3168d8c37b270",
+    "build/verification/cadenza-target-browser/wrap-800-0-3050.png": "81c2c96ac5f612c86d45d4becc460728979969ea1414989ef8bbe2584f473022",
+    "build/verification/cadenza-target-kotlin/wrap-800-0-3050.png": "fc2659ca7fe7c20283f83c982c1123c0ee0147b1e30d15192b579cbf29e0a7f6",
+    "build/verification/cadenza-target-browser/wrap-800-0-700.png": "144460c20a5ea8a28bcb66f5f789917390554a878c560afb41e2dc7dcc26a8dc",
+    "build/verification/cadenza-target-kotlin/wrap-800-0-700.png": "9ed61cfa1ebc8f886e356f2bd31bb4ae3ab2a36ec6ad54d3944a8a28d07b8e51",
+    "build/verification/cadenza-target-browser/wrap-800-0-750.png": "bc4c1c270234f7ee2cf58c0308e78e3a2f1c037a979c32b64c3bb0ba3ee6e41e",
+    "build/verification/cadenza-target-kotlin/wrap-800-0-750.png": "427543aa906e29576c847217d587bfcc13a7ffdd67bfd5550b16f1e2353438e8",
+    "build/verification/cadenza-target-browser/wrap-800-0-850.png": "2032dfe26fdfa7ea005215ecf35a19680ce194fe10fda0e62708d83cb36fc418",
+    "build/verification/cadenza-target-kotlin/wrap-800-0-850.png": "1bbfab8a0a05d077786113df3224d2648884e9b253e002ae96289899da384389",
+    "build/verification/cadenza-target-browser/wrap-800-1-1300.png": "541f7ee7fa7804f0c627312596a688cdad0b2f26f01c8862e0fcf9d5cd37cc6f",
+    "build/verification/cadenza-target-kotlin/wrap-800-1-1300.png": "4f43c37154c319287417ac4eeb547bc7f843ec855348ffda706de216b9392bf6",
+    "build/verification/cadenza-target-browser/wrap-800-1-1600.png": "c066242f1e4e42c3533d5169b051902dada41ed4070e98b63e0da1b098475ea2",
+    "build/verification/cadenza-target-kotlin/wrap-800-1-1600.png": "fd477abd0d598097880a1fc9c61c894a3a1cc7dda9e6efee6a6029635d643774",
+    "build/verification/cadenza-target-browser/wrap-800-1-2200.png": "e990ff54b66f60988ce5291fb24dc026d25b7ad9d4df63989a230cdab7e03c4c",
+    "build/verification/cadenza-target-kotlin/wrap-800-1-2200.png": "65c6ae465cb0029456e4186e4de01f6d42340fccc432702b2b3aa77d9f52afa3",
+    "build/verification/cadenza-target-browser/wrap-800-1-2800.png": "43e08d9b3f171a2c927a2bea1f247c6e7c90f6c55e1eb37e0804ab08357e9263",
+    "build/verification/cadenza-target-kotlin/wrap-800-1-2800.png": "afcb5da309b88ea5c05a8588998f757df45457ed8569e615d5e1dca5932070a5",
+    "build/verification/cadenza-target-browser/wrap-800-1-3050.png": "e3c6289ac3bcd3b61dad6f595c4b17b0c1d9e56b8960d6771dfb9a6babf54268",
+    "build/verification/cadenza-target-kotlin/wrap-800-1-3050.png": "e32d26d2576b10c6c7e3355714eb218712cef489df6249808d049069939454dd",
+    "build/verification/cadenza-target-browser/wrap-800-1-700.png": "144460c20a5ea8a28bcb66f5f789917390554a878c560afb41e2dc7dcc26a8dc",
+    "build/verification/cadenza-target-kotlin/wrap-800-1-700.png": "9ed61cfa1ebc8f886e356f2bd31bb4ae3ab2a36ec6ad54d3944a8a28d07b8e51",
+    "build/verification/cadenza-target-browser/wrap-800-1-750.png": "32d2003252a7ad2c4e7132b2eeadfef03a1c2a43a209126c986f1d53a912c4b6",
+    "build/verification/cadenza-target-kotlin/wrap-800-1-750.png": "ab5f4f148e90cef32dd99762246601acd3a22cabbd2e962e78eb56d8fc67828d",
+    "build/verification/cadenza-target-browser/wrap-800-1-850.png": "ba5f5e1ee0e5ba6a4bd0c6af326c7683b39066077e593ecbe57cd4a41bbea177",
+    "build/verification/cadenza-target-kotlin/wrap-800-1-850.png": "818af16d2af5e2f5cfc10e246c179ad93f7f963c1edb22e5a13544892ac36ae1"
+  }
+}

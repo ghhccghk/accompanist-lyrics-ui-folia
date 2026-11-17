@@ -898,3 +898,35 @@ syllables, combining/ZWJ, Arabic/CJK, unmatched/empty tokens and no-no wrap.
 source segment+wrap inputs. Two actual split fragments covered. Independent
 Compose text measurement/wrapping and full visual layer still pending.
 JVM logic and both builds passed; Android runtime not checked.
+
+## 2026-11-17 Independent Cadenza target text stage
+
+`cadenzaPreparedState.ts` measurement boundary → CadenzaTextPreparation.kt:
+Compose whole shaped prefix/paragraph measurements, source whitespace
+normalization/sizing and EGC-safe wraps replace pretext runtime.
+`VisualizerCadenza.tsx` target equations → CadenzaFrame.kt (audio energy
+explicitly0; no analysis). DOM placement/body/three-layer40px CSS shadow
+compositing and line envelope → CadenzaTargetStage.kt, INTERNAL calibration
+only. Whole fragments are shaped once; per-EGC shadow coverage clips those
+paragraphs, unlike source DOM's independent glyph spans. This shaping
+adaptation retains internal syllable times and is not a pixel-equivalence
+exemption for Arabic. Uses existing platform layer/blur machinery, lazy
+bounded masks; no frame-keyed bitmap history or new native dependency.
+
+Actual original component is mounted, source media fixed while210 original
+RAF iterations settle. This isolates target/raster, NOT animation smoothing
+or full theme acceptance. Shell-only wrapper now forwards its ref for
+original ResizeObserver. Host settings boundary supplies original default
+resolution1/antialias auto; original quality resolver and visualizer functions
+untouched. Classic/Partita/Tilt don't pass that shell ref, their wrapper DOM
+is unchanged. Upstream checkout stays clean and pinned.
+
+Four synthetic scenes, three OFL fonts,380/800x600,DPR1,glow0/1,8times:128
+pairs. Native independently measured id/order match8 layouts, max geometry
+9.156e-5px. First candidate assigned hanging spaces to the next token via
+getLineRight. Using full selection advance fixes it; same128 source hashes,
+MAE26.428939→9.971613. CJK19.656774 residual remains; contact sheets viewed.
+Random target queries and pause pixel repeats identical; JVM and both builds
+passed. No Android device run, visible window, source RAF-equivalent media
+animation, chorus ripple or public selector claim. Evidence: verification/
+cadenza-targets; reproduction in cadenza-fixtures/README.md.

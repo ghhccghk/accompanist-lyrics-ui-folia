@@ -14,6 +14,7 @@ const server = await createServer({ configFile: false, root: path.dirname(fileUR
     { find: 'react-i18next', replacement: path.join(root, 'verification/classic-browser/surfaces.tsx') },
     { find: '../VisualizerShell', replacement: path.join(root, 'verification/classic-browser/surfaces.tsx') },
     { find: '../VisualizerSubtitleOverlay', replacement: path.join(root, 'verification/classic-browser/no-subtitle.tsx') },
+    { find: '../../../stores/useVisualizerSettingsStore', replacement: path.join(root, 'verification/classic-browser/reference-settings.ts') },
     { find: 'pinned-classic', replacement: path.join(upstream, 'src/components/visualizer/classic/Visualizer.tsx') },
     { find: 'pinned-partita', replacement: path.join(upstream, 'src/components/visualizer/partita/VisualizerPartita.tsx') },
     { find: 'pinned-tilt', replacement: path.join(upstream, 'src/components/visualizer/tilt/VisualizerTilt.tsx') },

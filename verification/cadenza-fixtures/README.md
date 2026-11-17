@@ -52,3 +52,34 @@ source times. Whole words still remain available for shaping. Default tuning
 fontScale1.12/widthRatio.72 matches the source. Source ingestion annotations
 are a separate explicit step; resolveLineRenderTiming absent-hint behavior
 remains unchanged.
+
+## Independent Compose font layout and actual mounted target images
+
+Run `node verification/classic-browser/capture-cadenza-targets.mjs`,
+`:library:jvmTest --tests '*CadenzaTargetStageTest'`, then
+`python verification/compare-cadenza-targets.py`. Actual original Cadenza is
+mounted in React, with its DOM/Canvas methods unchanged. Fixed media time
+plus210 original RAF iterations isolates its converged targets/raster; it
+does NOT validate native smoothing, pause transitions or host line switching.
+The shell forwards its DOM ref for the original ResizeObserver; a host-only
+settings selector supplies the original default resolution1/antialias auto
+to the untouched quality resolver, avoiding unrelated settings/background
+registries. No Cadenza frame/layout/fragment/glow function is replaced.
+
+Four scenes x380/800x600 xglow0/1 x8times =128 original/native pairs, same
+recorded OFL font bytes. Kotlin independently measures and wraps;8 geometry
+sets preserve all fragment ids/order with maximum field delta9.156e-5px
+(assertion1e-3px accounts for floating-point platform text measurement).
+First candidate mistakenly hung trailing space via getLineRight; corrected
+selection width preserves it.128 source hashes unchanged, mean foreground
+MAE26.428939→9.971613. By scene:Latin7.070232,wrap7.404520,Arabic5.754925,
+CJK19.656774. First/current reports/contact sheets retained. Contact sheets
+inspected; pixel residuals are NOT a completed-theme acceptance. CJK paint
+baseline/coverage and glow raster calibration remain.
+
+Native targets support deterministic random revisits and media-time freeze,
+whole-fragment body shaping and per-EGC clipped shadow masks, source line
+opacity/blur/scale and ordered placement targets. Masks are bounded per
+prepared fragment, lazy and not time-keyed. This stage is INTERNAL only;
+Cadenza RAF smoothing, chorus ripple, colors/settings/accessibility/sample
+integration and runtime Android validation remain.

@@ -43,7 +43,8 @@ internal fun cappellaBubbleColors(sender: CappellaSender, primary: Color, accent
 /** Prepared sizes only retain dimensions. Paragraph objects are not cached for
  * every prefix (which would retain quadratic shaped text). */
 internal class CappellaBubbleMeasure(private val measurer: TextMeasurer, base: TextStyle,
-    private val density: Density, val config: CappellaBubbleStyle) {
+    private val density: Density, val config: CappellaBubbleStyle,
+    private val resolver: androidx.compose.ui.text.font.FontFamily.Resolver) {
     val lineHeight = config.fontPx * 1.45
     val style = base.copy(fontSize = (floor(config.fontPx * 100 + 1e-9) / 100).sp,
         fontWeight = base.fontWeight ?: FontWeight.Normal, textAlign = TextAlign.Left,
@@ -55,19 +56,35 @@ internal class CappellaBubbleMeasure(private val measurer: TextMeasurer, base: T
         return measurer.measure(safe, style, constraints = Constraints(maxWidth =
             floor(width * density.density).toInt().coerceAtLeast(1)))
     }
-    fun size(text: String): CappellaBubbleSize {
+    private fun textBox(text: String): CappellaBubbleSize {
         val result = layout(text)
         val width = (0 until result.lineCount).maxOfOrNull {
             val start=result.getLineStart(it)
             val end=result.getLineEnd(it).let { e -> if(e>start&&text.getOrNull(e-1)=='\n')e-1 else e }
             val row=text.ifEmpty{" "}.substring(start,end)
-            val natural=measurer.measure(row,style,softWrap=false)
             // pretext's pre-wrap metrics retain a trailing space's advance.
             // Native getLineRight hangs it; selection coverage preserves it.
-            natural.getPathForRange(0,row.length).getBounds().width/density.density.toDouble()
+            // Source sums segment Canvas advances in double precision. Measuring
+            // the entire line in one Float loses enough precision to cross ceil
+            // at integer boundaries (e.g. the hyphenated 16.56px chat fixture).
+            val segments=mutableListOf<String>()
+            for(s in segmentWords(row)) {
+                if(s.text=="-"&&segments.isNotEmpty())segments[segments.lastIndex]+=s.text else segments+=s.text
+            }
+            segments.sumOf { text->val natural=measurer.measure(text,style,softWrap=false)
+                cappellaCanvasAdvance(text,style,resolver,density)?:
+                    (natural.getPathForRange(0,text.length).getBounds().width/density.density.toDouble()) }
         } ?: 0.0
-        return CappellaBubbleSize(ceil(min(max(width,config.fontPx),config.maxTextWidth) + config.paddingX * 2 + 2),
-            ceil(max(result.lineCount,1) * lineHeight + config.paddingY * 2 + 2))
+        return CappellaBubbleSize(width,max(result.lineCount,1)*lineHeight)
+    }
+    fun size(text: String): CappellaBubbleSize = textBox(text).let {
+        CappellaBubbleSize(ceil(min(max(it.width,config.fontPx),config.maxTextWidth)+config.paddingX*2+2),
+            ceil(it.height+config.paddingY*2+2))
+    }
+    /** The title frame uses DOM fit-content/auto instead of the pretext ceil table. */
+    fun titleSize(text: String): CappellaBubbleSize = textBox(text).let {
+        CappellaBubbleSize(ceil((min(it.width,config.maxTextWidth)+config.paddingX*2+2)*64)/64,
+            floor((it.height+config.paddingY*2+2)*64+1e-9)/64)
     }
     fun sizes(plan: CappellaRevealPlan): List<CappellaBubbleSize> {
         val edges = graphemeBoundaries(plan.characters.joinToString("")).sorted()
@@ -86,10 +103,11 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
     colors: CappellaBubbleColors, modifier: Modifier = Modifier,
     config: CappellaBubbleStyle = CappellaBubbleStyle(), right: Boolean = false,
     active: Boolean = true, reducedMotion: Boolean = false,
+    sizeOverride: CappellaBubbleSize? = null,
     onPrepared: (CappellaBubblePrepared) -> Unit = {}) {
     val density = LocalDensity.current; val resolver = LocalFontFamilyResolver.current
     val measurer = rememberTextMeasurer(cacheSize = 32)
-    val measure = remember(textStyle,config,density,resolver) { CappellaBubbleMeasure(measurer,textStyle,density,config) }
+    val measure = remember(textStyle,config,density,resolver) { CappellaBubbleMeasure(measurer,textStyle,density,config,resolver) }
     val plan = remember(line) { CappellaRevealPlan(line) }
     val sizes = remember(measure,plan) { measure.sizes(plan) }
     val observer by rememberUpdatedState(onPrepared)
@@ -100,7 +118,7 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
         else plan.characters.size to plan.characters.size
     } }
     val (count,target) = counts
-    val box = sizes[target.coerceIn(sizes.indices)]
+    val box = sizeOverride ?: sizes[target.coerceIn(sizes.indices)]
     val width = max(box.width,config.minWidth)
     val height = max(box.height,config.minHeight)
     val shown = plan.characters.take(count).joinToString("")

@@ -1,0 +1,11 @@
+/* Utility values used by the pinned original Cappella JSX. Host only. */
+.h-full{height:100%}.overflow-visible{overflow:visible}.overflow-hidden{overflow:hidden}
+.gap-3{gap:12px}.pt-12{padding-top:48px}.pb-36{padding-bottom:144px}
+.shrink-0{flex-shrink:0}.w-10{width:40px}.h-10{height:40px}.rounded-full{border-radius:9999px}
+.border{border-width:1px;border-style:solid}.max-w-\[78\%\]{max-width:78%}
+.rounded-3xl{border-radius:24px}.rounded-br-md{border-bottom-right-radius:6px}.rounded-bl-md{border-bottom-left-radius:6px}
+.shadow-lg{box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)}
+.inset-y-0{top:0;bottom:0}.rounded-\[inherit\]{border-radius:inherit}
+.text-\[11px\]{font-size:11px}.font-medium{font-weight:500}.tabular-nums{font-variant-numeric:tabular-nums}
+@media(min-width:640px){.sm\:px-8{padding-left:32px;padding-right:32px}.sm\:pb-40{padding-bottom:160px}.sm\:pt-16{padding-top:64px}.sm\:max-w-\[68\%\]{max-width:68%}}
+@media(min-width:1024px){.lg\:px-14{padding-left:56px;padding-right:56px}.lg\:pt-20{padding-top:80px}}

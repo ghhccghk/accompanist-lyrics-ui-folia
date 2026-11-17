@@ -1,0 +1,6 @@
+<!doctype html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/cappella-utilities.css"></head>
+<body><div id="root"></div><script>
+window.testNow=0;let serial=0;window.testRafs=new Map();Object.defineProperty(performance,'now',{value:()=>window.testNow});
+window.requestAnimationFrame=cb=>{const id=++serial;window.testRafs.set(id,cb);return id};window.cancelAnimationFrame=id=>window.testRafs.delete(id);
+window.advanceSourceFrame=(dt=1000/60)=>{window.testNow+=dt;const cbs=[...window.testRafs.values()];window.testRafs.clear();for(const cb of cbs)cb(window.testNow)};
+</script><script type="module" src="/cappella-stage.tsx"></script></body></html>

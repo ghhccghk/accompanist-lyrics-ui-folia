@@ -1,0 +1,45 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "frames": 60,
+  "height": 900,
+  "DPR": 1,
+  "scope": "Actual original complete Cappella component. Media fixed,210 original RAF steps converge row target geometry. Source color avatars, emoji disabled. No original assets copied. This is NOT dynamic row transition/resize/spring acceptance.",
+  "coverage": {
+    "latin": {
+      "font": "FoliaParityLatin-Bold.ttf",
+      "required_codepoints": 28,
+      "missing": []
+    },
+    "wrap": {
+      "font": "FoliaParityLatin-Bold.ttf",
+      "required_codepoints": 27,
+      "missing": []
+    },
+    "arabic": {
+      "font": "FoliaParityBidi-Bold.ttf",
+      "required_codepoints": 28,
+      "missing": []
+    },
+    "cjk": {
+      "font": "FoliaParityChatCJK-Bold.otf",
+      "required_codepoints": 28,
+      "missing": []
+    }
+  },
+  "fonts": [
+    {
+      "name": "FoliaParityLatin-Bold.ttf",
+      "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+    },
+    {
+      "name": "FoliaParityBidi-Bold.ttf",
+      "sha256": "e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699"
+    },
+    {
+      "name": "FoliaParityChatCJK-Bold.otf",
+      "sha256": "c111c58ed2c29b4544cfbc0f3db1cdf8b596f75861ac486eb5790ef66bdafbac"
+    }
+  ],
+  "canvasAdvanceProbes": 248
+}

@@ -12,6 +12,7 @@ from fontTools.ttLib import TTFont
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('source',type=Path)
 parser.add_argument('--subtitle',action='store_true',help='Separate subtitle face with covered U+2026; leave the original body subset unchanged')
+parser.add_argument('--cappella',action='store_true',help='Separate full-coverage chat scene face; existing fonts remain unchanged')
 args=parser.parse_args()
 source = args.source
 assert hashlib.sha256(source.read_bytes()).hexdigest() == 'b5f0d1a190a7f9b43c310a8850630af12553df32c4c050543f9059732d9b4c0a'
@@ -21,10 +22,14 @@ options.name_IDs = ['*']
 options.name_legacy = True
 options.name_languages = ['*']
 subsetter = subset.Subsetter(options=options)
-subsetter.populate(unicodes=list(range(0x20, 0x7f)) + [ord(c) for c in '合成歌词光影流动世界字幕计时中英混排'] + ([0x2026] if args.subtitle else []))
+assert not (args.subtitle and args.cappella)
+subsetter.populate(unicodes=list(range(0x20, 0x7f)) + [ord(c) for c in '合成歌词光影流动世界字幕计时中英混排'] + ([0x2026] if args.subtitle else []) + ([ord(c) for c in '向远方星光回响'] if args.cappella else []))
 subsetter.subset(font)
 family = 'Folia Parity Subtitle' if args.subtitle else 'Folia Parity CJK'
 postscript = 'FoliaParitySubtitle-Bold' if args.subtitle else 'FoliaParityCJK-Bold'
+if args.cappella:
+    family = 'Folia Parity Chat CJK'
+    postscript = 'FoliaParityChatCJK-Bold'
 names = {1: family, 2: 'Bold', 3: family + ' Bold subset 1', 4: family + ' Bold',
          6: postscript, 16: family, 17: 'Bold'}
 for record in font['name'].names:

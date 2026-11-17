@@ -1074,3 +1074,47 @@ residuals remain, no final theme acceptance. Pause and shuffled/reverse media
 revisits produce identical pixels. Android APK/Desktop build passed; native
 Compose ran offscreen, no Android device present. No source artwork copied.
 Evidence/reproduction: verification/cappella-bubble, cappella-fixtures README.
+
+
+## 2026-11-17 Cappella complete-stage target geometry (still internal)
+
+`VisualizerCappella.tsx`, `CappellaMessageRow.tsx`, `cappellaIntensity.ts`,
+`cappellaMessageLayout.ts` at cc6226e4 → CappellaStageLayout.kt and
+CappellaStagePreparation.kt. Retains original sm/lg insets, panel/fit-width
+mismatch, font clamp, three intensity styles, title fit-content vs ceil table,
+active overflow margin, left/right anchors, state scale/opacity and window rule.
+Only32 preparations retained. Independent Compose shaping supplies all sizes;
+no browser geometry supplied to the implementation.
+
+Complete untouched source component now mounted with color-avatar configuration
+and emoji disabled (no source pictures copied), media fixed/210 RAF steps to
+settle geometry. 60 scenes/228 rows/2508 fields, maximum residual5.859375e-5px,
+original1e-3 assertion unchanged. 248 separate actual Canvas advance probes are
+exact, covering eight sizes, ligatures/kerning/joining and three font families.
+Evidence: verification/cappella-stage; raw complete source screenshots remain
+build/verification/cappella-stage-browser. This is NOT native full-stage drawing,
+spring/resize/row entry/exit or complete theme visual acceptance.
+
+JVM-only CappellaCanvasAdvance reproduces observed Canvas glyph16.16 truncation,
+static font GPOS design scaling and final Float accumulation; whole segments
+remain shaped together. The1px ceil mismatch at16.56px was fixed at this metric
+boundary, not by an epsilon or modifying expected widths. Variable fonts/missing
+glyphs fall back to real paragraph metrics. Android likewise uses actual paragraph
+metrics; no exact Canvas adapter/device acceptance claimed there. Handles close
+with use; no added native library or Rust dependency.
+
+Interop investigation consulted Chromium fonts/skia/skia_text_metrics.h/.cc,
+fonts/shaping/harfbuzz_face.cc and HarfBuzz hb-font.hh (2026-11-17 main), from the
+respective official chromium/chromium and harfbuzz/harfbuzz GitHub mirrors. No
+third-party implementation snippets copied; original browser probes are the
+pinned-runtime numeric oracle, not an assumption that those main branches match
+its build revision. Source Folia checkout remains unchanged/pinned.
+
+Initial failure audit retained in initial-diagnostics.json: English title in an
+Arabic-only face caused7.484375px system fallback difference. The new stage
+matrix uses the existing OFL merged Bidi face and a separate OFL ChatCJK subset;
+all text/title/timestamp codepoints are checked BEFORE capture. Previous fonts
+and reports remain unchanged; no cross-font before/after MAE improvement claimed.
+Earlier Cadenza/isolated bubble CJK coverage was incomplete; identical selected
+font hashes did not exclude fallback, so those complex-font numbers remain
+limited evidence. Android APK/Desktop compilation passed; no device run.

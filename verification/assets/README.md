@@ -62,3 +62,17 @@ metrics are unchanged. Reproduce with fontTools4.55.3 using
 `python verification/subset-cjk.py <pinned-original.otf> --subtitle`.
 SHA-256: 54a8b4538b14bca544ef4021313e681c7097fd8c9899cdace3a65ea2ea4d71d1.
 The existing FoliaParityCJK-Bold.otf and original body fixtures remain unchanged.
+
+
+FoliaParityChatCJK-Bold.otf is a separate verification-only OFL subset of the same
+pinned Noto Sans CJK SC Bold input above, with new family/PS name Folia Parity
+Chat CJK / FoliaParityChatCJK-Bold. Retains ASCII, original comparison coverage,
+and the synthetic chat characters 向远方星光回响; outlines/metrics unchanged.
+Reproduce: python verification/subset-cjk.py .work/cjk-font/NotoSansCJKsc-Bold.otf --cappella
+SHA-256 c111c58ed2c29b4544cfbc0f3db1cdf8b596f75861ac486eb5790ef66bdafbac.
+Original OFL copyright/name/license records retained; CJK-OFL.txt applies.
+Existing font assets are unchanged. New Cappella complete-stage fixtures use
+this face and FoliaParityBidi-Bold, with cmap checks before capturing. Earlier
+Cadenza and isolated Cappella bubble CJK/Arabic scenes did not have complete
+coverage for all text/title: those reports retain fallback-font limitations and
+cannot establish complex-font equivalence merely from matching font file hashes.

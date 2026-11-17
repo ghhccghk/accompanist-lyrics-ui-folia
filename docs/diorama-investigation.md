@@ -5,10 +5,10 @@
 
 | 层 | 原始位置与真实职责 | 当前结果／后续工作 |
 | --- | --- | --- |
-| 文字 | `dioramaSceneLayout.ts:145–230`：CJK字素／其他词分组、前缀宽度；`dioramaTextRaster.ts:29–185`：128px完整字体栈Canvas纹理、邻行4096边界、四层纯halo | 本轮仅共享原纹理隔离投影；内部文字分组/原词身份/完整EGC时钟/core桥接已迁，67原输入641字素/226单元时间峰0；Kotlin整行塑形切片待移植，不能把单位独立栅格照抄成逐字塑形 |
+| 文字 | `dioramaSceneLayout.ts:145–230`：CJK字素／其他词分组、前缀宽度；`dioramaTextRaster.ts:29–185`：128px完整字体栈Canvas纹理、邻行4096边界、四层纯halo | 本轮仅共享原纹理隔离投影；内部文字分组/原词身份/完整EGC时钟/core桥接已迁，67原输入641字素/226单元时间峰0；Kotlin完整邻行文字已独立塑形并透视绘制；活动单元切片/辉光待移植，不能把单位独立栅格照抄成逐字塑形 |
 | 路径／摆位 | `cameraPath.ts:223–346`：整曲8世界单位步长、局部正交框架、offset/roll/yaw/scale/look | 已迁入内部DioramaProjection.kt；四seed（含UTF-16 emoji）、12行、四weave的原函数数值对照 |
 | 运镜 | `cameraPath.ts:531–754`：13类shot、读头truck、空档settle、drift；`CameraRig.tsx:200–434`：SmoothDamp、24单位seek snap、回正和安全视锥、四元数跟随 | 尚未移植。冻结lookAt投影不是CameraRig，不能以数学通过代替播放镜头验收；媒体重建策略必须另建对照 |
-| 投影 | `VisualizerDiorama.tsx:470–478`：真实R3F/Three透视相机55°；`dioramaSceneUnits.ts:103–142`：固定5.2距离fit、basis×yaw×roll | 最小Double投影／平面单应矩阵与Three数值通过；JVM Compose Matrix实际透视纹理绘制9对画面可运行；Android仅共同代码构建 |
+| 投影 | `VisualizerDiorama.tsx:470–478`：真实R3F/Three透视相机55°；`dioramaSceneUnits.ts:103–142`：固定5.2距离fit、basis×yaw×roll | 最小Double投影／平面单应矩阵与Three数值通过；JVM Compose Matrix实际透视共享纹理9对及独立塑形文字24对可运行；Android仅共同代码构建 |
 | 深度／顺序 | `DioramaScene.tsx:624–651`：邻行正常透明mesh、depthWrite=false、默认depthTest；`DioramaActiveUnitPlanes.tsx:21–75`：glow/soul/base顺序17/18/19，全部depthTest=false/depthWrite=false，前两层Additive | 保留真实z/平面朝向后可研究文字平面专用合成；普通旋转缩放不能替代透视。当前探针没有近面穿越裁剪、遮挡、背面剔除或多平面合成，不能称深度验收 |
 | 距离／雾／色彩 | `dioramaSceneUnits.ts:95`：.9–2近消融／32–40远消失；`DioramaScene.tsx:393–428`：12–30雾、阻尼色；`dioramaSceneFrame.ts:92–140,184+`：邻行／当前单元效果 | life/fit数值已迁；逐像素view-depth雾、线性色彩／additive混色、三种跟唱与envelope尚未实现。单平面均色不能充作最终雾化 |
 | 切歌 | `dioramaSequencer.ts:82–148`：有界段、源索引；`dioramaTransition.ts:17–92`：3.2秒/46单位迁移；`CameraRig.tsx:280–359`：飞行弧／bank／aim | 本轮未移植，保持独立调查；不得把其他歌曲历史带成永久缓存 |
@@ -29,3 +29,12 @@ Three/OpenGL场景引擎。共同Double数学无native依赖；JVM Skia的Compos
 的EGC保留所有源区间（ZWJ片段独立分段后可能贡献多个区间）。原对象/嵌套伴唱/
 源行边界/字幕保持；无词只派生整句均匀时间。对应来源、原函数矩阵与保留的自编测试
 断言错误见verification/diorama-text。没有新增公开主题或绘制结论。
+
+独立文字平面追加：DioramaPlainText按原128px em/缩图/预缩padding公式准备完整段落，
+已用Latin/Arabic/CJK/长行、380/800/801与两个冻结视点24对真实WebGL核对；字体与
+纹理尺寸完全一致，Canvas middle原实测基线峰差<1e-6。修复尾空格advance漏算11px，
+以及CJK hhea/OS2度量不同造成的5–7px基线偏差。实际代码修复，未对图像配准。
+全非背景MAE13.081760、各图墨迹盒峰差2px，光栅/采样残差仍未验收。
+JVM公开Skia表接口可读OS/2；Android此适配尚无法读取resolved Typeface字表，退回
+Paint度量，中文middle一致性未实现/未验证，不能称平台有意差异或开放镜台。
+无源PNG复用；证据verification/diorama-text-plane。两端构建/JVM离屏通过，无设备。

@@ -1550,3 +1550,15 @@ Independent lyrics-core bridge keeps source objects/refs/nested lines, raw decla
 times and subtitles; no-word even timing remains explicitly derived. No fonts,
 rasters, background, camera damping or public/sample theme introduced. Actual
 original-function evidence and shaping adaptation: verification/diorama-text.
+
+### Diorama own complete-shaped neighbouring text plane (2026-11-18)
+Pinned cc6226e4 dioramaTextRaster.ts:rasterDioramaLine -> DioramaPlainText.kt:
+128px em, pre-shrink .2em pad,1.4em band,4096 shrink/24 minimum and .62 world em.
+Full Compose paragraph replaces Canvas fillText; complete selection includes
+trailing spaces. Real Canvas projective homography uses the previously ported
+source path/frame-fit/orientation, not a flat rotation. Independent JVM standard
+OS/2 table reader supplies typographic em midpoint through public Skia API;
+Android fallback/remaining parity is explicit. No source raster/font assets or
+full 3D/background engine copied. Source diagnostics only observe Canvas baseline
+metrics. Original24 WebGL vs independent24 Kotlin text frames and residuals are
+in verification/diorama-text-plane. Does not cover active planes/CameraRig/fog.

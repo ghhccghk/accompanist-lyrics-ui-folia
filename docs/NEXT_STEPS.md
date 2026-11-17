@@ -10,10 +10,10 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | 路径/摆位/冻结透视、core文字分组/内部时钟 | 无 | 运镜/揭示/合成与设备尚未实现 |
 
-当前唯一下一项：镜台完整塑形文字在冻结透视下的独立绘制对照。
-完成条件：使用相同合成输入/字体/尺寸与原文字测量及真实WebGL平面，不共享原版
-文字PNG冒充Kotlin塑形；保留内部字素时钟、实际投影与字形/度量残差。此项不开放
-Diorama，也不代替未实现的CameraRig/深度/雾/完整主题验收。
+当前唯一下一项：镜台活动文字单元的完整塑形切片/原媒体跟唱与三层合成。
+完成条件：复用已核对的core内部时钟和真实透视，逐单元外观对照实际原函数/材质，
+不把邻行完整段落当作活动主题；暂停/seek可重建。CameraRig/深度/雾和Android
+中线度量仍是未完成验收项，Diorama不开放sample入口。
 Fume短bridge/总览仍未修复：mounted原版与当前连续模型在3.15s、10s差最大；
 扩展完整pose的本地诊断保存在.work/FumeMountedPublicTest-diagnostic.kt及
 .work/fume-camera-diagnostic.log、build/verification/fume-mounted-kotlin/*.tsv。
@@ -86,10 +86,16 @@ fbbf7f6 Fume首次打印父层入场：实际原React/canvas挂载92帧；.985�
 .056221不变。暂停/seek/重挂/点击/120行及两端构建通过，未运行设备/真实窗口。
 初次40步数学反解不符原12步近似的失败保留；证据verification/fume-mounted。
 
-镜台文字准备：原splitDioramaLyricUnits与共享时间函数67同输入，641字素/226单元，
+52bc6f3 镜台文字准备：原splitDioramaLyricUnits与共享时间函数67同输入，641字素/226单元，
 词身份/UTF16范围完全一致、时间峰0。实际core桥接保留来源/嵌套/字幕/原时间；
 EGC跨parser片段保留全部内部clock。只是内部内核，没有新公开主题/视觉结论。
 两端构建/原透视数值回归通过，证据verification/diorama-text。
+
+镜台独立完整文字透视：同字体/视点24原WebGL对Kotlin自产纹理，advance/缩图字号/
+画布尺寸精确一致、middle基线1e-6内；修复悬挂空格漏算11px与中文hhea/OS2错位。
+全非背景MAE13.081760/墨迹盒峰2px，仍有采样差。没有共享原PNG、没有图像配准。
+原失败CJK图/报告保留；JVM离屏/两端构建通过，无设备/真实窗口。Android字体表度量
+暂缺，不能宣称其中文基线通过。证据verification/diorama-text-plane。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

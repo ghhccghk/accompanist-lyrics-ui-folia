@@ -48,3 +48,44 @@ exist (use a new optional run name for an intentional later audit, retain old ev
 Fresh Gradle JVM compile and restored Fume regressions also pass in
 .work/fume-restored-and-motion-lock.log. All255 source capture pages ran in actual
 Chromium headless; this is not an Android or real application window run.
+
+
+## Dense Cappella exact-lock follow-up (2026-11-18)
+
+The prior pending dense240 statement is historical as of this section. The older
+Pendolo dense tick/chorus/resize matrices remain pending; do not recapture unrelated
+regular210, Pendolo public45 or Fume mounted92 without a concrete reason.
+
+`audit-cappella-pressure-lock.mjs` preserves the COMPLETE prior source/native
+frames, states, tables and comparison under.work/cappella-pressure-lock-v1 BEFORE
+recapture. Same original240 probes/999 rows, rapid+overlap, three intensities,
+380x480/DPR1/font/inputs/source algorithms/clocks; new dedicated4182 cache/server.
+Actual Chromium151.0.7922.34, Motion13.4.3/dom13.4.2/utils13.3.0, both lock/font
+hashes and conditions are in cappella-pressure.json. No source formula changed.
+
+All three fixture TSV hashes (inputs, frames and geometry/presence/alpha) unchanged;
+all passive states unchanged.38 of240 PNGs change8..1578 pixels, raw channel peak42,
+full-image MAE peak0.01725877193. Compare retains EVERY image hash/raw difference;
+source-contact shows the first three changed filenames, no cherry-picking,
+registration or alpha suppression. Visual inspection shows small glyph/glow-edge
+changes while the large stacking error remains a separate Kotlin problem. The
+cause has NOT been isolated to dependency versions. This is not final acceptance.
+
+Run the preserved240 JVM matrix against the exact source, including random seek,
+pause, remount and presence/order checks. Its numeric22.1885925046px residual is
+still required work; no regular210 result substitutes for it. Native geometry
+exports now append rowTop/rowHeight for diagnosis; original compared columns and
+all assertions stay unchanged. Old reports/images remain preserved.
+
+```
+node verification/classic-browser/audit-cappella-pressure-lock.mjs
+python verification/compare-cappella-pressure-lock.py
+./gradlew :library:jvmTest --tests '*CappellaPresenceTest' --tests '*CappellaPresenceTrackTest'
+python verification/compare-cappella-playback.py --presence
+```
+
+The historical pressure comparison uses a>8 foreground cutoff. Keep that legacy
+metric for continuity; it is not sufficient for current low-alpha visual acceptance.
+Any repair comparison must use a SINGLE original/before/after all-nonbackground
+union (including halo), retaining the old report and numeric geometry failures.
+No Android/device/real Desktop-window/performance conclusion from this audit.

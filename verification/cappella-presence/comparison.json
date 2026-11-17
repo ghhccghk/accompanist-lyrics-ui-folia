@@ -12,7 +12,7 @@
     "scope": "Same controlled original mounted-stage clocks as cappella-playback; rapid micro-lines and overlapping lines, exact starts/inclusive ends and post-end probes."
   },
   "status": "Internal moving-stage calibration, not final Cappella acceptance. Full mounted transition/layout residuals below remain required work.",
-  "mean_foreground_mae": 9.173244837547363,
+  "mean_foreground_mae": 9.172424440999054,
   "maximum_geometry_error": 22.188592504565946,
   "maximum_opacity_error": 0.05038571441375628,
   "presence_mismatches": [],
@@ -20,1202 +20,1682 @@
     {
       "file": "overlap-calm-0-0.png",
       "foreground_mae": 2.956158896183376,
-      "full_mae": 0.180656067251462
+      "full_mae": 0.180656067251462,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "overlap-calm-1-700000.png",
       "foreground_mae": 2.210616758190444,
-      "full_mae": 0.14432748538011697
+      "full_mae": 0.14432748538011697,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "overlap-calm-10-1000000.png",
-      "foreground_mae": 12.067585905012038,
-      "full_mae": 1.5682054093567253
+      "foreground_mae": 11.947102465241267,
+      "full_mae": 1.5519426169590644,
+      "rgb_peak": 206,
+      "worst_64px_tile_mae": 14.527180989583334
     },
     {
       "file": "overlap-calm-11-1020000.png",
-      "foreground_mae": 12.60865639386,
-      "full_mae": 1.6164089912280701
+      "foreground_mae": 12.551746088140812,
+      "full_mae": 1.609311038011696,
+      "rgb_peak": 208,
+      "worst_64px_tile_mae": 13.309326171875
     },
     {
       "file": "overlap-calm-12-1100000.png",
       "foreground_mae": 10.134421961898001,
-      "full_mae": 1.3516483918128654
+      "full_mae": 1.3516483918128654,
+      "rgb_peak": 210,
+      "worst_64px_tile_mae": 14.388346354166666
     },
     {
       "file": "overlap-calm-13-1110000.png",
       "foreground_mae": 6.632064072541409,
-      "full_mae": 1.239422514619883
+      "full_mae": 1.239422514619883,
+      "rgb_peak": 208,
+      "worst_64px_tile_mae": 13.750162760416666
     },
     {
       "file": "overlap-calm-14-1167000.png",
       "foreground_mae": 5.718326232994135,
-      "full_mae": 1.5598263888888888
+      "full_mae": 1.5598263888888888,
+      "rgb_peak": 182,
+      "worst_64px_tile_mae": 8.783121744791666
     },
     {
       "file": "overlap-calm-15-1177000.png",
       "foreground_mae": 6.393189302645387,
-      "full_mae": 1.748987573099415
+      "full_mae": 1.748987573099415,
+      "rgb_peak": 175,
+      "worst_64px_tile_mae": 7.903401692708333
     },
     {
       "file": "overlap-calm-16-1180000.png",
       "foreground_mae": 6.298760571595217,
-      "full_mae": 1.712593201754386
+      "full_mae": 1.712593201754386,
+      "rgb_peak": 171,
+      "worst_64px_tile_mae": 7.742838541666667
     },
     {
       "file": "overlap-calm-17-1190000.png",
       "foreground_mae": 7.919922574047697,
-      "full_mae": 2.1159777046783628
+      "full_mae": 2.1159777046783628,
+      "rgb_peak": 175,
+      "worst_64px_tile_mae": 9.912516276041666
     },
     {
       "file": "overlap-calm-18-1200000.png",
       "foreground_mae": 8.427901463615749,
-      "full_mae": 2.220641447368421
+      "full_mae": 2.220641447368421,
+      "rgb_peak": 176,
+      "worst_64px_tile_mae": 10.554117838541666
     },
     {
       "file": "overlap-calm-19-1220000.png",
       "foreground_mae": 9.649191649662534,
-      "full_mae": 2.4647404970760234
+      "full_mae": 2.4647404970760234,
+      "rgb_peak": 180,
+      "worst_64px_tile_mae": 11.530436197916666
     },
     {
       "file": "overlap-calm-2-720000.png",
       "foreground_mae": 1.984776187230175,
-      "full_mae": 0.21902595029239766
+      "full_mae": 0.21902595029239766,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "overlap-calm-20-1300000.png",
       "foreground_mae": 33.71254437077222,
-      "full_mae": 7.456153143274854
+      "full_mae": 7.456153143274854,
+      "rgb_peak": 173,
+      "worst_64px_tile_mae": 38.397786458333336
     },
     {
       "file": "overlap-calm-21-1367000.png",
       "foreground_mae": 17.392736128759,
-      "full_mae": 4.600994152046783
+      "full_mae": 4.600994152046783,
+      "rgb_peak": 178,
+      "worst_64px_tile_mae": 25.993408203125
     },
     {
       "file": "overlap-calm-22-1377000.png",
       "foreground_mae": 15.258194134724619,
-      "full_mae": 4.09875182748538
+      "full_mae": 4.09875182748538,
+      "rgb_peak": 183,
+      "worst_64px_tile_mae": 23.229817708333332
     },
     {
       "file": "overlap-calm-23-1500000.png",
       "foreground_mae": 17.664170420980398,
-      "full_mae": 3.315749269005848
+      "full_mae": 3.315749269005848,
+      "rgb_peak": 215,
+      "worst_64px_tile_mae": 42.773763020833336
     },
     {
       "file": "overlap-calm-24-1800000.png",
       "foreground_mae": 9.322489006498813,
-      "full_mae": 1.4896655701754387
+      "full_mae": 1.4896655701754387,
+      "rgb_peak": 218,
+      "worst_64px_tile_mae": 18.100341796875
     },
     {
       "file": "overlap-calm-25-2000000.png",
       "foreground_mae": 4.894755380653938,
-      "full_mae": 0.9060453216374269
+      "full_mae": 0.9060453216374269,
+      "rgb_peak": 205,
+      "worst_64px_tile_mae": 9.120198567708334
     },
     {
       "file": "overlap-calm-26-2010000.png",
       "foreground_mae": 5.165944968208726,
-      "full_mae": 1.1881432748538012
+      "full_mae": 1.1881432748538012,
+      "rgb_peak": 205,
+      "worst_64px_tile_mae": 11.323811848958334
     },
     {
       "file": "overlap-calm-27-2067000.png",
       "foreground_mae": 5.616885638903398,
-      "full_mae": 1.6956323099415205
+      "full_mae": 1.6956323099415205,
+      "rgb_peak": 179,
+      "worst_64px_tile_mae": 8.9287109375
     },
     {
       "file": "overlap-calm-28-2077000.png",
       "foreground_mae": 6.833924994546139,
-      "full_mae": 2.045173611111111
+      "full_mae": 2.045173611111111,
+      "rgb_peak": 171,
+      "worst_64px_tile_mae": 9.198811848958334
     },
     {
       "file": "overlap-calm-29-2090000.png",
       "foreground_mae": 7.981832449684788,
-      "full_mae": 2.3655500730994152
+      "full_mae": 2.3655500730994152,
+      "rgb_peak": 152,
+      "worst_64px_tile_mae": 13.586995442708334
     },
     {
       "file": "overlap-calm-3-780000.png",
       "foreground_mae": 2.8231346931520243,
-      "full_mae": 0.3193512426900585
+      "full_mae": 0.3193512426900585,
+      "rgb_peak": 167,
+      "worst_64px_tile_mae": 2.5891493055555554
     },
     {
       "file": "overlap-calm-30-2100000.png",
       "foreground_mae": 12.041795294955183,
-      "full_mae": 3.573062865497076
+      "full_mae": 3.573062865497076,
+      "rgb_peak": 176,
+      "worst_64px_tile_mae": 18.465250651041668
     },
     {
       "file": "overlap-calm-31-2200000.png",
       "foreground_mae": 20.808101679270067,
-      "full_mae": 5.425794956140351
+      "full_mae": 5.425794956140351,
+      "rgb_peak": 196,
+      "worst_64px_tile_mae": 27.103597005208332
     },
     {
       "file": "overlap-calm-32-2500000.png",
       "foreground_mae": 3.052239540020209,
-      "full_mae": 0.6993859649122807
+      "full_mae": 0.6993859649122807,
+      "rgb_peak": 181,
+      "worst_64px_tile_mae": 3.7178548177083335
     },
     {
       "file": "overlap-calm-33-3000000.png",
       "foreground_mae": 2.4519235914174113,
-      "full_mae": 0.6093987573099415
+      "full_mae": 0.6093987573099415,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.3197916666666667
     },
     {
       "file": "overlap-calm-34-3026400.png",
       "foreground_mae": 2.4519235914174113,
-      "full_mae": 0.6093987573099415
+      "full_mae": 0.6093987573099415,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.3197916666666667
     },
     {
       "file": "overlap-calm-35-3036400.png",
       "foreground_mae": 2.4519235914174113,
-      "full_mae": 0.6093987573099415
+      "full_mae": 0.6093987573099415,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.3197916666666667
     },
     {
       "file": "overlap-calm-36-3380000.png",
       "foreground_mae": 2.4519235914174113,
-      "full_mae": 0.6093987573099415
+      "full_mae": 0.6093987573099415,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.3197916666666667
     },
     {
       "file": "overlap-calm-37-3390000.png",
       "foreground_mae": 2.4519235914174113,
-      "full_mae": 0.6093987573099415
+      "full_mae": 0.6093987573099415,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.3197916666666667
     },
     {
       "file": "overlap-calm-38-3500000.png",
       "foreground_mae": 2.4519235914174113,
-      "full_mae": 0.6093987573099415
+      "full_mae": 0.6093987573099415,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.3197916666666667
     },
     {
       "file": "overlap-calm-39-4000000.png",
       "foreground_mae": 2.4519235914174113,
-      "full_mae": 0.6093987573099415
+      "full_mae": 0.6093987573099415,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.3197916666666667
     },
     {
       "file": "overlap-calm-4-800000.png",
       "foreground_mae": 2.6187435831622174,
-      "full_mae": 0.5455793128654971
+      "full_mae": 0.5455793128654971,
+      "rgb_peak": 172,
+      "worst_64px_tile_mae": 2.5340277777777778
     },
     {
       "file": "overlap-calm-5-847000.png",
       "foreground_mae": 4.015247266526231,
-      "full_mae": 0.9045029239766081
+      "full_mae": 0.9045029239766081,
+      "rgb_peak": 150,
+      "worst_64px_tile_mae": 4.899739583333333
     },
     {
       "file": "overlap-calm-6-857000.png",
       "foreground_mae": 3.502262029049215,
-      "full_mae": 0.8156103801169591
+      "full_mae": 0.8157620614035088,
+      "rgb_peak": 140,
+      "worst_64px_tile_mae": 4.86962890625
     },
     {
       "file": "overlap-calm-7-860000.png",
       "foreground_mae": 3.8460139911770677,
-      "full_mae": 0.8793567251461988
+      "full_mae": 0.8794444444444445,
+      "rgb_peak": 143,
+      "worst_64px_tile_mae": 5.396240234375
     },
     {
       "file": "overlap-calm-8-900000.png",
-      "foreground_mae": 5.904605987496529,
-      "full_mae": 1.2183954678362574
+      "foreground_mae": 5.91941086962763,
+      "full_mae": 1.2218951023391813,
+      "rgb_peak": 176,
+      "worst_64px_tile_mae": 9.68017578125
     },
     {
       "file": "overlap-calm-9-940000.png",
-      "foreground_mae": 5.510625489133707,
-      "full_mae": 1.0771600877192982
+      "foreground_mae": 5.481668824456287,
+      "full_mae": 1.0713614766081871,
+      "rgb_peak": 197,
+      "worst_64px_tile_mae": 8.73486328125
     },
     {
       "file": "overlap-chaotic-0-0.png",
       "foreground_mae": 3.0954660439774275,
-      "full_mae": 0.17982273391812867
+      "full_mae": 0.17982273391812867,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.52734375
     },
     {
       "file": "overlap-chaotic-1-700000.png",
       "foreground_mae": 3.0954660439774275,
-      "full_mae": 0.17982273391812867
+      "full_mae": 0.17982273391812867,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.52734375
     },
     {
       "file": "overlap-chaotic-10-1000000.png",
       "foreground_mae": 12.201997146932953,
-      "full_mae": 2.4503033625730994
+      "full_mae": 2.4503033625730994,
+      "rgb_peak": 193,
+      "worst_64px_tile_mae": 12.887369791666666
     },
     {
       "file": "overlap-chaotic-11-1020000.png",
       "foreground_mae": 17.340861334412892,
-      "full_mae": 3.4058040935672516
+      "full_mae": 3.4058040935672516,
+      "rgb_peak": 201,
+      "worst_64px_tile_mae": 18.970458984375
     },
     {
       "file": "overlap-chaotic-12-1100000.png",
       "foreground_mae": 13.512554857370835,
-      "full_mae": 2.167701023391813
+      "full_mae": 2.167701023391813,
+      "rgb_peak": 210,
+      "worst_64px_tile_mae": 16.805013020833332
     },
     {
       "file": "overlap-chaotic-13-1110000.png",
       "foreground_mae": 9.885617551462621,
-      "full_mae": 2.237017543859649
+      "full_mae": 2.237017543859649,
+      "rgb_peak": 210,
+      "worst_64px_tile_mae": 17.23193359375
     },
     {
       "file": "overlap-chaotic-14-1167000.png",
       "foreground_mae": 6.300304748284727,
-      "full_mae": 2.234546783625731
+      "full_mae": 2.234546783625731,
+      "rgb_peak": 192,
+      "worst_64px_tile_mae": 9.030192057291666
     },
     {
       "file": "overlap-chaotic-15-1177000.png",
       "foreground_mae": 6.875996590282305,
-      "full_mae": 2.4583771929824563
+      "full_mae": 2.4583771929824563,
+      "rgb_peak": 187,
+      "worst_64px_tile_mae": 8.672037760416666
     },
     {
       "file": "overlap-chaotic-16-1180000.png",
       "foreground_mae": 6.8189236198497785,
-      "full_mae": 2.4407858187134504
+      "full_mae": 2.4407858187134504,
+      "rgb_peak": 185,
+      "worst_64px_tile_mae": 9.086507161458334
     },
     {
       "file": "overlap-chaotic-17-1190000.png",
       "foreground_mae": 7.49819943019943,
-      "full_mae": 2.6248866959064325
+      "full_mae": 2.6248866959064325,
+      "rgb_peak": 187,
+      "worst_64px_tile_mae": 12.120768229166666
     },
     {
       "file": "overlap-chaotic-18-1200000.png",
       "foreground_mae": 8.446911387408724,
-      "full_mae": 2.848675073099415
+      "full_mae": 2.848675073099415,
+      "rgb_peak": 181,
+      "worst_64px_tile_mae": 12.966878255208334
     },
     {
       "file": "overlap-chaotic-19-1220000.png",
       "foreground_mae": 10.180311079028387,
-      "full_mae": 3.1821052631578945
+      "full_mae": 3.1821052631578945,
+      "rgb_peak": 185,
+      "worst_64px_tile_mae": 15.195556640625
     },
     {
       "file": "overlap-chaotic-2-720000.png",
       "foreground_mae": 2.0833218470020674,
-      "full_mae": 0.25136513157894735
+      "full_mae": 0.25136513157894735,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.52734375
     },
     {
       "file": "overlap-chaotic-20-1300000.png",
       "foreground_mae": 25.801538345936567,
-      "full_mae": 7.0502960526315785
+      "full_mae": 7.0502960526315785,
+      "rgb_peak": 176,
+      "worst_64px_tile_mae": 26.949869791666668
     },
     {
       "file": "overlap-chaotic-21-1367000.png",
-      "foreground_mae": 17.046778561531678,
-      "full_mae": 6.083813961988304
+      "foreground_mae": 17.048111642944114,
+      "full_mae": 6.084278143274854,
+      "rgb_peak": 135,
+      "worst_64px_tile_mae": 30.340087890625
     },
     {
       "file": "overlap-chaotic-22-1377000.png",
       "foreground_mae": 17.7285924261255,
-      "full_mae": 5.917748538011696
+      "full_mae": 5.917748538011696,
+      "rgb_peak": 138,
+      "worst_64px_tile_mae": 29.655110677083332
     },
     {
       "file": "overlap-chaotic-23-1500000.png",
-      "foreground_mae": 20.496903071921828,
-      "full_mae": 4.002485380116959
+      "foreground_mae": 20.49731679169071,
+      "full_mae": 4.002701023391813,
+      "rgb_peak": 194,
+      "worst_64px_tile_mae": 26.828369140625
     },
     {
       "file": "overlap-chaotic-24-1800000.png",
       "foreground_mae": 19.867435905100688,
-      "full_mae": 3.9033497807017543
+      "full_mae": 3.9033497807017543,
+      "rgb_peak": 221,
+      "worst_64px_tile_mae": 25.217936197916668
     },
     {
       "file": "overlap-chaotic-25-2000000.png",
       "foreground_mae": 7.114196385989084,
-      "full_mae": 1.7409813596491228
+      "full_mae": 1.7409813596491228,
+      "rgb_peak": 207,
+      "worst_64px_tile_mae": 13.930745442708334
     },
     {
       "file": "overlap-chaotic-26-2010000.png",
       "foreground_mae": 7.614865568599444,
-      "full_mae": 2.1242251461988304
+      "full_mae": 2.1242251461988304,
+      "rgb_peak": 207,
+      "worst_64px_tile_mae": 15.332194010416666
     },
     {
       "file": "overlap-chaotic-27-2067000.png",
       "foreground_mae": 5.878943104811522,
-      "full_mae": 2.4576845760233916
+      "full_mae": 2.4576845760233916,
+      "rgb_peak": 190,
+      "worst_64px_tile_mae": 11.128255208333334
     },
     {
       "file": "overlap-chaotic-28-2077000.png",
       "foreground_mae": 6.002839844313104,
-      "full_mae": 2.5241812865497075
+      "full_mae": 2.5241812865497075,
+      "rgb_peak": 186,
+      "worst_64px_tile_mae": 10.655843098958334
     },
     {
       "file": "overlap-chaotic-29-2090000.png",
       "foreground_mae": 7.101775383434493,
-      "full_mae": 2.9819919590643273
+      "full_mae": 2.9819919590643273,
+      "rgb_peak": 178,
+      "worst_64px_tile_mae": 9.938639322916666
     },
     {
       "file": "overlap-chaotic-3-780000.png",
       "foreground_mae": 2.243620887708792,
-      "full_mae": 0.33473684210526317
+      "full_mae": 0.33473684210526317,
+      "rgb_peak": 167,
+      "worst_64px_tile_mae": 2.45390625
     },
     {
       "file": "overlap-chaotic-30-2100000.png",
-      "foreground_mae": 10.29132318528301,
-      "full_mae": 4.334435307017544
+      "foreground_mae": 10.29136083926453,
+      "full_mae": 4.3344572368421055,
+      "rgb_peak": 178,
+      "worst_64px_tile_mae": 16.718994140625
     },
     {
       "file": "overlap-chaotic-31-2200000.png",
       "foreground_mae": 17.988131209083,
-      "full_mae": 5.8826736111111115
+      "full_mae": 5.8826736111111115,
+      "rgb_peak": 204,
+      "worst_64px_tile_mae": 22.345377604166668
     },
     {
       "file": "overlap-chaotic-32-2500000.png",
       "foreground_mae": 12.006193996733044,
-      "full_mae": 2.3955354532163744
+      "full_mae": 2.3955354532163744,
+      "rgb_peak": 224,
+      "worst_64px_tile_mae": 16.6259765625
     },
     {
       "file": "overlap-chaotic-33-3000000.png",
       "foreground_mae": 2.449266425893845,
-      "full_mae": 0.5606542397660819
+      "full_mae": 0.5606542397660819,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.5193576388888888
     },
     {
       "file": "overlap-chaotic-34-3026400.png",
       "foreground_mae": 2.449266425893845,
-      "full_mae": 0.5606542397660819
+      "full_mae": 0.5606542397660819,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.5193576388888888
     },
     {
       "file": "overlap-chaotic-35-3036400.png",
       "foreground_mae": 2.449266425893845,
-      "full_mae": 0.5606542397660819
+      "full_mae": 0.5606542397660819,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.5193576388888888
     },
     {
       "file": "overlap-chaotic-36-3380000.png",
       "foreground_mae": 2.449266425893845,
-      "full_mae": 0.5606542397660819
+      "full_mae": 0.5606542397660819,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.5193576388888888
     },
     {
       "file": "overlap-chaotic-37-3390000.png",
       "foreground_mae": 2.449266425893845,
-      "full_mae": 0.5606542397660819
+      "full_mae": 0.5606542397660819,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.5193576388888888
     },
     {
       "file": "overlap-chaotic-38-3500000.png",
       "foreground_mae": 2.449266425893845,
-      "full_mae": 0.5606542397660819
+      "full_mae": 0.5606542397660819,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.5193576388888888
     },
     {
       "file": "overlap-chaotic-39-4000000.png",
       "foreground_mae": 2.449266425893845,
-      "full_mae": 0.5606542397660819
+      "full_mae": 0.5606542397660819,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.5193576388888888
     },
     {
       "file": "overlap-chaotic-4-800000.png",
       "foreground_mae": 2.0346533416614614,
-      "full_mae": 0.5721345029239766
+      "full_mae": 0.5721345029239766,
+      "rgb_peak": 166,
+      "worst_64px_tile_mae": 2.3790798611111112
     },
     {
       "file": "overlap-chaotic-5-847000.png",
       "foreground_mae": 5.125156436606524,
-      "full_mae": 1.4456231725146198
+      "full_mae": 1.4456231725146198,
+      "rgb_peak": 158,
+      "worst_64px_tile_mae": 8.453287760416666
     },
     {
       "file": "overlap-chaotic-6-857000.png",
       "foreground_mae": 6.565426564442024,
-      "full_mae": 1.8782766812865497
+      "full_mae": 1.8782766812865497,
+      "rgb_peak": 150,
+      "worst_64px_tile_mae": 13.2802734375
     },
     {
       "file": "overlap-chaotic-7-860000.png",
       "foreground_mae": 6.3329812330551745,
-      "full_mae": 1.797892909356725
+      "full_mae": 1.797892909356725,
+      "rgb_peak": 145,
+      "worst_64px_tile_mae": 12.950358072916666
     },
     {
       "file": "overlap-chaotic-8-900000.png",
       "foreground_mae": 9.361225911307175,
-      "full_mae": 2.3296984649122807
+      "full_mae": 2.3296984649122807,
+      "rgb_peak": 133,
+      "worst_64px_tile_mae": 12.945475260416666
     },
     {
       "file": "overlap-chaotic-9-940000.png",
       "foreground_mae": 9.247488889459758,
-      "full_mae": 2.076840277777778
+      "full_mae": 2.076840277777778,
+      "rgb_peak": 162,
+      "worst_64px_tile_mae": 10.950602213541666
     },
     {
       "file": "overlap-normal-0-0.png",
       "foreground_mae": 2.956158896183376,
-      "full_mae": 0.180656067251462
+      "full_mae": 0.180656067251462,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "overlap-normal-1-700000.png",
       "foreground_mae": 2.210616758190444,
-      "full_mae": 0.14432748538011697
+      "full_mae": 0.14432748538011697,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "overlap-normal-10-1000000.png",
       "foreground_mae": 11.737130660840187,
-      "full_mae": 2.20796783625731
+      "full_mae": 2.20796783625731,
+      "rgb_peak": 205,
+      "worst_64px_tile_mae": 14.1943359375
     },
     {
       "file": "overlap-normal-11-1020000.png",
-      "foreground_mae": 16.358905081600348,
-      "full_mae": 2.2937573099415203
+      "foreground_mae": 16.376256941317724,
+      "full_mae": 2.296268274853801,
+      "rgb_peak": 208,
+      "worst_64px_tile_mae": 17.931315104166668
     },
     {
       "file": "overlap-normal-12-1100000.png",
       "foreground_mae": 15.337442344585494,
-      "full_mae": 2.2076827485380117
+      "full_mae": 2.2076827485380117,
+      "rgb_peak": 210,
+      "worst_64px_tile_mae": 16.763590494791668
     },
     {
       "file": "overlap-normal-13-1110000.png",
       "foreground_mae": 11.009549780420759,
-      "full_mae": 2.0182748538011697
+      "full_mae": 2.0182748538011697,
+      "rgb_peak": 210,
+      "worst_64px_tile_mae": 14.288736979166666
     },
     {
       "file": "overlap-normal-14-1167000.png",
       "foreground_mae": 7.18988417808947,
-      "full_mae": 2.2729623538011694
+      "full_mae": 2.2729623538011694,
+      "rgb_peak": 187,
+      "worst_64px_tile_mae": 11.249267578125
     },
     {
       "file": "overlap-normal-15-1177000.png",
       "foreground_mae": 7.38536666728442,
-      "full_mae": 2.358232821637427
+      "full_mae": 2.358232821637427,
+      "rgb_peak": 180,
+      "worst_64px_tile_mae": 10.706949869791666
     },
     {
       "file": "overlap-normal-16-1180000.png",
       "foreground_mae": 7.694913888733957,
-      "full_mae": 2.4322222222222223
+      "full_mae": 2.4322222222222223,
+      "rgb_peak": 178,
+      "worst_64px_tile_mae": 10.2509765625
     },
     {
       "file": "overlap-normal-17-1190000.png",
       "foreground_mae": 7.962416657354639,
-      "full_mae": 2.5159283625730993
+      "full_mae": 2.5159283625730993,
+      "rgb_peak": 171,
+      "worst_64px_tile_mae": 9.361490885416666
     },
     {
       "file": "overlap-normal-18-1200000.png",
       "foreground_mae": 9.075740930156204,
-      "full_mae": 2.7947770467836257
+      "full_mae": 2.7947770467836257,
+      "rgb_peak": 176,
+      "worst_64px_tile_mae": 8.938232421875
     },
     {
       "file": "overlap-normal-19-1220000.png",
       "foreground_mae": 11.171782181445908,
-      "full_mae": 3.2667781432748537
+      "full_mae": 3.2667781432748537,
+      "rgb_peak": 181,
+      "worst_64px_tile_mae": 10.155924479166666
     },
     {
       "file": "overlap-normal-2-720000.png",
       "foreground_mae": 1.664404702999458,
-      "full_mae": 0.21082236842105262
+      "full_mae": 0.21082236842105262,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "overlap-normal-20-1300000.png",
       "foreground_mae": 28.69469880052325,
-      "full_mae": 7.215672514619883
+      "full_mae": 7.215672514619883,
+      "rgb_peak": 169,
+      "worst_64px_tile_mae": 37.697835286458336
     },
     {
       "file": "overlap-normal-21-1367000.png",
-      "foreground_mae": 16.727232654500572,
-      "full_mae": 4.980034722222222
+      "foreground_mae": 16.727390083248324,
+      "full_mae": 4.9800804093567255,
+      "rgb_peak": 175,
+      "worst_64px_tile_mae": 28.14990234375
     },
     {
       "file": "overlap-normal-22-1377000.png",
       "foreground_mae": 16.0380454012179,
-      "full_mae": 4.874406067251462
+      "full_mae": 4.874406067251462,
+      "rgb_peak": 176,
+      "worst_64px_tile_mae": 27.239420572916668
     },
     {
       "file": "overlap-normal-23-1500000.png",
-      "foreground_mae": 19.40994791357218,
-      "full_mae": 3.665233918128655
+      "foreground_mae": 19.40977503168568,
+      "full_mae": 3.6653380847953216,
+      "rgb_peak": 209,
+      "worst_64px_tile_mae": 34.755289713541664
     },
     {
       "file": "overlap-normal-24-1800000.png",
       "foreground_mae": 13.131026535781452,
-      "full_mae": 2.4172770467836258
+      "full_mae": 2.4172770467836258,
+      "rgb_peak": 220,
+      "worst_64px_tile_mae": 20.92236328125
     },
     {
       "file": "overlap-normal-25-2000000.png",
       "foreground_mae": 5.9351302145175335,
-      "full_mae": 1.3236129385964912
+      "full_mae": 1.3236129385964912,
+      "rgb_peak": 206,
+      "worst_64px_tile_mae": 10.101643880208334
     },
     {
       "file": "overlap-normal-26-2010000.png",
       "foreground_mae": 5.995696573743894,
-      "full_mae": 1.4874597953216375
+      "full_mae": 1.4874597953216375,
+      "rgb_peak": 206,
+      "worst_64px_tile_mae": 12.444905598958334
     },
     {
       "file": "overlap-normal-27-2067000.png",
       "foreground_mae": 5.953568930300232,
-      "full_mae": 2.1475822368421054
+      "full_mae": 2.1475822368421054,
+      "rgb_peak": 183,
+      "worst_64px_tile_mae": 9.17919921875
     },
     {
       "file": "overlap-normal-28-2077000.png",
       "foreground_mae": 5.828680210130242,
-      "full_mae": 2.1162317251461986
+      "full_mae": 2.1162317251461986,
+      "rgb_peak": 176,
+      "worst_64px_tile_mae": 8.937662760416666
     },
     {
       "file": "overlap-normal-29-2090000.png",
       "foreground_mae": 7.607750420316786,
-      "full_mae": 2.7121820175438596
+      "full_mae": 2.7121820175438596,
+      "rgb_peak": 153,
+      "worst_64px_tile_mae": 11.401611328125
     },
     {
       "file": "overlap-normal-3-780000.png",
       "foreground_mae": 2.3366050460649124,
-      "full_mae": 0.32067434210526313
+      "full_mae": 0.32067434210526313,
+      "rgb_peak": 167,
+      "worst_64px_tile_mae": 2.5891493055555554
     },
     {
       "file": "overlap-normal-30-2100000.png",
       "foreground_mae": 10.581925051111401,
-      "full_mae": 3.7881377923976607
+      "full_mae": 3.7881377923976607,
+      "rgb_peak": 159,
+      "worst_64px_tile_mae": 12.687418619791666
     },
     {
       "file": "overlap-normal-31-2200000.png",
-      "foreground_mae": 20.341555712172294,
-      "full_mae": 5.966306652046784
+      "foreground_mae": 20.3412950864428,
+      "full_mae": 5.966418128654971,
+      "rgb_peak": 190,
+      "worst_64px_tile_mae": 28.401692708333332
     },
     {
       "file": "overlap-normal-32-2500000.png",
       "foreground_mae": 6.0146586075665995,
-      "full_mae": 1.3110891812865497
+      "full_mae": 1.3110891812865497,
+      "rgb_peak": 213,
+      "worst_64px_tile_mae": 7.070393880208333
     },
     {
       "file": "overlap-normal-33-3000000.png",
       "foreground_mae": 2.2485746242191125,
-      "full_mae": 0.5572057748538012
+      "full_mae": 0.5572057748538012,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.7443033854166665
     },
     {
       "file": "overlap-normal-34-3026400.png",
       "foreground_mae": 2.2485746242191125,
-      "full_mae": 0.5572057748538012
+      "full_mae": 0.5572057748538012,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.7443033854166665
     },
     {
       "file": "overlap-normal-35-3036400.png",
       "foreground_mae": 2.2485746242191125,
-      "full_mae": 0.5572057748538012
+      "full_mae": 0.5572057748538012,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.7443033854166665
     },
     {
       "file": "overlap-normal-36-3380000.png",
       "foreground_mae": 2.2485746242191125,
-      "full_mae": 0.5572057748538012
+      "full_mae": 0.5572057748538012,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.7443033854166665
     },
     {
       "file": "overlap-normal-37-3390000.png",
       "foreground_mae": 2.2485746242191125,
-      "full_mae": 0.5572057748538012
+      "full_mae": 0.5572057748538012,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.7443033854166665
     },
     {
       "file": "overlap-normal-38-3500000.png",
       "foreground_mae": 2.2485746242191125,
-      "full_mae": 0.5572057748538012
+      "full_mae": 0.5572057748538012,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.7443033854166665
     },
     {
       "file": "overlap-normal-39-4000000.png",
       "foreground_mae": 2.2485746242191125,
-      "full_mae": 0.5572057748538012
+      "full_mae": 0.5572057748538012,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.7443033854166665
     },
     {
       "file": "overlap-normal-4-800000.png",
       "foreground_mae": 2.2436592509503335,
-      "full_mae": 0.5735032894736842
+      "full_mae": 0.5735032894736842,
+      "rgb_peak": 162,
+      "worst_64px_tile_mae": 3.1656901041666665
     },
     {
       "file": "overlap-normal-5-847000.png",
       "foreground_mae": 5.1494428033322395,
-      "full_mae": 1.3310745614035089
+      "full_mae": 1.3310745614035089,
+      "rgb_peak": 156,
+      "worst_64px_tile_mae": 8.211181640625
     },
     {
       "file": "overlap-normal-6-857000.png",
-      "foreground_mae": 5.692380151649618,
-      "full_mae": 1.4908497807017544
+      "foreground_mae": 5.692512494745201,
+      "full_mae": 1.4908936403508772,
+      "rgb_peak": 144,
+      "worst_64px_tile_mae": 11.99267578125
     },
     {
       "file": "overlap-normal-7-860000.png",
       "foreground_mae": 5.346982354045429,
-      "full_mae": 1.3994755116959063
+      "full_mae": 1.3994755116959063,
+      "rgb_peak": 144,
+      "worst_64px_tile_mae": 10.572672526041666
     },
     {
       "file": "overlap-normal-8-900000.png",
       "foreground_mae": 8.015664634043912,
-      "full_mae": 1.8593366228070176
+      "full_mae": 1.8593366228070176,
+      "rgb_peak": 157,
+      "worst_64px_tile_mae": 10.909016927083334
     },
     {
       "file": "overlap-normal-9-940000.png",
       "foreground_mae": 7.6730629612270596,
-      "full_mae": 1.6202302631578946
+      "full_mae": 1.6202302631578946,
+      "rgb_peak": 181,
+      "worst_64px_tile_mae": 9.505615234375
     },
     {
       "file": "rapid-calm-0-0.png",
       "foreground_mae": 2.956158896183376,
-      "full_mae": 0.180656067251462
+      "full_mae": 0.180656067251462,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "rapid-calm-1-700000.png",
       "foreground_mae": 2.210616758190444,
-      "full_mae": 0.14432748538011697
+      "full_mae": 0.14432748538011697,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "rapid-calm-10-860000.png",
       "foreground_mae": 7.939117339021015,
-      "full_mae": 1.9934576023391812
+      "full_mae": 1.993406432748538,
+      "rgb_peak": 155,
+      "worst_64px_tile_mae": 10.697428385416666
     },
     {
       "file": "rapid-calm-11-900000.png",
-      "foreground_mae": 10.021746408245543,
-      "full_mae": 2.658782894736842
+      "foreground_mae": 10.022025615819691,
+      "full_mae": 2.6586129385964914,
+      "rgb_peak": 146,
+      "worst_64px_tile_mae": 14.352294921875
     },
     {
       "file": "rapid-calm-12-927000.png",
-      "foreground_mae": 13.76026486978013,
-      "full_mae": 3.3280573830409357
+      "foreground_mae": 13.757783477111992,
+      "full_mae": 3.3274616228070175,
+      "rgb_peak": 155,
+      "worst_64px_tile_mae": 18.053792317708332
     },
     {
       "file": "rapid-calm-13-937000.png",
-      "foreground_mae": 11.827941133952063,
-      "full_mae": 3.086896929824561
+      "foreground_mae": 11.827047776018738,
+      "full_mae": 3.0864674707602338,
+      "rgb_peak": 141,
+      "worst_64px_tile_mae": 16.004475911458332
     },
     {
       "file": "rapid-calm-14-940000.png",
-      "foreground_mae": 12.004475583127268,
-      "full_mae": 3.132222222222222
+      "foreground_mae": 12.004020245842371,
+      "full_mae": 3.1320321637426902,
+      "rgb_peak": 143,
+      "worst_64px_tile_mae": 16.398274739583332
     },
     {
       "file": "rapid-calm-15-1000000.png",
-      "foreground_mae": 12.987868217797114,
-      "full_mae": 3.8063212719298245
+      "foreground_mae": 12.987917241731841,
+      "full_mae": 3.805906432748538,
+      "rgb_peak": 157,
+      "worst_64px_tile_mae": 24.16162109375
     },
     {
       "file": "rapid-calm-16-1007000.png",
-      "foreground_mae": 12.686552444306932,
-      "full_mae": 3.6876644736842104
+      "foreground_mae": 12.685582762755793,
+      "full_mae": 3.6868841374269006,
+      "rgb_peak": 172,
+      "worst_64px_tile_mae": 23.695393880208332
     },
     {
       "file": "rapid-calm-17-1017000.png",
-      "foreground_mae": 15.097608598990856,
-      "full_mae": 4.388565423976608
+      "foreground_mae": 15.100111499964552,
+      "full_mae": 4.388651315789474,
+      "rgb_peak": 163,
+      "worst_64px_tile_mae": 26.246012369791668
     },
     {
       "file": "rapid-calm-18-1020000.png",
-      "foreground_mae": 15.388967041155198,
-      "full_mae": 4.482235014619883
+      "foreground_mae": 15.388387751692944,
+      "full_mae": 4.4812609649122805,
+      "rgb_peak": 163,
+      "worst_64px_tile_mae": 26.414469401041668
     },
     {
       "file": "rapid-calm-19-1087000.png",
-      "foreground_mae": 14.772953478532427,
-      "full_mae": 4.111927997076023
+      "foreground_mae": 14.77159685424348,
+      "full_mae": 4.111542397660819,
+      "rgb_peak": 181,
+      "worst_64px_tile_mae": 22.369384765625
     },
     {
       "file": "rapid-calm-2-720000.png",
       "foreground_mae": 1.6741090492051292,
-      "full_mae": 0.3629002192982456
+      "full_mae": 0.3629002192982456,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "rapid-calm-20-1097000.png",
-      "foreground_mae": 15.267662701096832,
-      "full_mae": 4.314714912280702
+      "foreground_mae": 15.27016685235291,
+      "full_mae": 4.3152412280701755,
+      "rgb_peak": 160,
+      "worst_64px_tile_mae": 20.534016927083332
     },
     {
       "file": "rapid-calm-21-1100000.png",
-      "foreground_mae": 15.606267625213489,
-      "full_mae": 4.411909722222222
+      "foreground_mae": 15.608746598875891,
+      "full_mae": 4.4123885233918125,
+      "rgb_peak": 153,
+      "worst_64px_tile_mae": 20.230631510416668
     },
     {
       "file": "rapid-calm-22-1167000.png",
       "foreground_mae": 16.327955486335743,
-      "full_mae": 4.575679824561403
+      "full_mae": 4.575679824561403,
+      "rgb_peak": 183,
+      "worst_64px_tile_mae": 28.555338541666668
     },
     {
       "file": "rapid-calm-23-1177000.png",
       "foreground_mae": 17.24579807124582,
-      "full_mae": 4.91109100877193
+      "full_mae": 4.91109100877193,
+      "rgb_peak": 197,
+      "worst_64px_tile_mae": 25.817057291666668
     },
     {
       "file": "rapid-calm-24-1180000.png",
       "foreground_mae": 17.387304893465117,
-      "full_mae": 4.955272295321637
+      "full_mae": 4.955272295321637,
+      "rgb_peak": 197,
+      "worst_64px_tile_mae": 26.837320963541668
     },
     {
       "file": "rapid-calm-25-1200000.png",
-      "foreground_mae": 14.82616810209043,
-      "full_mae": 4.673218201754386
+      "foreground_mae": 14.817579334652853,
+      "full_mae": 4.670577485380117,
+      "rgb_peak": 153,
+      "worst_64px_tile_mae": 17.746744791666668
     },
     {
       "file": "rapid-calm-26-1247000.png",
       "foreground_mae": 16.824097664543526,
-      "full_mae": 4.727801535087719
+      "full_mae": 4.727801535087719,
+      "rgb_peak": 183,
+      "worst_64px_tile_mae": 21.926595052083332
     },
     {
       "file": "rapid-calm-27-1257000.png",
       "foreground_mae": 15.176225062179181,
-      "full_mae": 4.288764619883041
+      "full_mae": 4.288764619883041,
+      "rgb_peak": 162,
+      "worst_64px_tile_mae": 18.724609375
     },
     {
       "file": "rapid-calm-28-1260000.png",
       "foreground_mae": 15.259818391943206,
-      "full_mae": 4.319928728070176
+      "full_mae": 4.319928728070176,
+      "rgb_peak": 154,
+      "worst_64px_tile_mae": 17.109944661458332
     },
     {
       "file": "rapid-calm-29-1300000.png",
-      "foreground_mae": 14.161860768943635,
-      "full_mae": 4.5335051169590646
+      "foreground_mae": 14.162041573348263,
+      "full_mae": 4.533561769005848,
+      "rgb_peak": 195,
+      "worst_64px_tile_mae": 20.312744140625
     },
     {
       "file": "rapid-calm-3-767000.png",
       "foreground_mae": 1.9242944317315027,
-      "full_mae": 0.45487390350877194
+      "full_mae": 0.45487390350877194,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "rapid-calm-30-1327000.png",
-      "foreground_mae": 15.59425622975081,
-      "full_mae": 4.365696271929824
+      "foreground_mae": 15.594709544951534,
+      "full_mae": 4.3658205409356725,
+      "rgb_peak": 183,
+      "worst_64px_tile_mae": 25.652262369791668
     },
     {
       "file": "rapid-calm-31-1337000.png",
       "foreground_mae": 15.992398553742225,
-      "full_mae": 4.519968932748538
+      "full_mae": 4.519968932748538,
+      "rgb_peak": 185,
+      "worst_64px_tile_mae": 26.105631510416668
     },
     {
       "file": "rapid-calm-32-1500000.png",
       "foreground_mae": 12.735869843709967,
-      "full_mae": 2.746641081871345
+      "full_mae": 2.746641081871345,
+      "rgb_peak": 197,
+      "worst_64px_tile_mae": 11.433675130208334
     },
     {
       "file": "rapid-calm-33-1800000.png",
       "foreground_mae": 2.7049664854594395,
-      "full_mae": 0.6565095029239766
+      "full_mae": 0.6565095029239766,
+      "rgb_peak": 169,
+      "worst_64px_tile_mae": 3.6263834635416665
     },
     {
       "file": "rapid-calm-34-2000000.png",
       "foreground_mae": 2.1381566795957676,
-      "full_mae": 0.5514144736842105
+      "full_mae": 0.5514144736842105,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.2222493489583335
     },
     {
       "file": "rapid-calm-35-2200000.png",
       "foreground_mae": 2.1381566795957676,
-      "full_mae": 0.5514144736842105
+      "full_mae": 0.5514144736842105,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.2222493489583335
     },
     {
       "file": "rapid-calm-36-2500000.png",
       "foreground_mae": 2.1381566795957676,
-      "full_mae": 0.5514144736842105
+      "full_mae": 0.5514144736842105,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.2222493489583335
     },
     {
       "file": "rapid-calm-37-3000000.png",
       "foreground_mae": 2.1381566795957676,
-      "full_mae": 0.5514144736842105
+      "full_mae": 0.5514144736842105,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.2222493489583335
     },
     {
       "file": "rapid-calm-38-3500000.png",
       "foreground_mae": 2.1381566795957676,
-      "full_mae": 0.5514144736842105
+      "full_mae": 0.5514144736842105,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.2222493489583335
     },
     {
       "file": "rapid-calm-39-4000000.png",
       "foreground_mae": 2.1381566795957676,
-      "full_mae": 0.5514144736842105
+      "full_mae": 0.5514144736842105,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.2222493489583335
     },
     {
       "file": "rapid-calm-4-777000.png",
       "foreground_mae": 3.270056647488554,
-      "full_mae": 0.6938230994152047
+      "full_mae": 0.6938230994152047,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 3.8802083333333335
     },
     {
       "file": "rapid-calm-5-780000.png",
       "foreground_mae": 3.7279918886697643,
-      "full_mae": 0.7539766081871345
+      "full_mae": 0.7539766081871345,
+      "rgb_peak": 167,
+      "worst_64px_tile_mae": 4.421875
     },
     {
       "file": "rapid-calm-6-780000.png",
       "foreground_mae": 3.7277244821784716,
-      "full_mae": 0.7334301900584795
+      "full_mae": 0.7334301900584795,
+      "rgb_peak": 167,
+      "worst_64px_tile_mae": 4.421875
     },
     {
       "file": "rapid-calm-7-800000.png",
       "foreground_mae": 3.9509011305607484,
-      "full_mae": 1.018640350877193
+      "full_mae": 1.018640350877193,
+      "rgb_peak": 172,
+      "worst_64px_tile_mae": 4.048502604166667
     },
     {
       "file": "rapid-calm-8-847000.png",
       "foreground_mae": 7.771485490903624,
-      "full_mae": 1.9838048245614035
+      "full_mae": 1.9838048245614035,
+      "rgb_peak": 150,
+      "worst_64px_tile_mae": 9.7236328125
     },
     {
       "file": "rapid-calm-9-857000.png",
       "foreground_mae": 7.906431951542684,
-      "full_mae": 2.0033972953216375
+      "full_mae": 2.0033863304093567,
+      "rgb_peak": 155,
+      "worst_64px_tile_mae": 10.687337239583334
     },
     {
       "file": "rapid-chaotic-0-0.png",
       "foreground_mae": 3.0954660439774275,
-      "full_mae": 0.17982273391812867
+      "full_mae": 0.17982273391812867,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.52734375
     },
     {
       "file": "rapid-chaotic-1-700000.png",
       "foreground_mae": 3.0954660439774275,
-      "full_mae": 0.17982273391812867
+      "full_mae": 0.17982273391812867,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.52734375
     },
     {
       "file": "rapid-chaotic-10-860000.png",
       "foreground_mae": 9.132042623442894,
-      "full_mae": 2.9145449561403507
+      "full_mae": 2.9145449561403507,
+      "rgb_peak": 163,
+      "worst_64px_tile_mae": 10.97314453125
     },
     {
       "file": "rapid-chaotic-11-900000.png",
       "foreground_mae": 11.038074801095222,
-      "full_mae": 3.5502741228070174
+      "full_mae": 3.5502741228070174,
+      "rgb_peak": 166,
+      "worst_64px_tile_mae": 17.249674479166668
     },
     {
       "file": "rapid-chaotic-12-927000.png",
       "foreground_mae": 13.655036761547054,
-      "full_mae": 4.186087353801169
+      "full_mae": 4.186087353801169,
+      "rgb_peak": 160,
+      "worst_64px_tile_mae": 22.60693359375
     },
     {
       "file": "rapid-chaotic-13-937000.png",
       "foreground_mae": 12.204827356900934,
-      "full_mae": 4.096430921052631
+      "full_mae": 4.096430921052631,
+      "rgb_peak": 151,
+      "worst_64px_tile_mae": 19.121744791666668
     },
     {
       "file": "rapid-chaotic-14-940000.png",
       "foreground_mae": 12.924084037047127,
-      "full_mae": 4.299515716374269
+      "full_mae": 4.299515716374269,
+      "rgb_peak": 145,
+      "worst_64px_tile_mae": 20.202799479166668
     },
     {
       "file": "rapid-chaotic-15-1000000.png",
-      "foreground_mae": 15.036984769132667,
-      "full_mae": 5.37297514619883
+      "foreground_mae": 15.036289606004537,
+      "full_mae": 5.372732090643275,
+      "rgb_peak": 162,
+      "worst_64px_tile_mae": 30.221028645833332
     },
     {
       "file": "rapid-chaotic-16-1007000.png",
-      "foreground_mae": 14.92715526260724,
-      "full_mae": 5.331224415204678
+      "foreground_mae": 14.926883239171374,
+      "full_mae": 5.331129385964912,
+      "rgb_peak": 162,
+      "worst_64px_tile_mae": 28.536051432291668
     },
     {
       "file": "rapid-chaotic-17-1017000.png",
       "foreground_mae": 15.928006109062956,
-      "full_mae": 5.901304824561404
+      "full_mae": 5.901304824561404,
+      "rgb_peak": 162,
+      "worst_64px_tile_mae": 22.907633463541668
     },
     {
       "file": "rapid-chaotic-18-1020000.png",
       "foreground_mae": 16.35576538693142,
-      "full_mae": 6.04092653508772
+      "full_mae": 6.04092653508772,
+      "rgb_peak": 163,
+      "worst_64px_tile_mae": 23.2685546875
     },
     {
       "file": "rapid-chaotic-19-1087000.png",
-      "foreground_mae": 15.895652674944541,
-      "full_mae": 6.170279605263158
+      "foreground_mae": 15.894701967675953,
+      "full_mae": 6.169917763157895,
+      "rgb_peak": 136,
+      "worst_64px_tile_mae": 22.267578125
     },
     {
       "file": "rapid-chaotic-2-720000.png",
       "foreground_mae": 1.2377488281487794,
-      "full_mae": 0.3541593567251462
+      "full_mae": 0.3541593567251462,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.52734375
     },
     {
       "file": "rapid-chaotic-20-1097000.png",
       "foreground_mae": 16.663963398990905,
-      "full_mae": 6.561500365497076
+      "full_mae": 6.561500365497076,
+      "rgb_peak": 161,
+      "worst_64px_tile_mae": 23.215413411458332
     },
     {
       "file": "rapid-chaotic-21-1100000.png",
       "foreground_mae": 17.04659667166631,
-      "full_mae": 6.6842233187134505
+      "full_mae": 6.6842233187134505,
+      "rgb_peak": 161,
+      "worst_64px_tile_mae": 23.161376953125
     },
     {
       "file": "rapid-chaotic-22-1167000.png",
       "foreground_mae": 18.299204602325457,
-      "full_mae": 7.005327119883041
+      "full_mae": 7.005327119883041,
+      "rgb_peak": 166,
+      "worst_64px_tile_mae": 24.546223958333332
     },
     {
       "file": "rapid-chaotic-23-1177000.png",
       "foreground_mae": 18.101164421601574,
-      "full_mae": 7.190268640350877
+      "full_mae": 7.190268640350877,
+      "rgb_peak": 177,
+      "worst_64px_tile_mae": 29.791910807291668
     },
     {
       "file": "rapid-chaotic-24-1180000.png",
       "foreground_mae": 17.886390102921695,
-      "full_mae": 7.082414108187135
+      "full_mae": 7.082414108187135,
+      "rgb_peak": 148,
+      "worst_64px_tile_mae": 26.914876302083332
     },
     {
       "file": "rapid-chaotic-25-1200000.png",
-      "foreground_mae": 18.101355974373327,
-      "full_mae": 7.6021052631578945
+      "foreground_mae": 18.10472369578546,
+      "full_mae": 7.603490497076024,
+      "rgb_peak": 154,
+      "worst_64px_tile_mae": 24.421793619791668
     },
     {
       "file": "rapid-chaotic-26-1247000.png",
       "foreground_mae": 17.864335143983926,
-      "full_mae": 6.702673611111111
+      "full_mae": 6.702673611111111,
+      "rgb_peak": 164,
+      "worst_64px_tile_mae": 22.244873046875
     },
     {
       "file": "rapid-chaotic-27-1257000.png",
       "foreground_mae": 17.05473886568466,
-      "full_mae": 6.428583698830409
+      "full_mae": 6.428583698830409,
+      "rgb_peak": 150,
+      "worst_64px_tile_mae": 20.842529296875
     },
     {
       "file": "rapid-chaotic-28-1260000.png",
       "foreground_mae": 17.230677046192852,
-      "full_mae": 6.491085526315789
+      "full_mae": 6.491085526315789,
+      "rgb_peak": 146,
+      "worst_64px_tile_mae": 20.806803385416668
     },
     {
       "file": "rapid-chaotic-29-1300000.png",
       "foreground_mae": 17.69413481376258,
-      "full_mae": 6.8073629385964916
+      "full_mae": 6.8073629385964916,
+      "rgb_peak": 169,
+      "worst_64px_tile_mae": 30.38818359375
     },
     {
       "file": "rapid-chaotic-3-767000.png",
       "foreground_mae": 1.6369752928101222,
-      "full_mae": 0.5243256578947368
+      "full_mae": 0.5243256578947368,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.5442708333333335
     },
     {
       "file": "rapid-chaotic-30-1327000.png",
       "foreground_mae": 17.207338098835745,
-      "full_mae": 6.614047880116959
+      "full_mae": 6.614047880116959,
+      "rgb_peak": 139,
+      "worst_64px_tile_mae": 22.9833984375
     },
     {
       "file": "rapid-chaotic-31-1337000.png",
-      "foreground_mae": 15.63013013013013,
-      "full_mae": 6.0161823830409356
+      "foreground_mae": 15.630149567042771,
+      "full_mae": 6.016189692982456,
+      "rgb_peak": 161,
+      "worst_64px_tile_mae": 21.606689453125
     },
     {
       "file": "rapid-chaotic-32-1500000.png",
       "foreground_mae": 16.54114904907139,
-      "full_mae": 3.6925511695906432
+      "full_mae": 3.6925511695906432,
+      "rgb_peak": 205,
+      "worst_64px_tile_mae": 18.447428385416668
     },
     {
       "file": "rapid-chaotic-33-1800000.png",
       "foreground_mae": 16.74092363461503,
-      "full_mae": 3.390864400584795
+      "full_mae": 3.390864400584795,
+      "rgb_peak": 224,
+      "worst_64px_tile_mae": 16.945882161458332
     },
     {
       "file": "rapid-chaotic-34-2000000.png",
       "foreground_mae": 2.4530783317175398,
-      "full_mae": 0.5620595760233918
+      "full_mae": 0.5620595760233918,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.558246527777778
     },
     {
       "file": "rapid-chaotic-35-2200000.png",
       "foreground_mae": 2.4530783317175398,
-      "full_mae": 0.5620595760233918
+      "full_mae": 0.5620595760233918,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.558246527777778
     },
     {
       "file": "rapid-chaotic-36-2500000.png",
       "foreground_mae": 2.4530783317175398,
-      "full_mae": 0.5620595760233918
+      "full_mae": 0.5620595760233918,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.558246527777778
     },
     {
       "file": "rapid-chaotic-37-3000000.png",
       "foreground_mae": 2.4530783317175398,
-      "full_mae": 0.5620595760233918
+      "full_mae": 0.5620595760233918,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.558246527777778
     },
     {
       "file": "rapid-chaotic-38-3500000.png",
       "foreground_mae": 2.4530783317175398,
-      "full_mae": 0.5620595760233918
+      "full_mae": 0.5620595760233918,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.558246527777778
     },
     {
       "file": "rapid-chaotic-39-4000000.png",
       "foreground_mae": 2.4530783317175398,
-      "full_mae": 0.5620595760233918
+      "full_mae": 0.5620595760233918,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.558246527777778
     },
     {
       "file": "rapid-chaotic-4-777000.png",
       "foreground_mae": 3.711431296751845,
-      "full_mae": 1.0281834795321638
+      "full_mae": 1.0281834795321638,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 4.64306640625
     },
     {
       "file": "rapid-chaotic-5-780000.png",
       "foreground_mae": 3.461353145321608,
-      "full_mae": 0.9438139619883041
+      "full_mae": 0.9438139619883041,
+      "rgb_peak": 167,
+      "worst_64px_tile_mae": 4.618408203125
     },
     {
       "file": "rapid-chaotic-6-780000.png",
       "foreground_mae": 3.4599127329087906,
-      "full_mae": 0.9235051169590643
+      "full_mae": 0.9235051169590643,
+      "rgb_peak": 167,
+      "worst_64px_tile_mae": 4.618408203125
     },
     {
       "file": "rapid-chaotic-7-800000.png",
-      "foreground_mae": 4.9491730200391615,
-      "full_mae": 1.6791465643274854
+      "foreground_mae": 4.931044333743996,
+      "full_mae": 1.673580043859649,
+      "rgb_peak": 166,
+      "worst_64px_tile_mae": 8.445475260416666
     },
     {
       "file": "rapid-chaotic-8-847000.png",
       "foreground_mae": 8.68835341365462,
-      "full_mae": 2.8359758771929826
+      "full_mae": 2.8359758771929826,
+      "rgb_peak": 158,
+      "worst_64px_tile_mae": 11.766438802083334
     },
     {
       "file": "rapid-chaotic-9-857000.png",
       "foreground_mae": 8.21900579554281,
-      "full_mae": 2.656580774853801
+      "full_mae": 2.656580774853801,
+      "rgb_peak": 165,
+      "worst_64px_tile_mae": 10.700358072916666
     },
     {
       "file": "rapid-normal-0-0.png",
       "foreground_mae": 2.956158896183376,
-      "full_mae": 0.180656067251462
+      "full_mae": 0.180656067251462,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "rapid-normal-1-700000.png",
       "foreground_mae": 2.210616758190444,
-      "full_mae": 0.14432748538011697
+      "full_mae": 0.14432748538011697,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "rapid-normal-10-860000.png",
       "foreground_mae": 10.262439177523152,
-      "full_mae": 2.98562682748538
+      "full_mae": 2.98562682748538,
+      "rgb_peak": 164,
+      "worst_64px_tile_mae": 13.618896484375
     },
     {
       "file": "rapid-normal-11-900000.png",
       "foreground_mae": 11.393033432304408,
-      "full_mae": 3.447870979532164
+      "full_mae": 3.447870979532164,
+      "rgb_peak": 157,
+      "worst_64px_tile_mae": 14.66357421875
     },
     {
       "file": "rapid-normal-12-927000.png",
       "foreground_mae": 12.99373285545522,
-      "full_mae": 3.6630701754385964
+      "full_mae": 3.6630701754385964,
+      "rgb_peak": 162,
+      "worst_64px_tile_mae": 15.524820963541666
     },
     {
       "file": "rapid-normal-13-937000.png",
       "foreground_mae": 13.073885658914728,
-      "full_mae": 3.969031432748538
+      "full_mae": 3.969031432748538,
+      "rgb_peak": 165,
+      "worst_64px_tile_mae": 16.219889322916668
     },
     {
       "file": "rapid-normal-14-940000.png",
       "foreground_mae": 15.02724118094602,
-      "full_mae": 4.561105628654971
+      "full_mae": 4.561105628654971,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 17.7529296875
     },
     {
       "file": "rapid-normal-15-1000000.png",
       "foreground_mae": 13.911565654867951,
-      "full_mae": 4.645105994152047
+      "full_mae": 4.645105994152047,
+      "rgb_peak": 151,
+      "worst_64px_tile_mae": 21.113199869791668
     },
     {
       "file": "rapid-normal-16-1007000.png",
       "foreground_mae": 14.642761273149715,
-      "full_mae": 4.858349780701754
+      "full_mae": 4.858349780701754,
+      "rgb_peak": 151,
+      "worst_64px_tile_mae": 23.3359375
     },
     {
       "file": "rapid-normal-17-1017000.png",
       "foreground_mae": 14.882218815759833,
-      "full_mae": 5.079364035087719
+      "full_mae": 5.079364035087719,
+      "rgb_peak": 144,
+      "worst_64px_tile_mae": 15.950439453125
     },
     {
       "file": "rapid-normal-18-1020000.png",
       "foreground_mae": 15.388141455261547,
-      "full_mae": 5.22030519005848
+      "full_mae": 5.22030519005848,
+      "rgb_peak": 146,
+      "worst_64px_tile_mae": 16.06787109375
     },
     {
       "file": "rapid-normal-19-1087000.png",
       "foreground_mae": 15.740340799691932,
-      "full_mae": 5.496058114035088
+      "full_mae": 5.496058114035088,
+      "rgb_peak": 172,
+      "worst_64px_tile_mae": 20.168538411458332
     },
     {
       "file": "rapid-normal-2-720000.png",
       "foreground_mae": 1.1170688691013895,
-      "full_mae": 0.31584429824561405
+      "full_mae": 0.31584429824561405,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "rapid-normal-20-1097000.png",
       "foreground_mae": 19.200543299121403,
-      "full_mae": 6.340593932748538
+      "full_mae": 6.340593932748538,
+      "rgb_peak": 187,
+      "worst_64px_tile_mae": 23.027099609375
     },
     {
       "file": "rapid-normal-21-1100000.png",
       "foreground_mae": 19.253730408237654,
-      "full_mae": 6.304387792397661
+      "full_mae": 6.304387792397661,
+      "rgb_peak": 169,
+      "worst_64px_tile_mae": 22.711588541666668
     },
     {
       "file": "rapid-normal-22-1167000.png",
       "foreground_mae": 15.04064070520573,
-      "full_mae": 5.232775950292398
+      "full_mae": 5.232775950292398,
+      "rgb_peak": 175,
+      "worst_64px_tile_mae": 17.188232421875
     },
     {
       "file": "rapid-normal-23-1177000.png",
       "foreground_mae": 19.13764139843195,
-      "full_mae": 6.165588450292398
+      "full_mae": 6.165588450292398,
+      "rgb_peak": 190,
+      "worst_64px_tile_mae": 21.510091145833332
     },
     {
       "file": "rapid-normal-24-1180000.png",
       "foreground_mae": 19.45976490021928,
-      "full_mae": 6.238634868421053
+      "full_mae": 6.238634868421053,
+      "rgb_peak": 192,
+      "worst_64px_tile_mae": 21.844807942708332
     },
     {
       "file": "rapid-normal-25-1200000.png",
       "foreground_mae": 15.943873839174906,
-      "full_mae": 5.581299342105263
+      "full_mae": 5.581299342105263,
+      "rgb_peak": 143,
+      "worst_64px_tile_mae": 20.933837890625
     },
     {
       "file": "rapid-normal-26-1247000.png",
       "foreground_mae": 17.014621125113408,
-      "full_mae": 6.047441520467836
+      "full_mae": 6.047441520467836,
+      "rgb_peak": 173,
+      "worst_64px_tile_mae": 23.482340494791668
     },
     {
       "file": "rapid-normal-27-1257000.png",
       "foreground_mae": 16.785599389456383,
-      "full_mae": 5.359877558479532
+      "full_mae": 5.359877558479532,
+      "rgb_peak": 169,
+      "worst_64px_tile_mae": 18.59716796875
     },
     {
       "file": "rapid-normal-28-1260000.png",
       "foreground_mae": 18.03869988171113,
-      "full_mae": 5.715610380116959
+      "full_mae": 5.715610380116959,
+      "rgb_peak": 170,
+      "worst_64px_tile_mae": 18.785807291666668
     },
     {
       "file": "rapid-normal-29-1300000.png",
-      "foreground_mae": 16.778214874828933,
-      "full_mae": 5.998653143274854
+      "foreground_mae": 16.777803795459395,
+      "full_mae": 5.998508771929824,
+      "rgb_peak": 186,
+      "worst_64px_tile_mae": 24.370686848958332
     },
     {
       "file": "rapid-normal-3-767000.png",
       "foreground_mae": 1.415089658068272,
-      "full_mae": 0.44151133040935675
+      "full_mae": 0.44151133040935675,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.6645833333333333
     },
     {
       "file": "rapid-normal-30-1327000.png",
-      "foreground_mae": 15.71942684524287,
-      "full_mae": 5.488099415204679
+      "foreground_mae": 15.719031197369477,
+      "full_mae": 5.48796418128655,
+      "rgb_peak": 172,
+      "worst_64px_tile_mae": 21.610921223958332
     },
     {
       "file": "rapid-normal-31-1337000.png",
       "foreground_mae": 17.57949943923027,
-      "full_mae": 5.59421966374269
+      "full_mae": 5.59421966374269,
+      "rgb_peak": 188,
+      "worst_64px_tile_mae": 21.110595703125
     },
     {
       "file": "rapid-normal-32-1500000.png",
       "foreground_mae": 13.795498421290032,
-      "full_mae": 2.8135672514619885
+      "full_mae": 2.8135672514619885,
+      "rgb_peak": 215,
+      "worst_64px_tile_mae": 14.580322265625
     },
     {
       "file": "rapid-normal-33-1800000.png",
       "foreground_mae": 2.198752859165668,
-      "full_mae": 0.5301187865497076
+      "full_mae": 0.5301187865497076,
+      "rgb_peak": 179,
+      "worst_64px_tile_mae": 3.0279134114583335
     },
     {
       "file": "rapid-normal-34-2000000.png",
       "foreground_mae": 2.2520105531295487,
-      "full_mae": 0.5583625730994152
+      "full_mae": 0.5583625730994152,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.9366048177083335
     },
     {
       "file": "rapid-normal-35-2200000.png",
       "foreground_mae": 2.2520105531295487,
-      "full_mae": 0.5583625730994152
+      "full_mae": 0.5583625730994152,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.9366048177083335
     },
     {
       "file": "rapid-normal-36-2500000.png",
       "foreground_mae": 2.2520105531295487,
-      "full_mae": 0.5583625730994152
+      "full_mae": 0.5583625730994152,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.9366048177083335
     },
     {
       "file": "rapid-normal-37-3000000.png",
       "foreground_mae": 2.2520105531295487,
-      "full_mae": 0.5583625730994152
+      "full_mae": 0.5583625730994152,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.9366048177083335
     },
     {
       "file": "rapid-normal-38-3500000.png",
       "foreground_mae": 2.2520105531295487,
-      "full_mae": 0.5583625730994152
+      "full_mae": 0.5583625730994152,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.9366048177083335
     },
     {
       "file": "rapid-normal-39-4000000.png",
       "foreground_mae": 2.2520105531295487,
-      "full_mae": 0.5583625730994152
+      "full_mae": 0.5583625730994152,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 2.9366048177083335
     },
     {
       "file": "rapid-normal-4-777000.png",
       "foreground_mae": 3.3684398060892478,
-      "full_mae": 0.847046783625731
+      "full_mae": 0.847046783625731,
+      "rgb_peak": 168,
+      "worst_64px_tile_mae": 4.270426432291667
     },
     {
       "file": "rapid-normal-5-780000.png",
       "foreground_mae": 3.8033002364066193,
-      "full_mae": 0.918203581871345
+      "full_mae": 0.918203581871345,
+      "rgb_peak": 167,
+      "worst_64px_tile_mae": 4.6982421875
     },
     {
       "file": "rapid-normal-6-780000.png",
       "foreground_mae": 3.8016548463356976,
-      "full_mae": 0.8971235380116959
+      "full_mae": 0.8971235380116959,
+      "rgb_peak": 167,
+      "worst_64px_tile_mae": 4.6982421875
     },
     {
       "file": "rapid-normal-7-800000.png",
       "foreground_mae": 4.740993780547898,
-      "full_mae": 1.436779970760234
+      "full_mae": 1.436779970760234,
+      "rgb_peak": 162,
+      "worst_64px_tile_mae": 6.334391276041667
     },
     {
       "file": "rapid-normal-8-847000.png",
       "foreground_mae": 8.619408760253831,
-      "full_mae": 2.5618146929824563
+      "full_mae": 2.5618146929824563,
+      "rgb_peak": 156,
+      "worst_64px_tile_mae": 14.520345052083334
     },
     {
       "file": "rapid-normal-9-857000.png",
       "foreground_mae": 9.117954856137459,
-      "full_mae": 2.6760891812865495
+      "full_mae": 2.6760891812865495,
+      "rgb_peak": 163,
+      "worst_64px_tile_mae": 11.987711588541666
     }
   ],
   "png_sha256": {
@@ -1223,9 +1703,9 @@
     "build/verification/cappella-presence-kotlin/overlap-calm-0-0.png": "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
     "build/verification/cappella-presence-browser/overlap-calm-1-700000.png": "0fa3879109773a2d8da4e2369a5b0a782044763ee5b6aa7c76ac4215aad78730",
     "build/verification/cappella-presence-kotlin/overlap-calm-1-700000.png": "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
-    "build/verification/cappella-presence-browser/overlap-calm-10-1000000.png": "0752cc95d1a16ca5476cec1ff1390d2b750dc15dfc6ad57dcd5b97ec032221f7",
+    "build/verification/cappella-presence-browser/overlap-calm-10-1000000.png": "d807a725acb7492e1a7325b0fb1b9a0112f116317fdccddc0d921f4627f305a2",
     "build/verification/cappella-presence-kotlin/overlap-calm-10-1000000.png": "376daf8e43b5c22d9fb8baaf3dc0376449043e7013366478c1383f92ca1c77f9",
-    "build/verification/cappella-presence-browser/overlap-calm-11-1020000.png": "c742d96cf801933cdbd5182983a7fc0e6ed604aff07dcecf119130045e043f52",
+    "build/verification/cappella-presence-browser/overlap-calm-11-1020000.png": "4537219348e35270cb05495983acc534f7e15497726450ec5a07e579c4734f0b",
     "build/verification/cappella-presence-kotlin/overlap-calm-11-1020000.png": "8ff2b5497c8f19a7743a63cca5961312c7663d5d38f38ec6ccb7534d5ff20a93",
     "build/verification/cappella-presence-browser/overlap-calm-12-1100000.png": "13e83f42877e999fda721a90a3aa2775db5c4c4f1e92f0ac3b53378351d92aab",
     "build/verification/cappella-presence-kotlin/overlap-calm-12-1100000.png": "4864899f0173159cfb17cc0c40b81fbfe7d39f31a67fcb98889e0779ee215fb5",
@@ -1291,13 +1771,13 @@
     "build/verification/cappella-presence-kotlin/overlap-calm-4-800000.png": "ac9a58cbc38c783ab2d2163bd6e1e83d07d0af25f04b556d9995fdbaba402c12",
     "build/verification/cappella-presence-browser/overlap-calm-5-847000.png": "42c7b4b9a4668f32a38b6157734fd377a4ffb6a48473e4fdb9de2d725d1151da",
     "build/verification/cappella-presence-kotlin/overlap-calm-5-847000.png": "102d16a0fda3e80c1d745043aee14ec0677812f707f6174deab84ca4aadb5cda",
-    "build/verification/cappella-presence-browser/overlap-calm-6-857000.png": "b89b0d7e8a7948203a9a8e1ab0526e8e57261182fc72b34b60f742f50190489f",
+    "build/verification/cappella-presence-browser/overlap-calm-6-857000.png": "1c7c3ef0e75ed7d962c95b5a49bfaf62a96317207025de8598ea543e72005701",
     "build/verification/cappella-presence-kotlin/overlap-calm-6-857000.png": "17fe3ae1b7a7ee6214232e9f5d600a2be71b1b21426d455e227ce42f50d18809",
-    "build/verification/cappella-presence-browser/overlap-calm-7-860000.png": "88948b077e890d4322bcd6e8a980c02fb6f4435428abe4e538bcf68156a46a44",
+    "build/verification/cappella-presence-browser/overlap-calm-7-860000.png": "d1cd5bc17b5e9f8bc99a586ddd543300406255ad05cadaced36727cd342e1f88",
     "build/verification/cappella-presence-kotlin/overlap-calm-7-860000.png": "158a652de8981693671799d8b10a45537aedfae3f303ebdec2f2b4c958b791de",
-    "build/verification/cappella-presence-browser/overlap-calm-8-900000.png": "aa57507f011c1c73e75d48578f9b304ff8fb8a9529fee489b318f3d441a17fcd",
+    "build/verification/cappella-presence-browser/overlap-calm-8-900000.png": "98ce2d675976eba2ff180038d000bbb2e04505cd2c83ded7eaf39286594b52bb",
     "build/verification/cappella-presence-kotlin/overlap-calm-8-900000.png": "02e28adac4e3ac01935c6e3a479200e5f675caac6c41aca54b8a7231e06ebd47",
-    "build/verification/cappella-presence-browser/overlap-calm-9-940000.png": "8bd864cd0f70d3990055d74c38f31f61371fafeb54946061af458979164de220",
+    "build/verification/cappella-presence-browser/overlap-calm-9-940000.png": "589d8d89a5123e9c46c2fe7b87850823a8ac6445800f9e89d2893b1b72f6f30f",
     "build/verification/cappella-presence-kotlin/overlap-calm-9-940000.png": "eee2d56033b4bc8bdf033e54f69b007e81abae77867c5ff8a9b22ad3e2edc2ef",
     "build/verification/cappella-presence-browser/overlap-chaotic-0-0.png": "3b2d5168e8ebe65af69e7a6d67bcb0e0c431431e163c008b1b5b19627fc10c5d",
     "build/verification/cappella-presence-kotlin/overlap-chaotic-0-0.png": "2d56f1d921459be10632f79fb06cba8e7153fae346490609dfbc1a04b3a1881e",
@@ -1327,11 +1807,11 @@
     "build/verification/cappella-presence-kotlin/overlap-chaotic-2-720000.png": "0815d344e575dc671fc549b0c32a6a10936b2b2c03ec4ea10f1578abd037112a",
     "build/verification/cappella-presence-browser/overlap-chaotic-20-1300000.png": "2b00a9e90086dd9fafb492062a78b13416a29eb3034e751238a00d523bcbbd02",
     "build/verification/cappella-presence-kotlin/overlap-chaotic-20-1300000.png": "abb75f49848eba798230f4756a7bb5bc472889ee7233442c546ba8cee61e6b85",
-    "build/verification/cappella-presence-browser/overlap-chaotic-21-1367000.png": "3ba185c62d9fcabb4ece8e240146830279f2d92238409097ee56c882e668f9f4",
+    "build/verification/cappella-presence-browser/overlap-chaotic-21-1367000.png": "e63f586c8d3df55dc10f99b94b4e3a5745f63fe9ab18c14cb6b49d4991fb8912",
     "build/verification/cappella-presence-kotlin/overlap-chaotic-21-1367000.png": "1f03792c90e2dc635432c68842645e92035817408d7a29e959ffe005c23f240d",
     "build/verification/cappella-presence-browser/overlap-chaotic-22-1377000.png": "9b26a4637a2b11aa7c891a90b09767b13270cce57e12040c5f26890e02b062c2",
     "build/verification/cappella-presence-kotlin/overlap-chaotic-22-1377000.png": "cbc224822c7a027f73e3aff752b66354c30c5e32055260833ac046af9024153a",
-    "build/verification/cappella-presence-browser/overlap-chaotic-23-1500000.png": "03c7c6dabbf20a44be2ef9a1d015b2c6eab71ccdbb2e2d9e5366182df69b915d",
+    "build/verification/cappella-presence-browser/overlap-chaotic-23-1500000.png": "e0a3067f79b9954306c0aa5eeaa2566b26750d51cdbdf8a90c5964488613a3b8",
     "build/verification/cappella-presence-kotlin/overlap-chaotic-23-1500000.png": "65160bb961def3ae1ccdd2ced1d677fd019571d448b0d426d871159352e5c19b",
     "build/verification/cappella-presence-browser/overlap-chaotic-24-1800000.png": "8d26b956c899c3584fe0b08a437b24aa12e63a7ce3b93890f6b613c9b17704b7",
     "build/verification/cappella-presence-kotlin/overlap-chaotic-24-1800000.png": "216adb422d58b1b6e304a4acc267b44f0a5ebfb15c7bd4b098a4be5baeb510ab",
@@ -1347,7 +1827,7 @@
     "build/verification/cappella-presence-kotlin/overlap-chaotic-29-2090000.png": "ed3ea4d286e3f7e19242f4ef3b9795d0b238c1738ca787daeb60583bfff46cf5",
     "build/verification/cappella-presence-browser/overlap-chaotic-3-780000.png": "5b06e5bed93ec1fb0d0f9fb55ae927e1135af65e6d1fcc112956817eca8b8ab7",
     "build/verification/cappella-presence-kotlin/overlap-chaotic-3-780000.png": "d6e8ea96b941a320bf6208e5e2e320f459991959cf874c948613152fd4a9d0a7",
-    "build/verification/cappella-presence-browser/overlap-chaotic-30-2100000.png": "298f60c4a53192c0ffe0fecc0e1009c5a755456e39d56587c1b66b57c13e91e8",
+    "build/verification/cappella-presence-browser/overlap-chaotic-30-2100000.png": "e9886989f7bc13fee1cb7390acbf49f772d5009a6a7204752010b324c14e3eb2",
     "build/verification/cappella-presence-kotlin/overlap-chaotic-30-2100000.png": "9b78dca24fc0ae919504e795c4c5ac5210761d352929bc4a82f14cbb79161b2a",
     "build/verification/cappella-presence-browser/overlap-chaotic-31-2200000.png": "45f2cf1dd993042e91470ed9774a0b6ecebf158692281cc1ee2d13c10ef04b4c",
     "build/verification/cappella-presence-kotlin/overlap-chaotic-31-2200000.png": "15f99ad27112f37fbe58e31b7190f0516bed21e010f8de1d34891b32866dc390",
@@ -1385,7 +1865,7 @@
     "build/verification/cappella-presence-kotlin/overlap-normal-1-700000.png": "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
     "build/verification/cappella-presence-browser/overlap-normal-10-1000000.png": "1b04f975a0d5a5c506678b856a79e37d925b8b0561bf0928ee7dcffed830067a",
     "build/verification/cappella-presence-kotlin/overlap-normal-10-1000000.png": "72d9d4a4438e0d5ad74a31164ecf0330dea6caf828525a43b049029321e04be8",
-    "build/verification/cappella-presence-browser/overlap-normal-11-1020000.png": "4553764a40f3434e05f365cdc1e41e98df484157aa1a732db7def723f4050d05",
+    "build/verification/cappella-presence-browser/overlap-normal-11-1020000.png": "0bcf3cfb729244119f7950ba0c6efc5d9eb4431abe69b899e74896bca1132cb1",
     "build/verification/cappella-presence-kotlin/overlap-normal-11-1020000.png": "d78a5073be46e2149cd207d43fa50514fa9523c45773aa56c14f4e8206ff05b6",
     "build/verification/cappella-presence-browser/overlap-normal-12-1100000.png": "01d85d7e2188cfb992172eb22e91130a738012b8911cd014c40576215ae11a09",
     "build/verification/cappella-presence-kotlin/overlap-normal-12-1100000.png": "7436cca799aa44549b32d96744863c9854840e4b5fc72b02cf4a53a4e0025c5c",
@@ -1407,11 +1887,11 @@
     "build/verification/cappella-presence-kotlin/overlap-normal-2-720000.png": "80e693bc832166f45c8cd1b6c6bfb5de2df9bed43936359570a92152a9866805",
     "build/verification/cappella-presence-browser/overlap-normal-20-1300000.png": "200d5c37bae56b8de621571638695ad2439e4425725db52ad478d9b0705852a0",
     "build/verification/cappella-presence-kotlin/overlap-normal-20-1300000.png": "ddd6aa118b397f13128574dd0f2383765c3c9b6f725e579cf2c04c4a213f63f5",
-    "build/verification/cappella-presence-browser/overlap-normal-21-1367000.png": "251354713ec79327d2a64029929428e250166ac5ec926ccab8c6b3f59938440c",
+    "build/verification/cappella-presence-browser/overlap-normal-21-1367000.png": "432086d91cc01bdc7bb56256ae5a4c345499f550ba4c0398391c1000a3341674",
     "build/verification/cappella-presence-kotlin/overlap-normal-21-1367000.png": "e914748d8a17de3e423d071e0e451c560a7d4e5c4e42c90a2cbd4b2879e318c8",
     "build/verification/cappella-presence-browser/overlap-normal-22-1377000.png": "798ed6a543d5765f848d82a238eeedbbf496c486b6bcaf74739a4c0af6bd9da1",
     "build/verification/cappella-presence-kotlin/overlap-normal-22-1377000.png": "4261ade6be2c0a9827be3925c2c0dbb911a12811f8ab19bb4231ad94986ac1ba",
-    "build/verification/cappella-presence-browser/overlap-normal-23-1500000.png": "d79eb7184b0bd18b17063328c8d40e87de1b6e1fbca380bf5da140e334b7e50f",
+    "build/verification/cappella-presence-browser/overlap-normal-23-1500000.png": "37830af6823c8e164f57db03d7859156ef9815ad869eabc58e03db03e0d843fb",
     "build/verification/cappella-presence-kotlin/overlap-normal-23-1500000.png": "6a13fc983bf35929c3dd5810e14c3736aa1e17dc1d6c5399518c0064e440743f",
     "build/verification/cappella-presence-browser/overlap-normal-24-1800000.png": "8a2ba6bff5f1eede3cadb8e4a9d55ca3f2e11af71039814cd2a1c3ecc5f39848",
     "build/verification/cappella-presence-kotlin/overlap-normal-24-1800000.png": "c8170e044851c23c8bb85c149894a275d555bf4f43952382b8e337cbd050d61a",
@@ -1429,7 +1909,7 @@
     "build/verification/cappella-presence-kotlin/overlap-normal-3-780000.png": "7a341a2c2842e4ee91eb1c434e711774b9c2f1c7b55e9d9e0b31d9424eec7f83",
     "build/verification/cappella-presence-browser/overlap-normal-30-2100000.png": "03b93fd9791996d299defe62d29eca6f962cd6fb90df9df2f2f47acea6fb50db",
     "build/verification/cappella-presence-kotlin/overlap-normal-30-2100000.png": "e5fa22b2aeff3b1002039b7b5f473cfe000aa41eecc084715ac729e508e15a09",
-    "build/verification/cappella-presence-browser/overlap-normal-31-2200000.png": "a6d44d3f79e59e25c06ad22753b1a982c54a2720ebf3bcc4d4d87a8b944fca7e",
+    "build/verification/cappella-presence-browser/overlap-normal-31-2200000.png": "6aeed07fe4b955ae0284687af4182476c127e14bfe64af6fd3f68b0522774d37",
     "build/verification/cappella-presence-kotlin/overlap-normal-31-2200000.png": "5ef96da4759c2cc7bb75e5724332f0127de921bc4f90eaa3dd155839d89a1728",
     "build/verification/cappella-presence-browser/overlap-normal-32-2500000.png": "8cbd635b1fe857d6f52b9b9d5d68e532e33b91303efc27a6a55119e3cb852110",
     "build/verification/cappella-presence-kotlin/overlap-normal-32-2500000.png": "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa",
@@ -1451,7 +1931,7 @@
     "build/verification/cappella-presence-kotlin/overlap-normal-4-800000.png": "38b1c756f5435ce66f0a2eaf0f434d1fa2fd57ed1655bb112ce599c573ccc2da",
     "build/verification/cappella-presence-browser/overlap-normal-5-847000.png": "d0ed50d609617a91a548e34955102d4c61fb7dadd5449c0e57a7d3df4bd599c9",
     "build/verification/cappella-presence-kotlin/overlap-normal-5-847000.png": "0fb40f8f2e7b4fde2de86fb13677041ab0672a9ae30e6eb166395a7e36857e42",
-    "build/verification/cappella-presence-browser/overlap-normal-6-857000.png": "2718e4987fe5561759418d3d12990ee62cfbf6236ba5759b5817c8d5f183bab5",
+    "build/verification/cappella-presence-browser/overlap-normal-6-857000.png": "7d0b6e7dcbb6cac23b03dab08aba7a4be511d4bbf7455d692e5f896863d8631e",
     "build/verification/cappella-presence-kotlin/overlap-normal-6-857000.png": "ea1343f480899a9f203acd50cb5f340edfe403cfe734ac182557441ed818e108",
     "build/verification/cappella-presence-browser/overlap-normal-7-860000.png": "9c983a671c3cead8f1585c5e5c67ae2852e2a9c89f46153cd278bde44df82017",
     "build/verification/cappella-presence-kotlin/overlap-normal-7-860000.png": "6fdc0b45b15b601be07213d157e7149a8483e4e3b3ddf42fc3f2db164b806121",
@@ -1463,31 +1943,31 @@
     "build/verification/cappella-presence-kotlin/rapid-calm-0-0.png": "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
     "build/verification/cappella-presence-browser/rapid-calm-1-700000.png": "0fa3879109773a2d8da4e2369a5b0a782044763ee5b6aa7c76ac4215aad78730",
     "build/verification/cappella-presence-kotlin/rapid-calm-1-700000.png": "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
-    "build/verification/cappella-presence-browser/rapid-calm-10-860000.png": "9e6b2f50262ff7c1d178f0847777900eeeeb86baf894ce8caad4a624d3a5bbf1",
+    "build/verification/cappella-presence-browser/rapid-calm-10-860000.png": "940e46ca320075b615aff68d2d4b7ddb078791e143a82eb0689ac47c37e4a2fe",
     "build/verification/cappella-presence-kotlin/rapid-calm-10-860000.png": "8c92a2f4972abd86c152c49836695e2cc5e17567b06304ee1f2c8985d22ce3e6",
-    "build/verification/cappella-presence-browser/rapid-calm-11-900000.png": "9df6c1359ea4bbd302a4fc5007c4eecade4a3326485b3a1af87494737395d6ec",
+    "build/verification/cappella-presence-browser/rapid-calm-11-900000.png": "b08ed0453f73fd689476e91a8a72e12ff1b7928c8014b0729111a4b209cf98bd",
     "build/verification/cappella-presence-kotlin/rapid-calm-11-900000.png": "014a0a9d7bdcbddbaaa6b7a1ee9fbb1a8f567cbc52e7a42ef9cc5bb8aef5714d",
-    "build/verification/cappella-presence-browser/rapid-calm-12-927000.png": "a1e352b8737ae772af0dd62d8d309d8f8aa0d7f15b434e9e9146a577e68f1bd9",
+    "build/verification/cappella-presence-browser/rapid-calm-12-927000.png": "d19f028d910f1cbe3acfde206330047719cf3430e6b1b7280fd7fcffdba1c762",
     "build/verification/cappella-presence-kotlin/rapid-calm-12-927000.png": "a06e3155cae5e6cb89bfa79ac9985e98486d8c0512236ed2c6c1b39d77998fc2",
-    "build/verification/cappella-presence-browser/rapid-calm-13-937000.png": "407960b079fe6196c76abcde2cede5681a8280a850fd8a5e57a1f3cbba8577c1",
+    "build/verification/cappella-presence-browser/rapid-calm-13-937000.png": "3e7089c1fed5973452ae82544c33e2fd220cbfdea369dec20214e06027acf10e",
     "build/verification/cappella-presence-kotlin/rapid-calm-13-937000.png": "41119314677f8942d98dfa2ed250bbc6d273a2ae052bf9d15002644909e6a1a3",
-    "build/verification/cappella-presence-browser/rapid-calm-14-940000.png": "868d51aae6b76cb085252b7aaf73fff6c8ed1e283ceb02abe80e2d6ed2b43cf1",
+    "build/verification/cappella-presence-browser/rapid-calm-14-940000.png": "50eb7f8bafd9a88007d044ea9f3884185cf888b045d0c48c79b9ec495848bac5",
     "build/verification/cappella-presence-kotlin/rapid-calm-14-940000.png": "c69c41f8d5d82bc7b253e7bf462bee054bf2db0929cd29e659ab2847338cd12d",
-    "build/verification/cappella-presence-browser/rapid-calm-15-1000000.png": "37d1a28e1faf7e1976d7680ddbdd961f366b73274e98f2e947f9bdf87f33663b",
+    "build/verification/cappella-presence-browser/rapid-calm-15-1000000.png": "096835136e1ab25946609300be244b5d40c30b505222e987d317e028c91609bb",
     "build/verification/cappella-presence-kotlin/rapid-calm-15-1000000.png": "d0155dadf69777dfde9e1f15ec7c996c4ee576358bb505dce6df7c1564e7fa3b",
-    "build/verification/cappella-presence-browser/rapid-calm-16-1007000.png": "e19f03c151cd1c5231fb944431a398ff6357184ffd10be807c950c8dfdd36d54",
+    "build/verification/cappella-presence-browser/rapid-calm-16-1007000.png": "c60d3f6d1efe9ff0fd1a717d89b6e7f5fc9a75ff83b2699bd30ae52fe59c88ac",
     "build/verification/cappella-presence-kotlin/rapid-calm-16-1007000.png": "8defb475f0c624dd910a6bc0e2b9b6b6441db5995436c7668cf454508a9d4454",
-    "build/verification/cappella-presence-browser/rapid-calm-17-1017000.png": "4365a12cff8a99e291e3f1477a03b19427d5aba5312901538f0bc76a07d2efff",
+    "build/verification/cappella-presence-browser/rapid-calm-17-1017000.png": "6045bf1dfed8d199bf97087b5592edbaf474af40fbd3c0d1a4a21711d1633eb1",
     "build/verification/cappella-presence-kotlin/rapid-calm-17-1017000.png": "1995a20876f212fa6b32a990ccd645da6b4f6990ec0ec2dff77fc43b9be9507b",
-    "build/verification/cappella-presence-browser/rapid-calm-18-1020000.png": "1893c1f973de11cfbcd3914bd743f0deffa6a5b7e10e996953fec92eb7cf21a5",
+    "build/verification/cappella-presence-browser/rapid-calm-18-1020000.png": "110002158179f3064a3e97d84f6cad62991d1a72719c450b484ed071b3c22ec2",
     "build/verification/cappella-presence-kotlin/rapid-calm-18-1020000.png": "da700b85e1c5952de406a5dd205d9810403870a875b3d2ddf643e44a982f4937",
-    "build/verification/cappella-presence-browser/rapid-calm-19-1087000.png": "cc5443ea9a355c52af3717d47af3e89e7f5e1524aa14d0be29fa9f6be477705f",
+    "build/verification/cappella-presence-browser/rapid-calm-19-1087000.png": "7ec2bd45d76eefaea2dbba9a1d4b84d4c864852b531919c019c8c5a9889cade1",
     "build/verification/cappella-presence-kotlin/rapid-calm-19-1087000.png": "5ada9a187dc79303eb4083cfc8d40ae6f922cbc01c1766226ab8e1e33a7f126b",
     "build/verification/cappella-presence-browser/rapid-calm-2-720000.png": "5b167cd7d151e854033610669bed7ef1e290e8f541c5bee327915a69de1f07a4",
     "build/verification/cappella-presence-kotlin/rapid-calm-2-720000.png": "363fb1db992421c5e226fc00cb1f5d1de63a2c1ed678a48896acf5a67b662bb9",
-    "build/verification/cappella-presence-browser/rapid-calm-20-1097000.png": "f1d74dd44e8c6be8756c1d47f7306ad31d165b04670ec657eb4d93d554c1ceb1",
+    "build/verification/cappella-presence-browser/rapid-calm-20-1097000.png": "1758af01ad59a26a3d3d2c9818bddcc83fd1a332acb5ddc642868e0d83af77dc",
     "build/verification/cappella-presence-kotlin/rapid-calm-20-1097000.png": "083b940fcc7fe7c0cbb05e8d02e39f1f059d0f96528bcb10e60e375441d93e04",
-    "build/verification/cappella-presence-browser/rapid-calm-21-1100000.png": "847354e1df4438293920e5c27b409c793ece5d944976d00e9164d84826599701",
+    "build/verification/cappella-presence-browser/rapid-calm-21-1100000.png": "5b3378b95dd1a11934a90a0740434e7f6e75915e00702e03d05d3e98820f8dde",
     "build/verification/cappella-presence-kotlin/rapid-calm-21-1100000.png": "48f5a27113417eda798e0cdc14d9f66e877c98ce1fdec287a196de458f0cac8f",
     "build/verification/cappella-presence-browser/rapid-calm-22-1167000.png": "1e6dee492b09615e42ea667eb0d0a4e0c6c76fd889a20b4500f87fd84f862082",
     "build/verification/cappella-presence-kotlin/rapid-calm-22-1167000.png": "ca2b70d3146ccec971a06f698354f5ff0ccf369d3afef56e69da873f96b6d0e7",
@@ -1495,7 +1975,7 @@
     "build/verification/cappella-presence-kotlin/rapid-calm-23-1177000.png": "48773e8f54c2c2b65e9a0ee5969e5d902b406cddeb38011473fcf6cf71bfdc87",
     "build/verification/cappella-presence-browser/rapid-calm-24-1180000.png": "003efb4105d22b44f6d73c1f5303ff4e43d8fdf42340ad49b2f4e6104287876d",
     "build/verification/cappella-presence-kotlin/rapid-calm-24-1180000.png": "1f0d7d7e7052be67df01d44577f7d0868d6328932f3f5178540d76b84dafe3f4",
-    "build/verification/cappella-presence-browser/rapid-calm-25-1200000.png": "f980e3370a877bb4c87d85b7f49815ae9ffc4a69e17d08ace803e6777519b590",
+    "build/verification/cappella-presence-browser/rapid-calm-25-1200000.png": "7912af17a218ee469073f6749683c5dcb5cc1a07ae4d2bee446f250feb3f8a7a",
     "build/verification/cappella-presence-kotlin/rapid-calm-25-1200000.png": "478d75c599b131001c31e831813db7ccc4272acfdf1f8d74634e9a9c114ab141",
     "build/verification/cappella-presence-browser/rapid-calm-26-1247000.png": "071f43f4d6ade5212b00f0b8bb2cc6c9a6ee170ece2a4baa071ebd73cf945cee",
     "build/verification/cappella-presence-kotlin/rapid-calm-26-1247000.png": "71c4c668f9a435ebced2c99893ec25a1987f9dda2993c64a0afea4a9e1ca4220",
@@ -1503,11 +1983,11 @@
     "build/verification/cappella-presence-kotlin/rapid-calm-27-1257000.png": "7fe9526c5ef52bc1590c99ee82b3067aba6395698d2577511f1cc138eb0a7623",
     "build/verification/cappella-presence-browser/rapid-calm-28-1260000.png": "5abd7ab7365de5b2c063e6a8f901e57be950eadf2c792d79e674953ffd9f34e9",
     "build/verification/cappella-presence-kotlin/rapid-calm-28-1260000.png": "7c4fe2819f24f004a4cf5faafa94e4b787f82b0fb17ebf915c013041cb3d1e28",
-    "build/verification/cappella-presence-browser/rapid-calm-29-1300000.png": "96328ccc7cb7f13c51b761c509212486e61e2323abc90d5d7270dec9d707d3c9",
+    "build/verification/cappella-presence-browser/rapid-calm-29-1300000.png": "09c90500ca766a321905bb02798da37d008b7de29917295f1c1dd628bd97f4b0",
     "build/verification/cappella-presence-kotlin/rapid-calm-29-1300000.png": "8c8478c16df8fd7dffd2f83eb95af8608490b9a79eb08b48b4578fc106d32110",
     "build/verification/cappella-presence-browser/rapid-calm-3-767000.png": "f03b68ed266ebf32ac22b45c59c58004ac6e1101aaf727d781c100a09f2d6faf",
     "build/verification/cappella-presence-kotlin/rapid-calm-3-767000.png": "50ce8649577f46446a046f446b7a69e1c1549dc11fdf80ab5e9574b5e00e861f",
-    "build/verification/cappella-presence-browser/rapid-calm-30-1327000.png": "5118b777599c81de35a405fe0776f462642063f9358bc74d3002cbe910bf1a04",
+    "build/verification/cappella-presence-browser/rapid-calm-30-1327000.png": "141d1e9fb616da80e9c2d4ba4b590cf86be5e9811700944dfbc9cafb067e60bb",
     "build/verification/cappella-presence-kotlin/rapid-calm-30-1327000.png": "abb80060521c1d588d6788a73cbd524a9baca2ca009f868cab98ac0f7f9e1f17",
     "build/verification/cappella-presence-browser/rapid-calm-31-1337000.png": "a2d471880f56fe7125da53a6178781f06b0aabd29bd83a3bdefcfb1e8f8be8e3",
     "build/verification/cappella-presence-kotlin/rapid-calm-31-1337000.png": "4479b97794b8c1ef82ec0f23b55fc39b96d06f46e2333431826c57f7d42ade48",
@@ -1537,7 +2017,7 @@
     "build/verification/cappella-presence-kotlin/rapid-calm-7-800000.png": "87c52e721c40f2322132e9196efb8bc07bd5ce8f9e4efb8174f6e395cf0f6335",
     "build/verification/cappella-presence-browser/rapid-calm-8-847000.png": "5b64f58cd8f5f8f156c130788ec1ad4f95f9fdcaebcdc16d5337a38793b45ed5",
     "build/verification/cappella-presence-kotlin/rapid-calm-8-847000.png": "7ea939a577c4c537e98289c44c179fad41def7665f02ae824769d265b57ce37c",
-    "build/verification/cappella-presence-browser/rapid-calm-9-857000.png": "716bca4cc0ee46c5bbe4813f0bf027d4439a87566fbb2c45df1d55a7d4851d6a",
+    "build/verification/cappella-presence-browser/rapid-calm-9-857000.png": "a52bbd5005a0c97e9daf208e25b12e106fdb52f069254c0abbcd871115a9b10b",
     "build/verification/cappella-presence-kotlin/rapid-calm-9-857000.png": "198bdedb37b3e07267ede5f05c0dd24dffade9b5a4c1161faadb02eda54cc3e9",
     "build/verification/cappella-presence-browser/rapid-chaotic-0-0.png": "3b2d5168e8ebe65af69e7a6d67bcb0e0c431431e163c008b1b5b19627fc10c5d",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-0-0.png": "2d56f1d921459be10632f79fb06cba8e7153fae346490609dfbc1a04b3a1881e",
@@ -1553,15 +2033,15 @@
     "build/verification/cappella-presence-kotlin/rapid-chaotic-13-937000.png": "2949701a026b9f65e9453a058ce8544886d9fd11a4ae5a7a9d5b9918dce49300",
     "build/verification/cappella-presence-browser/rapid-chaotic-14-940000.png": "ba91b2bd25d80ec550ee8ce6e4513fd19c53775346837a2c33c7de689978c2dd",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-14-940000.png": "ea2be4dc33298b0007810225438949e5f6f263c16962137f778c1a522c8e19ad",
-    "build/verification/cappella-presence-browser/rapid-chaotic-15-1000000.png": "2a68925a81cb4dc57dc5b0a14224e9dedd4a2ea3ff7bd07ed3e8730cbb052050",
+    "build/verification/cappella-presence-browser/rapid-chaotic-15-1000000.png": "69f97adaa88f029b9a6046f34d36267ab9ffd8dff0fcbb7c4694bf48ad3c3156",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-15-1000000.png": "3ac32500dba364624cdae82098149be27e1e1faab6c9c63567a7b2e09c3d2025",
-    "build/verification/cappella-presence-browser/rapid-chaotic-16-1007000.png": "850fa19c1de52a18eb83d7b487e54f3eb9fdb34c333b109f20034c1a0e9e014a",
+    "build/verification/cappella-presence-browser/rapid-chaotic-16-1007000.png": "0421bfef8af9d6cbd9d4fff236808074e6bb11c9e2144e5bb56b76a11a0ddb3e",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-16-1007000.png": "f7a11ccf9321b8dd36d6a2d3dadd2e7f2a7ea4718919f081c598fc4ad798f9f6",
     "build/verification/cappella-presence-browser/rapid-chaotic-17-1017000.png": "1cd91ef3cc5d97c6ad69073c56e9ea9d2d5bccd1ceb29594de9ea2f6fb1ca8ef",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-17-1017000.png": "05d30b7dfa9ce515182f0f3d26dec4550a8ad8ded8fc766386b578b9e56ca95c",
     "build/verification/cappella-presence-browser/rapid-chaotic-18-1020000.png": "fa91826b7204e331d25d772604e65c4b9f3bf415299f0b7d8f8a8becf02046fd",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-18-1020000.png": "5070282c39963ada06c7b84582aa330cc6a25ad8c87d1120f0cc313ff3652ca0",
-    "build/verification/cappella-presence-browser/rapid-chaotic-19-1087000.png": "235dd6999792e148e5ff71aa00a6f4fee96a907888164511c4834e9ae936019f",
+    "build/verification/cappella-presence-browser/rapid-chaotic-19-1087000.png": "9433c894b88f8a26869bfd1c8ec1825999ee57a2f8717d2c649001d39add039b",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-19-1087000.png": "638184c0dfd409e29cd647194707bc606b2631ce8292eab8cf5adf4f042c9054",
     "build/verification/cappella-presence-browser/rapid-chaotic-2-720000.png": "deed5d8f1b8b554f31b5441c4828ad258af53055dc42725f90008d26c73398ce",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-2-720000.png": "e69ae91aae3babe088f2c0550c62013ead02c766847c45a216b81c443c1a3ae5",
@@ -1575,7 +2055,7 @@
     "build/verification/cappella-presence-kotlin/rapid-chaotic-23-1177000.png": "06da9de1e6503e5d4c79314db86ebd0d05fec3d0ecb9c347071c786bd743380d",
     "build/verification/cappella-presence-browser/rapid-chaotic-24-1180000.png": "acf0172123603c35d32436cac51faa4f4e535b1dcec7fa0f696d3232b4ea4c68",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-24-1180000.png": "993075d44d2785834e1a939d8313dcbb3ea808e9d72bb7d60c491c84f3cf4d79",
-    "build/verification/cappella-presence-browser/rapid-chaotic-25-1200000.png": "6ea70c6336b66713b3f4f4b210c3753c56a65f63b4e61a5aaaaa1bd4e7dd4c91",
+    "build/verification/cappella-presence-browser/rapid-chaotic-25-1200000.png": "33e469f381c8de6c83dc0d35da1305ffca863b8a11c4d424ff6cc591b2bb6a8d",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-25-1200000.png": "4e9fb10443f5b870cbbcd9dcbd239439be3d822b5c059140a97b588de2ac5449",
     "build/verification/cappella-presence-browser/rapid-chaotic-26-1247000.png": "3267b6158848d1003cb119fbe2310b9c01dd36e52f3911301baffd63ecab3ae7",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-26-1247000.png": "3aa55d13b025f531977f4135998cb1386e0390558038a70276baed2e832c16da",
@@ -1589,7 +2069,7 @@
     "build/verification/cappella-presence-kotlin/rapid-chaotic-3-767000.png": "a3246db6d373d03dc08a95b4e944295dc2d9dc767be7d7e7080cdd6a30da087c",
     "build/verification/cappella-presence-browser/rapid-chaotic-30-1327000.png": "071b9c8d6fe9ec14419032e6d603f05034b90622e3f93855bac8803b1c758cb9",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-30-1327000.png": "2fbe3d9cb565400206f41111d81d063d31182855a3efbd1419e36f9adf5dd5f7",
-    "build/verification/cappella-presence-browser/rapid-chaotic-31-1337000.png": "996d3ab98c57ede347bb1d162783eb7bd4a458ccf1d437b17928ea5ae15aad48",
+    "build/verification/cappella-presence-browser/rapid-chaotic-31-1337000.png": "470c8c359fd69d2683c8250c8d1492d14b650ff4ca6d68cd685ffce4e07c96ed",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-31-1337000.png": "763247140a12f5b821fb6670afc1f9c7112941054f7c69404d91d56a908ce8ba",
     "build/verification/cappella-presence-browser/rapid-chaotic-32-1500000.png": "18596fafb352eafcc2c08bf81903c1c4f63a6661b78712a9c39cec4958232572",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-32-1500000.png": "b936b37f45b3075525c7945cc57fe10d84380005c020285b60070d45ad32aba8",
@@ -1613,7 +2093,7 @@
     "build/verification/cappella-presence-kotlin/rapid-chaotic-5-780000.png": "b2e6f2b02dda62a988b7bbf68696488c47a88369c0a6aa27bd66b33b295723b3",
     "build/verification/cappella-presence-browser/rapid-chaotic-6-780000.png": "cfdada3322446a706c921abcd8ffeb9babefa4c525d2bf8b9b0fdecc46e2a791",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-6-780000.png": "de940cc9f5f0ed5c6fd655f5d166b2b77bfadd6a0518bfff7fc61f9299bec5ce",
-    "build/verification/cappella-presence-browser/rapid-chaotic-7-800000.png": "829e9d94e8e50fe17c1eb862bb4f878b25e38d124390351b6e99f5d3747a5fa6",
+    "build/verification/cappella-presence-browser/rapid-chaotic-7-800000.png": "342479dcf208f7dad31c7fd4c2152357c07920f2ecb32040bf18959f2874ce03",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-7-800000.png": "881454182069d484c6b12f194135cade93a1e10a4861bd07e476f8a029fb9849",
     "build/verification/cappella-presence-browser/rapid-chaotic-8-847000.png": "f69a8253d6ba0cee34569a0af3e90248b672f4b3b65aed5a9845b3cffc7f5c16",
     "build/verification/cappella-presence-kotlin/rapid-chaotic-8-847000.png": "0ed9a889190166c5371dc4f8004b6260eebb5ad61d0925c7c4011b54e6cac40c",
@@ -1663,11 +2143,11 @@
     "build/verification/cappella-presence-kotlin/rapid-normal-27-1257000.png": "a8746e1a34d200984d244ebfee820c3a0eaac24907911a77ee6cd97a00b6e603",
     "build/verification/cappella-presence-browser/rapid-normal-28-1260000.png": "4511974e1557ad06593687b2df7844ce5967d224faf163a970ada6198f62e957",
     "build/verification/cappella-presence-kotlin/rapid-normal-28-1260000.png": "d986d2f6fc4de4ddb9e5cd8ae3ffb78fa59ae9b10ba29e6c26c629716fa4e071",
-    "build/verification/cappella-presence-browser/rapid-normal-29-1300000.png": "7ead7a2b0b30ef7f273c1c0e34a5e82d298d07bdc8b49528322803af98dcb7a4",
+    "build/verification/cappella-presence-browser/rapid-normal-29-1300000.png": "ccd4bb747275dadf498189a65ae3eb3a0937f3aaa2a565989be02868ce2a6816",
     "build/verification/cappella-presence-kotlin/rapid-normal-29-1300000.png": "d2da27f54d6a7a67607515b021403335bd5e59c07d038ce9d3860d1eeacff303",
     "build/verification/cappella-presence-browser/rapid-normal-3-767000.png": "46a257c5deb36456f15365a4f6d93d4936489a3aa70ce03d6d7838c9bef7380e",
     "build/verification/cappella-presence-kotlin/rapid-normal-3-767000.png": "b5ea8eb04d28e21b1447019770420012c76d2f6577fa7acf0081d80bcb77ecd5",
-    "build/verification/cappella-presence-browser/rapid-normal-30-1327000.png": "dec2f0a1ed1c96ec03c9ccd634592cb19e0a5cfe488a971da58b21a1f7c9627d",
+    "build/verification/cappella-presence-browser/rapid-normal-30-1327000.png": "aed82b044f98c33c49aad70c4d5511315630f9eec19b2bca92d087a20e18803e",
     "build/verification/cappella-presence-kotlin/rapid-normal-30-1327000.png": "e526ef57670be6d2f417980eb5160926f11c5b8bb9ceb2f340117bd1dd6492bf",
     "build/verification/cappella-presence-browser/rapid-normal-31-1337000.png": "784a118bec24d79a06151e18b49cea290af470732f635bf4f41f3fcf0311a4c0",
     "build/verification/cappella-presence-kotlin/rapid-normal-31-1337000.png": "4cf81dfdbff86400b14d04790e415479582f676e34b8564bdfb9e4b3f3ff0e02",

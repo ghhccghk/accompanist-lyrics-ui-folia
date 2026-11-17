@@ -55,14 +55,14 @@ class CappellaPresenceTest {
         }
         val out=File("../build/verification/cappella-presence-kotlin").apply{mkdirs()}
         val states=linkedMapOf<Double,String>();val errors=mutableListOf<String>()
-        val geometry=mutableListOf("# file row id bubbleRect avatarRect opacity")
+        val geometry=mutableListOf("# file row id bubbleRect avatarRect opacity rowTop rowHeight")
         for(r in frames){
             val time=r[3].toDouble();runOnIdle{t=time};waitForIdle();states[time]=hash()
             val ids=observed.map{it.message.id};val expected=original.getValue(r[0]).map{it[2]}
             if(expected!=ids)errors+="${r[0]} source=$expected native=$ids"
             for((i,n)in observed.withIndex())geometry+=listOf(r[0],i,n.message.id,
                 listOf(n.bubbleX,n.bubbleY,n.bubbleWidth,n.bubbleHeight).joinToString(","),
-                listOf(n.avatarX,n.avatarY,40*n.scale,40*n.scale).joinToString(","),n.opacity).joinToString("\t")
+                listOf(n.avatarX,n.avatarY,40*n.scale,40*n.scale).joinToString(","),n.opacity,n.rowTop,n.rowHeight).joinToString("\t")
             ImageIO.write(captureToImage().toAwtImage(),"png",out.resolve(r[0]))
         }
         out.resolve("$timeline-${intensity.name.lowercase()}-geometry.tsv").writeText(geometry.joinToString("\n")+"\n")

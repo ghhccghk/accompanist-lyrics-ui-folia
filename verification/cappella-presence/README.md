@@ -41,7 +41,8 @@ The separate regular matrix remains present/order exact, geometry peak3.637201px
 mean MAE3.393810 after respecting integer popLayout offsetTop. These two matrices
 must not be averaged together or compared as if they were the same scenario.
 No Android device is connected; only Android build and Desktop offscreen execution
-are verified. No public Cappella entry has been added yet.
+are verified. Historical as of the pre-aefca39 internal capture: public entry was not added yet.
+Public calibration preview now exists; see ../cappella-public.
 
 Semantic-layout follow-up: prepare layout commits on actual parent selection or
 visible-line changes and local reveal/target/timestamp updates. Like original
@@ -78,3 +79,11 @@ and native PNG hashes remain identical. Random seek/pause/remount checks pass.
 Contact sheet inspected: rapid stacking still visibly differs; semantic commit
 reconstruction does not reproduce all original React/RAF batching. This is a
 partial correction, not final visual acceptance or a new acceptance threshold.
+
+
+Exact-lock follow-up: this240 source matrix has now been re-certified at the
+original Motion13.4.3/dom13.4.2/utils13.3.0. All999 numeric rows and passive states
+unchanged;38 PNG differences retained/classified without claiming a dependency
+cause. See ../motion-lock-audit/cappella-pressure.json and README. Old geometry
+residual22.1885925046px is unchanged and is not accepted. Legacy>8 foreground
+metric remains historical; new behavior comparisons must include low-alpha pixels.

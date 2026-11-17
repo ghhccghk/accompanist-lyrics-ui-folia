@@ -5,7 +5,7 @@ const states={},frames=['# file timeline intensity time'],rows=['# file row id s
 try{
  for(const timeline of['rapid','overlap'])for(const intensity of['calm','normal','chaotic']){
   const page=await browser.newPage({viewport:{width:380,height:480},deviceScaleFactor:1}),errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(`http://127.0.0.1:4173/cappella-playback.html?scene=latin&timeline=${timeline}&intensity=${intensity}`);await page.waitForFunction(()=>window.ready);
+  await page.goto(`${process.env.FOLIA_REFERENCE_URL??'http://127.0.0.1:4173'}/cappella-playback.html?scene=latin&timeline=${timeline}&intensity=${intensity}`);await page.waitForFunction(()=>window.ready);
   const lines=await page.evaluate(()=>window.stageInputs),encode=s=>Buffer.from(s).toString('base64');
   if(intensity==='calm')for(const[i,l]of lines.entries())inputs.push([timeline,i,encode(l.fullText),l.startTime,l.endTime,l.words.map(w=>[encode(w.text),w.startTime,w.endTime].join('~')).join('|')].join('\t'));
   const probes=[...new Set([0,.7,.72,.78,.8,.847,.86,.9,.94,1,1.02,1.1,1.2,1.3,1.5,1.8,2,2.2,2.5,3,3.5,4,

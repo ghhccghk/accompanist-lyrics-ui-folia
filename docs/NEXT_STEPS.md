@@ -2,6 +2,13 @@
 
 ## 2026-11-17 浮名继续点（最新）
 
+- b520191机械内核后已接真实wheel hub旋转、-.65文字反校正和绘制期边缘alpha；
+  原useSpring/完整JSX保持挂载144对/694行，native暂停/随机seek/重挂一致。
+  未验收：wheel峰0.325107°、bbox17.652888px、图MAE13.235468，原旋转隔离仍17.65px。
+  来源定位非活动主句transition-all的200ms max-width过渡，native目前直接目标宽；
+  下一项优先补齐这一过渡（保留完整段落塑形），再chorus/关键词及公共校准预览。
+  全Pendolo测试/Android APK/Desktop编译通过，无设备运行。证据verification/pendolo-tick-stage。
+
 - 时计tick媒体内核已实现三档/.5到2锐度、原物理响应/轮盘旋转/-.65文字反校正、
   语义事件携速改向及inclusive末尾右极限。1134组原Motion响应/2304次时间查询通过，
   最大4.25e-14；随机seek/暂停/重挂/减少动态通过。旧Cappella弹簧原样抽取共用，

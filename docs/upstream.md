@@ -1314,3 +1314,20 @@ its right limit without a time epsilon. Reference uses explicit t+ probes only.
 Source mounted RAF velocity is not silently claimed equivalent. Residual peak
 4.25e-14; initial stateful-dispatcher oracle failure preserved, see
 verification/pendolo-tick for scope/reproduction and remaining UI acceptance.
+
+## 2026-11-17 Pendolo mounted text-wheel escapement
+
+cc6226e4 `VisualizerPendolo.tsx` actual tick/useSpring/effect/transform declarations
+and complete JSX + `PendoloRotatingLine.tsx` → `PendoloWheelTarget.kt`/
+`PendoloPlaybackWheel`, `pendoloRotatedContentRect`. Retain original
+AGPL-3.0-only attribution. Native hub rotation and -.65 text correction are
+sampled from semantic-media tick history, with no new clock; render-end remains
+separate from sweep timing. Source hooks remain unchanged in the reference;
+RAF/CSS/WAAPI are explicitly controlled.144 pairs/694 original rows, same fonts,
+viewports and times. Additional144 same-source-rotation native frames isolate
+layout/raster only, not claimed as independent parity. Pause/random-seek/remount
+pixels and target/index identity pass; wheel0.325107°, box17.652888px and
+MAE13.235468 remain. Original idle `transition-all duration-200` max-width is
+not yet reconstructed, a concrete missing behavior rather than an accepted
+platform difference. Evidence/reproduction/failures: verification/pendolo-tick-stage.
+Android APK/Desktop compile pass; no connected-device/public-theme claim.

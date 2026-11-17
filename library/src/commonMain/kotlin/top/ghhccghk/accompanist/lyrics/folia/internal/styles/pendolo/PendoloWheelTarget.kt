@@ -17,11 +17,42 @@ import androidx.compose.ui.unit.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.text.*
 import kotlin.math.*
 
-internal data class PendoloStageLine(val lyric: PendoloLyric, val subtitles: PendoloSubtitleSource = PendoloSubtitleSource())
+internal data class PendoloStageLine(val lyric: PendoloLyric, val subtitles: PendoloSubtitleSource = PendoloSubtitleSource(),
+    val renderEnd: Double = lyric.end)
 internal data class PendoloPreparedSubtitle(val track: PendoloSubtitleTrack, val text: PendoloPreparedText)
 internal data class PendoloStageRow(val item: PendoloWheelItem, val main: PendoloPreparedText,
     val subtitles: List<PendoloPreparedSubtitle>, val blockHeight: Double, val reservedHeight: Double,
     val width: Double, val contentRect: List<Double>)
+
+/** The original wheel hub rotates first, then each left-center text block
+ * counter-rotates by -.65 of that angle. No modulo/culling of the rotation. */
+internal fun pendoloRotatedContentRect(row: PendoloStageRow, rotation: Double, hubX: Double, hubY: Double): List<Double> {
+    val item = row.item
+    val x = floor(item.x * 64) / 64; val y = floor(item.y * 64) / 64 + row.blockHeight / 2
+    val a = (item.angleDeg * .35 - rotation * .65) * PI / 180
+    val w = rotation * PI / 180
+    val points = listOf(0.0 to 0.0,row.width to 0.0,0.0 to row.blockHeight,row.width to row.blockHeight).map { (xx,yy) ->
+        val tx = x + (xx * cos(a) - (yy - row.blockHeight) * sin(a)) * item.scale - hubX
+        val ty = y + (xx * sin(a) + (yy - row.blockHeight) * cos(a)) * item.scale - hubY
+        (hubX + tx * cos(w) - ty * sin(w)) to (hubY + tx * sin(w) + ty * cos(w))
+    }
+    val left = points.minOf { it.first }; val top = points.minOf { it.second }
+    return listOf(left,top,points.maxOf { it.first } - left,points.maxOf { it.second } - top)
+}
+
+/** Media-driven mounted text wheel; still an internal calibration entry.
+ * Geometry/layout is prepared only for changed targets/constraints. */
+@Composable
+internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Double,
+    style: TextStyle, modifier: Modifier = Modifier,
+    intensity: PendoloIntensity = PendoloIntensity.NORMAL, reducedMotion: Boolean = false,
+    mode: PendoloSubtitleMode = PendoloSubtitleMode.BOTH, onRows: (List<PendoloStageRow>) -> Unit = {}) {
+    val clock by rememberUpdatedState(time)
+    val track = remember(lines,intensity) { PendoloTickTrack(lines.map { PendoloLineTime(it.lyric.start,it.lyric.end,it.renderEnd) },intensity) }
+    val target by remember(track) { derivedStateOf { track.at(clock()).target } }
+    PendoloWheelTarget(lines, { clock() }, target, style, modifier, mode,
+        wheelRotation = { track.at(clock(),reducedMotion).wheelRotation }, onRows = onRows)
+}
 
 /** Native target-state preparation. All layouts are independently measured;
  * browser snapshots/expected geometry are not input to production. */
@@ -80,9 +111,11 @@ internal fun preparePendoloWheel(lines: List<PendoloStageLine>, target: Double, 
 @Composable
 internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Double, target: Double,
     style: TextStyle, modifier: Modifier = Modifier, mode: PendoloSubtitleMode = PendoloSubtitleMode.BOTH,
+    wheelRotation: () -> Double = { 0.0 },
     onRows: (List<PendoloStageRow>) -> Unit = {}) {
     val density = LocalDensity.current; val resolver = LocalFontFamilyResolver.current
     val measurer = rememberTextMeasurer(cacheSize = 64); val clock by rememberUpdatedState(time)
+    val rotation by rememberUpdatedState(wheelRotation)
     val timelines = remember(lines) { lines.map { pendoloLineTimeline(it.lyric) } }
     BoxWithConstraints(modifier.fillMaxSize()) {
         val rows = remember(lines, target, style, mode, maxWidth, maxHeight, density, resolver, measurer) {
@@ -90,30 +123,32 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
         }
         SideEffect { onRows(rows) }
         Canvas(Modifier.fillMaxSize()) {
-            val d = density.density; val t = clock()
-            for (row in rows) {
-                val item = row.item
-                val alpha = pendoloRotatingOpacity(item.angleDeg, 0.0, item.alpha).toFloat()
-                withTransform({
-                    translate((floor(item.x * 64) / 64 * d).toFloat(), ((floor(item.y * 64) / 64 + row.blockHeight / 2) * d).toFloat())
-                    rotate((item.angleDeg * .35).toFloat(), Offset.Zero)
-                    scale(item.scale.toFloat(), item.scale.toFloat(), Offset.Zero)
-                    translate(0f, (-row.blockHeight * d).toFloat())
-                }) {
-                    drawContext.canvas.saveLayer(Rect(-64*d, -64*d, (row.width.toFloat()+64)*d, (row.blockHeight.toFloat()+64)*d), Paint().apply { this.alpha = alpha })
-                    if (item.active) drawPendoloSweep(row.main, timelines[item.index],
-                        lines[item.index].lyric.end, 28.0, t, Color(0xffdfe5ec), Color(0xfff17b4d))
-                    else drawPendoloRows(row.main, Color(0xffdfe5ec).copy(alpha = .75f))
-                    var top = row.main.height
-                    for (sub in row.subtitles) {
-                        top += sub.track.gapEm * sub.track.fontPx
-                        translate(0f, (top * d).toFloat()) {
-                            drawPendoloRows(sub.text, Color(0xffadb9c8).copy(alpha =
-                                ((if (item.active) 1.0 else .6) * sub.track.opacity).toFloat()))
+            val d = density.density; val t = clock(); val wheel = rotation()
+            rotate(wheel.toFloat(), Offset(0f, size.height * .5f)) {
+                for (row in rows) {
+                    val item = row.item
+                    val alpha = pendoloRotatingOpacity(item.angleDeg, wheel, item.alpha).toFloat()
+                    withTransform({
+                        translate((floor(item.x * 64) / 64 * d).toFloat(), ((floor(item.y * 64) / 64 + row.blockHeight / 2) * d).toFloat())
+                        rotate((item.angleDeg * .35 - wheel * .65).toFloat(), Offset.Zero)
+                        scale(item.scale.toFloat(), item.scale.toFloat(), Offset.Zero)
+                        translate(0f, (-row.blockHeight * d).toFloat())
+                    }) {
+                        drawContext.canvas.saveLayer(Rect(-64*d, -64*d, (row.width.toFloat()+64)*d, (row.blockHeight.toFloat()+64)*d), Paint().apply { this.alpha = alpha })
+                        if (item.active) drawPendoloSweep(row.main, timelines[item.index],
+                            lines[item.index].lyric.end, 28.0, t, Color(0xffdfe5ec), Color(0xfff17b4d))
+                        else drawPendoloRows(row.main, Color(0xffdfe5ec).copy(alpha = .75f))
+                        var top = row.main.height
+                        for (sub in row.subtitles) {
+                            top += sub.track.gapEm * sub.track.fontPx
+                            translate(0f, (top * d).toFloat()) {
+                                drawPendoloRows(sub.text, Color(0xffadb9c8).copy(alpha =
+                                    ((if (item.active) 1.0 else .6) * sub.track.opacity).toFloat()))
+                            }
+                            top += sub.text.height
                         }
-                        top += sub.text.height
+                        drawContext.canvas.restore()
                     }
-                    drawContext.canvas.restore()
                 }
             }
         }

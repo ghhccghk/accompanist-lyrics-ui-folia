@@ -15,6 +15,7 @@ import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.text.*
+import top.ghhccghk.accompanist.lyrics.folia.FoliaWordColor
 import kotlin.math.*
 
 internal data class PendoloStageLine(val lyric: PendoloLyric, val subtitles: PendoloSubtitleSource = PendoloSubtitleSource(),
@@ -48,6 +49,7 @@ internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Dou
     style: TextStyle, modifier: Modifier = Modifier,
     intensity: PendoloIntensity = PendoloIntensity.NORMAL, reducedMotion: Boolean = false,
     mode: PendoloSubtitleMode = PendoloSubtitleMode.BOTH,
+    wordColors: List<FoliaWordColor> = emptyList(),
     wheelRotationOverride: (() -> Double)? = null, onRows: (List<PendoloStageRow>) -> Unit = {}) {
     val clock by rememberUpdatedState(time)
     val track = remember(lines,intensity) { PendoloTickTrack(lines.map { PendoloLineTime(it.lyric.start,it.lyric.end,it.renderEnd) },intensity) }
@@ -68,7 +70,7 @@ internal fun PendoloPlaybackWheel(lines: List<PendoloStageLine>, time: () -> Dou
         val limits by remember(widthTrack,reducedMotion) { derivedStateOf { widthTrack.at(clock(),reducedMotion).mapValues { (_,v)->floor(v*64)/64 } } }
         PendoloWheelTarget(lines, { clock() }, target, style, Modifier.fillMaxSize(), mode,
             wheelRotation = wheelRotationOverride ?: { track.at(clock(),reducedMotion).wheelRotation }, idleMainLimits=limits,
-            reservedHeights=heights,onRows = onRows)
+            reservedHeights=heights,wordColors=wordColors,onRows = onRows)
     }
 }
 
@@ -134,6 +136,7 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
     style: TextStyle, modifier: Modifier = Modifier, mode: PendoloSubtitleMode = PendoloSubtitleMode.BOTH,
     wheelRotation: () -> Double = { 0.0 },
     idleMainLimits: Map<Int,Double> = emptyMap(), reservedHeights: List<Double>? = null,
+    wordColors: List<FoliaWordColor> = emptyList(),
     onRows: (List<PendoloStageRow>) -> Unit = {}) {
     val density = LocalDensity.current; val resolver = LocalFontFamilyResolver.current
     val measurer = rememberTextMeasurer(cacheSize = 64); val clock by rememberUpdatedState(time)
@@ -143,6 +146,12 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
         val rows = remember(lines, target, style, mode, maxWidth, maxHeight, density, resolver, measurer,idleMainLimits,reservedHeights) {
             preparePendoloWheel(lines, target, maxWidth.value.toDouble(), maxHeight.value.toDouble(), style, measurer, density, resolver, mode,
                 idleMainLimits=idleMainLimits,reservedHeights=reservedHeights)
+        }
+        val inks=remember(rows,lines,wordColors) {
+            if(wordColors.isEmpty())emptyMap() else rows.associate { row ->
+                row.item.index to preparePendoloInk(lines[row.item.index].lyric.text,row.main,wordColors,
+                    pendoloSweepColor(Color(0xffdfe5ec),Color(0xfff17b4d)))
+            }
         }
         SideEffect { onRows(rows) }
         Canvas(Modifier.fillMaxSize()) {
@@ -159,7 +168,7 @@ internal fun PendoloWheelTarget(lines: List<PendoloStageLine>, time: () -> Doubl
                     }) {
                         drawContext.canvas.saveLayer(Rect(-64*d, -64*d, (row.width.toFloat()+64)*d, (row.blockHeight.toFloat()+64)*d), Paint().apply { this.alpha = alpha })
                         if (item.active) drawPendoloSweep(row.main, timelines[item.index],
-                            lines[item.index].lyric.end, 28.0, t, Color(0xffdfe5ec), Color(0xfff17b4d))
+                            lines[item.index].lyric.end, 28.0, t, Color(0xffdfe5ec), Color(0xfff17b4d),inks[item.index])
                         else drawPendoloRows(row.main, Color(0xffdfe5ec).copy(alpha = .75f))
                         var top = row.main.height
                         for (sub in row.subtitles) {

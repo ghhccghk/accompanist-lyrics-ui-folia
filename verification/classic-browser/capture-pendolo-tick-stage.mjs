@@ -11,6 +11,7 @@ try{
   for(const t of probes){
    for(const time of times.filter(x=>x>last&&x<=t))await page.evaluate(({time,base})=>{window.testNow=base+time*1000;window.advanceWheel(time);window.advanceSourceFrame(0);window.driveNativeAnimations()},{time,base});last=t;
    const s=await page.evaluate(()=>window.readTickWheel()),target=await page.evaluate(t=>window.advanceWheel(t).target,t);
+   if(s.rows.some(r=>typeof r.mainWidth!=='number'||!Number.isFinite(r.contentWidth)))throw Error('Width observer host is stale; restart the no-HMR fixture server');
    const file=`${scene}-${width}-${intensity}-${Math.round(t*10000)}`;states[file]={t,target,...s};
    frames.push([file,scene,width,intensity,t,target,s.value,s.velocity,s.rotation,s.correction].join('\t'));
    for(const r of s.rows){rows.push([file,r.index,r.opacity,r.content.join(',')].join('\t'));widths.push([file,r.index,s.items.find(i=>i.index===r.index).isActive,r.mainMax,r.mainWidth,r.mainHeight,r.contentWidth,r.contentHeight].join('\t'));}

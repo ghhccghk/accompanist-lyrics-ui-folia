@@ -1,0 +1,637 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "DPR": 1,
+    "viewport": [
+      380,
+      480
+    ],
+    "frames": 88,
+    "scope": "Actual unchanged PendoloActiveLyricSweep with keyword ranges. Same existing covered fonts/700/28px/synthetic lyrics/150 and300px row widths as sweep baseline. Arabic keyword intentionally does not match source ASCII keyword matcher. No chorus/whole-wheel/device acceptance."
+  },
+  "status": "Isolated range-colored full-shaped-row sweep; no chorus/whole-wheel/theme/device acceptance.",
+  "maximum_width_or_prefix_error": 0.0,
+  "mean_foreground_mae": 5.799414460331835,
+  "max_foreground_mae": 9.237355964948597,
+  "frames": [
+    {
+      "file": "arabic-150-0.png",
+      "foreground_mae": 8.652375201288244,
+      "full_mae": 0.07881578947368421
+    },
+    {
+      "file": "arabic-150-1000.png",
+      "foreground_mae": 7.717129071170085,
+      "full_mae": 0.07037463450292397
+    },
+    {
+      "file": "arabic-150-1300.png",
+      "foreground_mae": 6.259638554216868,
+      "full_mae": 0.05714546783625731
+    },
+    {
+      "file": "arabic-150-1600.png",
+      "foreground_mae": 6.076259281557295,
+      "full_mae": 0.055502558479532164
+    },
+    {
+      "file": "arabic-150-2000.png",
+      "foreground_mae": 5.219350961538462,
+      "full_mae": 0.04772112573099415
+    },
+    {
+      "file": "arabic-150-2400.png",
+      "foreground_mae": 4.674074074074074,
+      "full_mae": 0.042744883040935676
+    },
+    {
+      "file": "arabic-150-2800.png",
+      "foreground_mae": 3.969024780175859,
+      "full_mae": 0.036312134502923976
+    },
+    {
+      "file": "arabic-150-3200.png",
+      "foreground_mae": 3.969024780175859,
+      "full_mae": 0.036312134502923976
+    },
+    {
+      "file": "arabic-150-3600.png",
+      "foreground_mae": 3.969024780175859,
+      "full_mae": 0.036312134502923976
+    },
+    {
+      "file": "arabic-150-4000.png",
+      "foreground_mae": 3.969024780175859,
+      "full_mae": 0.036312134502923976
+    },
+    {
+      "file": "arabic-150-700.png",
+      "foreground_mae": 8.539855072463768,
+      "full_mae": 0.07779422514619883
+    },
+    {
+      "file": "arabic-300-0.png",
+      "foreground_mae": 8.652375201288244,
+      "full_mae": 0.07881578947368421
+    },
+    {
+      "file": "arabic-300-1000.png",
+      "foreground_mae": 7.717129071170085,
+      "full_mae": 0.07037463450292397
+    },
+    {
+      "file": "arabic-300-1300.png",
+      "foreground_mae": 6.259638554216868,
+      "full_mae": 0.05714546783625731
+    },
+    {
+      "file": "arabic-300-1600.png",
+      "foreground_mae": 6.076259281557295,
+      "full_mae": 0.055502558479532164
+    },
+    {
+      "file": "arabic-300-2000.png",
+      "foreground_mae": 5.219350961538462,
+      "full_mae": 0.04772112573099415
+    },
+    {
+      "file": "arabic-300-2400.png",
+      "foreground_mae": 4.674074074074074,
+      "full_mae": 0.042744883040935676
+    },
+    {
+      "file": "arabic-300-2800.png",
+      "foreground_mae": 3.969024780175859,
+      "full_mae": 0.036312134502923976
+    },
+    {
+      "file": "arabic-300-3200.png",
+      "foreground_mae": 3.969024780175859,
+      "full_mae": 0.036312134502923976
+    },
+    {
+      "file": "arabic-300-3600.png",
+      "foreground_mae": 3.969024780175859,
+      "full_mae": 0.036312134502923976
+    },
+    {
+      "file": "arabic-300-4000.png",
+      "foreground_mae": 3.969024780175859,
+      "full_mae": 0.036312134502923976
+    },
+    {
+      "file": "arabic-300-700.png",
+      "foreground_mae": 8.539855072463768,
+      "full_mae": 0.07779422514619883
+    },
+    {
+      "file": "cjk-150-0.png",
+      "foreground_mae": 8.380216714944748,
+      "full_mae": 0.1430299707602339
+    },
+    {
+      "file": "cjk-150-1000.png",
+      "foreground_mae": 7.128312412831241,
+      "full_mae": 0.12170504385964913
+    },
+    {
+      "file": "cjk-150-1300.png",
+      "foreground_mae": 6.549940993455638,
+      "full_mae": 0.1118530701754386
+    },
+    {
+      "file": "cjk-150-1600.png",
+      "foreground_mae": 5.974144405106748,
+      "full_mae": 0.10204495614035088
+    },
+    {
+      "file": "cjk-150-2000.png",
+      "foreground_mae": 5.375818045274112,
+      "full_mae": 0.0918530701754386
+    },
+    {
+      "file": "cjk-150-2400.png",
+      "foreground_mae": 4.561420448449737,
+      "full_mae": 0.07798062865497075
+    },
+    {
+      "file": "cjk-150-2800.png",
+      "foreground_mae": 3.6433933933933935,
+      "full_mae": 0.06234283625730994
+    },
+    {
+      "file": "cjk-150-3200.png",
+      "foreground_mae": 3.6433933933933935,
+      "full_mae": 0.06234283625730994
+    },
+    {
+      "file": "cjk-150-3600.png",
+      "foreground_mae": 3.6433933933933935,
+      "full_mae": 0.06234283625730994
+    },
+    {
+      "file": "cjk-150-4000.png",
+      "foreground_mae": 3.6433933933933935,
+      "full_mae": 0.06234283625730994
+    },
+    {
+      "file": "cjk-150-700.png",
+      "foreground_mae": 8.257161248793048,
+      "full_mae": 0.14093384502923978
+    },
+    {
+      "file": "cjk-300-0.png",
+      "foreground_mae": 8.52043422733078,
+      "full_mae": 0.14656615497076023
+    },
+    {
+      "file": "cjk-300-1000.png",
+      "foreground_mae": 7.278522775649212,
+      "full_mae": 0.12524122807017543
+    },
+    {
+      "file": "cjk-300-1300.png",
+      "foreground_mae": 6.704767986377182,
+      "full_mae": 0.11538925438596491
+    },
+    {
+      "file": "cjk-300-1600.png",
+      "foreground_mae": 6.133567475521499,
+      "full_mae": 0.10558114035087719
+    },
+    {
+      "file": "cjk-300-2000.png",
+      "foreground_mae": 5.507982120051086,
+      "full_mae": 0.09483918128654971
+    },
+    {
+      "file": "cjk-300-2400.png",
+      "foreground_mae": 4.766709237973606,
+      "full_mae": 0.08211074561403509
+    },
+    {
+      "file": "cjk-300-2800.png",
+      "foreground_mae": 3.7762877820349083,
+      "full_mae": 0.06510416666666667
+    },
+    {
+      "file": "cjk-300-3200.png",
+      "foreground_mae": 3.7762877820349083,
+      "full_mae": 0.06510416666666667
+    },
+    {
+      "file": "cjk-300-3600.png",
+      "foreground_mae": 3.7762877820349083,
+      "full_mae": 0.06510416666666667
+    },
+    {
+      "file": "cjk-300-4000.png",
+      "foreground_mae": 3.7762877820349083,
+      "full_mae": 0.06510416666666667
+    },
+    {
+      "file": "cjk-300-700.png",
+      "foreground_mae": 8.398361004682844,
+      "full_mae": 0.1444700292397661
+    },
+    {
+      "file": "latin-150-0.png",
+      "foreground_mae": 8.729686769518466,
+      "full_mae": 0.1710233918128655
+    },
+    {
+      "file": "latin-150-1000.png",
+      "foreground_mae": 7.6828424497428704,
+      "full_mae": 0.15056286549707604
+    },
+    {
+      "file": "latin-150-1300.png",
+      "foreground_mae": 7.253108929406265,
+      "full_mae": 0.1421637426900585
+    },
+    {
+      "file": "latin-150-1600.png",
+      "foreground_mae": 6.721739130434782,
+      "full_mae": 0.13177266081871344
+    },
+    {
+      "file": "latin-150-2000.png",
+      "foreground_mae": 5.766619915848527,
+      "full_mae": 0.11309758771929825
+    },
+    {
+      "file": "latin-150-2400.png",
+      "foreground_mae": 5.014773258532024,
+      "full_mae": 0.09840277777777778
+    },
+    {
+      "file": "latin-150-2800.png",
+      "foreground_mae": 4.119962599345489,
+      "full_mae": 0.08091374269005848
+    },
+    {
+      "file": "latin-150-3200.png",
+      "foreground_mae": 4.119962599345489,
+      "full_mae": 0.08091374269005848
+    },
+    {
+      "file": "latin-150-3600.png",
+      "foreground_mae": 4.119962599345489,
+      "full_mae": 0.08091374269005848
+    },
+    {
+      "file": "latin-150-4000.png",
+      "foreground_mae": 4.119962599345489,
+      "full_mae": 0.08091374269005848
+    },
+    {
+      "file": "latin-150-700.png",
+      "foreground_mae": 8.647405329593267,
+      "full_mae": 0.16941520467836257
+    },
+    {
+      "file": "latin-300-0.png",
+      "foreground_mae": 8.694904160822814,
+      "full_mae": 0.170343567251462
+    },
+    {
+      "file": "latin-300-1000.png",
+      "foreground_mae": 7.6480598410472185,
+      "full_mae": 0.1498830409356725
+    },
+    {
+      "file": "latin-300-1300.png",
+      "foreground_mae": 7.20682561944834,
+      "full_mae": 0.14125913742690058
+    },
+    {
+      "file": "latin-300-1600.png",
+      "foreground_mae": 6.676297335203366,
+      "full_mae": 0.1308845029239766
+    },
+    {
+      "file": "latin-300-2000.png",
+      "foreground_mae": 5.731276297335203,
+      "full_mae": 0.11240679824561403
+    },
+    {
+      "file": "latin-300-2400.png",
+      "foreground_mae": 4.9794296400187,
+      "full_mae": 0.09771198830409357
+    },
+    {
+      "file": "latin-300-2800.png",
+      "foreground_mae": 4.084618980832165,
+      "full_mae": 0.08022295321637427
+    },
+    {
+      "file": "latin-300-3200.png",
+      "foreground_mae": 4.084618980832165,
+      "full_mae": 0.08022295321637427
+    },
+    {
+      "file": "latin-300-3600.png",
+      "foreground_mae": 4.084618980832165,
+      "full_mae": 0.08022295321637427
+    },
+    {
+      "file": "latin-300-4000.png",
+      "foreground_mae": 4.084618980832165,
+      "full_mae": 0.08022295321637427
+    },
+    {
+      "file": "latin-300-700.png",
+      "foreground_mae": 8.612622720897615,
+      "full_mae": 0.16873538011695907
+    },
+    {
+      "file": "wrap-150-0.png",
+      "foreground_mae": 9.120120738149138,
+      "full_mae": 0.24357638888888888
+    },
+    {
+      "file": "wrap-150-1000.png",
+      "foreground_mae": 7.657900143825765,
+      "full_mae": 0.20479897660818713
+    },
+    {
+      "file": "wrap-150-1300.png",
+      "foreground_mae": 6.26659829059829,
+      "full_mae": 0.16778874269005847
+    },
+    {
+      "file": "wrap-150-1600.png",
+      "foreground_mae": 5.44303191852915,
+      "full_mae": 0.145796783625731
+    },
+    {
+      "file": "wrap-150-2000.png",
+      "foreground_mae": 4.865149340441528,
+      "full_mae": 0.13034539473684212
+    },
+    {
+      "file": "wrap-150-2400.png",
+      "foreground_mae": 4.541999863303944,
+      "full_mae": 0.12169956140350877
+    },
+    {
+      "file": "wrap-150-2800.png",
+      "foreground_mae": 4.087212083931378,
+      "full_mae": 0.10953399122807017
+    },
+    {
+      "file": "wrap-150-3200.png",
+      "foreground_mae": 4.087212083931378,
+      "full_mae": 0.10953399122807017
+    },
+    {
+      "file": "wrap-150-3600.png",
+      "foreground_mae": 4.087212083931378,
+      "full_mae": 0.10953399122807017
+    },
+    {
+      "file": "wrap-150-4000.png",
+      "foreground_mae": 4.087212083931378,
+      "full_mae": 0.10953399122807017
+    },
+    {
+      "file": "wrap-150-700.png",
+      "foreground_mae": 9.053783357343761,
+      "full_mae": 0.2418092105263158
+    },
+    {
+      "file": "wrap-300-0.png",
+      "foreground_mae": 9.237355964948597,
+      "full_mae": 0.24520285087719298
+    },
+    {
+      "file": "wrap-300-1000.png",
+      "foreground_mae": 7.766893986360818,
+      "full_mae": 0.20643640350877193
+    },
+    {
+      "file": "wrap-300-1300.png",
+      "foreground_mae": 6.398348813209494,
+      "full_mae": 0.17021929824561405
+    },
+    {
+      "file": "wrap-300-1600.png",
+      "foreground_mae": 5.569630699401692,
+      "full_mae": 0.14822733918128655
+    },
+    {
+      "file": "wrap-300-2000.png",
+      "foreground_mae": 4.981638126676295,
+      "full_mae": 0.13260233918128655
+    },
+    {
+      "file": "wrap-300-2400.png",
+      "foreground_mae": 4.666391582422117,
+      "full_mae": 0.1242233187134503
+    },
+    {
+      "file": "wrap-300-2800.png",
+      "foreground_mae": 4.457645764576458,
+      "full_mae": 0.11869700292397661
+    },
+    {
+      "file": "wrap-300-3200.png",
+      "foreground_mae": 4.457645764576458,
+      "full_mae": 0.11869700292397661
+    },
+    {
+      "file": "wrap-300-3600.png",
+      "foreground_mae": 4.457645764576458,
+      "full_mae": 0.11869700292397661
+    },
+    {
+      "file": "wrap-300-4000.png",
+      "foreground_mae": 4.457645764576458,
+      "full_mae": 0.11869700292397661
+    },
+    {
+      "file": "wrap-300-700.png",
+      "foreground_mae": 9.170634099220313,
+      "full_mae": 0.2434356725146199
+    }
+  ],
+  "png_sha256": {
+    "build/verification/pendolo-color-sweep-browser/arabic-150-0.png": "4f77cf94f046865915ef2a88f604d382c635d5a90dfec5959be8a0790e3f76d1",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-0.png": "09dc17b8d08fdb9a3accc28f66986243f21760c1cd879fc521053c526e38a46b",
+    "build/verification/pendolo-color-sweep-browser/arabic-150-1000.png": "a9b1a5f54a556b13e85efbb090a7b8586a90d6d7b7b8d371522a3fb4be3e0c3a",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-1000.png": "8bd9f749ee9f7cf426ef326261e089093b098408b7c82bd25bd6b7bd484f76d3",
+    "build/verification/pendolo-color-sweep-browser/arabic-150-1300.png": "3dfb034e56c03d1994b2825b21fa71a3d43f9ad9b629bdd503924d98b30502d3",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-1300.png": "8199e2b144fce7238552eac0e8c7d4c657c06050e927edba5b1c0963e27607d7",
+    "build/verification/pendolo-color-sweep-browser/arabic-150-1600.png": "b77df347783a83e68e1ff8def46a9ccaeb1d9650102e513276e550e179a262bb",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-1600.png": "cff145284e67dfb15114129541350cd027cbb0c9e89701fcfdbc7db943b8cfa7",
+    "build/verification/pendolo-color-sweep-browser/arabic-150-2000.png": "ea4ad2df2f9099339c5d2f96f6a75f98d940e265854e1e6d14f4df2648fa51ae",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-2000.png": "02213e86b5573a4b711d0f8b0e4a7230c35aadffafd00bb85d3c0e9aa00b6808",
+    "build/verification/pendolo-color-sweep-browser/arabic-150-2400.png": "5d1c372b8a65ee87095ee0d47648d1579d9600db1a77098cd1ac1f9e6265ac0b",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-2400.png": "4fb8482c2ecdf3b8c5e9753a09afbc5bc17a167a740c728b3ca0f1848c8e6ade",
+    "build/verification/pendolo-color-sweep-browser/arabic-150-2800.png": "87bb140972cd985e622ca95bb37e07ece2be3225b985affc13463130ada65c39",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-2800.png": "04e11d7cc06aba343c6f090040bd3dfb34980c44513d21059071ab717dfd48f3",
+    "build/verification/pendolo-color-sweep-browser/arabic-150-3200.png": "87bb140972cd985e622ca95bb37e07ece2be3225b985affc13463130ada65c39",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-3200.png": "04e11d7cc06aba343c6f090040bd3dfb34980c44513d21059071ab717dfd48f3",
+    "build/verification/pendolo-color-sweep-browser/arabic-150-3600.png": "87bb140972cd985e622ca95bb37e07ece2be3225b985affc13463130ada65c39",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-3600.png": "04e11d7cc06aba343c6f090040bd3dfb34980c44513d21059071ab717dfd48f3",
+    "build/verification/pendolo-color-sweep-browser/arabic-150-4000.png": "87bb140972cd985e622ca95bb37e07ece2be3225b985affc13463130ada65c39",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-4000.png": "04e11d7cc06aba343c6f090040bd3dfb34980c44513d21059071ab717dfd48f3",
+    "build/verification/pendolo-color-sweep-browser/arabic-150-700.png": "7e40d785b32519c9fa2edb5c81e26e4ded7c5f1ad8a413e45e6daf9c566044e1",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-150-700.png": "42aa7d84ef72ef3be9515e83cbbd2ec0f14f9845e7c4b887531efd5eec48f1bf",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-0.png": "4f77cf94f046865915ef2a88f604d382c635d5a90dfec5959be8a0790e3f76d1",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-0.png": "09dc17b8d08fdb9a3accc28f66986243f21760c1cd879fc521053c526e38a46b",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-1000.png": "a9b1a5f54a556b13e85efbb090a7b8586a90d6d7b7b8d371522a3fb4be3e0c3a",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-1000.png": "8bd9f749ee9f7cf426ef326261e089093b098408b7c82bd25bd6b7bd484f76d3",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-1300.png": "3dfb034e56c03d1994b2825b21fa71a3d43f9ad9b629bdd503924d98b30502d3",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-1300.png": "8199e2b144fce7238552eac0e8c7d4c657c06050e927edba5b1c0963e27607d7",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-1600.png": "b77df347783a83e68e1ff8def46a9ccaeb1d9650102e513276e550e179a262bb",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-1600.png": "cff145284e67dfb15114129541350cd027cbb0c9e89701fcfdbc7db943b8cfa7",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-2000.png": "ea4ad2df2f9099339c5d2f96f6a75f98d940e265854e1e6d14f4df2648fa51ae",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-2000.png": "02213e86b5573a4b711d0f8b0e4a7230c35aadffafd00bb85d3c0e9aa00b6808",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-2400.png": "5d1c372b8a65ee87095ee0d47648d1579d9600db1a77098cd1ac1f9e6265ac0b",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-2400.png": "4fb8482c2ecdf3b8c5e9753a09afbc5bc17a167a740c728b3ca0f1848c8e6ade",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-2800.png": "87bb140972cd985e622ca95bb37e07ece2be3225b985affc13463130ada65c39",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-2800.png": "04e11d7cc06aba343c6f090040bd3dfb34980c44513d21059071ab717dfd48f3",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-3200.png": "87bb140972cd985e622ca95bb37e07ece2be3225b985affc13463130ada65c39",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-3200.png": "04e11d7cc06aba343c6f090040bd3dfb34980c44513d21059071ab717dfd48f3",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-3600.png": "87bb140972cd985e622ca95bb37e07ece2be3225b985affc13463130ada65c39",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-3600.png": "04e11d7cc06aba343c6f090040bd3dfb34980c44513d21059071ab717dfd48f3",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-4000.png": "87bb140972cd985e622ca95bb37e07ece2be3225b985affc13463130ada65c39",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-4000.png": "04e11d7cc06aba343c6f090040bd3dfb34980c44513d21059071ab717dfd48f3",
+    "build/verification/pendolo-color-sweep-browser/arabic-300-700.png": "7e40d785b32519c9fa2edb5c81e26e4ded7c5f1ad8a413e45e6daf9c566044e1",
+    "build/verification/pendolo-color-sweep-kotlin/arabic-300-700.png": "42aa7d84ef72ef3be9515e83cbbd2ec0f14f9845e7c4b887531efd5eec48f1bf",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-0.png": "3beb9fbaefb2cb38d2ad5f703dd687a85f905afe8910b53eed4059979d1e1bbe",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-0.png": "f85fbb1ad85ec5ab2c64172cdfcaf9b89d089dbb7e6c8dda1fbe3ba3fd7bb12d",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-1000.png": "937ffccb498f628fc5fb12392176922215437865d707a8fa5b678073a6a5b935",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-1000.png": "f8eef5516a0feee8b2be738bbc6a5bf0b373b21e892f06ee1a7a0462bf5ae67f",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-1300.png": "f6cbedcc32cbc136d01f63f5f3e99944f7385b16b3d7c64c4add73a6e9a9f13c",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-1300.png": "0127e27f755e6a5f41ed94ded9d65f1245a84a3ce5947482ab7eb21dff4c5ccc",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-1600.png": "c023c45f833edd2f4b515370e200964f4f02e13d5aed1c45a7ed883144d4dc43",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-1600.png": "b5a39f81741a86378328c175bc90af1e80ccde097bb33a206ce15e698c2148fc",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-2000.png": "ee477a52fe95a393149ba46752cc61106ebd1ffc44de92ff6331f91489cb35ab",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-2000.png": "b7b618d90feee7d6c4727f7501f2cbed2c1334006b92a662be84f9bf7a695522",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-2400.png": "3fbf4e8b60f2087d52af740dcdd3b44120923a69c3116895562f3d51e39bfed7",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-2400.png": "7029defdf600da13d4b64db15baf6bf7fac5f61f9e9f3daa0b9ca98eada43abf",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-2800.png": "4ba9e2a19bcb9cf7e239537bc4d4c6c3b408b0c1d247678706960051b99801fb",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-2800.png": "87f5e717f9153bbff9f9290874f53f57f9d77a49846faefb5ef644d0389d11e1",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-3200.png": "4ba9e2a19bcb9cf7e239537bc4d4c6c3b408b0c1d247678706960051b99801fb",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-3200.png": "87f5e717f9153bbff9f9290874f53f57f9d77a49846faefb5ef644d0389d11e1",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-3600.png": "4ba9e2a19bcb9cf7e239537bc4d4c6c3b408b0c1d247678706960051b99801fb",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-3600.png": "87f5e717f9153bbff9f9290874f53f57f9d77a49846faefb5ef644d0389d11e1",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-4000.png": "4ba9e2a19bcb9cf7e239537bc4d4c6c3b408b0c1d247678706960051b99801fb",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-4000.png": "87f5e717f9153bbff9f9290874f53f57f9d77a49846faefb5ef644d0389d11e1",
+    "build/verification/pendolo-color-sweep-browser/cjk-150-700.png": "1029e4a9ce93f43b3927bdd9ac938ae4968b11722b794a70de056a43429476ed",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-150-700.png": "6498709cfdb25bcbcdc058bf27b5a803f8d1311b6b55769c8d5b77d96a2adfcc",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-0.png": "897450b8ffc2b181148776505041c8488c73cbdcd9cf909229fb3be36f7bd921",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-0.png": "2d99fb8b1d40e227caa5b02dc351da41a83b613c7fea86d3f7b21c44ea578e80",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-1000.png": "1f317891ee7e4f2265c61fefdc4d9e131e6ede42e6301f1cd3b7d1350fe754c8",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-1000.png": "3a4056fcafe32254d0f34f9243bd968a0ca07654690c68da5d1c3f77b0eb6102",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-1300.png": "47d01820c45d22ba07b7a24932669bb7d668860b94035d9adfec06e169a2d373",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-1300.png": "d02bf03cf3ebe790c154744c00d052c69b41bfc09d588bd9afe10109cd60a195",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-1600.png": "ebf707fbefaf074cf505fee87aecb3f4c36aa9c25067b31d77cade6b851265b8",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-1600.png": "5e787f2efbdcc9e9d9b968307492231b8b239b3107b903869299747c37ff6472",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-2000.png": "ae21c192c54196cfa9ab3e818b0424301466a496b5a35f101d518bfad958df90",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-2000.png": "d091a6c8009b488db8e1e7ca46bdbdf6f43883459615b50c7afe47f66362537c",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-2400.png": "33cc33bf81185de1bcad8a2f52a5ec4f1782de3dc2ba38f8f6ab9683610368c1",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-2400.png": "0158aca254cf54af0d854f94632d667380e2239c1bd8bfbac9cfdaac8400a3a6",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-2800.png": "d232f15565df77ac9dba3d887c371de99ed8ab14922bafb8969a3e949c2c6d2b",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-2800.png": "a40fd544314bf5f43d746a1966acad91196e6a52c15f4670b7aec6df65fc1316",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-3200.png": "d232f15565df77ac9dba3d887c371de99ed8ab14922bafb8969a3e949c2c6d2b",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-3200.png": "a40fd544314bf5f43d746a1966acad91196e6a52c15f4670b7aec6df65fc1316",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-3600.png": "d232f15565df77ac9dba3d887c371de99ed8ab14922bafb8969a3e949c2c6d2b",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-3600.png": "a40fd544314bf5f43d746a1966acad91196e6a52c15f4670b7aec6df65fc1316",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-4000.png": "d232f15565df77ac9dba3d887c371de99ed8ab14922bafb8969a3e949c2c6d2b",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-4000.png": "a40fd544314bf5f43d746a1966acad91196e6a52c15f4670b7aec6df65fc1316",
+    "build/verification/pendolo-color-sweep-browser/cjk-300-700.png": "defcde987b20a39fb3b9de8c67596b6f7349d1a6ccb2a6ce52e300b60fbaa692",
+    "build/verification/pendolo-color-sweep-kotlin/cjk-300-700.png": "fae40f53a9a040587a3910e551b6134f8079c0d628ecc2125da98b8b0e6c7201",
+    "build/verification/pendolo-color-sweep-browser/latin-150-0.png": "c6882f046c05c3266421c156fe097f68b84ab4df82e5bf2b0c31e658f2c11dfe",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-0.png": "6ce164d9336abe7695723c134acc9695ec6bc089d390c7daac9639f1c023488f",
+    "build/verification/pendolo-color-sweep-browser/latin-150-1000.png": "8619c2583557b9f1053e6fb69e6f043ba8fc1a9fc60e1ab6c102cdcbbbaae530",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-1000.png": "f9c5333c9d4c90891d10e69d94c8d8e98a495ca9fdd87cb523f15e87f727c07f",
+    "build/verification/pendolo-color-sweep-browser/latin-150-1300.png": "39bdf463baa023b7b6cc603568ef33c6c154a0314ad8a76a5ffedc20550c5349",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-1300.png": "1b887e4bdebb2d46b5e0883900b67235ed7465936310bf25a56f9588d44c4cc8",
+    "build/verification/pendolo-color-sweep-browser/latin-150-1600.png": "30e856810d4b5f7287e1e5a0abf660a3acedbeb7e7bdc9e4dfcd15924513ce6d",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-1600.png": "bda0c55d2c973a493645e1cb445918e4cd4f654183885e8a4f3b08ef7fbebeb6",
+    "build/verification/pendolo-color-sweep-browser/latin-150-2000.png": "0779b412234ba7417522495693fcb3ef3e9eee32f95386fcf9827ce8488d09ab",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-2000.png": "fbe3a965f965e85092be79dee526eb27937abca08992985d32aab86f0c63cf60",
+    "build/verification/pendolo-color-sweep-browser/latin-150-2400.png": "d7d7ce7b6a40174994f1723e2e7c597f657cdb93c0aef5a884cbf600627cae53",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-2400.png": "877aad74c2672d68ed22af75dabd7e1b0e706b0cca927a62f3fc3e7a12564eb1",
+    "build/verification/pendolo-color-sweep-browser/latin-150-2800.png": "8fc2fe6f6b5791ae65be4db18e874e417c1b7d647faeb16421bb3f4e62bd252e",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-2800.png": "e1001df7393c5b274b583478cfdd87d915c7dd4c802bbd807e0355901ac00868",
+    "build/verification/pendolo-color-sweep-browser/latin-150-3200.png": "8fc2fe6f6b5791ae65be4db18e874e417c1b7d647faeb16421bb3f4e62bd252e",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-3200.png": "e1001df7393c5b274b583478cfdd87d915c7dd4c802bbd807e0355901ac00868",
+    "build/verification/pendolo-color-sweep-browser/latin-150-3600.png": "8fc2fe6f6b5791ae65be4db18e874e417c1b7d647faeb16421bb3f4e62bd252e",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-3600.png": "e1001df7393c5b274b583478cfdd87d915c7dd4c802bbd807e0355901ac00868",
+    "build/verification/pendolo-color-sweep-browser/latin-150-4000.png": "8fc2fe6f6b5791ae65be4db18e874e417c1b7d647faeb16421bb3f4e62bd252e",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-4000.png": "e1001df7393c5b274b583478cfdd87d915c7dd4c802bbd807e0355901ac00868",
+    "build/verification/pendolo-color-sweep-browser/latin-150-700.png": "ba22e08cd3cfdf3f5d269b484ad741133dafee870f72a13616b489af7c06d808",
+    "build/verification/pendolo-color-sweep-kotlin/latin-150-700.png": "3f4090d13448d6f2313a0af34683ec8a57dfc830a891439369c85f69bd23d845",
+    "build/verification/pendolo-color-sweep-browser/latin-300-0.png": "0298bca97b7119ae6dd58a894889370e77eabc658ea3cc545596ee8c003e5766",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-0.png": "a79f96a38a0b21207f91c497b911bde59ccf9f06537f303e5cfe878fd96fc6aa",
+    "build/verification/pendolo-color-sweep-browser/latin-300-1000.png": "47be2a8936222eb63471e6c7c9d0d909e736637660f3d918adfbf3cb3fd27acf",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-1000.png": "7d1f2a583621715956f2741ddd61a86a0680cae6a922ef1648631a6dbcbdcf12",
+    "build/verification/pendolo-color-sweep-browser/latin-300-1300.png": "055c81e4b63d32232b15b76da58c508385806ba528847462c049c104a32c6ee6",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-1300.png": "349ca2c7108c511824c9c6f172a1fcb9e4878a56e80b5e2435acd28e2d521fc7",
+    "build/verification/pendolo-color-sweep-browser/latin-300-1600.png": "c26af3705f24334e720b0adb12dd566e96cf59b315fbd3f2bd67f94aed499c67",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-1600.png": "db7afaa05b9442818a07f2b7a079dd3d504c514db29cafe8fb6adb74f42596bd",
+    "build/verification/pendolo-color-sweep-browser/latin-300-2000.png": "8a4520d9273b7a122780718de184ffc1ae791afd4cff38fd664179de14b5e33c",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-2000.png": "5de7af77aa576463c7c60fb4f9f65c724582f31894205fa686c1cad73a5c0b5f",
+    "build/verification/pendolo-color-sweep-browser/latin-300-2400.png": "fd2b48c4e0e7e4bc14dd05682c82ffa328b723aa70bc72d7ec589358e90bc8a9",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-2400.png": "20b356a77340b17e7429eb64845cb1e2d5ab4fb5cab8eee9ca50da93ac02b3ed",
+    "build/verification/pendolo-color-sweep-browser/latin-300-2800.png": "bdc61d74b8f896ab6377eadae942e1dd8be27badd51e8696610c0d0286906f24",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-2800.png": "1ab9ce5850205dd83c1e19cdbb35072eaffabb3518cf21ea95890eae49841591",
+    "build/verification/pendolo-color-sweep-browser/latin-300-3200.png": "bdc61d74b8f896ab6377eadae942e1dd8be27badd51e8696610c0d0286906f24",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-3200.png": "1ab9ce5850205dd83c1e19cdbb35072eaffabb3518cf21ea95890eae49841591",
+    "build/verification/pendolo-color-sweep-browser/latin-300-3600.png": "bdc61d74b8f896ab6377eadae942e1dd8be27badd51e8696610c0d0286906f24",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-3600.png": "1ab9ce5850205dd83c1e19cdbb35072eaffabb3518cf21ea95890eae49841591",
+    "build/verification/pendolo-color-sweep-browser/latin-300-4000.png": "bdc61d74b8f896ab6377eadae942e1dd8be27badd51e8696610c0d0286906f24",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-4000.png": "1ab9ce5850205dd83c1e19cdbb35072eaffabb3518cf21ea95890eae49841591",
+    "build/verification/pendolo-color-sweep-browser/latin-300-700.png": "31e328f495a0ac39a32eaaf9344c53caab3607017107becf54acb8cea1b7c84a",
+    "build/verification/pendolo-color-sweep-kotlin/latin-300-700.png": "1dd0f74f0244ec47dae6bbca722d98b22a097901f37c8b770d692c4e88758609",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-0.png": "0267506df16009437f49f878b15b2b57f5d5f353505b17b4039723c47abfd831",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-0.png": "9983b66d2eb977881736ecfecdc358139ec5257d0c608c2f82542827f2c5bdf6",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-1000.png": "4ccaa1d931ad0e5dbb7ad3af00d49d0c5f5761cc2b20e9a463e06ee390b1201e",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-1000.png": "9e243bf190581dad107eaae8df36758cac7aa78d0d4a5e16513563c5bc980636",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-1300.png": "f723f36481c4009baa67a0e4309d79f7eb025269c3da55e11f3dcd867b4bbbd9",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-1300.png": "8b11511ce5968f67d4d7cd3746cec71c2fea0bd3bcd31bc6e5a0bd847c641ffe",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-1600.png": "4ca956a4d01d0501544d71027d983b3fa3a04ebf3a653757e37739980ce64102",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-1600.png": "fd275a3eb5bee54b135dc79cea164d9b78ee4edbbf24ad460be775729b2a70a2",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-2000.png": "0510324e6aa896984934eaf164160f2e265d20bce98115d170b0ec9105e7cf05",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-2000.png": "3587dd6c8a23eac0983047a08e686e9644053433578f94d0b164074d1519c47a",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-2400.png": "622b9d4a1344dba658de6c48851d42363de649706b32d73c7f5af135959c4b0e",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-2400.png": "95bcb7d0171f9395106aa5f910ff22a1c8b28b273888e7a6bdbbaa5429b6ef3c",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-2800.png": "e679b63c136bbce7bf16b03218e37c15dc4e91d4be4170adedc654f9b515b96f",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-2800.png": "aa9d6231036734eb54984abf3b0e8b85766b149a2f405da424c8b87bc49201cf",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-3200.png": "e679b63c136bbce7bf16b03218e37c15dc4e91d4be4170adedc654f9b515b96f",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-3200.png": "aa9d6231036734eb54984abf3b0e8b85766b149a2f405da424c8b87bc49201cf",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-3600.png": "e679b63c136bbce7bf16b03218e37c15dc4e91d4be4170adedc654f9b515b96f",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-3600.png": "aa9d6231036734eb54984abf3b0e8b85766b149a2f405da424c8b87bc49201cf",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-4000.png": "e679b63c136bbce7bf16b03218e37c15dc4e91d4be4170adedc654f9b515b96f",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-4000.png": "aa9d6231036734eb54984abf3b0e8b85766b149a2f405da424c8b87bc49201cf",
+    "build/verification/pendolo-color-sweep-browser/wrap-150-700.png": "97ec29173d2a02a30562678bdfcba66d3267c0ddc1de0fb3a6efe2b2f46510c2",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-150-700.png": "2780c981eaf6bf12fcef9213a4246a4985bbada8277be1d89e8633b0a64a6b1d",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-0.png": "7363e9d776a36ca70e3eadde23150c3fe6d04d9c3a2a9e80afeb11bbb13065ca",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-0.png": "382a95e92c529a5af7e121cf491d48e7ad5a3e8b7395ab4384c4cf7e65e9078f",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-1000.png": "a2e8127cd416f3418f8216c05b5e80b21703290e1c366660bbf23e4369551700",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-1000.png": "4b805227c1fa635bce85199fc62d4235db295f98071efa366a81525532554ba9",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-1300.png": "e7a653ef74bb3039c34a79efa107fa12314f544aeaf8c9998e4b341d710f87d5",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-1300.png": "b187f0ec438e67afba1eec4dcb0adb429201f7f6b6717dfd0206f08c1dc57e0f",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-1600.png": "6a2e1d9baa7a6a820c06461304061769449050ea7bb32e8fdd76347291e41480",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-1600.png": "489d817f159b64837d6feb62db42b9aff2a00ef1d256dd9a292eb0176a10637e",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-2000.png": "748a0fdd33ef7a2b867eace8e1717c232b7c09f829b8adf46e7dd09dc9ce34b2",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-2000.png": "bb02557514a49d8b8fb5c6b2cc3844f9b80af030e82e9ef0c457e9c469771207",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-2400.png": "b9f7968f6738d171d6507f804d755ba61edec72c8aa2255b7a72e7da2a5b2617",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-2400.png": "088fc11581b94e13e3c69cd065a3d83bf452beeffc897e0009640efb29fc573a",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-2800.png": "9692f303921e29ad2fa4283c542854bf49db14d3d748f428583de23509c32156",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-2800.png": "40c89656d9233d3aba7780d3f9f70ee3c9d022236fef2658fd21fcd7d87ff2e6",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-3200.png": "9692f303921e29ad2fa4283c542854bf49db14d3d748f428583de23509c32156",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-3200.png": "40c89656d9233d3aba7780d3f9f70ee3c9d022236fef2658fd21fcd7d87ff2e6",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-3600.png": "9692f303921e29ad2fa4283c542854bf49db14d3d748f428583de23509c32156",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-3600.png": "40c89656d9233d3aba7780d3f9f70ee3c9d022236fef2658fd21fcd7d87ff2e6",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-4000.png": "9692f303921e29ad2fa4283c542854bf49db14d3d748f428583de23509c32156",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-4000.png": "40c89656d9233d3aba7780d3f9f70ee3c9d022236fef2658fd21fcd7d87ff2e6",
+    "build/verification/pendolo-color-sweep-browser/wrap-300-700.png": "0c63cadcf8f3c21f423a1f67a012fa5af660ee4579b9fb2fa901f211efdddd29",
+    "build/verification/pendolo-color-sweep-kotlin/wrap-300-700.png": "79556f57e097aef326db597151dd74459d3631d73df0468afd552b809dd431d3"
+  }
+}

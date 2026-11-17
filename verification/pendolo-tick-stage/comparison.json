@@ -113,8 +113,8 @@
       },
       {
         "file": "arabic-800-normal-87000.png",
-        "foreground_mae": 11.693278817875331,
-        "full_mae": 0.2362034722222222
+        "foreground_mae": 11.693099490710853,
+        "full_mae": 0.2362048611111111
       },
       {
         "file": "arabic-800-normal-87500.png",
@@ -654,7 +654,7 @@
       {
         "file": "wrap-380-normal-47000.png",
         "foreground_mae": 12.270666825718717,
-        "full_mae": 0.9443040935672514
+        "full_mae": 0.9443055555555555
       },
       {
         "file": "wrap-380-normal-47200.png",
@@ -773,7 +773,7 @@
       "build/verification/pendolo-tick-stage-kotlin/arabic-800-normal-7500.png": "c1789eb603a52ad743b2048b2e442adc02a1ab7ecf2fe122bc956f02a6deca16",
       "build/verification/pendolo-tick-stage-browser/arabic-800-normal-8000.png": "4e1fe1324aa4885196c5434d73c3b0cedea61ac1ee92da97f819bb8b9feccac7",
       "build/verification/pendolo-tick-stage-kotlin/arabic-800-normal-8000.png": "da0be1eb85629c26467452c42e8f14836d8107e06df909e8c539210e468677cc",
-      "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87000.png": "5161fc17221a559126ff280cb0c180cba8f083f6073e05fa228e55cf2ce29507",
+      "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87000.png": "360212830d3a485dd9748ddfdeb337d8549c0a1a33bf4f69fbe0e401f43a85f5",
       "build/verification/pendolo-tick-stage-kotlin/arabic-800-normal-87000.png": "c571a7115224d2645fa2aeaa8b89f1f69f830a7fb8f703ab1265a22f6c3cca52",
       "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87500.png": "da50f1b27c2e5d7a98958bfbfcaff9e1fcce456884441b37eb5fa79fcf78907f",
       "build/verification/pendolo-tick-stage-kotlin/arabic-800-normal-87500.png": "b9540001080bc370273be071c14c66d198984d17c423fedc2d2b2bcd16c65378",
@@ -989,7 +989,7 @@
       "build/verification/pendolo-tick-stage-kotlin/wrap-380-normal-31000.png": "af71f81dccf8b36b9221ce23bf0b716e8e8348cb3771c0d082c62cb78fef4aac",
       "build/verification/pendolo-tick-stage-browser/wrap-380-normal-35000.png": "6d52c9fe2633fcd9d2e53a475badf22da08ab7de825ab8dfd1adba97834071d9",
       "build/verification/pendolo-tick-stage-kotlin/wrap-380-normal-35000.png": "a21a82fe6a01e33cc5f09f7dd4a766518ab9aee92146a34b504d3fc03adf4858",
-      "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47000.png": "771328c5d5e9c7e8212661e55835fa8235d862616f45b710de66804e25f014a6",
+      "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47000.png": "fb1761f5b766b5b21d171a855a582c286e0820bd5e3f85309dd5545a6ef04575",
       "build/verification/pendolo-tick-stage-kotlin/wrap-380-normal-47000.png": "1824b960100f158b051398744eab8983e98775756b2b50878fa1b9d05cdebb8c",
       "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47200.png": "268404d6de6ed7696625bcca8c46aeb9fd00bafd88d4915e407c7792534725d7",
       "build/verification/pendolo-tick-stage-kotlin/wrap-380-normal-47200.png": "bcdce6199e92fd288c3a8edc764cf2a576abf1fed56a20c4fd6bab369b4b6df8",
@@ -1031,7 +1031,7 @@
     },
     "max_content_rect_error": 1.3647060090480068,
     "max_opacity_error": 4.899632487509464e-07,
-    "mean_foreground_mae": 13.137682039684838,
+    "mean_foreground_mae": 13.137680794357307,
     "max_foreground_mae": 23.317441757463016,
     "maximum_untransformed_box_error": 0.03125
   },
@@ -1139,8 +1139,8 @@
       },
       {
         "file": "arabic-800-normal-87000.png",
-        "foreground_mae": 11.693278817875331,
-        "full_mae": 0.2362034722222222
+        "foreground_mae": 11.693099490710853,
+        "full_mae": 0.2362048611111111
       },
       {
         "file": "arabic-800-normal-87500.png",
@@ -1680,7 +1680,7 @@
       {
         "file": "wrap-380-normal-47000.png",
         "foreground_mae": 12.270666825718717,
-        "full_mae": 0.9443040935672514
+        "full_mae": 0.9443055555555555
       },
       {
         "file": "wrap-380-normal-47200.png",
@@ -1799,7 +1799,7 @@
       "build/verification/pendolo-tick-stage-source-rotation-kotlin/arabic-800-normal-7500.png": "c1789eb603a52ad743b2048b2e442adc02a1ab7ecf2fe122bc956f02a6deca16",
       "build/verification/pendolo-tick-stage-browser/arabic-800-normal-8000.png": "4e1fe1324aa4885196c5434d73c3b0cedea61ac1ee92da97f819bb8b9feccac7",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin/arabic-800-normal-8000.png": "da0be1eb85629c26467452c42e8f14836d8107e06df909e8c539210e468677cc",
-      "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87000.png": "5161fc17221a559126ff280cb0c180cba8f083f6073e05fa228e55cf2ce29507",
+      "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87000.png": "360212830d3a485dd9748ddfdeb337d8549c0a1a33bf4f69fbe0e401f43a85f5",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin/arabic-800-normal-87000.png": "c571a7115224d2645fa2aeaa8b89f1f69f830a7fb8f703ab1265a22f6c3cca52",
       "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87500.png": "da50f1b27c2e5d7a98958bfbfcaff9e1fcce456884441b37eb5fa79fcf78907f",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin/arabic-800-normal-87500.png": "b9540001080bc370273be071c14c66d198984d17c423fedc2d2b2bcd16c65378",
@@ -2015,7 +2015,7 @@
       "build/verification/pendolo-tick-stage-source-rotation-kotlin/wrap-380-normal-31000.png": "af71f81dccf8b36b9221ce23bf0b716e8e8348cb3771c0d082c62cb78fef4aac",
       "build/verification/pendolo-tick-stage-browser/wrap-380-normal-35000.png": "6d52c9fe2633fcd9d2e53a475badf22da08ab7de825ab8dfd1adba97834071d9",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin/wrap-380-normal-35000.png": "a21a82fe6a01e33cc5f09f7dd4a766518ab9aee92146a34b504d3fc03adf4858",
-      "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47000.png": "771328c5d5e9c7e8212661e55835fa8235d862616f45b710de66804e25f014a6",
+      "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47000.png": "fb1761f5b766b5b21d171a855a582c286e0820bd5e3f85309dd5545a6ef04575",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin/wrap-380-normal-47000.png": "1824b960100f158b051398744eab8983e98775756b2b50878fa1b9d05cdebb8c",
       "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47200.png": "268404d6de6ed7696625bcca8c46aeb9fd00bafd88d4915e407c7792534725d7",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin/wrap-380-normal-47200.png": "bcdce6199e92fd288c3a8edc764cf2a576abf1fed56a20c4fd6bab369b4b6df8",
@@ -2052,7 +2052,7 @@
     "tick_maximum_errors": {},
     "max_content_rect_error": 0.1051146802102565,
     "max_opacity_error": 4.899632487509464e-07,
-    "mean_foreground_mae": 12.989471778210707,
+    "mean_foreground_mae": 12.989470532883177,
     "max_foreground_mae": 20.50286447199658
   },
   "pendolo-tick-stage-kotlin-before-width-transition": {
@@ -2159,8 +2159,8 @@
       },
       {
         "file": "arabic-800-normal-87000.png",
-        "foreground_mae": 11.693278817875331,
-        "full_mae": 0.2362034722222222
+        "foreground_mae": 11.693099490710853,
+        "full_mae": 0.2362048611111111
       },
       {
         "file": "arabic-800-normal-87500.png",
@@ -2700,7 +2700,7 @@
       {
         "file": "wrap-380-normal-47000.png",
         "foreground_mae": 11.678168614086335,
-        "full_mae": 0.8823421052631579
+        "full_mae": 0.882343567251462
       },
       {
         "file": "wrap-380-normal-47200.png",
@@ -2819,7 +2819,7 @@
       "build/verification/pendolo-tick-stage-kotlin-before-width-transition/arabic-800-normal-7500.png": "c1789eb603a52ad743b2048b2e442adc02a1ab7ecf2fe122bc956f02a6deca16",
       "build/verification/pendolo-tick-stage-browser/arabic-800-normal-8000.png": "4e1fe1324aa4885196c5434d73c3b0cedea61ac1ee92da97f819bb8b9feccac7",
       "build/verification/pendolo-tick-stage-kotlin-before-width-transition/arabic-800-normal-8000.png": "da0be1eb85629c26467452c42e8f14836d8107e06df909e8c539210e468677cc",
-      "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87000.png": "5161fc17221a559126ff280cb0c180cba8f083f6073e05fa228e55cf2ce29507",
+      "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87000.png": "360212830d3a485dd9748ddfdeb337d8549c0a1a33bf4f69fbe0e401f43a85f5",
       "build/verification/pendolo-tick-stage-kotlin-before-width-transition/arabic-800-normal-87000.png": "c571a7115224d2645fa2aeaa8b89f1f69f830a7fb8f703ab1265a22f6c3cca52",
       "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87500.png": "da50f1b27c2e5d7a98958bfbfcaff9e1fcce456884441b37eb5fa79fcf78907f",
       "build/verification/pendolo-tick-stage-kotlin-before-width-transition/arabic-800-normal-87500.png": "b9540001080bc370273be071c14c66d198984d17c423fedc2d2b2bcd16c65378",
@@ -3035,7 +3035,7 @@
       "build/verification/pendolo-tick-stage-kotlin-before-width-transition/wrap-380-normal-31000.png": "af71f81dccf8b36b9221ce23bf0b716e8e8348cb3771c0d082c62cb78fef4aac",
       "build/verification/pendolo-tick-stage-browser/wrap-380-normal-35000.png": "6d52c9fe2633fcd9d2e53a475badf22da08ab7de825ab8dfd1adba97834071d9",
       "build/verification/pendolo-tick-stage-kotlin-before-width-transition/wrap-380-normal-35000.png": "a21a82fe6a01e33cc5f09f7dd4a766518ab9aee92146a34b504d3fc03adf4858",
-      "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47000.png": "771328c5d5e9c7e8212661e55835fa8235d862616f45b710de66804e25f014a6",
+      "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47000.png": "fb1761f5b766b5b21d171a855a582c286e0820bd5e3f85309dd5545a6ef04575",
       "build/verification/pendolo-tick-stage-kotlin-before-width-transition/wrap-380-normal-47000.png": "51f388127aa70a64b5629fdf280bfeec239e409699885aadea3a0974cd36fbf9",
       "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47200.png": "268404d6de6ed7696625bcca8c46aeb9fd00bafd88d4915e407c7792534725d7",
       "build/verification/pendolo-tick-stage-kotlin-before-width-transition/wrap-380-normal-47200.png": "3b9b80d4b2acf13d59c2e54dd2bba47b5b72cbb3eb2a89a6f453cfd25e44144d",
@@ -3077,7 +3077,7 @@
     },
     "max_content_rect_error": 17.652887420745913,
     "max_opacity_error": 4.899632487509464e-07,
-    "mean_foreground_mae": 13.235477370740387,
+    "mean_foreground_mae": 13.235476125412854,
     "max_foreground_mae": 23.317441757463016
   },
   "pendolo-tick-stage-source-rotation-kotlin-before-width-transition": {
@@ -3184,8 +3184,8 @@
       },
       {
         "file": "arabic-800-normal-87000.png",
-        "foreground_mae": 11.693278817875331,
-        "full_mae": 0.2362034722222222
+        "foreground_mae": 11.693099490710853,
+        "full_mae": 0.2362048611111111
       },
       {
         "file": "arabic-800-normal-87500.png",
@@ -3725,7 +3725,7 @@
       {
         "file": "wrap-380-normal-47000.png",
         "foreground_mae": 11.678168614086335,
-        "full_mae": 0.8823421052631579
+        "full_mae": 0.882343567251462
       },
       {
         "file": "wrap-380-normal-47200.png",
@@ -3844,7 +3844,7 @@
       "build/verification/pendolo-tick-stage-source-rotation-kotlin-before-width-transition/arabic-800-normal-7500.png": "c1789eb603a52ad743b2048b2e442adc02a1ab7ecf2fe122bc956f02a6deca16",
       "build/verification/pendolo-tick-stage-browser/arabic-800-normal-8000.png": "4e1fe1324aa4885196c5434d73c3b0cedea61ac1ee92da97f819bb8b9feccac7",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin-before-width-transition/arabic-800-normal-8000.png": "da0be1eb85629c26467452c42e8f14836d8107e06df909e8c539210e468677cc",
-      "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87000.png": "5161fc17221a559126ff280cb0c180cba8f083f6073e05fa228e55cf2ce29507",
+      "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87000.png": "360212830d3a485dd9748ddfdeb337d8549c0a1a33bf4f69fbe0e401f43a85f5",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin-before-width-transition/arabic-800-normal-87000.png": "c571a7115224d2645fa2aeaa8b89f1f69f830a7fb8f703ab1265a22f6c3cca52",
       "build/verification/pendolo-tick-stage-browser/arabic-800-normal-87500.png": "da50f1b27c2e5d7a98958bfbfcaff9e1fcce456884441b37eb5fa79fcf78907f",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin-before-width-transition/arabic-800-normal-87500.png": "b9540001080bc370273be071c14c66d198984d17c423fedc2d2b2bcd16c65378",
@@ -4060,7 +4060,7 @@
       "build/verification/pendolo-tick-stage-source-rotation-kotlin-before-width-transition/wrap-380-normal-31000.png": "af71f81dccf8b36b9221ce23bf0b716e8e8348cb3771c0d082c62cb78fef4aac",
       "build/verification/pendolo-tick-stage-browser/wrap-380-normal-35000.png": "6d52c9fe2633fcd9d2e53a475badf22da08ab7de825ab8dfd1adba97834071d9",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin-before-width-transition/wrap-380-normal-35000.png": "a21a82fe6a01e33cc5f09f7dd4a766518ab9aee92146a34b504d3fc03adf4858",
-      "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47000.png": "771328c5d5e9c7e8212661e55835fa8235d862616f45b710de66804e25f014a6",
+      "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47000.png": "fb1761f5b766b5b21d171a855a582c286e0820bd5e3f85309dd5545a6ef04575",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin-before-width-transition/wrap-380-normal-47000.png": "51f388127aa70a64b5629fdf280bfeec239e409699885aadea3a0974cd36fbf9",
       "build/verification/pendolo-tick-stage-browser/wrap-380-normal-47200.png": "268404d6de6ed7696625bcca8c46aeb9fd00bafd88d4915e407c7792534725d7",
       "build/verification/pendolo-tick-stage-source-rotation-kotlin-before-width-transition/wrap-380-normal-47200.png": "3b9b80d4b2acf13d59c2e54dd2bba47b5b72cbb3eb2a89a6f453cfd25e44144d",
@@ -4097,7 +4097,7 @@
     "tick_maximum_errors": {},
     "max_content_rect_error": 17.652887420746026,
     "max_opacity_error": 4.899632487509464e-07,
-    "mean_foreground_mae": 13.087267109266257,
+    "mean_foreground_mae": 13.087265863938724,
     "max_foreground_mae": 20.50286447199658
   }
 }

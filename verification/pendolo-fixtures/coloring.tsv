@@ -1,0 +1,282 @@
+# C key text64 fallback; E key word64 color; R key start end color priority; G key index color; U key globalStart row64; P key row start text64 color
+C	0	QW1iZXIgZWNob2VzIGJleW9uZA==	#aabbcc
+E	0	QW1iZXI=	#ed71b8
+E	0	YmV5b25k	#73dea1
+R	0	0	5	#ed71b8	5
+R	0	13	19	#73dea1	6
+G	0	0	#ed71b8
+G	0	1	#ed71b8
+G	0	2	#ed71b8
+G	0	3	#ed71b8
+G	0	4	#ed71b8
+G	0	13	#73dea1
+G	0	14	#73dea1
+G	0	15	#73dea1
+G	0	16	#73dea1
+G	0	17	#73dea1
+G	0	18	#73dea1
+U	0	0	QW1iZXIgZWNob2VzIGJleW9uZA==
+P	0	0	0-#ed71b8	QW1iZXI=	#ed71b8
+P	0	0	5-#aabbcc	IGVjaG9lcyA=	#aabbcc
+P	0	0	13-#73dea1	YmV5b25k	#73dea1
+U	0	1	bWJlciBlY2hvZXMgYmV5b25k
+P	0	1	1-#ed71b8	bWJlcg==	#ed71b8
+P	0	1	5-#aabbcc	IGVjaG9lcyA=	#aabbcc
+P	0	1	13-#73dea1	YmV5b25k	#73dea1
+U	0	9	b2VzIGJleW9uZA==
+P	0	9	9-#aabbcc	b2VzIA==	#aabbcc
+P	0	9	13-#73dea1	YmV5b25k	#73dea1
+C	1	RWNobyBlY2hvIGVjaG9lcyBFQ0hPX2VjaG8gZWNobyE=	#aabbcc
+E	1	ZWNobw==	#f00
+E	1	ZWNobyBsb25nd29yZA==	#0f0
+E	1	ZWNobw==	#00f
+E	1	ZWNob2Vz	#777
+R	1	0	4	#0f0	8
+R	1	5	9	#0f0	8
+R	1	10	16	#777	6
+R	1	27	31	#0f0	8
+G	1	0	#0f0
+G	1	1	#0f0
+G	1	2	#0f0
+G	1	3	#0f0
+G	1	5	#0f0
+G	1	6	#0f0
+G	1	7	#0f0
+G	1	8	#0f0
+G	1	10	#777
+G	1	11	#777
+G	1	12	#777
+G	1	13	#777
+G	1	14	#777
+G	1	15	#777
+G	1	27	#0f0
+G	1	28	#0f0
+G	1	29	#0f0
+G	1	30	#0f0
+U	1	0	RWNobyBlY2hvIGVjaG9lcyBFQ0hPX2VjaG8gZWNobyE=
+P	1	0	0-#0f0	RWNobw==	#0f0
+P	1	0	4-#aabbcc	IA==	#aabbcc
+P	1	0	5-#0f0	ZWNobw==	#0f0
+P	1	0	9-#aabbcc	IA==	#aabbcc
+P	1	0	10-#777	ZWNob2Vz	#777
+P	1	0	16-#aabbcc	IEVDSE9fZWNobyA=	#aabbcc
+P	1	0	27-#0f0	ZWNobw==	#0f0
+P	1	0	31-#aabbcc	IQ==	#aabbcc
+U	1	1	Y2hvIGVjaG8gZWNob2VzIEVDSE9fZWNobyBlY2hvIQ==
+P	1	1	1-#0f0	Y2hv	#0f0
+P	1	1	4-#aabbcc	IA==	#aabbcc
+P	1	1	5-#0f0	ZWNobw==	#0f0
+P	1	1	9-#aabbcc	IA==	#aabbcc
+P	1	1	10-#777	ZWNob2Vz	#777
+P	1	1	16-#aabbcc	IEVDSE9fZWNobyA=	#aabbcc
+P	1	1	27-#0f0	ZWNobw==	#0f0
+P	1	1	31-#aabbcc	IQ==	#aabbcc
+U	1	16	IEVDSE9fZWNobyBlY2hvIQ==
+P	1	16	16-#aabbcc	IEVDSE9fZWNobyA=	#aabbcc
+P	1	16	27-#0f0	ZWNobw==	#0f0
+P	1	16	31-#aabbcc	IQ==	#aabbcc
+C	2	5pif5YWJ5ZCR6L+c5pa5IOaYn+WFieWQkei/nOaWuQ==	#aabbcc
+E	2	5pif5YWJ	#f00
+E	2	5pif5YWJ5ZCR6L+c5pa5	#0f0
+E	2	5ZCR6L+c5pa5	#00f
+R	2	0	5	#0f0	5
+R	2	6	11	#0f0	5
+G	2	0	#0f0
+G	2	1	#0f0
+G	2	2	#0f0
+G	2	3	#0f0
+G	2	4	#0f0
+G	2	6	#0f0
+G	2	7	#0f0
+G	2	8	#0f0
+G	2	9	#0f0
+G	2	10	#0f0
+U	2	0	5pif5YWJ5ZCR6L+c5pa5IOaYn+WFieWQkei/nOaWuQ==
+P	2	0	0-#0f0	5pif5YWJ5ZCR6L+c5pa5	#0f0
+P	2	0	5-#aabbcc	IA==	#aabbcc
+P	2	0	6-#0f0	5pif5YWJ5ZCR6L+c5pa5	#0f0
+U	2	1	5YWJ5ZCR6L+c5pa5IOaYn+WFieWQkei/nOaWuQ==
+P	2	1	1-#0f0	5YWJ5ZCR6L+c5pa5	#0f0
+P	2	1	5-#aabbcc	IA==	#aabbcc
+P	2	1	6-#0f0	5pif5YWJ5ZCR6L+c5pa5	#0f0
+U	2	5	IOaYn+WFieWQkei/nOaWuQ==
+P	2	5	5-#aabbcc	IA==	#aabbcc
+P	2	5	6-#0f0	5pif5YWJ5ZCR6L+c5pa5	#0f0
+C	3	ZcyBIGUgZcyB	#aabbcc
+E	3	ZQ==	#de89ff
+R	3	0	1	#de89ff	1
+R	3	3	4	#de89ff	1
+R	3	5	6	#de89ff	1
+G	3	0	#de89ff
+G	3	2	#de89ff
+G	3	4	#de89ff
+U	3	0	ZcyBIGUgZcyB
+P	3	0	0-#de89ff	ZcyB	#de89ff
+P	3	0	1-#aabbcc	IA==	#aabbcc
+P	3	0	2-#de89ff	ZQ==	#de89ff
+P	3	0	3-#aabbcc	IA==	#aabbcc
+P	3	0	4-#de89ff	ZcyB	#de89ff
+U	3	1	IGUgZcyB
+P	3	1	1-#aabbcc	IA==	#aabbcc
+P	3	1	2-#de89ff	ZQ==	#de89ff
+P	3	1	3-#aabbcc	IA==	#aabbcc
+P	3	1	4-#de89ff	ZcyB	#de89ff
+U	3	2	ZSBlzIE=
+P	3	2	2-#de89ff	ZQ==	#de89ff
+P	3	2	3-#aabbcc	IA==	#aabbcc
+P	3	2	4-#de89ff	ZcyB	#de89ff
+C	4	8J+RqfCfj73igI3wn5K7IGZhbWlseSDwn5Go4oCN8J+RqeKAjfCfkafigI3wn5GmIPCfkanwn4+94oCN8J+Suw==	#aabbcc
+E	4	ZmFtaWx5	#abc
+E	4	8J+RqfCfj73igI3wn5K7	#def
+R	4	8	14	#abc	6
+G	4	2	#abc
+G	4	3	#abc
+G	4	4	#abc
+G	4	5	#abc
+G	4	6	#abc
+G	4	7	#abc
+U	4	0	8J+RqfCfj73igI3wn5K7IGZhbWlseSDwn5Go4oCN8J+RqeKAjfCfkafigI3wn5GmIPCfkanwn4+94oCN8J+Suw==
+P	4	0	0-#aabbcc	8J+RqfCfj73igI3wn5K7IA==	#aabbcc
+P	4	0	2-#abc	ZmFtaWx5	#abc
+P	4	0	8-#aabbcc	IPCfkajigI3wn5Gp4oCN8J+Rp+KAjfCfkaYg8J+RqfCfj73igI3wn5K7	#aabbcc
+U	4	1	IGZhbWlseSDwn5Go4oCN8J+RqeKAjfCfkafigI3wn5GmIPCfkanwn4+94oCN8J+Suw==
+P	4	1	1-#aabbcc	IA==	#aabbcc
+P	4	1	2-#abc	ZmFtaWx5	#abc
+P	4	1	8-#aabbcc	IPCfkajigI3wn5Gp4oCN8J+Rp+KAjfCfkaYg8J+RqfCfj73igI3wn5K7	#aabbcc
+U	4	6	bHkg8J+RqOKAjfCfkanigI3wn5Gn4oCN8J+RpiDwn5Gp8J+PveKAjfCfkrs=
+P	4	6	6-#abc	bHk=	#abc
+P	4	6	8-#aabbcc	IPCfkajigI3wn5Gp4oCN8J+Rp+KAjfCfkaYg8J+RqfCfj73igI3wn5K7	#aabbcc
+C	5	2YXYsdit2KjYpyDYqNin2YTYudin2YTZhQ==	#aabbcc
+E	5	2YXYsdit2KjYpw==	#f00
+E	5	2KjYp9mE2LnYp9mE2YU=	#0f0
+U	5	0	2YXYsdit2KjYpyDYqNin2YTYudin2YTZhQ==
+P	5	0	0-#aabbcc	2YXYsdit2KjYpyDYqNin2YTYudin2YTZhQ==	#aabbcc
+U	5	1	2LHYrdio2Kcg2KjYp9mE2LnYp9mE2YU=
+P	5	1	1-#aabbcc	2LHYrdio2Kcg2KjYp9mE2LnYp9mE2YU=	#aabbcc
+U	5	6	2KjYp9mE2LnYp9mE2YU=
+P	5	6	6-#aabbcc	2KjYp9mE2LnYp9mE2YU=	#aabbcc
+C	6	5ZCR6L+c5pa5IOaYn+WFiSDlm57lk40=	#aabbcc
+E	6	5ZCR6L+c5pa5	#8ab4f8
+E	6	5pif5YWJIOWbnuWTjQ==	#ef55ae
+R	6	0	3	#8ab4f8	3
+R	6	4	9	#ef55ae	5
+G	6	0	#8ab4f8
+G	6	1	#8ab4f8
+G	6	2	#8ab4f8
+G	6	4	#ef55ae
+G	6	5	#ef55ae
+G	6	6	#ef55ae
+G	6	7	#ef55ae
+G	6	8	#ef55ae
+U	6	0	5ZCR6L+c5pa5IOaYn+WFiSDlm57lk40=
+P	6	0	0-#8ab4f8	5ZCR6L+c5pa5	#8ab4f8
+P	6	0	3-#aabbcc	IA==	#aabbcc
+P	6	0	4-#ef55ae	5pif5YWJIOWbnuWTjQ==	#ef55ae
+U	6	1	6L+c5pa5IOaYn+WFiSDlm57lk40=
+P	6	1	1-#8ab4f8	6L+c5pa5	#8ab4f8
+P	6	1	3-#aabbcc	IA==	#aabbcc
+P	6	1	4-#ef55ae	5pif5YWJIOWbnuWTjQ==	#ef55ae
+U	6	4	5pif5YWJIOWbnuWTjQ==
+P	6	4	4-#ef55ae	5pif5YWJIOWbnuWTjQ==	#ef55ae
+C	7	6rCA64KY64ukIOOCq+OCv+OCq+ODiiDjkIAg5ryi5a2X	#aabbcc
+E	7	6rCA64KY64uk	#abc
+E	7	44Kr44K/44Kr44OK	#def
+E	7	45CA	#f00
+E	7	5ryi5a2X	#0f0
+R	7	0	3	#abc	3
+R	7	4	8	#def	4
+R	7	11	13	#0f0	2
+G	7	0	#abc
+G	7	1	#abc
+G	7	2	#abc
+G	7	4	#def
+G	7	5	#def
+G	7	6	#def
+G	7	7	#def
+G	7	11	#0f0
+G	7	12	#0f0
+U	7	0	6rCA64KY64ukIOOCq+OCv+OCq+ODiiDjkIAg5ryi5a2X
+P	7	0	0-#abc	6rCA64KY64uk	#abc
+P	7	0	3-#aabbcc	IA==	#aabbcc
+P	7	0	4-#def	44Kr44K/44Kr44OK	#def
+P	7	0	8-#aabbcc	IOOQgCA=	#aabbcc
+P	7	0	11-#0f0	5ryi5a2X	#0f0
+U	7	1	64KY64ukIOOCq+OCv+OCq+ODiiDjkIAg5ryi5a2X
+P	7	1	1-#abc	64KY64uk	#abc
+P	7	1	3-#aabbcc	IA==	#aabbcc
+P	7	1	4-#def	44Kr44K/44Kr44OK	#def
+P	7	1	8-#aabbcc	IOOQgCA=	#aabbcc
+P	7	1	11-#0f0	5ryi5a2X	#0f0
+U	7	6	44Kr44OKIOOQgCDmvKLlrZc=
+P	7	6	6-#def	44Kr44OK	#def
+P	7	6	8-#aabbcc	IOOQgCA=	#aabbcc
+P	7	6	11-#0f0	5ryi5a2X	#0f0
+C	8	SSDEsCBpIMSxIF8z	#aabbcc
+E	8	xLA=	#123
+E	8	XzM=	#456
+E	8	ICAg	#fff
+R	8	0	1	#123	1
+R	8	4	5	#123	1
+R	8	8	10	#456	2
+G	8	0	#123
+G	8	4	#123
+G	8	8	#456
+G	8	9	#456
+U	8	0	SSDEsCBpIMSxIF8z
+P	8	0	0-#123	SQ==	#123
+P	8	0	1-#aabbcc	IMSwIA==	#aabbcc
+P	8	0	4-#123	aQ==	#123
+P	8	0	5-#aabbcc	IMSxIA==	#aabbcc
+P	8	0	8-#456	XzM=	#456
+U	8	1	IMSwIGkgxLEgXzM=
+P	8	1	1-#aabbcc	IMSwIA==	#aabbcc
+P	8	1	4-#123	aQ==	#123
+P	8	1	5-#aabbcc	IMSxIA==	#aabbcc
+P	8	1	8-#456	XzM=	#456
+U	8	5	IMSxIF8z
+P	8	5	5-#aabbcc	IMSxIA==	#aabbcc
+P	8	5	8-#456	XzM=	#456
+C	9	ZWNob8KFZWNobyBlY2hv77u/ZWNobw==	#aabbcc
+E	9	ZWNob8KFZWNobw==	#abc
+E	9	ZWNob++7v2VjaG8=	#def
+R	9	0	4	#def	4
+R	9	5	9	#def	4
+R	9	10	14	#def	4
+R	9	15	19	#def	4
+G	9	0	#def
+G	9	1	#def
+G	9	2	#def
+G	9	3	#def
+G	9	5	#def
+G	9	6	#def
+G	9	7	#def
+G	9	8	#def
+G	9	10	#def
+G	9	11	#def
+G	9	12	#def
+G	9	13	#def
+G	9	15	#def
+G	9	16	#def
+G	9	17	#def
+G	9	18	#def
+U	9	0	ZWNob8KFZWNobyBlY2hv77u/ZWNobw==
+P	9	0	0-#def	ZWNobw==	#def
+P	9	0	4-#aabbcc	woU=	#aabbcc
+P	9	0	5-#def	ZWNobw==	#def
+P	9	0	9-#aabbcc	IA==	#aabbcc
+P	9	0	10-#def	ZWNobw==	#def
+P	9	0	14-#aabbcc	77u/	#aabbcc
+P	9	0	15-#def	ZWNobw==	#def
+U	9	1	Y2hvwoVlY2hvIGVjaG/vu79lY2hv
+P	9	1	1-#def	Y2hv	#def
+P	9	1	4-#aabbcc	woU=	#aabbcc
+P	9	1	5-#def	ZWNobw==	#def
+P	9	1	9-#aabbcc	IA==	#aabbcc
+P	9	1	10-#def	ZWNobw==	#def
+P	9	1	14-#aabbcc	77u/	#aabbcc
+P	9	1	15-#def	ZWNobw==	#def
+U	9	9	IGVjaG/vu79lY2hv
+P	9	9	9-#aabbcc	IA==	#aabbcc
+P	9	9	10-#def	ZWNobw==	#def
+P	9	9	14-#aabbcc	77u/	#aabbcc
+P	9	9	15-#def	ZWNobw==	#def

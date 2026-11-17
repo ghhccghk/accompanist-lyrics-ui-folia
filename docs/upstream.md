@@ -1350,3 +1350,23 @@ parity. Same-current-source image comparisons, source4-hash observer variation,
 unchanged168 static/sweep native PNGs and reproduction are documented in
 verification/pendolo-width. Android APK/Desktop compile and full Pendolo tests
 pass; no public theme/device/whole-theme acceptance.
+
+## 2026-11-17 Pendolo keyword ranges / colored sweep
+
+cc6226e4 `wordColoring.ts` prepareWordColorMatchers /
+buildWordColorRangesFromMatchers / resolveTokenColorMap and
+`pendolo/pendoloColorRuns.ts` → `PendoloColoring.kt`. Preserve AGPL-3.0-only
+attribution. Generic typed colors replace CSS strings in native callers; preserve
+UTF-16-priority overlaps, ASCII matching, exact CJK phrase ranges, global EGC
+coverage and coalesced runs. Do not substitute Cadenza's different token matcher.
+10 original cases/281 fixture rows match. `PendoloSweepTarget.kt` paints complete
+shaped paragraphs through prepared range paths then the unchanged gradient;
+internal wheel accepts the same ink, no EGC/ligature re-shaping or timing loss.
+
+Actual original sweep88 pairs/176 exact layout observations; mean foreground
+MAE5.799414/peak9.237356 remains. Pause/random seek/resize/remount and palette
+restore/visible ink checks pass,312 existing native default PNGs unchanged.
+Initial stale no-palette source-host capture rejected; source guards/reproduction
+and exact-start source PNG variability are documented in verification/pendolo-color-sweep.
+Android APK/Desktop compile pass; chorus, colored full-wheel and device/final
+visual acceptance still pending, no public selector.

@@ -36,7 +36,7 @@ come from passive React props observation rather than guessed visible targets.
 
 210 pairs / 594 original rows; native random revisit of every probe, fixed-media
 pause, unmount/remount, reduced-motion pause, and exact source presence/draw order
-all pass. Mean foreground RGB MAE **3.390252085680098**; maximum bubble/avatar
+all pass. Mean foreground RGB MAE **3.393810053541433**; maximum bubble/avatar
 geometry residual **3.6372003149749617 px**, group×row opacity residual
 **0.013715527333574395**. These are measured residuals, not new acceptance bounds.
 Existing settled-target 0.001 px assertions have not changed. See comparison.json,
@@ -49,10 +49,12 @@ order, separate avatar fade and timestamp response. No frame accumulation or
 background animation coroutine drives these values; pause and arbitrary seeks
 reconstruct directly from the prepared media events.
 
-Remaining work: RAF millisecond/sample and CSS fractional flow differences;
-complex shaping/raster/shadows; source layout projection interruptions under
-overlap, rapid removal/reappearance and viewport changes; core/public bridge and
-device validation. Text-only color avatars deliberately use no unknown assets;
+Keyed reentry/cancelled exits and frozen popLayout boxes are now covered by the
+separate ../cappella-presence matrix. Identity/order passes there; rapid projection
+still differs materially. Remaining work: RAF millisecond/sample and CSS fractional
+flow differences; complex shaping/raster/shadows; source layout projection
+interruptions under overlap/rapid removal/reappearance and viewport changes;
+core/public bridge and device validation. Text-only color avatars use no unknown assets;
 emoji/image message support is absent, not an equivalent replacement.
 
 ## Diagnostics preserved

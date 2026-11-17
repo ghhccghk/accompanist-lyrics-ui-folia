@@ -45,7 +45,7 @@ internal fun CappellaTargetStage(lines:List<CappellaLine>,title:String,time:()->
         } }
         val current by remember { derivedStateOf { selected() } }
         SideEffect { observer(rows) }
-        for((index,row) in rows.withIndex()) key(row.message.id,index) {
+        for((index,row) in rows.withIndex()) key(row.message.id) {
             val motion=moving?.get(index)
             val m=row.message;val line=m.line?.let(lines::get)
             val active=motion?.active?:(line!=null&&m.line==current)

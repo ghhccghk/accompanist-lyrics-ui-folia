@@ -1197,3 +1197,22 @@ selected-line React updates are preserved; forced parent-RAF stress diagnostics
 remain separately reproducible.210 original/native pairs,594 row observations,
 exact presence/order and deterministic revisit/pause; geometry3.637201px and
 opacity0.013716 residuals remain. This is not full theme/device acceptance.
+
+## 2026-11-17 Cappella keyed presence interruptions
+
+Same pinned source row/presence behavior → `CappellaPresence.kt` and event episodes
+in `CappellaPlaybackPreparation.kt`. Original dependency runtime
+framer-motion13.4.3 `components/AnimatePresence/{index,PresenceChild,PopChild}.mjs`
+was inspected as an MIT behavior oracle: keyed reentry cancels exit, completed
+children are removed as a batch, PopChild fixes integer offsetTop/computed height.
+No React/Motion source/runtime is copied into the library. Native equations use
+the previously verified source-config tween, with immutable media-event retargets.
+Exiting source components retain old props plus MotionValue reveal subscriptions;
+native now retains those prefix/size events until unmount as well.
+
+240 pairs/999 rows for rapid micro and overlapping lines, exact source presence
+and drawing order now pass; initial duplicate-instance failures are preserved.
+Pause/random revisit/remount are deterministic. Visual projection still differs
+up to40.109467px (MAE13.291426), explicitly not accepted. See
+verification/cappella-presence. Regular geometry remains3.637201px, not a device
+claim or a relaxed acceptance threshold.

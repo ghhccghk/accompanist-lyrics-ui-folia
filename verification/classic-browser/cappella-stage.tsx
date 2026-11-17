@@ -9,8 +9,18 @@ for(const[name,url]of[['Cappella Latin',latinUrl],['Cappella Arabic',arabicUrl],
 const q=new URLSearchParams(location.search),scene=q.get('scene')??'latin',intensity=q.get('intensity')??'normal';
 const decode=(s:string)=>new TextDecoder().decode(Uint8Array.from(atob(s),c=>c.charCodeAt(0)));
 const f=raw.split(/\r?\n/).find(r=>r.split('\t')[0]===scene)!.split('\t');
-const lines=annotateLyricLines(Array.from({length:8},(_,i)=>({fullText:decode(f[1]),startTime:+f[2]+i*4,endTime:+f[3]+i*4,
- words:f[4].split('|').map(s=>{const w=s.split('~');return{text:decode(w[0]),startTime:+w[1]+i*4,endTime:+w[2]+i*4}})})));
+const timeline=q.get('timeline')??'regular';
+const starts=timeline==='rapid'?Array.from({length:8},(_,i)=>.7+i*.08):[.7,.78,1.1,1.11,1.22,1.3,2,2.01];
+const ends=timeline==='rapid'?starts.map(t=>t+.03):[3,.81,1.15,1.18,2.7,1.35,2.04,2.09];
+const lines=annotateLyricLines(Array.from({length:8},(_,i)=>{
+ const start=timeline==='regular'?+f[2]+i*4:starts[i],end=timeline==='regular'?+f[3]+i*4:ends[i];
+ const stretch=timeline==='regular'?1:(end-start)/(+f[3]-+f[2]);
+ return{fullText:decode(f[1]),startTime:start,endTime:end,
+  words:f[4].split('|').map(s=>{const w=s.split('~');return{text:decode(w[0]),
+   startTime:timeline==='regular'?+w[1]+i*4:start+(+w[1]-+f[2])*stretch,
+   endTime:timeline==='regular'?+w[2]+i*4:start+(+w[2]-+f[2])*stretch}})};
+}));
+(window as any).stageInputs=lines;
 const theme={fontFamily:scene==='arabic'?'Cappella Arabic':scene==='cjk'?'Cappella CJK':'Cappella Latin',fontWeight:700,fontStyle:'sans',animationIntensity:intensity,
  primaryColor:'#dfe5ec',accentColor:'#f17b4d',secondaryColor:'#adb9c8',backgroundColor:'#162435'};
 const root=createRoot(document.querySelector('#root')!);let media:any,lastCurrent:number;

@@ -2,12 +2,13 @@
 No phase alignment, shared source geometry, screenshot registration or tolerance fitting.
 """
 from pathlib import Path
-import json,hashlib
+import json,hashlib,sys
 import numpy as np
 from PIL import Image,ImageDraw
 root=Path(__file__).resolve().parents[1]
-source=root/'build/verification/cappella-playback-browser';native=root/'build/verification/cappella-playback-kotlin'
-out=root/'verification/cappella-playback';out.mkdir(exist_ok=True)
+matrix='presence'if'--presence'in sys.argv else'playback'
+source=root/f'build/verification/cappella-{matrix}-browser';native=root/f'build/verification/cappella-{matrix}-kotlin'
+out=root/f'verification/cappella-{matrix}';out.mkdir(exist_ok=True)
 background=np.array([22,36,53]);frames=[];hashes={};numeric=[];mismatches=[]
 for f in sorted(source.glob('*.png')):
     other=native/f.name
@@ -18,9 +19,10 @@ for f in sorted(source.glob('*.png')):
     diff=abs(a-b)
     frames.append(dict(file=f.name,foreground_mae=float(diff[mask].mean())if mask.any()else 0,full_mae=float(diff.mean())))
     for p in[f,other]:hashes[p.relative_to(root).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
-assert len(frames)==210, len(frames)
+expected=sum(1 for r in(root/f'verification/cappella-fixtures/{matrix}-frames.tsv').read_text().splitlines()if r and not r.startswith('#'))
+assert len(frames)==expected,(len(frames),expected)
 def rows(path):return[r.split('\t')for r in path.read_text(encoding='utf-8').splitlines()if r and not r.startswith('#')]
-original=rows(root/'verification/cappella-fixtures/playback-observations.tsv')
+original=rows(root/f'verification/cappella-fixtures/{matrix}-observations.tsv')
 actual=[r for p in native.glob('*-geometry.tsv')for r in rows(p)]
 for file in sorted(set(r[0]for r in original)):
     a=[r for r in original if r[0]==file];b=[r for r in actual if r[0]==file]
@@ -40,6 +42,10 @@ report=dict(conditions=json.loads((source/'conditions.json').read_text(encoding=
 (out/'comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 names=['latin-380-480-normal-800.png','latin-380-480-chaotic-3200.png','latin-380-480-normal-8800.png',
     'wrap-800-600-normal-9100.png','arabic-800-600-normal-12750.png','cjk-1200-600-normal-14000.png']
+if matrix=='presence':
+    names=[next(f.name for f in sorted(source.glob(pattern)))for pattern in[
+        'rapid-normal-*-857000.png','rapid-normal-*-937000.png','rapid-chaotic-*-1300000.png',
+        'overlap-calm-*-1190000.png','overlap-normal-*-1367000.png','overlap-chaotic-*-2000000.png']]
 sheet=Image.new('RGB',(1200,len(names)*330),(30,30,30));draw=ImageDraw.Draw(sheet)
 for i,name in enumerate(names):
     for j,folder in enumerate([source,native]):

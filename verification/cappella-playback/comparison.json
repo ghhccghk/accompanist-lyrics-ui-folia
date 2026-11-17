@@ -29,7 +29,7 @@
     "scope": "Actual original complete JSX stays mounted from media0 through14s. Original RAF queue at60Hz plus exact probes,one task per tick. Media MotionValue updates each tick; React host props update only on changed selection,matching source usePlaybackStore separation. Original row/size/spring/layout/timestamp Motion runs. Native WAAPI uses original startTime on media clock,original onfinish delivered once;CSS transition phases use creation time. Glyph fade/sweep explicitly media-anchored. No original assets. Passive React fiber props identify popLayout exits without modifying source. Forced parent-every-RAF diagnostics preserved separately."
   },
   "status": "Internal moving-stage calibration, not final Cappella acceptance. Full mounted transition/layout residuals below remain required work.",
-  "mean_foreground_mae": 3.390252085680098,
+  "mean_foreground_mae": 3.393810053541433,
   "maximum_geometry_error": 3.6372003149749617,
   "maximum_opacity_error": 0.013715527333574395,
   "presence_mismatches": [],
@@ -531,18 +531,18 @@
     },
     {
       "file": "latin-380-480-calm-8700.png",
-      "foreground_mae": 1.8988471119865593,
-      "full_mae": 0.44747258771929826
+      "foreground_mae": 1.933095906805262,
+      "full_mae": 0.45220211988304093
     },
     {
       "file": "latin-380-480-calm-8720.png",
-      "foreground_mae": 2.442691695172401,
-      "full_mae": 0.5094883040935673
+      "foreground_mae": 2.6198203772452846,
+      "full_mae": 0.5461586257309942
     },
     {
       "file": "latin-380-480-calm-8800.png",
-      "foreground_mae": 3.2295785672802566,
-      "full_mae": 0.5257620614035088
+      "foreground_mae": 3.237023850106688,
+      "full_mae": 0.5267269736842105
     },
     {
       "file": "latin-380-480-calm-9000.png",
@@ -706,18 +706,18 @@
     },
     {
       "file": "latin-380-480-chaotic-8700.png",
-      "foreground_mae": 1.9936082122201593,
-      "full_mae": 0.43022112573099414
+      "foreground_mae": 2.0318369436534094,
+      "full_mae": 0.4351297514619883
     },
     {
       "file": "latin-380-480-chaotic-8720.png",
-      "foreground_mae": 4.2123158642413765,
-      "full_mae": 0.7924908625730994
+      "foreground_mae": 4.374269186429513,
+      "full_mae": 0.821281067251462
     },
     {
       "file": "latin-380-480-chaotic-8800.png",
-      "foreground_mae": 3.512619559263473,
-      "full_mae": 0.6805043859649123
+      "foreground_mae": 3.5425065824117956,
+      "full_mae": 0.6856578947368421
     },
     {
       "file": "latin-380-480-chaotic-9000.png",
@@ -881,18 +881,18 @@
     },
     {
       "file": "latin-380-480-normal-8700.png",
-      "foreground_mae": 2.0212592234184106,
-      "full_mae": 0.4566794590643275
+      "foreground_mae": 2.0571189634152485,
+      "full_mae": 0.46148026315789475
     },
     {
       "file": "latin-380-480-normal-8720.png",
-      "foreground_mae": 3.365862251189008,
-      "full_mae": 0.6796710526315789
+      "foreground_mae": 3.60358018923023,
+      "full_mae": 0.7242891081871345
     },
     {
       "file": "latin-380-480-normal-8800.png",
-      "foreground_mae": 3.3607721198747313,
-      "full_mae": 0.618093932748538
+      "foreground_mae": 3.385475856229249,
+      "full_mae": 0.6222368421052632
     },
     {
       "file": "latin-380-480-normal-9000.png",
@@ -1285,11 +1285,11 @@
     "build/verification/cappella-playback-browser/latin-380-480-calm-860.png": "63b0514b81588668c7d2ba3c6f1591f4d123da039391a9db9aef1ce881515f06",
     "build/verification/cappella-playback-kotlin/latin-380-480-calm-860.png": "6a07e6517089e34023ab3577e40ad91c388092ea0f5aef975f08eaab45125414",
     "build/verification/cappella-playback-browser/latin-380-480-calm-8700.png": "72ee7a63e1fe6daed05e6a484d8c75435d158ab121012cad8e59ae1076a8315a",
-    "build/verification/cappella-playback-kotlin/latin-380-480-calm-8700.png": "d072c266f14f0a9fa3dfd98b2ef5bece1a09025e996665aa6bb9d37d20a00393",
+    "build/verification/cappella-playback-kotlin/latin-380-480-calm-8700.png": "8b364958de3eb0ed9a952c0b5122a4f98ddf4ac0ff44a01d8eaf73736db04b7a",
     "build/verification/cappella-playback-browser/latin-380-480-calm-8720.png": "8d3816591fb5cb9d5ae0cef85b2d7e9092717ec5b2cf533eeffcabbafd36c69e",
-    "build/verification/cappella-playback-kotlin/latin-380-480-calm-8720.png": "c24c7416e85419c108e9cc35f3f66cff2d845492fe230e1fe2719ebf6dbd0e8c",
+    "build/verification/cappella-playback-kotlin/latin-380-480-calm-8720.png": "0250befeb1b69d1616491820e989e934347ce07f00a2eec9ed4d078f06edbb42",
     "build/verification/cappella-playback-browser/latin-380-480-calm-8800.png": "af4181944daeffec649eb6458111dcf81352140f230b0845105525242b45edaf",
-    "build/verification/cappella-playback-kotlin/latin-380-480-calm-8800.png": "ade1058795398d42d72f363843c9d877fb2cc97c12fbfc97c893ca141189d295",
+    "build/verification/cappella-playback-kotlin/latin-380-480-calm-8800.png": "af7aa331e00b8c676528a6824cb3241eaa72a1029e8379df4ecc398010163786",
     "build/verification/cappella-playback-browser/latin-380-480-calm-9000.png": "83757d1336316495e06408cd94c4b74f2d9cf10436b48b9df87a3ff726848042",
     "build/verification/cappella-playback-kotlin/latin-380-480-calm-9000.png": "3d1987ad32072d68fd9bd22d499cb0cdc1b375c75a7a9ec834e5b01723abad87",
     "build/verification/cappella-playback-browser/latin-380-480-calm-9100.png": "0930db7405d309d026c2356adb5c490eedbead5d6a88dd7ea4948d6f9cba6196",
@@ -1355,11 +1355,11 @@
     "build/verification/cappella-playback-browser/latin-380-480-chaotic-860.png": "cc89d307b75f3b4e1c8577cf4f4b693fbbd85907061c9f589db2cea65bc6f6cb",
     "build/verification/cappella-playback-kotlin/latin-380-480-chaotic-860.png": "3c4ffd4966e83526eaa6b8ea64a71451ecee2754b508fefd135d09348e861b89",
     "build/verification/cappella-playback-browser/latin-380-480-chaotic-8700.png": "533bb5f9dfec6efb1c475b82d35a3250a606cc9dd3d1eee9e25a5fc8caf176e1",
-    "build/verification/cappella-playback-kotlin/latin-380-480-chaotic-8700.png": "f7aa5cd5eea0a2e57fa8983e13140d22e9ceb40b0ecb916396362b85318ce185",
+    "build/verification/cappella-playback-kotlin/latin-380-480-chaotic-8700.png": "9d5e9984cc5616db9d019856b7e58b0532e9ad403d8a8ecdcfb29819352caba2",
     "build/verification/cappella-playback-browser/latin-380-480-chaotic-8720.png": "9116eec9235566c1bfc134864e87494b41a75748d7275132d7ad995bdc731b43",
-    "build/verification/cappella-playback-kotlin/latin-380-480-chaotic-8720.png": "74dcae3c938e4f7ec3a75daa083b10567612bafb3e7baf0268bed014143f5eef",
+    "build/verification/cappella-playback-kotlin/latin-380-480-chaotic-8720.png": "e3e842326c2980324477d81d5d43ff24d8d808331979ffbe52a6071a32608042",
     "build/verification/cappella-playback-browser/latin-380-480-chaotic-8800.png": "26cb923d3c6705c6af72caff76f496189d30a35ceb1148645cac6c85d0ae3533",
-    "build/verification/cappella-playback-kotlin/latin-380-480-chaotic-8800.png": "23a289b2caafc5e6545e5ba5032444033d2af95475ebc7be63421483b293622e",
+    "build/verification/cappella-playback-kotlin/latin-380-480-chaotic-8800.png": "b2e4c871f9e488dcb9116e176365126068e64eff8fa0b563f9d747f4160cdad2",
     "build/verification/cappella-playback-browser/latin-380-480-chaotic-9000.png": "467716845358d6a4ad248d0eddd0d69604557146103b5dbb6333d76b31675748",
     "build/verification/cappella-playback-kotlin/latin-380-480-chaotic-9000.png": "2ed2b781e5a8b46ca4001c366196f06d71a821a24918fe4ec150c349b14a9f2b",
     "build/verification/cappella-playback-browser/latin-380-480-chaotic-9100.png": "de2318d2fb4ce63207804620ffef7c26b0998387509c7f5d27e0ecbfa98d42fd",
@@ -1425,11 +1425,11 @@
     "build/verification/cappella-playback-browser/latin-380-480-normal-860.png": "c30f30c8a8159194b35f90055dd27ef5cad5dcbd548f0fa42edc0f7ae91cd3f4",
     "build/verification/cappella-playback-kotlin/latin-380-480-normal-860.png": "43aa942c62f917d4f9e52f7295472019222abcf058b1731e4102daafcec42570",
     "build/verification/cappella-playback-browser/latin-380-480-normal-8700.png": "0581b6e5cf9d75c5e49158182f54be31c35a67da864379f1b01afee3fe2b94ee",
-    "build/verification/cappella-playback-kotlin/latin-380-480-normal-8700.png": "5057efab821288d94337b4ee1a27b46547a0792ace799ed8f54c19a644e60df1",
+    "build/verification/cappella-playback-kotlin/latin-380-480-normal-8700.png": "7bd9ae9067d5f9c2e1de64647baf01df0487584f454d6ab7f95586ba4843610c",
     "build/verification/cappella-playback-browser/latin-380-480-normal-8720.png": "139eeec7c97e249f7f0b5e83fb3a8dcaae7f6f2638f93d43e51e639099077fe3",
-    "build/verification/cappella-playback-kotlin/latin-380-480-normal-8720.png": "f35bd3ad58b053b16db766afcf4e3a538de2c68484b14a95ab7d6ba4d597e873",
+    "build/verification/cappella-playback-kotlin/latin-380-480-normal-8720.png": "7eb9c29685d2665ecadec3df49e2d1afd7cab70229efdc1dd64ed96d49662a9a",
     "build/verification/cappella-playback-browser/latin-380-480-normal-8800.png": "888d4b75e1a0af7d59698448bdb7d8b98aaaee9b44e1054bf7a51245555cd56f",
-    "build/verification/cappella-playback-kotlin/latin-380-480-normal-8800.png": "3a5f51276af82ded17419df038d708e433d2f1e1e8c32960dcf2da9fb40921cd",
+    "build/verification/cappella-playback-kotlin/latin-380-480-normal-8800.png": "b39e3bef0b1a0e5ff3b8776d290e1739ff61f1105f1e0f329df0d77475e232b2",
     "build/verification/cappella-playback-browser/latin-380-480-normal-9000.png": "56a28538bbbd6d971375367a0219d74e9aa4bfd7a9d215e6643cbdfc9c4492b6",
     "build/verification/cappella-playback-kotlin/latin-380-480-normal-9000.png": "916331ec12a4e0f80f7d5c8d6be75bff8f5b1c97152413984b524fefde937dc1",
     "build/verification/cappella-playback-browser/latin-380-480-normal-9100.png": "a0bd5222c82df47dd8102723e87e111ff6254461920a95ec885fff52758ff0df",

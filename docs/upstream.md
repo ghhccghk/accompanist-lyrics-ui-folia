@@ -1410,3 +1410,15 @@ visual acceptance still pending, no public selector.
 - Real original alternate-palette24 pairs plus24 rotation controls,1202 older
   native hashes unchanged. Reproduction and remaining raster limits:
   `verification/pendolo-palette-stage`. Still internal, not final-theme support.
+
+## Pendolo published-core adapter and render hints (2026-11-17)
+
+- `PendoloCoreAdapter.kt` is independently written against actual lyrics-core0.5.0
+  model/this project's normalizer. Keeps source object identity and raw syllable
+  clocks; only unsafe display-EGC boundaries coalesce, with nested pieces intact.
+- `PendoloRenderHints.kt` adapts `utils/lyrics/renderHints.ts` from pinned
+  cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only; original arithmetic
+  order/seconds thresholds retained. Source generator and56 cases verify this.
+- Existing published package com.mocharealm is an external model import, not an
+  unrenamed project package. No original Apache implementation is copied/modified.
+- Details/failure evidence/remaining public-entry work: `verification/pendolo-core`.

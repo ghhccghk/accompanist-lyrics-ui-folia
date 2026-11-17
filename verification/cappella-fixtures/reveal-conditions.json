@@ -1,0 +1,69 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "cases": 55,
+  "glyphs": 565,
+  "queries": 3172,
+  "method": "Unchanged source modules loaded by Vite SSR; Intl.Segmenter enabled. Native uses EGC display and media-time fade; source DOM codepoint mismatch recorded, not emulated.",
+  "sources": [
+    {
+      "file": "src/utils/lyrics/graphemeTiming.ts",
+      "sha256": "76ca4929c7658486a793545114c249b5c7178d4ac6fa905a2d06b066576ede35"
+    },
+    {
+      "file": "src/components/visualizer/cappella/cappellaReveal.ts",
+      "sha256": "1f55d6092c1dac35cfac4e06f074a4dc6a7353e4e58b21225eb262b58573001a"
+    }
+  ],
+  "unicode_display_discrepancies": [
+    {
+      "case": "case9",
+      "text": "é 👩🏽‍🚀 🇨🇳!",
+      "metrics_graphemes": [
+        "é",
+        " ",
+        "👩🏽‍🚀",
+        " ",
+        "🇨🇳",
+        "!"
+      ],
+      "dom_codepoints": [
+        "e",
+        "́",
+        " ",
+        "👩",
+        "🏽",
+        "‍",
+        "🚀",
+        " ",
+        "🇨",
+        "🇳",
+        "!"
+      ]
+    },
+    {
+      "case": "case11",
+      "text": "क्यों नमस्ते",
+      "metrics_graphemes": [
+        "क्यों",
+        " ",
+        "न",
+        "म",
+        "स्ते"
+      ],
+      "dom_codepoints": [
+        "क",
+        "्",
+        "य",
+        "ो",
+        "ं",
+        " ",
+        "न",
+        "म",
+        "स",
+        "्",
+        "त",
+        "े"
+      ]
+    }
+  ]
+}

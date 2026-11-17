@@ -997,3 +997,29 @@ Random target queries and pause pixel repeats identical; JVM and both builds
 passed. No Android device run, visible window, source RAF-equivalent media
 animation, chorus ripple or public selector claim. Evidence: verification/
 cadenza-targets; reproduction in cadenza-fixtures/README.md.
+
+
+## 2026-11-17 Cappella grapheme/reveal core
+
+Fixed source cc6226e464050a456a2913e062374f23d3844cc5 (AGPL-3.0-only):
+`src/utils/lyrics/graphemeTiming.ts` and
+`src/components/visualizer/cappella/cappellaReveal.ts` →
+`library/.../internal/styles/cappella/CappellaReveal.kt`.
+Word/syllable matching, gaps with next word, trailing punctuation at latest
+resolved end, 40ms minimum fades, timestamp-after-fade and .2s width lookahead
+retained. Binary-search order, including malformed non-monotonic input, is
+not silently sorted. Immutable queries support direct forward/reverse seeks.
+
+Platform adjustment: one displayed EGC never becomes independent UTF-16/codepoint
+sprites. A source syllable cutting an EGC is mapped to the covering timing union;
+raw syllables remain in the input. Original DOM getCharacterRevealPlan uses
+Array.from (codepoints), while its metrics use graphemes. Two actual discrepancy
+cases (combining/ZWJ/flag and Indic) recorded in reveal-conditions.json, not hidden
+as upstream equivalence. No renderer/public preview yet. No assets copied.
+
+Unchanged pinned modules executed by Vite SSR:55 cases,565 glyphs,3172 time queries.
+Native starts/ends/timestamp tolerance1e-10, fade milliseconds1e-8; shuffled and
+reverse queries exact. Unsafe parser cuts separately checked. Android APK and
+Desktop compilation passed; no device/UI/visual parity claim for this core.
+Reproduce: node verification/classic-browser/generate-cappella-reveal.mjs;
+gradlew.bat :library:jvmTest --tests '*CappellaRevealTest'.

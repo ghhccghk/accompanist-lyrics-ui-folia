@@ -8,13 +8,13 @@
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
-| Diorama | 路径/摆位/冻结透视、core文字分组/内部时钟 | 无 | 运镜/揭示/合成与设备尚未实现 |
+| Diorama | core分组/内部时钟、完整文字透视、三层合成、13镜头目标隔离核对 | 无 | 完整rig/朝向/切曲、深度/栅格/设备尚未验收 |
 
-当前唯一下一项：将原镜台shot/read-head/hold/drift镜头目标接到现有完整文字透视管线。
-完成条件：真实原函数数值矩阵及同文字/视口/时间的非冻结视点对照，保留CameraRig
-阻尼/朝向回正/跨曲飞行尚未完成项，不用目标轨迹冒充完整连续rig；不开放Diorama。
-注册halo/soul/base三层隔离合成已运行，最低alpha范围仍差21px；完整塑形切片
-的overhang/混合bidi、Android中线、雾/深度与设备仍未验收。
+当前唯一下一项：修复已开放Fume短bridge/总览镜头的原版连续对照残差。
+完成条件：从真实源时序/公式定位差异，同一mounted矩阵复核位置/速度/滤波焦点，
+保留失败，不用固定延迟或改阈值通过；优先可用预览中影响观感的差异。
+镜台有界文字/透视/材质/镜头目标探针已完成；后续完整rig/回正/切曲、weighted picker、
+near/depth/fog、Android中线、overhang/混合bidi与设备仍未完成，不开放Diorama。
 Fume短bridge/总览仍未修复：mounted原版与当前连续模型在3.15s、10s差最大；
 扩展完整pose的本地诊断保存在.work/FumeMountedPublicTest-diagnostic.kt及
 .work/fume-camera-diagnostic.log、build/verification/fume-mounted-kotlin/*.tsv。
@@ -108,10 +108,16 @@ ffd64e2 镜台活动正文/渐变绘制：ONE完整塑形段落按显示单元�
 字号/原线性色/逐单元时间、暂停/seek/重挂、时间变化不重备文字通过；两端构建通过。
 无设备/真实窗口；混合bidi与跨单元overhang未完成验收，证据verification/diorama-active-base。
 
-镜台注册辉光/灵魂层：实际原纹理/三层材质180对（媒体解析包络注入，非原RAF），
+49529b1 镜台注册辉光/灵魂层：实际原纹理/三层材质180对（媒体解析包络注入，非原RAF），
 同源层序/深度偏移/局部抬升放大/共享词色；材质字段峰1.771e-8、暂停/seek/重挂通过。
 原shadowColor先于blur的量化顺序已校正，原失败保留；全前景MAE4.427326、范围峰21px
 未最终验收。两端构建/JVM离屏通过，无设备/真实窗口；见verification/diorama-active-layers。
+
+镜台镜头目标：13shot/read-head/hold/drift、缓存EGC/方向/renderEnd与原CameraRig
+私有块2808组11字段峰1.066e-14；132张同文字三层原Three与Kotlin自产镜头图，
+世界pose峰3.553e-15、全前景MAE5.773035/范围峰20px。非原完整rig、不是正式验收；
+原target极端位置也裁词，不能以此降低最终标准。两端构建/JVM离屏通过，无设备/
+真窗口；证据verification/diorama-camera-targets，source段落hash保留，未改原代码。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

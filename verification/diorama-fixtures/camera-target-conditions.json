@@ -1,0 +1,145 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "cases": 2808,
+  "seed": "DioramaProbe",
+  "shots": [
+    "pushIn",
+    "pullBack",
+    "orbit",
+    "track",
+    "crane",
+    "hold",
+    "swell",
+    "spiral",
+    "pendulum",
+    "flyby",
+    "arc",
+    "float",
+    "glide"
+  ],
+  "inputLines": [
+    {
+      "fullText": "Synthetic mirror plane",
+      "startTime": 0.7,
+      "endTime": 3.1,
+      "words": [
+        {
+          "text": "Synthetic",
+          "startTime": 0.7,
+          "endTime": 1.5
+        },
+        {
+          "text": "mirror",
+          "startTime": 1.5,
+          "endTime": 2.3
+        },
+        {
+          "text": "plane",
+          "startTime": 2.3,
+          "endTime": 3.1
+        }
+      ]
+    },
+    {
+      "fullText": "مرحبا بالعالم",
+      "startTime": 0.7,
+      "endTime": 2.3,
+      "words": [
+        {
+          "text": "مرحبا",
+          "startTime": 0.7,
+          "endTime": 1.5
+        },
+        {
+          "text": "بالعالم",
+          "startTime": 1.5,
+          "endTime": 2.3
+        }
+      ]
+    },
+    {
+      "fullText": "星光 回响 向远方",
+      "startTime": 0.7,
+      "endTime": 3.1,
+      "words": [
+        {
+          "text": "星光",
+          "startTime": 0.7,
+          "endTime": 1.5
+        },
+        {
+          "text": "回响",
+          "startTime": 1.5,
+          "endTime": 2.3
+        },
+        {
+          "text": "向远方",
+          "startTime": 2.3,
+          "endTime": 3.1
+        }
+      ]
+    },
+    {
+      "fullText": "Micro",
+      "startTime": 1,
+      "endTime": 1.02,
+      "words": []
+    },
+    {
+      "fullText": "Last end",
+      "startTime": 1,
+      "endTime": 1.17,
+      "words": [
+        {
+          "text": "Last",
+          "startTime": 1,
+          "endTime": 4
+        },
+        {
+          "text": "end",
+          "startTime": 1.1,
+          "endTime": 1.17
+        }
+      ]
+    },
+    {
+      "fullText": "",
+      "startTime": 1,
+      "endTime": 1,
+      "words": []
+    }
+  ],
+  "sourceFragments": [
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 144,
+      "endLine": 165,
+      "sha256": "17185546e3df4e7780c6bea3dd6322943f7ae77d4a99483feed09192f3ea2dca"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 228,
+      "endLine": 235,
+      "sha256": "9bedebad4d1e02a64ae23d3be563d558539eb027116fbe26f48f0d0aed3d7a28"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 238,
+      "endLine": 240,
+      "sha256": "6afac2b22f01cf1633ac725ac113d0f935a9af62f700b45aba0a25f7d137cd6f"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 249,
+      "endLine": 281,
+      "sha256": "59751830a4e8b0c91113c24a095128e801342a52988df7069048364d3122240d"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 345,
+      "endLine": 349,
+      "sha256": "5799e88e0abe5bcc25bc37519270df90466c7a276f79d806bdd392042a116347"
+    }
+  ],
+  "scope": "Exact private original progress/target blocks exported without modification. No SmoothDamp/quaternion/alignment/transition. No source renderHint override; raw last-word semantics retained."
+}

@@ -1,0 +1,3181 @@
+{
+  "scope": "Exact extracted original CameraRig progress/desired pose/look before damped follow. Real Three three-layer text; analytic media charges/delta0, no original RAF/orientation/alignment/fog/depth.",
+  "foreground": "all nonbackground union including low alpha; no registration, alignment or frame shift",
+  "frames": [
+    {
+      "file": "latin-380-orbit-700.png",
+      "scene": "latin",
+      "foreground_mae": 9.601024572371276,
+      "full_mae": 0.1616593567251462,
+      "worst64": 12.96045197740113,
+      "channel_peak": 70,
+      "source_bounds": [
+        56,
+        275,
+        359,
+        327
+      ],
+      "native_bounds": [
+        56,
+        276,
+        358,
+        326
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-orbit-700.png": "be798c0bb60ee6d7f9549600edd7b55f4326c0186a22571cf8ca6f2522197c6e",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-orbit-700.png": "0fe5f19d3e0411c95552f32b4ac9e1c1018f6cf60ab84c71a0969f1e88018f24"
+      }
+    },
+    {
+      "file": "latin-380-orbit-1500.png",
+      "scene": "latin",
+      "foreground_mae": 5.4712962962962965,
+      "full_mae": 0.20733333333333334,
+      "worst64": 12.666666666666666,
+      "channel_peak": 92,
+      "source_bounds": [
+        28,
+        263,
+        361,
+        326
+      ],
+      "native_bounds": [
+        27,
+        262,
+        361,
+        325
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-orbit-1500.png": "43398bd398fa42a0f7301ab6816032f69a2b00928e7a92894129c9208203e8ac",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-orbit-1500.png": "c3681bb508cdcf8b7415b65aa5767f39b6fa25103490a1db3dae133fc99bdc2e"
+      }
+    },
+    {
+      "file": "latin-380-orbit-3450.png",
+      "scene": "latin",
+      "foreground_mae": 8.666896773896635,
+      "full_mae": 0.2753260233918129,
+      "worst64": 16.973488865323436,
+      "channel_peak": 133,
+      "source_bounds": [
+        15,
+        255,
+        313,
+        335
+      ],
+      "native_bounds": [
+        17,
+        256,
+        313,
+        340
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-orbit-3450.png": "5a2f6482bf221065f04817a146ffa299f537bdf348eb95d26cc6e0c508eb531b",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-orbit-3450.png": "9e6648b604dfda12384ed73cc55f8a2d94a59a605cc01cc32f706e2f5ad8dcec"
+      }
+    },
+    {
+      "file": "latin-380-orbit-8920.png",
+      "scene": "latin",
+      "foreground_mae": 17.22825207735863,
+      "full_mae": 0.3425248538011696,
+      "worst64": 19.671319796954315,
+      "channel_peak": 129,
+      "source_bounds": [
+        5,
+        256,
+        337,
+        334
+      ],
+      "native_bounds": [
+        6,
+        256,
+        337,
+        333
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-orbit-8920.png": "d6be4dc50ef9ebcb642145166c1023fdf7c98feda5f59a80c818a2696216134c",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-orbit-8920.png": "c819908a48e1905764503c5c86dc87fd2eab22c803f170e99dfdd756d02807cc"
+      }
+    },
+    {
+      "file": "latin-380-track-700.png",
+      "scene": "latin",
+      "foreground_mae": 10.529219143576826,
+      "full_mae": 0.1833377192982456,
+      "worst64": 11.65749235474006,
+      "channel_peak": 69,
+      "source_bounds": [
+        26,
+        268,
+        344,
+        328
+      ],
+      "native_bounds": [
+        27,
+        269,
+        343,
+        327
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-track-700.png": "76cd2e715feabe0551ff07c8d7a92d88998ef29714713a9eb615ea62addd80cb",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-track-700.png": "f2f6ce893b1719008c948d986b03423f78381578e430e97afd0a993962083878"
+      }
+    },
+    {
+      "file": "latin-380-track-1500.png",
+      "scene": "latin",
+      "foreground_mae": 5.140757927300851,
+      "full_mae": 0.19435672514619884,
+      "worst64": 17.428571428571427,
+      "channel_peak": 92,
+      "source_bounds": [
+        20,
+        248,
+        318,
+        330
+      ],
+      "native_bounds": [
+        19,
+        247,
+        317,
+        330
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-track-1500.png": "b2a1515b7d3e0d59f2e06e52a4841ade08db902318cb46a789250d417fec5251",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-track-1500.png": "113230dc9b7d113f4d276dcbdd706a8c634b117856563e1791069ab1346ea1b0"
+      }
+    },
+    {
+      "file": "latin-380-track-3450.png",
+      "scene": "latin",
+      "foreground_mae": 7.738317022363715,
+      "full_mae": 0.28784502923976607,
+      "worst64": 17.81029810298103,
+      "channel_peak": 126,
+      "source_bounds": [
+        22,
+        268,
+        350,
+        334
+      ],
+      "native_bounds": [
+        23,
+        269,
+        350,
+        339
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-track-3450.png": "d3a3e4f9fd965f4426f6d32fc30cd0448d58edbd3f06e16aa848d26b5751ff77",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-track-3450.png": "85a1e765b4010cc860adea01bd919c288f2213950622a5057e6d2432ac8a7a2e"
+      }
+    },
+    {
+      "file": "latin-380-track-8920.png",
+      "scene": "latin",
+      "foreground_mae": 18.612864370031318,
+      "full_mae": 0.3388684210526316,
+      "worst64": 21.16140350877193,
+      "channel_peak": 118,
+      "source_bounds": [
+        24,
+        268,
+        346,
+        327
+      ],
+      "native_bounds": [
+        26,
+        269,
+        345,
+        327
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-track-8920.png": "6edd26b244df7531a6aed33f7884e834394c4b16a611cc2de5b6ec665f265698",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-track-8920.png": "8d0094d9633b8e559c957c7dd6f48a11dc8a48e7a18781b160254298342a43a7"
+      }
+    },
+    {
+      "file": "latin-380-hold-700.png",
+      "scene": "latin",
+      "foreground_mae": 9.93230957292383,
+      "full_mae": 0.19006432748538013,
+      "worst64": 12.351421188630491,
+      "channel_peak": 73,
+      "source_bounds": [
+        16,
+        266,
+        353,
+        329
+      ],
+      "native_bounds": [
+        17,
+        266,
+        353,
+        328
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-hold-700.png": "1d94f1188c8b129b21d72fd67cce3af7b15c67a5a541210f96aaea3a9b9b4786",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-hold-700.png": "508354252e08dc2da1a31a86ec863e0b4c014a4aaeda0d72c02381b96c43441e"
+      }
+    },
+    {
+      "file": "latin-380-hold-1500.png",
+      "scene": "latin",
+      "foreground_mae": 4.922057051024508,
+      "full_mae": 0.2149298245614035,
+      "worst64": 13.27972027972028,
+      "channel_peak": 80,
+      "source_bounds": [
+        6,
+        254,
+        352,
+        329
+      ],
+      "native_bounds": [
+        5,
+        253,
+        351,
+        328
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-hold-1500.png": "df750876b1d40f63feb8daac45371465374aa336a7a6bb0fca37a14cd3c8f315",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-hold-1500.png": "37100d93d10a8359b4640df857a0230f603447a62f5cde8b427335a1b7c8589a"
+      }
+    },
+    {
+      "file": "latin-380-hold-3450.png",
+      "scene": "latin",
+      "foreground_mae": 7.297783933518006,
+      "full_mae": 0.30042543859649123,
+      "worst64": 17.503333333333334,
+      "channel_peak": 135,
+      "source_bounds": [
+        12,
+        266,
+        359,
+        337
+      ],
+      "native_bounds": [
+        13,
+        267,
+        360,
+        342
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-hold-3450.png": "638b666bb21bd1f30debbc3e117dbbfee8e08944878d05d5f29a248e7936674c",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-hold-3450.png": "c29e57904b26998bba3c17e36ab2a596edae8d415d0457112612c7d376f5b4db"
+      }
+    },
+    {
+      "file": "latin-380-hold-8920.png",
+      "scene": "latin",
+      "foreground_mae": 18.035018246758288,
+      "full_mae": 0.3395804093567251,
+      "worst64": 20.169811320754718,
+      "channel_peak": 140,
+      "source_bounds": [
+        19,
+        268,
+        351,
+        328
+      ],
+      "native_bounds": [
+        20,
+        268,
+        350,
+        327
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-hold-8920.png": "2de7868eb8add0b87a58979f1a70ee482de95401d6dd951896bbda6904f3cde5",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-hold-8920.png": "268d0e7ebfa3a458fa0398a30753f1bd8f97ca3326705a851f36dff4432cc017"
+      }
+    },
+    {
+      "file": "latin-380-glide-700.png",
+      "scene": "latin",
+      "foreground_mae": 11.144509205291886,
+      "full_mae": 0.1761125730994152,
+      "worst64": 14.356164383561644,
+      "channel_peak": 71,
+      "source_bounds": [
+        38,
+        270,
+        333,
+        326
+      ],
+      "native_bounds": [
+        39,
+        271,
+        332,
+        325
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-glide-700.png": "a11a4a500896fb4c9b3c80ded4b01f85a026efbbba3f27f1e8f3c9beb87d32e3",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-glide-700.png": "a4b61111315d436738e84e63d142c324387e27331bcdbe0f9a8ae862535bb37d"
+      }
+    },
+    {
+      "file": "latin-380-glide-1500.png",
+      "scene": "latin",
+      "foreground_mae": 5.407876064333018,
+      "full_mae": 0.2005657894736842,
+      "worst64": 13.119298245614035,
+      "channel_peak": 84,
+      "source_bounds": [
+        21,
+        257,
+        336,
+        327
+      ],
+      "native_bounds": [
+        20,
+        256,
+        335,
+        326
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-glide-1500.png": "ad1114e27d4e4a4335ee1334cbfa2ade2facbf3004bf7b65853a631d6d46048b",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-glide-1500.png": "ec2bacb85052f05d57457dfad6e98af49babfa39ab15b54a959378b455830bff"
+      }
+    },
+    {
+      "file": "latin-380-glide-3450.png",
+      "scene": "latin",
+      "foreground_mae": 7.8356636271529885,
+      "full_mae": 0.28266812865497076,
+      "worst64": 16.41592261904762,
+      "channel_peak": 129,
+      "source_bounds": [
+        4,
+        269,
+        345,
+        328
+      ],
+      "native_bounds": [
+        5,
+        269,
+        344,
+        333
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-glide-3450.png": "3361bdfa1cd241ee1f000a53120bf8d659a9397d570eed2f81380e3bf826c2a4",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-glide-3450.png": "166390b873599db4629c9485f810c86263da279d7e7fc5981d5e4f8eab93d067"
+      }
+    },
+    {
+      "file": "latin-380-glide-8920.png",
+      "scene": "latin",
+      "foreground_mae": 17.710694663957252,
+      "full_mae": 0.3440380116959064,
+      "worst64": 21.690647482014388,
+      "channel_peak": 140,
+      "source_bounds": [
+        10,
+        265,
+        347,
+        329
+      ],
+      "native_bounds": [
+        11,
+        265,
+        346,
+        328
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-380-glide-8920.png": "e7da0c21546ade6ac20b620563c92960e2751c00309c0dc90b70fc0221551c65",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-380-glide-8920.png": "133ccad75b8dbe523764e218562d6f33f8eb50ffc199e5c1cb6e218f6c71172d"
+      }
+    },
+    {
+      "file": "latin-800-pushIn-700.png",
+      "scene": "latin",
+      "foreground_mae": 6.893134400776322,
+      "full_mae": 0.11838958333333334,
+      "worst64": 9.243386243386244,
+      "channel_peak": 55,
+      "source_bounds": [
+        159,
+        252,
+        634,
+        341
+      ],
+      "native_bounds": [
+        160,
+        253,
+        633,
+        340
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pushIn-700.png": "6f3c002841f56a9c92f320d1221d9597aac33e29648d789e8a9ce55b39d7e44a",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pushIn-700.png": "da52b102ef8653855611a2710991fb56975704a067285b24b1724fe54fbc8db9"
+      }
+    },
+    {
+      "file": "latin-800-pushIn-1500.png",
+      "scene": "latin",
+      "foreground_mae": 3.0699898079605195,
+      "full_mae": 0.15897430555555556,
+      "worst64": 10.26984126984127,
+      "channel_peak": 69,
+      "source_bounds": [
+        113,
+        227,
+        660,
+        345
+      ],
+      "native_bounds": [
+        111,
+        225,
+        660,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pushIn-1500.png": "1c0917f2e7c6ca62b8d5f09b463f5a34bc39605fe8d94ee02d1bf10e1f1200e5",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pushIn-1500.png": "9201e1b162efb195987139d76c53f5e6ca9c07b23ee7feed23a804003ca93cdc"
+      }
+    },
+    {
+      "file": "latin-800-pushIn-3450.png",
+      "scene": "latin",
+      "foreground_mae": 1.853135313531353,
+      "full_mae": 0.22226041666666665,
+      "worst64": 7.371794871794871,
+      "channel_peak": 88,
+      "source_bounds": [
+        0,
+        203,
+        800,
+        399
+      ],
+      "native_bounds": [
+        0,
+        202,
+        800,
+        414
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pushIn-3450.png": "9564e893c4b4dcac781694034c40aa1ea024c50db2c63fdd0c81516dc324955a",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pushIn-3450.png": "e448d40df874a236f72944ffc4e8d1404cad486dcf7ce169a414191bd8635a47"
+      }
+    },
+    {
+      "file": "latin-800-pushIn-8920.png",
+      "scene": "latin",
+      "foreground_mae": 6.357765401799761,
+      "full_mae": 0.2806423611111111,
+      "worst64": 26.74074074074074,
+      "channel_peak": 105,
+      "source_bounds": [
+        0,
+        221,
+        800,
+        368
+      ],
+      "native_bounds": [
+        0,
+        221,
+        800,
+        368
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pushIn-8920.png": "43a46062cf16b61efc19bd6c61f04bb19d834ebfd62ec24bc0cb05875fa14ea4",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pushIn-8920.png": "6121f1bf50c22939720a673932e4b94428d4f26d37e3301b32d527ac822a3a23"
+      }
+    },
+    {
+      "file": "latin-800-pullBack-700.png",
+      "scene": "latin",
+      "foreground_mae": 3.299222164371026,
+      "full_mae": 0.1452138888888889,
+      "worst64": 8.80952380952381,
+      "channel_peak": 56,
+      "source_bounds": [
+        0,
+        216,
+        800,
+        369
+      ],
+      "native_bounds": [
+        0,
+        217,
+        800,
+        369
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pullBack-700.png": "6ee11c2e92d41422a109455615c964febb20640749003a24338e33edc6324c37",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pullBack-700.png": "540aec70f04444c00770e87755faf5f0a713be594689fa44e55629566abb7bcb"
+      }
+    },
+    {
+      "file": "latin-800-pullBack-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.353673353673354,
+      "full_mae": 0.18161041666666666,
+      "worst64": 7.56140350877193,
+      "channel_peak": 60,
+      "source_bounds": [
+        45,
+        210,
+        717,
+        354
+      ],
+      "native_bounds": [
+        42,
+        207,
+        717,
+        353
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pullBack-1500.png": "b4c32f433f524d6123e45c61e9113c68a4630ea960dd6c5e4551c0fd366f461e",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pullBack-1500.png": "d57cb64c5b52f02673ce19db853782a72085cd9f17962c35e3e7a7a3a3c1ac4c"
+      }
+    },
+    {
+      "file": "latin-800-pullBack-3450.png",
+      "scene": "latin",
+      "foreground_mae": 6.948635634028893,
+      "full_mae": 0.1443,
+      "worst64": 16.185714285714287,
+      "channel_peak": 121,
+      "source_bounds": [
+        218,
+        266,
+        580,
+        337
+      ],
+      "native_bounds": [
+        219,
+        266,
+        580,
+        342
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pullBack-3450.png": "c10296efe69d067302007d355b936e74c6cbcb9f3f58e407a8d4550184dbc768",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pullBack-3450.png": "8a5362449229db9783d26e4506555cd02abf7bf82b15e62ecc280c421d79f47b"
+      }
+    },
+    {
+      "file": "latin-800-pullBack-8920.png",
+      "scene": "latin",
+      "foreground_mae": 12.932642707933665,
+      "full_mae": 0.21066736111111112,
+      "worst64": 13.99566536627655,
+      "channel_peak": 118,
+      "source_bounds": [
+        165,
+        255,
+        624,
+        339
+      ],
+      "native_bounds": [
+        166,
+        256,
+        623,
+        338
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pullBack-8920.png": "841d1f3460d07cf5c54414d9838087eb7f428c027ac4ed178137cfa16aefe255",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pullBack-8920.png": "b9f20c9601e36330c3b51842d7d4721ae1f3a7aa706a05d127f5c57d3f3ba340"
+      }
+    },
+    {
+      "file": "latin-800-orbit-700.png",
+      "scene": "latin",
+      "foreground_mae": 3.7307454922188423,
+      "full_mae": 0.11753402777777777,
+      "worst64": 5.935897435897436,
+      "channel_peak": 61,
+      "source_bounds": [
+        154,
+        255,
+        800,
+        362
+      ],
+      "native_bounds": [
+        155,
+        255,
+        800,
+        362
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-orbit-700.png": "4a43e2dfd17ca53972662d6bf5af1c8e7f74b590a6d34002609f834d9dc6625d",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-orbit-700.png": "64055575a8ebebfc7bd29e91b8c904cbe84f248ac089a47ac0abcf820f96948d"
+      }
+    },
+    {
+      "file": "latin-800-orbit-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.318111447665753,
+      "full_mae": 0.16741111111111112,
+      "worst64": 7.714285714285714,
+      "channel_peak": 61,
+      "source_bounds": [
+        91,
+        227,
+        800,
+        358
+      ],
+      "native_bounds": [
+        89,
+        224,
+        800,
+        358
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-orbit-1500.png": "35150d7785ce2965262995b57f5421332b75412125a7688c8122cb3bdca8cf74",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-orbit-1500.png": "dc086a1d8e4840872da1beeea30ac3fc8129972388400d5c69f9660873aff8ab"
+      }
+    },
+    {
+      "file": "latin-800-orbit-3450.png",
+      "scene": "latin",
+      "foreground_mae": 3.3005440484032302,
+      "full_mae": 0.18789722222222222,
+      "worst64": 10.883468834688347,
+      "channel_peak": 90,
+      "source_bounds": [
+        0,
+        188,
+        629,
+        365
+      ],
+      "native_bounds": [
+        0,
+        189,
+        629,
+        373
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-orbit-3450.png": "f8fa63bebc5b23cc836b3359af0b36def47136bd12f0bb91450fb61d304adca1",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-orbit-3450.png": "6908dd77ae8878791c3c7e7ff4541bb6759793b5238620e9903a05397782ef91"
+      }
+    },
+    {
+      "file": "latin-800-orbit-8920.png",
+      "scene": "latin",
+      "foreground_mae": 6.942399716429374,
+      "full_mae": 0.24482083333333332,
+      "worst64": 11.47442680776014,
+      "channel_peak": 96,
+      "source_bounds": [
+        0,
+        198,
+        689,
+        364
+      ],
+      "native_bounds": [
+        0,
+        199,
+        688,
+        364
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-orbit-8920.png": "786b6e5ef02e06ddffd41fbe910240965c3de557acb15f804c75083b4b786c47",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-orbit-8920.png": "40e01f7fd9f8150e9b90302182635594a8c902f8c6b9d24425ac367174ff3dc7"
+      }
+    },
+    {
+      "file": "latin-800-track-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.542066977765578,
+      "full_mae": 0.13788958333333334,
+      "worst64": 8.007751937984496,
+      "channel_peak": 51,
+      "source_bounds": [
+        58,
+        232,
+        726,
+        356
+      ],
+      "native_bounds": [
+        59,
+        233,
+        725,
+        356
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-track-700.png": "0c7555242b8444e8731b0fab9ddfe58b006307e028182a0fc49685d19bda466d",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-track-700.png": "3b4a6799bfa96d3077be31566d400a42c8a8e393bab80495055ca41970b4c818"
+      }
+    },
+    {
+      "file": "latin-800-track-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.0662871244601675,
+      "full_mae": 0.18374027777777777,
+      "worst64": 7.614634146341463,
+      "channel_peak": 61,
+      "source_bounds": [
+        8,
+        178,
+        651,
+        359
+      ],
+      "native_bounds": [
+        3,
+        175,
+        650,
+        358
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-track-1500.png": "e9141e7dd828784a3541117543e8a2d63bc2042be8db3e59de6bc8c3acb2f2db",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-track-1500.png": "31b9ac1271f40f1e15781cf02352b61772ed78a62e1b3870b7a1f332489d2abd"
+      }
+    },
+    {
+      "file": "latin-800-track-3450.png",
+      "scene": "latin",
+      "foreground_mae": 3.120828336599491,
+      "full_mae": 0.2222875,
+      "worst64": 14.673515981735159,
+      "channel_peak": 107,
+      "source_bounds": [
+        51,
+        233,
+        740,
+        371
+      ],
+      "native_bounds": [
+        52,
+        234,
+        741,
+        381
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-track-3450.png": "bfabf822c1a8c0a0cd640e8b30dab842080dd9a46cbcc722183c6ece9d8883ed",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-track-3450.png": "0d515837c1c071a7ab65fadd36601e3f06b5b14e9021684fcd924196ef088874"
+      }
+    },
+    {
+      "file": "latin-800-track-8920.png",
+      "scene": "latin",
+      "foreground_mae": 8.176064953842731,
+      "full_mae": 0.2552465277777778,
+      "worst64": 15.992125984251969,
+      "channel_peak": 98,
+      "source_bounds": [
+        56,
+        234,
+        730,
+        356
+      ],
+      "native_bounds": [
+        57,
+        235,
+        730,
+        356
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-track-8920.png": "8545be4e192f47d292277a1af26c6dfe74e9ab5de0b24efeef8ec716de15bee3",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-track-8920.png": "95b410122a4f825d3232091b88b3244e01a7649652f2ca44db399442338ca8d0"
+      }
+    },
+    {
+      "file": "latin-800-crane-700.png",
+      "scene": "latin",
+      "foreground_mae": 5.066791192619007,
+      "full_mae": 0.12432638888888889,
+      "worst64": 17.622222222222224,
+      "channel_peak": 52,
+      "source_bounds": [
+        79,
+        243,
+        698,
+        345
+      ],
+      "native_bounds": [
+        79,
+        243,
+        697,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-crane-700.png": "d09e635076e64194682ae0bd31e5037b8329fc5373cd71842c89a157ded9da3e",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-crane-700.png": "10801daf5b20fb246df0fb3785fcffc41e70235c80de98e62c3b4b8ef4027257"
+      }
+    },
+    {
+      "file": "latin-800-crane-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.3238310414400343,
+      "full_mae": 0.17356597222222223,
+      "worst64": 12.19047619047619,
+      "channel_peak": 60,
+      "source_bounds": [
+        42,
+        212,
+        713,
+        350
+      ],
+      "native_bounds": [
+        40,
+        209,
+        713,
+        350
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-crane-1500.png": "9aa8bee23505ac6bad3a9d41a252eeb908796dbaa4c0b96ea346483d73021a47",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-crane-1500.png": "e1c4ff2e9b3a0aa1c6a952d7957efcc73c955b1a558561af389a98092b06e648"
+      }
+    },
+    {
+      "file": "latin-800-crane-3450.png",
+      "scene": "latin",
+      "foreground_mae": 3.12195462478185,
+      "full_mae": 0.2173986111111111,
+      "worst64": 14.516260162601625,
+      "channel_peak": 92,
+      "source_bounds": [
+        60,
+        236,
+        738,
+        375
+      ],
+      "native_bounds": [
+        61,
+        236,
+        745,
+        386
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-crane-3450.png": "bb86b13e3ee422f3e94aa893236017e4f7185601ab610b2edd1cd006fcf85dec",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-crane-3450.png": "f07e73cbc7fac591346badf8e3383cedf295f0688764987286ce331e570f83ef"
+      }
+    },
+    {
+      "file": "latin-800-crane-8920.png",
+      "scene": "latin",
+      "foreground_mae": 8.1196886507464,
+      "full_mae": 0.25571944444444444,
+      "worst64": 19.4375,
+      "channel_peak": 104,
+      "source_bounds": [
+        57,
+        236,
+        736,
+        358
+      ],
+      "native_bounds": [
+        58,
+        236,
+        735,
+        357
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-crane-8920.png": "54641a47cfc536d027c939880f681ee19cb39996b69e30ffa837c46d820ca5a5",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-crane-8920.png": "4e79477367c2a4aac55cf438698cbc32293dd42a3affba027280f13a2ab88a6b"
+      }
+    },
+    {
+      "file": "latin-800-hold-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.115350071443151,
+      "full_mae": 0.1400076388888889,
+      "worst64": 6.297872340425532,
+      "channel_peak": 52,
+      "source_bounds": [
+        37,
+        228,
+        745,
+        360
+      ],
+      "native_bounds": [
+        38,
+        228,
+        745,
+        359
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-hold-700.png": "94d29b6d555c9dd61b4a28a38338ed97bc7b3825a33e0bcbb4b8291216c0481d",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-hold-700.png": "eb371dd301767c5cb58ff497f293cc4d784c5e8fcbd01f9d301ff9c57a45bb50"
+      }
+    },
+    {
+      "file": "latin-800-hold-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.1160865417166774,
+      "full_mae": 0.19099444444444444,
+      "worst64": 7.67479674796748,
+      "channel_peak": 58,
+      "source_bounds": [
+        15,
+        202,
+        742,
+        358
+      ],
+      "native_bounds": [
+        12,
+        199,
+        742,
+        358
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-hold-1500.png": "a7fe81d12275db0bad121cab53fae75568bff56662b9561fce381d7eaf46fbd9",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-hold-1500.png": "410c2ce81dc6c4c598b9a7a10153c40bd197ed44de5965736eda28389e1c427e"
+      }
+    },
+    {
+      "file": "latin-800-hold-3450.png",
+      "scene": "latin",
+      "foreground_mae": 2.8439099550820015,
+      "full_mae": 0.22687291666666667,
+      "worst64": 11.067724867724868,
+      "channel_peak": 98,
+      "source_bounds": [
+        30,
+        229,
+        760,
+        376
+      ],
+      "native_bounds": [
+        31,
+        229,
+        761,
+        386
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-hold-3450.png": "98f514da24b2cead0cbe021459fef96f23c47a9ba687b1dcf905d690dad93c7f",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-hold-3450.png": "5fe1eb6fe99d199bb0fb08c60dcb73b06aebe2c2d6889362cc8049b1ce46f842"
+      }
+    },
+    {
+      "file": "latin-800-hold-8920.png",
+      "scene": "latin",
+      "foreground_mae": 7.9227120067170445,
+      "full_mae": 0.26210972222222223,
+      "worst64": 14.385026737967914,
+      "channel_peak": 105,
+      "source_bounds": [
+        45,
+        232,
+        741,
+        358
+      ],
+      "native_bounds": [
+        46,
+        233,
+        740,
+        358
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-hold-8920.png": "b523e4d78762859d5d20a8a2a75d0ef165e762496a7fdc30281cfe90b2a1f095",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-hold-8920.png": "6018ab92106d2fd836282f79a201554b5ccb1f335f9257d3e6ce3c2d537dec3e"
+      }
+    },
+    {
+      "file": "latin-800-swell-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.176527116236317,
+      "full_mae": 0.13883472222222223,
+      "worst64": 7.846153846153846,
+      "channel_peak": 51,
+      "source_bounds": [
+        39,
+        229,
+        741,
+        358
+      ],
+      "native_bounds": [
+        40,
+        229,
+        741,
+        358
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-swell-700.png": "98edd0c9cf281a940f40b6abbe22d17fef6cc7badd997572547e6b4b40818ff0",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-swell-700.png": "bd054cfe4f0fd2a11386297ca7ac8b384767f8cfc3dff9f0935d68c01b10dac0"
+      }
+    },
+    {
+      "file": "latin-800-swell-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.2650389788400584,
+      "full_mae": 0.18360972222222222,
+      "worst64": 9.383333333333333,
+      "channel_peak": 64,
+      "source_bounds": [
+        29,
+        204,
+        701,
+        353
+      ],
+      "native_bounds": [
+        26,
+        200,
+        700,
+        353
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-swell-1500.png": "c3f2ff7115b53f18ced5d9f51f11e79bb7d489ba0a5605a40e29dbbfc3ee6c35",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-swell-1500.png": "98c3de4e1b3085775d34957221f6885b8362b2ce852b6a8ae8a6f7bc35aad585"
+      }
+    },
+    {
+      "file": "latin-800-swell-3450.png",
+      "scene": "latin",
+      "foreground_mae": 5.346726373042163,
+      "full_mae": 0.18158819444444443,
+      "worst64": 15.121212121212121,
+      "channel_peak": 107,
+      "source_bounds": [
+        125,
+        246,
+        610,
+        345
+      ],
+      "native_bounds": [
+        126,
+        246,
+        609,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-swell-3450.png": "f5b9c4d3a2441d08894ee08675e01923dc808a5a045a458c8826fab97ad8ddf4",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-swell-3450.png": "ce1009f5ab82c90fea4a9e1e003ae16e79dfe8425383de730dbc5bc5f1f04d8a"
+      }
+    },
+    {
+      "file": "latin-800-swell-8920.png",
+      "scene": "latin",
+      "foreground_mae": 9.850458689212894,
+      "full_mae": 0.23786805555555557,
+      "worst64": 16.377581120943955,
+      "channel_peak": 117,
+      "source_bounds": [
+        83,
+        233,
+        653,
+        349
+      ],
+      "native_bounds": [
+        84,
+        234,
+        652,
+        348
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-swell-8920.png": "e0089da36fcf562138adb54bddd2d555463c28b1e053711adc3141320a113df6",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-swell-8920.png": "7bb89f8a2e6deb80557e0ceac543a25463a5f74989550c5b3e4fa45de1ea0120"
+      }
+    },
+    {
+      "file": "latin-800-spiral-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.589768262368695,
+      "full_mae": 0.11924791666666666,
+      "worst64": 7.373333333333333,
+      "channel_peak": 56,
+      "source_bounds": [
+        178,
+        265,
+        757,
+        331
+      ],
+      "native_bounds": [
+        178,
+        265,
+        757,
+        330
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-spiral-700.png": "b9912695c3f78d1a56823b31f3b1e63f6397397b627098298c3dd384d4b09a60",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-spiral-700.png": "6d8526fcee0ef1c02247b536c40c151d3965bafb73e31aa8a576e3c86a2e330d"
+      }
+    },
+    {
+      "file": "latin-800-spiral-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.5114028877303642,
+      "full_mae": 0.16258194444444443,
+      "worst64": 8.212121212121213,
+      "channel_peak": 62,
+      "source_bounds": [
+        112,
+        243,
+        779,
+        344
+      ],
+      "native_bounds": [
+        110,
+        240,
+        779,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-spiral-1500.png": "7a99098b6e2194b8d55b6c1aee220ab23e5f19eddc8f6f0035597879f7378708",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-spiral-1500.png": "fae17a5fa3f3fa8ae284704130b3c9df3322e1acf624ca79cf1afa6e1c163f79"
+      }
+    },
+    {
+      "file": "latin-800-spiral-3450.png",
+      "scene": "latin",
+      "foreground_mae": 4.139848787049492,
+      "full_mae": 0.18593958333333332,
+      "worst64": 8.071494252873563,
+      "channel_peak": 93,
+      "source_bounds": [
+        29,
+        243,
+        617,
+        342
+      ],
+      "native_bounds": [
+        30,
+        244,
+        616,
+        350
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-spiral-3450.png": "b24fa93c89c50f512c597cec2896d822619d76fe90c2950ac8afe1607a913d3f",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-spiral-3450.png": "93aadb4c7478883976966d7bba4a1833203ada6fe6b9968597b275d8c92e04bb"
+      }
+    },
+    {
+      "file": "latin-800-spiral-8920.png",
+      "scene": "latin",
+      "foreground_mae": 7.646245659722222,
+      "full_mae": 0.24467986111111112,
+      "worst64": 15.066666666666666,
+      "channel_peak": 94,
+      "source_bounds": [
+        7,
+        218,
+        672,
+        352
+      ],
+      "native_bounds": [
+        8,
+        218,
+        671,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-spiral-8920.png": "e3eedf0ece24ea4d5a55e5fabcbca7f1c6b51aeab855df30ccf9a84612530801",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-spiral-8920.png": "fee181a1bc12543d87a363870a04c4ed022a969d4e254fca0fef31adc5c12f9d"
+      }
+    },
+    {
+      "file": "latin-800-pendulum-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.68059961928934,
+      "full_mae": 0.12294375,
+      "worst64": 7.030769230769231,
+      "channel_peak": 57,
+      "source_bounds": [
+        150,
+        251,
+        760,
+        359
+      ],
+      "native_bounds": [
+        151,
+        252,
+        759,
+        359
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pendulum-700.png": "dcbf7e6c10315f228e3c5137f69a80b49ffa67b8e6510d1f77c5224c75fd8111",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pendulum-700.png": "9df0a52307eb62feb1929e773404e7bcd9685dc2c9625b1012f0f10395b2e2d5"
+      }
+    },
+    {
+      "file": "latin-800-pendulum-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.4756416866324975,
+      "full_mae": 0.1700611111111111,
+      "worst64": 11.878787878787879,
+      "channel_peak": 68,
+      "source_bounds": [
+        89,
+        227,
+        772,
+        353
+      ],
+      "native_bounds": [
+        88,
+        225,
+        771,
+        353
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pendulum-1500.png": "2c40ea568a86095876ab4136327d36a2ab592970b8d3f26f029a58a0e85409fc",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pendulum-1500.png": "dbb5cbc8a14d1fd57728b5fb4c4c97e15645f9e3a348b59ba437d210c669a79e"
+      }
+    },
+    {
+      "file": "latin-800-pendulum-3450.png",
+      "scene": "latin",
+      "foreground_mae": 3.919014036100686,
+      "full_mae": 0.1979673611111111,
+      "worst64": 10.276422764227643,
+      "channel_peak": 97,
+      "source_bounds": [
+        25,
+        220,
+        637,
+        355
+      ],
+      "native_bounds": [
+        26,
+        221,
+        637,
+        363
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pendulum-3450.png": "2c92ae87fa1af79e919786d0429aa486b7df26b5cb55b76c1dc824935ee127ad",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pendulum-3450.png": "510409e67db80e6b250fb07faa3e553fafa8be3b0e88016f33b39e2f4659a623"
+      }
+    },
+    {
+      "file": "latin-800-pendulum-8920.png",
+      "scene": "latin",
+      "foreground_mae": 7.88478376227116,
+      "full_mae": 0.24764791666666666,
+      "worst64": 12.44047619047619,
+      "channel_peak": 96,
+      "source_bounds": [
+        20,
+        216,
+        681,
+        357
+      ],
+      "native_bounds": [
+        21,
+        216,
+        680,
+        356
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-pendulum-8920.png": "b25103111d456df2e7469fbcfdf3c1579dc70d00f62b22c540f0e1fd0cc67d5f",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-pendulum-8920.png": "4d96a08715f00ed2006b5620286378b8dd201e7bfadd12fda5952d60743699e6"
+      }
+    },
+    {
+      "file": "latin-800-flyby-700.png",
+      "scene": "latin",
+      "foreground_mae": 3.481736323479443,
+      "full_mae": 0.11385277777777777,
+      "worst64": 8.5,
+      "channel_peak": 60,
+      "source_bounds": [
+        0,
+        162,
+        571,
+        356
+      ],
+      "native_bounds": [
+        1,
+        162,
+        571,
+        355
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-flyby-700.png": "e7c6add8dce68ad5c03ab1e504cf7b1d6f418f17fc51afb94a821b92e8ec1d82",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-flyby-700.png": "0a978c0be6e2f8e9a850418e4acce3c05926243178aeea11b4381803b4a6ceb8"
+      }
+    },
+    {
+      "file": "latin-800-flyby-1500.png",
+      "scene": "latin",
+      "foreground_mae": 1.7297970718291291,
+      "full_mae": 0.1904326388888889,
+      "worst64": 6.743243243243243,
+      "channel_peak": 62,
+      "source_bounds": [
+        0,
+        139,
+        648,
+        365
+      ],
+      "native_bounds": [
+        0,
+        134,
+        648,
+        364
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-flyby-1500.png": "11270f2fcc351f0c5104189287db95113214b2091276bce3b17944306fac5455",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-flyby-1500.png": "e4e608e32f9c421de1a21d4609071fd7042552731d3ad3b40b6b4e8283675165"
+      }
+    },
+    {
+      "file": "latin-800-flyby-3450.png",
+      "scene": "latin",
+      "foreground_mae": 2.0475528928250992,
+      "full_mae": 0.19651388888888888,
+      "worst64": 13.148179749715586,
+      "channel_peak": 106,
+      "source_bounds": [
+        200,
+        232,
+        800,
+        375
+      ],
+      "native_bounds": [
+        201,
+        232,
+        800,
+        391
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-flyby-3450.png": "bdafc93b4cf84dbe531a3a38a14e7acb11ba527bf0e24c897469db23a55581d8",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-flyby-3450.png": "0c1bfe255c2aaa364bba3f403b4476f3e0d470e335b94621134f5853cd92cf50"
+      }
+    },
+    {
+      "file": "latin-800-flyby-8920.png",
+      "scene": "latin",
+      "foreground_mae": 6.905459683116359,
+      "full_mae": 0.23759097222222222,
+      "worst64": 14.956989247311828,
+      "channel_peak": 92,
+      "source_bounds": [
+        119,
+        262,
+        800,
+        351
+      ],
+      "native_bounds": [
+        120,
+        263,
+        800,
+        350
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-flyby-8920.png": "d3bd0d9b17aa1cc80e2854febbc76cec3f2ffbad52e2779ca907dc27af162a18",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-flyby-8920.png": "8426d46041bc535375f7fc01eb5c519a5e031bbbc9f9a7327971b4ef266c75bb"
+      }
+    },
+    {
+      "file": "latin-800-arc-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.540789414867462,
+      "full_mae": 0.1410861111111111,
+      "worst64": 7.333333333333333,
+      "channel_peak": 54,
+      "source_bounds": [
+        54,
+        231,
+        730,
+        357
+      ],
+      "native_bounds": [
+        56,
+        232,
+        729,
+        357
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-arc-700.png": "82664cc0323e102db7a30ea1dcbe1cb44f8bf6a25a24587dc8e2216e2a4b376b",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-arc-700.png": "2405a42d8e4665d66543c9634f6be501962c96f78e2ed0439098869c25f6b000"
+      }
+    },
+    {
+      "file": "latin-800-arc-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.048030807758641,
+      "full_mae": 0.18059791666666666,
+      "worst64": 13.428571428571429,
+      "channel_peak": 61,
+      "source_bounds": [
+        9,
+        180,
+        641,
+        355
+      ],
+      "native_bounds": [
+        4,
+        176,
+        641,
+        354
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-arc-1500.png": "257f454eaf5d5b9f086cc7fe6f6721bb58c941eb38d9ac7ebd780d54095b3969",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-arc-1500.png": "7e2ab68daac756baed4c8abd0df79ffc1c219184dfb06a7db6e2f6b599521c4e"
+      }
+    },
+    {
+      "file": "latin-800-arc-3450.png",
+      "scene": "latin",
+      "foreground_mae": 3.056121914770077,
+      "full_mae": 0.22296319444444446,
+      "worst64": 11.834234234234234,
+      "channel_peak": 106,
+      "source_bounds": [
+        47,
+        232,
+        743,
+        372
+      ],
+      "native_bounds": [
+        48,
+        233,
+        745,
+        383
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-arc-3450.png": "edc7d2988d45f5692eb75a7995861bfe27de9bf1d53ea866943a4c4571390300",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-arc-3450.png": "11b76a26c21a4bd646abe723b124f8b680a16e7ea428c3e4f96e9843f61c5813"
+      }
+    },
+    {
+      "file": "latin-800-arc-8920.png",
+      "scene": "latin",
+      "foreground_mae": 8.179434730012098,
+      "full_mae": 0.25824861111111114,
+      "worst64": 14.429824561403509,
+      "channel_peak": 95,
+      "source_bounds": [
+        54,
+        234,
+        732,
+        357
+      ],
+      "native_bounds": [
+        55,
+        234,
+        732,
+        356
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-arc-8920.png": "687c43ee4ef45d06843c0cd794be035c23229c80f5e26740785090b192a8d678",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-arc-8920.png": "d9230e31a3bd3246ee54b5731871518394c3fb449e207d270ea9ad8ab2a724bd"
+      }
+    },
+    {
+      "file": "latin-800-float-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.692738121765827,
+      "full_mae": 0.13162152777777777,
+      "worst64": 13.866666666666667,
+      "channel_peak": 61,
+      "source_bounds": [
+        64,
+        236,
+        715,
+        351
+      ],
+      "native_bounds": [
+        65,
+        237,
+        715,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-float-700.png": "aec0659a195e9da7cbd7901797de863d2c1f7ed12feb33dcda7f6faf35114bad",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-float-700.png": "65a582f94d189479ae889ae999e8c8f368a6ba206893b6952554452ede3b5009"
+      }
+    },
+    {
+      "file": "latin-800-float-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.2988197715337555,
+      "full_mae": 0.17692291666666668,
+      "worst64": 8.296296296296296,
+      "channel_peak": 62,
+      "source_bounds": [
+        33,
+        207,
+        680,
+        348
+      ],
+      "native_bounds": [
+        30,
+        204,
+        679,
+        347
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-float-1500.png": "c388bff42c3779be7d262d00b3ff9f8f72df2a434b73e63f6f516066a014015d",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-float-1500.png": "d218a76de432d4b0c3fa0a88deed0430bb5ac2212fe4a0c9169b9b537ca86bbe"
+      }
+    },
+    {
+      "file": "latin-800-float-3450.png",
+      "scene": "latin",
+      "foreground_mae": 3.1759432516148127,
+      "full_mae": 0.20862638888888888,
+      "worst64": 18.84037558685446,
+      "channel_peak": 104,
+      "source_bounds": [
+        57,
+        237,
+        731,
+        365
+      ],
+      "native_bounds": [
+        58,
+        237,
+        731,
+        374
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-float-3450.png": "97e809f24a7e4f2baf8854909b74f4bc01bd208cfe37e7b4d59f5af830854ec3",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-float-3450.png": "e931758b78cc916c9d1c6d38c7ea972f75c9caacce04af83d5ea279ab384937a"
+      }
+    },
+    {
+      "file": "latin-800-float-8920.png",
+      "scene": "latin",
+      "foreground_mae": 8.328033301487649,
+      "full_mae": 0.2542479166666667,
+      "worst64": 16.52212389380531,
+      "channel_peak": 96,
+      "source_bounds": [
+        57,
+        235,
+        727,
+        355
+      ],
+      "native_bounds": [
+        58,
+        235,
+        726,
+        355
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-float-8920.png": "e5051a52d4c33c10cb1a96182798135711a184b034c678d33e3aa54eb51c6f82",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-float-8920.png": "f56ab47246caa73031786e59d4ee0f5ff18787f103580debdb1f8c4ca6ec1a23"
+      }
+    },
+    {
+      "file": "latin-800-glide-700.png",
+      "scene": "latin",
+      "foreground_mae": 5.089006047449217,
+      "full_mae": 0.13674583333333334,
+      "worst64": 16.962962962962962,
+      "channel_peak": 57,
+      "source_bounds": [
+        85,
+        237,
+        703,
+        353
+      ],
+      "native_bounds": [
+        86,
+        238,
+        702,
+        352
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-glide-700.png": "ec3687a9af27a49ff58d59034c1044f6a74310884d9e42308561aa9408040362",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-glide-700.png": "fcaf3016b3bdb03041005fe45de6989ac535e69754d457b788b8db584aee1a42"
+      }
+    },
+    {
+      "file": "latin-800-glide-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.3529411764705883,
+      "full_mae": 0.18075,
+      "worst64": 10.196078431372548,
+      "channel_peak": 68,
+      "source_bounds": [
+        44,
+        208,
+        705,
+        354
+      ],
+      "native_bounds": [
+        41,
+        204,
+        704,
+        353
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-glide-1500.png": "2b1fd5457d62b6602aaef4923a15d3774a8dc69a4f2ffd589c2f17c297b83cde",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-glide-1500.png": "c1461cf3fe5d78050872bf9edd8b05007190f9cfaa015011630032bf33dbb969"
+      }
+    },
+    {
+      "file": "latin-800-glide-3450.png",
+      "scene": "latin",
+      "foreground_mae": 3.0866216904276986,
+      "full_mae": 0.20207083333333334,
+      "worst64": 14.933333333333334,
+      "channel_peak": 94,
+      "source_bounds": [
+        0,
+        233,
+        707,
+        355
+      ],
+      "native_bounds": [
+        0,
+        233,
+        707,
+        364
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-glide-3450.png": "150837c0b8ac838b5aca7294174515a4e25c664d7141ce5288fd907725543a2e",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-glide-3450.png": "0cd5627281170920a60420b7e24e9dc266c267e687d9c1410afe7a9c059a8096"
+      }
+    },
+    {
+      "file": "latin-800-glide-8920.png",
+      "scene": "latin",
+      "foreground_mae": 7.513493404118404,
+      "full_mae": 0.25946597222222223,
+      "worst64": 12.968553459119496,
+      "channel_peak": 94,
+      "source_bounds": [
+        10,
+        223,
+        721,
+        357
+      ],
+      "native_bounds": [
+        11,
+        223,
+        720,
+        356
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\latin-800-glide-8920.png": "4525160c691a9b0115aa639e1d84249424d5ff743f9a5c2f2a7b90539d892f16",
+        "build\\verification\\diorama-camera-targets-kotlin\\latin-800-glide-8920.png": "64a9b3082d45e1d642325e8df3b9eccd9ab2f394dc693bd02d0f8c625a2d4462"
+      }
+    },
+    {
+      "file": "arabic-380-orbit-700.png",
+      "scene": "arabic",
+      "foreground_mae": 5.407282741738066,
+      "full_mae": 0.15500877192982457,
+      "worst64": 9.21031746031746,
+      "channel_peak": 69,
+      "source_bounds": [
+        53,
+        257,
+        351,
+        336
+      ],
+      "native_bounds": [
+        53,
+        257,
+        350,
+        335
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-orbit-700.png": "85f1909cbca9c1df5590af111a8ba3f7fd438b2007cda30dd6879882cde3a1dd",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-orbit-700.png": "ec7f3866dda8a30f89800f63275ff82db9801d493b4a85299b3f0f3884ccb2ef"
+      }
+    },
+    {
+      "file": "arabic-380-orbit-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 2.36625645700395,
+      "full_mae": 0.22770029239766082,
+      "worst64": 9.46987951807229,
+      "channel_peak": 83,
+      "source_bounds": [
+        19,
+        243,
+        375,
+        356
+      ],
+      "native_bounds": [
+        20,
+        240,
+        380,
+        361
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-orbit-1500.png": "5d446afc9820a3524d4ab3a3288bb6857ad810c0dc539edd335b075828cd92fc",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-orbit-1500.png": "c484424e7579a60a70c32ceba9492cc32e461b4e19fbe0742fd7cc3dff457cfb"
+      }
+    },
+    {
+      "file": "arabic-380-orbit-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.3049680160620065,
+      "full_mae": 0.2695891812865497,
+      "worst64": 15.166666666666666,
+      "channel_peak": 125,
+      "source_bounds": [
+        0,
+        188,
+        307,
+        336
+      ],
+      "native_bounds": [
+        0,
+        188,
+        307,
+        335
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-orbit-3450.png": "2e55b885bc70b6788fc18008c85b357181f2962eb4009bea423fac7fd3daae5e",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-orbit-3450.png": "80b556d023addd4d9c056eba88cbed1feefafd074cfe074f0c5ed20bb8e707fa"
+      }
+    },
+    {
+      "file": "arabic-380-orbit-8920.png",
+      "scene": "arabic",
+      "foreground_mae": 10.07025,
+      "full_mae": 0.3533421052631579,
+      "worst64": 18.646464646464647,
+      "channel_peak": 129,
+      "source_bounds": [
+        11,
+        242,
+        349,
+        339
+      ],
+      "native_bounds": [
+        12,
+        243,
+        348,
+        338
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-orbit-8920.png": "4f8ae8112923996b493c1fd5aab18de59d0d77169f2cb1eb2e3f50673e36dfa0",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-orbit-8920.png": "f8addfe47d9601f464a39f3600c0b28dbcb2de84ccaff9c5d4c660141d7358bb"
+      }
+    },
+    {
+      "file": "arabic-380-track-700.png",
+      "scene": "arabic",
+      "foreground_mae": 5.816510228640192,
+      "full_mae": 0.17666374269005847,
+      "worst64": 11.466666666666667,
+      "channel_peak": 66,
+      "source_bounds": [
+        19,
+        250,
+        338,
+        335
+      ],
+      "native_bounds": [
+        21,
+        250,
+        337,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-track-700.png": "cac77cde0ef9b0c5cbd7c082dd1f1f82e4f0a6eafdbcf614b2b4ac9bdeece489",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-track-700.png": "8e1369b87ce43968c4d38725d14062c02f9e2dcc437ed4d449849edf1bbf8310"
+      }
+    },
+    {
+      "file": "arabic-380-track-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 2.856002856002856,
+      "full_mae": 0.19883040935672514,
+      "worst64": 8.156299840510366,
+      "channel_peak": 70,
+      "source_bounds": [
+        24,
+        244,
+        330,
+        354
+      ],
+      "native_bounds": [
+        25,
+        245,
+        333,
+        357
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-track-1500.png": "f57a006cc33c9bcaf5a84102a5a0abd6c4fb04874483c584f2a688d49607374d",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-track-1500.png": "6a5515e2f33acfc745feafdd443a3ddddf1c03777ec40d7402f9642c00b221b8"
+      }
+    },
+    {
+      "file": "arabic-380-track-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.8717812917706995,
+      "full_mae": 0.2824137426900585,
+      "worst64": 15.551440329218106,
+      "channel_peak": 122,
+      "source_bounds": [
+        4,
+        208,
+        342,
+        335
+      ],
+      "native_bounds": [
+        5,
+        208,
+        341,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-track-3450.png": "e4e69b53e77623ffaf1a07c8293a018f8787300f8d8b515e10d3a4ea010c353f",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-track-3450.png": "6f5b99afcb1ab471669f3131d15536b9a81386fc050c4b3193617180be2e2b0c"
+      }
+    },
+    {
+      "file": "arabic-380-track-8920.png",
+      "scene": "arabic",
+      "foreground_mae": 10.452377701934015,
+      "full_mae": 0.3358055555555556,
+      "worst64": 18.571428571428573,
+      "channel_peak": 130,
+      "source_bounds": [
+        24,
+        249,
+        350,
+        336
+      ],
+      "native_bounds": [
+        25,
+        250,
+        350,
+        335
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-track-8920.png": "a0109f0e1d593f01d684a44b9b312a99ce88be58c4354f243e4395c78530e911",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-track-8920.png": "e9c7483f998b492cf9f3ecd937b69a3ffb54934869f27b6615d56a783078bfc0"
+      }
+    },
+    {
+      "file": "arabic-380-hold-700.png",
+      "scene": "arabic",
+      "foreground_mae": 5.350762247344981,
+      "full_mae": 0.18267690058479533,
+      "worst64": 10.353535353535353,
+      "channel_peak": 65,
+      "source_bounds": [
+        9,
+        246,
+        346,
+        337
+      ],
+      "native_bounds": [
+        10,
+        247,
+        346,
+        337
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-hold-700.png": "1c547fc6552fd0debad2664d386575c23a47d407bbfab8df2ec4d2f310dadb89",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-hold-700.png": "ed49f3335c2adf00b0c6430264e1e36a8b73121bae976921e0d7e6c3a5edb684"
+      }
+    },
+    {
+      "file": "arabic-380-hold-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 2.365235650956603,
+      "full_mae": 0.22231140350877193,
+      "worst64": 9.73913043478261,
+      "channel_peak": 85,
+      "source_bounds": [
+        11,
+        243,
+        368,
+        357
+      ],
+      "native_bounds": [
+        12,
+        240,
+        373,
+        361
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-hold-1500.png": "8ee8dde61e387705e47af3805a6e71c68689faa4b34dbd817dbf919346782344",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-hold-1500.png": "b227e2f530017c54ff083ded2a432eb9ef107debd5f59f80b8ab863c055d5c91"
+      }
+    },
+    {
+      "file": "arabic-380-hold-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.649949341438703,
+      "full_mae": 0.2952309941520468,
+      "worst64": 13.204301075268818,
+      "channel_peak": 125,
+      "source_bounds": [
+        0,
+        202,
+        351,
+        337
+      ],
+      "native_bounds": [
+        0,
+        203,
+        351,
+        336
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-hold-3450.png": "418e37338a0a72142c0f1e758d23431a07a9e709384d9a10c3af9dda76fb019e",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-hold-3450.png": "0704dab78acb08480765d5a80e90456eaa78249ca55fc95a83099c6ebb6b3e0c"
+      }
+    },
+    {
+      "file": "arabic-380-hold-8920.png",
+      "scene": "arabic",
+      "foreground_mae": 10.299765911399673,
+      "full_mae": 0.3409312865497076,
+      "worst64": 18.338422391857506,
+      "channel_peak": 127,
+      "source_bounds": [
+        22,
+        249,
+        353,
+        336
+      ],
+      "native_bounds": [
+        23,
+        249,
+        352,
+        336
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-hold-8920.png": "6f00bae3389ee28144da580a5783bb6d1934cd4fa55de0ed28a431e6d8f0310c",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-hold-8920.png": "42967cfdd840921ff934d4658a0804b1bb0eaaa0b04231d124bf3a1ddc7f9565"
+      }
+    },
+    {
+      "file": "arabic-380-glide-700.png",
+      "scene": "arabic",
+      "foreground_mae": 6.106407511118432,
+      "full_mae": 0.16259649122807018,
+      "worst64": 13.714285714285714,
+      "channel_peak": 66,
+      "source_bounds": [
+        32,
+        253,
+        327,
+        333
+      ],
+      "native_bounds": [
+        33,
+        254,
+        326,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-glide-700.png": "75568b4c042d3e8735aedc2865a4c3e6740a8bc8ad7561f2d372c9280e33fcbc",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-glide-700.png": "c5340e46725b7ea1ea49d5dc4c0b5927092f926c17e49751151f923f354faadb"
+      }
+    },
+    {
+      "file": "arabic-380-glide-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 2.5597576680996172,
+      "full_mae": 0.2063187134502924,
+      "worst64": 8.703703703703704,
+      "channel_peak": 70,
+      "source_bounds": [
+        19,
+        247,
+        352,
+        353
+      ],
+      "native_bounds": [
+        20,
+        244,
+        357,
+        357
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-glide-1500.png": "c96831f1b4b0120ff2869100b6a5258619ebc51b3d6725a6bf523225353ed5b3",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-glide-1500.png": "6374782f7f2778fb451e8171d51932018b33066de35c525c22038a5cbb68830e"
+      }
+    },
+    {
+      "file": "arabic-380-glide-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.708108108108108,
+      "full_mae": 0.29033333333333333,
+      "worst64": 25.177777777777777,
+      "channel_peak": 124,
+      "source_bounds": [
+        0,
+        203,
+        337,
+        331
+      ],
+      "native_bounds": [
+        0,
+        203,
+        336,
+        330
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-glide-3450.png": "5ae345430cb55354c3e9f0b88693cc2a02d0188d67bacea5b88eae0e7a1d565f",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-glide-3450.png": "0d93cec2b3d0a1815b6c2bbf364934f478cf60fb08e062ca82613b133c82c833"
+      }
+    },
+    {
+      "file": "arabic-380-glide-8920.png",
+      "scene": "arabic",
+      "foreground_mae": 10.31493395093498,
+      "full_mae": 0.3516125730994152,
+      "worst64": 18.7,
+      "channel_peak": 122,
+      "source_bounds": [
+        16,
+        246,
+        352,
+        337
+      ],
+      "native_bounds": [
+        17,
+        247,
+        352,
+        336
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-380-glide-8920.png": "3974feda2c77598f6e281eea6a0c7e99a9b6ceec647ead25a477bac8e09f7562",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-380-glide-8920.png": "1710032f7b8ba68f04cd9d9d98f4b0e815c1cc25b6781193ba90120046171b78"
+      }
+    },
+    {
+      "file": "arabic-800-orbit-700.png",
+      "scene": "arabic",
+      "foreground_mae": 4.694613996698529,
+      "full_mae": 0.08492361111111112,
+      "worst64": 10.138211382113822,
+      "channel_peak": 68,
+      "source_bounds": [
+        157,
+        251,
+        489,
+        348
+      ],
+      "native_bounds": [
+        158,
+        252,
+        488,
+        347
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-orbit-700.png": "1d88236a0d618faad744d900276d2b48d66762688439abbb415d1720c901681c",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-orbit-700.png": "8462f5822b3b44ba337b30bdbab03b2f58894a8a49248239bb3c2aec1d48ed0d"
+      }
+    },
+    {
+      "file": "arabic-800-orbit-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 2.0058501747454796,
+      "full_mae": 0.16500625,
+      "worst64": 9.761904761904763,
+      "channel_peak": 77,
+      "source_bounds": [
+        163,
+        223,
+        639,
+        375
+      ],
+      "native_bounds": [
+        165,
+        219,
+        646,
+        381
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-orbit-1500.png": "baa61ef10ffc5f0dd54ba8730d381d507d23fd076468829d767af120d72bf3d6",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-orbit-1500.png": "133eb294bc96d446c3a00c8590f33c80d657348de0d8b2827f2dcd6e8fd8bd92"
+      }
+    },
+    {
+      "file": "arabic-800-orbit-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 3.8808060453400506,
+      "full_mae": 0.1604875,
+      "worst64": 10.273333333333333,
+      "channel_peak": 137,
+      "source_bounds": [
+        273,
+        165,
+        617,
+        346
+      ],
+      "native_bounds": [
+        273,
+        165,
+        617,
+        345
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-orbit-3450.png": "606d46cfb0a43f4403f49b0173dce9a2ce8c4512be1fa36d4222a11c0f1e0b11",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-orbit-3450.png": "306f69162bf514de2405b1b7a70a9285e2e0d375aaacf6415f939bf6bbdbfb97"
+      }
+    },
+    {
+      "file": "arabic-800-orbit-8920.png",
+      "scene": "arabic",
+      "foreground_mae": 8.716920075189758,
+      "full_mae": 0.25440694444444445,
+      "worst64": 14.025333333333334,
+      "channel_peak": 128,
+      "source_bounds": [
+        194,
+        223,
+        641,
+        352
+      ],
+      "native_bounds": [
+        196,
+        224,
+        640,
+        352
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-orbit-8920.png": "bac6cf0f6d3c1470396f97cc837bc4f80ad132501f3a7b1c4d82f0f894d05778",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-orbit-8920.png": "69b246eb29e417e641496e60d8fdb63c740e4ff2c687d891fe59d3b282663dc0"
+      }
+    },
+    {
+      "file": "arabic-800-track-700.png",
+      "scene": "arabic",
+      "foreground_mae": 4.704240083675275,
+      "full_mae": 0.12181041666666667,
+      "worst64": 8.136876006441224,
+      "channel_peak": 76,
+      "source_bounds": [
+        54,
+        232,
+        485,
+        346
+      ],
+      "native_bounds": [
+        56,
+        232,
+        485,
+        346
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-track-700.png": "6de76a2fb16dfb29cd42576dbbedb6da57a5711c8c73564428bbe9b2276c7ece",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-track-700.png": "2cbd9bb18640d6514864077666388b2b0e15e43d0daafac5c02b30eb3d36f1d9"
+      }
+    },
+    {
+      "file": "arabic-800-track-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 2.455143254260252,
+      "full_mae": 0.14597361111111112,
+      "worst64": 7.47276688453159,
+      "channel_peak": 84,
+      "source_bounds": [
+        156,
+        222,
+        574,
+        370
+      ],
+      "native_bounds": [
+        158,
+        223,
+        579,
+        375
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-track-1500.png": "18425a7689435628ba482f50fc133900b47d5b6ca718b52b320f9e9ea99eda3b",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-track-1500.png": "1f8367b8afcb4d11597c3b1df68393e0889d7e211833c6fc43bf8313943a4a1d"
+      }
+    },
+    {
+      "file": "arabic-800-track-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.278210479510019,
+      "full_mae": 0.20712777777777777,
+      "worst64": 12.226720647773279,
+      "channel_peak": 133,
+      "source_bounds": [
+        269,
+        177,
+        718,
+        347
+      ],
+      "native_bounds": [
+        269,
+        177,
+        718,
+        346
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-track-3450.png": "219c039e84f7500fd755a21430fb4241c9543729558fbeeb8ddc51ad3bce4730",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-track-3450.png": "e0273f5a868f1de64b85b9d12da27f0af2802cb82ef68fc722de7caab1b3e468"
+      }
+    },
+    {
+      "file": "arabic-800-track-8920.png",
+      "scene": "arabic",
+      "foreground_mae": 8.925263887818785,
+      "full_mae": 0.24133541666666666,
+      "worst64": 15.275280898876405,
+      "channel_peak": 135,
+      "source_bounds": [
+        211,
+        232,
+        648,
+        348
+      ],
+      "native_bounds": [
+        212,
+        233,
+        648,
+        347
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-track-8920.png": "c2cc0f4ac1ce7110e49134b226db9bd8ecd715bfd424a0d8a93133a75e57d767",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-track-8920.png": "d98223cb7ae034c7913eb1817b6e5fea302a3e8c7c2063208dd8bd393d6c6c44"
+      }
+    },
+    {
+      "file": "arabic-800-hold-700.png",
+      "scene": "arabic",
+      "foreground_mae": 4.84,
+      "full_mae": 0.14116666666666666,
+      "worst64": 9.09009009009009,
+      "channel_peak": 75,
+      "source_bounds": [
+        32,
+        227,
+        490,
+        349
+      ],
+      "native_bounds": [
+        34,
+        228,
+        490,
+        349
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-hold-700.png": "557762770251f4ab3b5df3b373a682c1c6a0f3bffd72cad59cb89e609261b6cd",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-hold-700.png": "4cd12b06b0285e0bf2540eeae961532b5abb310bb8d02a2788e15fe25bbda17e"
+      }
+    },
+    {
+      "file": "arabic-800-hold-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 2.085854775346671,
+      "full_mae": 0.16702916666666667,
+      "worst64": 10.421875,
+      "channel_peak": 92,
+      "source_bounds": [
+        147,
+        224,
+        626,
+        376
+      ],
+      "native_bounds": [
+        148,
+        219,
+        633,
+        381
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-hold-1500.png": "d68c42c4c79fea269c8ea255004f452a94468536a87c93c29acbdfca1f3e4831",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-hold-1500.png": "8cc695ca6ff2927d54ee7a429cb0b082c62c4df5b62ff9fe1674d8f64b318ece"
+      }
+    },
+    {
+      "file": "arabic-800-hold-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 3.990847470608509,
+      "full_mae": 0.21711041666666667,
+      "worst64": 20.424242424242426,
+      "channel_peak": 136,
+      "source_bounds": [
+        261,
+        169,
+        737,
+        350
+      ],
+      "native_bounds": [
+        261,
+        169,
+        737,
+        349
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-hold-3450.png": "a23fe954a455748ce9255b02ab23e2f95ac39fb24b951ec1b0b20fe3d5b6822b",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-hold-3450.png": "d273e79f36e8273ac3210ccecf01130a0d611f557a529deb1de6139508faed2e"
+      }
+    },
+    {
+      "file": "arabic-800-hold-8920.png",
+      "scene": "arabic",
+      "foreground_mae": 8.772520337338607,
+      "full_mae": 0.24488125,
+      "worst64": 14.835069444444445,
+      "channel_peak": 137,
+      "source_bounds": [
+        208,
+        231,
+        652,
+        349
+      ],
+      "native_bounds": [
+        209,
+        232,
+        652,
+        348
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-hold-8920.png": "4c051183b9070c647d05ca100eba0f011cf41eba55755b968bb737cb0444bf15",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-hold-8920.png": "3bd0a7f912b50fc9d034132249f886f27d141e37bd4fb66e3de1add64b193ce3"
+      }
+    },
+    {
+      "file": "arabic-800-glide-700.png",
+      "scene": "arabic",
+      "foreground_mae": 4.913658749454523,
+      "full_mae": 0.10947222222222222,
+      "worst64": 9.848484848484848,
+      "channel_peak": 71,
+      "source_bounds": [
+        81,
+        237,
+        479,
+        343
+      ],
+      "native_bounds": [
+        82,
+        237,
+        479,
+        343
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-glide-700.png": "065eb1de27d13f5c2e2e6e84ef8ffa3a4f621dccfd24586e467497582eba998f",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-glide-700.png": "9464d8bfb4807824045ea5d0d8e5659af90d26865874a3291bc118d2d78e396b"
+      }
+    },
+    {
+      "file": "arabic-800-glide-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 2.2085587502279496,
+      "full_mae": 0.1513875,
+      "worst64": 9.24702380952381,
+      "channel_peak": 83,
+      "source_bounds": [
+        157,
+        229,
+        605,
+        370
+      ],
+      "native_bounds": [
+        158,
+        225,
+        611,
+        375
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-glide-1500.png": "93e680cd043cdf02a3c4896e4ebc95fb85f92d67afa5b2b9d087fa04883ecc87",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-glide-1500.png": "cc5aed90435da41253777877d72ad46f11b66407937c0c32cc43e6d9a890d3ba"
+      }
+    },
+    {
+      "file": "arabic-800-glide-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.010337755828067,
+      "full_mae": 0.19962291666666668,
+      "worst64": 13.416666666666666,
+      "channel_peak": 133,
+      "source_bounds": [
+        257,
+        169,
+        689,
+        336
+      ],
+      "native_bounds": [
+        257,
+        169,
+        688,
+        335
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-glide-3450.png": "56e75dbbe6e50d24d0c1e34ad6de4e42227b26f4d0315c4067d579bcc8abddc2",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-glide-3450.png": "9ac2995ea1fac6e78ad242d04569df1ed555604dcdbe710132586c2662724cdf"
+      }
+    },
+    {
+      "file": "arabic-800-glide-8920.png",
+      "scene": "arabic",
+      "foreground_mae": 8.908088681673588,
+      "full_mae": 0.2547527777777778,
+      "worst64": 15.215596330275229,
+      "channel_peak": 135,
+      "source_bounds": [
+        201,
+        228,
+        649,
+        349
+      ],
+      "native_bounds": [
+        202,
+        228,
+        648,
+        349
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\arabic-800-glide-8920.png": "a3d8c9eeb7ea6c61ba24a602d54743e7072a45f1e4b6ef46c0e6f5d234bdb43e",
+        "build\\verification\\diorama-camera-targets-kotlin\\arabic-800-glide-8920.png": "846ed8f7331660d311603a8cc84651bb841407f6cdf4738bfd4d68d431097b9d"
+      }
+    },
+    {
+      "file": "cjk-380-orbit-700.png",
+      "scene": "cjk",
+      "foreground_mae": 7.465818010372466,
+      "full_mae": 0.254656432748538,
+      "worst64": 9.919607843137255,
+      "channel_peak": 62,
+      "source_bounds": [
+        57,
+        270,
+        358,
+        339
+      ],
+      "native_bounds": [
+        57,
+        271,
+        358,
+        338
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-orbit-700.png": "f9a429569e303403b8da89a98278c386fae6fa9f3bfd532cd0ab680e722dc224",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-orbit-700.png": "f48007412b1d8b9fb195656dec6a801fea88a341feff9d9623997ab526f205e1"
+      }
+    },
+    {
+      "file": "cjk-380-orbit-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 4.762848698911554,
+      "full_mae": 0.28980263157894737,
+      "worst64": 7.967741935483871,
+      "channel_peak": 98,
+      "source_bounds": [
+        30,
+        244,
+        361,
+        338
+      ],
+      "native_bounds": [
+        23,
+        244,
+        361,
+        337
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-orbit-1500.png": "3e91f9ed06d555489b8bc09b6e001debeeb662a62f5312f362e515ab8804f07b",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-orbit-1500.png": "9e063bdacdbfe430fab7c7879e830b0f7de81750df15df0f4a1cf672ca3229c8"
+      }
+    },
+    {
+      "file": "cjk-380-orbit-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 6.146805518938395,
+      "full_mae": 0.4090321637426901,
+      "worst64": 17.748106060606062,
+      "channel_peak": 108,
+      "source_bounds": [
+        14,
+        238,
+        314,
+        348
+      ],
+      "native_bounds": [
+        15,
+        238,
+        318,
+        355
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-orbit-3450.png": "4764d7479ec4ba86d91b6ca0d6d8eb2b37d1c413cd23aa67aba571ea86996c22",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-orbit-3450.png": "3cf6c5ac7b73479a196cebc1f92d2315bab38597f2ebc3d837437bc73d173e8f"
+      }
+    },
+    {
+      "file": "cjk-380-orbit-8920.png",
+      "scene": "cjk",
+      "foreground_mae": 12.961821642782747,
+      "full_mae": 0.527625730994152,
+      "worst64": 18.15843621399177,
+      "channel_peak": 110,
+      "source_bounds": [
+        5,
+        249,
+        339,
+        344
+      ],
+      "native_bounds": [
+        5,
+        250,
+        338,
+        343
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-orbit-8920.png": "e3b19f8973ce38ac6d6cfb939cbb484fe79c6a505be7b7a1455b87b851526586",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-orbit-8920.png": "0411b5df6aab1657d41c5bb93638c8a598f828d116b45feae1007c1f26a72281"
+      }
+    },
+    {
+      "file": "cjk-380-track-700.png",
+      "scene": "cjk",
+      "foreground_mae": 7.8273957814316555,
+      "full_mae": 0.2756067251461988,
+      "worst64": 8.972751322751323,
+      "channel_peak": 69,
+      "source_bounds": [
+        26,
+        262,
+        344,
+        338
+      ],
+      "native_bounds": [
+        27,
+        263,
+        344,
+        337
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-track-700.png": "2548482aa1a586b55fe00ed1d30d01af11633b45ff91a645b384adf58e038081",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-track-700.png": "ac20b31e1fe0147f1693d50380118290fa5c30ea2a557cacb62604ff422ffbe7"
+      }
+    },
+    {
+      "file": "cjk-380-track-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 4.518431148283175,
+      "full_mae": 0.2772295321637427,
+      "worst64": 15.527777777777779,
+      "channel_peak": 90,
+      "source_bounds": [
+        18,
+        228,
+        323,
+        339
+      ],
+      "native_bounds": [
+        9,
+        229,
+        322,
+        339
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-track-1500.png": "1171f77c535008e16ed890b98b459ce4eca032ffde034e0dcd39e1e2832cc7de",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-track-1500.png": "0e387683165f0c38b3b1b1df9260f74670540f394458801a8779506e28dde173"
+      }
+    },
+    {
+      "file": "cjk-380-track-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 5.650978806952706,
+      "full_mae": 0.4292017543859649,
+      "worst64": 16.237985685071575,
+      "channel_peak": 115,
+      "source_bounds": [
+        22,
+        246,
+        348,
+        348
+      ],
+      "native_bounds": [
+        23,
+        246,
+        356,
+        356
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-track-3450.png": "644a3d9b17e43964d9ab901937da3769dfb043b94749da13a79d1a9276459de3",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-track-3450.png": "067ff2326ac7c0b009a6a1a7401860a3f363c1b055057cb4fa334beda861252a"
+      }
+    },
+    {
+      "file": "cjk-380-track-8920.png",
+      "scene": "cjk",
+      "foreground_mae": 14.112623910187507,
+      "full_mae": 0.5182675438596491,
+      "worst64": 16.847285641806188,
+      "channel_peak": 132,
+      "source_bounds": [
+        25,
+        262,
+        346,
+        338
+      ],
+      "native_bounds": [
+        25,
+        263,
+        346,
+        337
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-track-8920.png": "ddbbd67a8d1c0b3ea171f496e75c01eb8b4a5825fcdfc8b8a0785b1d2c3f3fc5",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-track-8920.png": "daf7a95775774e5b3e0de3ff95e75f97df4624abe02d2cd6c2a53a662b513011"
+      }
+    },
+    {
+      "file": "cjk-380-hold-700.png",
+      "scene": "cjk",
+      "foreground_mae": 7.399414749787013,
+      "full_mae": 0.29204970760233917,
+      "worst64": 15.285714285714286,
+      "channel_peak": 64,
+      "source_bounds": [
+        16,
+        259,
+        354,
+        340
+      ],
+      "native_bounds": [
+        17,
+        260,
+        353,
+        340
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-hold-700.png": "177aab7ec260452386b274ac279d7a2760e3140888a3c97051e01cf868be447c",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-hold-700.png": "c3523a052b3d10dc5e1417d77b7a9c29aa17110a34e611108eb6bfda841ec4a2"
+      }
+    },
+    {
+      "file": "cjk-380-hold-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 4.382386779625562,
+      "full_mae": 0.30628654970760233,
+      "worst64": 9.666666666666666,
+      "channel_peak": 95,
+      "source_bounds": [
+        7,
+        233,
+        353,
+        339
+      ],
+      "native_bounds": [
+        0,
+        234,
+        352,
+        339
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-hold-1500.png": "a11df4854d3e79dc627299cc52b24d6cd18ae6ad7e7d63f8b129cfd0da61faa6",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-hold-1500.png": "1b409bf1682427cdf8ad038accd7d959e5201e3a4944a51c36b49e6847c07ab0"
+      }
+    },
+    {
+      "file": "cjk-380-hold-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 5.331085718207398,
+      "full_mae": 0.45426461988304095,
+      "worst64": 18.75925925925926,
+      "channel_peak": 110,
+      "source_bounds": [
+        12,
+        243,
+        358,
+        351
+      ],
+      "native_bounds": [
+        13,
+        243,
+        366,
+        359
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-hold-3450.png": "311a9d08c39213ef245c13214dd06bbd4be53840a66a9afb8b92322131ff8705",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-hold-3450.png": "aa8757cb26ea36fc0b7724e8285e952368deb2efb8ddb62d9c463f4e08e80a72"
+      }
+    },
+    {
+      "file": "cjk-380-hold-8920.png",
+      "scene": "cjk",
+      "foreground_mae": 13.683305100696405,
+      "full_mae": 0.5314283625730994,
+      "worst64": 17.11111111111111,
+      "channel_peak": 122,
+      "source_bounds": [
+        20,
+        261,
+        351,
+        339
+      ],
+      "native_bounds": [
+        20,
+        262,
+        351,
+        339
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-hold-8920.png": "45df73c07d1a6484cb76cf6f87bc30e1251d88fba6430b024cc64073359b5bc2",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-hold-8920.png": "506bcf40cc12fd9adbb210b777e3114348c0fe7f132f28d1a205e93cfc97b2b6"
+      }
+    },
+    {
+      "file": "cjk-380-glide-700.png",
+      "scene": "cjk",
+      "foreground_mae": 8.397211878162896,
+      "full_mae": 0.25714619883040934,
+      "worst64": 9.321989528795811,
+      "channel_peak": 60,
+      "source_bounds": [
+        38,
+        265,
+        333,
+        335
+      ],
+      "native_bounds": [
+        39,
+        265,
+        333,
+        335
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-glide-700.png": "c3c686534996bbfa8294d7567a2b65a8e50fc0eb48e5147906d4188d602b8281",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-glide-700.png": "ce155dcb14e37d4f7b85be447499ea47f4110e3af3a9320297b9f60fc1e990cb"
+      }
+    },
+    {
+      "file": "cjk-380-glide-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 4.776386093093765,
+      "full_mae": 0.2809897660818714,
+      "worst64": 9.376344086021506,
+      "channel_peak": 92,
+      "source_bounds": [
+        22,
+        238,
+        336,
+        336
+      ],
+      "native_bounds": [
+        14,
+        238,
+        336,
+        336
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-glide-1500.png": "4056763bb6b0422f448ae54175cd9eb345687d791a207c30f01c63f346f05f60",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-glide-1500.png": "ee4a253423a4686e81391c8cd5c8078e7007428913155a893cf35ac5124c67cf"
+      }
+    },
+    {
+      "file": "cjk-380-glide-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 5.616794692737431,
+      "full_mae": 0.423328947368421,
+      "worst64": 18.74074074074074,
+      "channel_peak": 112,
+      "source_bounds": [
+        4,
+        245,
+        344,
+        341
+      ],
+      "native_bounds": [
+        5,
+        245,
+        350,
+        348
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-glide-3450.png": "7f4ffa6321789203a43b8181b43810bb9756ea6e899b41f64b3231c49da3a20a",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-glide-3450.png": "286606e90db6ca873c727024f06b2d2fbb0e5bb249df11555ce92bbb71030bbe"
+      }
+    },
+    {
+      "file": "cjk-380-glide-8920.png",
+      "scene": "cjk",
+      "foreground_mae": 13.30542669906487,
+      "full_mae": 0.5283654970760234,
+      "worst64": 14.69120654396728,
+      "channel_peak": 121,
+      "source_bounds": [
+        11,
+        258,
+        348,
+        339
+      ],
+      "native_bounds": [
+        11,
+        259,
+        348,
+        338
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-380-glide-8920.png": "04a03ce59973865c42ac6d8686c79bc0a2c94f1e88317a0d002ebc00a8c1238b",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-380-glide-8920.png": "f4284eb1d2297792e8bb3b9b3ed21a7947e7472016e078c234ff39e5ef7626fb"
+      }
+    },
+    {
+      "file": "cjk-800-orbit-700.png",
+      "scene": "cjk",
+      "foreground_mae": 2.8507996001999,
+      "full_mae": 0.15845694444444444,
+      "worst64": 9.53623188405797,
+      "channel_peak": 50,
+      "source_bounds": [
+        201,
+        247,
+        800,
+        383
+      ],
+      "native_bounds": [
+        201,
+        247,
+        800,
+        383
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-orbit-700.png": "3daafa37d1c46880ac5249422d63a57e2c8c53425e159727b919bab885908364",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-orbit-700.png": "6ef880d3e2ea790847c3bd37d8a92b0be3dfa9166939f1091aa4e861d5fcfdc3"
+      }
+    },
+    {
+      "file": "cjk-800-orbit-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 2.1135824372372114,
+      "full_mae": 0.20351597222222223,
+      "worst64": 4.848566308243727,
+      "channel_peak": 70,
+      "source_bounds": [
+        152,
+        197,
+        800,
+        374
+      ],
+      "native_bounds": [
+        140,
+        197,
+        800,
+        374
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-orbit-1500.png": "1790d5df42699197ff080d2c2f0e8b6c2dc592f1d6bc57ae7489acd7cdfcb507",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-orbit-1500.png": "c0d4c9e5d7f286bcd0d0386b3768876419f82eef7d8c008d06d440dc48a4f0cb"
+      }
+    },
+    {
+      "file": "cjk-800-orbit-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 2.4783439972740697,
+      "full_mae": 0.27275208333333334,
+      "worst64": 6.886792452830188,
+      "channel_peak": 89,
+      "source_bounds": [
+        0,
+        168,
+        591,
+        382
+      ],
+      "native_bounds": [
+        0,
+        168,
+        595,
+        393
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-orbit-3450.png": "817801cf83a69b6ea4f2565f44f0c94c6971e2d78cc26ffafe5801280194b893",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-orbit-3450.png": "44b7677b3a0e93a93a955c2ceb758f0544d0a1151edb49c672f91cab31ddeaf2"
+      }
+    },
+    {
+      "file": "cjk-800-orbit-8920.png",
+      "scene": "cjk",
+      "foreground_mae": 5.601037369909566,
+      "full_mae": 0.3479527777777778,
+      "worst64": 11.25,
+      "channel_peak": 90,
+      "source_bounds": [
+        0,
+        195,
+        648,
+        376
+      ],
+      "native_bounds": [
+        0,
+        195,
+        647,
+        376
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-orbit-8920.png": "a868fe69e18896a1511656cfe66116099e82dd068c8168d1b8b7647d6b51cde3",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-orbit-8920.png": "9ef7164b9e903d376416c90c0b71d753aa2dedff771ed43b0b44e5d7c79c4d56"
+      }
+    },
+    {
+      "file": "cjk-800-track-700.png",
+      "scene": "cjk",
+      "foreground_mae": 3.61770927772741,
+      "full_mae": 0.18289027777777778,
+      "worst64": 5.093401015228427,
+      "channel_peak": 63,
+      "source_bounds": [
+        136,
+        228,
+        729,
+        369
+      ],
+      "native_bounds": [
+        136,
+        229,
+        728,
+        369
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-track-700.png": "8adae7ffaaddb2c09dd8504214f3b8a4a8b972e555ee2b3ebc01c3a7640e930e",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-track-700.png": "7ff39e63907cc97494e25bac9b294cd03c1115b1cba57c88246b2da2f7f01f7e"
+      }
+    },
+    {
+      "file": "cjk-800-track-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 2.0305039787798407,
+      "full_mae": 0.20732291666666666,
+      "worst64": 6.872340425531915,
+      "channel_peak": 63,
+      "source_bounds": [
+        104,
+        160,
+        663,
+        369
+      ],
+      "native_bounds": [
+        84,
+        160,
+        663,
+        369
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-track-1500.png": "a13b5d2184f749fd3c6dd3601c8073779839de10a5390d397e5a66a9f0cd2b12",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-track-1500.png": "03b0615e0132c3ebebad9d6e50943ac5d32c2d0bf6f63a4ebd7ea736aae564f5"
+      }
+    },
+    {
+      "file": "cjk-800-track-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 2.5835214185677744,
+      "full_mae": 0.3100118055555556,
+      "worst64": 10.525252525252526,
+      "channel_peak": 94,
+      "source_bounds": [
+        52,
+        198,
+        662,
+        389
+      ],
+      "native_bounds": [
+        52,
+        198,
+        677,
+        403
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-track-3450.png": "4c62a126dee01e3f9f9b3facd2567badf7b464a279ec820e373a0edd87427a26",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-track-3450.png": "986fb727b6ad45ef2c84fc0079a7b402f41f528968b4e24f34843bfa3300ad07"
+      }
+    },
+    {
+      "file": "cjk-800-track-8920.png",
+      "scene": "cjk",
+      "foreground_mae": 6.724350804524454,
+      "full_mae": 0.3517395833333333,
+      "worst64": 22.666666666666668,
+      "channel_peak": 99,
+      "source_bounds": [
+        74,
+        230,
+        675,
+        370
+      ],
+      "native_bounds": [
+        75,
+        231,
+        675,
+        370
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-track-8920.png": "c1b0d901573597623715fcfd63b30d51ed64f2fe70af2c82bb3a3a269ed3cc92",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-track-8920.png": "99343642c62d75b8ddc93870e478e7b9d22bb3e05509454fefbfab9d18a2119f"
+      }
+    },
+    {
+      "file": "cjk-800-hold-700.png",
+      "scene": "cjk",
+      "foreground_mae": 3.3202276064610867,
+      "full_mae": 0.18842291666666666,
+      "worst64": 4.773747841105354,
+      "channel_peak": 50,
+      "source_bounds": [
+        119,
+        224,
+        748,
+        374
+      ],
+      "native_bounds": [
+        120,
+        224,
+        748,
+        373
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-hold-700.png": "373982a25e76df46aa35df80ab8cec631e4541b5926a163aa96335d6a2f8358a",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-hold-700.png": "b8c9dd1af0d2e54f8161a3012a4b5c8e9d8ac1515d48d896ed38f83690f1e4bd"
+      }
+    },
+    {
+      "file": "cjk-800-hold-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 2.00941485815404,
+      "full_mae": 0.22395347222222223,
+      "worst64": 4.9700374531835205,
+      "channel_peak": 62,
+      "source_bounds": [
+        101,
+        173,
+        745,
+        372
+      ],
+      "native_bounds": [
+        84,
+        173,
+        745,
+        372
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-hold-1500.png": "886bad3a46f86388979786b81c6898e2f7693ed25adcc01dfb68f03390ff2921",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-hold-1500.png": "49534a5c4a977c3848000033844a2390bb1bd000b85423b734dc6086e63f910f"
+      }
+    },
+    {
+      "file": "cjk-800-hold-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 2.3970419351017864,
+      "full_mae": 0.3232361111111111,
+      "worst64": 8.281385281385282,
+      "channel_peak": 91,
+      "source_bounds": [
+        31,
+        192,
+        678,
+        395
+      ],
+      "native_bounds": [
+        31,
+        191,
+        693,
+        409
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-hold-3450.png": "9bd9dfa218099fd159b016acc2f717f38f402cc0c4b68ea6c32a25e98dd7bffb",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-hold-3450.png": "824856c0f854e1270ad675a0499941e057474d510afd9c3847ad7bd06aca2b10"
+      }
+    },
+    {
+      "file": "cjk-800-hold-8920.png",
+      "scene": "cjk",
+      "foreground_mae": 6.469041719848837,
+      "full_mae": 0.35900486111111113,
+      "worst64": 9.079852230747372,
+      "channel_peak": 97,
+      "source_bounds": [
+        64,
+        228,
+        684,
+        373
+      ],
+      "native_bounds": [
+        65,
+        229,
+        683,
+        372
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-hold-8920.png": "1519720ee9f348d83453984629a5871c7f53ae72f233d8c6c54f329bc89f6f94",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-hold-8920.png": "a0465fbe70af8b57601efc6d05fa3af89cb2d67f1caef302641d39d7f91fb1a6"
+      }
+    },
+    {
+      "file": "cjk-800-glide-700.png",
+      "scene": "cjk",
+      "foreground_mae": 4.063407874617737,
+      "full_mae": 0.17716458333333332,
+      "worst64": 8.518518518518519,
+      "channel_peak": 56,
+      "source_bounds": [
+        156,
+        234,
+        705,
+        365
+      ],
+      "native_bounds": [
+        156,
+        234,
+        705,
+        364
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-glide-700.png": "f34dfe9b757d96185d1397dcfe9a6bad722d01c78e0b038a039aa28177cfad07",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-glide-700.png": "fe9005ecb072e21f763a6dee357e1361258118d84f0c1897ceb30f11954ee0ab"
+      }
+    },
+    {
+      "file": "cjk-800-glide-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 2.2568168861840987,
+      "full_mae": 0.21168472222222223,
+      "worst64": 5.27536231884058,
+      "channel_peak": 61,
+      "source_bounds": [
+        124,
+        182,
+        707,
+        366
+      ],
+      "native_bounds": [
+        108,
+        182,
+        707,
+        366
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-glide-1500.png": "dd32572281beef4d1df73024db2a752158a2ec78370806c1fce414698097a5e3",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-glide-1500.png": "4ba06fc4749c1709d834e74cb36a357b91d5e018cebc9a3639fc9c5238f29357"
+      }
+    },
+    {
+      "file": "cjk-800-glide-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 2.3517407170405216,
+      "full_mae": 0.28329166666666666,
+      "worst64": 5.687196110210697,
+      "channel_peak": 94,
+      "source_bounds": [
+        0,
+        190,
+        648,
+        373
+      ],
+      "native_bounds": [
+        0,
+        190,
+        656,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-glide-3450.png": "35a1feccda98e7a547e6f8c6405f236d258d79713d6e912b3d63d1bd234df38b",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-glide-3450.png": "e203e5f22244d2d8f899fa854e5fddc93fc23d192253036f1482c88218208c13"
+      }
+    },
+    {
+      "file": "cjk-800-glide-8920.png",
+      "scene": "cjk",
+      "foreground_mae": 6.120402257617066,
+      "full_mae": 0.3554423611111111,
+      "worst64": 9.375,
+      "channel_peak": 95,
+      "source_bounds": [
+        33,
+        218,
+        672,
+        370
+      ],
+      "native_bounds": [
+        33,
+        219,
+        672,
+        369
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-camera-targets-browser\\cjk-800-glide-8920.png": "24de933bd962ea80d057d62e57ff82459ecdcd820cf250880ca56cd11fde7c02",
+        "build\\verification\\diorama-camera-targets-kotlin\\cjk-800-glide-8920.png": "6b0ea0b0f12c1edbe654de3e70b35436c4e069cefd8e0f02a0c9b25dafb31b22"
+      }
+    }
+  ],
+  "mean_foreground_mae": 5.7730350692798,
+  "by_scene": {
+    "latin": 5.982686573179173,
+    "arabic": 5.371602006258405,
+    "cjk": 5.72895868651503
+  },
+  "status": "Original target-driven shots and Kotlin own target-driven shaped text. Analytic charges; NOT damped/orientation/alignment/transition CameraRig, full scene or device acceptance."
+}

@@ -29,7 +29,7 @@ const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:tru
 const world=new THREE.Scene();world.add(group);const camera=new THREE.PerspectiveCamera(55,innerWidth/600,.1,1000);
 const eye=composeLocal(f,p.offsetR+1.7,p.offsetU+.8,-5.2),look=composeLocal(f,p.offsetR+p.lookR,p.offsetU,0);camera.position.set(eye.x,eye.y,eye.z);camera.lookAt(look.x,look.y,look.z);camera.updateMatrixWorld();
 const primary=new THREE.Color('#dfe5ec'),accent=new THREE.Color('#f17b4d');
-Object.assign(window,{ready:true,rasters:()=>layout.units.map(u=>({base:u.raster.baseTexture.image.toDataURL(),halo:u.raster.glowTexture.image.toDataURL()})),drawLayers:(time:number,active:boolean)=>{
+Object.assign(window,{ready:true,targetStage:{line,layout,frame:f,placement:p,camera,group},rasters:()=>layout.units.map(u=>({base:u.raster.baseTexture.image.toDataURL(),halo:u.raster.glowTexture.image.toDataURL()})),drawLayers:(time:number,active:boolean)=>{
  const charge=(u:any,a:number,r:number)=>time<=u.startTime?0:(1-Math.exp(-a*(Math.min(time,u.endTime)-u.startTime)))*Math.exp(-r*Math.max(0,time-u.endTime));
  updateDioramaActiveUnits({activeLineUnits:units,planes,lightVals:new Float32Array(units.map(u=>charge(u,14,4.5))),soulVals:new Float32Array(units.map(u=>charge(u,12,2.2))),now:time,delta:0,
   life:1,breath:1,powerEnv:0,damped:{primary,accent,secondary:primary,background:primary},keywordUnitColors:new Map(),glowIntensity:1,soulIntensity:1,soulActiveEnabled:active,gradientIntensity:1});

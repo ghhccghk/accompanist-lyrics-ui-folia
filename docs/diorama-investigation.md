@@ -53,3 +53,9 @@ Paint度量，中文middle一致性未实现/未验证，不能称平台有意�
 additive、局部z/lift/swell。180实际Three帧，注入媒体解析charge/delta0，
 不称原RAF完整场景；材质峰1.771e-8、前景MAE4.427326、最低alpha范围仍差21px。
 旧错误量化次序与失败图保留；见verification/diorama-active-layers。CameraRig仍未接。
+
+有界镜头目标现已接真实文字透视：13shot/hold/drift/读头，原CameraRig私有片段
+只导出观察，2808数值峰1.066e-14，132同字体真实Three/Compose图MAE5.773035。
+Kotlin用自己的完整塑形宽度计算实际镜头（不是复用原pose）；尚缺原加权shot选择、
+SmoothDamp/朝向回正/跟随/切曲、雾与深度，极端target本身也有裁词，禁止称正式
+效果或开放sample。见verification/diorama-camera-targets。下一轮先回已开放Fume残差。

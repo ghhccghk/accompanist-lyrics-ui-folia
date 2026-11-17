@@ -1593,3 +1593,15 @@ Source recipe shadowColor modulates coverage before rounded blur; initial revers
 order and its failing halo bounds retained.180 actual source raster/Three frames
 with explicit analytic charge injection, NOT original RAF/CameraRig equivalence.
 Evidence and unresolved21px lowest-alpha extent: verification/diorama-active-layers.
+
+### Diorama desired camera targets (2026-11-18)
+Pinned cc6226e4 cameraPath.ts:resolveShotOffset/readHeadTruck/holdSettle/cameraDrift,
+CameraRig.tsx:144–165,228–240,249–281,345–349 and renderHints ->
+DioramaCameraTarget.kt. Original13 local shot offsets, direction/EGC read-progress,
+raw last-word render end, tanh truck, settled composition and idle drift.
+Once-per-line timing preparation, media-query reconstruction. No audio data fabricated.
+Verification export-only source extraction logs original ranges/hash and type-only
+Oxc transpilation; injected ref/line/frame inputs/zero transition sweep. Source
+functions/formulas unchanged. Real Three text vs own shaped target-driven text132
+frames, numeric2808 controls; NOT complete CameraRig/RAF/orientation/picker/depth.
+Evidence and unresolved edge clipping/halo differences: verification/diorama-camera-targets.

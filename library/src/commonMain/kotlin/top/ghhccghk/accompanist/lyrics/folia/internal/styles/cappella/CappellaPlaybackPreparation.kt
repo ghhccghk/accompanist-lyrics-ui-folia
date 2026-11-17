@@ -200,11 +200,16 @@ internal class CappellaPlaybackPreparation(private val stage:CappellaStagePrepar
             }
         }
     }
-    private fun flow(time:Double,leftLimit:Boolean=false):List<Pair<Episode,Double>> {
+    private fun flow(time:Double,leftLimit:Boolean=false,reducedMotion:Boolean=false):List<Pair<Episode,Double>> {
         var top=stage.size.top
+        val current=if(reducedMotion)cappellaCurrentLine(stage.lines,time)else -1
         return episodes.filter { e->e.present(time,leftLimit) }.sortedBy{order.getValue(it.message.id)}.map { e->
             val rowTop=top
-            top+=max(40.0,e.height.at(time).value)+e.margin.at(time).value+12
+            // Reduced motion already removes scale/projection/presence. Its
+            // flow must use the same instantaneous target sizes as its boxes,
+            // rather than leave animated preceding heights/margins underneath.
+            top+=if(reducedMotion)max(40.0,stage.rowSize(e.message,e.message.line!=null&&e.message.line==current,time).bubble.height)+12
+                else max(40.0,e.height.at(time).value)+e.margin.at(time).value+12
             e to rowTop
         }
     }
@@ -214,7 +219,7 @@ internal class CappellaPlaybackPreparation(private val stage:CappellaStagePrepar
         // Source selectors include renderEnd. A preparation event describes
         // its right limit, while an exact-end seek still sees the prior set.
         val leftLimit=current!=cappellaCurrentLine(stage.lines,time,after=true)
-        val live=flow(time,leftLimit)
+        val live=flow(time,leftLimit,reducedMotion)
         val exiting=episodes.filter{e->e.phase(time,leftLimit)?.second==false&&
             (e.unmount==null||time<e.unmount!!)}
             .map{it to it.exitTops.getValue(it.phase(time,leftLimit)!!.first)}
@@ -231,7 +236,7 @@ internal class CappellaPlaybackPreparation(private val stage:CappellaStagePrepar
             val margin=if(reducedMotion)0.0 else e.margin.at(time).value
             val passed=m.line!=null&&m.line<current
             val opacity=if(reducedMotion)if(passed)stage.motion.passedOpacity else 1.0 else e.opacity.at(time).value
-            val rowHeight=removal?.let{e.exitHeights.getValue(it)}?: (max(40.0,height)+margin)
+            val rowHeight=if(reducedMotion)max(40.0,height)else removal?.let{e.exitHeights.getValue(it)}?: (max(40.0,height)+margin)
             val outer=if(reducedMotion)CappellaPresenceFrame(1.0,1.0,0.0)else e.outer.at(time,leftLimit)
             val outerAlpha=outer.opacity;val outerScale=outer.scale;val outerY=outer.y
             val right=m.sender.side==CappellaSide.RIGHT

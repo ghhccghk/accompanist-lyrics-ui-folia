@@ -105,6 +105,7 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
     active: Boolean = true, reducedMotion: Boolean = false,
     sizeOverride: CappellaBubbleSize? = null,
     placement: CappellaPlacement? = null, decoration: CappellaDecoration? = null,
+    resizeFrom: Double? = null,
     onPrepared: (CappellaBubblePrepared) -> Unit = {}) {
     val density = LocalDensity.current; val resolver = LocalFontFamilyResolver.current
     val measurer = rememberTextMeasurer(cacheSize = 32)
@@ -119,7 +120,8 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
         else plan.characters.size to plan.characters.size
     } }
     val (count,target) = counts
-    val box = sizeOverride ?: sizes[target.coerceIn(sizes.indices)]
+    val resize=remember(plan,sizes,resizeFrom) { resizeFrom?.let{CappellaBubbleResize(plan,sizes,it)} }
+    val box = sizeOverride ?: resize?.at(clock()) ?: sizes[target.coerceIn(sizes.indices)]
     val width = max(box.width,config.minWidth)
     val height = max(box.height,config.minHeight)
     val shown = plan.characters.take(count).joinToString("")

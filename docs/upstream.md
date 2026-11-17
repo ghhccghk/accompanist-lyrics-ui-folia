@@ -1160,3 +1160,20 @@ not hidden by altered fixtures/tolerances. Native retains original0.24s exit.
 Independent interruption continuity/unchanged-target/random seek tests pass.
 Evidence/reproduction: verification/cappella-response. This does not establish
 mounted layout projection/velocity history or full moving-stage equivalence.
+
+## 2026-11-17 Cappella continuously active bubble resize
+
+`CappellaBubbleParts.tsx:AnimatedBubbleFrame` and `cappellaReveal.ts` at cc6226e4
+→ `CappellaBubbleResize.kt` and optional internal `CappellaBubbleTarget.resizeFrom`.
+Prepares source prefix target events,0.2s easeOut interrupted width/height curves,
+applies source lookahead once and shapes the visible prefix inside the actual
+interpolated width. Whole target renderer remains unchanged by default.
+
+Original actual AnimatedBubbleFrame now stays mounted with stable key; original
+RAF queue runs dense/event read points.92 paired images,random revisits and
+pause checks are retained in verification/cappella-resize. Source DOM/native
+width residual0.243535px,height0.07211px,foreground MAE0.879876;contact inspected.
+No phase fitting,registration,changed expected target values or relaxed0.001px
+target geometry bound. RAF quantization/layout and raster residuals remain;
+this does not claim an exact continuous geometry pass. Scope is isolated,
+continuously active message,not active→passed/group/stack/presence integration.

@@ -1,0 +1,665 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "viewport": [
+      480,
+      300
+    ],
+    "DPR": 1,
+    "frames": 92,
+    "scope": "Original stable-key AnimatedBubbleFrame/ActiveCappellaText. Source .2s lookahead+actual width/height animation; fixed font24.12/bold Latin. Exact target events plus60Hz read steps, original RAF queue. CSS glyph fades explicitly media-anchored. Excludes row springs,group scale,shadow,avatar/timestamp."
+  },
+  "status": "Continuously mounted original frame resize comparison; not row/whole-theme acceptance. RAF quantization,layout/word wrap/shaping/raster residuals measured below.",
+  "mean_foreground_mae": 0.8798756822525324,
+  "maximum_width_error": 0.24353479744220863,
+  "maximum_height_error": 0.07210990684689023,
+  "frames": [
+    {
+      "file": "latin-160-left-1000.png",
+      "foreground_mae": 0.46004504504504506,
+      "full_mae": 0.023791666666666666
+    },
+    {
+      "file": "latin-160-left-1100.png",
+      "foreground_mae": 0.44437518181440383,
+      "full_mae": 0.024854166666666667
+    },
+    {
+      "file": "latin-160-left-1200.png",
+      "foreground_mae": 0.8054248980871747,
+      "full_mae": 0.04772222222222222
+    },
+    {
+      "file": "latin-160-left-1300.png",
+      "foreground_mae": 0.5329446903451006,
+      "full_mae": 0.03443981481481481
+    },
+    {
+      "file": "latin-160-left-1400.png",
+      "foreground_mae": 0.7045882469527301,
+      "full_mae": 0.04953240740740741
+    },
+    {
+      "file": "latin-160-left-1500.png",
+      "foreground_mae": 0.6210016835016835,
+      "full_mae": 0.04789583333333333
+    },
+    {
+      "file": "latin-160-left-1600.png",
+      "foreground_mae": 0.5160917643175441,
+      "full_mae": 0.04349537037037037
+    },
+    {
+      "file": "latin-160-left-1750.png",
+      "foreground_mae": 0.9279901177154484,
+      "full_mae": 0.0901087962962963
+    },
+    {
+      "file": "latin-160-left-1900.png",
+      "foreground_mae": 0.6413291500285225,
+      "full_mae": 0.06261574074074074
+    },
+    {
+      "file": "latin-160-left-2000.png",
+      "foreground_mae": 0.6393483369486623,
+      "full_mae": 0.0656550925925926
+    },
+    {
+      "file": "latin-160-left-2100.png",
+      "foreground_mae": 0.7455283014902159,
+      "full_mae": 0.08225925925925925
+    },
+    {
+      "file": "latin-160-left-2200.png",
+      "foreground_mae": 0.8279051538310798,
+      "full_mae": 0.0979513888888889
+    },
+    {
+      "file": "latin-160-left-2300.png",
+      "foreground_mae": 0.6768767123287671,
+      "full_mae": 0.08591666666666667
+    },
+    {
+      "file": "latin-160-left-2500.png",
+      "foreground_mae": 1.465507621978655,
+      "full_mae": 0.18868518518518518
+    },
+    {
+      "file": "latin-160-left-2800.png",
+      "foreground_mae": 0.604236034036256,
+      "full_mae": 0.07563194444444445
+    },
+    {
+      "file": "latin-160-left-3000.png",
+      "foreground_mae": 0.604236034036256,
+      "full_mae": 0.07563194444444445
+    },
+    {
+      "file": "latin-160-left-3500.png",
+      "foreground_mae": 0.604236034036256,
+      "full_mae": 0.07563194444444445
+    },
+    {
+      "file": "latin-160-left-700.png",
+      "foreground_mae": 0.10662468358337963,
+      "full_mae": 0.004016203703703704
+    },
+    {
+      "file": "latin-160-left-710.png",
+      "foreground_mae": 0.13459282583194418,
+      "full_mae": 0.0050648148148148145
+    },
+    {
+      "file": "latin-160-left-750.png",
+      "foreground_mae": 0.18911761165282293,
+      "full_mae": 0.007486111111111111
+    },
+    {
+      "file": "latin-160-left-800.png",
+      "foreground_mae": 0.7373225152129818,
+      "full_mae": 0.030444444444444444
+    },
+    {
+      "file": "latin-160-left-850.png",
+      "foreground_mae": 0.8264546865799476,
+      "full_mae": 0.035895833333333335
+    },
+    {
+      "file": "latin-160-left-900.png",
+      "foreground_mae": 0.5020495900819836,
+      "full_mae": 0.02330787037037037
+    },
+    {
+      "file": "latin-160-right-1000.png",
+      "foreground_mae": 0.9435704673070676,
+      "full_mae": 0.04723842592592593
+    },
+    {
+      "file": "latin-160-right-1100.png",
+      "foreground_mae": 1.1346386583679116,
+      "full_mae": 0.06096990740740741
+    },
+    {
+      "file": "latin-160-right-1200.png",
+      "foreground_mae": 1.6138426781680015,
+      "full_mae": 0.09118518518518519
+    },
+    {
+      "file": "latin-160-right-1300.png",
+      "foreground_mae": 1.3921324583239043,
+      "full_mae": 0.08571064814814815
+    },
+    {
+      "file": "latin-160-right-1400.png",
+      "foreground_mae": 1.4809986895647975,
+      "full_mae": 0.09968055555555555
+    },
+    {
+      "file": "latin-160-right-1500.png",
+      "foreground_mae": 1.4689820057883478,
+      "full_mae": 0.10834259259259259
+    },
+    {
+      "file": "latin-160-right-1600.png",
+      "foreground_mae": 1.3908611902910943,
+      "full_mae": 0.1120462962962963
+    },
+    {
+      "file": "latin-160-right-1750.png",
+      "foreground_mae": 1.7261443372090077,
+      "full_mae": 0.1580439814814815
+    },
+    {
+      "file": "latin-160-right-1900.png",
+      "foreground_mae": 1.5614765473216763,
+      "full_mae": 0.1436736111111111
+    },
+    {
+      "file": "latin-160-right-2000.png",
+      "foreground_mae": 1.5763273539370362,
+      "full_mae": 0.1523935185185185
+    },
+    {
+      "file": "latin-160-right-2100.png",
+      "foreground_mae": 1.6097485115080423,
+      "full_mae": 0.16816203703703703
+    },
+    {
+      "file": "latin-160-right-2200.png",
+      "foreground_mae": 1.640166843055469,
+      "full_mae": 0.1838101851851852
+    },
+    {
+      "file": "latin-160-right-2300.png",
+      "foreground_mae": 1.5005970954197003,
+      "full_mae": 0.18080787037037038
+    },
+    {
+      "file": "latin-160-right-2500.png",
+      "foreground_mae": 2.418648286425426,
+      "full_mae": 0.29316898148148146
+    },
+    {
+      "file": "latin-160-right-2800.png",
+      "foreground_mae": 1.8034695960141665,
+      "full_mae": 0.20928703703703705
+    },
+    {
+      "file": "latin-160-right-3000.png",
+      "foreground_mae": 1.8034695960141665,
+      "full_mae": 0.20928703703703705
+    },
+    {
+      "file": "latin-160-right-3500.png",
+      "foreground_mae": 1.8034695960141665,
+      "full_mae": 0.20928703703703705
+    },
+    {
+      "file": "latin-160-right-700.png",
+      "foreground_mae": 0.11888888888888889,
+      "full_mae": 0.0044907407407407405
+    },
+    {
+      "file": "latin-160-right-710.png",
+      "foreground_mae": 0.13660493827160494,
+      "full_mae": 0.005155092592592592
+    },
+    {
+      "file": "latin-160-right-750.png",
+      "foreground_mae": 0.19762893422398747,
+      "full_mae": 0.007909722222222223
+    },
+    {
+      "file": "latin-160-right-800.png",
+      "foreground_mae": 0.7419907486722631,
+      "full_mae": 0.030395833333333334
+    },
+    {
+      "file": "latin-160-right-850.png",
+      "foreground_mae": 0.9953235454051115,
+      "full_mae": 0.042513888888888886
+    },
+    {
+      "file": "latin-160-right-900.png",
+      "foreground_mae": 0.695304594211698,
+      "full_mae": 0.031900462962962964
+    },
+    {
+      "file": "wrap-160-left-1000.png",
+      "foreground_mae": 0.6270308363331619,
+      "full_mae": 0.07631018518518519
+    },
+    {
+      "file": "wrap-160-left-1100.png",
+      "foreground_mae": 0.29136904761904764,
+      "full_mae": 0.040810185185185185
+    },
+    {
+      "file": "wrap-160-left-1200.png",
+      "foreground_mae": 0.3524966931216931,
+      "full_mae": 0.049368055555555554
+    },
+    {
+      "file": "wrap-160-left-1300.png",
+      "foreground_mae": 0.4179232804232804,
+      "full_mae": 0.058527777777777776
+    },
+    {
+      "file": "wrap-160-left-1400.png",
+      "foreground_mae": 0.48837632275132276,
+      "full_mae": 0.0683912037037037
+    },
+    {
+      "file": "wrap-160-left-1500.png",
+      "foreground_mae": 0.4500404100557233,
+      "full_mae": 0.07620601851851852
+    },
+    {
+      "file": "wrap-160-left-1600.png",
+      "foreground_mae": 0.9431321410829607,
+      "full_mae": 0.17587268518518517
+    },
+    {
+      "file": "wrap-160-left-1750.png",
+      "foreground_mae": 0.4482720384402144,
+      "full_mae": 0.08424074074074074
+    },
+    {
+      "file": "wrap-160-left-1900.png",
+      "foreground_mae": 0.46962360623421423,
+      "full_mae": 0.08825231481481481
+    },
+    {
+      "file": "wrap-160-left-2000.png",
+      "foreground_mae": 0.48015770344360253,
+      "full_mae": 0.09023148148148148
+    },
+    {
+      "file": "wrap-160-left-2100.png",
+      "foreground_mae": 0.4801453828620711,
+      "full_mae": 0.09022916666666667
+    },
+    {
+      "file": "wrap-160-left-2200.png",
+      "foreground_mae": 0.49150495903406644,
+      "full_mae": 0.09236342592592593
+    },
+    {
+      "file": "wrap-160-left-2300.png",
+      "foreground_mae": 0.5008193186718413,
+      "full_mae": 0.09411342592592592
+    },
+    {
+      "file": "wrap-160-left-2500.png",
+      "foreground_mae": 0.5230949300806998,
+      "full_mae": 0.09829861111111111
+    },
+    {
+      "file": "wrap-160-left-2800.png",
+      "foreground_mae": 0.5634078728515985,
+      "full_mae": 0.10587268518518518
+    },
+    {
+      "file": "wrap-160-left-3000.png",
+      "foreground_mae": 0.5634078728515985,
+      "full_mae": 0.10587268518518518
+    },
+    {
+      "file": "wrap-160-left-3500.png",
+      "foreground_mae": 0.5634078728515985,
+      "full_mae": 0.10587268518518518
+    },
+    {
+      "file": "wrap-160-left-700.png",
+      "foreground_mae": 0.06405548755609955,
+      "full_mae": 0.004016203703703704
+    },
+    {
+      "file": "wrap-160-left-710.png",
+      "foreground_mae": 0.0824895219020066,
+      "full_mae": 0.005166666666666667
+    },
+    {
+      "file": "wrap-160-left-750.png",
+      "foreground_mae": 0.17828183212798598,
+      "full_mae": 0.011511574074074073
+    },
+    {
+      "file": "wrap-160-left-800.png",
+      "foreground_mae": 0.2402164862614488,
+      "full_mae": 0.01617824074074074
+    },
+    {
+      "file": "wrap-160-left-850.png",
+      "foreground_mae": 0.4128827542440108,
+      "full_mae": 0.03027777777777778
+    },
+    {
+      "file": "wrap-160-left-900.png",
+      "foreground_mae": 0.858069961003434,
+      "full_mae": 0.06846296296296296
+    },
+    {
+      "file": "wrap-160-right-1000.png",
+      "foreground_mae": 1.0651316303413796,
+      "full_mae": 0.1264675925925926
+    },
+    {
+      "file": "wrap-160-right-1100.png",
+      "foreground_mae": 0.8206623691121798,
+      "full_mae": 0.1116412037037037
+    },
+    {
+      "file": "wrap-160-right-1200.png",
+      "foreground_mae": 1.0072007974152746,
+      "full_mae": 0.13591435185185186
+    },
+    {
+      "file": "wrap-160-right-1300.png",
+      "foreground_mae": 1.1903177738503656,
+      "full_mae": 0.15933564814814816
+    },
+    {
+      "file": "wrap-160-right-1400.png",
+      "foreground_mae": 1.446598550344948,
+      "full_mae": 0.19212731481481482
+    },
+    {
+      "file": "wrap-160-right-1500.png",
+      "foreground_mae": 1.2638137399573701,
+      "full_mae": 0.20048842592592592
+    },
+    {
+      "file": "wrap-160-right-1600.png",
+      "foreground_mae": 1.6900323045187404,
+      "full_mae": 0.30205787037037035
+    },
+    {
+      "file": "wrap-160-right-1750.png",
+      "foreground_mae": 1.315566967527752,
+      "full_mae": 0.2353587962962963
+    },
+    {
+      "file": "wrap-160-right-1900.png",
+      "foreground_mae": 1.3712059118171291,
+      "full_mae": 0.24451157407407406
+    },
+    {
+      "file": "wrap-160-right-2000.png",
+      "foreground_mae": 1.4110455037213727,
+      "full_mae": 0.2511435185185185
+    },
+    {
+      "file": "wrap-160-right-2100.png",
+      "foreground_mae": 1.4109412270754311,
+      "full_mae": 0.251125
+    },
+    {
+      "file": "wrap-160-right-2200.png",
+      "foreground_mae": 1.4259179603488055,
+      "full_mae": 0.2537847222222222
+    },
+    {
+      "file": "wrap-160-right-2300.png",
+      "foreground_mae": 1.4638317903656048,
+      "full_mae": 0.2597199074074074
+    },
+    {
+      "file": "wrap-160-right-2500.png",
+      "foreground_mae": 1.5220217268807905,
+      "full_mae": 0.2694837962962963
+    },
+    {
+      "file": "wrap-160-right-2800.png",
+      "foreground_mae": 1.6642789298717746,
+      "full_mae": 0.2927268518518519
+    },
+    {
+      "file": "wrap-160-right-3000.png",
+      "foreground_mae": 1.6642789298717746,
+      "full_mae": 0.2927268518518519
+    },
+    {
+      "file": "wrap-160-right-3500.png",
+      "foreground_mae": 1.6642789298717746,
+      "full_mae": 0.2927268518518519
+    },
+    {
+      "file": "wrap-160-right-700.png",
+      "foreground_mae": 0.07914256045097166,
+      "full_mae": 0.0049722222222222225
+    },
+    {
+      "file": "wrap-160-right-710.png",
+      "foreground_mae": 0.1065865598575879,
+      "full_mae": 0.0066851851851851855
+    },
+    {
+      "file": "wrap-160-right-750.png",
+      "foreground_mae": 0.3125183877611062,
+      "full_mae": 0.019979166666666666
+    },
+    {
+      "file": "wrap-160-right-800.png",
+      "foreground_mae": 0.4952853423404405,
+      "full_mae": 0.032678240740740744
+    },
+    {
+      "file": "wrap-160-right-850.png",
+      "foreground_mae": 0.7584329736560708,
+      "full_mae": 0.05429861111111111
+    },
+    {
+      "file": "wrap-160-right-900.png",
+      "foreground_mae": 1.2371530886302595,
+      "full_mae": 0.09614351851851852
+    }
+  ],
+  "png_sha256": {
+    "build/verification/cappella-resize-browser/latin-160-left-1000.png": "acb36a56e2e56b4b302c64cb7491ad42c6287225055d347738d20ed9535e9577",
+    "build/verification/cappella-resize-kotlin/latin-160-left-1000.png": "7a401022f161b700492c2f32fdcef5c0750ec9e1836b4eeeffe3e46a60ac5d74",
+    "build/verification/cappella-resize-browser/latin-160-left-1100.png": "12e581c0b77d057456075d7ffc5e7b46f756e0bdde2a28970e42a7b28c521d47",
+    "build/verification/cappella-resize-kotlin/latin-160-left-1100.png": "e48c7c9ebb01fa1eb350ebb1ef7a432e9029334e0ced3d071635d22139dd73bd",
+    "build/verification/cappella-resize-browser/latin-160-left-1200.png": "fbe18c88657da5e094c8c354556bf7b58d8dc12666aaf3432e5341eb22a5ff9e",
+    "build/verification/cappella-resize-kotlin/latin-160-left-1200.png": "679227ff941e25c4f9e3a9441cb24db6545f67d2838497a8e8c60a2e96fb2d70",
+    "build/verification/cappella-resize-browser/latin-160-left-1300.png": "63c8919cac03c061eb74c60b9403db0278319a6b34d1cc8724672e371c70d09e",
+    "build/verification/cappella-resize-kotlin/latin-160-left-1300.png": "97b9197d111c61c86addae0ce349618af3e1696b8499ce7c51ab7ff3bf67f046",
+    "build/verification/cappella-resize-browser/latin-160-left-1400.png": "64c68dbbf8ed4d8860a7a30ce949ea6a22078b4edf73f928f16b415d81f5a01c",
+    "build/verification/cappella-resize-kotlin/latin-160-left-1400.png": "3af4a9d9344ebda503a360ea3f4062feff0cf7507c07c22215fa33e4cca624f3",
+    "build/verification/cappella-resize-browser/latin-160-left-1500.png": "086d2006eed870a56ba8b64d844b78fb548aedab5dbe592f12d9411f7cd7be75",
+    "build/verification/cappella-resize-kotlin/latin-160-left-1500.png": "b51264853b3c1be00eb7230fb1c129c0f97eec4f1e0af80c5f6a7697ce996d16",
+    "build/verification/cappella-resize-browser/latin-160-left-1600.png": "0e8d2892a9c3965186077de1833df4899828cf23106601a2a6530d9b1735afbd",
+    "build/verification/cappella-resize-kotlin/latin-160-left-1600.png": "42641b2aff525a183e0d1d21c62334b914b8d0ba2c0b06d34b3ecd98b5a01122",
+    "build/verification/cappella-resize-browser/latin-160-left-1750.png": "2939588d4f886f9cbe9844e0d960ff9518a05f78522b3575f0f35c01cb2f1264",
+    "build/verification/cappella-resize-kotlin/latin-160-left-1750.png": "0db198576d03171566a8097b358170a8e80c9aa15599ed46c083eaedb78abf28",
+    "build/verification/cappella-resize-browser/latin-160-left-1900.png": "696b490b79fe747d4c0fb4dae81a3338ea8c5ff0c3de874418405a92b9b6a912",
+    "build/verification/cappella-resize-kotlin/latin-160-left-1900.png": "0fdf4f507bd273558eb4a6f339ffb6ec73872981d434c848fe7ad27bbe1ec3e7",
+    "build/verification/cappella-resize-browser/latin-160-left-2000.png": "aba9e0b218d7edb6d48a7509673bfeab6e881ab33aeb9585cd50e46813761757",
+    "build/verification/cappella-resize-kotlin/latin-160-left-2000.png": "bfc4c741e273701ef582c02dc742dbe7cc584cb35db5e57da9f0c64331d03d95",
+    "build/verification/cappella-resize-browser/latin-160-left-2100.png": "528a00bd95823492e97af358320935588f40ce7a8ce971ef691cd2a3c7f04984",
+    "build/verification/cappella-resize-kotlin/latin-160-left-2100.png": "21f88a2fcbc0bba3779114566ba536743923aa899694ecd3c4faac9791bc02e8",
+    "build/verification/cappella-resize-browser/latin-160-left-2200.png": "4ca7293782db9ed321da7ba3f5a73b6cd1234b0a97b16a0008f72fb6dae288c7",
+    "build/verification/cappella-resize-kotlin/latin-160-left-2200.png": "ff99f676c23dfa85fd1e15860d7a413a3c2e8c11a31d7e19dd1e5a1c78b5a825",
+    "build/verification/cappella-resize-browser/latin-160-left-2300.png": "dc1af764085fb3216c17573df305ce53e4cc1ac80f729d853943ce032d0bfee5",
+    "build/verification/cappella-resize-kotlin/latin-160-left-2300.png": "45df95afcda1df127eafa56c18b520eb2691e9820cbcf58d21e0c35cecb51be2",
+    "build/verification/cappella-resize-browser/latin-160-left-2500.png": "719279f42b6b85e41fe4a5d2ea81111bac981b9d2e86861bd1054429daf5ded1",
+    "build/verification/cappella-resize-kotlin/latin-160-left-2500.png": "951e977fae823a01ad9e3438e44258472dae3790d27d1807d935f65bb82b4a44",
+    "build/verification/cappella-resize-browser/latin-160-left-2800.png": "15d7dc25a449740cb94d8007b166fd6c5746a673574186e0878e10d48dcdb4f1",
+    "build/verification/cappella-resize-kotlin/latin-160-left-2800.png": "c0a2bf4b675f385dc055699a516b246dfe37b30d638411726608f9f54d37eab2",
+    "build/verification/cappella-resize-browser/latin-160-left-3000.png": "15d7dc25a449740cb94d8007b166fd6c5746a673574186e0878e10d48dcdb4f1",
+    "build/verification/cappella-resize-kotlin/latin-160-left-3000.png": "c0a2bf4b675f385dc055699a516b246dfe37b30d638411726608f9f54d37eab2",
+    "build/verification/cappella-resize-browser/latin-160-left-3500.png": "15d7dc25a449740cb94d8007b166fd6c5746a673574186e0878e10d48dcdb4f1",
+    "build/verification/cappella-resize-kotlin/latin-160-left-3500.png": "c0a2bf4b675f385dc055699a516b246dfe37b30d638411726608f9f54d37eab2",
+    "build/verification/cappella-resize-browser/latin-160-left-700.png": "d597047893fe00f7b9f6c3b8df8927d6ce995ae4f1fd3f9e2494158d37d52bb7",
+    "build/verification/cappella-resize-kotlin/latin-160-left-700.png": "835e6bd8e6242fb629f6aff45e1c0c9d18b4199b3be6020123e63a8cae003da2",
+    "build/verification/cappella-resize-browser/latin-160-left-710.png": "8d755a56a879b4a931001d847c493493892e4f006c7ce7b0aec4371076c7eba7",
+    "build/verification/cappella-resize-kotlin/latin-160-left-710.png": "93e2d19cc71e2b3214007104814136b6576653e2e733b4497f82dd6e3d5f2814",
+    "build/verification/cappella-resize-browser/latin-160-left-750.png": "c68b788d32d5dd6f66e42cda630cbe1dbab27a98c86e1b45fc05762a8ac3b597",
+    "build/verification/cappella-resize-kotlin/latin-160-left-750.png": "c488d2e8580d2764cf594dfea5a03d3740299829464e3f04d3e9950f295f1b77",
+    "build/verification/cappella-resize-browser/latin-160-left-800.png": "c38296ba70079edcb869c66206934eca8b72452a71befe8b19e7d5a2be871beb",
+    "build/verification/cappella-resize-kotlin/latin-160-left-800.png": "bbfc684a9dc686f9f9e2cd45373fe20c71cca82d6ba36b2d509ec364438b7243",
+    "build/verification/cappella-resize-browser/latin-160-left-850.png": "f698f94f30f505f006d530901aca9798141918980dfd2bc24997aa377d7bcb54",
+    "build/verification/cappella-resize-kotlin/latin-160-left-850.png": "066d47ea5fb980053575904545b7e781c67748c0ee0fd970685042997d0fb964",
+    "build/verification/cappella-resize-browser/latin-160-left-900.png": "fd2e863864f7927e28d7166d8a58b2d2aa6afa56ebaad72bd17b2c3bb440c5da",
+    "build/verification/cappella-resize-kotlin/latin-160-left-900.png": "4aeba869a2ec7af2c80c10b02c3cff29fca3a56e59ac2e76798b31249ddffb1f",
+    "build/verification/cappella-resize-browser/latin-160-right-1000.png": "94126aa137a749bfa103d761ab23733b6b735c5baa57402e17732c3dbc05ec21",
+    "build/verification/cappella-resize-kotlin/latin-160-right-1000.png": "267e9d37c525fad46e196804b3e0bb0ff9fc7cf4987a30313cc7cd9eb8974a6d",
+    "build/verification/cappella-resize-browser/latin-160-right-1100.png": "a48b9f7cbb624f3db3b6ecd68c1a098ae0d928f575ea07412ca505564c8e07a2",
+    "build/verification/cappella-resize-kotlin/latin-160-right-1100.png": "814cecab2ef6b0c9ed042ef423edfe62592d36acb25836284a23e9fc65f318fb",
+    "build/verification/cappella-resize-browser/latin-160-right-1200.png": "8038acd36490e4b8526ae5819f8152658991a031a9759bf065435bee253ad41d",
+    "build/verification/cappella-resize-kotlin/latin-160-right-1200.png": "9c5af3b2737d0713dbe5d476022281c7ac20dc8c4f45f06fc3b85020fc81f810",
+    "build/verification/cappella-resize-browser/latin-160-right-1300.png": "eea6a3d99985a6eed9ba8cdb4d0c7fdee7902d480f118f463e01edff14acdc7c",
+    "build/verification/cappella-resize-kotlin/latin-160-right-1300.png": "88d8efba60094fafe88d85aa2a918cac5c812823ed743750ce137519f4bb57c1",
+    "build/verification/cappella-resize-browser/latin-160-right-1400.png": "e6755a91812cc6d0080d15e0987493eda8f2bd097c227010b134cde9627cac85",
+    "build/verification/cappella-resize-kotlin/latin-160-right-1400.png": "a7aa1b14c9edccaa2ed5b75b6f500ecc8387d329ba97f4bd51d3793f26c524cc",
+    "build/verification/cappella-resize-browser/latin-160-right-1500.png": "ad96360485c410a573868cd57faa3761da0edd9a10d6c0e28209905b8f4e63ec",
+    "build/verification/cappella-resize-kotlin/latin-160-right-1500.png": "8177910dbc67299456216eb1354c4f086928040abc49e1603b34e605a3d17a7d",
+    "build/verification/cappella-resize-browser/latin-160-right-1600.png": "27f7b6727c8fcf85eb0e8cde80bc9710c318a2ad9b95cd067c3a39abe13253ad",
+    "build/verification/cappella-resize-kotlin/latin-160-right-1600.png": "304f9bd66ace6242d732ef81ab147fbb947e5f5d4682d6241b68e2e615a04d10",
+    "build/verification/cappella-resize-browser/latin-160-right-1750.png": "0e1d99b32178c79a9520910a569d5d19d8c6cc056923408f30b1291bde49f0ce",
+    "build/verification/cappella-resize-kotlin/latin-160-right-1750.png": "f7cc4c5bf0bcc723808970c8b352a99ab65c3178aa7dd767ab8a2ecf7f98eb5a",
+    "build/verification/cappella-resize-browser/latin-160-right-1900.png": "01db8e57598a86b8e520a938a51c2b4e4d578b3742dbdbccf204c63174dca466",
+    "build/verification/cappella-resize-kotlin/latin-160-right-1900.png": "c5ae2d15ea24b2f5acb284ace0ff3b4803e4c23e8f8f569dcb4ffe3dce9e1117",
+    "build/verification/cappella-resize-browser/latin-160-right-2000.png": "7d0df233141f273d1210b1d8db335e5480ce7aa98e48a7a4c74d879dec63bf11",
+    "build/verification/cappella-resize-kotlin/latin-160-right-2000.png": "78f7fc045e1daff1583d7381dd4f47c33114fd4a4eea1aac61dfb6ecfe7a6219",
+    "build/verification/cappella-resize-browser/latin-160-right-2100.png": "55f653ca160cd1b3121c449bd78e409f39089bd53b73f679b34c03d8b44f15b5",
+    "build/verification/cappella-resize-kotlin/latin-160-right-2100.png": "91884dec1587819cb9897eabb9ca074fbd318f1c60f33ed64d7d2ad142ea7602",
+    "build/verification/cappella-resize-browser/latin-160-right-2200.png": "ac47099cf66a3d86b6999945ce92e320987a2d59fb8e1e202d5089ef6670effb",
+    "build/verification/cappella-resize-kotlin/latin-160-right-2200.png": "d80ce8b9565b7faab6967705756207569757f6c209a8bf15d87906e131276632",
+    "build/verification/cappella-resize-browser/latin-160-right-2300.png": "953252b254666f75f77e97f3c52df9a47321a577af62f53ffa570d4ac7c948e2",
+    "build/verification/cappella-resize-kotlin/latin-160-right-2300.png": "c6c10350f5b1951731067455247e48820fb79b60b9611e816933afa6d199d803",
+    "build/verification/cappella-resize-browser/latin-160-right-2500.png": "ecd0b972a56c2df927222ac544cbb904f003effc52eed8154deac223fe739f11",
+    "build/verification/cappella-resize-kotlin/latin-160-right-2500.png": "a220001d3ec27a19fecb05779299ead6d142f127120cd2dec359fb07ea6b3c6f",
+    "build/verification/cappella-resize-browser/latin-160-right-2800.png": "b0b9ded9794fe25af1e1e4ca401524492ca0347dd29c0c951a5151bc1b847ca4",
+    "build/verification/cappella-resize-kotlin/latin-160-right-2800.png": "fa1fb371b989e3c6b653075b2b44b0525c5dc9cfdc324bb5e159bcc068533348",
+    "build/verification/cappella-resize-browser/latin-160-right-3000.png": "b0b9ded9794fe25af1e1e4ca401524492ca0347dd29c0c951a5151bc1b847ca4",
+    "build/verification/cappella-resize-kotlin/latin-160-right-3000.png": "fa1fb371b989e3c6b653075b2b44b0525c5dc9cfdc324bb5e159bcc068533348",
+    "build/verification/cappella-resize-browser/latin-160-right-3500.png": "b0b9ded9794fe25af1e1e4ca401524492ca0347dd29c0c951a5151bc1b847ca4",
+    "build/verification/cappella-resize-kotlin/latin-160-right-3500.png": "fa1fb371b989e3c6b653075b2b44b0525c5dc9cfdc324bb5e159bcc068533348",
+    "build/verification/cappella-resize-browser/latin-160-right-700.png": "59d1035fc3fd2daa70d4f449e35576b9764e4d100ef96700de60b84811798df4",
+    "build/verification/cappella-resize-kotlin/latin-160-right-700.png": "16580fb84ddc6ea00a595cc1a9271a0ac73f984d47b2bf19f817648b05794c2d",
+    "build/verification/cappella-resize-browser/latin-160-right-710.png": "f68ebbed61695c89b89efcafe9cd53f2a4e91204cdd35715a3a016f4c1213c06",
+    "build/verification/cappella-resize-kotlin/latin-160-right-710.png": "627dbc540560f9f906d9446e4940257de695e173003d8e089e4a846b53427ddc",
+    "build/verification/cappella-resize-browser/latin-160-right-750.png": "9de1db516741581a7b7828e27daa8a35ff2047588569da5d9dd614d91db5db9d",
+    "build/verification/cappella-resize-kotlin/latin-160-right-750.png": "3aeba3f4fe1a4fab9616358524974630cc815f987447dcb94bedd95867c318f7",
+    "build/verification/cappella-resize-browser/latin-160-right-800.png": "50b1903de8f56aa54ecbda8753c200660a850ea31b56c3a3c658dfa7995863d6",
+    "build/verification/cappella-resize-kotlin/latin-160-right-800.png": "8ddf1eeb2f9bbdbf0301d1a4a0d7c5f82674a26227fc7a34d542b12fcb1a3311",
+    "build/verification/cappella-resize-browser/latin-160-right-850.png": "88169d542e08445ea591efa6c95ae4ae6fbebae234ec87ae7dcb5f6975147d70",
+    "build/verification/cappella-resize-kotlin/latin-160-right-850.png": "22bb51c2d89872825c2995152385805bf40b81412ef59f61be0566ee9f94620e",
+    "build/verification/cappella-resize-browser/latin-160-right-900.png": "b243b8b2686a0ce04b3cef33a5f735a3af07ffd65e89160909a197833a28f0f3",
+    "build/verification/cappella-resize-kotlin/latin-160-right-900.png": "31d79a58e09850ed0f2ae7324f5de2966abc79e36a352e231c1efb83fdca6e08",
+    "build/verification/cappella-resize-browser/wrap-160-left-1000.png": "6928f13fb72deed039c10bed9c45d78fb496498d80beeca0f82ebc5c6e20c7a7",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-1000.png": "7c19ae7093dfabd010daae5a26312aac4c68eaecaa7a648242044c45c728646e",
+    "build/verification/cappella-resize-browser/wrap-160-left-1100.png": "09878839178e91a628638e49c8611e1f8f8127e87506c7fb1a6bb07a6c86ca75",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-1100.png": "3dc2c88d31c446c8d437080831bd7b88a6c40b5bdaf7df08f9405ed834c3c8bc",
+    "build/verification/cappella-resize-browser/wrap-160-left-1200.png": "6dad9f515268210d57d8caa8e569fbf9ef9df53d54d171aa30bfd9be3622fd3d",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-1200.png": "f5f4f59aa37a9702938a0a043f9cbf5c7917781e46db619b28f566b4a584267c",
+    "build/verification/cappella-resize-browser/wrap-160-left-1300.png": "d00ce12e411852388a6e2764ab2116b208bf18e28cf562627a0fc826c3519230",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-1300.png": "02f81ae311caca61c2f354c9ce6a2f42f6769532fe96f8483ffec0f01d895475",
+    "build/verification/cappella-resize-browser/wrap-160-left-1400.png": "6f3dd2d322eaa39fec6f0a4881f8a0122c325244c9d49e5dd526b613a8d8390c",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-1400.png": "c62935da6fccb4ff0f5f89df5524b071e75eada33f491fd31fd27a390315d193",
+    "build/verification/cappella-resize-browser/wrap-160-left-1500.png": "400f998c6332574cf127f4c101a7013dde012772d9e711aa3f70e30aa5b668a6",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-1500.png": "47fac4e571e912fde3b3827f449722603031eba141e885da8713fc717956787c",
+    "build/verification/cappella-resize-browser/wrap-160-left-1600.png": "db765a6c004f275b2e85a6e6a6b4532527f9c9edc9eeef745289183ba846c69d",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-1600.png": "4625dd4aaef8b6b7c82d5458f8f074df1460a160b7e70c25150a832eb9ce3b5c",
+    "build/verification/cappella-resize-browser/wrap-160-left-1750.png": "c48a8d78b63ba3b24a44bbf3b51ef164f15608cfbd29b2cb09b54f85a5b483cc",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-1750.png": "851d09a94776d71d4be1e2e5d86b8ed70d8af116f4c0cd2ce9817ab88ee1eaa2",
+    "build/verification/cappella-resize-browser/wrap-160-left-1900.png": "db6792adeaa397da3a3b7aff3eb08d94e669e8258c4cfe2a5b68d22bad6ce215",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-1900.png": "4f8d962601ef23209ca584c0b127f0ffaef82388379302916ebda27f191c1761",
+    "build/verification/cappella-resize-browser/wrap-160-left-2000.png": "5f394ef51a69305591f47da72b3782ceaa8edcab31bb1832f3a4b60801b414d3",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-2000.png": "495718df972d956c371da7263ec1f64a6cd2940a084c979dc20c18c78af2a2f7",
+    "build/verification/cappella-resize-browser/wrap-160-left-2100.png": "5f394ef51a69305591f47da72b3782ceaa8edcab31bb1832f3a4b60801b414d3",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-2100.png": "7d11c20296167e3ed70ff0fc11aa96d1552016bf965f79e27607c2c003593d35",
+    "build/verification/cappella-resize-browser/wrap-160-left-2200.png": "040f5c74b603ec9f5bebd527f45589d0c496bd4cb2af6f754b751c5ab1378e1e",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-2200.png": "b6360c641861ea50dc3fb213a5156252e4c94f12e2a2a18894ab6a585ba227f7",
+    "build/verification/cappella-resize-browser/wrap-160-left-2300.png": "342dfb8dfb5ff5d4cf2d6caf0464bf8315d286b0dffc5958b39a79d128da5df8",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-2300.png": "1fa54c672d72dccc70c7f2ffa81fa885a1e7fe56da90e2eb6017fc257f480ce5",
+    "build/verification/cappella-resize-browser/wrap-160-left-2500.png": "510ff6d8004ea72e91db1e98329d3a38a6ac20dbd382e12eb892b6d566108d92",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-2500.png": "18a3f81b219674a368eed2e32a022b39e955e30a5c917f561c9667a8079efda6",
+    "build/verification/cappella-resize-browser/wrap-160-left-2800.png": "88773fbf0909f7b96a009408e1eb2e50edae5a8cc53da42ab022938cf487ddf0",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-2800.png": "088bb433f526597a1a0db8390eff755f02976daec9344851b6973ec516ab142e",
+    "build/verification/cappella-resize-browser/wrap-160-left-3000.png": "88773fbf0909f7b96a009408e1eb2e50edae5a8cc53da42ab022938cf487ddf0",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-3000.png": "088bb433f526597a1a0db8390eff755f02976daec9344851b6973ec516ab142e",
+    "build/verification/cappella-resize-browser/wrap-160-left-3500.png": "88773fbf0909f7b96a009408e1eb2e50edae5a8cc53da42ab022938cf487ddf0",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-3500.png": "088bb433f526597a1a0db8390eff755f02976daec9344851b6973ec516ab142e",
+    "build/verification/cappella-resize-browser/wrap-160-left-700.png": "c1e575b27f201577a28fd4305af0072a74280571a2711f440d1db92d9c8a9102",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-700.png": "1aa1e2e26eed8ff88221e2cf1351e387d0b5bcecfa9ce2bc0ffb75860308184f",
+    "build/verification/cappella-resize-browser/wrap-160-left-710.png": "930c5904d111895fb0cc4ae28f8b6309575d5e5190ef82f23ca32785a84bca64",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-710.png": "551700730d6cc7c789eca10dcd5b8ea1e05c491a2537597168a89455f09fa0bd",
+    "build/verification/cappella-resize-browser/wrap-160-left-750.png": "29ba4ec92a96df64d3590d651458ae0ff8f50384d486f90a64dad7749a02effe",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-750.png": "807d7a0321ada1ee8ab015e2d2ed24c76ec064cb8491f0186f66661856ef60b4",
+    "build/verification/cappella-resize-browser/wrap-160-left-800.png": "0c92b7c0976486fd1082c514810378e5c3d8a3e76069bddd1c0440a72eea012e",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-800.png": "99210471d76ea0a38873bbc72ed2d7f70eaf4c3c96d15affd4fcf78e612feeaf",
+    "build/verification/cappella-resize-browser/wrap-160-left-850.png": "9f7f87ac8f10f2d47b8f9367aa23b351666ba197817f01b159c3f5fc6e514c16",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-850.png": "5bf1d55a5ffacf8a6d2fc07b37bbbd7805d471ddc442adff99cc75f28810cccc",
+    "build/verification/cappella-resize-browser/wrap-160-left-900.png": "b777d3934ee5a034e18a6a13f79276fd99721a5ea728cd5da6c32c2cbf7150b5",
+    "build/verification/cappella-resize-kotlin/wrap-160-left-900.png": "798f6f49a1b517ea40e7b16892940f9742986bac14280df60ade8982309cddee",
+    "build/verification/cappella-resize-browser/wrap-160-right-1000.png": "b37605b1043c9dbe42977ca0d59eb61469ffe1c865a7d0314ca77ec8286974a5",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-1000.png": "7c08b9a488092c743e5a8a1d6a4aa4a04c171ee87444f69c1f5dff14ed2bf580",
+    "build/verification/cappella-resize-browser/wrap-160-right-1100.png": "a5d634ffec8c5784e7c9a8bbe5f835833a61a1eb0a4c02131fe2e0891e6ce332",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-1100.png": "803e3236f82afea66a25b340df7b8ab5cabb4eb46a75cc09373d2716e7afe0b5",
+    "build/verification/cappella-resize-browser/wrap-160-right-1200.png": "21f33e6a55288e32a757472bd51c4cd01ad28596acf35ef628b7c75c9561cd29",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-1200.png": "e0e0700e4c2b1d7a570dffb3da83e452ef0a089119916f7dc7fbf5a3a0d70508",
+    "build/verification/cappella-resize-browser/wrap-160-right-1300.png": "ed2898991661fa026d99c3af58b29f271913e78227d901c8954a5712fa73d808",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-1300.png": "58b78bdb9c1ddb849d8ed0117930fcefada45caf9e3bd399e88c7d741c7bf0f2",
+    "build/verification/cappella-resize-browser/wrap-160-right-1400.png": "bbf2e70c6267838def4fcbdbf18b9119f170720df10ede550fdb2b6d6ec8d896",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-1400.png": "de3bd4c4c8dcfc9e95be48e89967bf26f02d0e8ce53eba5462d8c5c6cd96b6f4",
+    "build/verification/cappella-resize-browser/wrap-160-right-1500.png": "a48b1e94683e7ec4552c6ff8afe53505f9bc97f9c6379f0d6529596a4236e175",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-1500.png": "0003326c262e4fc23df610c7c272f33653975e0e6b5999df877dadf7b9e79f84",
+    "build/verification/cappella-resize-browser/wrap-160-right-1600.png": "4750c91ae8a3aefea91690f989f3d4f7c9a28c291050aa645beb8589e640464c",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-1600.png": "d182ed42c1a85b22c173ccade18e2beabb483a31a79f6a5cd82a207d511c673d",
+    "build/verification/cappella-resize-browser/wrap-160-right-1750.png": "ffd9ac6452fdfad8e3bfcbb312ba0c73bb8fec5cc5ead645fd94b76c25b46862",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-1750.png": "d25b17070010f83b2f42c5d96323a0662ec9548575a312cbc2e923f81fd225c5",
+    "build/verification/cappella-resize-browser/wrap-160-right-1900.png": "325352cabc0c8c29f98630caf65a5150abe5e85adcce9e8debb385cc66f43d86",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-1900.png": "677b637bb75a49057ef535cef95fcd6506b648cb671c694d13211b7e704e4af6",
+    "build/verification/cappella-resize-browser/wrap-160-right-2000.png": "3c7113c85ef51e03af0000a236cefdaf0c8cc94d6bc29996f49caadd5993941a",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-2000.png": "6e649888e6319e1f23818a9ad7d09d8c5bfd05acfe463f44ca46bd1e0437a836",
+    "build/verification/cappella-resize-browser/wrap-160-right-2100.png": "3c7113c85ef51e03af0000a236cefdaf0c8cc94d6bc29996f49caadd5993941a",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-2100.png": "ae6477f050081170815a03b60d2792aa8963d0ed399d9432651aeafdd472d6cf",
+    "build/verification/cappella-resize-browser/wrap-160-right-2200.png": "ef94480cfe1e6f274f52f9edaa754cc51227071deaccf6bd2e92caaa9bd81d92",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-2200.png": "1561ab07cff7c6574c3b5f8f48e9fa72e02d2ee5c5801cb4159cf5554a2decc1",
+    "build/verification/cappella-resize-browser/wrap-160-right-2300.png": "8d68aef4355fdf01440a82f34dce10296c3cf49f6e7c227e2ca4a56a03e9784c",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-2300.png": "4771ca343144d756a75abfc99561a36747caad92ffc19edf4327f17e02e3c7b8",
+    "build/verification/cappella-resize-browser/wrap-160-right-2500.png": "7ef226836aeab5d616a102b8417680f9e01d5327b03307c1de8ee57c8f844101",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-2500.png": "14fbc3576f395c478d17423d0c60ae7b241e0400aeaa19eb190692e2cb986051",
+    "build/verification/cappella-resize-browser/wrap-160-right-2800.png": "c933f5a822622fc02543dbfab7ec62932928dd3d4d7e1293483a4f688112739c",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-2800.png": "4b19def0afa8bbbb9973645966d53cd88a266beb4685869cff312ebdde2e687d",
+    "build/verification/cappella-resize-browser/wrap-160-right-3000.png": "c933f5a822622fc02543dbfab7ec62932928dd3d4d7e1293483a4f688112739c",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-3000.png": "4b19def0afa8bbbb9973645966d53cd88a266beb4685869cff312ebdde2e687d",
+    "build/verification/cappella-resize-browser/wrap-160-right-3500.png": "c933f5a822622fc02543dbfab7ec62932928dd3d4d7e1293483a4f688112739c",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-3500.png": "4b19def0afa8bbbb9973645966d53cd88a266beb4685869cff312ebdde2e687d",
+    "build/verification/cappella-resize-browser/wrap-160-right-700.png": "44f3fcfcef7eb6d6887490b607c1566c0e8aab128b5c3ac1db70d7da8d0175d8",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-700.png": "7118d52cb253cb543872d6a9e99d49bd2ee07acaa701a8b13ae8173ae131643f",
+    "build/verification/cappella-resize-browser/wrap-160-right-710.png": "0b40acedf527e428dffe19b89b78479a3dd6ce855acced40a914dc0943f89c9b",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-710.png": "34b2268128f1dde2a71e5b49027e0b1bc03e4a3e76e73f8385e883e1845cdbf7",
+    "build/verification/cappella-resize-browser/wrap-160-right-750.png": "c4a9e4739b63dfdc872a5831aaa91685f7c8c3be4a09a140754f0ddc5430e679",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-750.png": "ae2b82182a6a1cd0786a061ab85d96ce82a5b011c3eaa09f0a7345de5d5ef3d1",
+    "build/verification/cappella-resize-browser/wrap-160-right-800.png": "5f658f71ddd4291ae8c7c2bbc99da32143678c405bbe996c96e02829f1e07102",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-800.png": "b9a6c6ec74c51cff03fe065bf3902eeb30ad2ff68389ee8effa41315bd206f79",
+    "build/verification/cappella-resize-browser/wrap-160-right-850.png": "a28ac72c3009321d460823358ef757a52beb1434a3ceecfae3940290573c3224",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-850.png": "d7648aa17a4e0f3080835d63a03faf535e32b7adbee2ff38bcc41e5395ee45d4",
+    "build/verification/cappella-resize-browser/wrap-160-right-900.png": "cf608945981262d44cff6716f5ac465b9f7428aeb1b3c98b88c405972a89426d",
+    "build/verification/cappella-resize-kotlin/wrap-160-right-900.png": "530d3339d9688b0b372e07fc059cdd9168fd1c6561903b262c980c6732ce306d"
+  }
+}

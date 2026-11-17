@@ -35,6 +35,9 @@ data class FoliaStatus(
 )
 
 sealed interface FoliaStyle {
+    /** Whole-song article/camera calibration preview, without a background engine. */
+    @Immutable
+    data class Fume(val tuning:FumeTuning=FumeTuning()):FoliaStyle
     /** Text-only chat calibration preview; no bundled emoji/cover assets. */
     @Immutable
     data class Cappella(val tuning:CappellaTuning=CappellaTuning()):FoliaStyle
@@ -60,6 +63,27 @@ sealed interface FoliaStyle {
      * and source refresh-rate adaptation are recorded in docs/themes-parity.md. */
     @Immutable
     data class Cadenza(val tuning:CadenzaTuning=CadenzaTuning()) : FoliaStyle
+}
+
+enum class FumeTrackingMode { Smooth, Stepped }
+
+@Immutable
+data class FumeTuning(
+    val fontScale:Float=1f,val heroScale:Float=1f,val textHoldRatio:Float=1f,
+    val cameraSpeed:Float=1f,val trackingMode:FumeTrackingMode=FumeTrackingMode.Smooth,
+    val glowIntensity:Float=1f,val showPrintSymbols:Boolean=true,
+    /** Stable article shuffle input, corresponding to the source theme name. */
+    val layoutSeed:String="Fume",val chorusLineIndices:Set<Int> = emptySet(),
+    val wordColors:List<FoliaWordColor> = emptyList(),
+) {
+    init {
+        require(fontScale.isFinite()&&fontScale in .5f..2f)
+        require(heroScale.isFinite()&&heroScale in .82f..1.32f)
+        require(textHoldRatio.isFinite()&&textHoldRatio in 0f..1f)
+        require(cameraSpeed.isFinite()&&cameraSpeed in .55f..1.85f)
+        require(glowIntensity.isFinite()&&glowIntensity in 0f..1.8f)
+        require(chorusLineIndices.all{it>=0})
+    }
 }
 
 /** Explicit identity of a core source line; null accompanimentIndex is the main

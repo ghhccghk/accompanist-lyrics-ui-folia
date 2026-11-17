@@ -30,6 +30,24 @@ internal fun LyricThemeControls(session: SampleSession) {
     TextButton({session.lyricTheme=SampleLyricTheme.Cappella}) {
         Text("群唱${if(session.lyricTheme==SampleLyricTheme.Cappella)" ✓" else ""}")
     }
+    TextButton({session.lyricTheme=SampleLyricTheme.Fume}) {
+        Text("浮名${if(session.lyricTheme==SampleLyricTheme.Fume)" ✓" else ""}")
+    }
+    if(session.lyricTheme==SampleLyricTheme.Fume){
+        Text("浮名：文章镜头校准预览。短桥接、总览与文字光栅仍有差异。",style=MaterialTheme.typography.bodySmall)
+        Text("文章字号倍率 ${session.fumeTuning.fontScale}")
+        Slider(session.fumeTuning.fontScale,{session.fumeTuning=session.fumeTuning.copy(fontScale=it)},valueRange=.5f..2f)
+        Text("读后保留 ${session.fumeTuning.textHoldRatio}")
+        Slider(session.fumeTuning.textHoldRatio,{session.fumeTuning=session.fumeTuning.copy(textHoldRatio=it)},valueRange=0f..1f)
+        ThemeToggle("步进镜头",session.fumeTuning.trackingMode==top.ghhccghk.accompanist.lyrics.folia.FumeTrackingMode.Stepped){
+            session.fumeTuning=session.fumeTuning.copy(trackingMode=if(it)top.ghhccghk.accompanist.lyrics.folia.FumeTrackingMode.Stepped else top.ghhccghk.accompanist.lyrics.folia.FumeTrackingMode.Smooth)
+        }
+        Text("镜头速度 ${session.fumeTuning.cameraSpeed}")
+        Slider(session.fumeTuning.cameraSpeed,{session.fumeTuning=session.fumeTuning.copy(cameraSpeed=it)},valueRange=.55f..1.85f)
+        Text("浮名辉光 ${session.fumeTuning.glowIntensity}")
+        Slider(session.fumeTuning.glowIntensity,{session.fumeTuning=session.fumeTuning.copy(glowIntensity=it)},valueRange=0f..1.8f)
+        ThemeToggle("打印符号",session.fumeTuning.showPrintSymbols){session.fumeTuning=session.fumeTuning.copy(showPrintSymbols=it)}
+    }
     if(session.lyricTheme==SampleLyricTheme.Cappella) {
         Text("群唱：文字对话校准预览。密集消息投影、字形与辉光仍有差异。",style=MaterialTheme.typography.bodySmall)
         Text("群唱字号倍率 ${session.cappellaTuning.fontScale}")

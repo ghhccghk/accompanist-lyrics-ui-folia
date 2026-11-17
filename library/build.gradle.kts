@@ -26,6 +26,7 @@ kotlin {
             api(compose.runtime)
             api(compose.ui)
             implementation(compose.foundation)
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
         }
         commonTest.dependencies { implementation(kotlin("test")) }
         jvmMain.dependencies { implementation("com.ibm.icu:icu4j:78.3") }

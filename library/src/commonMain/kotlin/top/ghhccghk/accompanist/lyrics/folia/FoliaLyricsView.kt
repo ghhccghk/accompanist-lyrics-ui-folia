@@ -31,6 +31,7 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.styles.tilt.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.cadenza.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.pendolo.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.cappella.*
+import top.ghhccghk.accompanist.lyrics.folia.internal.styles.fume.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.model.SourceRef
 import top.ghhccghk.accompanist.lyrics.folia.internal.timeline.PrimaryEpoch
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.GlowBudget
@@ -66,16 +67,26 @@ fun FoliaLyricsView(
     }}
     val cappellaLines=remember(cappellaCore){cappellaCore?.map{it.stage}}
     val cappellaCounts=remember(cappellaLines){cappellaLines?.map{CappellaRevealPlan(it).characters.size}}
+    val fumeLines=remember(document,(style as? FoliaStyle.Fume)?.tuning?.chorusLineIndices,style is FoliaStyle.Fume){
+        (style as? FoliaStyle.Fume)?.let{f->document.lines.map{line->
+            fumeLyric(line).copy(chorus=!line.accompaniment&&line.ref.index in f.tuning.chorusLineIndices)
+        }}
+    }
+    val fumeCounts=remember(fumeLines){fumeLines?.map{FumeReveal(it).graphemes.size}}
     // Unknown/invalid vocal intervals cannot safely establish silence.
     val waitingTimeline = remember(document) {
         WaitingTimeline(if(document.diagnostics.isEmpty()) document.lines else emptyList())
     }
     val subtitleHistory = remember(document) { SubtitleHistory(document.lines) }
     val currentPlayback by rememberUpdatedState(playback)
-    val selection by remember(index, cadenzaIndex, cappellaLines, options.offsetMillis) { derivedStateOf {
+    val selection by remember(index, cadenzaIndex, cappellaLines, fumeLines, options.offsetMillis) { derivedStateOf {
         val us=(currentPlayback().positionMillis-options.offsetMillis)*1000
         val classic=index.at(us)
-        if(cappellaLines!=null){
+        if(fumeLines!=null){
+            val i=fumeLines.indexOfLast{us/1e6>=it.start&&us/1e6<=it.renderEnd}
+            classic.copy(primary=if(i<0)null else PrimaryEpoch(i,(fumeLines[i].start*1e6).toLong(),
+                (fumeLines[i].renderEnd*1e6).toLong()),exiting=emptyList(),secondary=emptyList())
+        }else if(cappellaLines!=null){
             val i=cappellaCurrentLine(cappellaLines,us/1e6)
             classic.copy(primary=if(i<0)null else PrimaryEpoch(i,(cappellaLines[i].start*1e6).toLong(),
                 (cappellaLines[i].renderEnd*1e6).toLong()),exiting=emptyList(),secondary=emptyList())
@@ -88,11 +99,11 @@ fun FoliaLyricsView(
                         us>=document.lines[it].startUs&&us<=document.lines[it].endUs},next=selected.upcoming)
         }
     } }
-    val waiting by remember(waitingTimeline,index,cadenzaIndex,cappellaLines,options.offsetMillis) { derivedStateOf {
+    val waiting by remember(waitingTimeline,index,cadenzaIndex,cappellaLines,fumeLines,options.offsetMillis) { derivedStateOf {
         val time=(currentPlayback().positionMillis-options.offsetMillis)*1000
         waitingTimeline.visibleAt(time,selection)
     } }
-    val subtitles by remember(index,cadenzaIndex,cappellaLines,subtitleHistory,options) {derivedStateOf {
+    val subtitles by remember(index,cadenzaIndex,cappellaLines,fumeLines,subtitleHistory,options) {derivedStateOf {
         val time=(currentPlayback().positionMillis-options.offsetMillis)*1000
         val active=selection.primary?.line
         resolveSubtitleContent(document.lines,active,subtitleHistory.recent(time,active),buildList {
@@ -105,10 +116,11 @@ fun FoliaLyricsView(
     // Never carry a previous line's count or budget fallback into the next selection.
     var quality by remember(document, selection.primary, options.quality, style) { mutableStateOf(FoliaQuality.Minimal) }
     var unitCount by remember(document, selection.primary, options.quality, style) { mutableIntStateOf(0) }
+    var themeDiagnostic by remember(document,style){mutableStateOf<String?>(null)}
     val statusObserver by rememberUpdatedState(onStatus)
-    LaunchedEffect(document, selection.primary, quality, options.quality, unitCount) {
+    LaunchedEffect(document, selection.primary, quality, options.quality, unitCount,themeDiagnostic) {
         statusObserver(FoliaStatus(options.quality, quality, unitCount,
-            document.diagnostics.map { "${it.ref.index}:${it.reason}" } +
+            document.diagnostics.map { "${it.ref.index}:${it.reason}" } + listOfNotNull(themeDiagnostic) +
                 if (unitCount > 0 && quality != options.quality) listOf("GlowBudgetExceeded") else emptyList()))
     }
     BoxWithConstraints(modifier) {
@@ -123,7 +135,38 @@ fun FoliaLyricsView(
         // its missing size before switching to classic/Partita text preparation.
         val mainStyle=typography.main?.let { if(it.fontSize==TextUnit.Unspecified)it.copy(fontSize=responsiveMain.fontSize)else it }?:responsiveMain
         val main = selection.primary?.line?.let(document.lines::get)
-        if(style is FoliaStyle.Cappella) {
+        if(style is FoliaStyle.Fume){
+            val tuning=style.tuning;val lines=fumeLines!!
+            // The stage owns preparation invalidation. Paint-only changes or a
+            // subtitle style must not reset readiness without restarting its job.
+            var ready by remember(document){mutableStateOf(false)}
+            LaunchedEffect(ready,selection.primary,options.quality,style){
+                unitCount=if(ready)selection.primary?.line?.let{fumeCounts!![it]}?:0 else 0
+                quality=if(unitCount==0)FoliaQuality.Minimal else options.quality
+            }
+            fun androidx.compose.ui.graphics.Color.ink()=FumeInk((red*255+.5f).toInt(),(green*255+.5f).toInt(),(blue*255+.5f).toInt(),alpha.toDouble())
+            val theme=remember(colors,tuning.wordColors,tuning.glowIntensity,options.quality,options.animationIntensity){
+                FumeFrameTheme(colors.text.ink(),colors.active.ink(),options.animationIntensity.name.lowercase(),
+                    if(options.quality==FoliaQuality.Minimal)0.0 else tuning.glowIntensity.toDouble(),
+                    tuning.wordColors.map{it.word to it.color.ink()})
+            }
+            if(lines.none{it.text.isNotBlank()})BasicText("暂无可显示歌词",style=mainStyle.copy(color=colors.secondary))
+            else FumeArticleStage(lines,{(currentPlayback().positionMillis-options.offsetMillis)/1000.0},
+                {lines.indexOfLast{line->val t=(currentPlayback().positionMillis-options.offsetMillis)/1000.0;t>=line.start&&t<=line.renderEnd}},
+                typography.main?:typography.secondary,theme,Modifier.fillMaxSize(),
+                fontScale=tuning.fontScale.toDouble()*typography.scale,heroScale=tuning.heroScale.toDouble(),
+                hold=tuning.textHoldRatio.toDouble(),cameraSpeed=tuning.cameraSpeed.toDouble(),
+                stepped=tuning.trackingMode==FumeTrackingMode.Stepped,reducedMotion=options.reducedMotion,
+                showStamp=tuning.showPrintSymbols&&options.quality!=FoliaQuality.Minimal,layoutSeed=tuning.layoutSeed,
+                onClick={onLineClicked(document.lines[it].source)},onLongPress={onLinePressed(document.lines[it].source)},
+                onState={isReady,diagnostic->ready=isReady;themeDiagnostic=diagnostic})
+            waiting?.let{gap->Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center){
+                WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
+                    {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
+                    Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
+                    defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
+            }}
+        }else if(style is FoliaStyle.Cappella) {
             val tuning=style.tuning
             val core=cappellaCore!!;val lines=cappellaLines!!
             val intensity=when(options.animationIntensity){

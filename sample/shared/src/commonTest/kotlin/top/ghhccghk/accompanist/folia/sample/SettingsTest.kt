@@ -4,6 +4,15 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 import kotlin.test.*
 
 class SettingsTest {
+    @Test fun fumeControlsRoundTripAndRealThemeIsSelectable() {
+        val tuning=FumeTuning(1.5f,1.2f,.3f,1.8f,FumeTrackingMode.Stepped,.7f,false)
+        val settings=SampleSettings(lyricTheme=SampleLyricTheme.Fume,fumeTuning=tuning)
+        assertEquals(settings,SampleSettings.decode(settings.encode()))
+        val session=SampleSession();session.applySettings(settings)
+        assertEquals(FoliaStyle.Fume(tuning),session.lyricStyle);assertEquals(settings,session.settings());assertFalse(session.demo)
+        assertEquals(FumeTuning(),SampleSettings.decode("version=1\nfumeFont=NaN\nfumeHero=5\nfumeHold=-1\nfumeSpeed=0\nfumeGlow=Infinity\nfumeTracking=Missing").fumeTuning)
+        assertFailsWith<IllegalArgumentException>{FumeTuning(cameraSpeed=Float.NaN)}
+    }
     @Test fun cappellaDisplayPreferenceAndContentTitleRemainSeparate() {
         val settings=SampleSettings(lyricTheme=SampleLyricTheme.Cappella,cappellaTuning=CappellaTuning(fontScale=1.5f))
         assertEquals(settings,SampleSettings.decode(settings.encode()))
@@ -68,7 +77,8 @@ class SettingsTest {
         val old=SampleSettings.decode("version=1")
         assertEquals(SampleLyricTheme.Classic,old.lyricTheme)
         assertEquals(PartitaTuning(),old.partitaTuning)
-        val invalid=SampleSettings.decode("version=1\nlyricTheme=Fume\npartitaMin=170\npartitaMax=20")
+        // Fume now has a real renderer; Diorama is still unavailable.
+        val invalid=SampleSettings.decode("version=1\nlyricTheme=Diorama\npartitaMin=170\npartitaMax=20")
         assertEquals(SampleLyricTheme.Classic,invalid.lyricTheme)
         assertEquals(20f,invalid.partitaTuning.staggerMin)
         assertEquals(170f,invalid.partitaTuning.staggerMax)

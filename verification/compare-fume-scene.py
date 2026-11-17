@@ -8,8 +8,11 @@ root = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--native-dir', default='build/verification/fume-scene-kotlin')
 parser.add_argument('--out', default='verification/fume-scene')
+parser.add_argument('--source-dir', default='build/verification/fume-scene-browser')
+parser.add_argument('--camera-fixture', default='verification/fume-fixtures/scene-camera.tsv')
+parser.add_argument('--all-foreground', action='store_true')
 args = parser.parse_args()
-source = root / 'build/verification/fume-scene-browser'
+source = root / args.source_dir
 native = root / args.native_dir
 out = root / args.out; out.mkdir(exist_ok=True, parents=True)
 background = np.array([22,36,53]); rows=[]; hashes={}
@@ -18,14 +21,17 @@ for file in sorted(source.glob('*.png')):
     if not other.exists(): raise RuntimeError(f'Missing native frame {file.name}')
     a,b = [np.asarray(Image.open(p).convert('RGB')).astype(np.int16) for p in [file,other]]
     assert a.shape == b.shape
-    mask = np.any(abs(a-background)>8,axis=2)|np.any(abs(b-background)>8,axis=2)
+    cutoff = 0 if args.all_foreground else 8
+    mask = np.any(abs(a-background)>cutoff,axis=2)|np.any(abs(b-background)>cutoff,axis=2)
     diff = abs(a-b)
+    tiles=[float(diff[y:y+64,x:x+64][mask[y:y+64,x:x+64]].mean())
+           for y in range(0,a.shape[0],64) for x in range(0,a.shape[1],64) if mask[y:y+64,x:x+64].any()]
     rows.append(dict(file=file.name,foreground_pixels=int(mask.sum()),foreground_mae=float(diff[mask].mean()) if mask.any() else 0,
-                     full_mae=float(diff.mean())))
+                     full_mae=float(diff.mean()),channel_peak=int(diff.max()),worst_64px_tile_mae=max(tiles,default=0)))
     for p in [file,other]: hashes[p.relative_to(root).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
 
 camera=[]
-raw = [r.split('\t') for r in (root/'verification/fume-fixtures/scene-camera.tsv').read_text(encoding='utf-8').splitlines() if r and not r.startswith('#')]
+raw = [r.split('\t') for r in (root/args.camera_fixture).read_text(encoding='utf-8').splitlines() if r and not r.startswith('#')]
 for row in raw:
     prefix=f'{row[0]}-{row[1]}-{row[2]}'
     reports=[r.split('\t') for r in (native/f'{prefix}.tsv').read_text(encoding='utf-8').splitlines() if r and not r.startswith('#')]
@@ -36,6 +42,7 @@ for row in raw:
         restore_error=abs(float(n[4])-float(row[7])),nodes=int(n[5])))
 
 report=dict(conditions=json.loads((source/'conditions.json').read_text(encoding='utf-8')),
+    foreground_cutoff=cutoff,
     source='untouched original article layout, stepFumeCamera60Hz, static snapshots and live draw, source text-hold duration',
     native='independently measured article and focus geometry; complete shaped-row text; '+
         ('explicit shared original camera isolates raster only' if 'source-camera' in args.native_dir else 'continuous media camera'),

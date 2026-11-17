@@ -7,7 +7,8 @@ import kotlin.math.*
 internal data class FumeFocusEpoch(val time: Double, val lineIndex: Int)
 internal data class FumeCameraTrackConfig(val viewport: FumeViewport, val overviewStart: Double,
     val speed: Double = 1.0, val stepped: Boolean = false, val static: Boolean = false,
-    val intensity: String = "normal", val floatOrigin: Double = 0.0)
+    val intensity: String = "normal", val floatOrigin: Double = 0.0,
+    val extendTail:Boolean=false)
 private data class FumeMediaCameraNode(val time: Double, val state: FumeCameraState)
 
 /** Internal calibration track, not yet a publicly accepted Fume theme.
@@ -24,7 +25,8 @@ private data class FumeMediaCameraNode(val time: Double, val state: FumeCameraSt
  */
 internal class FumeCameraTrack(private val article: FumeArticle,
     private val geometry: Map<Int, FumeFocusBlock>, private val epochs: List<FumeFocusEpoch>,
-    private val config: FumeCameraTrackConfig, private val endTime: Double) {
+    private val config: FumeCameraTrackConfig, private val endTime: Double,
+    private val checkpoint:()->Unit={}) {
     private val calibration = 1.0 / 60
     private val pixelError = .0000001
     private val overview = fumeOverview(article, config.viewport)
@@ -33,6 +35,10 @@ internal class FumeCameraTrack(private val article: FumeArticle,
     // depend only on content; keep one per block for this track's lifetime.
     private val reveals=article.blocks.associate{it.sourceIndex to FumeReveal(it.line)}
     private val nodes: List<FumeMediaCameraNode>
+    private var preparing=true
+    // Deterministic memoization beyond the lyric timeline. Five-second media
+    // anchors bound repeated tail queries; they are not animation frames.
+    private val tail=mutableListOf<FumeMediaCameraNode>()
     val preparedNodeCount: Int get() = nodes.size
 
     init {
@@ -51,6 +57,7 @@ internal class FumeCameraTrack(private val article: FumeArticle,
         var time = epochs.first().time
         var state = fumeInitialCamera(article)
         for (end in events) {
+            checkpoint()
             if (end > time) {
                 state = integrate(state, time, end, epochAt(time), time >= config.overviewStart) { t, s ->
                     prepared += FumeMediaCameraNode(t, s)
@@ -64,6 +71,7 @@ internal class FumeCameraTrack(private val article: FumeArticle,
             else prepared += FumeMediaCameraNode(time, state)
         }
         nodes = prepared.toList()
+        preparing=false
     }
 
     private fun epochAt(time: Double): Int {
@@ -151,6 +159,7 @@ internal class FumeCameraTrack(private val article: FumeArticle,
         accepted: (Double, FumeCameraState) -> Unit = { _, _ -> }): FumeCameraState {
         var state = initial; var time = from; var h = min(.05, to - from); var attempts = 0
         while (time < to) {
+            if(preparing&&attempts%64==0)checkpoint()
             check(++attempts <= 100_000) { "Fume continuous camera failed to converge" }
             h = min(h, to - time)
             if (state.retarget.bridge != "none") for (delta in listOf(calibration, calibration * .5)) {
@@ -171,7 +180,18 @@ internal class FumeCameraTrack(private val article: FumeArticle,
     }
     fun sample(time: Double): FumeCameraFrame {
         require(time.isFinite())
-        val t = time.coerceIn(nodes.first().time, endTime)
+        val t = if(config.extendTail)time.coerceAtLeast(nodes.first().time)else time.coerceIn(nodes.first().time, endTime)
+        if(t>endTime){
+            if(tail.isEmpty())tail+=nodes.last()
+            val bucket=floor((t-endTime)/5).toInt()
+            while(tail.lastIndex<bucket){
+                val previous=tail.last();val end=endTime+tail.size*5
+                tail+=FumeMediaCameraNode(end,integrate(previous.state,previous.time,end,epochAt(previous.time),previous.time>=config.overviewStart))
+            }
+            val n=tail[bucket]
+            val state=if(t==n.time)n.state else integrate(n.state,n.time,t,epochAt(n.time),n.time>=config.overviewStart)
+            return FumeCameraFrame(state,t>=config.overviewStart,if(t>=config.overviewStart)1.0 else 0.0)
+        }
         var low = 0; var high = nodes.size
         while (low < high) { val m = (low + high) ushr 1; if (nodes[m].time <= t) low = m + 1 else high = m }
         val n = nodes[max(low - 1, 0)]

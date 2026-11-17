@@ -1494,3 +1494,19 @@ changes or new runtime dependency. Same numerical fixtures/432 existing PNG
 hashes preserved. Original boundary state is exposed only by the test-shell
 fume-scene.ts return object, not altered upstream logic. Evidence, retained
 failed timeout, limits and original retarget records: verification/fume-preparation.
+
+### Public Fume article integration (2026-11-18)
+Pinned cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only:
+VisualizerFume.tsx / useFumeCanvasStage.ts / fumeArticleLayout.ts / fumeTextStyle.ts
+-> FumeArticleStage.kt, FumeArticleDrawing.kt, FumeCameraTrack.kt,
+FoliaLyricsView.kt / FoliaOptions.kt. Existing original-derived article, reveal,
+text and camera functions retain prior attribution. New integration adds cancellable
+background preparation, separate system-fontScale, actual-core identity callbacks,
+inverse-camera input/accessibility, media-clock tail, snapshot-reference cleanup
+and hold-setting cache. No original assets or background engine copied.
+SampleSession / LyricThemeControls / SettingsStore add actual preview/controls.
+Media float origin0 and reduced-motion static focus replace wall-clock behavior
+for reconstructible pause/seek. Continuous camera approximation remains a measured
+residual, not final parity. Coroutine1.11.0 already locked in project, now explicit
+library implementation dependency. Evidence/limitations: verification/fume-public;
+source test shell is original function pipeline, not full React lifecycle.

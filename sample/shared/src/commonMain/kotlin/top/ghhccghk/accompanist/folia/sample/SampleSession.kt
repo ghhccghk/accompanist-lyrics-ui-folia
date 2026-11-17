@@ -22,6 +22,7 @@ class SampleSession(demoInitially: Boolean = false) {
     var cadenzaTuning by mutableStateOf(CadenzaTuning())
     var pendoloTuning by mutableStateOf(PendoloTuning())
     var cappellaTuning by mutableStateOf(CappellaTuning())
+    var fumeTuning by mutableStateOf(FumeTuning())
     val lyricStyle: FoliaStyle get() = when(lyricTheme) {
         SampleLyricTheme.Classic -> FoliaStyle.Classic(tuning)
         SampleLyricTheme.Partita -> FoliaStyle.Partita(partitaTuning)
@@ -29,6 +30,7 @@ class SampleSession(demoInitially: Boolean = false) {
         SampleLyricTheme.Cadenza -> FoliaStyle.Cadenza(cadenzaTuning)
         SampleLyricTheme.Pendolo -> FoliaStyle.Pendolo(pendoloTuning)
         SampleLyricTheme.Cappella -> FoliaStyle.Cappella(cappellaTuning)
+        SampleLyricTheme.Fume -> FoliaStyle.Fume(fumeTuning)
     }
     fun lyricStyleForTitle(title:String):FoliaStyle = when(val style=lyricStyle){
         is FoliaStyle.Cappella->style.copy(tuning=style.tuning.copy(title=title))
@@ -40,4 +42,4 @@ class SampleSession(demoInitially: Boolean = false) {
     var preferencesLoaded = false
 }
 
-enum class SampleLyricTheme { Classic, Partita, Tilt, Cadenza, Pendolo, Cappella }
+enum class SampleLyricTheme { Classic, Partita, Tilt, Cadenza, Pendolo, Cappella, Fume }

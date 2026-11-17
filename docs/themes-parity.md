@@ -28,7 +28,7 @@
 | 流光 | classic；`classic/Visualizer.tsx`、`GlowWord.tsx` | 居中词布局、字素辉光、余韵和句转场 | 已实现但未最终验收；完整画面栅格、Android复杂字幕残差继续保留在classic-parity.md |
 | 云阶 | partita；`partitaLayout.ts`、`PartitaChunk.tsx`、`partitaOverlap.ts` | 依高度拆块、交替阶梯错位、块级入场、引导线、GlowWord | **移植校准中**：已接FoliaStyle.Partita与示例，完整画面尚有残差，未最终验收 |
 | 倾诉 | tilt；`VisualizerTilt.tsx` | 种子决定1–4段，水平／大号斜体两种排版，字素上下位移 | 已接 FoliaStyle.Tilt 和示例，明确标注校准预览；450ms 公共退场、Latin 段宽已补，Arabic shaping、CSS transform 延迟和全局字体缓存仍未验收 |
-| 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 内部时序、文章布局、拟合、Latin静态与实时文字已移植并有原Canvas对照；镜头未完成，文字栅格/复杂字体仍校准，未开放选择器，背景不纳入 |
+| 浮名 | fume；`VisualizerFume.tsx`、`fumeArticleLayout.ts`、`fumeCameraStep.ts`、`fumeReveal.ts` | 整曲文章布局、字素打印、步进/平滑相机、读后残留 | 已接FoliaStyle.Fume与sample文章镜头校准预览；真实core/来源回调/可取消整曲准备/字号/偏好/减少动态已贯通。216公共帧与内部逐像素相同；原函数管线镜头屏幕峰15.933273px、scale .056221，全非背景含低alpha MAE12.016782；未覆盖原React完整挂载，短桥接/总览/栅格/设备仍待正式验收，背景不纳入，详见fume-preview.md |
 | 心象 | cadenza；`VisualizerCadenza.tsx`、`cadenzaPlacements.ts`、`cadenzaEnvelopes.ts` | 碎片云布局、焦点强调、状态绘制顺序、漂移包络 | 已接FoliaStyle.Cadenza和sample校准预览；布局、包络、词/字素辉光、媒体时间低通、关键词色和显式副歌圈已实现；原版定格/播放/公开入口画面对照已建立。刷新率阶跃差、CJK/光栅、跨句共享id历史状态仍未最终验收，详见cadenza-preview.md |
 | 群唱 | cappella；`VisualizerCappella.tsx`、`cappellaMessages.ts`、`cappellaMessageLayout.ts`、`cappellaReveal.ts` | 多发送者对话、气泡、消息保留与逐字揭示 | 已接FoliaStyle.Cappella与sample文字对话校准预览、真实core/来源回调/显式嵌套agent/字幕/偏好/减少动态。210真实core公共入口与内部逐帧像素一致，原版整屏盒峰3.637201px；全非背景像素含低alpha MAE2.325954（与旧>8口径不可当改善比较）。240压力图盒峰22.188593px，密集投影/栅格/设备未最终验收。无未知来源头像/emoji；详见cappella-preview.md |
 | 时计 | pendolo；`VisualizerPendolo.tsx`、`pendoloGeometry.ts`、`pendoloTimeline.ts`、`PendoloActiveLyricSweep.tsx` | 圆弧歌词轨、机械跳步、当前句扫描、字幕轨 | 内部圆弧/高度避让/空档、完整塑形扫描、真实字幕和机械tick轮盘已实现并建立原版对照；80定格及144挂载对照，已补idle节点200ms宽度过渡与反向缩时；tick峰0.325107°/盒1.364707px/图MAE13.137682仍未验收。范围关键词与EGC同色段扫描已实现并有88对实际源图；副歌扫描的三档/.58混色/遮罩后顺序双辉光已补，264原图平均MAE3.124627，另132软件图；halo/父层scale及整屏配色现已接入原JSX168对校准，整屏MAE11.918332/峰45.121911，密集采样/旋转差及栅格未达标；光晕通道峰2/255，内部调用方配色已贯通正文/字幕/辉光/halo，24组替代配色原JSX图留证；已接core/独立正文字幕缩放/变换点击与长按、FoliaStyle.Pendolo及sample校准预览；45对公开入口原版图和残差见pendolo-preview.md，正式验收仍未通过。音频鼓点不伪造，证据verification/pendolo-stage及pendolo-tick-stage |
@@ -38,7 +38,7 @@
 字体、颜色、视口、媒体时间、随机种子相同才作视觉对照；暂停冻结、seek直接重建、
 完整shaping与内部字素计时、尺寸变化仍为每个主题共同验收条件。
 
-## 浮名：打印与读后保留内核（未开放主题）
+## 浮名：打印与读后保留内核（历史记录，公共进展见上表）
 
 `FumeReveal.kt` 对应原版 `fumeReveal.ts`、`fumeTextStyle.ts`、`fumeMath.ts`。
 18个合成输入的30个词范围/内部时钟、1584个边界和随机媒体时间的正逆序重建、

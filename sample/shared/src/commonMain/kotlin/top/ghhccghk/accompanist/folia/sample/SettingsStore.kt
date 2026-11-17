@@ -21,7 +21,8 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
     val tiltTuning: TiltTuning = TiltTuning(),
     val cadenzaTuning:CadenzaTuning=CadenzaTuning(),
     val pendoloTuning:PendoloTuning=PendoloTuning(),
-    val cappellaTuning:CappellaTuning=CappellaTuning()) {
+    val cappellaTuning:CappellaTuning=CappellaTuning(),
+    val fumeTuning:FumeTuning=FumeTuning()) {
     fun encode(): String = listOf("version=1", "translation=${options.showTranslation}",
         "phonetic=${options.showPhonetic}", "next=${options.showNextLine}", "motion=${options.reducedMotion}",
         "quality=${options.quality}", "offset=${options.offsetMillis}", "rotation=${tuning.enableWordRotation}",
@@ -34,6 +35,9 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
         "tiltColors=${tiltTuning.colorScheme}","cadenzaFont=${cadenzaTuning.fontScale}",
         "pendoloLyricsFont=${pendoloTuning.lyricsFontScale}","pendoloSubtitleFont=${pendoloTuning.subtitleFontScale}",
         "cappellaFont=${cappellaTuning.fontScale}",
+        "fumeFont=${fumeTuning.fontScale}","fumeHero=${fumeTuning.heroScale}","fumeHold=${fumeTuning.textHoldRatio}",
+        "fumeSpeed=${fumeTuning.cameraSpeed}","fumeTracking=${fumeTuning.trackingMode}",
+        "fumeGlow=${fumeTuning.glowIntensity}","fumeSymbols=${fumeTuning.showPrintSymbols}",
         "pendoloChorus=${pendoloTuning.chorusLineIndices.sorted().joinToString(",")}",
         "pendoloWords=${pendoloTuning.wordColors.joinToString("|"){entry->
             entry.word.map{it.code.toString(16).padStart(4,'0')}.joinToString("")+"~"+entry.color.toArgb().toUInt().toString(16)
@@ -83,12 +87,17 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
                         val chars=parts[0].chunked(4).map{it.toIntOrNull(16)?:return@mapNotNull null}
                         val color=parts[1].toUIntOrNull(16)?:return@mapNotNull null
                         FoliaWordColor(chars.map{it.toChar()}.joinToString(""),Color(color.toInt()))
-                    }),CappellaTuning(fontScale=number("cappellaFont",1f,.5f..2f)))
+                    }),CappellaTuning(fontScale=number("cappellaFont",1f,.5f..2f)),
+                FumeTuning(fontScale=number("fumeFont",1f,.5f..2f),heroScale=number("fumeHero",1f,.82f..1.32f),
+                    textHoldRatio=number("fumeHold",1f,0f..1f),cameraSpeed=number("fumeSpeed",1f,.55f..1.85f),
+                    trackingMode=FumeTrackingMode.entries.find{it.name==fields["fumeTracking"]}?:FumeTrackingMode.Smooth,
+                    glowIntensity=number("fumeGlow",1f,0f..1.8f),showPrintSymbols=boolean("fumeSymbols",true)))
         }
     }
 }
 
-fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning, renderResolution, tiltTuning,cadenzaTuning,pendoloTuning,cappellaTuning.copy(title="歌词",agents=emptyList()))
+fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning, renderResolution, tiltTuning,cadenzaTuning,pendoloTuning,cappellaTuning.copy(title="歌词",agents=emptyList()),
+    fumeTuning.copy(layoutSeed="Fume",chorusLineIndices=emptySet(),wordColors=emptyList()))
 fun SampleSession.applySettings(value: SampleSettings) {
     options = value.options; tuning = value.tuning; fontScale = value.fontScale
     lyricTheme=value.lyricTheme;partitaTuning=value.partitaTuning
@@ -97,4 +106,5 @@ fun SampleSession.applySettings(value: SampleSettings) {
     cadenzaTuning=value.cadenzaTuning
     pendoloTuning=value.pendoloTuning
     cappellaTuning=value.cappellaTuning
+    fumeTuning=value.fumeTuning
 }

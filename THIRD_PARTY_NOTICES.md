@@ -17,7 +17,7 @@ copyright metadata and provenance. They are used by the comparison harness only.
 | AndroidX Activity Compose | 1.13.0 | Apache-2.0; Android sample entry |
 | lyrics-core | 0.5.0 | Apache-2.0; published model dependency, not lyrics-ui |
 | ICU4J | 78.3 | Unicode-3.0; grapheme segmentation, same implementation on Android/JVM |
-| kotlinx.coroutines | 1.11.0 | Apache-2.0; asynchronous sample import and settings I/O |
+| kotlinx.coroutines | 1.11.0 | Apache-2.0; asynchronous sample import/settings I/O and cancellable library article preparation |
 | Tailwind CSS | 4.3.3 | MIT; verification-only compiler/generated subtitle utilities, matching the pinned Folia lockfile |
 | pretext | 0.0.9 | MIT; original Tilt measurement in verification; its cache behavior informs the independently written per-line compatibility cache. No pretext runtime dependency. See LICENSES/MIT-pretext-0.0.9.txt and docs/upstream.md. |
 | jni-sys | 0.3.0 | MIT OR Apache-2.0; optional development-only Rust JNI mask experiment, Cargo.lock pins checksum; not linked into default library/sample |

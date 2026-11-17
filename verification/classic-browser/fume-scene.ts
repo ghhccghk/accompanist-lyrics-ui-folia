@@ -10,6 +10,7 @@ import fontUrl from '../assets/FoliaParityLatin-Bold.ttf?url';
 const font = new FontFace('Fume Parity', `url(${fontUrl})`, { weight: '700' });
 await font.load(); document.fonts.add(font);
 const query = new URLSearchParams(location.search), glow=Number(query.get('glow')??1), stepped=query.get('stepped')==='true';
+const floatOrigin=Number(query.get('floatOrigin')??9.25);
 const word=(text:string,startTime:number,endTime:number)=>({text,startTime,endTime});
 const lines=[
  {fullText:'Amber echoes beyond',startTime:.7,endTime:2.8,words:[word('Amber ',.7,1.2),word('echoes ',1.2,2),word('beyond',2,2.8)]},
@@ -36,7 +37,7 @@ const bases=resolveFumeGlowBases(theme.animationIntensity,glow);
  if(frame<0)syncFumeCameraToArticle(camera,article);
  for(let f=frame+1;f<=target;f++){
   const time=f/60;
-  restore=stepFumeCamera(camera,{article,time,now:(time+9.25)*1000,dt:f===0?0:1/60,lineIndex:focusAt(time),viewport,
+  restore=stepFumeCamera(camera,{article,time,now:(time+floatOrigin)*1000,dt:f===0?0:1/60,lineIndex:focusAt(time),viewport,
    overviewCamera:overview,overviewStartTime:overviewStart,cameraSpeed:1,cameraTrackingMode:stepped?'stepped':'smooth',staticMode:false,animationIntensity:'normal'}).overviewTextRestoreProgress;
  }
  // Repeated time is a frozen observation, never another source step.

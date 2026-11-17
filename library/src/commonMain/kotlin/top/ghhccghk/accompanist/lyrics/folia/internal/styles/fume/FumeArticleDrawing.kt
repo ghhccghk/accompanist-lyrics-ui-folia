@@ -15,12 +15,20 @@ internal class FumeArticleDrawing private constructor(private val article: FumeA
     private val lyrics: List<FumeLyric>, private val drawings: Map<Int, FumeLiveText>,
     private val rasterDensity: Density) {
     val focusGeometry: Map<Int, FumeFocusBlock> = drawings.mapValues { it.value.focus }
+    fun releaseStaticSnapshots() { drawings.values.forEach { it.releaseStaticSnapshots() } }
+    // Hold is a setting, not a frame input that requires sorting the song again.
+    private var preparedHold=1.0
+    private var preparedPassedDuration=Double.POSITIVE_INFINITY
 
     fun draw(scope: DrawScope, viewport: FumeViewport, time: Double, camera: FumeCameraFrame,
         theme: FumeFrameTheme, hold: Double = 1.0, showStamp: Boolean = true) = with(scope) {
         val pose = camera.state.pose
         val pixels = rasterDensity.density
-        val passedDuration = fumePassedDuration(lyrics, hold)
+        if(hold!=preparedHold){
+            preparedPassedDuration=fumePassedDuration(lyrics,hold)
+            preparedHold=hold
+        }
+        val passedDuration = preparedPassedDuration
         withTransform({
             translate((viewport.width * pixels / 2).toFloat(), (viewport.height * pixels / 2).toFloat())
             scale(pose.scale.toFloat(), pose.scale.toFloat(), Offset.Zero)
@@ -38,7 +46,7 @@ internal class FumeArticleDrawing private constructor(private val article: FumeA
 
     companion object {
         fun prepare(article: FumeArticle, lyrics: List<FumeLyric>, measure: FumeTextMeasure,
-            resolver: FontFamily.Resolver, density: Density) = FumeArticleDrawing(article, lyrics,
-            article.blocks.associate { it.sourceIndex to FumeLiveText.prepare(it, measure, resolver, density) }, density)
+            resolver: FontFamily.Resolver, density: Density, checkpoint:()->Unit={}) = FumeArticleDrawing(article, lyrics,
+            article.blocks.associate { checkpoint();it.sourceIndex to FumeLiveText.prepare(it, measure, resolver, density) }, density)
     }
 }

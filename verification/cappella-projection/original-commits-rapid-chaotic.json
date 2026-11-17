@@ -1,0 +1,2947 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "browser": "151.0.7922.34",
+  "timeline": "rapid",
+  "intensity": "chaotic",
+  "scope": "Passive original projection didUpdate callbacks; no source logic changed. Same pressure clock/probes; trace limited to2.2s.",
+  "events": [
+    {
+      "time": 0.7,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 1,
+        "y": 0,
+        "scale": 1
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "static"
+    },
+    {
+      "time": 0.7166666666666667,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 110.09375,
+        "max": 221.328125
+      },
+      "snapshot": {
+        "min": 110.09376008845558,
+        "max": 221.32813508845558
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0,
+        "y": 27.787940365669783,
+        "scale": 0.9703595302766189
+      },
+      "offsetTop": 62,
+      "offsetHeight": 111,
+      "computedHeight": "111.234px",
+      "position": "static"
+    },
+    {
+      "time": 0.72,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 110.09375,
+        "max": 221.75
+      },
+      "snapshot": {
+        "min": 110.09375253133094,
+        "max": 221.75000253133095
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0,
+        "y": 27.409743393945973,
+        "scale": 0.9707629403797909
+      },
+      "offsetTop": 62,
+      "offsetHeight": 112,
+      "computedHeight": "111.656px",
+      "position": "static"
+    },
+    {
+      "time": 0.7333333333333333,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 110.09375,
+        "max": 223.96875
+      },
+      "snapshot": {
+        "min": 110.09374850534556,
+        "max": 223.96874850534556
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0,
+        "y": 25.789128930482548,
+        "scale": 0.9724915958074852
+      },
+      "offsetTop": 62,
+      "offsetHeight": 114,
+      "computedHeight": "113.875px",
+      "position": "static"
+    },
+    {
+      "time": 0.7769999999999999,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 1,
+        "y": 0,
+        "scale": 1
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "static"
+    },
+    {
+      "time": 0.7769999999999999,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 110.09375,
+        "max": 171.359375
+      },
+      "snapshot": {
+        "min": 110.09375918182818,
+        "max": 171.35938418182818
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0,
+        "y": 20.641479809128214,
+        "scale": 0.9779824215369299
+      },
+      "offsetTop": 62,
+      "offsetHeight": 61,
+      "computedHeight": "61.2656px",
+      "position": "static"
+    },
+    {
+      "time": 0.7769999999999999,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 110.09375,
+        "max": 232.359375
+      },
+      "snapshot": {
+        "min": 110.09374632316872,
+        "max": 232.35937132316872
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0,
+        "y": 20.641479809128214,
+        "scale": 0.9779824215369299
+      },
+      "offsetTop": 62,
+      "offsetHeight": 122,
+      "computedHeight": "122.266px",
+      "position": "static"
+    },
+    {
+      "time": 0.7799999999999999,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 1,
+        "y": 0,
+        "scale": 1
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 0.7799999999999999,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 169.1875
+      },
+      "snapshot": {
+        "min": 110.09374632316872,
+        "max": 231.28124632316872
+      },
+      "delta": 62.093746323168716,
+      "progress": 0,
+      "offset": 62.093746323168716,
+      "latest": {
+        "opacity": 0,
+        "y": 20.311640380241442,
+        "scale": 0.9783342502610758
+      },
+      "offsetTop": 0,
+      "offsetHeight": 121,
+      "computedHeight": "121.188px",
+      "position": "static"
+    },
+    {
+      "time": 0.7833333333333333,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 180.046875,
+        "max": 290.078125
+      },
+      "snapshot": {
+        "min": 181.18751008845558,
+        "max": 291.2187600884556
+      },
+      "delta": 1.1406350884556105,
+      "progress": 0,
+      "offset": 1.1406350884556105,
+      "latest": {
+        "opacity": 0,
+        "y": 29.59859624505043,
+        "scale": 0.9684281640052795
+      },
+      "offsetTop": 132,
+      "offsetHeight": 110,
+      "computedHeight": "110.031px",
+      "position": "static"
+    },
+    {
+      "time": 0.8,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 172.375,
+        "max": 284.03125
+      },
+      "snapshot": {
+        "min": 181.18750054472738,
+        "max": 292.8437505447274
+      },
+      "delta": 8.812500544727413,
+      "progress": 0,
+      "offset": 8.812500544727413,
+      "latest": {
+        "opacity": 0,
+        "y": 27.409743393945973,
+        "scale": 0.9707629403797909
+      },
+      "offsetTop": 124,
+      "offsetHeight": 112,
+      "computedHeight": "111.656px",
+      "position": "static"
+    },
+    {
+      "time": 0.8166666666666667,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 163.5,
+        "max": 278.140625
+      },
+      "snapshot": {
+        "min": 181.18749850534556,
+        "max": 295.82812350534556
+      },
+      "delta": 17.68749850534556,
+      "progress": 0,
+      "offset": 17.68749850534556,
+      "latest": {
+        "opacity": 0,
+        "y": 25.30425757257035,
+        "scale": 0.9730087919225916
+      },
+      "offsetTop": 116,
+      "offsetHeight": 115,
+      "computedHeight": "114.641px",
+      "position": "static"
+    },
+    {
+      "time": 0.85,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48.00000203004403,
+        "max": 98.09375203004403
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0.9065962544700596,
+        "y": -2.428497383778449,
+        "scale": 0.9943957752682036
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "static"
+    },
+    {
+      "time": 0.85,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 110.09375,
+        "max": 195.90625
+      },
+      "snapshot": {
+        "min": 93.06477685178547,
+        "max": 178.87727685178547
+      },
+      "delta": -17.028973148214533,
+      "progress": 0,
+      "offset": -17.028973148214533,
+      "latest": {
+        "opacity": 0,
+        "y": 13.060261547507253,
+        "scale": 0.9860690543493256
+      },
+      "offsetTop": 62,
+      "offsetHeight": 86,
+      "computedHeight": "85.8125px",
+      "position": "static"
+    },
+    {
+      "time": 0.85,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 207.90625,
+        "max": 267.953125
+      },
+      "snapshot": {
+        "min": 162.81553005926494,
+        "max": 222.86240505926494
+      },
+      "delta": -45.090719940735056,
+      "progress": 0,
+      "offset": -45.090719940735056,
+      "latest": {
+        "opacity": 0,
+        "y": 21.433319977659266,
+        "scale": 0.9771377920238301
+      },
+      "offsetTop": 160,
+      "offsetHeight": 60,
+      "computedHeight": "60.0469px",
+      "position": "static"
+    },
+    {
+      "time": 0.85,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 207.90625,
+        "max": 328.953125
+      },
+      "snapshot": {
+        "min": 162.81551840398984,
+        "max": 283.8623934039898
+      },
+      "delta": -45.09073159601019,
+      "progress": 0,
+      "offset": -45.09073159601019,
+      "latest": {
+        "opacity": 0,
+        "y": 21.433319977659266,
+        "scale": 0.9771377920238301
+      },
+      "offsetTop": 160,
+      "offsetHeight": 121,
+      "computedHeight": "121.047px",
+      "position": "static"
+    },
+    {
+      "time": 0.86,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 47.999999901459205,
+        "max": 98.0937499014592
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0.9106848339541199,
+        "y": -2.3221943171928814,
+        "scale": 0.9946410900372472
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 0.86,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 110,
+        "max": 192.25
+      },
+      "snapshot": {
+        "min": 93.59074108992297,
+        "max": 175.84074108992297
+      },
+      "delta": -16.40925891007703,
+      "progress": 0,
+      "offset": -16.40925891007703,
+      "latest": {
+        "opacity": 0.5957840357732493,
+        "y": 12.12647892680252,
+        "scale": 0.987065089144744
+      },
+      "offsetTop": 62,
+      "offsetHeight": 82,
+      "computedHeight": "82.25px",
+      "position": "absolute"
+    },
+    {
+      "time": 0.86,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 48,
+        "max": 165.28125
+      },
+      "snapshot": {
+        "min": 160.66134378912187,
+        "max": 277.9425937891219
+      },
+      "delta": 112.66134378912187,
+      "progress": 0,
+      "offset": 112.66134378912187,
+      "latest": {
+        "opacity": 0,
+        "y": 20.311640380241442,
+        "scale": 0.9783342502610758
+      },
+      "offsetTop": 0,
+      "offsetHeight": 117,
+      "computedHeight": "117.281px",
+      "position": "static"
+    },
+    {
+      "time": 0.8666666666666667,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 174.234375,
+        "max": 284.46875
+      },
+      "snapshot": {
+        "min": 177.28126008845558,
+        "max": 287.5156350884556
+      },
+      "delta": 3.0468850884556105,
+      "progress": 0,
+      "offset": 3.0468850884556105,
+      "latest": {
+        "opacity": 0,
+        "y": 29.07340453384677,
+        "scale": 0.9689883684972301
+      },
+      "offsetTop": 126,
+      "offsetHeight": 110,
+      "computedHeight": "110.234px",
+      "position": "static"
+    },
+    {
+      "time": 0.8833333333333333,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 166.375,
+        "max": 278.5
+      },
+      "snapshot": {
+        "min": 177.28125589638836,
+        "max": 289.40625589638836
+      },
+      "delta": 10.906255896388359,
+      "progress": 0,
+      "offset": 10.906255896388359,
+      "latest": {
+        "opacity": 0,
+        "y": 27.03449791733874,
+        "scale": 0.9711632022215053
+      },
+      "offsetTop": 118,
+      "offsetHeight": 112,
+      "computedHeight": "112.125px",
+      "position": "static"
+    },
+    {
+      "time": 0.9,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 157.390625,
+        "max": 272.609375
+      },
+      "snapshot": {
+        "min": 177.28124238859147,
+        "max": 292.49999238859147
+      },
+      "delta": 19.890617388591465,
+      "progress": 0,
+      "offset": 19.890617388591465,
+      "latest": {
+        "opacity": 0,
+        "y": 24.936359515122604,
+        "scale": 0.9734012165172026
+      },
+      "offsetTop": 109,
+      "offsetHeight": 115,
+      "computedHeight": "115.219px",
+      "position": "static"
+    },
+    {
+      "time": 0.9333333333333333,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48.00000113663503,
+        "max": 98.09375113663503
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0.9106848339541199,
+        "y": -4.706397621070675,
+        "scale": 0.9891390824129138
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 0.9333333333333333,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 102.25
+      },
+      "snapshot": {
+        "min": 98.09091571092839,
+        "max": 152.34091571092839
+      },
+      "delta": 50.090915710928385,
+      "progress": 0,
+      "offset": 50.090915710928385,
+      "latest": {
+        "opacity": 0.5352401235535879,
+        "y": 8.28738681496402,
+        "scale": 0.9823259362629514
+      },
+      "offsetTop": 0,
+      "offsetHeight": 54,
+      "computedHeight": "54.25px",
+      "position": "static"
+    },
+    {
+      "time": 0.9333333333333333,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 114.25,
+        "max": 194.75
+      },
+      "snapshot": {
+        "min": 129.76438670027042,
+        "max": 210.26438670027042
+      },
+      "delta": 15.514386700270421,
+      "progress": 0,
+      "offset": 15.514386700270421,
+      "latest": {
+        "opacity": 0,
+        "y": 12.777079369698185,
+        "scale": 0.9863711153389886
+      },
+      "offsetTop": 66,
+      "offsetHeight": 81,
+      "computedHeight": "80.5px",
+      "position": "static"
+    },
+    {
+      "time": 0.9333333333333333,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 206.75,
+        "max": 267.328125
+      },
+      "snapshot": {
+        "min": 160.98496365301494,
+        "max": 221.56308865301494
+      },
+      "delta": -45.765036346985056,
+      "progress": 0,
+      "offset": -45.765036346985056,
+      "latest": {
+        "opacity": 0,
+        "y": 21.09037546586478,
+        "scale": 0.9775035995030775
+      },
+      "offsetTop": 159,
+      "offsetHeight": 61,
+      "computedHeight": "60.5781px",
+      "position": "static"
+    },
+    {
+      "time": 0.9333333333333333,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 206.75,
+        "max": 328.328125
+      },
+      "snapshot": {
+        "min": 160.98496060929548,
+        "max": 282.5630856092955
+      },
+      "delta": -45.76503939070449,
+      "progress": 0,
+      "offset": -45.76503939070449,
+      "latest": {
+        "opacity": 0,
+        "y": 21.09037546586478,
+        "scale": 0.9775035995030775
+      },
+      "offsetTop": 159,
+      "offsetHeight": 122,
+      "computedHeight": "121.578px",
+      "position": "static"
+    },
+    {
+      "time": 0.94,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 47.999999455031364,
+        "max": 98.09374945503137
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0.9106848339541199,
+        "y": -5.137183891399439,
+        "scale": 0.9881449602506167
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 0.94,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 97.19487635543736,
+        "max": 150.56987635543737
+      },
+      "delta": 49.19487635543737,
+      "progress": 0,
+      "offset": 49.19487635543737,
+      "latest": {
+        "opacity": 0.55558414386104,
+        "y": 8.031418313330562,
+        "scale": 0.9828718265071932
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 0.94,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 113,
+        "max": 191.5625
+      },
+      "snapshot": {
+        "min": 128.61186262583436,
+        "max": 207.17436262583436
+      },
+      "delta": 15.611862625834362,
+      "progress": 0,
+      "offset": 15.611862625834362,
+      "latest": {
+        "opacity": 0.5957840357732493,
+        "y": 12.12647892680252,
+        "scale": 0.987065089144744
+      },
+      "offsetTop": 65,
+      "offsetHeight": 79,
+      "computedHeight": "78.5625px",
+      "position": "absolute"
+    },
+    {
+      "time": 0.94,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 48,
+        "max": 166.9375
+      },
+      "snapshot": {
+        "min": 159.00673562195257,
+        "max": 277.94423562195254
+      },
+      "delta": 111.00673562195254,
+      "progress": 0,
+      "offset": 111.00673562195254,
+      "latest": {
+        "opacity": 0,
+        "y": 20.311640380241442,
+        "scale": 0.9783342502610758
+      },
+      "offsetTop": 0,
+      "offsetHeight": 119,
+      "computedHeight": "118.938px",
+      "position": "static"
+    },
+    {
+      "time": 0.95,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 174.59375,
+        "max": 285.0625
+      },
+      "snapshot": {
+        "min": 178.93751008845558,
+        "max": 289.4062600884556
+      },
+      "delta": 4.3437600884556105,
+      "progress": 0,
+      "offset": 4.3437600884556105,
+      "latest": {
+        "opacity": 0,
+        "y": 28.68680443352787,
+        "scale": 0.9694007419375702
+      },
+      "offsetTop": 127,
+      "offsetHeight": 110,
+      "computedHeight": "110.469px",
+      "position": "static"
+    },
+    {
+      "time": 0.9666666666666667,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 166.59375,
+        "max": 279.375
+      },
+      "snapshot": {
+        "min": 178.93750257748923,
+        "max": 291.7187525774892
+      },
+      "delta": 12.343752577489226,
+      "progress": 0,
+      "offset": 12.343752577489226,
+      "latest": {
+        "opacity": 0,
+        "y": 26.536647505417932,
+        "scale": 0.9716942426608876
+      },
+      "offsetTop": 119,
+      "offsetHeight": 113,
+      "computedHeight": "112.781px",
+      "position": "static"
+    },
+    {
+      "time": 0.9833333333333333,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 157.5,
+        "max": 273.3125
+      },
+      "snapshot": {
+        "min": 178.93750103495017,
+        "max": 294.7500010349502
+      },
+      "delta": 21.437501034950174,
+      "progress": 0,
+      "offset": 21.437501034950174,
+      "latest": {
+        "opacity": 0,
+        "y": 24.575915398600046,
+        "scale": 0.9737856902414933
+      },
+      "offsetTop": 110,
+      "offsetHeight": 116,
+      "computedHeight": "115.812px",
+      "position": "static"
+    },
+    {
+      "time": 1.0166666666666666,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 47.99999994780569,
+        "max": 98.09374994780569
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0.9106848339541199,
+        "y": -11.383563066836793,
+        "scale": 0.9737302390765304
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.0166666666666666,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 83.7033637025886,
+        "max": 137.0783637025886
+      },
+      "delta": 35.703363702588604,
+      "progress": 0.31195067302905954,
+      "offset": 33.848501566777315,
+      "latest": {
+        "opacity": 0.55558414386104,
+        "y": 4.251246442666897,
+        "scale": 0.9781096719853235
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.0166666666666666,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 48,
+        "max": 100.03125
+      },
+      "snapshot": {
+        "min": 124.33036380068413,
+        "max": 176.36161380068413
+      },
+      "delta": 76.33036380068413,
+      "progress": 0,
+      "offset": 76.33036380068413,
+      "latest": {
+        "opacity": 0.530177614073568,
+        "y": 7.891432304896246,
+        "scale": 0.981837151700669
+      },
+      "offsetTop": 0,
+      "offsetHeight": 52,
+      "computedHeight": "52.0312px",
+      "position": "static"
+    },
+    {
+      "time": 1.0166666666666666,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 112.03125,
+        "max": 192.53125
+      },
+      "snapshot": {
+        "min": 128.5635540588651,
+        "max": 209.0635540588651
+      },
+      "delta": 16.532304058865094,
+      "progress": 0,
+      "offset": 16.532304058865094,
+      "latest": {
+        "opacity": 0,
+        "y": 12.407863186381292,
+        "scale": 0.9867649459345266
+      },
+      "offsetTop": 64,
+      "offsetHeight": 81,
+      "computedHeight": "80.5px",
+      "position": "static"
+    },
+    {
+      "time": 1.0166666666666666,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 204.53125,
+        "max": 265.796875
+      },
+      "snapshot": {
+        "min": 164.18219912323443,
+        "max": 225.44782412323443
+      },
+      "delta": -40.349050876765574,
+      "progress": 0,
+      "offset": -40.349050876765574,
+      "latest": {
+        "opacity": 0,
+        "y": 20.641479809128214,
+        "scale": 0.9779824215369299
+      },
+      "offsetTop": 157,
+      "offsetHeight": 61,
+      "computedHeight": "61.2656px",
+      "position": "static"
+    },
+    {
+      "time": 1.0166666666666666,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 204.53125,
+        "max": 326.796875
+      },
+      "snapshot": {
+        "min": 164.18220135160144,
+        "max": 286.4478263516014
+      },
+      "delta": -40.34904864839859,
+      "progress": 0,
+      "offset": -40.34904864839859,
+      "latest": {
+        "opacity": 0,
+        "y": 20.641479809128214,
+        "scale": 0.9779824215369299
+      },
+      "offsetTop": 157,
+      "offsetHeight": 122,
+      "computedHeight": "122.266px",
+      "position": "static"
+    },
+    {
+      "time": 1.02,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 47.999997813353346,
+        "max": 98.09374781335335
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0.9106848339541199,
+        "y": -11.688790269929914,
+        "scale": 0.973025868607854
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.02,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 81.84850012766152,
+        "max": 135.2235001276615
+      },
+      "delta": 33.84850012766151,
+      "progress": 0.3229453206586186,
+      "offset": 33.30762123606956,
+      "latest": {
+        "opacity": 0.55558414386104,
+        "y": 3.9855160438880697,
+        "scale": 0.9777749122803578
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.02,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 48,
+        "max": 100.015625
+      },
+      "snapshot": {
+        "min": 124.33035514340847,
+        "max": 176.34598014340847
+      },
+      "delta": 76.33035514340847,
+      "progress": 0.013380125164985657,
+      "offset": 75.30905397914208,
+      "latest": {
+        "opacity": 0.550743236547833,
+        "y": 7.785843952925723,
+        "scale": 0.9820801728842666
+      },
+      "offsetTop": 0,
+      "offsetHeight": 52,
+      "computedHeight": "52.0156px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.02,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 112,
+        "max": 192
+      },
+      "snapshot": {
+        "min": 128.5635466410361,
+        "max": 208.5635466410361
+      },
+      "delta": 16.563546641036112,
+      "progress": 0,
+      "offset": 16.563546641036112,
+      "latest": {
+        "opacity": 0.5957840357732493,
+        "y": 12.12647892680252,
+        "scale": 0.987065089144744
+      },
+      "offsetTop": 64,
+      "offsetHeight": 80,
+      "computedHeight": "80px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.02,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 48,
+        "max": 169.203125
+      },
+      "snapshot": {
+        "min": 163.69782635160144,
+        "max": 284.9009513516014
+      },
+      "delta": 115.6978263516014,
+      "progress": 0,
+      "offset": 115.6978263516014,
+      "latest": {
+        "opacity": 0,
+        "y": 20.311640380241442,
+        "scale": 0.9783342502610758
+      },
+      "offsetTop": 0,
+      "offsetHeight": 121,
+      "computedHeight": "121.203px",
+      "position": "static"
+    },
+    {
+      "time": 1.0333333333333334,
+      "message": "line-1.02-4",
+      "id": 25,
+      "layout": {
+        "min": 175.375,
+        "max": 286.140625
+      },
+      "snapshot": {
+        "min": 181.20313508845558,
+        "max": 291.9687600884556
+      },
+      "delta": 5.8281350884556105,
+      "progress": 0,
+      "offset": 5.8281350884556105,
+      "latest": {
+        "opacity": 0,
+        "y": 28.2956765461131,
+        "scale": 0.9698179450174793
+      },
+      "offsetTop": 127,
+      "offsetHeight": 111,
+      "computedHeight": "110.766px",
+      "position": "static"
+    },
+    {
+      "time": 1.05,
+      "message": "line-1.02-4",
+      "id": 25,
+      "layout": {
+        "min": 167.359375,
+        "max": 280.671875
+      },
+      "snapshot": {
+        "min": 181.2031360856287,
+        "max": 294.51563608562867
+      },
+      "delta": 13.843761085628671,
+      "progress": 0,
+      "offset": 13.843761085628671,
+      "latest": {
+        "opacity": 0,
+        "y": 26.16237461770652,
+        "scale": 0.9720934670744463
+      },
+      "offsetTop": 119,
+      "offsetHeight": 113,
+      "computedHeight": "113.312px",
+      "position": "static"
+    },
+    {
+      "time": 1.097,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 47.99999868031367,
+        "max": 98.09374868031367
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0.9106848339541199,
+        "y": -20.290903611701065,
+        "scale": 0.9531748378191514
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.097,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 69.88199267966306,
+        "max": 123.25699267966306
+      },
+      "delta": 21.881992679663057,
+      "progress": 0.586404560453957,
+      "offset": 20.34677650964036,
+      "latest": {
+        "opacity": 0.55558414386104,
+        "y": -4.9922222444761495,
+        "scale": 0.9664650093317944
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.097,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 48,
+        "max": 100.015625
+      },
+      "snapshot": {
+        "min": 102.53376825775467,
+        "max": 154.54939325775467
+      },
+      "delta": 54.53376825775467,
+      "progress": 0.3229453206586186,
+      "offset": 51.67982998708318,
+      "latest": {
+        "opacity": 0.550743236547833,
+        "y": 4.032950207458355,
+        "scale": 0.977405954361101
+      },
+      "offsetTop": 0,
+      "offsetHeight": 52,
+      "computedHeight": "52.0156px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.097,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 48,
+        "max": 100.546875
+      },
+      "snapshot": {
+        "min": 124.02105738096907,
+        "max": 176.56793238096907
+      },
+      "delta": 76.02105738096907,
+      "progress": 0,
+      "offset": 76.02105738096907,
+      "latest": {
+        "opacity": 0.5296050116642745,
+        "y": 7.891432304896246,
+        "scale": 0.981837151700669
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "52.5469px",
+      "position": "static"
+    },
+    {
+      "time": 1.097,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 112.546875,
+        "max": 194.90625
+      },
+      "snapshot": {
+        "min": 131.96812736285568,
+        "max": 214.32750236285568
+      },
+      "delta": 19.421252362855682,
+      "progress": 0,
+      "offset": 19.421252362855682,
+      "latest": {
+        "opacity": 0,
+        "y": 12.407863186381292,
+        "scale": 0.9867649459345266
+      },
+      "offsetTop": 65,
+      "offsetHeight": 82,
+      "computedHeight": "82.3594px",
+      "position": "static"
+    },
+    {
+      "time": 1.097,
+      "message": "line-1.02-4",
+      "id": 25,
+      "layout": {
+        "min": 206.90625,
+        "max": 268.171875
+      },
+      "snapshot": {
+        "min": 159.17685818426494,
+        "max": 220.44248318426494
+      },
+      "delta": -47.729391815735056,
+      "progress": 0,
+      "offset": -47.729391815735056,
+      "latest": {
+        "opacity": 0,
+        "y": 20.641479809128214,
+        "scale": 0.9779824215369299
+      },
+      "offsetTop": 159,
+      "offsetHeight": 61,
+      "computedHeight": "61.2656px",
+      "position": "static"
+    },
+    {
+      "time": 1.097,
+      "message": "line-1.02-4",
+      "id": 25,
+      "layout": {
+        "min": 206.90625,
+        "max": 329.171875
+      },
+      "snapshot": {
+        "min": 159.17686077542956,
+        "max": 281.44248577542953
+      },
+      "delta": -47.72938922457047,
+      "progress": 0,
+      "offset": -47.72938922457047,
+      "latest": {
+        "opacity": 0,
+        "y": 20.641479809128214,
+        "scale": 0.9779824215369299
+      },
+      "offsetTop": 159,
+      "offsetHeight": 122,
+      "computedHeight": "122.266px",
+      "position": "static"
+    },
+    {
+      "time": 1.1,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48.00000143890638,
+        "max": 98.09375143890638
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0.9106848339541199,
+        "y": -20.664100611176274,
+        "scale": 0.9523136139742086
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.1,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 68.34677656601393,
+        "max": 121.72177656601393
+      },
+      "delta": 20.34677656601393,
+      "progress": 0.5957840357732493,
+      "offset": 19.885354381028893,
+      "latest": {
+        "opacity": 0.55558414386104,
+        "y": -5.430916385657161,
+        "scale": 0.9659123547542722
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.1,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 48,
+        "max": 100.015625
+      },
+      "snapshot": {
+        "min": 99.67983545520792,
+        "max": 151.69546045520792
+      },
+      "delta": 51.67983545520792,
+      "progress": 0.3347235951514449,
+      "offset": 50.78079001010143,
+      "latest": {
+        "opacity": 0.550743236547833,
+        "y": 3.7691373477053602,
+        "scale": 0.9770773761920025
+      },
+      "offsetTop": 0,
+      "offsetHeight": 52,
+      "computedHeight": "52.0156px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.1,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 48,
+        "max": 100.546875
+      },
+      "snapshot": {
+        "min": 124.0210613620444,
+        "max": 176.5679363620444
+      },
+      "delta": 76.0210613620444,
+      "progress": 0.013380125164985657,
+      "offset": 75.00388611803714,
+      "latest": {
+        "opacity": 0.5501956987700474,
+        "y": 7.785843952925723,
+        "scale": 0.9820801728842666
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "52.5469px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.1,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 113,
+        "max": 195.359375
+      },
+      "snapshot": {
+        "min": 131.96812664585514,
+        "max": 214.32750164585514
+      },
+      "delta": 18.968126645855136,
+      "progress": 0.013380125164985657,
+      "offset": 19.1613935753799,
+      "latest": {
+        "opacity": 0.5957840357732493,
+        "y": 12.12647892680252,
+        "scale": 0.987065089144744
+      },
+      "offsetTop": 65,
+      "offsetHeight": 82,
+      "computedHeight": "82.3594px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.1,
+      "message": "line-1.02-4",
+      "id": 25,
+      "layout": {
+        "min": 48,
+        "max": 169.1875
+      },
+      "snapshot": {
+        "min": 159.17686077542956,
+        "max": 280.36436077542953
+      },
+      "delta": 111.17686077542953,
+      "progress": 0,
+      "offset": 111.17686077542953,
+      "latest": {
+        "opacity": 0,
+        "y": 20.311640380241442,
+        "scale": 0.9783342502610758
+      },
+      "offsetTop": 0,
+      "offsetHeight": 121,
+      "computedHeight": "121.188px",
+      "position": "static"
+    },
+    {
+      "time": 1.1166666666666667,
+      "message": "line-1.1-5",
+      "id": 30,
+      "layout": {
+        "min": 173.875,
+        "max": 285.109375
+      },
+      "snapshot": {
+        "min": 181.18751008845558,
+        "max": 292.4218850884556
+      },
+      "delta": 7.3125100884556105,
+      "progress": 0,
+      "offset": 7.3125100884556105,
+      "latest": {
+        "opacity": 0,
+        "y": 27.787940365669783,
+        "scale": 0.9703595302766189
+      },
+      "offsetTop": 126,
+      "offsetHeight": 111,
+      "computedHeight": "111.234px",
+      "position": "static"
+    },
+    {
+      "time": 1.1333333333333333,
+      "message": "line-1.1-5",
+      "id": 30,
+      "layout": {
+        "min": 165.671875,
+        "max": 279.546875
+      },
+      "snapshot": {
+        "min": 181.18750276437737,
+        "max": 295.06250276437737
+      },
+      "delta": 15.51562776437737,
+      "progress": 0,
+      "offset": 15.51562776437737,
+      "latest": {
+        "opacity": 0,
+        "y": 25.789128930482548,
+        "scale": 0.9724915958074852
+      },
+      "offsetTop": 118,
+      "offsetHeight": 114,
+      "computedHeight": "113.875px",
+      "position": "static"
+    },
+    {
+      "time": 1.177,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48.000001014547145,
+        "max": 98.09375101454714
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0,
+        "y": -26,
+        "scale": 0.94
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.177,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 58.68971368717029,
+        "max": 112.0647136871703
+      },
+      "delta": 10.689713687170297,
+      "progress": 0.8068937473290134,
+      "offset": 9.499838223611036,
+      "latest": {
+        "opacity": 0.55558414386104,
+        "y": -17.794482563795928,
+        "scale": 0.9503370807730599
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.177,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 48,
+        "max": 100.015625
+      },
+      "snapshot": {
+        "min": 81.22981630653327,
+        "max": 133.24544130653328
+      },
+      "delta": 33.22981630653328,
+      "progress": 0.5957840357732493,
+      "offset": 30.853951603472197,
+      "latest": {
+        "opacity": 0.550743236547833,
+        "y": -5.143816619366453,
+        "scale": 0.9659763172879696
+      },
+      "offsetTop": 0,
+      "offsetHeight": 52,
+      "computedHeight": "52.0156px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.177,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 48,
+        "max": 100.546875
+      },
+      "snapshot": {
+        "min": 102.31279512333862,
+        "max": 154.85967012333862
+      },
+      "delta": 54.31279512333862,
+      "progress": 0.3229453206586186,
+      "offset": 51.47041262826477,
+      "latest": {
+        "opacity": 0.5501956987700474,
+        "y": 4.032950207458355,
+        "scale": 0.977405954361101
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "52.5469px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.177,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 48,
+        "max": 101.390625
+      },
+      "snapshot": {
+        "min": 126.87539407439687,
+        "max": 180.26601907439687
+      },
+      "delta": 78.87539407439687,
+      "progress": 0,
+      "offset": 78.87539407439687,
+      "latest": {
+        "opacity": 0.5296050116642745,
+        "y": 7.891432304896246,
+        "scale": 0.981837151700669
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.3906px",
+      "position": "static"
+    },
+    {
+      "time": 1.177,
+      "message": "line-1.02-4",
+      "id": 25,
+      "layout": {
+        "min": 113.390625,
+        "max": 195.65625
+      },
+      "snapshot": {
+        "min": 128.68703026975422,
+        "max": 210.95265526975422
+      },
+      "delta": 15.296405269754217,
+      "progress": 0,
+      "offset": 15.296405269754217,
+      "latest": {
+        "opacity": 0,
+        "y": 12.407863186381292,
+        "scale": 0.9867649459345266
+      },
+      "offsetTop": 65,
+      "offsetHeight": 82,
+      "computedHeight": "82.2656px",
+      "position": "static"
+    },
+    {
+      "time": 1.177,
+      "message": "line-1.1-5",
+      "id": 30,
+      "layout": {
+        "min": 207.65625,
+        "max": 268.921875
+      },
+      "snapshot": {
+        "min": 160.66257595770244,
+        "max": 221.92820095770244
+      },
+      "delta": -46.993674042297556,
+      "progress": 0,
+      "offset": -46.993674042297556,
+      "latest": {
+        "opacity": 0,
+        "y": 20.641479809128214,
+        "scale": 0.9779824215369299
+      },
+      "offsetTop": 160,
+      "offsetHeight": 61,
+      "computedHeight": "61.2656px",
+      "position": "static"
+    },
+    {
+      "time": 1.177,
+      "message": "line-1.1-5",
+      "id": 30,
+      "layout": {
+        "min": 207.65625,
+        "max": 329.921875
+      },
+      "snapshot": {
+        "min": 160.66257854886706,
+        "max": 282.92820354886703
+      },
+      "delta": -46.99367145113297,
+      "progress": 0,
+      "offset": -46.99367145113297,
+      "latest": {
+        "opacity": 0,
+        "y": 20.641479809128214,
+        "scale": 0.9779824215369299
+      },
+      "offsetTop": 160,
+      "offsetHeight": 122,
+      "computedHeight": "122.266px",
+      "position": "static"
+    },
+    {
+      "time": 1.18,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48.000001014547145,
+        "max": 98.09375101454714
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0,
+        "y": -26,
+        "scale": 0.94
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.18,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 57.499842398229035,
+        "max": 110.87484239822903
+      },
+      "delta": 9.499842398229035,
+      "progress": 0.8139588681806345,
+      "offset": 9.152270476879316,
+      "latest": {
+        "opacity": 0.55558414386104,
+        "y": -18.330867707443026,
+        "scale": 0.94966135781001
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.18,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 48,
+        "max": 100.015625
+      },
+      "snapshot": {
+        "min": 78.8539514856812,
+        "max": 130.8695764856812
+      },
+      "delta": 30.853951485681193,
+      "progress": 0.6051324652216863,
+      "offset": 30.14038258270798,
+      "latest": {
+        "opacity": 0.550743236547833,
+        "y": -5.579345096626498,
+        "scale": 0.9654338678039591
+      },
+      "offsetTop": 0,
+      "offsetHeight": 52,
+      "computedHeight": "52.0156px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.18,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 48,
+        "max": 100.546875
+      },
+      "snapshot": {
+        "min": 99.47041134176396,
+        "max": 152.01728634176396
+      },
+      "delta": 51.47041134176396,
+      "progress": 0.3347235951514449,
+      "offset": 50.575015747196815,
+      "latest": {
+        "opacity": 0.5501956987700474,
+        "y": 3.7691373477053602,
+        "scale": 0.9770773761920025
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "52.5469px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.18,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 126.87538325750464,
+        "max": 180.25038325750464
+      },
+      "delta": 78.87538325750464,
+      "progress": 0.013380125164985657,
+      "offset": 77.82003142924387,
+      "latest": {
+        "opacity": 0.5501956987700474,
+        "y": 7.785843952925723,
+        "scale": 0.9820801728842666
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.18,
+      "message": "line-1.02-4",
+      "id": 25,
+      "layout": {
+        "min": 113,
+        "max": 195.25
+      },
+      "snapshot": {
+        "min": 128.68702394657754,
+        "max": 210.93702394657754
+      },
+      "delta": 15.68702394657754,
+      "progress": 0,
+      "offset": 15.68702394657754,
+      "latest": {
+        "opacity": 0.5957840357732493,
+        "y": 12.12647892680252,
+        "scale": 0.987065089144744
+      },
+      "offsetTop": 65,
+      "offsetHeight": 82,
+      "computedHeight": "82.25px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.18,
+      "message": "line-1.1-5",
+      "id": 30,
+      "layout": {
+        "min": 48,
+        "max": 169.1875
+      },
+      "snapshot": {
+        "min": 160.66257854886706,
+        "max": 281.85007854886703
+      },
+      "delta": 112.66257854886703,
+      "progress": 0,
+      "offset": 112.66257854886703,
+      "latest": {
+        "opacity": 0,
+        "y": 20.311640380241442,
+        "scale": 0.9783342502610758
+      },
+      "offsetTop": 0,
+      "offsetHeight": 121,
+      "computedHeight": "121.188px",
+      "position": "static"
+    },
+    {
+      "time": 1.1833333333333333,
+      "message": "line-1.18-6",
+      "id": 35,
+      "layout": {
+        "min": 180.046875,
+        "max": 290.078125
+      },
+      "snapshot": {
+        "min": 181.18751008845558,
+        "max": 291.2187600884556
+      },
+      "delta": 1.1406350884556105,
+      "progress": 0,
+      "offset": 1.1406350884556105,
+      "latest": {
+        "opacity": 0,
+        "y": 29.59859624505043,
+        "scale": 0.9684281640052795
+      },
+      "offsetTop": 132,
+      "offsetHeight": 110,
+      "computedHeight": "110.031px",
+      "position": "static"
+    },
+    {
+      "time": 1.2,
+      "message": "line-1.18-6",
+      "id": 35,
+      "layout": {
+        "min": 172.375,
+        "max": 284.03125
+      },
+      "snapshot": {
+        "min": 181.18750054472738,
+        "max": 292.8437505447274
+      },
+      "delta": 8.812500544727413,
+      "progress": 0,
+      "offset": 8.812500544727413,
+      "latest": {
+        "opacity": 0,
+        "y": 27.409743393945973,
+        "scale": 0.9707629403797909
+      },
+      "offsetTop": 124,
+      "offsetHeight": 112,
+      "computedHeight": "111.656px",
+      "position": "static"
+    },
+    {
+      "time": 1.2166666666666666,
+      "message": "line-1.18-6",
+      "id": 35,
+      "layout": {
+        "min": 163.5,
+        "max": 278.140625
+      },
+      "snapshot": {
+        "min": 181.18749850534556,
+        "max": 295.82812350534556
+      },
+      "delta": 17.68749850534556,
+      "progress": 0,
+      "offset": 17.68749850534556,
+      "latest": {
+        "opacity": 0,
+        "y": 25.30425757257035,
+        "scale": 0.9730087919225916
+      },
+      "offsetTop": 116,
+      "offsetHeight": 115,
+      "computedHeight": "114.641px",
+      "position": "static"
+    },
+    {
+      "time": 1.25,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48.000001014547145,
+        "max": 98.09375101454714
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0,
+        "y": -26,
+        "scale": 0.94
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.25,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 50.84855810124823,
+        "max": 104.22355810124823
+      },
+      "delta": 2.84855810124823,
+      "progress": 0.946412553981645,
+      "offset": 2.6362277810766486,
+      "latest": {
+        "opacity": 0,
+        "y": -26,
+        "scale": 0.94
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.25,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 48,
+        "max": 100.015625
+      },
+      "snapshot": {
+        "min": 64.02460240689862,
+        "max": 116.04022740689862
+      },
+      "delta": 16.024602406898623,
+      "progress": 0.797333969763713,
+      "offset": 15.469571817976238,
+      "latest": {
+        "opacity": 0.550743236547833,
+        "y": -16.62241466138167,
+        "scale": 0.9516797559603909
+      },
+      "offsetTop": 0,
+      "offsetHeight": 52,
+      "computedHeight": "52.0156px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.25,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 48,
+        "max": 100.546875
+      },
+      "snapshot": {
+        "min": 81.09516097126077,
+        "max": 133.64203597126078
+      },
+      "delta": 33.09516097126078,
+      "progress": 0.5740973543433938,
+      "offset": 32.377569464167394,
+      "latest": {
+        "opacity": 0.5501956987700474,
+        "y": -4.185219184356851,
+        "scale": 0.9671702476763246
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "52.5469px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.25,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 104.35205037705013,
+        "max": 157.72705037705015
+      },
+      "delta": 56.35205037705015,
+      "progress": 0.29698748447117396,
+      "offset": 55.4503892015692,
+      "latest": {
+        "opacity": 0.5501956987700474,
+        "y": 4.630119581832375,
+        "scale": 0.9781497271243287
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.25,
+      "message": "line-1.02-4",
+      "id": 25,
+      "layout": {
+        "min": 48,
+        "max": 102.9375
+      },
+      "snapshot": {
+        "min": 124.38491436322427,
+        "max": 179.32241436322425
+      },
+      "delta": 76.38491436322425,
+      "progress": 0,
+      "offset": 76.38491436322425,
+      "latest": {
+        "opacity": 0.5401355753050838,
+        "y": 8.565322991170824,
+        "scale": 0.9826690335349244
+      },
+      "offsetTop": 0,
+      "offsetHeight": 55,
+      "computedHeight": "54.9375px",
+      "position": "static"
+    },
+    {
+      "time": 1.25,
+      "message": "line-1.1-5",
+      "id": 30,
+      "layout": {
+        "min": 114.9375,
+        "max": 200.75
+      },
+      "snapshot": {
+        "min": 129.76529248869343,
+        "max": 215.57779248869343
+      },
+      "delta": 14.827792488693433,
+      "progress": 0,
+      "offset": 14.827792488693433,
+      "latest": {
+        "opacity": 0,
+        "y": 13.060261547507253,
+        "scale": 0.9860690543493256
+      },
+      "offsetTop": 67,
+      "offsetHeight": 86,
+      "computedHeight": "85.8125px",
+      "position": "static"
+    },
+    {
+      "time": 1.25,
+      "message": "line-1.18-6",
+      "id": 35,
+      "layout": {
+        "min": 212.75,
+        "max": 272.796875
+      },
+      "snapshot": {
+        "min": 162.81553005926494,
+        "max": 222.86240505926494
+      },
+      "delta": -49.934469940735056,
+      "progress": 0,
+      "offset": -49.934469940735056,
+      "latest": {
+        "opacity": 0,
+        "y": 21.433319977659266,
+        "scale": 0.9771377920238301
+      },
+      "offsetTop": 165,
+      "offsetHeight": 60,
+      "computedHeight": "60.0469px",
+      "position": "static"
+    },
+    {
+      "time": 1.25,
+      "message": "line-1.18-6",
+      "id": 35,
+      "layout": {
+        "min": 212.75,
+        "max": 333.796875
+      },
+      "snapshot": {
+        "min": 162.81551840398984,
+        "max": 283.8623934039898
+      },
+      "delta": -49.93448159601019,
+      "progress": 0,
+      "offset": -49.93448159601019,
+      "latest": {
+        "opacity": 0,
+        "y": 21.433319977659266,
+        "scale": 0.9771377920238301
+      },
+      "offsetTop": 165,
+      "offsetHeight": 121,
+      "computedHeight": "121.047px",
+      "position": "static"
+    },
+    {
+      "time": 1.26,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48.000001014547145,
+        "max": 98.09375101454714
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0,
+        "y": -26,
+        "scale": 0.94
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.26,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 50.169338023408926,
+        "max": 103.54433802340893
+      },
+      "delta": 2.169338023408926,
+      "progress": 0.959716042940272,
+      "offset": 1.9817642866610683,
+      "latest": {
+        "opacity": 0,
+        "y": -26,
+        "scale": 0.94
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.26,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 48,
+        "max": 100.015625
+      },
+      "snapshot": {
+        "min": 62.20058832704653,
+        "max": 114.21621332704653
+      },
+      "delta": 14.200588327046532,
+      "progress": 0.8209315534040798,
+      "offset": 13.668359673889967,
+      "latest": {
+        "opacity": 0.550743236547833,
+        "y": -18.386208987676035,
+        "scale": 0.9494829551261076
+      },
+      "offsetTop": 0,
+      "offsetHeight": 52,
+      "computedHeight": "52.0156px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.26,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 48,
+        "max": 100.546875
+      },
+      "snapshot": {
+        "min": 78.72892437584619,
+        "max": 131.2757993758462
+      },
+      "delta": 30.72892437584619,
+      "progress": 0.6051324652216863,
+      "offset": 30.018247519263987,
+      "latest": {
+        "opacity": 0.5501956987700474,
+        "y": -5.579345096626498,
+        "scale": 0.9654338678039591
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "52.5469px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.26,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 101.40295048647823,
+        "max": 154.77795048647823
+      },
+      "delta": 53.40295048647823,
+      "progress": 0.3347235951514449,
+      "offset": 52.47393860082777,
+      "latest": {
+        "opacity": 0.5501956987700474,
+        "y": 3.7691373477053602,
+        "scale": 0.9770773761920025
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.26,
+      "message": "line-1.02-4",
+      "id": 25,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 122.02565366287719,
+        "max": 175.40065366287718
+      },
+      "delta": 74.02565366287718,
+      "progress": 0,
+      "offset": 74.02565366287718,
+      "latest": {
+        "opacity": 0.5602653060946712,
+        "y": 8.190391518590578,
+        "scale": 0.9834276651457449
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.26,
+      "message": "line-1.1-5",
+      "id": 30,
+      "layout": {
+        "min": 113,
+        "max": 195.25
+      },
+      "snapshot": {
+        "min": 127.74482444420588,
+        "max": 209.99482444420588
+      },
+      "delta": 14.744824444205875,
+      "progress": 0,
+      "offset": 14.744824444205875,
+      "latest": {
+        "opacity": 0.5957840357732493,
+        "y": 12.12647892680252,
+        "scale": 0.987065089144744
+      },
+      "offsetTop": 65,
+      "offsetHeight": 82,
+      "computedHeight": "82.25px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.26,
+      "message": "line-1.18-6",
+      "id": 35,
+      "layout": {
+        "min": 48,
+        "max": 165.28125
+      },
+      "snapshot": {
+        "min": 159.24844095709062,
+        "max": 276.5296909570906
+      },
+      "delta": 111.24844095709062,
+      "progress": 0,
+      "offset": 111.24844095709062,
+      "latest": {
+        "opacity": 0,
+        "y": 20.311640380241442,
+        "scale": 0.9783342502610758
+      },
+      "offsetTop": 0,
+      "offsetHeight": 117,
+      "computedHeight": "117.281px",
+      "position": "static"
+    },
+    {
+      "time": 1.2666666666666666,
+      "message": "line-1.26-7",
+      "id": 40,
+      "layout": {
+        "min": 174.234375,
+        "max": 284.46875
+      },
+      "snapshot": {
+        "min": 177.28126008845558,
+        "max": 287.5156350884556
+      },
+      "delta": 3.0468850884556105,
+      "progress": 0,
+      "offset": 3.0468850884556105,
+      "latest": {
+        "opacity": 0,
+        "y": 29.07340453384677,
+        "scale": 0.9689883684972301
+      },
+      "offsetTop": 126,
+      "offsetHeight": 110,
+      "computedHeight": "110.234px",
+      "position": "static"
+    },
+    {
+      "time": 1.2833333333333334,
+      "message": "line-1.26-7",
+      "id": 40,
+      "layout": {
+        "min": 166.375,
+        "max": 278.5
+      },
+      "snapshot": {
+        "min": 177.28125589638836,
+        "max": 289.40625589638836
+      },
+      "delta": 10.906255896388359,
+      "progress": 0,
+      "offset": 10.906255896388359,
+      "latest": {
+        "opacity": 0,
+        "y": 27.03449791733874,
+        "scale": 0.9711632022215053
+      },
+      "offsetTop": 118,
+      "offsetHeight": 112,
+      "computedHeight": "112.125px",
+      "position": "static"
+    },
+    {
+      "time": 1.3,
+      "message": "line-1.26-7",
+      "id": 40,
+      "layout": {
+        "min": 157.390625,
+        "max": 272.609375
+      },
+      "snapshot": {
+        "min": 177.28124238859147,
+        "max": 292.49999238859147
+      },
+      "delta": 19.890617388591465,
+      "progress": 0,
+      "offset": 19.890617388591465,
+      "latest": {
+        "opacity": 0,
+        "y": 24.936359515122604,
+        "scale": 0.9734012165172026
+      },
+      "offsetTop": 109,
+      "offsetHeight": 115,
+      "computedHeight": "115.219px",
+      "position": "static"
+    },
+    {
+      "time": 1.3333333333333333,
+      "message": "title",
+      "id": 1,
+      "layout": {
+        "min": 48,
+        "max": 98.09375
+      },
+      "snapshot": {
+        "min": 48.000001014547145,
+        "max": 98.09375101454714
+      },
+      "delta": 0,
+      "progress": 0,
+      "latest": {
+        "opacity": 0,
+        "y": -26,
+        "scale": 0.94
+      },
+      "offsetTop": 0,
+      "offsetHeight": 50,
+      "computedHeight": "50.0938px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.3333333333333333,
+      "message": "line-0.7-0",
+      "id": 5,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 47.99999967534491,
+        "max": 101.37499967534491
+      },
+      "delta": 0,
+      "progress": 1,
+      "latest": {
+        "opacity": 0,
+        "y": -26,
+        "scale": 0.94
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.3333333333333333,
+      "message": "line-0.7799999999999999-1",
+      "id": 10,
+      "layout": {
+        "min": 48,
+        "max": 100.015625
+      },
+      "snapshot": {
+        "min": 52.090349237969576,
+        "max": 104.10597423796958
+      },
+      "delta": 4.090349237969576,
+      "progress": 0.9559031675744336,
+      "offset": 3.365927261501284,
+      "latest": {
+        "opacity": 0,
+        "y": -26,
+        "scale": 0.94
+      },
+      "offsetTop": 0,
+      "offsetHeight": 52,
+      "computedHeight": "52.0156px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.3333333333333333,
+      "message": "line-0.86-2",
+      "id": 15,
+      "layout": {
+        "min": 48,
+        "max": 100.546875
+      },
+      "snapshot": {
+        "min": 63.95966624914058,
+        "max": 116.50654124914058
+      },
+      "delta": 15.959666249140582,
+      "progress": 0.8045185830269475,
+      "offset": 14.860704016621568,
+      "latest": {
+        "opacity": 0.5501956987700474,
+        "y": -17.156271230193127,
+        "scale": 0.9510148391170441
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "52.5469px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.3333333333333333,
+      "message": "line-0.94-3",
+      "id": 20,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 82.33777205205813,
+        "max": 135.71277205205814
+      },
+      "delta": 34.33777205205814,
+      "progress": 0.5835127971076872,
+      "offset": 32.85059225507445,
+      "latest": {
+        "opacity": 0.5501956987700474,
+        "y": -4.5909391186474915,
+        "scale": 0.9666649246480963
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.3333333333333333,
+      "message": "line-1.02-4",
+      "id": 25,
+      "layout": {
+        "min": 48,
+        "max": 101.375
+      },
+      "snapshot": {
+        "min": 101.72439498734659,
+        "max": 155.09939498734659
+      },
+      "delta": 53.724394987346585,
+      "progress": 0.29698748447117396,
+      "offset": 52.04096099520494,
+      "latest": {
+        "opacity": 0.5602653060946712,
+        "y": 4.747638186144329,
+        "scale": 0.9790547775518845
+      },
+      "offsetTop": 0,
+      "offsetHeight": 53,
+      "computedHeight": "53.375px",
+      "position": "absolute"
+    },
+    {
+      "time": 1.3333333333333333,
+      "message": "line-1.1-5",
+      "id": 30,
+      "layout": {
+        "min": 48,
+        "max": 102.25
+      },
+      "snapshot": {
+        "min": 123.7011069901774,
+        "max": 177.95110699017738
+      },
+      "delta": 75.70110699017738,
+      "progress": 0,
+      "offset": 75.70110699017738,
+      "latest": {
+        "opacity": 0.5352401235535879,
+        "y": 8.28738681496402,
+        "scale": 0.9823259362629514
+      },
+      "offsetTop": 0,
+      "offsetHeight": 54,
+      "computedHeight": "54.25px",
+      "position": "static"
+    },
+    {
+      "time": 1.3333333333333333,
+      "message": "line-1.18-6",
+      "id": 35,
+      "layout": {
+        "min": 114.25,
+        "max": 194.75
+      },
+      "snapshot": {
+        "min": 128.7389655576923,
+        "max": 209.2389655576923
+      },
+      "delta": 14.488965557692296,
+      "progress": 0,
+      "offset": 14.488965557692296,
+      "latest": {
+        "opacity": 0,
+        "y": 12.777079369698185,
+        "scale": 0.9863711153389886
+      },
+      "offsetTop": 66,
+      "offsetHeight": 81,
+      "computedHeight": "80.5px",
+      "position": "static"
+    },
+    {
+      "time": 1.3333333333333333,
+      "message": "line-1.26-7",
+      "id": 40,
+      "layout": {
+        "min": 206.75,
+        "max": 267.328125
+      },
+      "snapshot": {
+        "min": 160.98496365301494,
+        "max": 221.56308865301494
+      },
+      "delta": -45.765036346985056,
+      "progress": 0,
+      "offset": -45.765036346985056,
+      "latest": {
+        "opacity": 0,
+        "y": 21.09037546586478,
+        "scale": 0.9775035995030775
+      },
+      "offsetTop": 159,
+      "offsetHeight": 61,
+      "computedHeight": "60.5781px",
+      "position": "static"
+    },
+    {
+      "time": 1.3333333333333333,
+      "message": "line-1.26-7",
+      "id": 40,
+      "layout": {
+        "min": 206.75,
+        "max": 328.328125
+      },
+      "snapshot": {
+        "min": 160.98496060929548,
+        "max": 282.5630856092955
+      },
+      "delta": -45.76503939070449,
+      "progress": 0,
+      "offset": -45.76503939070449,
+      "latest": {
+        "opacity": 0,
+        "y": 21.09037546586478,
+        "scale": 0.9775035995030775
+      },
+      "offsetTop": 159,
+      "offsetHeight": 122,
+      "computedHeight": "121.578px",
+      "position": "static"
+    },
+    {
+      "time": 1.55,
+      "message": "line-1.1-5",
+      "id": 30,
+      "layout": {
+        "min": 48,
+        "max": 97
+      },
+      "snapshot": {
+        "min": 66.34927277404893,
+        "max": 115.34927277404893
+      },
+      "delta": 18.349272774048927,
+      "progress": 0,
+      "offset": 18.349272774048927,
+      "latest": {
+        "opacity": 0.5352401235535879,
+        "y": 2.008788676024193,
+        "scale": 0.9957159645269354
+      },
+      "offsetTop": 0,
+      "offsetHeight": 49,
+      "computedHeight": "49px",
+      "position": "static"
+    },
+    {
+      "time": 1.55,
+      "message": "line-1.18-6",
+      "id": 35,
+      "layout": {
+        "min": 109,
+        "max": 157.875
+      },
+      "snapshot": {
+        "min": 112.51099860281734,
+        "max": 161.38599860281732
+      },
+      "delta": 3.510998602817324,
+      "progress": 0,
+      "offset": 3.510998602817324,
+      "latest": {
+        "opacity": 0,
+        "y": 0.038221718568820506,
+        "scale": 0.99995923016686
+      },
+      "offsetTop": 61,
+      "offsetHeight": 49,
+      "computedHeight": "48.875px",
+      "position": "static"
+    },
+    {
+      "time": 1.55,
+      "message": "line-1.26-7",
+      "id": 40,
+      "layout": {
+        "min": 169.875,
+        "max": 218.59375
+      },
+      "snapshot": {
+        "min": 158.78195439724513,
+        "max": 207.50070439724513
+      },
+      "delta": -11.09304560275487,
+      "progress": 0,
+      "offset": -11.09304560275487,
+      "latest": {
+        "opacity": 0,
+        "y": 2.5383814753149636,
+        "scale": 0.9972923930929973
+      },
+      "offsetTop": 122,
+      "offsetHeight": 49,
+      "computedHeight": "48.7188px",
+      "position": "static"
+    }
+  ],
+  "geometry": {
+    "panel": [
+      16,
+      48,
+      348,
+      171
+    ],
+    "rows": [
+      {
+        "id": "line-1.1-5",
+        "lineIndex": 5,
+        "current": -1,
+        "frame": [
+          97,
+          48,
+          215,
+          49
+        ],
+        "row": [
+          16,
+          48,
+          348,
+          49
+        ],
+        "group": [
+          92.5625,
+          48,
+          271.4375,
+          49
+        ],
+        "avatar": [
+          324,
+          57,
+          40,
+          40
+        ],
+        "bubble": [
+          97,
+          48,
+          215,
+          49
+        ],
+        "text": "Amber echoes beyond",
+        "rowScale": "none",
+        "rowOpacity": "1",
+        "scale": "none",
+        "opacity": "1"
+      },
+      {
+        "id": "line-1.18-6",
+        "lineIndex": 6,
+        "current": -1,
+        "frame": [
+          68,
+          109,
+          215,
+          49
+        ],
+        "row": [
+          16,
+          109,
+          348,
+          49
+        ],
+        "group": [
+          16,
+          109,
+          271.4375,
+          49
+        ],
+        "avatar": [
+          16,
+          118,
+          40,
+          40
+        ],
+        "bubble": [
+          68,
+          109,
+          215,
+          49
+        ],
+        "text": "Amber echoes beyond",
+        "rowScale": "none",
+        "rowOpacity": "1",
+        "scale": "none",
+        "opacity": "1"
+      },
+      {
+        "id": "line-1.26-7",
+        "lineIndex": 7,
+        "current": -1,
+        "frame": [
+          97,
+          170,
+          215,
+          49
+        ],
+        "row": [
+          16,
+          170,
+          348,
+          49
+        ],
+        "group": [
+          92.5625,
+          170,
+          271.4375,
+          49
+        ],
+        "avatar": [
+          324,
+          179,
+          40,
+          40
+        ],
+        "bubble": [
+          97,
+          170,
+          215,
+          49
+        ],
+        "text": "Amber echoes beyond",
+        "rowScale": "none",
+        "rowOpacity": "1",
+        "scale": "none",
+        "opacity": "1"
+      }
+    ]
+  }
+}

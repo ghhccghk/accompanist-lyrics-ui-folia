@@ -10,11 +10,16 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core分组/内部时钟、完整文字透视、三层合成、13镜头目标隔离核对 | 无 | 完整rig/朝向/切曲、深度/栅格/设备尚未验收 |
 
-当前唯一下一项：Cappella密集240帧精确Motion锁复核，然后定位影响可读性的最大布局残差。
-完成条件：用原被动布局事件定位一项明确算法或事件错误，必要修复后同矩阵验证并提交。
-精确锁前置复核已完成：240图/999行数值与被动状态完全不变，38图有原始像素差异，
-保留旧图/表/报告和全部差异，未归因于依赖；见verification/motion-lock-audit/cappella-pressure.json。
-Pendolo更早dense tick/chorus/resize精确锁仍待针对问题补验。
+当前唯一下一项：Pendolo旧tick/chorus/resize矩阵精确Motion锁补验，接着做七主题真实Desktop窗口运行验证。
+完成条件：旧输入/原图/表/报告先完整保留；专用实例采集并记录实际依赖及变化；
+真实窗口检查暂停/seek/主题切换/字号/resize/卸载，离屏与窗口证据分开，Android无设备准确待验。
+
+Cappella240精确锁复核已完成（0844f4f）：999数值行与被动状态完全不变，38图有原始差异，
+见verification/motion-lock-audit/cappella-pressure.json。局部snapshot候选整体6.376148→6.209810，
+峰22.188593→21.650655px但overlap/calm1.3s明显倒退，已恢复且不作为修复合入；
+见verification/cappella-projection。下一条可检验假设为分离原同一媒体更新内的parent/local二次提交，
+同一DOM前态测量两次快照；不能把逐事件冻结补偿/固定一帧延迟当修复。当前残差仍22.188593px。
+设备2026-11-18检查一次：adb无设备，不重复轮询；私有播放进程实机验证仍待设备。
 
 Fume同原incoming九维局部交接v1已完成（bcf23e0）。8组/520原步骤，
 目标峰1.14e-13/单步算子峰2.28e-13；连续模型提前分支与有限步clamp位移问题已分离，

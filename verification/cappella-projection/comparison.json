@@ -1,0 +1,5466 @@
+{
+  "scope": "Same exact-lock source240, baseline and candidate. One union per source/before/after triplet includes EVERY nonbackground pixel, including low alpha. No registration, fitted time or metric-threshold changes.",
+  "before": {
+    "geometryPeak": 22.188592504565946,
+    "opacityPeak": 0.05038571441375628,
+    "presence": [],
+    "meanForegroundMAE": 6.370006761974982
+  },
+  "after": {
+    "geometryPeak": 32.1714781060015,
+    "opacityPeak": 0.05038571441375628,
+    "presence": [],
+    "meanForegroundMAE": 6.0470829097173056
+  },
+  "frames": [
+    {
+      "file": "overlap-calm-0-0.png",
+      "unionPixels": 14258,
+      "hashes": [
+        "795a69250f77ce2a6025b8f03f0fe855092d2f94b56bd6146cd1c3050e193503",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c"
+      ],
+      "before": {
+        "foregroundMAE": 2.3111002010567168,
+        "fullMAE": 0.180656067251462,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 2.3111002010567168,
+        "fullMAE": 0.180656067251462,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "overlap-calm-1-700000.png",
+      "unionPixels": 14254,
+      "hashes": [
+        "0fa3879109773a2d8da4e2369a5b0a782044763ee5b6aa7c76ac4215aad78730",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c"
+      ],
+      "before": {
+        "foregroundMAE": 1.8468733922641598,
+        "fullMAE": 0.14432748538011697,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 1.8468733922641598,
+        "fullMAE": 0.14432748538011697,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "overlap-calm-10-1000000.png",
+      "unionPixels": 36498,
+      "hashes": [
+        "d807a725acb7492e1a7325b0fb1b9a0112f116317fdccddc0d921f4627f305a2",
+        "376daf8e43b5c22d9fb8baaf3dc0376449043e7013366478c1383f92ca1c77f9",
+        "2b32f144ebb2cee2a7a7b0d3ffc6ba896dc1153a9fed50baf3015f6609eb34da"
+      ],
+      "before": {
+        "foregroundMAE": 7.755886167278573,
+        "fullMAE": 1.5519426169590644,
+        "channelPeak": 206,
+        "worst64": 14.527180989583334
+      },
+      "after": {
+        "foregroundMAE": 7.897693024275303,
+        "fullMAE": 1.5803179824561404,
+        "channelPeak": 206,
+        "worst64": 14.527180989583334
+      }
+    },
+    {
+      "file": "overlap-calm-11-1020000.png",
+      "unionPixels": 36405,
+      "hashes": [
+        "4537219348e35270cb05495983acc534f7e15497726450ec5a07e579c4734f0b",
+        "8ff2b5497c8f19a7743a63cca5961312c7663d5d38f38ec6ccb7534d5ff20a93",
+        "a39c7ee1f5d06c0cba8f2427f977de782f00204452fbd3fa1dd8e53fea31ab31"
+      ],
+      "before": {
+        "foregroundMAE": 8.06313235361443,
+        "fullMAE": 1.609311038011696,
+        "channelPeak": 208,
+        "worst64": 13.309326171875
+      },
+      "after": {
+        "foregroundMAE": 8.060724259488165,
+        "fullMAE": 1.6088304093567252,
+        "channelPeak": 208,
+        "worst64": 13.309326171875
+      }
+    },
+    {
+      "file": "overlap-calm-12-1100000.png",
+      "unionPixels": 40524,
+      "hashes": [
+        "13e83f42877e999fda721a90a3aa2775db5c4c4f1e92f0ac3b53378351d92aab",
+        "4864899f0173159cfb17cc0c40b81fbfe7d39f31a67fcb98889e0779ee215fb5",
+        "13d7db57ee97708a184943e653c647ebbb943117a8ecc3de104e24145faeeef5"
+      ],
+      "before": {
+        "foregroundMAE": 6.083818642450565,
+        "fullMAE": 1.3516483918128654,
+        "channelPeak": 210,
+        "worst64": 14.388346354166666
+      },
+      "after": {
+        "foregroundMAE": 6.0842463725199885,
+        "fullMAE": 1.3517434210526316,
+        "channelPeak": 210,
+        "worst64": 14.388346354166666
+      }
+    },
+    {
+      "file": "overlap-calm-13-1110000.png",
+      "unionPixels": 51074,
+      "hashes": [
+        "0ad9f00d3b15c7f382198b462632ee4e86f716fdebed997e88157dda5ccfa8b9",
+        "76081bd65f323999f21cc9deadc2e35c192c764e527ae89b7b38e2aea6b29007",
+        "1619c3f6f086dd260c9411f4f86d50a4f0d426dd0f78ffc54dcaf15789e29c43"
+      ],
+      "before": {
+        "foregroundMAE": 4.426335643706517,
+        "fullMAE": 1.239422514619883,
+        "channelPeak": 208,
+        "worst64": 13.750162760416666
+      },
+      "after": {
+        "foregroundMAE": 4.426231220059782,
+        "fullMAE": 1.2393932748538012,
+        "channelPeak": 208,
+        "worst64": 13.750162760416666
+      }
+    },
+    {
+      "file": "overlap-calm-14-1167000.png",
+      "unionPixels": 73392,
+      "hashes": [
+        "5a84ab72bdbe508d0524e94d2aa431a9a97eb5a220c6cf466a09e1fc5654b813",
+        "b05f75756864be15f4345672a4e0022aff691e94f944b75d431ce8c167c00bc9",
+        "6caf7c90805165a00799e13bbbef2aad960ca2e60ee3f0918f1add7749b96cdd"
+      ],
+      "before": {
+        "foregroundMAE": 3.8766123464864473,
+        "fullMAE": 1.5598263888888888,
+        "channelPeak": 182,
+        "worst64": 8.783121744791666
+      },
+      "after": {
+        "foregroundMAE": 3.1878860547925294,
+        "fullMAE": 1.282704678362573,
+        "channelPeak": 182,
+        "worst64": 8.782958984375
+      }
+    },
+    {
+      "file": "overlap-calm-15-1177000.png",
+      "unionPixels": 75656,
+      "hashes": [
+        "40d69a55a0b81b2639f3794f9298cda8ab15cc92a147b2897be4d21aec538648",
+        "27ae47ffc902ea4b4556cdac210b8edadae170755f6bc2c2826848feb525529a",
+        "63b94982070d1f9e85c0a60f6d7f1a6ec35f01f168620fee05bd4d43cd78d8fb"
+      ],
+      "before": {
+        "foregroundMAE": 4.216656092488809,
+        "fullMAE": 1.748987573099415,
+        "channelPeak": 175,
+        "worst64": 7.903401692708333
+      },
+      "after": {
+        "foregroundMAE": 3.137644954354799,
+        "fullMAE": 1.3014345760233919,
+        "channelPeak": 175,
+        "worst64": 7.903564453125
+      }
+    },
+    {
+      "file": "overlap-calm-16-1180000.png",
+      "unionPixels": 75278,
+      "hashes": [
+        "f1a8807b469a42c2784f35ad87971b8c89c6c7ddce2a781cd2c80aadfc7ba93a",
+        "68d491668bb321818080f0130586c53720e4c1d783373c59be25de8a95565c32",
+        "a8886ed850a10814336614441caaaa525dc0d7efc2305e63410f406cfc9019e0"
+      ],
+      "before": {
+        "foregroundMAE": 4.149645314700178,
+        "fullMAE": 1.712593201754386,
+        "channelPeak": 171,
+        "worst64": 7.742838541666667
+      },
+      "after": {
+        "foregroundMAE": 2.9611617382679314,
+        "fullMAE": 1.2220961257309941,
+        "channelPeak": 171,
+        "worst64": 7.742838541666667
+      }
+    },
+    {
+      "file": "overlap-calm-17-1190000.png",
+      "unionPixels": 73106,
+      "hashes": [
+        "a8b214616c71d5a3610ea3e640e050638d287b10933da0f699953cf8016e3b10",
+        "b84814d402e2f5f3fe1d69cff920eb32265bef5bb910b58b865c99cb265c9745",
+        "cd816c0b669b5cdfbae425701470d9b318d9ce6f9afc57005845a11184157aab"
+      ],
+      "before": {
+        "foregroundMAE": 5.27937971347541,
+        "fullMAE": 2.1159777046783628,
+        "channelPeak": 175,
+        "worst64": 9.912516276041666
+      },
+      "after": {
+        "foregroundMAE": 3.9831112813357774,
+        "fullMAE": 1.5964327485380116,
+        "channelPeak": 175,
+        "worst64": 7.339925130208333
+      }
+    },
+    {
+      "file": "overlap-calm-18-1200000.png",
+      "unionPixels": 70633,
+      "hashes": [
+        "d2255bede09697712a54afa933d7fdb2cfa30309c2ca9b8e48e8174dbdee35b8",
+        "a06685ac27e1e526d88b74af708120b923b06c1586c073c2df7c4c3c58aaee20",
+        "f0b1ccbd150ce16e5e21dc82a722b3bd5baadb297751dcb1eb74912e16057fd6"
+      ],
+      "before": {
+        "foregroundMAE": 5.734500870697833,
+        "fullMAE": 2.220641447368421,
+        "channelPeak": 176,
+        "worst64": 10.554117838541666
+      },
+      "after": {
+        "foregroundMAE": 4.376349109717365,
+        "fullMAE": 1.6947076023391814,
+        "channelPeak": 176,
+        "worst64": 7.826334635416667
+      }
+    },
+    {
+      "file": "overlap-calm-19-1220000.png",
+      "unionPixels": 68064,
+      "hashes": [
+        "d1c2ecab778a7427e6d6df41b41b18316727f2feaed7caaef162e9835f14a9fd",
+        "eebdd4e1990e960eaf67cfb11736d78f8279f462fac8ddbef8ddbea6953812df",
+        "314d9370ad1f16dd174d526525e6f9cdf5e4338f4c641c121a42c309dc8ddbd1"
+      ],
+      "before": {
+        "foregroundMAE": 6.605087368750979,
+        "fullMAE": 2.4647404970760234,
+        "channelPeak": 180,
+        "worst64": 11.530436197916666
+      },
+      "after": {
+        "foregroundMAE": 7.573896136969127,
+        "fullMAE": 2.8262591374269004,
+        "channelPeak": 180,
+        "worst64": 16.677083333333332
+      }
+    },
+    {
+      "file": "overlap-calm-2-720000.png",
+      "unionPixels": 24839,
+      "hashes": [
+        "b14156e09121da49899a1a2707af925e1fbd15c7bbbda00222f5030539189aba",
+        "08b3169acb9f20e4ffe779e658e445c902b53957b4cb209ff547923ad1609f8b",
+        "08b3169acb9f20e4ffe779e658e445c902b53957b4cb209ff547923ad1609f8b"
+      ],
+      "before": {
+        "foregroundMAE": 1.6083712441456313,
+        "fullMAE": 0.21902595029239766,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 1.6083712441456313,
+        "fullMAE": 0.21902595029239766,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "overlap-calm-20-1300000.png",
+      "unionPixels": 61919,
+      "hashes": [
+        "2a3075b6d4b73660dd8f05a1ad1f95abfd0bd874b621ab3833f1d1877ed629ff",
+        "e5196e3b87e1c6fe53af96b6f9bd7578ed70fc042f1b21a0a80a545cd5431c6c",
+        "db5d8bb714e249003fd6bcd4edb38949a4361911cd9961b5ae211ccbbe543862"
+      ],
+      "before": {
+        "foregroundMAE": 21.96421669169937,
+        "fullMAE": 7.456153143274854,
+        "channelPeak": 173,
+        "worst64": 38.397786458333336
+      },
+      "after": {
+        "foregroundMAE": 35.80142874831097,
+        "fullMAE": 12.153446637426901,
+        "channelPeak": 181,
+        "worst64": 56.177571614583336
+      }
+    },
+    {
+      "file": "overlap-calm-21-1367000.png",
+      "unionPixels": 69962,
+      "hashes": [
+        "3a8eca2e83c6f563d19b9633b9d9583b39f06c9f348792129c6343802c6d158c",
+        "7354339d0aa2a9194d934feff15a5b8f71607645783b84415b2b0419ac1f0a78",
+        "daf1f7b09e750b1aabb2807f98ee84ef4b77a74591a979c91268b822f1b73c82"
+      ],
+      "before": {
+        "foregroundMAE": 11.995387972518415,
+        "fullMAE": 4.600994152046783,
+        "channelPeak": 178,
+        "worst64": 25.993408203125
+      },
+      "after": {
+        "foregroundMAE": 14.249101893408803,
+        "fullMAE": 5.465436769005848,
+        "channelPeak": 168,
+        "worst64": 31.861735026041668
+      }
+    },
+    {
+      "file": "overlap-calm-22-1377000.png",
+      "unionPixels": 70868,
+      "hashes": [
+        "d2ebf5bc027989f83ea2e745e5fd3c3ceff30ccbbdfc78ab358c3e0b980c7f4a",
+        "aeb0367751c3f00dfc477f5415e68dcaea6171f1cfc804dfb4f8646d6dc9157d",
+        "55d7f705ac2f6b86e3c85117db1c42404dba469d009109ea55e483d5e4ab2c4e"
+      ],
+      "before": {
+        "foregroundMAE": 10.549364075934601,
+        "fullMAE": 4.09875182748538,
+        "channelPeak": 183,
+        "worst64": 23.229817708333332
+      },
+      "after": {
+        "foregroundMAE": 11.891554251095934,
+        "fullMAE": 4.620233918128655,
+        "channelPeak": 182,
+        "worst64": 27.127360026041668
+      }
+    },
+    {
+      "file": "overlap-calm-23-1500000.png",
+      "unionPixels": 46469,
+      "hashes": [
+        "8c4ebae2cb04b00a5293efe9dd82072908b6eb35a70d452f19eea1461a9ecfd8",
+        "de10b08ce5d17f66f0389e70d5073f9f158a36a0c7b05b7c2580791d2b22618f",
+        "ae92694557e1be29e8f91b811a3dd96f374a97f0a413c454709ff3a59ee58d15"
+      ],
+      "before": {
+        "foregroundMAE": 13.014970553845933,
+        "fullMAE": 3.315749269005848,
+        "channelPeak": 215,
+        "worst64": 42.773763020833336
+      },
+      "after": {
+        "foregroundMAE": 11.99001484860875,
+        "fullMAE": 3.054627192982456,
+        "channelPeak": 215,
+        "worst64": 42.50439453125
+      }
+    },
+    {
+      "file": "overlap-calm-24-1800000.png",
+      "unionPixels": 45352,
+      "hashes": [
+        "e25a6572e3720b11ea168ca8ab53cc00fb89208d6970e00a83c78f4560cea4a7",
+        "8f9438a1f1041b578dfad6684fe3a63aa8d80c1ebb14ae3743776505c3e1f596",
+        "8f9438a1f1041b578dfad6684fe3a63aa8d80c1ebb14ae3743776505c3e1f596"
+      ],
+      "before": {
+        "foregroundMAE": 5.991246251543482,
+        "fullMAE": 1.4896655701754387,
+        "channelPeak": 218,
+        "worst64": 18.100341796875
+      },
+      "after": {
+        "foregroundMAE": 5.991246251543482,
+        "fullMAE": 1.4896655701754387,
+        "channelPeak": 218,
+        "worst64": 18.100341796875
+      }
+    },
+    {
+      "file": "overlap-calm-25-2000000.png",
+      "unionPixels": 51980,
+      "hashes": [
+        "a8e50f0d878a017cf9b667a7fb1074095e48cf33912f5d54d6eead9ae8ff5655",
+        "180bdd62f8da40726ef1662544ba147b9f6d7a5667697f5cf01d52e25132f712",
+        "180bdd62f8da40726ef1662544ba147b9f6d7a5667697f5cf01d52e25132f712"
+      ],
+      "before": {
+        "foregroundMAE": 3.179351032448378,
+        "fullMAE": 0.9060453216374269,
+        "channelPeak": 205,
+        "worst64": 9.120198567708334
+      },
+      "after": {
+        "foregroundMAE": 3.179351032448378,
+        "fullMAE": 0.9060453216374269,
+        "channelPeak": 205,
+        "worst64": 9.120198567708334
+      }
+    },
+    {
+      "file": "overlap-calm-26-2010000.png",
+      "unionPixels": 66317,
+      "hashes": [
+        "20aafcba025e1a7b34d8c09a219d07b7ec5c5d2583f77ae9db2ce758346ffcc4",
+        "fc47778ca61c696e909a8c347ba935b42f3ea828bb75862d0a11c5c5619512c0",
+        "fc47778ca61c696e909a8c347ba935b42f3ea828bb75862d0a11c5c5619512c0"
+      ],
+      "before": {
+        "foregroundMAE": 3.2679001362144446,
+        "fullMAE": 1.1881432748538012,
+        "channelPeak": 205,
+        "worst64": 11.323811848958334
+      },
+      "after": {
+        "foregroundMAE": 3.2679001362144446,
+        "fullMAE": 1.1881432748538012,
+        "channelPeak": 205,
+        "worst64": 11.323811848958334
+      }
+    },
+    {
+      "file": "overlap-calm-27-2067000.png",
+      "unionPixels": 81735,
+      "hashes": [
+        "eeb0a2cadb1e61fa159a6d04beb28ef5a09a123de0738ca7b8bc0d5b3fd5e350",
+        "d9f99798732c5bc4ee2c91fdb40a06a8233b3199e54dbb23a1fc5d26c33c3d6c",
+        "e9d3326c0346294db97089abdfc0b099614abe4205153b5d6cab9f70c8046049"
+      ],
+      "before": {
+        "foregroundMAE": 3.783976672580086,
+        "fullMAE": 1.6956323099415205,
+        "channelPeak": 179,
+        "worst64": 8.9287109375
+      },
+      "after": {
+        "foregroundMAE": 3.225639770804021,
+        "fullMAE": 1.445436769005848,
+        "channelPeak": 179,
+        "worst64": 8.9287109375
+      }
+    },
+    {
+      "file": "overlap-calm-28-2077000.png",
+      "unionPixels": 84043,
+      "hashes": [
+        "7eb7aaf0436dfbccd305804e2c5def4b98f71865aaf061e800f893caa9f030f6",
+        "503f5c16472ad95327d298e55578a904f66a80b2c6909bc8b77ee51e759a0769",
+        "326fbd9de23eae0e8be7cd3f85414ceff089c82430e5cd8aef64f8680d3ac59f"
+      ],
+      "before": {
+        "foregroundMAE": 4.438676233198085,
+        "fullMAE": 2.045173611111111,
+        "channelPeak": 171,
+        "worst64": 9.198811848958334
+      },
+      "after": {
+        "foregroundMAE": 3.4700331972918623,
+        "fullMAE": 1.598859649122807,
+        "channelPeak": 171,
+        "worst64": 9.198811848958334
+      }
+    },
+    {
+      "file": "overlap-calm-29-2090000.png",
+      "unionPixels": 83841,
+      "hashes": [
+        "9d931967ba4f0a6acdd0faab9369e9d4d58d1e0f89d620872dee35d696bc41d5",
+        "ce36a4fe30a2a50e6f2214af98ed884db154aa4ad407cd34224bedde9e08f631",
+        "dd9ce132a494dbe6383974bf02522c4f74e4a837f2c27868ded6ad8a5ceadae6"
+      ],
+      "before": {
+        "foregroundMAE": 5.146364348389611,
+        "fullMAE": 2.3655500730994152,
+        "channelPeak": 152,
+        "worst64": 13.586995442708334
+      },
+      "after": {
+        "foregroundMAE": 3.662758475368058,
+        "fullMAE": 1.6836038011695906,
+        "channelPeak": 152,
+        "worst64": 9.14404296875
+      }
+    },
+    {
+      "file": "overlap-calm-3-780000.png",
+      "unionPixels": 31903,
+      "hashes": [
+        "7518ae7c44c9b4b7605eadd525e791314750fe815e152d3121f77d1fdde69e1d",
+        "765a41250cb9219f753010850336840bad02ae2d6fdc08a3d554445f49f5aed0",
+        "765a41250cb9219f753010850336840bad02ae2d6fdc08a3d554445f49f5aed0"
+      ],
+      "before": {
+        "foregroundMAE": 1.8258366506807093,
+        "fullMAE": 0.3193512426900585,
+        "channelPeak": 167,
+        "worst64": 2.5891493055555554
+      },
+      "after": {
+        "foregroundMAE": 1.8258366506807093,
+        "fullMAE": 0.3193512426900585,
+        "channelPeak": 167,
+        "worst64": 2.5891493055555554
+      }
+    },
+    {
+      "file": "overlap-calm-30-2100000.png",
+      "unionPixels": 85324,
+      "hashes": [
+        "47395c51e95de36e05896fb5bf561c5ec5cca87e06352c2258f4b2e205f25e81",
+        "55125afb36d993514c854c4e96dea27847d0cf336b37d60d73bd275f55f469ca",
+        "009ba382f943feeee39cba904fca5a1a2acd66f754b42c0c0975fd8b07a799ee"
+      ],
+      "before": {
+        "foregroundMAE": 7.6382573093932145,
+        "fullMAE": 3.573062865497076,
+        "channelPeak": 176,
+        "worst64": 18.465250651041668
+      },
+      "after": {
+        "foregroundMAE": 6.491557670370197,
+        "fullMAE": 3.036653874269006,
+        "channelPeak": 176,
+        "worst64": 15.377848307291666
+      }
+    },
+    {
+      "file": "overlap-calm-31-2200000.png",
+      "unionPixels": 62943,
+      "hashes": [
+        "bec1fe3873ebf73d9232458440e2751a4c2f39ee72409d0caa8acbf36696b533",
+        "b8e4b51df6790e8825c5a324e9f957af11ec046ff71fdd51ddb82f0e6f9f7f1d",
+        "b096f41618b0199e38825a33e0070798dce21ec11a80f9e8173cbe8a9ffc498e"
+      ],
+      "before": {
+        "foregroundMAE": 15.723194000921469,
+        "fullMAE": 5.425794956140351,
+        "channelPeak": 196,
+        "worst64": 27.103597005208332
+      },
+      "after": {
+        "foregroundMAE": 13.437628754057904,
+        "fullMAE": 4.637086988304094,
+        "channelPeak": 196,
+        "worst64": 27.103597005208332
+      }
+    },
+    {
+      "file": "overlap-calm-32-2500000.png",
+      "unionPixels": 53201,
+      "hashes": [
+        "e501f8c81d1efbcdb1f49288f597480549095a6d26fbad9422a8af6b25ce7fdf",
+        "ebd298051e57f7ea4eb2d97f5986f6178ebe319f4a4378624dc8983920c88a13",
+        "ebd298051e57f7ea4eb2d97f5986f6178ebe319f4a4378624dc8983920c88a13"
+      ],
+      "before": {
+        "foregroundMAE": 2.397849664479991,
+        "fullMAE": 0.6993859649122807,
+        "channelPeak": 181,
+        "worst64": 3.7178548177083335
+      },
+      "after": {
+        "foregroundMAE": 2.397849664479991,
+        "fullMAE": 0.6993859649122807,
+        "channelPeak": 181,
+        "worst64": 3.7178548177083335
+      }
+    },
+    {
+      "file": "overlap-calm-33-3000000.png",
+      "unionPixels": 53969,
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb"
+      ],
+      "before": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      },
+      "after": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      }
+    },
+    {
+      "file": "overlap-calm-34-3026400.png",
+      "unionPixels": 53969,
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb"
+      ],
+      "before": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      },
+      "after": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      }
+    },
+    {
+      "file": "overlap-calm-35-3036400.png",
+      "unionPixels": 53969,
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb"
+      ],
+      "before": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      },
+      "after": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      }
+    },
+    {
+      "file": "overlap-calm-36-3380000.png",
+      "unionPixels": 53969,
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb"
+      ],
+      "before": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      },
+      "after": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      }
+    },
+    {
+      "file": "overlap-calm-37-3390000.png",
+      "unionPixels": 53969,
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb"
+      ],
+      "before": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      },
+      "after": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      }
+    },
+    {
+      "file": "overlap-calm-38-3500000.png",
+      "unionPixels": 53969,
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb"
+      ],
+      "before": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      },
+      "after": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      }
+    },
+    {
+      "file": "overlap-calm-39-4000000.png",
+      "unionPixels": 53969,
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb",
+        "2ed9b3175f73e19172187d5052bccbd5008d33dbca40d83e2429036bea883fdb"
+      ],
+      "before": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      },
+      "after": {
+        "foregroundMAE": 2.0595959408796407,
+        "fullMAE": 0.6093987573099415,
+        "channelPeak": 168,
+        "worst64": 3.3197916666666667
+      }
+    },
+    {
+      "file": "overlap-calm-4-800000.png",
+      "unionPixels": 52150,
+      "hashes": [
+        "7eec6444546cf2f0f7c94ea5636c06153966443937ab472591bae19a1079dce0",
+        "ac9a58cbc38c783ab2d2163bd6e1e83d07d0af25f04b556d9995fdbaba402c12",
+        "34a438bcbca2f49948956844fcaa97a80d8510e4510f5e2e0a02d731e718d247"
+      ],
+      "before": {
+        "foregroundMAE": 1.908219878555449,
+        "fullMAE": 0.5455793128654971,
+        "channelPeak": 172,
+        "worst64": 2.5340277777777778
+      },
+      "after": {
+        "foregroundMAE": 1.9082326621923937,
+        "fullMAE": 0.5455829678362573,
+        "channelPeak": 172,
+        "worst64": 2.5340277777777778
+      }
+    },
+    {
+      "file": "overlap-calm-5-847000.png",
+      "unionPixels": 61529,
+      "hashes": [
+        "42c7b4b9a4668f32a38b6157734fd377a4ffb6a48473e4fdb9de2d725d1151da",
+        "102d16a0fda3e80c1d745043aee14ec0677812f707f6174deab84ca4aadb5cda",
+        "eb21af23b725c5b93039e01edc4f993208463558c3c0f176845168285e688560"
+      ],
+      "before": {
+        "foregroundMAE": 2.681358925601478,
+        "fullMAE": 0.9045029239766081,
+        "channelPeak": 150,
+        "worst64": 4.899739583333333
+      },
+      "after": {
+        "foregroundMAE": 2.6814401880955865,
+        "fullMAE": 0.9045303362573099,
+        "channelPeak": 150,
+        "worst64": 4.899739583333333
+      }
+    },
+    {
+      "file": "overlap-calm-6-857000.png",
+      "unionPixels": 60829,
+      "hashes": [
+        "1c7c3ef0e75ed7d962c95b5a49bfaf62a96317207025de8598ea543e72005701",
+        "17fe3ae1b7a7ee6214232e9f5d600a2be71b1b21426d455e227ce42f50d18809",
+        "d31280b96b3c3233a706ee882b73854a76d62e7cb439bc87961125ddf2882448"
+      ],
+      "before": {
+        "foregroundMAE": 2.4461194496046295,
+        "fullMAE": 0.8157620614035088,
+        "channelPeak": 140,
+        "worst64": 4.86962890625
+      },
+      "after": {
+        "foregroundMAE": 2.4470400631277847,
+        "fullMAE": 0.8160690789473685,
+        "channelPeak": 140,
+        "worst64": 4.86962890625
+      }
+    },
+    {
+      "file": "overlap-calm-7-860000.png",
+      "unionPixels": 60230,
+      "hashes": [
+        "d1cd5bc17b5e9f8bc99a586ddd543300406255ad05cadaced36727cd342e1f88",
+        "158a652de8981693671799d8b10a45537aedfae3f303ebdec2f2b4c958b791de",
+        "f0b88a5da9b603c4172424904db01ab65933964ad5e253170c49da37991413f8"
+      ],
+      "before": {
+        "foregroundMAE": 2.663301787592008,
+        "fullMAE": 0.8794444444444445,
+        "channelPeak": 143,
+        "worst64": 5.396240234375
+      },
+      "after": {
+        "foregroundMAE": 2.6676517792904977,
+        "fullMAE": 0.8808808479532164,
+        "channelPeak": 143,
+        "worst64": 5.402506510416667
+      }
+    },
+    {
+      "file": "overlap-calm-8-900000.png",
+      "unionPixels": 54425,
+      "hashes": [
+        "98ce2d675976eba2ff180038d000bbb2e04505cd2c83ded7eaf39286594b52bb",
+        "02e28adac4e3ac01935c6e3a479200e5f675caac6c41aca54b8a7231e06ebd47",
+        "3fa19a3fe625d5f2f651df167646c3346306eb589bf5e8c04acf98ac2ce7b236"
+      ],
+      "before": {
+        "foregroundMAE": 4.095060480783953,
+        "fullMAE": 1.2218951023391813,
+        "channelPeak": 176,
+        "worst64": 9.68017578125
+      },
+      "after": {
+        "foregroundMAE": 4.132028785790844,
+        "fullMAE": 1.2329258040935673,
+        "channelPeak": 176,
+        "worst64": 9.68017578125
+      }
+    },
+    {
+      "file": "overlap-calm-9-940000.png",
+      "unionPixels": 50258,
+      "hashes": [
+        "589d8d89a5123e9c46c2fe7b87850823a8ac6445800f9e89d2893b1b72f6f30f",
+        "eee2d56033b4bc8bdf033e54f69b007e81abae77867c5ff8a9b22ad3e2edc2ef",
+        "9adf39a99a069fd6d25b4fdbfc85a3c8959af70091dc41e806a96769e4e97bdf"
+      ],
+      "before": {
+        "foregroundMAE": 3.888263228408081,
+        "fullMAE": 1.0713614766081871,
+        "channelPeak": 197,
+        "worst64": 8.73486328125
+      },
+      "after": {
+        "foregroundMAE": 3.8049796383991934,
+        "fullMAE": 1.0484137426900584,
+        "channelPeak": 197,
+        "worst64": 8.73486328125
+      }
+    },
+    {
+      "file": "overlap-chaotic-0-0.png",
+      "unionPixels": 13760,
+      "hashes": [
+        "3b2d5168e8ebe65af69e7a6d67bcb0e0c431431e163c008b1b5b19627fc10c5d",
+        "2d56f1d921459be10632f79fb06cba8e7153fae346490609dfbc1a04b3a1881e",
+        "2d56f1d921459be10632f79fb06cba8e7153fae346490609dfbc1a04b3a1881e"
+      ],
+      "before": {
+        "foregroundMAE": 2.3836967054263565,
+        "fullMAE": 0.17982273391812867,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      },
+      "after": {
+        "foregroundMAE": 2.3836967054263565,
+        "fullMAE": 0.17982273391812867,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      }
+    },
+    {
+      "file": "overlap-chaotic-1-700000.png",
+      "unionPixels": 13760,
+      "hashes": [
+        "3b2d5168e8ebe65af69e7a6d67bcb0e0c431431e163c008b1b5b19627fc10c5d",
+        "2d56f1d921459be10632f79fb06cba8e7153fae346490609dfbc1a04b3a1881e",
+        "2d56f1d921459be10632f79fb06cba8e7153fae346490609dfbc1a04b3a1881e"
+      ],
+      "before": {
+        "foregroundMAE": 2.3836967054263565,
+        "fullMAE": 0.17982273391812867,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      },
+      "after": {
+        "foregroundMAE": 2.3836967054263565,
+        "fullMAE": 0.17982273391812867,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      }
+    },
+    {
+      "file": "overlap-chaotic-10-1000000.png",
+      "unionPixels": 57756,
+      "hashes": [
+        "aca2e74372f23a98946df7f63cd49b21531b38d2a4c039598f200cad8bf920b7",
+        "288c02e4ef0daf2a4755555c098f33b966b4c439759af6930004bffb27fd45cb",
+        "eb90d2d1c1de67628b71c587d722da7ee0d5e4dd24caa9f1e4b71691137f4fa9"
+      ],
+      "before": {
+        "foregroundMAE": 7.73833598818016,
+        "fullMAE": 2.4503033625730994,
+        "channelPeak": 193,
+        "worst64": 12.887369791666666
+      },
+      "after": {
+        "foregroundMAE": 8.039857330840086,
+        "fullMAE": 2.54577850877193,
+        "channelPeak": 193,
+        "worst64": 12.887369791666666
+      }
+    },
+    {
+      "file": "overlap-chaotic-11-1020000.png",
+      "unionPixels": 57757,
+      "hashes": [
+        "9527bb1df17be0368af03383489aa81aefd3a2b2e05146805594ad2ab6e828b2",
+        "83fba7db668a9e6f83d86ebbb02f7b078fffc9f59f7b793033c65a0dd682c657",
+        "b806acf10793ea2f8ce8d9a91df0400984074c9c23d6385e54988b73f624c0cc"
+      ],
+      "before": {
+        "foregroundMAE": 10.755729464249644,
+        "fullMAE": 3.4058040935672516,
+        "channelPeak": 201,
+        "worst64": 18.970458984375
+      },
+      "after": {
+        "foregroundMAE": 10.892682560843996,
+        "fullMAE": 3.449170321637427,
+        "channelPeak": 201,
+        "worst64": 18.970458984375
+      }
+    },
+    {
+      "file": "overlap-chaotic-12-1100000.png",
+      "unionPixels": 54790,
+      "hashes": [
+        "b5e490ecabf8b467d23ba84082f57b0a1232b5efb0526787bfd1c10d51e71fc6",
+        "fbb62a3719023e0a199ff9090f15fe0df7a811f2d4e038fbf29a9a4e6f3847d3",
+        "a561110be5bbf7f59524676c388aa4bd6c30ef859b6a314678ecc68a438bfc62"
+      ],
+      "before": {
+        "foregroundMAE": 7.216438522844801,
+        "fullMAE": 2.167701023391813,
+        "channelPeak": 210,
+        "worst64": 16.805013020833332
+      },
+      "after": {
+        "foregroundMAE": 7.929159822352011,
+        "fullMAE": 2.3817909356725147,
+        "channelPeak": 210,
+        "worst64": 16.805013020833332
+      }
+    },
+    {
+      "file": "overlap-chaotic-13-1110000.png",
+      "unionPixels": 64699,
+      "hashes": [
+        "7e05a557545051fed689e9311a7a0b6a7563b212e68e2d34be15e730e8298575",
+        "8658deceb7cfaaba7d26a1bb32199c6af6d94db86112a36d33599c2c65d214c2",
+        "c6091fafd3112678ed1d35f94ee5de3ff4a36a3c299c840b361a9c4d05c712bf"
+      ],
+      "before": {
+        "foregroundMAE": 6.306619885933322,
+        "fullMAE": 2.237017543859649,
+        "channelPeak": 210,
+        "worst64": 17.23193359375
+      },
+      "after": {
+        "foregroundMAE": 6.7695791279617925,
+        "fullMAE": 2.401233552631579,
+        "channelPeak": 210,
+        "worst64": 17.23193359375
+      }
+    },
+    {
+      "file": "overlap-chaotic-14-1167000.png",
+      "unionPixels": 99206,
+      "hashes": [
+        "e6d8b065b0d22f848699a9cee5a9a8a7695c23ede7524ea5125c466db6ba9521",
+        "23ef904f21a87072914d83c6d72d03f225f43cadc298912aadbfd0ddd3b650f6",
+        "38b07c0246f472da94237e6ceff14c930f5daf7f1b87deeeff0351f498de54e6"
+      ],
+      "before": {
+        "foregroundMAE": 4.108434301688742,
+        "fullMAE": 2.234546783625731,
+        "channelPeak": 192,
+        "worst64": 9.030192057291666
+      },
+      "after": {
+        "foregroundMAE": 3.696661492248453,
+        "fullMAE": 2.0105866228070175,
+        "channelPeak": 192,
+        "worst64": 9.030192057291666
+      }
+    },
+    {
+      "file": "overlap-chaotic-15-1177000.png",
+      "unionPixels": 102632,
+      "hashes": [
+        "23f725c879ff31fe5825a081133b92cd85b9d4dd41fafca51a3317e36bbcd198",
+        "5d60ae0a8521c514ccb5e68a83d7cd29cd654b3cd770c4009a22411e534999e1",
+        "e1360d686f7e7fcee19ca410d7d0862587af7c5d4cb7931513e568bf65870a77"
+      ],
+      "before": {
+        "foregroundMAE": 4.369085665289578,
+        "fullMAE": 2.4583771929824563,
+        "channelPeak": 187,
+        "worst64": 8.672037760416666
+      },
+      "after": {
+        "foregroundMAE": 3.589319120742069,
+        "fullMAE": 2.019621710526316,
+        "channelPeak": 187,
+        "worst64": 8.511555989583334
+      }
+    },
+    {
+      "file": "overlap-chaotic-16-1180000.png",
+      "unionPixels": 102460,
+      "hashes": [
+        "e0e8740f0eb709b0da77146cd01498cc317838f36c919f7148e4a3b42d785417",
+        "4e50ceb45abb7d2a0516a5f8eb5b0f81dfe79fc9b396beafef5dcd2fb27a713d",
+        "6600e0fd0d6bc958abe6ac0291efc4d2d5cce9937e5e2f58189bb73f9007cd53"
+      ],
+      "before": {
+        "foregroundMAE": 4.345103780337042,
+        "fullMAE": 2.4407858187134504,
+        "channelPeak": 185,
+        "worst64": 9.086507161458334
+      },
+      "after": {
+        "foregroundMAE": 3.48786843646301,
+        "fullMAE": 1.959248903508772,
+        "channelPeak": 185,
+        "worst64": 8.51708984375
+      }
+    },
+    {
+      "file": "overlap-chaotic-17-1190000.png",
+      "unionPixels": 99101,
+      "hashes": [
+        "838abe01a94820d78978c356f181dbc25d97caeb37eeae11032fe5c00d6a5a8c",
+        "2194ab6c09d4ee5c063b947ecf24f181402fdbaa6b2199f7c2443ef461a75def",
+        "cd2467b34e07512ece139b93f42adb8ca6b24fbe9770c3c7e82ef3f83be91030"
+      ],
+      "before": {
+        "foregroundMAE": 4.831226055572934,
+        "fullMAE": 2.6248866959064325,
+        "channelPeak": 187,
+        "worst64": 12.120768229166666
+      },
+      "after": {
+        "foregroundMAE": 3.8530690911292518,
+        "fullMAE": 2.0934375,
+        "channelPeak": 187,
+        "worst64": 10.220621744791666
+      }
+    },
+    {
+      "file": "overlap-chaotic-18-1200000.png",
+      "unionPixels": 95416,
+      "hashes": [
+        "44d8efbb25f1b77d36bc9cb8ab5d3010957a789043cb429efb0d856b0801f292",
+        "fe0a4ce016a4d7ba1452215717c25e801203f2979297e1525c8e4541a8f703ac",
+        "5c14c41c838eee1de3d8ac93ca7d853063e568c5d042ab688b4f0107073e8b65"
+      ],
+      "before": {
+        "foregroundMAE": 5.445610100332579,
+        "fullMAE": 2.848675073099415,
+        "channelPeak": 181,
+        "worst64": 12.966878255208334
+      },
+      "after": {
+        "foregroundMAE": 4.420306866772869,
+        "fullMAE": 2.312324561403509,
+        "channelPeak": 181,
+        "worst64": 10.826741536458334
+      }
+    },
+    {
+      "file": "overlap-chaotic-19-1220000.png",
+      "unionPixels": 86437,
+      "hashes": [
+        "d124badd9aafc9207f14cc538b365b515a618649ff10538171502e1b97b42d77",
+        "ae3a37df04f378f4082f7ad6bba9a12530d03fde5eeb27a3d51ae800ea54dc9f",
+        "d98901dc4be368e3862fc2f2c9722e28e0b2709211c73276a6e7aa2aa69ca301"
+      ],
+      "before": {
+        "foregroundMAE": 6.714902183092889,
+        "fullMAE": 3.1821052631578945,
+        "channelPeak": 185,
+        "worst64": 15.195556640625
+      },
+      "after": {
+        "foregroundMAE": 6.010732286713638,
+        "fullMAE": 2.848408260233918,
+        "channelPeak": 187,
+        "worst64": 15.7890625
+      }
+    },
+    {
+      "file": "overlap-chaotic-2-720000.png",
+      "unionPixels": 28531,
+      "hashes": [
+        "305c4f97049fabf843a2ab2e371127c273e6371b50186dee04344a496d27853a",
+        "0815d344e575dc671fc549b0c32a6a10936b2b2c03ec4ea10f1578abd037112a",
+        "0815d344e575dc671fc549b0c32a6a10936b2b2c03ec4ea10f1578abd037112a"
+      ],
+      "before": {
+        "foregroundMAE": 1.6069888892783288,
+        "fullMAE": 0.25136513157894735,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      },
+      "after": {
+        "foregroundMAE": 1.6069888892783288,
+        "fullMAE": 0.25136513157894735,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      }
+    },
+    {
+      "file": "overlap-chaotic-20-1300000.png",
+      "unionPixels": 78938,
+      "hashes": [
+        "2b00a9e90086dd9fafb492062a78b13416a29eb3034e751238a00d523bcbbd02",
+        "abb75f49848eba798230f4756a7bb5bc472889ee7233442c546ba8cee61e6b85",
+        "88b87e5e2892eb174c980fdf8209c05e82b98258650bd4bc4265142fe8f87929"
+      ],
+      "before": {
+        "foregroundMAE": 16.290937191213356,
+        "fullMAE": 7.0502960526315785,
+        "channelPeak": 176,
+        "worst64": 26.949869791666668
+      },
+      "after": {
+        "foregroundMAE": 17.01027810855777,
+        "fullMAE": 7.361608187134503,
+        "channelPeak": 181,
+        "worst64": 28.8154296875
+      }
+    },
+    {
+      "file": "overlap-chaotic-21-1367000.png",
+      "unionPixels": 96903,
+      "hashes": [
+        "e63f586c8d3df55dc10f99b94b4e3a5745f63fe9ab18c14cb6b49d4991fb8912",
+        "1f03792c90e2dc635432c68842645e92035817408d7a29e959ffe005c23f240d",
+        "f399b74e32c2c9c2377574c58b337a0645768020126829c851d399e33bb28aa3"
+      ],
+      "before": {
+        "foregroundMAE": 11.452404294328693,
+        "fullMAE": 6.084278143274854,
+        "channelPeak": 135,
+        "worst64": 30.340087890625
+      },
+      "after": {
+        "foregroundMAE": 10.656226673408804,
+        "fullMAE": 5.661295687134503,
+        "channelPeak": 164,
+        "worst64": 22.800455729166668
+      }
+    },
+    {
+      "file": "overlap-chaotic-22-1377000.png",
+      "unionPixels": 95918,
+      "hashes": [
+        "9b26a4637a2b11aa7c891a90b09767b13270cce57e12040c5f26890e02b062c2",
+        "cbc224822c7a027f73e3aff752b66354c30c5e32055260833ac046af9024153a",
+        "76547e1c66fbc841aa524672f260bd7be6880526ac419f4e04c977dfc6a16a90"
+      ],
+      "before": {
+        "foregroundMAE": 11.25333444539433,
+        "fullMAE": 5.917748538011696,
+        "channelPeak": 138,
+        "worst64": 29.655110677083332
+      },
+      "after": {
+        "foregroundMAE": 10.147990992305928,
+        "fullMAE": 5.336485745614035,
+        "channelPeak": 164,
+        "worst64": 22.073079427083332
+      }
+    },
+    {
+      "file": "overlap-chaotic-23-1500000.png",
+      "unionPixels": 52004,
+      "hashes": [
+        "e0a3067f79b9954306c0aa5eeaa2566b26750d51cdbdf8a90c5964488613a3b8",
+        "65160bb961def3ae1ccdd2ced1d677fd019571d448b0d426d871159352e5c19b",
+        "27a3fbc507c047348868f8abe99d9462e2ae02fcd161173fd619d04b0f6832bb"
+      ],
+      "before": {
+        "foregroundMAE": 14.03916365407789,
+        "fullMAE": 4.002701023391813,
+        "channelPeak": 194,
+        "worst64": 26.828369140625
+      },
+      "after": {
+        "foregroundMAE": 11.836140809681307,
+        "fullMAE": 3.3745979532163743,
+        "channelPeak": 194,
+        "worst64": 27.355224609375
+      }
+    },
+    {
+      "file": "overlap-chaotic-24-1800000.png",
+      "unionPixels": 63509,
+      "hashes": [
+        "8d26b956c899c3584fe0b08a437b24aa12e63a7ce3b93890f6b613c9b17704b7",
+        "216adb422d58b1b6e304a4acc267b44f0a5ebfb15c7bd4b098a4be5baeb510ab",
+        "216adb422d58b1b6e304a4acc267b44f0a5ebfb15c7bd4b098a4be5baeb510ab"
+      ],
+      "before": {
+        "foregroundMAE": 11.210552835031255,
+        "fullMAE": 3.9033497807017543,
+        "channelPeak": 221,
+        "worst64": 25.217936197916668
+      },
+      "after": {
+        "foregroundMAE": 11.210552835031255,
+        "fullMAE": 3.9033497807017543,
+        "channelPeak": 221,
+        "worst64": 25.217936197916668
+      }
+    },
+    {
+      "file": "overlap-chaotic-25-2000000.png",
+      "unionPixels": 70944,
+      "hashes": [
+        "04615a45ddcf95e0c77eaefd241e3aa9317b3f791f8a6341190795bc26dbc7ba",
+        "27aca64dae06cd31f0ef965a56c840a21a3ed6a8e41af676cbed0bd9b4ae7664",
+        "27aca64dae06cd31f0ef965a56c840a21a3ed6a8e41af676cbed0bd9b4ae7664"
+      ],
+      "before": {
+        "foregroundMAE": 4.476136107352278,
+        "fullMAE": 1.7409813596491228,
+        "channelPeak": 207,
+        "worst64": 13.930745442708334
+      },
+      "after": {
+        "foregroundMAE": 4.476136107352278,
+        "fullMAE": 1.7409813596491228,
+        "channelPeak": 207,
+        "worst64": 13.930745442708334
+      }
+    },
+    {
+      "file": "overlap-chaotic-26-2010000.png",
+      "unionPixels": 87934,
+      "hashes": [
+        "86bae51bf3a8bc76f0b5b2f9dfb7131ec9d1e8960220b3082350d49bc0121a06",
+        "6110c5451898832af154f035d39c0ef6746a1efdb89f79f88d56892a3520c4a8",
+        "6110c5451898832af154f035d39c0ef6746a1efdb89f79f88d56892a3520c4a8"
+      ],
+      "before": {
+        "foregroundMAE": 4.406244076997142,
+        "fullMAE": 2.1242251461988304,
+        "channelPeak": 207,
+        "worst64": 15.332194010416666
+      },
+      "after": {
+        "foregroundMAE": 4.406244076997142,
+        "fullMAE": 2.1242251461988304,
+        "channelPeak": 207,
+        "worst64": 15.332194010416666
+      }
+    },
+    {
+      "file": "overlap-chaotic-27-2067000.png",
+      "unionPixels": 115756,
+      "hashes": [
+        "f9ddfb489f7ee3e9c3bcd3647532f6534c1abcfb3a575022c2db7457a3b95e49",
+        "316508cda1402de9e836883c096aaec5586033f64344cdf00bae9ab135f6c124",
+        "b327dc322ca5d4f69a629ee43f0e4ad79406f85b9d4338e1a4bf3dbb71ccf70d"
+      ],
+      "before": {
+        "foregroundMAE": 3.872643030742827,
+        "fullMAE": 2.4576845760233916,
+        "channelPeak": 190,
+        "worst64": 11.128255208333334
+      },
+      "after": {
+        "foregroundMAE": 3.5180206641556375,
+        "fullMAE": 2.2326315789473683,
+        "channelPeak": 190,
+        "worst64": 11.128255208333334
+      }
+    },
+    {
+      "file": "overlap-chaotic-28-2077000.png",
+      "unionPixels": 118950,
+      "hashes": [
+        "99738d9df65e3ab38509e51a3ea4a5c9b9481bc951c2e6d1e9d1c0b2fd1350ee",
+        "a5607eaaf0c7ea687f0a9cf925c86dae01888356e52ce670246fc1094115ce48",
+        "763edf3fe806b44a3a2e84b56516ed205b5da6c1a91624095041814769dc9347"
+      ],
+      "before": {
+        "foregroundMAE": 3.870623511279249,
+        "fullMAE": 2.5241812865497075,
+        "channelPeak": 186,
+        "worst64": 10.655843098958334
+      },
+      "after": {
+        "foregroundMAE": 3.1797533977861847,
+        "fullMAE": 2.073638523391813,
+        "channelPeak": 186,
+        "worst64": 10.655843098958334
+      }
+    },
+    {
+      "file": "overlap-chaotic-29-2090000.png",
+      "unionPixels": 120971,
+      "hashes": [
+        "4aa9bcf4989cc396b17d3e67a568a2a5f8ef37ee6219bbca6584b73056c5bb8a",
+        "ed3ea4d286e3f7e19242f4ef3b9795d0b238c1738ca787daeb60583bfff46cf5",
+        "7f1f49952b03f94158e31bb1a79fc5c2000d212f008f975c01541f2f82f1b221"
+      ],
+      "before": {
+        "foregroundMAE": 4.496245656672536,
+        "fullMAE": 2.9819919590643273,
+        "channelPeak": 178,
+        "worst64": 9.938639322916666
+      },
+      "after": {
+        "foregroundMAE": 3.4317811706938026,
+        "fullMAE": 2.2760197368421053,
+        "channelPeak": 178,
+        "worst64": 8.723063151041666
+      }
+    },
+    {
+      "file": "overlap-chaotic-3-780000.png",
+      "unionPixels": 39856,
+      "hashes": [
+        "5b06e5bed93ec1fb0d0f9fb55ae927e1135af65e6d1fcc112956817eca8b8ab7",
+        "d6e8ea96b941a320bf6208e5e2e320f459991959cf874c948613152fd4a9d0a7",
+        "d6e8ea96b941a320bf6208e5e2e320f459991959cf874c948613152fd4a9d0a7"
+      ],
+      "before": {
+        "foregroundMAE": 1.5319148936170213,
+        "fullMAE": 0.33473684210526317,
+        "channelPeak": 167,
+        "worst64": 2.45390625
+      },
+      "after": {
+        "foregroundMAE": 1.5319148936170213,
+        "fullMAE": 0.33473684210526317,
+        "channelPeak": 167,
+        "worst64": 2.45390625
+      }
+    },
+    {
+      "file": "overlap-chaotic-30-2100000.png",
+      "unionPixels": 125636,
+      "hashes": [
+        "e9886989f7bc13fee1cb7390acbf49f772d5009a6a7204752010b324c14e3eb2",
+        "9b78dca24fc0ae919504e795c4c5ac5210761d352929bc4a82f14cbb79161b2a",
+        "997238e8589f4b22e0a3cb185ee3382b0309a6b6532ddea63c39a9c99c03d71d"
+      ],
+      "before": {
+        "foregroundMAE": 6.292822121048107,
+        "fullMAE": 4.3344572368421055,
+        "channelPeak": 178,
+        "worst64": 16.718994140625
+      },
+      "after": {
+        "foregroundMAE": 5.214784509747737,
+        "fullMAE": 3.591911549707602,
+        "channelPeak": 178,
+        "worst64": 13.443277994791666
+      }
+    },
+    {
+      "file": "overlap-chaotic-31-2200000.png",
+      "unionPixels": 86186,
+      "hashes": [
+        "45f2cf1dd993042e91470ed9774a0b6ecebf158692281cc1ee2d13c10ef04b4c",
+        "15f99ad27112f37fbe58e31b7190f0516bed21e010f8de1d34891b32866dc390",
+        "8d1d62d7662f555fb75813f6cabd85620ed9e71ebd7cc0a8924f59ef2990f8b5"
+      ],
+      "before": {
+        "foregroundMAE": 12.449813968239235,
+        "fullMAE": 5.8826736111111115,
+        "channelPeak": 204,
+        "worst64": 22.345377604166668
+      },
+      "after": {
+        "foregroundMAE": 10.876681440914611,
+        "fullMAE": 5.139351242690059,
+        "channelPeak": 204,
+        "worst64": 22.345377604166668
+      }
+    },
+    {
+      "file": "overlap-chaotic-32-2500000.png",
+      "unionPixels": 50069,
+      "hashes": [
+        "a73de43a6c6b65d704feddc6a4b6541b5cb3e7254a2cc0fa26e0af97e6ea6690",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf"
+      ],
+      "before": {
+        "foregroundMAE": 8.726870252385043,
+        "fullMAE": 2.3955354532163744,
+        "channelPeak": 224,
+        "worst64": 16.6259765625
+      },
+      "after": {
+        "foregroundMAE": 8.726870252385043,
+        "fullMAE": 2.3955354532163744,
+        "channelPeak": 224,
+        "worst64": 16.6259765625
+      }
+    },
+    {
+      "file": "overlap-chaotic-33-3000000.png",
+      "unionPixels": 50139,
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf"
+      ],
+      "before": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      },
+      "after": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      }
+    },
+    {
+      "file": "overlap-chaotic-34-3026400.png",
+      "unionPixels": 50139,
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf"
+      ],
+      "before": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      },
+      "after": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      }
+    },
+    {
+      "file": "overlap-chaotic-35-3036400.png",
+      "unionPixels": 50139,
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf"
+      ],
+      "before": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      },
+      "after": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      }
+    },
+    {
+      "file": "overlap-chaotic-36-3380000.png",
+      "unionPixels": 50139,
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf"
+      ],
+      "before": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      },
+      "after": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      }
+    },
+    {
+      "file": "overlap-chaotic-37-3390000.png",
+      "unionPixels": 50139,
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf"
+      ],
+      "before": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      },
+      "after": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      }
+    },
+    {
+      "file": "overlap-chaotic-38-3500000.png",
+      "unionPixels": 50139,
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf"
+      ],
+      "before": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      },
+      "after": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      }
+    },
+    {
+      "file": "overlap-chaotic-39-4000000.png",
+      "unionPixels": 50139,
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf",
+        "24389479a0d408d26379012fe0a98f0d5fd24de27419d7cfe952b57bfbceb0cf"
+      ],
+      "before": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      },
+      "after": {
+        "foregroundMAE": 2.039596588151605,
+        "fullMAE": 0.5606542397660819,
+        "channelPeak": 168,
+        "worst64": 3.5193576388888888
+      }
+    },
+    {
+      "file": "overlap-chaotic-4-800000.png",
+      "unionPixels": 67059,
+      "hashes": [
+        "5a0c38fdcf0e8c5bebbc139b9810a83d18c24cc23bd734198b568baf120731ac",
+        "3e369307d75dd8409a388782618304422255f35214e4263bd4825ed4a27cdd2e",
+        "74c1423cc05be9e31e1f32f8c1966b4c91fbdd319ef2403523cdee3b44e07866"
+      ],
+      "before": {
+        "foregroundMAE": 1.5562017526854461,
+        "fullMAE": 0.5721345029239766,
+        "channelPeak": 166,
+        "worst64": 2.3790798611111112
+      },
+      "after": {
+        "foregroundMAE": 1.5558538003847358,
+        "fullMAE": 0.5720065789473684,
+        "channelPeak": 166,
+        "worst64": 2.3790798611111112
+      }
+    },
+    {
+      "file": "overlap-chaotic-5-847000.png",
+      "unionPixels": 81030,
+      "hashes": [
+        "21293df90c005f3c8391d4be9b2cec623e210e65067db7be817eb80ced0d8b8f",
+        "a3d83c69afc99895040820ac664cc124591918129f8ea4f03398369dca9d6e8e",
+        "f11b5f3535e1c228449881d4cd8ed55dc216d5b1537d9eb3a93b7ba1baf7f9fb"
+      ],
+      "before": {
+        "foregroundMAE": 3.2541239870006993,
+        "fullMAE": 1.4456231725146198,
+        "channelPeak": 158,
+        "worst64": 8.453287760416666
+      },
+      "after": {
+        "foregroundMAE": 3.2533259286683944,
+        "fullMAE": 1.4452686403508772,
+        "channelPeak": 158,
+        "worst64": 8.453206380208334
+      }
+    },
+    {
+      "file": "overlap-chaotic-6-857000.png",
+      "unionPixels": 79904,
+      "hashes": [
+        "b4b0d32566e199866007c654c7674c5768b62a3954fda57e6bd0663524e29355",
+        "88dca8b48cd4aba33e2ac9585818e45fc4c5b518679b145c22e1a1d2bf0b7d25",
+        "e18277252427da805ee4a49389be9ab34b42b92512e61e2455e98d4eaa912823"
+      ],
+      "before": {
+        "foregroundMAE": 4.287615972500333,
+        "fullMAE": 1.8782766812865497,
+        "channelPeak": 150,
+        "worst64": 13.2802734375
+      },
+      "after": {
+        "foregroundMAE": 4.40042634494727,
+        "fullMAE": 1.9276955409356724,
+        "channelPeak": 150,
+        "worst64": 13.377034505208334
+      }
+    },
+    {
+      "file": "overlap-chaotic-7-860000.png",
+      "unionPixels": 77625,
+      "hashes": [
+        "61ca9abcd75944cb2ee4f3a23711162fcde78b6a2aff95a74865986d4b0d9f72",
+        "53b0ce73ff224c259b9da59ce4d1657df5d90627a450a91be52df2dc38c74795",
+        "da8593928583efc33366e3d494f7d360e5141f2666a66e8b3d7197ef93ad5e00"
+      ],
+      "before": {
+        "foregroundMAE": 4.224614063338701,
+        "fullMAE": 1.797892909356725,
+        "channelPeak": 145,
+        "worst64": 12.950358072916666
+      },
+      "after": {
+        "foregroundMAE": 4.307607085346215,
+        "fullMAE": 1.8332127192982457,
+        "channelPeak": 145,
+        "worst64": 13.053141276041666
+      }
+    },
+    {
+      "file": "overlap-chaotic-8-900000.png",
+      "unionPixels": 66426,
+      "hashes": [
+        "48a868885524fe65bfeed56682a3f9399bfece16ca644916c88b9bbc759e2e10",
+        "a343820f1aa4cf4004d72f56bd74cd465803c740548a260f60fecf9be3dba059",
+        "ba2e95696eb536623b206f13f2f26017de6e2cd0dee2159e314df81a138198e3"
+      ],
+      "before": {
+        "foregroundMAE": 6.397148706831662,
+        "fullMAE": 2.3296984649122807,
+        "channelPeak": 133,
+        "worst64": 12.945475260416666
+      },
+      "after": {
+        "foregroundMAE": 6.508570941097362,
+        "fullMAE": 2.3702759502923976,
+        "channelPeak": 133,
+        "worst64": 13.153238932291666
+      }
+    },
+    {
+      "file": "overlap-chaotic-9-940000.png",
+      "unionPixels": 61514,
+      "hashes": [
+        "5b2b2ff60baed77a75a90c6e0d47536dccb4c7488d62d64061c95bde7e1d3a99",
+        "510e7ea25a4c8ad2b6df8cec1eaf5e74c3527e530e4e4ef019aea4e7ad92c6f9",
+        "f90bdde547513e39257c17b3113ee5be440f479da3c902b933c9a18901ffe448"
+      ],
+      "before": {
+        "foregroundMAE": 6.158202468814687,
+        "fullMAE": 2.076840277777778,
+        "channelPeak": 162,
+        "worst64": 10.950602213541666
+      },
+      "after": {
+        "foregroundMAE": 6.28903989335761,
+        "fullMAE": 2.120964912280702,
+        "channelPeak": 162,
+        "worst64": 11.233154296875
+      }
+    },
+    {
+      "file": "overlap-normal-0-0.png",
+      "unionPixels": 14258,
+      "hashes": [
+        "795a69250f77ce2a6025b8f03f0fe855092d2f94b56bd6146cd1c3050e193503",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c"
+      ],
+      "before": {
+        "foregroundMAE": 2.3111002010567168,
+        "fullMAE": 0.180656067251462,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 2.3111002010567168,
+        "fullMAE": 0.180656067251462,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "overlap-normal-1-700000.png",
+      "unionPixels": 14254,
+      "hashes": [
+        "0fa3879109773a2d8da4e2369a5b0a782044763ee5b6aa7c76ac4215aad78730",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c"
+      ],
+      "before": {
+        "foregroundMAE": 1.8468733922641598,
+        "fullMAE": 0.14432748538011697,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 1.8468733922641598,
+        "fullMAE": 0.14432748538011697,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "overlap-normal-10-1000000.png",
+      "unionPixels": 51594,
+      "hashes": [
+        "1b04f975a0d5a5c506678b856a79e37d925b8b0561bf0928ee7dcffed830067a",
+        "72d9d4a4438e0d5ad74a31164ecf0330dea6caf828525a43b049029321e04be8",
+        "42e2f965c4d044652ee16dd30628192b34f6b9b33fcb6c1969468e095ca5e8b0"
+      ],
+      "before": {
+        "foregroundMAE": 7.80581721388792,
+        "fullMAE": 2.20796783625731,
+        "channelPeak": 205,
+        "worst64": 14.1943359375
+      },
+      "after": {
+        "foregroundMAE": 7.938106498171622,
+        "fullMAE": 2.2453874269005847,
+        "channelPeak": 205,
+        "worst64": 14.1943359375
+      }
+    },
+    {
+      "file": "overlap-normal-11-1020000.png",
+      "unionPixels": 44387,
+      "hashes": [
+        "0bcf3cfb729244119f7950ba0c6efc5d9eb4431abe69b899e74896bca1132cb1",
+        "d78a5073be46e2149cd207d43fa50514fa9523c45773aa56c14f4e8206ff05b6",
+        "a4896f1930a9e23f7c1a275f9a760f03313f7afcc678a7fe00a87bfdffe69d41"
+      ],
+      "before": {
+        "foregroundMAE": 9.436081134866816,
+        "fullMAE": 2.296268274853801,
+        "channelPeak": 208,
+        "worst64": 17.931315104166668
+      },
+      "after": {
+        "foregroundMAE": 9.442952516127095,
+        "fullMAE": 2.297940423976608,
+        "channelPeak": 208,
+        "worst64": 17.931315104166668
+      }
+    },
+    {
+      "file": "overlap-normal-12-1100000.png",
+      "unionPixels": 49391,
+      "hashes": [
+        "01d85d7e2188cfb992172eb22e91130a738012b8911cd014c40576215ae11a09",
+        "7436cca799aa44549b32d96744863c9854840e4b5fc72b02cf4a53a4e0025c5c",
+        "810edacb47b6bdef02f829885342000707e06d369388422f0f08c4bd7e9c1b4d"
+      ],
+      "before": {
+        "foregroundMAE": 8.15292934610219,
+        "fullMAE": 2.2076827485380117,
+        "channelPeak": 210,
+        "worst64": 16.763590494791668
+      },
+      "after": {
+        "foregroundMAE": 8.147496507460874,
+        "fullMAE": 2.2062116228070177,
+        "channelPeak": 210,
+        "worst64": 16.763590494791668
+      }
+    },
+    {
+      "file": "overlap-normal-13-1110000.png",
+      "unionPixels": 64064,
+      "hashes": [
+        "d2cffd81313cd0f0853e3092c7d965dbafadd758112b642b1faf9edde4ed635d",
+        "d1d58e0c24f7d7f7f0c00d08a1dff89fe24e929226b81d69ec51f72e9b387bac",
+        "4a12715ef6e81b72da9065e5d568f21de5287c4e20f8d4a08c7c50f801c28b34"
+      ],
+      "before": {
+        "foregroundMAE": 5.746336996336996,
+        "fullMAE": 2.0182748538011697,
+        "channelPeak": 210,
+        "worst64": 14.288736979166666
+      },
+      "after": {
+        "foregroundMAE": 5.746279761904762,
+        "fullMAE": 2.0182547514619884,
+        "channelPeak": 210,
+        "worst64": 14.288736979166666
+      }
+    },
+    {
+      "file": "overlap-normal-14-1167000.png",
+      "unionPixels": 88429,
+      "hashes": [
+        "7081dbc26b365716e5c268c18f770e10c6f18d074629e1afb3291d5911561310",
+        "371a9210f2efb63abc4bf5a5707c073cb9fa5bc45440a4ca98b3a88d8f6039d1",
+        "70918f45d6a4ab23382d0d38b667ae9114059266752b931bfec2364e0b2dfb2f"
+      ],
+      "before": {
+        "foregroundMAE": 4.688375231353214,
+        "fullMAE": 2.2729623538011694,
+        "channelPeak": 187,
+        "worst64": 11.249267578125
+      },
+      "after": {
+        "foregroundMAE": 4.081918827533954,
+        "fullMAE": 1.9789473684210526,
+        "channelPeak": 187,
+        "worst64": 11.249267578125
+      }
+    },
+    {
+      "file": "overlap-normal-15-1177000.png",
+      "unionPixels": 89646,
+      "hashes": [
+        "7ade0363dbeb7df4ef91d795ad0a3be2dd9aceb5e13c172c6f8380de10ad19d0",
+        "b0e426d31cf57cc40733223ecf86fa2c4ea4441fead15acf54e7a1495fdf3d70",
+        "d8093abc7be81aa7182e6294f68648900b7e18e271861534e52686fb2b87a21f"
+      ],
+      "before": {
+        "foregroundMAE": 4.798224869672564,
+        "fullMAE": 2.358232821637427,
+        "channelPeak": 180,
+        "worst64": 10.706949869791666
+      },
+      "after": {
+        "foregroundMAE": 3.637976039087076,
+        "fullMAE": 1.7879934210526316,
+        "channelPeak": 180,
+        "worst64": 10.706949869791666
+      }
+    },
+    {
+      "file": "overlap-normal-16-1180000.png",
+      "unionPixels": 91471,
+      "hashes": [
+        "372bbfb0dcc0cdaa9476caba5037207d17a6dc4aa881270593c62cc886750da5",
+        "79099816f558275429ff603c931741b4130415ebf216d1d39d7f8cf916d5650a",
+        "372697dc23007e994017323e897c2a18735842fe318502c7208f0b27f18f4d9b"
+      ],
+      "before": {
+        "foregroundMAE": 4.850032615072901,
+        "fullMAE": 2.4322222222222223,
+        "channelPeak": 178,
+        "worst64": 10.2509765625
+      },
+      "after": {
+        "foregroundMAE": 3.6829632706905286,
+        "fullMAE": 1.846953581871345,
+        "channelPeak": 178,
+        "worst64": 10.2509765625
+      }
+    },
+    {
+      "file": "overlap-normal-17-1190000.png",
+      "unionPixels": 87921,
+      "hashes": [
+        "4a726fdf1f284c7cd23c4b4a984cdd60b01ab660df6ed443d2d7a97d7c72610b",
+        "ee4ddb54a8a440ccbcdc3733cb4345e0c2607227f2a26726cce367398cbf232a",
+        "99d4a11820a6b300e291c0950363bd0fa815249ef3002896180d70505adfcc40"
+      ],
+      "before": {
+        "foregroundMAE": 5.219519037924197,
+        "fullMAE": 2.5159283625730993,
+        "channelPeak": 171,
+        "worst64": 9.361490885416666
+      },
+      "after": {
+        "foregroundMAE": 4.170846555430443,
+        "fullMAE": 2.0104440789473683,
+        "channelPeak": 171,
+        "worst64": 9.361490885416666
+      }
+    },
+    {
+      "file": "overlap-normal-18-1200000.png",
+      "unionPixels": 84452,
+      "hashes": [
+        "baa59992542e5f6fb52a4bbbe7643910484a44bc458d9205e67ce475c5688010",
+        "c8726583c5c89d20911d228b842f40038951982b4377984c3777113ba4506660",
+        "caf33f7bf7988ddb106229125ac703222c5a30ae7dfbcc09db29d426627da6ff"
+      ],
+      "before": {
+        "foregroundMAE": 6.036178341937827,
+        "fullMAE": 2.7947770467836257,
+        "channelPeak": 176,
+        "worst64": 8.938232421875
+      },
+      "after": {
+        "foregroundMAE": 4.823710510112253,
+        "fullMAE": 2.2333991228070174,
+        "channelPeak": 176,
+        "worst64": 8.938232421875
+      }
+    },
+    {
+      "file": "overlap-normal-19-1220000.png",
+      "unionPixels": 79718,
+      "hashes": [
+        "807bd99fffd5bb41b0a75456e7b5b6f6e44f1b7e246577a179d285c4a1875760",
+        "478d5aba33c157d4bbfab342b854a028204d488eddd289aadadc57a6edf871e1",
+        "4b7d043015fbae146705ee8d81757513e5dacd30d72cd1c28ce4ea09f8875d70"
+      ],
+      "before": {
+        "foregroundMAE": 7.474602139207373,
+        "fullMAE": 3.2667781432748537,
+        "channelPeak": 181,
+        "worst64": 10.155924479166666
+      },
+      "after": {
+        "foregroundMAE": 7.38964851100128,
+        "fullMAE": 3.2296491228070177,
+        "channelPeak": 181,
+        "worst64": 12.048095703125
+      }
+    },
+    {
+      "file": "overlap-normal-2-720000.png",
+      "unionPixels": 27801,
+      "hashes": [
+        "9e2537a95d4dceb0ca857f5fa4a85e2e987974edd207ffbbc8a7d8ae6a1e8967",
+        "80e693bc832166f45c8cd1b6c6bfb5de2df9bed43936359570a92152a9866805",
+        "80e693bc832166f45c8cd1b6c6bfb5de2df9bed43936359570a92152a9866805"
+      ],
+      "before": {
+        "foregroundMAE": 1.3831876551203195,
+        "fullMAE": 0.21082236842105262,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 1.3831876551203195,
+        "fullMAE": 0.21082236842105262,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "overlap-normal-20-1300000.png",
+      "unionPixels": 69738,
+      "hashes": [
+        "200d5c37bae56b8de621571638695ad2439e4425725db52ad478d9b0705852a0",
+        "ddd6aa118b397f13128574dd0f2383765c3c9b6f725e579cf2c04c4a213f63f5",
+        "bcb44ccfb23209d24f04372af4019ea4b2f940cb52f3979e1dbbc768b4263070"
+      ],
+      "before": {
+        "foregroundMAE": 18.872618467215386,
+        "fullMAE": 7.215672514619883,
+        "channelPeak": 169,
+        "worst64": 37.697835286458336
+      },
+      "after": {
+        "foregroundMAE": 22.190508283384478,
+        "fullMAE": 8.48421966374269,
+        "channelPeak": 180,
+        "worst64": 38.317301432291664
+      }
+    },
+    {
+      "file": "overlap-normal-21-1367000.png",
+      "unionPixels": 80217,
+      "hashes": [
+        "432086d91cc01bdc7bb56256ae5a4c345499f550ba4c0398391c1000a3341674",
+        "e914748d8a17de3e423d071e0e451c560a7d4e5c4e42c90a2cbd4b2879e318c8",
+        "912b4dc6f3ab3b877449e0d8f01ed32fb8322c6672afa2c0ade8f97a812c5a8c"
+      ],
+      "before": {
+        "foregroundMAE": 11.323867343164999,
+        "fullMAE": 4.9800804093567255,
+        "channelPeak": 175,
+        "worst64": 28.14990234375
+      },
+      "after": {
+        "foregroundMAE": 11.456391205521689,
+        "fullMAE": 5.038362573099415,
+        "channelPeak": 178,
+        "worst64": 25.647623697916668
+      }
+    },
+    {
+      "file": "overlap-normal-22-1377000.png",
+      "unionPixels": 82876,
+      "hashes": [
+        "798ed6a543d5765f848d82a238eeedbbf496c486b6bcaf74739a4c0af6bd9da1",
+        "4261ade6be2c0a9827be3925c2c0dbb911a12811f8ab19bb4231ad94986ac1ba",
+        "816b0ab637052750caa5ced728338a97346f13ccad7f77f187cf2d4b74192bee"
+      ],
+      "before": {
+        "foregroundMAE": 10.727975127499718,
+        "fullMAE": 4.874406067251462,
+        "channelPeak": 176,
+        "worst64": 27.239420572916668
+      },
+      "after": {
+        "foregroundMAE": 10.032478240584327,
+        "fullMAE": 4.558397295321638,
+        "channelPeak": 176,
+        "worst64": 22.027262369791668
+      }
+    },
+    {
+      "file": "overlap-normal-23-1500000.png",
+      "unionPixels": 47472,
+      "hashes": [
+        "37830af6823c8e164f57db03d7859156ef9815ad869eabc58e03db03e0d843fb",
+        "6a13fc983bf35929c3dd5810e14c3736aa1e17dc1d6c5399518c0064e440743f",
+        "554261d0fd7eae01af8717b031fd885ffbd5c2af9259b5ca5e6f300192dd646a"
+      ],
+      "before": {
+        "foregroundMAE": 14.083199921357151,
+        "fullMAE": 3.6653380847953216,
+        "channelPeak": 209,
+        "worst64": 34.755289713541664
+      },
+      "after": {
+        "foregroundMAE": 13.036758510279745,
+        "fullMAE": 3.3929879385964914,
+        "channelPeak": 209,
+        "worst64": 32.256591796875
+      }
+    },
+    {
+      "file": "overlap-normal-24-1800000.png",
+      "unionPixels": 57477,
+      "hashes": [
+        "8a2ba6bff5f1eede3cadb8e4a9d55ca3f2e11af71039814cd2a1c3ecc5f39848",
+        "c8170e044851c23c8bb85c149894a275d555bf4f43952382b8e337cbd050d61a",
+        "c8170e044851c23c8bb85c149894a275d555bf4f43952382b8e337cbd050d61a"
+      ],
+      "before": {
+        "foregroundMAE": 7.671091625055819,
+        "fullMAE": 2.4172770467836258,
+        "channelPeak": 220,
+        "worst64": 20.92236328125
+      },
+      "after": {
+        "foregroundMAE": 7.671091625055819,
+        "fullMAE": 2.4172770467836258,
+        "channelPeak": 220,
+        "worst64": 20.92236328125
+      }
+    },
+    {
+      "file": "overlap-normal-25-2000000.png",
+      "unionPixels": 63877,
+      "hashes": [
+        "d1c94d4fdc3f9ab71b405b283238e8dab2f7ec0c538558c685cb00caaa369d40",
+        "1ba5c9513227da5fa72b47c6ca9a3cbdb7deec8bff9a30fe2e77ac39b4af6323",
+        "1ba5c9513227da5fa72b47c6ca9a3cbdb7deec8bff9a30fe2e77ac39b4af6323"
+      ],
+      "before": {
+        "foregroundMAE": 3.779560718255397,
+        "fullMAE": 1.3236129385964912,
+        "channelPeak": 206,
+        "worst64": 10.101643880208334
+      },
+      "after": {
+        "foregroundMAE": 3.779560718255397,
+        "fullMAE": 1.3236129385964912,
+        "channelPeak": 206,
+        "worst64": 10.101643880208334
+      }
+    },
+    {
+      "file": "overlap-normal-26-2010000.png",
+      "unionPixels": 79073,
+      "hashes": [
+        "db57af137046ce0e2a56e171caee9a29f9d07d4d2d874a4cf8fea09eab4d4b50",
+        "3190eee5474e186bfe28d5b9636ba224f0eef1315468d100787354f6a473efbd",
+        "3190eee5474e186bfe28d5b9636ba224f0eef1315468d100787354f6a473efbd"
+      ],
+      "before": {
+        "foregroundMAE": 3.431166980722455,
+        "fullMAE": 1.4874597953216375,
+        "channelPeak": 206,
+        "worst64": 12.444905598958334
+      },
+      "after": {
+        "foregroundMAE": 3.431166980722455,
+        "fullMAE": 1.4874597953216375,
+        "channelPeak": 206,
+        "worst64": 12.444905598958334
+      }
+    },
+    {
+      "file": "overlap-normal-27-2067000.png",
+      "unionPixels": 100735,
+      "hashes": [
+        "56a2e91b5ec0ed61d14f321b8efc165e9ac5fcec2265164b2de01016d66fac3f",
+        "c43d163801e159449dc7dcba274b41c2e9201ed9badcbe4ace13ce05510338ab",
+        "9ce417d7a994111a4f5f74752706634fed85c3cd99cf774720c6bb85eb56c39b"
+      ],
+      "before": {
+        "foregroundMAE": 3.888608725864893,
+        "fullMAE": 2.1475822368421054,
+        "channelPeak": 183,
+        "worst64": 9.17919921875
+      },
+      "after": {
+        "foregroundMAE": 3.335265796396486,
+        "fullMAE": 1.8419846491228071,
+        "channelPeak": 183,
+        "worst64": 9.17919921875
+      }
+    },
+    {
+      "file": "overlap-normal-28-2077000.png",
+      "unionPixels": 101785,
+      "hashes": [
+        "7d16e1c8019ca4d86c2c2d790f2366a179d4201e11dffeb8bd3ddf96c2eb9c0d",
+        "8b0e524facfa4a21ab5482e65f70e8d55fa3bf5bfe33e55eaf1de4d74fdeb404",
+        "a4e3e1f4c3dc266653c00d926a6a057a37a47580f9fb3a529ae1c78dcd408038"
+      ],
+      "before": {
+        "foregroundMAE": 3.79231386419086,
+        "fullMAE": 2.1162317251461986,
+        "channelPeak": 176,
+        "worst64": 8.937662760416666
+      },
+      "after": {
+        "foregroundMAE": 2.8167575444973885,
+        "fullMAE": 1.5718402777777778,
+        "channelPeak": 176,
+        "worst64": 8.937662760416666
+      }
+    },
+    {
+      "file": "overlap-normal-29-2090000.png",
+      "unionPixels": 104778,
+      "hashes": [
+        "163d7f5f7211c5de324bb1fe83f280b4f401133020f5f7e651aa0249622b3bf5",
+        "f8868a4af420e64a07a9057c907cfdd14da44b9f37e91aef18ec4567db1919b9",
+        "72429cb7385bf8a57a5fe11d75e4209bf178cd74e142fcf6aa9ba225a061d665"
+      ],
+      "before": {
+        "foregroundMAE": 4.721430071198152,
+        "fullMAE": 2.7121820175438596,
+        "channelPeak": 153,
+        "worst64": 11.401611328125
+      },
+      "after": {
+        "foregroundMAE": 3.327393791317516,
+        "fullMAE": 1.911390716374269,
+        "channelPeak": 153,
+        "worst64": 8.489339192708334
+      }
+    },
+    {
+      "file": "overlap-normal-3-780000.png",
+      "unionPixels": 37818,
+      "hashes": [
+        "06b848bec2404f95a9fe02ade2d5d03d3ed2bafa4c05a652962a387de822ddde",
+        "7a341a2c2842e4ee91eb1c434e711774b9c2f1c7b55e9d9e0b31d9424eec7f83",
+        "7a341a2c2842e4ee91eb1c434e711774b9c2f1c7b55e9d9e0b31d9424eec7f83"
+      ],
+      "before": {
+        "foregroundMAE": 1.5466444550214185,
+        "fullMAE": 0.32067434210526313,
+        "channelPeak": 167,
+        "worst64": 2.5891493055555554
+      },
+      "after": {
+        "foregroundMAE": 1.5466444550214185,
+        "fullMAE": 0.32067434210526313,
+        "channelPeak": 167,
+        "worst64": 2.5891493055555554
+      }
+    },
+    {
+      "file": "overlap-normal-30-2100000.png",
+      "unionPixels": 106205,
+      "hashes": [
+        "03b93fd9791996d299defe62d29eca6f962cd6fb90df9df2f2f47acea6fb50db",
+        "e5fa22b2aeff3b1002039b7b5f473cfe000aa41eecc084715ac729e508e15a09",
+        "8846b87b01de33b90fe465e27964e8926ea29f6fc17904d95876f6b2ea3ed28c"
+      ],
+      "before": {
+        "foregroundMAE": 6.505873860301618,
+        "fullMAE": 3.7881377923976607,
+        "channelPeak": 159,
+        "worst64": 12.687418619791666
+      },
+      "after": {
+        "foregroundMAE": 5.261199253016964,
+        "fullMAE": 3.0634082602339183,
+        "channelPeak": 159,
+        "worst64": 9.6552734375
+      }
+    },
+    {
+      "file": "overlap-normal-31-2200000.png",
+      "unionPixels": 74743,
+      "hashes": [
+        "6aeed07fe4b955ae0284687af4182476c127e14bfe64af6fd3f68b0522774d37",
+        "5ef96da4759c2cc7bb75e5724332f0127de921bc4f90eaa3dd155839d89a1728",
+        "9fe5254cd79a934a4a4b59d23122794bf6f96d01a09a196ea3e0fb25d4a8870f"
+      ],
+      "before": {
+        "foregroundMAE": 14.560221915987674,
+        "fullMAE": 5.966418128654971,
+        "channelPeak": 190,
+        "worst64": 28.401692708333332
+      },
+      "after": {
+        "foregroundMAE": 12.524722493522248,
+        "fullMAE": 5.132320906432748,
+        "channelPeak": 190,
+        "worst64": 28.401692708333332
+      }
+    },
+    {
+      "file": "overlap-normal-32-2500000.png",
+      "unionPixels": 52989,
+      "hashes": [
+        "8cbd635b1fe857d6f52b9b9d5d68e532e33b91303efc27a6a55119e3cb852110",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa"
+      ],
+      "before": {
+        "foregroundMAE": 4.513062459504174,
+        "fullMAE": 1.3110891812865497,
+        "channelPeak": 213,
+        "worst64": 7.070393880208333
+      },
+      "after": {
+        "foregroundMAE": 4.513062459504174,
+        "fullMAE": 1.3110891812865497,
+        "channelPeak": 213,
+        "worst64": 7.070393880208333
+      }
+    },
+    {
+      "file": "overlap-normal-33-3000000.png",
+      "unionPixels": 53013,
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa"
+      ],
+      "before": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      },
+      "after": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      }
+    },
+    {
+      "file": "overlap-normal-34-3026400.png",
+      "unionPixels": 53013,
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa"
+      ],
+      "before": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      },
+      "after": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      }
+    },
+    {
+      "file": "overlap-normal-35-3036400.png",
+      "unionPixels": 53013,
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa"
+      ],
+      "before": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      },
+      "after": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      }
+    },
+    {
+      "file": "overlap-normal-36-3380000.png",
+      "unionPixels": 53013,
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa"
+      ],
+      "before": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      },
+      "after": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      }
+    },
+    {
+      "file": "overlap-normal-37-3390000.png",
+      "unionPixels": 53013,
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa"
+      ],
+      "before": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      },
+      "after": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      }
+    },
+    {
+      "file": "overlap-normal-38-3500000.png",
+      "unionPixels": 53013,
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa"
+      ],
+      "before": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      },
+      "after": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      }
+    },
+    {
+      "file": "overlap-normal-39-4000000.png",
+      "unionPixels": 53013,
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa",
+        "04acbab246d1e7af9ddf7194a6a83cc898059b66c0c8c724bf425f5d0eb1a2aa"
+      ],
+      "before": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      },
+      "after": {
+        "foregroundMAE": 1.9171586843478643,
+        "fullMAE": 0.5572057748538012,
+        "channelPeak": 168,
+        "worst64": 3.7443033854166665
+      }
+    },
+    {
+      "file": "overlap-normal-4-800000.png",
+      "unionPixels": 62811,
+      "hashes": [
+        "eb0ff20bbeebd765733a9e4342dc7f425cb983ccfb34a22221cdb9179f4ab21e",
+        "38b1c756f5435ce66f0a2eaf0f434d1fa2fd57ed1655bb112ce599c573ccc2da",
+        "5d84a48ff517da0d3383774bf30a3b92dc663ff49ccf12bd8841cf7720b0a45a"
+      ],
+      "before": {
+        "foregroundMAE": 1.665424845966471,
+        "fullMAE": 0.5735032894736842,
+        "channelPeak": 162,
+        "worst64": 3.1656901041666665
+      },
+      "after": {
+        "foregroundMAE": 1.6649843711027261,
+        "fullMAE": 0.5733516081871345,
+        "channelPeak": 162,
+        "worst64": 3.1656901041666665
+      }
+    },
+    {
+      "file": "overlap-normal-5-847000.png",
+      "unionPixels": 72888,
+      "hashes": [
+        "d0ed50d609617a91a548e34955102d4c61fb7dadd5449c0e57a7d3df4bd599c9",
+        "0fb40f8f2e7b4fde2de86fb13677041ab0672a9ae30e6eb166395a7e36857e42",
+        "7b0d719d5ff973e6805b7dcb81b2097ed8fd039ca692a40ae11eb45e31ff3d5b"
+      ],
+      "before": {
+        "foregroundMAE": 3.330973548457908,
+        "fullMAE": 1.3310745614035089,
+        "channelPeak": 156,
+        "worst64": 8.211181640625
+      },
+      "after": {
+        "foregroundMAE": 3.3303515896535325,
+        "fullMAE": 1.3308260233918128,
+        "channelPeak": 156,
+        "worst64": 8.210774739583334
+      }
+    },
+    {
+      "file": "overlap-normal-6-857000.png",
+      "unionPixels": 73691,
+      "hashes": [
+        "7d0b6e7dcbb6cac23b03dab08aba7a4be511d4bbf7455d692e5f896863d8631e",
+        "ea1343f480899a9f203acd50cb5f340edfe403cfe734ac182557441ed818e108",
+        "45e04dab4773bd5c20b6d50d8d534c3cc68299d6b7450306d7acfe953b9c9467"
+      ],
+      "before": {
+        "foregroundMAE": 3.6902606831227693,
+        "fullMAE": 1.4908936403508772,
+        "channelPeak": 144,
+        "worst64": 11.99267578125
+      },
+      "after": {
+        "foregroundMAE": 3.7242585028474755,
+        "fullMAE": 1.5046290204678363,
+        "channelPeak": 144,
+        "worst64": 12.0
+      }
+    },
+    {
+      "file": "overlap-normal-7-860000.png",
+      "unionPixels": 71965,
+      "hashes": [
+        "9c983a671c3cead8f1585c5e5c67ae2852e2a9c89f46153cd278bde44df82017",
+        "6fdc0b45b15b601be07213d157e7149a8483e4e3b3ddf42fc3f2db164b806121",
+        "656b41ad1bab5b6f652d917999158650c04c7dff3f3a209b1abcd43a4c3ab4f6"
+      ],
+      "before": {
+        "foregroundMAE": 3.5470622293244403,
+        "fullMAE": 1.3994755116959063,
+        "channelPeak": 144,
+        "worst64": 10.572672526041666
+      },
+      "after": {
+        "foregroundMAE": 3.5822552629750573,
+        "fullMAE": 1.4133607456140351,
+        "channelPeak": 144,
+        "worst64": 10.65966796875
+      }
+    },
+    {
+      "file": "overlap-normal-8-900000.png",
+      "unionPixels": 62854,
+      "hashes": [
+        "24859621cee870591592915b36dca2753c953aac55d119e57a2ae70226ff9115",
+        "de31c2b12e59eb3016baa2e0b8eef82c2fb41dc6d7f782d4ab24bc164decb58a",
+        "22c1cfb750d5691ca313441b9e6804187704507dba1f2fe27b4e90911a7ed829"
+      ],
+      "before": {
+        "foregroundMAE": 5.395726604512044,
+        "fullMAE": 1.8593366228070176,
+        "channelPeak": 157,
+        "worst64": 10.909016927083334
+      },
+      "after": {
+        "foregroundMAE": 5.423282527762752,
+        "fullMAE": 1.8688322368421053,
+        "channelPeak": 157,
+        "worst64": 10.921142578125
+      }
+    },
+    {
+      "file": "overlap-normal-9-940000.png",
+      "unionPixels": 57036,
+      "hashes": [
+        "1f642def43cd1d3962d31a175c592cb322c73543b38a45072ab9324f090586a2",
+        "77f97dcb3868bb5828b56854f03695e821b56c078e7951f9ca6a2af3fee5b730",
+        "a3827b945cfcec9a9a2fdf008dbf3c8a755a3cdf97bc4344fa0d63e5dec4b595"
+      ],
+      "before": {
+        "foregroundMAE": 5.181464338312645,
+        "fullMAE": 1.6202302631578946,
+        "channelPeak": 181,
+        "worst64": 9.505615234375
+      },
+      "after": {
+        "foregroundMAE": 5.196326296841761,
+        "fullMAE": 1.624877558479532,
+        "channelPeak": 181,
+        "worst64": 9.505615234375
+      }
+    },
+    {
+      "file": "rapid-calm-0-0.png",
+      "unionPixels": 14258,
+      "hashes": [
+        "795a69250f77ce2a6025b8f03f0fe855092d2f94b56bd6146cd1c3050e193503",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c"
+      ],
+      "before": {
+        "foregroundMAE": 2.3111002010567168,
+        "fullMAE": 0.180656067251462,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 2.3111002010567168,
+        "fullMAE": 0.180656067251462,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "rapid-calm-1-700000.png",
+      "unionPixels": 14254,
+      "hashes": [
+        "0fa3879109773a2d8da4e2369a5b0a782044763ee5b6aa7c76ac4215aad78730",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c"
+      ],
+      "before": {
+        "foregroundMAE": 1.8468733922641598,
+        "fullMAE": 0.14432748538011697,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 1.8468733922641598,
+        "fullMAE": 0.14432748538011697,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "rapid-calm-10-860000.png",
+      "unionPixels": 64960,
+      "hashes": [
+        "940e46ca320075b615aff68d2d4b7ddb078791e143a82eb0689ac47c37e4a2fe",
+        "8c92a2f4972abd86c152c49836695e2cc5e17567b06304ee1f2c8985d22ce3e6",
+        "49855ef8641d09004a779c0a3868cfdf234a839e141b124c725e1ca78bdb4c97"
+      ],
+      "before": {
+        "foregroundMAE": 5.597249589490969,
+        "fullMAE": 1.993406432748538,
+        "channelPeak": 155,
+        "worst64": 10.697428385416666
+      },
+      "after": {
+        "foregroundMAE": 6.864254926108375,
+        "fullMAE": 2.4446381578947367,
+        "channelPeak": 155,
+        "worst64": 10.448404947916666
+      }
+    },
+    {
+      "file": "rapid-calm-11-900000.png",
+      "unionPixels": 68521,
+      "hashes": [
+        "b08ed0453f73fd689476e91a8a72e12ff1b7928c8014b0729111a4b209cf98bd",
+        "014a0a9d7bdcbddbaaa6b7a1ee9fbb1a8f567cbc52e7a42ef9cc5bb8aef5714d",
+        "13b7f9d23eec51f6dab2313ad0de084625caac4cfdd8d53f8165cad12558efda"
+      ],
+      "before": {
+        "foregroundMAE": 7.077115045022694,
+        "fullMAE": 2.6586129385964914,
+        "channelPeak": 146,
+        "worst64": 14.352294921875
+      },
+      "after": {
+        "foregroundMAE": 7.737798144607736,
+        "fullMAE": 2.9068073830409356,
+        "channelPeak": 146,
+        "worst64": 14.212076822916666
+      }
+    },
+    {
+      "file": "rapid-calm-12-927000.png",
+      "unionPixels": 67574,
+      "hashes": [
+        "d19f028d910f1cbe3acfde206330047719cf3430e6b1b7280fd7fcffdba1c762",
+        "a06e3155cae5e6cb89bfa79ac9985e98486d8c0512236ed2c6c1b39d77998fc2",
+        "181b60b3fb5963b4b802a79e2ed8878bb5fedb388055e93fb34dd088a4e8f676"
+      ],
+      "before": {
+        "foregroundMAE": 8.981694142717613,
+        "fullMAE": 3.3274616228070175,
+        "channelPeak": 155,
+        "worst64": 18.053792317708332
+      },
+      "after": {
+        "foregroundMAE": 9.256286934817139,
+        "fullMAE": 3.4291904239766082,
+        "channelPeak": 155,
+        "worst64": 18.406087239583332
+      }
+    },
+    {
+      "file": "rapid-calm-13-937000.png",
+      "unionPixels": 68127,
+      "hashes": [
+        "3e7089c1fed5973452ae82544c33e2fd220cbfdea369dec20214e06027acf10e",
+        "41119314677f8942d98dfa2ed250bbc6d273a2ae052bf9d15002644909e6a1a3",
+        "68558bcc3ab705d83732d5f105202cd68bfdb126fb29be914360b01057eb8714"
+      ],
+      "before": {
+        "foregroundMAE": 8.263561681369598,
+        "fullMAE": 3.0864674707602338,
+        "channelPeak": 141,
+        "worst64": 16.004475911458332
+      },
+      "after": {
+        "foregroundMAE": 8.619847246074732,
+        "fullMAE": 3.2195413011695906,
+        "channelPeak": 141,
+        "worst64": 16.073486328125
+      }
+    },
+    {
+      "file": "rapid-calm-14-940000.png",
+      "unionPixels": 67521,
+      "hashes": [
+        "50eb7f8bafd9a88007d044ea9f3884185cf888b045d0c48c79b9ec495848bac5",
+        "c69c41f8d5d82bc7b253e7bf462bee054bf2db0929cd29e659ab2847338cd12d",
+        "dbc75b2258f1bd7357479140db65dd033a237b0e3cfd7ee359307ed7ffe8d643"
+      ],
+      "before": {
+        "foregroundMAE": 8.460814660130428,
+        "fullMAE": 3.1320321637426902,
+        "channelPeak": 143,
+        "worst64": 16.398274739583332
+      },
+      "after": {
+        "foregroundMAE": 8.433726791171141,
+        "fullMAE": 3.122004751461988,
+        "channelPeak": 153,
+        "worst64": 16.864583333333332
+      }
+    },
+    {
+      "file": "rapid-calm-15-1000000.png",
+      "unionPixels": 73956,
+      "hashes": [
+        "096835136e1ab25946609300be244b5d40c30b505222e987d317e028c91609bb",
+        "d0155dadf69777dfde9e1f15ec7c996c4ee576358bb505dce6df7c1564e7fa3b",
+        "1fbda90a94db7f304f842eb6c9cb97ff70ba4d4e2cdf02c90f2a30c8e2b862e4"
+      ],
+      "before": {
+        "foregroundMAE": 9.386626282293976,
+        "fullMAE": 3.805906432748538,
+        "channelPeak": 157,
+        "worst64": 24.16162109375
+      },
+      "after": {
+        "foregroundMAE": 8.639087205004778,
+        "fullMAE": 3.50280884502924,
+        "channelPeak": 157,
+        "worst64": 23.897623697916668
+      }
+    },
+    {
+      "file": "rapid-calm-16-1007000.png",
+      "unionPixels": 75054,
+      "hashes": [
+        "c60d3f6d1efe9ff0fd1a717d89b6e7f5fc9a75ff83b2699bd30ae52fe59c88ac",
+        "8defb475f0c624dd910a6bc0e2b9b6b6441db5995436c7668cf454508a9d4454",
+        "50991d71f39a1c2f417d76f478d7736c019c866f56e40539295b21d3344bb414"
+      ],
+      "before": {
+        "foregroundMAE": 8.960050985512654,
+        "fullMAE": 3.6868841374269006,
+        "channelPeak": 172,
+        "worst64": 23.695393880208332
+      },
+      "after": {
+        "foregroundMAE": 8.3008278483936,
+        "fullMAE": 3.4156268274853803,
+        "channelPeak": 172,
+        "worst64": 22.749837239583332
+      }
+    },
+    {
+      "file": "rapid-calm-17-1017000.png",
+      "unionPixels": 75310,
+      "hashes": [
+        "6045bf1dfed8d199bf97087b5592edbaf474af40fbd3c0d1a4a21711d1633eb1",
+        "1995a20876f212fa6b32a990ccd645da6b4f6990ec0ec2dff77fc43b9be9507b",
+        "21f62490320836413e083e81ea2e9cc8419908bca51052b2fcb315066f01bbb5"
+      ],
+      "before": {
+        "foregroundMAE": 10.629265701766034,
+        "fullMAE": 4.388651315789474,
+        "channelPeak": 163,
+        "worst64": 26.246012369791668
+      },
+      "after": {
+        "foregroundMAE": 10.165064400478023,
+        "fullMAE": 4.196990131578947,
+        "channelPeak": 163,
+        "worst64": 26.314778645833332
+      }
+    },
+    {
+      "file": "rapid-calm-18-1020000.png",
+      "unionPixels": 74149,
+      "hashes": [
+        "110002158179f3064a3e97d84f6cad62991d1a72719c450b484ed071b3c22ec2",
+        "da700b85e1c5952de406a5dd205d9810403870a875b3d2ddf643e44a982f4937",
+        "073b29a78facdf7761587b0b62d1698d993042b3e704e7769933d8fad91ccd5d"
+      ],
+      "before": {
+        "foregroundMAE": 11.023506722949737,
+        "fullMAE": 4.4812609649122805,
+        "channelPeak": 163,
+        "worst64": 26.414469401041668
+      },
+      "after": {
+        "foregroundMAE": 9.66285002719749,
+        "fullMAE": 3.9281286549707604,
+        "channelPeak": 161,
+        "worst64": 25.851643880208332
+      }
+    },
+    {
+      "file": "rapid-calm-19-1087000.png",
+      "unionPixels": 71288,
+      "hashes": [
+        "7ec2bd45d76eefaea2dbba9a1d4b84d4c864852b531919c019c8c5a9889cade1",
+        "5ada9a187dc79303eb4083cfc8d40ae6f922cbc01c1766226ab8e1e33a7f126b",
+        "e50e3b26f7c4f66004743f9b53fee686c0b8e61a4ae32da8a44342f73c4470db"
+      ],
+      "before": {
+        "foregroundMAE": 10.51993790446265,
+        "fullMAE": 4.111542397660819,
+        "channelPeak": 181,
+        "worst64": 22.369384765625
+      },
+      "after": {
+        "foregroundMAE": 9.539726181124452,
+        "fullMAE": 3.7284429824561403,
+        "channelPeak": 181,
+        "worst64": 21.801188151041668
+      }
+    },
+    {
+      "file": "rapid-calm-2-720000.png",
+      "unionPixels": 46066,
+      "hashes": [
+        "5b167cd7d151e854033610669bed7ef1e290e8f541c5bee327915a69de1f07a4",
+        "363fb1db992421c5e226fc00cb1f5d1de63a2c1ed678a48896acf5a67b662bb9",
+        "363fb1db992421c5e226fc00cb1f5d1de63a2c1ed678a48896acf5a67b662bb9"
+      ],
+      "before": {
+        "foregroundMAE": 1.4369165979247167,
+        "fullMAE": 0.3629002192982456,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 1.4369165979247167,
+        "fullMAE": 0.3629002192982456,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "rapid-calm-20-1097000.png",
+      "unionPixels": 72479,
+      "hashes": [
+        "1758af01ad59a26a3d3d2c9818bddcc83fd1a332acb5ddc642868e0d83af77dc",
+        "083b940fcc7fe7c0cbb05e8d02e39f1f059d0f96528bcb10e60e375441d93e04",
+        "c95ad71ed38e1c44570f16331c289945aff95fb59920a0b8d55f3049f709768f"
+      ],
+      "before": {
+        "foregroundMAE": 10.859697291629299,
+        "fullMAE": 4.3152412280701755,
+        "channelPeak": 160,
+        "worst64": 20.534016927083332
+      },
+      "after": {
+        "foregroundMAE": 10.040158758628936,
+        "fullMAE": 3.9895869883040938,
+        "channelPeak": 160,
+        "worst64": 20.233072916666668
+      }
+    },
+    {
+      "file": "rapid-calm-21-1100000.png",
+      "unionPixels": 71364,
+      "hashes": [
+        "5b3378b95dd1a11934a90a0740434e7f6e75915e00702e03d05d3e98820f8dde",
+        "48f5a27113417eda798e0cdc14d9f66e877c98ce1fdec287a196de458f0cac8f",
+        "7a5853621dd5c0d751744b9fe4c5ab5b3f208e36fe2dc2d52e95f0c4fd810c88"
+      ],
+      "before": {
+        "foregroundMAE": 11.277670347327318,
+        "fullMAE": 4.4123885233918125,
+        "channelPeak": 153,
+        "worst64": 20.230631510416668
+      },
+      "after": {
+        "foregroundMAE": 9.739242942286493,
+        "fullMAE": 3.8104788011695905,
+        "channelPeak": 162,
+        "worst64": 20.64306640625
+      }
+    },
+    {
+      "file": "rapid-calm-22-1167000.png",
+      "unionPixels": 72220,
+      "hashes": [
+        "1e6dee492b09615e42ea667eb0d0a4e0c6c76fd889a20b4500f87fd84f862082",
+        "ca2b70d3146ccec971a06f698354f5ff0ccf369d3afef56e69da873f96b6d0e7",
+        "b6bc8d346c44311df4bfec319e70cc63a72e2932b279e424a68cc88da682ff9e"
+      ],
+      "before": {
+        "foregroundMAE": 11.556410966491276,
+        "fullMAE": 4.575679824561403,
+        "channelPeak": 183,
+        "worst64": 28.555338541666668
+      },
+      "after": {
+        "foregroundMAE": 10.377190067386689,
+        "fullMAE": 4.108775584795322,
+        "channelPeak": 183,
+        "worst64": 27.867350260416668
+      }
+    },
+    {
+      "file": "rapid-calm-23-1177000.png",
+      "unionPixels": 73366,
+      "hashes": [
+        "dd9877b4590f9194547559281964f8815ffd7048454a31131d11ac8ae09ddd44",
+        "48773e8f54c2c2b65e9a0ee5969e5d902b406cddeb38011473fcf6cf71bfdc87",
+        "af561b2c59de507702edb6ebdcc386f913beed6e067c2f0d69c55ae552d3589f"
+      ],
+      "before": {
+        "foregroundMAE": 12.2097838235695,
+        "fullMAE": 4.91109100877193,
+        "channelPeak": 197,
+        "worst64": 25.817057291666668
+      },
+      "after": {
+        "foregroundMAE": 11.229111577569991,
+        "fullMAE": 4.516639254385965,
+        "channelPeak": 191,
+        "worst64": 25.744873046875
+      }
+    },
+    {
+      "file": "rapid-calm-24-1180000.png",
+      "unionPixels": 72300,
+      "hashes": [
+        "003efb4105d22b44f6d73c1f5303ff4e43d8fdf42340ad49b2f4e6104287876d",
+        "1f0d7d7e7052be67df01d44577f7d0868d6328932f3f5178540d76b84dafe3f4",
+        "fdc435ad974bae40576f58a54a77e4cbc0c9530f2d478e00531add189b1888c6"
+      ],
+      "before": {
+        "foregroundMAE": 12.50126786537575,
+        "fullMAE": 4.955272295321637,
+        "channelPeak": 197,
+        "worst64": 26.837320963541668
+      },
+      "after": {
+        "foregroundMAE": 10.673125864453665,
+        "fullMAE": 4.2306304824561405,
+        "channelPeak": 197,
+        "worst64": 26.122884114583332
+      }
+    },
+    {
+      "file": "rapid-calm-25-1200000.png",
+      "unionPixels": 75775,
+      "hashes": [
+        "7912af17a218ee469073f6749683c5dcb5cc1a07ae4d2bee446f250feb3f8a7a",
+        "478d75c599b131001c31e831813db7ccc4272acfdf1f8d74634e9a9c114ab141",
+        "fb1d5694a215eada9fb8d13a589e5256597aa3d539674513b014916d3f1032c4"
+      ],
+      "before": {
+        "foregroundMAE": 11.242670185857254,
+        "fullMAE": 4.670577485380117,
+        "channelPeak": 153,
+        "worst64": 17.746744791666668
+      },
+      "after": {
+        "foregroundMAE": 9.655739579896624,
+        "fullMAE": 4.0113139619883045,
+        "channelPeak": 153,
+        "worst64": 17.714599609375
+      }
+    },
+    {
+      "file": "rapid-calm-26-1247000.png",
+      "unionPixels": 72574,
+      "hashes": [
+        "071f43f4d6ade5212b00f0b8bb2cc6c9a6ee170ece2a4baa071ebd73cf945cee",
+        "71c4c668f9a435ebced2c99893ec25a1987f9dda2993c64a0afea4a9e1ca4220",
+        "bae8a6a1688404ead1de97b2deebf175d874d43aa7037218dd99eadacce29010"
+      ],
+      "before": {
+        "foregroundMAE": 11.882368341279246,
+        "fullMAE": 4.727801535087719,
+        "channelPeak": 183,
+        "worst64": 21.926595052083332
+      },
+      "after": {
+        "foregroundMAE": 10.65649314263143,
+        "fullMAE": 4.240045687134503,
+        "channelPeak": 183,
+        "worst64": 21.437906901041668
+      }
+    },
+    {
+      "file": "rapid-calm-27-1257000.png",
+      "unionPixels": 71131,
+      "hashes": [
+        "07ec9d4c000671817acd0bf479ffa735295532f80acb3dd2fa9a8428d1d5251b",
+        "7fe9526c5ef52bc1590c99ee82b3067aba6395698d2577511f1cc138eb0a7623",
+        "0faee420c7534a7991a982b9271886ac1867fb5f1b119944a898ca16280139d4"
+      ],
+      "before": {
+        "foregroundMAE": 10.997605357251643,
+        "fullMAE": 4.288764619883041,
+        "channelPeak": 162,
+        "worst64": 18.724609375
+      },
+      "after": {
+        "foregroundMAE": 9.944384305014692,
+        "fullMAE": 3.8780372807017542,
+        "channelPeak": 162,
+        "worst64": 18.395100911458332
+      }
+    },
+    {
+      "file": "rapid-calm-28-1260000.png",
+      "unionPixels": 70724,
+      "hashes": [
+        "5abd7ab7365de5b2c063e6a8f901e57be950eadf2c792d79e674953ffd9f34e9",
+        "7c4fe2819f24f004a4cf5faafa94e4b787f82b0fb17ebf915c013041cb3d1e28",
+        "5bdb2a7b8f6c030643a47d32080d1e35b56ff32a84c4cf9f2721a8a765f5978e"
+      ],
+      "before": {
+        "foregroundMAE": 11.14126746224761,
+        "fullMAE": 4.319928728070176,
+        "channelPeak": 154,
+        "worst64": 17.109944661458332
+      },
+      "after": {
+        "foregroundMAE": 9.411185264785175,
+        "fullMAE": 3.6491045321637428,
+        "channelPeak": 165,
+        "worst64": 17.100341796875
+      }
+    },
+    {
+      "file": "rapid-calm-29-1300000.png",
+      "unionPixels": 77939,
+      "hashes": [
+        "09c90500ca766a321905bb02798da37d008b7de29917295f1c1dd628bd97f4b0",
+        "8c8478c16df8fd7dffd2f83eb95af8608490b9a79eb08b48b4578fc106d32110",
+        "c0198d2af667307ff6a8666da88fa1e9e59e4cb0a0836ea15472909a92faed0b"
+      ],
+      "before": {
+        "foregroundMAE": 10.609857281549246,
+        "fullMAE": 4.533561769005848,
+        "channelPeak": 195,
+        "worst64": 20.312744140625
+      },
+      "after": {
+        "foregroundMAE": 9.167776508979244,
+        "fullMAE": 3.9173647660818713,
+        "channelPeak": 186,
+        "worst64": 19.916829427083332
+      }
+    },
+    {
+      "file": "rapid-calm-3-767000.png",
+      "unionPixels": 56301,
+      "hashes": [
+        "f03b68ed266ebf32ac22b45c59c58004ac6e1101aaf727d781c100a09f2d6faf",
+        "50ce8649577f46446a046f446b7a69e1c1549dc11fdf80ab5e9574b5e00e861f",
+        "50ce8649577f46446a046f446b7a69e1c1549dc11fdf80ab5e9574b5e00e861f"
+      ],
+      "before": {
+        "foregroundMAE": 1.4736683185023356,
+        "fullMAE": 0.45487390350877194,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 1.4736683185023356,
+        "fullMAE": 0.45487390350877194,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "rapid-calm-30-1327000.png",
+      "unionPixels": 72120,
+      "hashes": [
+        "141d1e9fb616da80e9c2d4ba4b590cf86be5e9811700944dfbc9cafb067e60bb",
+        "abb80060521c1d588d6788a73cbd524a9baca2ca009f868cab98ac0f7f9e1f17",
+        "6510c7ffcffb7bc056eac59a33c6615ced68a875e5a811e27f72aa23581f49de"
+      ],
+      "before": {
+        "foregroundMAE": 11.041675910519505,
+        "fullMAE": 4.3658205409356725,
+        "channelPeak": 183,
+        "worst64": 25.652262369791668
+      },
+      "after": {
+        "foregroundMAE": 9.843760399334442,
+        "fullMAE": 3.892171052631579,
+        "channelPeak": 183,
+        "worst64": 24.904459635416668
+      }
+    },
+    {
+      "file": "rapid-calm-31-1337000.png",
+      "unionPixels": 71454,
+      "hashes": [
+        "a2d471880f56fe7125da53a6178781f06b0aabd29bd83a3bdefcfb1e8f8be8e3",
+        "4479b97794b8c1ef82ec0f23b55fc39b96d06f46e2333431826c57f7d42ade48",
+        "d2fb6393eb427bf4e47d63d7f6f4dc63e8f4d9c39f2b9932d3ce282276e6f5e8"
+      ],
+      "before": {
+        "foregroundMAE": 11.538085108368088,
+        "fullMAE": 4.519968932748538,
+        "channelPeak": 185,
+        "worst64": 26.105631510416668
+      },
+      "after": {
+        "foregroundMAE": 10.522788553941464,
+        "fullMAE": 4.122233187134503,
+        "channelPeak": 185,
+        "worst64": 25.921223958333332
+      }
+    },
+    {
+      "file": "rapid-calm-32-1500000.png",
+      "unionPixels": 49460,
+      "hashes": [
+        "b6f136da586565a2e0db0cd97c0dac4557db8bf49af64f93e3a44258b01fd1f4",
+        "50a4e01585edcdfc8081f4c5161b4f052e4d949cf66d112cdc151c9417148633",
+        "192d932728156966edbf796267a490359bbe86c07417a1312fce7cd1ee5b95b5"
+      ],
+      "before": {
+        "foregroundMAE": 10.12914139371883,
+        "fullMAE": 2.746641081871345,
+        "channelPeak": 197,
+        "worst64": 11.433675130208334
+      },
+      "after": {
+        "foregroundMAE": 10.3807858201914,
+        "fullMAE": 2.814877558479532,
+        "channelPeak": 197,
+        "worst64": 11.646240234375
+      }
+    },
+    {
+      "file": "rapid-calm-33-1800000.png",
+      "unionPixels": 54570,
+      "hashes": [
+        "5c491722c9f13acd34cf858cd50bc62eff1833690a628d6b4a6e0aec65990916",
+        "064055f78df3e90936b6b023ec348482b0e429c6db446435476c9868d5ff3f53",
+        "064055f78df3e90936b6b023ec348482b0e429c6db446435476c9868d5ff3f53"
+      ],
+      "before": {
+        "foregroundMAE": 2.19438030663979,
+        "fullMAE": 0.6565095029239766,
+        "channelPeak": 169,
+        "worst64": 3.6263834635416665
+      },
+      "after": {
+        "foregroundMAE": 2.19438030663979,
+        "fullMAE": 0.6565095029239766,
+        "channelPeak": 169,
+        "worst64": 3.6263834635416665
+      }
+    },
+    {
+      "file": "rapid-calm-34-2000000.png",
+      "unionPixels": 54565,
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282"
+      ],
+      "before": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      },
+      "after": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      }
+    },
+    {
+      "file": "rapid-calm-35-2200000.png",
+      "unionPixels": 54565,
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282"
+      ],
+      "before": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      },
+      "after": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      }
+    },
+    {
+      "file": "rapid-calm-36-2500000.png",
+      "unionPixels": 54565,
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282"
+      ],
+      "before": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      },
+      "after": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      }
+    },
+    {
+      "file": "rapid-calm-37-3000000.png",
+      "unionPixels": 54565,
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282"
+      ],
+      "before": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      },
+      "after": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      }
+    },
+    {
+      "file": "rapid-calm-38-3500000.png",
+      "unionPixels": 54565,
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282"
+      ],
+      "before": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      },
+      "after": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      }
+    },
+    {
+      "file": "rapid-calm-39-4000000.png",
+      "unionPixels": 54565,
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282",
+        "122a192b8c474347318791c4828dd762bd5aa92b9f3ccf4173ab5055e4b2e282"
+      ],
+      "before": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      },
+      "after": {
+        "foregroundMAE": 1.84326949509759,
+        "fullMAE": 0.5514144736842105,
+        "channelPeak": 168,
+        "worst64": 3.2222493489583335
+      }
+    },
+    {
+      "file": "rapid-calm-4-777000.png",
+      "unionPixels": 56869,
+      "hashes": [
+        "60cf2aaef6342cf2276c8fcf4d22908c6d1f026d330500c14a01c9a11dff9318",
+        "799b14dec7c65149e6f526d600413cd9f3bb9eb4a0f511b409fc52aad21fbeee",
+        "799b14dec7c65149e6f526d600413cd9f3bb9eb4a0f511b409fc52aad21fbeee"
+      ],
+      "before": {
+        "foregroundMAE": 2.225348315133611,
+        "fullMAE": 0.6938230994152047,
+        "channelPeak": 168,
+        "worst64": 3.8802083333333335
+      },
+      "after": {
+        "foregroundMAE": 2.225348315133611,
+        "fullMAE": 0.6938230994152047,
+        "channelPeak": 168,
+        "worst64": 3.8802083333333335
+      }
+    },
+    {
+      "file": "rapid-calm-5-780000.png",
+      "unionPixels": 55276,
+      "hashes": [
+        "93f75e9e8a66635d9e79746f490e40d007c94c5c30ce04e5eeeea6860f01f56e",
+        "094e62c936c36e3cd6bdd0615aaadca2560ed8a146c7e90bcb1773e29d13e856",
+        "094e62c936c36e3cd6bdd0615aaadca2560ed8a146c7e90bcb1773e29d13e856"
+      ],
+      "before": {
+        "foregroundMAE": 2.4879754926791615,
+        "fullMAE": 0.7539766081871345,
+        "channelPeak": 167,
+        "worst64": 4.421875
+      },
+      "after": {
+        "foregroundMAE": 2.4879754926791615,
+        "fullMAE": 0.7539766081871345,
+        "channelPeak": 167,
+        "worst64": 4.421875
+      }
+    },
+    {
+      "file": "rapid-calm-6-780000.png",
+      "unionPixels": 55973,
+      "hashes": [
+        "93f75e9e8a66635d9e79746f490e40d007c94c5c30ce04e5eeeea6860f01f56e",
+        "9439def8de0e5ab01e76aded95ae7611a498b246ba8fecc75f87fa7ddf5c9057",
+        "9439def8de0e5ab01e76aded95ae7611a498b246ba8fecc75f87fa7ddf5c9057"
+      ],
+      "before": {
+        "foregroundMAE": 2.3900392451122268,
+        "fullMAE": 0.7334301900584795,
+        "channelPeak": 167,
+        "worst64": 4.421875
+      },
+      "after": {
+        "foregroundMAE": 2.3900392451122268,
+        "fullMAE": 0.7334301900584795,
+        "channelPeak": 167,
+        "worst64": 4.421875
+      }
+    },
+    {
+      "file": "rapid-calm-7-800000.png",
+      "unionPixels": 64159,
+      "hashes": [
+        "e6e1048fd8ad629c36ed30b1eec52670fe5c86502e933eb16be8682c6389f4d1",
+        "87c52e721c40f2322132e9196efb8bc07bd5ce8f9e4efb8174f6e395cf0f6335",
+        "55ac3762b4f2ac1bf4861feb77d0449c7999e7318748c0de17fade89298ec421"
+      ],
+      "before": {
+        "foregroundMAE": 2.895930422855718,
+        "fullMAE": 1.018640350877193,
+        "channelPeak": 172,
+        "worst64": 4.048502604166667
+      },
+      "after": {
+        "foregroundMAE": 2.8919247494505838,
+        "fullMAE": 1.0172313596491227,
+        "channelPeak": 172,
+        "worst64": 4.045735677083333
+      }
+    },
+    {
+      "file": "rapid-calm-8-847000.png",
+      "unionPixels": 68007,
+      "hashes": [
+        "5b64f58cd8f5f8f156c130788ec1ad4f95f9fdcaebcdc16d5337a38793b45ed5",
+        "7ea939a577c4c537e98289c44c179fad41def7665f02ae824769d265b57ce37c",
+        "a64abd257a098b86528ded4bb45294eb3a10d33295d4178f789a0da7d623cb17"
+      ],
+      "before": {
+        "foregroundMAE": 5.320716985016248,
+        "fullMAE": 1.9838048245614035,
+        "channelPeak": 150,
+        "worst64": 9.7236328125
+      },
+      "after": {
+        "foregroundMAE": 5.284554041005583,
+        "fullMAE": 1.9703216374269006,
+        "channelPeak": 150,
+        "worst64": 9.586018880208334
+      }
+    },
+    {
+      "file": "rapid-calm-9-857000.png",
+      "unionPixels": 65841,
+      "hashes": [
+        "a52bbd5005a0c97e9daf208e25b12e106fdb52f069254c0abbcd871115a9b10b",
+        "198bdedb37b3e07267ede5f05c0dd24dffade9b5a4c1161faadb02eda54cc3e9",
+        "c83d20bec7a1892f24c4b49c74e4f32722041b187cde82c8726bbaab5fc3864d"
+      ],
+      "before": {
+        "foregroundMAE": 5.550001771945546,
+        "fullMAE": 2.0033863304093567,
+        "channelPeak": 155,
+        "worst64": 10.687337239583334
+      },
+      "after": {
+        "foregroundMAE": 5.5280903995990345,
+        "fullMAE": 1.9954769736842106,
+        "channelPeak": 155,
+        "worst64": 10.6748046875
+      }
+    },
+    {
+      "file": "rapid-chaotic-0-0.png",
+      "unionPixels": 13760,
+      "hashes": [
+        "3b2d5168e8ebe65af69e7a6d67bcb0e0c431431e163c008b1b5b19627fc10c5d",
+        "2d56f1d921459be10632f79fb06cba8e7153fae346490609dfbc1a04b3a1881e",
+        "2d56f1d921459be10632f79fb06cba8e7153fae346490609dfbc1a04b3a1881e"
+      ],
+      "before": {
+        "foregroundMAE": 2.3836967054263565,
+        "fullMAE": 0.17982273391812867,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      },
+      "after": {
+        "foregroundMAE": 2.3836967054263565,
+        "fullMAE": 0.17982273391812867,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      }
+    },
+    {
+      "file": "rapid-chaotic-1-700000.png",
+      "unionPixels": 13760,
+      "hashes": [
+        "3b2d5168e8ebe65af69e7a6d67bcb0e0c431431e163c008b1b5b19627fc10c5d",
+        "2d56f1d921459be10632f79fb06cba8e7153fae346490609dfbc1a04b3a1881e",
+        "2d56f1d921459be10632f79fb06cba8e7153fae346490609dfbc1a04b3a1881e"
+      ],
+      "before": {
+        "foregroundMAE": 2.3836967054263565,
+        "fullMAE": 0.17982273391812867,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      },
+      "after": {
+        "foregroundMAE": 2.3836967054263565,
+        "fullMAE": 0.17982273391812867,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      }
+    },
+    {
+      "file": "rapid-chaotic-10-860000.png",
+      "unionPixels": 84445,
+      "hashes": [
+        "c624cf6b95425d9f00a3ec6745d1c27c31a74f0ef2d788ebf1b527a652b74e5b",
+        "e1caae8b765649e16aa621cd8d162eac1fa301a679aea8a0462debf43ea32e48",
+        "282bf42e31937c56f2fdf885bd5a70ec92b9d56f2ea96b186e15975c314fdabc"
+      ],
+      "before": {
+        "foregroundMAE": 6.29537568831784,
+        "fullMAE": 2.9145449561403507,
+        "channelPeak": 163,
+        "worst64": 10.97314453125
+      },
+      "after": {
+        "foregroundMAE": 6.514038723429451,
+        "fullMAE": 3.01577850877193,
+        "channelPeak": 163,
+        "worst64": 11.405680338541666
+      }
+    },
+    {
+      "file": "rapid-chaotic-11-900000.png",
+      "unionPixels": 84844,
+      "hashes": [
+        "362c57c6d5b32ee4bb96d0d075ee451ef29d030293eb1403a5dab88a2e95b6cb",
+        "4002378bbd0852c6410352660db55368b28819e202e75fff6ecd4d46680673b6",
+        "d20b54c2202eb79887ddd5476e31f538e9811d29095cda50d3deb44ccd31907a"
+      ],
+      "before": {
+        "foregroundMAE": 7.632478431002782,
+        "fullMAE": 3.5502741228070174,
+        "channelPeak": 166,
+        "worst64": 17.249674479166668
+      },
+      "after": {
+        "foregroundMAE": 7.801455219775902,
+        "fullMAE": 3.628874269005848,
+        "channelPeak": 166,
+        "worst64": 17.966796875
+      }
+    },
+    {
+      "file": "rapid-chaotic-12-927000.png",
+      "unionPixels": 86203,
+      "hashes": [
+        "f624b7be7dbcb008a1079629682fbcd3ded4e795069fd65e9fe54856e9c4afac",
+        "a71380294975eafa7de2f6a7027d7c027daaa4272c2d36e825944d18f5619767",
+        "03fc3bcded866f653b70d7813ea8eda949fea552726fd425f13fd59752125c78"
+      ],
+      "before": {
+        "foregroundMAE": 8.85749142527909,
+        "fullMAE": 4.186087353801169,
+        "channelPeak": 160,
+        "worst64": 22.60693359375
+      },
+      "after": {
+        "foregroundMAE": 8.819271564408044,
+        "fullMAE": 4.168024488304094,
+        "channelPeak": 160,
+        "worst64": 22.846272786458332
+      }
+    },
+    {
+      "file": "rapid-chaotic-13-937000.png",
+      "unionPixels": 90339,
+      "hashes": [
+        "05bca9bb5a337d71030847ff5a77345b598efe15561c41153970302303957c16",
+        "2949701a026b9f65e9453a058ce8544886d9fd11a4ae5a7a9d5b9918dce49300",
+        "d04c4fbca49829111341b363ee5ebd451fd2711cf62b63be103f64b56367f2bd"
+      ],
+      "before": {
+        "foregroundMAE": 8.270946103011989,
+        "fullMAE": 4.096430921052631,
+        "channelPeak": 151,
+        "worst64": 19.121744791666668
+      },
+      "after": {
+        "foregroundMAE": 8.457808919735662,
+        "fullMAE": 4.1889802631578945,
+        "channelPeak": 151,
+        "worst64": 19.826334635416668
+      }
+    },
+    {
+      "file": "rapid-chaotic-14-940000.png",
+      "unionPixels": 89041,
+      "hashes": [
+        "ba91b2bd25d80ec550ee8ce6e4513fd19c53775346837a2c33c7de689978c2dd",
+        "ea2be4dc33298b0007810225438949e5f6f263c16962137f778c1a522c8e19ad",
+        "958eb967f28615aca66ecdb3657d9b09c54f828b242de58fad09519a83435b39"
+      ],
+      "before": {
+        "foregroundMAE": 8.807534356831871,
+        "fullMAE": 4.299515716374269,
+        "channelPeak": 145,
+        "worst64": 20.202799479166668
+      },
+      "after": {
+        "foregroundMAE": 7.590136379121229,
+        "fullMAE": 3.7052266081871346,
+        "channelPeak": 145,
+        "worst64": 16.819580078125
+      }
+    },
+    {
+      "file": "rapid-chaotic-15-1000000.png",
+      "unionPixels": 94387,
+      "hashes": [
+        "69f97adaa88f029b9a6046f34d36267ab9ffd8dff0fcbb7c4694bf48ad3c3156",
+        "3ac32500dba364624cdae82098149be27e1e1faab6c9c63567a7b2e09c3d2025",
+        "7838d78da40221fae6752f3196eff7555db633826ef0eb3b16e0756ff2db8bc1"
+      ],
+      "before": {
+        "foregroundMAE": 10.382640971037679,
+        "fullMAE": 5.372732090643275,
+        "channelPeak": 162,
+        "worst64": 30.221028645833332
+      },
+      "after": {
+        "foregroundMAE": 9.241177280769598,
+        "fullMAE": 4.782055921052631,
+        "channelPeak": 161,
+        "worst64": 26.621419270833332
+      }
+    },
+    {
+      "file": "rapid-chaotic-16-1007000.png",
+      "unionPixels": 94405,
+      "hashes": [
+        "0421bfef8af9d6cbd9d4fff236808074e6bb11c9e2144e5bb56b76a11a0ddb3e",
+        "f7a11ccf9321b8dd36d6a2d3dadd2e7f2a7ea4718919f081c598fc4ad798f9f6",
+        "df312d30152edc77b1bb4d91c00bb08aba72b083128c22d3ad68133ba6df8a61"
+      ],
+      "before": {
+        "foregroundMAE": 10.300280705471108,
+        "fullMAE": 5.331129385964912,
+        "channelPeak": 162,
+        "worst64": 28.536051432291668
+      },
+      "after": {
+        "foregroundMAE": 9.338145931536111,
+        "fullMAE": 4.833156067251462,
+        "channelPeak": 163,
+        "worst64": 26.704508463541668
+      }
+    },
+    {
+      "file": "rapid-chaotic-17-1017000.png",
+      "unionPixels": 97521,
+      "hashes": [
+        "1cd91ef3cc5d97c6ad69073c56e9ea9d2d5bccd1ceb29594de9ea2f6fb1ca8ef",
+        "05d30b7dfa9ce515182f0f3d26dec4550a8ad8ded8fc766386b578b9e56ca95c",
+        "779e20e1ef5eb553973c921ff1b938ef9fb8815ad456277ca88541c5dcecc961"
+      ],
+      "before": {
+        "foregroundMAE": 11.037602157484029,
+        "fullMAE": 5.901304824561404,
+        "channelPeak": 162,
+        "worst64": 22.907633463541668
+      },
+      "after": {
+        "foregroundMAE": 10.36130679545944,
+        "fullMAE": 5.539720394736842,
+        "channelPeak": 162,
+        "worst64": 22.581136067708332
+      }
+    },
+    {
+      "file": "rapid-chaotic-18-1020000.png",
+      "unionPixels": 95602,
+      "hashes": [
+        "fa91826b7204e331d25d772604e65c4b9f3bf415299f0b7d8f8a8becf02046fd",
+        "5070282c39963ada06c7b84582aa330cc6a25ad8c87d1120f0cc313ff3652ca0",
+        "0f5dfc83b5a270de94426ba68f2a4e2bdc34bd1fb53d07f6ececfb0ee5567de6"
+      ],
+      "before": {
+        "foregroundMAE": 11.525543398673667,
+        "fullMAE": 6.04092653508772,
+        "channelPeak": 163,
+        "worst64": 23.2685546875
+      },
+      "after": {
+        "foregroundMAE": 10.498469348618928,
+        "fullMAE": 5.502602339181286,
+        "channelPeak": 163,
+        "worst64": 23.647542317708332
+      }
+    },
+    {
+      "file": "rapid-chaotic-19-1087000.png",
+      "unionPixels": 99274,
+      "hashes": [
+        "9433c894b88f8a26869bfd1c8ec1825999ee57a2f8717d2c649001d39add039b",
+        "638184c0dfd409e29cd647194707bc606b2631ce8292eab8cf5adf4f042c9054",
+        "5bce939371d37cb09c8a2207b6c0187fe4438ba752abf00c90648bb3c637ffd3"
+      ],
+      "before": {
+        "foregroundMAE": 11.336231037331023,
+        "fullMAE": 6.169917763157895,
+        "channelPeak": 136,
+        "worst64": 22.267578125
+      },
+      "after": {
+        "foregroundMAE": 10.280657573987147,
+        "fullMAE": 5.595405701754386,
+        "channelPeak": 137,
+        "worst64": 22.677978515625
+      }
+    },
+    {
+      "file": "rapid-chaotic-2-720000.png",
+      "unionPixels": 56498,
+      "hashes": [
+        "deed5d8f1b8b554f31b5441c4828ad258af53055dc42725f90008d26c73398ce",
+        "e69ae91aae3babe088f2c0550c62013ead02c766847c45a216b81c443c1a3ae5",
+        "e69ae91aae3babe088f2c0550c62013ead02c766847c45a216b81c443c1a3ae5"
+      ],
+      "before": {
+        "foregroundMAE": 1.1433797066562827,
+        "fullMAE": 0.3541593567251462,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      },
+      "after": {
+        "foregroundMAE": 1.1433797066562827,
+        "fullMAE": 0.3541593567251462,
+        "channelPeak": 168,
+        "worst64": 2.52734375
+      }
+    },
+    {
+      "file": "rapid-chaotic-20-1097000.png",
+      "unionPixels": 100992,
+      "hashes": [
+        "b93780a127e39a9ff21f150f261a7b337b699ca8b30360697193cbaddd90ad60",
+        "35d60a8f9d10ddb4b9560fa5cf02ce1ddd1fecab54ac52aed2ba4fde6cf9582b",
+        "60fc4232362192d7b3c71bb5489fd8c9ab7e45dab499673a153c9eea7f4e7e25"
+      ],
+      "before": {
+        "foregroundMAE": 11.850618530840727,
+        "fullMAE": 6.561500365497076,
+        "channelPeak": 161,
+        "worst64": 23.215413411458332
+      },
+      "after": {
+        "foregroundMAE": 10.924941249471905,
+        "fullMAE": 6.048967470760234,
+        "channelPeak": 161,
+        "worst64": 22.645426432291668
+      }
+    },
+    {
+      "file": "rapid-chaotic-21-1100000.png",
+      "unionPixels": 98948,
+      "hashes": [
+        "2dc35e3f8308aece5b6c1df4c5d7e6a0aec5fef92d90a3bc282621c4cff45257",
+        "3b8b2d4b4d2287b6e08982f917c9d1b806438b9f5ad0ea4af502fa9d08d6c761",
+        "4093ec8bbecf995292fdbee4807e22317afa61f39e03571c1050e2cfcbfe93a6"
+      ],
+      "before": {
+        "foregroundMAE": 12.321647060408834,
+        "fullMAE": 6.6842233187134505,
+        "channelPeak": 161,
+        "worst64": 23.161376953125
+      },
+      "after": {
+        "foregroundMAE": 10.90518925765722,
+        "fullMAE": 5.915826023391813,
+        "channelPeak": 161,
+        "worst64": 21.981363932291668
+      }
+    },
+    {
+      "file": "rapid-chaotic-22-1167000.png",
+      "unionPixels": 97384,
+      "hashes": [
+        "cb2f9fd0dca29ef3c8c2370cc46ed3a610a0fc9fda7f7ee5a2c8f00378c0eac2",
+        "33332db19285154dae54fd4edef6763a8bf1da314cbd7cc4b6e35ec9b7b032d3",
+        "668df96f560faa23dc63f7788e25ace99fbccf8cd3588786ee77ad82f1337bb2"
+      ],
+      "before": {
+        "foregroundMAE": 13.120961006599304,
+        "fullMAE": 7.005327119883041,
+        "channelPeak": 166,
+        "worst64": 24.546223958333332
+      },
+      "after": {
+        "foregroundMAE": 11.808298420000547,
+        "fullMAE": 6.304491959064327,
+        "channelPeak": 167,
+        "worst64": 24.767740885416668
+      }
+    },
+    {
+      "file": "rapid-chaotic-23-1177000.png",
+      "unionPixels": 101241,
+      "hashes": [
+        "435a1dbeabcbd0f1c5bf1e8a96e503f3d343e25c99a519f715c749e3bd9acfae",
+        "06da9de1e6503e5d4c79314db86ebd0d05fec3d0ecb9c347071c786bd743380d",
+        "53fe7f7f344b3700910acccdf165b82dc7910b5b31306ac5794a87af0fcf2531"
+      ],
+      "before": {
+        "foregroundMAE": 12.954287294673106,
+        "fullMAE": 7.190268640350877,
+        "channelPeak": 177,
+        "worst64": 29.791910807291668
+      },
+      "after": {
+        "foregroundMAE": 11.844937657009842,
+        "fullMAE": 6.57452485380117,
+        "channelPeak": 177,
+        "worst64": 29.157307942708332
+      }
+    },
+    {
+      "file": "rapid-chaotic-24-1180000.png",
+      "unionPixels": 99286,
+      "hashes": [
+        "acf0172123603c35d32436cac51faa4f4e535b1dcec7fa0f696d3232b4ea4c68",
+        "993075d44d2785834e1a939d8313dcbb3ea808e9d72bb7d60c491c84f3cf4d79",
+        "4beac43d25b3bbc5cdcf401b0db240a52494d692ecaacdd36a5ed8d403fda9c8"
+      ],
+      "before": {
+        "foregroundMAE": 13.011223468901289,
+        "fullMAE": 7.082414108187135,
+        "channelPeak": 148,
+        "worst64": 26.914876302083332
+      },
+      "after": {
+        "foregroundMAE": 11.502212463657179,
+        "fullMAE": 6.261012426900585,
+        "channelPeak": 141,
+        "worst64": 27.2333984375
+      }
+    },
+    {
+      "file": "rapid-chaotic-25-1200000.png",
+      "unionPixels": 97855,
+      "hashes": [
+        "33e469f381c8de6c83dc0d35da1305ffca863b8a11c4d424ff6cc591b2bb6a8d",
+        "4e9fb10443f5b870cbbcd9dcbd239439be3d822b5c059140a97b588de2ac5449",
+        "36fdd5e0a6fb32d59574fdf6aa14d6e778ece52b46b995de67767b2935b56d38"
+      ],
+      "before": {
+        "foregroundMAE": 14.172772639790166,
+        "fullMAE": 7.603490497076024,
+        "channelPeak": 154,
+        "worst64": 24.421793619791668
+      },
+      "after": {
+        "foregroundMAE": 12.537553863709912,
+        "fullMAE": 6.726218932748538,
+        "channelPeak": 154,
+        "worst64": 21.114176432291668
+      }
+    },
+    {
+      "file": "rapid-chaotic-26-1247000.png",
+      "unionPixels": 96218,
+      "hashes": [
+        "3267b6158848d1003cb119fbe2310b9c01dd36e52f3911301baffd63ecab3ae7",
+        "3aa55d13b025f531977f4135998cb1386e0390558038a70276baed2e832c16da",
+        "268ca12cba5b5044c936ef01d65aeee785284a3e868bc0b4087e5093660d0a34"
+      ],
+      "before": {
+        "foregroundMAE": 12.706226139253223,
+        "fullMAE": 6.702673611111111,
+        "channelPeak": 164,
+        "worst64": 22.244873046875
+      },
+      "after": {
+        "foregroundMAE": 11.303255801062864,
+        "fullMAE": 5.962591374269006,
+        "channelPeak": 164,
+        "worst64": 21.766276041666668
+      }
+    },
+    {
+      "file": "rapid-chaotic-27-1257000.png",
+      "unionPixels": 94029,
+      "hashes": [
+        "1adb596b092388e2e884e3520a5e6aa105fe7211c1edb73c2017213df95a6e3e",
+        "47534ce715f5098893baa81b76206a026cb311b4e9938405e0f244dd82dd0203",
+        "71afaee568cf6af4cadf068dbee77632529fa04510e072be3967891fbe99e11c"
+      ],
+      "before": {
+        "foregroundMAE": 12.470340710490026,
+        "fullMAE": 6.428583698830409,
+        "channelPeak": 150,
+        "worst64": 20.842529296875
+      },
+      "after": {
+        "foregroundMAE": 11.136422451229585,
+        "fullMAE": 5.7409356725146194,
+        "channelPeak": 150,
+        "worst64": 20.255615234375
+      }
+    },
+    {
+      "file": "rapid-chaotic-28-1260000.png",
+      "unionPixels": 92321,
+      "hashes": [
+        "f0af318f43a9148df2bb3cc3e3846fb07b423780793900eb192a534e2ff81b76",
+        "864e61e43366ddc94e2ab7d91a44405a98a417e821f3bc97dacade1a9d4f0c0d",
+        "fbbe99b1a22dd8357d44ae48b2da2b4f9eac8572b4aa5abf2daa10c71d8dcb7f"
+      ],
+      "before": {
+        "foregroundMAE": 12.824536129374682,
+        "fullMAE": 6.491085526315789,
+        "channelPeak": 146,
+        "worst64": 20.806803385416668
+      },
+      "after": {
+        "foregroundMAE": 11.285334142105624,
+        "fullMAE": 5.71202485380117,
+        "channelPeak": 173,
+        "worst64": 21.130696614583332
+      }
+    },
+    {
+      "file": "rapid-chaotic-29-1300000.png",
+      "unionPixels": 94409,
+      "hashes": [
+        "da5699116e8a6b9e428bbdd19f08950ddae3cf1c0cbf42ebfc9455f37cd92e72",
+        "bdf959327f57c6824f0f93a1370572789dae56311752e09a092ce9a7dbcad6bc",
+        "aec94a6fd70ac2b8053c507f2e08be20e020e9ba758f1210804563ee40b59850"
+      ],
+      "before": {
+        "foregroundMAE": 13.151955851666685,
+        "fullMAE": 6.8073629385964916,
+        "channelPeak": 169,
+        "worst64": 30.38818359375
+      },
+      "after": {
+        "foregroundMAE": 11.436829822015557,
+        "fullMAE": 5.919625365497076,
+        "channelPeak": 169,
+        "worst64": 26.71044921875
+      }
+    },
+    {
+      "file": "rapid-chaotic-3-767000.png",
+      "unionPixels": 75411,
+      "hashes": [
+        "cfcee0560c51445141b7e00745cce7851b1eb983edd18c8597ee7e2906550ef1",
+        "a3246db6d373d03dc08a95b4e944295dc2d9dc767be7d7e7080cdd6a30da087c",
+        "a3246db6d373d03dc08a95b4e944295dc2d9dc767be7d7e7080cdd6a30da087c"
+      ],
+      "before": {
+        "foregroundMAE": 1.268210208059832,
+        "fullMAE": 0.5243256578947368,
+        "channelPeak": 168,
+        "worst64": 2.5442708333333335
+      },
+      "after": {
+        "foregroundMAE": 1.268210208059832,
+        "fullMAE": 0.5243256578947368,
+        "channelPeak": 168,
+        "worst64": 2.5442708333333335
+      }
+    },
+    {
+      "file": "rapid-chaotic-30-1327000.png",
+      "unionPixels": 97919,
+      "hashes": [
+        "071b9c8d6fe9ec14419032e6d603f05034b90622e3f93855bac8803b1c758cb9",
+        "2fbe3d9cb565400206f41111d81d063d31182855a3efbd1419e36f9adf5dd5f7",
+        "d3651bd1baa790415ac3d5d2231dc735fde8cfa7993b9b0d105e3799188b11c7"
+      ],
+      "before": {
+        "foregroundMAE": 12.320411088076199,
+        "fullMAE": 6.614047880116959,
+        "channelPeak": 139,
+        "worst64": 22.9833984375
+      },
+      "after": {
+        "foregroundMAE": 11.09901721490892,
+        "fullMAE": 5.958358918128655,
+        "channelPeak": 139,
+        "worst64": 23.583333333333332
+      }
+    },
+    {
+      "file": "rapid-chaotic-31-1337000.png",
+      "unionPixels": 96386,
+      "hashes": [
+        "470c8c359fd69d2683c8250c8d1492d14b650ff4ca6d68cd685ffce4e07c96ed",
+        "763247140a12f5b821fb6670afc1f9c7112941054f7c69404d91d56a908ce8ba",
+        "75ccda47a2f05e7f5730561fea5d0af39a2da20ad610b35c4f0551bfa0c12517"
+      ],
+      "before": {
+        "foregroundMAE": 11.384983296329342,
+        "fullMAE": 6.016189692982456,
+        "channelPeak": 161,
+        "worst64": 21.606689453125
+      },
+      "after": {
+        "foregroundMAE": 10.230289322792384,
+        "fullMAE": 5.406012426900585,
+        "channelPeak": 161,
+        "worst64": 20.185953776041668
+      }
+    },
+    {
+      "file": "rapid-chaotic-32-1500000.png",
+      "unionPixels": 50629,
+      "hashes": [
+        "18596fafb352eafcc2c08bf81903c1c4f63a6661b78712a9c39cec4958232572",
+        "b936b37f45b3075525c7945cc57fe10d84380005c020285b60070d45ad32aba8",
+        "0bfa6ee66fdd26b5f6a1f35609d7a1295036bb3eb2b63c7e1d9f7e1ce06cdb95"
+      ],
+      "before": {
+        "foregroundMAE": 13.303073995799508,
+        "fullMAE": 3.6925511695906432,
+        "channelPeak": 205,
+        "worst64": 18.447428385416668
+      },
+      "after": {
+        "foregroundMAE": 12.641062105380975,
+        "fullMAE": 3.5087956871345027,
+        "channelPeak": 205,
+        "worst64": 17.078938802083332
+      }
+    },
+    {
+      "file": "rapid-chaotic-33-1800000.png",
+      "unionPixels": 50732,
+      "hashes": [
+        "a8a7318f363d7b24617be506541d68709f9b1133cca26ffe9733a325f6ca8b20",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7"
+      ],
+      "before": {
+        "foregroundMAE": 12.191391363767773,
+        "fullMAE": 3.390864400584795,
+        "channelPeak": 224,
+        "worst64": 16.945882161458332
+      },
+      "after": {
+        "foregroundMAE": 12.191391363767773,
+        "fullMAE": 3.390864400584795,
+        "channelPeak": 224,
+        "worst64": 16.945882161458332
+      }
+    },
+    {
+      "file": "rapid-chaotic-34-2000000.png",
+      "unionPixels": 50315,
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7"
+      ],
+      "before": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      },
+      "after": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      }
+    },
+    {
+      "file": "rapid-chaotic-35-2200000.png",
+      "unionPixels": 50315,
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7"
+      ],
+      "before": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      },
+      "after": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      }
+    },
+    {
+      "file": "rapid-chaotic-36-2500000.png",
+      "unionPixels": 50315,
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7"
+      ],
+      "before": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      },
+      "after": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      }
+    },
+    {
+      "file": "rapid-chaotic-37-3000000.png",
+      "unionPixels": 50315,
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7"
+      ],
+      "before": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      },
+      "after": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      }
+    },
+    {
+      "file": "rapid-chaotic-38-3500000.png",
+      "unionPixels": 50315,
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7"
+      ],
+      "before": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      },
+      "after": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      }
+    },
+    {
+      "file": "rapid-chaotic-39-4000000.png",
+      "unionPixels": 50315,
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7",
+        "1f3182c7400729407b01ae9bf34f961def230785eeb8a0683d5da2381e3ae8e7"
+      ],
+      "before": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      },
+      "after": {
+        "foregroundMAE": 2.037556725959787,
+        "fullMAE": 0.5620595760233918,
+        "channelPeak": 168,
+        "worst64": 2.558246527777778
+      }
+    },
+    {
+      "file": "rapid-chaotic-4-777000.png",
+      "unionPixels": 77412,
+      "hashes": [
+        "c394207b7df7e811bbc648ed4f43f0d82641d34eda96433aa9ff600afa7e4bd1",
+        "e5b6b9cffe8ed6940310bddd785e3e433df728435a8a1ebba15932329aba0380",
+        "e5b6b9cffe8ed6940310bddd785e3e433df728435a8a1ebba15932329aba0380"
+      ],
+      "before": {
+        "foregroundMAE": 2.4226304276684063,
+        "fullMAE": 1.0281834795321638,
+        "channelPeak": 168,
+        "worst64": 4.64306640625
+      },
+      "after": {
+        "foregroundMAE": 2.4226304276684063,
+        "fullMAE": 1.0281834795321638,
+        "channelPeak": 168,
+        "worst64": 4.64306640625
+      }
+    },
+    {
+      "file": "rapid-chaotic-5-780000.png",
+      "unionPixels": 74920,
+      "hashes": [
+        "cfdada3322446a706c921abcd8ffeb9babefa4c525d2bf8b9b0fdecc46e2a791",
+        "b2e6f2b02dda62a988b7bbf68696488c47a88369c0a6aa27bd66b33b295723b3",
+        "b2e6f2b02dda62a988b7bbf68696488c47a88369c0a6aa27bd66b33b295723b3"
+      ],
+      "before": {
+        "foregroundMAE": 2.297806549208044,
+        "fullMAE": 0.9438139619883041,
+        "channelPeak": 167,
+        "worst64": 4.618408203125
+      },
+      "after": {
+        "foregroundMAE": 2.297806549208044,
+        "fullMAE": 0.9438139619883041,
+        "channelPeak": 167,
+        "worst64": 4.618408203125
+      }
+    },
+    {
+      "file": "rapid-chaotic-6-780000.png",
+      "unionPixels": 75592,
+      "hashes": [
+        "cfdada3322446a706c921abcd8ffeb9babefa4c525d2bf8b9b0fdecc46e2a791",
+        "de940cc9f5f0ed5c6fd655f5d166b2b77bfadd6a0518bfff7fc61f9299bec5ce",
+        "de940cc9f5f0ed5c6fd655f5d166b2b77bfadd6a0518bfff7fc61f9299bec5ce"
+      ],
+      "before": {
+        "foregroundMAE": 2.228375136698769,
+        "fullMAE": 0.9235051169590643,
+        "channelPeak": 167,
+        "worst64": 4.618408203125
+      },
+      "after": {
+        "foregroundMAE": 2.228375136698769,
+        "fullMAE": 0.9235051169590643,
+        "channelPeak": 167,
+        "worst64": 4.618408203125
+      }
+    },
+    {
+      "file": "rapid-chaotic-7-800000.png",
+      "unionPixels": 87430,
+      "hashes": [
+        "342479dcf208f7dad31c7fd4c2152357c07920f2ecb32040bf18959f2874ce03",
+        "881454182069d484c6b12f194135cade93a1e10a4861bd07e476f8a029fb9849",
+        "1412b898fe8e15058d27ff517900062ba9f7c04a38981a852699f9e198247120"
+      ],
+      "before": {
+        "foregroundMAE": 3.491490335125243,
+        "fullMAE": 1.673580043859649,
+        "channelPeak": 166,
+        "worst64": 8.445475260416666
+      },
+      "after": {
+        "foregroundMAE": 3.4797857333485838,
+        "fullMAE": 1.66796966374269,
+        "channelPeak": 166,
+        "worst64": 8.429850260416666
+      }
+    },
+    {
+      "file": "rapid-chaotic-8-847000.png",
+      "unionPixels": 90160,
+      "hashes": [
+        "f69a8253d6ba0cee34569a0af3e90248b672f4b3b65aed5a9845b3cffc7f5c16",
+        "0ed9a889190166c5371dc4f8004b6260eebb5ad61d0925c7c4011b54e6cac40c",
+        "986ac49b09c3b3a05594c56d0ad027b73f44afd2566b5c84bc146752a3250b3f"
+      ],
+      "before": {
+        "foregroundMAE": 5.737377994676131,
+        "fullMAE": 2.8359758771929826,
+        "channelPeak": 158,
+        "worst64": 11.766438802083334
+      },
+      "after": {
+        "foregroundMAE": 5.649164448388051,
+        "fullMAE": 2.792372076023392,
+        "channelPeak": 158,
+        "worst64": 11.692301432291666
+      }
+    },
+    {
+      "file": "rapid-chaotic-9-857000.png",
+      "unionPixels": 86387,
+      "hashes": [
+        "d3e4a5099732a41a7ca5107dfd35da97be121697847989d58ade6011610a9e13",
+        "f64fe95e188c920029215a44c554ef2bc5c59acc5436684d898fa501fc74306a",
+        "c583e0d9c272f484e1165e06b49a6b9a7a30635ba620dae5b028e85816eccabc"
+      ],
+      "before": {
+        "foregroundMAE": 5.609181165375963,
+        "fullMAE": 2.656580774853801,
+        "channelPeak": 165,
+        "worst64": 10.700358072916666
+      },
+      "after": {
+        "foregroundMAE": 5.49916847056463,
+        "fullMAE": 2.6044773391812868,
+        "channelPeak": 165,
+        "worst64": 10.603922526041666
+      }
+    },
+    {
+      "file": "rapid-normal-0-0.png",
+      "unionPixels": 14258,
+      "hashes": [
+        "795a69250f77ce2a6025b8f03f0fe855092d2f94b56bd6146cd1c3050e193503",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c"
+      ],
+      "before": {
+        "foregroundMAE": 2.3111002010567168,
+        "fullMAE": 0.180656067251462,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 2.3111002010567168,
+        "fullMAE": 0.180656067251462,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "rapid-normal-1-700000.png",
+      "unionPixels": 14254,
+      "hashes": [
+        "0fa3879109773a2d8da4e2369a5b0a782044763ee5b6aa7c76ac4215aad78730",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c",
+        "a485918a694bfc3cdad5bd12befe2bdb34f8aee540358697eec1a0bf27c1fd6c"
+      ],
+      "before": {
+        "foregroundMAE": 1.8468733922641598,
+        "fullMAE": 0.14432748538011697,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 1.8468733922641598,
+        "fullMAE": 0.14432748538011697,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "rapid-normal-10-860000.png",
+      "unionPixels": 77018,
+      "hashes": [
+        "f55451055647b5f532a3ec40dedbff12665e1099d9a15145f6e3588674519e9a",
+        "9bb18c94c9445720c825aa201f1c64420ea3c3bac711c795214527475a44aaf6",
+        "257ea987d4e1fb612e4ccfa429c6ae2ae8f401a24cfef252f6b05a69b9bb3356"
+      ],
+      "before": {
+        "foregroundMAE": 7.070792974802427,
+        "fullMAE": 2.98562682748538,
+        "channelPeak": 164,
+        "worst64": 13.618896484375
+      },
+      "after": {
+        "foregroundMAE": 7.831346784734304,
+        "fullMAE": 3.3067690058479533,
+        "channelPeak": 164,
+        "worst64": 14.714762369791666
+      }
+    },
+    {
+      "file": "rapid-normal-11-900000.png",
+      "unionPixels": 79791,
+      "hashes": [
+        "8b73555379580e81e6c6245d86b0828d62cd3e2ac6830ee2b4479a0af0dd5f73",
+        "36caab1e5cd421d95f744ff9bcf96433233f91a54d4c66bc5cd53d024ce4232c",
+        "42c58be9cebeebcad9fc0ffd425d205b16a42ce3ab0c33f82ddabfb5f08c7607"
+      ],
+      "before": {
+        "foregroundMAE": 7.881736870908582,
+        "fullMAE": 3.447870979532164,
+        "channelPeak": 157,
+        "worst64": 14.66357421875
+      },
+      "after": {
+        "foregroundMAE": 8.21749320098758,
+        "fullMAE": 3.594747807017544,
+        "channelPeak": 157,
+        "worst64": 14.445231119791666
+      }
+    },
+    {
+      "file": "rapid-normal-12-927000.png",
+      "unionPixels": 78438,
+      "hashes": [
+        "2f02dbb341455a1434f2929f5486e23e6a002d0b9d0fab0f9270e42f5ab7e571",
+        "5bcadf20edd771ba658acbe879bf99e59c060b1da76485e61c4ab2d8df9a4b99",
+        "f862a7b0168c5c6a65317a5b6d257486aac0a1a390a902d7a661ba5baec80d83"
+      ],
+      "before": {
+        "foregroundMAE": 8.518116219179479,
+        "fullMAE": 3.6630701754385964,
+        "channelPeak": 162,
+        "worst64": 15.524820963541666
+      },
+      "after": {
+        "foregroundMAE": 8.633685203600296,
+        "fullMAE": 3.7127686403508773,
+        "channelPeak": 162,
+        "worst64": 15.576009114583334
+      }
+    },
+    {
+      "file": "rapid-normal-13-937000.png",
+      "unionPixels": 81773,
+      "hashes": [
+        "e1cb6a10d032efda4c194fec63e3cb4180559a7fbec500b6ca2795f5fb709195",
+        "ce05cb5105f805f10f325771b27aba9f76577041aa9f200fdb551e8ecd9e02cb",
+        "8b24cc48eb32a0c4e6131d6fce560f7b32de56830b6e24491d1d790b9bcac50b"
+      ],
+      "before": {
+        "foregroundMAE": 8.853182998463225,
+        "fullMAE": 3.969031432748538,
+        "channelPeak": 165,
+        "worst64": 16.219889322916668
+      },
+      "after": {
+        "foregroundMAE": 9.064658668916799,
+        "fullMAE": 4.063839546783626,
+        "channelPeak": 165,
+        "worst64": 16.3046875
+      }
+    },
+    {
+      "file": "rapid-normal-14-940000.png",
+      "unionPixels": 80416,
+      "hashes": [
+        "f659fda3bb3e7750dc2acf52b44c0d757e326a88a24e1400312665209748171c",
+        "ae9426d0a6baf5b18579f3226e072b0b6c1816440ba56aeac7b5f92667cc7fc6",
+        "60c702a0b43ef3fc348d5bc02a93fb2c1ca2f6565974a5bb0ae22190bbb19ae2"
+      ],
+      "before": {
+        "foregroundMAE": 10.34552410797188,
+        "fullMAE": 4.561105628654971,
+        "channelPeak": 168,
+        "worst64": 17.7529296875
+      },
+      "after": {
+        "foregroundMAE": 8.961806937259583,
+        "fullMAE": 3.9510562865497074,
+        "channelPeak": 167,
+        "worst64": 16.3681640625
+      }
+    },
+    {
+      "file": "rapid-normal-15-1000000.png",
+      "unionPixels": 86674,
+      "hashes": [
+        "adad4c7af723f08475186262ed96b2136619e2abf77788bc61eb94ecdb11893a",
+        "617bf49ab34f2208e26e7370eed673f7898731a113fbd50af1dcd2d3531acd22",
+        "7820fdd068cc66744323038f7a951d908239167c35e019f5ba13aff7afe158e0"
+      ],
+      "before": {
+        "foregroundMAE": 9.77533439478198,
+        "fullMAE": 4.645105994152047,
+        "channelPeak": 151,
+        "worst64": 21.113199869791668
+      },
+      "after": {
+        "foregroundMAE": 8.981686165016805,
+        "fullMAE": 4.267975146198831,
+        "channelPeak": 150,
+        "worst64": 20.479410807291668
+      }
+    },
+    {
+      "file": "rapid-normal-16-1007000.png",
+      "unionPixels": 86294,
+      "hashes": [
+        "35e307c6572eced2a831ac126065f6b92dd2ff2464d7d15f2c6204b333cc4c38",
+        "5b2630fec60d329f25b6c6b4ab08ae557b2f2bb88616ee99a600c4222f9543fd",
+        "b569bed695b753cd6a3fc613a658d783472049b29b451699fddcf60de42da0b2"
+      ],
+      "before": {
+        "foregroundMAE": 10.269114886318864,
+        "fullMAE": 4.858349780701754,
+        "channelPeak": 151,
+        "worst64": 23.3359375
+      },
+      "after": {
+        "foregroundMAE": 9.38492826847753,
+        "fullMAE": 4.440038377192982,
+        "channelPeak": 151,
+        "worst64": 22.802652994791668
+      }
+    },
+    {
+      "file": "rapid-normal-17-1017000.png",
+      "unionPixels": 89704,
+      "hashes": [
+        "baa858a87d93439c89a973eaa41703b365b3897db3de8e60d21089ce31ba48fc",
+        "1ab8561b6779f8e9d7e524bc2d7ec78e738b06e9eae56590057e4f070f008341",
+        "8c0f09dcff6596f19494f7decb12e2754f13491917d8ed32457b6843da860345"
+      ],
+      "before": {
+        "foregroundMAE": 10.328145902077946,
+        "fullMAE": 5.079364035087719,
+        "channelPeak": 144,
+        "worst64": 15.950439453125
+      },
+      "after": {
+        "foregroundMAE": 9.661772793483754,
+        "fullMAE": 4.751642909356725,
+        "channelPeak": 144,
+        "worst64": 15.761393229166666
+      }
+    },
+    {
+      "file": "rapid-normal-18-1020000.png",
+      "unionPixels": 87942,
+      "hashes": [
+        "ed00eb576b5d12deed2defd3770c7543667ed94a6b8d4d207cc22a769551b96c",
+        "2c7b42e8a6f9f5bd8ee597f6692619bb0579bcdfc560d00549e23444fb335eee",
+        "f5ce4703bff9c3e6f8ed70f04c8aa15bb75f873982e7bfbd6616a8e868a77a52"
+      ],
+      "before": {
+        "foregroundMAE": 10.827405183719574,
+        "fullMAE": 5.22030519005848,
+        "channelPeak": 146,
+        "worst64": 16.06787109375
+      },
+      "after": {
+        "foregroundMAE": 9.365562908886918,
+        "fullMAE": 4.515495248538012,
+        "channelPeak": 146,
+        "worst64": 14.874674479166666
+      }
+    },
+    {
+      "file": "rapid-normal-19-1087000.png",
+      "unionPixels": 88985,
+      "hashes": [
+        "84a254b6c8114c4d5da83e44d97851b0e048f4cd6a6e9cd5c8653b4ac6cc4cf9",
+        "e3663ae82e7b822c6bd6fe77499952bb66944ca0a70b6ddf6a895fbdf0ec0d8c",
+        "1791707511918264daaf96268b7043f1d07805903f70049c6f451da5d748ea80"
+      ],
+      "before": {
+        "foregroundMAE": 11.265730179243693,
+        "fullMAE": 5.496058114035088,
+        "channelPeak": 172,
+        "worst64": 20.168538411458332
+      },
+      "after": {
+        "foregroundMAE": 9.879878631229982,
+        "fullMAE": 4.819961622807018,
+        "channelPeak": 173,
+        "worst64": 18.817789713541668
+      }
+    },
+    {
+      "file": "rapid-normal-2-720000.png",
+      "unionPixels": 53865,
+      "hashes": [
+        "7a9bb1eb73b283155a1cce7d0e359df2730663ddbb07b30df8cd8008baa85bd1",
+        "1b72305862792cbe9f19d54289a3caed50c5d9e5f4518902a2832390d297fe02",
+        "1b72305862792cbe9f19d54289a3caed50c5d9e5f4518902a2832390d297fe02"
+      ],
+      "before": {
+        "foregroundMAE": 1.0695256660168941,
+        "fullMAE": 0.31584429824561405,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 1.0695256660168941,
+        "fullMAE": 0.31584429824561405,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "rapid-normal-20-1097000.png",
+      "unionPixels": 92071,
+      "hashes": [
+        "c6d8d29033633358314e7797f2c41312dccf08e550d13c0faa7855a713eeb6e4",
+        "a627f58c184d89c849df2d73a9f1bba33fcb161c404e3695c3e65aacab1e31c9",
+        "7135bb5d97cbcab9cfd1cf6ab5130c4abaa230204a2295789894945a0eed726a"
+      ],
+      "before": {
+        "foregroundMAE": 12.561222679598716,
+        "fullMAE": 6.340593932748538,
+        "channelPeak": 187,
+        "worst64": 23.027099609375
+      },
+      "after": {
+        "foregroundMAE": 11.609167562714282,
+        "fullMAE": 5.860020102339181,
+        "channelPeak": 187,
+        "worst64": 22.9951171875
+      }
+    },
+    {
+      "file": "rapid-normal-21-1100000.png",
+      "unionPixels": 85189,
+      "hashes": [
+        "b02768b8a12fdfca01c5c38597e22c213e6badeda3b0b1c56b1b913350f563be",
+        "34c0a0079843a858f6c2702d3641f39c41c5650367a23e3fcc92e78f0d21f5bd",
+        "f816e56c948756a971385439cbcf306973e3ba9a85dd5fa4d3481aef9a4633bf"
+      ],
+      "before": {
+        "foregroundMAE": 13.498460286343699,
+        "fullMAE": 6.304387792397661,
+        "channelPeak": 169,
+        "worst64": 22.711588541666668
+      },
+      "after": {
+        "foregroundMAE": 11.44626653675944,
+        "fullMAE": 5.345921052631579,
+        "channelPeak": 169,
+        "worst64": 20.896647135416668
+      }
+    },
+    {
+      "file": "rapid-normal-22-1167000.png",
+      "unionPixels": 87833,
+      "hashes": [
+        "9c8162d561ad4a5e479b3e03c156ffa88a36ddbbc2d96bffdea1a63a3795b1fc",
+        "7fc116cf731734ce40b68a9606be4ad7a2472be01cfa0125c27b772a56a294d7",
+        "b7f16d709b75951fbc1ed7e38f850b18a621a40cbce25e28b7b1fe87119e0acc"
+      ],
+      "before": {
+        "foregroundMAE": 10.866739532218338,
+        "fullMAE": 5.232775950292398,
+        "channelPeak": 175,
+        "worst64": 17.188232421875
+      },
+      "after": {
+        "foregroundMAE": 9.501800765847308,
+        "fullMAE": 4.575502558479532,
+        "channelPeak": 175,
+        "worst64": 17.146240234375
+      }
+    },
+    {
+      "file": "rapid-normal-23-1177000.png",
+      "unionPixels": 91893,
+      "hashes": [
+        "57891caa3f340fd9d08e309debd45e9cb866b4921aea672afa699bf40cace7ef",
+        "cf1457d6c0dcd6ed153b81f9868fcaf8b4c28dd185ad5d1bc8be4a664b9c8b2c",
+        "a3d52dc9bc2e6d52aa2fcdef564a7ae0c6ffd091e8a3c6aa5e5a78d62f826747"
+      ],
+      "before": {
+        "foregroundMAE": 12.238182814069987,
+        "fullMAE": 6.165588450292398,
+        "channelPeak": 190,
+        "worst64": 21.510091145833332
+      },
+      "after": {
+        "foregroundMAE": 11.014785311902612,
+        "fullMAE": 5.549241593567252,
+        "channelPeak": 190,
+        "worst64": 20.898193359375
+      }
+    },
+    {
+      "file": "rapid-normal-24-1180000.png",
+      "unionPixels": 83663,
+      "hashes": [
+        "561b29927462d22aae538f91b5cc596572484083cccb063bfbfb599f78853bee",
+        "06c101194171b95c72f8d55a8cbcdbbdb5488c3f11aa4be8b8de31c89b96ccc9",
+        "fb26063850b08bf756167d44e0b5d9798d3cba602360c3f3e4b3ca41c3ad5b64"
+      ],
+      "before": {
+        "foregroundMAE": 13.601317189199527,
+        "fullMAE": 6.238634868421053,
+        "channelPeak": 192,
+        "worst64": 21.844807942708332
+      },
+      "after": {
+        "foregroundMAE": 11.762360103430828,
+        "fullMAE": 5.3951443713450296,
+        "channelPeak": 192,
+        "worst64": 20.638590494791668
+      }
+    },
+    {
+      "file": "rapid-normal-25-1200000.png",
+      "unionPixels": 84052,
+      "hashes": [
+        "0e96b706dc133869023c245107413b043523a01ba315d738e49b78ca3f4a698d",
+        "2ad370c5612f347ceeca00712d6888224591ec2498ae0558e31b5b1c64e4ccf9",
+        "5ad7f5946681b85a21f50d3b523df3b41d7f727daf9b7a156ce1a5103a9a3476"
+      ],
+      "before": {
+        "foregroundMAE": 12.1118950173702,
+        "fullMAE": 5.581299342105263,
+        "channelPeak": 143,
+        "worst64": 20.933837890625
+      },
+      "after": {
+        "foregroundMAE": 10.64449785053697,
+        "fullMAE": 4.905105994152047,
+        "channelPeak": 143,
+        "worst64": 20.334309895833332
+      }
+    },
+    {
+      "file": "rapid-normal-26-1247000.png",
+      "unionPixels": 89588,
+      "hashes": [
+        "891ebf30031cf5c2549cee66a0f16a79713801dfb5ce8afddb53e1bb76a88af2",
+        "03e16e3d82310c0f4d28c8c959a22dd336c0bc72056ebc69c71b3814d75b7069",
+        "edbe7da4a65adf6aa32fd04944604321a413d9b7ed0cdee3bf6596a300f6d304"
+      ],
+      "before": {
+        "foregroundMAE": 12.312512092393327,
+        "fullMAE": 6.047441520467836,
+        "channelPeak": 173,
+        "worst64": 23.482340494791668
+      },
+      "after": {
+        "foregroundMAE": 11.093442574154277,
+        "fullMAE": 5.448680555555556,
+        "channelPeak": 173,
+        "worst64": 23.0087890625
+      }
+    },
+    {
+      "file": "rapid-normal-27-1257000.png",
+      "unionPixels": 87988,
+      "hashes": [
+        "6a7b714a534329cf6c564cb627f7545ca7aec75267279898cd5b65dbf9257738",
+        "a8746e1a34d200984d244ebfee820c3a0eaac24907911a77ee6cd97a00b6e603",
+        "e31959251abc61b85b8da5f5a78dc2783e364419f7f41a6e2936ac87d4eb52ee"
+      ],
+      "before": {
+        "foregroundMAE": 11.11107954114955,
+        "fullMAE": 5.359877558479532,
+        "channelPeak": 169,
+        "worst64": 18.59716796875
+      },
+      "after": {
+        "foregroundMAE": 9.997560273370611,
+        "fullMAE": 4.822726608187135,
+        "channelPeak": 169,
+        "worst64": 15.271158854166666
+      }
+    },
+    {
+      "file": "rapid-normal-28-1260000.png",
+      "unionPixels": 80327,
+      "hashes": [
+        "4511974e1557ad06593687b2df7844ce5967d224faf163a970ada6198f62e957",
+        "d986d2f6fc4de4ddb9e5cd8ae3ffb78fa59ae9b10ba29e6c26c629716fa4e071",
+        "5a88accbb2242836e7530be383bce0639d17bdc9b4c5717d60ae847b74a1882e"
+      ],
+      "before": {
+        "foregroundMAE": 12.978541876745469,
+        "fullMAE": 5.715610380116959,
+        "channelPeak": 170,
+        "worst64": 18.785807291666668
+      },
+      "after": {
+        "foregroundMAE": 11.325013175312577,
+        "fullMAE": 4.987414108187134,
+        "channelPeak": 170,
+        "worst64": 15.823486328125
+      }
+    },
+    {
+      "file": "rapid-normal-29-1300000.png",
+      "unionPixels": 87181,
+      "hashes": [
+        "ccd4bb747275dadf498189a65ae3eb3a0937f3aaa2a565989be02868ce2a6816",
+        "d2da27f54d6a7a67607515b021403335bd5e59c07d038ce9d3860d1eeacff303",
+        "6eb9a474a28ffa9dc0a81da1ae515b1deb8ac21b5c3135dd39b28feee1c7d1a9"
+      ],
+      "before": {
+        "foregroundMAE": 12.550073984010277,
+        "fullMAE": 5.998508771929824,
+        "channelPeak": 186,
+        "worst64": 24.370686848958332
+      },
+      "after": {
+        "foregroundMAE": 10.8652764554968,
+        "fullMAE": 5.193232821637427,
+        "channelPeak": 186,
+        "worst64": 23.283935546875
+      }
+    },
+    {
+      "file": "rapid-normal-3-767000.png",
+      "unionPixels": 65815,
+      "hashes": [
+        "46a257c5deb36456f15365a4f6d93d4936489a3aa70ce03d6d7838c9bef7380e",
+        "b5ea8eb04d28e21b1447019770420012c76d2f6577fa7acf0081d80bcb77ecd5",
+        "b5ea8eb04d28e21b1447019770420012c76d2f6577fa7acf0081d80bcb77ecd5"
+      ],
+      "before": {
+        "foregroundMAE": 1.223606573982628,
+        "fullMAE": 0.44151133040935675,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      },
+      "after": {
+        "foregroundMAE": 1.223606573982628,
+        "fullMAE": 0.44151133040935675,
+        "channelPeak": 168,
+        "worst64": 2.6645833333333333
+      }
+    },
+    {
+      "file": "rapid-normal-30-1327000.png",
+      "unionPixels": 87822,
+      "hashes": [
+        "aed82b044f98c33c49aad70c4d5511315630f9eec19b2bca92d087a20e18803e",
+        "e526ef57670be6d2f417980eb5160926f11c5b8bb9ceb2f340117bd1dd6492bf",
+        "8d017f78408e0572771be961d4079b5837286844e730aab01f06be707856023e"
+      ],
+      "before": {
+        "foregroundMAE": 11.398108294808438,
+        "fullMAE": 5.48796418128655,
+        "channelPeak": 172,
+        "worst64": 21.610921223958332
+      },
+      "after": {
+        "foregroundMAE": 9.973628475780556,
+        "fullMAE": 4.802105263157895,
+        "channelPeak": 173,
+        "worst64": 17.521484375
+      }
+    },
+    {
+      "file": "rapid-normal-31-1337000.png",
+      "unionPixels": 88617,
+      "hashes": [
+        "784a118bec24d79a06151e18b49cea290af470732f635bf4f41f3fcf0311a4c0",
+        "4cf81dfdbff86400b14d04790e415479582f676e34b8564bdfb9e4b3f3ff0e02",
+        "0a44ab74ed53b0de3be47590ab197656e7cc2507fa86d6d027a1f1b968552e60"
+      ],
+      "before": {
+        "foregroundMAE": 11.51455890705696,
+        "fullMAE": 5.59421966374269,
+        "channelPeak": 188,
+        "worst64": 21.110595703125
+      },
+      "after": {
+        "foregroundMAE": 10.354299965017999,
+        "fullMAE": 5.030520833333333,
+        "channelPeak": 188,
+        "worst64": 17.581380208333332
+      }
+    },
+    {
+      "file": "rapid-normal-32-1500000.png",
+      "unionPixels": 46705,
+      "hashes": [
+        "4a692d28650521cf7ed876bdcce40851d27bd8e33347894b221cd525c81208dd",
+        "ea16db96f349ab71445c077c22304de602cc5dc358e9395b0cd7bcf5600d44f3",
+        "56d5967d59ea9759946293c54198084c0db3b006d55a83ee99e609e9003e4cb2"
+      ],
+      "before": {
+        "foregroundMAE": 10.988002712057952,
+        "fullMAE": 2.8135672514619885,
+        "channelPeak": 215,
+        "worst64": 14.580322265625
+      },
+      "after": {
+        "foregroundMAE": 10.774114120543839,
+        "fullMAE": 2.758799342105263,
+        "channelPeak": 216,
+        "worst64": 14.575113932291666
+      }
+    },
+    {
+      "file": "rapid-normal-33-1800000.png",
+      "unionPixels": 53121,
+      "hashes": [
+        "e586c174f76b525195c1452fae7695928a370a77d2c9b407bc8d1d5ea6dff357",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482"
+      ],
+      "before": {
+        "foregroundMAE": 1.8202531327848999,
+        "fullMAE": 0.5301187865497076,
+        "channelPeak": 179,
+        "worst64": 3.0279134114583335
+      },
+      "after": {
+        "foregroundMAE": 1.8202531327848999,
+        "fullMAE": 0.5301187865497076,
+        "channelPeak": 179,
+        "worst64": 3.0279134114583335
+      }
+    },
+    {
+      "file": "rapid-normal-34-2000000.png",
+      "unionPixels": 53141,
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482"
+      ],
+      "before": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      },
+      "after": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      }
+    },
+    {
+      "file": "rapid-normal-35-2200000.png",
+      "unionPixels": 53141,
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482"
+      ],
+      "before": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      },
+      "after": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      }
+    },
+    {
+      "file": "rapid-normal-36-2500000.png",
+      "unionPixels": 53141,
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482"
+      ],
+      "before": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      },
+      "after": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      }
+    },
+    {
+      "file": "rapid-normal-37-3000000.png",
+      "unionPixels": 53141,
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482"
+      ],
+      "before": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      },
+      "after": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      }
+    },
+    {
+      "file": "rapid-normal-38-3500000.png",
+      "unionPixels": 53141,
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482"
+      ],
+      "before": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      },
+      "after": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      }
+    },
+    {
+      "file": "rapid-normal-39-4000000.png",
+      "unionPixels": 53141,
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482",
+        "3969b03e3a9ffe1dc708039be0fa5184d096fbaa3ae2345acd23225e4d1c8482"
+      ],
+      "before": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      },
+      "after": {
+        "foregroundMAE": 1.9165114193058719,
+        "fullMAE": 0.5583625730994152,
+        "channelPeak": 168,
+        "worst64": 2.9366048177083335
+      }
+    },
+    {
+      "file": "rapid-normal-4-777000.png",
+      "unionPixels": 69186,
+      "hashes": [
+        "951c06bfbdff63ccb1307226c2b6d77748beeac8469a3e3eb26a08feac14893a",
+        "63f853652864e0cff65074ab60ffd5fff53d7d16278404cd208243cefda2d105",
+        "63f853652864e0cff65074ab60ffd5fff53d7d16278404cd208243cefda2d105"
+      ],
+      "before": {
+        "foregroundMAE": 2.233130016670039,
+        "fullMAE": 0.847046783625731,
+        "channelPeak": 168,
+        "worst64": 4.270426432291667
+      },
+      "after": {
+        "foregroundMAE": 2.233130016670039,
+        "fullMAE": 0.847046783625731,
+        "channelPeak": 168,
+        "worst64": 4.270426432291667
+      }
+    },
+    {
+      "file": "rapid-normal-5-780000.png",
+      "unionPixels": 67628,
+      "hashes": [
+        "dc689dc61eab3b12131ae7cc6905ea648c49e1b3a7905c9fced480c20d132fc7",
+        "255adfaf92d507f7fed8a0163190c379966de1ad204ce215d83d3e783758f6bc",
+        "255adfaf92d507f7fed8a0163190c379966de1ad204ce215d83d3e783758f6bc"
+      ],
+      "before": {
+        "foregroundMAE": 2.476493957138069,
+        "fullMAE": 0.918203581871345,
+        "channelPeak": 167,
+        "worst64": 4.6982421875
+      },
+      "after": {
+        "foregroundMAE": 2.476493957138069,
+        "fullMAE": 0.918203581871345,
+        "channelPeak": 167,
+        "worst64": 4.6982421875
+      }
+    },
+    {
+      "file": "rapid-normal-6-780000.png",
+      "unionPixels": 68288,
+      "hashes": [
+        "dc689dc61eab3b12131ae7cc6905ea648c49e1b3a7905c9fced480c20d132fc7",
+        "338d5b9ac91a32abe66095bab11f162e602a4d42851f6570d5f680f6ee46c356",
+        "338d5b9ac91a32abe66095bab11f162e602a4d42851f6570d5f680f6ee46c356"
+      ],
+      "before": {
+        "foregroundMAE": 2.3962531240237426,
+        "fullMAE": 0.8971235380116959,
+        "channelPeak": 167,
+        "worst64": 4.6982421875
+      },
+      "after": {
+        "foregroundMAE": 2.3962531240237426,
+        "fullMAE": 0.8971235380116959,
+        "channelPeak": 167,
+        "worst64": 4.6982421875
+      }
+    },
+    {
+      "file": "rapid-normal-7-800000.png",
+      "unionPixels": 77204,
+      "hashes": [
+        "e61f988c8dee2aeaa4ac1a452f8bdeb5c62b6575193653bf36d717f53932d8bb",
+        "a23c7a6aa36f84cec5a9a461e8e1f29812b5041f62d7a33406b977f9c5e9a00a",
+        "e5eea1d852f283d7931a15edf8f3278db0ff7825630b049e62539131d1d62dae"
+      ],
+      "before": {
+        "foregroundMAE": 3.3944959673937447,
+        "fullMAE": 1.436779970760234,
+        "channelPeak": 162,
+        "worst64": 6.334391276041667
+      },
+      "after": {
+        "foregroundMAE": 3.373680983714143,
+        "fullMAE": 1.42796966374269,
+        "channelPeak": 162,
+        "worst64": 6.333740234375
+      }
+    },
+    {
+      "file": "rapid-normal-8-847000.png",
+      "unionPixels": 80057,
+      "hashes": [
+        "cfd17ff524afa4f2866f8e59f6a2daed3aa5ecbeae41eb6f5440a5d36b4e368a",
+        "2f474b941ae1d17d96ceda598d1e6807627f82207094dcd74bccd29b78df635e",
+        "7d5591cd8f65e276644cd1ba8ab6f1a709d3b87f6fc33989f03ea6c87cb432d5"
+      ],
+      "before": {
+        "foregroundMAE": 5.8367787951084855,
+        "fullMAE": 2.5618146929824563,
+        "channelPeak": 156,
+        "worst64": 14.520345052083334
+      },
+      "after": {
+        "foregroundMAE": 5.73816155988858,
+        "fullMAE": 2.518530701754386,
+        "channelPeak": 156,
+        "worst64": 14.221435546875
+      }
+    },
+    {
+      "file": "rapid-normal-9-857000.png",
+      "unionPixels": 78418,
+      "hashes": [
+        "929a5bc8c66f1b0a6628ddd442139411a9e6aec1455de5b66a4061109369df21",
+        "568fec03525493c658b44cd56dc08db430e81e34fe166bb0cfc324d964198626",
+        "15629f9765a8685fd9643b0567849fadad0f7617d797c813674923c20980ca8c"
+      ],
+      "before": {
+        "foregroundMAE": 6.224574289916431,
+        "fullMAE": 2.6760891812865495,
+        "channelPeak": 163,
+        "worst64": 11.987711588541666
+      },
+      "after": {
+        "foregroundMAE": 6.10220017512986,
+        "fullMAE": 2.6234777046783626,
+        "channelPeak": 163,
+        "worst64": 11.606119791666666
+      }
+    }
+  ],
+  "decision": "REJECTED; production restored byte-for-byte. Mean improvement does not excuse overlap/calm regression.",
+  "geometryWorstBefore": [
+    {
+      "file": "rapid-chaotic-18-1020000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 260.2739562988281,
+      "native": 238.08536379426218,
+      "error": 22.188592504565946
+    },
+    {
+      "file": "rapid-chaotic-17-1017000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 261.82110595703125,
+      "native": 240.86143897518835,
+      "error": 20.9596669818429
+    },
+    {
+      "file": "rapid-chaotic-24-1180000.png",
+      "id": "line-1.1-5",
+      "field": 5,
+      "source": 257.2293395996094,
+      "native": 238.08536379426218,
+      "error": 19.143975805347196
+    },
+    {
+      "file": "rapid-chaotic-20-1097000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 186.95831298828125,
+      "native": 167.97878825249515,
+      "error": 18.9795247357861
+    },
+    {
+      "file": "rapid-chaotic-21-1100000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 187.12744140625,
+      "native": 168.2830530897198,
+      "error": 18.8443883165302
+    },
+    {
+      "file": "rapid-chaotic-25-1200000.png",
+      "id": "line-1.1-5",
+      "field": 5,
+      "source": 236.6101837158203,
+      "native": 218.44657583866052,
+      "error": 18.16360787715979
+    },
+    {
+      "file": "overlap-chaotic-20-1300000.png",
+      "id": "line-1.11-3",
+      "field": 5,
+      "source": 175.93179321289062,
+      "native": 157.83373858373537,
+      "error": 18.098054629155257
+    },
+    {
+      "file": "rapid-chaotic-23-1177000.png",
+      "id": "line-1.1-5",
+      "field": 5,
+      "source": 258.7858581542969,
+      "native": 240.86143897518835,
+      "error": 17.924419179108526
+    },
+    {
+      "file": "rapid-chaotic-21-1100000.png",
+      "id": "line-1.02-4",
+      "field": 5,
+      "source": 255.74362182617188,
+      "native": 238.08536379426218,
+      "error": 17.658258031909696
+    },
+    {
+      "file": "rapid-normal-18-1020000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 236.39035034179688,
+      "native": 218.81877297190672,
+      "error": 17.57157736989015
+    },
+    {
+      "file": "overlap-chaotic-20-1300000.png",
+      "id": "line-1.11-3",
+      "field": 1,
+      "source": 154.38552856445312,
+      "native": 137.09111127216025,
+      "error": 17.294417292292877
+    },
+    {
+      "file": "rapid-chaotic-19-1087000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 192.093505859375,
+      "native": 174.99703997304687,
+      "error": 17.096465886328133
+    },
+    {
+      "file": "rapid-normal-17-1017000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 237.84164428710938,
+      "native": 220.84881281456444,
+      "error": 16.992831472544935
+    },
+    {
+      "file": "overlap-normal-20-1300000.png",
+      "id": "line-1.11-3",
+      "field": 5,
+      "source": 161.5711669921875,
+      "native": 144.78951343965937,
+      "error": 16.781653552528127
+    },
+    {
+      "file": "rapid-chaotic-22-1167000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 179.68006896972656,
+      "native": 163.03295086014558,
+      "error": 16.647118109580987
+    },
+    {
+      "file": "rapid-chaotic-20-1097000.png",
+      "id": "line-1.02-4",
+      "field": 5,
+      "source": 257.3001403808594,
+      "native": 240.86143897518835,
+      "error": 16.438701405671026
+    },
+    {
+      "file": "rapid-chaotic-18-1020000.png",
+      "id": "line-0.94-3",
+      "field": 1,
+      "source": 185.61618041992188,
+      "native": 169.23927922403814,
+      "error": 16.376901195883732
+    },
+    {
+      "file": "overlap-normal-20-1300000.png",
+      "id": "line-1.11-3",
+      "field": 1,
+      "source": 139.06411743164062,
+      "native": 123.01888709307148,
+      "error": 16.04523033856914
+    },
+    {
+      "file": "rapid-chaotic-23-1177000.png",
+      "id": "line-1.02-4",
+      "field": 5,
+      "source": 183.6186981201172,
+      "native": 167.97878825249515,
+      "error": 15.639909867622038
+    },
+    {
+      "file": "rapid-chaotic-14-940000.png",
+      "id": "line-0.86-2",
+      "field": 5,
+      "source": 253.43426513671875,
+      "native": 238.0853637942622,
+      "error": 15.348901342456543
+    },
+    {
+      "file": "rapid-chaotic-24-1180000.png",
+      "id": "line-1.02-4",
+      "field": 5,
+      "source": 183.577880859375,
+      "native": 168.2830530897198,
+      "error": 15.2948277696552
+    },
+    {
+      "file": "rapid-chaotic-17-1017000.png",
+      "id": "line-0.94-3",
+      "field": 1,
+      "source": 185.804931640625,
+      "native": 170.54923996059833,
+      "error": 15.255691680026672
+    },
+    {
+      "file": "overlap-chaotic-21-1367000.png",
+      "id": "line-1.11-3",
+      "field": 5,
+      "source": 152.44760131835938,
+      "native": 137.2043516189139,
+      "error": 15.243249699445471
+    },
+    {
+      "file": "rapid-normal-24-1180000.png",
+      "id": "line-1.1-5",
+      "field": 5,
+      "source": 234.0305633544922,
+      "native": 218.81877297190672,
+      "error": 15.211790382585463
+    },
+    {
+      "file": "rapid-chaotic-25-1200000.png",
+      "id": "line-1.02-4",
+      "field": 5,
+      "source": 182.95394897460938,
+      "native": 167.83233407747719,
+      "error": 15.12161489713219
+    }
+  ],
+  "geometryWorstAfter": [
+    {
+      "file": "overlap-calm-20-1300000.png",
+      "id": "line-1.11-3",
+      "field": 1,
+      "source": 124.4944839477539,
+      "native": 156.6659620537554,
+      "error": 32.1714781060015
+    },
+    {
+      "file": "overlap-calm-20-1300000.png",
+      "id": "line-1.11-3",
+      "field": 5,
+      "source": 146.01991271972656,
+      "native": 177.60177423892577,
+      "error": 31.581861519199208
+    },
+    {
+      "file": "overlap-normal-20-1300000.png",
+      "id": "line-1.11-3",
+      "field": 1,
+      "source": 139.06411743164062,
+      "native": 166.36871526904412,
+      "error": 27.30459783740349
+    },
+    {
+      "file": "overlap-normal-20-1300000.png",
+      "id": "line-1.11-3",
+      "field": 5,
+      "source": 161.5711669921875,
+      "native": 188.139341615632,
+      "error": 26.56817462344449
+    },
+    {
+      "file": "rapid-chaotic-18-1020000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 260.2739562988281,
+      "native": 238.62330163121,
+      "error": 21.650654667618113
+    },
+    {
+      "file": "overlap-chaotic-20-1300000.png",
+      "id": "line-1.11-3",
+      "field": 1,
+      "source": 154.38552856445312,
+      "native": 175.06520477534386,
+      "error": 20.679676210890733
+    },
+    {
+      "file": "rapid-chaotic-17-1017000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 261.82110595703125,
+      "native": 241.40681266507946,
+      "error": 20.414293291951793
+    },
+    {
+      "file": "overlap-chaotic-20-1300000.png",
+      "id": "line-1.11-3",
+      "field": 5,
+      "source": 175.93179321289062,
+      "native": 195.80783208691898,
+      "error": 19.876038874028353
+    },
+    {
+      "file": "rapid-chaotic-20-1097000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 186.95831298828125,
+      "native": 168.35210915251318,
+      "error": 18.60620383576807
+    },
+    {
+      "file": "rapid-chaotic-24-1180000.png",
+      "id": "line-1.1-5",
+      "field": 5,
+      "source": 257.2293395996094,
+      "native": 238.62330163121,
+      "error": 18.606037968399363
+    },
+    {
+      "file": "overlap-calm-21-1367000.png",
+      "id": "line-1.11-3",
+      "field": 1,
+      "source": 108.15872192382812,
+      "native": 126.74439425249201,
+      "error": 18.58567232866389
+    },
+    {
+      "file": "overlap-calm-21-1367000.png",
+      "id": "line-1.11-3",
+      "field": 5,
+      "source": 120.27508544921875,
+      "native": 138.7211467026709,
+      "error": 18.446061253452143
+    },
+    {
+      "file": "rapid-chaotic-21-1100000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 187.12744140625,
+      "native": 169.03446920648358,
+      "error": 18.09297219976642
+    },
+    {
+      "file": "rapid-chaotic-25-1200000.png",
+      "id": "line-1.1-5",
+      "field": 5,
+      "source": 236.6101837158203,
+      "native": 218.93806710774837,
+      "error": 17.672116608071946
+    },
+    {
+      "file": "rapid-chaotic-23-1177000.png",
+      "id": "line-1.1-5",
+      "field": 5,
+      "source": 258.7858581542969,
+      "native": 241.40681266507946,
+      "error": 17.379045489217418
+    },
+    {
+      "file": "rapid-normal-18-1020000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 236.39035034179688,
+      "native": 219.21971211390522,
+      "error": 17.170638227891658
+    },
+    {
+      "file": "rapid-chaotic-21-1100000.png",
+      "id": "line-1.02-4",
+      "field": 5,
+      "source": 255.74362182617188,
+      "native": 238.62330163121,
+      "error": 17.120320194961863
+    },
+    {
+      "file": "overlap-calm-22-1377000.png",
+      "id": "line-1.11-3",
+      "field": 1,
+      "source": 104.86224365234375,
+      "native": 121.59539951977068,
+      "error": 16.73315586742693
+    },
+    {
+      "file": "rapid-chaotic-19-1087000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 192.093505859375,
+      "native": 175.38745038026013,
+      "error": 16.706055479114866
+    },
+    {
+      "file": "overlap-calm-22-1377000.png",
+      "id": "line-1.11-3",
+      "field": 5,
+      "source": 116.56802368164062,
+      "native": 133.2567916758403,
+      "error": 16.68876799419968
+    },
+    {
+      "file": "rapid-normal-17-1017000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 237.84164428710938,
+      "native": 221.25642746807011,
+      "error": 16.58521681903926
+    },
+    {
+      "file": "overlap-normal-21-1367000.png",
+      "id": "line-1.11-3",
+      "field": 1,
+      "source": 125.18147277832031,
+      "native": 141.39798759175787,
+      "error": 16.216514813437556
+    },
+    {
+      "file": "rapid-chaotic-22-1167000.png",
+      "id": "line-0.94-3",
+      "field": 5,
+      "source": 179.68006896972656,
+      "native": 163.57829393137627,
+      "error": 16.101775038350297
+    },
+    {
+      "file": "overlap-normal-21-1367000.png",
+      "id": "line-1.11-3",
+      "field": 5,
+      "source": 135.9189453125,
+      "native": 151.96359726609413,
+      "error": 16.044651953594126
+    },
+    {
+      "file": "rapid-chaotic-20-1097000.png",
+      "id": "line-1.02-4",
+      "field": 5,
+      "source": 257.3001403808594,
+      "native": 241.40681266507946,
+      "error": 15.893327715779918
+    }
+  ],
+  "sourceHashes": {
+    "before": "5e4cc1ddf917c0e042adc80b926bcdb52259764a65ba9add976c84fae0d5db85",
+    "rejected": "623057ae067d1b9f03ae33e2c760eb16ad1c0c9e887fa116f74fb5b3fa75dfdc"
+  }
+}

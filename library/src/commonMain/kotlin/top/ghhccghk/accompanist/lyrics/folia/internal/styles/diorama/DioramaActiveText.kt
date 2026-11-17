@@ -13,37 +13,66 @@ import androidx.compose.ui.text.style.*
 import androidx.compose.ui.unit.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.text.*
 import kotlin.math.*
+import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.blurPremultiplied
 
 internal data class DioramaActiveSlice(val unit: DioramaUnit, val image: ImageBitmap, val centerPx: Double,
-    val rangeLeft: Float, val rangeRight: Float)
+    val rangeLeft: Float, val rangeRight: Float, val halo: ImageBitmap)
 
-/** Base reveal/gradient layer only. A complete shaped paragraph is shared by
- * all slices: joining, ligatures and EGC clocks never become per-character
- * shaping. Glow/soul rasters and original continuous camera remain separate. */
+/** Full-shaped slices and the original registered halo / crisp soul / base order.
+ * Text and halo textures are prepared once, never from the display-frame loop. */
 internal class DioramaActiveText private constructor(val slices: List<DioramaActiveSlice>,
     val lineAdvance: Double, val middleBaseline: Double) {
     fun drawBase(scope: DrawScope, time: Double, view: DioramaPerspective, frame: DioramaFrame,
         placement: DioramaPlacement, primary: DioramaLinearColor, accent: DioramaLinearColor,
-        gradient: Double = 1.0, keywords: Map<Int, DioramaLinearColor> = emptyMap()) = with(scope) {
+        gradient: Double = 1.0, keywords: Map<Int, DioramaLinearColor> = emptyMap()) =
+        draw(scope, time, view, frame, placement, primary, accent,
+            DioramaUnitTuning(glow = 0.0, soul = 0.0, gradient = gradient), keywords)
+
+    fun draw(scope: DrawScope, time: Double, view: DioramaPerspective, frame: DioramaFrame,
+        placement: DioramaPlacement, primary: DioramaLinearColor, accent: DioramaLinearColor,
+        tuning: DioramaUnitTuning = DioramaUnitTuning(),
+        keywords: Map<Int, DioramaLinearColor> = emptyMap()) = with(scope) {
         val fit = dioramaFrameFit(lineAdvance * .62 / 128, 5.2, view.fov, view.width / view.height) * placement.scale
         val unitScale = fit * .62 / 128
-        val x = dioramaPlaneAxis(frame, placement, 1.0, 0.0) * unitScale
-        val y = dioramaPlaneAxis(frame, placement, 0.0, 1.0) * unitScale
+        val right = dioramaPlaneAxis(frame, placement, 1.0, 0.0)
+        val up = dioramaPlaneAxis(frame, placement, 0.0, 1.0)
+        val normal = right.cross(up).normalized()
+        val x = right * unitScale
+        val y = up * unitScale
         val center = dioramaComposeLocal(frame, placement.offsetR, placement.offsetU, 0.0)
-        for ((i, slice) in slices.withIndex()) {
-            val state = dioramaUnitFrame(time, slice.unit.start, slice.unit.end,
-                dioramaMediaEnvelope(time, slice.unit.start, slice.unit.end), primary, accent,
-                DioramaUnitTuning(glow = 0.0, soul = 0.0, gradient = gradient), keywords[i])
-            val origin = center + x * slice.centerPx - x * (slice.image.width / 2.0) + y * (slice.image.height / 2.0)
-            val h = view.planeHomography(origin, x, y * -1.0)
+        val states = slices.mapIndexed { i, slice ->
+            dioramaUnitFrame(time, slice.unit.start, slice.unit.end,
+                dioramaMediaEnvelope(time, slice.unit.start, slice.unit.end), primary, accent, tuning, keywords[i])
+        }
+        fun plane(slice: DioramaActiveSlice, image: ImageBitmap, alpha: Double, color: Color,
+            depth: Double = 0.0, lift: Double = 0.0, scale: Double = 1.0, additive: Boolean = false) {
+            val origin = center + x * slice.centerPx + normal * (depth * fit) + up * (lift * fit) -
+                x * (image.width / 2.0 * scale) + y * (image.height / 2.0 * scale)
+            val h = view.planeHomography(origin, x * scale, y * -scale)
             val matrix = Matrix().apply {
                 this[0,0] = h[0].toFloat(); this[1,0] = h[1].toFloat(); this[3,0] = h[2].toFloat()
                 this[0,1] = h[3].toFloat(); this[1,1] = h[4].toFloat(); this[3,1] = h[5].toFloat()
                 this[0,3] = h[6].toFloat(); this[1,3] = h[7].toFloat(); this[3,3] = h[8].toFloat()
             }
             withTransform({ transform(matrix) }) {
-                drawImage(slice.image, alpha = state.baseOpacity.toFloat(), colorFilter = ColorFilter.tint(state.fill.srgb()))
+                drawImage(image, alpha = alpha.toFloat(), colorFilter = ColorFilter.tint(color),
+                    blendMode = if (additive) BlendMode.Plus else BlendMode.SrcOver)
             }
+        }
+        // Three sorts by renderOrder: all17 glow, all18 soul, then all19 bodies.
+        // Rendering three layers per unit changes overlapping ghosts and halos.
+        for ((i, slice) in slices.withIndex()) {
+            val state = states[i]
+            if (state.glowVisible) plane(slice, slice.halo, state.glowOpacity, state.fill.srgb(), depth = -.01, additive = true)
+        }
+        for ((i, slice) in slices.withIndex()) {
+            val state = states[i]
+            if (state.soulVisible) plane(slice, slice.image, state.soulOpacity, state.fill.srgb(),
+                depth = -.005, lift = state.soulLift, scale = state.soulScale, additive = true)
+        }
+        for ((i, slice) in slices.withIndex()) {
+            val state = states[i]
+            plane(slice, slice.image, state.baseOpacity, state.fill.srgb())
         }
     }
 
@@ -75,7 +104,7 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
                     }
                 }
                 DioramaActiveSlice(unit, image, range.left + width / 2.0 - advance / 2,
-                    range.left, range.right)
+                    range.left, range.right, prepareDioramaHalo(image))
             }
             return DioramaActiveText(slices, advance, middle)
         }
@@ -86,4 +115,22 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
 internal fun DioramaLinearColor.srgb(): Color {
     fun channel(v: Double) = (if (v < .0031308) v * 12.92 else 1.055 * v.pow(1 / 2.4) - .055).toFloat()
     return Color(channel(red), channel(green), channel(blue))
+}
+
+/** Original pure-shadow ladder: shadowColor modulates source coverage BEFORE
+ * the blur, rather than multiplying an already rounded 8-bit blur result. */
+internal fun prepareDioramaHalo(body: ImageBitmap): ImageBitmap {
+    val halo = ImageBitmap(body.width, body.height)
+    val passes = listOf(10.24f to .95f, 10.24f to .85f, 20.48f to .55f, 29.696f to .3f)
+    CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, Canvas(halo), Size(body.width.toFloat(), body.height.toFloat())) {
+        for ((sigma, alpha) in passes) {
+            val shadowSource = ImageBitmap(body.width, body.height)
+            CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, Canvas(shadowSource), size) {
+                drawImage(body, alpha = alpha)
+            }
+            val blur = blurPremultiplied(shadowSource, sigma)
+            drawImage(blur.image, topLeft = blur.origin, blendMode = BlendMode.Plus)
+        }
+    }
+    return halo
 }

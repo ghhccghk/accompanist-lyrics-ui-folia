@@ -48,3 +48,8 @@ Paint度量，中文middle一致性未实现/未验证，不能称平台有意�
 90原active layout/material/WebGL图（明确glow/soul0隔离）MAE6.605919、盒峰2px；
 暂停/seek/重挂通过，不以此冒充三层/CameraRig。跨单元overhang/混合bidi还需补，
 详见verification/diorama-active-base。两端构建/JVM离屏通过，无设备。
+
+注册辉光/灵魂层已复用同一完整塑形字身：原四次纯shadow栅格、17/18/19层序、
+additive、局部z/lift/swell。180实际Three帧，注入媒体解析charge/delta0，
+不称原RAF完整场景；材质峰1.771e-8、前景MAE4.427326、最低alpha范围仍差21px。
+旧错误量化次序与失败图保留；见verification/diorama-active-layers。CameraRig仍未接。

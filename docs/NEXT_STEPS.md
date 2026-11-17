@@ -10,10 +10,11 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | 路径/摆位/冻结透视、core文字分组/内部时钟 | 无 | 运镜/揭示/合成与设备尚未实现 |
 
-当前唯一下一项：镜台活动文字注册辉光/灵魂层实际三层透视合成。
-完成条件：在已运行的完整塑形切片/原媒体跟唱上增加原halo栅格、原层序/深度偏移、
-phase-correct ghost；同输入/字体/媒体/实际源材质连续或隔离对照，保留非线性混色/
-采样残差。CameraRig/深度/雾/Android中线度量仍未完成，Diorama不开放sample。
+当前唯一下一项：将原镜台shot/read-head/hold/drift镜头目标接到现有完整文字透视管线。
+完成条件：真实原函数数值矩阵及同文字/视口/时间的非冻结视点对照，保留CameraRig
+阻尼/朝向回正/跨曲飞行尚未完成项，不用目标轨迹冒充完整连续rig；不开放Diorama。
+注册halo/soul/base三层隔离合成已运行，最低alpha范围仍差21px；完整塑形切片
+的overhang/混合bidi、Android中线、雾/深度与设备仍未验收。
 Fume短bridge/总览仍未修复：mounted原版与当前连续模型在3.15s、10s差最大；
 扩展完整pose的本地诊断保存在.work/FumeMountedPublicTest-diagnostic.kt及
 .work/fume-camera-diagnostic.log、build/verification/fume-mounted-kotlin/*.tsv。
@@ -102,10 +103,15 @@ e7037f7 镜台活动材质内核：实际原updateDioramaActiveUnits/Three对象
 包络可逆/暂停，事件边界原指数1e-12；不是原RAF连续画面等价或视觉验收。
 两端构建通过，下一项仍是完整塑形切片/三层实际绘制，证据verification/diorama-unit-frame。
 
-镜台活动正文/渐变绘制：ONE完整塑形段落按显示单元切片、内部EGC时钟保留，
+ffd64e2 镜台活动正文/渐变绘制：ONE完整塑形段落按显示单元切片、内部EGC时钟保留，
 原版真实active layout/material/WebGL（glow/soul0）90对，前景MAE6.605919/盒峰2px。
 字号/原线性色/逐单元时间、暂停/seek/重挂、时间变化不重备文字通过；两端构建通过。
 无设备/真实窗口；混合bidi与跨单元overhang未完成验收，证据verification/diorama-active-base。
+
+镜台注册辉光/灵魂层：实际原纹理/三层材质180对（媒体解析包络注入，非原RAF），
+同源层序/深度偏移/局部抬升放大/共享词色；材质字段峰1.771e-8、暂停/seek/重挂通过。
+原shadowColor先于blur的量化顺序已校正，原失败保留；全前景MAE4.427326、范围峰21px
+未最终验收。两端构建/JVM离屏通过，无设备/真实窗口；见verification/diorama-active-layers。
 
 用户签名配置与daemon JVM文件保持原样、不暂存。Android播放独立进程设备验收仍待。
 

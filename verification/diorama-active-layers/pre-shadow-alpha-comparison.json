@@ -1,0 +1,4333 @@
+{
+  "scope": "Actual original active layout, own base/halo raster, three real depth-offset/additive planes, original material assignment. Injected analytic media envelopes into Float32 arrays/delta0, life/breath1 power0. Frozen view, NOT source RAF/CameraRig/fog/depth. Kotlin own complete-shaped textures.",
+  "foreground": "all nonbackground union including low alpha; no registration, alignment or frame shift",
+  "frames": [
+    {
+      "file": "latin-380-active-0.png",
+      "scene": "latin",
+      "foreground_mae": 10.27594278283485,
+      "full_mae": 0.1732938596491228,
+      "worst64": 15.433333333333334,
+      "channel_peak": 72,
+      "source_bounds": [
+        41,
+        277,
+        352,
+        323
+      ],
+      "native_bounds": [
+        42,
+        278,
+        351,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-active-0.png": "72381a68e36a13dc3575222b84de7cd6933528e55804d747ef16a2b3ca99195d",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-active-0.png": "a888898e0fa3608e141d439da6a428b7cdf3acb2c8d8297e9ed5291fd2af63b9"
+      }
+    },
+    {
+      "file": "latin-380-active-700.png",
+      "scene": "latin",
+      "foreground_mae": 10.27594278283485,
+      "full_mae": 0.1732938596491228,
+      "worst64": 15.433333333333334,
+      "channel_peak": 72,
+      "source_bounds": [
+        41,
+        277,
+        352,
+        323
+      ],
+      "native_bounds": [
+        42,
+        278,
+        351,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-active-700.png": "72381a68e36a13dc3575222b84de7cd6933528e55804d747ef16a2b3ca99195d",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-active-700.png": "a888898e0fa3608e141d439da6a428b7cdf3acb2c8d8297e9ed5291fd2af63b9"
+      }
+    },
+    {
+      "file": "latin-380-active-1100.png",
+      "scene": "latin",
+      "foreground_mae": 6.177291066282421,
+      "full_mae": 0.23503508771929824,
+      "worst64": 15.433333333333334,
+      "channel_peak": 92,
+      "source_bounds": [
+        32,
+        266,
+        352,
+        323
+      ],
+      "native_bounds": [
+        30,
+        263,
+        351,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-active-1100.png": "934ed556b55ea946b94551095c559cb27c2411ab288a16a7cf55977e92d29755",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-active-1100.png": "9cb8016c7fcd3d6f7381004b6e7afbd11d408254074b78f46952421b8ce686fa"
+      }
+    },
+    {
+      "file": "latin-380-active-1500.png",
+      "scene": "latin",
+      "foreground_mae": 5.264630163304515,
+      "full_mae": 0.20030994152046783,
+      "worst64": 15.433333333333334,
+      "channel_peak": 90,
+      "source_bounds": [
+        32,
+        266,
+        352,
+        323
+      ],
+      "native_bounds": [
+        30,
+        263,
+        351,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-active-1500.png": "a0ff6ed69c5a464547f9079e84d651cd2051eeb5f875560bd3dc340b2bf65778",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-active-1500.png": "844c3fa2f2345dc058dbbf2cf1027cb0b14c76a62264cbdad90b6c195cd25158"
+      }
+    },
+    {
+      "file": "latin-380-active-1900.png",
+      "scene": "latin",
+      "foreground_mae": 4.293453241261174,
+      "full_mae": 0.23452046783625732,
+      "worst64": 11.77450980392157,
+      "channel_peak": 113,
+      "source_bounds": [
+        26,
+        261,
+        352,
+        325
+      ],
+      "native_bounds": [
+        27,
+        261,
+        351,
+        328
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-active-1900.png": "60f5cb32dd611c155fc6f8157792922cecb764b81f48dd6f08d743d8a1d79f20",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-active-1900.png": "77dafe2acba6a31cf6438e7a17a7253e2d8aff8b53dabcc9e1ef9770a5c97852"
+      }
+    },
+    {
+      "file": "latin-380-active-2300.png",
+      "scene": "latin",
+      "foreground_mae": 4.165060400902695,
+      "full_mae": 0.22935233918128656,
+      "worst64": 11.77450980392157,
+      "channel_peak": 120,
+      "source_bounds": [
+        25,
+        259,
+        352,
+        325
+      ],
+      "native_bounds": [
+        26,
+        260,
+        351,
+        328
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-active-2300.png": "98425b271bc76d33c29a7c7658a731b60be69d7e4f08b6ecb68ad615deea6b5b",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-active-2300.png": "f72368e124c751fb5db2aa25e4b8d0419974ab47a87d66181a8e2eee04b186a2"
+      }
+    },
+    {
+      "file": "latin-380-active-3100.png",
+      "scene": "latin",
+      "foreground_mae": 4.629010595433518,
+      "full_mae": 0.27209649122807017,
+      "worst64": 9.657906558849955,
+      "channel_peak": 122,
+      "source_bounds": [
+        25,
+        260,
+        365,
+        334
+      ],
+      "native_bounds": [
+        26,
+        260,
+        368,
+        338
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-active-3100.png": "5d23196f56c46814b048be0ba4a791722c6667d6230d952dbb15fb53bd97d8c7",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-active-3100.png": "76e50b2aeb2a9b38b7feb9d518763ac9d993ff186dfc380731a3c332a50cd475"
+      }
+    },
+    {
+      "file": "latin-380-active-3450.png",
+      "scene": "latin",
+      "foreground_mae": 6.463644850119282,
+      "full_mae": 0.27331578947368423,
+      "worst64": 19.038427167113493,
+      "channel_peak": 123,
+      "source_bounds": [
+        41,
+        268,
+        364,
+        331
+      ],
+      "native_bounds": [
+        42,
+        269,
+        368,
+        338
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-active-3450.png": "15b7d54d237900294ca1ed75398e8306601c5e7c1ad5124c807320cf6ea48eeb",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-active-3450.png": "0fa90c1637d34454bd21f0692231b5e15d0d0c4a54e24c5dfa105800655de5fd"
+      }
+    },
+    {
+      "file": "latin-380-active-4000.png",
+      "scene": "latin",
+      "foreground_mae": 11.72041859911999,
+      "full_mae": 0.2881783625730994,
+      "worst64": 19.454870420017873,
+      "channel_peak": 130,
+      "source_bounds": [
+        41,
+        274,
+        366,
+        323
+      ],
+      "native_bounds": [
+        42,
+        274,
+        366,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-active-4000.png": "ba302786251dbf0134535be4cd347173af950988c208829f82b5d05d60862de5",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-active-4000.png": "2d9c5e6346c829dde50a8ae60d64635286a0e38e7f600fe02dfaa85c1ba09917"
+      }
+    },
+    {
+      "file": "latin-380-active-5250.png",
+      "scene": "latin",
+      "foreground_mae": 18.14573370249182,
+      "full_mae": 0.3161973684210526,
+      "worst64": 26.873015873015873,
+      "channel_peak": 132,
+      "source_bounds": [
+        41,
+        276,
+        352,
+        323
+      ],
+      "native_bounds": [
+        42,
+        278,
+        351,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-active-5250.png": "beb4074dd6ec5853a4e8bd4a3bb6340ca0edd9488257671f2dd51650fb28afc9",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-active-5250.png": "b3b14f877598bd7912907c4a81f69c0942cb3af7b40dee47b50bbff16e5c80d8"
+      }
+    },
+    {
+      "file": "latin-380-trail-0.png",
+      "scene": "latin",
+      "foreground_mae": 10.27594278283485,
+      "full_mae": 0.1732938596491228,
+      "worst64": 15.433333333333334,
+      "channel_peak": 72,
+      "source_bounds": [
+        41,
+        277,
+        352,
+        323
+      ],
+      "native_bounds": [
+        42,
+        278,
+        351,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-trail-0.png": "72381a68e36a13dc3575222b84de7cd6933528e55804d747ef16a2b3ca99195d",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-trail-0.png": "a888898e0fa3608e141d439da6a428b7cdf3acb2c8d8297e9ed5291fd2af63b9"
+      }
+    },
+    {
+      "file": "latin-380-trail-700.png",
+      "scene": "latin",
+      "foreground_mae": 10.27594278283485,
+      "full_mae": 0.1732938596491228,
+      "worst64": 15.433333333333334,
+      "channel_peak": 72,
+      "source_bounds": [
+        41,
+        277,
+        352,
+        323
+      ],
+      "native_bounds": [
+        42,
+        278,
+        351,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-trail-700.png": "72381a68e36a13dc3575222b84de7cd6933528e55804d747ef16a2b3ca99195d",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-trail-700.png": "a888898e0fa3608e141d439da6a428b7cdf3acb2c8d8297e9ed5291fd2af63b9"
+      }
+    },
+    {
+      "file": "latin-380-trail-1100.png",
+      "scene": "latin",
+      "foreground_mae": 4.627550432276657,
+      "full_mae": 0.1760701754385965,
+      "worst64": 15.433333333333334,
+      "channel_peak": 72,
+      "source_bounds": [
+        32,
+        266,
+        352,
+        323
+      ],
+      "native_bounds": [
+        30,
+        263,
+        351,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-trail-1100.png": "a24b053833d99745b7365bf563b7e9b905e8fd8d5e2a3de8975ee0f0459f4a36",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-trail-1100.png": "878042fc082343b4b08a1ab96acd01d9f862825d5b1600c065d3f20902d860c5"
+      }
+    },
+    {
+      "file": "latin-380-trail-1500.png",
+      "scene": "latin",
+      "foreground_mae": 4.250951008645533,
+      "full_mae": 0.16174122807017544,
+      "worst64": 15.433333333333334,
+      "channel_peak": 79,
+      "source_bounds": [
+        32,
+        266,
+        352,
+        323
+      ],
+      "native_bounds": [
+        30,
+        263,
+        351,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-trail-1500.png": "6fb59c3e17eb877556c801da5c1324ac418b2f456c8659d4c50912a26b33bfe9",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-trail-1500.png": "47990b63ea572a5ff729b1538fe824d49eafcc88e7c3c662687815b51832ca18"
+      }
+    },
+    {
+      "file": "latin-380-trail-1900.png",
+      "scene": "latin",
+      "foreground_mae": 3.5532936380216715,
+      "full_mae": 0.19368567251461988,
+      "worst64": 11.77450980392157,
+      "channel_peak": 113,
+      "source_bounds": [
+        26,
+        261,
+        352,
+        325
+      ],
+      "native_bounds": [
+        27,
+        261,
+        351,
+        328
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-trail-1900.png": "6226ae8a818203a1906c1e7fba01c169ddf331fe8c50d543898c40ef38f6e017",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-trail-1900.png": "bb9bd4d9a9f05d747b3c9e87a5808e39d40b9a5342672a832b83abec975831a9"
+      }
+    },
+    {
+      "file": "latin-380-trail-2300.png",
+      "scene": "latin",
+      "foreground_mae": 3.6529403955927253,
+      "full_mae": 0.20115204678362572,
+      "worst64": 11.77450980392157,
+      "channel_peak": 120,
+      "source_bounds": [
+        25,
+        259,
+        352,
+        325
+      ],
+      "native_bounds": [
+        26,
+        260,
+        351,
+        328
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-trail-2300.png": "3a848f583bc575d888a2897450f152277e12d4ae7e2255ef1e527e8896687c45",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-trail-2300.png": "c6ef0958fcc85711f16da36b6d5c2b6d1bab5c6b69d73403fbcb7428c61375d8"
+      }
+    },
+    {
+      "file": "latin-380-trail-3100.png",
+      "scene": "latin",
+      "foreground_mae": 4.2282246430880965,
+      "full_mae": 0.24853801169590642,
+      "worst64": 9.657906558849955,
+      "channel_peak": 122,
+      "source_bounds": [
+        25,
+        260,
+        365,
+        334
+      ],
+      "native_bounds": [
+        26,
+        260,
+        368,
+        338
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-trail-3100.png": "5c550815f971a55d5c9062f9a66671528601d5e4faa51fe62a873b2bd1db40c8",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-trail-3100.png": "9c22df6876d7ca2957eb428f9b7207cc8ccbcc9ba166b36746afca12a1812c2b"
+      }
+    },
+    {
+      "file": "latin-380-trail-3450.png",
+      "scene": "latin",
+      "foreground_mae": 6.414467760925272,
+      "full_mae": 0.2708143274853801,
+      "worst64": 19.038427167113493,
+      "channel_peak": 123,
+      "source_bounds": [
+        41,
+        268,
+        363,
+        331
+      ],
+      "native_bounds": [
+        42,
+        269,
+        368,
+        338
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-trail-3450.png": "619f11cc854f0efea97ac968d8178ae5d2a53169196e8ad500636a69716e4358",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-trail-3450.png": "7f0d9b346203bf939e7287127127635ff6bc837c1d18a5ef9d0a5bfa1f53e271"
+      }
+    },
+    {
+      "file": "latin-380-trail-4000.png",
+      "scene": "latin",
+      "foreground_mae": 11.72041859911999,
+      "full_mae": 0.2881783625730994,
+      "worst64": 19.454870420017873,
+      "channel_peak": 130,
+      "source_bounds": [
+        41,
+        274,
+        366,
+        323
+      ],
+      "native_bounds": [
+        42,
+        274,
+        366,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-trail-4000.png": "ba302786251dbf0134535be4cd347173af950988c208829f82b5d05d60862de5",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-trail-4000.png": "2d9c5e6346c829dde50a8ae60d64635286a0e38e7f600fe02dfaa85c1ba09917"
+      }
+    },
+    {
+      "file": "latin-380-trail-5250.png",
+      "scene": "latin",
+      "foreground_mae": 18.14573370249182,
+      "full_mae": 0.3161973684210526,
+      "worst64": 26.873015873015873,
+      "channel_peak": 132,
+      "source_bounds": [
+        41,
+        276,
+        352,
+        323
+      ],
+      "native_bounds": [
+        42,
+        278,
+        351,
+        323
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-380-trail-5250.png": "beb4074dd6ec5853a4e8bd4a3bb6340ca0edd9488257671f2dd51650fb28afc9",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-380-trail-5250.png": "b3b14f877598bd7912907c4a81f69c0942cb3af7b40dee47b50bbff16e5c80d8"
+      }
+    },
+    {
+      "file": "latin-800-active-0.png",
+      "scene": "latin",
+      "foreground_mae": 4.186200272509995,
+      "full_mae": 0.13014722222222222,
+      "worst64": 12.571428571428571,
+      "channel_peak": 58,
+      "source_bounds": [
+        115,
+        255,
+        782,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        782,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-active-0.png": "733ad078754544d3e50b90df6eba5253107b924679273dd0248f1d2da66eb74a",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-active-0.png": "2257205d7645281b26f8555637cb19bed1f853e0ff73b91e9f72ec209c2878df"
+      }
+    },
+    {
+      "file": "latin-800-active-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.186200272509995,
+      "full_mae": 0.13014722222222222,
+      "worst64": 12.571428571428571,
+      "channel_peak": 58,
+      "source_bounds": [
+        115,
+        255,
+        782,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        782,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-active-700.png": "733ad078754544d3e50b90df6eba5253107b924679273dd0248f1d2da66eb74a",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-active-700.png": "2257205d7645281b26f8555637cb19bed1f853e0ff73b91e9f72ec209c2878df"
+      }
+    },
+    {
+      "file": "latin-800-active-1100.png",
+      "scene": "latin",
+      "foreground_mae": 2.9597913183835822,
+      "full_mae": 0.21393125,
+      "worst64": 12.571428571428571,
+      "channel_peak": 68,
+      "source_bounds": [
+        99,
+        234,
+        782,
+        351
+      ],
+      "native_bounds": [
+        95,
+        228,
+        782,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-active-1100.png": "b0ce1f7b0bfc78e7fb767936e15883e5b274fd29a2408a58aaf5250623d6dac6",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-active-1100.png": "21af00e614e018cfa7690d25e22632d682256d05089f03ca6abee8078e46a22b"
+      }
+    },
+    {
+      "file": "latin-800-active-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.4444284314290656,
+      "full_mae": 0.17668125,
+      "worst64": 12.571428571428571,
+      "channel_peak": 71,
+      "source_bounds": [
+        99,
+        234,
+        782,
+        351
+      ],
+      "native_bounds": [
+        95,
+        228,
+        782,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-active-1500.png": "e41576f763613ddcd5dff2759a7b1125d96f5d27384a3d376231f8ae5d51fd75",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-active-1500.png": "7827729d8491c97144c04b97fb86f7360d6a4e28a6697365ab7d5a574816261a"
+      }
+    },
+    {
+      "file": "latin-800-active-1900.png",
+      "scene": "latin",
+      "foreground_mae": 2.006226759942018,
+      "full_mae": 0.22106111111111112,
+      "worst64": 3.853782120883098,
+      "channel_peak": 99,
+      "source_bounds": [
+        87,
+        224,
+        782,
+        354
+      ],
+      "native_bounds": [
+        87,
+        224,
+        782,
+        361
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-active-1900.png": "764b9fb21f4f2b751ac0c9c51a19c5c6db96e7ebe6295a4bb55e60eaeb839f8d",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-active-1900.png": "a335a6b5de06212124297f65dd57c4e4c46cab616ddcff7ee7aea75f11806629"
+      }
+    },
+    {
+      "file": "latin-800-active-2300.png",
+      "scene": "latin",
+      "foreground_mae": 1.9220557925664206,
+      "full_mae": 0.21306388888888889,
+      "worst64": 3.8479913137893593,
+      "channel_peak": 104,
+      "source_bounds": [
+        84,
+        221,
+        782,
+        354
+      ],
+      "native_bounds": [
+        85,
+        221,
+        782,
+        361
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-active-2300.png": "b678a5306cc92c469a0ef6270e336f0dc9fa9cc23fdf5cc88dee9e64f5ed2c16",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-active-2300.png": "6de96a5aaa84726b3cc4ccf9e16b8304387d7a02e39fd6818653186d6fcbb638"
+      }
+    },
+    {
+      "file": "latin-800-active-3100.png",
+      "scene": "latin",
+      "foreground_mae": 2.0044217186980977,
+      "full_mae": 0.25561805555555556,
+      "worst64": 7.031582746796607,
+      "channel_peak": 106,
+      "source_bounds": [
+        85,
+        221,
+        800,
+        377
+      ],
+      "native_bounds": [
+        85,
+        221,
+        800,
+        386
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-active-3100.png": "a80c5e1df0a82ce92a7c30f8a23da1f1837af539a37c2117483ea8cbadc1fc10",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-active-3100.png": "6e4f55a9792f56936bcd05b471806c75266f0727bbb7020bf38459d9541f3978"
+      }
+    },
+    {
+      "file": "latin-800-active-3450.png",
+      "scene": "latin",
+      "foreground_mae": 2.3755715069495245,
+      "full_mae": 0.21649375,
+      "worst64": 16.166666666666668,
+      "channel_peak": 105,
+      "source_bounds": [
+        115,
+        232,
+        800,
+        370
+      ],
+      "native_bounds": [
+        116,
+        233,
+        800,
+        386
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-active-3450.png": "784a43e5a0a5fbe8fc3e54bd38f0f062c4f19aae43d74964c6f71af8af10cf01",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-active-3450.png": "4b5aed9ff2352f19b06d66a3acd3532807c53447b995422c812aba9feb0fbcbb"
+      }
+    },
+    {
+      "file": "latin-800-active-4000.png",
+      "scene": "latin",
+      "foreground_mae": 4.618248959114917,
+      "full_mae": 0.21799097222222222,
+      "worst64": 19.208333333333332,
+      "channel_peak": 105,
+      "source_bounds": [
+        115,
+        241,
+        800,
+        351
+      ],
+      "native_bounds": [
+        116,
+        242,
+        800,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-active-4000.png": "df7014fc12e27103232de2850fad6e7f55ede4dcd52e576d5139b2f17a6ab2e8",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-active-4000.png": "63d8940d7c878bee8779aaf986aed7994a9ad56282c7fbf257621380e6200e3d"
+      }
+    },
+    {
+      "file": "latin-800-active-5250.png",
+      "scene": "latin",
+      "foreground_mae": 7.7626252615350735,
+      "full_mae": 0.2447652777777778,
+      "worst64": 20.25,
+      "channel_peak": 105,
+      "source_bounds": [
+        115,
+        255,
+        782,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        782,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-active-5250.png": "00a29873d5f63210c6303995f5c66b33af1124823097ed8e84b24c2058c1d793",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-active-5250.png": "f96ca1ee0e80e65010023b9cc784ccf4c5d0dbdcbfcabc2463028e47577da251"
+      }
+    },
+    {
+      "file": "latin-800-trail-0.png",
+      "scene": "latin",
+      "foreground_mae": 4.186200272509995,
+      "full_mae": 0.13014722222222222,
+      "worst64": 12.571428571428571,
+      "channel_peak": 58,
+      "source_bounds": [
+        115,
+        255,
+        782,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        782,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-trail-0.png": "733ad078754544d3e50b90df6eba5253107b924679273dd0248f1d2da66eb74a",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-trail-0.png": "2257205d7645281b26f8555637cb19bed1f853e0ff73b91e9f72ec209c2878df"
+      }
+    },
+    {
+      "file": "latin-800-trail-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.186200272509995,
+      "full_mae": 0.13014722222222222,
+      "worst64": 12.571428571428571,
+      "channel_peak": 58,
+      "source_bounds": [
+        115,
+        255,
+        782,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        782,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-trail-700.png": "733ad078754544d3e50b90df6eba5253107b924679273dd0248f1d2da66eb74a",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-trail-700.png": "2257205d7645281b26f8555637cb19bed1f853e0ff73b91e9f72ec209c2878df"
+      }
+    },
+    {
+      "file": "latin-800-trail-1100.png",
+      "scene": "latin",
+      "foreground_mae": 2.4177187217770606,
+      "full_mae": 0.17475069444444444,
+      "worst64": 12.571428571428571,
+      "channel_peak": 56,
+      "source_bounds": [
+        99,
+        234,
+        782,
+        351
+      ],
+      "native_bounds": [
+        95,
+        228,
+        782,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-trail-1100.png": "b8dc347b6588e748e6f00632569e0649ec5b58e8600abce08382efdaa8e80601",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-trail-1100.png": "467379e336c867ce7a8e9319cd369fff81aa35f6fd3d1e48552e57fdd8a3771f"
+      }
+    },
+    {
+      "file": "latin-800-trail-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.090486347303088,
+      "full_mae": 0.15109861111111111,
+      "worst64": 12.571428571428571,
+      "channel_peak": 71,
+      "source_bounds": [
+        99,
+        234,
+        782,
+        351
+      ],
+      "native_bounds": [
+        95,
+        228,
+        782,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-trail-1500.png": "e969f1aee4d837354f218c1cb8177af6d367193d141127662b7e6537b3c82cf5",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-trail-1500.png": "0a22d486e79f1ca4cd320034af902663544eb4366e2a26bea4bda053eed4011d"
+      }
+    },
+    {
+      "file": "latin-800-trail-1900.png",
+      "scene": "latin",
+      "foreground_mae": 1.7996188745441009,
+      "full_mae": 0.19805555555555557,
+      "worst64": 3.853782120883098,
+      "channel_peak": 99,
+      "source_bounds": [
+        88,
+        224,
+        782,
+        354
+      ],
+      "native_bounds": [
+        88,
+        224,
+        782,
+        361
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-trail-1900.png": "94ff13cce3040af2028e54566c141b1a5d19f1a80dc547cee1ec9df4d8f21f5f",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-trail-1900.png": "e443ec61cf9165c5d2c126a75c43546ce63182cb39388667d5b97c8a04c23f54"
+      }
+    },
+    {
+      "file": "latin-800-trail-2300.png",
+      "scene": "latin",
+      "foreground_mae": 1.7476492072143184,
+      "full_mae": 0.19373055555555554,
+      "worst64": 3.8479913137893593,
+      "channel_peak": 104,
+      "source_bounds": [
+        84,
+        221,
+        782,
+        354
+      ],
+      "native_bounds": [
+        85,
+        221,
+        782,
+        361
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-trail-2300.png": "4ad03c0401c371b10a43a2f1ebb7b1b47523db53761c0f52767275e3e06cbcca",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-trail-2300.png": "a74cb1a0a0b90874c3fab6fc57aee0a85238d8321309dda3314065ffd4b399c9"
+      }
+    },
+    {
+      "file": "latin-800-trail-3100.png",
+      "scene": "latin",
+      "foreground_mae": 1.8411938640484864,
+      "full_mae": 0.23480208333333333,
+      "worst64": 7.031582746796607,
+      "channel_peak": 106,
+      "source_bounds": [
+        85,
+        221,
+        800,
+        377
+      ],
+      "native_bounds": [
+        85,
+        221,
+        800,
+        386
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-trail-3100.png": "32e295ed544f49fd4c3f6eb17cd20274de1b2133fb92f6981e81cb7ff8e32367",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-trail-3100.png": "0ea0e647f12b4c923615792f79e01b3e7d05912628a7dd916ff9f33d101373b2"
+      }
+    },
+    {
+      "file": "latin-800-trail-3450.png",
+      "scene": "latin",
+      "foreground_mae": 2.419737835426532,
+      "full_mae": 0.2203625,
+      "worst64": 16.166666666666668,
+      "channel_peak": 105,
+      "source_bounds": [
+        115,
+        232,
+        800,
+        370
+      ],
+      "native_bounds": [
+        116,
+        233,
+        800,
+        386
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-trail-3450.png": "941b7a641564491aa2135597ab62ce0f9f264f6698b978550d86ec80b8e684d1",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-trail-3450.png": "b1dc89be894b639fc903b9d7a1f64d4146047bc49c44d9a55a63b35deef5e728"
+      }
+    },
+    {
+      "file": "latin-800-trail-4000.png",
+      "scene": "latin",
+      "foreground_mae": 4.618248959114917,
+      "full_mae": 0.21799097222222222,
+      "worst64": 19.208333333333332,
+      "channel_peak": 105,
+      "source_bounds": [
+        115,
+        241,
+        800,
+        351
+      ],
+      "native_bounds": [
+        116,
+        242,
+        800,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-trail-4000.png": "df7014fc12e27103232de2850fad6e7f55ede4dcd52e576d5139b2f17a6ab2e8",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-trail-4000.png": "63d8940d7c878bee8779aaf986aed7994a9ad56282c7fbf257621380e6200e3d"
+      }
+    },
+    {
+      "file": "latin-800-trail-5250.png",
+      "scene": "latin",
+      "foreground_mae": 7.7626252615350735,
+      "full_mae": 0.2447652777777778,
+      "worst64": 20.25,
+      "channel_peak": 105,
+      "source_bounds": [
+        115,
+        255,
+        782,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        782,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-800-trail-5250.png": "00a29873d5f63210c6303995f5c66b33af1124823097ed8e84b24c2058c1d793",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-800-trail-5250.png": "f96ca1ee0e80e65010023b9cc784ccf4c5d0dbdcbfcabc2463028e47577da251"
+      }
+    },
+    {
+      "file": "latin-801-active-0.png",
+      "scene": "latin",
+      "foreground_mae": 4.185535223540452,
+      "full_mae": 0.12992925509779443,
+      "worst64": 10.488888888888889,
+      "channel_peak": 54,
+      "source_bounds": [
+        116,
+        255,
+        783,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        783,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-active-0.png": "855e88447f37f68c348f58443a5dd9f5ecb09cc5777ff8af2b4e4bf73fb81b63",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-active-0.png": "fc54bd06f3b21d33538e4a8a7fa550f0bb6b9eb4b10e6fa72e9b9a100c4c38d0"
+      }
+    },
+    {
+      "file": "latin-801-active-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.185535223540452,
+      "full_mae": 0.12992925509779443,
+      "worst64": 10.488888888888889,
+      "channel_peak": 54,
+      "source_bounds": [
+        116,
+        255,
+        783,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        783,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-active-700.png": "855e88447f37f68c348f58443a5dd9f5ecb09cc5777ff8af2b4e4bf73fb81b63",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-active-700.png": "fc54bd06f3b21d33538e4a8a7fa550f0bb6b9eb4b10e6fa72e9b9a100c4c38d0"
+      }
+    },
+    {
+      "file": "latin-801-active-1100.png",
+      "scene": "latin",
+      "foreground_mae": 2.9511561220281766,
+      "full_mae": 0.21342765986960743,
+      "worst64": 10.488888888888889,
+      "channel_peak": 71,
+      "source_bounds": [
+        99,
+        234,
+        783,
+        351
+      ],
+      "native_bounds": [
+        95,
+        228,
+        783,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-active-1100.png": "7d445fb7874b960f662226f56b7c6c0d94ba104ae7d59bff13384af720297796",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-active-1100.png": "7b4e7a0c90cd5a01fb1041fa75431db0fc41848f6b720106c114c0eaab9f0397"
+      }
+    },
+    {
+      "file": "latin-801-active-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.4344256792396735,
+      "full_mae": 0.17605770564572062,
+      "worst64": 10.488888888888889,
+      "channel_peak": 69,
+      "source_bounds": [
+        99,
+        234,
+        783,
+        351
+      ],
+      "native_bounds": [
+        95,
+        228,
+        783,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-active-1500.png": "e764a8ab5e9128b23dde29485d895dc208738c44944b1fefce7e434a2778f7ab",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-active-1500.png": "2ad7a5364b97224698805adad760be6165ea6f17f852bc1c31fde70cc2f98e25"
+      }
+    },
+    {
+      "file": "latin-801-active-1900.png",
+      "scene": "latin",
+      "foreground_mae": 2.018612808327676,
+      "full_mae": 0.2227278401997503,
+      "worst64": 3.943029016277424,
+      "channel_peak": 91,
+      "source_bounds": [
+        87,
+        224,
+        783,
+        355
+      ],
+      "native_bounds": [
+        87,
+        224,
+        783,
+        361
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-active-1900.png": "f9f1ae3b4ed6edf9cb6bf2750120b81c07f94b019bda48cc399e98db9e88a592",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-active-1900.png": "05c7155cb54d7453172d1e93a01d4a9af8394b50572fff0d1d6084e98b88257c"
+      }
+    },
+    {
+      "file": "latin-801-active-2300.png",
+      "scene": "latin",
+      "foreground_mae": 1.9348127600554785,
+      "full_mae": 0.2147940074906367,
+      "worst64": 3.9278131634819533,
+      "channel_peak": 97,
+      "source_bounds": [
+        85,
+        221,
+        783,
+        355
+      ],
+      "native_bounds": [
+        85,
+        221,
+        783,
+        361
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-active-2300.png": "805c82271bd65f6bdc9446c2b7f41fb14268082a6564b43e24a7d57a0672b4fc",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-active-2300.png": "35ab4079aabfbb24fe7422961091a31612aec2a8b54af725766d17277677a02c"
+      }
+    },
+    {
+      "file": "latin-801-active-3100.png",
+      "scene": "latin",
+      "foreground_mae": 2.0110183403454984,
+      "full_mae": 0.2565952281869885,
+      "worst64": 7.037878787878788,
+      "channel_peak": 98,
+      "source_bounds": [
+        85,
+        221,
+        801,
+        377
+      ],
+      "native_bounds": [
+        85,
+        221,
+        801,
+        387
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-active-3100.png": "8f372a784a92801cb0c796c727e6be024eda096b3a7476022a0435c0de33673f",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-active-3100.png": "e6f96c2361b067581ec41c29320074ca1d6b416ea54694b7faf73cd44d6ac9e0"
+      }
+    },
+    {
+      "file": "latin-801-active-3450.png",
+      "scene": "latin",
+      "foreground_mae": 2.3769326759191625,
+      "full_mae": 0.21666389235677624,
+      "worst64": 14.291666666666666,
+      "channel_peak": 98,
+      "source_bounds": [
+        116,
+        232,
+        801,
+        370
+      ],
+      "native_bounds": [
+        116,
+        233,
+        801,
+        387
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-active-3450.png": "05634ba919c8c51d713b5e173f0cf0e9e1a5512c463c61ad2bf73e5645ab6cbd",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-active-3450.png": "cf494ed4dda0031dec19a4fc83ab5a44b11ca337d98f4b651d1d22bf7cac8b0b"
+      }
+    },
+    {
+      "file": "latin-801-active-4000.png",
+      "scene": "latin",
+      "foreground_mae": 4.618860655255573,
+      "full_mae": 0.21785337772229157,
+      "worst64": 18.066666666666666,
+      "channel_peak": 99,
+      "source_bounds": [
+        116,
+        241,
+        801,
+        351
+      ],
+      "native_bounds": [
+        116,
+        242,
+        801,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-active-4000.png": "71687c4bf89e9020f1cf9e8825ce6ee75c76c2e0d3fcf602ed0c6af0fa642806",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-active-4000.png": "e325687c79eab05a61681a3e4028fae82382e166c4706d270c0fcc7a8ac43de8"
+      }
+    },
+    {
+      "file": "latin-801-active-5250.png",
+      "scene": "latin",
+      "foreground_mae": 7.775919069029357,
+      "full_mae": 0.2447003745318352,
+      "worst64": 19.0,
+      "channel_peak": 99,
+      "source_bounds": [
+        116,
+        255,
+        783,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        783,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-active-5250.png": "d25054ec6cc6cfc19e9a464855cf1ed9a5912a4ee10b703df26af89c955332e2",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-active-5250.png": "690097495e6cee2518566bfe486fb00dc7d2d6d4bcce542e99f0f7d54242730b"
+      }
+    },
+    {
+      "file": "latin-801-trail-0.png",
+      "scene": "latin",
+      "foreground_mae": 4.185535223540452,
+      "full_mae": 0.12992925509779443,
+      "worst64": 10.488888888888889,
+      "channel_peak": 54,
+      "source_bounds": [
+        116,
+        255,
+        783,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        783,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-trail-0.png": "855e88447f37f68c348f58443a5dd9f5ecb09cc5777ff8af2b4e4bf73fb81b63",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-trail-0.png": "fc54bd06f3b21d33538e4a8a7fa550f0bb6b9eb4b10e6fa72e9b9a100c4c38d0"
+      }
+    },
+    {
+      "file": "latin-801-trail-700.png",
+      "scene": "latin",
+      "foreground_mae": 4.185535223540452,
+      "full_mae": 0.12992925509779443,
+      "worst64": 10.488888888888889,
+      "channel_peak": 54,
+      "source_bounds": [
+        116,
+        255,
+        783,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        783,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-trail-700.png": "855e88447f37f68c348f58443a5dd9f5ecb09cc5777ff8af2b4e4bf73fb81b63",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-trail-700.png": "fc54bd06f3b21d33538e4a8a7fa550f0bb6b9eb4b10e6fa72e9b9a100c4c38d0"
+      }
+    },
+    {
+      "file": "latin-801-trail-1100.png",
+      "scene": "latin",
+      "foreground_mae": 2.385140643131839,
+      "full_mae": 0.17249341101401028,
+      "worst64": 10.488888888888889,
+      "channel_peak": 51,
+      "source_bounds": [
+        99,
+        234,
+        783,
+        351
+      ],
+      "native_bounds": [
+        95,
+        228,
+        783,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-trail-1100.png": "684a9f13da54cfcc97ed2e52ec19a8b20eb5bdd2079bc55c25a0940f471f3119",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-trail-1100.png": "68198d8b2cbb4b2546066d099b098cf1eeb9de805f94f156da8a828f68c442d4"
+      }
+    },
+    {
+      "file": "latin-801-trail-1500.png",
+      "scene": "latin",
+      "foreground_mae": 2.0647447516567405,
+      "full_mae": 0.1493223748092662,
+      "worst64": 10.488888888888889,
+      "channel_peak": 64,
+      "source_bounds": [
+        99,
+        234,
+        783,
+        351
+      ],
+      "native_bounds": [
+        95,
+        228,
+        783,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-trail-1500.png": "b48c26f6a2063ceb476235acd835fbc4184fbfea261f243cafa1992907661931",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-trail-1500.png": "db8d88664026baf09794bd5c24b38864936aa402b2fe974c6953e6257e1d57b1"
+      }
+    },
+    {
+      "file": "latin-801-trail-1900.png",
+      "scene": "latin",
+      "foreground_mae": 1.7985549933288019,
+      "full_mae": 0.19820779581079206,
+      "worst64": 3.943029016277424,
+      "channel_peak": 91,
+      "source_bounds": [
+        88,
+        224,
+        783,
+        355
+      ],
+      "native_bounds": [
+        88,
+        224,
+        783,
+        361
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-trail-1900.png": "9aa2f909d79e3301bacf4506a722795d6ec7f157d2f55376f866e3753dfae5e0",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-trail-1900.png": "4f4fd708fbfb953dbb5ceb26e6f57d2be155847319ae4efaeb4418566223c76c"
+      }
+    },
+    {
+      "file": "latin-801-trail-2300.png",
+      "scene": "latin",
+      "foreground_mae": 1.7542014969199435,
+      "full_mae": 0.19474337633513664,
+      "worst64": 3.9278131634819533,
+      "channel_peak": 97,
+      "source_bounds": [
+        85,
+        221,
+        783,
+        355
+      ],
+      "native_bounds": [
+        85,
+        221,
+        783,
+        361
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-trail-2300.png": "382c2291f2e51bbe53bb965b6ba7f872bc455bcfbc2779fdb2738ca9cc1706d2",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-trail-2300.png": "668919c2e25e49b07a8b735c9cbb2eef60dfa79156d3beda8d3ae8164f95256d"
+      }
+    },
+    {
+      "file": "latin-801-trail-3100.png",
+      "scene": "latin",
+      "foreground_mae": 1.8470478240544448,
+      "full_mae": 0.23567346372589817,
+      "worst64": 7.037878787878788,
+      "channel_peak": 98,
+      "source_bounds": [
+        85,
+        221,
+        801,
+        377
+      ],
+      "native_bounds": [
+        85,
+        221,
+        801,
+        387
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-trail-3100.png": "2bfacd20cb7de06bbcc9c52b4146d195c13c36787071f05972f91397aa6443f2",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-trail-3100.png": "1c04ea344a8288db45bba8294994b814fe76224c1f2c6c4e899468ccc07eef09"
+      }
+    },
+    {
+      "file": "latin-801-trail-3450.png",
+      "scene": "latin",
+      "foreground_mae": 2.4238893711640093,
+      "full_mae": 0.2207726453044805,
+      "worst64": 14.291666666666666,
+      "channel_peak": 98,
+      "source_bounds": [
+        116,
+        232,
+        801,
+        370
+      ],
+      "native_bounds": [
+        116,
+        233,
+        801,
+        387
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-trail-3450.png": "2e109c01c8049f1b295c059a556c36efb2c33f0d8b8ad2c83236976c54c950af",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-trail-3450.png": "e797e02c32216cd63c88f114f96f62eafa5c3fa0bcfc97071c1faa54bc2c16c3"
+      }
+    },
+    {
+      "file": "latin-801-trail-4000.png",
+      "scene": "latin",
+      "foreground_mae": 4.618860655255573,
+      "full_mae": 0.21785337772229157,
+      "worst64": 18.066666666666666,
+      "channel_peak": 99,
+      "source_bounds": [
+        116,
+        241,
+        801,
+        351
+      ],
+      "native_bounds": [
+        116,
+        242,
+        801,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-trail-4000.png": "71687c4bf89e9020f1cf9e8825ce6ee75c76c2e0d3fcf602ed0c6af0fa642806",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-trail-4000.png": "e325687c79eab05a61681a3e4028fae82382e166c4706d270c0fcc7a8ac43de8"
+      }
+    },
+    {
+      "file": "latin-801-trail-5250.png",
+      "scene": "latin",
+      "foreground_mae": 7.775919069029357,
+      "full_mae": 0.2447003745318352,
+      "worst64": 19.0,
+      "channel_peak": 99,
+      "source_bounds": [
+        116,
+        255,
+        783,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        783,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\latin-801-trail-5250.png": "d25054ec6cc6cfc19e9a464855cf1ed9a5912a4ee10b703df26af89c955332e2",
+        "build\\verification\\diorama-active-layers-kotlin\\latin-801-trail-5250.png": "690097495e6cee2518566bfe486fb00dc7d2d6d4bcce542e99f0f7d54242730b"
+      }
+    },
+    {
+      "file": "arabic-380-active-0.png",
+      "scene": "arabic",
+      "foreground_mae": 5.389681229044688,
+      "full_mae": 0.15745906432748538,
+      "worst64": 10.570175438596491,
+      "channel_peak": 69,
+      "source_bounds": [
+        41,
+        257,
+        350,
+        333
+      ],
+      "native_bounds": [
+        42,
+        258,
+        350,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-active-0.png": "a21f8a0ee1a4a56936b553831b5f3b2d08b8b0ebda023bd25358ce4eed3a3edb",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-active-0.png": "b2824c51198ec96fadf655724bcd7bbea4ad851a726cb4470ae1455f49bf31eb"
+      }
+    },
+    {
+      "file": "arabic-380-active-700.png",
+      "scene": "arabic",
+      "foreground_mae": 5.389681229044688,
+      "full_mae": 0.15745906432748538,
+      "worst64": 10.570175438596491,
+      "channel_peak": 69,
+      "source_bounds": [
+        41,
+        257,
+        350,
+        333
+      ],
+      "native_bounds": [
+        42,
+        258,
+        350,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-active-700.png": "a21f8a0ee1a4a56936b553831b5f3b2d08b8b0ebda023bd25358ce4eed3a3edb",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-active-700.png": "b2824c51198ec96fadf655724bcd7bbea4ad851a726cb4470ae1455f49bf31eb"
+      }
+    },
+    {
+      "file": "arabic-380-active-1100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.67989850335455,
+      "full_mae": 0.27330263157894735,
+      "worst64": 5.982704402515723,
+      "channel_peak": 69,
+      "source_bounds": [
+        41,
+        243,
+        376,
+        354
+      ],
+      "native_bounds": [
+        42,
+        235,
+        380,
+        362
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-active-1100.png": "ed0d1f3a2ed6538fcbbf8ac3988838c03896a159ae68a5904f84090d03a7c31c",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-active-1100.png": "63cdb04093995b993a1169e614cce9f6a1d7b3cf5a381060410fd38f9d643d65"
+      }
+    },
+    {
+      "file": "arabic-380-active-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 2.1448190836630543,
+      "full_mae": 0.21873391812865497,
+      "worst64": 5.982704402515723,
+      "channel_peak": 68,
+      "source_bounds": [
+        41,
+        243,
+        376,
+        354
+      ],
+      "native_bounds": [
+        42,
+        235,
+        380,
+        362
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-active-1500.png": "06b25d109682c7b25142f339cc85ca141570e4b71f2ef0229b9d5c1a13787647",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-active-1500.png": "d1e9e3ad5eb7d8b6ce393db37959af741708dce5ab0dfd7131764ba360e895da"
+      }
+    },
+    {
+      "file": "arabic-380-active-1900.png",
+      "scene": "arabic",
+      "foreground_mae": 1.9456154116723938,
+      "full_mae": 0.3153859649122807,
+      "worst64": 4.248453776041667,
+      "channel_peak": 92,
+      "source_bounds": [
+        19,
+        226,
+        374,
+        346
+      ],
+      "native_bounds": [
+        16,
+        227,
+        380,
+        362
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-active-1900.png": "25dfc7e67119a159c7664c5e5566cb0a330338870b98814cf7db4a1697332da2",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-active-1900.png": "9cb5e60692e0da4429dd1bbe76fee2c7bc6fe7df78718a389171d4e6b0c8929b"
+      }
+    },
+    {
+      "file": "arabic-380-active-2300.png",
+      "scene": "arabic",
+      "foreground_mae": 1.747979499310073,
+      "full_mae": 0.28521198830409356,
+      "worst64": 3.122802734375,
+      "channel_peak": 101,
+      "source_bounds": [
+        20,
+        223,
+        376,
+        343
+      ],
+      "native_bounds": [
+        16,
+        223,
+        380,
+        362
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-active-2300.png": "bbb8093a7608e5b39abb88b20705b1ffbf130aff6506ba5de6d0c07ab9e31754",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-active-2300.png": "64aef374a7dd8b0504a53c16132852c7fc5f8c961b11191a5b3a770b0ca2205d"
+      }
+    },
+    {
+      "file": "arabic-380-active-3100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.3574258995086383,
+      "full_mae": 0.28267397660818716,
+      "worst64": 18.035087719298247,
+      "channel_peak": 124,
+      "source_bounds": [
+        20,
+        217,
+        375,
+        333
+      ],
+      "native_bounds": [
+        16,
+        218,
+        375,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-active-3100.png": "a2eecc97c27526d64d1aedaec5488a1aa3a9debc80cf3bb61da049f496936808",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-active-3100.png": "54562809c90fa43a39871c531ff27b996e7326cc8becd533fbbb4d8d23e4d1fc"
+      }
+    },
+    {
+      "file": "arabic-380-active-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.814956777034742,
+      "full_mae": 0.2589517543859649,
+      "worst64": 18.87719298245614,
+      "channel_peak": 127,
+      "source_bounds": [
+        20,
+        218,
+        350,
+        333
+      ],
+      "native_bounds": [
+        21,
+        218,
+        350,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-active-3450.png": "90a794d54bd700a9ce5f283a72548fe4fb7bf3a69d34dc72bbf4e00875d2047e",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-active-3450.png": "d60bcdb187dabacaf5bf8d42f90cd86b8c5abb112048c020f82d5d0d68aa42fd"
+      }
+    },
+    {
+      "file": "arabic-380-active-4000.png",
+      "scene": "arabic",
+      "foreground_mae": 9.545355353865991,
+      "full_mae": 0.28137865497076026,
+      "worst64": 19.236842105263158,
+      "channel_peak": 127,
+      "source_bounds": [
+        40,
+        257,
+        350,
+        333
+      ],
+      "native_bounds": [
+        42,
+        258,
+        350,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-active-4000.png": "8201fdba74a3f98871de15a0e3006c0dc3d2b004c26c8015e4c68562e4e94d7f",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-active-4000.png": "e41f46d52ab3f720c2dfbb837e3e255d471eae261ab79ebc0fa7f0442fb7a456"
+      }
+    },
+    {
+      "file": "arabic-380-active-5250.png",
+      "scene": "arabic",
+      "foreground_mae": 9.93564380980713,
+      "full_mae": 0.2929707602339181,
+      "worst64": 19.236842105263158,
+      "channel_peak": 128,
+      "source_bounds": [
+        40,
+        257,
+        350,
+        333
+      ],
+      "native_bounds": [
+        42,
+        258,
+        350,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-active-5250.png": "d30cb305e1f2d05898bc67961123a599edbdbaaaddd43965efc12b7fe41479f1",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-active-5250.png": "904f84ee5c389975318c21b7f2a2ffdc223183b646b4f17f9c46717c7c62638f"
+      }
+    },
+    {
+      "file": "arabic-380-trail-0.png",
+      "scene": "arabic",
+      "foreground_mae": 5.389681229044688,
+      "full_mae": 0.15745906432748538,
+      "worst64": 10.570175438596491,
+      "channel_peak": 69,
+      "source_bounds": [
+        41,
+        257,
+        350,
+        333
+      ],
+      "native_bounds": [
+        42,
+        258,
+        350,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-trail-0.png": "a21f8a0ee1a4a56936b553831b5f3b2d08b8b0ebda023bd25358ce4eed3a3edb",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-trail-0.png": "b2824c51198ec96fadf655724bcd7bbea4ad851a726cb4470ae1455f49bf31eb"
+      }
+    },
+    {
+      "file": "arabic-380-trail-700.png",
+      "scene": "arabic",
+      "foreground_mae": 5.389681229044688,
+      "full_mae": 0.15745906432748538,
+      "worst64": 10.570175438596491,
+      "channel_peak": 69,
+      "source_bounds": [
+        41,
+        257,
+        350,
+        333
+      ],
+      "native_bounds": [
+        42,
+        258,
+        350,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-trail-700.png": "a21f8a0ee1a4a56936b553831b5f3b2d08b8b0ebda023bd25358ce4eed3a3edb",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-trail-700.png": "b2824c51198ec96fadf655724bcd7bbea4ad851a726cb4470ae1455f49bf31eb"
+      }
+    },
+    {
+      "file": "arabic-380-trail-1100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.1917254429726474,
+      "full_mae": 0.22351754385964911,
+      "worst64": 5.982704402515723,
+      "channel_peak": 68,
+      "source_bounds": [
+        41,
+        243,
+        376,
+        354
+      ],
+      "native_bounds": [
+        42,
+        235,
+        380,
+        362
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-trail-1100.png": "a7f16396652acc12ca52c5913ab28ed28ce2b8e8d6640b2ff13ff87cbc87f5b7",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-trail-1100.png": "db6813517a578feb1f36794457500144a91958b57b4a83378b5771ae9e095c25"
+      }
+    },
+    {
+      "file": "arabic-380-trail-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 1.8304805321406044,
+      "full_mae": 0.18667690058479533,
+      "worst64": 5.982704402515723,
+      "channel_peak": 68,
+      "source_bounds": [
+        41,
+        243,
+        376,
+        354
+      ],
+      "native_bounds": [
+        42,
+        235,
+        380,
+        362
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-trail-1500.png": "93b429b1d15907bb71bf41e7adbdff4277da71f8720bd33e93f460001776ceea",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-trail-1500.png": "f4a5802385bf1c7156185832eef2178433a0adfa6e1f4899ea0c2237dc75872f"
+      }
+    },
+    {
+      "file": "arabic-380-trail-1900.png",
+      "scene": "arabic",
+      "foreground_mae": 1.531745816740263,
+      "full_mae": 0.24798830409356726,
+      "worst64": 2.9270833333333335,
+      "channel_peak": 92,
+      "source_bounds": [
+        19,
+        227,
+        373,
+        346
+      ],
+      "native_bounds": [
+        16,
+        228,
+        380,
+        362
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-trail-1900.png": "d74a06268f5da9bec629f411534280f1afbca112053cd8030479ec5e7639721b",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-trail-1900.png": "58bf37a3c06facaae8f6fafa1165615fb0752782beb6f2b1d595548532624cdc"
+      }
+    },
+    {
+      "file": "arabic-380-trail-2300.png",
+      "scene": "arabic",
+      "foreground_mae": 1.451678225185026,
+      "full_mae": 0.2368654970760234,
+      "worst64": 2.34375,
+      "channel_peak": 101,
+      "source_bounds": [
+        20,
+        223,
+        376,
+        343
+      ],
+      "native_bounds": [
+        16,
+        223,
+        380,
+        362
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-trail-2300.png": "384a01fa937de5c7ce9dace0c99cc4a1720001c2a83d7b9a310b29f416ec9273",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-trail-2300.png": "f79d935f545a2cd36a8f7ecf2f8533d762553c8262740bdcc6ddc1613517fe9f"
+      }
+    },
+    {
+      "file": "arabic-380-trail-3100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.3574258995086383,
+      "full_mae": 0.28267397660818716,
+      "worst64": 18.035087719298247,
+      "channel_peak": 124,
+      "source_bounds": [
+        20,
+        217,
+        375,
+        333
+      ],
+      "native_bounds": [
+        16,
+        218,
+        375,
+        351
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-trail-3100.png": "a2eecc97c27526d64d1aedaec5488a1aa3a9debc80cf3bb61da049f496936808",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-trail-3100.png": "54562809c90fa43a39871c531ff27b996e7326cc8becd533fbbb4d8d23e4d1fc"
+      }
+    },
+    {
+      "file": "arabic-380-trail-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.814956777034742,
+      "full_mae": 0.2589517543859649,
+      "worst64": 18.87719298245614,
+      "channel_peak": 127,
+      "source_bounds": [
+        20,
+        218,
+        350,
+        333
+      ],
+      "native_bounds": [
+        21,
+        218,
+        350,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-trail-3450.png": "90a794d54bd700a9ce5f283a72548fe4fb7bf3a69d34dc72bbf4e00875d2047e",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-trail-3450.png": "d60bcdb187dabacaf5bf8d42f90cd86b8c5abb112048c020f82d5d0d68aa42fd"
+      }
+    },
+    {
+      "file": "arabic-380-trail-4000.png",
+      "scene": "arabic",
+      "foreground_mae": 9.545355353865991,
+      "full_mae": 0.28137865497076026,
+      "worst64": 19.236842105263158,
+      "channel_peak": 127,
+      "source_bounds": [
+        40,
+        257,
+        350,
+        333
+      ],
+      "native_bounds": [
+        42,
+        258,
+        350,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-trail-4000.png": "8201fdba74a3f98871de15a0e3006c0dc3d2b004c26c8015e4c68562e4e94d7f",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-trail-4000.png": "e41f46d52ab3f720c2dfbb837e3e255d471eae261ab79ebc0fa7f0442fb7a456"
+      }
+    },
+    {
+      "file": "arabic-380-trail-5250.png",
+      "scene": "arabic",
+      "foreground_mae": 9.93564380980713,
+      "full_mae": 0.2929707602339181,
+      "worst64": 19.236842105263158,
+      "channel_peak": 128,
+      "source_bounds": [
+        40,
+        257,
+        350,
+        333
+      ],
+      "native_bounds": [
+        42,
+        258,
+        350,
+        332
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-380-trail-5250.png": "d30cb305e1f2d05898bc67961123a599edbdbaaaddd43965efc12b7fe41479f1",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-380-trail-5250.png": "904f84ee5c389975318c21b7f2a2ffdc223183b646b4f17f9c46717c7c62638f"
+      }
+    },
+    {
+      "file": "arabic-800-active-0.png",
+      "scene": "arabic",
+      "foreground_mae": 4.679391471552992,
+      "full_mae": 0.11491805555555555,
+      "worst64": 10.095238095238095,
+      "channel_peak": 71,
+      "source_bounds": [
+        206,
+        244,
+        623,
+        344
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-active-0.png": "96f259a2042804a8bf3126a95d7471a93fceb2ef67e350c252aa1aadd76eebbb",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-active-0.png": "ae0ffd8b7312151214e0a93b56b63a31a804f5edfb6a04d1afd763f9b4e402c4"
+      }
+    },
+    {
+      "file": "arabic-800-active-700.png",
+      "scene": "arabic",
+      "foreground_mae": 4.679391471552992,
+      "full_mae": 0.11491805555555555,
+      "worst64": 10.095238095238095,
+      "channel_peak": 71,
+      "source_bounds": [
+        206,
+        244,
+        623,
+        344
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-active-700.png": "96f259a2042804a8bf3126a95d7471a93fceb2ef67e350c252aa1aadd76eebbb",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-active-700.png": "ae0ffd8b7312151214e0a93b56b63a31a804f5edfb6a04d1afd763f9b4e402c4"
+      }
+    },
+    {
+      "file": "arabic-800-active-1100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.3991920395274424,
+      "full_mae": 0.2181715277777778,
+      "worst64": 9.29559748427673,
+      "channel_peak": 77,
+      "source_bounds": [
+        206,
+        223,
+        660,
+        373
+      ],
+      "native_bounds": [
+        208,
+        212,
+        674,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-active-1100.png": "3203c07a28ae6e7b435eacaf90de48f3767f937dafbdcee1f7dbdde487db1996",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-active-1100.png": "6a09a21eb6868f09d0cb851bf9217d718eceea5aa4147e49917fb2c905f901c8"
+      }
+    },
+    {
+      "file": "arabic-800-active-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 1.8690386186777856,
+      "full_mae": 0.16996180555555557,
+      "worst64": 9.29559748427673,
+      "channel_peak": 74,
+      "source_bounds": [
+        206,
+        223,
+        660,
+        373
+      ],
+      "native_bounds": [
+        208,
+        212,
+        674,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-active-1500.png": "c2c18e3734bb22b595e3e0b1f41e888299289c3f12dec4fa41e9fa8997a01320",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-active-1500.png": "783e54749cfefd9d3fd94a4a59cfb411fbe73ac3aeac293383c399ace64f80ee"
+      }
+    },
+    {
+      "file": "arabic-800-active-1900.png",
+      "scene": "arabic",
+      "foreground_mae": 1.744711662020837,
+      "full_mae": 0.2451465277777778,
+      "worst64": 4.168863932291667,
+      "channel_peak": 101,
+      "source_bounds": [
+        180,
+        200,
+        658,
+        363
+      ],
+      "native_bounds": [
+        175,
+        201,
+        674,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-active-1900.png": "ecd01b761c887a6ba4028a832649c9236859e529a3485be24e5b3d925d479b73",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-active-1900.png": "c6014d11bce0ef4acc50051655d4e6edee4f5295f2ff890dd7e6b99e45940fb2"
+      }
+    },
+    {
+      "file": "arabic-800-active-2300.png",
+      "scene": "arabic",
+      "foreground_mae": 1.5775206352010522,
+      "full_mae": 0.22323888888888888,
+      "worst64": 3.0874837239583335,
+      "channel_peak": 110,
+      "source_bounds": [
+        180,
+        196,
+        660,
+        358
+      ],
+      "native_bounds": [
+        175,
+        196,
+        674,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-active-2300.png": "06e045ecffa318c94edd002f4c825c0351aab42b80e092dd7b79953632fd60a9",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-active-2300.png": "1b952a3a10ff27f9a8617cf402dcc44247898c08ad4a3f539e61428cc3451ee3"
+      }
+    },
+    {
+      "file": "arabic-800-active-3100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.123478642681705,
+      "full_mae": 0.21494027777777777,
+      "worst64": 10.766114180478821,
+      "channel_peak": 129,
+      "source_bounds": [
+        180,
+        191,
+        660,
+        345
+      ],
+      "native_bounds": [
+        175,
+        191,
+        660,
+        368
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-active-3100.png": "b1892480275381585d56ced36c432ab5c588fb3f05f99d1400543180835e0f6d",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-active-3100.png": "b3fcef4471e2f90374864ba686596a3f5a93ef3b4eebd09fa07b5fc9010de1a9"
+      }
+    },
+    {
+      "file": "arabic-800-active-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.33319310710168,
+      "full_mae": 0.19313402777777777,
+      "worst64": 13.121212121212121,
+      "channel_peak": 132,
+      "source_bounds": [
+        180,
+        191,
+        623,
+        345
+      ],
+      "native_bounds": [
+        181,
+        191,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-active-3450.png": "05aab126d718e0ab8d33aeb2020afa5adc4aabe7829d338d161110c1a0592667",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-active-3450.png": "45e73d0943c66450fa4ea0ae4a78993a0031418971a0e02b7e6a1117c389b135"
+      }
+    },
+    {
+      "file": "arabic-800-active-4000.png",
+      "scene": "arabic",
+      "foreground_mae": 8.48956931359354,
+      "full_mae": 0.21025833333333332,
+      "worst64": 17.011111111111113,
+      "channel_peak": 132,
+      "source_bounds": [
+        206,
+        244,
+        623,
+        345
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-active-4000.png": "b87b28d9e04a27a575b24fe927a38612ddbf7b4816cc61a86733682ae5dace4a",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-active-4000.png": "79da75c95b7065e80a65551b3e20c243a43336b6780df3d6bd9df02255e3bfb1"
+      }
+    },
+    {
+      "file": "arabic-800-active-5250.png",
+      "scene": "arabic",
+      "foreground_mae": 8.845614625392553,
+      "full_mae": 0.2190763888888889,
+      "worst64": 17.011111111111113,
+      "channel_peak": 132,
+      "source_bounds": [
+        206,
+        244,
+        623,
+        345
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-active-5250.png": "e304f1bdc530ddaf59053beb7e50e957799ee35ce92d94584e828f70b0cbdb2a",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-active-5250.png": "134b2b3835d605e54388cc122df3ddfedc56ab4314b72957b293aa25c8a77077"
+      }
+    },
+    {
+      "file": "arabic-800-trail-0.png",
+      "scene": "arabic",
+      "foreground_mae": 4.679391471552992,
+      "full_mae": 0.11491805555555555,
+      "worst64": 10.095238095238095,
+      "channel_peak": 71,
+      "source_bounds": [
+        206,
+        244,
+        623,
+        344
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-trail-0.png": "96f259a2042804a8bf3126a95d7471a93fceb2ef67e350c252aa1aadd76eebbb",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-trail-0.png": "ae0ffd8b7312151214e0a93b56b63a31a804f5edfb6a04d1afd763f9b4e402c4"
+      }
+    },
+    {
+      "file": "arabic-800-trail-700.png",
+      "scene": "arabic",
+      "foreground_mae": 4.679391471552992,
+      "full_mae": 0.11491805555555555,
+      "worst64": 10.095238095238095,
+      "channel_peak": 71,
+      "source_bounds": [
+        206,
+        244,
+        623,
+        344
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-trail-700.png": "96f259a2042804a8bf3126a95d7471a93fceb2ef67e350c252aa1aadd76eebbb",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-trail-700.png": "ae0ffd8b7312151214e0a93b56b63a31a804f5edfb6a04d1afd763f9b4e402c4"
+      }
+    },
+    {
+      "file": "arabic-800-trail-1100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.009576393502715,
+      "full_mae": 0.18274166666666666,
+      "worst64": 9.29559748427673,
+      "channel_peak": 70,
+      "source_bounds": [
+        206,
+        223,
+        660,
+        373
+      ],
+      "native_bounds": [
+        208,
+        212,
+        674,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-trail-1100.png": "f87f804d7e42cb203a0d45ee7db9f2c0cb7e404b58ae0124ea78e4385e9163ee",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-trail-1100.png": "16dd1751b9c7a47827bfee50128ccfe4125bccd88a9b3d1073adecfa4e6d70a2"
+      }
+    },
+    {
+      "file": "arabic-800-trail-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 1.6212207992546603,
+      "full_mae": 0.1474263888888889,
+      "worst64": 9.29559748427673,
+      "channel_peak": 70,
+      "source_bounds": [
+        206,
+        223,
+        660,
+        373
+      ],
+      "native_bounds": [
+        208,
+        212,
+        674,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-trail-1500.png": "c43fce54d3108fccb8c878e0b199635bd3ce616c3ee7aa1de8098888e1964412",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-trail-1500.png": "724b4b93e3f687c6451e0bcfa51792812a0b71104a357ff3d0d42c7962fae81d"
+      }
+    },
+    {
+      "file": "arabic-800-trail-1900.png",
+      "scene": "arabic",
+      "foreground_mae": 1.3924976991360627,
+      "full_mae": 0.19543125,
+      "worst64": 2.803955078125,
+      "channel_peak": 101,
+      "source_bounds": [
+        180,
+        201,
+        656,
+        363
+      ],
+      "native_bounds": [
+        175,
+        202,
+        674,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-trail-1900.png": "d474b95e5eac28493e26c75caf50bc1e5a7f8ade3e4e7f896dd6f19c183f8cc5",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-trail-1900.png": "04917fa17c60c4d6879dc34569dbba6834e534df48328fbc910d965ed08bfb38"
+      }
+    },
+    {
+      "file": "arabic-800-trail-2300.png",
+      "scene": "arabic",
+      "foreground_mae": 1.319872606463897,
+      "full_mae": 0.1867784722222222,
+      "worst64": 2.7511393229166665,
+      "channel_peak": 110,
+      "source_bounds": [
+        180,
+        196,
+        660,
+        358
+      ],
+      "native_bounds": [
+        175,
+        196,
+        674,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-trail-2300.png": "9bb82890401edea37fe77c16168c07935bddb9af5264ac31e934968723794aa1",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-trail-2300.png": "f2c40a80e89b9789fd02f639e64ae8e6ccfb78b138aac16f5e3202ab188c0550"
+      }
+    },
+    {
+      "file": "arabic-800-trail-3100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.123478642681705,
+      "full_mae": 0.21494027777777777,
+      "worst64": 10.766114180478821,
+      "channel_peak": 129,
+      "source_bounds": [
+        180,
+        191,
+        660,
+        345
+      ],
+      "native_bounds": [
+        175,
+        191,
+        660,
+        368
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-trail-3100.png": "b1892480275381585d56ced36c432ab5c588fb3f05f99d1400543180835e0f6d",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-trail-3100.png": "b3fcef4471e2f90374864ba686596a3f5a93ef3b4eebd09fa07b5fc9010de1a9"
+      }
+    },
+    {
+      "file": "arabic-800-trail-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.33319310710168,
+      "full_mae": 0.19313402777777777,
+      "worst64": 13.121212121212121,
+      "channel_peak": 132,
+      "source_bounds": [
+        180,
+        191,
+        623,
+        345
+      ],
+      "native_bounds": [
+        181,
+        191,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-trail-3450.png": "05aab126d718e0ab8d33aeb2020afa5adc4aabe7829d338d161110c1a0592667",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-trail-3450.png": "45e73d0943c66450fa4ea0ae4a78993a0031418971a0e02b7e6a1117c389b135"
+      }
+    },
+    {
+      "file": "arabic-800-trail-4000.png",
+      "scene": "arabic",
+      "foreground_mae": 8.48956931359354,
+      "full_mae": 0.21025833333333332,
+      "worst64": 17.011111111111113,
+      "channel_peak": 132,
+      "source_bounds": [
+        206,
+        244,
+        623,
+        345
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-trail-4000.png": "b87b28d9e04a27a575b24fe927a38612ddbf7b4816cc61a86733682ae5dace4a",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-trail-4000.png": "79da75c95b7065e80a65551b3e20c243a43336b6780df3d6bd9df02255e3bfb1"
+      }
+    },
+    {
+      "file": "arabic-800-trail-5250.png",
+      "scene": "arabic",
+      "foreground_mae": 8.845614625392553,
+      "full_mae": 0.2190763888888889,
+      "worst64": 17.011111111111113,
+      "channel_peak": 132,
+      "source_bounds": [
+        206,
+        244,
+        623,
+        345
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-800-trail-5250.png": "e304f1bdc530ddaf59053beb7e50e957799ee35ce92d94584e828f70b0cbdb2a",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-800-trail-5250.png": "134b2b3835d605e54388cc122df3ddfedc56ab4314b72957b293aa25c8a77077"
+      }
+    },
+    {
+      "file": "arabic-801-active-0.png",
+      "scene": "arabic",
+      "foreground_mae": 4.786229415105054,
+      "full_mae": 0.1169170481342766,
+      "worst64": 15.72,
+      "channel_peak": 70,
+      "source_bounds": [
+        207,
+        244,
+        623,
+        344
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-active-0.png": "5bb15956b4bea1617fc767c6729fd6c6a52d754212830e02d50e4c74e6e734aa",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-active-0.png": "794d777d3836b3ac6c919ff6e5b8a84019c1296a8047e64f849fe200d9cbefdc"
+      }
+    },
+    {
+      "file": "arabic-801-active-700.png",
+      "scene": "arabic",
+      "foreground_mae": 4.786229415105054,
+      "full_mae": 0.1169170481342766,
+      "worst64": 15.72,
+      "channel_peak": 70,
+      "source_bounds": [
+        207,
+        244,
+        623,
+        344
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-active-700.png": "5bb15956b4bea1617fc767c6729fd6c6a52d754212830e02d50e4c74e6e734aa",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-active-700.png": "794d777d3836b3ac6c919ff6e5b8a84019c1296a8047e64f849fe200d9cbefdc"
+      }
+    },
+    {
+      "file": "arabic-801-active-1100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.4024865807221176,
+      "full_mae": 0.21792342904702455,
+      "worst64": 15.72,
+      "channel_peak": 77,
+      "source_bounds": [
+        207,
+        223,
+        661,
+        373
+      ],
+      "native_bounds": [
+        208,
+        212,
+        675,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-active-1100.png": "299fc92a1db0075307085ab1292789b35f9075309af3e5f6d951d1deedbe4125",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-active-1100.png": "9c7ed3d5f0d51cd102db4de0a9fc5614297c740cbd5736c14a3980b00fe9ccdc"
+      }
+    },
+    {
+      "file": "arabic-801-active-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 1.8743481518863452,
+      "full_mae": 0.1700173394368151,
+      "worst64": 15.72,
+      "channel_peak": 74,
+      "source_bounds": [
+        207,
+        223,
+        660,
+        373
+      ],
+      "native_bounds": [
+        208,
+        212,
+        675,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-active-1500.png": "50d3d21b45dd689d12fb14302d6dae4579fdba42496609c1bcea80e5a4944c46",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-active-1500.png": "bacf78a0306ec93686c0797379110e4f9930f677a110f5968d0e4b63492d2354"
+      }
+    },
+    {
+      "file": "arabic-801-active-1900.png",
+      "scene": "arabic",
+      "foreground_mae": 1.7555967383246849,
+      "full_mae": 0.24638992925509778,
+      "worst64": 4.130045572916667,
+      "channel_peak": 101,
+      "source_bounds": [
+        180,
+        200,
+        658,
+        363
+      ],
+      "native_bounds": [
+        175,
+        201,
+        675,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-active-1900.png": "5f9fa709256c229ee9f7425f0beb234877f7b4c0f70eaf05bf9fd72641479591",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-active-1900.png": "9bb214ced7f362c91ac5c139bfae7c3f150a7424522314c23e537dba91dd345c"
+      }
+    },
+    {
+      "file": "arabic-801-active-2300.png",
+      "scene": "arabic",
+      "foreground_mae": 1.585564501489081,
+      "full_mae": 0.22413996393397143,
+      "worst64": 3.272705078125,
+      "channel_peak": 122,
+      "source_bounds": [
+        180,
+        196,
+        661,
+        358
+      ],
+      "native_bounds": [
+        175,
+        196,
+        675,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-active-2300.png": "62391a40bb2298881b98a6f1fe1dbecb4af6c7efb0a10f80b1368e3643a8f2ad",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-active-2300.png": "613b7a236aff2d24856bd2f1f70aa4ffb5fad2bd9d0a76c2ca4a0737b300ae69"
+      }
+    },
+    {
+      "file": "arabic-801-active-3100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.159316147806512,
+      "full_mae": 0.2182140380080455,
+      "worst64": 11.119318181818182,
+      "channel_peak": 126,
+      "source_bounds": [
+        180,
+        191,
+        660,
+        345
+      ],
+      "native_bounds": [
+        175,
+        191,
+        661,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-active-3100.png": "7fb0a84d1d90fa5c8e28acf53893b143bd2578a353e5cdd61e55cc2027e0f5ec",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-active-3100.png": "0a3d7ac80ef33357fbe6644a43b8c3a80bdbac21da138e65d5c1e7b738d779a9"
+      }
+    },
+    {
+      "file": "arabic-801-active-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.4193854974915086,
+      "full_mae": 0.19672978221667362,
+      "worst64": 12.242424242424242,
+      "channel_peak": 128,
+      "source_bounds": [
+        180,
+        191,
+        623,
+        345
+      ],
+      "native_bounds": [
+        181,
+        191,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-active-3450.png": "54c7daeba11d5a31089fcbcf6cafd86abb9d8efcae5e738beebd254adfb0fd00",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-active-3450.png": "7b281f01c071072d927f3c04509a7efe5c9561dc7e85f92872b0d783aaca09b4"
+      }
+    },
+    {
+      "file": "arabic-801-active-4000.png",
+      "scene": "arabic",
+      "foreground_mae": 8.688127584170113,
+      "full_mae": 0.21423845193508115,
+      "worst64": 25.023809523809526,
+      "channel_peak": 129,
+      "source_bounds": [
+        207,
+        244,
+        623,
+        345
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-active-4000.png": "98686b9c5c6b5503d7797872066fd5fbbda0dd2f8121766db7a2b729ed0189f2",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-active-4000.png": "fd00464e51049035b9c56724a55e889b1ec5af4ae0b845ba8d79efe148288813"
+      }
+    },
+    {
+      "file": "arabic-801-active-5250.png",
+      "scene": "arabic",
+      "foreground_mae": 9.04496751877162,
+      "full_mae": 0.22307532251352477,
+      "worst64": 26.238095238095237,
+      "channel_peak": 129,
+      "source_bounds": [
+        207,
+        244,
+        623,
+        345
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-active-5250.png": "cc9be0ec1335c2118224acb21ecf3a43501a091e641ddb6e2fdf327411c3bfe3",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-active-5250.png": "db821513806da61f94aee4acdf51c9119757b332d587b54f28a225210de030fe"
+      }
+    },
+    {
+      "file": "arabic-801-trail-0.png",
+      "scene": "arabic",
+      "foreground_mae": 4.786229415105054,
+      "full_mae": 0.1169170481342766,
+      "worst64": 15.72,
+      "channel_peak": 70,
+      "source_bounds": [
+        207,
+        244,
+        623,
+        344
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-trail-0.png": "5bb15956b4bea1617fc767c6729fd6c6a52d754212830e02d50e4c74e6e734aa",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-trail-0.png": "794d777d3836b3ac6c919ff6e5b8a84019c1296a8047e64f849fe200d9cbefdc"
+      }
+    },
+    {
+      "file": "arabic-801-trail-700.png",
+      "scene": "arabic",
+      "foreground_mae": 4.786229415105054,
+      "full_mae": 0.1169170481342766,
+      "worst64": 15.72,
+      "channel_peak": 70,
+      "source_bounds": [
+        207,
+        244,
+        623,
+        344
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-trail-700.png": "5bb15956b4bea1617fc767c6729fd6c6a52d754212830e02d50e4c74e6e734aa",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-trail-700.png": "794d777d3836b3ac6c919ff6e5b8a84019c1296a8047e64f849fe200d9cbefdc"
+      }
+    },
+    {
+      "file": "arabic-801-trail-1100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.0266473979599637,
+      "full_mae": 0.18383201553613537,
+      "worst64": 15.72,
+      "channel_peak": 70,
+      "source_bounds": [
+        207,
+        223,
+        661,
+        373
+      ],
+      "native_bounds": [
+        208,
+        212,
+        675,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-trail-1100.png": "5785d6c2fcc97c10b3503d6fc6dfa71618f023da35c09171e32cd9b35811c475",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-trail-1100.png": "e8cdd1f6297f6dea5f78b6f3bc943867ac07b6ef32782f0c9f1cc37ededd4f94"
+      }
+    },
+    {
+      "file": "arabic-801-trail-1500.png",
+      "scene": "arabic",
+      "foreground_mae": 1.633336391858207,
+      "full_mae": 0.14815577750034678,
+      "worst64": 15.72,
+      "channel_peak": 70,
+      "source_bounds": [
+        207,
+        223,
+        660,
+        373
+      ],
+      "native_bounds": [
+        208,
+        212,
+        675,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-trail-1500.png": "b17df9dbf0e793a76509398a88430d1b05bc16e49a968a8d9c8d349219cf17b2",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-trail-1500.png": "0fc4686431a797b8f34158e7f42bc203731879269cd63f439c1464aa37d84d14"
+      }
+    },
+    {
+      "file": "arabic-801-trail-1900.png",
+      "scene": "arabic",
+      "foreground_mae": 1.4024411361623599,
+      "full_mae": 0.19660147038424192,
+      "worst64": 2.8788248697916665,
+      "channel_peak": 101,
+      "source_bounds": [
+        180,
+        201,
+        657,
+        363
+      ],
+      "native_bounds": [
+        175,
+        202,
+        675,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-trail-1900.png": "86a7dbc07bb585512144521b0cdb621e0328e636fabc626c0be1544d9f2e1594",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-trail-1900.png": "110ffcf7cb5f6b828cdc415982cee7823c1374864bc6741aa69b792f575c6de1"
+      }
+    },
+    {
+      "file": "arabic-801-trail-2300.png",
+      "scene": "arabic",
+      "foreground_mae": 1.3311254703974644,
+      "full_mae": 0.18817172978221666,
+      "worst64": 2.8819173177083335,
+      "channel_peak": 122,
+      "source_bounds": [
+        180,
+        196,
+        661,
+        358
+      ],
+      "native_bounds": [
+        175,
+        196,
+        675,
+        385
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-trail-2300.png": "6824daaa5541a8538fd1fd4d5754d0728766f86302fc3958e99ec2605b2d1132",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-trail-2300.png": "7ace1dffdfa7ccdfbef035d670b9d3869a9572d6501c3a7c4013bd9a6aaeed9f"
+      }
+    },
+    {
+      "file": "arabic-801-trail-3100.png",
+      "scene": "arabic",
+      "foreground_mae": 2.159316147806512,
+      "full_mae": 0.2182140380080455,
+      "worst64": 11.119318181818182,
+      "channel_peak": 126,
+      "source_bounds": [
+        180,
+        191,
+        660,
+        345
+      ],
+      "native_bounds": [
+        175,
+        191,
+        661,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-trail-3100.png": "7fb0a84d1d90fa5c8e28acf53893b143bd2578a353e5cdd61e55cc2027e0f5ec",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-trail-3100.png": "0a3d7ac80ef33357fbe6644a43b8c3a80bdbac21da138e65d5c1e7b738d779a9"
+      }
+    },
+    {
+      "file": "arabic-801-trail-3450.png",
+      "scene": "arabic",
+      "foreground_mae": 4.4193854974915086,
+      "full_mae": 0.19672978221667362,
+      "worst64": 12.242424242424242,
+      "channel_peak": 128,
+      "source_bounds": [
+        180,
+        191,
+        623,
+        345
+      ],
+      "native_bounds": [
+        181,
+        191,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-trail-3450.png": "54c7daeba11d5a31089fcbcf6cafd86abb9d8efcae5e738beebd254adfb0fd00",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-trail-3450.png": "7b281f01c071072d927f3c04509a7efe5c9561dc7e85f92872b0d783aaca09b4"
+      }
+    },
+    {
+      "file": "arabic-801-trail-4000.png",
+      "scene": "arabic",
+      "foreground_mae": 8.688127584170113,
+      "full_mae": 0.21423845193508115,
+      "worst64": 25.023809523809526,
+      "channel_peak": 129,
+      "source_bounds": [
+        207,
+        244,
+        623,
+        345
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-trail-4000.png": "98686b9c5c6b5503d7797872066fd5fbbda0dd2f8121766db7a2b729ed0189f2",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-trail-4000.png": "fd00464e51049035b9c56724a55e889b1ec5af4ae0b845ba8d79efe148288813"
+      }
+    },
+    {
+      "file": "arabic-801-trail-5250.png",
+      "scene": "arabic",
+      "foreground_mae": 9.04496751877162,
+      "full_mae": 0.22307532251352477,
+      "worst64": 26.238095238095237,
+      "channel_peak": 129,
+      "source_bounds": [
+        207,
+        244,
+        623,
+        345
+      ],
+      "native_bounds": [
+        208,
+        245,
+        623,
+        344
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\arabic-801-trail-5250.png": "cc9be0ec1335c2118224acb21ecf3a43501a091e641ddb6e2fdf327411c3bfe3",
+        "build\\verification\\diorama-active-layers-kotlin\\arabic-801-trail-5250.png": "db821513806da61f94aee4acdf51c9119757b332d587b54f28a225210de030fe"
+      }
+    },
+    {
+      "file": "cjk-380-active-0.png",
+      "scene": "cjk",
+      "foreground_mae": 7.542204060784063,
+      "full_mae": 0.2590482456140351,
+      "worst64": 9.42911877394636,
+      "channel_peak": 58,
+      "source_bounds": [
+        41,
+        271,
+        351,
+        334
+      ],
+      "native_bounds": [
+        42,
+        272,
+        351,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-active-0.png": "14ad880b9518ddb89fd26571ded013584e09ed0467ddbf8d8bd8b3de53bc7f54",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-active-0.png": "278c32ca86c62811cec3943488306877cff79b8c5f2b598f15550a8334ca08dd"
+      }
+    },
+    {
+      "file": "cjk-380-active-700.png",
+      "scene": "cjk",
+      "foreground_mae": 7.542204060784063,
+      "full_mae": 0.2590482456140351,
+      "worst64": 9.42911877394636,
+      "channel_peak": 58,
+      "source_bounds": [
+        41,
+        271,
+        351,
+        334
+      ],
+      "native_bounds": [
+        42,
+        272,
+        351,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-active-700.png": "14ad880b9518ddb89fd26571ded013584e09ed0467ddbf8d8bd8b3de53bc7f54",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-active-700.png": "278c32ca86c62811cec3943488306877cff79b8c5f2b598f15550a8334ca08dd"
+      }
+    },
+    {
+      "file": "cjk-380-active-1100.png",
+      "scene": "cjk",
+      "foreground_mae": 5.523759053170818,
+      "full_mae": 0.2742982456140351,
+      "worst64": 7.5556351480420245,
+      "channel_peak": 75,
+      "source_bounds": [
+        28,
+        253,
+        351,
+        334
+      ],
+      "native_bounds": [
+        25,
+        250,
+        351,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-active-1100.png": "a383dae137e4c97fa37eebb05d48047c66db920b62181f22c90846d53c468e5f",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-active-1100.png": "8e03d9481a68df0d90d576a3d1317c07b67ee09844e394d2939e342ee875c684"
+      }
+    },
+    {
+      "file": "cjk-380-active-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 4.724094335035254,
+      "full_mae": 0.2840672514619883,
+      "worst64": 7.5556351480420245,
+      "channel_peak": 97,
+      "source_bounds": [
+        34,
+        248,
+        351,
+        334
+      ],
+      "native_bounds": [
+        25,
+        248,
+        351,
+        335
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-active-1500.png": "127df58fdacc1bf1315ef524f6fa7117450adfe026bc5bd5c5341a23f5bd4828",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-active-1500.png": "f9f37ceb3dbfd786f2c22f98819c09c65bfa4aba23f4b67dad1f38f6374dc79b"
+      }
+    },
+    {
+      "file": "cjk-380-active-1900.png",
+      "scene": "cjk",
+      "foreground_mae": 4.25950539713227,
+      "full_mae": 0.3092251461988304,
+      "worst64": 7.5556351480420245,
+      "channel_peak": 105,
+      "source_bounds": [
+        37,
+        245,
+        351,
+        336
+      ],
+      "native_bounds": [
+        25,
+        246,
+        351,
+        339
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-active-1900.png": "4e830be8e5726f2cd59744ddcb32c41e47b54ce53fbd27d7fe652ba247f1bb65",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-active-1900.png": "899a40add8f16757e1a0499ab6f577dbd62310c2fe2eb5417f4fe85bd0ab35f8"
+      }
+    },
+    {
+      "file": "cjk-380-active-2300.png",
+      "scene": "cjk",
+      "foreground_mae": 4.16346408944476,
+      "full_mae": 0.3212076023391813,
+      "worst64": 8.945035460992909,
+      "channel_peak": 106,
+      "source_bounds": [
+        37,
+        246,
+        351,
+        338
+      ],
+      "native_bounds": [
+        37,
+        246,
+        351,
+        343
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-active-2300.png": "6413a3decb50bd60bcfcc32db8e33403c68e5c8d2557f5fd280415c82e87c5e8",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-active-2300.png": "2370808e4053b85df6dd2d72aa2c79f93fc5c33b011e724f6a5f4f2d680328ba"
+      }
+    },
+    {
+      "file": "cjk-380-active-3100.png",
+      "scene": "cjk",
+      "foreground_mae": 3.9724609996816302,
+      "full_mae": 0.40132309941520466,
+      "worst64": 17.078959810874704,
+      "channel_peak": 108,
+      "source_bounds": [
+        41,
+        247,
+        369,
+        352
+      ],
+      "native_bounds": [
+        42,
+        247,
+        375,
+        357
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-active-3100.png": "ef40b539663c02dd668b54deeded0e548a5b7ad578aeae2f093c8cbeb3007525",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-active-3100.png": "e2e92b01e7428dc0698a22d31dbb4a2f03b7d5cd6979b9e8f00867378a24498a"
+      }
+    },
+    {
+      "file": "cjk-380-active-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 4.79098126718904,
+      "full_mae": 0.40494298245614035,
+      "worst64": 17.218439716312055,
+      "channel_peak": 108,
+      "source_bounds": [
+        41,
+        250,
+        363,
+        346
+      ],
+      "native_bounds": [
+        42,
+        250,
+        375,
+        357
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-active-3450.png": "31a08ca27f6dc96291a25d44b1174b47e7b8f608bbc37b4992ff5a7c2c012fe1",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-active-3450.png": "ac5e864dcf95367ca13a0f2d85d1a00cd0b52069a54530d1a8ffef1772d1fe19"
+      }
+    },
+    {
+      "file": "cjk-380-active-4000.png",
+      "scene": "cjk",
+      "foreground_mae": 8.65816678152998,
+      "full_mae": 0.44080701754385965,
+      "worst64": 17.218439716312055,
+      "channel_peak": 108,
+      "source_bounds": [
+        41,
+        255,
+        360,
+        335
+      ],
+      "native_bounds": [
+        42,
+        255,
+        360,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-active-4000.png": "a0cc76ff0e53fee2c57e36768ed3449af0e1904b270e02b3685b6f1248e30e77",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-active-4000.png": "da6ff9983cfec5bcc520bec626c9ebf241b7c277983046f764f5cdc2507d28c8"
+      }
+    },
+    {
+      "file": "cjk-380-active-5250.png",
+      "scene": "cjk",
+      "foreground_mae": 13.664622700538105,
+      "full_mae": 0.47892105263157897,
+      "worst64": 17.218439716312055,
+      "channel_peak": 108,
+      "source_bounds": [
+        41,
+        271,
+        352,
+        334
+      ],
+      "native_bounds": [
+        42,
+        272,
+        351,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-active-5250.png": "813214a5844feea6490eeb05030da7b263ac4cb0416aef301b1dc65d7c443bef",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-active-5250.png": "b7064427d2a3d3105793e7961cb01f4e6f58c24f13f80da90c3c39514dfa88c2"
+      }
+    },
+    {
+      "file": "cjk-380-trail-0.png",
+      "scene": "cjk",
+      "foreground_mae": 7.542204060784063,
+      "full_mae": 0.2590482456140351,
+      "worst64": 9.42911877394636,
+      "channel_peak": 58,
+      "source_bounds": [
+        41,
+        271,
+        351,
+        334
+      ],
+      "native_bounds": [
+        42,
+        272,
+        351,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-trail-0.png": "14ad880b9518ddb89fd26571ded013584e09ed0467ddbf8d8bd8b3de53bc7f54",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-trail-0.png": "278c32ca86c62811cec3943488306877cff79b8c5f2b598f15550a8334ca08dd"
+      }
+    },
+    {
+      "file": "cjk-380-trail-700.png",
+      "scene": "cjk",
+      "foreground_mae": 7.542204060784063,
+      "full_mae": 0.2590482456140351,
+      "worst64": 9.42911877394636,
+      "channel_peak": 58,
+      "source_bounds": [
+        41,
+        271,
+        351,
+        334
+      ],
+      "native_bounds": [
+        42,
+        272,
+        351,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-trail-700.png": "14ad880b9518ddb89fd26571ded013584e09ed0467ddbf8d8bd8b3de53bc7f54",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-trail-700.png": "278c32ca86c62811cec3943488306877cff79b8c5f2b598f15550a8334ca08dd"
+      }
+    },
+    {
+      "file": "cjk-380-trail-1100.png",
+      "scene": "cjk",
+      "foreground_mae": 5.095742801625154,
+      "full_mae": 0.2530438596491228,
+      "worst64": 7.5556351480420245,
+      "channel_peak": 60,
+      "source_bounds": [
+        28,
+        253,
+        351,
+        334
+      ],
+      "native_bounds": [
+        25,
+        250,
+        351,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-trail-1100.png": "3e98bbca3e90ba18ed27d7ff5ad1789c497a8dd3bd4eee1f4b75938eb19b2a4e",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-trail-1100.png": "f43022b6ace8898341ca33e5f61767537c4925929e1e05b4a6e38bb14b33800d"
+      }
+    },
+    {
+      "file": "cjk-380-trail-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 4.468799454629562,
+      "full_mae": 0.26834356725146197,
+      "worst64": 7.5556351480420245,
+      "channel_peak": 94,
+      "source_bounds": [
+        34,
+        248,
+        351,
+        334
+      ],
+      "native_bounds": [
+        25,
+        249,
+        351,
+        335
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-trail-1500.png": "c322e447e8eb7d7da44818a5b2759cc0d6b7dc957b3884db2a64075a166ccf1d",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-trail-1500.png": "9f94e83fa8bd40181c2b040cd88a25392c3cf0426425be2a598e0cbb5416d18f"
+      }
+    },
+    {
+      "file": "cjk-380-trail-1900.png",
+      "scene": "cjk",
+      "foreground_mae": 3.9250392939185104,
+      "full_mae": 0.2847719298245614,
+      "worst64": 7.5556351480420245,
+      "channel_peak": 105,
+      "source_bounds": [
+        37,
+        245,
+        351,
+        336
+      ],
+      "native_bounds": [
+        25,
+        246,
+        351,
+        339
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-trail-1900.png": "342441849d6fa20caf582ace11f3cd96317e39801ee8de44cdf9201074c41f23",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-trail-1900.png": "36db16ba1bfa054d50a93d021c431585c51f0eb2e575bc430e4792dd4b11098a"
+      }
+    },
+    {
+      "file": "cjk-380-trail-2300.png",
+      "scene": "cjk",
+      "foreground_mae": 3.878736122971819,
+      "full_mae": 0.2988157894736842,
+      "worst64": 8.945035460992909,
+      "channel_peak": 106,
+      "source_bounds": [
+        37,
+        246,
+        351,
+        338
+      ],
+      "native_bounds": [
+        37,
+        246,
+        351,
+        343
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-trail-2300.png": "126ac8952ae7f9247f31d2e2461778e5711479aa24d2a0d8d07e8e40d9d458b7",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-trail-2300.png": "f753ac69713580c19691c4bf73ecd06ccb3fba361f07125a5276a55a16f7cf1a"
+      }
+    },
+    {
+      "file": "cjk-380-trail-3100.png",
+      "scene": "cjk",
+      "foreground_mae": 3.748458800034731,
+      "full_mae": 0.37869298245614036,
+      "worst64": 17.078959810874704,
+      "channel_peak": 108,
+      "source_bounds": [
+        41,
+        247,
+        369,
+        352
+      ],
+      "native_bounds": [
+        42,
+        247,
+        375,
+        357
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-trail-3100.png": "3e08aa06e4be637e47cda31fca6e6203236b1bcc08e03484552abd559e7cf994",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-trail-3100.png": "152928359c082002d9f50a2e340fb0f09ae3228a570238c8db6f543c7d2958a5"
+      }
+    },
+    {
+      "file": "cjk-380-trail-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 4.768738210200232,
+      "full_mae": 0.40285380116959063,
+      "worst64": 17.218439716312055,
+      "channel_peak": 108,
+      "source_bounds": [
+        41,
+        250,
+        363,
+        346
+      ],
+      "native_bounds": [
+        42,
+        250,
+        375,
+        357
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-trail-3450.png": "81865b6ce1adfd9155947ef4a696f6baf627b7602c062121991184a977be1631",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-trail-3450.png": "4c354acc42871954e64c9924e0b5acf5153fdae1f41fefa6c2384237d0faf99d"
+      }
+    },
+    {
+      "file": "cjk-380-trail-4000.png",
+      "scene": "cjk",
+      "foreground_mae": 8.65816678152998,
+      "full_mae": 0.44080701754385965,
+      "worst64": 17.218439716312055,
+      "channel_peak": 108,
+      "source_bounds": [
+        41,
+        255,
+        360,
+        335
+      ],
+      "native_bounds": [
+        42,
+        255,
+        360,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-trail-4000.png": "a0cc76ff0e53fee2c57e36768ed3449af0e1904b270e02b3685b6f1248e30e77",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-trail-4000.png": "da6ff9983cfec5bcc520bec626c9ebf241b7c277983046f764f5cdc2507d28c8"
+      }
+    },
+    {
+      "file": "cjk-380-trail-5250.png",
+      "scene": "cjk",
+      "foreground_mae": 13.664622700538105,
+      "full_mae": 0.47892105263157897,
+      "worst64": 17.218439716312055,
+      "channel_peak": 108,
+      "source_bounds": [
+        41,
+        271,
+        352,
+        334
+      ],
+      "native_bounds": [
+        42,
+        272,
+        351,
+        334
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-380-trail-5250.png": "813214a5844feea6490eeb05030da7b263ac4cb0416aef301b1dc65d7c443bef",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-380-trail-5250.png": "b7064427d2a3d3105793e7961cb01f4e6f58c24f13f80da90c3c39514dfa88c2"
+      }
+    },
+    {
+      "file": "cjk-800-active-0.png",
+      "scene": "cjk",
+      "foreground_mae": 3.3656542217433945,
+      "full_mae": 0.16921527777777778,
+      "worst64": 5.924554183813443,
+      "channel_peak": 52,
+      "source_bounds": [
+        144,
+        249,
+        732,
+        367
+      ],
+      "native_bounds": [
+        144,
+        250,
+        732,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-active-0.png": "66959dd965d4b991f9289c319fd7d9f71f82ff8acebeb6c26300cf83c80a2249",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-active-0.png": "789a84261baf82362e88fef452ea19d9616c2c8e42b3554497d251fd9054e49f"
+      }
+    },
+    {
+      "file": "cjk-800-active-700.png",
+      "scene": "cjk",
+      "foreground_mae": 3.3656542217433945,
+      "full_mae": 0.16921527777777778,
+      "worst64": 5.924554183813443,
+      "channel_peak": 52,
+      "source_bounds": [
+        144,
+        249,
+        732,
+        367
+      ],
+      "native_bounds": [
+        144,
+        250,
+        732,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-active-700.png": "66959dd965d4b991f9289c319fd7d9f71f82ff8acebeb6c26300cf83c80a2249",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-active-700.png": "789a84261baf82362e88fef452ea19d9616c2c8e42b3554497d251fd9054e49f"
+      }
+    },
+    {
+      "file": "cjk-800-active-1100.png",
+      "scene": "cjk",
+      "foreground_mae": 2.5827163306375063,
+      "full_mae": 0.1889472222222222,
+      "worst64": 4.363122171945701,
+      "channel_peak": 60,
+      "source_bounds": [
+        122,
+        216,
+        732,
+        367
+      ],
+      "native_bounds": [
+        117,
+        210,
+        732,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-active-1100.png": "73fdfcc849581230bc4ba7d4693d735b1ded55d6b724d4c86c1463a05bc54592",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-active-1100.png": "1b9137b3c791288a8a2b3905320c069e911e1971428ae59ddb79e99d380a502c"
+      }
+    },
+    {
+      "file": "cjk-800-active-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 2.2640653427786166,
+      "full_mae": 0.20308194444444444,
+      "worst64": 3.8996478873239435,
+      "channel_peak": 74,
+      "source_bounds": [
+        131,
+        207,
+        732,
+        367
+      ],
+      "native_bounds": [
+        117,
+        208,
+        732,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-active-1500.png": "6fefcf0a6395669381357b6aa1982994a72d7e1e9e196dc03f15cf06a86ed917",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-active-1500.png": "c6b33dd39d241a9bbf1dabebc6150ccba69b1c745946f793b78564f132aa7b7a"
+      }
+    },
+    {
+      "file": "cjk-800-active-1900.png",
+      "scene": "cjk",
+      "foreground_mae": 2.0505257228689446,
+      "full_mae": 0.22752291666666666,
+      "worst64": 3.8780207134637514,
+      "channel_peak": 90,
+      "source_bounds": [
+        134,
+        203,
+        732,
+        367
+      ],
+      "native_bounds": [
+        117,
+        204,
+        732,
+        372
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-active-1900.png": "12e7fcc4b290cb6a815246a4189a4176b7f438f3c9018fdd458604c354bce8d5",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-active-1900.png": "afb5c042e6979d3c95eaa3b98e1dffe3c423c60a641bf906d149d38ac21267ed"
+      }
+    },
+    {
+      "file": "cjk-800-active-2300.png",
+      "scene": "cjk",
+      "foreground_mae": 2.0221083463736464,
+      "full_mae": 0.24498263888888888,
+      "worst64": 6.0118357487922705,
+      "channel_peak": 93,
+      "source_bounds": [
+        134,
+        203,
+        732,
+        370
+      ],
+      "native_bounds": [
+        134,
+        203,
+        732,
+        380
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-active-2300.png": "a7bfbc691275f12bc19042669d32d9e92e52d590b44c41d8d756df92c828deac",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-active-2300.png": "e09a40bc4a0934a5a7a8588f942d8e85df75e86fb12cd03b7d0f379f021d56a2"
+      }
+    },
+    {
+      "file": "cjk-800-active-3100.png",
+      "scene": "cjk",
+      "foreground_mae": 1.9002952069972672,
+      "full_mae": 0.33705694444444445,
+      "worst64": 11.075136612021858,
+      "channel_peak": 96,
+      "source_bounds": [
+        144,
+        203,
+        770,
+        401
+      ],
+      "native_bounds": [
+        144,
+        203,
+        786,
+        413
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-active-3100.png": "cafdfdd71daa9208b64bf458a506ed2ddcdc6767ad969e651506c5806f554695",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-active-3100.png": "d6a0b558e6ebf4ed1a122ed8fceba842c346c7f980eae0a65e0577c4b73acda4"
+      }
+    },
+    {
+      "file": "cjk-800-active-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 2.063620929010956,
+      "full_mae": 0.30555347222222223,
+      "worst64": 11.115646258503402,
+      "channel_peak": 96,
+      "source_bounds": [
+        144,
+        208,
+        757,
+        391
+      ],
+      "native_bounds": [
+        144,
+        208,
+        786,
+        413
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-active-3450.png": "3508bd8de21853e9898e125ecb289b22fdb24fb598af7cd85d2184da1132bd09",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-active-3450.png": "c37054bdc797e36b9c9aaab7c4cf7fd782756d672f5e04a5b64be3da713a15ed"
+      }
+    },
+    {
+      "file": "cjk-800-active-4000.png",
+      "scene": "cjk",
+      "foreground_mae": 3.788976498899186,
+      "full_mae": 0.30834375,
+      "worst64": 11.115646258503402,
+      "channel_peak": 96,
+      "source_bounds": [
+        144,
+        212,
+        755,
+        368
+      ],
+      "native_bounds": [
+        144,
+        212,
+        755,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-active-4000.png": "da1d85dfbc9d4c023f0807e47139b0b556731295fa031038186b6a6a9c9ef131",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-active-4000.png": "f79a09fde9dd3046723e6aebec4f442650e13e6d52f99ca29b42ae11901933ac"
+      }
+    },
+    {
+      "file": "cjk-800-active-5250.png",
+      "scene": "cjk",
+      "foreground_mae": 6.40925553869914,
+      "full_mae": 0.32565694444444443,
+      "worst64": 11.115646258503402,
+      "channel_peak": 96,
+      "source_bounds": [
+        144,
+        249,
+        733,
+        368
+      ],
+      "native_bounds": [
+        144,
+        250,
+        732,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-active-5250.png": "a99e321a7c6931ac33bd0600d9a1e56e7e7e8e5547b0dae0f788bea539a89c57",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-active-5250.png": "443503f7dde09a9203e5c89ad66ad8c865374db4b67f8a8589126971c72abb01"
+      }
+    },
+    {
+      "file": "cjk-800-trail-0.png",
+      "scene": "cjk",
+      "foreground_mae": 3.3656542217433945,
+      "full_mae": 0.16921527777777778,
+      "worst64": 5.924554183813443,
+      "channel_peak": 52,
+      "source_bounds": [
+        144,
+        249,
+        732,
+        367
+      ],
+      "native_bounds": [
+        144,
+        250,
+        732,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-trail-0.png": "66959dd965d4b991f9289c319fd7d9f71f82ff8acebeb6c26300cf83c80a2249",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-trail-0.png": "789a84261baf82362e88fef452ea19d9616c2c8e42b3554497d251fd9054e49f"
+      }
+    },
+    {
+      "file": "cjk-800-trail-700.png",
+      "scene": "cjk",
+      "foreground_mae": 3.3656542217433945,
+      "full_mae": 0.16921527777777778,
+      "worst64": 5.924554183813443,
+      "channel_peak": 52,
+      "source_bounds": [
+        144,
+        249,
+        732,
+        367
+      ],
+      "native_bounds": [
+        144,
+        250,
+        732,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-trail-700.png": "66959dd965d4b991f9289c319fd7d9f71f82ff8acebeb6c26300cf83c80a2249",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-trail-700.png": "789a84261baf82362e88fef452ea19d9616c2c8e42b3554497d251fd9054e49f"
+      }
+    },
+    {
+      "file": "cjk-800-trail-1100.png",
+      "scene": "cjk",
+      "foreground_mae": 2.3907620457910923,
+      "full_mae": 0.17490416666666667,
+      "worst64": 4.363122171945701,
+      "channel_peak": 53,
+      "source_bounds": [
+        122,
+        216,
+        732,
+        367
+      ],
+      "native_bounds": [
+        117,
+        210,
+        732,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-trail-1100.png": "eb889da4182c1d41b3d87fac03d3d1767e64b17856b1f744e54c98e9175e421b",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-trail-1100.png": "e2add414ae6ef647af70a42cce6d8a740272146815ef8d55eb1248bbd7423132"
+      }
+    },
+    {
+      "file": "cjk-800-trail-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 2.150439871332791,
+      "full_mae": 0.19266597222222223,
+      "worst64": 3.8996478873239435,
+      "channel_peak": 73,
+      "source_bounds": [
+        131,
+        208,
+        732,
+        367
+      ],
+      "native_bounds": [
+        117,
+        209,
+        732,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-trail-1500.png": "e2283f47fd774d60bb421576a93a53a40c6aa2f19b267b140c8183689beaf64e",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-trail-1500.png": "1153d2b30fa35cf1bea82f85d6755d4f15e4f420218dd2709ccea8904556db95"
+      }
+    },
+    {
+      "file": "cjk-800-trail-1900.png",
+      "scene": "cjk",
+      "foreground_mae": 1.8696806844801883,
+      "full_mae": 0.20729305555555555,
+      "worst64": 3.8780207134637514,
+      "channel_peak": 90,
+      "source_bounds": [
+        134,
+        203,
+        732,
+        367
+      ],
+      "native_bounds": [
+        117,
+        204,
+        732,
+        372
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-trail-1900.png": "89f05aa935a65cb4f55fc3783c0ea300adc1e0ca364b274e132ff243bdf6391b",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-trail-1900.png": "15ae1615e6dede5fd414ad1066e6b506452be4d98a103c65ebd2060c00a0f6ce"
+      }
+    },
+    {
+      "file": "cjk-800-trail-2300.png",
+      "scene": "cjk",
+      "foreground_mae": 1.877992078525917,
+      "full_mae": 0.22719791666666667,
+      "worst64": 6.0118357487922705,
+      "channel_peak": 93,
+      "source_bounds": [
+        134,
+        203,
+        732,
+        370
+      ],
+      "native_bounds": [
+        134,
+        203,
+        732,
+        380
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-trail-2300.png": "13fa65aed0b7aff18ff3a1f967aff141525fe78b096f772d55fcd500f8e4e2bb",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-trail-2300.png": "bda8523391cf98eb2534cc44877ee2e0b5fbd1c4ba4cf9e4135989dddca0af29"
+      }
+    },
+    {
+      "file": "cjk-800-trail-3100.png",
+      "scene": "cjk",
+      "foreground_mae": 1.8082524842021188,
+      "full_mae": 0.32073125,
+      "worst64": 11.075136612021858,
+      "channel_peak": 96,
+      "source_bounds": [
+        144,
+        203,
+        770,
+        401
+      ],
+      "native_bounds": [
+        144,
+        203,
+        786,
+        413
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-trail-3100.png": "e62c4b4c7a3bf3adaadc3bd24dee9dc61b2eb9f727d462fb18e096cb4d1a31ff",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-trail-3100.png": "994e4d3447a87dc176d3f46503aa4dccc57659e837153a37335721b9372cc95a"
+      }
+    },
+    {
+      "file": "cjk-800-trail-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 2.0568273544705375,
+      "full_mae": 0.3043590277777778,
+      "worst64": 11.115646258503402,
+      "channel_peak": 96,
+      "source_bounds": [
+        144,
+        208,
+        757,
+        391
+      ],
+      "native_bounds": [
+        144,
+        208,
+        786,
+        413
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-trail-3450.png": "dd0b1c41cf0cbbae541634fbd2bdd33bc03f38c31d1d09cc6339d6b053de0abd",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-trail-3450.png": "ed6d30f04c0163af4fd66388c8a73c3229d21139adf634370bea6ef6a85076fd"
+      }
+    },
+    {
+      "file": "cjk-800-trail-4000.png",
+      "scene": "cjk",
+      "foreground_mae": 3.788976498899186,
+      "full_mae": 0.30834375,
+      "worst64": 11.115646258503402,
+      "channel_peak": 96,
+      "source_bounds": [
+        144,
+        212,
+        755,
+        368
+      ],
+      "native_bounds": [
+        144,
+        212,
+        755,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-trail-4000.png": "da1d85dfbc9d4c023f0807e47139b0b556731295fa031038186b6a6a9c9ef131",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-trail-4000.png": "f79a09fde9dd3046723e6aebec4f442650e13e6d52f99ca29b42ae11901933ac"
+      }
+    },
+    {
+      "file": "cjk-800-trail-5250.png",
+      "scene": "cjk",
+      "foreground_mae": 6.40925553869914,
+      "full_mae": 0.32565694444444443,
+      "worst64": 11.115646258503402,
+      "channel_peak": 96,
+      "source_bounds": [
+        144,
+        249,
+        733,
+        368
+      ],
+      "native_bounds": [
+        144,
+        250,
+        732,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-800-trail-5250.png": "a99e321a7c6931ac33bd0600d9a1e56e7e7e8e5547b0dae0f788bea539a89c57",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-800-trail-5250.png": "443503f7dde09a9203e5c89ad66ad8c865374db4b67f8a8589126971c72abb01"
+      }
+    },
+    {
+      "file": "cjk-801-active-0.png",
+      "scene": "cjk",
+      "foreground_mae": 3.365382758953567,
+      "full_mae": 0.16925648494936885,
+      "worst64": 6.088888888888889,
+      "channel_peak": 59,
+      "source_bounds": [
+        144,
+        249,
+        733,
+        367
+      ],
+      "native_bounds": [
+        144,
+        250,
+        733,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-active-0.png": "a542162f0807f225f535553637a99111264c428d27f5196d053ae607dd1d538c",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-active-0.png": "a803eb4b9efbeac64c538eb27836a971ffa80d38f4c886a067ebde7c83e60ca2"
+      }
+    },
+    {
+      "file": "cjk-801-active-700.png",
+      "scene": "cjk",
+      "foreground_mae": 3.365382758953567,
+      "full_mae": 0.16925648494936885,
+      "worst64": 6.088888888888889,
+      "channel_peak": 59,
+      "source_bounds": [
+        144,
+        249,
+        733,
+        367
+      ],
+      "native_bounds": [
+        144,
+        250,
+        733,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-active-700.png": "a542162f0807f225f535553637a99111264c428d27f5196d053ae607dd1d538c",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-active-700.png": "a803eb4b9efbeac64c538eb27836a971ffa80d38f4c886a067ebde7c83e60ca2"
+      }
+    },
+    {
+      "file": "cjk-801-active-1100.png",
+      "scene": "cjk",
+      "foreground_mae": 2.5879526766554624,
+      "full_mae": 0.1890400887779165,
+      "worst64": 4.424028268551237,
+      "channel_peak": 60,
+      "source_bounds": [
+        122,
+        216,
+        733,
+        367
+      ],
+      "native_bounds": [
+        117,
+        210,
+        733,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-active-1100.png": "cd0b29cdfc5a92bf9a6a508ec863b34acaeb215b75964db6d7feda67eb66306b",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-active-1100.png": "fef8b17e8ccbd39c8e17e44b99215036c90852ba9ba5efae2627b1d1b0c0cf8b"
+      }
+    },
+    {
+      "file": "cjk-801-active-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 2.264249346147299,
+      "full_mae": 0.2029532528783465,
+      "worst64": 4.424028268551237,
+      "channel_peak": 77,
+      "source_bounds": [
+        131,
+        207,
+        733,
+        367
+      ],
+      "native_bounds": [
+        117,
+        208,
+        733,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-active-1500.png": "0ceaa12f5b36090c15d596d350764dbfa58a06037ef528069b63049f2e367935",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-active-1500.png": "7b8597c06a5dd65c103b8d4aea3272211c666e2f5a38a79326f8724b44b05d95"
+      }
+    },
+    {
+      "file": "cjk-801-active-1900.png",
+      "scene": "cjk",
+      "foreground_mae": 2.0557831566814504,
+      "full_mae": 0.2276161742266611,
+      "worst64": 3.9228395061728394,
+      "channel_peak": 86,
+      "source_bounds": [
+        135,
+        203,
+        733,
+        367
+      ],
+      "native_bounds": [
+        117,
+        204,
+        733,
+        372
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-active-1900.png": "3f12e2f1726c3c5a836c20c7f04f6ba1ef64c2a58d0a52acaf923a00c872d069",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-active-1900.png": "42c32396c3417cc9450b047a3b8feda5a732d9ff50a8616ca3c8c6998e0c913e"
+      }
+    },
+    {
+      "file": "cjk-801-active-2300.png",
+      "scene": "cjk",
+      "foreground_mae": 2.0240885080610473,
+      "full_mae": 0.2447732001664586,
+      "worst64": 6.106105006105006,
+      "channel_peak": 94,
+      "source_bounds": [
+        135,
+        203,
+        733,
+        370
+      ],
+      "native_bounds": [
+        135,
+        203,
+        733,
+        380
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-active-2300.png": "75ba12b286f0f46ec4dec444662b842cec0a4c4ce73bfd4987473ac50bf496ce",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-active-2300.png": "b37bce4f9d54365e447f8e9534f2251cbab764f991833db7f75e440b731cfeba"
+      }
+    },
+    {
+      "file": "cjk-801-active-3100.png",
+      "scene": "cjk",
+      "foreground_mae": 1.8956511532366922,
+      "full_mae": 0.33603828547648773,
+      "worst64": 11.326417704011066,
+      "channel_peak": 100,
+      "source_bounds": [
+        144,
+        203,
+        771,
+        401
+      ],
+      "native_bounds": [
+        144,
+        203,
+        786,
+        413
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-active-3100.png": "879d577df929629f60feb7ffb476a1d5bb64c8a334a29fc201b5217927e80e74",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-active-3100.png": "f74f4feba34a69dbb5dbea1ca1e45e613749fc988f519b6de5742ab9c0b2ab0d"
+      }
+    },
+    {
+      "file": "cjk-801-active-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 2.063358210004076,
+      "full_mae": 0.30547232625884313,
+      "worst64": 11.412171507607193,
+      "channel_peak": 105,
+      "source_bounds": [
+        144,
+        208,
+        758,
+        391
+      ],
+      "native_bounds": [
+        144,
+        208,
+        786,
+        413
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-active-3450.png": "30bd83497141441090e1f5fca8166f0c071a330a44b7da43757e5345fc0b57f2",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-active-3450.png": "fecb08db860b3c5f316d4b78379cb73a8e7ef47edf366cd5544a8c2bdb376707"
+      }
+    },
+    {
+      "file": "cjk-801-active-4000.png",
+      "scene": "cjk",
+      "foreground_mae": 3.7885034569667244,
+      "full_mae": 0.3085982799278679,
+      "worst64": 11.412171507607193,
+      "channel_peak": 110,
+      "source_bounds": [
+        144,
+        212,
+        755,
+        368
+      ],
+      "native_bounds": [
+        144,
+        212,
+        755,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-active-4000.png": "f4cb5abbbf708593e1cf6a272790eaa73487b5cd921f61e776a272b6e8978c63",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-active-4000.png": "70ed9aa906a382fadb903348e3ebef2c24bb401c31f6c1753dce45f8084935af"
+      }
+    },
+    {
+      "file": "cjk-801-active-5250.png",
+      "scene": "cjk",
+      "foreground_mae": 6.410196592040819,
+      "full_mae": 0.3258850048550423,
+      "worst64": 11.412171507607193,
+      "channel_peak": 109,
+      "source_bounds": [
+        144,
+        249,
+        733,
+        368
+      ],
+      "native_bounds": [
+        144,
+        250,
+        733,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-active-5250.png": "0a6dc5cebd68c97a0d644f6919ad530d49afd43252a7aa6a8aa5471e4b742abc",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-active-5250.png": "210593691dd04ae0612b70848587fc5dced781e480386d8c390362b76e863576"
+      }
+    },
+    {
+      "file": "cjk-801-trail-0.png",
+      "scene": "cjk",
+      "foreground_mae": 3.365382758953567,
+      "full_mae": 0.16925648494936885,
+      "worst64": 6.088888888888889,
+      "channel_peak": 59,
+      "source_bounds": [
+        144,
+        249,
+        733,
+        367
+      ],
+      "native_bounds": [
+        144,
+        250,
+        733,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-trail-0.png": "a542162f0807f225f535553637a99111264c428d27f5196d053ae607dd1d538c",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-trail-0.png": "a803eb4b9efbeac64c538eb27836a971ffa80d38f4c886a067ebde7c83e60ca2"
+      }
+    },
+    {
+      "file": "cjk-801-trail-700.png",
+      "scene": "cjk",
+      "foreground_mae": 3.365382758953567,
+      "full_mae": 0.16925648494936885,
+      "worst64": 6.088888888888889,
+      "channel_peak": 59,
+      "source_bounds": [
+        144,
+        249,
+        733,
+        367
+      ],
+      "native_bounds": [
+        144,
+        250,
+        733,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-trail-700.png": "a542162f0807f225f535553637a99111264c428d27f5196d053ae607dd1d538c",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-trail-700.png": "a803eb4b9efbeac64c538eb27836a971ffa80d38f4c886a067ebde7c83e60ca2"
+      }
+    },
+    {
+      "file": "cjk-801-trail-1100.png",
+      "scene": "cjk",
+      "foreground_mae": 2.3901422358950986,
+      "full_mae": 0.1745907892911638,
+      "worst64": 4.424028268551237,
+      "channel_peak": 59,
+      "source_bounds": [
+        122,
+        216,
+        733,
+        367
+      ],
+      "native_bounds": [
+        117,
+        210,
+        733,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-trail-1100.png": "765dffe016fba1f2e29f61ad1a5fcb251047f15d06bd47d26ba24cbb9856a024",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-trail-1100.png": "90e622b27f03414d18246154529bad60709da9eb01cbeae827d56cd5d04801a9"
+      }
+    },
+    {
+      "file": "cjk-801-trail-1500.png",
+      "scene": "cjk",
+      "foreground_mae": 2.1542621604450436,
+      "full_mae": 0.19284366763767513,
+      "worst64": 4.424028268551237,
+      "channel_peak": 77,
+      "source_bounds": [
+        131,
+        208,
+        733,
+        367
+      ],
+      "native_bounds": [
+        117,
+        209,
+        733,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-trail-1500.png": "b453d38a3bf801d1ff8b764f8550d0f7905f6702f49f7928468a7a37b447163f",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-trail-1500.png": "1ff61128c1e8ea3671c135addf0a280879e5ab5c6f9bccf2ec88ae658d487bc9"
+      }
+    },
+    {
+      "file": "cjk-801-trail-1900.png",
+      "scene": "cjk",
+      "foreground_mae": 1.8768399408209835,
+      "full_mae": 0.20764738521292828,
+      "worst64": 3.9228395061728394,
+      "channel_peak": 86,
+      "source_bounds": [
+        135,
+        203,
+        733,
+        367
+      ],
+      "native_bounds": [
+        117,
+        204,
+        733,
+        372
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-trail-1900.png": "4050c34914a1e19dff10daef315ba4111de1cea7e53cd174dc5dc3133fd089ae",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-trail-1900.png": "e925d933ee351de8d986783f8a7f26a41f8c15930d6f7c875a880b47fbd58540"
+      }
+    },
+    {
+      "file": "cjk-801-trail-2300.png",
+      "scene": "cjk",
+      "foreground_mae": 1.882947138714216,
+      "full_mae": 0.22741503675960606,
+      "worst64": 6.106105006105006,
+      "channel_peak": 94,
+      "source_bounds": [
+        135,
+        203,
+        733,
+        370
+      ],
+      "native_bounds": [
+        135,
+        203,
+        733,
+        380
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-trail-2300.png": "50d684b16f21e15cbb62206ca5922e825ad4cd50f2bf5323f1b5678f56aa7266",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-trail-2300.png": "cf08dfa7ed47598d181e295aa3dc57edd31c7f0637d49cd7a72d2f3b39534bc1"
+      }
+    },
+    {
+      "file": "cjk-801-trail-3100.png",
+      "scene": "cjk",
+      "foreground_mae": 1.8041238726842341,
+      "full_mae": 0.3198134276598696,
+      "worst64": 11.326417704011066,
+      "channel_peak": 100,
+      "source_bounds": [
+        144,
+        203,
+        771,
+        401
+      ],
+      "native_bounds": [
+        144,
+        203,
+        786,
+        413
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-trail-3100.png": "83e1dd3179450af9a03db9d80b69860f03fa019bacca5df5dea5800a262f65ca",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-trail-3100.png": "41d795805c272a4e617262ce452fde79227408d559d4e99f3bdd26875733e65e"
+      }
+    },
+    {
+      "file": "cjk-801-trail-3450.png",
+      "scene": "cjk",
+      "foreground_mae": 2.055709470703775,
+      "full_mae": 0.3041517547510057,
+      "worst64": 11.412171507607193,
+      "channel_peak": 105,
+      "source_bounds": [
+        144,
+        208,
+        758,
+        391
+      ],
+      "native_bounds": [
+        144,
+        208,
+        786,
+        413
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-trail-3450.png": "27de9e83397fdc2f3b5cc98c85d69177529fdc816d82f4e44be635eb18989d0f",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-trail-3450.png": "4f7204bc085e00c0875ee8fabc63d55fb82b0b2d4ce6cf792381a5c5669f7067"
+      }
+    },
+    {
+      "file": "cjk-801-trail-4000.png",
+      "scene": "cjk",
+      "foreground_mae": 3.7885034569667244,
+      "full_mae": 0.3085982799278679,
+      "worst64": 11.412171507607193,
+      "channel_peak": 110,
+      "source_bounds": [
+        144,
+        212,
+        755,
+        368
+      ],
+      "native_bounds": [
+        144,
+        212,
+        755,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-trail-4000.png": "f4cb5abbbf708593e1cf6a272790eaa73487b5cd921f61e776a272b6e8978c63",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-trail-4000.png": "70ed9aa906a382fadb903348e3ebef2c24bb401c31f6c1753dce45f8084935af"
+      }
+    },
+    {
+      "file": "cjk-801-trail-5250.png",
+      "scene": "cjk",
+      "foreground_mae": 6.410196592040819,
+      "full_mae": 0.3258850048550423,
+      "worst64": 11.412171507607193,
+      "channel_peak": 109,
+      "source_bounds": [
+        144,
+        249,
+        733,
+        368
+      ],
+      "native_bounds": [
+        144,
+        250,
+        733,
+        367
+      ],
+      "png_sha256": {
+        "build\\verification\\diorama-active-layers-browser\\cjk-801-trail-5250.png": "0a6dc5cebd68c97a0d644f6919ad530d49afd43252a7aa6a8aa5471e4b742abc",
+        "build\\verification\\diorama-active-layers-kotlin\\cjk-801-trail-5250.png": "210593691dd04ae0612b70848587fc5dced781e480386d8c390362b76e863576"
+      }
+    }
+  ],
+  "mean_foreground_mae": 4.39985144110918,
+  "by_scene": {
+    "latin": 4.8937380274823665,
+    "arabic": 4.206739939248094,
+    "cjk": 4.099076356597079
+  },
+  "status": "Own shaped slices, four-pass halo and crisp ghost in original global layer order. Frozen perspective and analytic charges; NOT original RAF, CameraRig, full scene or Android acceptance."
+}

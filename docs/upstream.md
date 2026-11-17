@@ -1582,3 +1582,14 @@ selection replaces isolated-unit shaping/prefix geometry to protect joining;
 advance-clipped boundary overhang is still unresolved. No source textures copied.
 Source explicitly disables glow/soul for the90-frame isolated base comparison;
 this does not validate original full scene/RAF. Evidence: verification/diorama-active-base.
+
+### Diorama registered halo / soul composition (2026-11-18)
+Pinned cc6226e4 dioramaTextRaster.ts:drawGlowGlyph and
+DioramaActiveUnitPlanes.tsx plus sceneFrame soul mesh assignments ->
+DioramaActiveText.kt. Four once-prepared pure coverage shadows, original global
+renderOrder17/18/19, additive/normal blending, local depth/lift/swell, same fill.
+Full-shaped own body retained rather than copying source per-unit glyph bitmaps.
+Source recipe shadowColor modulates coverage before rounded blur; initial reversed
+order and its failing halo bounds retained.180 actual source raster/Three frames
+with explicit analytic charge injection, NOT original RAF/CameraRig equivalence.
+Evidence and unresolved21px lowest-alpha extent: verification/diorama-active-layers.

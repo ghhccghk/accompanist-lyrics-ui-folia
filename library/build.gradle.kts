@@ -44,6 +44,7 @@ tasks.withType<Test>().configureEach {
     inputs.dir(rootProject.file("verification/partita-fixtures"))
     inputs.dir(rootProject.file("verification/tilt-fixtures"))
     inputs.dir(rootProject.file("verification/fume-fixtures"))
+    inputs.dir(rootProject.file("verification/diorama-fixtures"))
     inputs.dir(rootProject.file("verification/cadenza-fixtures"))
     inputs.dir(rootProject.file("verification/cappella-fixtures"))
     inputs.dir(rootProject.file("verification/pendolo-fixtures"))

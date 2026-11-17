@@ -1,0 +1,196 @@
+{
+  "scope": "Same original raster and explicit frozen Three.js view; Compose perspective matrix. NOT text shaping, CameraRig, fog, scene depth or theme acceptance.",
+  "foreground": "all nonbackground RGB union, including low alpha",
+  "frames": [
+    {
+      "file": "380--3.6-1.9.png",
+      "foreground_mae": 25.237037037037037,
+      "full_mae": 0.3038406432748538,
+      "channel_peak": 171,
+      "worst_64px_tile_mae": 29.233879781420764,
+      "source_bounds": [
+        57,
+        274,
+        284,
+        318
+      ],
+      "native_bounds": [
+        58,
+        275,
+        283,
+        317
+      ],
+      "source_sha256": "97c2030748ba3fc85fb9030a10665c8c40749024b2c1d206269ea948cc9cf701",
+      "native_sha256": "de302622e0e894efe0bcaf31b017fc47bdba197d26ddf7bc33259e1c94147821"
+    },
+    {
+      "file": "380-1.7-0.8.png",
+      "foreground_mae": 20.6397623174053,
+      "full_mae": 0.3656315789473684,
+      "channel_peak": 159,
+      "worst_64px_tile_mae": 35.03174603174603,
+      "source_bounds": [
+        41,
+        276,
+        352,
+        323
+      ],
+      "native_bounds": [
+        42,
+        278,
+        351,
+        323
+      ],
+      "source_sha256": "16bfc7c1b1f94514d5a9f64db729f6b2378c0fa052293b9aa9b468812bb794eb",
+      "native_sha256": "abde117f5ccb2cd4bab9e1ec39fe5a82ec4887352d9dc90f805dad5cda40d6d8"
+    },
+    {
+      "file": "380-4.4--1.2.png",
+      "foreground_mae": 24.61328790459966,
+      "full_mae": 0.2534736842105263,
+      "channel_peak": 175,
+      "worst_64px_tile_mae": 29.904761904761905,
+      "source_bounds": [
+        102,
+        272,
+        300,
+        328
+      ],
+      "native_bounds": [
+        103,
+        273,
+        299,
+        327
+      ],
+      "source_sha256": "39e18bdf2713f1110814a154e7981ca097bdf7933de449f4c8ba6a646dcbce81",
+      "native_sha256": "5d6957344c2548358616c096366001be474de336466e43bb076e80a1bc7572ed"
+    },
+    {
+      "file": "800--3.6-1.9.png",
+      "foreground_mae": 10.124623365327865,
+      "full_mae": 0.2263486111111111,
+      "channel_peak": 136,
+      "worst_64px_tile_mae": 32.053333333333335,
+      "source_bounds": [
+        70,
+        236,
+        577,
+        334
+      ],
+      "native_bounds": [
+        71,
+        237,
+        576,
+        333
+      ],
+      "source_sha256": "1fc23c8ab7672579778e79f9d4351790ad57cb079fe45913ff87c6b3c5745a33",
+      "native_sha256": "4aeda00e2710b2e4a688fc61f2eb60578d7d60d872246119cf0ad83d064b6467"
+    },
+    {
+      "file": "800-1.7-0.8.png",
+      "foreground_mae": 8.512229071385962,
+      "full_mae": 0.26755,
+      "channel_peak": 140,
+      "worst_64px_tile_mae": 24.91111111111111,
+      "source_bounds": [
+        115,
+        255,
+        782,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        782,
+        351
+      ],
+      "source_sha256": "c26f49b6e3da1afd41dc8b80cc69b565123ea534acfd847091e1970108b835b4",
+      "native_sha256": "c7334459d4411b7e8bf88153163c1b26074576ccf5fea402e7003529816bffe0"
+    },
+    {
+      "file": "800-4.4--1.2.png",
+      "foreground_mae": 11.527717860224332,
+      "full_mae": 0.22267708333333333,
+      "channel_peak": 173,
+      "worst_64px_tile_mae": 22.92820512820513,
+      "source_bounds": [
+        241,
+        227,
+        687,
+        350
+      ],
+      "native_bounds": [
+        241,
+        228,
+        687,
+        349
+      ],
+      "source_sha256": "197ccd2e4891a8b1fc70847af449aa1a55a8ff8998a92066efc17571e71864f3",
+      "native_sha256": "1b242268a716eee4ae4686928e239c6c7ac217f25088fb3171487c2bae491850"
+    },
+    {
+      "file": "801--3.6-1.9.png",
+      "foreground_mae": 10.101355114163727,
+      "full_mae": 0.22645027049521432,
+      "channel_peak": 137,
+      "worst_64px_tile_mae": 31.141025641025642,
+      "source_bounds": [
+        70,
+        236,
+        578,
+        334
+      ],
+      "native_bounds": [
+        71,
+        236,
+        577,
+        333
+      ],
+      "source_sha256": "9a0abc53add8e2a5c2c6c631fe331e681f63a4fbad70e332c7fce2a4b45d972f",
+      "native_sha256": "a43211dccccc0787e36cb048ca2e2e3623956404bfd70f42e48ffadca6bb8669"
+    },
+    {
+      "file": "801-1.7-0.8.png",
+      "foreground_mae": 8.369661363786388,
+      "full_mae": 0.2638202247191011,
+      "channel_peak": 122,
+      "worst_64px_tile_mae": 21.333333333333332,
+      "source_bounds": [
+        115,
+        255,
+        783,
+        351
+      ],
+      "native_bounds": [
+        116,
+        256,
+        783,
+        351
+      ],
+      "source_sha256": "fd540a5810871b40915c2d979a6c22e992ff3eab6469ad913826331a16d51d6f",
+      "native_sha256": "0aba903e7053c40d657b51287bbe4a8156327f5d9832648a06dd7621bebffa71"
+    },
+    {
+      "file": "801-4.4--1.2.png",
+      "foreground_mae": 11.539082687338501,
+      "full_mae": 0.22300249687890136,
+      "channel_peak": 141,
+      "worst_64px_tile_mae": 20.487179487179485,
+      "source_bounds": [
+        241,
+        227,
+        688,
+        350
+      ],
+      "native_bounds": [
+        242,
+        228,
+        688,
+        350
+      ],
+      "source_sha256": "696052639e030102b0ce7ddbdf52fd58917a5f0b658e88a8a0b5fb1590a38019",
+      "native_sha256": "99ef68d8b6665e14fd9325611c8c6bfc6e01af9dd399f1b9c8904b65a035b7d8"
+    }
+  ],
+  "mean_foreground_mae": 14.518306302363195
+}

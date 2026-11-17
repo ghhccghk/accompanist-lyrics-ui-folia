@@ -20,6 +20,7 @@ copyright metadata and provenance. They are used by the comparison harness only.
 | kotlinx.coroutines | 1.11.0 | Apache-2.0; asynchronous sample import/settings I/O and cancellable library article preparation |
 | Tailwind CSS | 4.3.3 | MIT; verification-only compiler/generated subtitle utilities, matching the pinned Folia lockfile |
 | pretext | 0.0.9 | MIT; original Tilt measurement in verification; its cache behavior informs the independently written per-line compatibility cache. No pretext runtime dependency. See LICENSES/MIT-pretext-0.0.9.txt and docs/upstream.md. |
+| Three.js | 0.185.1 | MIT; verification-only original Diorama math/material/projection oracle, exact pinned Folia lockfile version. No Kotlin/sample runtime dependency. See LICENSES/MIT-three-0.185.1.txt. |
 | jni-sys | 0.3.0 | MIT OR Apache-2.0; optional development-only Rust JNI mask experiment, Cargo.lock pins checksum; not linked into default library/sample |
 
 This inventory covers direct dependencies. Transitive binary/source notices and

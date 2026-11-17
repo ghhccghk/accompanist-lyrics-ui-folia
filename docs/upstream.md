@@ -1510,3 +1510,18 @@ for reconstructible pause/seek. Continuous camera approximation remains a measur
 residual, not final parity. Coroutine1.11.0 already locked in project, now explicit
 library implementation dependency. Evidence/limitations: verification/fume-public;
 source test shell is original function pipeline, not full React lifecycle.
+
+### Diorama bounded text-plane probe (2026-11-18)
+Pinned cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only:
+cameraPath.ts:94–112,223–256,291–294,321–346 -> internal DioramaProjection.kt:
+UTF-16 seed hash, seeded sinusoid, winding frames, local composition and placement.
+dioramaSceneUnits.ts:95–113,128–142 -> same file: life,frame-fit and equivalent
+basis*yaw*roll plane axes (matrix-vector form, not a Three dependency).
+DioramaPerspective is an independently written frozen lookAt/pinhole/homography
+capability probe, compared to actual locked Three.js0.185.1, MIT notice retained.
+No CameraRig temporal adaptation, background, shaders or assets ported.
+DioramaPlaneCanvasTest shares original-generated invented-text raster solely to
+isolate real projective Canvas support. PNG font is existing OFL verification font;
+no project sample/runtime asset introduced. Source scripts run untouched original
+functions/materials and explicitly frozen view, not full VisualizerDiorama.
+Evidence/limitations: docs/diorama-investigation.md, verification/diorama-projection.

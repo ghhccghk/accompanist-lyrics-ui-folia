@@ -1,0 +1,27 @@
+{
+  "production": "325c2bd",
+  "date": "2026-11-18",
+  "command": "./gradlew.bat :library:jvmTest --tests *Public*Test :sample:shared:jvmTest --tests *ThemeOptionsTest :sample:android-app:assembleDebug",
+  "apk": "sample/android-app/build/outputs/apk/debug/android-app-debug.apk",
+  "bytes": 28134533,
+  "sha256": "294b90054e29798b7516686eb493ca660c82fe1fbdbd727f4fbf76d827f95b48",
+  "applicationId": "top.ghhccghk.accompanist.folia.sample",
+  "minSdk": 23,
+  "targetSdk": 37,
+  "signature": "apksigner verify passed: v1 and v2; v3/v4 not enabled",
+  "rustLibraries": {
+    "lib/arm64-v8a/libfolia_mask_experiment.so": 183,
+    "lib/x86_64/libfolia_mask_experiment.so": 62
+  },
+  "libraryPublicJvmTests": 38,
+  "sampleThemeOptionsJvmTests": 2,
+  "tests": "All passed; counts inspected from XML immediately after the build, before the subsequent isolated mounted filter experiment overwrote the library test report",
+  "preservedExternalInputs": [
+    "sample/android-app/build.gradle.kts release/debug signing change",
+    "gradle/gradle-daemon-jvm.properties"
+  ],
+  "installed": false,
+  "androidRuntime": false,
+  "visualAcceptance": false,
+  "performanceAcceptance": false
+}

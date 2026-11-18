@@ -1,0 +1,27 @@
+diff --git a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaFog.kt b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaFog.kt
+--- a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaFog.kt
++++ b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaFog.kt
+@@ -60,2 +60 @@
+-    fun constant(ink: Color)=drawImage(image,alpha=alpha,colorFilter=ColorFilter.tint(ink),
+-        blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver)
++    fun constant(ink: Color)=drawDioramaTexture(image,alpha,ink,additive)
+@@ -77 +76 @@
+-        drawImage(image,alpha=alpha)
++        drawDioramaTexture(image,alpha)
+diff --git a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlaneDrawing.kt b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlaneDrawing.kt
+--- a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlaneDrawing.kt
++++ b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlaneDrawing.kt
+@@ -10,0 +11,9 @@
++
++/** Original CanvasTexture minifies with mipmaps; the simple drawImage overload
++ * uses only bilinear sampling. Keep the shaped texture and filter on the GPU. */
++internal fun DrawScope.drawDioramaTexture(image: ImageBitmap, alpha: Float = 1f,
++    color: Color? = null, additive: Boolean = false) {
++    drawImage(image, alpha=alpha, colorFilter=color?.let { ColorFilter.tint(it) },
++        blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver,
++        filterQuality=FilterQuality.Medium)
++}
+@@ -60,2 +69 @@
+-            if(fog==null)drawImage(image,alpha=alpha,colorFilter=ColorFilter.tint(color),
+-                blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver)
++            if(fog==null)drawDioramaTexture(image,alpha,color,additive)

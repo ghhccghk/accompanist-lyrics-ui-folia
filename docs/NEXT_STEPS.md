@@ -16,10 +16,20 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：完成本轮Android debug APK刷新/签名/native ABI检查及必要共享入口
-回归；只构建不安装。随后从固定mounted原版/有限相机+有限材质仍不同的700ms
-完整文字帧定位raster/coverage与投影误差，不再叠加新的isolated target原型。
-媒体域辉光呼吸为历史下一项，已实现：保留原.9+.1*sin(phase*1.9)，phase采用
+当前唯一下一项：从固定mounted700ms可见邻行的实际原cache canvas与本完整塑形
+texture，按原字体/128px/middle基线测alpha/coverage，再区分纹理输入与投影/后端；
+不拟合像素/延迟、不再叠加新的isolated target原型。
+本轮交付构建/公共入口/独立消费已完成：325c2bd下公开JVM38项与新版选择器2项
+通过；Android debug APK构建、apksigner v1/v2、arm64-v8a/x86_64真实ELF库核对通过。
+APK在sample/android-app/build/outputs/apk/debug/android-app-debug.apk，未安装，
+见verification/android-debug/2026-11-18-validation.json。两项外部签名/daemon配置
+保留并排除提交。独立本地Maven JVM绘制/回调、Android消费编译及归属/依赖边界
+通过，见verification/consumer/325c2bd-validation.json；无远程发布或新设备结论。
+700ms采样线索已做一次有界反证：原CanvasTexture确用anisotropy4/mipmap，显式
+Medium hint候选在48mounted原矩阵中144本PNG全部字节不变，无收益，已逐行撤回；
+补丁/完整48对照保留verification/diorama-filtering。不宣称GPU等价或采样无影响，
+不反复重试同hint；不能用此排除文字输入/投影误差。
+325c2bd媒体域辉光呼吸为历史下一项，已实现：保留原.9+.1*sin(phase*1.9)，phase采用
 media-offset与不可变cut/loop锚点，暂停冻结/乱序seek/resize/重挂恢复，reduced恒1。
 同48原图五图union有限MAE6.954943→6.887058(28改善/0回退/20不变)，媒体
 20.290248→20.258454(22改善/6回退/20不变，7帧局部回退全部保留)；局部峰仍

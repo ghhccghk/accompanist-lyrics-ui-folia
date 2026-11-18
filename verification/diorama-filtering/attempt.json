@@ -1,0 +1,953 @@
+{
+  "summary": {
+    "material-before": {
+      "mean": 7.013977285916933,
+      "worst": 20.43439716312057
+    },
+    "material-after": {
+      "mean": 7.013977285916933,
+      "worst": 20.43439716312057
+    },
+    "media-before": {
+      "mean": 20.60325794468925,
+      "worst": 83.4
+    },
+    "media-after": {
+      "mean": 20.60325794468925,
+      "worst": 83.4
+    }
+  },
+  "changes": {
+    "material": {
+      "improved": 0,
+      "regressed": []
+    },
+    "media": {
+      "improved": 0,
+      "regressed": []
+    }
+  },
+  "rows": [
+    {
+      "file": "mounted-380-144-0.png",
+      "material-before": {
+        "mae": 17.308413615928067,
+        "worst64": 20.43439716312057
+      },
+      "material-after": {
+        "mae": 17.308413615928067,
+        "worst64": 20.43439716312057
+      },
+      "media-before": {
+        "mae": 18.983558124598588,
+        "worst64": 22.630586968228325
+      },
+      "media-after": {
+        "mae": 18.983558124598588,
+        "worst64": 22.630586968228325
+      }
+    },
+    {
+      "file": "mounted-380-144-1600.png",
+      "material-before": {
+        "mae": 9.42800788954635,
+        "worst64": 9.42800788954635
+      },
+      "material-after": {
+        "mae": 9.42800788954635,
+        "worst64": 9.42800788954635
+      },
+      "media-before": {
+        "mae": 10.570019723865878,
+        "worst64": 10.570019723865878
+      },
+      "media-after": {
+        "mae": 10.570019723865878,
+        "worst64": 10.570019723865878
+      }
+    },
+    {
+      "file": "mounted-380-144-2099.png",
+      "material-before": {
+        "mae": 13.546199936928414,
+        "worst64": 14.32227307398932
+      },
+      "material-after": {
+        "mae": 13.546199936928414,
+        "worst64": 14.32227307398932
+      },
+      "media-before": {
+        "mae": 26.68338063702302,
+        "worst64": 28.128909229595727
+      },
+      "media-after": {
+        "mae": 26.68338063702302,
+        "worst64": 28.128909229595727
+      }
+    },
+    {
+      "file": "mounted-380-144-2100.png",
+      "material-before": {
+        "mae": 10.459748427672956,
+        "worst64": 10.479210711768852
+      },
+      "material-after": {
+        "mae": 10.459748427672956,
+        "worst64": 10.479210711768852
+      },
+      "media-before": {
+        "mae": 21.29811320754717,
+        "worst64": 25.52046783625731
+      },
+      "media-after": {
+        "mae": 21.29811320754717,
+        "worst64": 25.52046783625731
+      }
+    },
+    {
+      "file": "mounted-380-144-3199.png",
+      "material-before": {
+        "mae": 6.579936753338019,
+        "worst64": 7.665544332210999
+      },
+      "material-after": {
+        "mae": 6.579936753338019,
+        "worst64": 7.665544332210999
+      },
+      "media-before": {
+        "mae": 27.256851721714686,
+        "worst64": 30.3517536103743
+      },
+      "media-after": {
+        "mae": 27.256851721714686,
+        "worst64": 30.3517536103743
+      }
+    },
+    {
+      "file": "mounted-380-144-3200.png",
+      "material-before": {
+        "mae": 6.436005133590013,
+        "worst64": 7.3421342134213425
+      },
+      "material-after": {
+        "mae": 6.436005133590013,
+        "worst64": 7.3421342134213425
+      },
+      "media-before": {
+        "mae": 26.939621981099055,
+        "worst64": 29.92315967419702
+      },
+      "media-after": {
+        "mae": 26.939621981099055,
+        "worst64": 29.92315967419702
+      }
+    },
+    {
+      "file": "mounted-380-144-3201.png",
+      "material-before": {
+        "mae": 6.582304168840958,
+        "worst64": 7.505341880341881
+      },
+      "material-after": {
+        "mae": 6.582304168840958,
+        "worst64": 7.505341880341881
+      },
+      "media-before": {
+        "mae": 27.27958485533716,
+        "worst64": 30.538331019589695
+      },
+      "media-after": {
+        "mae": 27.27958485533716,
+        "worst64": 30.538331019589695
+      }
+    },
+    {
+      "file": "mounted-380-144-3499.png",
+      "material-before": {
+        "mae": 7.108084358523726,
+        "worst64": 9.82451187955775
+      },
+      "material-after": {
+        "mae": 7.108084358523726,
+        "worst64": 9.82451187955775
+      },
+      "media-before": {
+        "mae": 18.6668863503222,
+        "worst64": 29.909903552105387
+      },
+      "media-after": {
+        "mae": 18.6668863503222,
+        "worst64": 29.909903552105387
+      }
+    },
+    {
+      "file": "mounted-380-144-3500.png",
+      "material-before": {
+        "mae": 9.37746806039489,
+        "worst64": 20.364779874213838
+      },
+      "material-after": {
+        "mae": 9.37746806039489,
+        "worst64": 20.364779874213838
+      },
+      "media-before": {
+        "mae": 25.838917180380594,
+        "worst64": 48.11726907630522
+      },
+      "media-after": {
+        "mae": 25.838917180380594,
+        "worst64": 48.11726907630522
+      }
+    },
+    {
+      "file": "mounted-380-144-4500.png",
+      "material-before": {
+        "mae": 6.170044667783361,
+        "worst64": 9.361556908319498
+      },
+      "material-after": {
+        "mae": 6.170044667783361,
+        "worst64": 9.361556908319498
+      },
+      "media-before": {
+        "mae": 7.163456169737577,
+        "worst64": 12.174691016417635
+      },
+      "media-after": {
+        "mae": 7.163456169737577,
+        "worst64": 12.174691016417635
+      }
+    },
+    {
+      "file": "mounted-380-144-4600.png",
+      "material-before": {
+        "mae": 5.614024962123945,
+        "worst64": 8.132970137207426
+      },
+      "material-after": {
+        "mae": 5.614024962123945,
+        "worst64": 8.132970137207426
+      },
+      "media-before": {
+        "mae": 6.287882067190919,
+        "worst64": 10.201977401129943
+      },
+      "media-after": {
+        "mae": 6.287882067190919,
+        "worst64": 10.201977401129943
+      }
+    },
+    {
+      "file": "mounted-380-144-700.png",
+      "material-before": {
+        "mae": 10.011799410029498,
+        "worst64": 12.72888888888889
+      },
+      "material-after": {
+        "mae": 10.011799410029498,
+        "worst64": 12.72888888888889
+      },
+      "media-before": {
+        "mae": 21.355162241887907,
+        "worst64": 27.253333333333334
+      },
+      "media-after": {
+        "mae": 21.355162241887907,
+        "worst64": 27.253333333333334
+      }
+    },
+    {
+      "file": "mounted-380-60-0.png",
+      "material-before": {
+        "mae": 15.220883534136545,
+        "worst64": 18.367816091954023
+      },
+      "material-after": {
+        "mae": 15.220883534136545,
+        "worst64": 18.367816091954023
+      },
+      "media-before": {
+        "mae": 46.081502480510274,
+        "worst64": 76.15686274509804
+      },
+      "media-after": {
+        "mae": 46.081502480510274,
+        "worst64": 76.15686274509804
+      }
+    },
+    {
+      "file": "mounted-380-60-1600.png",
+      "material-before": {
+        "mae": 6.483234714003944,
+        "worst64": 6.483234714003944
+      },
+      "material-after": {
+        "mae": 6.483234714003944,
+        "worst64": 6.483234714003944
+      },
+      "media-before": {
+        "mae": 18.159763313609467,
+        "worst64": 18.159763313609467
+      },
+      "media-after": {
+        "mae": 18.159763313609467,
+        "worst64": 18.159763313609467
+      }
+    },
+    {
+      "file": "mounted-380-60-2099.png",
+      "material-before": {
+        "mae": 14.02410800385728,
+        "worst64": 14.56605222734255
+      },
+      "material-after": {
+        "mae": 14.02410800385728,
+        "worst64": 14.56605222734255
+      },
+      "media-before": {
+        "mae": 17.682095789135325,
+        "worst64": 18.252304147465438
+      },
+      "media-after": {
+        "mae": 17.682095789135325,
+        "worst64": 18.252304147465438
+      }
+    },
+    {
+      "file": "mounted-380-60-2100.png",
+      "material-before": {
+        "mae": 10.425176621708413,
+        "worst64": 11.919753086419753
+      },
+      "material-after": {
+        "mae": 10.425176621708413,
+        "worst64": 11.919753086419753
+      },
+      "media-before": {
+        "mae": 14.019267822736031,
+        "worst64": 17.47530864197531
+      },
+      "media-after": {
+        "mae": 14.019267822736031,
+        "worst64": 17.47530864197531
+      }
+    },
+    {
+      "file": "mounted-380-60-3199.png",
+      "material-before": {
+        "mae": 6.342935528120713,
+        "worst64": 7.392992424242424
+      },
+      "material-after": {
+        "mae": 6.342935528120713,
+        "worst64": 7.392992424242424
+      },
+      "media-before": {
+        "mae": 21.685432098765432,
+        "worst64": 23.437997724687143
+      },
+      "media-after": {
+        "mae": 21.685432098765432,
+        "worst64": 23.437997724687143
+      }
+    },
+    {
+      "file": "mounted-380-60-3200.png",
+      "material-before": {
+        "mae": 6.455134487640205,
+        "worst64": 7.2064814814814815
+      },
+      "material-after": {
+        "mae": 6.455134487640205,
+        "worst64": 7.2064814814814815
+      },
+      "media-before": {
+        "mae": 21.4317761080257,
+        "worst64": 22.793273986152325
+      },
+      "media-after": {
+        "mae": 21.4317761080257,
+        "worst64": 22.793273986152325
+      }
+    },
+    {
+      "file": "mounted-380-60-3201.png",
+      "material-before": {
+        "mae": 6.211928796266146,
+        "worst64": 7.098092643051771
+      },
+      "material-after": {
+        "mae": 6.211928796266146,
+        "worst64": 7.098092643051771
+      },
+      "media-before": {
+        "mae": 21.31802887224574,
+        "worst64": 22.737762730991676
+      },
+      "media-after": {
+        "mae": 21.31802887224574,
+        "worst64": 22.737762730991676
+      }
+    },
+    {
+      "file": "mounted-380-60-3499.png",
+      "material-before": {
+        "mae": 6.828302086643364,
+        "worst64": 9.609394313967861
+      },
+      "material-after": {
+        "mae": 6.828302086643364,
+        "worst64": 9.609394313967861
+      },
+      "media-before": {
+        "mae": 34.051442290717794,
+        "worst64": 53.9507622579316
+      },
+      "media-after": {
+        "mae": 34.051442290717794,
+        "worst64": 53.9507622579316
+      }
+    },
+    {
+      "file": "mounted-380-60-3500.png",
+      "material-before": {
+        "mae": 8.340226606449567,
+        "worst64": 19.681818181818183
+      },
+      "material-after": {
+        "mae": 8.340226606449567,
+        "worst64": 19.681818181818183
+      },
+      "media-before": {
+        "mae": 35.9912843673243,
+        "worst64": 41.874845105328376
+      },
+      "media-after": {
+        "mae": 35.9912843673243,
+        "worst64": 41.874845105328376
+      }
+    },
+    {
+      "file": "mounted-380-60-4500.png",
+      "material-before": {
+        "mae": 6.2205294705294705,
+        "worst64": 9.272271714922049
+      },
+      "material-after": {
+        "mae": 6.2205294705294705,
+        "worst64": 9.272271714922049
+      },
+      "media-before": {
+        "mae": 9.60983460983461,
+        "worst64": 17.916295471417964
+      },
+      "media-after": {
+        "mae": 9.60983460983461,
+        "worst64": 17.916295471417964
+      }
+    },
+    {
+      "file": "mounted-380-60-4600.png",
+      "material-before": {
+        "mae": 5.52598361436601,
+        "worst64": 8.421265413381848
+      },
+      "material-after": {
+        "mae": 5.52598361436601,
+        "worst64": 8.421265413381848
+      },
+      "media-before": {
+        "mae": 8.396160807849862,
+        "worst64": 14.504346068324237
+      },
+      "media-after": {
+        "mae": 8.396160807849862,
+        "worst64": 14.504346068324237
+      }
+    },
+    {
+      "file": "mounted-380-60-700.png",
+      "material-before": {
+        "mae": 9.414012738853502,
+        "worst64": 12.182926829268293
+      },
+      "material-after": {
+        "mae": 9.414012738853502,
+        "worst64": 12.182926829268293
+      },
+      "media-before": {
+        "mae": 20.349787685774945,
+        "worst64": 29.061032863849764
+      },
+      "media-after": {
+        "mae": 20.349787685774945,
+        "worst64": 29.061032863849764
+      }
+    },
+    {
+      "file": "mounted-800-144-0.png",
+      "material-before": {
+        "mae": 10.733099004100762,
+        "worst64": 13.360951285001917
+      },
+      "material-after": {
+        "mae": 10.733099004100762,
+        "worst64": 13.360951285001917
+      },
+      "media-before": {
+        "mae": 14.021948838117556,
+        "worst64": 18.50913520097442
+      },
+      "media-after": {
+        "mae": 14.021948838117556,
+        "worst64": 18.50913520097442
+      }
+    },
+    {
+      "file": "mounted-800-144-1600.png",
+      "material-before": {
+        "mae": 6.339268178130737,
+        "worst64": 8.963146314631462
+      },
+      "material-after": {
+        "mae": 6.339268178130737,
+        "worst64": 8.963146314631462
+      },
+      "media-before": {
+        "mae": 15.061355194056615,
+        "worst64": 19.66996699669967
+      },
+      "media-after": {
+        "mae": 15.061355194056615,
+        "worst64": 19.66996699669967
+      }
+    },
+    {
+      "file": "mounted-800-144-2099.png",
+      "material-before": {
+        "mae": 6.367360454115421,
+        "worst64": 19.17391304347826
+      },
+      "material-after": {
+        "mae": 6.367360454115421,
+        "worst64": 19.17391304347826
+      },
+      "media-before": {
+        "mae": 27.26351308735415,
+        "worst64": 46.44927536231884
+      },
+      "media-after": {
+        "mae": 27.26351308735415,
+        "worst64": 46.44927536231884
+      }
+    },
+    {
+      "file": "mounted-800-144-2100.png",
+      "material-before": {
+        "mae": 6.298046287947099,
+        "worst64": 13.533333333333333
+      },
+      "material-after": {
+        "mae": 6.298046287947099,
+        "worst64": 13.533333333333333
+      },
+      "media-before": {
+        "mae": 32.61232341448753,
+        "worst64": 59.96386520503451
+      },
+      "media-after": {
+        "mae": 32.61232341448753,
+        "worst64": 59.96386520503451
+      }
+    },
+    {
+      "file": "mounted-800-144-3199.png",
+      "material-before": {
+        "mae": 4.024199668109307,
+        "worst64": 6.856209150326797
+      },
+      "material-after": {
+        "mae": 4.024199668109307,
+        "worst64": 6.856209150326797
+      },
+      "media-before": {
+        "mae": 19.304897472460578,
+        "worst64": 28.23917748917749
+      },
+      "media-after": {
+        "mae": 19.304897472460578,
+        "worst64": 28.23917748917749
+      }
+    },
+    {
+      "file": "mounted-800-144-3200.png",
+      "material-before": {
+        "mae": 3.9453016246134354,
+        "worst64": 6.860677534975141
+      },
+      "material-after": {
+        "mae": 3.9453016246134354,
+        "worst64": 6.860677534975141
+      },
+      "media-before": {
+        "mae": 19.249535288871105,
+        "worst64": 28.48198198198198
+      },
+      "media-after": {
+        "mae": 19.249535288871105,
+        "worst64": 28.48198198198198
+      }
+    },
+    {
+      "file": "mounted-800-144-3201.png",
+      "material-before": {
+        "mae": 3.9392380191161287,
+        "worst64": 6.868106350864972
+      },
+      "material-after": {
+        "mae": 3.9392380191161287,
+        "worst64": 6.868106350864972
+      },
+      "media-before": {
+        "mae": 19.245354181236888,
+        "worst64": 28.625
+      },
+      "media-after": {
+        "mae": 19.245354181236888,
+        "worst64": 28.625
+      }
+    },
+    {
+      "file": "mounted-800-144-3499.png",
+      "material-before": {
+        "mae": 3.917038975143781,
+        "worst64": 7.828178694158075
+      },
+      "material-after": {
+        "mae": 3.917038975143781,
+        "worst64": 7.828178694158075
+      },
+      "media-before": {
+        "mae": 10.376085042661204,
+        "worst64": 27.59106529209622
+      },
+      "media-after": {
+        "mae": 10.376085042661204,
+        "worst64": 27.59106529209622
+      }
+    },
+    {
+      "file": "mounted-800-144-3500.png",
+      "material-before": {
+        "mae": 5.11011883498845,
+        "worst64": 11.197860962566844
+      },
+      "material-after": {
+        "mae": 5.11011883498845,
+        "worst64": 11.197860962566844
+      },
+      "media-before": {
+        "mae": 16.052535067038175,
+        "worst64": 34.03921568627451
+      },
+      "media-after": {
+        "mae": 16.052535067038175,
+        "worst64": 34.03921568627451
+      }
+    },
+    {
+      "file": "mounted-800-144-4500.png",
+      "material-before": {
+        "mae": 3.746621019817413,
+        "worst64": 7.755904812644291
+      },
+      "material-after": {
+        "mae": 3.746621019817413,
+        "worst64": 7.755904812644291
+      },
+      "media-before": {
+        "mae": 4.864579158316634,
+        "worst64": 10.832445391582311
+      },
+      "media-after": {
+        "mae": 4.864579158316634,
+        "worst64": 10.832445391582311
+      }
+    },
+    {
+      "file": "mounted-800-144-4600.png",
+      "material-before": {
+        "mae": 3.3802601961008736,
+        "worst64": 6.928468468468468
+      },
+      "material-after": {
+        "mae": 3.3802601961008736,
+        "worst64": 6.928468468468468
+      },
+      "media-before": {
+        "mae": 4.427539964137194,
+        "worst64": 9.028288288288289
+      },
+      "media-after": {
+        "mae": 4.427539964137194,
+        "worst64": 9.028288288288289
+      }
+    },
+    {
+      "file": "mounted-800-144-700.png",
+      "material-before": {
+        "mae": 6.21859681372549,
+        "worst64": 8.238713667285095
+      },
+      "material-after": {
+        "mae": 6.21859681372549,
+        "worst64": 8.238713667285095
+      },
+      "media-before": {
+        "mae": 20.34145220588235,
+        "worst64": 32.52713178294574
+      },
+      "media-after": {
+        "mae": 20.34145220588235,
+        "worst64": 32.52713178294574
+      }
+    },
+    {
+      "file": "mounted-800-60-0.png",
+      "material-before": {
+        "mae": 9.717036416910842,
+        "worst64": 12.568253968253968
+      },
+      "material-after": {
+        "mae": 9.717036416910842,
+        "worst64": 12.568253968253968
+      },
+      "media-before": {
+        "mae": 46.44481652016185,
+        "worst64": 83.4
+      },
+      "media-after": {
+        "mae": 46.44481652016185,
+        "worst64": 83.4
+      }
+    },
+    {
+      "file": "mounted-800-60-1600.png",
+      "material-before": {
+        "mae": 6.513141152209205,
+        "worst64": 8.905234159779614
+      },
+      "material-after": {
+        "mae": 6.513141152209205,
+        "worst64": 8.905234159779614
+      },
+      "media-before": {
+        "mae": 14.936904918608223,
+        "worst64": 19.825047199496538
+      },
+      "media-after": {
+        "mae": 14.936904918608223,
+        "worst64": 19.825047199496538
+      }
+    },
+    {
+      "file": "mounted-800-60-2099.png",
+      "material-before": {
+        "mae": 6.8368284401837425,
+        "worst64": 15.066666666666666
+      },
+      "material-after": {
+        "mae": 6.8368284401837425,
+        "worst64": 15.066666666666666
+      },
+      "media-before": {
+        "mae": 17.194793955129484,
+        "worst64": 41.946666666666665
+      },
+      "media-after": {
+        "mae": 17.194793955129484,
+        "worst64": 41.946666666666665
+      }
+    },
+    {
+      "file": "mounted-800-60-2100.png",
+      "material-before": {
+        "mae": 6.781388194577966,
+        "worst64": 11.0
+      },
+      "material-after": {
+        "mae": 6.781388194577966,
+        "worst64": 11.0
+      },
+      "media-before": {
+        "mae": 25.553931936166123,
+        "worst64": 55.82019190654985
+      },
+      "media-after": {
+        "mae": 25.553931936166123,
+        "worst64": 55.82019190654985
+      }
+    },
+    {
+      "file": "mounted-800-60-3199.png",
+      "material-before": {
+        "mae": 3.9348439839933222,
+        "worst64": 7.017164435290079
+      },
+      "material-after": {
+        "mae": 3.9348439839933222,
+        "worst64": 7.017164435290079
+      },
+      "media-before": {
+        "mae": 29.99557279519472,
+        "worst64": 46.977731202515066
+      },
+      "media-after": {
+        "mae": 29.99557279519472,
+        "worst64": 46.977731202515066
+      }
+    },
+    {
+      "file": "mounted-800-60-3200.png",
+      "material-before": {
+        "mae": 3.9340377370825266,
+        "worst64": 6.863741073485372
+      },
+      "material-after": {
+        "mae": 3.9340377370825266,
+        "worst64": 6.863741073485372
+      },
+      "media-before": {
+        "mae": 29.986639209629576,
+        "worst64": 46.935354591392226
+      },
+      "media-after": {
+        "mae": 29.986639209629576,
+        "worst64": 46.935354591392226
+      }
+    },
+    {
+      "file": "mounted-800-60-3201.png",
+      "material-before": {
+        "mae": 3.8281492366723815,
+        "worst64": 6.813633737723859
+      },
+      "material-after": {
+        "mae": 3.8281492366723815,
+        "worst64": 6.813633737723859
+      },
+      "media-before": {
+        "mae": 29.969083190464527,
+        "worst64": 46.88810580353258
+      },
+      "media-after": {
+        "mae": 29.969083190464527,
+        "worst64": 46.88810580353258
+      }
+    },
+    {
+      "file": "mounted-800-60-3499.png",
+      "material-before": {
+        "mae": 3.7144883194696754,
+        "worst64": 7.15625
+      },
+      "material-after": {
+        "mae": 3.7144883194696754,
+        "worst64": 7.15625
+      },
+      "media-before": {
+        "mae": 19.037742614016636,
+        "worst64": 50.357638888888886
+      },
+      "media-after": {
+        "mae": 19.037742614016636,
+        "worst64": 50.357638888888886
+      }
+    },
+    {
+      "file": "mounted-800-60-3500.png",
+      "material-before": {
+        "mae": 4.640235516589307,
+        "worst64": 10.108757062146893
+      },
+      "material-after": {
+        "mae": 4.640235516589307,
+        "worst64": 10.108757062146893
+      },
+      "media-before": {
+        "mae": 28.721011689874505,
+        "worst64": 58.10550996483001
+      },
+      "media-after": {
+        "mae": 28.721011689874505,
+        "worst64": 58.10550996483001
+      }
+    },
+    {
+      "file": "mounted-800-60-4500.png",
+      "material-before": {
+        "mae": 3.72918877686389,
+        "worst64": 7.6718222222222225
+      },
+      "material-after": {
+        "mae": 3.72918877686389,
+        "worst64": 7.6718222222222225
+      },
+      "media-before": {
+        "mae": 7.275835765455028,
+        "worst64": 15.309777777777779
+      },
+      "media-after": {
+        "mae": 7.275835765455028,
+        "worst64": 15.309777777777779
+      }
+    },
+    {
+      "file": "mounted-800-60-4600.png",
+      "material-before": {
+        "mae": 3.405449947432728,
+        "worst64": 7.080611785874944
+      },
+      "material-after": {
+        "mae": 3.405449947432728,
+        "worst64": 7.080611785874944
+      },
+      "media-before": {
+        "mae": 6.792259824396897,
+        "worst64": 12.600719748088169
+      },
+      "media-after": {
+        "mae": 6.792259824396897,
+        "worst64": 12.600719748088169
+      }
+    },
+    {
+      "file": "mounted-800-60-700.png",
+      "material-before": {
+        "mae": 5.502479338842975,
+        "worst64": 8.541666666666666
+      },
+      "material-after": {
+        "mae": 5.502479338842975,
+        "worst64": 8.541666666666666
+      },
+      "media-before": {
+        "mae": 23.12685950413223,
+        "worst64": 43.5045045045045
+      },
+      "media-after": {
+        "mae": 23.12685950413223,
+        "worst64": 43.5045045045045
+      }
+    }
+  ],
+  "baseline": "325c2bd",
+  "status": "Rejected: no pixel effect in this JVM offscreen matrix. Production candidate reverted exactly; no conclusion about actual GPU filtering.",
+  "source": "Folia cc6226e4 dioramaTextRaster.ts makeTexture:anisotropy4; Three0.185.1 Texture default LinearMipmapLinearFilter",
+  "candidate": "Explicit FilterQuality.Medium via drawImage source/destination rectangle overload in all plain/active/fog-mask paths",
+  "source_png_unchanged": 48,
+  "native_png_unchanged": 144,
+  "tests": "DioramaMountedStageTest narrow/wide pass including original1e-9 camera/material controls",
+  "comparison": "Same48 mounted source frames; original/material-before/material-after/media-before/media-after ALL-ink union including lowest alpha; no registration/filter/phase shift/omission",
+  "candidate_patch_sha256": "4e4bcf63425efeecfd3c8aab528a3cba711c856023b0188043c46c0a594e473d"
+}

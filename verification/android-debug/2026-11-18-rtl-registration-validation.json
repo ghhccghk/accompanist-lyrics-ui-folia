@@ -1,0 +1,56 @@
+{
+  "sourceRevision": "13b85187be15e6ac9aaed1ecb0348fee015e1ebb",
+  "date": "2026-11-18T17:17:53.067589+08:00",
+  "build": {
+    "task": ":sample:android-app:assembleDebug",
+    "exitCode": 0,
+    "taskSummary": "59 actionable tasks: 42 executed, 17 up-to-date",
+    "appOutputIsolated": true,
+    "signingConfigurationChanged": false
+  },
+  "deliveredApk": "build/deliverables/android/lyrics-ui-folia-debug-13b8518-20261118-171753.apk",
+  "bytes": 27911824,
+  "sha256": "c41734a49247f091756492c6408f1d84ca2ce894c5d029b2872f1dd0032f1ba4",
+  "signatureChecks": [
+    {
+      "buildTools": "37.0.0",
+      "exitCode": 0,
+      "v1": true,
+      "v2": true,
+      "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+    },
+    {
+      "buildTools": "30.0.2",
+      "exitCode": 0,
+      "v1": true,
+      "v2": true,
+      "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+    }
+  ],
+  "deliverySignatureCheck": {
+    "buildTools": "37.0.0",
+    "exitCode": 0,
+    "v1": true,
+    "v2": true,
+    "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+  },
+  "originalDebugCertificateRetained": true,
+  "zipCrcCheck": "all entries passed",
+  "zipalign16KiB": {
+    "buildTools": "37.0.0",
+    "exitCode": 0
+  },
+  "rustLibraries": {
+    "lib/arm64-v8a/libfolia_mask_experiment.so": 183,
+    "lib/x86_64/libfolia_mask_experiment.so": 62
+  },
+  "copyMatchesBuildOutput": true,
+  "installed": false,
+  "phoneVerificationFailureReproduced": false,
+  "phoneInstallationResolved": "not established; device installation/transfer not performed",
+  "featureScope": "Internal JVM opt-in plain/active-base samplers plus original RTL word registration and partial-failure release; Android ordinary sampler fallback and public seven preview themes unchanged. APK refresh does not enable or visually validate Diorama on Android.",
+  "preservedExternalInputs": [
+    "sample/android-app/build.gradle.kts release/debug signing change",
+    "gradle/gradle-daemon-jvm.properties"
+  ]
+}

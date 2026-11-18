@@ -1,0 +1,17 @@
+{
+  "sourceRevision": "13b85187be15e6ac9aaed1ecb0348fee015e1ebb",
+  "date": "2026-11-18T17:24:21.195256+08:00",
+  "command": "python scripts/verify-consumer.py",
+  "result": "PASS",
+  "publication": "file-backed local verification repository only",
+  "independentJvm": {
+    "tests": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "independentAndroidCompile": "PASS",
+  "artifactCoordinatesDependencyBoundaryAndPackagedNotices": "PASS",
+  "installed": false,
+  "remotePublished": false,
+  "limits": "No device, real-window, performance or original-theme visual claim. RTL registration is internal, Diorama remains unavailable from sample; JVM samplers opt-in and Android ordinary fallback."
+}

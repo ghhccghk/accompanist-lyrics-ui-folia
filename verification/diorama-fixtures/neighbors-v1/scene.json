@@ -1,0 +1,6731 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "browser": "151.0.7922.34",
+  "three": "0.185.1",
+  "DPR": 1,
+  "sourceHashes": [
+    {
+      "file": "dioramaSceneLayout.ts",
+      "sha256": "1d0ef0ee78535071b4d913a8e7cbb9e72ebb6822aec9b6f523c68b2920379338"
+    },
+    {
+      "file": "dioramaSceneFrame.ts",
+      "sha256": "b116464bc42a052ba04ed53a17b2f9edc1c435363a20c8c0d010af1e9b1952f5"
+    },
+    {
+      "file": "dioramaSceneConstants.ts",
+      "sha256": "9809b495e1ef33f358c6868b68c701549603a24799715acf68cc83afd43cc002"
+    },
+    {
+      "file": "dioramaSceneUnits.ts",
+      "sha256": "303ead0e85c5e4a8ee665857fcb6b42fdfcf390a661d1a8b5fa4e3946d49b81b"
+    },
+    {
+      "file": "dioramaTextRaster.ts",
+      "sha256": "085bc682dbe3e15ba08cede13108063b4ff1cf0a4a79b35be35be56722a41d28"
+    },
+    {
+      "file": "cameraPath.ts",
+      "sha256": "71adb1bcb6b7c099a147848065004d48de1d3fa2f45122681cd2fb50d0ce3e76"
+    },
+    {
+      "file": "dioramaSequencer.ts",
+      "sha256": "840b37e72c0947daa238a91e15efee1436cb66aef1da6655dd9db809a19b0efa"
+    }
+  ],
+  "lockSha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad",
+  "fonts": [
+    {
+      "file": "FoliaParityLatin-Bold.ttf",
+      "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+    },
+    {
+      "file": "FoliaParityBidi-Bold.ttf",
+      "sha256": "e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699"
+    },
+    {
+      "file": "FoliaParityChatCJK-Bold.otf",
+      "sha256": "c111c58ed2c29b4544cfbc0f3db1cdf8b596f75861ac486eb5790ef66bdafbac"
+    }
+  ],
+  "inputs": {
+    "latin": {
+      "lines": [
+        {
+          "fullText": "Synthetic mirror plane",
+          "startTime": 0.7,
+          "endTime": 2.3,
+          "words": [
+            {
+              "text": "Synthetic",
+              "startTime": 0.7,
+              "endTime": 1.233
+            },
+            {
+              "text": "mirror",
+              "startTime": 1.233,
+              "endTime": 1.767
+            },
+            {
+              "text": "plane",
+              "startTime": 1.767,
+              "endTime": 2.3
+            }
+          ]
+        },
+        {
+          "fullText": "Synthetic mirror plane",
+          "startTime": 3.1,
+          "endTime": 4.7,
+          "words": [
+            {
+              "text": "Synthetic",
+              "startTime": 3.1,
+              "endTime": 3.633
+            },
+            {
+              "text": "mirror",
+              "startTime": 3.633,
+              "endTime": 4.167
+            },
+            {
+              "text": "plane",
+              "startTime": 4.167,
+              "endTime": 4.7
+            }
+          ]
+        },
+        {
+          "fullText": "Synthetic mirror plane",
+          "startTime": 5.5,
+          "endTime": 7.1,
+          "words": [
+            {
+              "text": "Synthetic",
+              "startTime": 5.5,
+              "endTime": 6.033
+            },
+            {
+              "text": "mirror",
+              "startTime": 6.033,
+              "endTime": 6.567
+            },
+            {
+              "text": "plane",
+              "startTime": 6.567,
+              "endTime": 7.1
+            }
+          ]
+        },
+        {
+          "fullText": "Synthetic mirror plane",
+          "startTime": 7.9,
+          "endTime": 9.5,
+          "words": [
+            {
+              "text": "Synthetic",
+              "startTime": 7.9,
+              "endTime": 8.433
+            },
+            {
+              "text": "mirror",
+              "startTime": 8.433,
+              "endTime": 8.967
+            },
+            {
+              "text": "plane",
+              "startTime": 8.967,
+              "endTime": 9.5
+            }
+          ]
+        },
+        {
+          "fullText": "Synthetic mirror plane",
+          "startTime": 10.3,
+          "endTime": 11.9,
+          "words": [
+            {
+              "text": "Synthetic",
+              "startTime": 10.3,
+              "endTime": 10.833
+            },
+            {
+              "text": "mirror",
+              "startTime": 10.833,
+              "endTime": 11.367
+            },
+            {
+              "text": "plane",
+              "startTime": 11.367,
+              "endTime": 11.9
+            }
+          ]
+        },
+        {
+          "fullText": "Synthetic mirror plane",
+          "startTime": 12.7,
+          "endTime": 14.3,
+          "words": [
+            {
+              "text": "Synthetic",
+              "startTime": 12.7,
+              "endTime": 13.233
+            },
+            {
+              "text": "mirror",
+              "startTime": 13.233,
+              "endTime": 13.767
+            },
+            {
+              "text": "plane",
+              "startTime": 13.767,
+              "endTime": 14.3
+            }
+          ]
+        },
+        {
+          "fullText": "Synthetic mirror plane",
+          "startTime": 15.1,
+          "endTime": 16.7,
+          "words": [
+            {
+              "text": "Synthetic",
+              "startTime": 15.1,
+              "endTime": 15.633
+            },
+            {
+              "text": "mirror",
+              "startTime": 15.633,
+              "endTime": 16.167
+            },
+            {
+              "text": "plane",
+              "startTime": 16.167,
+              "endTime": 16.7
+            }
+          ]
+        },
+        {
+          "fullText": "Synthetic mirror plane",
+          "startTime": 17.5,
+          "endTime": 19.1,
+          "words": [
+            {
+              "text": "Synthetic",
+              "startTime": 17.5,
+              "endTime": 18.033
+            },
+            {
+              "text": "mirror",
+              "startTime": 18.033,
+              "endTime": 18.567
+            },
+            {
+              "text": "plane",
+              "startTime": 18.567,
+              "endTime": 19.1
+            }
+          ]
+        }
+      ],
+      "seed": "DioramaProbe",
+      "windows": [
+        {
+          "total": 0,
+          "current": 0,
+          "indices": []
+        },
+        {
+          "total": 1,
+          "current": 0,
+          "indices": [
+            0
+          ]
+        },
+        {
+          "total": 2,
+          "current": 0,
+          "indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "total": 2,
+          "current": 1,
+          "indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "total": 3,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "total": 3,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "total": 3,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "total": 4,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 4,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 4,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 4,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 5,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 5,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 5,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 5,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 5,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 6,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 6,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 6,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 6,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 6,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 6,
+          "current": 5,
+          "indices": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 7,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 7,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 7,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 7,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 7,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 7,
+          "current": 5,
+          "indices": [
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 7,
+          "current": 6,
+          "indices": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 8,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 8,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 8,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 8,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 8,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "total": 8,
+          "current": 5,
+          "indices": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "total": 8,
+          "current": 6,
+          "indices": [
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "total": 8,
+          "current": 7,
+          "indices": [
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "primary": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "secondary": [
+        0.17788841597328695,
+        0.2663556047920505,
+        0.4019777798219466
+      ],
+      "accent": [
+        0.8796223968851662,
+        0.19806931954941637,
+        0.07421356837213867
+      ]
+    },
+    "arabic": {
+      "lines": [
+        {
+          "fullText": "مرحبا بالعالم",
+          "startTime": 0.7,
+          "endTime": 2.3,
+          "words": [
+            {
+              "text": "مرحبا",
+              "startTime": 0.7,
+              "endTime": 1.5
+            },
+            {
+              "text": "بالعالم",
+              "startTime": 1.5,
+              "endTime": 2.3
+            }
+          ]
+        },
+        {
+          "fullText": "مرحبا بالعالم",
+          "startTime": 3.1,
+          "endTime": 4.7,
+          "words": [
+            {
+              "text": "مرحبا",
+              "startTime": 3.1,
+              "endTime": 3.9
+            },
+            {
+              "text": "بالعالم",
+              "startTime": 3.9,
+              "endTime": 4.7
+            }
+          ]
+        },
+        {
+          "fullText": "مرحبا بالعالم",
+          "startTime": 5.5,
+          "endTime": 7.1,
+          "words": [
+            {
+              "text": "مرحبا",
+              "startTime": 5.5,
+              "endTime": 6.3
+            },
+            {
+              "text": "بالعالم",
+              "startTime": 6.3,
+              "endTime": 7.1
+            }
+          ]
+        },
+        {
+          "fullText": "مرحبا بالعالم",
+          "startTime": 7.9,
+          "endTime": 9.5,
+          "words": [
+            {
+              "text": "مرحبا",
+              "startTime": 7.9,
+              "endTime": 8.7
+            },
+            {
+              "text": "بالعالم",
+              "startTime": 8.7,
+              "endTime": 9.5
+            }
+          ]
+        },
+        {
+          "fullText": "مرحبا بالعالم",
+          "startTime": 10.3,
+          "endTime": 11.9,
+          "words": [
+            {
+              "text": "مرحبا",
+              "startTime": 10.3,
+              "endTime": 11.1
+            },
+            {
+              "text": "بالعالم",
+              "startTime": 11.1,
+              "endTime": 11.9
+            }
+          ]
+        },
+        {
+          "fullText": "مرحبا بالعالم",
+          "startTime": 12.7,
+          "endTime": 14.3,
+          "words": [
+            {
+              "text": "مرحبا",
+              "startTime": 12.7,
+              "endTime": 13.5
+            },
+            {
+              "text": "بالعالم",
+              "startTime": 13.5,
+              "endTime": 14.3
+            }
+          ]
+        },
+        {
+          "fullText": "مرحبا بالعالم",
+          "startTime": 15.1,
+          "endTime": 16.7,
+          "words": [
+            {
+              "text": "مرحبا",
+              "startTime": 15.1,
+              "endTime": 15.9
+            },
+            {
+              "text": "بالعالم",
+              "startTime": 15.9,
+              "endTime": 16.7
+            }
+          ]
+        },
+        {
+          "fullText": "مرحبا بالعالم",
+          "startTime": 17.5,
+          "endTime": 19.1,
+          "words": [
+            {
+              "text": "مرحبا",
+              "startTime": 17.5,
+              "endTime": 18.3
+            },
+            {
+              "text": "بالعالم",
+              "startTime": 18.3,
+              "endTime": 19.1
+            }
+          ]
+        }
+      ],
+      "seed": "DioramaProbe",
+      "windows": [
+        {
+          "total": 0,
+          "current": 0,
+          "indices": []
+        },
+        {
+          "total": 1,
+          "current": 0,
+          "indices": [
+            0
+          ]
+        },
+        {
+          "total": 2,
+          "current": 0,
+          "indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "total": 2,
+          "current": 1,
+          "indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "total": 3,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "total": 3,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "total": 3,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "total": 4,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 4,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 4,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 4,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 5,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 5,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 5,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 5,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 5,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 6,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 6,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 6,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 6,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 6,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 6,
+          "current": 5,
+          "indices": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 7,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 7,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 7,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 7,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 7,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 7,
+          "current": 5,
+          "indices": [
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 7,
+          "current": 6,
+          "indices": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 8,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 8,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 8,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 8,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 8,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "total": 8,
+          "current": 5,
+          "indices": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "total": 8,
+          "current": 6,
+          "indices": [
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "total": 8,
+          "current": 7,
+          "indices": [
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "primary": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "secondary": [
+        0.17788841597328695,
+        0.2663556047920505,
+        0.4019777798219466
+      ],
+      "accent": [
+        0.8796223968851662,
+        0.19806931954941637,
+        0.07421356837213867
+      ]
+    },
+    "cjk": {
+      "lines": [
+        {
+          "fullText": "星光 回响 向远方",
+          "startTime": 0.7,
+          "endTime": 2.3,
+          "words": [
+            {
+              "text": "星光",
+              "startTime": 0.7,
+              "endTime": 1.233
+            },
+            {
+              "text": "回响",
+              "startTime": 1.233,
+              "endTime": 1.767
+            },
+            {
+              "text": "向远方",
+              "startTime": 1.767,
+              "endTime": 2.3
+            }
+          ]
+        },
+        {
+          "fullText": "星光 回响 向远方",
+          "startTime": 3.1,
+          "endTime": 4.7,
+          "words": [
+            {
+              "text": "星光",
+              "startTime": 3.1,
+              "endTime": 3.633
+            },
+            {
+              "text": "回响",
+              "startTime": 3.633,
+              "endTime": 4.167
+            },
+            {
+              "text": "向远方",
+              "startTime": 4.167,
+              "endTime": 4.7
+            }
+          ]
+        },
+        {
+          "fullText": "星光 回响 向远方",
+          "startTime": 5.5,
+          "endTime": 7.1,
+          "words": [
+            {
+              "text": "星光",
+              "startTime": 5.5,
+              "endTime": 6.033
+            },
+            {
+              "text": "回响",
+              "startTime": 6.033,
+              "endTime": 6.567
+            },
+            {
+              "text": "向远方",
+              "startTime": 6.567,
+              "endTime": 7.1
+            }
+          ]
+        },
+        {
+          "fullText": "星光 回响 向远方",
+          "startTime": 7.9,
+          "endTime": 9.5,
+          "words": [
+            {
+              "text": "星光",
+              "startTime": 7.9,
+              "endTime": 8.433
+            },
+            {
+              "text": "回响",
+              "startTime": 8.433,
+              "endTime": 8.967
+            },
+            {
+              "text": "向远方",
+              "startTime": 8.967,
+              "endTime": 9.5
+            }
+          ]
+        },
+        {
+          "fullText": "星光 回响 向远方",
+          "startTime": 10.3,
+          "endTime": 11.9,
+          "words": [
+            {
+              "text": "星光",
+              "startTime": 10.3,
+              "endTime": 10.833
+            },
+            {
+              "text": "回响",
+              "startTime": 10.833,
+              "endTime": 11.367
+            },
+            {
+              "text": "向远方",
+              "startTime": 11.367,
+              "endTime": 11.9
+            }
+          ]
+        },
+        {
+          "fullText": "星光 回响 向远方",
+          "startTime": 12.7,
+          "endTime": 14.3,
+          "words": [
+            {
+              "text": "星光",
+              "startTime": 12.7,
+              "endTime": 13.233
+            },
+            {
+              "text": "回响",
+              "startTime": 13.233,
+              "endTime": 13.767
+            },
+            {
+              "text": "向远方",
+              "startTime": 13.767,
+              "endTime": 14.3
+            }
+          ]
+        },
+        {
+          "fullText": "星光 回响 向远方",
+          "startTime": 15.1,
+          "endTime": 16.7,
+          "words": [
+            {
+              "text": "星光",
+              "startTime": 15.1,
+              "endTime": 15.633
+            },
+            {
+              "text": "回响",
+              "startTime": 15.633,
+              "endTime": 16.167
+            },
+            {
+              "text": "向远方",
+              "startTime": 16.167,
+              "endTime": 16.7
+            }
+          ]
+        },
+        {
+          "fullText": "星光 回响 向远方",
+          "startTime": 17.5,
+          "endTime": 19.1,
+          "words": [
+            {
+              "text": "星光",
+              "startTime": 17.5,
+              "endTime": 18.033
+            },
+            {
+              "text": "回响",
+              "startTime": 18.033,
+              "endTime": 18.567
+            },
+            {
+              "text": "向远方",
+              "startTime": 18.567,
+              "endTime": 19.1
+            }
+          ]
+        }
+      ],
+      "seed": "DioramaProbe",
+      "windows": [
+        {
+          "total": 0,
+          "current": 0,
+          "indices": []
+        },
+        {
+          "total": 1,
+          "current": 0,
+          "indices": [
+            0
+          ]
+        },
+        {
+          "total": 2,
+          "current": 0,
+          "indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "total": 2,
+          "current": 1,
+          "indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "total": 3,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "total": 3,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "total": 3,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "total": 4,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 4,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 4,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 4,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 5,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 5,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 5,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 5,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 5,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 6,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 6,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 6,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 6,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 6,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 6,
+          "current": 5,
+          "indices": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 7,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 7,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 7,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 7,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 7,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 7,
+          "current": 5,
+          "indices": [
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 7,
+          "current": 6,
+          "indices": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 8,
+          "current": 0,
+          "indices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "total": 8,
+          "current": 1,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "total": 8,
+          "current": 2,
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "total": 8,
+          "current": 3,
+          "indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "total": 8,
+          "current": 4,
+          "indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "total": 8,
+          "current": 5,
+          "indices": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "total": 8,
+          "current": 6,
+          "indices": [
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "total": 8,
+          "current": 7,
+          "indices": [
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "primary": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "secondary": [
+        0.17788841597328695,
+        0.2663556047920505,
+        0.4019777798219466
+      ],
+      "accent": [
+        0.8796223968851662,
+        0.19806931954941637,
+        0.07421356837213867
+      ]
+    }
+  },
+  "captures": [
+    {
+      "file": "latin-380-0-5.2.png",
+      "scene": "latin",
+      "width": 380,
+      "current": 0,
+      "distance": 5.2,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        3.789151751387628,
+        -0.6456466407238125,
+        4.114318486361874
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.3775778653556013,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.133854409375182,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.4172678477467488,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.78195728520693,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.4443825458537903,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.280293820692503,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-380-0-14.png",
+      "scene": "latin",
+      "width": 380,
+      "current": 0,
+      "distance": 14,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        7.0267974472959684,
+        -3.3856292465081883,
+        11.824710543045196
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.3775778653556013,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.01110647239772,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.4172678477467488,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 29.90245918799563,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.4443825458537903,
+          "opacity": 0.010916551440784596,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.67989311284515,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-380-0-36.png",
+      "scene": "latin",
+      "width": 380,
+      "current": 0,
+      "distance": 36,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        15.120911687066815,
+        -10.23558576096913,
+        31.100690684753502
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.3775778653556013,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.00050138520761,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.4172678477467488,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 51.94279230795426,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.4443825458537903,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.78500058519721,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-380-3-5.2.png",
+      "scene": "latin",
+      "width": 380,
+      "current": 3,
+      "distance": 5.2,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -3.4940442551772524,
+        7.29160412321506,
+        -17.03635537195042
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.3775778653556013,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.449183013029575,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.4172678477467488,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.880579350038568,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.3234971627043304,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.129948694080827,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.30300320864581115,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.73453990264296,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.37032688466352354,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.071593843623443,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-380-3-14.png",
+      "scene": "latin",
+      "width": 380,
+      "current": 3,
+      "distance": 14,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -1.1371694580422362,
+        4.699772461343449,
+        -8.963713312057664
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.3775778653556013,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.6395849472533275,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.4172678477467488,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.2724188419723,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.3234971627043304,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.055699262346607,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.30300320864581115,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 30.021184344057964,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.37032688466352354,
+          "opacity": 0.009894406237379064,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.81429540456299,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-380-3-36.png",
+      "scene": "latin",
+      "width": 380,
+      "current": 3,
+      "distance": 36,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        4.755017534795305,
+        -1.7798066933355763,
+        11.217891837674234
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.3775778653556013,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.16271434590055,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.4172678477467488,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.115845929932252,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.3234971627043304,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.01470583937483,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.30300320864581115,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 52.02739723531899,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.37032688466352354,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.90606004095085,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614097,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-380-7-5.2.png",
+      "scene": "latin",
+      "width": 380,
+      "current": 7,
+      "distance": 5.2,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -12.249906093078406,
+        15.91106994858331,
+        -46.30691643992167
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.30300320864581115,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.627949189833771,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.37032688466352354,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -2.086571263501149,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "latin-380-7-14.png",
+      "scene": "latin",
+      "width": 380,
+      "current": 7,
+      "distance": 14,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.942600253857751,
+        14.502935763444437,
+        -37.625745940627
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.30300320864581115,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.8886463265755395,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.37032688466352354,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.089273327249252,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "latin-380-7-36.png",
+      "scene": "latin",
+      "width": 380,
+      "current": 7,
+      "distance": 36,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.174335655806113,
+        10.982600300597255,
+        -15.922819692390306
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.30300320864581115,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.038297820966186,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.37032688466352354,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.019353106439162,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "latin-800-0-5.2.png",
+      "scene": "latin",
+      "width": 800,
+      "current": 0,
+      "distance": 5.2,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        3.789151751387628,
+        -0.6456466407238125,
+        4.114318486361874
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.794900769169687,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.133854409375182,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8784586268352607,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.78195728520693,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.9355422017974533,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.280293820692503,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-800-0-14.png",
+      "scene": "latin",
+      "width": 800,
+      "current": 0,
+      "distance": 14,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        7.0267974472959684,
+        -3.3856292465081883,
+        11.824710543045196
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.794900769169687,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.01110647239772,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8784586268352607,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 29.90245918799563,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.9355422017974533,
+          "opacity": 0.010916551440784596,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.67989311284515,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-800-0-36.png",
+      "scene": "latin",
+      "width": 800,
+      "current": 0,
+      "distance": 36,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        15.120911687066815,
+        -10.23558576096913,
+        31.100690684753502
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.794900769169687,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.00050138520761,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8784586268352607,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 51.94279230795426,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.9355422017974533,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.78500058519721,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-800-3-5.2.png",
+      "scene": "latin",
+      "width": 800,
+      "current": 3,
+      "distance": 5.2,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -3.4940442551772524,
+        7.29160412321506,
+        -17.03635537195042
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.794900769169687,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.449183013029575,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8784586268352607,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.880579350038568,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.6810466583249061,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.129948694080827,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6379014918859183,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.73453990264296,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.7796355466600495,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.071593843623443,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-800-3-14.png",
+      "scene": "latin",
+      "width": 800,
+      "current": 3,
+      "distance": 14,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -1.1371694580422362,
+        4.699772461343449,
+        -8.963713312057664
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.794900769169687,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.6395849472533275,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8784586268352607,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.2724188419723,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.6810466583249061,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.055699262346607,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6379014918859183,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 30.021184344057964,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.7796355466600495,
+          "opacity": 0.009894406237379064,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.81429540456299,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-800-3-36.png",
+      "scene": "latin",
+      "width": 800,
+      "current": 3,
+      "distance": 36,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        4.755017534795305,
+        -1.7798066933355763,
+        11.217891837674234
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.794900769169687,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.16271434590055,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8784586268352607,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.115845929932252,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.6810466583249061,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.01470583937483,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6379014918859183,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 52.02739723531899,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.7796355466600495,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.90606004095085,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614097,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "latin-800-7-5.2.png",
+      "scene": "latin",
+      "width": 800,
+      "current": 7,
+      "distance": 5.2,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -12.249906093078406,
+        15.91106994858331,
+        -46.30691643992167
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6379014918859183,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.627949189833771,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.7796355466600495,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -2.086571263501149,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "latin-800-7-14.png",
+      "scene": "latin",
+      "width": 800,
+      "current": 7,
+      "distance": 14,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.942600253857751,
+        14.502935763444437,
+        -37.625745940627
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6379014918859183,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.8886463265755395,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.7796355466600495,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.089273327249252,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "latin-800-7-36.png",
+      "scene": "latin",
+      "width": 800,
+      "current": 7,
+      "distance": 36,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.174335655806113,
+        10.982600300597255,
+        -15.922819692390306
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6379014918859183,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.038297820966186,
+          "advance": 1443,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.7796355466600495,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.019353106439162,
+          "advance": 1443,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "arabic-380-0-5.2.png",
+      "scene": "arabic",
+      "width": 380,
+      "current": 0,
+      "distance": 5.2,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        3.789151751387628,
+        -0.6456466407238125,
+        4.114318486361874
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.7965568124387904,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.133854409375182,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8802887489745007,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.78195728520693,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.9374912480511979,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.280293820692503,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-380-0-14.png",
+      "scene": "arabic",
+      "width": 380,
+      "current": 0,
+      "distance": 14,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        7.0267974472959684,
+        -3.3856292465081883,
+        11.824710543045196
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.7965568124387904,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.01110647239772,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8802887489745007,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 29.90245918799563,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.9374912480511979,
+          "opacity": 0.010916551440784596,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.67989311284515,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-380-0-36.png",
+      "scene": "arabic",
+      "width": 380,
+      "current": 0,
+      "distance": 36,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        15.120911687066815,
+        -10.23558576096913,
+        31.100690684753502
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.7965568124387904,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.00050138520761,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8802887489745007,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 51.94279230795426,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.9374912480511979,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.78500058519721,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-380-3-5.2.png",
+      "scene": "arabic",
+      "width": 380,
+      "current": 3,
+      "distance": 5.2,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -3.4940442551772524,
+        7.29160412321506,
+        -17.03635537195042
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.7965568124387904,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.449183013029575,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8802887489745007,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.880579350038568,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.6824655055297496,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.129948694080827,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6392304533273473,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.73453990264296,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.781259787382258,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.071593843623443,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-380-3-14.png",
+      "scene": "arabic",
+      "width": 380,
+      "current": 3,
+      "distance": 14,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -1.1371694580422362,
+        4.699772461343449,
+        -8.963713312057664
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.7965568124387904,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.6395849472533275,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8802887489745007,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.2724188419723,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.6824655055297496,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.055699262346607,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6392304533273473,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 30.021184344057964,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.781259787382258,
+          "opacity": 0.009894406237379064,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.81429540456299,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-380-3-36.png",
+      "scene": "arabic",
+      "width": 380,
+      "current": 3,
+      "distance": 36,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        4.755017534795305,
+        -1.7798066933355763,
+        11.217891837674234
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.7965568124387904,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.16271434590055,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.8802887489745007,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.115845929932252,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.6824655055297496,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.01470583937483,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6392304533273473,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 52.02739723531899,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.781259787382258,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.90606004095085,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614097,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-380-7-5.2.png",
+      "scene": "arabic",
+      "width": 380,
+      "current": 7,
+      "distance": 5.2,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -12.249906093078406,
+        15.91106994858331,
+        -46.30691643992167
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6392304533273473,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.627949189833771,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.781259787382258,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -2.086571263501149,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "arabic-380-7-14.png",
+      "scene": "arabic",
+      "width": 380,
+      "current": 7,
+      "distance": 14,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.942600253857751,
+        14.502935763444437,
+        -37.625745940627
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6392304533273473,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.8886463265755395,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.781259787382258,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.089273327249252,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "arabic-380-7-36.png",
+      "scene": "arabic",
+      "width": 380,
+      "current": 7,
+      "distance": 36,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.174335655806113,
+        10.982600300597255,
+        -15.922819692390306
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.6392304533273473,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.038297820966186,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.781259787382258,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.019353106439162,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "arabic-800-0-5.2.png",
+      "scene": "arabic",
+      "width": 800,
+      "current": 0,
+      "distance": 5.2,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        3.789151751387628,
+        -0.6456466407238125,
+        4.114318486361874
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.133854409375182,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.78195728520693,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 1.2581435219947161,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.280293820692503,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-800-0-14.png",
+      "scene": "arabic",
+      "width": 800,
+      "current": 0,
+      "distance": 14,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        7.0267974472959684,
+        -3.3856292465081883,
+        11.824710543045196
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.01110647239772,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 29.90245918799563,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 1.2581435219947161,
+          "opacity": 0.010916551440784596,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.67989311284515,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-800-0-36.png",
+      "scene": "arabic",
+      "width": 800,
+      "current": 0,
+      "distance": 36,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        15.120911687066815,
+        -10.23558576096913,
+        31.100690684753502
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.00050138520761,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 51.94279230795426,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 1.2581435219947161,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.78500058519721,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-800-3-5.2.png",
+      "scene": "arabic",
+      "width": 800,
+      "current": 3,
+      "distance": 5.2,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -3.4940442551772524,
+        7.29160412321506,
+        -17.03635537195042
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.449183013029575,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.880579350038568,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.9158907419690513,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.129948694080827,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.73453990264296,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.071593843623443,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-800-3-14.png",
+      "scene": "arabic",
+      "width": 800,
+      "current": 3,
+      "distance": 14,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -1.1371694580422362,
+        4.699772461343449,
+        -8.963713312057664
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.6395849472533275,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.2724188419723,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.9158907419690513,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.055699262346607,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 30.021184344057964,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0.009894406237379064,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.81429540456299,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-800-3-36.png",
+      "scene": "arabic",
+      "width": 800,
+      "current": 3,
+      "distance": 36,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        4.755017534795305,
+        -1.7798066933355763,
+        11.217891837674234
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.16271434590055,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.115845929932252,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.9158907419690513,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.01470583937483,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 52.02739723531899,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.90606004095085,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614097,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "arabic-800-7-5.2.png",
+      "scene": "arabic",
+      "width": 800,
+      "current": 7,
+      "distance": 5.2,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -12.249906093078406,
+        15.91106994858331,
+        -46.30691643992167
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.627949189833771,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -2.086571263501149,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "arabic-800-7-14.png",
+      "scene": "arabic",
+      "width": 800,
+      "current": 7,
+      "distance": 14,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.942600253857751,
+        14.502935763444437,
+        -37.625745940627
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.8886463265755395,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.089273327249252,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "arabic-800-7-36.png",
+      "scene": "arabic",
+      "width": 800,
+      "current": 7,
+      "distance": 36,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.174335655806113,
+        10.982600300597255,
+        -15.922819692390306
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.038297820966186,
+          "advance": 684,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.019353106439162,
+          "advance": 684,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "cjk-380-0-5.2.png",
+      "scene": "cjk",
+      "width": 380,
+      "current": 0,
+      "distance": 5.2,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        3.789151751387628,
+        -0.6456466407238125,
+        4.114318486361874
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.5705181777048509,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.133854409375182,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.6304895332969198,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.78195728520693,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.6714597001748893,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.280293820692503,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-380-0-14.png",
+      "scene": "cjk",
+      "width": 380,
+      "current": 0,
+      "distance": 14,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        7.0267974472959684,
+        -3.3856292465081883,
+        11.824710543045196
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.5705181777048509,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.01110647239772,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.6304895332969198,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 29.90245918799563,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.6714597001748893,
+          "opacity": 0.010916551440784596,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.67989311284515,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-380-0-36.png",
+      "scene": "cjk",
+      "width": 380,
+      "current": 0,
+      "distance": 36,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        15.120911687066815,
+        -10.23558576096913,
+        31.100690684753502
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.5705181777048509,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.00050138520761,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.6304895332969198,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 51.94279230795426,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 0.6714597001748893,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.78500058519721,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-380-3-5.2.png",
+      "scene": "cjk",
+      "width": 380,
+      "current": 3,
+      "distance": 5.2,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -3.4940442551772524,
+        7.29160412321506,
+        -17.03635537195042
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.5705181777048509,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.449183013029575,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.6304895332969198,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.880579350038568,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.4888025191438206,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.129948694080827,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.45783626185958687,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.73453990264296,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.5595619838423711,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.071593843623443,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-380-3-14.png",
+      "scene": "cjk",
+      "width": 380,
+      "current": 3,
+      "distance": 14,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -1.1371694580422362,
+        4.699772461343449,
+        -8.963713312057664
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.5705181777048509,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.6395849472533275,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.6304895332969198,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.2724188419723,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.4888025191438206,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.055699262346607,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.45783626185958687,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 30.021184344057964,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.5595619838423711,
+          "opacity": 0.009894406237379064,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.81429540456299,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-380-3-36.png",
+      "scene": "cjk",
+      "width": 380,
+      "current": 3,
+      "distance": 36,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        4.755017534795305,
+        -1.7798066933355763,
+        11.217891837674234
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 0.5705181777048509,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.16271434590055,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 0.6304895332969198,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.115845929932252,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.4888025191438206,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.01470583937483,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.45783626185958687,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 52.02739723531899,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.5595619838423711,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.90606004095085,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614097,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-380-7-5.2.png",
+      "scene": "cjk",
+      "width": 380,
+      "current": 7,
+      "distance": 5.2,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -12.249906093078406,
+        15.91106994858331,
+        -46.30691643992167
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.45783626185958687,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.627949189833771,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.5595619838423711,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -2.086571263501149,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "cjk-380-7-14.png",
+      "scene": "cjk",
+      "width": 380,
+      "current": 7,
+      "distance": 14,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.942600253857751,
+        14.502935763444437,
+        -37.625745940627
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.45783626185958687,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.8886463265755395,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.5595619838423711,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.089273327249252,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "cjk-380-7-36.png",
+      "scene": "cjk",
+      "width": 380,
+      "current": 7,
+      "distance": 36,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.174335655806113,
+        10.982600300597255,
+        -15.922819692390306
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.45783626185958687,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.038297820966186,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 0.5595619838423711,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.019353106439162,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "cjk-800-0-5.2.png",
+      "scene": "cjk",
+      "width": 800,
+      "current": 0,
+      "distance": 5.2,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        3.789151751387628,
+        -0.6456466407238125,
+        4.114318486361874
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.133854409375182,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.78195728520693,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 1.2581435219947161,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.280293820692503,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-800-0-14.png",
+      "scene": "cjk",
+      "width": 800,
+      "current": 0,
+      "distance": 14,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        7.0267974472959684,
+        -3.3856292465081883,
+        11.824710543045196
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.01110647239772,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 29.90245918799563,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 1.2581435219947161,
+          "opacity": 0.010916551440784596,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.67989311284515,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-800-0-36.png",
+      "scene": "cjk",
+      "width": 800,
+      "current": 0,
+      "distance": 36,
+      "time": 1.15,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eye": [
+        15.120911687066815,
+        -10.23558576096913,
+        31.100690684753502
+      ],
+      "look": [
+        0.9693492433528896,
+        0.21320079759973687,
+        -0.3312727692487248
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.00050138520761,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 51.94279230795426,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 3,
+          "center": [
+            -6.584649701726633,
+            8.058626321195826,
+            -21.556292862841644
+          ],
+          "fit": 1.2581435219947161,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.78500058519721,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-800-3-5.2.png",
+      "scene": "cjk",
+      "width": 800,
+      "current": 3,
+      "distance": 5.2,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -3.4940442551772524,
+        7.29160412321506,
+        -17.03635537195042
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.449183013029575,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.880579350038568,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.9158907419690513,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 13.129948694080827,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 20.73453990264296,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0.06,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 28.071593843623443,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-800-3-14.png",
+      "scene": "cjk",
+      "width": 800,
+      "current": 3,
+      "distance": 14,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        -1.1371694580422362,
+        4.699772461343449,
+        -8.963713312057664
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.6395849472533275,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.2724188419723,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.9158907419690513,
+          "opacity": 0.34,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 22.055699262346607,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0.16,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 30.021184344057964,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0.009894406237379064,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 37.81429540456299,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-800-3-36.png",
+      "scene": "cjk",
+      "width": 800,
+      "current": 3,
+      "distance": 36,
+      "time": 8.35,
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "eye": [
+        4.755017534795305,
+        -1.7798066933355763,
+        11.217891837674234
+      ],
+      "look": [
+        -6.53160585952145,
+        8.058626321195826,
+        -21.57177945247476
+      ],
+      "neighbors": [
+        {
+          "index": 1,
+          "center": [
+            -2.2570493041491133,
+            2.9495259157890765,
+            -7.114774655600588
+          ],
+          "fit": 1.0690049593037838,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.16271434590055,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 2,
+          "center": [
+            -4.783011083605447,
+            5.7493955331019535,
+            -14.148272992437679
+          ],
+          "fit": 1.1813759214385935,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.115845929932252,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 4,
+          "center": [
+            -9.184598963798921,
+            10.845977261981504,
+            -28.581955691887867
+          ],
+          "fit": 0.9158907419690513,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 44.01470583937483,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 52.02739723531899,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0,
+          "color": [
+            0.17788841597328695,
+            0.2663556047920505,
+            0.4019777798219466
+          ],
+          "depth": 59.90606004095085,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614097,
+      "drawOrder": [
+        6,
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "file": "cjk-800-7-5.2.png",
+      "scene": "cjk",
+      "width": 800,
+      "current": 7,
+      "distance": 5.2,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -12.249906093078406,
+        15.91106994858331,
+        -46.30691643992167
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -9.627949189833771,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -2.086571263501149,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "cjk-800-7-14.png",
+      "scene": "cjk",
+      "width": 800,
+      "current": 7,
+      "distance": 14,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.942600253857751,
+        14.502935763444437,
+        -37.625745940627
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": -1.8886463265755395,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 6.089273327249252,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 1,
+      "drawOrder": [
+        6,
+        5
+      ]
+    },
+    {
+      "file": "cjk-800-7-36.png",
+      "scene": "cjk",
+      "width": 800,
+      "current": 7,
+      "distance": 36,
+      "time": 17.95,
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "eye": [
+        -11.174335655806113,
+        10.982600300597255,
+        -15.922819692390306
+      ],
+      "look": [
+        -14.8884503875303,
+        15.953457605683042,
+        -51.477817348494966
+      ],
+      "neighbors": [
+        {
+          "index": 5,
+          "center": [
+            -11.426442802997078,
+            13.105462995287088,
+            -35.94086691200062
+          ],
+          "fit": 0.8578679060603098,
+          "opacity": 0.1,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 20.038297820966186,
+          "advance": 955,
+          "fontPx": 128
+        },
+        {
+          "index": 6,
+          "center": [
+            -12.794414396983232,
+            14.550374644960396,
+            -43.697645712397545
+          ],
+          "fit": 1.0484758578101172,
+          "opacity": 0.3,
+          "color": [
+            0.7379104087672317,
+            0.7835377915215659,
+            0.8387990117372213
+          ],
+          "depth": 28.019353106439162,
+          "advance": 955,
+          "fontPx": 128
+        }
+      ],
+      "activeLife": 0.4908140022614084,
+      "drawOrder": [
+        6,
+        5
+      ]
+    }
+  ],
+  "scope": "Actual original single-segment window/visible lines/raster/material functions and Three text composition. Frozen source camera; analytic source-unit charges injected at delta0, life original, breath1/audio0. NO React scene/CameraRig, fog, background, opaque-depth or cross-song transition acceptance.",
+  "originalLockSha256": "ce30669b1acca119cc886133166dd872f8eeb3b9d05edb8c193e4d18e3b2a000",
+  "hostSha256": "526cafc453c4a764dd01f8848a3f548f7eb3e51df0d8286e9268c7e2ab1ee682"
+}

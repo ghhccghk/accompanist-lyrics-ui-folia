@@ -8,12 +8,20 @@
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
-| Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、文字平面near/far/背面裁剪 | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
+| Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
 
-当前唯一下一项：Diorama内部真实core文字舞台的邻行窗口／生命周期。原版前2后3窗口、
-原opacity与欧氏距离life、固定hero-distance fit、透视排序须由原函数和真实Three对照；
-接完整文字舞台，验证暂停/逆序seek/offset/换输入/尺寸恢复。保持未公开，不冒充fog/
-depth/切曲或完整镜台。Fume局部交接修复尚未成立，以下有界证据已保存，暂不猜参数。
+当前唯一下一项：Diorama活动文字完整塑形切片的overhang／混合bidi。用同一完整段落
+重组检查定位advance矩形裁切是否丢墨/重复邻字；原完整文字/布局作独立依据，先保留
+失败，验证真实core舞台与已存矩阵，不能牺牲内部时钟或逐UTF16重绘。镜台继续未公开。
+Fume局部交接仍需有依据的饱和位移重建策略，不能再猜focus/branch或调旧fixture。
+
+Diorama正常邻行窗口/life已接内部core舞台：原前2后3、符号opacity、固定5.2fit/
+欧氏life、primary/secondary、透明far-to-near再活动17/18/19，活动三层也接life。
+37原窗口精确一致、180材质行峰1.0812e-11（1e-9门槛）；54同源/前/后全前景union
+MAE15.895084→6.616512，最坏图34.659908→12.806258、64px局部49.563957→22.985632。
+窄CJK原/本仍裁词，未以均值宣布可读性通过。准备次数/原core身份/暂停/乱序seek/
+offset/设置/重挂及既有逻辑resize通过，Android库/Desktop编译通过。正常window不
+冒充跨曲flight/fog/depth；整曲文字内存仍待有界准备方案。证据verification/diorama-neighbors。
 
 Fume冻结原首spring实验v1完成：6个真实源incoming/756原有限算子映射，完整9态峰0；
 96个无饱和校准控制log峰3.87e-12。8个合法输入、饱和、校准时长控制仍有位置差

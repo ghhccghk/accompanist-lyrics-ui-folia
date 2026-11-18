@@ -1,0 +1,2180 @@
+{
+  "scope": "Actual original single-segment window/visible lines/raster/material functions and Three text composition. Frozen source camera; analytic source-unit charges injected at delta0, life original, breath1/audio0. NO React scene/CameraRig, fog, background, opaque-depth or cross-song transition acceptance.",
+  "conditions_sha256": "8a7b21efe7f7a8bdb7e01a43de18837ce3240fb49c58d63f9554eeb7c40ddbe6",
+  "mask": "Identical source/before/after union, every nonbackground pixel including lowest-alpha halo. No registration or cutoff.",
+  "summary": {
+    "before": {
+      "mean_foreground_mae": 15.895083842920728,
+      "worst_frame": 34.659908193167,
+      "local_worst": 49.56395715185885
+    },
+    "after": {
+      "mean_foreground_mae": 6.616512319225941,
+      "worst_frame": 12.806257521058965,
+      "local_worst": 22.985632183908045
+    }
+  },
+  "frames": [
+    {
+      "file": "latin-380-0-5.2.png",
+      "source_bounds": [
+        0,
+        210,
+        324,
+        322
+      ],
+      "before_bounds": [
+        0,
+        275,
+        269,
+        323
+      ],
+      "after_bounds": [
+        0,
+        211,
+        324,
+        323
+      ],
+      "source_pixels": 6942,
+      "after_pixels": 6233,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-380-0-5.2.png": "aa4e730070b0acf079fade15f1630dc8e9e33090940a7a0ba50b7733ae09cab6",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-380-0-5.2.png": "88e7dc2a1ae6ea9203ea5940074a6484096f68fd1e1f84471b1b12d3605b4738",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-380-0-5.2.png": "dea37f6edd0083f1e7dac96f0b9ed524ba8bc73c19f112fec602ea211fa80167"
+      },
+      "before": {
+        "foreground_mae": 6.63903520931522,
+        "full_mae": 0.21006140350877192,
+        "worst64": 13.277286135693215,
+        "channel_peak": 78
+      },
+      "after": {
+        "foreground_mae": 6.177525182515479,
+        "full_mae": 0.1954590643274854,
+        "worst64": 9.939536709854732,
+        "channel_peak": 78
+      }
+    },
+    {
+      "file": "latin-380-0-14.png",
+      "source_bounds": [
+        90,
+        267,
+        254,
+        310
+      ],
+      "before_bounds": [
+        90,
+        289,
+        220,
+        310
+      ],
+      "after_bounds": [
+        90,
+        267,
+        255,
+        310
+      ],
+      "source_pixels": 1912,
+      "after_pixels": 1578,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-380-0-14.png": "3a4abac9d4b273cd9ed46c806a3d03928cd5efaca347f0d6dc2624ec62e03480",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-380-0-14.png": "91be9f4718a1a2a0113d35068fd1b4fdd73988a21c700754f6d667ea6beddd3b",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-380-0-14.png": "ccb802de2de9f5d0e41cc2bc3412283da32cc930ca417241b0053c7075be9280"
+      },
+      "before": {
+        "foreground_mae": 11.487307949231797,
+        "full_mae": 0.10056432748538012,
+        "worst64": 13.645884270578646,
+        "channel_peak": 93
+      },
+      "after": {
+        "foreground_mae": 12.151803607214429,
+        "full_mae": 0.10638157894736842,
+        "worst64": 14.366340668296658,
+        "channel_peak": 93
+      }
+    },
+    {
+      "file": "latin-380-0-36.png",
+      "source_bounds": [
+        150,
+        296,
+        202,
+        304
+      ],
+      "before_bounds": [
+        150,
+        295,
+        202,
+        304
+      ],
+      "after_bounds": [
+        150,
+        295,
+        202,
+        304
+      ],
+      "source_pixels": 267,
+      "after_pixels": 199,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-380-0-36.png": "862ca43e387d165d04bcefe9dcaee3047cab306b82d02e9b57300727170bdd15",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-380-0-36.png": "19e9529bad872bb93d93601f0276c9c1632b9420deeb9cd5eb596f04c5adc40f",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-380-0-36.png": "6d515e09b266f6200acf349ec5919a510e620e1c39adada29abc331946c4ae8a"
+      },
+      "before": {
+        "foreground_mae": 26.99398315282792,
+        "full_mae": 0.0327953216374269,
+        "worst64": 27.29787234042553,
+        "channel_peak": 169
+      },
+      "after": {
+        "foreground_mae": 12.806257521058965,
+        "full_mae": 0.015558479532163742,
+        "worst64": 13.484126984126984,
+        "channel_peak": 93
+      }
+    },
+    {
+      "file": "latin-380-3-5.2.png",
+      "source_bounds": [
+        32,
+        208,
+        363,
+        323
+      ],
+      "before_bounds": [
+        32,
+        265,
+        351,
+        323
+      ],
+      "after_bounds": [
+        32,
+        208,
+        362,
+        323
+      ],
+      "source_pixels": 8342,
+      "after_pixels": 7930,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-380-3-5.2.png": "64725a1d32efc6720d7514783118eb9b992c2b416ca543eb7b36327d0cd41e46",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-380-3-5.2.png": "e32882afeefbef961870920e7cd1e4061d37054a563efdc7da7a31f0592048fb",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-380-3-5.2.png": "a4a59d67968ff45c763fb925c706e1a429778668ce2125038787209a5d9395fa"
+      },
+      "before": {
+        "foreground_mae": 5.987956842185245,
+        "full_mae": 0.2304312865497076,
+        "worst64": 15.433333333333334,
+        "channel_peak": 87
+      },
+      "after": {
+        "foreground_mae": 5.839107970518958,
+        "full_mae": 0.22470321637426902,
+        "worst64": 15.433333333333334,
+        "channel_peak": 87
+      }
+    },
+    {
+      "file": "latin-380-3-14.png",
+      "source_bounds": [
+        0,
+        269,
+        253,
+        359
+      ],
+      "before_bounds": [
+        121,
+        285,
+        251,
+        309
+      ],
+      "after_bounds": [
+        0,
+        269,
+        254,
+        359
+      ],
+      "source_pixels": 3873,
+      "after_pixels": 2936,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-380-3-14.png": "941127952fd2f4a1d1488a146ef54a275f448d53a943322975dde767f9f9761a",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-380-3-14.png": "4c779925c024206ef52b7f373c592953dfaf519c87e61b30bdbd1db26c18b7ad",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-380-3-14.png": "b7bf3ade78df284b021a420956d88bc942803f4659296aea932c8e1907d29a9b"
+      },
+      "before": {
+        "foreground_mae": 23.119424219599967,
+        "full_mae": 0.40388011695906434,
+        "worst64": 34.237329434697855,
+        "channel_peak": 96
+      },
+      "after": {
+        "foreground_mae": 9.673780232655453,
+        "full_mae": 0.1689941520467836,
+        "worst64": 16.869426751592357,
+        "channel_peak": 96
+      }
+    },
+    {
+      "file": "latin-380-3-36.png",
+      "source_bounds": [
+        133,
+        294,
+        214,
+        328
+      ],
+      "before_bounds": [
+        163,
+        293,
+        214,
+        304
+      ],
+      "after_bounds": [
+        134,
+        293,
+        214,
+        328
+      ],
+      "source_pixels": 809,
+      "after_pixels": 454,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-380-3-36.png": "29e04977f700c486a31c7fe373f020007efc2020e8915b5b792ee9f65e14ac5f",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-380-3-36.png": "8c6907f7542b03ed6b43d9e1bea0f3235af65b1071032fb5e83af9f43d7fbcdd",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-380-3-36.png": "ce1fdc5acd030c81100ca5c64d7426fb106da9fab62135a39904b8e49133f561"
+      },
+      "before": {
+        "foreground_mae": 15.049247049247048,
+        "full_mae": 0.05405847953216374,
+        "worst64": 23.695863746958636,
+        "channel_peak": 158
+      },
+      "after": {
+        "foreground_mae": 11.837606837606838,
+        "full_mae": 0.042521929824561405,
+        "worst64": 15.715328467153284,
+        "channel_peak": 105
+      }
+    },
+    {
+      "file": "latin-380-7-5.2.png",
+      "source_bounds": [
+        138,
+        281,
+        380,
+        325
+      ],
+      "before_bounds": [
+        137,
+        280,
+        380,
+        326
+      ],
+      "after_bounds": [
+        137,
+        280,
+        380,
+        326
+      ],
+      "source_pixels": 5268,
+      "after_pixels": 5073,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-380-7-5.2.png": "ac5aa11c8452adb5f3a4adcd8259ad8f29609b15f29a14a3fdf763f634070c48",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-380-7-5.2.png": "208f14e1341e44c97f23b55d8f9de41d2c65861cee09dc9bb878d511a2f01373",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-380-7-5.2.png": "208f14e1341e44c97f23b55d8f9de41d2c65861cee09dc9bb878d511a2f01373"
+      },
+      "before": {
+        "foreground_mae": 6.403606853020739,
+        "full_mae": 0.15573684210526315,
+        "worst64": 11.72719181130396,
+        "channel_peak": 82
+      },
+      "after": {
+        "foreground_mae": 6.403606853020739,
+        "full_mae": 0.15573684210526315,
+        "worst64": 11.72719181130396,
+        "channel_peak": 82
+      }
+    },
+    {
+      "file": "latin-380-7-14.png",
+      "source_bounds": [
+        113,
+        292,
+        357,
+        370
+      ],
+      "before_bounds": [
+        164,
+        292,
+        275,
+        312
+      ],
+      "after_bounds": [
+        114,
+        292,
+        357,
+        369
+      ],
+      "source_pixels": 3611,
+      "after_pixels": 2588,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-380-7-14.png": "8a203a7a7f51bf97714154104b11775aa600b215d59cdc394745de3c73e3734b",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-380-7-14.png": "dc739479a168127fff243e6dba0b9afefef5026e9bd65e15a14cab189702ce65",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-380-7-14.png": "a7ec5da0c04cd6c70bf50c330acc9d39de5cdefcc00a9fd23355a7d316a78ee9"
+      },
+      "before": {
+        "foreground_mae": 26.065974120648807,
+        "full_mae": 0.41819883040935674,
+        "worst64": 32.12045690550364,
+        "channel_peak": 100
+      },
+      "after": {
+        "foreground_mae": 9.930380900309823,
+        "full_mae": 0.1593216374269006,
+        "worst64": 22.985632183908045,
+        "channel_peak": 100
+      }
+    },
+    {
+      "file": "latin-380-7-36.png",
+      "source_bounds": [
+        179,
+        296,
+        273,
+        326
+      ],
+      "before_bounds": [
+        179,
+        297,
+        223,
+        305
+      ],
+      "after_bounds": [
+        179,
+        297,
+        272,
+        326
+      ],
+      "source_pixels": 657,
+      "after_pixels": 338,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-380-7-36.png": "7469aad7a03d9569c67eddf5e8764f61776c374344f12a62c09b6f001d451a46",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-380-7-36.png": "a29bf123bedc5e0faf295ed6ce3ce1495c6934db4d8a1ed38d74aeed8b750455",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-380-7-36.png": "a9ba5c759aa91cbd80f4625a80de5afd694c1993b05e8ce228391891fd66636a"
+      },
+      "before": {
+        "foreground_mae": 13.647088353413654,
+        "full_mae": 0.03974415204678362,
+        "worst64": 25.580524344569287,
+        "channel_peak": 175
+      },
+      "after": {
+        "foreground_mae": 12.289658634538153,
+        "full_mae": 0.03579093567251462,
+        "worst64": 13.898278560250391,
+        "channel_peak": 93
+      }
+    },
+    {
+      "file": "latin-800-0-5.2.png",
+      "source_bounds": [
+        15,
+        206,
+        693,
+        345
+      ],
+      "before_bounds": [
+        13,
+        247,
+        693,
+        348
+      ],
+      "after_bounds": [
+        13,
+        206,
+        693,
+        348
+      ],
+      "source_pixels": 34697,
+      "after_pixels": 34885,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-800-0-5.2.png": "0bfd573fe26962231dad09cf6653c44e9da7adc589f7f2a53e211af708370632",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-800-0-5.2.png": "60f6d7d7faee4b56370e2d38186e7702ef8a2a287bd2f7260331ab41ce7b65c2",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-800-0-5.2.png": "0136e9eb69cc517d5cadeb46d58994e840ebb7bcf868819f5df3e701742dc421"
+      },
+      "before": {
+        "foreground_mae": 3.845676832966695,
+        "full_mae": 0.29500347222222223,
+        "worst64": 20.528374655647383,
+        "channel_peak": 59
+      },
+      "after": {
+        "foreground_mae": 2.6669291980120042,
+        "full_mae": 0.20458125,
+        "worst64": 13.55072463768116,
+        "channel_peak": 59
+      }
+    },
+    {
+      "file": "latin-800-0-14.png",
+      "source_bounds": [
+        230,
+        263,
+        503,
+        319
+      ],
+      "before_bounds": [
+        230,
+        277,
+        503,
+        320
+      ],
+      "after_bounds": [
+        230,
+        264,
+        503,
+        320
+      ],
+      "source_pixels": 7535,
+      "after_pixels": 6782,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-800-0-14.png": "8c6f1ae0c802bbcbba72e6ff0407949e23f8b32197da0171f075c6c05ee8403a",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-800-0-14.png": "fbb87b78934ab31f10a6fb754bd9596f75ec5143167f994f649e8b43e786e085",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-800-0-14.png": "46a6ea602ec0e6e0d9282ef13e632f32b42699978e54cce867d32abf7aa5b465"
+      },
+      "before": {
+        "foreground_mae": 7.801846440520053,
+        "full_mae": 0.12793402777777776,
+        "worst64": 11.921377064433589,
+        "channel_peak": 81
+      },
+      "after": {
+        "foreground_mae": 6.589675178926862,
+        "full_mae": 0.10805694444444444,
+        "worst64": 9.426569165143205,
+        "channel_peak": 81
+      }
+    },
+    {
+      "file": "latin-800-0-36.png",
+      "source_bounds": [
+        332,
+        291,
+        440,
+        307
+      ],
+      "before_bounds": [
+        331,
+        290,
+        439,
+        308
+      ],
+      "after_bounds": [
+        331,
+        290,
+        439,
+        308
+      ],
+      "source_pixels": 960,
+      "after_pixels": 905,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-800-0-36.png": "687afbca72a7ab9041fe3a5d5fc665280d11e320a06e7cb238e156aa7d2aad19",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-800-0-36.png": "a5a4362be177ed165bfcaee948b116d376e253c1a331c1fd28bfcff06f4c2f08",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-800-0-36.png": "28fe3e7a25859a17cc2cc7e59aa6c5a7830656f80a91994f89b2ce8ec6ccc429"
+      },
+      "before": {
+        "foreground_mae": 25.79867674858223,
+        "full_mae": 0.056864583333333336,
+        "worst64": 34.48172043010753,
+        "channel_peak": 152
+      },
+      "after": {
+        "foreground_mae": 7.851921865154379,
+        "full_mae": 0.017306944444444444,
+        "worst64": 11.834408602150537,
+        "channel_peak": 70
+      }
+    },
+    {
+      "file": "latin-800-3-5.2.png",
+      "source_bounds": [
+        99,
+        197,
+        782,
+        351
+      ],
+      "before_bounds": [
+        97,
+        231,
+        782,
+        351
+      ],
+      "after_bounds": [
+        97,
+        197,
+        782,
+        351
+      ],
+      "source_pixels": 32798,
+      "after_pixels": 32991,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-800-3-5.2.png": "308bc8bc53623f87f5dfc1adaa004c7e93a80b50c680c01cbf974f9fc9793935",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-800-3-5.2.png": "486cea2348bfb0ea6ac9c431910164b0ded3f7cbcd57572299786ad646893247",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-800-3-5.2.png": "781a95634bc02cda610f52a92f4735b09516f98f6e9933f2ce4bef57a4f90719"
+      },
+      "before": {
+        "foreground_mae": 3.4292009119298044,
+        "full_mae": 0.24860277777777778,
+        "worst64": 18.97659817351598,
+        "channel_peak": 67
+      },
+      "after": {
+        "foreground_mae": 2.6691763894476694,
+        "full_mae": 0.19350416666666667,
+        "worst64": 12.571428571428571,
+        "channel_peak": 67
+      }
+    },
+    {
+      "file": "latin-800-3-14.png",
+      "source_bounds": [
+        0,
+        263,
+        560,
+        378
+      ],
+      "before_bounds": [
+        260,
+        268,
+        532,
+        319
+      ],
+      "after_bounds": [
+        1,
+        263,
+        560,
+        377
+      ],
+      "source_pixels": 17376,
+      "after_pixels": 15306,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-800-3-14.png": "2c96a3adc213fe52790b53c4c11da0cc1df68ed96251da9910e6986a8a442ebd",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-800-3-14.png": "cd74f6219ac9d43c30c170bdc978bfd52110ce16766a403d0712190c5af2ffe2",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-800-3-14.png": "15a1c58f7e6b645d15f3da3fc302da92e3b7761b0a1ed04ccca4edc320c09757"
+      },
+      "before": {
+        "foreground_mae": 28.584347532116293,
+        "full_mae": 1.05690625,
+        "worst64": 44.24903100775194,
+        "channel_peak": 96
+      },
+      "after": {
+        "foreground_mae": 4.97291713620314,
+        "full_mae": 0.1838736111111111,
+        "worst64": 12.147582697201019,
+        "channel_peak": 96
+      }
+    },
+    {
+      "file": "latin-800-3-36.png",
+      "source_bounds": [
+        302,
+        287,
+        460,
+        334
+      ],
+      "before_bounds": [
+        344,
+        286,
+        451,
+        308
+      ],
+      "after_bounds": [
+        302,
+        286,
+        460,
+        334
+      ],
+      "source_pixels": 2582,
+      "after_pixels": 1853,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-800-3-36.png": "318e48a860c21b82bfa31c0ca3565bf29b6253a42975ca01bd5233e223baa118",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-800-3-36.png": "7cdb8db93b16276d9466d4d4749c37f1e8fe1093651ea4c6425140511a0c18c8",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-800-3-36.png": "54cf276a70e3abea6f0b841e0dd180dd85127593bc6ced63bb1610de46669c48"
+      },
+      "before": {
+        "foreground_mae": 19.012674271229404,
+        "full_mae": 0.1041736111111111,
+        "worst64": 37.88235294117647,
+        "channel_peak": 159
+      },
+      "after": {
+        "foreground_mae": 8.231812420785804,
+        "full_mae": 0.045103472222222225,
+        "worst64": 15.27450980392157,
+        "channel_peak": 73
+      }
+    },
+    {
+      "file": "latin-800-7-5.2.png",
+      "source_bounds": [
+        240,
+        259,
+        800,
+        347
+      ],
+      "before_bounds": [
+        239,
+        259,
+        800,
+        349
+      ],
+      "after_bounds": [
+        239,
+        259,
+        800,
+        349
+      ],
+      "source_pixels": 20866,
+      "after_pixels": 21062,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-800-7-5.2.png": "b550cede3361274ec5e3e652f12cf1ee0caeaf1944f0e69fcc6ebb7d7727db7a",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-800-7-5.2.png": "62d6f6d0f6c2cfb8a3f5d5bf4798e7bb213f87715d3e24af2a5713e1ef77a286",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-800-7-5.2.png": "62d6f6d0f6c2cfb8a3f5d5bf4798e7bb213f87715d3e24af2a5713e1ef77a286"
+      },
+      "before": {
+        "foreground_mae": 3.0180016914340944,
+        "full_mae": 0.13877777777777778,
+        "worst64": 9.738095238095237,
+        "channel_peak": 70
+      },
+      "after": {
+        "foreground_mae": 3.0180016914340944,
+        "full_mae": 0.13877777777777778,
+        "worst64": 9.738095238095237,
+        "channel_peak": 70
+      }
+    },
+    {
+      "file": "latin-800-7-14.png",
+      "source_bounds": [
+        203,
+        283,
+        718,
+        386
+      ],
+      "before_bounds": [
+        316,
+        284,
+        548,
+        325
+      ],
+      "after_bounds": [
+        204,
+        284,
+        717,
+        386
+      ],
+      "source_pixels": 13280,
+      "after_pixels": 11528,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-800-7-14.png": "7e78b144a65ef88c1853acf7ae7fa3e87354bc83f1d51f7cff4f5d241466e0e4",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-800-7-14.png": "391f38832df0a5f30e162f62961748c1c41f3610c57ac05598c4c53ee5808e5b",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-800-7-14.png": "5f0c6aa6413d4c068d122a094979ba79e33efa203bae823f7c0c1f0d451a5dba"
+      },
+      "before": {
+        "foreground_mae": 30.698847333531216,
+        "full_mae": 0.8618701388888889,
+        "worst64": 44.508071367884455,
+        "channel_peak": 91
+      },
+      "after": {
+        "foreground_mae": 5.413376867517562,
+        "full_mae": 0.15198055555555556,
+        "worst64": 13.013071895424837,
+        "channel_peak": 91
+      }
+    },
+    {
+      "file": "latin-800-7-36.png",
+      "source_bounds": [
+        365,
+        294,
+        515,
+        334
+      ],
+      "before_bounds": [
+        365,
+        294,
+        457,
+        310
+      ],
+      "after_bounds": [
+        365,
+        294,
+        515,
+        334
+      ],
+      "source_pixels": 1958,
+      "after_pixels": 1357,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\latin-800-7-36.png": "d77b7988eb4e3739566f7b569217995a1114fe4be024a3e73972b9f0a93edaf3",
+        "build\\verification\\diorama-neighbors-kotlin\\before-latin-800-7-36.png": "aa9fec9340365b3dd9bfe38b1ddfec1d61525f49afae87954a3dfb0d85de1d99",
+        "build\\verification\\diorama-neighbors-kotlin\\after-latin-800-7-36.png": "db4a8045c021fef40c696781bbd9cab9166cc1e3c94b01e9d8ac6cf728ee08a9"
+      },
+      "before": {
+        "foreground_mae": 18.88090485695276,
+        "full_mae": 0.07882777777777777,
+        "worst64": 25.473616473616474,
+        "channel_peak": 145
+      },
+      "after": {
+        "foreground_mae": 9.664005322687958,
+        "full_mae": 0.04034722222222222,
+        "worst64": 12.087087087087086,
+        "channel_peak": 69
+      }
+    },
+    {
+      "file": "arabic-380-0-5.2.png",
+      "source_bounds": [
+        0,
+        205,
+        324,
+        350
+      ],
+      "before_bounds": [
+        0,
+        240,
+        298,
+        355
+      ],
+      "after_bounds": [
+        0,
+        205,
+        324,
+        355
+      ],
+      "source_pixels": 19946,
+      "after_pixels": 21238,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-380-0-5.2.png": "38e69a115120e7677e3a9f609150024d3b40e313e63758287506ba2b9a3b2407",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-380-0-5.2.png": "bd0ba0d38bfc80ccb43180e41b5907e02d8667fa9d52ef1b594c351e9f4e9d77",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-380-0-5.2.png": "96b02409e872b2779f4f04728f299f62486a496bc9278a4310105000b54f8c90"
+      },
+      "before": {
+        "foreground_mae": 3.612473274803257,
+        "full_mae": 0.34830263157894736,
+        "worst64": 16.682971014492754,
+        "channel_peak": 76
+      },
+      "after": {
+        "foreground_mae": 2.676052707395108,
+        "full_mae": 0.258016081871345,
+        "worst64": 5.521873074553296,
+        "channel_peak": 76
+      }
+    },
+    {
+      "file": "arabic-380-0-14.png",
+      "source_bounds": [
+        94,
+        263,
+        255,
+        319
+      ],
+      "before_bounds": [
+        95,
+        277,
+        230,
+        321
+      ],
+      "after_bounds": [
+        95,
+        264,
+        255,
+        321
+      ],
+      "source_pixels": 3854,
+      "after_pixels": 3597,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-380-0-14.png": "a7e1aab36c0cc587b420ada4d1d930fc581770f021d5f395e355c4e5a362da61",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-380-0-14.png": "82b23829ab1fc568b5b1aa4e98aaaafbd64b18264d3041a51548fbcf7d9c2193",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-380-0-14.png": "ec162b52150713ac8dd25dbfee308ce26f67eae81334f57d4f150573c07824e5"
+      },
+      "before": {
+        "foreground_mae": 7.211258386516119,
+        "full_mae": 0.12885380116959064,
+        "worst64": 10.399698340874812,
+        "channel_peak": 73
+      },
+      "after": {
+        "foreground_mae": 6.066110292914416,
+        "full_mae": 0.10839181286549708,
+        "worst64": 10.399698340874812,
+        "channel_peak": 73
+      }
+    },
+    {
+      "file": "arabic-380-0-36.png",
+      "source_bounds": [
+        151,
+        291,
+        205,
+        307
+      ],
+      "before_bounds": [
+        152,
+        291,
+        206,
+        308
+      ],
+      "after_bounds": [
+        152,
+        291,
+        206,
+        308
+      ],
+      "source_pixels": 496,
+      "after_pixels": 476,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-380-0-36.png": "f303506ad834a4702b23269d638d473091752f587d20ae48660cf68a1e10a5aa",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-380-0-36.png": "19a55fbbf4fe3b8697256116daffcd7e2c1fd9c792c442b5c750aec4272cb601",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-380-0-36.png": "67419b58b0870b9d5695295dbf2987d644bb6d5dab7535eab5532e4e467a2188"
+      },
+      "before": {
+        "foreground_mae": 24.78258258258258,
+        "full_mae": 0.060326023391812866,
+        "worst64": 26.447863247863246,
+        "channel_peak": 155
+      },
+      "after": {
+        "foreground_mae": 7.058258258258259,
+        "full_mae": 0.017181286549707603,
+        "worst64": 7.650427350427351,
+        "channel_peak": 51
+      }
+    },
+    {
+      "file": "arabic-380-3-5.2.png",
+      "source_bounds": [
+        41,
+        207,
+        376,
+        354
+      ],
+      "before_bounds": [
+        42,
+        240,
+        380,
+        358
+      ],
+      "after_bounds": [
+        42,
+        207,
+        380,
+        358
+      ],
+      "source_pixels": 20144,
+      "after_pixels": 21397,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-380-3-5.2.png": "cfca4e57776c65582f5308d7a2759c36abfab7cb908edcd348e61aebbc2fe295",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-380-3-5.2.png": "1e0da3b67937eafe0ccad07b7a92f7eefca9a3ed0bb48aadbeb6be4a272bd76d",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-380-3-5.2.png": "b4e1da0a0037e62d97f53ad4b3c925c06fe7e41ada5f03068b1c4a377efe24bb"
+      },
+      "before": {
+        "foreground_mae": 3.2836162272781992,
+        "full_mae": 0.3190292397660819,
+        "worst64": 17.060207991242475,
+        "channel_peak": 71
+      },
+      "after": {
+        "foreground_mae": 2.733899121223065,
+        "full_mae": 0.26561988304093564,
+        "worst64": 5.982704402515723,
+        "channel_peak": 71
+      }
+    },
+    {
+      "file": "arabic-380-3-14.png",
+      "source_bounds": [
+        0,
+        268,
+        260,
+        367
+      ],
+      "before_bounds": [
+        126,
+        277,
+        261,
+        323
+      ],
+      "after_bounds": [
+        0,
+        269,
+        261,
+        366
+      ],
+      "source_pixels": 7088,
+      "after_pixels": 6386,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-380-3-14.png": "012ef68e750393b54ef5f5eb3b4fd876c09e53396337cee5bf8825be4b12bae1",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-380-3-14.png": "a37cedab135e05337a98e0a65c0a835c09f2e9c52779943f7d662c64d93c35e8",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-380-3-14.png": "436d0189585464fd477f1bf21d6399691fab2b634f007535cc3fe49dc1cbaaa3"
+      },
+      "before": {
+        "foreground_mae": 24.60843593251254,
+        "full_mae": 0.7889809941520468,
+        "worst64": 43.97530864197531,
+        "channel_peak": 76
+      },
+      "after": {
+        "foreground_mae": 4.95563155494756,
+        "full_mae": 0.1588845029239766,
+        "worst64": 10.294847328244275,
+        "channel_peak": 76
+      }
+    },
+    {
+      "file": "arabic-380-3-36.png",
+      "source_bounds": [
+        133,
+        292,
+        217,
+        331
+      ],
+      "before_bounds": [
+        164,
+        291,
+        218,
+        309
+      ],
+      "after_bounds": [
+        133,
+        291,
+        218,
+        330
+      ],
+      "source_pixels": 1279,
+      "after_pixels": 980,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-380-3-36.png": "ab5dd0d3cb2a7d3d9620dc95bcf3e3a4de451d17e7a164ecffa2a09f41f7f52b",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-380-3-36.png": "47d0d001906c3981ad8c11b29f2f2c1d9df0ca6fdf2c220168ed82afa2f8a6f1",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-380-3-36.png": "db63397946acf9a372cad5ac5faf06b4e80efb24c9bf93d92cc919d23b6a6269"
+      },
+      "before": {
+        "foreground_mae": 20.108771929824563,
+        "full_mae": 0.11730116959064328,
+        "worst64": 26.77047619047619,
+        "channel_peak": 149
+      },
+      "after": {
+        "foreground_mae": 8.464912280701755,
+        "full_mae": 0.04937865497076024,
+        "worst64": 10.764423076923077,
+        "channel_peak": 57
+      }
+    },
+    {
+      "file": "arabic-380-7-5.2.png",
+      "source_bounds": [
+        146,
+        247,
+        380,
+        338
+      ],
+      "before_bounds": [
+        146,
+        244,
+        380,
+        340
+      ],
+      "after_bounds": [
+        146,
+        244,
+        380,
+        340
+      ],
+      "source_pixels": 11647,
+      "after_pixels": 12142,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-380-7-5.2.png": "f0a77ff14420e0f68b6885db8a3fcbe141b841e938c3792fff635cc452141d9f",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-380-7-5.2.png": "bdab3992996f6d7310eb2b245761e16e5f336740ccbdf6614828750ee09a0670",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-380-7-5.2.png": "bdab3992996f6d7310eb2b245761e16e5f336740ccbdf6614828750ee09a0670"
+      },
+      "before": {
+        "foreground_mae": 3.128468626357577,
+        "full_mae": 0.17224415204678362,
+        "worst64": 8.275,
+        "channel_peak": 69
+      },
+      "after": {
+        "foreground_mae": 3.128468626357577,
+        "full_mae": 0.17224415204678362,
+        "worst64": 8.275,
+        "channel_peak": 69
+      }
+    },
+    {
+      "file": "arabic-380-7-14.png",
+      "source_bounds": [
+        112,
+        278,
+        356,
+        376
+      ],
+      "before_bounds": [
+        168,
+        278,
+        284,
+        314
+      ],
+      "after_bounds": [
+        113,
+        278,
+        355,
+        376
+      ],
+      "source_pixels": 6611,
+      "after_pixels": 5797,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-380-7-14.png": "f10ebce8f116d6addba3bf0792444994058790d3f54ce57fd06834aec1dd90c6",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-380-7-14.png": "b47ab9f1df36097307c1aa9c2754badee252555376e4f3196eb299f8b53d2286",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-380-7-14.png": "e83a2640d65a741da3b158c94e366aa125860fe5596a95ebd5e9eaf67876b60c"
+      },
+      "before": {
+        "foreground_mae": 28.90088225146631,
+        "full_mae": 0.857266081871345,
+        "worst64": 43.82360097323601,
+        "channel_peak": 84
+      },
+      "after": {
+        "foreground_mae": 5.104637981172064,
+        "full_mae": 0.15141520467836259,
+        "worst64": 13.731513083048918,
+        "channel_peak": 84
+      }
+    },
+    {
+      "file": "arabic-380-7-36.png",
+      "source_bounds": [
+        180,
+        292,
+        272,
+        330
+      ],
+      "before_bounds": [
+        181,
+        292,
+        227,
+        306
+      ],
+      "after_bounds": [
+        181,
+        292,
+        272,
+        329
+      ],
+      "source_pixels": 984,
+      "after_pixels": 711,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-380-7-36.png": "4e5721edf4cdda3f49f266fadfc1ba4a1238363226e2b04df8f26f795c2b70c7",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-380-7-36.png": "7ab77220ae19faf6d464794c8526e06072dda9e437acfa08d1cd28d22758f2f0",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-380-7-36.png": "cb9b6a5896fedd888c8646f99d01c364282e25744ca6101b729a0742555c369a"
+      },
+      "before": {
+        "foreground_mae": 19.461918892185956,
+        "full_mae": 0.08629824561403508,
+        "worst64": 29.528089887640448,
+        "channel_peak": 148
+      },
+      "after": {
+        "foreground_mae": 9.159907682162874,
+        "full_mae": 0.04061695906432748,
+        "worst64": 11.955056179775282,
+        "channel_peak": 53
+      }
+    },
+    {
+      "file": "arabic-800-0-5.2.png",
+      "source_bounds": [
+        126,
+        201,
+        575,
+        368
+      ],
+      "before_bounds": [
+        127,
+        217,
+        582,
+        374
+      ],
+      "after_bounds": [
+        127,
+        202,
+        582,
+        374
+      ],
+      "source_pixels": 37933,
+      "after_pixels": 40661,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-800-0-5.2.png": "bcd9dca18222c22bd6181fd9200bb2a7b530be5f6ea186999ea501fc860374cf",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-800-0-5.2.png": "3db040a966abc0bf6159639411b432a63bedf8fd857c157623387d475ffb7b6f",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-800-0-5.2.png": "7515c7f8f66e298a75613b5589ce871994a13e642cc5d415df095d5aa9a8993d"
+      },
+      "before": {
+        "foreground_mae": 3.47101327776314,
+        "full_mae": 0.3018986111111111,
+        "worst64": 19.565656565656564,
+        "channel_peak": 85
+      },
+      "after": {
+        "foreground_mae": 2.411371130645844,
+        "full_mae": 0.20973402777777778,
+        "worst64": 19.565656565656564,
+        "channel_peak": 85
+      }
+    },
+    {
+      "file": "arabic-800-0-14.png",
+      "source_bounds": [
+        283,
+        261,
+        473,
+        326
+      ],
+      "before_bounds": [
+        284,
+        268,
+        466,
+        328
+      ],
+      "after_bounds": [
+        284,
+        261,
+        473,
+        328
+      ],
+      "source_pixels": 6224,
+      "after_pixels": 6216,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-800-0-14.png": "2d54456583222f9e282990efeb2fcdadc13d9f5109985e7173b23cc5e6105158",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-800-0-14.png": "43e8e3b8bcceb9287d472c48b6f48d6d9a932b5cba728f5815fa86240986a106",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-800-0-14.png": "bc731f4191a789d24dbe014d794d06478e58dbfe9255bd93e615f1243d7161ba"
+      },
+      "before": {
+        "foreground_mae": 6.6025368910450775,
+        "full_mae": 0.09072986111111112,
+        "worst64": 9.833333333333334,
+        "channel_peak": 90
+      },
+      "after": {
+        "foreground_mae": 4.8548109965635735,
+        "full_mae": 0.06671319444444444,
+        "worst64": 9.833333333333334,
+        "channel_peak": 90
+      }
+    },
+    {
+      "file": "arabic-800-0-36.png",
+      "source_bounds": [
+        353,
+        288,
+        425,
+        309
+      ],
+      "before_bounds": [
+        354,
+        288,
+        426,
+        311
+      ],
+      "after_bounds": [
+        354,
+        288,
+        426,
+        311
+      ],
+      "source_pixels": 856,
+      "after_pixels": 854,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-800-0-36.png": "e780b3a7bff47b1bfd34f73acd587c0b89676be9f738d6a821d13a620153832c",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-800-0-36.png": "7364986669f967dd0ac174f579909e20d1443429f2ebf7fdd40734eba8f0f7b8",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-800-0-36.png": "7fcd8755072e7ec6ac080cc9c9218436ea774f5eb9664ab50d2b5b41277de356"
+      },
+      "before": {
+        "foreground_mae": 24.882332643202208,
+        "full_mae": 0.050075694444444444,
+        "worst64": 33.50468540829986,
+        "channel_peak": 144
+      },
+      "after": {
+        "foreground_mae": 5.91407867494824,
+        "full_mae": 0.011902083333333334,
+        "worst64": 9.262382864792503,
+        "channel_peak": 48
+      }
+    },
+    {
+      "file": "arabic-800-3-5.2.png",
+      "source_bounds": [
+        206,
+        203,
+        660,
+        373
+      ],
+      "before_bounds": [
+        208,
+        219,
+        667,
+        379
+      ],
+      "after_bounds": [
+        208,
+        203,
+        667,
+        379
+      ],
+      "source_pixels": 36608,
+      "after_pixels": 39475,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-800-3-5.2.png": "e64b6b7d88918c0a32d9014d1f808e16ba81887d07c0f34f9f2c428b91865c16",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-800-3-5.2.png": "c5258837729fce7362a34ad0b7c011f56342d3b343107056387ff568be1b6429",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-800-3-5.2.png": "bf7d80a56d284b63837011fc475195648398326ccb072ae6b1fae2462b60e2d5"
+      },
+      "before": {
+        "foreground_mae": 3.0563927449088166,
+        "full_mae": 0.25732916666666666,
+        "worst64": 9.29559748427673,
+        "channel_peak": 78
+      },
+      "after": {
+        "foreground_mae": 2.4039046841362928,
+        "full_mae": 0.20239375,
+        "worst64": 9.29559748427673,
+        "channel_peak": 78
+      }
+    },
+    {
+      "file": "arabic-800-3-14.png",
+      "source_bounds": [
+        100,
+        266,
+        495,
+        375
+      ],
+      "before_bounds": [
+        315,
+        269,
+        497,
+        331
+      ],
+      "after_bounds": [
+        101,
+        266,
+        497,
+        375
+      ],
+      "source_pixels": 14331,
+      "after_pixels": 13535,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-800-3-14.png": "ad3769af916314305514e84b4f49f0aa91dab367020ef98d8355f13fe23abd06",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-800-3-14.png": "f04c812f69fcf4c26ffb6503b7e49dcf8cae56759135fcbcdfbd090c0a3ef6fc",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-800-3-14.png": "f283e68b71077502743d953ad85993b324d768eb24508d82f3b7a7556077714e"
+      },
+      "before": {
+        "foreground_mae": 29.666666666666668,
+        "full_mae": 0.9084180555555555,
+        "worst64": 49.28167641325536,
+        "channel_peak": 87
+      },
+      "after": {
+        "foreground_mae": 3.579058375289155,
+        "full_mae": 0.10959375,
+        "worst64": 9.929544699235626,
+        "channel_peak": 71
+      }
+    },
+    {
+      "file": "arabic-800-3-36.png",
+      "source_bounds": [
+        330,
+        289,
+        436,
+        333
+      ],
+      "before_bounds": [
+        366,
+        288,
+        437,
+        312
+      ],
+      "after_bounds": [
+        331,
+        288,
+        437,
+        332
+      ],
+      "source_pixels": 2097,
+      "after_pixels": 1708,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-800-3-36.png": "e4b1a758e275802617e5688586774129debf7b4ff9b39578c24451fbb7ee9600",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-800-3-36.png": "01f0c826a8612f2245b52b2a9e977ecdb461152c6e71c579f2d9424220411a02",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-800-3-36.png": "d78d63f4c395732d3e5b22ef96029f6547ce6d50cddd22dc7e591f794b4bd02e"
+      },
+      "before": {
+        "foreground_mae": 20.398143922105582,
+        "full_mae": 0.09310902777777778,
+        "worst64": 24.179934569247546,
+        "channel_peak": 141
+      },
+      "after": {
+        "foreground_mae": 6.597748364521528,
+        "full_mae": 0.03011597222222222,
+        "worst64": 8.11049723756906,
+        "channel_peak": 59
+      }
+    },
+    {
+      "file": "arabic-800-7-5.2.png",
+      "source_bounds": [
+        322,
+        228,
+        713,
+        351
+      ],
+      "before_bounds": [
+        322,
+        225,
+        719,
+        355
+      ],
+      "after_bounds": [
+        322,
+        225,
+        719,
+        355
+      ],
+      "source_pixels": 27906,
+      "after_pixels": 30746,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-800-7-5.2.png": "1293f4313b7f6a9d3d856c55853abc940b19facb70932a210ea4a24258e609fb",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-800-7-5.2.png": "c4fa05123e9b534004e2c53791a1515c40ff6c736c006438ea61d25ba288f1b9",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-800-7-5.2.png": "c4fa05123e9b534004e2c53791a1515c40ff6c736c006438ea61d25ba288f1b9"
+      },
+      "before": {
+        "foreground_mae": 2.3393713998696204,
+        "full_mae": 0.1520152777777778,
+        "worst64": 7.825301204819277,
+        "channel_peak": 78
+      },
+      "after": {
+        "foreground_mae": 2.3393713998696204,
+        "full_mae": 0.1520152777777778,
+        "worst64": 7.825301204819277,
+        "channel_peak": 78
+      }
+    },
+    {
+      "file": "arabic-800-7-14.png",
+      "source_bounds": [
+        284,
+        272,
+        611,
+        384
+      ],
+      "before_bounds": [
+        361,
+        271,
+        516,
+        319
+      ],
+      "after_bounds": [
+        285,
+        271,
+        610,
+        383
+      ],
+      "source_pixels": 11152,
+      "after_pixels": 10481,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-800-7-14.png": "edb41847bdc4f6c3602358327a9498a6169d98ecf13140d974d3da3ca14e2456",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-800-7-14.png": "53b1b83ef1b9b710832218875041c5008c0f0b2384a766454c01b6965cedabc4",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-800-7-14.png": "b4bfa2ccaa01e3c822c29c02e71c540ee5b716ac0464acde470335f808ecd422"
+      },
+      "before": {
+        "foreground_mae": 30.52121264918547,
+        "full_mae": 0.7299020833333333,
+        "worst64": 47.841449855459196,
+        "channel_peak": 85
+      },
+      "after": {
+        "foreground_mae": 3.721926997125185,
+        "full_mae": 0.08900833333333333,
+        "worst64": 9.913768115942029,
+        "channel_peak": 85
+      }
+    },
+    {
+      "file": "arabic-800-7-36.png",
+      "source_bounds": [
+        383,
+        290,
+        492,
+        333
+      ],
+      "before_bounds": [
+        384,
+        289,
+        445,
+        308
+      ],
+      "after_bounds": [
+        384,
+        289,
+        492,
+        333
+      ],
+      "source_pixels": 1572,
+      "after_pixels": 1230,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\arabic-800-7-36.png": "d07dc0899cedf3d0532e68a4afb9fc5ba478b32fd6a1a2ec9fbe2401eda56f2e",
+        "build\\verification\\diorama-neighbors-kotlin\\before-arabic-800-7-36.png": "a1f64dbfc6001c45e05f3ba859edd45379241d83ed07b398c01dcffb43fb5774",
+        "build\\verification\\diorama-neighbors-kotlin\\after-arabic-800-7-36.png": "84611a8a900203cb0354d789b8005769aec9b9b076bb1e85269c49656fa7b3a8"
+      },
+      "before": {
+        "foreground_mae": 20.687384615384616,
+        "full_mae": 0.07003541666666667,
+        "worst64": 24.736648250460405,
+        "channel_peak": 149
+      },
+      "after": {
+        "foreground_mae": 7.6838974358974355,
+        "full_mae": 0.026013194444444443,
+        "worst64": 8.991405770411296,
+        "channel_peak": 58
+      }
+    },
+    {
+      "file": "cjk-380-0-5.2.png",
+      "source_bounds": [
+        0,
+        208,
+        324,
+        337
+      ],
+      "before_bounds": [
+        0,
+        262,
+        268,
+        340
+      ],
+      "after_bounds": [
+        0,
+        209,
+        324,
+        340
+      ],
+      "source_pixels": 11151,
+      "after_pixels": 9459,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-380-0-5.2.png": "6241fec2065e3128f82bde27714d18e4e7da9daebdde8659c7274bbe2eb18c8a",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-380-0-5.2.png": "10d388f96b0c19705c681e37adb84f1041aeb31e5ec1eb601414e5d3e45f60b6",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-380-0-5.2.png": "e03d5f7f56bd03d65a832385fed791dd9fe852734d8217f61f068edf13c78725"
+      },
+      "before": {
+        "foreground_mae": 6.995569933840459,
+        "full_mae": 0.3509137426900585,
+        "worst64": 17.207729468599034,
+        "channel_peak": 60
+      },
+      "after": {
+        "foreground_mae": 5.8589956573693565,
+        "full_mae": 0.29390058479532166,
+        "worst64": 8.373590982286634,
+        "channel_peak": 60
+      }
+    },
+    {
+      "file": "cjk-380-0-14.png",
+      "source_bounds": [
+        90,
+        266,
+        254,
+        315
+      ],
+      "before_bounds": [
+        88,
+        284,
+        220,
+        316
+      ],
+      "after_bounds": [
+        88,
+        266,
+        255,
+        316
+      ],
+      "source_pixels": 3194,
+      "after_pixels": 2570,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-380-0-14.png": "b89b5a489df90acaf1818615a12449d7f0b46a957bc19fb9d771cde95480921d",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-380-0-14.png": "44270d668eec920770e0172b92f51347cc286ba98c9a460086f88f9574c742fe",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-380-0-14.png": "78f114a7854bfb2d687b2a218ad992ff282a0c4279384e1133b1e1406e949ec1"
+      },
+      "before": {
+        "foreground_mae": 11.287308641975308,
+        "full_mae": 0.16708187134502925,
+        "worst64": 15.1967838648133,
+        "channel_peak": 87
+      },
+      "after": {
+        "foreground_mae": 11.234074074074075,
+        "full_mae": 0.1662938596491228,
+        "worst64": 15.003543199781957,
+        "channel_peak": 87
+      }
+    },
+    {
+      "file": "cjk-380-0-36.png",
+      "source_bounds": [
+        150,
+        294,
+        202,
+        306
+      ],
+      "before_bounds": [
+        150,
+        293,
+        202,
+        306
+      ],
+      "after_bounds": [
+        150,
+        293,
+        202,
+        306
+      ],
+      "source_pixels": 401,
+      "after_pixels": 318,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-380-0-36.png": "6319af5fff1108bf48a1c618102ea909ce13db44d36ddad3c90bc2c501c5d055",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-380-0-36.png": "3ae3de22e16d7a4b627ac5b4b719784eea674493b8b537f52e7064f9791b6c3c",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-380-0-36.png": "6df2326b9a264438145500eff0c0330f2f2a8d463698b1ff8c17f860a648dbe1"
+      },
+      "before": {
+        "foreground_mae": 29.174382716049383,
+        "full_mae": 0.05527777777777778,
+        "worst64": 31.215384615384615,
+        "channel_peak": 136
+      },
+      "after": {
+        "foreground_mae": 11.757716049382717,
+        "full_mae": 0.02227777777777778,
+        "worst64": 13.764102564102565,
+        "channel_peak": 75
+      }
+    },
+    {
+      "file": "cjk-380-3-5.2.png",
+      "source_bounds": [
+        31,
+        206,
+        362,
+        334
+      ],
+      "before_bounds": [
+        28,
+        252,
+        351,
+        334
+      ],
+      "after_bounds": [
+        28,
+        207,
+        362,
+        334
+      ],
+      "source_pixels": 13310,
+      "after_pixels": 12366,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-380-3-5.2.png": "bb1b6affb17dcdd2d021ed8af9f8b65fcbe430ceeb64d99328281285cbc49626",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-380-3-5.2.png": "b7415ef67d348a1b09241ab8e91355143d9fca99e88e9611da03a70b169a7130",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-380-3-5.2.png": "ad3f10408b190e56981d187ecc68046d7b8353cdd8a8305f9c31df6dcdf0f459"
+      },
+      "before": {
+        "foreground_mae": 5.675326509001059,
+        "full_mae": 0.3525921052631579,
+        "worst64": 15.542134831460674,
+        "channel_peak": 78
+      },
+      "after": {
+        "foreground_mae": 5.214731144840569,
+        "full_mae": 0.32397660818713453,
+        "worst64": 9.235018726591761,
+        "channel_peak": 78
+      }
+    },
+    {
+      "file": "cjk-380-3-14.png",
+      "source_bounds": [
+        0,
+        268,
+        252,
+        367
+      ],
+      "before_bounds": [
+        119,
+        279,
+        251,
+        313
+      ],
+      "after_bounds": [
+        0,
+        268,
+        254,
+        366
+      ],
+      "source_pixels": 6786,
+      "after_pixels": 5485,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-380-3-14.png": "af4b84b0c711f734ee2149c1d1d676d429eb93cae98f049b556310a5c18a5df6",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-380-3-14.png": "4f8c00c5978798fe231a2e5c912d6139b4ce805bd0e974c8473e5c9fa0fbcc1b",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-380-3-14.png": "b4f084a4c4129505a3b38e2da934ab35d8d21e490f8a586f9f8bd18e9b8b00a6"
+      },
+      "before": {
+        "foreground_mae": 27.13074794886472,
+        "full_mae": 0.8315336257309941,
+        "worst64": 39.368205128205126,
+        "channel_peak": 89
+      },
+      "after": {
+        "foreground_mae": 8.283772180881511,
+        "full_mae": 0.25389035087719297,
+        "worst64": 15.285541439806412,
+        "channel_peak": 89
+      }
+    },
+    {
+      "file": "cjk-380-3-36.png",
+      "source_bounds": [
+        133,
+        292,
+        214,
+        331
+      ],
+      "before_bounds": [
+        162,
+        292,
+        213,
+        306
+      ],
+      "after_bounds": [
+        134,
+        292,
+        213,
+        330
+      ],
+      "source_pixels": 1321,
+      "after_pixels": 797,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-380-3-36.png": "fc1dd1699a6acfed24f4c2280bd4cf9aa873a455563dffab701cef32a8f442e2",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-380-3-36.png": "2395b68d4392bc385d431f7a7974046b70f547f0d43498e65026a31d6e48a290",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-380-3-36.png": "fa5767c3edbb3d40d4412eb45eb9f8d192474cbbe3c0011014ca19d7644510f8"
+      },
+      "before": {
+        "foreground_mae": 17.812624750499,
+        "full_mae": 0.10437573099415205,
+        "worst64": 29.48263888888889,
+        "channel_peak": 131
+      },
+      "after": {
+        "foreground_mae": 12.453592814371257,
+        "full_mae": 0.07297368421052632,
+        "worst64": 18.65625,
+        "channel_peak": 95
+      }
+    },
+    {
+      "file": "cjk-380-7-5.2.png",
+      "source_bounds": [
+        138,
+        273,
+        380,
+        333
+      ],
+      "before_bounds": [
+        135,
+        271,
+        380,
+        336
+      ],
+      "after_bounds": [
+        135,
+        271,
+        380,
+        336
+      ],
+      "source_pixels": 8057,
+      "after_pixels": 7657,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-380-7-5.2.png": "68c976c764ad38f6ca5f73699579af832b9115c7831416a4ecf1ab6fccd227bf",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-380-7-5.2.png": "aab0d46299013eabbe7218d3f106d6f520720c6345d9bc621ae4b7ab26fe19e3",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-380-7-5.2.png": "aab0d46299013eabbe7218d3f106d6f520720c6345d9bc621ae4b7ab26fe19e3"
+      },
+      "before": {
+        "foreground_mae": 5.7289564242353945,
+        "full_mae": 0.21661988304093568,
+        "worst64": 8.733426704014938,
+        "channel_peak": 86
+      },
+      "after": {
+        "foreground_mae": 5.7289564242353945,
+        "full_mae": 0.21661988304093568,
+        "worst64": 8.733426704014938,
+        "channel_peak": 86
+      }
+    },
+    {
+      "file": "cjk-380-7-14.png",
+      "source_bounds": [
+        113,
+        288,
+        357,
+        376
+      ],
+      "before_bounds": [
+        163,
+        288,
+        274,
+        316
+      ],
+      "after_bounds": [
+        114,
+        288,
+        356,
+        375
+      ],
+      "source_pixels": 6338,
+      "after_pixels": 4997,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-380-7-14.png": "c21f34c012211e79f2cd97cb2d20f7a364f6db133aa1685843a721e30894340c",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-380-7-14.png": "6d860967e3e3263a8cd009e52301b668c8b76ee7842f7d9317f8e0de45f66d26",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-380-7-14.png": "b8ac62a0e1d038a1f70041f9b8745c510292bc4d87053823a4d4b7d10f0be0aa"
+      },
+      "before": {
+        "foreground_mae": 30.802607076350093,
+        "full_mae": 0.870578947368421,
+        "worst64": 39.681061247530344,
+        "channel_peak": 99
+      },
+      "after": {
+        "foreground_mae": 8.375801779433065,
+        "full_mae": 0.2367266081871345,
+        "worst64": 20.27,
+        "channel_peak": 99
+      }
+    },
+    {
+      "file": "cjk-380-7-36.png",
+      "source_bounds": [
+        179,
+        295,
+        272,
+        328
+      ],
+      "before_bounds": [
+        179,
+        295,
+        223,
+        306
+      ],
+      "after_bounds": [
+        179,
+        295,
+        272,
+        327
+      ],
+      "source_pixels": 1058,
+      "after_pixels": 595,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-380-7-36.png": "64e9c287851d26eac323412cfbfa245bdbff5f0c31989a6a3fb5623bf110fe93",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-380-7-36.png": "37b6905a84878a6fa1f342a67ff120ac0d926c9ce439707e23eb44b9e8d667ee",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-380-7-36.png": "5c40c8cda3f8f03bf07bab88be36e0729c9ff072669481df86ad7a936c0780ea"
+      },
+      "before": {
+        "foreground_mae": 16.855503875968992,
+        "full_mae": 0.07947222222222222,
+        "worst64": 24.479012345679013,
+        "channel_peak": 161
+      },
+      "after": {
+        "foreground_mae": 12.372093023255815,
+        "full_mae": 0.058333333333333334,
+        "worst64": 14.874446085672083,
+        "channel_peak": 83
+      }
+    },
+    {
+      "file": "cjk-800-0-5.2.png",
+      "source_bounds": [
+        43,
+        204,
+        644,
+        365
+      ],
+      "before_bounds": [
+        36,
+        227,
+        644,
+        370
+      ],
+      "after_bounds": [
+        36,
+        204,
+        644,
+        370
+      ],
+      "source_pixels": 44452,
+      "after_pixels": 43960,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-800-0-5.2.png": "8281eaa38af24be125b80da820742e95814825529ab0687e63e7b23fef39098e",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-800-0-5.2.png": "39e303e26c91bd8b492c934021e1fe11980c05d02c005a88eae5960e6165302f",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-800-0-5.2.png": "76ad0994a7343b9b7a727c89dc961d90fbdd3a0d6db52a6909bf37e0c9610184"
+      },
+      "before": {
+        "foreground_mae": 4.265439941275286,
+        "full_mae": 0.41966597222222224,
+        "worst64": 21.71063509958662,
+        "channel_peak": 59
+      },
+      "after": {
+        "foreground_mae": 2.562253843221954,
+        "full_mae": 0.25209375,
+        "worst64": 5.09695603156708,
+        "channel_peak": 59
+      }
+    },
+    {
+      "file": "cjk-800-0-14.png",
+      "source_bounds": [
+        244,
+        262,
+        487,
+        327
+      ],
+      "before_bounds": [
+        241,
+        269,
+        487,
+        329
+      ],
+      "after_bounds": [
+        241,
+        262,
+        487,
+        329
+      ],
+      "source_pixels": 9456,
+      "after_pixels": 8678,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-800-0-14.png": "86b2830de684fb8a5bfd62bfacb9765ebfc428488466aa4e0e378a97ce587f59",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-800-0-14.png": "40f82fe16aaa9467a88f94dd31699ee2e13a75e65336da2ab6a242cfb735302d",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-800-0-14.png": "e54ae1f4a18d88d7cfd2eb20101e3e2185fdaf7ddc5f96090dea795a667dcbec"
+      },
+      "before": {
+        "foreground_mae": 8.118238993710692,
+        "full_mae": 0.17031388888888888,
+        "worst64": 12.491899070385125,
+        "channel_peak": 93
+      },
+      "after": {
+        "foreground_mae": 6.253723932472691,
+        "full_mae": 0.13119791666666666,
+        "worst64": 8.373428798727128,
+        "channel_peak": 93
+      }
+    },
+    {
+      "file": "cjk-800-0-36.png",
+      "source_bounds": [
+        338,
+        289,
+        434,
+        310
+      ],
+      "before_bounds": [
+        336,
+        287,
+        433,
+        311
+      ],
+      "after_bounds": [
+        336,
+        287,
+        433,
+        311
+      ],
+      "source_pixels": 1264,
+      "after_pixels": 1118,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-800-0-36.png": "1e726bd3cb403ef4537aa462a6fe947cbd607932a8c08c128806dc3ac67b9d5d",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-800-0-36.png": "4b37bbe1c06aa279507bce1156fac277253a501fba3ddbd77214323e30d35315",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-800-0-36.png": "041a9bd9d29026d5de88804e2ec74f42c87174263ae2d5c9e26c86e35f2d679b"
+      },
+      "before": {
+        "foreground_mae": 28.16000951022349,
+        "full_mae": 0.08225069444444444,
+        "worst64": 35.273622047244096,
+        "channel_peak": 146
+      },
+      "after": {
+        "foreground_mae": 8.344032334759866,
+        "full_mae": 0.024371527777777777,
+        "worst64": 11.245406824146981,
+        "channel_peak": 73
+      }
+    },
+    {
+      "file": "cjk-800-3-5.2.png",
+      "source_bounds": [
+        126,
+        196,
+        732,
+        367
+      ],
+      "before_bounds": [
+        120,
+        214,
+        732,
+        367
+      ],
+      "after_bounds": [
+        120,
+        196,
+        732,
+        367
+      ],
+      "source_pixels": 41511,
+      "after_pixels": 41274,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-800-3-5.2.png": "25222ce09546ad49470ffe9a6d09a99f778da89765782f0acd79d3c3a7222e4b",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-800-3-5.2.png": "5c605534153d3d7d29ec0833fca64543f79ee6ed7cf059319156fae42ce5fbb3",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-800-3-5.2.png": "18abc54303f99691e6fefafe39174af93e8d5ec2f02098f49226be1dd86f681e"
+      },
+      "before": {
+        "foreground_mae": 3.652229366660629,
+        "full_mae": 0.33606597222222223,
+        "worst64": 20.618327028163094,
+        "channel_peak": 63
+      },
+      "after": {
+        "foreground_mae": 2.55758316730061,
+        "full_mae": 0.23534027777777777,
+        "worst64": 5.80327868852459,
+        "channel_peak": 63
+      }
+    },
+    {
+      "file": "cjk-800-3-14.png",
+      "source_bounds": [
+        31,
+        262,
+        529,
+        388
+      ],
+      "before_bounds": [
+        270,
+        262,
+        517,
+        325
+      ],
+      "after_bounds": [
+        31,
+        262,
+        528,
+        387
+      ],
+      "source_pixels": 25304,
+      "after_pixels": 23015,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-800-3-14.png": "b1ce409e1963e4e702270a5547a9858c986ebd817fbba6b74212f141b40f1471",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-800-3-14.png": "3989ad37edc188806457799f2993a3fcb46ef1ed0fadc02ae98bc185690f3b78",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-800-3-14.png": "11693636c03bb955f61b968e3a473a27df579a16318c66a6ce71eb92b7f2ed0c"
+      },
+      "before": {
+        "foreground_mae": 32.41651258346174,
+        "full_mae": 1.7531930555555555,
+        "worst64": 49.56395715185885,
+        "channel_peak": 108
+      },
+      "after": {
+        "foreground_mae": 4.389304057524397,
+        "full_mae": 0.23738819444444445,
+        "worst64": 12.282608695652174,
+        "channel_peak": 108
+      }
+    },
+    {
+      "file": "cjk-800-3-36.png",
+      "source_bounds": [
+        311,
+        286,
+        451,
+        337
+      ],
+      "before_bounds": [
+        348,
+        284,
+        445,
+        310
+      ],
+      "after_bounds": [
+        311,
+        284,
+        451,
+        337
+      ],
+      "source_pixels": 3615,
+      "after_pixels": 2698,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-800-3-36.png": "64f3eadfdf7eec5459189fa4fca44ff84c70b019fba91a1605d7be82a3e0eaa8",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-800-3-36.png": "5d3800cf7c1fd4a6af450908a0e3fdc6ac7bf99bd5a87a4cf54af8b47c2f3d4a",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-800-3-36.png": "d4d612ef51ab47127a47610dd9f37ab63e104e78570efd4c1213c58e80e6a75e"
+      },
+      "before": {
+        "foreground_mae": 19.684613997113996,
+        "full_mae": 0.15157152777777777,
+        "worst64": 30.318015318015316,
+        "channel_peak": 134
+      },
+      "after": {
+        "foreground_mae": 8.164141414141413,
+        "full_mae": 0.06286388888888889,
+        "worst64": 12.484515484515484,
+        "channel_peak": 66
+      }
+    },
+    {
+      "file": "cjk-800-7-5.2.png",
+      "source_bounds": [
+        260,
+        244,
+        782,
+        359
+      ],
+      "before_bounds": [
+        255,
+        245,
+        782,
+        363
+      ],
+      "after_bounds": [
+        255,
+        245,
+        782,
+        363
+      ],
+      "source_pixels": 27420,
+      "after_pixels": 27372,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-800-7-5.2.png": "24dfc2f665e9b3a796ded3a5d327192374e6beef55052469266bc84de2fdca55",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-800-7-5.2.png": "a99fbcb41b4351a89b212650c9febc30355a08d01faccb3d2234b7cb6f0e516b",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-800-7-5.2.png": "a99fbcb41b4351a89b212650c9febc30355a08d01faccb3d2234b7cb6f0e516b"
+      },
+      "before": {
+        "foreground_mae": 2.801488719907328,
+        "full_mae": 0.16962430555555555,
+        "worst64": 5.793880837359098,
+        "channel_peak": 85
+      },
+      "after": {
+        "foreground_mae": 2.801488719907328,
+        "full_mae": 0.16962430555555555,
+        "worst64": 5.793880837359098,
+        "channel_peak": 85
+      }
+    },
+    {
+      "file": "cjk-800-7-14.png",
+      "source_bounds": [
+        228,
+        279,
+        685,
+        395
+      ],
+      "before_bounds": [
+        325,
+        279,
+        533,
+        330
+      ],
+      "after_bounds": [
+        228,
+        279,
+        684,
+        395
+      ],
+      "source_pixels": 19364,
+      "after_pixels": 17303,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-800-7-14.png": "9426a2becc5b81c36f42d803ad9551916110c2f80e123dd725db43b0372d71b9",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-800-7-14.png": "a83287c0081cab80dd1159dbeb59deff43250cb3a602b0397c18fe6c8a33cdf8",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-800-7-14.png": "f07b2bc75940542b96e53823358b6ce7d9b549b92f03aac5f25dfd0c3a61e343"
+      },
+      "before": {
+        "foreground_mae": 34.659908193167,
+        "full_mae": 1.4209840277777779,
+        "worst64": 46.8912037037037,
+        "channel_peak": 98
+      },
+      "after": {
+        "foreground_mae": 4.722902586513542,
+        "full_mae": 0.19362916666666666,
+        "worst64": 11.81693028705331,
+        "channel_peak": 98
+      }
+    },
+    {
+      "file": "cjk-800-7-36.png",
+      "source_bounds": [
+        370,
+        292,
+        508,
+        335
+      ],
+      "before_bounds": [
+        369,
+        292,
+        451,
+        312
+      ],
+      "after_bounds": [
+        369,
+        292,
+        507,
+        335
+      ],
+      "source_pixels": 2752,
+      "after_pixels": 1916,
+      "png_sha256": {
+        "build\\verification\\diorama-neighbors-browser\\cjk-800-7-36.png": "2aa8a1e61122675d84b94f83cd5a32f83d15be69c1d0c410c483045cbb0d542d",
+        "build\\verification\\diorama-neighbors-kotlin\\before-cjk-800-7-36.png": "1037d3d6475017fe4fe0ffa697e857e790a64bf71c8e7b0e4175ecf0206b05f9",
+        "build\\verification\\diorama-neighbors-kotlin\\after-cjk-800-7-36.png": "71fa42e8bea9fbf1d132052c0049e7ca132d8279eebe9d1cb9978eccc0ad92b7"
+      },
+      "before": {
+        "foreground_mae": 19.925795053003533,
+        "full_mae": 0.11747916666666666,
+        "worst64": 27.399288451012588,
+        "channel_peak": 137
+      },
+      "after": {
+        "foreground_mae": 9.174911660777385,
+        "full_mae": 0.05409375,
+        "worst64": 12.287082649151614,
+        "channel_peak": 63
+      }
+    }
+  ],
+  "status": "Core text corridor window/life integration; fixed original camera isolates text. Raster/foreground and full follower residuals remain; NOT full scene, fog, device or public theme acceptance."
+}

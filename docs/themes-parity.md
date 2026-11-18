@@ -4,6 +4,10 @@
 按固定 `v0.7.26 / cc6226e464050a456a2913e062374f23d3844cc5` 登记。
 未接入的样式不放入公共选择器，不通过classic换名冒充。
 
+2026-11-18状态以NEXT_STEPS顶部唯一活动表为准。下文带日期的阶段日志保留当时
+证据；其中“尚未接入口／未实现follower”等句子不是当前活动计划。镜台已接内部
+core文字/follower/picker/裁剪与正常邻行window/life，仍未公开；见diorama-neighbors。
+
 ## 名称与支持矩阵
 
 心象圆环/配色追加：`VisualizerCadenza.tsx:398–413`的群唱圈位于舞台坐标，

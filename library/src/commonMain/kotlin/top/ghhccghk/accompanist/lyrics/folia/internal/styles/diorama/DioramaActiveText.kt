@@ -31,7 +31,7 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
     fun draw(scope: DrawScope, time: Double, view: DioramaPerspective, frame: DioramaFrame,
         placement: DioramaPlacement, primary: DioramaLinearColor, accent: DioramaLinearColor,
         tuning: DioramaUnitTuning = DioramaUnitTuning(),
-        keywords: Map<Int, DioramaLinearColor> = emptyMap()) = with(scope) {
+        keywords: Map<Int, DioramaLinearColor> = emptyMap(), life: Double = 1.0) = with(scope) {
         val fit = dioramaFrameFit(lineAdvance * .62 / 128, 5.2, view.fov, view.width / view.height) * placement.scale
         val unitScale = fit * .62 / 128
         val right = dioramaPlaneAxis(frame, placement, 1.0, 0.0)
@@ -42,7 +42,7 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         val center = dioramaComposeLocal(frame, placement.offsetR, placement.offsetU, 0.0)
         val states = slices.mapIndexed { i, slice ->
             dioramaUnitFrame(time, slice.unit.start, slice.unit.end,
-                dioramaMediaEnvelope(time, slice.unit.start, slice.unit.end), primary, accent, tuning, keywords[i])
+                dioramaMediaEnvelope(time, slice.unit.start, slice.unit.end), primary, accent, tuning, keywords[i], life = life)
         }
         fun plane(slice: DioramaActiveSlice, image: ImageBitmap, alpha: Double, color: Color,
             depth: Double = 0.0, lift: Double = 0.0, scale: Double = 1.0, additive: Boolean = false) {

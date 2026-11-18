@@ -1641,3 +1641,15 @@ now shared by DioramaPlainText and each active base/halo/soul transform. No Thre
 renderer/background/texture or clipping implementation copied. Actual locked
 Three0.185.1 shared-raster18-frame stress and216 unchanged own forward hashes:
 verification/diorama-clipping. This is not depth-buffer/fog/full-scene acceptance.
+
+### Diorama normal neighbour text window / distance life (2026-11-18)
+Pinned cc6226e4 dioramaSceneLayout.ts:26–78, sceneConstants.ts:8–10,31–39,
+sceneFrame.ts:103–131 and DioramaScene.tsx:523,612–651 -> DioramaNeighbors.kt /
+DioramaTextPlayback.kt, with existing own DioramaPlainText rasters. Single-song
+previous2/next3, signed opacity, fixed hero-distance fit, Euclidean life and
+primary/secondary tones; transparent centre-depth sort before active17/18/19.
+Active life now reaches all unit layers. No full sequencer/flight/fog/depth writer
+or source texture copied. Real original functions + Three54 images /180 original
+material rows, full core-stage integration and explicit residuals:
+verification/diorama-neighbors. All preparation stays outside stable display
+frames; duplicate plain text shares only per-preparation immutable ownership.

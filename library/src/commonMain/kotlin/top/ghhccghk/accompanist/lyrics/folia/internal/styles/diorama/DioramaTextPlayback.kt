@@ -10,13 +10,16 @@ import androidx.compose.ui.text.font.FontFamily
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import top.ghhccghk.accompanist.lyrics.folia.internal.model.normalize
 import kotlin.math.max
+import kotlin.math.sqrt
 
-internal data class DioramaPlaybackLine(val core: DioramaCoreLine, val text: DioramaActiveText)
+internal data class DioramaPlaybackLine(val core: DioramaCoreLine, val text: DioramaActiveText,
+    val neighbor: DioramaPlainText)
 
 /** Core objects -> once-prepared full-shaped text -> media follower -> actual
  * projective three-layer drawing. Original weighted shot picker uses actual
  * source word timings and optional explicit metadata; overrides are calibration.
- * Neighbours, cross-song flight, depth/near clipping/fog remain separate work. */
+ * Normal neighbour window is integrated; cross-song flight, depth testing and
+ * fog remain separate work. Near/far clipping is shared by all text layers. */
 internal class DioramaTextPlayback private constructor(val lines: List<DioramaPlaybackLine>,
     val camera: DioramaCameraTrack, val width: Double, val height: Double) {
     fun lyricTime(mediaSeconds: Double, offsetMillis: Int = 0): Double {
@@ -27,11 +30,34 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         lines[camera.subjectIndex(lyricTime(mediaSeconds,offsetMillis))].core
     fun mediaStart(core: DioramaCoreLine, offsetMillis: Int = 0) = core.lyric.start-offsetMillis/1000.0
     fun draw(scope: DrawScope, mediaSeconds: Double, primary: DioramaLinearColor,
-        accent: DioramaLinearColor, offsetMillis: Int = 0, reducedMotion: Boolean = false) {
+        accent: DioramaLinearColor, offsetMillis: Int = 0, reducedMotion: Boolean = false,
+        secondary: DioramaLinearColor = primary) {
         val time=lyricTime(mediaSeconds,offsetMillis)
+        drawStage(scope,time,camera.perspectiveAt(time,reducedMotion),primary,accent,secondary,reducedMotion)
+    }
+    /** Shared production stage; explicit view also isolates text/window parity
+     * from the separately measured media follower residual in verification. */
+    fun drawStage(scope: DrawScope, time: Double, view: DioramaPerspective,
+        primary: DioramaLinearColor, accent: DioramaLinearColor, secondary: DioramaLinearColor = primary,
+        reducedMotion: Boolean = false) {
         val index=camera.subjectIndex(time);val s=camera.subjects[index]
-        lines[index].text.draw(scope,time,camera.perspectiveAt(time,reducedMotion),s.frame,s.placement,
-            primary,accent,if(reducedMotion)DioramaUnitTuning(soul=0.0)else DioramaUnitTuning())
+        // Original neighbours are transparent, depthWrite=false and order0;
+        // active layers have order17/18/19. With no opaque background geometry,
+        // far-to-near centre sorting reproduces that transparent text ordering.
+        dioramaMountedTextIndices(index,lines.size).filter { it!=index }.map { i ->
+            val subject=camera.subjects[i];val text=lines[i].neighbor
+            dioramaNeighborFrame(i,index,text.advancePx,text.fontPx,subject.frame,subject.placement,view,primary,secondary)
+        }.sortedWith(compareByDescending<DioramaNeighborFrame>{it.depth}.thenBy{it.index}).forEach { neighbor ->
+            if(neighbor.opacity>0) {
+                val subject=camera.subjects[neighbor.index]
+                lines[neighbor.index].neighbor.draw(scope,view,subject.frame,subject.placement,
+                    neighbor.color.srgb(),neighbor.opacity.toFloat())
+            }
+        }
+        val activeDelta=dioramaComposeLocal(s.frame,s.placement.offsetR,s.placement.offsetU,0.0)-view.eye
+        lines[index].text.draw(scope,time,view,s.frame,s.placement,
+            primary,accent,if(reducedMotion)DioramaUnitTuning(soul=0.0)else DioramaUnitTuning(),
+            life=dioramaTextLife(sqrt(activeDelta.dot(activeDelta))))
     }
     companion object {
         fun prepare(core: SyncedLyrics, style: TextStyle, measurer: TextMeasurer,
@@ -46,9 +72,17 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             val seed=dioramaHashSeed(seedName)
             val lyrics=mapped.map{it.lyric}
             val frames=buildDioramaPath(mapped.size,seed)
+            // Repeated chorus text shares its immutable plain raster within
+            // this preparation/font configuration, never a global song cache.
+            val neighborTexts=mutableMapOf<String,DioramaPlainText>()
             val lines=mapped.map {
                 checkpoint()
-                DioramaPlaybackLine(it,DioramaActiveText.prepare(it.lyric,style,measurer,resolver))
+                val active=DioramaActiveText.prepare(it.lyric,style,measurer,resolver)
+                checkpoint()
+                val neighbor=neighborTexts.getOrPut(it.lyric.text) {
+                    DioramaPlainText.prepare(it.lyric.text,style,measurer,resolver)
+                }
+                DioramaPlaybackLine(it,active,neighbor)
             }
             val subjects=lines.mapIndexed { index,line ->
                 val placement=dioramaTextPlacement(index,seed,mode.weave)

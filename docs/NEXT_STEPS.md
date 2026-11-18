@@ -16,10 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：同700ms/cache7做有界native fragment控制，保留独立linear RGB/
-alpha采样后再tint→ACES→sRGB→fog→blend，对原实际层及标注isotropic控制；
-先查现有Skia RuntimeEffect公开能力，不新增JNI/构建框架，不开放Diorama假入口。
-须保留各向异性/逐fragment LOD未等价项，局部及近景失败成立后才扩大生产集成。
+当前唯一下一项：同700ms/cache7的默认aniso4 footprint控制，保留已成立的
+isotropic诊断，不以其替代原默认；数值成立后查近景Latin/Arabic/尺寸矩阵，
+不因单帧改善开放Diorama或在生产引入未验收shader。
+有界JVM RuntimeEffect独立linear RGB/alpha/逐fragment LOD→tint→ACES→显式sRGB
+→fog→blend控制已完成：同原isotropic诊断通道峰2/MAE约.326，独立真实GPU mip
+scalar oracle峰2；原aniso4仍峰14。首轮上下文OETF亮度失败11802mass与通道定位
+保留，修显式原OETF后20570(原isotropic20614)，无拟合/改原图。见
+verification/diorama-fragment-control。仅共享输入局部JVM控制，未进入生产/Android，
+非原默认/正式视觉通过；全部168生产图不变，暂停/诊断往返确定，资源测试内关闭。
 实际GPU mip0/4/5已被动读取：原PNG/状态/452callback/纹理及Source版本不变；
 base RGBA与既有cache7逐字节同。mip4/5 alpha本与原峰1，但mask统一染色丢RGB，
 MAE70.344595/102.155689；独立linear-F16 occupancy RGB峰1，包含alpha0的48/12

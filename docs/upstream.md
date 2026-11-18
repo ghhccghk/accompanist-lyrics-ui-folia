@@ -1883,3 +1883,17 @@ and frozen72 complete original frames, all same-union regressions retained in
 verification/diorama-mounted-raster and verification/diorama-plain-coverage.
 No fitted gamma/coverage curve or confirmed font-engine cause is claimed. This
 is an input correction, not media-camera, final theme or device acceptance.
+
+### Diorama shared-input texture/fragment controls (2026-11-18)
+Untouched pinned DioramaScene/cache texture0.185.1 inputs are read only by the
+reference host (actual mesh/UV/matrix and READ framebuffer mip0/4/5); exact source
+state/versions/full screenshot and locks retained. Only synthetic cache7 and
+small raw mip4/5 texels are fixtures, never production assets. Native JVM test
+DioramaFragmentControl independently prepares RGB/alpha and adapts the existing
+DioramaToneMapping.kt Three MIT ACES algebra plus source explicit sRGB transfer
+to SkSL; copyright/notice retained, no new original runtime. Complete paragraph
+input preserves shaping; finite geometry and media state remain independently
+prepared from core. Raw mip and scalar/fragment source controls, failed isotropic
+and context-conversion experiments:verification/diorama-mounted-mips,
+verification/diorama-minification,verification/diorama-fragment-control.
+No production sampler, default aniso4 equivalence, Android or public Diorama claim.

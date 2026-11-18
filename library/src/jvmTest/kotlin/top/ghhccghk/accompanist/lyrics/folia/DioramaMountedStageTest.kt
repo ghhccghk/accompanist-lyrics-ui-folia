@@ -62,6 +62,8 @@ class DioramaMountedStageTest {
                 MessageDigest.getInstance("SHA-256").digest(bytes).joinToString(""){"%02x".format(it)})
             Image.makeFromEncoded(bytes).toComposeImageBitmap()
         }
+        val fragmentControl=if(width==380)DioramaFragmentControl(sourceCache7)else null
+        fragmentControl?.exportChildColorControls()
         var controlPeak=0.0;var widthPeak=0.0;var stepCount=0
         var materialPeak=0.0;var materialStates=0;var envelopePeak=0.0
         setContent {
@@ -161,11 +163,15 @@ class DioramaMountedStageTest {
                     val view=if(method!="media")finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time)
                     drawn=view
                     if(method.startsWith("input-")) {
-                        val only=if(method=="input-source-only-7")7 else method.removePrefix("input-only-").toIntOrNull()
+                        val only=if(method=="input-source-only-7"||method.startsWith("input-source-fragment"))7 else method.removePrefix("input-only-").toIntOrNull()
                         if(method!="input-active")for(n in ready.neighborFramesAt(time,view,primary,secondary)) {
                             if(n.opacity>0 && (only==null||only==n.index)) {
                                 val p=diagnosticPlanes.getValue(n.index)
-                                drawInputPlane(this,view,p,
+                                if(method.startsWith("input-source-fragment"))fragmentControl!!.draw(this,view,p,n.color,n.opacity.toFloat(),
+                                    when{method.endsWith("-linear-color")->1;method.endsWith("-alpha")->2;
+                                        method.endsWith("-aces-linear")->3;method.endsWith("-aces-encoded")->4;
+                                        method.endsWith("-primary")->5;else->0})
+                                else drawInputPlane(this,view,p,
                                     if(method.startsWith("input-source")&&n.index==7)sourceCache7 else p.text.image,
                                     n.color.srgb(DioramaToneMapping.AcesFilmic),n.opacity.toFloat(),fog)
                             }
@@ -209,6 +215,14 @@ class DioramaMountedStageTest {
             ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-cache7.png"))
             runOnIdle{method="input-source-only-7"};pixels()
             ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-neighbor-7.png"))
+            runOnIdle{method="input-source-fragment"};val fragmentPixels=pixels()
+            ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-neighbor-7-fragment.png"))
+            mainClock.advanceTimeBy(400);assertContentEquals(fragmentPixels,pixels(),"fixed shared-input fragment has no independent clock")
+            for(channel in listOf("linear-color","alpha","aces-linear","aces-encoded","primary")) {
+                runOnIdle{method="input-source-fragment-$channel"};pixels()
+                ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("fragment-$channel.png"))
+            }
+            runOnIdle{method="input-source-fragment"};assertContentEquals(fragmentPixels,pixels(),"fragment channel diagnostic round trip")
             val counts=mutableListOf<String>()
             for(n in listOf(2,3,4,5,6,7,9,10)) {
                 runOnIdle{method="input-only-$n"}
@@ -229,6 +243,7 @@ class DioramaMountedStageTest {
         runOnIdle{mounted=true};assertTrue(paused.contentEquals(pixels()))
         out.resolve("numeric-$width.txt").writeText("originalMountedSteps=$stepCount finiteStatePosePeak=$controlPeak widthPeak=$widthPeak gate=1e-9 adaptiveMediaPositionResidual=$mediaPeak\nFinite control reproduces original actual callback-width order with independently prepared core geometry; production media draws native analytic material without original RAF state injection\n")
         out.resolve("material-$width.txt").writeText("originalUnitStates=$materialStates materialPeak=$materialPeak sampledEnvelopePeak=$envelopePeak gate=1e-9\nOwn finite Float32 history/reset from core intervals, original wall breath and own camera life; no original material/pose values drive rendering.\n")
+        fragmentControl?.close()
     }
 
     /** Compare actual upstream Float32 buffer corners with our independently

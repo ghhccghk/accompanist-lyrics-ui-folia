@@ -1,0 +1,289 @@
+{
+  "baseline": "e5d8e2d",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "conditions": "Same380x600/DPR1/700ms actual source cache7, same native independent geometry/finite camera/material; scalar CPU source-mip input control uses real GPU mip4/5, not native output as expected.",
+  "scope": "Isotropic mip0..5 JVM fragment probe only, no production use of GPU mip assets, original outputs never changed. Full shared-input image union including every low contribution. No pixel/phase shift.",
+  "unionPixels": 523,
+  "lodRange": [
+    4.318609788870582,
+    4.389068687021202
+  ],
+  "measurements": {
+    "original": {
+      "sha256": "aae3adee428ea92d2c30049e58d2869562144d9a4166c5069ea0594f70621992",
+      "pixels": 409,
+      "positiveRgbMass": 22421,
+      "originalMae": 0.0,
+      "originalPeak": 0,
+      "isotropicMae": 2.4181007010834925,
+      "isotropicPeak": 13,
+      "worst64": 0.0
+    },
+    "isotropic-diagnostic": {
+      "sha256": "412536fd2b7aeaaeb7eea295d2f191fffc3fdd4ac762f538d20535157a773ef0",
+      "pixels": 512,
+      "positiveRgbMass": 20614,
+      "originalMae": 2.4181007010834925,
+      "originalPeak": 13,
+      "isotropicMae": 0.0,
+      "isotropicPeak": 0,
+      "worst64": 2.4856081708449396
+    },
+    "native-default": {
+      "sha256": "18033bf8cb7618e873ef5f399083b5fbff3ed50f153d25f8a8a96bc54007c674",
+      "pixels": 193,
+      "positiveRgbMass": 27678,
+      "originalMae": 10.762268961121734,
+      "originalPeak": 46,
+      "isotropicMae": 12.550669216061186,
+      "isotropicPeak": 49,
+      "worst64": 10.975858867223769
+    },
+    "fragment": {
+      "sha256": "9a91fd420158d7c52f22045b349bd47bea37315a791b6e143bffd191fe9b0e5f",
+      "pixels": 451,
+      "positiveRgbMass": 20570,
+      "originalMae": 2.534098151688974,
+      "originalPeak": 14,
+      "isotropicMae": 0.32377310388782665,
+      "isotropicPeak": 2,
+      "worst64": 2.6146703806870937
+    },
+    "cpu-source-mips": {
+      "sha256": "06e38c4b3cff564232869912ba19e6c6146839a25cc997e5a89f06a69ce50778",
+      "pixels": 451,
+      "positiveRgbMass": 20574,
+      "originalMae": 2.5315487571701722,
+      "originalPeak": 14,
+      "isotropicMae": 0.32249840662842577,
+      "isotropicPeak": 2,
+      "worst64": 2.6118848653667595
+    },
+    "fragment-context-failed": {
+      "sha256": "a68117153f762d77f66a8d29a95bf4ec0b327d286a424b617a3b87443d76124b",
+      "pixels": 522,
+      "positiveRgbMass": 11802,
+      "originalMae": 6.923518164435946,
+      "originalPeak": 25,
+      "isotropicMae": 5.748247291268323,
+      "isotropicPeak": 13,
+      "worst64": 7.032497678737233
+    }
+  },
+  "channelProbes": [
+    {
+      "pixel": [
+        200,
+        420
+      ],
+      "uv": [
+        443.9676544486681,
+        125.2271268244704
+      ],
+      "lod": 4.365035176544203,
+      "linearRgb": [
+        0.29943573105224963,
+        0.29943573105224963,
+        0.29943573105224963
+      ],
+      "alpha": 0.2917823901210792,
+      "acesLinear": [
+        0.27419231763564617,
+        0.29093688922347494,
+        0.3108115752635733
+      ],
+      "acesEncoded": [
+        0.5603310456347214,
+        0.5757180925525762,
+        0.5933252753368466
+      ],
+      "native-linear-color": [
+        76,
+        76,
+        76
+      ],
+      "native-alpha": [
+        74,
+        74,
+        74
+      ],
+      "native-aces-linear": [
+        70,
+        74,
+        79
+      ],
+      "native-aces-encoded": [
+        143,
+        147,
+        151
+      ],
+      "native-primary": [
+        188,
+        200,
+        214
+      ]
+    },
+    {
+      "pixel": [
+        220,
+        420
+      ],
+      "uv": [
+        787.1220975110975,
+        115.29305859564383
+      ],
+      "lod": 4.354223881328099,
+      "linearRgb": [
+        0.2936167838393836,
+        0.2936167838393836,
+        0.2936167838393836
+      ],
+      "alpha": 0.2721277981577216,
+      "acesLinear": [
+        0.2681314222592304,
+        0.28469186006943736,
+        0.30436646816629354
+      ],
+      "acesEncoded": [
+        0.5546267372831344,
+        0.570041322838456,
+        0.5876893870421293
+      ],
+      "native-linear-color": [
+        75,
+        75,
+        75
+      ],
+      "native-alpha": [
+        69,
+        69,
+        69
+      ],
+      "native-aces-linear": [
+        69,
+        73,
+        78
+      ],
+      "native-aces-encoded": [
+        142,
+        146,
+        150
+      ],
+      "native-primary": [
+        188,
+        200,
+        214
+      ]
+    },
+    {
+      "pixel": [
+        240,
+        420
+      ],
+      "uv": [
+        1126.06944580473,
+        105.48078265982934
+      ],
+      "lod": 4.343776317388888,
+      "linearRgb": [
+        0.3706502318253613,
+        0.3706502318253613,
+        0.3706502318253613
+      ],
+      "alpha": 0.3330404983872689,
+      "acesLinear": [
+        0.3442712199120016,
+        0.36263019941667496,
+        0.384195803819488
+      ],
+      "acesEncoded": [
+        0.6215414745657216,
+        0.6363465182008201,
+        0.6531893370626658
+      ],
+      "native-linear-color": [
+        94,
+        94,
+        94
+      ],
+      "native-alpha": [
+        85,
+        85,
+        85
+      ],
+      "native-aces-linear": [
+        87,
+        92,
+        98
+      ],
+      "native-aces-encoded": [
+        158,
+        162,
+        166
+      ],
+      "native-primary": [
+        188,
+        200,
+        214
+      ]
+    },
+    {
+      "pixel": [
+        260,
+        420
+      ],
+      "uv": [
+        1460.886596810073,
+        95.78807289164112
+      ],
+      "lod": 4.333682821260684,
+      "linearRgb": [
+        0.6336892692652509,
+        0.6336892692652509,
+        0.6336892692652509
+      ],
+      "alpha": 0.6157830017515893,
+      "acesLinear": [
+        0.5364205582029754,
+        0.5548883214940631,
+        0.5760559975716153
+      ],
+      "acesEncoded": [
+        0.7588537745500874,
+        0.77041328237597,
+        0.7833899925745608
+      ],
+      "native-linear-color": [
+        161,
+        161,
+        161
+      ],
+      "native-alpha": [
+        157,
+        157,
+        157
+      ],
+      "native-aces-linear": [
+        137,
+        141,
+        147
+      ],
+      "native-aces-encoded": [
+        193,
+        196,
+        200
+      ],
+      "native-primary": [
+        188,
+        200,
+        214
+      ]
+    }
+  ],
+  "localIsotropicChannelGate": 2,
+  "localIsotropicChannelGatePassed": true,
+  "interpretation": "Only this isotropic shared-cache fragment control. Explicit source OETF fixes the preserved context-conversion failure. Original default aniso4 remains different; no production integration, full matrices or final visual acceptance.",
+  "productionChanged": false,
+  "deviceValidated": false,
+  "visualAcceptance": false
+}

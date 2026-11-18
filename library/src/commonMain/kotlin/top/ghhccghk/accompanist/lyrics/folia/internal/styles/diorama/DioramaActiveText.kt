@@ -17,7 +17,8 @@ import kotlin.math.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.blurPremultiplied
 
 internal data class DioramaActiveSlice(val unit: DioramaUnit, val image: ImageBitmap, val centerPx: Double,
-    val rangeLeft: Float, val rangeRight: Float, val halo: ImageBitmap, val imageOffsetPx: Double = 0.0)
+    val rangeLeft: Float, val rangeRight: Float, val halo: ImageBitmap, val imageOffsetPx: Double = 0.0,
+    val body:ImageBitmap=image)
 
 /** Full-shaped slices and the original registered halo / crisp soul / base order.
  * Text and halo textures are prepared once, never from the display-frame loop. */
@@ -81,7 +82,7 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         }
         for ((i, slice) in slices.withIndex()) {
             val state = states[i]
-            plane(slice, slice.image, state.baseOpacity, state.fill, sampleBase = true)
+            plane(slice, slice.body, state.baseOpacity, state.fill, sampleBase = true)
         }
     }
 
@@ -104,6 +105,13 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
             val padding = 90 // ceil(128*.7), original active-unit padding
             val origin = Offset(padding.toFloat(), (180 + middle - paintedNaturalBaseline(layout, metrics)).toFloat())
             val units = dioramaUnits(line)
+            // Existing host-preserving Windows foreground coverage is verified
+            // for the source's independent CJK/kana/symbol display class. Keep
+            // canonical grayscale input for blur and soul; never redraw glyphs
+            // separately or change layout/ownership to select a raster policy.
+            val bodyStyle=if(dioramaSeparateGlyphUnits(units))classicBodyRasterStyle(style)else style
+            val bodyLayout=if(bodyStyle==style)layout else measurer.measure(AnnotatedString(text),bodyStyle,
+                softWrap=false,density=density,layoutDirection=LayoutDirection.Ltr)
             val ownership = dioramaShapedColumns(layout,units,max(1,ceil(advance).toInt())+padding*2,padding,checkpoint)
             // The source anchors a ceil-sized RTL word from the RIGHT edge;
             // a left-anchored canonical crop does not have that raster phase.
@@ -150,12 +158,22 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
                         }
                     }
                 }
+                val body=if(bodyLayout===layout)image else ImageBitmap(image.width,image.height).also { target ->
+                    CanvasDrawScope().draw(density,LayoutDirection.Ltr,Canvas(target),Size(target.width.toFloat(),target.height.toFloat())) {
+                        for(column in columns) {
+                            checkpoint()
+                            clipRect((column.first+shift).toFloat(),0f,(column.last+1+shift).toFloat(),360f) {
+                                drawText(bodyLayout,Color.White,origin+Offset(shift.toFloat(),0f),shadow=Shadow.None)
+                            }
+                        }
+                    }
+                }
                 val center = if(sourceWords) {
                     val start=measuredAdvance(text.substring(0,unit.charStart))+width/2.0
                     if(direction==ResolvedTextDirection.Rtl)advance/2-start else -advance/2+start
                 }else range.left + width / 2.0 - advance / 2
                 DioramaActiveSlice(unit, image, center, range.left, range.right, prepareDioramaHalo(image,checkpoint),
-                    if(sourceWords)0.0 else left + image.width/2.0 - advance/2 - center)
+                    if(sourceWords)0.0 else left + image.width/2.0 - advance/2 - center,body)
             }
             checkpoint()
             return DioramaActiveText(slices, advance, middle)

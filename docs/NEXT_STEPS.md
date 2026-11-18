@@ -16,8 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：验证仅CJK body使用已有Windows前景coverage、halo保留灰度的有界候选，
-同90/180矩阵与完整shaping守恒；保留source/own四路输入证据，不改几何/phase/相机。
+当前唯一下一项：刷新body coverage改动后的Android debug/独立消费；再隔离mounted700ms
+四个入场帧的原/本正文贡献，不调相机/halo/前景口径或重试已拒绝的广泛词注册。
+CJK正文coverage已独立：body用已有host-preserving Windows前景策略，灰度image仍供
+halo/soul；只在原独立显示单元class整行适用且平台策略实际改变时多一张body图。
+同90/180五图union四条ordinary/sample均值与局部0回退，完整sample1.797512→1.466458/
+局部8.832765→7.849341，旧12个CJK sampled-vs-old-ordinary失败在该矩阵消除。14灰度/
+halo输入hash不变，Latin/Arabic路径不变；灰度与body各自完整paragraph守恒精确。
+12项JVM/Android库/Desktop编译通过，见verification/diorama-cjk-body-coverage。
+这是额外Windows图像分配换准确度，非内存/性能收益；无设备/公开镜台/正式视觉通过。
 CJK输入cross已完成：同6图union source/source峰6，own/own75；单换source placement
 反而退步。foreground-only保持原几何/phase，7个raw alpha均值/峰全改善，固定stage
 MAE2.628243→1.387852/峰75→21；仅诊断未采用，1项JVM通过，

@@ -24,7 +24,7 @@ internal class DioramaActiveBaseRenderer(private val maxEntries:Int=32,
 
     fun prepare(text:DioramaActiveText?) {
         check(!closed){"Active base renderer is closed"}
-        val images=text?.slices?.map{it.image}?.distinct().orEmpty()
+        val images=text?.slices?.map{it.body}?.distinct().orEmpty()
         if(images==requested)return
         for(image in entries.keys.toList())if(image !in images) {
             entries.remove(image)!!.close();residentBytes-=dioramaPlainMipBytes(image.width,image.height)

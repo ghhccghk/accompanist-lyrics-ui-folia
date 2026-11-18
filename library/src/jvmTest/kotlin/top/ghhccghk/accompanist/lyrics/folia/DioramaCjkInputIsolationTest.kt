@@ -52,7 +52,7 @@ class DioramaCjkInputIsolationTest {
                     val text=DioramaActiveText.prepare(line,style,measurer,resolver)
                     val f=DioramaActiveText.prepare(line,classicBodyRasterStyle(style),measurer,resolver)
                     for((i,s)in text.slices.withIndex()) {
-                        own+=SkiaDioramaPlainSampler(s.image);foreground+=SkiaDioramaPlainSampler(f.slices[i].image)
+                        own+=SkiaDioramaPlainSampler(s.body);foreground+=SkiaDioramaPlainSampler(f.slices[i].body)
                         assertEquals(s.unit,f.slices[i].unit);assertEquals(s.centerPx,f.slices[i].centerPx)
                         assertEquals(s.imageOffsetPx,f.slices[i].imageOffsetPx)
                         ImageIO.write(s.image.toAwtImage(),"png",out.resolve("own-unit-$i.png"))
@@ -70,7 +70,7 @@ class DioramaCjkInputIsolationTest {
                     val center=dioramaComposeLocal(frame,placement.offsetR,placement.offsetU,0.0)
                     for((i,slice)in stage.slices.withIndex()) {
                         val input=source[i];val textureSource=mode.startsWith("source-")
-                        val image=if(textureSource)images[i]else slice.image
+                        val image=if(textureSource)images[i]else slice.body
                         val sampler=when{textureSource->shared[i];mode.startsWith("foreground-")->foreground[i];else->own[i]}
                         val pivot=if(mode.endsWith("-source"))input[3].toDouble()*128/.62 else slice.centerPx+slice.imageOffsetPx
                         sampler.draw(this,view,center+x*(pivot-image.width/2.0)-y*(image.height/2.0),x,y,

@@ -116,6 +116,15 @@ class DioramaShapedMaskTest {
                     f.indices.sumOf{max(0,f[it]-a[it]).toLong()},f.indices.sumOf{max(0,a[it]-f[it]).toLong()})}
                 val result=stats(production)
                 assertEquals(listOf(0L,0L,0L),result,"exact complete-run coverage conservation $name")
+                val bodyLayout=if(name=="cjk")measurer.measure(AnnotatedString(text),classicBodyRasterStyle(style),softWrap=false)else layout
+                val fullBody=bitmap{drawText(bodyLayout,topLeft=origin)}
+                val body=bitmap{for(slice in prepared.slices) {
+                    val x=90+prepared.lineAdvance/2+slice.centerPx+slice.imageOffsetPx-slice.body.width/2.0
+                    drawImage(slice.body,Offset(x.toFloat(),0f))
+                }}
+                assertEquals(alpha(fullBody),alpha(body),"body raster also conserves its complete shaped run $name")
+                ImageIO.write(fullBody.toAwtImage(),"png",out.resolve("$name-body-full.png"))
+                ImageIO.write(body.toAwtImage(),"png",out.resolve("$name-body-production.png"))
                 reports+=listOf(name,stats(old).joinToString("\t"),stats(span).joinToString("\t"),result.joinToString("\t")).joinToString("\t")
                 for((label,im)in listOf("full" to full,"old" to old,"span" to span,"production" to production))
                     ImageIO.write(im.toAwtImage(),"png",out.resolve("$name-$label.png"))

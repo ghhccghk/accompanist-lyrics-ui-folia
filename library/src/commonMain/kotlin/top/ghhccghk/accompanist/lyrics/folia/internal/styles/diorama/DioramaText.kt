@@ -93,6 +93,9 @@ internal fun dioramaLineTimeline(line: DioramaLyric): List<DioramaGlyph> {
 
 // Exact upstream class, including bullets, geometric shapes and half-width kana.
 private val separateUnit = Regex("[\u2e80-\u9fff\u3040-\u30ff\uf900-\ufaff\uff66-\uff9f\u2022\u00b7\u25a0-\u25ff]")
+/** Source's independent display-glyph class; not UTF-16 character iteration. */
+internal fun dioramaSeparateGlyphUnits(units:List<DioramaUnit>):Boolean =
+    units.isNotEmpty()&&units.all{it.timeline.size==1&&separateUnit.containsMatchIn(it.text)}
 private fun String.blankInSource() = all { it.isWhitespace() || it == '\ufeff' }
 
 internal fun dioramaUnits(line: DioramaLyric, timeline: List<DioramaGlyph> = dioramaLineTimeline(line)): List<DioramaUnit> {

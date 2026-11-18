@@ -1999,3 +1999,16 @@ own replay equals actual internal sampler, production inputs unchanged.
 All7 raw alpha controls and fixed six-image union/failures/source geometry
 retained:verification/diorama-cjk-input-isolation. No new source asset in runtime,
 adopted coverage policy, product code or final visual/device/performance claim.
+
+### Diorama independent-display body coverage (2026-11-18)
+Same pinned dioramaTextRaster.ts base versus glow inputs, original independent
+unit class from dioramaSceneLayout.ts -> DioramaActiveSlice.body and
+DioramaActiveText.prepare/drawFrames; source grouping/clocks/geometry unchanged.
+Existing Windows host-preserving classicBodyRasterStyle supplies body-only
+coverage for whole lines of independent CJK/kana/symbol display units; full
+paragraph still shaped/drawn, grayscale image/halo/soul retained exactly.
+Other platforms/explicit host settings share original image. No original font,
+texture/asset, driver source or new dependency copied. Fixed90/180 and exact
+body/gray whole-run ownership, all residuals, allocation tradeoff and limits:
+verification/diorama-cjk-body-coverage. Internal accuracy repair, not public
+Diorama, Android fragment/performance or final visual acceptance.

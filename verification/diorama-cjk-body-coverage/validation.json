@@ -1,0 +1,23 @@
+{
+  "targetedJvmTests": 12,
+  "failures": 0,
+  "androidLibraryCompile": "PASS",
+  "desktopCompile": "PASS",
+  "originalBaseFrames": 90,
+  "originalCompleteLayerFrames": 180,
+  "ordinaryAndSamplerBaseMeanRegressions": 0,
+  "ordinaryAndSamplerBaseLocalRegressions": 0,
+  "ordinaryAndSamplerLayerMeanRegressions": 0,
+  "ordinaryAndSamplerLayerLocalRegressions": 0,
+  "previousTwelveCjkSamplerVsOldOrdinaryLocalRegressionsRemaining": 0,
+  "grayscaleAndHaloInputHashesUnchanged": 14,
+  "latinArabicOutputHashesUnchanged": true,
+  "exactUnsafeShapingConservation": true,
+  "exactBodyWholeParagraphCoverage": true,
+  "fixedContactInspected": true,
+  "extraWindowsBodyImageAllocation": true,
+  "deviceRuntime": false,
+  "realWindow": false,
+  "performanceMeasured": false,
+  "formalVisualAcceptance": false
+}

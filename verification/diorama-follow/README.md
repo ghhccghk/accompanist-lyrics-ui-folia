@@ -1,5 +1,10 @@
 # Diorama internal text camera follower
 
+Historical initial scope at de7baa6. Later complete masks/life, picker,
+neighbours, clipping, fog and incoming flight extend this code. This original
+matrix/report is retained; it is not a current pre-flight pixel baseline.
+See `../diorama-flight` for the later finite operator and real-core text checks.
+
 Pinned Folia v0.7.26 / cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only.
 Desired targets now drive position/look SmoothDamp, reading-alignment yaw/roll,
 safe-cone target and single quaternion orientation follower. DioramaPerspective

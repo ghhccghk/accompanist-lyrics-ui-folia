@@ -3,7 +3,7 @@
 // Folia cc6226e4 CameraRig.tsx normal follow/alignment/frame-keep; cameraPath smoothDamp.
 // Quaternion algebra adapted from Three.js0.185.1 math/Quaternion.js, Matrix4.js,
 // Vector3.js, Copyright (c) 2010-2026 three.js authors, MIT (LICENSES/MIT-three-0.185.1.txt).
-// No cross-song flight/background/audio or Three runtime dependency.
+// Optional text-flight offsets; no background/audio or Three runtime dependency.
 package top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama
 
 import kotlin.math.*
@@ -83,7 +83,9 @@ internal data class DioramaFollowState(
 )
 internal data class DioramaFollowResult(val state: DioramaFollowState, val snapped: Boolean,
     val readTarget: Double, val offAxis: Double, val maxOffAxis: Double,
-    val targetOrientation: DioramaQuaternion)
+    val targetOrientation: DioramaQuaternion,
+    val renderedPosition: DioramaVec = state.position,
+    val renderedOrientation: DioramaQuaternion? = state.orientation)
 
 private val alignmentCeiling = mapOf(DioramaShot.hold to .9, DioramaShot.pushIn to .85,
     DioramaShot.track to .85, DioramaShot.swell to .8, DioramaShot.float to .78,
@@ -96,21 +98,24 @@ private val alignmentCeiling = mapOf(DioramaShot.hold to .9, DioramaShot.pushIn 
 internal fun dioramaFollowStep(previous: DioramaFollowState, target: DioramaCameraTarget,
     frame: DioramaFrame, placement: DioramaPlacement, shot: DioramaShot,
     now: Double, lineStart: Double, renderEnd: Double, delta: Double,
-    smoothTime: Double, aspect: Double, fov: Double = 55.0): DioramaFollowResult {
+    smoothTime: Double, aspect: Double, fov: Double = 55.0,
+    flight: DioramaFlightFrame? = null): DioramaFollowResult {
     require(delta.isFinite() && delta >= 0 && now.isFinite())
     require(smoothTime.isFinite() && smoothTime > 0 && aspect.isFinite() && aspect > 0 && fov > 0 && fov < 180)
     fun distance(a: DioramaVec, b: DioramaVec) = (a-b).let { sqrt(it.dot(it)) }
     fun damp(current: DioramaVec, goal: DioramaVec, velocity: DioramaVec): Pair<DioramaVec,DioramaVec> {
-        val omega = 2/max(.0001,smoothTime); val x = omega*delta
+        val omega = 2/max(.0001,flight?.smoothTime ?: smoothTime); val x = omega*delta
         val decay = 1/(1+x+.48*x*x+.235*x*x*x)
         val change = current-goal; val temp = (velocity+change*omega)*delta
         return goal+(change+temp)*decay to (velocity-temp*omega)*decay
     }
-    val snapped = distance(target.eye,previous.position) > 24
+    val snapped = flight?.flying != true && distance(target.eye,previous.position) > 24
     val (position,velocity) = if (snapped) target.eye to DioramaVec(0.0,0.0,0.0)
         else damp(previous.position,target.eye,previous.velocity)
-    val (look,lookVelocity) = if (distance(target.look,previous.look) > 24)
-        target.look to DioramaVec(0.0,0.0,0.0) else damp(previous.look,target.look,previous.lookVelocity)
+    val goalLook = target.look + (flight?.lookOffset ?: DioramaVec(0.0,0.0,0.0))
+    val (look,lookVelocity) = if (flight?.flying != true && distance(goalLook,previous.look) > 24)
+        goalLook to DioramaVec(0.0,0.0,0.0) else damp(previous.look,goalLook,previous.lookVelocity)
+    val renderedPosition = position + (flight?.positionOffset ?: DioramaVec(0.0,0.0,0.0))
     val desiredAlignment = DioramaQuaternion.basis(frame.right,frame.up,frame.forward * -1.0) *
         DioramaQuaternion.axis(DioramaVec(0.0,1.0,0.0),placement.yaw) *
         DioramaQuaternion.axis(DioramaVec(0.0,0.0,1.0),placement.roll)
@@ -119,9 +124,9 @@ internal fun dioramaFollowStep(previous: DioramaFollowState, target: DioramaCame
     fun smooth(t: Double): Double { val c=t.coerceIn(0.0,1.0); return c*c*(3-2*c) }
     val read = min(smooth((now-(lineStart-.6))/.95),1-smooth(now-renderEnd))*alignmentCeiling.getValue(shot)
     val alignment = previous.alignment+(read-previous.alignment)*(1-exp(-1.2*delta))
-    val lookOrientation = DioramaQuaternion.look(position,look)
+    val lookOrientation = DioramaQuaternion.look(renderedPosition,look)
     var orientationTarget = lookOrientation.slerp(alignmentOrientation,alignment)
-    val view = (look-position).normalized()
+    val view = (look-renderedPosition).normalized()
     val forward = orientationTarget.rotate(DioramaVec(0.0,0.0,-1.0))
     val denominator = sqrt(forward.dot(forward)*view.dot(view))
     val offAxis = if (denominator == 0.0) PI/2 else acos((forward.dot(view)/denominator).coerceIn(-1.0,1.0))
@@ -130,6 +135,9 @@ internal fun dioramaFollowStep(previous: DioramaFollowState, target: DioramaCame
     if (offAxis > maxOffAxis) orientationTarget = orientationTarget.slerp(lookOrientation,1-maxOffAxis/offAxis)
     val orientation = if (snapped || previous.orientation == null) orientationTarget
         else previous.orientation.slerp(orientationTarget,1-exp(-4.2*delta))
+    val renderedOrientation = if (flight != null && flight.bank != 0.0)
+        orientation * DioramaQuaternion.axis(DioramaVec(0.0,0.0,1.0),flight.bank) else orientation
     return DioramaFollowResult(DioramaFollowState(position,velocity,look,lookVelocity,alignment,
-        alignmentOrientation,orientation),snapped,read,offAxis,maxOffAxis,orientationTarget)
+        alignmentOrientation,orientation),snapped,read,offAxis,maxOffAxis,orientationTarget,
+        renderedPosition,renderedOrientation)
 }

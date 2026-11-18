@@ -1616,6 +1616,8 @@ frames, numeric2808 controls; NOT complete CameraRig/RAF/orientation/picker/dept
 Evidence and unresolved edge clipping/halo differences: verification/diorama-camera-targets.
 
 ### Diorama normal camera follower/core text playback (2026-11-18)
+Historical scope at de7baa6; later picker/neighbours/clipping/fog/flight entries
+below extend this initial internal integration. Original evidence is retained.
 Pinned cc6226e4 cameraPath.ts:121–137 and CameraRig.tsx:57–139,315–434 ->
 DioramaCameraFollow.kt:SmoothDamp,24-unit snap,13 reading ceilings,text-basis
 yaw/roll,alignment decay,safe-cone target and quaternion follower. Flight absent.
@@ -1751,3 +1753,20 @@ Original30 matrix reused, all-alpha union comparison and retained failed control
 verification/cappella-cluster-ink. The earlier shared-fi report is historical
 for these verified cases; dense projection/raster/device/whole-theme acceptance
 remain unresolved. Android behavior is compile-only in this work.
+
+### Diorama incoming text-flight integration (2026-11-18)
+Pinned cc6226e4 dioramaTransition.ts:16–89,CameraRig.tsx:57–139,289–440,
+VisualizerDiorama.tsx:365–390 -> DioramaCameraFlight.kt,CameraFollow.kt,
+CameraTrack.kt,TextPlayback.kt. Original seeded46-unit offset,3.2s live-target
+SmoothDamp flight,smootherstep smooth time,sin² visual arc/aim sweep/bank;
+arc/bank never enter persistent camera refs. Value-only outgoing refs/frame
+anchor drives real published-core incoming text; adaptive media clock replaces
+source wall time for reconstructible pause/seek/offset, explicitly separate
+from finite source equivalence. No source resource or Three runtime copied;
+existing Three scalar algebra/MIT notice retained.
+Original verbatim block exporter/hash ledger,480 independent original incoming
+finite controls,96 source/own-core text frames and67 chronological observations:
+verification/diorama-flight. No expected source pose drives native rendering.
+Original gates retained; media/RAF,raster/clipping residuals and failed tests
+preserved. Full outgoing corridor/window,loop restart and late-ready song gate
+remain missing; no public/sample Diorama or device/performance acceptance.

@@ -19,8 +19,9 @@ internal data class DioramaPlaybackLine(val core: DioramaCoreLine, val text: Dio
  * projective three-layer drawing. Original weighted shot picker uses actual
  * source word timings and optional explicit metadata; overrides are calibration.
  * Normal neighbour window and optional host-color fragment fog are integrated;
- * cross-song flight and depth testing remain separate. Near/far clipping and
- * optional fog are shared by all text layers. */
+ * incoming text-flight anchors are optional. Outgoing corridor composition and
+ * depth testing remain separate. Near/far clipping and optional fog are shared
+ * by all text layers. */
 internal class DioramaTextPlayback private constructor(val lines: List<DioramaPlaybackLine>,
     val camera: DioramaCameraTrack, val width: Double, val height: Double) {
     fun lyricTime(mediaSeconds: Double, offsetMillis: Int = 0): Double {
@@ -33,6 +34,12 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
     fun sourceAt(mediaSeconds: Double, offsetMillis: Int = 0): DioramaCoreLine =
         lines[camera.subjectIndex(lyricTime(mediaSeconds,offsetMillis))].core
     fun mediaStart(core: DioramaCoreLine, offsetMillis: Int = 0) = core.lyric.start+offsetMillis/1000.0
+    /** Capture before preparing a ready incoming song. No old scene/cache/job
+     * is retained; full outgoing-corridor composition remains a separate task. */
+    fun transitionAt(mediaSeconds: Double, epoch: Int, offsetMillis: Int = 0): DioramaTextTransition {
+        val time=lyricTime(mediaSeconds,offsetMillis)
+        return DioramaTextTransition(camera.at(time),camera.subjects[camera.subjectIndex(time)].frame.position,epoch)
+    }
     fun draw(scope: DrawScope, mediaSeconds: Double, primary: DioramaLinearColor,
         accent: DioramaLinearColor, offsetMillis: Int = 0, reducedMotion: Boolean = false,
         secondary: DioramaLinearColor = primary, fog: DioramaFog? = null) {
@@ -68,14 +75,17 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             resolver: FontFamily.Resolver, width: Double, height: Double, shots: List<DioramaShot>? = null,
             seedName: String, endTime: Double? = null, checkpoint: () -> Unit = {},
             metadata: List<DioramaShotMetadata> = emptyList(),
-            mode: DioramaShotMode = DioramaShotMode.normal): DioramaTextPlayback {
+            mode: DioramaShotMode = DioramaShotMode.normal,
+            transition: DioramaTextTransition? = null): DioramaTextPlayback {
             require(width.isFinite() && height.isFinite() && width>0 && height>0)
             val mapped=dioramaCoreLines(normalize(core))
             require(mapped.isNotEmpty() && (shots==null || shots.size==mapped.size))
             require(metadata.isEmpty() || metadata.size==mapped.size)
             val seed=dioramaHashSeed(seedName)
             val lyrics=mapped.map{it.lyric}
-            val frames=buildDioramaPath(mapped.size,seed)
+            val origin=transition?.let { it.outgoingOrigin+dioramaTransitionOffset(seed,it.epoch) }
+                ?:DioramaVec(0.0,0.0,0.0)
+            val frames=buildDioramaPath(mapped.size,seed).map { it.copy(position=it.position+origin) }
             // Repeated chorus text shares its immutable plain raster within
             // this preparation/font configuration, never a global song cache.
             val neighborTexts=mutableMapOf<String,DioramaPlainText>()
@@ -97,7 +107,8 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             }
             val end=endTime?:max(0.0,subjects.maxOf { it.line.renderEnd }+8)
             val track=DioramaCameraTrack(subjects,width,height,end,seed,smoothTime=mode.smooth,
-                moveScale=mode.move,driftScale=mode.drift,checkpoint=checkpoint)
+                moveScale=mode.move,driftScale=mode.drift,checkpoint=checkpoint,
+                initialState=transition?.previous?:DioramaFollowState(),flightEpoch=transition?.epoch?:0)
             return DioramaTextPlayback(lines,track,width,height)
         }
     }

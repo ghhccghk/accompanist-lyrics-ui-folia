@@ -21,9 +21,11 @@ internal class DioramaCameraTrack(val subjects: List<DioramaCameraSubject>, val 
     val height: Double, val endTime: Double, private val seed: Double,
     private val smoothTime: Double = .42, private val moveScale: Double = 1.0,
     private val driftScale: Double = .62, private val tolerance: Double = .00002,
-    checkpoint: () -> Unit = {}) {
+    checkpoint: () -> Unit = {}, initialState: DioramaFollowState = DioramaFollowState(),
+    flightEpoch: Int = 0) {
     private data class Node(val time: Double, val state: DioramaFollowState)
     private val nodes: List<Node>
+    private val flight: DioramaCameraFlight?
     val preparedNodeCount get() = nodes.size
     init {
         require(subjects.isNotEmpty())
@@ -33,14 +35,16 @@ internal class DioramaCameraTrack(val subjects: List<DioramaCameraSubject>, val 
         require(moveScale.isFinite() && driftScale.isFinite())
         require(subjects.all { it.trackWidth.isFinite() && it.trackWidth >= 0 &&
             it.line.line.start.isFinite() && it.line.renderEnd.isFinite() })
-        val events = (listOf(0.0,endTime)+subjects.flatMap { s ->
+        require(flightEpoch >= 0)
+        flight = if(flightEpoch > 0) DioramaCameraFlight(initialState.position,target(0.0).eye,seed,flightEpoch) else null
+        val events = (listOf(0.0,endTime)+(if(flight!=null)listOf(DioramaFlightDuration)else emptyList())+subjects.flatMap { s ->
             val line=s.line.line
             listOf(line.start,line.start-.6,line.start+.35,s.line.renderEnd,s.line.renderEnd+1,
                 s.line.renderEnd+3,s.line.renderEnd+8)+
                 dioramaLineTimeline(line).flatMap { listOf(it.start,it.end) }
         }).filter { it >= 0 && it <= endTime }.distinct().sorted()
         val result=ArrayList<Node>()
-        var state=advance(DioramaFollowState(),0.0,0.0).state
+        var state=advance(initialState,0.0,0.0).state
         result+=Node(0.0,state)
         var t=0.0;var h=min(.1,smoothTime/4)
         for (end in events.drop(1)) {
@@ -86,7 +90,7 @@ internal class DioramaCameraTrack(val subjects: List<DioramaCameraSubject>, val 
         leftLimit: Boolean = false): DioramaFollowResult {
         val s=subjects[subjectIndex(time,leftLimit)]
         return dioramaFollowStep(state,target(time,leftLimit),s.frame,s.placement,s.shot,time,
-            s.line.line.start,s.line.renderEnd,dt,smoothTime,width/height)
+            s.line.line.start,s.line.renderEnd,dt,smoothTime,width/height,flight=flight?.at(time,smoothTime))
     }
 
     /** Media beyond the bounded prepared song is held, not integrated forever. */
@@ -110,7 +114,11 @@ internal class DioramaCameraTrack(val subjects: List<DioramaCameraSubject>, val 
     }
     fun perspectiveAt(time: Double, reducedMotion: Boolean = false): DioramaPerspective {
         val state=at(time,reducedMotion)
-        return DioramaPerspective(state.position,state.look,width,height,orientation=state.orientation)
+        val visual=if(reducedMotion)null else flight?.at(time.coerceIn(0.0,endTime),smoothTime)
+        val eye=state.position+(visual?.positionOffset?:DioramaVec(0.0,0.0,0.0))
+        val orientation=if(visual!=null&&visual.bank!=0.0)state.orientation?.times(
+            DioramaQuaternion.axis(DioramaVec(0.0,0.0,1.0),visual.bank))else state.orientation
+        return DioramaPerspective(eye,state.look,width,height,orientation=orientation)
     }
 
     private fun distance(a: DioramaFollowState,b: DioramaFollowState): Double {

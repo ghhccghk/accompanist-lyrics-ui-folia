@@ -1,0 +1,3284 @@
+{
+  "scope": "Actual extracted original CameraRig flight/follower + original Three full-shaped incoming text/life. Shared explicit incoming refs, normal source targets, finite 60/144 schedules including exact probes. No React mount, outgoing corridor, depth/fog/background. Analytic active-unit charge injection, delta0, is a separate media adaptation. Chronological 15Hz drawing observes the SAME 60Hz source schedule; all eight original source keyframes and steps are byte/value identical.",
+  "comparisons": {
+    "finite": {
+      "mean_foreground_mae": 4.043517274407011,
+      "peak_foreground_mae": 14.353238015138771,
+      "local_worst": 20.333333333333332
+    },
+    "media": {
+      "mean_foreground_mae": 19.084416987215505,
+      "peak_foreground_mae": 43.97925427530137,
+      "local_worst": 101.2071973827699
+    }
+  },
+  "blank_frames": {
+    "source": [
+      "sequence-latin-800-60-0.png",
+      "sequence-latin-800-60-67.png",
+      "sequence-latin-800-60-133.png",
+      "sequence-latin-800-60-200.png",
+      "sequence-latin-800-60-267.png",
+      "sequence-latin-800-60-333.png",
+      "sequence-latin-800-60-400.png",
+      "sequence-latin-800-60-467.png",
+      "sequence-latin-800-60-533.png",
+      "sequence-latin-800-60-600.png"
+    ],
+    "finite": [
+      "sequence-latin-800-60-0.png",
+      "sequence-latin-800-60-67.png",
+      "sequence-latin-800-60-133.png",
+      "sequence-latin-800-60-200.png",
+      "sequence-latin-800-60-267.png",
+      "sequence-latin-800-60-333.png",
+      "sequence-latin-800-60-400.png",
+      "sequence-latin-800-60-467.png",
+      "sequence-latin-800-60-533.png",
+      "sequence-latin-800-60-600.png"
+    ],
+    "media": [
+      "sequence-latin-800-60-0.png",
+      "sequence-latin-800-60-67.png",
+      "sequence-latin-800-60-133.png",
+      "sequence-latin-800-60-200.png",
+      "sequence-latin-800-60-267.png",
+      "sequence-latin-800-60-333.png",
+      "sequence-latin-800-60-400.png",
+      "sequence-latin-800-60-467.png",
+      "sequence-latin-800-60-533.png",
+      "sequence-latin-800-60-600.png"
+    ]
+  },
+  "edge_touch": {
+    "source": [
+      "sequence-latin-800-60-2400.png",
+      "sequence-latin-800-60-2467.png",
+      "sequence-latin-800-60-2533.png",
+      "sequence-latin-800-60-2600.png",
+      "sequence-latin-800-60-2667.png",
+      "sequence-latin-800-60-2733.png",
+      "sequence-latin-800-60-2800.png",
+      "sequence-latin-800-60-2867.png",
+      "sequence-latin-800-60-2933.png",
+      "sequence-latin-800-60-3000.png",
+      "sequence-latin-800-60-3067.png",
+      "sequence-latin-800-60-3133.png",
+      "sequence-latin-800-60-3199.png",
+      "sequence-latin-800-60-3200.png",
+      "sequence-latin-800-60-3201.png",
+      "sequence-latin-800-60-3267.png",
+      "sequence-latin-800-60-3333.png",
+      "sequence-latin-800-60-3400.png",
+      "sequence-latin-800-60-3467.png",
+      "sequence-latin-800-60-3533.png",
+      "sequence-latin-800-60-3600.png",
+      "sequence-latin-800-60-3667.png",
+      "sequence-latin-800-60-3733.png",
+      "sequence-latin-800-60-3867.png",
+      "sequence-latin-800-60-3933.png",
+      "sequence-latin-800-60-4000.png",
+      "sequence-latin-800-60-4067.png",
+      "sequence-latin-800-60-4133.png",
+      "sequence-latin-800-60-4200.png"
+    ],
+    "finite": [
+      "sequence-latin-800-60-2333.png",
+      "sequence-latin-800-60-2400.png",
+      "sequence-latin-800-60-2467.png",
+      "sequence-latin-800-60-2533.png",
+      "sequence-latin-800-60-2600.png",
+      "sequence-latin-800-60-2667.png",
+      "sequence-latin-800-60-2733.png",
+      "sequence-latin-800-60-2800.png",
+      "sequence-latin-800-60-2867.png",
+      "sequence-latin-800-60-2933.png",
+      "sequence-latin-800-60-3000.png",
+      "sequence-latin-800-60-3067.png",
+      "sequence-latin-800-60-3133.png",
+      "sequence-latin-800-60-3199.png",
+      "sequence-latin-800-60-3200.png",
+      "sequence-latin-800-60-3201.png",
+      "sequence-latin-800-60-3267.png",
+      "sequence-latin-800-60-3333.png",
+      "sequence-latin-800-60-3400.png",
+      "sequence-latin-800-60-3467.png",
+      "sequence-latin-800-60-3533.png",
+      "sequence-latin-800-60-3600.png",
+      "sequence-latin-800-60-3667.png",
+      "sequence-latin-800-60-3733.png",
+      "sequence-latin-800-60-3867.png",
+      "sequence-latin-800-60-3933.png",
+      "sequence-latin-800-60-4000.png",
+      "sequence-latin-800-60-4067.png",
+      "sequence-latin-800-60-4200.png"
+    ],
+    "media": [
+      "sequence-latin-800-60-2333.png",
+      "sequence-latin-800-60-2400.png",
+      "sequence-latin-800-60-2467.png",
+      "sequence-latin-800-60-2533.png",
+      "sequence-latin-800-60-2600.png",
+      "sequence-latin-800-60-2667.png",
+      "sequence-latin-800-60-2733.png",
+      "sequence-latin-800-60-2800.png",
+      "sequence-latin-800-60-2867.png",
+      "sequence-latin-800-60-2933.png",
+      "sequence-latin-800-60-3000.png",
+      "sequence-latin-800-60-3067.png",
+      "sequence-latin-800-60-3133.png",
+      "sequence-latin-800-60-3199.png",
+      "sequence-latin-800-60-3200.png",
+      "sequence-latin-800-60-3201.png",
+      "sequence-latin-800-60-3267.png",
+      "sequence-latin-800-60-3333.png",
+      "sequence-latin-800-60-3400.png",
+      "sequence-latin-800-60-3467.png",
+      "sequence-latin-800-60-3533.png",
+      "sequence-latin-800-60-3600.png",
+      "sequence-latin-800-60-3667.png",
+      "sequence-latin-800-60-3733.png",
+      "sequence-latin-800-60-3867.png",
+      "sequence-latin-800-60-3933.png",
+      "sequence-latin-800-60-4067.png",
+      "sequence-latin-800-60-4200.png"
+    ]
+  },
+  "mask": "Identical source/own-finite/own-media ALL nonbackground union including lowest alpha; no registration, phase shift or threshold filtering.",
+  "status": "Internal incoming-text flight only. Finite operator gate is distinct from adaptive-media/RAF residual and raster/readability. NOT full dual-corridor CameraRig, public theme or device acceptance.",
+  "frames": [
+    {
+      "file": "sequence-latin-800-60-0.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0,
+      "empty_foreground": true,
+      "bounds": {
+        "source": null,
+        "finite": null,
+        "media": null
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-0.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-0.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-0.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "finite": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      },
+      "media": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-67.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.06666666666666667,
+      "empty_foreground": true,
+      "bounds": {
+        "source": null,
+        "finite": null,
+        "media": null
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-67.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-67.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-67.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "finite": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      },
+      "media": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-133.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.13333333333333333,
+      "empty_foreground": true,
+      "bounds": {
+        "source": null,
+        "finite": null,
+        "media": null
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-133.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-133.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-133.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "finite": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      },
+      "media": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-200.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.2,
+      "empty_foreground": true,
+      "bounds": {
+        "source": null,
+        "finite": null,
+        "media": null
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-200.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-200.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-200.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "finite": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      },
+      "media": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-267.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.26666666666666666,
+      "empty_foreground": true,
+      "bounds": {
+        "source": null,
+        "finite": null,
+        "media": null
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-267.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-267.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-267.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "finite": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      },
+      "media": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-333.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.3333333333333333,
+      "empty_foreground": true,
+      "bounds": {
+        "source": null,
+        "finite": null,
+        "media": null
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-333.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-333.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-333.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "finite": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      },
+      "media": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-400.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.4,
+      "empty_foreground": true,
+      "bounds": {
+        "source": null,
+        "finite": null,
+        "media": null
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-400.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-400.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-400.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "finite": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      },
+      "media": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-467.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.4666666666666667,
+      "empty_foreground": true,
+      "bounds": {
+        "source": null,
+        "finite": null,
+        "media": null
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-467.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-467.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-467.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "finite": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      },
+      "media": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-533.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.5333333333333333,
+      "empty_foreground": true,
+      "bounds": {
+        "source": null,
+        "finite": null,
+        "media": null
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-533.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-533.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-533.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "finite": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      },
+      "media": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-600.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.6,
+      "empty_foreground": true,
+      "bounds": {
+        "source": null,
+        "finite": null,
+        "media": null
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-600.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-600.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-600.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "finite": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      },
+      "media": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-667.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.6666666666666666,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          336,
+          169,
+          417,
+          184
+        ],
+        "finite": [
+          336,
+          170,
+          417,
+          184
+        ],
+        "media": [
+          338,
+          171,
+          418,
+          185
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-667.png": "9e2c0afd902c2d2239374da5a19d0a4c1b98bfe2c56a1779c9f6f1871a91a040",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-667.png": "17681d04f7867bcf0fa5abd200241693b982c030ef19c13b53f5bf8a9af24dc5",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-667.png": "ab9da09154f5744554fb82a21d0f0e33c33768e65c3f1eb0168333812d3cfaf7"
+      },
+      "finite": {
+        "foreground_mae": 3.892728581713463,
+        "full_mae": 0.003754861111111111,
+        "worst64": 3.9625468164794007,
+        "channel_peak": 15
+      },
+      "media": {
+        "foreground_mae": 8.941684665226783,
+        "full_mae": 0.008625,
+        "worst64": 9.136704119850187,
+        "channel_peak": 17
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-700.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.7,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          333,
+          167,
+          416,
+          183
+        ],
+        "finite": [
+          333,
+          168,
+          416,
+          183
+        ],
+        "media": [
+          335,
+          169,
+          417,
+          184
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-700.png": "86e233eaa64050510facc9609eb7162336eb77dd071af971c7982904b1f4e97c",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-700.png": "8f4d791fc294979620b815621da62fc95f13ca84b11a8d9fe7f39e270f81a231",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-700.png": "7ac8c3f30b3ffe4b145d6fa57c95eefd863cb54691fea389957c6bbebc62f63b"
+      },
+      "finite": {
+        "foreground_mae": 7.916998671978751,
+        "full_mae": 0.008279861111111111,
+        "worst64": 8.213836477987421,
+        "channel_peak": 32
+      },
+      "media": {
+        "foreground_mae": 18.229747675962816,
+        "full_mae": 0.019065277777777778,
+        "worst64": 19.141304347826086,
+        "channel_peak": 35
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-733.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.7333333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          327,
+          165,
+          415,
+          185
+        ],
+        "finite": [
+          326,
+          166,
+          415,
+          186
+        ],
+        "media": [
+          328,
+          167,
+          416,
+          187
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-733.png": "ecbc88d46d54af8f8ac4e2b8313b1c0c9570d27abfdcbf4d69edb30c25791140",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-733.png": "f7ec18a1a7ae28140f58768fe6f439013ef7db08d4744089aeb23d3eb32891c8",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-733.png": "687b2499c924854bcf3c7f1fcde0b5d0f96f5a153cb0607de79a780fd160643b"
+      },
+      "finite": {
+        "foreground_mae": 7.2492146596858635,
+        "full_mae": 0.014422916666666667,
+        "worst64": 12.602150537634408,
+        "channel_peak": 51
+      },
+      "media": {
+        "foreground_mae": 20.281675392670156,
+        "full_mae": 0.04035208333333333,
+        "worst64": 29.905017921146953,
+        "channel_peak": 88
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-800.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.8,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          321,
+          162,
+          414,
+          185
+        ],
+        "finite": [
+          320,
+          162,
+          413,
+          185
+        ],
+        "media": [
+          322,
+          164,
+          415,
+          186
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-800.png": "86dc490a11ea3d236463cf287149fbade208b344c2ae956b8d61500160588f67",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-800.png": "a265936f0c16334e64ed57c8b10be7da12918746c07125c7220ea0c539377555",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-800.png": "72f1d7ddcfc6f0eb81d35e4703b5027979f5f427a0a85d0a7ac68ead6d063750"
+      },
+      "finite": {
+        "foreground_mae": 12.948694029850746,
+        "full_mae": 0.02891875,
+        "worst64": 19.581560283687942,
+        "channel_peak": 82
+      },
+      "media": {
+        "foreground_mae": 38.132462686567166,
+        "full_mae": 0.0851625,
+        "worst64": 47.68262411347518,
+        "channel_peak": 171
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-867.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.8666666666666667,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          316,
+          159,
+          413,
+          185
+        ],
+        "finite": [
+          316,
+          159,
+          413,
+          185
+        ],
+        "media": [
+          317,
+          161,
+          414,
+          187
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-867.png": "086ab6c07e2296fdfd7f12f430efe99a505b442e780ba99b8b13fe4d97abef57",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-867.png": "7ef26c4f449449b61d8e22a0ab13567d9cac57b4372051363bedb7edc17189be",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-867.png": "e812b1e79e280345cb39fc41dcaba8577850ed485e20b714cbca94c4e099908a"
+      },
+      "finite": {
+        "foreground_mae": 14.353238015138771,
+        "full_mae": 0.035554166666666664,
+        "worst64": 19.791452991452992,
+        "channel_peak": 95
+      },
+      "media": {
+        "foreground_mae": 43.97925427530137,
+        "full_mae": 0.10894027777777777,
+        "worst64": 53.324786324786324,
+        "channel_peak": 191
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-933.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 0.9333333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          313,
+          157,
+          414,
+          186
+        ],
+        "finite": [
+          313,
+          157,
+          413,
+          187
+        ],
+        "media": [
+          314,
+          159,
+          415,
+          188
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-933.png": "1b81290bfd0b5abfb9a60f9c059d122eaafb886353a3ac09c17f67c6ac5e5d56",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-933.png": "789b21316c9c52ab779bd555d6aa8f0a2365fa56bfe380019571064f5f8bac82",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-933.png": "12ce84908d25b1c06e885c832bf869ffac434265804d48e5e510819aead73aa9"
+      },
+      "finite": {
+        "foreground_mae": 13.457953394123606,
+        "full_mae": 0.03689722222222222,
+        "worst64": 20.333333333333332,
+        "channel_peak": 89
+      },
+      "media": {
+        "foreground_mae": 41.872847011144884,
+        "full_mae": 0.11480138888888888,
+        "worst64": 52.00318979266348,
+        "channel_peak": 202
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1000.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          312,
+          156,
+          416,
+          190
+        ],
+        "finite": [
+          312,
+          157,
+          416,
+          190
+        ],
+        "media": [
+          313,
+          158,
+          417,
+          191
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1000.png": "14508495c96af364f0727532f8e7dbf3058ec6f1060c51bc8c93b7489d5c5386",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1000.png": "3cfb3c28019f530c42b55113472b13124807487e921b02fb3fcff292df57b012",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1000.png": "461c01e97d6376eff2b3454777adceeafd40188cdc9dda526fdd8b05b0d4a598"
+      },
+      "finite": {
+        "foreground_mae": 12.443600368324125,
+        "full_mae": 0.037538194444444443,
+        "worst64": 18.725244072524408,
+        "channel_peak": 87
+      },
+      "media": {
+        "foreground_mae": 37.72283609576427,
+        "full_mae": 0.11379722222222222,
+        "worst64": 48.341701534170156,
+        "channel_peak": 187
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1067.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.0666666666666667,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          314,
+          157,
+          421,
+          195
+        ],
+        "finite": [
+          314,
+          158,
+          420,
+          196
+        ],
+        "media": [
+          315,
+          159,
+          421,
+          197
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1067.png": "0beda4ad3f0f1102dbbe38829d2beeb3980138b42922d50bc9c1160cc4d5e006",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1067.png": "c9ae6b0d091b524e5d05fc784ac765ffdecc381723ac109431da224ca6fd826e",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1067.png": "571f5b2518e2c85f86abfa7568d68743e52da749ba75ad739ea8ef5c7047a2b5"
+      },
+      "finite": {
+        "foreground_mae": 12.295329087048833,
+        "full_mae": 0.04021597222222222,
+        "worst64": 18.787769784172664,
+        "channel_peak": 112
+      },
+      "media": {
+        "foreground_mae": 33.42144373673036,
+        "full_mae": 0.10931597222222222,
+        "worst64": 46.20383693045564,
+        "channel_peak": 183
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1133.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.1333333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          318,
+          159,
+          428,
+          203
+        ],
+        "finite": [
+          318,
+          160,
+          427,
+          203
+        ],
+        "media": [
+          319,
+          161,
+          428,
+          204
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1133.png": "196ebea943352c836769446cf00ff9d22919cbd0e6a399bf95ed9333a02d6f10",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1133.png": "7b2d6c2c4a272a04bd1ff538a2bc7757e6105630603fac70090240327fb4cc57",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1133.png": "efe34b216c9547b56970749fe1e6742285eb188cf19429f30d219c761996db88"
+      },
+      "finite": {
+        "foreground_mae": 11.531360946745561,
+        "full_mae": 0.0406,
+        "worst64": 18.628855721393034,
+        "channel_peak": 87
+      },
+      "media": {
+        "foreground_mae": 27.14181459566075,
+        "full_mae": 0.09556180555555556,
+        "worst64": 39.525373134328355,
+        "channel_peak": 171
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1200.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.2,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          325,
+          163,
+          436,
+          212
+        ],
+        "finite": [
+          325,
+          164,
+          436,
+          213
+        ],
+        "media": [
+          325,
+          165,
+          436,
+          213
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1200.png": "86cf65d7b61418f7d418c130211280ef0dedb86641d0844141868790a15461f9",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1200.png": "9bbecb30844be66729369bd6605d83314aedd4df80ea9ae577faa4450423492c",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1200.png": "203ebd9f8b5b530f63ecf981b30f9a5c30c75027c25db5e22945b31a4d2c4c87"
+      },
+      "finite": {
+        "foreground_mae": 10.710233592880979,
+        "full_mae": 0.04011875,
+        "worst64": 18.109794628751974,
+        "channel_peak": 84
+      },
+      "media": {
+        "foreground_mae": 21.00815721171672,
+        "full_mae": 0.07869305555555556,
+        "worst64": 32.65086887835703,
+        "channel_peak": 155
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1267.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.2666666666666666,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          333,
+          169,
+          445,
+          223
+        ],
+        "finite": [
+          332,
+          169,
+          444,
+          224
+        ],
+        "media": [
+          333,
+          170,
+          445,
+          224
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1267.png": "fdd5ae94dc1fb67954f0486d4e322ec339149858974f216afb4833a5903c86b7",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1267.png": "2a9935db455db670434ea1fb46782f59d6cde4d784ddebdba496e02b253df817",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1267.png": "f274f749ca7566bf8104563feb2a87c05f4b9ab7b1aede36a8b2e3bd8e1ce871"
+      },
+      "finite": {
+        "foreground_mae": 9.97065847833504,
+        "full_mae": 0.04058888888888889,
+        "worst64": 16.70625,
+        "channel_peak": 88
+      },
+      "media": {
+        "foreground_mae": 27.44779938587513,
+        "full_mae": 0.11173541666666667,
+        "worst64": 48.980555555555554,
+        "channel_peak": 160
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1333.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.3333333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          337,
+          175,
+          450,
+          236
+        ],
+        "finite": [
+          337,
+          176,
+          449,
+          237
+        ],
+        "media": [
+          339,
+          176,
+          451,
+          237
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1333.png": "3beadd570297167adc7eadfc554932e8071f98b1368b961a5e5607752593b8d7",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1333.png": "49d88a12331dc3ff3c2014ca34f70434385fac5fe1a4ae8425d65448b97b3c25",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1333.png": "1694c626a725efc0fd6b4552e39f9ce279d90f1eae3f7f2073768a849a2f5bc9"
+      },
+      "finite": {
+        "foreground_mae": 8.569797933055684,
+        "full_mae": 0.038581944444444446,
+        "worst64": 16.87410071942446,
+        "channel_peak": 96
+      },
+      "media": {
+        "foreground_mae": 31.353540027764925,
+        "full_mae": 0.14115625,
+        "worst64": 75.84444444444445,
+        "channel_peak": 204
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1400.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.4,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          340,
+          183,
+          452,
+          251
+        ],
+        "finite": [
+          340,
+          184,
+          452,
+          251
+        ],
+        "media": [
+          342,
+          184,
+          454,
+          251
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1400.png": "4ddd31a5ce3d86234a7214227434e51e24fdb791df782643d407220a24c9c41e",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1400.png": "fcec16c6229783853646373dd11d331f618f5a51eff885e525f41a40c3e20f59",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1400.png": "9d3a234757309034b870e36c48a937061747e63d31d2c2aecfbeb025dec747d1"
+      },
+      "finite": {
+        "foreground_mae": 8.323019624695602,
+        "full_mae": 0.040349305555555555,
+        "worst64": 18.107142857142858,
+        "channel_peak": 90
+      },
+      "media": {
+        "foreground_mae": 29.02907892852027,
+        "full_mae": 0.14073055555555555,
+        "worst64": 96.66666666666667,
+        "channel_peak": 206
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1467.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.4666666666666666,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          342,
+          191,
+          453,
+          266
+        ],
+        "finite": [
+          342,
+          192,
+          453,
+          267
+        ],
+        "media": [
+          344,
+          192,
+          455,
+          266
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1467.png": "452ae2ae223ba31909c39b7aafef0b9e7b3e54962efc534914a66ae3c7a02a88",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1467.png": "43d0567b0c634bd38ea17e146c4a3f68b47b1e80f0421b705c6aa03fee0d98e6",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1467.png": "94eefad75f80ee26f90b6f938522f46c94230c05adf45b8fd4c6d1a3483a8bbd"
+      },
+      "finite": {
+        "foreground_mae": 8.153732147669093,
+        "full_mae": 0.04202569444444444,
+        "worst64": 17.19871794871795,
+        "channel_peak": 85
+      },
+      "media": {
+        "foreground_mae": 27.273376448396657,
+        "full_mae": 0.1405715277777778,
+        "worst64": 53.166666666666664,
+        "channel_peak": 201
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1533.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.5333333333333334,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          343,
+          200,
+          453,
+          282
+        ],
+        "finite": [
+          343,
+          201,
+          453,
+          283
+        ],
+        "media": [
+          345,
+          201,
+          455,
+          283
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1533.png": "68052fe4effe3a147efb8eb364f479201bc49fe4ef679ca24b8912bd49420dd0",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1533.png": "e711fdd791ae409473902f3860dcffdd09a5ab4c5628d5722a676d416a05cea1",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1533.png": "b5895beef0c813bc3b04a0d3f2121c6daae16088444287e85c1356e8e576ca05"
+      },
+      "finite": {
+        "foreground_mae": 6.662785819173484,
+        "full_mae": 0.04411319444444444,
+        "worst64": 13.631578947368421,
+        "channel_peak": 90
+      },
+      "media": {
+        "foreground_mae": 23.41252359974827,
+        "full_mae": 0.15501041666666668,
+        "worst64": 54.96491228070175,
+        "channel_peak": 192
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1600.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.6,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          344,
+          209,
+          452,
+          299
+        ],
+        "finite": [
+          343,
+          210,
+          452,
+          301
+        ],
+        "media": [
+          346,
+          210,
+          454,
+          300
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1600.png": "9a0ad08d57c7cef30a1260811bcd3488fda7be8a10c24e7bbeca075d70f3bb18",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1600.png": "cb23ee18e1bd2a8a7d648e5a7ac903c4dc06d478bbf2823651f21b1a410ff2b4",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1600.png": "17cb004661532dfac48823fe1064059b75c68e205d30dfec5225b82121dd4f2b"
+      },
+      "finite": {
+        "foreground_mae": 6.977857213782147,
+        "full_mae": 0.04880138888888889,
+        "worst64": 15.056737588652481,
+        "channel_peak": 95
+      },
+      "media": {
+        "foreground_mae": 25.38506603117863,
+        "full_mae": 0.17753680555555557,
+        "worst64": 53.05673758865248,
+        "channel_peak": 191
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1667.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.6666666666666667,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          343,
+          219,
+          451,
+          317
+        ],
+        "finite": [
+          342,
+          219,
+          451,
+          319
+        ],
+        "media": [
+          345,
+          219,
+          453,
+          318
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1667.png": "f8eb81cfd654caecfb18e31432e54cd6c632dbf31d3868e8ee017817e97349f2",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1667.png": "7c6195f01e174d9f489f2a47f7b4fa71e1ed18385342d8d25eb2f3f6acc29db3",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1667.png": "a82ef5c5d73ea3d5cce85a3f352d4e34e6183b5c74ddfa7eccafbd46aa349e9b"
+      },
+      "finite": {
+        "foreground_mae": 6.919070288434612,
+        "full_mae": 0.051475,
+        "worst64": 9.850806451612904,
+        "channel_peak": 92
+      },
+      "media": {
+        "foreground_mae": 27.130589004013814,
+        "full_mae": 0.20184027777777777,
+        "worst64": 68.51960784313725,
+        "channel_peak": 215
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1733.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.7333333333333334,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          339,
+          228,
+          449,
+          335
+        ],
+        "finite": [
+          340,
+          229,
+          449,
+          338
+        ],
+        "media": [
+          342,
+          228,
+          451,
+          337
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1733.png": "e93c605b90c5ae1d5d980b6805ac7141422cf09f9e46a4dc5ce13366deaeee1b",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1733.png": "9af4f48ec514e77402391ddd1e851bca9c8c8ba9f3cd3a87d11caf1c214f5cb5",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1733.png": "85ca5d18d3fd560689518685970efd25979a4222ddb13d859402bdfcb67534b7"
+      },
+      "finite": {
+        "foreground_mae": 6.737581274382315,
+        "full_mae": 0.053970833333333336,
+        "worst64": 11.383734249713632,
+        "channel_peak": 114
+      },
+      "media": {
+        "foreground_mae": 28.48305158214131,
+        "full_mae": 0.22816111111111112,
+        "worst64": 77.54901960784314,
+        "channel_peak": 226
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1800.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.8,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          334,
+          238,
+          447,
+          354
+        ],
+        "finite": [
+          334,
+          238,
+          446,
+          358
+        ],
+        "media": [
+          336,
+          238,
+          449,
+          357
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1800.png": "17adf2ffe0d9fa7609206e5afc74ba4f78352df3dbfc69bd07d0f1e541df7191",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1800.png": "45c8c5852bee669c160c8aae0893b36ba81203b7309639020e730c21f89f6191",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1800.png": "a48b982c15f7b81037a0c0b8e9fa192bb14bb59f4c92836d022869df118d297b"
+      },
+      "finite": {
+        "foreground_mae": 6.42854887099321,
+        "full_mae": 0.056544444444444446,
+        "worst64": 13.176608187134503,
+        "channel_peak": 130
+      },
+      "media": {
+        "foreground_mae": 28.788252013263858,
+        "full_mae": 0.25321666666666665,
+        "worst64": 81.66666666666667,
+        "channel_peak": 220
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1867.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.8666666666666667,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          326,
+          247,
+          444,
+          374
+        ],
+        "finite": [
+          326,
+          248,
+          444,
+          379
+        ],
+        "media": [
+          329,
+          247,
+          445,
+          378
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1867.png": "e2f2453aa781d8780aacb3070362e93d72b82042bccabf30c94fcad3b78db8ca",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1867.png": "b52df5e64bc3610aaa1676843631e815b0f166da2b47a1e4048bdb82feba6ce9",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1867.png": "d9406bc49b445f469e0ebbed0af9259f27ca1ca9fd902cc739915eadce524dfb"
+      },
+      "finite": {
+        "foreground_mae": 5.951410768045929,
+        "full_mae": 0.05903055555555556,
+        "worst64": 13.96103896103896,
+        "channel_peak": 134
+      },
+      "media": {
+        "foreground_mae": 28.151858853182105,
+        "full_mae": 0.27923125,
+        "worst64": 51.44588744588744,
+        "channel_peak": 219
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-1933.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 1.9333333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          316,
+          256,
+          440,
+          395
+        ],
+        "finite": [
+          316,
+          257,
+          440,
+          402
+        ],
+        "media": [
+          318,
+          256,
+          442,
+          401
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-1933.png": "57fd42538a14b3184caba4544460ebaed98913a5e292f0899686b77c37b3a2b9",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-1933.png": "8368fb242b8e7ae5912bc42042f223531f2c889c34e88253a1cc5c5f2fc372d1",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-1933.png": "593c5603183a20754d95d4ece0915c74db44a39bc917de4ed032a1a1ff2ca622"
+      },
+      "finite": {
+        "foreground_mae": 5.492381127225996,
+        "full_mae": 0.06232708333333333,
+        "worst64": 8.799366211130916,
+        "channel_peak": 107
+      },
+      "media": {
+        "foreground_mae": 26.212716480019584,
+        "full_mae": 0.2974597222222222,
+        "worst64": 38.94553376906318,
+        "channel_peak": 210
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2000.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          303,
+          265,
+          436,
+          419
+        ],
+        "finite": [
+          303,
+          266,
+          435,
+          427
+        ],
+        "media": [
+          305,
+          265,
+          437,
+          425
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2000.png": "95f6ac584799779e2dc78060018f6a65c832bfc74ff380ab991ecddc27f7528f",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2000.png": "562eddde35cf0110e6ea47851eb671b93597c6ace159f994c204ab1f07df9f99",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2000.png": "c65770b1ed0366fcf36a23d491b885ec75ab37e9b6b7a7603d81389d9e621cbc"
+      },
+      "finite": {
+        "foreground_mae": 4.982782369146006,
+        "full_mae": 0.06531597222222223,
+        "worst64": 8.561090458488229,
+        "channel_peak": 110
+      },
+      "media": {
+        "foreground_mae": 23.47038567493113,
+        "full_mae": 0.30765763888888886,
+        "worst64": 37.718711276332094,
+        "channel_peak": 212
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2067.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.066666666666667,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          286,
+          274,
+          430,
+          444
+        ],
+        "finite": [
+          286,
+          275,
+          430,
+          454
+        ],
+        "media": [
+          288,
+          274,
+          431,
+          452
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2067.png": "33de62936837f2070e2b74cadab66b214279ec679b8472f0a829191b2e40e319",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2067.png": "c0867bb0dce668a3e0f004ac83b4ce3cf9f4ace6c5988ddbb78fc5c39a71376e",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2067.png": "72314d2f5d20c4e626d86d8ffc25c1214a60591e6fb216b429cf60a36283ad3c"
+      },
+      "finite": {
+        "foreground_mae": 4.660576532683719,
+        "full_mae": 0.07174375,
+        "worst64": 9.678936605316974,
+        "channel_peak": 126
+      },
+      "media": {
+        "foreground_mae": 20.100193982045383,
+        "full_mae": 0.3094173611111111,
+        "worst64": 36.60974778459441,
+        "channel_peak": 191
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2133.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.1333333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          263,
+          282,
+          424,
+          473
+        ],
+        "finite": [
+          263,
+          283,
+          423,
+          484
+        ],
+        "media": [
+          264,
+          282,
+          424,
+          482
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2133.png": "91584fb9ea7d1a07bf85b161dbf82b5318246807f2f720de1b3d615f059140a6",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2133.png": "f26a75d1f56d4cdc2332a3638e6961de29dac47425eb72f98865fef3ca6d3990",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2133.png": "61a2b830f607e85e47de8253278a78dab706166840a4d140eb810d532a49092e"
+      },
+      "finite": {
+        "foreground_mae": 4.121263079222721,
+        "full_mae": 0.07658680555555555,
+        "worst64": 10.473604826546003,
+        "channel_peak": 133
+      },
+      "media": {
+        "foreground_mae": 16.666554559043348,
+        "full_mae": 0.3097201388888889,
+        "worst64": 36.56158873805933,
+        "channel_peak": 181
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2200.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.2,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          231,
+          290,
+          416,
+          508
+        ],
+        "finite": [
+          231,
+          291,
+          415,
+          519
+        ],
+        "media": [
+          233,
+          290,
+          416,
+          517
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2200.png": "910f570524b5d0df108c184b2a7047d65bc07237b3fce658f7514408dfa3a2f5",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2200.png": "2806b3cf45e881e834c86233bb20bbac7dd65e3d8c424967b281aa8d46f58472",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2200.png": "c13da3ec7aa5c71dbd1b6d39ed6fb295c220808a568ce1de53d5f62578855a50"
+      },
+      "finite": {
+        "foreground_mae": 3.66187136606126,
+        "full_mae": 0.08484861111111111,
+        "worst64": 13.332480818414322,
+        "channel_peak": 105
+      },
+      "media": {
+        "foreground_mae": 13.550170832584067,
+        "full_mae": 0.31396875,
+        "worst64": 36.82267689684569,
+        "channel_peak": 181
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2267.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.2666666666666666,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          189,
+          298,
+          406,
+          549
+        ],
+        "finite": [
+          189,
+          298,
+          406,
+          559
+        ],
+        "media": [
+          190,
+          298,
+          406,
+          557
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2267.png": "e8695c38873412d8be693ed5d9436308c3e1c02868670063999fe4a1f19cd4fc",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2267.png": "2a7cc209d4eb7ee8873ab522762d02097e9ef45fb8cc97ce68fd9bc4ef6d19b2",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2267.png": "f8662e4b4d7e66211c616f20465d51ab9def8ef62456277cb613f9472571e88a"
+      },
+      "finite": {
+        "foreground_mae": 3.164986208654938,
+        "full_mae": 0.09482430555555556,
+        "worst64": 13.716049382716049,
+        "channel_peak": 107
+      },
+      "media": {
+        "foreground_mae": 10.815752265720974,
+        "full_mae": 0.32404444444444447,
+        "worst64": 30.210526315789473,
+        "channel_peak": 181
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2333.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.3333333333333335,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          131,
+          295,
+          399,
+          598
+        ],
+        "finite": [
+          131,
+          292,
+          401,
+          600
+        ],
+        "media": [
+          132,
+          292,
+          401,
+          600
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2333.png": "39cd9513b2de0418a2903b585427fe8e85ef5c51f49c8ff0a3f362378bb64fca",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2333.png": "7a78fe08c85afbdc93dc12cedc74a2950a5cc3b5d4eb64e850fb95f5f65dae4b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2333.png": "62a876ae96adf4b41e34fa5a296a6e00c1b634fddb1a1869de8ca08e5262d699"
+      },
+      "finite": {
+        "foreground_mae": 2.5371810877428853,
+        "full_mae": 0.11008194444444444,
+        "worst64": 4.619312906220984,
+        "channel_peak": 112
+      },
+      "media": {
+        "foreground_mae": 8.364304235090753,
+        "full_mae": 0.36290625,
+        "worst64": 12.933498554316397,
+        "channel_peak": 182
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2400.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.4,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          61,
+          299,
+          388,
+          600
+        ],
+        "finite": [
+          61,
+          297,
+          389,
+          600
+        ],
+        "media": [
+          60,
+          297,
+          388,
+          600
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2400.png": "df46622bf07be088e9c0ee9b1b9b1113a10a0a65619c636247e18360cf0ee506",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2400.png": "5840e9122c5c3a700eb955bd0e5dd87630bea2750ff521d5e6367a3dd079497b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2400.png": "109491f009b4937a3bbc7d66add308828453903fb934453d5fde859b58b48569"
+      },
+      "finite": {
+        "foreground_mae": 3.084220697270863,
+        "full_mae": 0.10861597222222222,
+        "worst64": 6.328165374677003,
+        "channel_peak": 103
+      },
+      "media": {
+        "foreground_mae": 10.294092128095913,
+        "full_mae": 0.3625236111111111,
+        "worst64": 33.917568263781554,
+        "channel_peak": 183
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2467.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.466666666666667,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          46,
+          303,
+          375,
+          600
+        ],
+        "finite": [
+          46,
+          301,
+          375,
+          600
+        ],
+        "media": [
+          41,
+          300,
+          374,
+          600
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2467.png": "d859cff84e16d5c724bc2af3f8545955125406ec021b74104eeda79a053bfa06",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2467.png": "a0e66dcbd00d97897c578dcdc1c82dd3c7a295c22ac3368fc6478e24aefb87af",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2467.png": "a1cabc4ef9318ca716966491fd55786c1bdcb1f1ba153a1565c7055e1aa405a0"
+      },
+      "finite": {
+        "foreground_mae": 2.7815840621963073,
+        "full_mae": 0.11130972222222223,
+        "worst64": 9.53125,
+        "channel_peak": 95
+      },
+      "media": {
+        "foreground_mae": 8.300447730112452,
+        "full_mae": 0.33215625,
+        "worst64": 28.020833333333332,
+        "channel_peak": 183
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2533.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.533333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          1,
+          305,
+          360,
+          600
+        ],
+        "finite": [
+          1,
+          303,
+          361,
+          600
+        ],
+        "media": [
+          0,
+          303,
+          359,
+          600
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2533.png": "54915a21eb4443237def216c3532b83883aa0d7ec69951b3531bf6792806e243",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2533.png": "1eeff4f6a03b05cb3c779a44f59254743ca4a0826fc82ca94a5d20a8e4784f0b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2533.png": "8d5c4a562264284c9465a4baae3d542b1bb6b78276c11700fe727bf80c9459a8"
+      },
+      "finite": {
+        "foreground_mae": 2.375623528034991,
+        "full_mae": 0.11277777777777778,
+        "worst64": 5.113812154696133,
+        "channel_peak": 94
+      },
+      "media": {
+        "foreground_mae": 7.684732522929741,
+        "full_mae": 0.3648166666666667,
+        "worst64": 15.662048913972978,
+        "channel_peak": 183
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2600.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.6,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          305,
+          345,
+          600
+        ],
+        "finite": [
+          0,
+          303,
+          346,
+          600
+        ],
+        "media": [
+          0,
+          303,
+          344,
+          600
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2600.png": "36a891ccba0860b8f13b5d307d98fc7ee629ccb0fc6a279b7786909abb237c41",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2600.png": "3f8ee8477e86eb49fc116a5636af56c4ede52c618f3d388aa12b97b99ff77ea7",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2600.png": "8daca93aff4cc9afa62afbd5dfea1b8666e3e53ce98b6b840409cec2fab33f68"
+      },
+      "finite": {
+        "foreground_mae": 2.128630809294872,
+        "full_mae": 0.11806805555555555,
+        "worst64": 6.230769230769231,
+        "channel_peak": 79
+      },
+      "media": {
+        "foreground_mae": 9.580441205929487,
+        "full_mae": 0.5313951388888889,
+        "worst64": 21.748253068932957,
+        "channel_peak": 182
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2667.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.6666666666666665,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          303,
+          330,
+          600
+        ],
+        "finite": [
+          0,
+          301,
+          331,
+          600
+        ],
+        "media": [
+          0,
+          301,
+          328,
+          600
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2667.png": "cb0f89681232d80f423cf71f51fdf78134df92ab116e712c2f5c1f143419ac0b",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2667.png": "f32acad207040b9a8a4c7dd5a5ad6a62c2fadc9dedadc6db57f0cb05b697e8c3",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2667.png": "dfcbf56f70669514b3b7ebf00432ca08338e33c2f24b790515a6b1514f3524cb"
+      },
+      "finite": {
+        "foreground_mae": 1.7397871163048078,
+        "full_mae": 0.11135,
+        "worst64": 3.608058608058608,
+        "channel_peak": 81
+      },
+      "media": {
+        "foreground_mae": 12.688909866215292,
+        "full_mae": 0.8121166666666667,
+        "worst64": 37.48011363636363,
+        "channel_peak": 187
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2733.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.7333333333333334,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          298,
+          318,
+          566
+        ],
+        "finite": [
+          0,
+          296,
+          320,
+          585
+        ],
+        "media": [
+          0,
+          297,
+          315,
+          587
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2733.png": "be2d49664580e7ae077161970cf79b2cebe84ec33046eb962f8ab7939c4e5175",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2733.png": "9069e780046e3311471cc45de11e0f9476837b7e60f8fc7bb9444d717607d1c4",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2733.png": "5842d85fd6b2c7d3a95d626d1d42a6dea48a15e2e082ba115c99d12b2bde7e83"
+      },
+      "finite": {
+        "foreground_mae": 1.5780038043424696,
+        "full_mae": 0.11118680555555556,
+        "worst64": 2.9547569547569545,
+        "channel_peak": 88
+      },
+      "media": {
+        "foreground_mae": 15.363846919566738,
+        "full_mae": 1.0825430555555555,
+        "worst64": 26.051678051678053,
+        "channel_peak": 195
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2800.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.8,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          291,
+          311,
+          546
+        ],
+        "finite": [
+          0,
+          288,
+          313,
+          567
+        ],
+        "media": [
+          0,
+          290,
+          307,
+          567
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2800.png": "12d65253dbb875718c26948f37f771eceec2db0cecf1ab3f39ab9456c358f043",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2800.png": "4f35035fe3485946ff5c1906ffa8c064e0ca9a5525ca8e29062534b0045cf890",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2800.png": "e11903e59de93a01946fd39bf4012e0fb4617751de129625f4345d9c107b73fb"
+      },
+      "finite": {
+        "foreground_mae": 1.5812346558960957,
+        "full_mae": 0.11092361111111111,
+        "worst64": 3.3644422556020683,
+        "channel_peak": 92
+      },
+      "media": {
+        "foreground_mae": 19.55154628969668,
+        "full_mae": 1.3715409722222223,
+        "worst64": 33.325289337601575,
+        "channel_peak": 201
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2867.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.8666666666666667,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          282,
+          312,
+          512
+        ],
+        "finite": [
+          0,
+          279,
+          315,
+          534
+        ],
+        "media": [
+          0,
+          281,
+          307,
+          534
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2867.png": "071a76ac16195eee92ed5afb182f31b3aa9b529ebbeab29100a79f3d4614b18d",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2867.png": "3f2f8cd91d81925f1ecef38790bd8582a3de07a6cc18a7fed3f34b7cf19646a3",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2867.png": "fd8d803e8c7b02bec8ac546ab44793d963281b887dae369f954fd61721e8f834"
+      },
+      "finite": {
+        "foreground_mae": 1.5384201831813338,
+        "full_mae": 0.10929513888888889,
+        "worst64": 3.212833700710262,
+        "channel_peak": 93
+      },
+      "media": {
+        "foreground_mae": 22.172771081981956,
+        "full_mae": 1.5752368055555555,
+        "worst64": 34.638509114583336,
+        "channel_peak": 207
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-2933.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 2.933333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          274,
+          323,
+          482
+        ],
+        "finite": [
+          0,
+          270,
+          327,
+          507
+        ],
+        "media": [
+          0,
+          271,
+          318,
+          507
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-2933.png": "dbf70b3145d703268d6170dd4a546915980c8f5191427a35f6f6f600ccc99891",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-2933.png": "41cab7d95ab2f1dace1a991b88c3e7d8acd7fd965ffd775b27c7b09f1209855b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-2933.png": "2fe9a429cc8ef6df1b0b9accdf55821038d990f063362c66bb348f699af94563"
+      },
+      "finite": {
+        "foreground_mae": 1.3819715202004619,
+        "full_mae": 0.10264305555555556,
+        "worst64": 2.703007828594973,
+        "channel_peak": 92
+      },
+      "media": {
+        "foreground_mae": 23.747459164305816,
+        "full_mae": 1.7637930555555557,
+        "worst64": 37.77251808021039,
+        "channel_peak": 218
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3000.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          267,
+          343,
+          458
+        ],
+        "finite": [
+          0,
+          263,
+          347,
+          484
+        ],
+        "media": [
+          0,
+          264,
+          337,
+          485
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3000.png": "f97dac238f4422cc639c4c296421cceeb559d39d65e7f94383fc92b1a9e4ff75",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3000.png": "d5fc76754b5bd5d6203219fb26bdc54173d65e613aef405eab68780694c97f38",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3000.png": "18bcacdb1957ebaa4348ed39c1a4c37af6a52f53ce4a5861f852940034ec86e3"
+      },
+      "finite": {
+        "foreground_mae": 1.3255424089220642,
+        "full_mae": 0.10432847222222222,
+        "worst64": 2.3382085605685012,
+        "channel_peak": 94
+      },
+      "media": {
+        "foreground_mae": 22.769333933313924,
+        "full_mae": 1.7920888888888888,
+        "worst64": 41.702799479166664,
+        "channel_peak": 217
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3067.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.066666666666667,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          262,
+          365,
+          438
+        ],
+        "finite": [
+          0,
+          258,
+          369,
+          464
+        ],
+        "media": [
+          0,
+          259,
+          360,
+          465
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3067.png": "58e6843fcf41a816cf841e69af5b915814d3cc33fd16677de5f9663990fd82c0",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3067.png": "85d8f8f97f8e137b526999452dd284c00e5edb32b09f178cb26a7bc100223a28",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3067.png": "fda2cc90841e85de049bf479e8f7425b15884f95605f016f5833e1df136762ac"
+      },
+      "finite": {
+        "foreground_mae": 1.3216438356164384,
+        "full_mae": 0.11055,
+        "worst64": 2.055055805430618,
+        "channel_peak": 86
+      },
+      "media": {
+        "foreground_mae": 22.16161892901619,
+        "full_mae": 1.8537270833333332,
+        "worst64": 37.893667567788974,
+        "channel_peak": 212
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3133.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.1333333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          261,
+          391,
+          421
+        ],
+        "finite": [
+          0,
+          256,
+          395,
+          448
+        ],
+        "media": [
+          0,
+          256,
+          387,
+          450
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3133.png": "013661354b1ab7137692345b2e459110d9d4d3f55f4dbaff20037c883e09d2f8",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3133.png": "182adca039720e716f28cd124a5448d958938fce8c42e6db65d4d8a15bf96c2b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3133.png": "68ebc4703b30e31ee84387f14e61e2f8caf8268b52799b0c9e0466a7fcdfd897"
+      },
+      "finite": {
+        "foreground_mae": 1.3189018691588785,
+        "full_mae": 0.11760208333333333,
+        "worst64": 1.789721971293787,
+        "channel_peak": 98
+      },
+      "media": {
+        "foreground_mae": 22.172492211838005,
+        "full_mae": 1.9770472222222222,
+        "worst64": 40.918050130208336,
+        "channel_peak": 185
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3199.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.199,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          264,
+          420,
+          402
+        ],
+        "finite": [
+          0,
+          259,
+          424,
+          402
+        ],
+        "media": [
+          0,
+          259,
+          416,
+          406
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3199.png": "4b24b8860bf0df6c0266513b89b4f4710996b01bdb3bb51f0e5f751bdc51d36a",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3199.png": "0ce2ced83bdf961e7ab126217b886a3defdfb7d3da43f614d53079d9b52f15bc",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3199.png": "3180fa8a2b6b7094fec2dc9b84984c4731f426c4a18d9063fcc39ec8f3582921"
+      },
+      "finite": {
+        "foreground_mae": 1.312029541258344,
+        "full_mae": 0.10264444444444444,
+        "worst64": 2.6862745098039214,
+        "channel_peak": 94
+      },
+      "media": {
+        "foreground_mae": 27.067248970316715,
+        "full_mae": 2.1175611111111112,
+        "worst64": 101.16289917473986,
+        "channel_peak": 183
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3200.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.2,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          264,
+          420,
+          405
+        ],
+        "finite": [
+          0,
+          259,
+          425,
+          402
+        ],
+        "media": [
+          0,
+          259,
+          417,
+          405
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3200.png": "b625419f2cd36c8bbee10f8415a73e3c39de38d5de124201a5caa670901ca060",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3200.png": "3b5265635c6eef9b92775519f46c9aafebcbc69c372c474ccaf6df193429e8cc",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3200.png": "22062f27dbbfc71171f924d0b8702b2bd5b7d1b5fe382896bc60b1f0dc4e4d6f"
+      },
+      "finite": {
+        "foreground_mae": 1.3448590999432142,
+        "full_mae": 0.1052576388888889,
+        "worst64": 2.673202614379085,
+        "channel_peak": 97
+      },
+      "media": {
+        "foreground_mae": 27.027612152186258,
+        "full_mae": 2.115361111111111,
+        "worst64": 101.2071973827699,
+        "channel_peak": 183
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3201.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.201,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          264,
+          421,
+          405
+        ],
+        "finite": [
+          0,
+          259,
+          425,
+          402
+        ],
+        "media": [
+          0,
+          259,
+          417,
+          405
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3201.png": "02ebe4c91614599c3d23777ece0eb8c71fff4b532914683f90416fb25c263f51",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3201.png": "e00fda6a7061994db678300038344f6ab92ff599194fa6420ddba23ef28513f4",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3201.png": "7787a7f1f643856ba3eaaa8e0f2365c2471f9974f79e76127705cdc6731c15b3"
+      },
+      "finite": {
+        "foreground_mae": 1.3148902195608783,
+        "full_mae": 0.10293125,
+        "worst64": 2.9836601307189543,
+        "channel_peak": 94
+      },
+      "media": {
+        "foreground_mae": 26.994216012419606,
+        "full_mae": 2.1131409722222223,
+        "worst64": 100.90386740331492,
+        "channel_peak": 183
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3267.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.2666666666666666,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          271,
+          447,
+          399
+        ],
+        "finite": [
+          0,
+          265,
+          453,
+          399
+        ],
+        "media": [
+          0,
+          264,
+          446,
+          400
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3267.png": "c476293ffbce8dc50e39db8af8d63a453dce47ff4cb122484927b0caf113dd58",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3267.png": "96703ea71a85366d779f8c15483e15363d9cfa2f2d688b0bdfe57d4f99989eeb",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3267.png": "c27f6dcf0009e45da7fd70294f92aef2f37938f036c0f44419058db34cbc88b1"
+      },
+      "finite": {
+        "foreground_mae": 1.4152385324220478,
+        "full_mae": 0.11561319444444444,
+        "worst64": 4.806451612903226,
+        "channel_peak": 99
+      },
+      "media": {
+        "foreground_mae": 26.468300520248903,
+        "full_mae": 2.162239583333333,
+        "worst64": 99.14786967418546,
+        "channel_peak": 183
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3333.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.3333333333333335,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          277,
+          470,
+          392
+        ],
+        "finite": [
+          0,
+          271,
+          478,
+          400
+        ],
+        "media": [
+          0,
+          270,
+          472,
+          401
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3333.png": "c98d91e844756d85b7d106fb4b9f35d38046bf125904a25753bb831c5c05259b",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3333.png": "084ec2f972d70fb7acff6954f20cdd0a7cea1077621ac13cd0b64e7164fa6c20",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3333.png": "36490940b77397796d1568f7d30a6a41052a52cb5585b3c35325720c6b8b806b"
+      },
+      "finite": {
+        "foreground_mae": 1.399267490120211,
+        "full_mae": 0.11753263888888889,
+        "worst64": 3.128968253968254,
+        "channel_peak": 93
+      },
+      "media": {
+        "foreground_mae": 25.723671809117516,
+        "full_mae": 2.16068125,
+        "worst64": 99.62698412698413,
+        "channel_peak": 184
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3400.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.4,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          273,
+          489,
+          392
+        ],
+        "finite": [
+          0,
+          274,
+          499,
+          403
+        ],
+        "media": [
+          0,
+          274,
+          494,
+          402
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3400.png": "fd04687c127e5ec1ae676fbcd97a5406af20bdb54289b65c7542674f00372dc3",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3400.png": "84b460eeabf5b67a2e66c2d7d020d27060879324ff4a5514cba9b0f3d2265ab6",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3400.png": "cbc51e8f0143f94e112896f8e924c0d7e584ab0c144dfac8c127d0752914173c"
+      },
+      "finite": {
+        "foreground_mae": 1.5627071170929105,
+        "full_mae": 0.1332826388888889,
+        "worst64": 11.681159420289855,
+        "channel_peak": 99
+      },
+      "media": {
+        "foreground_mae": 23.650748674857716,
+        "full_mae": 2.0171625,
+        "worst64": 84.71014492753623,
+        "channel_peak": 186
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3467.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.466666666666667,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          270,
+          510,
+          393
+        ],
+        "finite": [
+          0,
+          270,
+          517,
+          405
+        ],
+        "media": [
+          0,
+          270,
+          512,
+          405
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3467.png": "c631ff17fc71e9d435768cb416d884970c8760ff00ab55357d536af24633ad29",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3467.png": "516d35c5410d4c1d0ea1ef4c9e34febd140e0ad76b37b489539315a945a60689",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3467.png": "da1b3d9e03cbfe6a1bdf69d035d97327a69b95fa6d68c160ae5f368913d9283f"
+      },
+      "finite": {
+        "foreground_mae": 1.4828964335199468,
+        "full_mae": 0.1285763888888889,
+        "worst64": 3.731674146606827,
+        "channel_peak": 98
+      },
+      "media": {
+        "foreground_mae": 22.22941445013095,
+        "full_mae": 1.9274291666666667,
+        "worst64": 64.79196787148594,
+        "channel_peak": 186
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3533.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.533333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          268,
+          527,
+          393
+        ],
+        "finite": [
+          0,
+          269,
+          531,
+          408
+        ],
+        "media": [
+          0,
+          268,
+          527,
+          408
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3533.png": "044e705fe3353ad4b5cc0a125d971a979c579fa9230e7cefda94512e4236f00b",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3533.png": "1a38aa5de5035d96e09bc2cf829e8b104ec8bc0279ed864d69d137e7eec152a6",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3533.png": "4c040c9002c46a324cab17657cfeb5f37fff427bc51c5375b981d92dc997b361"
+      },
+      "finite": {
+        "foreground_mae": 1.6660544265743598,
+        "full_mae": 0.14740069444444445,
+        "worst64": 4.843373493975903,
+        "channel_peak": 98
+      },
+      "media": {
+        "foreground_mae": 21.12486558190281,
+        "full_mae": 1.8689784722222222,
+        "worst64": 84.06533827618165,
+        "channel_peak": 187
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3600.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.6,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          269,
+          541,
+          395
+        ],
+        "finite": [
+          0,
+          270,
+          544,
+          411
+        ],
+        "media": [
+          0,
+          270,
+          540,
+          411
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3600.png": "64d9123a89ac463a5451be89530ea699d074e9baf7b2f70fd5e08a978fc65b97",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3600.png": "90fc380db702933b7b83c2988aac47caa030b397327c610be03673043db0262c",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3600.png": "1b73b3cf78221e582cc3fc83f960012b702fcf95fecfe96afdd8e9d8428143ca"
+      },
+      "finite": {
+        "foreground_mae": 1.781296993213498,
+        "full_mae": 0.15876180555555555,
+        "worst64": 5.720678285445125,
+        "channel_peak": 102
+      },
+      "media": {
+        "foreground_mae": 19.069072719197774,
+        "full_mae": 1.6995708333333333,
+        "worst64": 83.99560370544826,
+        "channel_peak": 186
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3667.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.6666666666666665,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          272,
+          552,
+          397
+        ],
+        "finite": [
+          0,
+          273,
+          555,
+          414
+        ],
+        "media": [
+          0,
+          272,
+          552,
+          413
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3667.png": "28510645ac77fcfd5ef7de1c8ff823db12190bcf8bd1a12b6b50977c2658bea4",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3667.png": "5efc6401ee9937013569fab30e3fa9d40a4d19df8c64810e9026315393f4ab9b",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3667.png": "6f20d26e5d2d9f4a370a3657d6de8ba02a1e56bfb0ee4998c1ed41118902467c"
+      },
+      "finite": {
+        "foreground_mae": 1.871036023369888,
+        "full_mae": 0.16635069444444445,
+        "worst64": 6.238095238095238,
+        "channel_peak": 97
+      },
+      "media": {
+        "foreground_mae": 17.49074421220358,
+        "full_mae": 1.5550729166666666,
+        "worst64": 92.71428571428571,
+        "channel_peak": 187
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3733.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.7333333333333334,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          273,
+          562,
+          398
+        ],
+        "finite": [
+          0,
+          273,
+          564,
+          416
+        ],
+        "media": [
+          0,
+          273,
+          561,
+          416
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3733.png": "36837af9945f68233b4ef27140603cf907d93996ce379edb6b6fa435e6190228",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3733.png": "e35af920ff1d0e00483e5300017e9ecb465c15c615e008c54474fc8cfe3ac2b4",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3733.png": "d5ff53ba010fb0146a90e810005c5eb0244154c04fcdd0337253be27dd68d638"
+      },
+      "finite": {
+        "foreground_mae": 2.0206294961222167,
+        "full_mae": 0.17984444444444445,
+        "worst64": 11.375,
+        "channel_peak": 100
+      },
+      "media": {
+        "foreground_mae": 15.734633210055708,
+        "full_mae": 1.4004479166666666,
+        "worst64": 78.57051282051282,
+        "channel_peak": 187
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3800.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.8,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          4,
+          273,
+          571,
+          399
+        ],
+        "finite": [
+          4,
+          273,
+          572,
+          418
+        ],
+        "media": [
+          1,
+          273,
+          570,
+          418
+        ]
+      },
+      "edge_touch": {
+        "source": false,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3800.png": "80f5a275c8de5880c3dc9b2cc6f2887302be51b245cfce523fe27671232dd5ee",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3800.png": "ee80f7a0f397bb45ba91910c3c2de6ddcf49c794183c2a52fcd3f3de5fad2c54",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3800.png": "bd6c872a16679c640875c5c08bc21f40f0a269acd4bd943089d9d3d68339b75a"
+      },
+      "finite": {
+        "foreground_mae": 2.0246421962474526,
+        "full_mae": 0.18007083333333335,
+        "worst64": 12.019323671497585,
+        "channel_peak": 95
+      },
+      "media": {
+        "foreground_mae": 14.522288070085029,
+        "full_mae": 1.29160625,
+        "worst64": 98.97584541062803,
+        "channel_peak": 186
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3867.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.8666666666666667,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          273,
+          579,
+          399
+        ],
+        "finite": [
+          0,
+          273,
+          580,
+          420
+        ],
+        "media": [
+          0,
+          273,
+          578,
+          420
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3867.png": "d420d92f9fd50f9242f5dcbdaf777f1eb0860af91d0fdcfcb1958b9d204da7eb",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3867.png": "4096a67fb75a32b60282307a27b661ee14c0002c630edd095bff8fa434dc02d8",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3867.png": "74e88914877f4e9f8946a171b0f1adef2c7501d5fe65836f473519742f49baf0"
+      },
+      "finite": {
+        "foreground_mae": 2.0979580702984957,
+        "full_mae": 0.18693680555555556,
+        "worst64": 8.454545454545455,
+        "channel_peak": 100
+      },
+      "media": {
+        "foreground_mae": 13.813521939053853,
+        "full_mae": 1.230842361111111,
+        "worst64": 76.76969696969697,
+        "channel_peak": 186
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-3933.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 3.933333333333333,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          273,
+          586,
+          399
+        ],
+        "finite": [
+          0,
+          272,
+          588,
+          422
+        ],
+        "media": [
+          0,
+          273,
+          586,
+          422
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-3933.png": "045aa327c2d81f8540e70f66dcd0087630d6bc0e5dfd3c67ea9b62811ca13b27",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-3933.png": "e50038b5dc217b5a747dc801cb6dbd2deb2b795584643017596d99a54f9afcfd",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-3933.png": "79c8f1c6028bdfb7907787628a4c0d18e6d6388d3e1300274e4efa75b6aea5db"
+      },
+      "finite": {
+        "foreground_mae": 2.2319137541621066,
+        "full_mae": 0.19969583333333332,
+        "worst64": 13.076543209876544,
+        "channel_peak": 94
+      },
+      "media": {
+        "foreground_mae": 13.36802725840377,
+        "full_mae": 1.1960763888888888,
+        "worst64": 73.05679012345679,
+        "channel_peak": 186
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-4000.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 4,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          280,
+          594,
+          394
+        ],
+        "finite": [
+          0,
+          281,
+          594,
+          394
+        ],
+        "media": [
+          2,
+          280,
+          592,
+          394
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-4000.png": "e0e091604f6147673bf21edb1aae5a64bd4bef924a428a9641bc5a775f9f85d5",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-4000.png": "7739be6b2f2772e93ee5b111b75fd449d9ada11d9f0dd05dba764202e666d40d",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-4000.png": "e22c288a796c3bea639de410e572f2539e1ab0e84e584de11d21c5b3d92a1fa9"
+      },
+      "finite": {
+        "foreground_mae": 3.521320213202132,
+        "full_mae": 0.1669986111111111,
+        "worst64": 10.509803921568627,
+        "channel_peak": 99
+      },
+      "media": {
+        "foreground_mae": 24.58610086100861,
+        "full_mae": 1.1659958333333333,
+        "worst64": 64.08373590982286,
+        "channel_peak": 186
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-4067.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 4.066666666666666,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          280,
+          601,
+          395
+        ],
+        "finite": [
+          0,
+          281,
+          602,
+          394
+        ],
+        "media": [
+          0,
+          281,
+          600,
+          394
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-4067.png": "220ddfc70aae14de1b36edd3279c4e36fff05f2a62bfe75b04da8bffd2e5d886",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-4067.png": "f4bca258aa1354513c407b0b072c937bd4ef619b89a5f953530682d4e39a2d96",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-4067.png": "d8919daaa8ccce11fac5dfc9e17c5a870897fd7ff5790b9f7f177300f8a9d12a"
+      },
+      "finite": {
+        "foreground_mae": 3.772266294714207,
+        "full_mae": 0.18029861111111112,
+        "worst64": 9.898876404494382,
+        "channel_peak": 94
+      },
+      "media": {
+        "foreground_mae": 24.736640223171477,
+        "full_mae": 1.1823083333333333,
+        "worst64": 66.3011193011193,
+        "channel_peak": 186
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-4133.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 4.133333333333334,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          280,
+          609,
+          395
+        ],
+        "finite": [
+          3,
+          281,
+          609,
+          394
+        ],
+        "media": [
+          1,
+          281,
+          608,
+          394
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": false,
+        "media": false
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-4133.png": "8add08fb8a016d42d3df1d485b0b3e181eb10a29449e46fc58ef05a87f7f19bf",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-4133.png": "c06889a56ad9f067c644ec3e45a47509ed7a921e4d1eb0ead7f5fbc0229a31a4",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-4133.png": "3ca42cddce2a887722928a0d6172423b2f1b90f5d9e1234f84eaa281632618e9"
+      },
+      "finite": {
+        "foreground_mae": 3.71110245197789,
+        "full_mae": 0.1785736111111111,
+        "worst64": 19.137931034482758,
+        "channel_peak": 100
+      },
+      "media": {
+        "foreground_mae": 25.363337229943284,
+        "full_mae": 1.2204520833333334,
+        "worst64": 73.93139223560911,
+        "channel_peak": 186
+      }
+    },
+    {
+      "file": "sequence-latin-800-60-4200.png",
+      "scene": "latin",
+      "fps": 60,
+      "time": 4.2,
+      "empty_foreground": false,
+      "bounds": {
+        "source": [
+          0,
+          280,
+          618,
+          396
+        ],
+        "finite": [
+          0,
+          280,
+          618,
+          395
+        ],
+        "media": [
+          0,
+          280,
+          616,
+          395
+        ]
+      },
+      "edge_touch": {
+        "source": true,
+        "finite": true,
+        "media": true
+      },
+      "png_sha256": {
+        "build\\verification\\diorama-flight-browser\\sequence-latin-800-60-4200.png": "46657c35f5b80acbe8e84942403b93053780be4f59ef35206c6c097821b776f1",
+        "build\\verification\\diorama-flight-kotlin\\finite-sequence-latin-800-60-4200.png": "00dd745b446d82b3f296fde7b911be102a705e7c8d2ed124dbd5cd6e5461db1c",
+        "build\\verification\\diorama-flight-kotlin\\media-sequence-latin-800-60-4200.png": "01cdbdbeed2924a516bf2257003b30886cbb30be87276075cfcbe9588f876c99"
+      },
+      "finite": {
+        "foreground_mae": 4.115129004255077,
+        "full_mae": 0.2008097222222222,
+        "worst64": 13.231884057971014,
+        "channel_peak": 99
+      },
+      "media": {
+        "foreground_mae": 26.830665015867595,
+        "full_mae": 1.3092805555555556,
+        "worst64": 76.46177370030581,
+        "channel_peak": 186
+      }
+    }
+  ]
+}

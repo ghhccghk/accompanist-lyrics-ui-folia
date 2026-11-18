@@ -16,8 +16,17 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：刷新RTL修复后的debug交付，然后隔离原CJK800/1100ms三层，定位新观察到的
-12个sampled-vs-old-ordinary局部残差；不能借此调相机/抹低alpha或降低最终标准。
+当前唯一下一项：对原CJK800/1100ms的BASE做原/自身texture×原/自身placement输入消融，
+区分canonical分数phase/ceil pivot与采样，保留完整shaping；不调halo/相机或改前景口径。
+原CJK失败层已隔离：同原完整PNG/21mesh输入/版本不变，clone-all精确，释放几何/纹理0；
+native分层重放等于两条实际完整stage路径。旧失败tile(384,320)固定573union内all=base，
+所有glow/soul均纯背景；局部3.979058→5.198953属于未唱正文，不能调halo掩盖。
+1项JVM/暂停/无重复准备通过，见verification/diorama-cjk-layer-isolation；无生产/设备结论。
+13b8518最新debug已构建，原证书v1/v2/CRC/16KB对齐/双ABI Rust和复制hash通过：
+build/deliverables/android/lyrics-ui-folia-debug-13b8518-20261118-171753.apk，SHA256
+c41734a49247f091756492c6408f1d84ca2ce894c5d029b2872f1dd0032f1ba4。未安装/传输，
+见verification/android-debug/2026-11-18-rtl-registration-validation.json；独立本地Maven
+JVM绘制/回调与Android消费编译通过，verification/consumer/13b8518-validation.json。
 RTL安全独立词原始右边界注册已修：原pivot差.656036/.720062px，按原ceil/prefix公式
 现为0；仍画同一完整paragraph，跨单元cluster/混合bidi保留canonical。更广泛全词候选
 虽均值更好但10个Latin局部回退，完整补丁/失败保留并撤回。最终同90七图union普通

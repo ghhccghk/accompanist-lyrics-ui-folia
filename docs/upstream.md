@@ -1978,3 +1978,15 @@ candidate rejected for10 Latin local regressions; patch and same90/180 fixed
 comparisons/12 CJK sampled residuals retained in verification/diorama-rtl-registration.
 No source font/raster or new dependency copied into runtime; original authorship/
 AGPL-3.0-only unchanged. Not public Diorama, device/performance/final acceptance.
+
+### Diorama CJK original-layer failure isolation (2026-11-18)
+Same pinned active-unit layout/raster/material and existing isolated original
+CJK800/1100ms analytic-envelope injection stage -> read-only reference host
+input snapshot and labelled temporary clone layers. Full original framebuffer/
+mesh matrices/materials/texture versions remain exact; explicit geometry/texture
+disposal and dedicated browser teardown recorded. Own-core renderer is not
+driven by original textures/poses; diagnostic full replays match its actual
+ordinary/sampled stage. Existing failing tile is base-only, glow/soul all
+background. Scope/hashes/source files/contact:verification/diorama-cjk-layer-isolation.
+No new product code, runtime asset/dependency or license change; not actual
+mounted RAF, Android/performance or formal theme acceptance.

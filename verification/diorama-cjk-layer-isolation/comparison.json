@@ -1,0 +1,294 @@
+{
+  "baseline": "13b8518",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "three": "0.185.1",
+  "condition": "Same original CJK800x600/DPR1/1100ms/soulActive=true isolated stage, analytic Float32 envelope injection/delta0 retained. Passive current-material read and clone layers only; NOT original mounted RAF/CameraRig.",
+  "originalFullFrameAndInputsVersionsExact": true,
+  "sourceBaseEqualsExistingOriginalBase": true,
+  "nativeAllReplaysExactlyMatchExistingFullStage": true,
+  "rows": [
+    {
+      "layer": "all",
+      "unionPixels": 33313,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 64,
+            "y": 192,
+            "mae": 0.0
+          },
+          "pixels": 32073,
+          "bounds": [
+            122,
+            216,
+            732,
+            367
+          ]
+        },
+        "ordinary": {
+          "mae": 2.6938132260679013,
+          "peak": 60,
+          "worst64": {
+            "x": 256,
+            "y": 256,
+            "mae": 4.418929110105581
+          },
+          "pixels": 31013,
+          "bounds": [
+            120,
+            214,
+            732,
+            367
+          ]
+        },
+        "sampled": {
+          "mae": 2.1401955192667526,
+          "peak": 58,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 5.198952879581152
+          },
+          "pixels": 32369,
+          "bounds": [
+            120,
+            214,
+            733,
+            367
+          ]
+        }
+      },
+      "hashes": {
+        "original": "73fdfcc849581230bc4ba7d4693d735b1ded55d6b724d4c86c1463a05bc54592",
+        "ordinary": "9f76760a4d0e79067c367d7e26276d55686cf291a3943578c153c969e3873520",
+        "sampled": "dd6d36bbac02122ea1676d73e52bc015e4039fb246f96108b9094de4790232bd"
+      }
+    },
+    {
+      "layer": "base",
+      "unionPixels": 24254,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 128,
+            "y": 192,
+            "mae": 0.0
+          },
+          "pixels": 24177,
+          "bounds": [
+            144,
+            249,
+            732,
+            367
+          ]
+        },
+        "ordinary": {
+          "mae": 3.4183364943239605,
+          "peak": 95,
+          "worst64": {
+            "x": 128,
+            "y": 192,
+            "mae": 5.831325301204819
+          },
+          "pixels": 21502,
+          "bounds": [
+            144,
+            250,
+            732,
+            367
+          ]
+        },
+        "sampled": {
+          "mae": 2.659451361974657,
+          "peak": 75,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 5.198952879581152
+          },
+          "pixels": 23243,
+          "bounds": [
+            144,
+            249,
+            733,
+            367
+          ]
+        }
+      },
+      "hashes": {
+        "original": "30a66439626a455ee888b53ce180f5aa1563f14b10bc75bb9cd55ba03ed32836",
+        "ordinary": "9dfb3b990957766ba6d2bb035d58a428ce617aa9bd0d574a10b9b20f7b687f83",
+        "sampled": "6a32d686f48f35957a70fbb5dd62c91adeda62d4407eafb1238efd8cd1fabfa4"
+      }
+    },
+    {
+      "layer": "glow",
+      "unionPixels": 12523,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 64,
+            "y": 192,
+            "mae": 0.0
+          },
+          "pixels": 11273,
+          "bounds": [
+            122,
+            216,
+            225,
+            347
+          ]
+        },
+        "ordinary": {
+          "mae": 0.334105246346722,
+          "peak": 5,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 0.48121450415028394
+          },
+          "pixels": 12523,
+          "bounds": [
+            120,
+            214,
+            227,
+            350
+          ]
+        },
+        "sampled": {
+          "mae": 0.334105246346722,
+          "peak": 5,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 0.48121450415028394
+          },
+          "pixels": 12523,
+          "bounds": [
+            120,
+            214,
+            227,
+            350
+          ]
+        }
+      },
+      "hashes": {
+        "original": "18d539ed0caeb22471fb2b5ce49ec749aba087e3beb2e08cb40cb7373d7e86f9",
+        "ordinary": "092c50f0914255d8c91a863528c74cd1bbee69457e1046aeadbe665601880788",
+        "sampled": "092c50f0914255d8c91a863528c74cd1bbee69457e1046aeadbe665601880788"
+      }
+    },
+    {
+      "layer": "soul",
+      "unionPixels": 3220,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 128,
+            "y": 192,
+            "mae": 0.0
+          },
+          "pixels": 3220,
+          "bounds": [
+            141,
+            241,
+            205,
+            317
+          ]
+        },
+        "ordinary": {
+          "mae": 3.410248447204969,
+          "peak": 60,
+          "worst64": {
+            "x": 128,
+            "y": 192,
+            "mae": 4.475429248075785
+          },
+          "pixels": 2818,
+          "bounds": [
+            141,
+            242,
+            204,
+            317
+          ]
+        },
+        "sampled": {
+          "mae": 3.410248447204969,
+          "peak": 60,
+          "worst64": {
+            "x": 128,
+            "y": 192,
+            "mae": 4.475429248075785
+          },
+          "pixels": 2818,
+          "bounds": [
+            141,
+            242,
+            204,
+            317
+          ]
+        }
+      },
+      "hashes": {
+        "original": "449da22a6407b27bbcd3dc78e57956c90fa33e9e1dec11f602bdd8d9c66613d7",
+        "ordinary": "0b3c3765d04a52a69ddd32c863e0672213705e124f36e8d43dfefc5f3ae01c60",
+        "sampled": "0b3c3765d04a52a69ddd32c863e0672213705e124f36e8d43dfefc5f3ae01c60"
+      }
+    }
+  ],
+  "existingFailureRoi": {
+    "rect": [
+      384,
+      320,
+      448,
+      384
+    ],
+    "unionPixels": 573,
+    "metrics": {
+      "all": {
+        "original": 0.0,
+        "ordinary": 3.979057591623037,
+        "sampled": 5.198952879581152
+      },
+      "base": {
+        "original": 0.0,
+        "ordinary": 3.979057591623037,
+        "sampled": 5.198952879581152
+      },
+      "glow": {
+        "original": 0.0,
+        "ordinary": 0.0,
+        "sampled": 0.0
+      },
+      "soul": {
+        "original": 0.0,
+        "ordinary": 0.0,
+        "sampled": 0.0
+      }
+    },
+    "allEqualsBaseForAllThreeImages": true,
+    "allGlowSoulRoiPixelsBackground": true
+  },
+  "conclusion": "The retained local regression is on unsung base ink, not halo/soul compositing: both additive layers have zero contribution in the preselected failing tile. Base global local maximum improves but this one base tile worsens and becomes full-stage worst. Inspect source versus native glyph phase/ownership/placement, including CJK ceil pivot; do not tune halo or change unions to hide it.",
+  "release": {
+    "geometries": 0,
+    "textures": 0
+  },
+  "productionChanged": false,
+  "formalVisualAcceptance": false,
+  "deviceValidated": false
+}

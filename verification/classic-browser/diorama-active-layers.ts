@@ -29,6 +29,28 @@ const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:tru
 const world=new THREE.Scene();world.add(group);const camera=new THREE.PerspectiveCamera(55,innerWidth/600,.1,1000);
 const eye=composeLocal(f,p.offsetR+1.7,p.offsetU+.8,-5.2),look=composeLocal(f,p.offsetR+p.lookR,p.offsetU,0);camera.position.set(eye.x,eye.y,eye.z);camera.lookAt(look.x,look.y,look.z);camera.updateMatrixWorld();
 const primary=new THREE.Color('#dfe5ec'),accent=new THREE.Color('#f17b4d');
+// Passive current-frame diagnostics only: no analytic charge, material, clock
+// or original mesh mutation. Flattened clones share actual immutable inputs.
+Object.assign(window,{
+ readActiveLayerInputs:()=>planes.unitGroups.flatMap((g:any,i:number)=>g.children.map((m:any)=>({unit:i,order:m.renderOrder,
+  visible:m.visible,matrix:m.matrixWorld.toArray(),opacity:m.material.opacity,color:m.material.color.toArray(),
+  blending:m.material.blending,textureVersion:m.material.map.version,sourceVersion:m.material.map.source.version}))),
+ renderActiveLayer:(kind:'base'|'glow'|'soul'|'all'|null)=>{
+  if(kind===null){renderer.render(world,camera);return;}
+  const scene=new THREE.Scene();
+  for(const g of planes.unitGroups)for(const m of g.children){
+   if(kind!=='all'&&m.renderOrder!==({base:19,glow:17,soul:18}[kind]))continue;
+   const clone=m.clone(false);clone.matrixAutoUpdate=false;clone.matrix.copy(m.matrixWorld);scene.add(clone);
+  }
+  try{renderer.render(scene,camera);}finally{scene.clear();}
+ },
+ releaseActiveLayerStage:()=>{
+  for(const g of planes.unitGroups)for(const m of g.children){m.geometry.dispose();m.material.dispose();}
+  for(const u of layout.units){u.raster.baseTexture.dispose();u.raster.glowTexture.dispose();}
+  world.clear();renderer.dispose();renderer.forceContextLoss();
+  return{geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures};
+ }
+});
 Object.assign(window,{ready:true,targetStage:{line,layout,frame:f,placement:p,camera,group},rasters:()=>layout.units.map(u=>({base:u.raster.baseTexture.image.toDataURL(),halo:u.raster.glowTexture.image.toDataURL()})),drawLayers:(time:number,active:boolean)=>{
  const charge=(u:any,a:number,r:number)=>time<=u.startTime?0:(1-Math.exp(-a*(Math.min(time,u.endTime)-u.startTime)))*Math.exp(-r*Math.max(0,time-u.endTime));
  updateDioramaActiveUnits({activeLineUnits:units,planes,lightVals:new Float32Array(units.map(u=>charge(u,14,4.5))),soulVals:new Float32Array(units.map(u=>charge(u,12,2.2))),now:time,delta:0,

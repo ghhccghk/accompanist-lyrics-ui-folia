@@ -199,7 +199,8 @@ internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
         }
         val input=if(onClick==null && onLongPress==null) Modifier else Modifier
             .pointerInput(prepared,options,enterUs,leaveUs) {
-                detectTapGestures(onTap={if(hit(it))click?.invoke()},onLongPress={if(hit(it))longPress?.invoke()})
+                if(renderTarget!=null)partitaNativeGestures(::hit,{click?.invoke()},{longPress?.invoke()})
+                else detectTapGestures(onTap={if(hit(it))click?.invoke()},onLongPress={if(hit(it))longPress?.invoke()})
             }.semantics {
                 contentDescription=line.text
                 onClick {click?.invoke();true}

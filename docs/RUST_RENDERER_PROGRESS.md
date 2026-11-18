@@ -25,6 +25,14 @@ OpenDocument/audio-service/import flow is still unverified. Interaction/lifecycl
 release-consumer checks are next. Initial sample build
 failed on Activity `visible`/`setVisible` collision; renamed `hostVisible`.
 
+Sample integration committed `44830ff`. Native input now hits before consuming
+down; blank points pass to parent; movement beyond slop, second pointer, cancel
+or parent consumption cancels click/long press. Focus/semantics/source mapping
+continue through existing Partita. `:library:jvmTest --tests '*PartitaNativeInputTest*'
+--tests '*RendererBridgeTest*'` PASS (3 tests); Android wrapper compiled. This is
+gesture logic/offscreen validation, not yet an Android physical-touch result.
+Release consumer lifecycle/fallback matrix is being expanded and is not yet PASS.
+
 ## Remaining
 
 - P3: thin native sample and persisted backend selection; input pass-through, cancel behavior and source mapping; explicit fallback/required failures; lifecycle/recreation/multi-instance runtime matrix.

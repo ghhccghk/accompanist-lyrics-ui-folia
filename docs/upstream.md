@@ -69,6 +69,15 @@ No source/demo assets, source checkout modifications, or runtime JS dependency.
 
 ## Tilt public calibration preview — 2026-11-16
 
+2026-11-18 scale follow-up: fixed source VisualizerTilt.tsx:225-334,350-356,576-580
+-> TiltLine.kt effective host/system scale, shared fit/row/stagger dimensions and
+neutralised sp multiplication. Preserve CSS decimal half rounding and use raw
+requested Canvas measurement size separately from raster size. Actual original
+12-frame natural and additional same-initial-metric-font controls remain separate
+(verification/tilt-font-scale); the natural .016px metric residual is not accepted.
+No source assets or fonts copied; installed Segoe UI is only a fixed Windows
+measurement input to the second verification harness, never a redistributed font.
+
 Same fixed Folia cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only.
 VisualizerTilt.tsx:334–534 -> TiltLine/TiltTextFeatures (whole-run shaping,
 optional kerning disabled to match independent source EGC boxes; required joining

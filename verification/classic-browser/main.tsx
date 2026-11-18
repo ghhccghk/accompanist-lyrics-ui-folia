@@ -97,6 +97,7 @@ const root = createRoot(document.getElementById('root')!);
     theme={themes} audioPower={audioPower} audioBands={{}} classicTuning={{ enableWordRotation: true,
       breathingFloatMultiplier: params.has('breathe') ? 1 : 0, wordSpacing: .7, avoidOverlap: params.has('avoid'), useLegacyLayout: false }}
     partitaTuning={{ showGuideLines: !params.has('noGuides'), useSemanticLayout: true, staggerMin: 20, staggerMax: 100, avoidOverlap: params.has('avoid') }}
+    lyricsFontScale={Number(params.get('fontScale')??1)}
     tiltTuning={{splitProbability:Number(params.get('split')??.75),tiltStyleProbability:Number(params.get('tilt')??.35),colorScheme:'default'}} />));
   flushSync(() => currentTime.set(seconds));
   if(manual) {

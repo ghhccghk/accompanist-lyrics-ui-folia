@@ -55,8 +55,15 @@ internal fun TiltLine(line:NormalizedLine,playback:()->FoliaPlaybackSnapshot,tex
     BoxWithConstraints(modifier.fillMaxSize()) {
         val width=maxWidth.value.toDouble()
         val prepared=remember(line,config,ink,fontScale,width,textStyle,colors,density,resolver,measurer,nativeInk,enterUs) {
+            // Source CSS uses one effective scale for shaping, fit, row boxes
+            // and motion amplitude. Include the host's accessible font scale
+            // once, then neutralise sp's automatic multiplication below.
+            // Use the public Float's shortest decimal value at CSS rounding
+            // boundaries: 1.4 must yield 2.188rem, not 2.187rem after widening
+            // its binary Float approximation to Double (3.125 * 1.4 * .5).
+            val effectiveScale=fontScale.toString().toDouble()*density.fontScale.toString().toDouble()
             fun style(font:Double,tilt:Boolean,tracking:Boolean):TextStyle = textStyle.copy(
-                fontSize=(floor(font*100+.000001)/100).sp,
+                fontSize=(floor(font*100+.000001)/100/density.fontScale).sp,
                 fontFeatureSettings=if(tracking)listOfNotNull(textStyle.fontFeatureSettings,tiltKerningOff).joinToString(", ")
                     else textStyle.fontFeatureSettings,
                 fontWeight=textStyle.fontWeight?:if(tilt)FontWeight.Light else FontWeight.Normal,
@@ -73,15 +80,18 @@ internal fun TiltLine(line:NormalizedLine,playback:()->FoliaPlaybackSnapshot,tex
             // Canvas font (initially 10px sans-serif). Model the actual source
             // assignment order per line, without importing its global cache
             // history into seek/resize. This upstream quirk is documented.
-            var measurementStyle=TextStyle(fontFamily=FontFamily.SansSerif,fontSize=10.sp,
+            var measurementStyle=TextStyle(fontFamily=FontFamily.SansSerif,fontSize=(10/density.fontScale).sp,
                 fontWeight=FontWeight.Normal,textMotion=TextMotion.Animated)
             val invalidFontWidths=mutableMapOf<String,Double>()
             fun rawWidth(value:String):Double {
                 val measured=measurer.measure(value,measurementStyle,softWrap=false)
                 return measured.getPathForRange(0,value.length).getBounds().width/density.density.toDouble()
             }
-            val layout=buildTiltLayout(line.text,line.startUs/1e6,config,width,fontScale.toDouble()) { text,tilt,size ->
-                if(!tilt)measurementStyle=style(size,false,false)
+            val layout=buildTiltLayout(line.text,line.startUs/1e6,config,width,effectiveScale) { text,tilt,size ->
+                // Canvas measurement uses its requested size, not the drawing
+                // raster's hundredth-pixel quantisation. In particular a Float
+                // host scale of 1.4 must not truncate 126px to 125.99px here.
+                if(!tilt)measurementStyle=style(size,false,false).copy(fontSize=(size/density.fontScale).sp)
                 if(!tilt)rawWidth(text) else {
                     // The invalid fontSpec still keys pretext's metric cache.
                     // Its first space/token widths survive later normal font
@@ -101,7 +111,7 @@ internal fun TiltLine(line:NormalizedLine,playback:()->FoliaPlaybackSnapshot,tex
             fun fixed(v:Double)=floor(v*1000+.5)/1000
             var top=0f
             val rows=layout.segments.mapIndexed { index,segment ->
-                val base=fontScale*layout.scale
+                val base=effectiveScale*layout.scale
                 val boost=if(segment.shortLast)1.18 else 1.0
                 val scale=base*boost
                 val used=(fixed(6.875*scale)*width/100).coerceIn(fixed(3.125*scale)*16,fixed(5.625*scale)*16)

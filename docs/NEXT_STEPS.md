@@ -10,9 +10,18 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
 
-当前唯一下一项：已开放Tilt大字号与字幕重叠的固定原版条件对照；先判断原版布局/字号
-规则与公共入口差异，再修真实问题。真实Desktop七主题窗口当前复核已完成，待保存
-当前manifest/图检与本轮共享Pendolo变更的运行结论；不冒充选歌/音频/设备验证。
+当前唯一下一项：Tilt真实原版字幕overlay与正文大字号的整屏对照，区分原版自身
+overlap与本实现排版问题；沿用同一字号/视口/字体条件，不改最终验收要求。
+真实Desktop七主题窗口复核和manifest/图检已保存（059087b/verification/themes-native-window），
+此前“待保存”为历史。没有选歌/真实音频/设备的新证据。
+
+Tilt系统字号接入fit/重分行/行高/居中/stagger已修，sp只乘一次；1.4的CSS半舍入
+和测量125.99截断也已修。同原12帧44行自然默认字体矩阵，MAE84.912471→14.683705，
+字号峰30.672→.016px/行高41.406225→.03125px；仍8个.011字号门槛失败，未降低。
+被动测量定位浏览器sans与Windows Skia Segoe UI默认空格差；另控相同初始Canvas字体
+的独立原版矩阵字号峰0，宽.20275/高.01565px，通过原门槛，不替换自然基线。
+18定向JVM及Android库/Desktop编译通过，暂停/seek/offset/重挂/原对象点击通过；
+字幕/设备/新窗口未验，证据verification/tilt-font-scale。此处为行为修复非正式视觉通过。
 
 镜台长行取消检查已接到ownership/每256列、单元paint和halo pass边界，原异常原样
 传播，不返回部分对象；actual core重试和draw/seek无准备检查通过，418旧hash不变。

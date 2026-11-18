@@ -1,0 +1,1843 @@
+{
+  "conditions": "No alignment, scaling, alpha cutoff or replacement of natural-default failures. Root test canvas is 800x600; crop ONLY its known unused right margin to the requested 380px viewport. 12 fixed original timestamps at 2400ms per oracle; no subtitle or full-theme acceptance.",
+  "gates": {
+    "font": 0.011,
+    "width": 0.51,
+    "height": 0.03125
+  },
+  "matrices": {
+    "natural": {
+      "frames": 12,
+      "rows": [
+        {
+          "file": "380-1-0.png",
+          "foregroundPixels": 9414,
+          "sourceSha256": "373828011d5d473337ca28259cb49979bfa1bd3a1c10e2ecbe56ed6d293e9cae",
+          "beforeSha256": "a5f13e6e1643d92b632158eebd4431581aa6185aa15451aafd2f77e995da2557",
+          "afterSha256": "a5f13e6e1643d92b632158eebd4431581aa6185aa15451aafd2f77e995da2557",
+          "before": {
+            "mae": 25.758728135401174,
+            "peakChannel": 201,
+            "worst64px": 41.34888888888889,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.09362000000001558,
+              "height": 0.0
+            }
+          },
+          "after": {
+            "mae": 25.758728135401174,
+            "peakChannel": 201,
+            "worst64px": 41.34888888888889,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.09362000000001558,
+              "height": 0.0
+            }
+          }
+        },
+        {
+          "file": "380-1-1.png",
+          "foregroundPixels": 8683,
+          "sourceSha256": "9c1a042bd75866c6900fefcc24048db2345da42e5c512a342f880ed7f054ded3",
+          "beforeSha256": "eb5a3f57fe719216a10866f41e42aa7736ef555b064457492494472ed15cd42e",
+          "afterSha256": "eb5a3f57fe719216a10866f41e42aa7736ef555b064457492494472ed15cd42e",
+          "before": {
+            "mae": 22.457867864409383,
+            "peakChannel": 210,
+            "worst64px": 36.50187265917603,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 26.368,
+                "actual": 26.384,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 26.368,
+                "actual": 26.384,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 26.368,
+                "actual": 26.384,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 26.368,
+                "actual": 26.384,
+                "gate": 0.011
+              }
+            ],
+            "maxGeometry": {
+              "font": 0.01600000000000179,
+              "width": 0.06262000000000967,
+              "height": 0.01557499999999834
+            }
+          },
+          "after": {
+            "mae": 22.457867864409383,
+            "peakChannel": 210,
+            "worst64px": 36.50187265917603,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 26.368,
+                "actual": 26.384,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 26.368,
+                "actual": 26.384,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 26.368,
+                "actual": 26.384,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 26.368,
+                "actual": 26.384,
+                "gate": 0.011
+              }
+            ],
+            "maxGeometry": {
+              "font": 0.01600000000000179,
+              "width": 0.06262000000000967,
+              "height": 0.01557499999999834
+            }
+          }
+        },
+        {
+          "file": "380-1.4-0.png",
+          "foregroundPixels": 27571,
+          "sourceSha256": "04414b878d7f20385e2c5c893dd29a513cae3002b02f37b53c1644681b8c6eaa",
+          "beforeSha256": "35aec582c60369ffb4143623aa90c6335580b1f9c3197412d6d0773093360735",
+          "afterSha256": "96310e40394c4c02a21b757a411baa8b923d841bace7dd63cafa6186da8a5c9e",
+          "before": {
+            "mae": 101.26382793514925,
+            "peakChannel": 202,
+            "worst64px": 136.09695046712497,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 38.496,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 51.9688,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 38.496,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 51.9688,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 38.496,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 51.9688,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 38.496,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 51.9688,
+                "actual": 37.125,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 10.992,
+              "width": 0.015620000000012624,
+              "height": 14.843800000000002
+            }
+          },
+          "after": {
+            "mae": 14.487251097167313,
+            "peakChannel": 202,
+            "worst64px": 82.88888888888889,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.09325000000001182,
+              "height": 5.000000000165983e-05
+            }
+          }
+        },
+        {
+          "file": "380-1.4-1.png",
+          "foregroundPixels": 22204,
+          "sourceSha256": "a5dc4a67bf70b72da86789a81a6446207675a8238900a0d07d08f9e6b1dd5036",
+          "beforeSha256": "fd0869cfcc86fcf13c5abdbb4bdba4f0af241cea685c6fefdee2657a2efb7c7f",
+          "afterSha256": "3dbf78d2d47838b0608b61c91cc58a55e3f2ce41d2b48674bc0e6cedfe7b180d",
+          "before": {
+            "mae": 102.66464000480394,
+            "peakChannel": 215,
+            "worst64px": 132.72893772893772,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 35.008,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 47.2656,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 35.008,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 47.2656,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 35.008,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 47.2656,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 35.008,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 43.7656,
+                "actual": 31.25,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 10.000000000000004,
+              "width": 0.10962000000000671,
+              "height": 13.5156
+            }
+          },
+          "after": {
+            "mae": 16.607247943313517,
+            "peakChannel": 201,
+            "worst64px": 35.15528781793842,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.10962000000000671,
+              "height": 0.01559999999999917
+            }
+          }
+        },
+        {
+          "file": "380-2-0.png",
+          "foregroundPixels": 48734,
+          "sourceSha256": "a0c1cbf3e04f4aee9b99cc4672dcb01fcd9b538eb575173655bd01d4d3022455",
+          "beforeSha256": "b789803d243396d1de359ef542fc4de2073ef1d2ab040977738e4695c8bd0f64",
+          "afterSha256": "c4a7038a8c1afc462bd4a33db75de9e079e60b303b71b86593dc91276edca2bb",
+          "before": {
+            "mae": 121.4838853093665,
+            "peakChannel": 202,
+            "worst64px": 159.4781048097631,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 55.008,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 74.2656,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 55.008,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 74.2656,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 55.008,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 74.2656,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 55.008,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 74.2656,
+                "actual": 37.125,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 27.504,
+              "width": 0.07837999999998146,
+              "height": 37.140600000000006
+            }
+          },
+          "after": {
+            "mae": 7.483413359598364,
+            "peakChannel": 201,
+            "worst64px": 27.976019184652277,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.07837999999998146,
+              "height": 0.015600000000006276
+            }
+          }
+        },
+        {
+          "file": "380-2-1.png",
+          "foregroundPixels": 40701,
+          "sourceSha256": "a5467444474b937b0db66ce848b1d44e1322f2151485b4da49a6b21c8d5c1d11",
+          "beforeSha256": "9d1addda98c8da2c2c567c70aac5bf508ac2044825f4e2f73d1c9b45696ead7c",
+          "afterSha256": "b9ee09e1a7e4e5f88dc8371ed235f3449e0ce97ac88341c9dd6f73e30e668932",
+          "before": {
+            "mae": 121.1349680188038,
+            "peakChannel": 209,
+            "worst64px": 148.42732240437158,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 50,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 67.5,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 50,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 67.5,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 50,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 67.5,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 50,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 62.5,
+                "actual": 31.25,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 24.992,
+              "width": 0.07774999999998045,
+              "height": 33.75
+            }
+          },
+          "after": {
+            "mae": 10.873541190634137,
+            "peakChannel": 201,
+            "worst64px": 30.157208911307272,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.07774999999998045,
+              "height": 0.0
+            }
+          }
+        },
+        {
+          "file": "800-1-0.png",
+          "foregroundPixels": 13537,
+          "sourceSha256": "c5333d3c45aff80cf8d5d26bae18eff8ffcd892b7b55ca33a5ccc8950954c6d0",
+          "beforeSha256": "2c512928791819aab4bca7583b6c9bb852d504331c21d33e516e2f37e45afebd",
+          "afterSha256": "2c512928791819aab4bca7583b6c9bb852d504331c21d33e516e2f37e45afebd",
+          "before": {
+            "mae": 23.937997094383295,
+            "peakChannel": 201,
+            "worst64px": 152.33333333333334,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.20274999999998045,
+              "height": 0.01559999999999917
+            }
+          },
+          "after": {
+            "mae": 23.937997094383295,
+            "peakChannel": 201,
+            "worst64px": 152.33333333333334,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.20274999999998045,
+              "height": 0.01559999999999917
+            }
+          }
+        },
+        {
+          "file": "800-1-1.png",
+          "foregroundPixels": 14468,
+          "sourceSha256": "10d974c3b33c9efbc0588771717611ca89303fe7e1c39bf61b6cbed9b672079c",
+          "beforeSha256": "36fe7c7b2414ef47db4f38fce81dd09be6f4825393ba64503c6f8742b6e18ad8",
+          "afterSha256": "36fe7c7b2414ef47db4f38fce81dd09be6f4825393ba64503c6f8742b6e18ad8",
+          "before": {
+            "mae": 20.24078425951525,
+            "peakChannel": 223,
+            "worst64px": 46.872549019607845,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.1410999999999376,
+              "height": 5.000000000165983e-05
+            }
+          },
+          "after": {
+            "mae": 20.24078425951525,
+            "peakChannel": 223,
+            "worst64px": 46.872549019607845,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.1410999999999376,
+              "height": 5.000000000165983e-05
+            }
+          }
+        },
+        {
+          "file": "800-1.4-0.png",
+          "foregroundPixels": 57397,
+          "sourceSha256": "be0024745d4abc435fec0eb8a1cc39d7e4a7f722dead9b23eab3fb6d2c090906",
+          "beforeSha256": "dfdee326d34daef43305071c152c083d503a84ae4bbf0ac70f86a9057e5c5cdf",
+          "afterSha256": "10e1f2cd0823bd454609c7453a35556660717c477d5758b3c996685d13688105",
+          "before": {
+            "mae": 112.39381849225569,
+            "peakChannel": 202,
+            "worst64px": 153.27783078880407,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 59.104,
+                "actual": 42.216,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 79.7969,
+                "actual": 56.984375,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 59.104,
+                "actual": 42.216,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 79.7969,
+                "actual": 56.984375,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 59.104,
+                "actual": 42.216,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 79.7969,
+                "actual": 56.984375,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 59.104,
+                "actual": 42.216,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 79.7969,
+                "actual": 56.984375,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 16.887999999999998,
+              "width": 0.1560000000000059,
+              "height": 22.812524999999994
+            }
+          },
+          "after": {
+            "mae": 6.637327154148591,
+            "peakChannel": 186,
+            "worst64px": 24.268532155130092,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.10912000000001854,
+              "height": 0.015649999999993724
+            }
+          }
+        },
+        {
+          "file": "800-1.4-1.png",
+          "foregroundPixels": 57373,
+          "sourceSha256": "d75fde3f4bec5b34059365275d40e9c545bafa949e3fcbedf3ff0a09974eb066",
+          "beforeSha256": "574be0f140565b482e9a9a714bd8e1515007aa15b54ec10e10c51551f74d5e58",
+          "afterSha256": "ffd25f4adc77556abcd5f52917c003e4d93c161285c0c590f764e89d3a19b35d",
+          "before": {
+            "mae": 116.41371957773401,
+            "peakChannel": 215,
+            "worst64px": 155.94321106821107,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 61.16,
+                "actual": 43.64,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 82.5469,
+                "actual": 58.90625,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 61.16,
+                "actual": 43.64,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "width",
+                "expected": 486.5,
+                "actual": 485.90625,
+                "gate": 0.51
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 82.5469,
+                "actual": 58.90625,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 61.16,
+                "actual": 43.64,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 82.5469,
+                "actual": 58.90625,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 61.16,
+                "actual": 43.64,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "width",
+                "expected": 553,
+                "actual": 552.375,
+                "gate": 0.51
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 76.4375,
+                "actual": 54.546875,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 17.519999999999996,
+              "width": 0.625,
+              "height": 23.640649999999994
+            }
+          },
+          "after": {
+            "mae": 12.039588889082554,
+            "peakChannel": 211,
+            "worst64px": 52.12519319938176,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 61.16,
+                "actual": 61.176,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 61.16,
+                "actual": 61.176,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 61.16,
+                "actual": 61.176,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 61.16,
+                "actual": 61.176,
+                "gate": 0.011
+              }
+            ],
+            "maxGeometry": {
+              "font": 0.016000000000005343,
+              "width": 0.04690000000005057,
+              "height": 0.03125
+            }
+          }
+        },
+        {
+          "file": "800-2-0.png",
+          "foregroundPixels": 64098,
+          "sourceSha256": "2071297b4b21d15a15ccd82b23d70684e9436b2dfd8b79f41281483b5489c180",
+          "beforeSha256": "8fb49a985f306ada1c164dd2e38bbedc7a76e84ec2f72d6f41d797aae62b021f",
+          "afterSha256": "63cbb1d874fcd9fe19ea55e60f92f8ac3bf5c33558be45f9929a12214f2c68b3",
+          "before": {
+            "mae": 123.0581921432806,
+            "peakChannel": 202,
+            "worst64px": 155.41122947181535,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 60.504,
+                "actual": 30.248,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 81.6719,
+                "actual": 40.828125,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 60.504,
+                "actual": 30.248,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 81.6719,
+                "actual": 40.828125,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 60.504,
+                "actual": 30.248,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 81.6719,
+                "actual": 40.828125,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 60.504,
+                "actual": 30.248,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 81.6719,
+                "actual": 40.828125,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 30.255999999999997,
+              "width": 0.26600000000001955,
+              "height": 40.843774999999994
+            }
+          },
+          "after": {
+            "mae": 6.861009703890917,
+            "peakChannel": 201,
+            "worst64px": 30.961129446277962,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.09412000000003218,
+              "height": 2.4999999993724487e-05
+            }
+          }
+        },
+        {
+          "file": "800-2-1.png",
+          "foregroundPixels": 60573,
+          "sourceSha256": "efdb1ddb3cd2ae8344d4374044113bf7271a7f1cf1ee0eb1eae22f9ef9c7f6cd",
+          "beforeSha256": "33467e2dce6dfd2a2ece6fed2d51d815b04c7c69996cfe87d5c3c8e9425031c0",
+          "afterSha256": "3d76703667e0114eec8ab833ff65a367e6f0c211b31c1eeed92d952f4566a8b6",
+          "before": {
+            "mae": 128.14122904044157,
+            "peakChannel": 215,
+            "worst64px": 164.29000884173297,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 61.224,
+                "actual": 30.552,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "width",
+                "expected": 332.609,
+                "actual": 331.90625,
+                "gate": 0.51
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 82.6406,
+                "actual": 41.234375,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 61.224,
+                "actual": 30.552,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "width",
+                "expected": 487,
+                "actual": 485.9375,
+                "gate": 0.51
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 82.6406,
+                "actual": 41.234375,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 61.224,
+                "actual": 30.552,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "width",
+                "expected": 321.047,
+                "actual": 320.35938,
+                "gate": 0.51
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 82.6406,
+                "actual": 41.234375,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 61.224,
+                "actual": 30.552,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "width",
+                "expected": 553.578,
+                "actual": 552.40625,
+                "gate": 0.51
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 76.5156,
+                "actual": 38.1875,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 30.671999999999997,
+              "width": 1.1717499999999745,
+              "height": 41.406225000000006
+            }
+          },
+          "after": {
+            "mae": 8.819705149158866,
+            "peakChannel": 211,
+            "worst64px": 43.96976993044409,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.008000000000002672,
+              "width": 0.03125,
+              "height": 0.015649999999993724
+            }
+          }
+        }
+      ],
+      "initialMetricFont": "untouched browser default",
+      "sourceFixtureSha256": "80a4bdcebff06967cedd88380e9ca54a3bc9585a007010dee43100f81f826a8b",
+      "summary": {
+        "before": {
+          "meanMAE": 84.91247148962871,
+          "maxGeometry": {
+            "font": 30.671999999999997,
+            "width": 1.1717499999999745,
+            "height": 41.406225000000006
+          },
+          "failedFields": 74
+        },
+        "after": {
+          "meanMAE": 14.683705153391948,
+          "maxGeometry": {
+            "font": 0.016000000000005343,
+            "width": 0.20274999999998045,
+            "height": 0.03125
+          },
+          "failedFields": 8
+        }
+      }
+    },
+    "controlled-initial-metric-font": {
+      "frames": 12,
+      "rows": [
+        {
+          "file": "380-1-0.png",
+          "foregroundPixels": 9433,
+          "sourceSha256": "c7caf73e60e7ebfd43a06787691d6fb0b6513a7160fa14744e4ea27414238e33",
+          "beforeSha256": "a5f13e6e1643d92b632158eebd4431581aa6185aa15451aafd2f77e995da2557",
+          "afterSha256": "a5f13e6e1643d92b632158eebd4431581aa6185aa15451aafd2f77e995da2557",
+          "before": {
+            "mae": 25.356231668963567,
+            "peakChannel": 201,
+            "worst64px": 37.91025641025641,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.09362000000001558,
+              "height": 0.0
+            }
+          },
+          "after": {
+            "mae": 25.356231668963567,
+            "peakChannel": 201,
+            "worst64px": 37.91025641025641,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.09362000000001558,
+              "height": 0.0
+            }
+          }
+        },
+        {
+          "file": "380-1-1.png",
+          "foregroundPixels": 8698,
+          "sourceSha256": "d5b5d47e14ec90a7185d4321868a53f8f8d30ec234831732c41bd7f045c0dd7a",
+          "beforeSha256": "eb5a3f57fe719216a10866f41e42aa7736ef555b064457492494472ed15cd42e",
+          "afterSha256": "eb5a3f57fe719216a10866f41e42aa7736ef555b064457492494472ed15cd42e",
+          "before": {
+            "mae": 22.335249482639686,
+            "peakChannel": 198,
+            "worst64px": 36.166666666666664,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.10937999999998738,
+              "height": 0.01565000000000083
+            }
+          },
+          "after": {
+            "mae": 22.335249482639686,
+            "peakChannel": 198,
+            "worst64px": 36.166666666666664,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.10937999999998738,
+              "height": 0.01565000000000083
+            }
+          }
+        },
+        {
+          "file": "380-1.4-0.png",
+          "foregroundPixels": 27566,
+          "sourceSha256": "8e1ad576b6a7aff4bef36ed6f5e8f0844a12cd0b4a139199cae34e51014d6d50",
+          "beforeSha256": "35aec582c60369ffb4143623aa90c6335580b1f9c3197412d6d0773093360735",
+          "afterSha256": "96310e40394c4c02a21b757a411baa8b923d841bace7dd63cafa6186da8a5c9e",
+          "before": {
+            "mae": 101.59516554209291,
+            "peakChannel": 202,
+            "worst64px": 136.09695046712497,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 38.496,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 51.9688,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 38.496,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 51.9688,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 38.496,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 51.9688,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 38.496,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 51.9688,
+                "actual": 37.125,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 10.992,
+              "width": 0.015620000000012624,
+              "height": 14.843800000000002
+            }
+          },
+          "after": {
+            "mae": 14.2685191903069,
+            "peakChannel": 202,
+            "worst64px": 82.88888888888889,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.09325000000001182,
+              "height": 5.000000000165983e-05
+            }
+          }
+        },
+        {
+          "file": "380-1.4-1.png",
+          "foregroundPixels": 22234,
+          "sourceSha256": "a9cf89e670349c7dd3997a0058de1192f19d83c21f971991fb6fbab46ae27ac6",
+          "beforeSha256": "fd0869cfcc86fcf13c5abdbb4bdba4f0af241cea685c6fefdee2657a2efb7c7f",
+          "afterSha256": "3dbf78d2d47838b0608b61c91cc58a55e3f2ce41d2b48674bc0e6cedfe7b180d",
+          "before": {
+            "mae": 102.62773230188,
+            "peakChannel": 215,
+            "worst64px": 133.30316409124356,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 35.008,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 47.2656,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 35.008,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 47.2656,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 35.008,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 47.2656,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 35.008,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 43.7656,
+                "actual": 31.25,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 10.000000000000004,
+              "width": 0.10962000000000671,
+              "height": 13.5156
+            }
+          },
+          "after": {
+            "mae": 16.407214176486463,
+            "peakChannel": 209,
+            "worst64px": 28.303643724696357,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.10962000000000671,
+              "height": 0.01559999999999917
+            }
+          }
+        },
+        {
+          "file": "380-2-0.png",
+          "foregroundPixels": 48744,
+          "sourceSha256": "b9f8ea2e2cac38d1076edad7066f499278c6ffd2416375534617f9cfeb810dd7",
+          "beforeSha256": "b789803d243396d1de359ef542fc4de2073ef1d2ab040977738e4695c8bd0f64",
+          "afterSha256": "c4a7038a8c1afc462bd4a33db75de9e079e60b303b71b86593dc91276edca2bb",
+          "before": {
+            "mae": 121.39537857650856,
+            "peakChannel": 202,
+            "worst64px": 159.4781048097631,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 55.008,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 74.2656,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 55.008,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 74.2656,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 55.008,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 74.2656,
+                "actual": 37.125,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 55.008,
+                "actual": 27.504,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 74.2656,
+                "actual": 37.125,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 27.504,
+              "width": 0.07837999999998146,
+              "height": 37.140600000000006
+            }
+          },
+          "after": {
+            "mae": 7.436963181793315,
+            "peakChannel": 201,
+            "worst64px": 33.32254196642686,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.07837999999998146,
+              "height": 0.015600000000006276
+            }
+          }
+        },
+        {
+          "file": "380-2-1.png",
+          "foregroundPixels": 40762,
+          "sourceSha256": "44b08d5687d309b0cb4dfdff786d9c2e177fde3663a3868d05f2be609eefda2a",
+          "beforeSha256": "9d1addda98c8da2c2c567c70aac5bf508ac2044825f4e2f73d1c9b45696ead7c",
+          "afterSha256": "b9ee09e1a7e4e5f88dc8371ed235f3449e0ce97ac88341c9dd6f73e30e668932",
+          "before": {
+            "mae": 120.52278265704987,
+            "peakChannel": 209,
+            "worst64px": 148.42732240437158,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 50,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 67.5,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 50,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 67.5,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 50,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 67.5,
+                "actual": 33.75,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 50,
+                "actual": 25.008,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 62.5,
+                "actual": 31.25,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 24.992,
+              "width": 0.07774999999998045,
+              "height": 33.75
+            }
+          },
+          "after": {
+            "mae": 11.18188508905353,
+            "peakChannel": 201,
+            "worst64px": 30.157208911307272,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.07774999999998045,
+              "height": 0.0
+            }
+          }
+        },
+        {
+          "file": "800-1-0.png",
+          "foregroundPixels": 13500,
+          "sourceSha256": "ac0714ce4c0417496eff7801d99d28ca60df8fc0f7d8fea491cbcb14a2b8adac",
+          "beforeSha256": "2c512928791819aab4bca7583b6c9bb852d504331c21d33e516e2f37e45afebd",
+          "afterSha256": "2c512928791819aab4bca7583b6c9bb852d504331c21d33e516e2f37e45afebd",
+          "before": {
+            "mae": 23.95906172839506,
+            "peakChannel": 201,
+            "worst64px": 152.33333333333334,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.20274999999998045,
+              "height": 0.01559999999999917
+            }
+          },
+          "after": {
+            "mae": 23.95906172839506,
+            "peakChannel": 201,
+            "worst64px": 152.33333333333334,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.20274999999998045,
+              "height": 0.01559999999999917
+            }
+          }
+        },
+        {
+          "file": "800-1-1.png",
+          "foregroundPixels": 14457,
+          "sourceSha256": "092d4d82b4b64fd77c121e7c8918788544fd0433d2c76027b49b37a62b6765f4",
+          "beforeSha256": "36fe7c7b2414ef47db4f38fce81dd09be6f4825393ba64503c6f8742b6e18ad8",
+          "afterSha256": "36fe7c7b2414ef47db4f38fce81dd09be6f4825393ba64503c6f8742b6e18ad8",
+          "before": {
+            "mae": 20.62357335546794,
+            "peakChannel": 223,
+            "worst64px": 46.872549019607845,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.1410999999999376,
+              "height": 5.000000000165983e-05
+            }
+          },
+          "after": {
+            "mae": 20.62357335546794,
+            "peakChannel": 223,
+            "worst64px": 46.872549019607845,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.1410999999999376,
+              "height": 5.000000000165983e-05
+            }
+          }
+        },
+        {
+          "file": "800-1.4-0.png",
+          "foregroundPixels": 57379,
+          "sourceSha256": "62f8c2489e2ce680a2f358b17d1ae993865b30cab86770392c55d85e7fd7cc8a",
+          "beforeSha256": "dfdee326d34daef43305071c152c083d503a84ae4bbf0ac70f86a9057e5c5cdf",
+          "afterSha256": "10e1f2cd0823bd454609c7453a35556660717c477d5758b3c996685d13688105",
+          "before": {
+            "mae": 112.30823123442374,
+            "peakChannel": 202,
+            "worst64px": 153.27783078880407,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 59.104,
+                "actual": 42.216,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 79.7969,
+                "actual": 56.984375,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 59.104,
+                "actual": 42.216,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 79.7969,
+                "actual": 56.984375,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 59.104,
+                "actual": 42.216,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 79.7969,
+                "actual": 56.984375,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 59.104,
+                "actual": 42.216,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 79.7969,
+                "actual": 56.984375,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 16.887999999999998,
+              "width": 0.1560000000000059,
+              "height": 22.812524999999994
+            }
+          },
+          "after": {
+            "mae": 6.942632902862255,
+            "peakChannel": 186,
+            "worst64px": 32.702228544333806,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.10912000000001854,
+              "height": 0.015649999999993724
+            }
+          }
+        },
+        {
+          "file": "800-1.4-1.png",
+          "foregroundPixels": 56887,
+          "sourceSha256": "d1a4ba91b6c3fa231d24bd5c1c08c7622c5a43e15f2964493e09b07a1852c502",
+          "beforeSha256": "574be0f140565b482e9a9a714bd8e1515007aa15b54ec10e10c51551f74d5e58",
+          "afterSha256": "ffd25f4adc77556abcd5f52917c003e4d93c161285c0c590f764e89d3a19b35d",
+          "before": {
+            "mae": 117.66145750933137,
+            "peakChannel": 215,
+            "worst64px": 158.01116005873715,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 61.176,
+                "actual": 43.64,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 82.5781,
+                "actual": 58.90625,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 61.176,
+                "actual": 43.64,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "width",
+                "expected": 486.562,
+                "actual": 485.90625,
+                "gate": 0.51
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 82.5781,
+                "actual": 58.90625,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 61.176,
+                "actual": 43.64,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 82.5781,
+                "actual": 58.90625,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 61.176,
+                "actual": 43.64,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "width",
+                "expected": 553.172,
+                "actual": 552.375,
+                "gate": 0.51
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 76.4531,
+                "actual": 54.546875,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 17.536,
+              "width": 0.7970000000000255,
+              "height": 23.671850000000006
+            }
+          },
+          "after": {
+            "mae": 8.3329114443253,
+            "peakChannel": 198,
+            "worst64px": 31.037186742118028,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.1250999999999749,
+              "height": 0.015649999999993724
+            }
+          }
+        },
+        {
+          "file": "800-2-0.png",
+          "foregroundPixels": 64133,
+          "sourceSha256": "79ef0a8579e34fc022a4703b314a4c39a10b17a398c1a982b2ea0e7e54ba9be9",
+          "beforeSha256": "8fb49a985f306ada1c164dd2e38bbedc7a76e84ec2f72d6f41d797aae62b021f",
+          "afterSha256": "63cbb1d874fcd9fe19ea55e60f92f8ac3bf5c33558be45f9929a12214f2c68b3",
+          "before": {
+            "mae": 123.09578012359732,
+            "peakChannel": 202,
+            "worst64px": 155.41122947181535,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 60.504,
+                "actual": 30.248,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 81.6719,
+                "actual": 40.828125,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 60.504,
+                "actual": 30.248,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 81.6719,
+                "actual": 40.828125,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 60.504,
+                "actual": 30.248,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 81.6719,
+                "actual": 40.828125,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 60.504,
+                "actual": 30.248,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 81.6719,
+                "actual": 40.828125,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 30.255999999999997,
+              "width": 0.26600000000001955,
+              "height": 40.843774999999994
+            }
+          },
+          "after": {
+            "mae": 6.85046180073701,
+            "peakChannel": 201,
+            "worst64px": 34.61161387631976,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.09412000000003218,
+              "height": 2.4999999993724487e-05
+            }
+          }
+        },
+        {
+          "file": "800-2-1.png",
+          "foregroundPixels": 60388,
+          "sourceSha256": "38a50b7c7d50cd6d14cb096ef930b4f14eae60c1f3df10f04eb7723c3509965a",
+          "beforeSha256": "33467e2dce6dfd2a2ece6fed2d51d815b04c7c69996cfe87d5c3c8e9425031c0",
+          "afterSha256": "3d76703667e0114eec8ab833ff65a367e6f0c211b31c1eeed92d952f4566a8b6",
+          "before": {
+            "mae": 128.6265814400212,
+            "peakChannel": 215,
+            "worst64px": 164.29000884173297,
+            "failures": [
+              {
+                "row": 0,
+                "field": "font",
+                "expected": 61.232,
+                "actual": 30.552,
+                "gate": 0.011
+              },
+              {
+                "row": 0,
+                "field": "width",
+                "expected": 332.688,
+                "actual": 331.90625,
+                "gate": 0.51
+              },
+              {
+                "row": 0,
+                "field": "height",
+                "expected": 82.6562,
+                "actual": 41.234375,
+                "gate": 0.03125
+              },
+              {
+                "row": 1,
+                "field": "font",
+                "expected": 61.232,
+                "actual": 30.552,
+                "gate": 0.011
+              },
+              {
+                "row": 1,
+                "field": "width",
+                "expected": 487.078,
+                "actual": 485.9375,
+                "gate": 0.51
+              },
+              {
+                "row": 1,
+                "field": "height",
+                "expected": 82.6562,
+                "actual": 41.234375,
+                "gate": 0.03125
+              },
+              {
+                "row": 2,
+                "field": "font",
+                "expected": 61.232,
+                "actual": 30.552,
+                "gate": 0.011
+              },
+              {
+                "row": 2,
+                "field": "width",
+                "expected": 321.125,
+                "actual": 320.35938,
+                "gate": 0.51
+              },
+              {
+                "row": 2,
+                "field": "height",
+                "expected": 82.6562,
+                "actual": 41.234375,
+                "gate": 0.03125
+              },
+              {
+                "row": 3,
+                "field": "font",
+                "expected": 61.232,
+                "actual": 30.552,
+                "gate": 0.011
+              },
+              {
+                "row": 3,
+                "field": "width",
+                "expected": 553.703,
+                "actual": 552.40625,
+                "gate": 0.51
+              },
+              {
+                "row": 3,
+                "field": "height",
+                "expected": 76.5312,
+                "actual": 38.1875,
+                "gate": 0.03125
+              }
+            ],
+            "maxGeometry": {
+              "font": 30.68,
+              "width": 1.2967499999999745,
+              "height": 41.421825
+            }
+          },
+          "after": {
+            "mae": 7.674438630191429,
+            "peakChannel": 201,
+            "worst64px": 23.9864406779661,
+            "failures": [],
+            "maxGeometry": {
+              "font": 0.0,
+              "width": 0.10924999999997453,
+              "height": 5.000000000165983e-05
+            }
+          }
+        }
+      ],
+      "initialMetricFont": "10px Segoe UI (host-injected context input, matching measured Windows Skia SansSerif)",
+      "sourceFixtureSha256": "1bdce7168b1e512458be356b842d3f38442ad790d9d65a5cdcd070be67e2fc50",
+      "summary": {
+        "before": {
+          "meanMAE": 85.00893546836427,
+          "maxGeometry": {
+            "font": 30.68,
+            "width": 1.2967499999999745,
+            "height": 41.421825
+          },
+          "failedFields": 70
+        },
+        "after": {
+          "meanMAE": 14.280761887601871,
+          "maxGeometry": {
+            "font": 0.0,
+            "width": 0.20274999999998045,
+            "height": 0.01565000000000083
+          },
+          "failedFields": 0
+        }
+      }
+    }
+  }
+}

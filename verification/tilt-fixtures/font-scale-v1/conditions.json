@@ -1,0 +1,902 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "DPR": 1,
+  "height": 600,
+  "scope": "Untouched mounted original VisualizerTilt. Explicit lyricsFontScale, fixed wrap synthetic scene and CSS/RAF clock at 10ms. Existing shell/background/subtitles isolated by existing host aliases. Not a subtitle, device or complete theme acceptance.",
+  "captures": [
+    {
+      "file": "380-1-0.png",
+      "width": 380,
+      "scale": 1,
+      "tilt": 0,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic",
+          "tilt": false,
+          "font": 27.504,
+          "width": 149.453,
+          "height": 37.125,
+          "rect": {
+            "x": 115.265625,
+            "y": 207.75,
+            "width": 149.453125,
+            "height": 37.125,
+            "top": 207.75,
+            "right": 264.71875,
+            "bottom": 244.875,
+            "left": 115.265625
+          }
+        },
+        {
+          "text": "amber echoes",
+          "tilt": false,
+          "font": 27.504,
+          "width": 218.781,
+          "height": 37.125,
+          "rect": {
+            "x": 80.59375,
+            "y": 256.875,
+            "width": 218.78125,
+            "height": 37.125,
+            "top": 256.875,
+            "right": 299.375,
+            "bottom": 294,
+            "left": 80.59375
+          }
+        },
+        {
+          "text": "cross the",
+          "tilt": false,
+          "font": 27.504,
+          "width": 144.25,
+          "height": 37.125,
+          "rect": {
+            "x": 117.859375,
+            "y": 306,
+            "width": 144.25,
+            "height": 37.125,
+            "top": 306,
+            "right": 262.109375,
+            "bottom": 343.125,
+            "left": 117.859375
+          }
+        },
+        {
+          "text": "quiet window.",
+          "tilt": false,
+          "font": 27.504,
+          "width": 223.703,
+          "height": 37.125,
+          "rect": {
+            "x": 78.140625,
+            "y": 356.0150451660156,
+            "width": 223.703125,
+            "height": 37.125,
+            "top": 356.0150451660156,
+            "right": 301.84375,
+            "bottom": 393.1400451660156,
+            "left": 78.140625
+          }
+        }
+      ]
+    },
+    {
+      "file": "380-1-1.png",
+      "width": 380,
+      "scale": 1,
+      "tilt": 1,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic",
+          "tilt": false,
+          "font": 26.368,
+          "width": 143.281,
+          "height": 35.5938,
+          "rect": {
+            "x": 118.34375,
+            "y": 212.125,
+            "width": 143.28125,
+            "height": 35.59375,
+            "top": 212.125,
+            "right": 261.625,
+            "bottom": 247.71875,
+            "left": 118.34375
+          }
+        },
+        {
+          "text": "amber echoes",
+          "tilt": false,
+          "font": 26.368,
+          "width": 209.75,
+          "height": 35.5938,
+          "rect": {
+            "x": 85.109375,
+            "y": 259.71875,
+            "width": 209.75,
+            "height": 35.59375,
+            "top": 259.71875,
+            "right": 294.859375,
+            "bottom": 295.3125,
+            "left": 85.109375
+          }
+        },
+        {
+          "text": "cross the",
+          "tilt": false,
+          "font": 26.368,
+          "width": 138.297,
+          "height": 35.5938,
+          "rect": {
+            "x": 120.84375,
+            "y": 307.3125,
+            "width": 138.296875,
+            "height": 35.59375,
+            "top": 307.3125,
+            "right": 259.140625,
+            "bottom": 342.90625,
+            "left": 120.84375
+          }
+        },
+        {
+          "text": "quiet window.",
+          "tilt": true,
+          "font": 26.368,
+          "width": 238.453,
+          "height": 32.9688,
+          "rect": {
+            "x": 71.44469451904297,
+            "y": 356.7088317871094,
+            "width": 237.094970703125,
+            "height": 32.780975341796875,
+            "top": 356.7088317871094,
+            "right": 308.53966522216797,
+            "bottom": 389.48980712890625,
+            "left": 71.44469451904297
+          }
+        }
+      ]
+    },
+    {
+      "file": "380-1.4-0.png",
+      "width": 380,
+      "scale": 1.4,
+      "tilt": 0,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic",
+          "tilt": false,
+          "font": 38.496,
+          "width": 209.156,
+          "height": 51.9688,
+          "rect": {
+            "x": 85.421875,
+            "y": 178.0625,
+            "width": 209.15625,
+            "height": 51.96875,
+            "top": 178.0625,
+            "right": 294.578125,
+            "bottom": 230.03125,
+            "left": 85.421875
+          }
+        },
+        {
+          "text": "amber echoes",
+          "tilt": false,
+          "font": 38.496,
+          "width": 306.188,
+          "height": 51.9688,
+          "rect": {
+            "x": 36.90625,
+            "y": 242.03125,
+            "width": 306.1875,
+            "height": 51.96875,
+            "top": 242.03125,
+            "right": 343.09375,
+            "bottom": 294,
+            "left": 36.90625
+          }
+        },
+        {
+          "text": "cross the",
+          "tilt": false,
+          "font": 38.496,
+          "width": 201.875,
+          "height": 51.9688,
+          "rect": {
+            "x": 89.0625,
+            "y": 306,
+            "width": 201.875,
+            "height": 51.96875,
+            "top": 306,
+            "right": 290.9375,
+            "bottom": 357.96875,
+            "left": 89.0625
+          }
+        },
+        {
+          "text": "quiet window.",
+          "tilt": false,
+          "font": 38.496,
+          "width": 313.062,
+          "height": 51.9688,
+          "rect": {
+            "x": 33.46875,
+            "y": 370.8587951660156,
+            "width": 313.0625,
+            "height": 51.96875,
+            "top": 370.8587951660156,
+            "right": 346.53125,
+            "bottom": 422.8275451660156,
+            "left": 33.46875
+          }
+        }
+      ]
+    },
+    {
+      "file": "380-1.4-1.png",
+      "width": 380,
+      "scale": 1.4,
+      "tilt": 1,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic",
+          "tilt": false,
+          "font": 35.008,
+          "width": 190.188,
+          "height": 47.2656,
+          "rect": {
+            "x": 94.90625,
+            "y": 189.21875,
+            "width": 190.1875,
+            "height": 47.265625,
+            "top": 189.21875,
+            "right": 285.09375,
+            "bottom": 236.484375,
+            "left": 94.90625
+          }
+        },
+        {
+          "text": "amber echoes",
+          "tilt": false,
+          "font": 35.008,
+          "width": 278.469,
+          "height": 47.2656,
+          "rect": {
+            "x": 50.765625,
+            "y": 248.484375,
+            "width": 278.46875,
+            "height": 47.265625,
+            "top": 248.484375,
+            "right": 329.234375,
+            "bottom": 295.75,
+            "left": 50.765625
+          }
+        },
+        {
+          "text": "cross the",
+          "tilt": false,
+          "font": 35.008,
+          "width": 183.578,
+          "height": 47.2656,
+          "rect": {
+            "x": 98.203125,
+            "y": 307.75,
+            "width": 183.578125,
+            "height": 47.265625,
+            "top": 307.75,
+            "right": 281.78125,
+            "bottom": 355.015625,
+            "left": 98.203125
+          }
+        },
+        {
+          "text": "quiet window.",
+          "tilt": true,
+          "font": 35.008,
+          "width": 316.531,
+          "height": 43.7656,
+          "rect": {
+            "x": 32.63580322265625,
+            "y": 368.84893798828125,
+            "width": 314.7283935546875,
+            "height": 43.516357421875,
+            "top": 368.84893798828125,
+            "right": 347.36419677734375,
+            "bottom": 412.36529541015625,
+            "left": 32.63580322265625
+          }
+        }
+      ]
+    },
+    {
+      "file": "380-2-0.png",
+      "width": 380,
+      "scale": 2,
+      "tilt": 0,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic",
+          "tilt": false,
+          "font": 55.008,
+          "width": 298.844,
+          "height": 74.2656,
+          "rect": {
+            "x": 40.578125,
+            "y": 133.46875,
+            "width": 298.84375,
+            "height": 74.265625,
+            "top": 133.46875,
+            "right": 339.421875,
+            "bottom": 207.734375,
+            "left": 40.578125
+          }
+        },
+        {
+          "text": "amber echoes",
+          "tilt": false,
+          "font": 55.008,
+          "width": 437.484,
+          "height": 74.2656,
+          "rect": {
+            "x": -28.734375,
+            "y": 219.734375,
+            "width": 437.484375,
+            "height": 74.265625,
+            "top": 219.734375,
+            "right": 408.75,
+            "bottom": 294,
+            "left": -28.734375
+          }
+        },
+        {
+          "text": "cross the",
+          "tilt": false,
+          "font": 55.008,
+          "width": 288.438,
+          "height": 74.2656,
+          "rect": {
+            "x": 45.78125,
+            "y": 306,
+            "width": 288.4375,
+            "height": 74.265625,
+            "top": 306,
+            "right": 334.21875,
+            "bottom": 380.265625,
+            "left": 45.78125
+          }
+        },
+        {
+          "text": "quiet window.",
+          "tilt": false,
+          "font": 55.008,
+          "width": 447.297,
+          "height": 74.2656,
+          "rect": {
+            "x": -33.640625,
+            "y": 393.1556701660156,
+            "width": 447.296875,
+            "height": 74.265625,
+            "top": 393.1556701660156,
+            "right": 413.65625,
+            "bottom": 467.4212951660156,
+            "left": -33.640625
+          }
+        }
+      ]
+    },
+    {
+      "file": "380-2-1.png",
+      "width": 380,
+      "scale": 2,
+      "tilt": 1,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic",
+          "tilt": false,
+          "font": 50,
+          "width": 271.656,
+          "height": 67.5,
+          "rect": {
+            "x": 54.171875,
+            "y": 149.5,
+            "width": 271.65625,
+            "height": 67.5,
+            "top": 149.5,
+            "right": 325.828125,
+            "bottom": 217,
+            "left": 54.171875
+          }
+        },
+        {
+          "text": "amber echoes",
+          "tilt": false,
+          "font": 50,
+          "width": 397.734,
+          "height": 67.5,
+          "rect": {
+            "x": -8.875,
+            "y": 229,
+            "width": 397.734375,
+            "height": 67.5,
+            "top": 229,
+            "right": 388.859375,
+            "bottom": 296.5,
+            "left": -8.875
+          }
+        },
+        {
+          "text": "cross the",
+          "tilt": false,
+          "font": 50,
+          "width": 262.203,
+          "height": 67.5,
+          "rect": {
+            "x": 58.890625,
+            "y": 308.5,
+            "width": 262.203125,
+            "height": 67.5,
+            "top": 308.5,
+            "right": 321.09375,
+            "bottom": 376,
+            "left": 58.890625
+          }
+        },
+        {
+          "text": "quiet window.",
+          "tilt": true,
+          "font": 50,
+          "width": 452.125,
+          "height": 62.5,
+          "rect": {
+            "x": -34.774932861328125,
+            "y": 389.88665771484375,
+            "width": 449.54986572265625,
+            "height": 62.14404296875,
+            "top": 389.88665771484375,
+            "right": 414.7749328613281,
+            "bottom": 452.03070068359375,
+            "left": -34.774932861328125
+          }
+        }
+      ]
+    },
+    {
+      "file": "800-1-0.png",
+      "width": 800,
+      "scale": 1,
+      "tilt": 0,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic amber echoes",
+          "tilt": false,
+          "font": 34.728,
+          "width": 476.734,
+          "height": 46.8906,
+          "rect": {
+            "x": 161.625,
+            "y": 245.109375,
+            "width": 476.734375,
+            "height": 46.890625,
+            "top": 245.109375,
+            "right": 638.359375,
+            "bottom": 292,
+            "left": 161.625
+          }
+        },
+        {
+          "text": "cross the quiet window.",
+          "tilt": false,
+          "font": 34.728,
+          "width": 476.359,
+          "height": 46.8906,
+          "rect": {
+            "x": 161.8125,
+            "y": 308,
+            "width": 476.359375,
+            "height": 46.890625,
+            "top": 308,
+            "right": 638.171875,
+            "bottom": 354.890625,
+            "left": 161.8125
+          }
+        }
+      ]
+    },
+    {
+      "file": "800-1-1.png",
+      "width": 800,
+      "scale": 1,
+      "tilt": 1,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic amber echoes",
+          "tilt": true,
+          "font": 35.232,
+          "width": 537.938,
+          "height": 44.0312,
+          "rect": {
+            "x": 131.03125,
+            "y": 246.203125,
+            "width": 537.9375,
+            "height": 44.03125,
+            "top": 246.203125,
+            "right": 668.96875,
+            "bottom": 290.234375,
+            "left": 131.03125
+          }
+        },
+        {
+          "text": "cross the quiet window.",
+          "tilt": false,
+          "font": 35.232,
+          "width": 483.297,
+          "height": 47.5625,
+          "rect": {
+            "x": 158.34375,
+            "y": 306.234375,
+            "width": 483.296875,
+            "height": 47.5625,
+            "top": 306.234375,
+            "right": 641.640625,
+            "bottom": 353.796875,
+            "left": 158.34375
+          }
+        }
+      ]
+    },
+    {
+      "file": "800-1.4-0.png",
+      "width": 800,
+      "scale": 1.4,
+      "tilt": 0,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic",
+          "tilt": false,
+          "font": 59.104,
+          "width": 321.109,
+          "height": 79.7969,
+          "rect": {
+            "x": 239.4375,
+            "y": 116.40625,
+            "width": 321.109375,
+            "height": 79.796875,
+            "top": 116.40625,
+            "right": 560.546875,
+            "bottom": 196.203125,
+            "left": 239.4375
+          }
+        },
+        {
+          "text": "amber echoes",
+          "tilt": false,
+          "font": 59.104,
+          "width": 470.125,
+          "height": 79.7969,
+          "rect": {
+            "x": 164.9375,
+            "y": 212.203125,
+            "width": 470.125,
+            "height": 79.796875,
+            "top": 212.203125,
+            "right": 635.0625,
+            "bottom": 292,
+            "left": 164.9375
+          }
+        },
+        {
+          "text": "cross the",
+          "tilt": false,
+          "font": 59.104,
+          "width": 309.938,
+          "height": 79.7969,
+          "rect": {
+            "x": 245.03125,
+            "y": 308,
+            "width": 309.9375,
+            "height": 79.796875,
+            "top": 308,
+            "right": 554.96875,
+            "bottom": 387.796875,
+            "left": 245.03125
+          }
+        },
+        {
+          "text": "quiet window.",
+          "tilt": false,
+          "font": 59.104,
+          "width": 480.656,
+          "height": 79.7969,
+          "rect": {
+            "x": 159.671875,
+            "y": 404.6869201660156,
+            "width": 480.65625,
+            "height": 79.796875,
+            "top": 404.6869201660156,
+            "right": 640.328125,
+            "bottom": 484.4837951660156,
+            "left": 159.671875
+          }
+        }
+      ]
+    },
+    {
+      "file": "800-1.4-1.png",
+      "width": 800,
+      "scale": 1.4,
+      "tilt": 1,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic",
+          "tilt": false,
+          "font": 61.16,
+          "width": 332.266,
+          "height": 82.5469,
+          "rect": {
+            "x": 233.859375,
+            "y": 113.96875,
+            "width": 332.265625,
+            "height": 82.546875,
+            "top": 113.96875,
+            "right": 566.125,
+            "bottom": 196.515625,
+            "left": 233.859375
+          }
+        },
+        {
+          "text": "amber echoes",
+          "tilt": false,
+          "font": 61.16,
+          "width": 486.5,
+          "height": 82.5469,
+          "rect": {
+            "x": 156.75,
+            "y": 212.515625,
+            "width": 486.5,
+            "height": 82.546875,
+            "top": 212.515625,
+            "right": 643.25,
+            "bottom": 295.0625,
+            "left": 156.75
+          }
+        },
+        {
+          "text": "cross the",
+          "tilt": false,
+          "font": 61.16,
+          "width": 320.734,
+          "height": 82.5469,
+          "rect": {
+            "x": 239.625,
+            "y": 311.0625,
+            "width": 320.734375,
+            "height": 82.546875,
+            "top": 311.0625,
+            "right": 560.359375,
+            "bottom": 393.609375,
+            "left": 239.625
+          }
+        },
+        {
+          "text": "quiet window.",
+          "tilt": true,
+          "font": 61.16,
+          "width": 553,
+          "height": 76.4375,
+          "rect": {
+            "x": 125.07485961914062,
+            "y": 411.5357360839844,
+            "width": 549.850341796875,
+            "height": 76.00213623046875,
+            "top": 411.5357360839844,
+            "right": 674.9252014160156,
+            "bottom": 487.5378723144531,
+            "left": 125.07485961914062
+          }
+        }
+      ]
+    },
+    {
+      "file": "800-2-0.png",
+      "width": 800,
+      "scale": 2,
+      "tilt": 0,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic",
+          "tilt": false,
+          "font": 60.504,
+          "width": 328.703,
+          "height": 81.6719,
+          "rect": {
+            "x": 235.640625,
+            "y": 112.65625,
+            "width": 328.703125,
+            "height": 81.671875,
+            "top": 112.65625,
+            "right": 564.34375,
+            "bottom": 194.328125,
+            "left": 235.640625
+          }
+        },
+        {
+          "text": "amber echoes",
+          "tilt": false,
+          "font": 60.504,
+          "width": 481.266,
+          "height": 81.6719,
+          "rect": {
+            "x": 159.359375,
+            "y": 210.328125,
+            "width": 481.265625,
+            "height": 81.671875,
+            "top": 210.328125,
+            "right": 640.625,
+            "bottom": 292,
+            "left": 159.359375
+          }
+        },
+        {
+          "text": "cross the",
+          "tilt": false,
+          "font": 60.504,
+          "width": 317.281,
+          "height": 81.6719,
+          "rect": {
+            "x": 241.359375,
+            "y": 308,
+            "width": 317.28125,
+            "height": 81.671875,
+            "top": 308,
+            "right": 558.640625,
+            "bottom": 389.671875,
+            "left": 241.359375
+          }
+        },
+        {
+          "text": "quiet window.",
+          "tilt": false,
+          "font": 60.504,
+          "width": 492.031,
+          "height": 81.6719,
+          "rect": {
+            "x": 153.984375,
+            "y": 406.5619201660156,
+            "width": 492.03125,
+            "height": 81.671875,
+            "top": 406.5619201660156,
+            "right": 646.015625,
+            "bottom": 488.2337951660156,
+            "left": 153.984375
+          }
+        }
+      ]
+    },
+    {
+      "file": "800-2-1.png",
+      "width": 800,
+      "scale": 2,
+      "tilt": 1,
+      "mediaMs": 2400,
+      "rows": [
+        {
+          "text": "Synthetic",
+          "tilt": false,
+          "font": 61.224,
+          "width": 332.609,
+          "height": 82.6406,
+          "rect": {
+            "x": 233.6875,
+            "y": 113.78125,
+            "width": 332.609375,
+            "height": 82.640625,
+            "top": 113.78125,
+            "right": 566.296875,
+            "bottom": 196.421875,
+            "left": 233.6875
+          }
+        },
+        {
+          "text": "amber echoes",
+          "tilt": false,
+          "font": 61.224,
+          "width": 487,
+          "height": 82.6406,
+          "rect": {
+            "x": 156.484375,
+            "y": 212.421875,
+            "width": 487,
+            "height": 82.640625,
+            "top": 212.421875,
+            "right": 643.484375,
+            "bottom": 295.0625,
+            "left": 156.484375
+          }
+        },
+        {
+          "text": "cross the",
+          "tilt": false,
+          "font": 61.224,
+          "width": 321.047,
+          "height": 82.6406,
+          "rect": {
+            "x": 239.46875,
+            "y": 311.0625,
+            "width": 321.046875,
+            "height": 82.640625,
+            "top": 311.0625,
+            "right": 560.515625,
+            "bottom": 393.703125,
+            "left": 239.46875
+          }
+        },
+        {
+          "text": "quiet window.",
+          "tilt": true,
+          "font": 61.224,
+          "width": 553.578,
+          "height": 76.5156,
+          "rect": {
+            "x": 124.77960205078125,
+            "y": 411.62969970703125,
+            "width": 550.4251708984375,
+            "height": 76.079833984375,
+            "top": 411.62969970703125,
+            "right": 675.2047729492188,
+            "bottom": 487.70953369140625,
+            "left": 124.77960205078125
+          }
+        }
+      ]
+    }
+  ],
+  "sourceSha256": "e962ab13d5cb6509d37b1c118f93a3500fe52ff497d0bb7de7f2cf7ca947bf85",
+  "hashes": [
+    {
+      "file": "verification/classic-browser/main.tsx",
+      "sha256": "6605fb2233a117fa5c4ad39d331cbf5192aee2905f5a727ea7d19fde294fb194"
+    },
+    {
+      "file": "verification/classic-browser/style.css",
+      "sha256": "65420e55087a4a424703e80774f3c6a166fc39209585083f9cef58553a847f68"
+    },
+    {
+      "file": "verification/classic-browser/serve.mjs",
+      "sha256": "32bb146995b20762d20a71b256df96eac89a03e9858a582b263fafc3cd0a353b"
+    },
+    {
+      "file": "verification/classic-fixtures/scenes.tsv",
+      "sha256": "a74a6d7b52051e4dd09d6af1e85833138d92ec7d7d6fccb5b93ab020f0ca9a80"
+    },
+    {
+      "file": "verification/partita-fixtures/scenes.tsv",
+      "sha256": "1a124fe8ffba6c8152788abe5129a020c28f41b5aa3fb5e7eb059362580622d9"
+    },
+    {
+      "file": "verification/assets/FoliaParityLatin-Bold.ttf",
+      "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+    },
+    {
+      "file": "verification/classic-browser/pnpm-lock.yaml",
+      "sha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad"
+    }
+  ],
+  "originalLockSha256": "ce30669b1acca119cc886133166dd872f8eeb3b9d05edb8c193e4d18e3b2a000"
+}

@@ -35,6 +35,9 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession = remember { SampleSession() },
     settingsStore: SettingsStore? = rememberSettingsStore()) {
     var scene by session::scene
+    // No-audio imports already have an explicitly derived finite demo duration.
+    // Preserve their raw parser model while giving renderers that same boundary.
+    val displayLyrics=remember(scene.lyrics,scene.durationMillis){resolveOpenLrcEnds(scene.lyrics,scene.durationMillis)}
     val clock = session.clock
     val playing by remember { derivedStateOf { clock.snapshot.isPlaying } }
     var options by session::options
@@ -125,7 +128,7 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
                 }
             }
             val lyrics: @Composable (Modifier) -> Unit = { modifier ->
-                SampleRenderStage(session.renderResolution,modifier) { SampleMaskScope(session) { FoliaLyricsView(scene.lyrics, { clock.snapshot }, Modifier.fillMaxSize(), contentKey = scene.id, options = options,
+                SampleRenderStage(session.renderResolution,modifier) { SampleMaskScope(session) { FoliaLyricsView(displayLyrics, { clock.snapshot }, Modifier.fillMaxSize(), contentKey = scene.id, options = options,
                     typography = FoliaTypography(scale = fontScale), style = session.lyricStyleForTitle(scene.title),
                     onStatus = { status = it },
                     onLineClicked = { clock.seek(it.start.toLong() + options.offsetMillis) }, onLinePressed = { pressed = it }) } }

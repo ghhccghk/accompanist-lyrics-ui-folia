@@ -141,6 +141,12 @@ fun FoliaSampleApp(
                     Text(localAudioFormats, style = MaterialTheme.typography.bodySmall)
                     TextButton({ session.demo = true }) { Text("开发／演示") }
                 } else {
+                    // The real parser's open final LRC endpoint is not a
+                    // 24-day song. Keep raw parsed lyrics in SongSession and
+                    // bound only the display copy by actual native duration.
+                    val displayLyrics=remember(song.lyrics,song.player.durationMillis) {
+                        song.lyrics?.let{resolveOpenLrcEnds(it,song.player.durationMillis)}
+                    }
                     val metadata: @Composable () -> Unit = {
                         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             SongCover(
@@ -176,7 +182,7 @@ fun FoliaSampleApp(
                             Box(modifier, contentAlignment = Alignment.Center) { Text("播放结束") }
                         else SampleRenderStage(session.renderResolution,modifier) { SampleMaskScope(session) {
                             FoliaLyricsView(
-                                song.lyrics,
+                                displayLyrics!!,
                                 { songs.snapshot },
                                 Modifier.fillMaxSize(),
                                 contentKey = song.revision,

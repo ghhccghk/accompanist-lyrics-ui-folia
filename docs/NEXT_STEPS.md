@@ -10,11 +10,15 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life、可选文字fragment fog | 无 | 切曲/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：Desktop实际sample的选择音频/歌词→播放/暂停/seek/七主题UI运行验证，
-仅使用自有静音合成文件和专用实例，不操作用户歌曲/播放；记录原生文件选择与画面证据。
-无法安全自动操作的步骤保留待验，继续已有主题源对照，不新增播放器功能。
-只验真实能力，不将window自一致性当原版效果/音频/设备通过。Fume/群唱残差继续保留，
-Diorama不开放入口。此前正常fog“下一项”为历史，已按下列证据完成内部文字接入。
+当前唯一下一项：从已有Fume frozen-clamp-v1证据推导分支局部限幅位移重建；先做
+同原incoming的可证伪数值实验，不重试focus-only/midpoint-only或固定帧延迟。成立后
+才修改生产模型并复核原mounted92帧；不成立保留失败并转做已知独立主题问题。
+最近完成：真实Java Sound+完整离屏sample七主题探针暴露并修复普通LRC末行无界导致
+Fume不收敛。sample按真实时长/已有demo时长生成显示副本，raw core保持；七主题
+暂停/seek像素恢复通过，3个定向测试类/Android shared及Desktop编译通过，证据
+verification/local-playback-themes。原生文件选择/本轮Android设备/人工听音仍待验。
+此前Desktop选歌“唯一下一项”为历史；当前记录只证明真音频游标和离屏UI集成，
+不替代真实窗口/原版视觉/设备验收。Fume/群唱残差继续保留，Diorama不开放入口。
 真实Desktop七主题窗口复核和manifest/图检已保存（059087b/verification/themes-native-window），
 此前“待保存”为历史。没有选歌/真实音频/设备的新证据。
 

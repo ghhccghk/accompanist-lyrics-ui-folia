@@ -1,3 +1,5 @@
+import java.time.Duration
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
@@ -85,6 +87,17 @@ tasks.register<JavaExec>("verifyLocalAudio") {
     mainClass.set("top.ghhccghk.accompanist.folia.sample.NativeAudioProbeKt")
     dependsOn(test.compileTaskProvider)
     workingDir = rootProject.projectDir
+}
+// Explicit hardware integration, never part of the ordinary JVM test suite.
+tasks.register<JavaExec>("verifyLocalPlaybackThemes") {
+    group = "verification"
+    description = "Verify real Java Sound playback and seven-theme sample UI with an owned silent WAV"
+    val test = kotlin.targets.getByName("jvm").compilations.getByName("test")
+    classpath = files(test.output.allOutputs, test.runtimeDependencyFiles)
+    mainClass.set("top.ghhccghk.accompanist.folia.sample.LocalPlaybackThemesProbe")
+    dependsOn(test.compileTaskProvider)
+    workingDir = rootProject.projectDir
+    timeout.set(Duration.ofMinutes(2))
 }
 kotlin {
     jvmToolchain(21)

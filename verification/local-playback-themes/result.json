@@ -1,0 +1,76 @@
+{
+  "baseRevision": "51bdced",
+  "date": "2026-11-18",
+  "conditions": "Production real DesktopAudioPlayer/Java Sound Clip, 12s zero-valued owned PCM48000Hz/16bit mono. Full FoliaSampleApp, settingsStore=null, real parser/core, theme controls and transport actions.\nUI=offscreen Compose1100x740; native file picker NOT automated. Device position is real; UI scheduler steps are NOT media time. No preview clock. No Android/original visual/performance/physical-output claim.\nOS=Windows 10;Java=21.0.5;waveSHA256=331ac2f1a6d27624df849ae82cb74b9c3b7fd3deac35b3d3fe15824d9bb29833\n",
+  "scope": "Real Java Sound Clip and production sample in Compose offscreen UI; NOT native picker, physical sound, visible window, Android runtime, source visual or performance acceptance.",
+  "rawParserTimes": "700\t3600\n3600\t6500\n6500\t10000\n10000\t2147483647\n",
+  "events": "event\ttheme\tposition_ms\tplaying\tdiscontinuity\ncancel-empty\tClassic\t0\tfalse\t0\nnative-open-no-lyrics\tClassic\t20\tfalse\t1\nnative-playing-no-lyrics\tClassic\t1330\ttrue\t2\nnative-pause-no-lyrics\tClassic\t1370\tfalse\t2\nslider-seek\tClassic\t4500\tfalse\t3\nattach-actual-parser-translation\tClassic\t4500\tfalse\t3\ntheme-pause\tClassic\t1600\tfalse\t4\ntheme-native-advance\tClassic\t2370\ttrue\t4\ntheme-seek-restored\tClassic\t1600\tfalse\t6\ntheme-reverse-seek\tClassic\t1600\tfalse\t6\ntheme-pause\tPartita\t1600\tfalse\t6\ntheme-native-advance\tPartita\t2360\ttrue\t6\ntheme-seek-restored\tPartita\t1600\tfalse\t8\ntheme-reverse-seek\tPartita\t1600\tfalse\t8\ntheme-pause\tTilt\t1600\tfalse\t8\ntheme-native-advance\tTilt\t1880\ttrue\t8\ntheme-seek-restored\tTilt\t1600\tfalse\t10\ntheme-reverse-seek\tTilt\t1600\tfalse\t10\ntheme-pause\tCadenza\t1600\tfalse\t10\ntheme-native-advance\tCadenza\t1920\ttrue\t10\ntheme-seek-restored\tCadenza\t1600\tfalse\t12\ntheme-reverse-seek\tCadenza\t1600\tfalse\t12\ntheme-pause\tPendolo\t1600\tfalse\t12\ntheme-native-advance\tPendolo\t1830\ttrue\t12\ntheme-seek-restored\tPendolo\t1600\tfalse\t14\ntheme-reverse-seek\tPendolo\t1600\tfalse\t14\ntheme-pause\tCappella\t1600\tfalse\t14\ntheme-native-advance\tCappella\t2000\ttrue\t14\ntheme-seek-restored\tCappella\t1600\tfalse\t16\ntheme-reverse-seek\tCappella\t1600\tfalse\t16\ntheme-pause\tFume\t1600\tfalse\t16\ntheme-native-advance\tFume\t2510\ttrue\t16\ntheme-seek-restored\tFume\t1600\tfalse\t18\ntheme-reverse-seek\tFume\t1600\tfalse\t18\ncancel-keeps-native-session\tFume\t1600\tfalse\t18\nclosed-native-clip\tFume\t1600\tfalse\t18\n",
+  "passed": "Actual native audio, full sample UI and seven themes passed.\n",
+  "frames": [
+    {
+      "theme": "Classic",
+      "pausedSHA256": "f94be39383885f305c0114d0caff7752d793febdb97340466cf0a0c3f27e2d51",
+      "restoredSHA256": "f94be39383885f305c0114d0caff7752d793febdb97340466cf0a0c3f27e2d51",
+      "identical": true
+    },
+    {
+      "theme": "Partita",
+      "pausedSHA256": "c0fff30143c725d251d781b0503305d0e383abd8a560209cc02db3169bbbb517",
+      "restoredSHA256": "c0fff30143c725d251d781b0503305d0e383abd8a560209cc02db3169bbbb517",
+      "identical": true
+    },
+    {
+      "theme": "Tilt",
+      "pausedSHA256": "18f69dc58d81f435ea30e5b1e1328d79edf5f21149ea11d92814472d2afba463",
+      "restoredSHA256": "18f69dc58d81f435ea30e5b1e1328d79edf5f21149ea11d92814472d2afba463",
+      "identical": true
+    },
+    {
+      "theme": "Cadenza",
+      "pausedSHA256": "cfc7bd555ed7a2778336c3a25d5912fcf5dc80e9459bf44ee151ddd029a0987c",
+      "restoredSHA256": "cfc7bd555ed7a2778336c3a25d5912fcf5dc80e9459bf44ee151ddd029a0987c",
+      "identical": true
+    },
+    {
+      "theme": "Pendolo",
+      "pausedSHA256": "a610db063aa36ac5c818f4d3018b0485a163384ec833b96c8f5983bffcac9ddf",
+      "restoredSHA256": "a610db063aa36ac5c818f4d3018b0485a163384ec833b96c8f5983bffcac9ddf",
+      "identical": true
+    },
+    {
+      "theme": "Cappella",
+      "pausedSHA256": "2122667851a49764a9a975ce5c47972b817506e68693a9de61a59016d4b43171",
+      "restoredSHA256": "2122667851a49764a9a975ce5c47972b817506e68693a9de61a59016d4b43171",
+      "identical": true
+    },
+    {
+      "theme": "Fume",
+      "pausedSHA256": "5fdceac8af7fbced0e0fdd52ae5a0443c51d02e2e9d223de34f30be56e455d26",
+      "restoredSHA256": "5fdceac8af7fbced0e0fdd52ae5a0443c51d02e2e9d223de34f30be56e455d26",
+      "identical": true
+    }
+  ],
+  "regressions": [
+    {
+      "name": "ImportTest[jvm]",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "LocalSongTest[jvm]",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "OpenLrcEndTest[jvm]",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ]
+}

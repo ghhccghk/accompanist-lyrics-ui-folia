@@ -6,6 +6,7 @@ import {chromium}from'playwright';import{startReferenceServer}from'./serve.mjs';
 import{root,revision,checkReference,referenceMotionVersions}from'./reference.mjs';
 checkReference();
 const output=path.resolve(root,process.argv[2]??'verification/cappella-projection/frame-phases-v2.json');
+const inspectTargets=process.argv.includes('--targets');
 if(fs.existsSync(output))throw Error('Preserve original phase trace; refusing overwrite');
 const server=await startReferenceServer(4191);let browser;
 try {
@@ -19,7 +20,7 @@ try {
   await page.evaluate(()=>window.mountStage(0));await page.evaluate(()=>{for(let i=0;i<90;i++)window.advanceSourceFrame()});
   const base=await page.evaluate(()=>window.testNow);
   const ticks=[...new Set([...probes,...Array.from({length:241},(_,i)=>i/60)])].filter(t=>t<=1.1).sort((a,b)=>a-b);
-  await page.evaluate(instrumented=>{
+  await page.evaluate(({instrumented,inspectTargets})=>{
    window.phaseTrace=[];
    window.observeFramePhase=(tag,t,previousTime)=>{
     if(!instrumented||t<.99||t>1.04)return;
@@ -31,24 +32,59 @@ try {
      for(let f=start;f;f=f.return)if(f.memoizedProps?.message){id=f.memoizedProps.message.id;break}
      search:for(let f=start;f;f=f.return){let h=f.memoizedState;while(h){for(const c of [h.memoizedState,h.memoizedState?.current,...(Array.isArray(h.memoizedState)?h.memoizedState:[])])if(c?.projection){p=c.projection;break search}h=h.next}}
      const group=row.firstElementChild,frame=group.children[1];
+     // Pure reads from the existing original React tree/VisualElement. Do not
+     // call getValue: it can create a new MotionValue on a missing key.
+     let targets;
+     if(inspectTargets){
+      const fiber=e=>e[Object.keys(e).find(k=>k.startsWith('__reactFiber'))];
+      let targetSize=null;
+      for(let f=fiber(frame);f;f=f.return)if(f.memoizedProps?.targetSize){targetSize=copy(f.memoizedProps.targetSize);break}
+      const latest=e=>{
+       for(let f=fiber(e);f;f=f.return){let h=f.memoizedState;while(h){
+        for(const c of [h.memoizedState,h.memoizedState?.current,...(Array.isArray(h.memoizedState)?h.memoizedState:[])])
+         if(c?.current===e&&c.latestValues){
+          const values={};
+          for(const name of ['height','width','marginTop']){const v=c.values?.get(name);
+           // AsyncMotionValueAnimation.state/time are NOT passive getters:
+           // they flush pending keyframe resolvers. Observe data fields only.
+           if(v)values[name]={current:v.current,previous:v.prev,updatedAt:v.updatedAt,
+            animationResolved:!!Object.getOwnPropertyDescriptor(v.animation??{},'_animation')?.value};
+          }
+          return{latest:copy(c.latestValues),values};
+         }
+        h=h.next;
+       }}return null;
+      };
+      targets={targetSize,frameMotion:latest(frame),groupMotion:latest(group),position:getComputedStyle(row).position,
+       groupComputedMargin:getComputedStyle(group).marginTop};
+     }
      return{id,flowTop:row.offsetTop,flowHeight:row.offsetHeight,rowRect:rect(row),rowTransform:row.style.transform,
       groupMargin:group.style.marginTop,groupTransform:group.style.transform,
       frameInlineHeight:frame.style.height,frameComputedHeight:getComputedStyle(frame).height,
       projection:p?{snapshot:box(p.snapshot),layout:box(p.layout),progress:p.animationProgress,latest:copy(p.latestValues),
-       targetDelta:copy(p.targetDelta),projectionDelta:copy(p.projectionDelta)}:null};
+       targetDelta:copy(p.targetDelta),projectionDelta:copy(p.projectionDelta)}:null,...(inspectTargets?{targets}:{})};
     });
     window.phaseTrace.push({tag,media:t,previousMedia:previousTime,clock:window.testNow,rows});
    };
-  },instrumented);
+  },{instrumented,inspectTargets});
   const states={};let previousTime=null;
   for(const t of ticks){
-   await page.evaluate(({t,base,previousTime})=>{
+   try { await page.evaluate(({t,base,previousTime})=>{
     window.observeFramePhase('before-media',t,previousTime);
     window.testNow=base+t*1000;window.advanceStage(t);
     window.observeFramePhase('after-media-before-raf',t,previousTime);
     window.advanceSourceFrame(0);window.observeFramePhase('after-raf-before-native',t,previousTime);
     window.driveNativeAnimations();window.observeFramePhase('after-native',t,previousTime);
-   },{t,base,previousTime});
+   },{t,base,previousTime}); } catch(error) {
+    // Fail closed. Retain the actual pending native animation rather than
+    // inventing a startTime, skipping it, or calling a partial run an oracle.
+    const diagnostic=await page.evaluate(()=>({clock:window.testNow,trace:window.phaseTrace,
+     animations:document.getAnimations().map(a=>({type:a.constructor.name,startTime:a.startTime,currentTime:a.currentTime,
+      pending:a.pending,playState:a.playState,target:a.effect?.target?.outerHTML.slice(0,500),timing:a.effect?.getTiming()}))}));
+    fs.writeFileSync(output+'.failure.json',JSON.stringify({valid:false,instrumented,media:t,previousTime,browser:browser.version(),
+     motion:referenceMotionVersions(),error:String(error),diagnostic},null,2)+'\n');
+    throw error;
+   }
    // React's local commit can land AFTER the evaluated RAF task, before the
    // next media update. Observe that phase too; do not call the inside-task
    // after-native values the final committed layout.
@@ -68,6 +104,7 @@ try {
  fs.writeFileSync(output,JSON.stringify({revision,browser:browser.version(),motion:referenceMotionVersions(),viewport:[380,480],DPR:1,
   hashes:['.work/folia-major/src/components/visualizer/cappella/CappellaMessageRow.tsx','verification/classic-browser/cappella-stage.tsx',
    'verification/classic-browser/cappella-playback.html','verification/classic-browser/pnpm-lock.yaml','verification/assets/FoliaParityLatin-Bold.ttf'].map(file=>({file,sha256:hash(file)})),
+  ...(inspectTargets?{observer:{file:'verification/classic-browser/probe-cappella-frame-phases.mjs',sha256:hash('verification/classic-browser/probe-cappella-frame-phases.mjs'),targets:true}}:{}),
   scope:'Same rapid/chaotic prefix to1.1s and exact previous commits as original pressure/boundary probe. Read-only phase observation can force DOM layout; both original and observer geometry are compared. No source/model/DOM/RAF/projection implementation is replaced. No screenshot or production repair.',
   originalGeometryMatches,instrumentedGeometryMatches,runs},null,2)+'\n');
  console.log(JSON.stringify({originalGeometryMatches,instrumentedGeometryMatches,phases:runs[1].trace.length}));

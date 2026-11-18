@@ -1,0 +1,77 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "viewport": [
+    380,
+    480
+  ],
+  "DPR": 1,
+  "hashes": [
+    {
+      "file": ".work/folia-major/src/components/visualizer/cappella/CappellaMessageRow.tsx",
+      "sha256": "377c933af7f5ada461486443ddcf154110f3b8f39de6fd47a99bed5ef875ab81"
+    },
+    {
+      "file": "verification/classic-browser/cappella-stage.tsx",
+      "sha256": "c1bb612db0ca349c6f6685c9ad24aa8ec37001341b18a9cd98bdbfd7fb19f124"
+    },
+    {
+      "file": "verification/classic-browser/cappella-playback.html",
+      "sha256": "8f8d275abc30a4e35c358fb9bc7fe8a2e5b57c06ba8424bc71e8525cd56e52e7"
+    },
+    {
+      "file": "verification/classic-browser/pnpm-lock.yaml",
+      "sha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad"
+    },
+    {
+      "file": "verification/assets/FoliaParityLatin-Bold.ttf",
+      "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+    }
+  ],
+  "observer": {
+    "file": "verification/classic-browser/probe-cappella-frame-phases.mjs",
+    "sha256": "e7da11fdc06691d7a7cf425d8f070b8bc5a509092a2e7b4773b6259ef7d9cd4c",
+    "targets": true
+  },
+  "scope": "Passive original React target vs MotionValue data fields vs DOM; not a production repair.",
+  "fullTraceSha256": "422c6d5a8f32f91afec4c3c52b4b68e77c74bef6752a3d0f5e5ee2ab3b0fbac5",
+  "priorPhaseTraceSha256": "6d7e3ab0d60732b0277f5876a61b7c68d120617216cc553a0e3f52a9d0baa149",
+  "originalGeometryMatches": true,
+  "instrumentedGeometryMatches": true,
+  "originalPhaseTraceMatches": true,
+  "phases": 30,
+  "observations": 159,
+  "targetChangesDuringRestoration": false,
+  "boundary": {
+    "media": 1.0166666666666666,
+    "id": "line-0.94-3",
+    "heights": [
+      {
+        "phase": "before-media",
+        "target": 110,
+        "inline": "110px",
+        "motion": 110,
+        "animationResolved": false
+      },
+      {
+        "phase": "after-media-before-raf",
+        "target": 49,
+        "inline": "49px",
+        "motion": 110,
+        "animationResolved": false
+      },
+      {
+        "phase": "after-browser-task",
+        "target": 49,
+        "inline": "110px",
+        "motion": 110,
+        "animationResolved": true
+      }
+    ]
+  }
+}

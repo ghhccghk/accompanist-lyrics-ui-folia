@@ -157,3 +157,46 @@ python verification/analyze-cappella-frame-phases.py
 ```
 The probe refuses overwrite and closes its own browser/server. Python analysis,
 Node syntax check, original/control identity and independent repeat passed.
+
+## Target / live-value separation v3 (2026-11-18)
+
+`--targets` adds **data-field-only** reads of the original frame/group
+VisualElements, existing MotionValues and React targetSize. Do not call
+`getValue`, `animation.state`, `animation.time` or `animation.animation` here:
+the latter AsyncMotionValueAnimation getters flush pending keyframe resolvers.
+An initial invalid observer did that and failed closed on an unbound native
+startTime. Its error/animation diagnostic remains in
+`.work/cappella-frame-targets-diagnostic.json.failure.json`; it is NOT an oracle.
+The corrected observer reads `_animation` using its own property descriptor.
+It never starts, resolves, samples, pauses or replaces an original animation.
+The existing host's explicit WAAPI clock driving is unchanged.
+
+The valid run and an independent repeat have exactly equal complete states and
+traces; removing the added fields also reproduces EVERY v2 phase value. Both
+control/observer geometry equal the preserved dense source. The compact raw
+159-row table is `frame-targets-v3.tsv`; revision, font/host/lock/observer hashes,
+Chromium151 and exact Motion versions are in `frame-targets-v3.json`. Full raw
+captures remain ignored under `.work/cappella-frame-targets-pure-v3*.json`.
+
+For line-0.94-3 at1.0166666666666666, target height changes110 ->49 and STAYS49.
+Inline height changes110 ->49 ->110 through before-media / media-before-RAF /
+after-browser-task, while the MotionValue and latestValues height stay110.
+Only resolution changes from false to true. At1.02 the SAME49 target has a
+MotionValue/inline height108.4539465/108.454px. Thus restoring110 is not a second
+target change, a reveal-count reversal or a second easing decay. The original
+`AnimatedBubbleFrame` sets both `style.height` and `animate.height`
+(`CappellaBubbleParts.tsx:117–150`), and the pending animation retains the live
+value. Parent/local commit transport must distinguish that transient DOM write
+from its settled target and current value.
+
+This narrows the reconstruction problem; it does NOT fix the native22.188593px
+residual or establish a display-schedule-independent projection policy. No
+production edit, new screenshot matrix, tolerance change or visual/device/
+performance pass. Do not approximate this transient by a fixed display delay.
+The remaining independent text-stage work may continue while this policy remains
+unresolved. Previous failures and full source/native matrices stay intact.
+
+```
+node verification/classic-browser/probe-cappella-frame-phases.mjs .work/cappella-targets-fresh.json --targets
+python verification/analyze-cappella-frame-targets.py .work/cappella-targets-fresh.json
+```

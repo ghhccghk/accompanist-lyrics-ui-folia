@@ -10,9 +10,15 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life、可选文字fragment fog | 无 | 切曲/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：群唱密集projection的同原incoming局部交接；复用frame-phases-v2
-分离原precommit DOM/实时flow/RAF与提交后target，先检验原始输入对应关系，
-再考虑媒体重建修复。不重试已否证的freeze/多衰减/固定帧延迟；保留22.188593px。
+当前唯一下一项：镜台正常follower接实际文字切曲flight的有界闭环；先迁原有限
+flight/姿态语义并接媒体重建与真实core文字，不开放公共主题。完成条件为同原初态
+数值对照、连续文字帧及暂停/乱序seek/重挂，明确保留完整双走廊/设备待验。
+群唱当前局部探针已收束：159条原target/live-value/DOM记录及完整独立重复一致；
+1.016667s目标110→49后保持49，inline却110→49→110、MV一直110，证伪再次切target。
+原v2所有phase值不变。媒体重建尚缺可成立的瞬时DOM写入/解析交接策略，
+22.188593px未修，不加入固定帧延迟或再试freeze；证据cappella-projection/frame-targets-v3。
+浮名有限限幅位移的媒体重建亦仍未成立，原同初态/frozen-clamp证据保留。
+此前“群唱局部交接唯一下一项”为本轮诊断前历史，恢复时不要重复已完成探针。
 最近完成：群唱共享塑形cluster按首个逻辑EGC时钟绘制，原fi/ffi/ffl/RTL lam-alef
 24个独立span端点对照验证；保留原所有字素时钟和完整行单次绘制。原30帧固定union
 均值11.677862→6.984958，最坏64px223.259843→93；italic100ms最坏局部→21.333333。

@@ -66,8 +66,13 @@ class ConsumerActivity : ComponentActivity() {
                 }
             }
             val source=remember(r.scene){
-                fun line(a:String,b:String,s:Int,m:Int,e:Int)=KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable(a,s,m),KaraokeSyllable(b,m,e)),null,KaraokeAlignment.Unspecified,s,e)
+                fun line(a: String, b: String, start: Int, middle: Int, end: Int, translation: String? = null) =
+                    KaraokeLine.MainKaraokeLine(listOf(KaraokeSyllable(a, start, middle),
+                        KaraokeSyllable(b, middle, end)), translation, KaraokeAlignment.Unspecified, start, end)
                 if(r.scene=="baseline")SyncedLyrics(listOf(line("Amber ","echo",700,1300,1900),line("Silver ","light",3200,3650,4100)))
+                else if (r.scene == "subtitle") SyncedLyrics(listOf(
+                    line("Amber ", "echo", 700, 1300, 2900, "Translation probe"),
+                    line("Silver ", "light", 3200, 3650, 4100)))
                 else if(r.scene=="waiting")SyncedLyrics(listOf(line("Amber ","echo",10000,11000,12000),line("Silver ","light",36000,37000,38000)))
                 else {
                     val selected=rows.filter{it[0]==r.scene};require(selected.isNotEmpty())
@@ -78,7 +83,7 @@ class ConsumerActivity : ComponentActivity() {
             CompositionLocalProvider(LocalDensity provides Density(1f,r.fontScale)){
                 Layout(content={repeat(r.instances){slot->key(slot){FoliaNativeLyricsView(source,{FoliaPlaybackSnapshot(r.ms,false,r.ms)},
                     typography=FoliaTypography(secondary=TextStyle(fontFamily=family,fontWeight=FontWeight.Bold)),
-                    options=FoliaOptions(showTranslation=false,showPhonetic=false,showNextLine=false,reducedMotion=r.reduced,offsetMillis=r.offset),
+                    options=FoliaOptions(showTranslation=r.scene == "subtitle",showPhonetic=false,showNextLine=false,reducedMotion=r.reduced,offsetMillis=r.offset),
                     style=if(r.theme=="Partita")FoliaStyle.Partita(PartitaTuning(showGuideLines=r.guides))else FoliaStyle.Classic(),backend=r.backend,
                     active=r.active&&hostVisible,rendererConfig=FoliaNativeRendererConfig(r.budget),
                     diagnosticsIntervalFrames=1,

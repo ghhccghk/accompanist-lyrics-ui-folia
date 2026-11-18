@@ -27,7 +27,39 @@ public final class NativeLifecycleProbe extends Instrumentation {
     private List<TextureView> textures(){List<TextureView> views=new ArrayList<>();runOnMainSync(()->findTextures(activity.getWindow().getDecorView(),views));return views;}
     private long value(String state,String name){java.util.regex.Matcher match=Pattern.compile(name+"=(\\d+)").matcher(state);if(!match.find())throw new AssertionError("Missing "+name+": "+state);return Long.parseLong(match.group(1));}
     private void stable(){SystemClock.sleep(500);String paused=state();for(int i=0;i<10;i++){SystemClock.sleep(100);if(!paused.equals(state()))throw new AssertionError("Paused frame changed: "+paused+" -> "+state());}}
-    private void touch(float x,float y,long hold){long down=SystemClock.uptimeMillis();sendPointerSync(MotionEvent.obtain(down,down,MotionEvent.ACTION_DOWN,x,y,0));SystemClock.sleep(hold);sendPointerSync(MotionEvent.obtain(down,SystemClock.uptimeMillis(),MotionEvent.ACTION_UP,x,y,0));}
+    private void pointer(long down, int action, float x, float y) {
+        MotionEvent event = MotionEvent.obtain(down, SystemClock.uptimeMillis(), action, x, y, 0);
+        try { sendPointerSync(event); }
+        finally { event.recycle(); }
+    }
+    private void touch(float x, float y, long hold) {
+        long down = SystemClock.uptimeMillis();
+        pointer(down, MotionEvent.ACTION_DOWN, x, y);
+        SystemClock.sleep(hold);
+        pointer(down, MotionEvent.ACTION_UP, x, y);
+    }
+    private void assertCancelled(String label, boolean drag) {
+        long down = SystemClock.uptimeMillis();
+        pointer(down, MotionEvent.ACTION_DOWN, 430, 326);
+        if (drag) {
+            pointer(down, MotionEvent.ACTION_MOVE, 430, 406);
+            pointer(down, MotionEvent.ACTION_UP, 430, 406);
+        } else {
+            pointer(down, MotionEvent.ACTION_CANCEL, 430, 326);
+        }
+        SystemClock.sleep(ViewConfiguration.getLongPressTimeout() + 100);
+        if (!label.equals(state())) throw new AssertionError("Cancelled gesture fired: " + state());
+    }
+    private void awaitWorkers(long expected) {
+        long deadline = SystemClock.uptimeMillis() + 8000;
+        while (SystemClock.uptimeMillis() < deadline) {
+            long count = Thread.getAllStackTraces().keySet().stream()
+                    .filter(thread -> thread.getName().equals("Folia renderer")).count();
+            if (count == expected) return;
+            SystemClock.sleep(50);
+        }
+        throw new AssertionError("Expected " + expected + " renderer workers after disposing views");
+    }
     @Override public void onStart(){
         Bundle result=new Bundle();
         try{
@@ -52,10 +84,24 @@ public final class NativeLifecycleProbe extends Instrumentation {
             update(intent().putExtra("mediaMs",1500L));await("NativeGpu","sampled=1500000");
             AccessibilityNodeInfo line=null;
             long accessibilityDeadline=SystemClock.uptimeMillis()+10000;
-            while(line==null&&SystemClock.uptimeMillis()<accessibilityDeadline){line=findDescription(getUiAutomation().getRootInActiveWindow(),"Amber echo");if(line==null)SystemClock.sleep(50);}
-            if(line==null||!line.performAction(AccessibilityNodeInfo.ACTION_CLICK))throw new AssertionError("Missing accessible line action");
+            while(line==null&&SystemClock.uptimeMillis()<accessibilityDeadline){
+                line=findDescription(getUiAutomation().getRootInActiveWindow(),"Amber echo");
+                if(line==null)line=findDescription(getUiAutomation().getRootInActiveWindow(),"Amber");
+                if(line==null)SystemClock.sleep(50);
+            }
+            if(line==null||!line.performAction(AccessibilityNodeInfo.ACTION_CLICK))
+                throw new AssertionError("Missing accessible line action: "+state());
             await("CLICK source=true");
             touch(10,590,50);await("BLANK media=1500");
+            // Fixed 800x600 geometry. The second word spans this point in the
+            // baseline fixture at 1500 ms. Use real MotionEvents for both actions.
+            touch(430, 326, 50); await("CLICK source=true");
+            touch(430, 326, ViewConfiguration.getLongPressTimeout() + 200);
+            await("LONG source=true");
+            touch(10, 590, 50);
+            String blank = await("BLANK media=1500");
+            assertCancelled(blank, true);
+            assertCancelled(blank, false);
             update(intent().putExtra("mediaMs",1501L));await("sampled=1501000");
             update(intent().putExtra("mediaMs",1700L).putExtra("width",640).putExtra("height",480).putExtra("fontScale",1.5f).putExtra("reduced",true).putExtra("guides",false));
             await("NativeGpu","sampled=1700000");List<TextureView> resized=textures();
@@ -73,11 +119,21 @@ public final class NativeLifecycleProbe extends Instrumentation {
             update(intent().putExtra("active",false).putExtra("mediaMs",1503L));SystemClock.sleep(400);String inactive=state();SystemClock.sleep(500);
             if(!inactive.equals(state())||state().contains("sampled=1503000"))throw new AssertionError("Inactive surface submitted");
             update(intent().putExtra("active",true).putExtra("mediaMs",1503L));await("NativeGpu","sampled=1503000");stable();
-            result.putString("stream","PASS release/R8 AAR: Partita, paused/seek/offset, explicit capability/budget fallback and required failure, source semantics, blank input, resize/font/reduced-motion, recreation, two instances, inactive/resume\n");finish(Activity.RESULT_OK,result);
+            awaitWorkers(1);
+            for (int i = 0; i < 3; i++) {
+                update(intent().putExtra("backend", "Kotlin"));
+                await("Kotlin Kotlin");
+                awaitWorkers(0);
+                long time = 1500L + i;
+                update(intent().putExtra("mediaMs", time));
+                await("NativeGpu", "sampled=" + time * 1000);
+                awaitWorkers(1);
+            }
+            result.putString("stream","PASS release/R8 AAR: Partita, paused/seek/offset, explicit capability/budget fallback and required failure, source semantics, tap/long press/drag/cancel/blank input, resize/font/reduced-motion, recreation, two instances, inactive/resume, repeated worker retirement\n");finish(Activity.RESULT_OK,result);
         }catch(Throwable error){result.putString("stream","FAIL "+android.util.Log.getStackTraceString(error)+"\n");finish(Activity.RESULT_CANCELED,result);}
         finally{if(activity!=null)runOnMainSync(()->activity.finish());}
     }
-    private AccessibilityNodeInfo findDescription(AccessibilityNodeInfo node,String text){if(node==null)return null;CharSequence description=node.getContentDescription();if(description!=null&&text.contentEquals(description))return node;for(int i=0;i<node.getChildCount();i++){AccessibilityNodeInfo found=findDescription(node.getChild(i),text);if(found!=null)return found;}return null;}
+    private AccessibilityNodeInfo findDescription(AccessibilityNodeInfo node,String text){if(node==null)return null;CharSequence description=node.getContentDescription();if(description!=null&&description.toString().contains(text))return node;for(int i=0;i<node.getChildCount();i++){AccessibilityNodeInfo found=findDescription(node.getChild(i),text);if(found!=null)return found;}return null;}
     private static void findTextures(View v,List<TextureView> out){if(v instanceof TextureView)out.add((TextureView)v);if(v instanceof ViewGroup){ViewGroup group=(ViewGroup)v;for(int i=0;i<group.getChildCount();i++)findTextures(group.getChildAt(i),out);}}
     private String textOf(View view){StringBuilder out=new StringBuilder();if(view instanceof TextView)out.append(((TextView)view).getText());if(view instanceof ViewGroup){ViewGroup group=(ViewGroup)view;for(int i=0;i<group.getChildCount();i++)out.append(textOf(group.getChildAt(i)));}return out.toString();}
 }

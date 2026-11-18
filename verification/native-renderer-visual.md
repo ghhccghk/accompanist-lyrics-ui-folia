@@ -31,9 +31,14 @@ registration. Values below are in 8-bit channel units.
 | cluster | 1500 | 63236 | 0.784 | 12 | 54 | 8.874 |
 | large-reduced | 1700 | 28634 | 0.478 | 5 | 12 | 1.503 |
 | waiting | 9000 | 518 | 0.000 | 0 | 0 | 0.000 |
+| subtitle-1500 | 1500 | 74943 | 0.763 | 12 | 87 | 6.303 |
+| subtitle-3300 | 3300 | 64331 | 0.609 | 2 | 4 | 1.159 |
+| diagnostic-guides-off | 1500 | 83949 | 0.658 | 9 | 35 | 3.793 |
 
-Waiting matched exactly. The vertical guide in the 1500 ms Latin fixture shows
-an 86-channel-unit peak with the same visible line and input. CJK has a
+The subtitle overlay region matched exactly in both subtitle captures. This
+shows the Kotlin-owned subtitle layer remains aligned while the Partita main
+stage is supplied by the native surface. The vertical guide in the 1500 ms
+Latin fixture shows an 86-channel-unit peak with the same visible line and input. CJK has a
 97-channel-unit peak. Local error remains a visual acceptance failure. The
 large-font row used guide-off and reduced-motion settings on both backends.
 It is a separate appearance case. These measurements contain no performance

@@ -1,52 +1,48 @@
 # Partita lifecycle and independent release consumer
 
-November 19, 2026 (Asia/Taipei). API 34 x86_64 task-owned emulator,
-SwiftShader Vulkan, 800x600 at 160 dpi, 4096-byte OS pages.
-Published `0.1.0-20261118.230350-10` to the local Maven repository.
-`verify-native-consumer.py` built release and release instrumentation APKs
-with R8 in a project and Gradle home outside the checkout, using the coordinate
-without Rust on PATH or a native build task. Both `.so` entries match the AAR.
+Verified November 19, 2026 (Asia/Taipei) against local Maven snapshot
+`0.1.0-20261118.230350-10`. The consumer uses only the published coordinates,
+with no Rust on PATH or native build task. Release and instrumentation APKs
+were minified with R8.
 
-`NativeLifecycleProbe` passed the following in one process:
+The release probe passed the following scenarios in one process:
 
-- Real Partita GPU submission and ten stable paused observations.
-- Seek 1500 → 850 → 1500 with no extra upload. The shared offset path samples
-  1500 ms for a 1600 ms host snapshot and 100 ms offset.
-- Classic Preferred returns Kotlin with `UnsupportedTheme:Classic`.
+- Partita GPU submissions and ten stable paused observations.
+- Seek 1500 to 850 to 1500 ms without another texture upload.
+- At a 1600 ms host time and 100 ms offset, the sampled frame remains at 1500 ms.
+- Unsupported Classic: Preferred displays Kotlin with an explicit reason;
   Required reports failure. Both remove the native view.
-- A 1-byte coverage-copy budget makes actual preparation fail for Preferred
-  and Required without moving the host clock. Native recovers with the normal budget.
-- Accessibility click returns the original lyrics-core object. Touch in blank
-  space reaches the parent.
-- 640×480, fontScale 1.5 and reduced motion submit the requested sample.
+- A 1-byte prepared coverage-copy budget makes preparation fail for both
+  backends without moving media time. Restoring budget recovers native rendering.
+- The click semantics action returns the original lyrics-core object.
+- A tap clicks the line; long press reports the long callback. Drag and
+  ACTION_CANCEL suppress both callbacks. Touch in blank space reaches the parent.
+- 640x480, font scale 1.5, reduced motion and guide changes submit correctly.
   Activity recreation restores the request and creates a new TextureView.
-- Two instances submit independently. Removing one leaves one TextureView.
-  Inactive updates do not submit. Reactivation submits the updated sample.
+- Two instances render separately. Removing one leaves one view. An inactive
+  view submits no frame; resume submits the updated sample.
+- Three Kotlin/native transitions retire each old renderer worker before the
+  replacement worker is counted.
 
-Earlier versions exposed a Vulkan device creation failure and a host encoder
-hang during frequent view replacement. Defer the Vulkan session until a
-nonempty scene is available, and reuse the session when only Partita appearance
-settings or viewport change. With deferred creation alone the resize case still
-failed with `-99`. After the reuse change the entire matrix passed. This does
-not isolate the initial driver error. The worker now preserves the first
-failure stage and code for future runs.
+The API 34 baseline run and API 35 / 16 KiB runtime run both passed. On API 35,
+the system initially displayed the one-time immersive-mode confirmation over
+the app, blocking the accessibility tree. The task-owned emulator was configured
+to suppress that confirmation and the full probe passed.
 
-The native sample was also tested through Android DocumentsUI. The sample APK
-SHA-256 was `5422e47fae217fc5c27eb87070711d88d44f92e750438c728dc1319dd8b7eb20`.
-Open the 12-second synthetic `uslt-v23.mp3` from
-`verification/generate-embedded-audio.py` as the audio file. The UI reported
-timed embedded lyrics and advanced to 0:04 with the embedded second line. The
-sample's separate `:playback` PID owned the active NuPlayer and AudioTrack.
-The fixture is silent PCM encoded as MP3, so this checks decoding, transport
-and lyric timing.
+The native sample was tested through Android DocumentsUI using the synthetic
+12-second silent MP3 from `verification/generate-embedded-audio.py`. The sample
+showed timed embedded lyrics and advanced to the second line at 0:04. Its separate
+`:playback` process owned an active NuPlayer and AudioTrack. This verifies media
+decoding and timing, not audible output.
 
-In the track's lyric editing dialog, select a UTF-8 LRC with `Amber` at 6 s and
-`Echo` at 8 s, then apply the lyrics. The source label changed to external
-lyrics. After seeking to 0:08 the stage showed `Echo`. Settings reported
-`NativeRequired` / `NativeGpu` / `Ready:PartitaMainAndGlow`. MediaPlayer stayed
-in the same playback process. Returning from Home preserved the selected file,
-external lyrics and paused 0:08 position.
+In the same playback session, an external LRC was selected and applied. The
+source label changed to external lyrics. Seeking to 0:08 showed the second line;
+settings reported `NativeRequired`, `NativeGpu` and `Ready:PartitaMainAndGlow`.
+Returning from Home preserved the selected file, external lyrics and paused
+0:08 position.
 
-Remaining runtime checks include platform line long press and drag/cancel,
-repeated churn with memory samples, and ARM64 and 16KiB OS runs. Submission
-stability here does not measure physical presents or performance.
+The initial lifecycle version had one emulator-only `Create:-12` and encoder
+hang during frequent view replacement. Deferring Vulkan initialization until a
+nonempty scene was insufficient. Reusing the surface for tuning and size changes
+allowed the entire matrix to pass. The earlier error was not isolated.
+Submission diagnostics here do not measure physical presents or performance.

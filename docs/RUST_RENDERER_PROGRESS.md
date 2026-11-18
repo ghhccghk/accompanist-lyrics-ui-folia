@@ -43,23 +43,25 @@ The first run lacked an SDK path. The passing run used `ANDROID_HOME` and disabl
 the optional CPU mask experiment during local publication.
 
 The P4 local Maven archives passed static checks for both runtime ABIs, 63
-locked crates and matching licenses, paired line-table symbols, and ELF LOAD
-alignment. See [packaging evidence](../verification/native-renderer-p4.md).
-The release APK also passed 16KiB zipalign. ARM64 and 16KiB OS runs remain open.
+locked crates and matching licenses, paired line-table symbols, ELF LOAD
+alignment and 16 KiB APK alignment. The release/R8 lifecycle matrix passed on
+Android 35 x86_64 with 16384-byte pages. See
+[packaging evidence](../verification/native-renderer-p4.md). ARM64 runtime remains open.
 
 The native sample passed Android OpenDocument selection, timed embedded tags,
 real MediaPlayer playback in the `:playback` process, external LRC attachment,
 and seek. Returning from Home preserved paused playback and lyrics selection.
 See [the sample check](../verification/native-renderer-p3.md).
 
-Eleven fixed-time visual pairs were measured from the release consumer. Waiting
-matched pixel for pixel. Peak local differences reached 97/255, so visual
-acceptance remains open. See [visual results](../verification/native-renderer-visual.md).
+Fourteen fixed-time visual pairs were measured from the release consumer.
+Waiting and the visible subtitle overlay matched exactly. Peak local differences
+reached 97/255, so main-stage visual acceptance remains open. See
+[visual results](../verification/native-renderer-visual.md).
 
 ## Remaining
 
-- P3: platform touch cancellation/long press, sustained foreground/background, remaining visual differences, captions and emoji.
-- P4: repeated lifecycle, device error and resource-pressure evidence, ARM64/16KiB OS behavior, and paired hardware performance.
+- P3: sustained foreground/background, remaining main-stage visual differences and emoji.
+- P4: ARM64 runtime, device-error/resource-pressure evidence and paired hardware performance.
 - Only after the first theme closes: trace-led second theme, then separately validated desktop host.
 
 ## P0 observations and fixed acceptance conditions
@@ -78,7 +80,7 @@ acceptance remains open. See [visual results](../verification/native-renderer-vi
 - Android SDK and pinned NDK present; project-local Rust 1.91.1 present.
 - ARM64/x86_64 locked builds, AAR publication, Rust 2/2 tests on Android and isolated release/R8 packaged runtime probe: PASS. Exact hashes, initial failures and scope are in `verification/native-renderer-p1.md`.
 - Partita scene adapter + real GPU submit in isolated minified consumer: PASS; 6/6 Rust Android tests; 2/2 bridge tests and existing Partita suite PASS. Paused diagnostics no longer resubmit unchanged frames. See P2 evidence for exact limits and open visual differences.
-- ARM64 runtime, actual Partita visual/interaction/lifecycle/performance and 16KiB OS: pending.
+- ARM64 runtime and paired physical-device performance: pending; Partita visual differences remain documented.
 
 ## Next action / acceptance commands
 

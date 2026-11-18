@@ -26,23 +26,28 @@ same build ID as its runtime partner.
 | arm64-v8a | `9a91546e9779c52cbc9c83bc94f372b1d8ad31fe` | `f8c2b666bbdd8877daee5901499d500a43b9e9be2ededc6be6d3bd7382250785` |
 | x86_64 | `280c483b185cb7592d04644763b8a91016befa64` | `ef75671c25a6fd7d652cc7e4fd29083ff224d33da043bb96f9012a74b7ccebe2` |
 
-| Maven artifact | SHA-256 |
+| Maven artifact (`-10`) | SHA-256 |
 | --- | --- |
-| aar | `f408f4c16d8ac45214428c14c3e45f3cb968941582282a8c23a4c47db3fb9939` |
-| rust-sources | `841c4f1741fdba95e23919d4a4cf071c94d19e3453cce447b8220028b22c68f2` |
-| native-symbols | `99c8dbc3d4f4bead1e6da8dd5b8c3208aa233bc90747588b350514815fac5565` |
-| sources | `5b2b87d4d08eb1d8b7f839fcdca21caaa69b8234007edb1667f98cc4e130b644` |
-| pom | `fb961954095b8c229294446c66209c426c12cfa77ae3a70bdd6bf5a6f53ba188` |
-| module | `41372ecd2cca36930c0c11b30ebbccdae18c71a18a2d8c1e3c32a5a77e8345a7` |
+| AAR | `360750eec96e641d1071445de68ef19d67bf42c6e20b742b34ba4bf88476b71d` |
+| Rust sources | `841c4f1741fdba95e23919d4a4cf071c94d19e3453cce447b8220028b22c68f2` |
+| Native symbols | `99c8dbc3d4f4bead1e6da8dd5b8c3208aa233bc90747588b350514815fac5565` |
+| Kotlin sources | `86e40f0a61c5385a180841997e54aa6e29f60b3f1a2c83a19b7f970c6c868b20` |
+| POM | `fb961954095b8c229294446c66209c426c12cfa77ae3a70bdd6bf5a6f53ba188` |
+| Gradle module metadata | `cb9fbed22574a3cb3ab992e3a1f9364c5aecd1189beb3b8cef7a62da665e292e` |
 
 The first build had no ELF build IDs. The verified build sets a SHA-1 build ID
-on the final crate link, before copying and stripping the ELF. The `-10` wrapper snapshot was then
-built and verified through the release/R8 consumer. Its two runtime libraries,
-Rust source ZIP and symbols ZIP have the same checksums as `-9`. `zipalign -c
--P 16 -v 4` passed on the exact APK that ran the lifecycle matrix.
+on the final crate link, before copying and stripping the ELF. The `-10` wrapper
+snapshot passed the release/R8 consumer and the complete lifecycle probe. Its
+two runtime libraries, Rust source ZIP and symbols ZIP have the same checksums
+as `-9`.
 
-- `-10` Maven AAR SHA-256: `360750eec96e641d1071445de68ef19d67bf42c6e20b742b34ba4bf88476b71d`
-- Release consumer APK SHA-256: `d6d395468ed8baa1b0c15caa52e006c07a9ed1be33c50280c86d9a9b06e348b8`
+`zipalign -c -P 16 -v 4` passed on the exact release APK. Its SHA-256 is
+`36d0be152301b4dda43a5a808853efa927bff4c22190d1fd1f6e98c048c59f2a`.
 
-16KiB OS behavior and ARM64 execution require runtime validation on a suitable
-system. See [the lifecycle matrix](native-renderer-p3.md) for emulator results.
+The same APK and instrumentation were tested on the task-owned Android 35
+x86_64 Google APIs page_size_16kb image (`system-images;android-35;google_apis_ps16k;x86_64`, revision 5; official archive SHA-1
+`d709cf26b375abecfbbf5803afd20749ddfa2865`),
+SwiftShader Vulkan, 800x600 at 160 dpi. `getconf PAGE_SIZE` reported `16384`.
+The complete release/R8 lifecycle probe passed, including native Vulkan Partita
+submissions. This is a 16 KiB x86_64 emulator result, not physical hardware.
+ARM64 runtime execution remains open. See [lifecycle evidence](native-renderer-p3.md).

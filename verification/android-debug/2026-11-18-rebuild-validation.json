@@ -1,0 +1,66 @@
+{
+  "sourceRevision": "f45248eef1097f53be12b7bbd9a682ec6fce3e15",
+  "date": "2026-11-18T13:05:16.017723+08:00",
+  "request": "Force rebuild Android debug APK after phone-side APK verification failure",
+  "build": {
+    "task": ":sample:android-app:assembleDebug",
+    "flags": [
+      "--rerun-tasks",
+      "--no-build-cache"
+    ],
+    "exitCode": 0,
+    "executedTasks": 59,
+    "appOutputIsolated": true,
+    "isolation": "Temporary Gradle init script changes only sample:android-app buildDirectory. Original APK is locked; no user processes were closed and no signing configuration was changed."
+  },
+  "initialAttempt": {
+    "exitCode": 1,
+    "failedTask": ":sample:android-app:packageDebug",
+    "reason": "Existing android-app-debug.apk was locked and the output directory could not be deleted."
+  },
+  "deliveredApk": "build/deliverables/android/lyrics-ui-folia-debug-f45248e-20261118-130516.apk",
+  "bytes": 27895440,
+  "sha256": "ba85f30f46b8ce2ab7cf3b40a7591c9e4a23ab6c77bc0284599ab09779705fb4",
+  "sameAsPreviousRecordedApk": false,
+  "signatureChecks": [
+    {
+      "buildTools": "37.0.0",
+      "exitCode": 0,
+      "v1": true,
+      "v2": true,
+      "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+    },
+    {
+      "buildTools": "30.0.2",
+      "exitCode": 0,
+      "v1": true,
+      "v2": true,
+      "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+    }
+  ],
+  "deliverySignatureCheck": {
+    "buildTools": "37.0.0",
+    "exitCode": 0,
+    "v1": true,
+    "v2": true,
+    "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+  },
+  "originalDebugCertificateRetained": true,
+  "zipCrcCheck": "all entries passed",
+  "zipalign16KiB": {
+    "buildTools": "37.0.0",
+    "exitCode": 0
+  },
+  "rustLibraries": {
+    "lib/arm64-v8a/libfolia_mask_experiment.so": 183,
+    "lib/x86_64/libfolia_mask_experiment.so": 62
+  },
+  "copyMatchesBuildOutput": true,
+  "installed": false,
+  "phoneVerificationFailureReproduced": false,
+  "phoneInstallationResolved": "not established; no device installation performed",
+  "preservedExternalInputs": [
+    "sample/android-app/build.gradle.kts release/debug signing change",
+    "gradle/gradle-daemon-jvm.properties"
+  ]
+}

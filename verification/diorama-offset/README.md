@@ -54,6 +54,28 @@ hashes are EXACTLY unchanged, verified against the saved pre-run manifest
 `.work/diorama-offset-neighbor-fixed-bridge.log`. This repairs the test-host
 conversion omitted from9e46baa, not a second production offset convention.
 
+## Exact millisecond boundary follow-up (2026-11-18)
+
+The same-corridor loop integration exposed a separate numerical bug: raw core
+start2100ms, host position2300ms and offset+200ms evaluated as `2.3-.2`, i.e.
+`2.0999999999999996`, selecting the PREVIOUS source line. The inverse click test
+returned0.9s instead of2.3s; `.work/diorama-loop-first.log` retains that failure.
+
+The bridge now subtracts/adds offsets in the core/host MILLSECOND unit before
+converting to seconds; offset0 preserves the exact supplied media value.
+There is no rounding, snapping, epsilon, altered source boundary or frame delay.
+Submillisecond playback progress is retained. Original source camera functions
+receive the same lyric-time contract and their fixtures remain untouched.
+
+Independent `DioramaOffsetBoundaryTest` uses actual core start2100ms and ten
+positive/negative/zero integer offsets. All exact source identities and click
+inverses pass, probes0.1microsecond before/after remain on their correct side,
+and full shaped-text/camera pixels equal the offset0 exact-boundary image.
+Fractional media time/clamping/NaN tests also pass. Existing offset/core and new
+loop integration pass; Android library/Desktop compile pass in
+`.work/diorama-offset-boundary-fix.log`. This is an internal host precision fix,
+not new original visual/Android-device/performance acceptance.
+
 ```
 ./gradlew :library:jvmTest --tests '*DioramaOffsetContractTest' --tests '*DioramaTextPlaybackTest' --tests '*DioramaCameraTrackTest' --tests '*PublicTiltTest' --tests '*TiltSubtitleStageTest' :library:compileAndroidMain :sample:desktop-app:compileKotlin
 ```

@@ -13,7 +13,7 @@
 当前唯一下一项：镜台同走廊loop restart文字镜头闭环；复核原loop/epoch语义，
 复用当前真实core/flight轨道，回到原走廊而非另加46单位；正反seek不能误触发切曲。
 完成条件为原控制、实际文字暂停/重建/循环及回调，仍不开放公共主题。
-此前incoming flight为历史下一项，本轮已完成：480原同初态有限控制峰1.42e-14、
+此前incoming flight为历史下一项，486b8c1已完成：480原同初态有限控制峰1.42e-14、
 96真实core原Three/本有限/本媒体文字帧，另67连续观察且原8关键帧及step完全不变。
 同矩阵前景均值有限3.955025/媒体12.366458，媒体位置残差.035038world；
 21/21/26空帧、47/47/42触边均保留，不称原版视觉验收。12定向JVM/Android库/
@@ -21,6 +21,10 @@ Desktop编译通过；暂停/乱序seek/offset/resize/reduced/重挂通过，无
 证据verification/diorama-flight；完整outgoing corridor/loop/late-lyrics gate仍未实现。
 正常有限1482原控制通过；de7baa6旧normal图表因不是当前基线仅120/288hash匹配，
 失败原样记录，不将此称无变化，亦不改旧报告/期望。详该README/失败日志。
+loop回归另发现实际2100ms行在media2300/offset200时因秒浮点相减误选前行；
+现按core毫秒单位换算，无round/epsilon/帧延迟，十组正负offset精确边界及前后
+0.1µs/完整文字像素/点击逆映射通过。证据verification/diorama-offset新增边界节；
+旧loop失败保留。loop实现与原32帧数值/实际文字回归已通过，待独立整理提交。
 群唱当前局部探针已收束：159条原target/live-value/DOM记录及完整独立重复一致；
 1.016667s目标110→49后保持49，inline却110→49→110、MV一直110，证伪再次切target。
 原v2所有phase值不变。媒体重建尚缺可成立的瞬时DOM写入/解析交接策略，

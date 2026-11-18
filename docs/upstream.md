@@ -1770,3 +1770,12 @@ verification/diorama-flight. No expected source pose drives native rendering.
 Original gates retained; media/RAF,raster/clipping residuals and failed tests
 preserved. Full outgoing corridor/window,loop restart and late-ready song gate
 remain missing; no public/sample Diorama or device/performance acceptance.
+
+### Diorama exact core millisecond boundary (2026-11-18)
+Independent host adaptation in DioramaTextPlayback.kt, not copied source math.
+Published core integer-ms boundaries and existing media-minus-offset contract
+require2300ms-offset200ms to select2100ms exactly. Offset arithmetic now stays
+in milliseconds until the final seconds conversion, without rounding/epsilon;
+zero offset is identity. Independent core/strict-neighbour/pixel/click regression
+and retained failing loop probe:verification/diorama-offset. Original camera,
+timing and image fixtures unchanged. No public/device or performance claim.

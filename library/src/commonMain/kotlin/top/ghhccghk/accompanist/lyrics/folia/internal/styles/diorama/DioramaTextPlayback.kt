@@ -29,11 +29,16 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         // Same host contract as FoliaLyricsView: positive offset delays lyrics.
         // Only the bounded internal camera input is clamped, never the source
         // timestamps or the inverse click target returned to the media host.
-        return (mediaSeconds-offsetMillis/1000.0).coerceIn(0.0,camera.endTime)
+        // Core timestamps and host offset are milliseconds. Subtract in that
+        // unit: 2.3-.2 falls one ULP BEFORE the exact source boundary 2.1.
+        // No rounding/epsilon/delay; fractional media progress is preserved.
+        val adjusted=if(offsetMillis==0)mediaSeconds else (mediaSeconds*1000.0-offsetMillis)/1000.0
+        return adjusted.coerceIn(0.0,camera.endTime)
     }
     fun sourceAt(mediaSeconds: Double, offsetMillis: Int = 0): DioramaCoreLine =
         lines[camera.subjectIndex(lyricTime(mediaSeconds,offsetMillis))].core
-    fun mediaStart(core: DioramaCoreLine, offsetMillis: Int = 0) = core.lyric.start+offsetMillis/1000.0
+    fun mediaStart(core: DioramaCoreLine, offsetMillis: Int = 0) =
+        if(offsetMillis==0)core.lyric.start else (core.lyric.start*1000.0+offsetMillis)/1000.0
     /** Capture before preparing a ready incoming song. No old scene/cache/job
      * is retained; full outgoing-corridor composition remains a separate task. */
     fun transitionAt(mediaSeconds: Double, epoch: Int, offsetMillis: Int = 0): DioramaTextTransition {

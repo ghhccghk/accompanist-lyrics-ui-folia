@@ -87,7 +87,13 @@ class DioramaPlainFragmentMatrixTest {
                 assertTrue(image.any{it!=Color(0xff162435).toArgb()})
                 captured[i]=image
                 ImageIO.write(captureToImage().toAwtImage(),"png",out.resolve(rows[i][0]))
-                runOnIdle{useSampler=true};assertContentEquals(image,pixels(),"Internal library sampler retains independently validated control")
+                runOnIdle{useSampler=true};val actual=pixels()
+                if(!image.contentEquals(actual)) {
+                    val differing=image.indices.filter{image[it]!=actual[it]}
+                    val peak=differing.maxOf{j->(0..2).maxOf{c->abs((image[j] ushr (c*8) and 255)-(actual[j] ushr (c*8) and 255))}}
+                    ImageIO.write(captureToImage().toAwtImage(),"png",out.resolve("atlas-failure-${rows[i][0]}"))
+                    assertTrue(false,"Exact independent control ${rows[i][0]}: ${differing.size} differing pixels, peak=$peak, first=${differing.first()}")
+                }
                 val samplerOut=File("../build/verification/diorama-plain-sampler-kotlin").apply{mkdirs()}
                 ImageIO.write(captureToImage().toAwtImage(),"png",samplerOut.resolve(rows[i][0]))
                 assertEquals(1,renderer.residentCount)

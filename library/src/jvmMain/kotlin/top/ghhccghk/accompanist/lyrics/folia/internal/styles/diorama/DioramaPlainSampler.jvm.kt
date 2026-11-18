@@ -36,8 +36,8 @@ internal class SkiaDioramaPlainSampler(base:ImageBitmap):DioramaPlainSampler {
     private val masks=mutableListOf(base)
     private val colors=mutableListOf<ImageBitmap>()
     private val children=mutableListOf<org.jetbrains.skia.Shader>()
-    private var effect:RuntimeEffect?=null
-    private var builder:RuntimeShaderBuilder?=null
+    private val effects=mutableListOf<RuntimeEffect>()
+    private val builders=mutableListOf<RuntimeShaderBuilder>()
     private var closed=false
     init {
         try {
@@ -65,9 +65,15 @@ internal class SkiaDioramaPlainSampler(base:ImageBitmap):DioramaPlainSampler {
                 masks+=reduce(masks.last(),w,h,false);colors+=reduce(colors.last(),w,h,true)
             }
             val last=colors.lastIndex
-            val declarations=(0..last).joinToString("\n"){"uniform shader c$it; uniform shader a$it; uniform float2 size$it;"}
-            val branches=(0..last).joinToString("\n") {
-                "if(level==$it){float2 uv=p*size$it/baseSize;return float4(toLinearSrgb(c$it.eval(uv).rgb),a$it.eval(uv).a);}"
+            for(i in 0..last) {
+                children+=colors[i].asSkiaBitmap().makeShader(sampling=FilterMipmap(FilterMode.LINEAR,MipmapMode.NONE))
+                children+=masks[i].asSkiaBitmap().makeShader(sampling=FilterMipmap(FilterMode.LINEAR,MipmapMode.NONE))
+            }
+            for(pass in dioramaMipPasses(last)) {
+            val levels=pass.first..pass.last
+            val declarations=levels.joinToString("\n"){"uniform shader c$it; uniform shader a$it; uniform float2 size$it;"}
+            val branches=levels.joinToString("\n") {
+                "if(level==$it){float2 uv=p*size$it/baseSize;sampled=float4(toLinearSrgb(c$it.eval(uv).rgb),a$it.eval(uv).a);}"
             }
             val program=RuntimeEffect.makeForShader("""
                 $declarations
@@ -76,14 +82,14 @@ internal class SkiaDioramaPlainSampler(base:ImageBitmap):DioramaPlainSampler {
                 uniform float3 primary;uniform float opacity;
                 uniform int toneMapped;uniform int fogEnabled;
                 uniform float3 fogColor;uniform float2 fogRange;
-                float4 sampleLevel(int level,float2 p){$branches return float4(0);}
+                float4 sampleLevel(int level,float2 p){float4 sampled=float4(0);$branches return sampled;}
                 float3 aces(float3 c){
                     c=c/.6;
                     float3 q=float3(dot(float3(.59719,.35458,.04823),c),dot(float3(.076,.90834,.01566),c),dot(float3(.02840,.13383,.83777),c));
                     q=(q*(q+.0245786)-.000090537)/(q*(.983729*q+.4329510)+.238081);
                     return clamp(float3(dot(float3(1.60475,-.53108,-.07367),q),dot(float3(-.10208,1.10813,-.00605),q),dot(float3(-.00327,-.07276,1.07602),q)),0,1);
                 }
-                float encode(float c){return c<=.0031308?12.92*c:1.055*pow(c,1.0/2.4)-.055;}
+                float encode(float c){return c<=.0031308?12.92*c:1.055*pow(max(c,0.0),1.0/2.4)-.055;}
                 float3 encoded(float3 c){return float3(encode(c.r),encode(c.g),encode(c.b));}
                 float4 main(float2 p){
                     float3 coord=float3(p,1);float a=dot(hx,coord);float b=dot(hy,coord);float z=dot(hz,coord);
@@ -96,6 +102,9 @@ internal class SkiaDioramaPlainSampler(base:ImageBitmap):DioramaPlainSampler {
                     float ratio=min(4.0,max(sx,sy)/area);
                     float2 axis=sx>=sy?tx:ty;
                     float level=clamp(log2(sqrt(max(sx,sy))/ratio),0,$last);
+                    // Disjoint pixel ownership; original level coordinates and
+                    // interpolation survive, without atlas translation error.
+                    if(level<${pass.first}.0${if(pass.last<last)"||level>=${pass.last}.0" else ""})return float4(0);
                     int first=int(floor(level));int count=int(floor(ratio+.5));
                     float4 tex=float4(0);
                     for(int i=0;i<4;++i){if(i<count){
@@ -108,14 +117,13 @@ internal class SkiaDioramaPlainSampler(base:ImageBitmap):DioramaPlainSampler {
                     float alpha=tex.a*opacity;return float4(rgb*alpha,alpha);
                 }
             """.trimIndent())
-            effect=program
-            val uniforms=RuntimeShaderBuilder(program);builder=uniforms
+            effects+=program
+            val uniforms=RuntimeShaderBuilder(program);builders+=uniforms
             uniforms.uniform("baseSize",width.toFloat(),height.toFloat())
-            for(i in 0..last) {
-                val c=colors[i].asSkiaBitmap().makeShader(sampling=FilterMipmap(FilterMode.LINEAR,MipmapMode.NONE)).also{children+=it}
-                val a=masks[i].asSkiaBitmap().makeShader(sampling=FilterMipmap(FilterMode.LINEAR,MipmapMode.NONE)).also{children+=it}
-                uniforms.child("c$i",c);uniforms.child("a$i",a)
+            for(i in levels) {
+                uniforms.child("c$i",children[i*2]);uniforms.child("a$i",children[i*2+1])
                 uniforms.uniform("size$i",colors[i].width.toFloat(),colors[i].height.toFloat())
+            }
             }
         }catch(failure:Throwable){close();throw failure}
     }
@@ -124,8 +132,8 @@ internal class SkiaDioramaPlainSampler(base:ImageBitmap):DioramaPlainSampler {
         color:DioramaLinearColor,alpha:Float,fog:DioramaFog?,toneMapping:DioramaToneMapping) {
         check(!closed){"Plain sampler is closed"}
         if(alpha<=0)return
-        val uniforms=checkNotNull(builder)
         val h=view.planeHomography(origin,x,y)
+        for(uniforms in builders) {
         for((name,start)in listOf("hx" to 0,"hy" to 3,"hz" to 6))uniforms.uniform(name,h[start].toFloat(),h[start+1].toFloat(),h[start+2].toFloat())
         uniforms.uniform("primary",color.red.toFloat(),color.green.toFloat(),color.blue.toFloat());uniforms.uniform("opacity",alpha)
         uniforms.uniform("toneMapped",if(toneMapping==DioramaToneMapping.AcesFilmic)1 else 0)
@@ -136,12 +144,13 @@ internal class SkiaDioramaPlainSampler(base:ImageBitmap):DioramaPlainSampler {
         scope.withDioramaPlane(view,origin,x,y,width.toDouble(),height.toDouble()) {
             uniforms.makeShader().use{drawRect(ShaderBrush(it.asComposeShader()),size=Size(width.toFloat(),height.toFloat()))}
         }
+        }
     }
 
     override fun close() {
         if(closed)return
         closed=true
-        builder?.close();builder=null;effect?.close();effect=null
+        builders.forEach{it.close()};builders.clear();effects.forEach{it.close()};effects.clear()
         children.forEach{it.close()};children.clear()
         colors.forEach{it.asSkiaBitmap().close()};colors.clear()
         // The original paragraph image is shared with departing snapshots.

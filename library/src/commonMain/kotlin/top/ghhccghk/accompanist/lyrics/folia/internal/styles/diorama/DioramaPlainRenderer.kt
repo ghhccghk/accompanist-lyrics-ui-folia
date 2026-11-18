@@ -12,6 +12,21 @@ internal interface DioramaPlainSampler {
 }
 internal expect fun createDioramaPlainSampler(text:DioramaPlainText):DioramaPlainSampler?
 
+internal data class DioramaMipPass(val first:Int,val last:Int)
+
+/** Six LOD intervals plus their shared endpoint = at most fourteen child
+ * samplers. Leave two D3D ps_5_1 slots for the host's clip/composition inputs.
+ * Passes own disjoint LOD intervals; no mip or anisotropic tap is discarded. */
+internal fun dioramaMipPasses(last:Int):List<DioramaMipPass> {
+    require(last>=0)
+    val result=mutableListOf<DioramaMipPass>();var first=0
+    while(true) {
+        val end=minOf(last,first+6);result+=DioramaMipPass(first,end)
+        if(end==last)return result
+        first=end
+    }
+}
+
 /** Exact resident image payload estimate: F16 straight color base plus both
  * F16 color/ARGB alpha lower mip chains. Excludes the already owned paragraph,
  * shader/driver overhead and transient preparation buffers; not total PSS. */

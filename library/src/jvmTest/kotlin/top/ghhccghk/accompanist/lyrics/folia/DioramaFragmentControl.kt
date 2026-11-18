@@ -24,6 +24,7 @@ internal class DioramaFragmentControl(private val base:ImageBitmap,private val m
     private val children=mutableListOf<org.jetbrains.skia.Shader>()
     private val effect:RuntimeEffect
     private val builder:RuntimeShaderBuilder
+    private var closed=false
 
     init {
         require(maxMipLevel in 0..12)
@@ -165,5 +166,5 @@ internal class DioramaFragmentControl(private val base:ImageBitmap,private val m
             }}
         }
     }
-    override fun close(){builder.close();effect.close();children.forEach{it.close()}}
+    override fun close(){if(closed)return;closed=true;builder.close();effect.close();children.forEach{it.close()}}
 }

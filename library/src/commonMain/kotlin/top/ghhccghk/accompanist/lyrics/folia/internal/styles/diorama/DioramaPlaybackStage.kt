@@ -92,7 +92,7 @@ internal fun DioramaPlaybackStage(core:SyncedLyrics,time:()->Double,textStyle:Te
                     result to cache?.load(result.rastersAt(t),result.prefetchRastersAt(t)){context.ensureActive()}
                 }
                 if(window!=null)cache!!.publish(window)
-                prepared=result;observer(result);status(true,null)
+                prepared=result;observer(result);status(false,"DioramaTextureLoading")
                 awaitCancellation()
             }catch(cancelled:CancellationException){throw cancelled}
             catch(error:IllegalArgumentException){ensureActive();failure=error.message?:"镜台输入无效";status(false,"DioramaPreparationFailed: $failure")}
@@ -116,7 +116,10 @@ internal fun DioramaPlaybackStage(core:SyncedLyrics,time:()->Double,textStyle:Te
             val t=clock().coerceIn(0.0,p.camera.endTime)
             try{
                 windowFailure=null
-                if(!p.hasRastersAt(t))status(false,"DioramaTextureLoading")
+                // Loaded source pixels alone do not certify the current
+                // sampler window. Rapid seek must not expose a fallback frame
+                // as ready while the final request is still preparing.
+                status(false,"DioramaTextureLoading")
                 val context=coroutineContext
                 val window=withContext(Dispatchers.IO){p.rasterCache?.load(p.rastersAt(t),p.prefetchRastersAt(t)){context.ensureActive()}}
                 if(window!=null)p.rasterCache!!.publish(window)
@@ -131,7 +134,7 @@ internal fun DioramaPlaybackStage(core:SyncedLyrics,time:()->Double,textStyle:Te
         }
         // A random seek can leave the prefetched window. Keep the media clock
         // running; render a truthful loading state until asynchronous IO ends.
-        val available by remember(p,current){derivedStateOf{windowVersion;p.hasRastersAt(clock().coerceIn(0.0,p.camera.endTime))}}
+        val available by remember(p,current){derivedStateOf{windowVersion;preparedIndex==current&&p.hasRastersAt(clock().coerceIn(0.0,p.camera.endTime))}}
         if(!available||windowFailure!=null)BasicText(windowFailure?:"正在读取镜台纹理…",style=textStyle.copy(color=colors.secondary))
         val input=if(onClick==null&&onLongPress==null)Modifier else Modifier.pointerInput(p,density,reduced,fog){
             awaitEachGesture {

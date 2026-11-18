@@ -16,11 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。后来用户授权镜台调试入口，当前共八项，下述新结果取代入口限制。
 
-当前唯一下一项（用户报告）：修复Windows镜台fragment的ps_5_1超过16个sampler，
-完整mip链改为共享图集并用原独立控制矩阵验证，保留全部过滤／颜色语义。
-随后提供实际可用的Desktop启动后端参数（当前Skiko无JVM Vulkan解析支持），
-再构建Android debug／独立消费，回到同48原矩阵3499ms媒体相机局部残差。
+当前唯一下一项（用户追加）：示例增加可关闭的实际后端／帧回调调试信息，核对真实
+窗口hook启停、统计口径和Android编译；已有后端参数同时收尾。
+然后构建Android debug／独立消费，回到同48原矩阵3499ms媒体相机局部残差。
 不调整阈值、帧延迟或重采原图。
+Windows sampler超限：图集候选45像素差1已撤回，保留失败；改为全mip分段（每pass
+至多14child）。原24平面控制及彩色alpha跨LOD6边界逐像素精确，公共缓存就绪竞态
+修正，11项JVM通过、Android编译通过；见verification/windows-rendering。
+专用真实D3D/OpenGL窗口均5个请求完成，已图检真实文字而非准备label；不等于
+原版完整视觉／Android运行／GPU呈现或性能结论。当前Skiko的JVM解析不支持Vulkan。
 镜台会话磁盘缓存：默认32MiB retained ARGB软目标，后台窗口读盘和下一窗口预取，
 正常卸载删自有文件、错误可见。强制磁盘vs内存逐像素、乱序seek/暂停/offset/resize/
 原对象/取消/失败恢复及设置验证，证据见verification/diorama-raster-cache。

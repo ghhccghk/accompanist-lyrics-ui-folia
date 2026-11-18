@@ -150,7 +150,11 @@ fun FoliaLyricsView(
                 onClick=onLineClicked,onLongPress=onLinePressed,
                 onState={isReady,diagnostic->
                     ready=isReady;themeDiagnostic=diagnostic
-                    if(!isReady){unitCount=0;quality=FoliaQuality.Minimal}
+                    // A resident-window preparation may go false -> true in
+                    // one UI turn. Publish its counters here too: the keyed
+                    // ready effect need not restart for a coalesced transition.
+                    unitCount=if(isReady)selection.primary?.line?.let{dioramaUnits(coreLines[it].lyric).size}?:0 else 0
+                    quality=if(unitCount==0)FoliaQuality.Minimal else options.quality
                 })
         }else if(style is FoliaStyle.Fume){
             val tuning=style.tuning;val lines=fumeLines!!

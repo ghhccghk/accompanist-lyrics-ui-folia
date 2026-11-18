@@ -2060,3 +2060,13 @@ disk IO. No new upstream code/assets or license change. Public exact pixels,
 raw-byte roundtrip, cancellation/seek/cleanup/errors and settings evidence:
 verification/diorama-raster-cache. No PSS/performance/device claim; process-kill
 orphan cleanup remains unimplemented.
+
+### Diorama Windows sampler limit (2026-11-18)
+Existing independently adapted fragment shader -> DioramaPlainSampler.jvm.kt
+disjoint LOD passes with shared mip endpoints, at most fourteen color/alpha
+children per pass. Original coordinates, full chain and filtering retained;
+no new upstream code/resource. Pow branch made nonnegative, sampled value
+explicitly initialized; public window readiness published after samplers.
+Frozen 0d836a5 single-pass control, prior independent24 matrix, rejected atlas
+candidate and actual-backend window conditions: verification/windows-rendering.
+Not a new upstream visual/performance/device acceptance or license change.

@@ -1,0 +1,344 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "DPR": 1,
+  "sourceHashes": [
+    {
+      "file": "dioramaTextRaster.ts",
+      "sha256": "085bc682dbe3e15ba08cede13108063b4ff1cf0a4a79b35be35be56722a41d28"
+    },
+    {
+      "file": "dioramaSceneLayout.ts",
+      "sha256": "1d0ef0ee78535071b4d913a8e7cbb9e72ebb6822aec9b6f523c68b2920379338"
+    }
+  ],
+  "fonts": [
+    {
+      "file": "FoliaParityLatin-Bold.ttf",
+      "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+    },
+    {
+      "file": "FoliaParityBidi-Bold.ttf",
+      "sha256": "e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699"
+    },
+    {
+      "file": "FoliaParityChatCJK-Bold.otf",
+      "sha256": "c111c58ed2c29b4544cfbc0f3db1cdf8b596f75861ac486eb5790ef66bdafbac"
+    }
+  ],
+  "hostSha256": "9007fadf7e41d09d73f7484251fa9dc5eacdc0968dc33008fd3c90490e85bbf3",
+  "lockSha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad",
+  "originalLockSha256": "ce30669b1acca119cc886133166dd872f8eeb3b9d05edb8c193e4d18e3b2a000",
+  "captures": [
+    {
+      "name": "italic",
+      "text": "fij Wavy",
+      "pieces": [
+        "f",
+        "i",
+        "j",
+        " ",
+        "Wavy"
+      ],
+      "family": "Shaped Latin",
+      "italic": true,
+      "line": {
+        "fullText": "fij Wavy",
+        "startTime": 0.7,
+        "endTime": 2,
+        "words": [
+          {
+            "text": "f",
+            "startTime": 0.7,
+            "endTime": 0.8
+          },
+          {
+            "text": "i",
+            "startTime": 0.8,
+            "endTime": 0.9
+          },
+          {
+            "text": "j",
+            "startTime": 0.9,
+            "endTime": 1
+          },
+          {
+            "text": " ",
+            "startTime": 1,
+            "endTime": 1.1
+          },
+          {
+            "text": "Wavy",
+            "startTime": 1.1,
+            "endTime": 1.2
+          }
+        ]
+      },
+      "units": [
+        {
+          "text": "f",
+          "charStart": 0,
+          "charEnd": 1,
+          "startTime": 0.7,
+          "endTime": 0.8
+        },
+        {
+          "text": "i",
+          "charStart": 1,
+          "charEnd": 2,
+          "startTime": 0.8,
+          "endTime": 0.9
+        },
+        {
+          "text": "j",
+          "charStart": 2,
+          "charEnd": 3,
+          "startTime": 0.9,
+          "endTime": 1
+        },
+        {
+          "text": "Wavy",
+          "charStart": 4,
+          "charEnd": 8,
+          "startTime": 1.1,
+          "endTime": 1.2
+        }
+      ],
+      "advance": 506,
+      "width": 686,
+      "height": 360
+    },
+    {
+      "name": "arabic",
+      "text": "مرحبا بالعالم",
+      "pieces": [
+        "مر",
+        "حبا",
+        " ",
+        "بال",
+        "عالم"
+      ],
+      "family": "Shaped Bidi",
+      "line": {
+        "fullText": "مرحبا بالعالم",
+        "startTime": 0.7,
+        "endTime": 2,
+        "words": [
+          {
+            "text": "مر",
+            "startTime": 0.7,
+            "endTime": 0.8
+          },
+          {
+            "text": "حبا",
+            "startTime": 0.8,
+            "endTime": 0.9
+          },
+          {
+            "text": " ",
+            "startTime": 0.9,
+            "endTime": 1
+          },
+          {
+            "text": "بال",
+            "startTime": 1,
+            "endTime": 1.1
+          },
+          {
+            "text": "عالم",
+            "startTime": 1.1,
+            "endTime": 1.2
+          }
+        ]
+      },
+      "units": [
+        {
+          "text": "مر",
+          "charStart": 0,
+          "charEnd": 2,
+          "startTime": 0.7,
+          "endTime": 0.8
+        },
+        {
+          "text": "حبا",
+          "charStart": 2,
+          "charEnd": 5,
+          "startTime": 0.8,
+          "endTime": 0.9
+        },
+        {
+          "text": "بال",
+          "charStart": 6,
+          "charEnd": 9,
+          "startTime": 1,
+          "endTime": 1.1
+        },
+        {
+          "text": "عالم",
+          "charStart": 9,
+          "charEnd": 13,
+          "startTime": 1.1,
+          "endTime": 1.2
+        }
+      ],
+      "advance": 684,
+      "width": 864,
+      "height": 360
+    },
+    {
+      "name": "mixed",
+      "text": "Aمرحبا 12B بالعالم",
+      "pieces": [
+        "Aمر",
+        "حبا",
+        " ",
+        "12B",
+        " ",
+        "بال",
+        "عالم"
+      ],
+      "family": "Shaped Bidi",
+      "line": {
+        "fullText": "Aمرحبا 12B بالعالم",
+        "startTime": 0.7,
+        "endTime": 2,
+        "words": [
+          {
+            "text": "Aمر",
+            "startTime": 0.7,
+            "endTime": 0.8
+          },
+          {
+            "text": "حبا",
+            "startTime": 0.8,
+            "endTime": 0.9
+          },
+          {
+            "text": " ",
+            "startTime": 0.9,
+            "endTime": 1
+          },
+          {
+            "text": "12B",
+            "startTime": 1,
+            "endTime": 1.1
+          },
+          {
+            "text": " ",
+            "startTime": 1.1,
+            "endTime": 1.2
+          },
+          {
+            "text": "بال",
+            "startTime": 1.2,
+            "endTime": 1.3
+          },
+          {
+            "text": "عالم",
+            "startTime": 1.3,
+            "endTime": 1.4
+          }
+        ]
+      },
+      "units": [
+        {
+          "text": "Aمر",
+          "charStart": 0,
+          "charEnd": 3,
+          "startTime": 0.7,
+          "endTime": 0.8
+        },
+        {
+          "text": "حبا",
+          "charStart": 3,
+          "charEnd": 6,
+          "startTime": 0.8,
+          "endTime": 0.9
+        },
+        {
+          "text": "12B",
+          "charStart": 7,
+          "charEnd": 10,
+          "startTime": 1,
+          "endTime": 1.1
+        },
+        {
+          "text": "بال",
+          "charStart": 11,
+          "charEnd": 14,
+          "startTime": 1.2,
+          "endTime": 1.3
+        },
+        {
+          "text": "عالم",
+          "charStart": 14,
+          "charEnd": 18,
+          "startTime": 1.3,
+          "endTime": 1.4
+        }
+      ],
+      "advance": 1038,
+      "width": 1218,
+      "height": 360
+    },
+    {
+      "name": "cjk",
+      "text": "星光回响",
+      "pieces": [
+        "星光回响"
+      ],
+      "family": "Shaped Cjk",
+      "line": {
+        "fullText": "星光回响",
+        "startTime": 0.7,
+        "endTime": 2,
+        "words": [
+          {
+            "text": "星光回响",
+            "startTime": 0.7,
+            "endTime": 0.8
+          }
+        ]
+      },
+      "units": [
+        {
+          "text": "星",
+          "charStart": 0,
+          "charEnd": 1,
+          "startTime": 0.7,
+          "endTime": 0.725
+        },
+        {
+          "text": "光",
+          "charStart": 1,
+          "charEnd": 2,
+          "startTime": 0.725,
+          "endTime": 0.75
+        },
+        {
+          "text": "回",
+          "charStart": 2,
+          "charEnd": 3,
+          "startTime": 0.75,
+          "endTime": 0.775
+        },
+        {
+          "text": "响",
+          "charStart": 3,
+          "charEnd": 4,
+          "startTime": 0.775,
+          "endTime": 0.8
+        }
+      ],
+      "advance": 512,
+      "width": 692,
+      "height": 360
+    }
+  ],
+  "scope": "Unchanged original rasterDioramaUnit(full run) + splitDioramaLyricUnits. Complete Canvas shaping reference, NOT original per-unit stage, CameraRig/Three or new theme equivalence. Synthetic italic/font128/middle/white/transparent/pad90."
+}

@@ -1653,3 +1653,14 @@ or source texture copied. Real original functions + Three54 images /180 original
 material rows, full core-stage integration and explicit residuals:
 verification/diorama-neighbors. All preparation stays outside stable display
 frames; duplicate plain text shares only per-preparation immutable ownership.
+
+### Diorama complete-paragraph mask ownership (2026-11-18)
+Pinned dioramaTextRaster.ts:108–145 and dioramaSceneLayout.ts unit/timeline rules
+remain the reference; DioramaActiveText.kt / new DioramaShapedSlices.kt replace
+advance-rectangle clipping with independent full-paragraph raster-column ownership.
+Original units/clocks and scale pivots are retained. No original raster/code is
+copied by the ownership algorithm. Original complete-run Canvas call, failed
+advance/span controls and unchanged original per-unit stage matrices are distinct
+oracles: verification/diorama-shaped-mask. Four exact own-coverage controls pass;
+old stage means regress slightly, retained with every frame hash and no waiver.
+This is not original mixed-bidi per-unit equivalence or public theme acceptance.

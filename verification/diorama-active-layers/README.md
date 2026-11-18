@@ -41,6 +41,9 @@ DO NOT treat MAE4.399851→4.427326 as a fixed-mask improvement/regression claim
 Residual alpha support/Skia Canvas vs software box blur is unresolved, not waived.
 No alpha threshold, image registration, phase delay or tolerance altered.
 
+Historical status through2ce67b1; subsequent complete-shaped coverage repair and
+the same matrix's small retained regressions: ../diorama-shaped-mask/README.md.
+The original figures above remain historical evidence, not current acceptance.
 Other limits inherited from active-base: advance-bound slices may cut overhang,
 mixed-bidi/ligature boundary fixtures pending; Android OS/2 midpoint unavailable.
 No fog/depth/full CameraRig or public/sample Diorama. Next integrate real camera

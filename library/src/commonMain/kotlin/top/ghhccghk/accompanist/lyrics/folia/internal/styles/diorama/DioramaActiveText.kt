@@ -16,7 +16,7 @@ import kotlin.math.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.blurPremultiplied
 
 internal data class DioramaActiveSlice(val unit: DioramaUnit, val image: ImageBitmap, val centerPx: Double,
-    val rangeLeft: Float, val rangeRight: Float, val halo: ImageBitmap)
+    val rangeLeft: Float, val rangeRight: Float, val halo: ImageBitmap, val imageOffsetPx: Double = 0.0)
 
 /** Full-shaped slices and the original registered halo / crisp soul / base order.
  * Text and halo textures are prepared once, never from the display-frame loop. */
@@ -46,7 +46,7 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         }
         fun plane(slice: DioramaActiveSlice, image: ImageBitmap, alpha: Double, color: Color,
             depth: Double = 0.0, lift: Double = 0.0, scale: Double = 1.0, additive: Boolean = false) {
-            val origin = center + x * slice.centerPx + normal * (depth * fit) + up * (lift * fit) -
+            val origin = center + x * (slice.centerPx + slice.imageOffsetPx * scale) + normal * (depth * fit) + up * (lift * fit) -
                 x * (image.width / 2.0 * scale) + y * (image.height / 2.0 * scale)
             drawDioramaPlane(image,view,origin,x * scale,y * -scale,alpha.toFloat(),color,additive)
         }
@@ -81,21 +81,36 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
             val metrics = naturalFontMetrics(style, resolver, density)
             val ratio = dioramaTypographicRatio(style, resolver) ?: (metrics.ascent / (metrics.ascent + metrics.descent)).toDouble()
             val middle = floor(128 * ratio * 64 + .5) / 64 - 64
-            val slices = dioramaUnits(line).map { unit ->
+            val padding = 90 // ceil(128*.7), original active-unit padding
+            val full = ImageBitmap(max(1,ceil(advance).toInt()) + padding * 2,360)
+            val origin = Offset(padding.toFloat(), (180 + middle - paintedNaturalBaseline(layout, metrics)).toFloat())
+            CanvasDrawScope().draw(density,LayoutDirection.Ltr,Canvas(full),Size(full.width.toFloat(),360f)) {
+                drawText(layout,Color.White,origin,shadow=Shadow.None)
+            }
+            val units = dioramaUnits(line)
+            val ownership = dioramaShapedColumns(layout,units,full.width,padding)
+            val slices = units.mapIndexed { index, unit ->
                 val range = layout.getPathForRange(unit.charStart, unit.charEnd).getBounds()
                 val width = max(1, ceil(range.width.toDouble()).toInt())
-                val padding = 90 // ceil(128*.7), original active-unit padding
-                val image = ImageBitmap(width + padding * 2, 360) // ceil(128*1.4)+180
-                val origin = Offset(padding - range.left, (180 + middle - paintedNaturalBaseline(layout, metrics)).toFloat())
+                val columns = ownership[index]
+                // Integer texture crops keep the complete paragraph's raster
+                // phase. Preserve the original unit pivot separately so soul
+                // scaling does not pivot around an asymmetrical ink crop.
+                val left = min(floor(range.left.toDouble()).toInt()-padding,
+                    (columns.minOfOrNull { it.first } ?: padding)-padding)
+                val right = max(ceil(range.right.toDouble()).toInt()+padding,
+                    (columns.maxOfOrNull { it.last+1 } ?: padding)-padding)
+                val image = ImageBitmap(max(1,right-left),360)
+                val shift = -padding-left
                 CanvasDrawScope().draw(density, LayoutDirection.Ltr, Canvas(image), Size(image.width.toFloat(), image.height.toFloat())) {
-                    // Slice the complete shaped run at unit advances. Do not let
-                    // neighbouring glyphs appear in another unit's halo padding.
-                    clipRect(padding.toFloat(), 0f, padding + range.width, image.height.toFloat()) {
-                        drawText(layout, Color.White, origin, shadow = Shadow.None)
+                    for (column in columns) clipRect((column.first+shift).toFloat(),0f,
+                        (column.last+1+shift).toFloat(),360f) {
+                        drawImage(full,Offset(shift.toFloat(),0f))
                     }
                 }
-                DioramaActiveSlice(unit, image, range.left + width / 2.0 - advance / 2,
-                    range.left, range.right, prepareDioramaHalo(image))
+                val center = range.left + width / 2.0 - advance / 2
+                DioramaActiveSlice(unit, image, center, range.left, range.right, prepareDioramaHalo(image),
+                    left + image.width/2.0 - advance/2 - center)
             }
             return DioramaActiveText(slices, advance, middle)
         }

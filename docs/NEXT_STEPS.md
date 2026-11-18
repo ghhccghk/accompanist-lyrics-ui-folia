@@ -10,10 +10,19 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
 
-当前唯一下一项：Diorama活动文字完整塑形切片的overhang／混合bidi。用同一完整段落
-重组检查定位advance矩形裁切是否丢墨/重复邻字；原完整文字/布局作独立依据，先保留
-失败，验证真实core舞台与已存矩阵，不能牺牲内部时钟或逐UTF16重绘。镜台继续未公开。
-Fume局部交接仍需有依据的饱和位移重建策略，不能再猜focus/branch或调旧fixture。
+当前唯一下一项：Pendolo密集tick旋转残差的同源事件/连续积分对照。先读pendolo-tick-stage
+和pendolo-sweep现存证据，定位.325106°/1.364706px是否来自事件更新或轨迹重建；以
+固定原始矩阵和公共core入口回归，不重采精确锁或放宽预期。若有局部阻碍保留反例。
+Fume饱和位移策略和Cappella普通密集投影仍未修复，已完成的失败实验不能重试。
+
+Diorama完整塑形遮罩修复：原advance矩形裁斜体756px/混合bidi重复1504px，透明span
+候选也损伤fi合字327px已拒绝。现一次完整栅格、可分离视觉列ownership、原pivot缩放，
+四原Canvas完整run/真实core场景重组alpha全部逐像素相等，原单位/时钟保留。固定旧
+90/180/54图均值6.604446→6.642979/4.425606→4.451274/6.614592→6.618104，确有小退步，
+最差64px局部改善不掩盖均值；栅格phase/crop/halo贡献尚未单独隔离，完整舞台未验收。
+见verification/diorama-shaped-mask；JVM离屏/Android库编译/Desktop编译通过，无新设备/
+真窗口/性能结论，镜台保持未公开。原overhang/bidi“下一项”为历史，coverage已修而
+完整原逐单位视觉和整曲内存仍待验。Fume局部交接仍需有依据的饱和位移重建策略。
 
 Diorama正常邻行窗口/life已接内部core舞台：原前2后3、符号opacity、固定5.2fit/
 欧氏life、primary/secondary、透明far-to-near再活动17/18/19，活动三层也接life。

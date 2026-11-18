@@ -30,7 +30,7 @@ class DioramaNeighborStageTest {
         val controls=rows("windows")
         assertEquals(37,controls.size)
         for(row in controls) {
-            val expected=row.getOrElse(2){""}.split(',').filter{it.isNotEmpty()}.map(String::toInt)
+            val expected=row.getOrElse(2){""}.split(',').filter{it.isNotEmpty()&&it!="-"}.map(String::toInt)
             assertEquals(expected,dioramaMountedTextIndices(row[1].toInt(),row[0].toInt()).toList())
         }
         assertFailsWith<IllegalArgumentException>{dioramaMountedTextIndices(-1,3)}

@@ -40,6 +40,6 @@ try {
   c.file,c.scene,c.width,c.current,c.distance,c.time,...c.eye,...c.look,c.activeLife].join('\t'))].join('\n')+'\n');
  fs.writeFileSync(path.join(fixture,'neighbors.tsv'),['# file index advance fontPx fit opacity linearColor3 center3 depth',...captures.flatMap(c=>c.neighbors.map(n=>[
   c.file,n.index,n.advance,n.fontPx,n.fit,n.opacity,...n.color,...n.center,n.depth].join('\t')))].join('\n')+'\n');
- fs.writeFileSync(path.join(fixture,'windows.tsv'),['# total current indices',...inputs.latin.windows.map(w=>[w.total,w.current,w.indices.join(',')].join('\t'))].join('\n')+'\n');
+ fs.writeFileSync(path.join(fixture,'windows.tsv'),['# total current indices; - means empty',...inputs.latin.windows.map(w=>[w.total,w.current,w.indices.join(',')||'-'].join('\t'))].join('\n')+'\n');
  console.log(JSON.stringify({frames:captures.length,neighborRows:captures.reduce((n,c)=>n+c.neighbors.length,0),browser:browser.version()}));
 }finally{await browser?.close();await server.close()}

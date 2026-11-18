@@ -165,6 +165,16 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
                 val top = ((config.paddingY+1+row*measure.lineHeight)*d).toFloat() +
                     base-paintedNaturalBaseline(paragraph,metrics)
                 val origin = Offset(((config.paddingX+1)*d).toFloat(),top)
+                // Original CappellaText returns the complete text node for
+                // passed messages. Caret selections are not glyph ink masks:
+                // clipping each EGC drops overhang and can blend a ligature or
+                // bidi run twice even when every character is fully opaque.
+                // Reduced motion has no character fade and uses the same
+                // complete shaped row. Keep the timed active path unchanged.
+                if (!active || reducedMotion) {
+                    drawText(paragraph,colors.text,topLeft=origin,shadow=Shadow.None)
+                    continue
+                }
                 for ((i, edge) in edges.withIndex()) {
                     if (i >= edges.lastIndex || edge < start || edge >= end) continue
                     val finish = min(edges[i+1],end)

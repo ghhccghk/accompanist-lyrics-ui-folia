@@ -1715,3 +1715,13 @@ is optional internally. Actual Three54 full-core-stage /56 shared-mask frames,
 1221 scalar controls, initial precision failure and108 unchanged old native
 hashes: verification/diorama-fog. Not full camera/depth/flight/background or final
 visual/Android/performance acceptance; Diorama stays unpublished.
+
+### Cappella complete passed-text coverage (2026-11-18)
+Pinned cc6226e4 CappellaBubbleParts.tsx:46–63 CappellaText / inactive branch in
+CappellaMessageRow.tsx -> CappellaBubble.kt. Draw each whole shaped row once for
+passed/no-fade reduced text, replacing repeated caret-selection clips that lost
+overhang/ligature/bidi ink. No original code or glyph resources copied; timings,
+active opacity path and target/flow geometry unchanged. Original component/font/
+Motion/host hashes, ten exact native coverage controls, five original images,
+and unchanged240-frame dense geometry evidence: verification/cappella-complete-text.
+Not a repair of the22.188593px layout residual or full-theme acceptance.

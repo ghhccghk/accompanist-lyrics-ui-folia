@@ -10,10 +10,15 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life、可选文字fragment fog | 无 | 切曲/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：从已有Fume frozen-clamp-v1证据推导分支局部限幅位移重建；先做
-同原incoming的可证伪数值实验，不重试focus-only/midpoint-only或固定帧延迟。成立后
-才修改生产模型并复核原mounted92帧；不成立保留失败并转做已知独立主题问题。
-最近完成：真实Java Sound+完整离屏sample七主题探针暴露并修复普通LRC末行无界导致
+当前唯一下一项：群唱活动逐字淡入的完整塑形覆盖。已读修复的同类裁剪问题仍在活动
+路径；先证明全alpha=1/不同内部时钟的覆盖，再以原active组件和固定矩阵核对，保留
+几何/计时及密集失败记录。Fume有限限幅位移的媒体重建策略仍未成立，已有同初态及
+frozen-clamp-v1证据，不重试focus-only/midpoint-only或固定帧延迟、不改旧oracle。
+最近完成：群唱已读/减少动态完整行绘制，十组像素覆盖零差；原五组同union均值
+7.962819→7.081652，斜体局部109.412121→10.674576。密集240几何六表字节不变，
+22.188593px残差保留；整屏均值6.387616→6.387741微退步如实保留。证据
+verification/cappella-complete-text，JVM/public/Android库/Desktop编译通过，无设备结论。
+已提交1d6850a：真实Java Sound+完整离屏sample七主题探针修复普通LRC末行无界导致
 Fume不收敛。sample按真实时长/已有demo时长生成显示副本，raw core保持；七主题
 暂停/seek像素恢复通过，3个定向测试类/Android shared及Desktop编译通过，证据
 verification/local-playback-themes。原生文件选择/本轮Android设备/人工听音仍待验。

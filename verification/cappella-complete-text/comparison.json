@@ -1,0 +1,209 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "motion": {
+      "framer-motion": "13.4.3",
+      "motion-dom": "13.4.2",
+      "motion-utils": "13.3.0"
+    },
+    "browser": "151.0.7922.34",
+    "viewport": [
+      800,
+      300
+    ],
+    "DPR": 1,
+    "originalSha256": "4be2fabfe5fb48ef358551441fade413ecf63ee66efdaf553a9c4cc881ca184a",
+    "hostSha256": "bbe82039d0c3ddbd63ddc9e0c4c8751af2048b4f90e66d0895077933f7e0bcb5",
+    "lockSha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad",
+    "fonts": [
+      {
+        "name": "FoliaParityLatin-Bold.ttf",
+        "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+      },
+      {
+        "name": "FoliaParityBidi-Bold.ttf",
+        "sha256": "e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699"
+      },
+      {
+        "name": "FoliaParityChatCJK-Bold.otf",
+        "sha256": "c111c58ed2c29b4544cfbc0f3db1cdf8b596f75861ac486eb5790ef66bdafbac"
+      }
+    ],
+    "observations": [
+      {
+        "name": "italic",
+        "text": "fij Wavy",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": true,
+        "viewport": [
+          800,
+          300
+        ],
+        "fontPx": 64,
+        "lineHeight": 92.8,
+        "scope": "Actual original CappellaText in fixed host frame; passed whole text only, not full message-stage or active fade parity."
+      },
+      {
+        "name": "arabic",
+        "text": "مرحبا بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "viewport": [
+          800,
+          300
+        ],
+        "fontPx": 64,
+        "lineHeight": 92.8,
+        "scope": "Actual original CappellaText in fixed host frame; passed whole text only, not full message-stage or active fade parity."
+      },
+      {
+        "name": "mixed",
+        "text": "Aمرحبا 12B بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "viewport": [
+          800,
+          300
+        ],
+        "fontPx": 64,
+        "lineHeight": 92.8,
+        "scope": "Actual original CappellaText in fixed host frame; passed whole text only, not full message-stage or active fade parity."
+      },
+      {
+        "name": "latin",
+        "text": "office affine",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "viewport": [
+          800,
+          300
+        ],
+        "fontPx": 64,
+        "lineHeight": 92.8,
+        "scope": "Actual original CappellaText in fixed host frame; passed whole text only, not full message-stage or active fade parity."
+      },
+      {
+        "name": "cjk",
+        "text": "星光回响",
+        "font": "FoliaParityChatCJK-Bold.otf",
+        "italic": false,
+        "viewport": [
+          800,
+          300
+        ],
+        "fontPx": 64,
+        "lineHeight": 92.8,
+        "scope": "Actual original CappellaText in fixed host frame; passed whole text only, not full message-stage or active fade parity."
+      }
+    ],
+    "scope": "Actual original passed whole-text component, fixed transparent host frame. No original algorithm replacements, per-character opacity edits, time control, or source screenshot pixel registration. Not whole-theme visual acceptance."
+  },
+  "scope": "Whole-text coverage correction for passed/reduced rows only; active fades and normal layout-projection residuals unchanged, no full-theme/Android/device/performance pass.",
+  "pixelPolicy": "One original/before/after all-nonzero-alpha union per case. Premultiplied RGBA. No registration, threshold, dropped frames or phase correction.",
+  "beforeMean": 7.962818632646884,
+  "afterMean": 7.081652305367136,
+  "cases": [
+    {
+      "case": "italic",
+      "unionPixels": 6189,
+      "hashes": [
+        "740696e70aff2df5ec50c00e5b9f19b4f4a994a77ed189c7e1f26acf0f691801",
+        "55859c6e16cbb0b58ffa49bac3d9d0703ad15e8043aff69ea7cedf08fd93348c",
+        "d4662b739f0c729adc747817dbb9d47c3c07107d172301b01ac25da232003975"
+      ],
+      "before": {
+        "foregroundMAE": 10.620132493132978,
+        "peak": 255.0,
+        "worst64": 109.4121212121212
+      },
+      "after": {
+        "foregroundMAE": 7.143157214412668,
+        "peak": 130.0,
+        "worst64": 10.67457627118644
+      },
+      "completeRowDifferentPixels": 0
+    },
+    {
+      "case": "arabic",
+      "unionPixels": 7323,
+      "hashes": [
+        "e7acb2bbf000693d09f02bce7cbde46b0917cab383755973ffdf5b33cf0399bc",
+        "77941fcd62cd9659c2073121cc611f2d47dfd6d2280b0363da503ce87c062ff1",
+        "197f28db6555ca710d329bdd349c433e9d4aad536506a5ae381eb51b1d278bb7"
+      ],
+      "before": {
+        "foregroundMAE": 6.764577359005872,
+        "peak": 130.0,
+        "worst64": 12.02332361516035
+      },
+      "after": {
+        "foregroundMAE": 6.461013245937457,
+        "peak": 130.0,
+        "worst64": 12.02332361516035
+      },
+      "completeRowDifferentPixels": 0
+    },
+    {
+      "case": "mixed",
+      "unionPixels": 11243,
+      "hashes": [
+        "aa41270b623973d181523cae3699094690224c510cac27b3704175ca32a52041",
+        "21b59cbf7b57b6d0736d5ea5627d73b9ac24ab6c938d10b3d182478dfc09449e",
+        "d43703c8f15fe9ec05901af605100ccd51a8b687ac690afa2ff6ee478b08c77a"
+      ],
+      "before": {
+        "foregroundMAE": 7.008360757804857,
+        "peak": 148.0,
+        "worst64": 19.18867924528302
+      },
+      "after": {
+        "foregroundMAE": 6.774526371964778,
+        "peak": 148.0,
+        "worst64": 19.18867924528302
+      },
+      "completeRowDifferentPixels": 0
+    },
+    {
+      "case": "latin",
+      "unionPixels": 8780,
+      "hashes": [
+        "de98db0b641fa495e4d958783bcd3693d116088022a2fa2f40cae568d138666c",
+        "fba10ef5c19ccab22d6894d89c290d6e59e5c620b9ed550d56a4c28af8b5de23",
+        "f6a9189fc06bf6967fe084caaecbb116701fded4074741621c2279d6ad80c45e"
+      ],
+      "before": {
+        "foregroundMAE": 7.446583143507973,
+        "peak": 130.0,
+        "worst64": 10.060568603213845
+      },
+      "after": {
+        "foregroundMAE": 7.055125284738041,
+        "peak": 130.0,
+        "worst64": 10.060568603213845
+      },
+      "completeRowDifferentPixels": 0
+    },
+    {
+      "case": "cjk",
+      "unionPixels": 8607,
+      "hashes": [
+        "92d0be024b67a6874b9e1829c92b08eb3dd38ff52eef5e7f5b5e8f3011b09c66",
+        "3e7519d99a2d295cd1e54a58265690e1cfb8bea957459dc73c2317ea96634b9b",
+        "3e7519d99a2d295cd1e54a58265690e1cfb8bea957459dc73c2317ea96634b9b"
+      ],
+      "before": {
+        "foregroundMAE": 7.974439409782735,
+        "peak": 110.0,
+        "worst64": 12.565393988627132
+      },
+      "after": {
+        "foregroundMAE": 7.974439409782735,
+        "peak": 110.0,
+        "worst64": 12.565393988627132
+      },
+      "completeRowDifferentPixels": 0
+    }
+  ],
+  "beforeCoverage": "# case mode differentPixels\nitalic\tpassed\t226\nitalic\treduced\t226\narabic\tpassed\t85\narabic\treduced\t85\nmixed\tpassed\t77\nmixed\treduced\t77\nlatin\tpassed\t66\nlatin\treduced\t66\ncjk\tpassed\t0\ncjk\treduced\t0\n",
+  "afterCoverage": "# case mode differentPixels\nitalic\tpassed\t0\nitalic\treduced\t0\narabic\tpassed\t0\narabic\treduced\t0\nmixed\tpassed\t0\nmixed\treduced\t0\nlatin\tpassed\t0\nlatin\treduced\t0\ncjk\tpassed\t0\ncjk\treduced\t0\n"
+}

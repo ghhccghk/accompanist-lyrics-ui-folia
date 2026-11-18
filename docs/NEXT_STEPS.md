@@ -16,9 +16,13 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：固定700ms同原cache7输入，在测试中验证预生成mip金字塔，
-LOD由本独立投影Jacobian推导而非手选；先对原aniso4及已标注的isotropic控制，
-局部成立后才扩大原完整矩阵。保留采样/颜色/alpha/各向异性未等价项，不盲调hint。
+当前唯一下一项：同700ms/cache7被动读取原实际GPU mip0/4/5 RGBA，与native
+预乘mask金字塔比较颜色/alpha，核对原图/状态恢复，区分straight texture RGB
+和单纯alpha覆盖。不得通过降低LOD追图；只在数据明确后选必要文字采样修复。
+显式isotropic center-LOD候选已拒绝并撤回：虽mounted48均值改善，plain24有7均值/
+6局部回退、近景Latin/Arabic可见模糊，不能用均值掩盖；全部72原图不变，完整候选
+补丁/失败/同union数值见verification/diorama-minification。候选14测试/Android库/
+Desktop编译通过不代表视觉通过；撤回后5项及168生产图hash恢复。无该候选产品改动。
 原克隆采样消融已完成：原aniso4=409像素，关mip=194、native=193；同513union
 关mip对native MAE.400260，原10.972060，trilinear/aniso1则512像素。证明该场景
 mip采样是覆盖扩散贡献，非全部根因或等价证明；原完整图/状态/452callback均不变。

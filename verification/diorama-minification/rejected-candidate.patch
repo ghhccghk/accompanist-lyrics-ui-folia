@@ -1,0 +1,345 @@
+diff --git a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlainText.kt b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlainText.kt
+index 62e7cfc..57a85cf 100644
+--- a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlainText.kt
++++ b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlainText.kt
+@@ -25,7 +25,7 @@ internal expect fun dioramaTypographicRatio(style: TextStyle, resolver: FontFami
+ /** One complete shaped neighbouring-line raster, not an active-unit/glow stage.
+  * Fixed source texture em is independent of viewport density/system font scale.
+  * Prepare once per content/font change; camera queries never reshape the text. */
+-internal class DioramaPlainText private constructor(val image: ImageBitmap, val advancePx: Int,
++internal class DioramaPlainText private constructor(val image: ImageBitmap, val mipPyramid:DioramaMipPyramid, val advancePx: Int,
+     val fontPx: Int, val padding: Int, val middleBaseline: Double, val hasTypographicMetrics: Boolean) {
+     val worldWidth: Double get() = advancePx * .62 / fontPx
+
+@@ -39,7 +39,7 @@ internal class DioramaPlainText private constructor(val image: ImageBitmap, val
+         val y = dioramaPlaneAxis(frame, placement, 0.0, 1.0) * (scale * .62 / fontPx)
+         val center = dioramaComposeLocal(frame, placement.offsetR, placement.offsetU, 0.0)
+         val origin = center - x * (image.width / 2.0) + y * (image.height / 2.0)
+-        drawDioramaPlane(image,view,origin,x,y * -1.0,alpha,color,fog=fog)
++        mipPyramid.draw(this,view,origin,x,y * -1.0,alpha,color,fog)
+     }
+
+     companion object {
+@@ -81,7 +81,7 @@ internal class DioramaPlainText private constructor(val image: ImageBitmap, val
+                 Size(image.width.toFloat(), image.height.toFloat())) {
+                 drawText(layout, Color.White, origin, shadow = Shadow.None)
+             }
+-            return DioramaPlainText(image, advancePx, fontPx, padding, middle, typographic != null)
++            return DioramaPlainText(image, DioramaMipPyramid.prepare(image), advancePx, fontPx, padding, middle, typographic != null)
+         }
+     }
+ }
+diff --git a/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMountedStageTest.kt b/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMountedStageTest.kt
+index 0d3a202..6a1fe41 100644
+--- a/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMountedStageTest.kt
++++ b/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMountedStageTest.kt
+@@ -62,6 +62,7 @@ class DioramaMountedStageTest {
+                 MessageDigest.getInstance("SHA-256").digest(bytes).joinToString(""){"%02x".format(it)})
+             Image.makeFromEncoded(bytes).toComposeImageBitmap()
+         }
++        val explicitMipControl=if(width==380)DioramaExplicitMipControl(sourceCache7)else null
+         var controlPeak=0.0;var widthPeak=0.0;var stepCount=0
+         var materialPeak=0.0;var materialStates=0;var envelopePeak=0.0
+         setContent {
+@@ -161,13 +162,14 @@ class DioramaMountedStageTest {
+                     val view=if(method!="media")finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time)
+                     drawn=view
+                     if(method.startsWith("input-")) {
+-                        val only=if(method=="input-source-only-7")7 else method.removePrefix("input-only-").toIntOrNull()
++                        val only=if(method in listOf("input-source-only-7","input-source-explicit-mip"))7 else method.removePrefix("input-only-").toIntOrNull()
+                         if(method!="input-active")for(n in ready.neighborFramesAt(time,view,primary,secondary)) {
+                             if(n.opacity>0 && (only==null||only==n.index)) {
+                                 val p=diagnosticPlanes.getValue(n.index)
+                                 drawInputPlane(this,view,p,
+                                     if(method.startsWith("input-source")&&n.index==7)sourceCache7 else p.text.image,
+-                                    n.color.srgb(DioramaToneMapping.AcesFilmic),n.opacity.toFloat(),fog)
++                                    n.color.srgb(DioramaToneMapping.AcesFilmic),n.opacity.toFloat(),fog,
++                                    if(method=="input-source-explicit-mip")explicitMipControl else null)
+                             }
+                         }
+                         if(only==null) {
+@@ -209,6 +211,9 @@ class DioramaMountedStageTest {
+             ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-cache7.png"))
+             runOnIdle{method="input-source-only-7"};pixels()
+             ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-neighbor-7.png"))
++            runOnIdle{method="input-source-explicit-mip"};pixels()
++            ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-neighbor-7-explicit-mip.png"))
++            diagnostic.resolve("explicit-mip.txt").writeText("centerJacobianLod=${explicitMipControl!!.lastLod} levels=${explicitMipControl.levels.map{it.width to it.height}}\n")
+             val counts=mutableListOf<String>()
+             for(n in listOf(2,3,4,5,6,7,9,10)) {
+                 runOnIdle{method="input-only-$n"}
+@@ -271,14 +276,16 @@ class DioramaMountedStageTest {
+      * texture result MUST match drawStage byte-for-byte before substituting the
+      * original cache7 image. No source geometry/pose/material drives drawing. */
+     private fun drawInputPlane(scope:DrawScope,view:DioramaPerspective,p:DioramaDepartingPlane,
+-        image:ImageBitmap,color:Color,alpha:Float,fog:DioramaFog) {
++        image:ImageBitmap,color:Color,alpha:Float,fog:DioramaFog,mipControl:DioramaExplicitMipControl?=null) {
+         assertEquals(p.text.image.width,image.width);assertEquals(p.text.image.height,image.height)
+         val scale=dioramaFrameFit(p.text.worldWidth,5.2,view.fov,view.width/view.height)*p.placement.scale
+         val x=dioramaPlaneAxis(p.frame,p.placement,1.0,0.0)*(scale*.62/p.text.fontPx)
+         val y=dioramaPlaneAxis(p.frame,p.placement,0.0,1.0)*(scale*.62/p.text.fontPx)
+         val center=dioramaComposeLocal(p.frame,p.placement.offsetR,p.placement.offsetU,0.0)
+         val origin=center-x*(image.width/2.0)+y*(image.height/2.0)
+-        scope.drawDioramaPlane(image,view,origin,x,y*-1.0,alpha,color,fog=fog)
++        if(mipControl==null && image===p.text.image)p.text.draw(scope,view,p.frame,p.placement,color,alpha,fog)
++        else if(mipControl==null)scope.drawDioramaPlane(image,view,origin,x,y*-1.0,alpha,color,fog=fog)
++        else mipControl.draw(scope,view,origin,x,y*-1.0,alpha,color,fog)
+     }
+
+     /** Export the independently prepared production rasters BEFORE projection.
+diff --git a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaMipPyramid.kt b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaMipPyramid.kt
+new file mode 100644
+--- /dev/null
++++ b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaMipPyramid.kt
+@@ -0,0 +1,79 @@
++// SPDX-License-Identifier: AGPL-3.0-only
++// Independent minification adapter for Folia's cached neighbour text planes.
++// Isotropic approximation, not WebGL anisotropic sampling equivalence.
++package top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama
++
++import androidx.compose.ui.geometry.*
++import androidx.compose.ui.graphics.*
++import androidx.compose.ui.graphics.drawscope.*
++import androidx.compose.ui.unit.*
++import kotlin.math.*
++
++/** Immutable and owned by ONE prepared paragraph; no global cache or per-frame
++ * image preparation. Extra pixel storage is bounded by the halving chain.
++ * Base level remains the original fully shaped paragraph. */
++internal class DioramaMipPyramid private constructor(val levels:List<ImageBitmap>) {
++    fun levelAt(view:DioramaPerspective,origin:DioramaVec,x:DioramaVec,y:DioramaVec):Double {
++        val base=levels.first()
++        return dioramaMipLevel(view.planeHomography(origin,x,y),base.width.toDouble(),base.height.toDouble(),levels.lastIndex)
++    }
++
++    fun draw(scope:DrawScope,view:DioramaPerspective,origin:DioramaVec,x:DioramaVec,y:DioramaVec,
++        alpha:Float,color:Color,fog:DioramaFog?) {
++        if(alpha<=0)return
++        val lod=levelAt(view,origin,x,y)
++        val base=levels.first()
++        if(lod<=0) {
++            scope.drawDioramaPlane(base,view,origin,x,y,alpha,color,fog=fog)
++            return
++        }
++        val low=floor(lod).toInt();val high=min(low+1,levels.lastIndex);val weight=(lod-low).toFloat()
++        // Weighted premultiplied contributions must add in a transparent layer;
++        // two SrcOver draws would darken/attenuate the second mip incorrectly.
++        val canvas=scope.drawContext.canvas
++        canvas.saveLayer(Rect(0f,0f,view.width.toFloat(),view.height.toFloat()),Paint())
++        try {
++            fun draw(index:Int,fraction:Float) {
++                if(fraction<=0)return
++                val image=levels[index]
++                scope.drawDioramaPlane(image,view,origin,x*(base.width.toDouble()/image.width),
++                    y*(base.height.toDouble()/image.height),alpha*fraction,color,additive=true,fog=fog)
++            }
++            draw(low,1f-weight);draw(high,weight)
++        }finally{canvas.restore()}
++    }
++
++    companion object {
++        fun prepare(image:ImageBitmap):DioramaMipPyramid {
++            val levels=buildList {
++                add(image)
++                while(last().width>1 || last().height>1) {
++                    val previous=last();val width=max(1,previous.width/2);val height=max(1,previous.height/2)
++                    val next=ImageBitmap(width,height)
++                    CanvasDrawScope().draw(Density(1f),LayoutDirection.Ltr,Canvas(next),Size(width.toFloat(),height.toFloat())) {
++                        drawImage(previous,dstSize=IntSize(width,height),filterQuality=FilterQuality.Low)
++                    }
++                    add(next)
++                }
++            }
++            return DioramaMipPyramid(levels)
++        }
++    }
++}
++
++/** Inverse screen Jacobian gives the source-texel footprint of a screen pixel.
++ * Use the larger of its two column lengths, matching isotropic derivative LOD;
++ * no frame/viewport constant, fitted offset or hand-selected level. The plane
++ * center is an explicit bounded approximation, NOT per-fragment anisotropy4.
++ * Degenerate/behind-center planes retain the clipped base path. */
++internal fun dioramaMipLevel(h:List<Double>,width:Double,height:Double,lastLevel:Int):Double {
++    val u=width/2;val v=height/2
++    val a=h[0]*u+h[1]*v+h[2];val b=h[3]*u+h[4]*v+h[5];val z=h[6]*u+h[7]*v+h[8]
++    if(z<=0 || !z.isFinite())return 0.0
++    val xx=(h[0]*z-a*h[6])/(z*z);val xy=(h[1]*z-a*h[7])/(z*z)
++    val yx=(h[3]*z-b*h[6])/(z*z);val yy=(h[4]*z-b*h[7])/(z*z)
++    val determinant=xx*yy-xy*yx
++    if(determinant==0.0 || !determinant.isFinite())return 0.0
++    val rho=max(hypot(yy,yx),hypot(xy,xx))/abs(determinant)
++    return if(rho.isFinite())log2(max(1.0,rho)).coerceIn(0.0,lastLevel.toDouble())else 0.0
++}
+diff --git a/library/src/commonTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMipLevelTest.kt b/library/src/commonTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMipLevelTest.kt
+new file mode 100644
+--- /dev/null
++++ b/library/src/commonTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMipLevelTest.kt
+@@ -0,0 +1,44 @@
++package top.ghhccghk.accompanist.lyrics.folia
++
++import top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama.dioramaMipLevel
++import kotlin.math.*
++import kotlin.test.*
++
++class DioramaMipLevelTest {
++    private fun affine(a:Double,b:Double,c:Double,d:Double)=listOf(a,b,17.0,c,d,23.0,0.0,0.0,1.0)
++
++    @Test fun affineFootprintsUseInverseScreenJacobian() {
++        assertEquals(0.0,dioramaMipLevel(affine(2.0,0.0,0.0,2.0),128.0,32.0,7),0.0)
++        assertEquals(2.0,dioramaMipLevel(affine(.25,0.0,0.0,.25),128.0,32.0,7),1e-12)
++        assertEquals(3.0,dioramaMipLevel(affine(.25,0.0,0.0,.125),128.0,32.0,7),1e-12)
++        assertEquals(2.0,dioramaMipLevel(affine(.125,0.0,0.0,.125),128.0,32.0,2),0.0)
++    }
++
++    @Test fun rotationAndTranslationDoNotInventMinification() {
++        val theta=.71;val c=cos(theta)*.25;val s=sin(theta)*.25
++        assertEquals(2.0,dioramaMipLevel(affine(c,-s,s,c),2048.0,512.0,11),1e-12)
++    }
++
++    @Test fun perspectiveJacobianAgreesWithIndependentInverseFiniteDifferences() {
++        val h=listOf(.7383916653297786,.16453450273533257,2359.4855149861205,
++            -.07635252710280671,.8886192915833638,5601.805223768278,
++            -.00022689870199743643,.0005476387163991759,13.537950545062245)
++        // Invert the full projective matrix independently using cofactors.
++        val a=h[0];val b=h[1];val c=h[2];val d=h[3];val e=h[4];val f=h[5];val g=h[6];val i=h[7];val j=h[8]
++        val inv=listOf(e*j-f*i,c*i-b*j,b*f-c*e,f*g-d*j,a*j-c*g,c*d-a*f,d*i-e*g,b*g-a*i,a*e-b*d)
++        fun apply(m:List<Double>,x:Double,y:Double):Pair<Double,Double> {
++            val w=m[6]*x+m[7]*y+m[8];return (m[0]*x+m[1]*y+m[2])/w to (m[3]*x+m[4]*y+m[5])/w
++        }
++        val (x,y)=apply(h,825.0,116.0);val step=1e-3
++        val l=apply(inv,x-step,y);val r=apply(inv,x+step,y)
++        val t=apply(inv,x,y-step);val z=apply(inv,x,y+step)
++        val rho=max(hypot(r.first-l.first,r.second-l.second),hypot(z.first-t.first,z.second-t.second))/(2*step)
++        assertEquals(log2(rho),dioramaMipLevel(h,1650.0,232.0,10),1e-7)
++    }
++
++    @Test fun invalidOrBehindPlanesKeepOriginalClippedBasePath() {
++        assertEquals(0.0,dioramaMipLevel(affine(0.0,0.0,0.0,0.0),16.0,16.0,4))
++        assertEquals(0.0,dioramaMipLevel(listOf(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0),16.0,16.0,4))
++        assertEquals(0.0,dioramaMipLevel(affine(Double.NaN,0.0,0.0,1.0),16.0,16.0,4))
++    }
++}
+diff --git a/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaExplicitMipControl.kt b/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaExplicitMipControl.kt
+new file mode 100644
+--- /dev/null
++++ b/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaExplicitMipControl.kt
+@@ -0,0 +1,51 @@
++// SPDX-License-Identifier: AGPL-3.0-only
++package top.ghhccghk.accompanist.lyrics.folia
++
++import androidx.compose.ui.geometry.*
++import androidx.compose.ui.graphics.*
++import androidx.compose.ui.graphics.drawscope.*
++import androidx.compose.ui.unit.*
++import top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama.*
++import kotlin.math.*
++
++/** Test-only explicit pyramid, not another filterQuality hint. All levels are
++ * prepared BEFORE drawing; LOD comes solely from the projective Jacobian.
++ * Isotropic center-footprint approximation is labelled, not source aniso4. */
++internal class DioramaExplicitMipControl(image:ImageBitmap) {
++    val levels:List<ImageBitmap> = buildList {
++        add(image)
++        while(last().width>1 || last().height>1) {
++            val previous=last();val width=max(1,previous.width/2);val height=max(1,previous.height/2)
++            val next=ImageBitmap(width,height)
++            CanvasDrawScope().draw(Density(1f),LayoutDirection.Ltr,Canvas(next),Size(width.toFloat(),height.toFloat())) {
++                drawImage(previous,dstSize=IntSize(width,height),filterQuality=FilterQuality.Low)
++            }
++            add(next)
++        }
++    }
++    var lastLod:Double=Double.NaN
++        private set
++
++    fun draw(scope:DrawScope,view:DioramaPerspective,origin:DioramaVec,x:DioramaVec,y:DioramaVec,
++        alpha:Float,color:Color,fog:DioramaFog) {
++        val base=levels.first();val h=view.planeHomography(origin,x,y)
++        val u=base.width/2.0;val v=base.height/2.0
++        val a=h[0]*u+h[1]*v+h[2];val b=h[3]*u+h[4]*v+h[5];val z=h[6]*u+h[7]*v+h[8]
++        val xx=(h[0]*z-a*h[6])/(z*z);val xy=(h[1]*z-a*h[7])/(z*z)
++        val yx=(h[3]*z-b*h[6])/(z*z);val yy=(h[4]*z-b*h[7])/(z*z)
++        val determinant=xx*yy-xy*yx
++        val rho=max(hypot(yy,yx),hypot(xy,xx))/abs(determinant)
++        val lod=log2(max(1.0,rho)).coerceAtMost(levels.lastIndex.toDouble());lastLod=lod
++        val low=floor(lod).toInt();val high=min(low+1,levels.lastIndex);val weight=(lod-low).toFloat()
++        val canvas=scope.drawContext.canvas
++        canvas.saveLayer(Rect(0f,0f,view.width.toFloat(),view.height.toFloat()),Paint())
++        try {
++            for((index,fraction)in listOf(low to 1f-weight,high to weight)) {
++                if(fraction<=0)continue
++                val image=levels[index]
++                with(scope){drawDioramaPlane(image,view,origin,x*(base.width.toDouble()/image.width),
++                    y*(base.height.toDouble()/image.height),alpha*fraction,color,additive=true,fog=fog)}
++            }
++        }finally{canvas.restore()}
++    }
++}
+diff --git a/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMipPyramidTest.kt b/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMipPyramidTest.kt
+new file mode 100644
+--- /dev/null
++++ b/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMipPyramidTest.kt
+@@ -0,0 +1,62 @@
++package top.ghhccghk.accompanist.lyrics.folia
++
++import androidx.compose.foundation.Canvas
++import androidx.compose.foundation.background
++import androidx.compose.foundation.layout.fillMaxSize
++import androidx.compose.runtime.*
++import androidx.compose.ui.Modifier
++import androidx.compose.ui.geometry.*
++import androidx.compose.ui.graphics.*
++import androidx.compose.ui.graphics.drawscope.*
++import androidx.compose.ui.test.ExperimentalTestApi
++import androidx.compose.ui.test.v2.runDesktopComposeUiTest
++import androidx.compose.ui.unit.*
++import top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama.*
++import kotlin.math.*
++import kotlin.test.*
++
++@OptIn(ExperimentalTestApi::class)
++class DioramaMipPyramidTest {
++    @Test fun boundedHalvingRetainsBaseAndDoesNotMutatePixels()=runDesktopComposeUiTest(width=160,height=120) {
++        val base=ImageBitmap(65,17)
++        CanvasDrawScope().draw(Density(1f),LayoutDirection.Ltr,Canvas(base),Size(65f,17f)) {
++            drawRect(Color.White,Offset(5f,4f),Size(47f,9f))
++        }
++        fun pixels(image:ImageBitmap)=IntArray(image.width*image.height).also{image.readPixels(it)}
++        val original=pixels(base);val pyramid=DioramaMipPyramid.prepare(base)
++        assertSame(base,pyramid.levels.first());assertContentEquals(original,pixels(base))
++        assertEquals(listOf(65 to 17,32 to 8,16 to 4,8 to 2,4 to 1,2 to 1,1 to 1),pyramid.levels.map{it.width to it.height})
++        assertTrue(pyramid.levels.sumOf{it.width.toLong()*it.height}<2L*base.width*base.height)
++    }
++
++    @Test fun magnificationKeepsBasePathExactlyAndMinificationRetainsParentAlpha()=runDesktopComposeUiTest(width=160,height=120) {
++        val image=ImageBitmap(64,64)
++        CanvasDrawScope().draw(Density(1f),LayoutDirection.Ltr,Canvas(image),Size(64f,64f)){drawRect(Color.White)}
++        val pyramid=DioramaMipPyramid.prepare(image)
++        val identities=pyramid.levels.toList()
++        val view=DioramaPerspective(DioramaVec(0.0,0.0,5.0),DioramaVec(0.0,0.0,0.0),160.0,120.0)
++        var minified by mutableStateOf(false);var mip by mutableStateOf(false)
++        setContent {
++            Canvas(Modifier.fillMaxSize().background(Color.Black)) {
++                val scale=if(minified).015 else .12
++                val x=DioramaVec(scale,0.0,0.0);val y=DioramaVec(0.0,-scale,0.0)
++                val origin=DioramaVec(-32*scale,32*scale,0.0)
++                // Simulate an ancestor transition alpha through the same
++                // Compose Canvas path; applying it twice would fail the center.
++                drawContext.canvas.saveLayer(Rect(0f,0f,160f,120f),Paint().apply{alpha=.4f})
++                try {
++                    if(mip)pyramid.draw(this,view,origin,x,y,1f,Color.White,null)
++                    else drawDioramaPlane(image,view,origin,x,y,1f,Color.White)
++                }finally{drawContext.canvas.restore()}
++            }
++        }
++        fun pixels():IntArray{waitForIdle();val im=captureToImage();return IntArray(im.width*im.height).also{im.readPixels(it)}}
++        val base=pixels();runOnIdle{mip=true};assertContentEquals(base,pixels(),"magnified path must be byte-identical")
++        runOnIdle{minified=true};val minifiedImage=pixels()
++        val center=Color(minifiedImage[60*160+80])
++        assertEquals(.4f,center.red,2f/255);assertEquals(center.red,center.green,0f);assertEquals(center.red,center.blue,0f)
++        assertTrue(pyramid.levelAt(view,DioramaVec(-.48,.48,0.0),DioramaVec(.015,0.0,0.0),DioramaVec(0.0,-.015,0.0)) in 1.0..2.0)
++        mainClock.advanceTimeBy(1000);assertContentEquals(minifiedImage,pixels(),"no autonomous mip clock")
++        identities.zip(pyramid.levels).forEach{(a,b)->assertSame(a,b)}
++    }
++}

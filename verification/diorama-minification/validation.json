@@ -1,0 +1,20 @@
+{
+  "candidateTests": {
+    "mountedPlainBreathWindow": {
+      "tests": 8,
+      "failures": 0
+    },
+    "mipContracts": {
+      "tests": 6,
+      "failures": 0
+    }
+  },
+  "androidLibraryCompile": "PASS",
+  "desktopCompile": "PASS",
+  "initialCommandFailure": "Requested nonexistent desktop compileKotlinJvm; corrected to compileKotlin; original log retained in .work/diorama-mip-contracts.log",
+  "candidateRestored": true,
+  "visualAcceptance": false,
+  "productionDecision": "REJECT: visible near-view blur, no production adoption",
+  "restoredTests": 5,
+  "allRestoredBaselineFullStageHashesUnchanged": 168
+}

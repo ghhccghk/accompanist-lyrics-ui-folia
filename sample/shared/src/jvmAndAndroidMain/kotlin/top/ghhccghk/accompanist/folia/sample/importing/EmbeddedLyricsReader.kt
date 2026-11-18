@@ -20,7 +20,7 @@ internal suspend fun readEmbeddedLyrics(open: () -> InputStream): EmbeddedLyrics
     }
 }
 
-/** No full song reads: cover/audio payloads are skipped; metadata reads <= 16 MiB. */
+/** Audio blocks are skipped; ID3 tags are read within an 8 MiB cap, total metadata <= 16 MiB. */
 internal class EmbeddedTagReader(input: InputStream, private val checkActive: () -> Unit = {}) {
     private val input = PushbackInputStream(input, 12)
     private var position = 0L

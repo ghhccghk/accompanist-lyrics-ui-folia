@@ -36,6 +36,14 @@ fixtures-manifest.json；音频二进制在忽略的 `.work`，不提交歌曲�
   embedded-timed-narrow.png、embedded-plain-wide.png。不提交可重建画面。
   本轮没有新增真实 Desktop 窗口／原生选文件对话框运行证据。
 
+功能提交 `7ca2823`；debug交付为
+`build/deliverables/android/lyrics-ui-folia-debug-7ca2823-20261118-201924.apk`，
+SHA256 `90115417823bfb4dd9b47c31de5e667bdca64b7f46ef6fe6a36f4319a31114fe`。
+原证书、两版工具v1/v2、ZIP CRC、16KiB对齐、两ABI Rust、五个新功能DEX符号及
+副本一致性检查通过。此后的reader改动仅澄清“ID3有界整体读入，APIC也占限制”的
+注释；功能／测试逻辑未改，APK仍准确对应功能提交。未安装／传输，不能据本机验签
+推断手机验签／安装问题已解决。原两项外部遗留hash保持不变并排除在提交之外。
+
 ## 保留的首次失败
 
 `.work/embedded-tests.log`：新测试最后一条 assertFailsWith 导致推断返回异常对象，

@@ -1,0 +1,63 @@
+{
+  "sourceRevision": "7ca2823bea4bcf64b0dc08db2e44e7246028cc6f",
+  "date": "2026-11-18T20:19:24.532981+08:00",
+  "build": {
+    "task": ":sample:android-app:assembleDebug",
+    "exitCode": 0,
+    "taskSummary": "59 actionable tasks: 21 executed, 38 up-to-date",
+    "appOutputIsolated": true,
+    "signingConfigurationChanged": false
+  },
+  "deliveredApk": "build/deliverables/android/lyrics-ui-folia-debug-7ca2823-20261118-201924.apk",
+  "bytes": 27993748,
+  "sha256": "90115417823bfb4dd9b47c31de5e667bdca64b7f46ef6fe6a36f4319a31114fe",
+  "signatureChecks": [
+    {
+      "buildTools": "37.0.0",
+      "exitCode": 0,
+      "v1": true,
+      "v2": true,
+      "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+    },
+    {
+      "buildTools": "30.0.2",
+      "exitCode": 0,
+      "v1": true,
+      "v2": true,
+      "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+    }
+  ],
+  "deliverySignatureCheck": {
+    "buildTools": "37.0.0",
+    "exitCode": 0,
+    "v1": true,
+    "v2": true,
+    "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+  },
+  "originalDebugCertificateRetained": true,
+  "zipCrcCheck": "all entries passed",
+  "zipalign16KiB": {
+    "buildTools": "37.0.0",
+    "exitCode": 0
+  },
+  "rustLibraries": {
+    "lib/arm64-v8a/libfolia_mask_experiment.so": 183,
+    "lib/x86_64/libfolia_mask_experiment.so": 62
+  },
+  "copyMatchesBuildOutput": true,
+  "installed": false,
+  "phoneVerificationFailureReproduced": false,
+  "phoneInstallationResolved": "not established; device installation/transfer not performed",
+  "featureScope": "Sample embedded lyrics: bounded ID3/FLAC/MP4/WAV tags, external precedence, real core timed parser, separate untimed text, translation and generation-safe content swap. Android shared and debug APK built, original signing and Rust packaging retained; no Android device/URI/phone install, compressed Desktop playback, GPU performance or theme parity claim. APK source is feature commit; subsequent source edit is a memory-limit comment only.",
+  "preservedExternalInputs": [
+    "sample/android-app/build.gradle.kts release/debug signing change",
+    "gradle/gradle-daemon-jvm.properties"
+  ],
+  "dexFeatureSymbols": [
+    "EmbeddedLyricsReader",
+    "SongLyricsContent",
+    "openContent",
+    "embeddedLyrics",
+    "PlainLyricsPanel"
+  ]
+}

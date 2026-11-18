@@ -81,7 +81,8 @@
   "android": {
     "compilation": true,
     "installed": false,
-    "uriOrPlaybackProcessDeviceVerification": false
+    "uriOrPlaybackProcessDeviceVerification": false,
+    "debugApkRecord": "../android-debug/2026-11-18-embedded-lyrics-validation.json"
   },
   "realDesktopWindow": false,
   "excludedExternalInputs": {
@@ -93,5 +94,7 @@
     "No new Desktop compressed codec support",
     "SYLT/Ogg/APEv2/Lyrics3/MP4 freeform unimplemented",
     "No library/render performance or original-theme visual parity claim"
-  ]
+  ],
+  "sourceRevision": "7ca2823bea4bcf64b0dc08db2e44e7246028cc6f",
+  "sourceSnapshotNote": "Production logic and tests captured at feature revision; later reader edit clarifies memory-limit comment only."
 }

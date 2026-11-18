@@ -16,13 +16,17 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。后来用户授权镜台调试入口，当前共八项，下述新结果取代入口限制。
 
-当前唯一下一项（用户新增收尾）：构建／原证书验签含内嵌歌词的Android debug APK。
-sample标签读取已实现：外部优先、真实core计时、纯文本独立显示、损坏标签提示不阻断音频；
+7ca2823用户新增内嵌歌词已完成：外部优先、真实core计时、纯文本独立显示、损坏标签提示不阻断音频；
 20项数据／事务／离屏UI与Android shared／Desktop编译通过，独立Mutagen／FFmpeg六容器
 实例通过，生产Java Sound tagged WAV播放／暂停seek／释放通过；Android设备／原生选择器
-未验证，不扩展Desktop解码范围，见verification/embedded-lyrics。APK收尾后接续镜台定位。
+未验证，不扩展Desktop解码范围，见verification/embedded-lyrics。
+debug已构建／双版工具原证书v1/v2／CRC／16KiB／双ABI Rust／功能DEX与副本hash验证：
+build/deliverables/android/lyrics-ui-folia-debug-7ca2823-20261118-201924.apk，
+SHA256 90115417823bfb4dd9b47c31de5e667bdca64b7f46ef6fe6a36f4319a31114fe；未传输／安装。
+见verification/android-debug/2026-11-18-embedded-lyrics-validation.json。内嵌读取ID3整体
+上限8MiB（含APIC字节），不把它误称为逐帧跳过封面；后续只有此处注释澄清，无逻辑修改。
 
-已保存的核心接续项：同原flight初态/target/宽度，隔离飞行段look-only、alignment、
+当前唯一下一项：同原flight初态/target/宽度，隔离飞行段look-only、alignment、
 frame-keep和最终orientation follower，重点3.199→3.2s；先判forcing/顺序/有限采样，
 不调整阈值、帧延迟或重采原图。当前相机单因素及完整交叉已完成：
 48时点/1906 incoming有限回调peak6.04e-14；3499ms 800宽旧初态和current width

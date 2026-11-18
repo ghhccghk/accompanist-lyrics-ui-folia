@@ -140,15 +140,24 @@ Object.assign(window,{mountedReady:true,mountedInputs:{oldLines,lines,oldSeed,se
  // Labelled diagnostic render only: clone an ACTUAL mounted neighbour mesh,
  // retaining its matrix/geometry/texture/material and the mounted camera/fog.
  // Original objects/refs stay unchanged; null restores the original whole scene.
- renderMountedNeighborLayer:(index:number|null)=>{
+ renderMountedNeighborLayer:(index:number|null,sampling?:'linear-no-mip'|'trilinear-1')=>{
   const state=_roots.get(canvas)!.store.getState();
   if(index===null){state.gl.render(state.scene,state.camera);return;}
   const mesh=refs(DioramaScene)[0].get(index);
   if(!mesh)throw Error(`Missing actual mounted neighbour ${index}`);
   mesh.updateWorldMatrix(true,false);
   const clone=mesh.clone(),material=mesh.material.clone();
+  let texture:THREE.Texture|undefined;
+  if(sampling){
+   texture=material.map.clone();
+   // Texture.clone shares Source; detach it BEFORE needsUpdate to keep the
+   // real original texture/source versions and GPU cache completely untouched.
+   texture.source=new THREE.Source(material.map.image);texture.anisotropy=1;
+   texture.minFilter=sampling==='linear-no-mip'?THREE.LinearFilter:THREE.LinearMipmapLinearFilter;
+   texture.generateMipmaps=sampling!=='linear-no-mip';texture.needsUpdate=true;material.map=texture;
+  }
   clone.material=material;clone.matrix.copy(mesh.matrixWorld);clone.matrixAutoUpdate=false;
   const scene=new THREE.Scene();scene.fog=state.scene.fog?.clone()??null;scene.add(clone);
-  try{state.gl.render(scene,state.camera);}finally{material.dispose();scene.remove(clone);}
+  try{state.gl.render(scene,state.camera);}finally{material.dispose();texture?.dispose();scene.remove(clone);}
  },
  unmountMounted:async()=>{root.unmount();await new Promise(r=>setTimeout(r,600));return{roots:_roots.size,queuedRafs:(window as any).queuedRafs.size}}});

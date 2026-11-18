@@ -16,9 +16,13 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：固定700ms实际原mesh7/texture的独立克隆控制，对比原采样、
-linear无mip、trilinear各向异性1，核对恢复原完整图/状态；明确区分诊断修改图和
-原验收图，先验证原采样是否解释覆盖扩散，再做native修改，不再盲调hint。
+当前唯一下一项：固定700ms同原cache7输入，在测试中验证预生成mip金字塔，
+LOD由本独立投影Jacobian推导而非手选；先对原aniso4及已标注的isotropic控制，
+局部成立后才扩大原完整矩阵。保留采样/颜色/alpha/各向异性未等价项，不盲调hint。
+原克隆采样消融已完成：原aniso4=409像素，关mip=194、native=193；同513union
+关mip对native MAE.400260，原10.972060，trilinear/aniso1则512像素。证明该场景
+mip采样是覆盖扩散贡献，非全部根因或等价证明；原完整图/状态/452callback均不变。
+证据verification/diorama-mounted-sampling；修改clone诊断图不替换原验收帧。
 实际原mesh投影控制已完成：452callback/完整PNG/状态未变，4角本独立core几何
 世界峰4.055e-9/投影1.483e-7px/深度1.617e-9，homography峰5.684e-14px。
 不能解释193/409覆盖差。原texture确为trilinear/aniso4，MSAA4；见

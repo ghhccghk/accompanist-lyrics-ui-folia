@@ -1,0 +1,76 @@
+{
+  "baseline": "5bd0613",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "originalFrameAndStateUnchanged": true,
+  "originalCloneUnchanged": true,
+  "callbacks": 452,
+  "scope": "Isolated clone-only DIAGNOSTICS, not original acceptance frames: original actual mesh7 material/texture, versus independently cloned texture Source with linear/no-mip/aniso1 and trilinear/aniso1. All other state unchanged; no source object mutation, no additional RAF; original full scene restored unchanged.",
+  "mask": "All-four-image nonbackground union, no low-alpha threshold, registration, fitted transform or time shift.",
+  "unionPixels": 513,
+  "measurements": {
+    "original": {
+      "sha256": "aae3adee428ea92d2c30049e58d2869562144d9a4166c5069ea0594f70621992",
+      "pixels": 409,
+      "bounds": [
+        176,
+        416,
+        270,
+        425
+      ],
+      "positiveRgbMass": 22421,
+      "originalMae": 0.0,
+      "nativeMae": 10.972059779077323,
+      "originalPeak": 0,
+      "worst64": 0.0
+    },
+    "linear-no-mip": {
+      "sha256": "305e259fee29bc9ee6e671c65b2d2ff5fec7de78264c87ece21c476108978a4a",
+      "pixels": 194,
+      "bounds": [
+        177,
+        417,
+        270,
+        424
+      ],
+      "positiveRgbMass": 27178,
+      "originalMae": 10.74333983105913,
+      "nativeMae": 0.40025990903183883,
+      "originalPeak": 46,
+      "worst64": 10.97064393939394
+    },
+    "trilinear-1": {
+      "sha256": "412536fd2b7aeaaeb7eea295d2f191fffc3fdd4ac762f538d20535157a773ef0",
+      "pixels": 512,
+      "bounds": [
+        176,
+        416,
+        271,
+        426
+      ],
+      "positiveRgbMass": 20614,
+      "originalMae": 2.465237166991553,
+      "nativeMae": 12.7953216374269,
+      "originalPeak": 13,
+      "worst64": 2.535037878787879
+    },
+    "native-default": {
+      "sha256": "18033bf8cb7618e873ef5f399083b5fbff3ed50f153d25f8a8a96bc54007c674",
+      "pixels": 193,
+      "bounds": [
+        177,
+        417,
+        270,
+        424
+      ],
+      "positiveRgbMass": 27678,
+      "originalMae": 10.972059779077323,
+      "nativeMae": 0.0,
+      "originalPeak": 46,
+      "worst64": 11.194128787878787
+    }
+  },
+  "interpretation": "Source-only removal of mipmaps moves coverage409 to194, near native193; native now close to the labelled no-mip control. Mipmap sampling is a demonstrated contributor in this view, not proof that every backend residual has this cause. Isotropic trilinear has its own512-pixel spread; retain it as a diagnostic, not a replacement oracle.",
+  "productionChanged": false,
+  "deviceValidated": false,
+  "visualAcceptance": false
+}

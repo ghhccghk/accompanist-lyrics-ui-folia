@@ -13,8 +13,10 @@ checkReference();
 const require=createRequire(import.meta.url),hash=data=>createHash('sha256').update(data).digest('hex');
 const layers=process.argv.includes('--layers');
 const geometry=process.argv.includes('--geometry');
-if(layers&&geometry)throw Error('Use one diagnostic at a time');
-const fixture=path.join(root,geometry?'verification/diorama-fixtures/mounted-geometry-v1':layers?'verification/diorama-fixtures/mounted-input-layers-v1':'verification/diorama-fixtures/mounted-raster-v1');
+const sampling=process.argv.includes('--sampling');
+if([layers,geometry,sampling].filter(Boolean).length>1)throw Error('Use one diagnostic at a time');
+const label=sampling?'mounted-sampling-v1':geometry?'mounted-geometry-v1':layers?'mounted-input-layers-v1':'mounted-raster-v1';
+const fixture=path.join(root,'verification/diorama-fixtures',label);
 if(fs.existsSync(fixture))throw Error('Preserve original cache observations; refusing fixture overwrite');
 const original=JSON.parse(fs.readFileSync(path.join(root,'verification/diorama-fixtures/mounted-cut-v1/scene.json'),'utf8'));
 const sourceFile='mounted-380-60-700.png';
@@ -35,7 +37,7 @@ const server=await createServer({configFile:false,root:path.join(root,'verificat
  plugins:[cameraTargetPlugin(),cameraFlightPlugin()],resolve:{alias:aliases,dedupe:['react','react-dom','three','@react-three/fiber']},
  optimizeDeps:{noDiscovery:true,entries:[],include:['react','react/jsx-runtime','react/jsx-dev-runtime','react-dom','react-dom/client','@react-three/fiber','framer-motion','three']},
  cacheDir:path.join(root,'.work/diorama-mounted-vite-v2'),server:{host:'127.0.0.1',port:4188,strictPort:true,hmr:false,fs:{allow:[root]}}});
-const out=path.join(root,geometry?'build/verification/diorama-mounted-geometry-browser':layers?'build/verification/diorama-mounted-input-browser':'build/verification/diorama-mounted-raster-browser');
+const out=path.join(root,sampling?'build/verification/diorama-mounted-sampling-browser':geometry?'build/verification/diorama-mounted-geometry-browser':layers?'build/verification/diorama-mounted-input-browser':'build/verification/diorama-mounted-raster-browser');
 let browser;
 try {
  await server.listen();browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
@@ -58,6 +60,26 @@ try {
  const after=await page.screenshot(),stateAfter=await page.evaluate(()=>window.readMounted());
  if(hash(after)!==expectedHash||JSON.stringify(stateBefore)!==JSON.stringify(stateAfter))throw Error('Passive cache read changed original pixels/state');
  const layerCaptures=[];
+ const samplingCaptures=[];
+ if(sampling){
+  fs.mkdirSync(out,{recursive:true});
+  const sourceState=await page.evaluate(()=>window.readMountedNeighborGeometry(7));
+  for(const mode of ['original','linear-no-mip','trilinear-1']){
+   await page.evaluate(mode=>window.renderMountedNeighborLayer(7,mode==='original'?undefined:mode),mode);
+   const data=await page.screenshot(),file=`source-${mode}.png`;
+   if(mode==='original'){
+    const oldLayer=JSON.parse(fs.readFileSync(path.join(root,'verification/diorama-fixtures/mounted-input-layers-v1/scene.json'),'utf8'));
+    if(hash(data)!==oldLayer.layerCaptures[0].sha256)throw Error('Unmodified source clone changed');
+   }
+   fs.writeFileSync(path.join(out,file),data);samplingCaptures.push({mode,file,sha256:hash(data)});
+  }
+  await page.evaluate(()=>window.renderMountedNeighborLayer(null));
+  const restored=await page.screenshot(),stateRestored=await page.evaluate(()=>window.readMounted());
+  const geometryRestored=await page.evaluate(()=>window.readMountedNeighborGeometry(7));
+  if(hash(restored)!==expectedHash||JSON.stringify(stateBefore)!==JSON.stringify(stateRestored)||
+    JSON.stringify(sourceState)!==JSON.stringify(geometryRestored))throw Error('Sampling clone altered original scene/state/inputs');
+  fs.writeFileSync(path.join(out,'restored.png'),restored);
+ }
  if(layers){
   fs.mkdirSync(out,{recursive:true});
   await page.evaluate(()=>window.renderMountedNeighborLayer(7));
@@ -86,7 +108,8 @@ try {
   hostFiles:['diorama-mounted.tsx','diorama-mounted.html','capture-diorama-mounted-raster.mjs','pnpm-lock.yaml'].map(file=>({file,sha256:hash(fs.readFileSync(path.join(root,'verification/classic-browser',file)))})),
   scope:'Passive actual mounted neighbor-cache canvas read only. Original complete callback history through380/60/700, unchanged screenshot/state before/after. No source raster recreation, texture replacement, ref mutation or extra animation turn.',rasters:records,
   ...(layers?{layerCaptures,layerScope:'Diagnostic cloned actual mounted neighbour7 only, same material/texture/world matrix/camera/fog/renderer. No original refs or objects mutated. Whole original scene restored byte-identically without another RAF callback. This is layer isolation, not another whole-scene acceptance capture.'}:{}),
-  ...(geometry?{meshGeometry,geometryScope:'Passive actual original mesh7 buffer UV/world/view/clip/pixel read, no matrix update or extra render, unchanged original state/pixels.'}:{})};
+  ...(geometry?{meshGeometry,geometryScope:'Passive actual original mesh7 buffer UV/world/view/clip/pixel read, no matrix update or extra render, unchanged original state/pixels.'}:{}),
+  ...(sampling?{samplingCaptures,samplingScope:'Isolated clone-only DIAGNOSTICS, not original acceptance frames: original actual mesh7 material/texture, versus independently cloned texture Source with linear/no-mip/aniso1 and trilinear/aniso1. All other state unchanged; no source object mutation, no additional RAF; original full scene restored unchanged.'}:{})};
  fs.writeFileSync(path.join(fixture,'scene.json'),JSON.stringify(record,null,2)+'\n');
  fs.writeFileSync(path.join(fixture,'rasters.tsv'),['# index fontPx advancePx width height textBase64',...records.map(r=>
   [r.index,r.fontPx,r.advancePx,r.width,r.height,Buffer.from(r.text).toString('base64')].join('\t'))].join('\n')+'\n');

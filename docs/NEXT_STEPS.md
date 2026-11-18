@@ -16,9 +16,13 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：以固定700ms同原cache7输入为控制，核对已安装Compose
-SkiaBackedCanvas.drawImageRect的strict=true与实际mipmap采样的关系；只在该控制
-验证新的采样路径，成立后才扩大原矩阵，不重复无效Medium hint或拟合相机/像素。
+当前唯一下一项：固定700ms同原cache7控制，读取实际原mesh7的world/view/clip
+角点、UV与材质采样状态，并与本独立core几何/homography逐点比较；先区分几何
+与采样残差，再决定必要修复。不拟合相机/像素，不重复无效filter hint或shader候选。
+上一项strict/mipmap假设已做有界反证：公开Bitmap shader经Compose绘制，no-mip
+与生产逐像素相同，trilinear仅23分量变化且MAE13.762021→13.762836微退步。
+候选完整补丁与结果保存verification/diorama-sampling-shader并已精确反向撤回；
+撤回后narrow通过、原生产/控制图hash不变。未证明strict或mipmap是根因，无产品收益。
 同输入控制已完成：own-texture重放与生产stage逐像素相同；源完整图/状态在分层
 clone渲染后仍同原hash。源实际邻行7=409非背景像素，本=193；共享源cache7后
 局部MAE13.705786→13.762021，覆盖输入不足以解释残差，见verification/diorama-mounted-input。

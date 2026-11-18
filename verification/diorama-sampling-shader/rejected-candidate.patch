@@ -1,0 +1,175 @@
+diff --git a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaFog.kt b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaFog.kt
+index 36af846..661ba8b 100644
+--- a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaFog.kt
++++ b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaFog.kt
+@@ -51,14 +51,17 @@ internal fun dioramaFogMixChannel(body: Double, fog: Double, factor: Double): Do
+  * Alpha coverage/life stays separate from this per-fragment RGB operation. */
+ internal fun DrawScope.drawDioramaFogMask(image: ImageBitmap, view: DioramaPerspective,
+     origin: DioramaVec, x: DioramaVec, y: DioramaVec, alpha: Float, color: Color,
+-    additive: Boolean, fog: DioramaFog) {
++    additive: Boolean, fog: DioramaFog, sampler: DioramaTextureSampler? = null) {
+     val z0=(origin-view.eye).dot(view.forward)
+     val zx=x.dot(view.forward);val zy=y.dot(view.forward)
+     val dx=zx*image.width;val dy=zy*image.height
+     val low=z0+min(0.0,dx)+min(0.0,dy)
+     val high=z0+max(0.0,dx)+max(0.0,dy)
+-    fun constant(ink: Color)=drawImage(image,alpha=alpha,colorFilter=ColorFilter.tint(ink),
+-        blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver)
++    fun constant(ink: Color) {
++        if(sampler!=null)sampler.draw(this,image,alpha,ink,additive)
++        else drawImage(image,alpha=alpha,colorFilter=ColorFilter.tint(ink),
++            blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver)
++    }
+     if(high<=fog.near){constant(color);return}
+     if(low>=fog.far){constant(fog.encodedColor);return}
+     // Only a numerical guard for a front-parallel/degenerate depth gradient.
+@@ -74,7 +77,7 @@ internal fun DrawScope.drawDioramaFogMask(image: ImageBitmap, view: DioramaPersp
+     val canvas=drawContext.canvas
+     canvas.saveLayer(bounds,Paint().apply{blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver})
+     try {
+-        drawImage(image,alpha=alpha)
++        if(sampler!=null)sampler.draw(this,image,alpha,null,false)else drawImage(image,alpha=alpha)
+         drawRect(brush,Offset.Zero,bounds.size,blendMode=BlendMode.SrcIn)
+     } finally { canvas.restore() }
+ }
+diff --git a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlaneDrawing.kt b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlaneDrawing.kt
+index 4f5ba0a..6da4964 100644
+--- a/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlaneDrawing.kt
++++ b/library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/diorama/DioramaPlaneDrawing.kt
+@@ -9,6 +9,12 @@ import androidx.compose.ui.graphics.drawscope.*
+ internal data class DioramaPlanePoint(val x: Double, val y: Double)
+ internal data class DioramaPlaneClip(val points: List<DioramaPlanePoint>, val needsClip: Boolean)
+
++/** Internal texture-sampling seam for bounded backend conformance controls.
++ * Null keeps the production draw path; never supplies geometry or clock state. */
++internal fun interface DioramaTextureSampler {
++    fun draw(scope: DrawScope, image: ImageBitmap, alpha: Float, color: Color?, additive: Boolean)
++}
++
+ /** Texture coordinates have downward Y; their front normal is -cross(x,y).
+  * Clip in DOUBLE plane coordinates before any projective float matrix. */
+ internal fun dioramaClipPlane(view: DioramaPerspective, origin: DioramaVec,
+@@ -45,7 +51,8 @@ internal fun dioramaClipPlane(view: DioramaPerspective, origin: DioramaVec,
+  * retain the old draw path exactly, avoiding a gratuitous extra raster clip. */
+ internal fun DrawScope.drawDioramaPlane(image: ImageBitmap, view: DioramaPerspective,
+     origin: DioramaVec, x: DioramaVec, y: DioramaVec, alpha: Float = 1f,
+-    color: Color = Color.White, additive: Boolean = false, fog: DioramaFog? = null) {
++    color: Color = Color.White, additive: Boolean = false, fog: DioramaFog? = null,
++    sampler: DioramaTextureSampler? = null) {
+     if(alpha<=0)return
+     val clip=dioramaClipPlane(view,origin,x,y,image.width.toDouble(),image.height.toDouble())
+     if(clip.points.size<3)return
+@@ -57,9 +64,11 @@ internal fun DrawScope.drawDioramaPlane(image: ImageBitmap, view: DioramaPerspec
+     }
+     withTransform({transform(matrix)}) {
+         fun body() {
+-            if(fog==null)drawImage(image,alpha=alpha,colorFilter=ColorFilter.tint(color),
+-                blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver)
+-            else drawDioramaFogMask(image,view,origin,x,y,alpha,color,additive,fog)
++            if(fog==null) {
++                if(sampler!=null)sampler.draw(this,image,alpha,color,additive)
++                else drawImage(image,alpha=alpha,colorFilter=ColorFilter.tint(color),
++                    blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver)
++            }else drawDioramaFogMask(image,view,origin,x,y,alpha,color,additive,fog,sampler)
+         }
+         if(!clip.needsClip)body()else {
+             val path=Path().apply {
+diff --git a/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMountedStageTest.kt b/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMountedStageTest.kt
+index 77b28f5..0557a8c 100644
+--- a/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMountedStageTest.kt
++++ b/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMountedStageTest.kt
+@@ -62,6 +62,8 @@ class DioramaMountedStageTest {
+                 MessageDigest.getInstance("SHA-256").digest(bytes).joinToString(""){"%02x".format(it)})
+             Image.makeFromEncoded(bytes).toComposeImageBitmap()
+         }
++        val noMipSampler=DioramaMipmapSampler(org.jetbrains.skia.MipmapMode.NONE)
++        val mipSampler=DioramaMipmapSampler(org.jetbrains.skia.MipmapMode.LINEAR)
+         var controlPeak=0.0;var widthPeak=0.0;var stepCount=0
+         var materialPeak=0.0;var materialStates=0;var envelopePeak=0.0
+         setContent {
+@@ -161,13 +163,14 @@ class DioramaMountedStageTest {
+                     val view=if(method!="media")finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time)
+                     drawn=view
+                     if(method.startsWith("input-")) {
+-                        val only=if(method=="input-source-only-7")7 else method.removePrefix("input-only-").toIntOrNull()
++                        val only=if(method in listOf("input-source-only-7","input-source-nomip","input-source-mip"))7 else method.removePrefix("input-only-").toIntOrNull()
+                         if(method!="input-active")for(n in ready.neighborFramesAt(time,view,primary,secondary)) {
+                             if(n.opacity>0 && (only==null||only==n.index)) {
+                                 val p=diagnosticPlanes.getValue(n.index)
+                                 drawInputPlane(this,view,p,
+                                     if(method.startsWith("input-source")&&n.index==7)sourceCache7 else p.text.image,
+-                                    n.color.srgb(DioramaToneMapping.AcesFilmic),n.opacity.toFloat(),fog)
++                                    n.color.srgb(DioramaToneMapping.AcesFilmic),n.opacity.toFloat(),fog,
++                                    when(method){"input-source-nomip"->noMipSampler;"input-source-mip"->mipSampler;else->null})
+                             }
+                         }
+                         if(only==null) {
+@@ -208,6 +211,10 @@ class DioramaMountedStageTest {
+             ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-cache7.png"))
+             runOnIdle{method="input-source-only-7"};pixels()
+             ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-neighbor-7.png"))
++            for(mode in listOf("nomip","mip")) {
++                runOnIdle{method="input-source-$mode"};pixels()
++                ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-neighbor-7-$mode.png"))
++            }
+             val counts=mutableListOf<String>()
+             for(n in listOf(2,3,4,5,6,7,9,10)) {
+                 runOnIdle{method="input-only-$n"}
+@@ -228,20 +235,21 @@ class DioramaMountedStageTest {
+         runOnIdle{mounted=true};assertTrue(paused.contentEquals(pixels()))
+         out.resolve("numeric-$width.txt").writeText("originalMountedSteps=$stepCount finiteStatePosePeak=$controlPeak widthPeak=$widthPeak gate=1e-9 adaptiveMediaPositionResidual=$mediaPeak\nFinite control reproduces original actual callback-width order with independently prepared core geometry; production media draws native analytic material without original RAF state injection\n")
+         out.resolve("material-$width.txt").writeText("originalUnitStates=$materialStates materialPeak=$materialPeak sampledEnvelopePeak=$envelopePeak gate=1e-9\nOwn finite Float32 history/reset from core intervals, original wall breath and own camera life; no original material/pose values drive rendering.\n")
++        noMipSampler.close();mipSampler.close()
+     }
+
+     /** Diagnostic-only replay of the production plain-plane transform. Its own
+      * texture result MUST match drawStage byte-for-byte before substituting the
+      * original cache7 image. No source geometry/pose/material drives drawing. */
+     private fun drawInputPlane(scope:DrawScope,view:DioramaPerspective,p:DioramaDepartingPlane,
+-        image:ImageBitmap,color:Color,alpha:Float,fog:DioramaFog) {
++        image:ImageBitmap,color:Color,alpha:Float,fog:DioramaFog,sampler:DioramaTextureSampler?=null) {
+         assertEquals(p.text.image.width,image.width);assertEquals(p.text.image.height,image.height)
+         val scale=dioramaFrameFit(p.text.worldWidth,5.2,view.fov,view.width/view.height)*p.placement.scale
+         val x=dioramaPlaneAxis(p.frame,p.placement,1.0,0.0)*(scale*.62/p.text.fontPx)
+         val y=dioramaPlaneAxis(p.frame,p.placement,0.0,1.0)*(scale*.62/p.text.fontPx)
+         val center=dioramaComposeLocal(p.frame,p.placement.offsetR,p.placement.offsetU,0.0)
+         val origin=center-x*(image.width/2.0)+y*(image.height/2.0)
+-        scope.drawDioramaPlane(image,view,origin,x,y*-1.0,alpha,color,fog=fog)
++        scope.drawDioramaPlane(image,view,origin,x,y*-1.0,alpha,color,fog=fog,sampler=sampler)
+     }
+
+     /** Export the independently prepared production rasters BEFORE projection.
+diff --git a/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMipmapSampler.kt b/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMipmapSampler.kt
+new file mode 100644
+--- /dev/null
++++ b/library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/DioramaMipmapSampler.kt
+@@ -0,0 +1,29 @@
++package top.ghhccghk.accompanist.lyrics.folia
++
++import androidx.compose.ui.geometry.Size
++import androidx.compose.ui.graphics.*
++import androidx.compose.ui.graphics.drawscope.DrawScope
++import org.jetbrains.skia.FilterMipmap
++import org.jetbrains.skia.FilterMode
++import org.jetbrains.skia.MipmapMode
++import top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama.DioramaTextureSampler
++import java.util.IdentityHashMap
++
++/** Diagnostic only. Public Skia Bitmap shader avoids Compose's strict srcRect
++ * image call. It still paints THROUGH Compose, preserving parent alpha/state.
++ * Identical no-mip control separates that drawing path from mipmap selection. */
++internal class DioramaMipmapSampler(private val mipmap:MipmapMode):DioramaTextureSampler,AutoCloseable {
++    private data class Resource(val shader:org.jetbrains.skia.Shader,val brush:ShaderBrush)
++    private val resources=IdentityHashMap<ImageBitmap,Resource>()
++    override fun draw(scope:DrawScope,image:ImageBitmap,alpha:Float,color:Color?,additive:Boolean) {
++        val resource=resources.getOrPut(image) {
++            val shader=image.asSkiaBitmap().makeShader(sampling=FilterMipmap(FilterMode.LINEAR,mipmap))
++            Resource(shader,ShaderBrush(shader.asComposeShader()))
++        }
++        with(scope) {
++            drawRect(resource.brush,size=Size(image.width.toFloat(),image.height.toFloat()),alpha=alpha,
++                colorFilter=color?.let{ColorFilter.tint(it)},blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver)
++        }
++    }
++    override fun close() {resources.values.forEach{it.shader.close()};resources.clear()}
++}

@@ -1,0 +1,78 @@
+{
+  "baseline": "62418a3",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "conditions": "Same mounted 380x600/DPR1/60Hz/incoming700ms, actual source cache7, finite native camera and materials, original mesh7 clone. All nonbackground union across FOUR images, no registration/threshold/phase shift.",
+  "unionPixels": 409,
+  "measurements": {
+    "source": {
+      "sha256": "aae3adee428ea92d2c30049e58d2869562144d9a4166c5069ea0594f70621992",
+      "foregroundMae": 0.0,
+      "worst64": 0.0,
+      "nonbackground": 409,
+      "bounds": [
+        176,
+        416,
+        270,
+        425
+      ],
+      "positiveRgbMass": 22421,
+      "peak": 55,
+      "changedComponentsFromDefault": 1166
+    },
+    "default": {
+      "sha256": "18033bf8cb7618e873ef5f399083b5fbff3ed50f153d25f8a8a96bc54007c674",
+      "foregroundMae": 13.76202118989405,
+      "worst64": 13.972813238770685,
+      "nonbackground": 193,
+      "bounds": [
+        177,
+        417,
+        270,
+        424
+      ],
+      "positiveRgbMass": 27678,
+      "peak": 57,
+      "changedComponentsFromDefault": 0
+    },
+    "shaderNoMip": {
+      "sha256": "18033bf8cb7618e873ef5f399083b5fbff3ed50f153d25f8a8a96bc54007c674",
+      "foregroundMae": 13.76202118989405,
+      "worst64": 13.972813238770685,
+      "nonbackground": 193,
+      "bounds": [
+        177,
+        417,
+        270,
+        424
+      ],
+      "positiveRgbMass": 27678,
+      "peak": 57,
+      "changedComponentsFromDefault": 0
+    },
+    "shaderTrilinear": {
+      "sha256": "ccccbfc62d6ea0332e2e8b8d09bf265e9b66a0426058f0a5c24ab2a7ab5a749a",
+      "foregroundMae": 13.76283618581907,
+      "worst64": 13.972813238770685,
+      "nonbackground": 193,
+      "bounds": [
+        177,
+        417,
+        270,
+        424
+      ],
+      "positiveRgbMass": 27655,
+      "peak": 57,
+      "changedComponentsFromDefault": 23
+    }
+  },
+  "candidate": "Skia Bitmap.makeShader(FilterMipmap(LINEAR,NONE or LINEAR)), ShaderBrush through Compose drawRect preserving parent alpha; no geometry or clock changes.",
+  "decision": "REJECT: no-mip exactly equals production, trilinear slightly worse; does not establish strict rect or backend root cause.",
+  "candidateJvmNarrow": "PASS; prior candidate run recorded in .work/diorama-sampling-shader-control.log",
+  "restoredValidation": {
+    "jvmNarrow": "PASS (1 test, zero failures/errors)",
+    "allFrozenProductionAndInputControlPngHashesUnchanged": true,
+    "productionPatchFullyReversed": true
+  },
+  "visualAcceptance": false,
+  "deviceValidated": false
+}

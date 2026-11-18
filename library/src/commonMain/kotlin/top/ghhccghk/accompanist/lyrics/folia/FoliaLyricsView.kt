@@ -146,18 +146,12 @@ fun FoliaLyricsView(
             if(document.lines.none{it.text.isNotBlank()})BasicText("暂无可显示歌词",style=mainStyle.copy(color=colors.secondary))
             else DioramaPlaybackStage(lyrics,{(currentPlayback().positionMillis-options.offsetMillis)/1000.0},
                 typography.main?:typography.secondary,Modifier.fillMaxSize(),scale=typography.scale,
-                tuning=style.tuning,colors=colors,options=options,showText={waiting==null},
+                tuning=style.tuning,colors=colors,options=options,
                 onClick=onLineClicked,onLongPress=onLinePressed,
                 onState={isReady,diagnostic->
                     ready=isReady;themeDiagnostic=diagnostic
                     if(!isReady){unitCount=0;quality=FoliaQuality.Minimal}
                 })
-            waiting?.let{gap->Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center){
-                WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
-                    {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
-                    Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
-                    defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
-            }}
         }else if(style is FoliaStyle.Fume){
             val tuning=style.tuning;val lines=fumeLines!!
             // The stage owns preparation invalidation. Paint-only changes or a
@@ -183,12 +177,6 @@ fun FoliaLyricsView(
                 showStamp=tuning.showPrintSymbols&&options.quality!=FoliaQuality.Minimal,layoutSeed=tuning.layoutSeed,
                 onClick={onLineClicked(document.lines[it].source)},onLongPress={onLinePressed(document.lines[it].source)},
                 onState={isReady,diagnostic->ready=isReady;themeDiagnostic=diagnostic})
-            waiting?.let{gap->Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center){
-                WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
-                    {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
-                    Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
-                    defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
-            }}
         }else if(style is FoliaStyle.Cappella) {
             val tuning=style.tuning
             val core=cappellaCore!!;val lines=cappellaLines!!
@@ -211,12 +199,6 @@ fun FoliaLyricsView(
                     unitCount=if(i<0)0 else cappellaCounts!![i]
                     quality=if(unitCount==0)FoliaQuality.Minimal else options.quality
                 })
-            waiting?.let{gap->Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center){
-                WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
-                    {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
-                    Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
-                    defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
-            }}
         } else if(style is FoliaStyle.Pendolo) {
             val tuning=style.tuning
             val core=remember(document,tuning.chorusLineIndices){pendoloCoreLines(document,tuning.chorusLineIndices)}
@@ -245,12 +227,6 @@ fun FoliaLyricsView(
                     unitCount=rows.filter{it.item.active}.sumOf{it.main.rows.sumOf{row->row.graphemeEnd-row.graphemeStart}}
                     quality=if(unitCount==0)FoliaQuality.Minimal else options.quality
                 })
-            waiting?.let{gap->Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center){
-                WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
-                    {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
-                    Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
-                    defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
-            }}
         } else if(style is FoliaStyle.Classic) {
         val tuning = style.tuning
         ClassicStage(Modifier.fillMaxSize()) {

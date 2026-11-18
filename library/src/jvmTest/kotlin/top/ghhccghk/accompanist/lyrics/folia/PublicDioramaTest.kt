@@ -25,6 +25,31 @@ import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
 class PublicDioramaTest {
+    @Test fun gapsKeepTextStageWithoutWaitingOverlay()=runDesktopComposeUiTest(width=380,height=600){
+        val core=SyncedLyrics(listOf(SyncedLine("First retained text",null,8000,10000),
+            SyncedLine("Next retained text",null,22000,25000)))
+        var time by mutableStateOf(4000L);var prepared:DioramaTextPlayback?=null;var ready=false
+        var public by mutableStateOf(false)
+        setContent{Box(Modifier.fillMaxSize().background(Color(0xff162435))){
+            if(public)FoliaLyricsView(core,{FoliaPlaybackSnapshot(time,false)},Modifier.fillMaxSize(),style=FoliaStyle.Diorama(),
+                options=FoliaOptions(showTranslation=false,showPhonetic=false,showNextLine=false))
+            else DioramaPlaybackStage(core,{time/1000.0},FoliaTypography().secondary,Modifier.fillMaxSize(),
+                onPrepared={prepared=it},onState={r,_->ready=r})
+        }}
+        waitUntil(timeoutMillis=30000){ready&&prepared!=null}
+        fun pixels():IntArray{waitForIdle();val im=captureToImage();return IntArray(im.width*im.height).also{im.readPixels(it)}}
+        for(t in listOf(4000L,17000L)){
+            runOnIdle{time=t}
+            if(public){runOnIdle{public=false;ready=false};waitUntil(timeoutMillis=30000){ready}}
+            waitForIdle();val expected=pixels()
+            assertTrue(expected.distinct().size>1,"actual retained stage at $t")
+            runOnIdle{public=true};waitForIdle()
+            waitUntil(timeoutMillis=30000){onAllNodes(hasText("正在准备镜台文字…")).fetchSemanticsNodes().isEmpty()}
+            onNodeWithContentDescription("等待演唱").assertDoesNotExist()
+            assertTrue(expected.contentEquals(pixels()),"public gap keeps same stage at $t")
+        }
+    }
+
     @Test fun actualCoreProjectionCallbacksClockAndLifecycle()=runDesktopComposeUiTest(width=800,height=600){
         fun song()=SyncedLyrics(listOf(SyncedLine("Synthetic mirror",null,700,2600),SyncedLine("Second stanza",null,3100,4600)))
         val original=song();var core by mutableStateOf(original,referentialEqualityPolicy())

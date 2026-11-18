@@ -10,12 +10,21 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life、可选文字fragment fog | 无 | 切曲/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：在当前Tilt字号修复后，复核七公开主题真实Desktop窗口恢复矩阵，
-保留旧窗口证据，在专用实例中验证字号/resize/设置/seek/重挂；随后核对当前产物独立消费。
+当前唯一下一项：Desktop实际sample的选择音频/歌词→播放/暂停/seek/七主题UI运行验证，
+仅使用自有静音合成文件和专用实例，不操作用户歌曲/播放；记录原生文件选择与画面证据。
+无法安全自动操作的步骤保留待验，继续已有主题源对照，不新增播放器功能。
 只验真实能力，不将window自一致性当原版效果/音频/设备通过。Fume/群唱残差继续保留，
 Diorama不开放入口。此前正常fog“下一项”为历史，已按下列证据完成内部文字接入。
 真实Desktop七主题窗口复核和manifest/图检已保存（059087b/verification/themes-native-window），
 此前“待保存”为历史。没有选歌/真实音频/设备的新证据。
+
+c50e5b4后七主题真实DIRECT3D窗口105检查重跑完成，旧2d472d4图/表原样保留；
+只有Tilt large-font hash变化，其余104不变，恢复/暂停/resize/字号/设置/offset/切输入/
+卸载/反向切主题全部通过。固定contact图检仍可见Tilt重叠/Fume镜头，不称原版通过。
+当前本地Maven独立消费JVM渲染/原core回调、Android编译/依赖边界/归属打包通过，
+仅build/local-maven发布，详verification/themes-native-window/post-tilt-v2和
+verification/consumer/c50e5b4-validation.json。ADB一次检查无设备，无新Android运行结论。
+此前“当前Tilt后窗口/独立消费下一项”为历史；镜台fog提交c50e5b4，仍内部。
 
 镜台文字fragment fog已接全邻行及活动三层：原view-axis12/30、编码后RGB混合、
 alpha/life保留，透视变换下32段有界梯度；原8bit中间颜色门槛先失败，保留全部失败，

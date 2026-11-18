@@ -2,11 +2,15 @@
 from pathlib import Path
 import csv
 import hashlib
+import argparse
 from PIL import Image, ImageDraw
 
 root=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output',default='verification/themes-native-window',help='Repository-relative report directory; preserve prior versioned evidence')
+args=parser.parse_args()
 source=root/'build/verification/themes-native-window'
-out=root/'verification/themes-native-window'
+out=root/args.output
 assert (source/'SUCCESS').exists(), 'Native-window run has not succeeded'
 rows=list(csv.DictReader((source/'checks.tsv').read_text(encoding='utf-8').splitlines(), delimiter='\t'))
 themes=['Classic','Partita','Tilt','Cadenza','Pendolo','Cappella','Fume']
@@ -20,7 +24,7 @@ for theme in themes:
     for label in ['baseline','narrow','large-font','reduced']:
         p=source/(theme+'-'+label+'.png')
         assert hashlib.sha256(p.read_bytes()).hexdigest()==selected[label]['sha256'], p
-out.mkdir(exist_ok=True)
+out.mkdir(parents=True,exist_ok=True)
 for name in ['checks.tsv','conditions.txt']:
     (out/name).write_text((source/name).read_text(encoding='utf-8'),encoding='utf-8')
 sheet=Image.new('RGB',(1000,7*300),(30,30,30));draw=ImageDraw.Draw(sheet)

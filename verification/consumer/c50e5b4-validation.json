@@ -1,0 +1,92 @@
+{
+  "production": "c50e5b4",
+  "date": "2026-11-18",
+  "method": "python scripts/verify-consumer.py; ANDROID_HOME temporarily read from root local.properties; restored after command",
+  "consumer": "Independent Gradle root, coordinates only, no project/includeBuild dependency",
+  "jvmTests": 1,
+  "failures": 0,
+  "androidCompilation": "passed",
+  "noticesBoundaryAndEntryPoint": "passed",
+  "remotePublication": false,
+  "runtime": "Windows/JDK21; not Linux/macOS/device performance evidence",
+  "artifacts": [
+    {
+      "module": "lyrics-ui-folia",
+      "name": "lyrics-ui-folia-0.1.0-20261118.015754-7-kotlin-tooling-metadata.json",
+      "bytes": 874,
+      "sha256": "99b97db4ef026704b82c67d7d06cc23bf95dcf54c236aace8e8e2aa599257adb"
+    },
+    {
+      "module": "lyrics-ui-folia",
+      "name": "lyrics-ui-folia-0.1.0-20261118.015754-7.jar",
+      "bytes": 66183,
+      "sha256": "8b5316a9e963fd10974ce42cbf1088cc2aea2e0e145036ea329c866d534c0a75"
+    },
+    {
+      "module": "lyrics-ui-folia",
+      "name": "lyrics-ui-folia-0.1.0-20261118.015754-7.module",
+      "bytes": 6495,
+      "sha256": "8d4527e6198da189ed4a67fda4264aa28d8039eb89346a09b93ddacb1739087b"
+    },
+    {
+      "module": "lyrics-ui-folia",
+      "name": "lyrics-ui-folia-0.1.0-20261118.015754-7-sources.jar",
+      "bytes": 316395,
+      "sha256": "edb35bcbdef2ddc0a5f67cc18a7f1853779bf91b79a573169812349968f6432e"
+    },
+    {
+      "module": "lyrics-ui-folia",
+      "name": "lyrics-ui-folia-0.1.0-20261118.015754-7.pom",
+      "bytes": 1984,
+      "sha256": "46b91faa0cda6cfe0ce21c7f5738fa946c88008df6f78151dc4cd282f8f7c8b6"
+    },
+    {
+      "module": "lyrics-ui-folia-jvm",
+      "name": "lyrics-ui-folia-jvm-0.1.0-20261118.015754-7.module",
+      "bytes": 5026,
+      "sha256": "2cfd47b05818084ade5924f522ba400b6cb9407dbe3c0863ad7f7892e1a1ac55"
+    },
+    {
+      "module": "lyrics-ui-folia-jvm",
+      "name": "lyrics-ui-folia-jvm-0.1.0-20261118.015754-7.pom",
+      "bytes": 2595,
+      "sha256": "108e8cb5853714ddeffffbf3ce72e7d7305a37131ef1cba88d8f64d47f189667"
+    },
+    {
+      "module": "lyrics-ui-folia-jvm",
+      "name": "lyrics-ui-folia-jvm-0.1.0-20261118.015754-7.jar",
+      "bytes": 1721109,
+      "sha256": "a9cac2782b0ebdcae836dde1373a55941cbe78af4940ed8853da58f3245e6f91"
+    },
+    {
+      "module": "lyrics-ui-folia-jvm",
+      "name": "lyrics-ui-folia-jvm-0.1.0-20261118.015754-7-sources.jar",
+      "bytes": 327239,
+      "sha256": "215c1e0671eabd15c0bc22b95175bd3666f0c726dc4ef74d4c41a22be97846a3"
+    },
+    {
+      "module": "lyrics-ui-folia-android",
+      "name": "lyrics-ui-folia-android-0.1.0-20261118.015754-7-sources.jar",
+      "bytes": 325505,
+      "sha256": "722b33cf126b23253e72bd8e6cdf2a9830ff657c3b5e0b9f5f2e73d0f85a500f"
+    },
+    {
+      "module": "lyrics-ui-folia-android",
+      "name": "lyrics-ui-folia-android-0.1.0-20261118.015754-7.module",
+      "bytes": 5022,
+      "sha256": "a4a70c1f21866b6ca93db7365b6319df551252534414ec910b424d9e021a2f5f"
+    },
+    {
+      "module": "lyrics-ui-folia-android",
+      "name": "lyrics-ui-folia-android-0.1.0-20261118.015754-7.aar",
+      "bytes": 1639470,
+      "sha256": "86ecec54f0f7cbe7ef0f9d2fc683b87256b2112cad48d170b13b14a5a765bbb9"
+    },
+    {
+      "module": "lyrics-ui-folia-android",
+      "name": "lyrics-ui-folia-android-0.1.0-20261118.015754-7.pom",
+      "bytes": 2629,
+      "sha256": "97d2f41e44ec59c733977ce0a32f673b87a16a10231c2e9c16694d7ac12f6548"
+    }
+  ]
+}

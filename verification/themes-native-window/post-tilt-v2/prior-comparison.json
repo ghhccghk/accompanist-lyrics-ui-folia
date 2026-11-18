@@ -1,0 +1,14 @@
+{
+  "priorEvidence": "2d472d4, retained unchanged",
+  "currentProduction": "c50e5b4",
+  "count": 105,
+  "changed": [
+    {
+      "theme": "Tilt",
+      "check": "large-font",
+      "old": "0c1e07591f056b2f100f404b0dd44cdac1489b3bc7cdfdd6a3186344f9ddef50",
+      "new": "92647a324470ddd61f139fd0dcfae2f0e4823b6c0bdbf040273e0fe8669a745b"
+    }
+  ],
+  "note": "Only Tilt large-font expected to differ after 64d5619; no upstream equivalence or performance inference"
+}

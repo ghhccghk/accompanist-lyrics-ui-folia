@@ -1,0 +1,4614 @@
+{
+  "scope": "Same exact-lock original240 source and preserved before/after; all nonbackground pixels in one triple union including low alpha. No registration or discarded frames. Ink correction, not projection/whole-theme acceptance.",
+  "sourceConditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "browser": "151.0.7922.34",
+    "frames": 240,
+    "DPR": 1,
+    "font": "FoliaParityLatin-Bold.ttf",
+    "viewport": [
+      380,
+      480
+    ],
+    "scope": "Same controlled original mounted-stage clocks as cappella-playback; rapid micro-lines and overlapping lines, exact starts/inclusive ends and post-end probes."
+  },
+  "geometry": [
+    {
+      "name": "overlap-calm-geometry.tsv",
+      "before": "b4135dbb8119d67f66010c6e27a0876c300951de1eda3b93b807d75b8681dc7e",
+      "after": "b4135dbb8119d67f66010c6e27a0876c300951de1eda3b93b807d75b8681dc7e"
+    },
+    {
+      "name": "overlap-chaotic-geometry.tsv",
+      "before": "1524261fc01d97c9f2de1af871f8fff9bf8cd0eb339501a16e328eea94b0111b",
+      "after": "1524261fc01d97c9f2de1af871f8fff9bf8cd0eb339501a16e328eea94b0111b"
+    },
+    {
+      "name": "overlap-normal-geometry.tsv",
+      "before": "af75b4984bd2304372038c2749a2eff7a323108362967fad6ef1f32b7b665547",
+      "after": "af75b4984bd2304372038c2749a2eff7a323108362967fad6ef1f32b7b665547"
+    },
+    {
+      "name": "rapid-calm-geometry.tsv",
+      "before": "c19654dc3b7245ba8961a7859dc38b1f3c24e442b5a47b80431ca576c09d175f",
+      "after": "c19654dc3b7245ba8961a7859dc38b1f3c24e442b5a47b80431ca576c09d175f"
+    },
+    {
+      "name": "rapid-chaotic-geometry.tsv",
+      "before": "22db27d5e445dd06feb28af0b6776d373a9c52c386d156f86e89b404b6edc199",
+      "after": "22db27d5e445dd06feb28af0b6776d373a9c52c386d156f86e89b404b6edc199"
+    },
+    {
+      "name": "rapid-normal-geometry.tsv",
+      "before": "d97ca22b661f414c5a3054e8be65fb9021f7f1687fb9733358a20a250d8b7ce4",
+      "after": "d97ca22b661f414c5a3054e8be65fb9021f7f1687fb9733358a20a250d8b7ce4"
+    }
+  ],
+  "changedFrames": 128,
+  "frames": [
+    {
+      "file": "overlap-calm-0-0.png",
+      "hashes": [
+        "795a69250f77ce2a6025b8f03f0fe855092d2f94b56bd6146cd1c3050e193503",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05"
+      ],
+      "before": {
+        "mae": 2.3109131715528126,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 2.3109131715528126,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-1-700000.png",
+      "hashes": [
+        "0fa3879109773a2d8da4e2369a5b0a782044763ee5b6aa7c76ac4215aad78730",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05"
+      ],
+      "before": {
+        "mae": 1.8468733922641598,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 1.8468733922641598,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-10-1000000.png",
+      "hashes": [
+        "d807a725acb7492e1a7325b0fb1b9a0112f116317fdccddc0d921f4627f305a2",
+        "9931800eed23cfbba554ed1c7daa760a6b36ccba3f4e62ca0d72476ee8d6b38c",
+        "2d2bd1f300f5e0fb2e0bdba1c78d5d8932a68bbe66854573cf109ae06ead7238"
+      ],
+      "before": {
+        "mae": 7.755831369755421,
+        "peak": 206,
+        "worst64": 23.29809449229966
+      },
+      "after": {
+        "mae": 7.7566441996821744,
+        "peak": 206,
+        "worst64": 23.29809449229966
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-11-1020000.png",
+      "hashes": [
+        "4537219348e35270cb05495983acc534f7e15497726450ec5a07e579c4734f0b",
+        "ab6913d0ea3d83aec452f9051b2b6ce38fdd3a5342ef9158bfc4ba731a2e05ff",
+        "ccc81b3b80240cd9a040e8950ad7479b79ec1543be664a60cd69c5bc8a921207"
+      ],
+      "before": {
+        "mae": 8.06315413564816,
+        "peak": 208,
+        "worst64": 28.52991452991453
+      },
+      "after": {
+        "mae": 8.06319991942056,
+        "peak": 208,
+        "worst64": 28.52991452991453
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-12-1100000.png",
+      "hashes": [
+        "13e83f42877e999fda721a90a3aa2775db5c4c4f1e92f0ac3b53378351d92aab",
+        "a40548f0ffacdd247cd22ef478272b2faae0c2208b5c474cd74acdb8b437749c",
+        "2e7d814f158366944d2395e01234bbc8ac21d3fc7a088bcfd7cbdde7f4597a6c"
+      ],
+      "before": {
+        "mae": 6.083399137959399,
+        "peak": 210,
+        "worst64": 18.573799768883287
+      },
+      "after": {
+        "mae": 6.083530747211529,
+        "peak": 210,
+        "worst64": 18.573799768883287
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-13-1110000.png",
+      "hashes": [
+        "0ad9f00d3b15c7f382198b462632ee4e86f716fdebed997e88157dda5ccfa8b9",
+        "f653209974f4449175d46cb6801a0cfdc1b85dce201731786aa4c79322025d5b",
+        "09b541b5d3e3affba442b2fb661be5583f5de668be619c14d1d361fbde049eb7"
+      ],
+      "before": {
+        "mae": 4.425944055031262,
+        "peak": 208,
+        "worst64": 19.950643523438423
+      },
+      "after": {
+        "mae": 4.426146375846811,
+        "peak": 208,
+        "worst64": 19.950643523438423
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-14-1167000.png",
+      "hashes": [
+        "5a84ab72bdbe508d0524e94d2aa431a9a97eb5a220c6cf466a09e1fc5654b813",
+        "d9c3976462e4b58aab4e7f4a4791bda574652036749dcece9d85ab8e25e338fe",
+        "fd0831e7cfef8834af925c10295fc29fb1d6ffdf6dc6d4a56a3bb5b330c7ce47"
+      ],
+      "before": {
+        "mae": 3.878446661940855,
+        "peak": 182,
+        "worst64": 12.3755303290907
+      },
+      "after": {
+        "mae": 3.8800370794481704,
+        "peak": 182,
+        "worst64": 12.3755303290907
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-15-1177000.png",
+      "hashes": [
+        "40d69a55a0b81b2639f3794f9298cda8ab15cc92a147b2897be4d21aec538648",
+        "c64bceffb8e0d9649b72df36b279625cb766a0daba66b9513d47a54580c4e6ad",
+        "e3144793fcd8dd12c4cec44fb9d77cd7b073736909769668b12bd78fb3ac6b74"
+      ],
+      "before": {
+        "mae": 4.21839779614325,
+        "peak": 175,
+        "worst64": 11.044808370294552
+      },
+      "after": {
+        "mae": 4.218406611570248,
+        "peak": 175,
+        "worst64": 11.044808370294552
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-16-1180000.png",
+      "hashes": [
+        "f1a8807b469a42c2784f35ad87971b8c89c6c7ddce2a781cd2c80aadfc7ba93a",
+        "55156d17adbf2fbbb1dade201377b7361f65479eb532b715923dcbf61363b638",
+        "0c7a24d8ce6d2bd5fa3e996b6221ac0a6987dcba0001fe7b9bd879c4d1e11368"
+      ],
+      "before": {
+        "mae": 4.150194197545626,
+        "peak": 171,
+        "worst64": 10.79097198593626
+      },
+      "after": {
+        "mae": 4.150517491065141,
+        "peak": 171,
+        "worst64": 10.79097198593626
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-17-1190000.png",
+      "hashes": [
+        "a8b214616c71d5a3610ea3e640e050638d287b10933da0f699953cf8016e3b10",
+        "bdf20817ee00d404ece57ffdd7fe7271c440dd23be28ea07bb5a35eb23ee86e0",
+        "4653e2cd6a281603a7a1840ccb5fc599affd92dd18f860f300dc2c6c2ca53a36"
+      ],
+      "before": {
+        "mae": 5.282120407623323,
+        "peak": 175,
+        "worst64": 10.159963951785514
+      },
+      "after": {
+        "mae": 5.282229885686656,
+        "peak": 175,
+        "worst64": 10.159963951785514
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-18-1200000.png",
+      "hashes": [
+        "d2255bede09697712a54afa933d7fdb2cfa30309c2ca9b8e48e8174dbdee35b8",
+        "c21da238814f83663db662561293ceaaaf1a112e78989b5bfd33e4d8528d4f67",
+        "0c1cc74901da8ed173955ce851ea4fc1d869ce5e083672f62f20005d8742370b"
+      ],
+      "before": {
+        "mae": 5.740413230167503,
+        "peak": 176,
+        "worst64": 10.553629557291666
+      },
+      "after": {
+        "mae": 5.740706100199341,
+        "peak": 176,
+        "worst64": 10.553629557291666
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-19-1220000.png",
+      "hashes": [
+        "d1c2ecab778a7427e6d6df41b41b18316727f2feaed7caaef162e9835f14a9fd",
+        "4fd92ba99b0b8ab141c1bc0bdc21f6bc157b75b2cad1a1718f9724a310e76fd9",
+        "c2dbe23eee850bb9a56d698a00d5564f5457c40a78313377ec76dff2d45decf3"
+      ],
+      "before": {
+        "mae": 6.643069982318494,
+        "peak": 180,
+        "worst64": 12.658893951576879
+      },
+      "after": {
+        "mae": 6.643069982318494,
+        "peak": 180,
+        "worst64": 12.658893951576879
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-2-720000.png",
+      "hashes": [
+        "b14156e09121da49899a1a2707af925e1fbd15c7bbbda00222f5030539189aba",
+        "8ea994e76dd08df63d727f00b834f2b5a7a79ec00b47eb17e35a925a457bccfa",
+        "8ea994e76dd08df63d727f00b834f2b5a7a79ec00b47eb17e35a925a457bccfa"
+      ],
+      "before": {
+        "mae": 1.6083712441456313,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 1.6083712441456313,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-20-1300000.png",
+      "hashes": [
+        "2a3075b6d4b73660dd8f05a1ad1f95abfd0bd874b621ab3833f1d1877ed629ff",
+        "44009f57f38d8bd7e4a65c12985bb1776627544c7eccb2ec7578f177010870c6",
+        "dfe1d590816761da937f9f40dcf3c954c0b7f94d3c22ea29cc9200555221992e"
+      ],
+      "before": {
+        "mae": 24.171826680410906,
+        "peak": 173,
+        "worst64": 87.35691823899371
+      },
+      "after": {
+        "mae": 24.171856301614948,
+        "peak": 173,
+        "worst64": 87.35691823899371
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-21-1367000.png",
+      "hashes": [
+        "3a8eca2e83c6f563d19b9633b9d9583b39f06c9f348792129c6343802c6d158c",
+        "5776c11bff7a2e4803bf9404c9ef2f8c059e1bd631de2743339e9f25fefffefd",
+        "b563328e50699bac979e9f6905aae5d79dd5999263df4bbac5788da4af17c9d7"
+      ],
+      "before": {
+        "mae": 12.062108647014579,
+        "peak": 178,
+        "worst64": 50.81688125894134
+      },
+      "after": {
+        "mae": 12.062324235499279,
+        "peak": 178,
+        "worst64": 50.81688125894134
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-22-1377000.png",
+      "hashes": [
+        "d2ebf5bc027989f83ea2e745e5fd3c3ceff30ccbbdfc78ab358c3e0b980c7f4a",
+        "2311b26f08d030b2fe61c1f2e50bca074e3cc00f16293b5353422b7d2a0019da",
+        "eefe8f821c1edc005e2fd3e9905a149fd5fbe19877c106da544b9fe1d8378885"
+      ],
+      "before": {
+        "mae": 10.606844760972473,
+        "peak": 183,
+        "worst64": 37.13076923076923
+      },
+      "after": {
+        "mae": 10.606225261395718,
+        "peak": 183,
+        "worst64": 37.13076923076923
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-23-1500000.png",
+      "hashes": [
+        "8c4ebae2cb04b00a5293efe9dd82072908b6eb35a70d452f19eea1461a9ecfd8",
+        "e7e28899c03e9aa8011270ae54f73a297b7c8cd9d7ab6dd93d6406866c74ef38",
+        "ffe750a0d92824a792e1ade07fad0c61e2f187db7d9234788eddc5794ef206b8"
+      ],
+      "before": {
+        "mae": 13.025773565941561,
+        "peak": 215,
+        "worst64": 42.773763020833336
+      },
+      "after": {
+        "mae": 13.022485461985784,
+        "peak": 215,
+        "worst64": 42.742757161458336
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-24-1800000.png",
+      "hashes": [
+        "e25a6572e3720b11ea168ca8ab53cc00fb89208d6970e00a83c78f4560cea4a7",
+        "cfbc1accef8a7dafedfce64f3e23c3a6976b35c643ab2f408ae893f3a7fb1c53",
+        "e76daa8577725a80a6009dc4381af2ac52ce366b1fbb1599b791ba37a8829e8b"
+      ],
+      "before": {
+        "mae": 5.99070970776739,
+        "peak": 218,
+        "worst64": 18.100341796875
+      },
+      "after": {
+        "mae": 5.99152554830364,
+        "peak": 218,
+        "worst64": 18.107828776041668
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-25-2000000.png",
+      "hashes": [
+        "a8e50f0d878a017cf9b667a7fb1074095e48cf33912f5d54d6eead9ae8ff5655",
+        "59646cb8e39df5c66e35d692a41e8ce618295273d39d49de9daf35ca7559abc4",
+        "306d028f80d9a59859791fb22adc0487cd6a308df9e56955e6cda7b06ce3bd9d"
+      ],
+      "before": {
+        "mae": 3.1788829036809028,
+        "peak": 205,
+        "worst64": 9.55649356186578
+      },
+      "after": {
+        "mae": 3.180248813646274,
+        "peak": 205,
+        "worst64": 9.556152468662061
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-26-2010000.png",
+      "hashes": [
+        "20aafcba025e1a7b34d8c09a219d07b7ec5c5d2583f77ae9db2ce758346ffcc4",
+        "ea0f2a25a9993f54fdd70cefaa4757948fe1ce08c945a964f404d17db00db524",
+        "150a2eb3b431f0de0f2db066ba61801845727fbe6aabd65a0828d8c968317cb0"
+      ],
+      "before": {
+        "mae": 3.2675432644218927,
+        "peak": 205,
+        "worst64": 11.323811848958334
+      },
+      "after": {
+        "mae": 3.2692321224824203,
+        "peak": 205,
+        "worst64": 11.347493489583334
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-27-2067000.png",
+      "hashes": [
+        "eeb0a2cadb1e61fa159a6d04beb28ef5a09a123de0738ca7b8bc0d5b3fd5e350",
+        "bd6b65b95d4a7750f1ccc30c0e0dddecfa33f7eb9496042088154c07e69a60b0",
+        "7cbd41d58ccea3c23cfa812b09fe92d656094f34f6ccfb6698f1a1b1d3a7ef17"
+      ],
+      "before": {
+        "mae": 3.785361972951472,
+        "peak": 179,
+        "worst64": 8.928792317708334
+      },
+      "after": {
+        "mae": 3.7870183383309874,
+        "peak": 179,
+        "worst64": 8.9453125
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-28-2077000.png",
+      "hashes": [
+        "7eb7aaf0436dfbccd305804e2c5def4b98f71865aaf061e800f893caa9f030f6",
+        "cad2840a742f65c7d4a5d2e48cbf3ce79fdea9481ff4dcaf06ff7557bf9c8f9c",
+        "1c27a87c375490c67672182e68335a090909950e545a89562c3513180199c39f"
+      ],
+      "before": {
+        "mae": 4.440250599120761,
+        "peak": 171,
+        "worst64": 9.197591145833334
+      },
+      "after": {
+        "mae": 4.440635464774873,
+        "peak": 171,
+        "worst64": 9.196695963541666
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-29-2090000.png",
+      "hashes": [
+        "9d931967ba4f0a6acdd0faab9369e9d4d58d1e0f89d620872dee35d696bc41d5",
+        "2ca1982decaf099972c5e280baefed63d9ebdabf6cc003e37737cb023c803c0f",
+        "d127fe52bc889ce84c08dd503061f0ba854cc092e7e14f33f3a2a1d317f35c63"
+      ],
+      "before": {
+        "mae": 5.147954597879432,
+        "peak": 152,
+        "worst64": 13.586995442708334
+      },
+      "after": {
+        "mae": 5.147552914787505,
+        "peak": 152,
+        "worst64": 13.58447265625
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-3-780000.png",
+      "hashes": [
+        "7518ae7c44c9b4b7605eadd525e791314750fe815e152d3121f77d1fdde69e1d",
+        "86e12259d291d9abb230231b54badbf2b3150cd44039f7bb2c732cab4cb38a2b",
+        "86e12259d291d9abb230231b54badbf2b3150cd44039f7bb2c732cab4cb38a2b"
+      ],
+      "before": {
+        "mae": 1.825564993887722,
+        "peak": 167,
+        "worst64": 25.64957264957265
+      },
+      "after": {
+        "mae": 1.825564993887722,
+        "peak": 167,
+        "worst64": 25.64957264957265
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-30-2100000.png",
+      "hashes": [
+        "47395c51e95de36e05896fb5bf561c5ec5cca87e06352c2258f4b2e205f25e81",
+        "cfbdede6711c4d86c7d54a02bd98d2090c3956f065d5c60dfbddfb6807dee487",
+        "ceab82ad7ad0fd00aab0a367a5b2ee769e708de6eee9e212a52384c62b657754"
+      ],
+      "before": {
+        "mae": 7.6396993033496265,
+        "peak": 176,
+        "worst64": 18.47032967032967
+      },
+      "after": {
+        "mae": 7.639785261331801,
+        "peak": 176,
+        "worst64": 18.47032967032967
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-31-2200000.png",
+      "hashes": [
+        "bec1fe3873ebf73d9232458440e2751a4c2f39ee72409d0caa8acbf36696b533",
+        "7ec1710ad558a72e6228e834f6b9e666fc5bb91dbe41e7a6e58c2f755a41afc5",
+        "a39c32a4786d61619a0eb0a4acbfb25bb0eef7ebc3cb71858ab6693733c640c5"
+      ],
+      "before": {
+        "mae": 15.75176921199775,
+        "peak": 196,
+        "worst64": 37.49285151412811
+      },
+      "after": {
+        "mae": 15.751795736915259,
+        "peak": 196,
+        "worst64": 37.49285151412811
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-32-2500000.png",
+      "hashes": [
+        "e501f8c81d1efbcdb1f49288f597480549095a6d26fbad9422a8af6b25ce7fdf",
+        "164fb3026727c60c22a888f28fc2df846ea520596459f5da5e2ca47ce0ebae13",
+        "164fb3026727c60c22a888f28fc2df846ea520596459f5da5e2ca47ce0ebae13"
+      ],
+      "before": {
+        "mae": 2.3972794997587763,
+        "peak": 181,
+        "worst64": 33.50854700854701
+      },
+      "after": {
+        "mae": 2.3972794997587763,
+        "peak": 181,
+        "worst64": 33.50854700854701
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-33-3000000.png",
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d"
+      ],
+      "before": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-34-3026400.png",
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d"
+      ],
+      "before": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-35-3036400.png",
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d"
+      ],
+      "before": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-36-3380000.png",
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d"
+      ],
+      "before": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-37-3390000.png",
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d"
+      ],
+      "before": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-38-3500000.png",
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d"
+      ],
+      "before": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-39-4000000.png",
+      "hashes": [
+        "cc25703a9cbe5c164e8b0537db8e4437315a6179a6714f87bcd8589242b8ef7c",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d",
+        "821ee90168c1b4cca343596e0a366aa9b2d68241643baf8b4c760039db05339d"
+      ],
+      "before": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 2.0594291784790033,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-calm-4-800000.png",
+      "hashes": [
+        "7eec6444546cf2f0f7c94ea5636c06153966443937ab472591bae19a1079dce0",
+        "d65ba72af73d5f6f2c3667166b1e76ccee718ad139ce4d1c0c592fceafd4e99c",
+        "9b7545554deb6947ae137ddcc3747ffb9513425e4b8b4ece26781c98adfa2afb"
+      ],
+      "before": {
+        "mae": 1.9081495685522532,
+        "peak": 172,
+        "worst64": 20.264227642276424
+      },
+      "after": {
+        "mae": 1.9089357622243528,
+        "peak": 172,
+        "worst64": 20.264227642276424
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-5-847000.png",
+      "hashes": [
+        "42c7b4b9a4668f32a38b6157734fd377a4ffb6a48473e4fdb9de2d725d1151da",
+        "c9d54d37c1aa90a43819c2ace9631550d2e86704331478ba61f0e7c0509cbebe",
+        "b058d80829b9c31ab28ea15652e359e51bb74274dea17d7cf07357a489bb9e32"
+      ],
+      "before": {
+        "mae": 2.681299333105798,
+        "peak": 150,
+        "worst64": 19.066666666666666
+      },
+      "after": {
+        "mae": 2.681483528092444,
+        "peak": 150,
+        "worst64": 19.066666666666666
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-6-857000.png",
+      "hashes": [
+        "1c7c3ef0e75ed7d962c95b5a49bfaf62a96317207025de8598ea543e72005701",
+        "c409c914bbfc80843119404c85f8f2f21353642e54a4004b4b197679776be404",
+        "fc78993824293af77ed6c2fa2b02ab126e10faf3cc9edf28f5549b2e3b78b07c"
+      ],
+      "before": {
+        "mae": 2.4465342627910034,
+        "peak": 140,
+        "worst64": 12.181102362204724
+      },
+      "after": {
+        "mae": 2.4474385111140338,
+        "peak": 140,
+        "worst64": 12.181102362204724
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-7-860000.png",
+      "hashes": [
+        "d1cd5bc17b5e9f8bc99a586ddd543300406255ad05cadaced36727cd342e1f88",
+        "f569674fd16554fefcc8735f83342815daca31a44eb00b289317f7107dffad0e",
+        "164c5259c31f8afc72de2417fbd39522a5ad75c24c4570ead6467f5ca62da5c5"
+      ],
+      "before": {
+        "mae": 2.6636669544619336,
+        "peak": 143,
+        "worst64": 15.778645833333334
+      },
+      "after": {
+        "mae": 2.6628589139049392,
+        "peak": 143,
+        "worst64": 15.778645833333334
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-8-900000.png",
+      "hashes": [
+        "98ce2d675976eba2ff180038d000bbb2e04505cd2c83ded7eaf39286594b52bb",
+        "5aa30044f90ca59306a47ca173ee6b36b1ce45c93336a6c2e54e09d88676d68e",
+        "52211a844363dad929eae2200a6c4ed918047028710f80843fa0b4d4f47ff55e"
+      ],
+      "before": {
+        "mae": 4.095278344327459,
+        "peak": 176,
+        "worst64": 17.06743515850144
+      },
+      "after": {
+        "mae": 4.095964328807061,
+        "peak": 176,
+        "worst64": 17.06743515850144
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-calm-9-940000.png",
+      "hashes": [
+        "589d8d89a5123e9c46c2fe7b87850823a8ac6445800f9e89d2893b1b72f6f30f",
+        "233b06b1e5b4fc16818f09d93657c5fd36fb84cccc777d2585997403308ec6d7",
+        "44e78440fced6afda568611a00c3b2409069dc49cce112946fa96f6361b22792"
+      ],
+      "before": {
+        "mae": 3.888539552407105,
+        "peak": 197,
+        "worst64": 13.524483775811209
+      },
+      "after": {
+        "mae": 3.889010493360396,
+        "peak": 197,
+        "worst64": 13.524483775811209
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-0-0.png",
+      "hashes": [
+        "3b2d5168e8ebe65af69e7a6d67bcb0e0c431431e163c008b1b5b19627fc10c5d",
+        "9bf88c63ace5c516ecdf1a6276f4a5ef4183fafcf87046f47c9b906883853d75",
+        "9bf88c63ace5c516ecdf1a6276f4a5ef4183fafcf87046f47c9b906883853d75"
+      ],
+      "before": {
+        "mae": 2.3835029069767444,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "after": {
+        "mae": 2.3835029069767444,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-1-700000.png",
+      "hashes": [
+        "3b2d5168e8ebe65af69e7a6d67bcb0e0c431431e163c008b1b5b19627fc10c5d",
+        "9bf88c63ace5c516ecdf1a6276f4a5ef4183fafcf87046f47c9b906883853d75",
+        "9bf88c63ace5c516ecdf1a6276f4a5ef4183fafcf87046f47c9b906883853d75"
+      ],
+      "before": {
+        "mae": 2.3835029069767444,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "after": {
+        "mae": 2.3835029069767444,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-10-1000000.png",
+      "hashes": [
+        "aca2e74372f23a98946df7f63cd49b21531b38d2a4c039598f200cad8bf920b7",
+        "6177d14193ba02e8c8e16e4379e87105222a998acabbb574800605c97044d120",
+        "991dc760b97dec208f6e0dd86aa5304b8a61610c806b21db27dc285fd0c43ae3"
+      ],
+      "before": {
+        "mae": 7.73970815728106,
+        "peak": 193,
+        "worst64": 18.305363781200214
+      },
+      "after": {
+        "mae": 7.740123756089677,
+        "peak": 193,
+        "worst64": 18.305363781200214
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-11-1020000.png",
+      "hashes": [
+        "9527bb1df17be0368af03383489aa81aefd3a2b2e05146805594ad2ab6e828b2",
+        "c51310abb75fab65c1edd66a7b03437d1291a81fbec43aeca0091f3b61988c98",
+        "d73999f120f2d47a257051641b7f26149f31bc19244846ddf321b7af2a6490f1"
+      ],
+      "before": {
+        "mae": 10.758979598905476,
+        "peak": 201,
+        "worst64": 26.46258847320526
+      },
+      "after": {
+        "mae": 10.759331740039023,
+        "peak": 201,
+        "worst64": 26.46258847320526
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-12-1100000.png",
+      "hashes": [
+        "b5e490ecabf8b467d23ba84082f57b0a1232b5efb0526787bfd1c10d51e71fc6",
+        "e22fa05753e8b8e1758b0a96d070362eaf992ae4592de51ac054982c7182b859",
+        "8d7b99a4557dd4a344844ccdf0f667c15e3b57a7219774eeb0be0ebf340a94d0"
+      ],
+      "before": {
+        "mae": 7.217792381647803,
+        "peak": 210,
+        "worst64": 19.0799840827696
+      },
+      "after": {
+        "mae": 7.218175733235975,
+        "peak": 210,
+        "worst64": 19.0799840827696
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-13-1110000.png",
+      "hashes": [
+        "7e05a557545051fed689e9311a7a0b6a7563b212e68e2d34be15e730e8298575",
+        "c99581f0733b0105f00361fb8ab167e4a81da9f94aac0ebf246e4cc6bce045fa",
+        "9e2e5d29bb8b5cc834e9df8f4b83e5f1e8594ec0b10c1ccfafc7cd50741c47c2"
+      ],
+      "before": {
+        "mae": 6.307072861603141,
+        "peak": 210,
+        "worst64": 22.59013843521543
+      },
+      "after": {
+        "mae": 6.307433511597473,
+        "peak": 210,
+        "worst64": 22.59013843521543
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-14-1167000.png",
+      "hashes": [
+        "e6d8b065b0d22f848699a9cee5a9a8a7695c23ede7524ea5125c466db6ba9521",
+        "76390f3f471a2b6e884c3ddfb7066e60b7d303e0a892aab2fb27ee0c70ef1b35",
+        "dc821190383badaeed5209ef43d1f1e10d2d466c81be67b32181099008fd0678"
+      ],
+      "before": {
+        "mae": 4.109446466438814,
+        "peak": 192,
+        "worst64": 15.303130602675493
+      },
+      "after": {
+        "mae": 4.109799335262349,
+        "peak": 192,
+        "worst64": 15.303130602675493
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-15-1177000.png",
+      "hashes": [
+        "23f725c879ff31fe5825a081133b92cd85b9d4dd41fafca51a3317e36bbcd198",
+        "62d90f6e8cb97fbc4d3dff15b888694d27116e8b98db1ff740f43989f8c12ca4",
+        "280ace1423d5578403de97290978a21a92a46251a17f9fa5ab74985e70f8af3a"
+      ],
+      "before": {
+        "mae": 4.370080530677348,
+        "peak": 187,
+        "worst64": 14.323473021090113
+      },
+      "after": {
+        "mae": 4.369908359402663,
+        "peak": 187,
+        "worst64": 14.323473021090113
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-16-1180000.png",
+      "hashes": [
+        "e0e8740f0eb709b0da77146cd01498cc317838f36c919f7148e4a3b42d785417",
+        "a9b97acaf73a558c81dc1af357e772a08eecef19bdcfb31f6c4265411770e079",
+        "ffd6ecca30fb7f8aed5fecc00b67c79b0cf647956aa8aeeb0198aafa99ec7166"
+      ],
+      "before": {
+        "mae": 4.3465590127603075,
+        "peak": 185,
+        "worst64": 14.285831285831286
+      },
+      "after": {
+        "mae": 4.346711967222184,
+        "peak": 185,
+        "worst64": 14.285831285831286
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-17-1190000.png",
+      "hashes": [
+        "838abe01a94820d78978c356f181dbc25d97caeb37eeae11032fe5c00d6a5a8c",
+        "ca8fce0a75d2d6d918be39d88f7d6d99e5366f9667eadd862d7680aa8a713bb3",
+        "9fa690fce8b06f2c562c2679e652e689fbb8e2581f5dabe045a9575631d92934"
+      ],
+      "before": {
+        "mae": 4.833629456143539,
+        "peak": 187,
+        "worst64": 28.38888888888889
+      },
+      "after": {
+        "mae": 4.833811167867983,
+        "peak": 187,
+        "worst64": 28.38888888888889
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-18-1200000.png",
+      "hashes": [
+        "44d8efbb25f1b77d36bc9cb8ab5d3010957a789043cb429efb0d856b0801f292",
+        "94121f329fe4a69e40a1309bf3afdf6ea9e54246a03ea4b90999208460580707",
+        "9d1249ed6111a2dfd9084664e7f9246e1b04aafdc5b77695dba37540a3ca6f7b"
+      ],
+      "before": {
+        "mae": 5.44612374663732,
+        "peak": 181,
+        "worst64": 38.61702127659574
+      },
+      "after": {
+        "mae": 5.446270481780386,
+        "peak": 181,
+        "worst64": 38.61702127659574
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-19-1220000.png",
+      "hashes": [
+        "d124badd9aafc9207f14cc538b365b515a618649ff10538171502e1b97b42d77",
+        "d50f7873db9735a5d3d29b0ac74b6c66bb361915736bee069d95ba35bfce028c",
+        "667fd44e1ddffdf2a0da5a36b5ee72a8dc6e52ab863875c40092ede6f45765e4"
+      ],
+      "before": {
+        "mae": 6.717285222174646,
+        "peak": 185,
+        "worst64": 30.16078431372549
+      },
+      "after": {
+        "mae": 6.717331512577489,
+        "peak": 185,
+        "worst64": 30.16078431372549
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-2-720000.png",
+      "hashes": [
+        "305c4f97049fabf843a2ab2e371127c273e6371b50186dee04344a496d27853a",
+        "cf49bd1d0fe2d7ab8d331c95e6cac810c009e7e8b08d3dc1139ef750b3ce224f",
+        "30f1cfe1b5a4fdf1237188ac349221b0bc61e6b55fef052644b939112c5c27e9"
+      ],
+      "before": {
+        "mae": 1.6068954236911897,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "after": {
+        "mae": 1.6069071068895822,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-20-1300000.png",
+      "hashes": [
+        "2b00a9e90086dd9fafb492062a78b13416a29eb3034e751238a00d523bcbbd02",
+        "398a6193becd91970236fbe13a4175e49fcea281134abff5a9195f19dcc167c1",
+        "9337fc13a298c47160da3079fcef2c3a89685cfd17678c9ecbc66b287737402b"
+      ],
+      "before": {
+        "mae": 16.83795520407807,
+        "peak": 176,
+        "worst64": 35.83583714347921
+      },
+      "after": {
+        "mae": 16.83793338221431,
+        "peak": 176,
+        "worst64": 35.83583714347921
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-21-1367000.png",
+      "hashes": [
+        "e63f586c8d3df55dc10f99b94b4e3a5745f63fe9ab18c14cb6b49d4991fb8912",
+        "68e4d4a232b889e9c8d11574a00f44fbe2e75e632aa09d5fdd26d09464868359",
+        "ead95c956d22eb470f05be62d7b5e25f5c1d13dd8cf29392c27954c672aeb499"
+      ],
+      "before": {
+        "mae": 11.468251835930504,
+        "peak": 135,
+        "worst64": 56.95485466914038
+      },
+      "after": {
+        "mae": 11.467862604885712,
+        "peak": 135,
+        "worst64": 56.95485466914038
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-22-1377000.png",
+      "hashes": [
+        "9b26a4637a2b11aa7c891a90b09767b13270cce57e12040c5f26890e02b062c2",
+        "ee6921204622a76fbbb43d201266ed155b8ad6b82370462e86a58b4611f9c42b",
+        "ba770eca4a2cc4bae9fa69dcc438d16377bec316133dc532b2481144fd6027dc"
+      ],
+      "before": {
+        "mae": 11.262515389912565,
+        "peak": 138,
+        "worst64": 56.422572178477694
+      },
+      "after": {
+        "mae": 11.262226720366158,
+        "peak": 138,
+        "worst64": 56.422572178477694
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-23-1500000.png",
+      "hashes": [
+        "e0a3067f79b9954306c0aa5eeaa2566b26750d51cdbdf8a90c5964488613a3b8",
+        "88b533bedf7474d4f88aa6b076cb5282d487de3d4290c3bfbe31896e54c15d84",
+        "62bb691e180d3cc7e3db35b693ef507da795d5eee9f40dc73aed3a5d132ea2ff"
+      ],
+      "before": {
+        "mae": 14.047718002001078,
+        "peak": 194,
+        "worst64": 33.79012345679013
+      },
+      "after": {
+        "mae": 14.045312860771185,
+        "peak": 194,
+        "worst64": 33.79012345679013
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-24-1800000.png",
+      "hashes": [
+        "8d26b956c899c3584fe0b08a437b24aa12e63a7ce3b93890f6b613c9b17704b7",
+        "bb05d3dae67239c74905d903fc9566ad51e4e7ad8db64b6e98066b7ac8a9f673",
+        "8a43cf6f8d0e8d65b515a0ccfae3dba69c2ff74d29f7c84692d1826dab76928c"
+      ],
+      "before": {
+        "mae": 11.210589575230808,
+        "peak": 221,
+        "worst64": 26.018303946263643
+      },
+      "after": {
+        "mae": 11.209424386045022,
+        "peak": 221,
+        "worst64": 26.015281276238454
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-25-2000000.png",
+      "hashes": [
+        "04615a45ddcf95e0c77eaefd241e3aa9317b3f791f8a6341190795bc26dbc7ba",
+        "ce6986487ac678b8cd15ede6f36b6daf719f97556d9448c1ba9a74b4dfd58027",
+        "5ee2fdeff0a928c965d333772c9e70db32795ddd9297d18e4c50d0617a29e431"
+      ],
+      "before": {
+        "mae": 4.476084423394978,
+        "peak": 207,
+        "worst64": 14.694909434286204
+      },
+      "after": {
+        "mae": 4.477555066907232,
+        "peak": 207,
+        "worst64": 14.699373336767104
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-26-2010000.png",
+      "hashes": [
+        "86bae51bf3a8bc76f0b5b2f9dfb7131ec9d1e8960220b3082350d49bc0121a06",
+        "e4e445d40148383154a9b48dd9a933b0668cf80337f374c766a64e229b2f2ed6",
+        "c8575923f8e1b72dc0c5193e97eceaba50320bb8b36f31099d3207ef8781797c"
+      ],
+      "before": {
+        "mae": 4.406270612049947,
+        "peak": 207,
+        "worst64": 15.332194010416666
+      },
+      "after": {
+        "mae": 4.407930948211158,
+        "peak": 207,
+        "worst64": 15.340657552083334
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-27-2067000.png",
+      "hashes": [
+        "f9ddfb489f7ee3e9c3bcd3647532f6534c1abcfb3a575022c2db7457a3b95e49",
+        "7129f34ff7654f06b0a7af17577f752a3af60645b9c32f51e6dcf8e5e01f4ea5",
+        "9ddb8ac040b1f022662825a0927b7390f5f62617ed098c7eaddb89ce5efd7c26"
+      ],
+      "before": {
+        "mae": 3.873063597798571,
+        "peak": 190,
+        "worst64": 11.128255208333334
+      },
+      "after": {
+        "mae": 3.8741838959303516,
+        "peak": 190,
+        "worst64": 11.131266276041666
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-28-2077000.png",
+      "hashes": [
+        "99738d9df65e3ab38509e51a3ea4a5c9b9481bc951c2e6d1e9d1c0b2fd1350ee",
+        "91e9acb439ebfd6bc13b15aad5a30c281908c3eb7ba458e0d60adabc206a6226",
+        "38afee94a1569e6e48205eed0124a1e829cd4cf492d72f87cedeb118d3927a97"
+      ],
+      "before": {
+        "mae": 3.871443226153639,
+        "peak": 186,
+        "worst64": 10.655843098958334
+      },
+      "after": {
+        "mae": 3.871605789497287,
+        "peak": 186,
+        "worst64": 10.656494140625
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-29-2090000.png",
+      "hashes": [
+        "4aa9bcf4989cc396b17d3e67a568a2a5f8ef37ee6219bbca6584b73056c5bb8a",
+        "5067e7fefa805bd4fd3e6ed39adad7b6fca547ccab51a0e7a9ab8bfbbdf281a1",
+        "eaa9a6b5252ac227e67405e11a636120a028a4b58353880b91c34bfe1263a4c3"
+      ],
+      "before": {
+        "mae": 4.497334810625479,
+        "peak": 178,
+        "worst64": 9.938069661458334
+      },
+      "after": {
+        "mae": 4.49783642848087,
+        "peak": 178,
+        "worst64": 9.938069661458334
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-3-780000.png",
+      "hashes": [
+        "5b06e5bed93ec1fb0d0f9fb55ae927e1135af65e6d1fcc112956817eca8b8ab7",
+        "4285d917b156a5c28756a127fb524282db4820650de9494a7d766b20ec9009e0",
+        "4285d917b156a5c28756a127fb524282db4820650de9494a7d766b20ec9009e0"
+      ],
+      "before": {
+        "mae": 1.5319316205004683,
+        "peak": 167,
+        "worst64": 18.529411764705884
+      },
+      "after": {
+        "mae": 1.5319316205004683,
+        "peak": 167,
+        "worst64": 18.529411764705884
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-30-2100000.png",
+      "hashes": [
+        "e9886989f7bc13fee1cb7390acbf49f772d5009a6a7204752010b324c14e3eb2",
+        "4858399df7f0cbe25a50359c5158bc783ac1a4b2eab6fc5e3f54c22c2effd184",
+        "a7afd590a719d8fed49525df500dfa04f1eb328117f290eee1b122f168d3658a"
+      ],
+      "before": {
+        "mae": 6.293207886588501,
+        "peak": 178,
+        "worst64": 16.7197265625
+      },
+      "after": {
+        "mae": 6.293154821129605,
+        "peak": 178,
+        "worst64": 16.7197265625
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-31-2200000.png",
+      "hashes": [
+        "45f2cf1dd993042e91470ed9774a0b6ecebf158692281cc1ee2d13c10ef04b4c",
+        "304fc466c7cc738d3480d9cf345925d86c3907220bd2690d5d856603cddcdaa4",
+        "efd10117c36a964a326258399ae37ec82c4c9ddaa2a2c797ef157faa73bb24c5"
+      ],
+      "before": {
+        "mae": 12.457072759215832,
+        "peak": 204,
+        "worst64": 32.126126126126124
+      },
+      "after": {
+        "mae": 12.457088238253345,
+        "peak": 204,
+        "worst64": 32.126126126126124
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-32-2500000.png",
+      "hashes": [
+        "a73de43a6c6b65d704feddc6a4b6541b5cb3e7254a2cc0fa26e0af97e6ea6690",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162"
+      ],
+      "before": {
+        "mae": 8.727223098790336,
+        "peak": 224,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 8.727223098790336,
+        "peak": 224,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-33-3000000.png",
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162"
+      ],
+      "before": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-34-3026400.png",
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162"
+      ],
+      "before": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-35-3036400.png",
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162"
+      ],
+      "before": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-36-3380000.png",
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162"
+      ],
+      "before": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-37-3390000.png",
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162"
+      ],
+      "before": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-38-3500000.png",
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162"
+      ],
+      "before": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-39-4000000.png",
+      "hashes": [
+        "d46dd9517a21a8e232e840c2ff2d60cda793793568fc008f86ea6feda9638302",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162",
+        "c18fce1cae28eb76694f6db2816eacf95c2e6e80900f83f476bf2ca828875162"
+      ],
+      "before": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.039390494425497,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-chaotic-4-800000.png",
+      "hashes": [
+        "5a0c38fdcf0e8c5bebbc139b9810a83d18c24cc23bd734198b568baf120731ac",
+        "ba9e0c19a91ec5f0f6857aa3ff1242af09daf357bc702a724224183963593721",
+        "10603947daca8597647c67ebf845517ca6ee46eeefbc7cc1ec3828944679ce38"
+      ],
+      "before": {
+        "mae": 1.5561570159610691,
+        "peak": 166,
+        "worst64": 17.136150234741784
+      },
+      "after": {
+        "mae": 1.5563359628585773,
+        "peak": 166,
+        "worst64": 17.136150234741784
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-5-847000.png",
+      "hashes": [
+        "21293df90c005f3c8391d4be9b2cec623e210e65067db7be817eb80ced0d8b8f",
+        "1d0617c16ba4bb3533adf467db0f3d72ab55fed8a161e0aa1beaf81a41a26d23",
+        "e883057f60b84a6a22255ebf1e049eb30d1be7f55ee0db6e35b8e5bd7203cbb0"
+      ],
+      "before": {
+        "mae": 3.254132214406187,
+        "peak": 158,
+        "worst64": 11.845648604269295
+      },
+      "after": {
+        "mae": 3.253901847052532,
+        "peak": 158,
+        "worst64": 11.845648604269295
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-6-857000.png",
+      "hashes": [
+        "b4b0d32566e199866007c654c7674c5768b62a3954fda57e6bd0663524e29355",
+        "208bbd7b94beded43b152c90c5ef7b0a4f36c5cc7291d07098eefa82f53b78b8",
+        "2099930936311dffa34e1c9da1fa168145b1556d13ccdb37f8c7e3956a3f7b2e"
+      ],
+      "before": {
+        "mae": 4.287983278471032,
+        "peak": 150,
+        "worst64": 13.468181818181819
+      },
+      "after": {
+        "mae": 4.288342073753291,
+        "peak": 150,
+        "worst64": 13.468181818181819
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-7-860000.png",
+      "hashes": [
+        "61ca9abcd75944cb2ee4f3a23711162fcde78b6a2aff95a74865986d4b0d9f72",
+        "4dc1d06c19790120eeb336ef587edada36fb16dfa9ae78d81039c0233d792591",
+        "a4d402135002671f23cd460fe0de627c946f6755112cc991207f60b3e068cc7e"
+      ],
+      "before": {
+        "mae": 4.225212805249912,
+        "peak": 145,
+        "worst64": 12.950358072916666
+      },
+      "after": {
+        "mae": 4.224937940749522,
+        "peak": 145,
+        "worst64": 12.944905598958334
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-8-900000.png",
+      "hashes": [
+        "48a868885524fe65bfeed56682a3f9399bfece16ca644916c88b9bbc759e2e10",
+        "f5a374945ea2cd977c2ad653f012f020b53657e2b8d2599c67e44ed2f9bb2795",
+        "7829e2b7c6dea319cab9caf3d3209644b049eed15d0dd12a50d571529ea38cea"
+      ],
+      "before": {
+        "mae": 6.398201263732679,
+        "peak": 133,
+        "worst64": 13.579086641058472
+      },
+      "after": {
+        "mae": 6.398281564458898,
+        "peak": 133,
+        "worst64": 13.579086641058472
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-chaotic-9-940000.png",
+      "hashes": [
+        "5b2b2ff60baed77a75a90c6e0d47536dccb4c7488d62d64061c95bde7e1d3a99",
+        "eb30cbd2ef9f8d305db25c58c563fe28352fae72f7f9273945aefea2132c0e1d",
+        "31db90ded66d7e11c90c9aa90f6437ca58a49db0eccf604ea300c60fdf8d70f1"
+      ],
+      "before": {
+        "mae": 6.159079331013777,
+        "peak": 162,
+        "worst64": 11.064667291471416
+      },
+      "after": {
+        "mae": 6.159393663490825,
+        "peak": 162,
+        "worst64": 11.064667291471416
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-0-0.png",
+      "hashes": [
+        "795a69250f77ce2a6025b8f03f0fe855092d2f94b56bd6146cd1c3050e193503",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05"
+      ],
+      "before": {
+        "mae": 2.3109131715528126,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 2.3109131715528126,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-1-700000.png",
+      "hashes": [
+        "0fa3879109773a2d8da4e2369a5b0a782044763ee5b6aa7c76ac4215aad78730",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05"
+      ],
+      "before": {
+        "mae": 1.8468733922641598,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 1.8468733922641598,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-10-1000000.png",
+      "hashes": [
+        "1b04f975a0d5a5c506678b856a79e37d925b8b0561bf0928ee7dcffed830067a",
+        "2668b13cd75e0eed9a30a0e8db37e3a5983a82c1b9e466617dc139229358b376",
+        "bfc24a03a6abd5c8643d3621941fe1e15e5b2075aa372ee9caae38dd38caf0e7"
+      ],
+      "before": {
+        "mae": 7.807492989053878,
+        "peak": 205,
+        "worst64": 21.58011540168664
+      },
+      "after": {
+        "mae": 7.807719148606211,
+        "peak": 205,
+        "worst64": 21.58011540168664
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-11-1020000.png",
+      "hashes": [
+        "0bcf3cfb729244119f7950ba0c6efc5d9eb4431abe69b899e74896bca1132cb1",
+        "7c7d774e86c5e9c3913c364623c43bf55cc3e52bc8f64794e342946d892fff60",
+        "65e37ea86fecfbdc3acaf7f181ce2dcbda17452c3c5174a30791a7e217a4a2bb"
+      ],
+      "before": {
+        "mae": 9.437589659238563,
+        "peak": 208,
+        "worst64": 27.3713298791019
+      },
+      "after": {
+        "mae": 9.437799959442104,
+        "peak": 208,
+        "worst64": 27.3713298791019
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-12-1100000.png",
+      "hashes": [
+        "01d85d7e2188cfb992172eb22e91130a738012b8911cd014c40576215ae11a09",
+        "59914cf5be6cca9cfef69154b871f2d78e8bc2b3c96c4d82dbd0a05fd4cc2612",
+        "187a0f75ede705fd4b2e73b32b485e408b43a837af84d2ab36f4c8b367fa5b74"
+      ],
+      "before": {
+        "mae": 8.153145309874269,
+        "peak": 210,
+        "worst64": 19.788120567375888
+      },
+      "after": {
+        "mae": 8.153442260060874,
+        "peak": 210,
+        "worst64": 19.788120567375888
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-13-1110000.png",
+      "hashes": [
+        "d2cffd81313cd0f0853e3092c7d965dbafadd758112b642b1faf9edde4ed635d",
+        "6f673cb3b77712844b3b6d69dc96b6d41247b52c5415aa53f787346f11ef01e5",
+        "677e5535bf2dbd862940c4c665833f18a6001aae62c5107fd2e5ef00cc327ec5"
+      ],
+      "before": {
+        "mae": 5.746711621711622,
+        "peak": 210,
+        "worst64": 19.152837465564737
+      },
+      "after": {
+        "mae": 5.7469561688311686,
+        "peak": 210,
+        "worst64": 19.152837465564737
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-14-1167000.png",
+      "hashes": [
+        "7081dbc26b365716e5c268c18f770e10c6f18d074629e1afb3291d5911561310",
+        "8462759a8148f60da308ed75f281a03a865a7f5b9cc3a2dcb698b1bc4ac292c3",
+        "d49de80932e5d43f79a5f05951fec09f357929577e7e7dbf60b54445a882d6f9"
+      ],
+      "before": {
+        "mae": 4.689420245595382,
+        "peak": 187,
+        "worst64": 27.70957095709571
+      },
+      "after": {
+        "mae": 4.689755799617695,
+        "peak": 187,
+        "worst64": 27.70957095709571
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-15-1177000.png",
+      "hashes": [
+        "7ade0363dbeb7df4ef91d795ad0a3be2dd9aceb5e13c172c6f8380de10ad19d0",
+        "e625fa424b9deb85b8b3a724e27e638e0d12a6473b7c957ac40232463a9fe8bf",
+        "016662645f8caf5a15b93267e940c2b3f2995a40c9426c313f75d2f8dbafc9b7"
+      ],
+      "before": {
+        "mae": 4.800383898579352,
+        "peak": 180,
+        "worst64": 16.333581626319056
+      },
+      "after": {
+        "mae": 4.800521536635903,
+        "peak": 180,
+        "worst64": 16.333581626319056
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-16-1180000.png",
+      "hashes": [
+        "372bbfb0dcc0cdaa9476caba5037207d17a6dc4aa881270593c62cc886750da5",
+        "784d63a26cc99290c1586b74aef27b0a9cc8bdddc709831593c5342d70399317",
+        "94a7ba7ef182197861862b85b0836135057aa31d37bdf8414be15d973574041f"
+      ],
+      "before": {
+        "mae": 4.858714738921075,
+        "peak": 178,
+        "worst64": 15.603121516164995
+      },
+      "after": {
+        "mae": 4.8583460194727675,
+        "peak": 178,
+        "worst64": 15.603121516164995
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-17-1190000.png",
+      "hashes": [
+        "4a726fdf1f284c7cd23c4b4a984cdd60b01ab660df6ed443d2d7a97d7c72610b",
+        "89f5a2a8e98df88386c8eb245d1a76db0550e287a8ee0a15b8c88624b54816ad",
+        "1db7f16cd254fa5844ee349ebb0ba9c17b1ef6f01ad588a20e9ee3f04fddac40"
+      ],
+      "before": {
+        "mae": 5.221181851278784,
+        "peak": 171,
+        "worst64": 14.180719921104536
+      },
+      "after": {
+        "mae": 5.2214624859682655,
+        "peak": 171,
+        "worst64": 14.180719921104536
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-18-1200000.png",
+      "hashes": [
+        "baa59992542e5f6fb52a4bbbe7643910484a44bc458d9205e67ce475c5688010",
+        "66c49025810e7e275d6a23dba909ae799a40bf3a477ddcf0d0f340d308508442",
+        "67c6443acc01fff3eac55f0d30ae406eb34ecd248cebcf78fb88b178eb91eeac"
+      ],
+      "before": {
+        "mae": 6.039767633806043,
+        "peak": 176,
+        "worst64": 13.454979786843072
+      },
+      "after": {
+        "mae": 6.0399966827395835,
+        "peak": 176,
+        "worst64": 13.454979786843072
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-19-1220000.png",
+      "hashes": [
+        "807bd99fffd5bb41b0a75456e7b5b6f6e44f1b7e246577a179d285c4a1875760",
+        "1a0d349e94812a9bfc383c1caa3edf230d81f92fbf501fd4698398b1556e8826",
+        "77b893b55d8af15c61ecdbcde8a67fc905db3078ada9bfd388eb60939ba7431c"
+      ],
+      "before": {
+        "mae": 7.478108815876443,
+        "peak": 181,
+        "worst64": 18.67863720073665
+      },
+      "after": {
+        "mae": 7.478343080411301,
+        "peak": 181,
+        "worst64": 18.67863720073665
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-2-720000.png",
+      "hashes": [
+        "9e2537a95d4dceb0ca857f5fa4a85e2e987974edd207ffbbc8a7d8ae6a1e8967",
+        "103ebcb16f09cf1dfd78acfc4a4c496f41fed3f50b11467554dd8c39bb923395",
+        "f5a3ec188736e7364ebf6b190a0755849b2f46849a5224665bd750c1e2f748a1"
+      ],
+      "before": {
+        "mae": 1.3831876551203195,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 1.3831996450966992,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-20-1300000.png",
+      "hashes": [
+        "200d5c37bae56b8de621571638695ad2439e4425725db52ad478d9b0705852a0",
+        "c4287b78cacf737f9e5a9024587f04f7ef71c5ff1c4d436f9465aded1289199f",
+        "c080bf5139b4e35bc21e57436d583b4727f182fa353313526e1338b043acecb5"
+      ],
+      "before": {
+        "mae": 19.45746541893963,
+        "peak": 169,
+        "worst64": 50.108108108108105
+      },
+      "after": {
+        "mae": 19.457539336418154,
+        "peak": 169,
+        "worst64": 50.108108108108105
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-21-1367000.png",
+      "hashes": [
+        "432086d91cc01bdc7bb56256ae5a4c345499f550ba4c0398391c1000a3341674",
+        "d667f97bd7fa011403db4a26881cd0dd6bcebd3e817620e6a7fd70ee7e640b62",
+        "a68888df4fd09da1603840f7ea6c9133005b702d4b9611476008d7f297587d51"
+      ],
+      "before": {
+        "mae": 11.35641538525649,
+        "peak": 175,
+        "worst64": 52.178231292517005
+      },
+      "after": {
+        "mae": 11.357007125890735,
+        "peak": 175,
+        "worst64": 52.178231292517005
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-22-1377000.png",
+      "hashes": [
+        "798ed6a543d5765f848d82a238eeedbbf496c486b6bcaf74739a4c0af6bd9da1",
+        "bef514898bb46c5485103d8e8cf52aa7e57a030088c2d7f0c421c5f5049b81f2",
+        "ce97868e804be6715fba76e2eac3250083f729f1d715abe9b37eae8e3e879d1b"
+      ],
+      "before": {
+        "mae": 10.748444551901999,
+        "peak": 176,
+        "worst64": 43.51337448559671
+      },
+      "after": {
+        "mae": 10.748315602836879,
+        "peak": 176,
+        "worst64": 43.51337448559671
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-23-1500000.png",
+      "hashes": [
+        "37830af6823c8e164f57db03d7859156ef9815ad869eabc58e03db03e0d843fb",
+        "f52e254ed59bb08640c3a77cb3141e8fd600f7be907b239650889d3a355d821c",
+        "e932c2a6e816f7f0c246df20896a9f9d7df825e3df67201893f4d3f0118fe35e"
+      ],
+      "before": {
+        "mae": 14.089984334056917,
+        "peak": 209,
+        "worst64": 34.8744896292667
+      },
+      "after": {
+        "mae": 14.086542041630663,
+        "peak": 209,
+        "worst64": 34.83757961783439
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-24-1800000.png",
+      "hashes": [
+        "8a2ba6bff5f1eede3cadb8e4a9d55ca3f2e11af71039814cd2a1c3ecc5f39848",
+        "b18309aec7e18c2c264e66ae33bd0db34619d1fa1dbd4a2be225cf44adb18da6",
+        "f5b24507aa1fce0ec0cc32cc6fc9de61656e80579ffa045dcb0f2cd1d263def3"
+      ],
+      "before": {
+        "mae": 7.670575476567438,
+        "peak": 220,
+        "worst64": 21.38707262290991
+      },
+      "after": {
+        "mae": 7.670320302033857,
+        "peak": 220,
+        "worst64": 21.386656684136096
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-25-2000000.png",
+      "hashes": [
+        "d1c94d4fdc3f9ab71b405b283238e8dab2f7ec0c538558c685cb00caaa369d40",
+        "4cf1270df86c0ce0428d8dcd2b87ff2cf89a3c0f79b160aebb35be1ca36841dc",
+        "6603282ae97c5d14d5b2da9fcf8fe3ccc2db668c130036508d2785043ad6eab5"
+      ],
+      "before": {
+        "mae": 3.779096284004154,
+        "peak": 206,
+        "worst64": 10.451208217563357
+      },
+      "after": {
+        "mae": 3.7809905495457414,
+        "peak": 206,
+        "worst64": 10.461901153489938
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-26-2010000.png",
+      "hashes": [
+        "db57af137046ce0e2a56e171caee9a29f9d07d4d2d874a4cf8fea09eab4d4b50",
+        "c174c5919e23f41623f79f63f370072f70dfac50e91eed9f41f6b2ac75aaed10",
+        "6128106611e43855e1d2b8c2b925788daed5c303d13d4375b012d5340464b09c"
+      ],
+      "before": {
+        "mae": 3.4307875844683604,
+        "peak": 206,
+        "worst64": 12.444905598958334
+      },
+      "after": {
+        "mae": 3.431900480147037,
+        "peak": 206,
+        "worst64": 12.447916666666666
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-27-2067000.png",
+      "hashes": [
+        "56a2e91b5ec0ed61d14f321b8efc165e9ac5fcec2265164b2de01016d66fac3f",
+        "57e6fa68b98665731cfa1ff8fdd352611c79ab341ff81f5c3213a68ad59cca59",
+        "febe004e33f39d9df07f2216ab1e8e1c52468576832aab383664be966af4a7b6"
+      ],
+      "before": {
+        "mae": 3.889173509135979,
+        "peak": 183,
+        "worst64": 9.17919921875
+      },
+      "after": {
+        "mae": 3.8903351568886375,
+        "peak": 183,
+        "worst64": 9.188639322916666
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-28-2077000.png",
+      "hashes": [
+        "7d16e1c8019ca4d86c2c2d790f2366a179d4201e11dffeb8bd3ddf96c2eb9c0d",
+        "211a629d2657fc3d000d2639c913aa819a8865e3b886198cd39771610adbdbd5",
+        "b79911a0b153ccf21f4031a76bb29428490ee52d6b891775bee12ed27c73a7ce"
+      ],
+      "before": {
+        "mae": 3.7935701368139645,
+        "peak": 176,
+        "worst64": 8.937662760416666
+      },
+      "after": {
+        "mae": 3.7937667086019813,
+        "peak": 176,
+        "worst64": 8.939046223958334
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-29-2090000.png",
+      "hashes": [
+        "163d7f5f7211c5de324bb1fe83f280b4f401133020f5f7e651aa0249622b3bf5",
+        "76058892aed44d29dea485b9e66bd1f0c3e0885fa149ae8dd60a98564021a92d",
+        "f302aba086138194cb3fa62363ec797eb0672c984ccd755c8d7e80b8748ec005"
+      ],
+      "before": {
+        "mae": 4.722215858470154,
+        "peak": 153,
+        "worst64": 11.404395604395605
+      },
+      "after": {
+        "mae": 4.721598574519537,
+        "peak": 153,
+        "worst64": 11.38941798941799
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-3-780000.png",
+      "hashes": [
+        "06b848bec2404f95a9fe02ade2d5d03d3ed2bafa4c05a652962a387de822ddde",
+        "6adaf14705d0d8ecbc09ba64913f150fef28d8e70d91c58d1928afc435e19552",
+        "6adaf14705d0d8ecbc09ba64913f150fef28d8e70d91c58d1928afc435e19552"
+      ],
+      "before": {
+        "mae": 1.546618012586599,
+        "peak": 167,
+        "worst64": 25.64957264957265
+      },
+      "after": {
+        "mae": 1.546618012586599,
+        "peak": 167,
+        "worst64": 25.64957264957265
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-30-2100000.png",
+      "hashes": [
+        "03b93fd9791996d299defe62d29eca6f962cd6fb90df9df2f2f47acea6fb50db",
+        "416235ba61912ef4abfc49bdf79f9515790efe9e481d26484ac089d88bfc2652",
+        "3fdf00a2010a8639fc63839ae0f5f9e5e2d6d9e3afcc610d143af9973de54020"
+      ],
+      "before": {
+        "mae": 6.506644945823446,
+        "peak": 159,
+        "worst64": 12.687744140625
+      },
+      "after": {
+        "mae": 6.50675480557962,
+        "peak": 159,
+        "worst64": 12.687744140625
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-31-2200000.png",
+      "hashes": [
+        "6aeed07fe4b955ae0284687af4182476c127e14bfe64af6fd3f68b0522774d37",
+        "9caabdcc9c8979746e624faaa35f10fe39b249b0c7a869c415d62d6294dea09e",
+        "57270074578e937098dcc2e8a55c7d6e474813060c006fbca7c683d764270aaf"
+      ],
+      "before": {
+        "mae": 14.568017740654478,
+        "peak": 190,
+        "worst64": 35.54040404040404
+      },
+      "after": {
+        "mae": 14.566487296870399,
+        "peak": 190,
+        "worst64": 35.54040404040404
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-32-2500000.png",
+      "hashes": [
+        "8cbd635b1fe857d6f52b9b9d5d68e532e33b91303efc27a6a55119e3cb852110",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5"
+      ],
+      "before": {
+        "mae": 4.513137946869476,
+        "peak": 213,
+        "worst64": 27.69333333333333
+      },
+      "after": {
+        "mae": 4.513137946869476,
+        "peak": 213,
+        "worst64": 27.69333333333333
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-33-3000000.png",
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5"
+      ],
+      "before": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-34-3026400.png",
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5"
+      ],
+      "before": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-35-3036400.png",
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5"
+      ],
+      "before": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-36-3380000.png",
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5"
+      ],
+      "before": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-37-3390000.png",
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5"
+      ],
+      "before": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-38-3500000.png",
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5"
+      ],
+      "before": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-39-4000000.png",
+      "hashes": [
+        "18857063da59f45f3acabe586b73577ab0269d2d03863ef66432b93254a47f88",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5",
+        "a9f9436e039604e533db819a7c89725b1c880780a03e9f40cf61906fdccda0b5"
+      ],
+      "before": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9170832311571375,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "overlap-normal-4-800000.png",
+      "hashes": [
+        "eb0ff20bbeebd765733a9e4342dc7f425cb983ccfb34a22221cdb9179f4ab21e",
+        "f39c75982b4517d0468cbef9b3e82ff183097e4f8b030a097580257db8a61f75",
+        "601b142f90fe8b27529fd657b78816b423d4e2fbec72e4da27c498df2d663ebc"
+      ],
+      "before": {
+        "mae": 1.665329321297225,
+        "peak": 162,
+        "worst64": 19.52777777777778
+      },
+      "after": {
+        "mae": 1.6655734398964088,
+        "peak": 162,
+        "worst64": 19.52777777777778
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-5-847000.png",
+      "hashes": [
+        "d0ed50d609617a91a548e34955102d4c61fb7dadd5449c0e57a7d3df4bd599c9",
+        "38d15a52a34a42841a5cb31ebf6fcfd21ca815a5cee7f0d22683afea1b6d4b1a",
+        "6232f86dd5a8d32864780f93385d9a00b8f032e4c6a0320d6e46af402872c8e5"
+      ],
+      "before": {
+        "mae": 3.3311153184794935,
+        "peak": 156,
+        "worst64": 17.17676767676768
+      },
+      "after": {
+        "mae": 3.331133611385505,
+        "peak": 156,
+        "worst64": 17.17676767676768
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-6-857000.png",
+      "hashes": [
+        "7d0b6e7dcbb6cac23b03dab08aba7a4be511d4bbf7455d692e5f896863d8631e",
+        "44ac2c764a4f1fcc275abca80e9116f4a5d5a16ca9a5270ec52279083966141f",
+        "c81364f5e704fd84db0f1aef3c78c7c73a7059ad8238026d9a1657d620359775"
+      ],
+      "before": {
+        "mae": 3.690528534722976,
+        "peak": 144,
+        "worst64": 14.317982456140351
+      },
+      "after": {
+        "mae": 3.6907140013751674,
+        "peak": 144,
+        "worst64": 14.317982456140351
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-7-860000.png",
+      "hashes": [
+        "9c983a671c3cead8f1585c5e5c67ae2852e2a9c89f46153cd278bde44df82017",
+        "d3985a444d09b2d79efb98a7f1e819435d5938783b4ae543abeada157ab665ef",
+        "8f32f81fe15d489d7b3daa6db804bcb2d9104edd7aa4dcc31006ad0f2b9fb109"
+      ],
+      "before": {
+        "mae": 3.5474029914351757,
+        "peak": 144,
+        "worst64": 12.123376623376624
+      },
+      "after": {
+        "mae": 3.5468378705131944,
+        "peak": 144,
+        "worst64": 12.123376623376624
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-8-900000.png",
+      "hashes": [
+        "24859621cee870591592915b36dca2753c953aac55d119e57a2ae70226ff9115",
+        "e7512997d0dce8b722efe387839b2ee7cf1c7f164206a906c1f7f58109d5ee89",
+        "a600e16509a33f43ca40bf075fea25940f9d382228847cc0ff87f046f137bae0"
+      ],
+      "before": {
+        "mae": 5.396417755289301,
+        "peak": 157,
+        "worst64": 13.5709992486852
+      },
+      "after": {
+        "mae": 5.396603391304809,
+        "peak": 157,
+        "worst64": 13.5709992486852
+      },
+      "changed": true
+    },
+    {
+      "file": "overlap-normal-9-940000.png",
+      "hashes": [
+        "1f642def43cd1d3962d31a175c592cb322c73543b38a45072ab9324f090586a2",
+        "665cf6bd04cff9230bd585cb50ed7ebeffe623d6373332511dbf15f8d74a9496",
+        "ce95947ef8ddfd3b457e45de2a3ea0fcee91d310c926300e79f4233cceeb1142"
+      ],
+      "before": {
+        "mae": 5.181976516519676,
+        "peak": 181,
+        "worst64": 16.083152566883587
+      },
+      "after": {
+        "mae": 5.182286278704142,
+        "peak": 181,
+        "worst64": 16.083152566883587
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-0-0.png",
+      "hashes": [
+        "795a69250f77ce2a6025b8f03f0fe855092d2f94b56bd6146cd1c3050e193503",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05"
+      ],
+      "before": {
+        "mae": 2.3109131715528126,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 2.3109131715528126,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-1-700000.png",
+      "hashes": [
+        "0fa3879109773a2d8da4e2369a5b0a782044763ee5b6aa7c76ac4215aad78730",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05"
+      ],
+      "before": {
+        "mae": 1.8468733922641598,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 1.8468733922641598,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-10-860000.png",
+      "hashes": [
+        "940e46ca320075b615aff68d2d4b7ddb078791e143a82eb0689ac47c37e4a2fe",
+        "bcc8bfe572f68a87b0436b869799e7c079217bb9ce49be8a531be75bb9e3c82e",
+        "bcc8bfe572f68a87b0436b869799e7c079217bb9ce49be8a531be75bb9e3c82e"
+      ],
+      "before": {
+        "mae": 5.608427416867173,
+        "peak": 155,
+        "worst64": 38.96666666666667
+      },
+      "after": {
+        "mae": 5.608427416867173,
+        "peak": 155,
+        "worst64": 38.96666666666667
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-11-900000.png",
+      "hashes": [
+        "b08ed0453f73fd689476e91a8a72e12ff1b7928c8014b0729111a4b209cf98bd",
+        "7d2bdc60199c002529c32d3f62fcd2ce6ead922a194b704de9ba90cdd7719b5f",
+        "603d451cbbc4407fa9c256f54e6789af8d61d5fbeeecacc7202bea4cf259b83c"
+      ],
+      "before": {
+        "mae": 7.096845792113017,
+        "peak": 146,
+        "worst64": 53.54545454545455
+      },
+      "after": {
+        "mae": 7.09510917286191,
+        "peak": 146,
+        "worst64": 53.54545454545455
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-12-927000.png",
+      "hashes": [
+        "d19f028d910f1cbe3acfde206330047719cf3430e6b1b7280fd7fcffdba1c762",
+        "1865fa0d3d2b60e2149b8025ac30ad5e145abc104c4770c45a9ad5bcac887af0",
+        "0c4467fb7048cf16fe31780b5eb721d142dee155c45c13a94586f2c8f162a629"
+      ],
+      "before": {
+        "mae": 8.991550992795382,
+        "peak": 155,
+        "worst64": 31.197860962566846
+      },
+      "after": {
+        "mae": 8.991220143302273,
+        "peak": 155,
+        "worst64": 31.197860962566846
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-13-937000.png",
+      "hashes": [
+        "3e7089c1fed5973452ae82544c33e2fd220cbfdea369dec20214e06027acf10e",
+        "54b264327dc6d064f38bf6d6036199080f155f171e5824e7cfbe02e849b33d06",
+        "54b264327dc6d064f38bf6d6036199080f155f171e5824e7cfbe02e849b33d06"
+      ],
+      "before": {
+        "mae": 8.285417157209011,
+        "peak": 141,
+        "worst64": 29.84606275902901
+      },
+      "after": {
+        "mae": 8.285417157209011,
+        "peak": 141,
+        "worst64": 29.84606275902901
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-14-940000.png",
+      "hashes": [
+        "50eb7f8bafd9a88007d044ea9f3884185cf888b045d0c48c79b9ec495848bac5",
+        "dc7ab7eb7452d5d128cf8345e7b04dd3f220719ed4855b8d8431dcbd4ce38b84",
+        "dc7ab7eb7452d5d128cf8345e7b04dd3f220719ed4855b8d8431dcbd4ce38b84"
+      ],
+      "before": {
+        "mae": 8.463305878170182,
+        "peak": 143,
+        "worst64": 28.65715795034337
+      },
+      "after": {
+        "mae": 8.463305878170182,
+        "peak": 143,
+        "worst64": 28.65715795034337
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-15-1000000.png",
+      "hashes": [
+        "096835136e1ab25946609300be244b5d40c30b505222e987d317e028c91609bb",
+        "590f7c94c8d630dc143521d323609044845511f710bdd247cdaee0fd3b463ab7",
+        "442548bdfbf908b95017131856a816a5b2a56f8ffec35262a5f5a2ec04c69269"
+      ],
+      "before": {
+        "mae": 9.392577059234707,
+        "peak": 157,
+        "worst64": 24.162272135416668
+      },
+      "after": {
+        "mae": 9.392730388509325,
+        "peak": 157,
+        "worst64": 24.16259765625
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-16-1007000.png",
+      "hashes": [
+        "c60d3f6d1efe9ff0fd1a717d89b6e7f5fc9a75ff83b2699bd30ae52fe59c88ac",
+        "ff3dfbfdff4c89bf96b6618dc4416ae76e30f1a1d7917571e7cf2b8030950e89",
+        "c86d4f355659c2280a9fc658c33abcb2a6f47b7a689eb1b0da4b6372bd04217b"
+      ],
+      "before": {
+        "mae": 8.9653615595519,
+        "peak": 172,
+        "worst64": 23.69677734375
+      },
+      "after": {
+        "mae": 8.965752602882167,
+        "peak": 172,
+        "worst64": 23.69677734375
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-17-1017000.png",
+      "hashes": [
+        "6045bf1dfed8d199bf97087b5592edbaf474af40fbd3c0d1a4a21711d1633eb1",
+        "9414b4cd3ac70bc7108fad3de222306274b353e9d3d06774457880bee03d24cc",
+        "9414b4cd3ac70bc7108fad3de222306274b353e9d3d06774457880bee03d24cc"
+      ],
+      "before": {
+        "mae": 10.632338552942063,
+        "peak": 163,
+        "worst64": 26.247884114583332
+      },
+      "after": {
+        "mae": 10.632338552942063,
+        "peak": 163,
+        "worst64": 26.247884114583332
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-18-1020000.png",
+      "hashes": [
+        "110002158179f3064a3e97d84f6cad62991d1a72719c450b484ed071b3c22ec2",
+        "e4b9e2ff192f352cbf9cec95c57abc2cdf8c08741642ffb9b195c09dcaf3015e",
+        "e4b9e2ff192f352cbf9cec95c57abc2cdf8c08741642ffb9b195c09dcaf3015e"
+      ],
+      "before": {
+        "mae": 11.031673414304993,
+        "peak": 163,
+        "worst64": 26.414876302083332
+      },
+      "after": {
+        "mae": 11.031673414304993,
+        "peak": 163,
+        "worst64": 26.414876302083332
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-19-1087000.png",
+      "hashes": [
+        "7ec2bd45d76eefaea2dbba9a1d4b84d4c864852b531919c019c8c5a9889cade1",
+        "5d58d9c781329808e99f6c17033833ae9fde06e2d2fa8c732d2012e3fdeb2381",
+        "efd988371ce8bcde0bbe64e81b76b7585fc2f73044d45e2ca7944b311af90142"
+      ],
+      "before": {
+        "mae": 10.52953041492339,
+        "peak": 181,
+        "worst64": 25.278360819590205
+      },
+      "after": {
+        "mae": 10.529240258707027,
+        "peak": 181,
+        "worst64": 25.278360819590205
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-2-720000.png",
+      "hashes": [
+        "5b167cd7d151e854033610669bed7ef1e290e8f541c5bee327915a69de1f07a4",
+        "edd08848991e8fff127dc6ea038aa43dfb5afde43162f2c7d59a5d03c9487a5c",
+        "c6563ed565a2aba44b7eccfbd4db286e9a8efe5e1d349c6dd6108e2fb3be66f9"
+      ],
+      "before": {
+        "mae": 1.4369165979247167,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 1.4373579936033807,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-20-1097000.png",
+      "hashes": [
+        "1758af01ad59a26a3d3d2c9818bddcc83fd1a332acb5ddc642868e0d83af77dc",
+        "cfdecb27842dc2bbbc144f66389ce749aca40763d07bbb7fdbd2cb85154c3475",
+        "cfdecb27842dc2bbbc144f66389ce749aca40763d07bbb7fdbd2cb85154c3475"
+      ],
+      "before": {
+        "mae": 10.866229523283637,
+        "peak": 160,
+        "worst64": 67.99507389162562
+      },
+      "after": {
+        "mae": 10.866229523283637,
+        "peak": 160,
+        "worst64": 67.99507389162562
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-21-1100000.png",
+      "hashes": [
+        "5b3378b95dd1a11934a90a0740434e7f6e75915e00702e03d05d3e98820f8dde",
+        "b2cd64fb8910b14f6394ed8302aa9c52501611beff3d391c11190bb827401256",
+        "b2cd64fb8910b14f6394ed8302aa9c52501611beff3d391c11190bb827401256"
+      ],
+      "before": {
+        "mae": 11.282178518528902,
+        "peak": 153,
+        "worst64": 68.20189701897019
+      },
+      "after": {
+        "mae": 11.282178518528902,
+        "peak": 153,
+        "worst64": 68.20189701897019
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-22-1167000.png",
+      "hashes": [
+        "1e6dee492b09615e42ea667eb0d0a4e0c6c76fd889a20b4500f87fd84f862082",
+        "1476044d1c57bfc92d90695ada5d8e9285a775337396b32629d004e870ba98f0",
+        "0affa95093c29a3f41b89f00dbecf38cd736b2e29b9c3cd94897ea160937440d"
+      ],
+      "before": {
+        "mae": 11.574096416173214,
+        "peak": 183,
+        "worst64": 45.166666666666664
+      },
+      "after": {
+        "mae": 11.574202733748434,
+        "peak": 183,
+        "worst64": 45.166666666666664
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-23-1177000.png",
+      "hashes": [
+        "dd9877b4590f9194547559281964f8815ffd7048454a31131d11ac8ae09ddd44",
+        "a988a14f981e6293c240cadcec5fd3bdfba95421670efb0f5054a97f5de72ea4",
+        "a988a14f981e6293c240cadcec5fd3bdfba95421670efb0f5054a97f5de72ea4"
+      ],
+      "before": {
+        "mae": 12.214978842543985,
+        "peak": 197,
+        "worst64": 25.818359375
+      },
+      "after": {
+        "mae": 12.214978842543985,
+        "peak": 197,
+        "worst64": 25.818359375
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-24-1180000.png",
+      "hashes": [
+        "003efb4105d22b44f6d73c1f5303ff4e43d8fdf42340ad49b2f4e6104287876d",
+        "15f6d0001d2e3ccc95d56796902b6c1e067e497d26dd1ca8a63fd57e7228c0cf",
+        "15f6d0001d2e3ccc95d56796902b6c1e067e497d26dd1ca8a63fd57e7228c0cf"
+      ],
+      "before": {
+        "mae": 12.507714447811587,
+        "peak": 197,
+        "worst64": 26.837646484375
+      },
+      "after": {
+        "mae": 12.507714447811587,
+        "peak": 197,
+        "worst64": 26.837646484375
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-25-1200000.png",
+      "hashes": [
+        "7912af17a218ee469073f6749683c5dcb5cc1a07ae4d2bee446f250feb3f8a7a",
+        "28413bf724beb3dfbf6141b2e0f40d064fc009a17a9ddaec3fd930d9ba097563",
+        "27b08782d09cfe47f6c0a6413c1bbd84dcc0594e6dc08ed89377cc607fc406eb"
+      ],
+      "before": {
+        "mae": 11.249209954137728,
+        "peak": 153,
+        "worst64": 20.91041961338991
+      },
+      "after": {
+        "mae": 11.249412417144216,
+        "peak": 153,
+        "worst64": 20.91041961338991
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-26-1247000.png",
+      "hashes": [
+        "071f43f4d6ade5212b00f0b8bb2cc6c9a6ee170ece2a4baa071ebd73cf945cee",
+        "81ad7f81b39cb5d0141f6485c594da9b14a3ebeb345bd3b8e0495c8f52da1f3f",
+        "b83b1b15e9e28625a3f65b39c73128730598759882135e11c616a67eab46b73c"
+      ],
+      "before": {
+        "mae": 11.900878149308383,
+        "peak": 183,
+        "worst64": 39.666666666666664
+      },
+      "after": {
+        "mae": 11.900454944822416,
+        "peak": 183,
+        "worst64": 39.666666666666664
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-27-1257000.png",
+      "hashes": [
+        "07ec9d4c000671817acd0bf479ffa735295532f80acb3dd2fa9a8428d1d5251b",
+        "9bcf09c76bab127f9556e8d3345599ae3f6caedd85721fa7f8dc36a6443033bd",
+        "9bcf09c76bab127f9556e8d3345599ae3f6caedd85721fa7f8dc36a6443033bd"
+      ],
+      "before": {
+        "mae": 11.002840989001715,
+        "peak": 162,
+        "worst64": 23.049356440660787
+      },
+      "after": {
+        "mae": 11.002840989001715,
+        "peak": 162,
+        "worst64": 23.049356440660787
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-28-1260000.png",
+      "hashes": [
+        "5abd7ab7365de5b2c063e6a8f901e57be950eadf2c792d79e674953ffd9f34e9",
+        "3daaf16274f55a0c2854cda9e46655cfe2ddc2e77e5aa2d14665c398be8523fb",
+        "3daaf16274f55a0c2854cda9e46655cfe2ddc2e77e5aa2d14665c398be8523fb"
+      ],
+      "before": {
+        "mae": 11.146365843883348,
+        "peak": 154,
+        "worst64": 21.351834909016976
+      },
+      "after": {
+        "mae": 11.146365843883348,
+        "peak": 154,
+        "worst64": 21.351834909016976
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-29-1300000.png",
+      "hashes": [
+        "09c90500ca766a321905bb02798da37d008b7de29917295f1c1dd628bd97f4b0",
+        "29252f92c560b51563c38b9ce0fd5f96e5deb41fcf19b0d460792ae3285ff585",
+        "177cdd7e6ed61b561a57d0fa8d788fe52eac39470eb39265b1bd50b0f94b2945"
+      ],
+      "before": {
+        "mae": 10.618983413590156,
+        "peak": 195,
+        "worst64": 20.312662760416668
+      },
+      "after": {
+        "mae": 10.618974852862493,
+        "peak": 195,
+        "worst64": 20.31005859375
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-3-767000.png",
+      "hashes": [
+        "f03b68ed266ebf32ac22b45c59c58004ac6e1101aaf727d781c100a09f2d6faf",
+        "22eac2919661d0f12a1229096e9db1d0c0a666f2b624b356fbfd2c4ed358f89a",
+        "01617c48c8a4eee5dac66a9c0c6ed82053dfe0eb03b21dec914ff2fd97c6cd55"
+      ],
+      "before": {
+        "mae": 1.4736683185023356,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 1.4738932997045642,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-30-1327000.png",
+      "hashes": [
+        "141d1e9fb616da80e9c2d4ba4b590cf86be5e9811700944dfbc9cafb067e60bb",
+        "b44d1064e303160130d420a2a30e7b70bbe0757c7f539687fe0aedd4d74c8e28",
+        "10556ca0f1227541b625220375b824fa81758ec792ccf318d617afa04af22ff7"
+      ],
+      "before": {
+        "mae": 11.053383302102853,
+        "peak": 183,
+        "worst64": 44.333333333333336
+      },
+      "after": {
+        "mae": 11.05383209568094,
+        "peak": 183,
+        "worst64": 44.333333333333336
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-31-1337000.png",
+      "hashes": [
+        "a2d471880f56fe7125da53a6178781f06b0aabd29bd83a3bdefcfb1e8f8be8e3",
+        "8020ac5ed8a70f535e36503aff8162c8d9c8faadfa4bca34686366488123af91",
+        "8020ac5ed8a70f535e36503aff8162c8d9c8faadfa4bca34686366488123af91"
+      ],
+      "before": {
+        "mae": 11.543017677474753,
+        "peak": 185,
+        "worst64": 28.72514619883041
+      },
+      "after": {
+        "mae": 11.543017677474753,
+        "peak": 185,
+        "worst64": 28.72514619883041
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-32-1500000.png",
+      "hashes": [
+        "b6f136da586565a2e0db0cd97c0dac4557db8bf49af64f93e3a44258b01fd1f4",
+        "d60393c6469641ed691b6a7616152112be49beeeb3f3301fb100c98916c90326",
+        "d60393c6469641ed691b6a7616152112be49beeeb3f3301fb100c98916c90326"
+      ],
+      "before": {
+        "mae": 10.136046715485968,
+        "peak": 197,
+        "worst64": 109.25
+      },
+      "after": {
+        "mae": 10.136046715485968,
+        "peak": 197,
+        "worst64": 109.25
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-33-1800000.png",
+      "hashes": [
+        "5c491722c9f13acd34cf858cd50bc62eff1833690a628d6b4a6e0aec65990916",
+        "5f4e6adcc78a86b32d2937f493e2551e3ed378f8f106d4c7827d329a77eac150",
+        "5f4e6adcc78a86b32d2937f493e2551e3ed378f8f106d4c7827d329a77eac150"
+      ],
+      "before": {
+        "mae": 2.193861095840205,
+        "peak": 169,
+        "worst64": 32.636752136752136
+      },
+      "after": {
+        "mae": 2.193861095840205,
+        "peak": 169,
+        "worst64": 32.636752136752136
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-34-2000000.png",
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb"
+      ],
+      "before": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-35-2200000.png",
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb"
+      ],
+      "before": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-36-2500000.png",
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb"
+      ],
+      "before": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-37-3000000.png",
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb"
+      ],
+      "before": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-38-3500000.png",
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb"
+      ],
+      "before": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-39-4000000.png",
+      "hashes": [
+        "0a109efc0d4347c9ca5191686ab9e7507f8647b4c93157c4889bb709d985b979",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb",
+        "dc14d3a1098cf374dd2fed15ce27c3278d15695ae1ab6d99fae4b57c6dc083fb"
+      ],
+      "before": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "after": {
+        "mae": 1.8431167720455726,
+        "peak": 168,
+        "worst64": 32.666666666666664
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-4-777000.png",
+      "hashes": [
+        "60cf2aaef6342cf2276c8fcf4d22908c6d1f026d330500c14a01c9a11dff9318",
+        "886bb2d5ee9f60b5c37379c1cbf1bf92efca87f42bc4c1a596dc7b435d6ab5b3",
+        "886bb2d5ee9f60b5c37379c1cbf1bf92efca87f42bc4c1a596dc7b435d6ab5b3"
+      ],
+      "before": {
+        "mae": 2.225313146588358,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 2.225313146588358,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-5-780000.png",
+      "hashes": [
+        "93f75e9e8a66635d9e79746f490e40d007c94c5c30ce04e5eeeea6860f01f56e",
+        "623181426ac583b450f7d7bd8a4975c46aae5eaf075188b837ee128675d85083",
+        "623181426ac583b450f7d7bd8a4975c46aae5eaf075188b837ee128675d85083"
+      ],
+      "before": {
+        "mae": 2.4876257326868805,
+        "peak": 167,
+        "worst64": 25.64957264957265
+      },
+      "after": {
+        "mae": 2.4876257326868805,
+        "peak": 167,
+        "worst64": 25.64957264957265
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-6-780000.png",
+      "hashes": [
+        "93f75e9e8a66635d9e79746f490e40d007c94c5c30ce04e5eeeea6860f01f56e",
+        "880687cc00ba383a28c2996b33da7c718455d63c7875f967bc1d3231978f878e",
+        "880687cc00ba383a28c2996b33da7c718455d63c7875f967bc1d3231978f878e"
+      ],
+      "before": {
+        "mae": 2.389729571996022,
+        "peak": 167,
+        "worst64": 19.144654088050313
+      },
+      "after": {
+        "mae": 2.389729571996022,
+        "peak": 167,
+        "worst64": 19.144654088050313
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-calm-7-800000.png",
+      "hashes": [
+        "e6e1048fd8ad629c36ed30b1eec52670fe5c86502e933eb16be8682c6389f4d1",
+        "c850dcf70de50a30f083e248df95bb6694ed29eacbd4f3929f7a69f80eb0fe8b",
+        "90b3cf5641edacb66417690ecc86bf289aea74ad2b59d091db31ab5465e429a6"
+      ],
+      "before": {
+        "mae": 2.8960499176524985,
+        "peak": 172,
+        "worst64": 20.264227642276424
+      },
+      "after": {
+        "mae": 2.8962109758568557,
+        "peak": 172,
+        "worst64": 20.264227642276424
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-8-847000.png",
+      "hashes": [
+        "5b64f58cd8f5f8f156c130788ec1ad4f95f9fdcaebcdc16d5337a38793b45ed5",
+        "163ebb34f1feb2d218bec320bfcfdc17148a6f0a193b891e3b29a2e00b7d47a9",
+        "01f9979e5ba830d9487cafdaa6b28c215d74e5a0cf90614cc4eb04cb51d91c03"
+      ],
+      "before": {
+        "mae": 5.320814830064014,
+        "peak": 150,
+        "worst64": 24.626356589147285
+      },
+      "after": {
+        "mae": 5.321197149271143,
+        "peak": 150,
+        "worst64": 24.626356589147285
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-calm-9-857000.png",
+      "hashes": [
+        "a52bbd5005a0c97e9daf208e25b12e106fdb52f069254c0abbcd871115a9b10b",
+        "f7b15509c509a206bda7fdc1ae47b1bee085d20a80bb4c32a72ddf2221a8b078",
+        "f7b15509c509a206bda7fdc1ae47b1bee085d20a80bb4c32a72ddf2221a8b078"
+      ],
+      "before": {
+        "mae": 5.550543481012338,
+        "peak": 155,
+        "worst64": 28.833333333333332
+      },
+      "after": {
+        "mae": 5.550543481012338,
+        "peak": 155,
+        "worst64": 28.833333333333332
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-0-0.png",
+      "hashes": [
+        "3b2d5168e8ebe65af69e7a6d67bcb0e0c431431e163c008b1b5b19627fc10c5d",
+        "9bf88c63ace5c516ecdf1a6276f4a5ef4183fafcf87046f47c9b906883853d75",
+        "9bf88c63ace5c516ecdf1a6276f4a5ef4183fafcf87046f47c9b906883853d75"
+      ],
+      "before": {
+        "mae": 2.3835029069767444,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "after": {
+        "mae": 2.3835029069767444,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-1-700000.png",
+      "hashes": [
+        "3b2d5168e8ebe65af69e7a6d67bcb0e0c431431e163c008b1b5b19627fc10c5d",
+        "9bf88c63ace5c516ecdf1a6276f4a5ef4183fafcf87046f47c9b906883853d75",
+        "9bf88c63ace5c516ecdf1a6276f4a5ef4183fafcf87046f47c9b906883853d75"
+      ],
+      "before": {
+        "mae": 2.3835029069767444,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "after": {
+        "mae": 2.3835029069767444,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-10-860000.png",
+      "hashes": [
+        "c624cf6b95425d9f00a3ec6745d1c27c31a74f0ef2d788ebf1b527a652b74e5b",
+        "3018b14a66dc7976b6bd26a392c0d582eadac392118ba3ee25e1be6e81ff0d95",
+        "3018b14a66dc7976b6bd26a392c0d582eadac392118ba3ee25e1be6e81ff0d95"
+      ],
+      "before": {
+        "mae": 6.299475062506666,
+        "peak": 163,
+        "worst64": 17.220329358319137
+      },
+      "after": {
+        "mae": 6.299475062506666,
+        "peak": 163,
+        "worst64": 17.220329358319137
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-11-900000.png",
+      "hashes": [
+        "362c57c6d5b32ee4bb96d0d075ee451ef29d030293eb1403a5dab88a2e95b6cb",
+        "3655448b578ab4a99d341a5aa2af59a878d3fa08ea5a1e9ba4f1d7f2a64cb055",
+        "db464f0775e694ea17e3f60f0899ac8d1a75248c4b7938c594068fbb5ba3856d"
+      ],
+      "before": {
+        "mae": 7.654842116046873,
+        "peak": 166,
+        "worst64": 38.595238095238095
+      },
+      "after": {
+        "mae": 7.653482745848995,
+        "peak": 166,
+        "worst64": 38.595238095238095
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-12-927000.png",
+      "hashes": [
+        "f624b7be7dbcb008a1079629682fbcd3ded4e795069fd65e9fe54856e9c4afac",
+        "4768f4a67ffdc9707c8ef928dccfb1a985cab8894ef05d2304c1eaa15af35796",
+        "6fa93e8c7f8c679414d4dc34c1e8fcac8e0a5393906a84226d993e39ba5d1f8f"
+      ],
+      "before": {
+        "mae": 8.881632004218428,
+        "peak": 160,
+        "worst64": 37.013084112149535
+      },
+      "after": {
+        "mae": 8.881368352486856,
+        "peak": 160,
+        "worst64": 37.013084112149535
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-13-937000.png",
+      "hashes": [
+        "05bca9bb5a337d71030847ff5a77345b598efe15561c41153970302303957c16",
+        "23aa15115ee5225268502fac91efe6a756a08e16858ebdbf4903ca1c6eedc414",
+        "23aa15115ee5225268502fac91efe6a756a08e16858ebdbf4903ca1c6eedc414"
+      ],
+      "before": {
+        "mae": 8.278037503969749,
+        "peak": 151,
+        "worst64": 43.58243080625752
+      },
+      "after": {
+        "mae": 8.278037503969749,
+        "peak": 151,
+        "worst64": 43.58243080625752
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-14-940000.png",
+      "hashes": [
+        "ba91b2bd25d80ec550ee8ce6e4513fd19c53775346837a2c33c7de689978c2dd",
+        "defe89d8223310cd520d503021c3d9a3771cc9db8f2d9afdadf5b569d25b28c4",
+        "defe89d8223310cd520d503021c3d9a3771cc9db8f2d9afdadf5b569d25b28c4"
+      ],
+      "before": {
+        "mae": 8.81102447720055,
+        "peak": 145,
+        "worst64": 40.048632218844986
+      },
+      "after": {
+        "mae": 8.81102447720055,
+        "peak": 145,
+        "worst64": 40.048632218844986
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-15-1000000.png",
+      "hashes": [
+        "69f97adaa88f029b9a6046f34d36267ab9ffd8dff0fcbb7c4694bf48ad3c3156",
+        "dbde3207bede91e1dc4553c2565a586a5a14c25b7013c8239076432e361ad85f",
+        "3ab4a22515b13c2ff1b5bc30b14e088eb3bd6169c5e330b70c85986a266a5a0f"
+      ],
+      "before": {
+        "mae": 10.386321162983768,
+        "peak": 162,
+        "worst64": 32.19748305905131
+      },
+      "after": {
+        "mae": 10.38627876989384,
+        "peak": 162,
+        "worst64": 32.19748305905131
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-16-1007000.png",
+      "hashes": [
+        "0421bfef8af9d6cbd9d4fff236808074e6bb11c9e2144e5bb56b76a11a0ddb3e",
+        "57572e3434079b0ae26378cdd25dd508e15bf13a7be55c42ff1ccc14ee2af0b1",
+        "83bc8307a21d518f22b145188fecb55f8c997715ea522566bd124741e55f9f03"
+      ],
+      "before": {
+        "mae": 10.303520278598953,
+        "peak": 162,
+        "worst64": 32.04432132963989
+      },
+      "after": {
+        "mae": 10.303838152657251,
+        "peak": 162,
+        "worst64": 32.04432132963989
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-17-1017000.png",
+      "hashes": [
+        "1cd91ef3cc5d97c6ad69073c56e9ea9d2d5bccd1ceb29594de9ea2f6fb1ca8ef",
+        "35c4cb3dd8f5762cc351b2c83e9f637d47ff69537d768f94140e7b40ed2ec7e7",
+        "35c4cb3dd8f5762cc351b2c83e9f637d47ff69537d768f94140e7b40ed2ec7e7"
+      ],
+      "before": {
+        "mae": 11.050903777316934,
+        "peak": 162,
+        "worst64": 22.907470703125
+      },
+      "after": {
+        "mae": 11.050903777316934,
+        "peak": 162,
+        "worst64": 22.907470703125
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-18-1020000.png",
+      "hashes": [
+        "fa91826b7204e331d25d772604e65c4b9f3bf415299f0b7d8f8a8becf02046fd",
+        "27a79fd129c60fd426ddfcd09cc8ccbb47e06f9fc8a6f2dc48f6850a2780b976",
+        "27a79fd129c60fd426ddfcd09cc8ccbb47e06f9fc8a6f2dc48f6850a2780b976"
+      ],
+      "before": {
+        "mae": 11.544883682756549,
+        "peak": 163,
+        "worst64": 23.268961588541668
+      },
+      "after": {
+        "mae": 11.544883682756549,
+        "peak": 163,
+        "worst64": 23.268961588541668
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-19-1087000.png",
+      "hashes": [
+        "9433c894b88f8a26869bfd1c8ec1825999ee57a2f8717d2c649001d39add039b",
+        "95f8c00ba9cb832efe0929ad4103ff9e6afb5b1342de9b068928e16892cd6221",
+        "3ef208f7050267136d05ba13cb2bc4a8d63f51ab3bac7c167d22af1717589dd5"
+      ],
+      "before": {
+        "mae": 11.34020535453382,
+        "peak": 136,
+        "worst64": 43.76881720430107
+      },
+      "after": {
+        "mae": 11.3400441340951,
+        "peak": 136,
+        "worst64": 43.76881720430107
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-2-720000.png",
+      "hashes": [
+        "deed5d8f1b8b554f31b5441c4828ad258af53055dc42725f90008d26c73398ce",
+        "9ac7cda653c338cdd5658ff2fdf3ffa828a05bafb059ad2bb4c298a0dd4667d6",
+        "c029402699095dc479193af9285b0401ac5d9ad2900e054747ac79f9db031737"
+      ],
+      "before": {
+        "mae": 1.1433325073453928,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "after": {
+        "mae": 1.1440640966641886,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-20-1097000.png",
+      "hashes": [
+        "b93780a127e39a9ff21f150f261a7b337b699ca8b30360697193cbaddd90ad60",
+        "0b8a81c682ef8be3d5f77dde1a60a339d04010f266f48ed756f364a5485b2f15",
+        "0b8a81c682ef8be3d5f77dde1a60a339d04010f266f48ed756f364a5485b2f15"
+      ],
+      "before": {
+        "mae": 11.854541192473661,
+        "peak": 161,
+        "worst64": 50.812462731067384
+      },
+      "after": {
+        "mae": 11.854541192473661,
+        "peak": 161,
+        "worst64": 50.812462731067384
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-21-1100000.png",
+      "hashes": [
+        "2dc35e3f8308aece5b6c1df4c5d7e6a0aec5fef92d90a3bc282621c4cff45257",
+        "015c57009fa02fcc0fe2b5c6ad3491c0db935053279443adbea6bfa5f0e437f4",
+        "015c57009fa02fcc0fe2b5c6ad3491c0db935053279443adbea6bfa5f0e437f4"
+      ],
+      "before": {
+        "mae": 12.32734442141449,
+        "peak": 161,
+        "worst64": 54.1958174904943
+      },
+      "after": {
+        "mae": 12.32734442141449,
+        "peak": 161,
+        "worst64": 54.1958174904943
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-22-1167000.png",
+      "hashes": [
+        "cb2f9fd0dca29ef3c8c2370cc46ed3a610a0fc9fda7f7ee5a2c8f00378c0eac2",
+        "1ee2182cd48360fb132bec9a25ba7b2deab2ca4410b3fe079612ec039c27b3d7",
+        "3a9f3694c8de921133640379ce6c03a4b210890a494c033a453af19e3eaec5a6"
+      ],
+      "before": {
+        "mae": 13.132934550238447,
+        "peak": 166,
+        "worst64": 46.29557185547406
+      },
+      "after": {
+        "mae": 13.132728991942114,
+        "peak": 166,
+        "worst64": 46.29557185547406
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-23-1177000.png",
+      "hashes": [
+        "435a1dbeabcbd0f1c5bf1e8a96e503f3d343e25c99a519f715c749e3bd9acfae",
+        "95d1728f972b61267c38079d075f4c68fd440591af2f864fc243e3f22ca39476",
+        "95d1728f972b61267c38079d075f4c68fd440591af2f864fc243e3f22ca39476"
+      ],
+      "before": {
+        "mae": 12.960564586524367,
+        "peak": 177,
+        "worst64": 37.65611979166667
+      },
+      "after": {
+        "mae": 12.960564586524367,
+        "peak": 177,
+        "worst64": 37.65611979166667
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-24-1180000.png",
+      "hashes": [
+        "acf0172123603c35d32436cac51faa4f4e535b1dcec7fa0f696d3232b4ea4c68",
+        "075fb4404e5ef11dbf2a55dde276874cf92e06eb93c0f45f1c230abc627bbd64",
+        "075fb4404e5ef11dbf2a55dde276874cf92e06eb93c0f45f1c230abc627bbd64"
+      ],
+      "before": {
+        "mae": 13.020345770592701,
+        "peak": 148,
+        "worst64": 36.448249619482496
+      },
+      "after": {
+        "mae": 13.020345770592701,
+        "peak": 148,
+        "worst64": 36.448249619482496
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-25-1200000.png",
+      "hashes": [
+        "33e469f381c8de6c83dc0d35da1305ffca863b8a11c4d424ff6cc591b2bb6a8d",
+        "f06a97cf608d44ae94add168beb38408c27932100dc75d862945fb7d4c75970d",
+        "1664d86afcc2f3fa077b97aaa1b216323ce5767ae9cd1cae39fd820671fe7ce7"
+      ],
+      "before": {
+        "mae": 14.178464086364473,
+        "peak": 154,
+        "worst64": 33.56658567626982
+      },
+      "after": {
+        "mae": 14.179445500828068,
+        "peak": 154,
+        "worst64": 33.56658567626982
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-26-1247000.png",
+      "hashes": [
+        "3267b6158848d1003cb119fbe2310b9c01dd36e52f3911301baffd63ecab3ae7",
+        "c8236a4925f0067d87b260420cecea9332f17ccfebf33f6b333e2ef82a6a6ceb",
+        "7360dd10d142aa4ded76fff7e58919a23523c4cd526ff598d72ff6db86b37e82"
+      ],
+      "before": {
+        "mae": 12.712856667498544,
+        "peak": 164,
+        "worst64": 65.09815546772069
+      },
+      "after": {
+        "mae": 12.712860133654992,
+        "peak": 164,
+        "worst64": 65.09815546772069
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-27-1257000.png",
+      "hashes": [
+        "1adb596b092388e2e884e3520a5e6aa105fe7211c1edb73c2017213df95a6e3e",
+        "1d5d2b10d83d543009e932da7ce90632b40dab5b3efac1ccdecbd993e1164c25",
+        "1d5d2b10d83d543009e932da7ce90632b40dab5b3efac1ccdecbd993e1164c25"
+      ],
+      "before": {
+        "mae": 12.474258865248228,
+        "peak": 150,
+        "worst64": 51.98487140695915
+      },
+      "after": {
+        "mae": 12.474258865248228,
+        "peak": 150,
+        "worst64": 51.98487140695915
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-28-1260000.png",
+      "hashes": [
+        "f0af318f43a9148df2bb3cc3e3846fb07b423780793900eb192a534e2ff81b76",
+        "5d9bc183bf2f421ce65b21465941f72a40df6600b43c1a73c7661a42108cc78d",
+        "5d9bc183bf2f421ce65b21465941f72a40df6600b43c1a73c7661a42108cc78d"
+      ],
+      "before": {
+        "mae": 12.832200750719831,
+        "peak": 146,
+        "worst64": 48.12159624413145
+      },
+      "after": {
+        "mae": 12.832200750719831,
+        "peak": 146,
+        "worst64": 48.12159624413145
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-29-1300000.png",
+      "hashes": [
+        "da5699116e8a6b9e428bbdd19f08950ddae3cf1c0cbf42ebfc9455f37cd92e72",
+        "e9059d528e843b430aebf1c88abb5250aec33fa137ad0d2c07ef47fb1d880096",
+        "87bce8b01aaed58251a45c22a4dc534fd455cdc1602946a2c6e006edf3424970"
+      ],
+      "before": {
+        "mae": 13.155221002669832,
+        "peak": 169,
+        "worst64": 30.389567057291668
+      },
+      "after": {
+        "mae": 13.154288680764504,
+        "peak": 169,
+        "worst64": 30.389567057291668
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-3-767000.png",
+      "hashes": [
+        "cfcee0560c51445141b7e00745cce7851b1eb983edd18c8597ee7e2906550ef1",
+        "7802dc97ecd67a101f6809e40aadb5178b9494ad0d7549d8a516d05cbf58b63d",
+        "cddaa49bcb5c64367bfe8ea483daa37be66573b90f0ee045bdb039a4da98fda7"
+      ],
+      "before": {
+        "mae": 1.268210208059832,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "after": {
+        "mae": 1.268161585621903,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-30-1327000.png",
+      "hashes": [
+        "071b9c8d6fe9ec14419032e6d603f05034b90622e3f93855bac8803b1c758cb9",
+        "f67b755c4c31cdf88efa565208352545e5a4fa9b180e149933adbee1e05d7c08",
+        "ecc5c455e9a670ed46ceeb54d70421a8d6cfc6f343b333400fde200a8c50d920"
+      ],
+      "before": {
+        "mae": 12.324942620327047,
+        "peak": 139,
+        "worst64": 22.984375
+      },
+      "after": {
+        "mae": 12.324717869085807,
+        "peak": 139,
+        "worst64": 22.984375
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-31-1337000.png",
+      "hashes": [
+        "470c8c359fd69d2683c8250c8d1492d14b650ff4ca6d68cd685ffce4e07c96ed",
+        "5fcb3ecbaac93421c091c238091bcb88275a929326118b1b9d6ddb8afae3b6c6",
+        "5fcb3ecbaac93421c091c238091bcb88275a929326118b1b9d6ddb8afae3b6c6"
+      ],
+      "before": {
+        "mae": 11.388150930864864,
+        "peak": 161,
+        "worst64": 24.896911898274297
+      },
+      "after": {
+        "mae": 11.388150930864864,
+        "peak": 161,
+        "worst64": 24.896911898274297
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-32-1500000.png",
+      "hashes": [
+        "18596fafb352eafcc2c08bf81903c1c4f63a6661b78712a9c39cec4958232572",
+        "8f4b6b06b55d26d49560ab56eb256db155a340facb783276aec506e80ce3740e",
+        "8f4b6b06b55d26d49560ab56eb256db155a340facb783276aec506e80ce3740e"
+      ],
+      "before": {
+        "mae": 13.308944695817114,
+        "peak": 205,
+        "worst64": 102.71428571428571
+      },
+      "after": {
+        "mae": 13.308944695817114,
+        "peak": 205,
+        "worst64": 102.71428571428571
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-33-1800000.png",
+      "hashes": [
+        "a8a7318f363d7b24617be506541d68709f9b1133cca26ffe9733a325f6ca8b20",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba"
+      ],
+      "before": {
+        "mae": 12.191673894189073,
+        "peak": 224,
+        "worst64": 78.72055888223552
+      },
+      "after": {
+        "mae": 12.191673894189073,
+        "peak": 224,
+        "worst64": 78.72055888223552
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-34-2000000.png",
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba"
+      ],
+      "before": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-35-2200000.png",
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba"
+      ],
+      "before": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-36-2500000.png",
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba"
+      ],
+      "before": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-37-3000000.png",
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba"
+      ],
+      "before": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-38-3500000.png",
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba"
+      ],
+      "before": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-39-4000000.png",
+      "hashes": [
+        "7dd3af42bf34abdaf2d878b5e5bbee7236af803397feabee34b1a29251eba712",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba",
+        "2e71d030d5c4fc8b87feaea6c6d1d565e195dbc64caf9900b1649050705df7ba"
+      ],
+      "before": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "after": {
+        "mae": 2.0373513531418728,
+        "peak": 168,
+        "worst64": 16.96511627906977
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-4-777000.png",
+      "hashes": [
+        "c394207b7df7e811bbc648ed4f43f0d82641d34eda96433aa9ff600afa7e4bd1",
+        "a1a41a44f12b051cae4ba9626567aeb0c0ed92425ad2fd42f990737806b1beba",
+        "a1a41a44f12b051cae4ba9626567aeb0c0ed92425ad2fd42f990737806b1beba"
+      ],
+      "before": {
+        "mae": 2.4226519574915173,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "after": {
+        "mae": 2.4226519574915173,
+        "peak": 168,
+        "worst64": 18.517156862745097
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-5-780000.png",
+      "hashes": [
+        "cfdada3322446a706c921abcd8ffeb9babefa4c525d2bf8b9b0fdecc46e2a791",
+        "51e0782c6fc26d0536dfa82e32aac3dc1345662df43e7d39bebe3ede5bbd308f",
+        "51e0782c6fc26d0536dfa82e32aac3dc1345662df43e7d39bebe3ede5bbd308f"
+      ],
+      "before": {
+        "mae": 2.297806549208044,
+        "peak": 167,
+        "worst64": 18.529411764705884
+      },
+      "after": {
+        "mae": 2.297806549208044,
+        "peak": 167,
+        "worst64": 18.529411764705884
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-6-780000.png",
+      "hashes": [
+        "cfdada3322446a706c921abcd8ffeb9babefa4c525d2bf8b9b0fdecc46e2a791",
+        "3c67cc226c79f981c4b3bf03d2fc54c2d1a8b6724a0bfcdabce1910ecf649208",
+        "3c67cc226c79f981c4b3bf03d2fc54c2d1a8b6724a0bfcdabce1910ecf649208"
+      ],
+      "before": {
+        "mae": 2.228401594524994,
+        "peak": 167,
+        "worst64": 14.237037037037037
+      },
+      "after": {
+        "mae": 2.228401594524994,
+        "peak": 167,
+        "worst64": 14.237037037037037
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-chaotic-7-800000.png",
+      "hashes": [
+        "342479dcf208f7dad31c7fd4c2152357c07920f2ecb32040bf18959f2874ce03",
+        "7c538d074b818c3b711276ee9f62e6e3d4cd90f5a05d9210f37eda3c7aec389f",
+        "a94330381235a3821ba823a2cb9d6e66c448eba7dc8dff99520f9ffc4d0ed5e4"
+      ],
+      "before": {
+        "mae": 3.4914941476991115,
+        "peak": 166,
+        "worst64": 17.136150234741784
+      },
+      "after": {
+        "mae": 3.491612337489039,
+        "peak": 166,
+        "worst64": 17.136150234741784
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-8-847000.png",
+      "hashes": [
+        "f69a8253d6ba0cee34569a0af3e90248b672f4b3b65aed5a9845b3cffc7f5c16",
+        "a35f4baab3e29a4a807896f7b963b260036d13c58c26543725ab6d6cce61ec0a",
+        "d2f948925e5b48e58c44fe18f47262a8d594cf15a556389db848f333f5d238cf"
+      ],
+      "before": {
+        "mae": 5.737656854263256,
+        "peak": 158,
+        "worst64": 15.072539682539682
+      },
+      "after": {
+        "mae": 5.737191005420114,
+        "peak": 158,
+        "worst64": 15.072539682539682
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-chaotic-9-857000.png",
+      "hashes": [
+        "d3e4a5099732a41a7ca5107dfd35da97be121697847989d58ade6011610a9e13",
+        "5f501ebd7d0977ac69456cb217725277ef89e7e5efcf46fba6ce06af04161ebd",
+        "5f501ebd7d0977ac69456cb217725277ef89e7e5efcf46fba6ce06af04161ebd"
+      ],
+      "before": {
+        "mae": 5.6092499556255255,
+        "peak": 165,
+        "worst64": 13.55144927536232
+      },
+      "after": {
+        "mae": 5.6092499556255255,
+        "peak": 165,
+        "worst64": 13.55144927536232
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-0-0.png",
+      "hashes": [
+        "795a69250f77ce2a6025b8f03f0fe855092d2f94b56bd6146cd1c3050e193503",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05"
+      ],
+      "before": {
+        "mae": 2.3109131715528126,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 2.3109131715528126,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-1-700000.png",
+      "hashes": [
+        "0fa3879109773a2d8da4e2369a5b0a782044763ee5b6aa7c76ac4215aad78730",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05",
+        "ea2bdffe2cfe11640482f1d72d67f63226f0e65f983876d292e750b116430a05"
+      ],
+      "before": {
+        "mae": 1.8468733922641598,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 1.8468733922641598,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-10-860000.png",
+      "hashes": [
+        "f55451055647b5f532a3ec40dedbff12665e1099d9a15145f6e3588674519e9a",
+        "104bd2559b10a4c7b51fc9a941e5c08832be04c9deb25aeffd367103943d86bf",
+        "104bd2559b10a4c7b51fc9a941e5c08832be04c9deb25aeffd367103943d86bf"
+      ],
+      "before": {
+        "mae": 7.07969007969008,
+        "peak": 164,
+        "worst64": 15.282465589467385
+      },
+      "after": {
+        "mae": 7.07969007969008,
+        "peak": 164,
+        "worst64": 15.282465589467385
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-11-900000.png",
+      "hashes": [
+        "8b73555379580e81e6c6245d86b0828d62cd3e2ac6830ee2b4479a0af0dd5f73",
+        "7104cdac2edd55f4722a9a00a612329db92d77cc48e068fc243337c7f19d70c8",
+        "6e4182718818e912c50623dd09e812a9bd6e7b903284624d3756e891fa210224"
+      ],
+      "before": {
+        "mae": 7.91061553232792,
+        "peak": 157,
+        "worst64": 25.398639455782313
+      },
+      "after": {
+        "mae": 7.9112737884105,
+        "peak": 157,
+        "worst64": 25.398639455782313
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-12-927000.png",
+      "hashes": [
+        "2f02dbb341455a1434f2929f5486e23e6a002d0b9d0fab0f9270e42f5ab7e571",
+        "c3d30bac609a599d92b8b257f0223a3598e47343f7d35d4776c3795134ae4fe3",
+        "aaee31c4d0981be8aa3f78a828e65367eaf5867c126cb9b242f40f707361938c"
+      ],
+      "before": {
+        "mae": 8.547252035016353,
+        "peak": 162,
+        "worst64": 53.52624113475177
+      },
+      "after": {
+        "mae": 8.547350108093587,
+        "peak": 162,
+        "worst64": 53.52624113475177
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-13-937000.png",
+      "hashes": [
+        "e1cb6a10d032efda4c194fec63e3cb4180559a7fbec500b6ca2795f5fb709195",
+        "8d8cb732af56731c5caba59597f836e879f0599d50d8f7db5bd5997e634b6b38",
+        "8d8cb732af56731c5caba59597f836e879f0599d50d8f7db5bd5997e634b6b38"
+      ],
+      "before": {
+        "mae": 8.868982865356658,
+        "peak": 165,
+        "worst64": 30.022332506203472
+      },
+      "after": {
+        "mae": 8.868982865356658,
+        "peak": 165,
+        "worst64": 30.022332506203472
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-14-940000.png",
+      "hashes": [
+        "f659fda3bb3e7750dc2acf52b44c0d757e326a88a24e1400312665209748171c",
+        "203ca7a7e9b91325609311447e31cbf50eda66f7835d5115f57b79a8c1e7e892",
+        "203ca7a7e9b91325609311447e31cbf50eda66f7835d5115f57b79a8c1e7e892"
+      ],
+      "before": {
+        "mae": 10.34681838908925,
+        "peak": 168,
+        "worst64": 43.312544802867386
+      },
+      "after": {
+        "mae": 10.34681838908925,
+        "peak": 168,
+        "worst64": 43.312544802867386
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-15-1000000.png",
+      "hashes": [
+        "adad4c7af723f08475186262ed96b2136619e2abf77788bc61eb94ecdb11893a",
+        "61189f992502703c8e3078bb2e09f3a6cbe385a20f4579500a0298fea39a60a6",
+        "03614721d063f160096e60c163b98b28fcc222fd0a3787ae879423cc0ed73bcf"
+      ],
+      "before": {
+        "mae": 9.778220160334826,
+        "peak": 151,
+        "worst64": 21.660919540229884
+      },
+      "after": {
+        "mae": 9.777235378294789,
+        "peak": 151,
+        "worst64": 21.660919540229884
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-16-1007000.png",
+      "hashes": [
+        "35e307c6572eced2a831ac126065f6b92dd2ff2464d7d15f2c6204b333cc4c38",
+        "bbdcc790741e96abbed847262c3e683b4ddab88fce367c8e8000b9dd4ed5b234",
+        "b1fbb8f7088220c15021f4b84bd116e8c07978ec0ca20f4c14a7c2a492ebc576"
+      ],
+      "before": {
+        "mae": 10.27161595672752,
+        "peak": 151,
+        "worst64": 23.358748778103617
+      },
+      "after": {
+        "mae": 10.270982323964068,
+        "peak": 151,
+        "worst64": 23.34742587161942
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-17-1017000.png",
+      "hashes": [
+        "baa858a87d93439c89a973eaa41703b365b3897db3de8e60d21089ce31ba48fc",
+        "d6db7a452e482eedfe5c77919e237f9d0ef6b76219fcd6cac0b22a8ea197c329",
+        "d6db7a452e482eedfe5c77919e237f9d0ef6b76219fcd6cac0b22a8ea197c329"
+      ],
+      "before": {
+        "mae": 10.330672226744122,
+        "peak": 144,
+        "worst64": 20.020294985250736
+      },
+      "after": {
+        "mae": 10.330672226744122,
+        "peak": 144,
+        "worst64": 20.020294985250736
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-18-1020000.png",
+      "hashes": [
+        "ed00eb576b5d12deed2defd3770c7543667ed94a6b8d4d207cc22a769551b96c",
+        "b0f4781ce3ccd49558c707c1c830c71b9dcf7b5566559e663b37bca7be4a2b60",
+        "b0f4781ce3ccd49558c707c1c830c71b9dcf7b5566559e663b37bca7be4a2b60"
+      ],
+      "before": {
+        "mae": 10.830398914189091,
+        "peak": 146,
+        "worst64": 20.922469315834245
+      },
+      "after": {
+        "mae": 10.830398914189091,
+        "peak": 146,
+        "worst64": 20.922469315834245
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-19-1087000.png",
+      "hashes": [
+        "84a254b6c8114c4d5da83e44d97851b0e048f4cd6a6e9cd5c8653b4ac6cc4cf9",
+        "60620ad0572c848d1bb06900dfe8c38157edb78e45227e10505e8ae23408e243",
+        "3f022b54628eb4837e4e56a83a5bace627ac7db568dce521057fae6beecd70c4"
+      ],
+      "before": {
+        "mae": 11.270785085253888,
+        "peak": 172,
+        "worst64": 42.570281124497996
+      },
+      "after": {
+        "mae": 11.270548997564175,
+        "peak": 172,
+        "worst64": 42.570281124497996
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-2-720000.png",
+      "hashes": [
+        "7a9bb1eb73b283155a1cce7d0e359df2730663ddbb07b30df8cd8008baa85bd1",
+        "a4110cb77c3eea655dafdf5f402ad161a966df15297e0fea2aa994736a740822",
+        "6bd5587e3333fdd50bedec62ee734bb13e74f7dcb2bbb6951d70cf7ee0af8624"
+      ],
+      "before": {
+        "mae": 1.0695256660168941,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 1.0700145425291625,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-20-1097000.png",
+      "hashes": [
+        "c6d8d29033633358314e7797f2c41312dccf08e550d13c0faa7855a713eeb6e4",
+        "5156f8f5b6bc17cc217b7e55b8c2b780813db36331918eb0e0c0db2c093d98d3",
+        "5156f8f5b6bc17cc217b7e55b8c2b780813db36331918eb0e0c0db2c093d98d3"
+      ],
+      "before": {
+        "mae": 12.56403376315818,
+        "peak": 187,
+        "worst64": 23.348709122203097
+      },
+      "after": {
+        "mae": 12.56403376315818,
+        "peak": 187,
+        "worst64": 23.348709122203097
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-21-1100000.png",
+      "hashes": [
+        "b02768b8a12fdfca01c5c38597e22c213e6badeda3b0b1c56b1b913350f563be",
+        "c1fab30c0150c8519a6ac16a58a03062233fcd04d10b0fa14ef6b25beb71fc2e",
+        "c1fab30c0150c8519a6ac16a58a03062233fcd04d10b0fa14ef6b25beb71fc2e"
+      ],
+      "before": {
+        "mae": 13.50178268816068,
+        "peak": 169,
+        "worst64": 22.712727864583332
+      },
+      "after": {
+        "mae": 13.50178268816068,
+        "peak": 169,
+        "worst64": 22.712727864583332
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-22-1167000.png",
+      "hashes": [
+        "9c8162d561ad4a5e479b3e03c156ffa88a36ddbbc2d96bffdea1a63a3795b1fc",
+        "291969c9e082feca21ef3b5ba9dc3e31e6a71c4d048f3aec07b073d474eb480e",
+        "301123b81945157a56c5c151f7b67c3dd6df0af37ab2598d414c68a384c67b23"
+      ],
+      "before": {
+        "mae": 10.87147711524954,
+        "peak": 175,
+        "worst64": 29.971199727334696
+      },
+      "after": {
+        "mae": 10.871963095848283,
+        "peak": 175,
+        "worst64": 29.971199727334696
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-23-1177000.png",
+      "hashes": [
+        "57891caa3f340fd9d08e309debd45e9cb866b4921aea672afa699bf40cace7ef",
+        "eb284a06c5880c84555ef9b39cba9789812b4a590fab4c0354a03a123bf01d02",
+        "eb284a06c5880c84555ef9b39cba9789812b4a590fab4c0354a03a123bf01d02"
+      ],
+      "before": {
+        "mae": 12.240709499294347,
+        "peak": 190,
+        "worst64": 25.68485059068798
+      },
+      "after": {
+        "mae": 12.240709499294347,
+        "peak": 190,
+        "worst64": 25.68485059068798
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-24-1180000.png",
+      "hashes": [
+        "561b29927462d22aae538f91b5cc596572484083cccb063bfbfb599f78853bee",
+        "944d379a419c293b0af9944bd5920d072cfcf913ab930442ca8e8b666e98bbaf",
+        "944d379a419c293b0af9944bd5920d072cfcf913ab930442ca8e8b666e98bbaf"
+      ],
+      "before": {
+        "mae": 13.604952736199449,
+        "peak": 192,
+        "worst64": 25.6021174863388
+      },
+      "after": {
+        "mae": 13.604952736199449,
+        "peak": 192,
+        "worst64": 25.6021174863388
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-25-1200000.png",
+      "hashes": [
+        "0e96b706dc133869023c245107413b043523a01ba315d738e49b78ca3f4a698d",
+        "23107f70d1bb0d1191cd9fe49c63e66eacb5b699fb4efc9767d147d2669d2cc6",
+        "7cfbe09654dc1d1b508fdf9d023ca4a8a8601f36024001c79dc7c16998b069d6"
+      ],
+      "before": {
+        "mae": 12.117775423644753,
+        "peak": 143,
+        "worst64": 20.933837890625
+      },
+      "after": {
+        "mae": 12.117886517562757,
+        "peak": 143,
+        "worst64": 20.932942708333332
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-26-1247000.png",
+      "hashes": [
+        "891ebf30031cf5c2549cee66a0f16a79713801dfb5ce8afddb53e1bb76a88af2",
+        "e8531778b8df08abf968d71d035e46f9f56f7d42bfa027cde0943501d98bf593",
+        "0e3e4d6327bb441d21f07a1f868134497ae8a968174f7ea2f3a85c6bbebbf249"
+      ],
+      "before": {
+        "mae": 12.318718870747995,
+        "peak": 173,
+        "worst64": 23.499552080788337
+      },
+      "after": {
+        "mae": 12.31817538844095,
+        "peak": 173,
+        "worst64": 23.48969785813177
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-27-1257000.png",
+      "hashes": [
+        "6a7b714a534329cf6c564cb627f7545ca7aec75267279898cd5b65dbf9257738",
+        "58b3447a582dfb8f3eac5f06b07e7d541301d9f7a373a19dfb3aacee4b9a55d2",
+        "58b3447a582dfb8f3eac5f06b07e7d541301d9f7a373a19dfb3aacee4b9a55d2"
+      ],
+      "before": {
+        "mae": 11.115909073682456,
+        "peak": 169,
+        "worst64": 27.7193515704154
+      },
+      "after": {
+        "mae": 11.115909073682456,
+        "peak": 169,
+        "worst64": 27.7193515704154
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-28-1260000.png",
+      "hashes": [
+        "4511974e1557ad06593687b2df7844ce5967d224faf163a970ada6198f62e957",
+        "c7055c845e2cf3014ea4fa612a4293ab74fb2d0a6b03af6ee814abe5faeae8d0",
+        "c7055c845e2cf3014ea4fa612a4293ab74fb2d0a6b03af6ee814abe5faeae8d0"
+      ],
+      "before": {
+        "mae": 12.982777943813508,
+        "peak": 170,
+        "worst64": 32.833333333333336
+      },
+      "after": {
+        "mae": 12.982777943813508,
+        "peak": 170,
+        "worst64": 32.833333333333336
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-29-1300000.png",
+      "hashes": [
+        "ccd4bb747275dadf498189a65ae3eb3a0937f3aaa2a565989be02868ce2a6816",
+        "77db3a0a4f6002a514e70ea849d603dded06c0bc2110d686cd0ee4c8337b28e1",
+        "21df4e9c37061de31a5b6f81cc6a0742cd5dd3912272628e488b2d308fe43899"
+      ],
+      "before": {
+        "mae": 12.557668617774207,
+        "peak": 186,
+        "worst64": 31.632279534109816
+      },
+      "after": {
+        "mae": 12.55845288649145,
+        "peak": 186,
+        "worst64": 31.632279534109816
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-3-767000.png",
+      "hashes": [
+        "46a257c5deb36456f15365a4f6d93d4936489a3aa70ce03d6d7838c9bef7380e",
+        "6e66ec19c476a61a9377b68335620f31845615ccad084b8dd6fc30111b439e45",
+        "816d9bf392ab89c9cd7d9afab821a71730ce42416312a097f42d0a23e711dd21"
+      ],
+      "before": {
+        "mae": 1.223606573982628,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 1.2236217680873154,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-30-1327000.png",
+      "hashes": [
+        "aed82b044f98c33c49aad70c4d5511315630f9eec19b2bca92d087a20e18803e",
+        "c76e2fac74b1bd4d53e3f9fe44c8336251bc98355fa6026665e1756ec6646702",
+        "a5288c5c3f53567ceae518a927d76e3388e85fd397387fef4745e4f4511e14fb"
+      ],
+      "before": {
+        "mae": 11.405446052181839,
+        "peak": 172,
+        "worst64": 29.022257834757834
+      },
+      "after": {
+        "mae": 11.405711898522654,
+        "peak": 172,
+        "worst64": 29.022257834757834
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-31-1337000.png",
+      "hashes": [
+        "784a118bec24d79a06151e18b49cea290af470732f635bf4f41f3fcf0311a4c0",
+        "7229d7fc2ab9a069bd7f70f419b579e10316dcb2d3968b60453e6fe0e421c992",
+        "7229d7fc2ab9a069bd7f70f419b579e10316dcb2d3968b60453e6fe0e421c992"
+      ],
+      "before": {
+        "mae": 11.519567998795816,
+        "peak": 188,
+        "worst64": 21.111572265625
+      },
+      "after": {
+        "mae": 11.519567998795816,
+        "peak": 188,
+        "worst64": 21.111572265625
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-32-1500000.png",
+      "hashes": [
+        "4a692d28650521cf7ed876bdcce40851d27bd8e33347894b221cd525c81208dd",
+        "cd8be30ecb7bdd3767f202f04f539590edd69a1390cb2f8a1effd3a05d554e90",
+        "cd8be30ecb7bdd3767f202f04f539590edd69a1390cb2f8a1effd3a05d554e90"
+      ],
+      "before": {
+        "mae": 10.990257793764988,
+        "peak": 215,
+        "worst64": 52.97555555555556
+      },
+      "after": {
+        "mae": 10.990257793764988,
+        "peak": 215,
+        "worst64": 52.97555555555556
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-33-1800000.png",
+      "hashes": [
+        "e586c174f76b525195c1452fae7695928a370a77d2c9b407bc8d1d5ea6dff357",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b"
+      ],
+      "before": {
+        "mae": 1.8189730364011722,
+        "peak": 179,
+        "worst64": 32.04761904761905
+      },
+      "after": {
+        "mae": 1.8189730364011722,
+        "peak": 179,
+        "worst64": 32.04761904761905
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-34-2000000.png",
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b"
+      ],
+      "before": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-35-2200000.png",
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b"
+      ],
+      "before": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-36-2500000.png",
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b"
+      ],
+      "before": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-37-3000000.png",
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b"
+      ],
+      "before": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-38-3500000.png",
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b"
+      ],
+      "before": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-39-4000000.png",
+      "hashes": [
+        "c519b7bfbe795a8f82ba25c0b5c23e89b6a93403e7b28df4db92b211fa2e1a88",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b",
+        "1fb6f43fcff265f49bea2ca67ccbe8b2f6cab386f6da1664e8b4888d731eb24b"
+      ],
+      "before": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "after": {
+        "mae": 1.9164361478582137,
+        "peak": 168,
+        "worst64": 25.60377358490566
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-4-777000.png",
+      "hashes": [
+        "951c06bfbdff63ccb1307226c2b6d77748beeac8469a3e3eb26a08feac14893a",
+        "2f6a59a6e55b7b83a754979864aaa75409883d12c53430d5070c43daf95240c8",
+        "2f6a59a6e55b7b83a754979864aaa75409883d12c53430d5070c43daf95240c8"
+      ],
+      "before": {
+        "mae": 2.2331011090875803,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "after": {
+        "mae": 2.2331011090875803,
+        "peak": 168,
+        "worst64": 25.581196581196583
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-5-780000.png",
+      "hashes": [
+        "dc689dc61eab3b12131ae7cc6905ea648c49e1b3a7905c9fced480c20d132fc7",
+        "0385c0a0719d89fd4641e41695a15f8def0df8f286be307476f5dec95a386f2d",
+        "0385c0a0719d89fd4641e41695a15f8def0df8f286be307476f5dec95a386f2d"
+      ],
+      "before": {
+        "mae": 2.476651682734962,
+        "peak": 167,
+        "worst64": 25.64957264957265
+      },
+      "after": {
+        "mae": 2.476651682734962,
+        "peak": 167,
+        "worst64": 25.64957264957265
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-6-780000.png",
+      "hashes": [
+        "dc689dc61eab3b12131ae7cc6905ea648c49e1b3a7905c9fced480c20d132fc7",
+        "28d3bde5491982761043da4a25ad914c140ba9fd15932f2bc9f6c344aa30342a",
+        "28d3bde5491982761043da4a25ad914c140ba9fd15932f2bc9f6c344aa30342a"
+      ],
+      "before": {
+        "mae": 2.3964386129334585,
+        "peak": 167,
+        "worst64": 19.135220125786162
+      },
+      "after": {
+        "mae": 2.3964386129334585,
+        "peak": 167,
+        "worst64": 19.135220125786162
+      },
+      "changed": false
+    },
+    {
+      "file": "rapid-normal-7-800000.png",
+      "hashes": [
+        "e61f988c8dee2aeaa4ac1a452f8bdeb5c62b6575193653bf36d717f53932d8bb",
+        "cb3d608579f197a7d08184bcadf62378e91a0c81af44f016df6d6699ee885d9e",
+        "8d7cd54cf77186a18de9b8bd368c8b9c076c416b3ced6b07de18394bd70cf04e"
+      ],
+      "before": {
+        "mae": 3.3945175552216638,
+        "peak": 162,
+        "worst64": 19.52777777777778
+      },
+      "after": {
+        "mae": 3.3940685284009464,
+        "peak": 162,
+        "worst64": 19.52777777777778
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-8-847000.png",
+      "hashes": [
+        "cfd17ff524afa4f2866f8e59f6a2daed3aa5ecbeae41eb6f5440a5d36b4e368a",
+        "77a015a93832ee2310f478ce7c3e00daf00a5e85c0ea03010d652734fd1d7a6b",
+        "6a5b7c5f2795ce09bd4436782c38968dc0bf226b94b11ab8dbd32e2a3f5bcbb8"
+      ],
+      "before": {
+        "mae": 5.836685153725726,
+        "peak": 156,
+        "worst64": 17.17676767676768
+      },
+      "after": {
+        "mae": 5.836056427167649,
+        "peak": 156,
+        "worst64": 17.17676767676768
+      },
+      "changed": true
+    },
+    {
+      "file": "rapid-normal-9-857000.png",
+      "hashes": [
+        "929a5bc8c66f1b0a6628ddd442139411a9e6aec1455de5b66a4061109369df21",
+        "da85834dcdbb58eca4ec1598b3623387cb0b2f5457f028447c4df21cf5033b52",
+        "da85834dcdbb58eca4ec1598b3623387cb0b2f5457f028447c4df21cf5033b52"
+      ],
+      "before": {
+        "mae": 6.224721680247906,
+        "peak": 163,
+        "worst64": 12.798847369399518
+      },
+      "after": {
+        "mae": 6.224721680247906,
+        "peak": 163,
+        "worst64": 12.798847369399518
+      },
+      "changed": false
+    }
+  ],
+  "beforeMAE": 6.38774093537051,
+  "beforeWorst64": 109.25,
+  "afterMAE": 6.3877824111987245,
+  "afterWorst64": 109.25
+}

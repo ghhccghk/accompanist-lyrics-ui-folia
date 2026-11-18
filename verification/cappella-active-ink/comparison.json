@@ -1,0 +1,2051 @@
+{
+  "conditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "motion": {
+      "framer-motion": "13.4.3",
+      "motion-dom": "13.4.2",
+      "motion-utils": "13.3.0"
+    },
+    "browser": "151.0.7922.34",
+    "viewport": [
+      800,
+      300
+    ],
+    "DPR": 1,
+    "fontPx": 64,
+    "lineHeight": 92.8,
+    "padding": [
+      16,
+      20
+    ],
+    "border": 1,
+    "originalSha256": "4be2fabfe5fb48ef358551441fade413ecf63ee66efdaf553a9c4cc881ca184a",
+    "hostSha256": "9d2a5ea626727721fea802bbf3f8f8e886b6fdd8b55da9445bc21b0c3b7aec7c",
+    "locks": [
+      {
+        "file": "verification/classic-browser/pnpm-lock.yaml",
+        "sha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad"
+      },
+      {
+        "file": ".work/folia-major/package-lock.json",
+        "sha256": "ce30669b1acca119cc886133166dd872f8eeb3b9d05edb8c193e4d18e3b2a000"
+      }
+    ],
+    "fonts": [
+      {
+        "name": "FoliaParityLatin-Bold.ttf",
+        "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+      },
+      {
+        "name": "FoliaParityBidi-Bold.ttf",
+        "sha256": "e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699"
+      },
+      {
+        "name": "FoliaParityChatCJK-Bold.otf",
+        "sha256": "c111c58ed2c29b4544cfbc0f3db1cdf8b596f75861ac486eb5790ef66bdafbac"
+      }
+    ],
+    "observations": [
+      {
+        "file": "italic-stagger-100.png",
+        "name": "italic",
+        "text": "fij Wavy",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": true,
+        "time": 0.1,
+        "uniform": false,
+        "count": 2,
+        "characters": [
+          "f",
+          "i",
+          "j",
+          " ",
+          "W",
+          "a",
+          "v",
+          "y"
+        ],
+        "revealTimes": [
+          0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001
+        ],
+        "opacities": [
+          1,
+          0
+        ]
+      },
+      {
+        "file": "italic-stagger-350.png",
+        "name": "italic",
+        "text": "fij Wavy",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": true,
+        "time": 0.35,
+        "uniform": false,
+        "count": 4,
+        "characters": [
+          "f",
+          "i",
+          "j",
+          " ",
+          "W",
+          "a",
+          "v",
+          "y"
+        ],
+        "revealTimes": [
+          0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          0.684643
+        ]
+      },
+      {
+        "file": "italic-stagger-650.png",
+        "name": "italic",
+        "text": "fij Wavy",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": true,
+        "time": 0.65,
+        "uniform": false,
+        "count": 7,
+        "characters": [
+          "f",
+          "i",
+          "j",
+          " ",
+          "W",
+          "a",
+          "v",
+          "y"
+        ],
+        "revealTimes": [
+          0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0.684643
+        ]
+      },
+      {
+        "file": "italic-stagger-1200.png",
+        "name": "italic",
+        "text": "fij Wavy",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": true,
+        "time": 1.2,
+        "uniform": false,
+        "count": 8,
+        "characters": [
+          "f",
+          "i",
+          "j",
+          " ",
+          "W",
+          "a",
+          "v",
+          "y"
+        ],
+        "revealTimes": [
+          0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "file": "italic-uniform-500.png",
+        "name": "italic",
+        "text": "fij Wavy",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": true,
+        "time": 0.5,
+        "uniform": true,
+        "count": 8,
+        "characters": [
+          "f",
+          "i",
+          "j",
+          " ",
+          "W",
+          "a",
+          "v",
+          "y"
+        ],
+        "revealTimes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opacities": [
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643
+        ]
+      },
+      {
+        "file": "italic-uniform-2000.png",
+        "name": "italic",
+        "text": "fij Wavy",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": true,
+        "time": 2,
+        "uniform": true,
+        "count": 8,
+        "characters": [
+          "f",
+          "i",
+          "j",
+          " ",
+          "W",
+          "a",
+          "v",
+          "y"
+        ],
+        "revealTimes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "file": "arabic-stagger-100.png",
+        "name": "arabic",
+        "text": "مرحبا بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 0.1,
+        "uniform": false,
+        "count": 2,
+        "characters": [
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0.06153846153846154,
+          0.12307692307692308,
+          0.18461538461538463,
+          0.24615384615384617,
+          0.3076923076923077,
+          0.36923076923076925,
+          0.4307692307692308,
+          0.49230769230769234,
+          0.5538461538461539,
+          0.6153846153846154,
+          0.676923076923077,
+          0.7384615384615385
+        ],
+        "opacities": [
+          1,
+          0.807978
+        ]
+      },
+      {
+        "file": "arabic-stagger-350.png",
+        "name": "arabic",
+        "text": "مرحبا بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 0.35,
+        "uniform": false,
+        "count": 6,
+        "characters": [
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0.06153846153846154,
+          0.12307692307692308,
+          0.18461538461538463,
+          0.24615384615384617,
+          0.3076923076923077,
+          0.36923076923076925,
+          0.4307692307692308,
+          0.49230769230769234,
+          0.5538461538461539,
+          0.6153846153846154,
+          0.676923076923077,
+          0.7384615384615385
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0.86068
+        ]
+      },
+      {
+        "file": "arabic-stagger-650.png",
+        "name": "arabic",
+        "text": "مرحبا بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 0.65,
+        "uniform": false,
+        "count": 11,
+        "characters": [
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0.06153846153846154,
+          0.12307692307692308,
+          0.18461538461538463,
+          0.24615384615384617,
+          0.3076923076923077,
+          0.36923076923076925,
+          0.4307692307692308,
+          0.49230769230769234,
+          0.5538461538461539,
+          0.6153846153846154,
+          0.676923076923077,
+          0.7384615384615385
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0.749116
+        ]
+      },
+      {
+        "file": "arabic-stagger-1200.png",
+        "name": "arabic",
+        "text": "مرحبا بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 1.2,
+        "uniform": false,
+        "count": 13,
+        "characters": [
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0.06153846153846154,
+          0.12307692307692308,
+          0.18461538461538463,
+          0.24615384615384617,
+          0.3076923076923077,
+          0.36923076923076925,
+          0.4307692307692308,
+          0.49230769230769234,
+          0.5538461538461539,
+          0.6153846153846154,
+          0.676923076923077,
+          0.7384615384615385
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "file": "arabic-uniform-500.png",
+        "name": "arabic",
+        "text": "مرحبا بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 0.5,
+        "uniform": true,
+        "count": 13,
+        "characters": [
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opacities": [
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643
+        ]
+      },
+      {
+        "file": "arabic-uniform-2000.png",
+        "name": "arabic",
+        "text": "مرحبا بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 2,
+        "uniform": true,
+        "count": 13,
+        "characters": [
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "file": "mixed-stagger-100.png",
+        "name": "mixed",
+        "text": "Aمرحبا 12B بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 0.1,
+        "uniform": false,
+        "count": 3,
+        "characters": [
+          "A",
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "1",
+          "2",
+          "B",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0.044444444444444446,
+          0.08888888888888889,
+          0.13333333333333333,
+          0.17777777777777778,
+          0.22222222222222224,
+          0.26666666666666666,
+          0.3111111111111111,
+          0.35555555555555557,
+          0.4,
+          0.4444444444444445,
+          0.48888888888888893,
+          0.5333333333333333,
+          0.5777777777777778,
+          0.6222222222222222,
+          0.6666666666666667,
+          0.7111111111111111,
+          0.7555555555555555
+        ],
+        "opacities": [
+          1,
+          1,
+          0.378138
+        ]
+      },
+      {
+        "file": "mixed-stagger-350.png",
+        "name": "mixed",
+        "text": "Aمرحبا 12B بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 0.35,
+        "uniform": false,
+        "count": 8,
+        "characters": [
+          "A",
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "1",
+          "2",
+          "B",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0.044444444444444446,
+          0.08888888888888889,
+          0.13333333333333333,
+          0.17777777777777778,
+          0.22222222222222224,
+          0.26666666666666666,
+          0.3111111111111111,
+          0.35555555555555557,
+          0.4,
+          0.4444444444444445,
+          0.48888888888888893,
+          0.5333333333333333,
+          0.5777777777777778,
+          0.6222222222222222,
+          0.6666666666666667,
+          0.7111111111111111,
+          0.7555555555555555
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0.974015
+        ]
+      },
+      {
+        "file": "mixed-stagger-650.png",
+        "name": "mixed",
+        "text": "Aمرحبا 12B بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 0.65,
+        "uniform": false,
+        "count": 15,
+        "characters": [
+          "A",
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "1",
+          "2",
+          "B",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0.044444444444444446,
+          0.08888888888888889,
+          0.13333333333333333,
+          0.17777777777777778,
+          0.22222222222222224,
+          0.26666666666666666,
+          0.3111111111111111,
+          0.35555555555555557,
+          0.4,
+          0.4444444444444445,
+          0.48888888888888893,
+          0.5333333333333333,
+          0.5777777777777778,
+          0.6222222222222222,
+          0.6666666666666667,
+          0.7111111111111111,
+          0.7555555555555555
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0.807978
+        ]
+      },
+      {
+        "file": "mixed-stagger-1200.png",
+        "name": "mixed",
+        "text": "Aمرحبا 12B بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 1.2,
+        "uniform": false,
+        "count": 18,
+        "characters": [
+          "A",
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "1",
+          "2",
+          "B",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0.044444444444444446,
+          0.08888888888888889,
+          0.13333333333333333,
+          0.17777777777777778,
+          0.22222222222222224,
+          0.26666666666666666,
+          0.3111111111111111,
+          0.35555555555555557,
+          0.4,
+          0.4444444444444445,
+          0.48888888888888893,
+          0.5333333333333333,
+          0.5777777777777778,
+          0.6222222222222222,
+          0.6666666666666667,
+          0.7111111111111111,
+          0.7555555555555555
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "file": "mixed-uniform-500.png",
+        "name": "mixed",
+        "text": "Aمرحبا 12B بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 0.5,
+        "uniform": true,
+        "count": 18,
+        "characters": [
+          "A",
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "1",
+          "2",
+          "B",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opacities": [
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643
+        ]
+      },
+      {
+        "file": "mixed-uniform-2000.png",
+        "name": "mixed",
+        "text": "Aمرحبا 12B بالعالم",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "time": 2,
+        "uniform": true,
+        "count": 18,
+        "characters": [
+          "A",
+          "م",
+          "ر",
+          "ح",
+          "ب",
+          "ا",
+          " ",
+          "1",
+          "2",
+          "B",
+          " ",
+          "ب",
+          "ا",
+          "ل",
+          "ع",
+          "ا",
+          "ل",
+          "م"
+        ],
+        "revealTimes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "file": "latin-stagger-100.png",
+        "name": "latin",
+        "text": "office affine",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "time": 0.1,
+        "uniform": false,
+        "count": 2,
+        "characters": [
+          "o",
+          "f",
+          "f",
+          "i",
+          "c",
+          "e",
+          " ",
+          "a",
+          "f",
+          "f",
+          "i",
+          "n",
+          "e"
+        ],
+        "revealTimes": [
+          0,
+          0.06153846153846154,
+          0.12307692307692308,
+          0.18461538461538463,
+          0.24615384615384617,
+          0.3076923076923077,
+          0.36923076923076925,
+          0.4307692307692308,
+          0.49230769230769234,
+          0.5538461538461539,
+          0.6153846153846154,
+          0.676923076923077,
+          0.7384615384615385
+        ],
+        "opacities": [
+          1,
+          0.807978
+        ]
+      },
+      {
+        "file": "latin-stagger-350.png",
+        "name": "latin",
+        "text": "office affine",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "time": 0.35,
+        "uniform": false,
+        "count": 6,
+        "characters": [
+          "o",
+          "f",
+          "f",
+          "i",
+          "c",
+          "e",
+          " ",
+          "a",
+          "f",
+          "f",
+          "i",
+          "n",
+          "e"
+        ],
+        "revealTimes": [
+          0,
+          0.06153846153846154,
+          0.12307692307692308,
+          0.18461538461538463,
+          0.24615384615384617,
+          0.3076923076923077,
+          0.36923076923076925,
+          0.4307692307692308,
+          0.49230769230769234,
+          0.5538461538461539,
+          0.6153846153846154,
+          0.676923076923077,
+          0.7384615384615385
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0.86068
+        ]
+      },
+      {
+        "file": "latin-stagger-650.png",
+        "name": "latin",
+        "text": "office affine",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "time": 0.65,
+        "uniform": false,
+        "count": 11,
+        "characters": [
+          "o",
+          "f",
+          "f",
+          "i",
+          "c",
+          "e",
+          " ",
+          "a",
+          "f",
+          "f",
+          "i",
+          "n",
+          "e"
+        ],
+        "revealTimes": [
+          0,
+          0.06153846153846154,
+          0.12307692307692308,
+          0.18461538461538463,
+          0.24615384615384617,
+          0.3076923076923077,
+          0.36923076923076925,
+          0.4307692307692308,
+          0.49230769230769234,
+          0.5538461538461539,
+          0.6153846153846154,
+          0.676923076923077,
+          0.7384615384615385
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0.749116
+        ]
+      },
+      {
+        "file": "latin-stagger-1200.png",
+        "name": "latin",
+        "text": "office affine",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "time": 1.2,
+        "uniform": false,
+        "count": 13,
+        "characters": [
+          "o",
+          "f",
+          "f",
+          "i",
+          "c",
+          "e",
+          " ",
+          "a",
+          "f",
+          "f",
+          "i",
+          "n",
+          "e"
+        ],
+        "revealTimes": [
+          0,
+          0.06153846153846154,
+          0.12307692307692308,
+          0.18461538461538463,
+          0.24615384615384617,
+          0.3076923076923077,
+          0.36923076923076925,
+          0.4307692307692308,
+          0.49230769230769234,
+          0.5538461538461539,
+          0.6153846153846154,
+          0.676923076923077,
+          0.7384615384615385
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "file": "latin-uniform-500.png",
+        "name": "latin",
+        "text": "office affine",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "time": 0.5,
+        "uniform": true,
+        "count": 13,
+        "characters": [
+          "o",
+          "f",
+          "f",
+          "i",
+          "c",
+          "e",
+          " ",
+          "a",
+          "f",
+          "f",
+          "i",
+          "n",
+          "e"
+        ],
+        "revealTimes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opacities": [
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643
+        ]
+      },
+      {
+        "file": "latin-uniform-2000.png",
+        "name": "latin",
+        "text": "office affine",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "time": 2,
+        "uniform": true,
+        "count": 13,
+        "characters": [
+          "o",
+          "f",
+          "f",
+          "i",
+          "c",
+          "e",
+          " ",
+          "a",
+          "f",
+          "f",
+          "i",
+          "n",
+          "e"
+        ],
+        "revealTimes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "file": "cjk-stagger-100.png",
+        "name": "cjk",
+        "text": "星光回响",
+        "font": "FoliaParityChatCJK-Bold.otf",
+        "italic": false,
+        "time": 0.1,
+        "uniform": false,
+        "count": 1,
+        "characters": [
+          "星",
+          "光",
+          "回",
+          "响"
+        ],
+        "revealTimes": [
+          0,
+          0.2,
+          0.4,
+          0.6000000000000001
+        ],
+        "opacities": [
+          0.684643
+        ]
+      },
+      {
+        "file": "cjk-stagger-350.png",
+        "name": "cjk",
+        "text": "星光回响",
+        "font": "FoliaParityChatCJK-Bold.otf",
+        "italic": false,
+        "time": 0.35,
+        "uniform": false,
+        "count": 2,
+        "characters": [
+          "星",
+          "光",
+          "回",
+          "响"
+        ],
+        "revealTimes": [
+          0,
+          0.2,
+          0.4,
+          0.6000000000000001
+        ],
+        "opacities": [
+          1,
+          0.906535
+        ]
+      },
+      {
+        "file": "cjk-stagger-650.png",
+        "name": "cjk",
+        "text": "星光回响",
+        "font": "FoliaParityChatCJK-Bold.otf",
+        "italic": false,
+        "time": 0.65,
+        "uniform": false,
+        "count": 4,
+        "characters": [
+          "星",
+          "光",
+          "回",
+          "响"
+        ],
+        "revealTimes": [
+          0,
+          0.2,
+          0.4,
+          0.6000000000000001
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          0.378138
+        ]
+      },
+      {
+        "file": "cjk-stagger-1200.png",
+        "name": "cjk",
+        "text": "星光回响",
+        "font": "FoliaParityChatCJK-Bold.otf",
+        "italic": false,
+        "time": 1.2,
+        "uniform": false,
+        "count": 4,
+        "characters": [
+          "星",
+          "光",
+          "回",
+          "响"
+        ],
+        "revealTimes": [
+          0,
+          0.2,
+          0.4,
+          0.6000000000000001
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "file": "cjk-uniform-500.png",
+        "name": "cjk",
+        "text": "星光回响",
+        "font": "FoliaParityChatCJK-Bold.otf",
+        "italic": false,
+        "time": 0.5,
+        "uniform": true,
+        "count": 4,
+        "characters": [
+          "星",
+          "光",
+          "回",
+          "响"
+        ],
+        "revealTimes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "opacities": [
+          0.684643,
+          0.684643,
+          0.684643,
+          0.684643
+        ]
+      },
+      {
+        "file": "cjk-uniform-2000.png",
+        "name": "cjk",
+        "text": "星光回响",
+        "font": "FoliaParityChatCJK-Bold.otf",
+        "italic": false,
+        "time": 2,
+        "uniform": true,
+        "count": 4,
+        "characters": [
+          "星",
+          "光",
+          "回",
+          "响"
+        ],
+        "revealTimes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "opacities": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "scope": "Unmodified original ActiveCappellaText/character-plan, fixed transparent host frame, per-source-character CSS animations paused/re-anchored to their media progress for deterministic comparison. No shaping, geometry, original opacity formula or event logic rewritten. Not full message-stage or every source RAF history."
+  },
+  "scope": "Active EGC ink ownership only; source count/CSS alpha kept, complete shaping preserved. Not full theme projection/RAF/Android/device acceptance.",
+  "comparison": "Premultiplied RGBA; one unchanged original/before/after all-alpha>0 union. No phase/pixel registration or discarded samples.",
+  "beforeMean": 12.375544811720852,
+  "afterMean": 11.677861808300298,
+  "beforeWorst64": 223.25984251968504,
+  "afterWorst64": 223.25984251968504,
+  "beforeCoverage": "# file uniformDifferentPixels\nitalic-stagger-1200.png\t226\nitalic-uniform-500.png\t226\nitalic-uniform-2000.png\t226\narabic-stagger-1200.png\t85\narabic-uniform-500.png\t85\narabic-uniform-2000.png\t85\nmixed-stagger-1200.png\t77\nmixed-uniform-500.png\t77\nmixed-uniform-2000.png\t77\nlatin-stagger-1200.png\t66\nlatin-uniform-500.png\t66\nlatin-uniform-2000.png\t66\ncjk-stagger-1200.png\t0\ncjk-uniform-500.png\t0\ncjk-uniform-2000.png\t0\n",
+  "afterCoverage": "# file uniformDifferentPixels\nitalic-stagger-1200.png\t0\nitalic-uniform-500.png\t0\nitalic-uniform-2000.png\t0\narabic-stagger-1200.png\t0\narabic-uniform-500.png\t0\narabic-uniform-2000.png\t0\nmixed-stagger-1200.png\t0\nmixed-uniform-500.png\t0\nmixed-uniform-2000.png\t0\nlatin-stagger-1200.png\t0\nlatin-uniform-500.png\t0\nlatin-uniform-2000.png\t0\ncjk-stagger-1200.png\t0\ncjk-uniform-500.png\t0\ncjk-uniform-2000.png\t0\n",
+  "frames": [
+    {
+      "file": "italic-stagger-100.png",
+      "unionPixels": 1218,
+      "hashes": [
+        "b69276ac0e55a045e100f1afc747560c988bcb397d020838028c20b5dae1feae",
+        "b7b440eecb75db241c99239142594e37a5b3140d49e657407ee5726df2930a71",
+        "ec086b8e02172dc3ef9f2e60e116d5b777af2b4cc87a2a1f4be2c7c0c67ceacd"
+      ],
+      "before": {
+        "foregroundMAE": 142.50985221674875,
+        "peak": 255.0,
+        "worst64": 223.25984251968504
+      },
+      "after": {
+        "foregroundMAE": 143.16830870279145,
+        "peak": 255.0,
+        "worst64": 223.25984251968504
+      }
+    },
+    {
+      "file": "italic-stagger-350.png",
+      "unionPixels": 1944,
+      "hashes": [
+        "f6653174e7b2672d024244e54971c26720050eb8ce577638f7baa689abca6ed7",
+        "bc52f4209bcc9205b018ce3a4074cfba40f2809ac8b36dac929dff3efb529043",
+        "d5225aa039e14973448d5aab2046b8b214bd330f63bffd7714268ec8df05cb88"
+      ],
+      "before": {
+        "foregroundMAE": 11.77880658436214,
+        "peak": 96.0,
+        "worst64": 30.38718662952646
+      },
+      "after": {
+        "foregroundMAE": 10.072016460905349,
+        "peak": 96.0,
+        "worst64": 24.866295264623954
+      }
+    },
+    {
+      "file": "italic-stagger-650.png",
+      "unionPixels": 5241,
+      "hashes": [
+        "b00da908aca93a26d1bb72ec206622926cd230d1813da06b5971c6fbdebb103a",
+        "477443aef68155ce55adbc67b1a8f8b9fee4ca7208be4f943907782260d82033",
+        "5d746aaa576900cb2a2240b97fd694d00570dd4846bfca0169582e77e300d562"
+      ],
+      "before": {
+        "foregroundMAE": 9.92482350696432,
+        "peak": 174.0,
+        "worst64": 35.5
+      },
+      "after": {
+        "foregroundMAE": 7.008204541118107,
+        "peak": 130.0,
+        "worst64": 9.65089722675367
+      }
+    },
+    {
+      "file": "italic-stagger-1200.png",
+      "unionPixels": 6189,
+      "hashes": [
+        "740696e70aff2df5ec50c00e5b9f19b4f4a994a77ed189c7e1f26acf0f691801",
+        "55859c6e16cbb0b58ffa49bac3d9d0703ad15e8043aff69ea7cedf08fd93348c",
+        "d4662b739f0c729adc747817dbb9d47c3c07107d172301b01ac25da232003975"
+      ],
+      "before": {
+        "foregroundMAE": 10.620132493132978,
+        "peak": 255.0,
+        "worst64": 109.4121212121212
+      },
+      "after": {
+        "foregroundMAE": 7.143157214412668,
+        "peak": 130.0,
+        "worst64": 10.67457627118644
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "italic-uniform-500.png",
+      "unionPixels": 6189,
+      "hashes": [
+        "e58f210342f796747d5f67d4721d71057f6ccb782e172d4b812c174d25e41555",
+        "13c255fbfc1a78526accb30d8bce2f292173b55dc09d93497f6a3899c07a1b21",
+        "5134752a03784e0bfdef95790fc3cf1a79bf07a7097eed396a52b1aa474eb70f"
+      ],
+      "before": {
+        "foregroundMAE": 7.705929875585716,
+        "peak": 174.0,
+        "worst64": 74.78181818181818
+      },
+      "after": {
+        "foregroundMAE": 5.53837453546615,
+        "peak": 88.0,
+        "worst64": 7.864406779661017
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "italic-uniform-2000.png",
+      "unionPixels": 6189,
+      "hashes": [
+        "740696e70aff2df5ec50c00e5b9f19b4f4a994a77ed189c7e1f26acf0f691801",
+        "55859c6e16cbb0b58ffa49bac3d9d0703ad15e8043aff69ea7cedf08fd93348c",
+        "d4662b739f0c729adc747817dbb9d47c3c07107d172301b01ac25da232003975"
+      ],
+      "before": {
+        "foregroundMAE": 10.620132493132978,
+        "peak": 255.0,
+        "worst64": 109.4121212121212
+      },
+      "after": {
+        "foregroundMAE": 7.143157214412668,
+        "peak": 130.0,
+        "worst64": 10.67457627118644
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "arabic-stagger-100.png",
+      "unionPixels": 1212,
+      "hashes": [
+        "7403e75a8cb549cb88ed5e302d1c3dd26471c9ff23e3af82ef9dd0d5ddea4dc4",
+        "b559df1f784853f571982317deac2e78c3e962ca278b08f7f449a473a1682b40",
+        "1677482d34f5434546fd6c8f77b4f852344815db95d1dcef41ae335e2f1fa5ca"
+      ],
+      "before": {
+        "foregroundMAE": 6.45957095709571,
+        "peak": 206.0,
+        "worst64": 7.309859154929577
+      },
+      "after": {
+        "foregroundMAE": 4.952145214521452,
+        "peak": 88.0,
+        "worst64": 7.267605633802817
+      }
+    },
+    {
+      "file": "arabic-stagger-350.png",
+      "unionPixels": 2849,
+      "hashes": [
+        "3fa5f6c1636aa981a7bcfad68ee543cec299cf31ef480138713335f661ae04c9",
+        "fb838b80e14de85218cbb85a2de1eaa6f2db8ddaf85d54b477eab16094c11c3d",
+        "d4729f1015bd6c82c6c973c0c59fe165e6f25e2cfd66395d86e474648ee6be3c"
+      ],
+      "before": {
+        "foregroundMAE": 7.287469287469287,
+        "peak": 130.0,
+        "worst64": 10.253048780487806
+      },
+      "after": {
+        "foregroundMAE": 6.801684801684802,
+        "peak": 130.0,
+        "worst64": 10.253048780487806
+      }
+    },
+    {
+      "file": "arabic-stagger-650.png",
+      "unionPixels": 5725,
+      "hashes": [
+        "89f8bd11faba568178ae8fd169ba391b64b337b133f990bc5829d44c82d9bb75",
+        "42248d12f5c0c4b66ab67455978f2d01196acaa6c315564d892a41677c6d7958",
+        "c0ac96935ad11e59a1ac84e8259e41dd5984e8ca0035e30aacde66903eb2e465"
+      ],
+      "before": {
+        "foregroundMAE": 7.2019213973799125,
+        "peak": 130.0,
+        "worst64": 10.310344827586206
+      },
+      "after": {
+        "foregroundMAE": 6.869694323144105,
+        "peak": 130.0,
+        "worst64": 10.310344827586206
+      }
+    },
+    {
+      "file": "arabic-stagger-1200.png",
+      "unionPixels": 7326,
+      "hashes": [
+        "50a5fd81d3cd614bea33e6edaae9b7496baee5f80df5a83351b4ad0479b81b62",
+        "77941fcd62cd9659c2073121cc611f2d47dfd6d2280b0363da503ce87c062ff1",
+        "197f28db6555ca710d329bdd349c433e9d4aad536506a5ae381eb51b1d278bb7"
+      ],
+      "before": {
+        "foregroundMAE": 7.000955500955501,
+        "peak": 140.0,
+        "worst64": 13.092753623188406
+      },
+      "after": {
+        "foregroundMAE": 6.698607698607699,
+        "peak": 140.0,
+        "worst64": 13.092753623188406
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "arabic-uniform-500.png",
+      "unionPixels": 7326,
+      "hashes": [
+        "33487abf1c6d09f575754a688c7935a8a66795100efc4adf1b0b5a15e89efe04",
+        "fb8989a87ba6db2ea3664dfe8034f1c3ee7dabee6611f405dbc2d70d1289dfa9",
+        "a99702bd6b4f39193c88936107f2cd0edc4883c31b07485d3f872ca5a0361ea7"
+      ],
+      "before": {
+        "foregroundMAE": 5.515970515970516,
+        "peak": 95.0,
+        "worst64": 9.504347826086956
+      },
+      "after": {
+        "foregroundMAE": 5.377286377286377,
+        "peak": 95.0,
+        "worst64": 9.504347826086956
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "arabic-uniform-2000.png",
+      "unionPixels": 7326,
+      "hashes": [
+        "50a5fd81d3cd614bea33e6edaae9b7496baee5f80df5a83351b4ad0479b81b62",
+        "77941fcd62cd9659c2073121cc611f2d47dfd6d2280b0363da503ce87c062ff1",
+        "197f28db6555ca710d329bdd349c433e9d4aad536506a5ae381eb51b1d278bb7"
+      ],
+      "before": {
+        "foregroundMAE": 7.000955500955501,
+        "peak": 140.0,
+        "worst64": 13.092753623188406
+      },
+      "after": {
+        "foregroundMAE": 6.698607698607699,
+        "peak": 140.0,
+        "worst64": 13.092753623188406
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "mixed-stagger-100.png",
+      "unionPixels": 2293,
+      "hashes": [
+        "46579cb47bdc77c78dda2e7a107baddf642848738e8ff2288d8d0ad54524d077",
+        "6367c6d1feb936c8f8354db2bf54a057d0dd0dd9978c1d9726d749db7394959e",
+        "a158dd21ccdf77a8336439e8a928725ed3c76a853a54a121c646f5ca7aee9eb5"
+      ],
+      "before": {
+        "foregroundMAE": 5.493240296554732,
+        "peak": 161.0,
+        "worst64": 84.0
+      },
+      "after": {
+        "foregroundMAE": 5.443959877889228,
+        "peak": 161.0,
+        "worst64": 84.0
+      }
+    },
+    {
+      "file": "mixed-stagger-350.png",
+      "unionPixels": 4591,
+      "hashes": [
+        "ee825fa7481c53497b171ea8b6bae1f82f34feed2a4f25b3016eebed812949d2",
+        "e0c39d1cc6a84f3b8226d1aa1c241098faf476137322c296fef5b587f38e6cb8",
+        "0d0e6539e326d1725122a5d8f9812b01b78c5b51646ff010cfdcd86378da3433"
+      ],
+      "before": {
+        "foregroundMAE": 7.10760182966674,
+        "peak": 130.0,
+        "worst64": 22.764705882352942
+      },
+      "after": {
+        "foregroundMAE": 6.8945763450228705,
+        "peak": 130.0,
+        "worst64": 22.764705882352942
+      }
+    },
+    {
+      "file": "mixed-stagger-650.png",
+      "unionPixels": 9545,
+      "hashes": [
+        "812dc442e1d5f86627cf58810d8348e1a94e89da5cb156f016cc4c1b13a1b48b",
+        "5645f8c26cac824eb3ab29f4f367a55b10d3e9c4ce4fdc75ab4cfacc80b168e5",
+        "c3435e4bcaa65f6a876662f698dbe7a87a09d9ab41c968449e8d35891c9cd3d0"
+      ],
+      "before": {
+        "foregroundMAE": 7.428915662650603,
+        "peak": 156.0,
+        "worst64": 12.819389110225764
+      },
+      "after": {
+        "foregroundMAE": 7.237192247249869,
+        "peak": 156.0,
+        "worst64": 12.816733067729084
+      }
+    },
+    {
+      "file": "mixed-stagger-1200.png",
+      "unionPixels": 11240,
+      "hashes": [
+        "2adb1e5cbefd2d1cd86bb475f778ec66d7f4ee95e6788ea8b7762fde8245043b",
+        "21b59cbf7b57b6d0736d5ea5627d73b9ac24ab6c938d10b3d182478dfc09449e",
+        "d43703c8f15fe9ec05901af605100ccd51a8b687ac690afa2ff6ee478b08c77a"
+      ],
+      "before": {
+        "foregroundMAE": 7.629181494661922,
+        "peak": 156.0,
+        "worst64": 25.006134969325153
+      },
+      "after": {
+        "foregroundMAE": 7.395996441281139,
+        "peak": 156.0,
+        "worst64": 25.006134969325153
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "mixed-uniform-500.png",
+      "unionPixels": 11240,
+      "hashes": [
+        "2fb2837762a92294654ba4c38ae447a8c45b7914acc1707d1ebf74413adfa82a",
+        "a14d217dfd934efb0e9643bb1c1b9b2a626c4a0e6ef3d83c4a67ac6f378cbdf9",
+        "a634fd03c04e8279b66816de9ecc00a0b17991a73fe709ada5a420df5ff6854a"
+      ],
+      "before": {
+        "foregroundMAE": 5.972330960854093,
+        "peak": 106.0,
+        "worst64": 17.39877300613497
+      },
+      "after": {
+        "foregroundMAE": 5.874377224199288,
+        "peak": 106.0,
+        "worst64": 17.39877300613497
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "mixed-uniform-2000.png",
+      "unionPixels": 11240,
+      "hashes": [
+        "2adb1e5cbefd2d1cd86bb475f778ec66d7f4ee95e6788ea8b7762fde8245043b",
+        "21b59cbf7b57b6d0736d5ea5627d73b9ac24ab6c938d10b3d182478dfc09449e",
+        "d43703c8f15fe9ec05901af605100ccd51a8b687ac690afa2ff6ee478b08c77a"
+      ],
+      "before": {
+        "foregroundMAE": 7.629181494661922,
+        "peak": 156.0,
+        "worst64": 25.006134969325153
+      },
+      "after": {
+        "foregroundMAE": 7.395996441281139,
+        "peak": 156.0,
+        "worst64": 25.006134969325153
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "latin-stagger-100.png",
+      "unionPixels": 1587,
+      "hashes": [
+        "0844142ccd55c7967c22222f03bede15a94c882210959866e33984038ce3f9b2",
+        "2283a3d4fed26561a04b17aaa51598b5d9a9ee4cbcf1b7a1dca5612fe6033664",
+        "0253276ddbe322a17e5dab446892e54368e26560495e6f3835e4dbebb9324546"
+      ],
+      "before": {
+        "foregroundMAE": 9.839319470699433,
+        "peak": 206.0,
+        "worst64": 15.579775280898877
+      },
+      "after": {
+        "foregroundMAE": 8.008191556395715,
+        "peak": 130.0,
+        "worst64": 11.818181818181818
+      }
+    },
+    {
+      "file": "latin-stagger-350.png",
+      "unionPixels": 4265,
+      "hashes": [
+        "60e101043b14907af4a4c649c903dc0ff03905ce031507b9e6b1bad05c41b6d9",
+        "30e4fde3436c9d2adbe9258ff355291b2cb72a5bfa550d87fd3d5dc21e1b9bdb",
+        "27b036ebcd3b2fb7ea77ae6756efeb22710738ee2c948daa76f1e942c529c314"
+      ],
+      "before": {
+        "foregroundMAE": 9.663071512309497,
+        "peak": 156.0,
+        "worst64": 16.333333333333332
+      },
+      "after": {
+        "foregroundMAE": 9.23516998827667,
+        "peak": 156.0,
+        "worst64": 16.333333333333332
+      }
+    },
+    {
+      "file": "latin-stagger-650.png",
+      "unionPixels": 7066,
+      "hashes": [
+        "4587bc77f8f3f79444fedd7577001ff5219001dbc0d90e455eb30c1217c35cf2",
+        "ff868bc5929dddc0d4cb3b3c147e155c6596446d369694e919295b0bba907f53",
+        "7feee3beff920694b3e740899939bd70d5c20ea20e3ddf447a1ccba8f291b3fe"
+      ],
+      "before": {
+        "foregroundMAE": 13.621568072459667,
+        "peak": 156.0,
+        "worst64": 93.0
+      },
+      "after": {
+        "foregroundMAE": 13.121285026889328,
+        "peak": 156.0,
+        "worst64": 93.0
+      }
+    },
+    {
+      "file": "latin-stagger-1200.png",
+      "unionPixels": 8783,
+      "hashes": [
+        "7a09fdc476ea175522c0c2f306f76a8ab4f018539e492f1027584b149bfa6876",
+        "fba10ef5c19ccab22d6894d89c290d6e59e5c620b9ed550d56a4c28af8b5de23",
+        "f6a9189fc06bf6967fe084caaecbb116701fded4074741621c2279d6ad80c45e"
+      ],
+      "before": {
+        "foregroundMAE": 8.79300922236138,
+        "peak": 156.0,
+        "worst64": 16.333333333333332
+      },
+      "after": {
+        "foregroundMAE": 8.401229648183993,
+        "peak": 156.0,
+        "worst64": 16.333333333333332
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "latin-uniform-500.png",
+      "unionPixels": 8783,
+      "hashes": [
+        "741513e4e96a2b201e6ccc8dead963133c42bca3f7078e296f87340a89e75381",
+        "242aa3a7ab0c17c83224887651216bffb4ad021dccc45198ad14b9afb15eae48",
+        "0f0aa0b14c01d2058fdaa2577d039861ee7159ff0a60a6e800b50f0acac02e87"
+      ],
+      "before": {
+        "foregroundMAE": 6.610042126835933,
+        "peak": 106.0,
+        "worst64": 11.93939393939394
+      },
+      "after": {
+        "foregroundMAE": 6.435955823750427,
+        "peak": 106.0,
+        "worst64": 11.93939393939394
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "latin-uniform-2000.png",
+      "unionPixels": 8783,
+      "hashes": [
+        "7a09fdc476ea175522c0c2f306f76a8ab4f018539e492f1027584b149bfa6876",
+        "fba10ef5c19ccab22d6894d89c290d6e59e5c620b9ed550d56a4c28af8b5de23",
+        "f6a9189fc06bf6967fe084caaecbb116701fded4074741621c2279d6ad80c45e"
+      ],
+      "before": {
+        "foregroundMAE": 8.79300922236138,
+        "peak": 156.0,
+        "worst64": 16.333333333333332
+      },
+      "after": {
+        "foregroundMAE": 8.401229648183993,
+        "peak": 156.0,
+        "worst64": 16.333333333333332
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "cjk-stagger-100.png",
+      "unionPixels": 2160,
+      "hashes": [
+        "911441f650c95a627de292b561b30b61ca6104407dddf4c0545e35d5c752e8da",
+        "ecec1d4f22e44ca300a9afd2c9cde882f03af0a63b6d8e1f3c16bbea0a24f44d",
+        "ecec1d4f22e44ca300a9afd2c9cde882f03af0a63b6d8e1f3c16bbea0a24f44d"
+      ],
+      "before": {
+        "foregroundMAE": 4.602777777777778,
+        "peak": 63.0,
+        "worst64": 9.48913043478261
+      },
+      "after": {
+        "foregroundMAE": 4.602777777777778,
+        "peak": 63.0,
+        "worst64": 9.48913043478261
+      }
+    },
+    {
+      "file": "cjk-stagger-350.png",
+      "unionPixels": 4015,
+      "hashes": [
+        "0a4d1b665c30cc41b1f4fe82c9a41b3a4205958447e74f65a4bc2af253683b9e",
+        "4592d7f2e286a421516acc44c5890f10e9d2fcd482d21fa5b9f06d3dfe7c4077",
+        "b5977ffad3ee09e6fb7ada53da7b62c7e749e1c99326d9f695517a9c51c946c2"
+      ],
+      "before": {
+        "foregroundMAE": 6.424159402241594,
+        "peak": 97.0,
+        "worst64": 11.555555555555555
+      },
+      "after": {
+        "foregroundMAE": 6.418181818181818,
+        "peak": 97.0,
+        "worst64": 11.552552552552553
+      }
+    },
+    {
+      "file": "cjk-stagger-650.png",
+      "unionPixels": 8607,
+      "hashes": [
+        "431794da1c1233779fc20d1173669103e0ade614775489085589e1ae79c2ff51",
+        "afa15afb52ecd731ebd9196fe807f50b273e6beb10d9832e156cb386ab7910c2",
+        "a50ffa34018936157eb1a4ae63a0692c064d16696b05d263eec3a0bbbca1641f"
+      ],
+      "before": {
+        "foregroundMAE": 5.943882886023005,
+        "peak": 108.0,
+        "worst64": 8.299760191846524
+      },
+      "after": {
+        "foregroundMAE": 5.909957011734635,
+        "peak": 108.0,
+        "worst64": 8.299760191846524
+      }
+    },
+    {
+      "file": "cjk-stagger-1200.png",
+      "unionPixels": 8607,
+      "hashes": [
+        "92d0be024b67a6874b9e1829c92b08eb3dd38ff52eef5e7f5b5e8f3011b09c66",
+        "3e7519d99a2d295cd1e54a58265690e1cfb8bea957459dc73c2317ea96634b9b",
+        "3e7519d99a2d295cd1e54a58265690e1cfb8bea957459dc73c2317ea96634b9b"
+      ],
+      "before": {
+        "foregroundMAE": 7.974439409782735,
+        "peak": 110.0,
+        "worst64": 12.565393988627132
+      },
+      "after": {
+        "foregroundMAE": 7.974439409782735,
+        "peak": 110.0,
+        "worst64": 12.565393988627132
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "cjk-uniform-500.png",
+      "unionPixels": 8607,
+      "hashes": [
+        "63880121d4252268ebcac4ff19e8aae13c0da69029c012c870a9788e1c5da2e9",
+        "bb0c7af92e235d801e0bff1ce20299b79da02a4ac964432319d8eb75cabee8f4",
+        "bb0c7af92e235d801e0bff1ce20299b79da02a4ac964432319d8eb75cabee8f4"
+      ],
+      "before": {
+        "foregroundMAE": 6.139653770187057,
+        "peak": 75.0,
+        "worst64": 9.164906580016247
+      },
+      "after": {
+        "foregroundMAE": 6.139653770187057,
+        "peak": 75.0,
+        "worst64": 9.164906580016247
+      },
+      "uniformDifferentPixels": 0
+    },
+    {
+      "file": "cjk-uniform-2000.png",
+      "unionPixels": 8607,
+      "hashes": [
+        "92d0be024b67a6874b9e1829c92b08eb3dd38ff52eef5e7f5b5e8f3011b09c66",
+        "3e7519d99a2d295cd1e54a58265690e1cfb8bea957459dc73c2317ea96634b9b",
+        "3e7519d99a2d295cd1e54a58265690e1cfb8bea957459dc73c2317ea96634b9b"
+      ],
+      "before": {
+        "foregroundMAE": 7.974439409782735,
+        "peak": 110.0,
+        "worst64": 12.565393988627132
+      },
+      "after": {
+        "foregroundMAE": 7.974439409782735,
+        "peak": 110.0,
+        "worst64": 12.565393988627132
+      },
+      "uniformDifferentPixels": 0
+    }
+  ]
+}

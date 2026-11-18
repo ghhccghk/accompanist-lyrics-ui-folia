@@ -138,6 +138,13 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
         }
     }
     val edges = remember(shown) { graphemeBoundaries(shown).sorted() }
+    val ink = remember(rows,edges,active,reducedMotion) {
+        if(!active||reducedMotion)emptyList() else rows.map { (start,end,paragraph) ->
+            cappellaInkRuns(paragraph,edges.zipWithNext().mapIndexedNotNull { i,(a,b) ->
+                if(a<start||a>=end)null else CappellaInkGlyph(i,a-start,min(b,end)-start)
+            })
+        }
+    }
     val shadows=remember(width,height,density,right,active,decoration) {
         cappellaShadows(width,height,density,right,active,decoration)
     }
@@ -160,7 +167,7 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
         clipPath(outline) {
             if(active&&decoration!=null)drawCappellaSweep(w,h,t,right,decoration,reducedMotion)
             for ((row, entry) in rows.withIndex()) {
-                val (start,end,paragraph) = entry
+                val (_,_,paragraph) = entry
                 val base = cssFontBaseline(metrics.ascent,metrics.descent,(measure.lineHeight*d).toFloat())
                 val top = ((config.paddingY+1+row*measure.lineHeight)*d).toFloat() +
                     base-paintedNaturalBaseline(paragraph,metrics)
@@ -169,22 +176,14 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
                 // passed messages. Caret selections are not glyph ink masks:
                 // clipping each EGC drops overhang and can blend a ligature or
                 // bidi run twice even when every character is fully opaque.
-                // Reduced motion has no character fade and uses the same
-                // complete shaped row. Keep the timed active path unchanged.
+                // Reduced motion has no character fade and uses the same row.
                 if (!active || reducedMotion) {
                     drawText(paragraph,colors.text,topLeft=origin,shadow=Shadow.None)
                     continue
                 }
-                for ((i, edge) in edges.withIndex()) {
-                    if (i >= edges.lastIndex || edge < start || edge >= end) continue
-                    val finish = min(edges[i+1],end)
-                    val alpha = if (!active || reducedMotion) 1f else cappellaEaseOut(plan.progress(i,t)).toFloat()
-                    if (alpha <= 0) continue
-                    val path = paragraph.getPathForRange(edge-start,finish-start)
-                    withTransform({translate(origin.x,origin.y)}) {
-                        clipPath(path) { drawText(paragraph,colors.text,alpha=alpha,shadow=Shadow.None) }
-                    }
-                }
+                val runs=ink[row]
+                val alphas=runs.map{cappellaEaseOut(plan.progress(it.index,t)).toFloat()}
+                drawCappellaInk(paragraph,runs,alphas,colors.text,origin)
             }
         }
       }

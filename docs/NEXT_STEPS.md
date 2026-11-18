@@ -10,11 +10,17 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life、可选文字fragment fog | 无 | 切曲/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：群唱活动逐字淡入的完整塑形覆盖。已读修复的同类裁剪问题仍在活动
-路径；先证明全alpha=1/不同内部时钟的覆盖，再以原active组件和固定矩阵核对，保留
-几何/计时及密集失败记录。Fume有限限幅位移的媒体重建策略仍未成立，已有同初态及
-frozen-clamp-v1证据，不重试focus-only/midpoint-only或固定帧延迟、不改旧oracle。
-最近完成：群唱已读/减少动态完整行绘制，十组像素覆盖零差；原五组同union均值
+当前唯一下一项：群唱绘制改动后的真实Desktop窗口与独立Maven消费回归；保留旧
+105窗口矩阵，只跑本次共享绘制风险所需一轮，检查真实后端的阶梯alpha和释放。
+之后继续群唱早期fi共享字形透明度/密集投影，不能以均值盖过局部失败。
+Fume有限限幅位移的媒体重建策略仍未成立，已有同初态/frozen-clamp-v1证据；
+不重试focus-only/midpoint-only或固定帧延迟、不改旧oracle。
+最近完成：群唱活动路径单次完整行+内部EGC阶梯alpha，15统一alpha/15变换覆盖
+零差，30原字素count/CSS透明度一致；原同union均值12.375545→11.677862，最坏局部
+223.259843未改善，italic100ms微退步已记录，不能正式验收。240几何六表字节不变，
+22.188593px未修。分次vectorclip和constantgradient失败均保留；16项定向JVM、
+Android库/Desktop编译通过，证据verification/cappella-active-ink，无新设备/性能结论。
+已提交930d104：群唱已读/减少动态完整行绘制，十组像素覆盖零差；原五组同union均值
 7.962819→7.081652，斜体局部109.412121→10.674576。密集240几何六表字节不变，
 22.188593px残差保留；整屏均值6.387616→6.387741微退步如实保留。证据
 verification/cappella-complete-text，JVM/public/Android库/Desktop编译通过，无设备结论。

@@ -1725,3 +1725,15 @@ active opacity path and target/flow geometry unchanged. Original component/font/
 Motion/host hashes, ten exact native coverage controls, five original images,
 and unchanged240-frame dense geometry evidence: verification/cappella-complete-text.
 Not a repair of the22.188593px layout residual or full-theme acceptance.
+
+### Cappella active shaped-ink clock ownership (2026-11-18)
+Pinned CappellaBubbleParts.tsx:133–159 / cappellaReveal.ts -> CappellaBubble.kt
+and independent CappellaInk.kt. Existing EGC times/fades/count remain; native
+whole-row shaping receives one step-alpha shader instead of repeated caret
+clips. Visual columns retain EGC clock indices and complete overhang; identical
+alpha uses original solid text. No original shader or new resource copied.
+Rejected fractional vector clips, constant-shader raster failure,30 actual
+original character/CSS observations,15 uniform controls/transformed coverage,
+source visual and240 dense unchanged geometry: verification/cappella-active-ink.
+Early shared-fi CSS opacity/raster difference and22.188593px layout residual
+remain; not final source/Android/performance acceptance.

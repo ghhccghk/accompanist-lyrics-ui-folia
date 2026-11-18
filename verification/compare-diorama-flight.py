@@ -8,17 +8,19 @@ from PIL import Image, ImageDraw
 
 root = Path(__file__).resolve().parents[1]
 loop = '--loop' in sys.argv
-name = 'diorama-loop-stage' if loop else 'diorama-flight'
+cut = '--cut' in sys.argv
+assert not (loop and cut)
+name = 'diorama-cut-stage' if cut else 'diorama-loop-stage' if loop else 'diorama-flight'
 source = root / f'build/verification/{name}-browser'
 native = root / f'build/verification/{name}-kotlin'
 out = root / f'verification/{name}'
 out.mkdir(parents=True, exist_ok=True)
 sequence = '--sequence' in sys.argv
-assert not (loop and sequence)
+assert not ((loop or cut) and sequence)
 stem = 'sequence' if sequence else 'scene'
-fixture = 'loop-stage-v1' if loop else 'flight-v1'
+fixture = 'cut-stage-v1' if cut else 'loop-stage-v1' if loop else 'flight-v1'
 conditions = json.loads((root / f'verification/diorama-fixtures/{fixture}/{stem}.json').read_text(encoding='utf-8'))
-assert len(conditions['captures']) == (40 if loop else 67 if sequence else 96)
+assert len(conditions['captures']) == (48 if cut else 40 if loop else 67 if sequence else 96)
 for suffix in (['sequence'] if sequence else ['380', '800']):
     assert (native / f'numeric-{suffix}.txt').is_file(), 'Wait for completed native captures'
 bg = np.array([22, 36, 53])
@@ -68,6 +70,9 @@ if sequence:
 if loop:
     names = ['loop-380-60-0.png', 'loop-800-60-700.png', 'loop-800-144-1600.png',
              'loop-380-60-2099.png', 'loop-800-60-3200.png', 'loop-380-144-4500.png']
+if cut:
+    names = ['cut-380-60-0.png', 'cut-800-60-700.png', 'cut-800-144-1600.png',
+             'cut-380-60-2099.png', 'cut-800-60-3200.png', 'cut-380-144-3500.png']
 sheet = Image.new('RGB', (1260, len(names)*338), (30, 30, 30))
 draw = ImageDraw.Draw(sheet)
 for i, name in enumerate(names):

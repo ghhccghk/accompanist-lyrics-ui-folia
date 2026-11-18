@@ -1768,8 +1768,9 @@ Original verbatim block exporter/hash ledger,480 independent original incoming
 finite controls,96 source/own-core text frames and67 chronological observations:
 verification/diorama-flight. No expected source pose drives native rendering.
 Original gates retained; media/RAF,raster/clipping residuals and failed tests
-preserved. Full outgoing corridor/window,loop restart and late-ready song gate
-remain missing; no public/sample Diorama or device/performance acceptance.
+preserved. Historical as of486b8c1: outgoing corridor/window,loop restart and
+late-ready song gate were missing. Later loop and bounded text cut entries below
+supersede only the implemented parts; no public/sample Diorama or device claim.
 
 ### Diorama exact core millisecond boundary (2026-11-18)
 Independent host adaptation in DioramaTextPlayback.kt, not copied source math.
@@ -1801,3 +1802,17 @@ independent media full text:verification/diorama-loop-stage. Original input,
 step/ref/host/font/lock/source hashes retained; explicit local clock/window and
 analytic charge injections disclosed. No modified upstream logic, source output
 pose driving native, or mounted full-scene/RAF-envelope/visual acceptance claim.
+
+### Diorama bounded cross-song departing text (2026-11-18)
+Pinned cc6226e4 VisualizerDiorama.tsx:350–455,dioramaSceneLayout.ts:26–78,
+sceneFrame.ts:103–131 -> DioramaTextCut.kt and TextPlayback.cutAt/prepare/
+neighborFramesAt/drawStage, shared DioramaNeighbors global-index helpers.
+Original old-frame+seeded new origin, outgoing/live union and nearest-cluster
+tie/primary/life/order rules; independent bounded ownership keeps <=6 existing
+plain rasters with value placements, never old playback/core/active rasters/jobs
+or recursive departures. Media[0,3.2) replaces source wall timeout; explicit
+ready cut, three-corridor guard and reconstruction limits documented. No source
+asset or background runtime copied. Same fixed source full text-only stage,
+48 original/own-finite/own-media frames and244 original materials plus retained
+failure/regression:verification/diorama-cut-stage. No source pose drives native;
+not mounted full CameraRig, general sequencer/font-gate/depth/public acceptance.

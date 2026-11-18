@@ -19,12 +19,14 @@ internal data class DioramaPlaybackLine(val core: DioramaCoreLine, val text: Dio
  * projective three-layer drawing. Original weighted shot picker uses actual
  * source word timings and optional explicit metadata; overrides are calibration.
  * Normal neighbour window and optional host-color fragment fog are integrated;
- * incoming text-flight anchors are optional. Outgoing corridor composition and
- * depth testing remain separate. Near/far clipping and optional fog are shared
+ * incoming text-flight anchors and bounded two-corridor cuts are optional.
+ * Full sequencer/depth testing remain separate. Near/far clipping and optional fog are shared
  * by all text layers. */
 internal class DioramaTextPlayback private constructor(val lines: List<DioramaPlaybackLine>,
     val camera: DioramaCameraTrack, val width: Double, val height: Double,
-    private val transitionOutgoingIndex: Int? = null) {
+    private val transitionOutgoingIndex: Int? = null,
+    val departure: DioramaTextDeparture? = null) {
+    val globalStart: Int get() = departure?.sourceSpan ?: 0
     fun lyricTime(mediaSeconds: Double, offsetMillis: Int = 0): Double {
         require(mediaSeconds.isFinite())
         // Same host contract as FoliaLyricsView: positive offset delays lyrics.
@@ -40,11 +42,27 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         lines[camera.subjectIndex(lyricTime(mediaSeconds,offsetMillis))].core
     fun mediaStart(core: DioramaCoreLine, offsetMillis: Int = 0) =
         if(offsetMillis==0)core.lyric.start else (core.lyric.start*1000.0+offsetMillis)/1000.0
-    /** Capture before preparing a ready incoming song. No old scene/cache/job
-     * is retained; full outgoing-corridor composition remains a separate task. */
+    /** Value-only anchor for callers which deliberately retain no old text. */
     fun transitionAt(mediaSeconds: Double, epoch: Int, offsetMillis: Int = 0): DioramaTextTransition {
         val time=lyricTime(mediaSeconds,offsetMillis)
         return DioramaTextTransition(camera.at(time),camera.subjects[camera.subjectIndex(time)].frame.position,epoch)
+    }
+    /** Capture only the necessary plain text from this active corridor. A
+     * third still-visible corridor needs the full sequencer, not silent loss.
+     * Preparation/cancellation of the new song leaves this owner unchanged. */
+    fun cutAt(mediaSeconds: Double, epoch: Int, offsetMillis: Int = 0): DioramaTextCut {
+        val time=lyricTime(mediaSeconds,offsetMillis)
+        require(departure==null || mountedTextIndicesAt(time).all { it>=globalStart }) {
+            "Interrupted three-corridor text cuts require a sequencer; previous departing text is still mounted"
+        }
+        val index=camera.subjectIndex(time)
+        val indices=dioramaDepartureTextIndices(index,lines.size)
+        val planes=indices.map { i ->
+            val s=camera.subjects[i]
+            DioramaDepartingPlane(i,lines[i].neighbor,s.frame,s.placement)
+        }
+        return DioramaTextCut(transitionAt(mediaSeconds,epoch,offsetMillis),
+            DioramaTextDeparture(lines.size,index,planes))
     }
     /** Caller supplies a real loop discontinuity, not a generic backwards seek.
      * Folia VisualizerDiorama:402–422 keeps the segment and flies to its start.
@@ -53,12 +71,29 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
     fun loopAt(mediaSeconds: Double, epoch: Int, offsetMillis: Int = 0,
         checkpoint: () -> Unit = {}): DioramaTextPlayback {
         val time=lyricTime(mediaSeconds,offsetMillis);val previous=camera.at(time)
-        return DioramaTextPlayback(lines,camera.restarted(previous,epoch,checkpoint),width,height,camera.subjectIndex(time))
+        return DioramaTextPlayback(lines,camera.restarted(previous,epoch,checkpoint),width,height,
+            globalStart+camera.subjectIndex(time),departure)
     }
     fun outgoingTextIndexAt(time: Double): Int? =
         if(time>=0.0&&time<DioramaFlightDuration)transitionOutgoingIndex else null
     fun mountedTextIndicesAt(time: Double): List<Int> =
-        dioramaTransitionTextIndices(camera.subjectIndex(time),outgoingTextIndexAt(time),lines.size)
+        dioramaTransitionTextIndices(globalStart+camera.subjectIndex(time),outgoingTextIndexAt(time),globalStart+lines.size)
+            .filter { it>=globalStart || departure?.planes?.any { p -> p.index==it }==true }
+    private fun plainAt(globalIndex: Int): DioramaDepartingPlane = if(globalIndex<globalStart)
+        departure!!.planes.first { it.index==globalIndex }
+    else {
+        val i=globalIndex-globalStart;val s=camera.subjects[i]
+        DioramaDepartingPlane(globalIndex,lines[i].neighbor,s.frame,s.placement)
+    }
+    fun neighborFramesAt(time: Double, view: DioramaPerspective, primary: DioramaLinearColor,
+        secondary: DioramaLinearColor = primary): List<DioramaNeighborFrame> {
+        val current=globalStart+camera.subjectIndex(time)
+        return mountedTextIndicesAt(time).filter { it!=current }.map { i ->
+            val p=plainAt(i)
+            dioramaNeighborFrame(i,current,p.text.advancePx,p.text.fontPx,p.frame,p.placement,
+                view,primary,secondary,outgoingTextIndexAt(time))
+        }.sortedWith(compareByDescending<DioramaNeighborFrame>{it.depth}.thenBy{it.index})
+    }
     fun draw(scope: DrawScope, mediaSeconds: Double, primary: DioramaLinearColor,
         accent: DioramaLinearColor, offsetMillis: Int = 0, reducedMotion: Boolean = false,
         secondary: DioramaLinearColor = primary, fog: DioramaFog? = null) {
@@ -74,14 +109,10 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         // Original neighbours are transparent, depthWrite=false and order0;
         // active layers have order17/18/19. With no opaque background geometry,
         // far-to-near centre sorting reproduces that transparent text ordering.
-        val outgoing=outgoingTextIndexAt(time)
-        mountedTextIndicesAt(time).filter { it!=index }.map { i ->
-            val subject=camera.subjects[i];val text=lines[i].neighbor
-            dioramaNeighborFrame(i,index,text.advancePx,text.fontPx,subject.frame,subject.placement,view,primary,secondary,outgoing)
-        }.sortedWith(compareByDescending<DioramaNeighborFrame>{it.depth}.thenBy{it.index}).forEach { neighbor ->
+        neighborFramesAt(time,view,primary,secondary).forEach { neighbor ->
             if(neighbor.opacity>0) {
-                val subject=camera.subjects[neighbor.index]
-                lines[neighbor.index].neighbor.draw(scope,view,subject.frame,subject.placement,
+                val p=plainAt(neighbor.index)
+                p.text.draw(scope,view,p.frame,p.placement,
                     neighbor.color.srgb(),neighbor.opacity.toFloat(),fog)
             }
         }
@@ -96,14 +127,16 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             seedName: String, endTime: Double? = null, checkpoint: () -> Unit = {},
             metadata: List<DioramaShotMetadata> = emptyList(),
             mode: DioramaShotMode = DioramaShotMode.normal,
-            transition: DioramaTextTransition? = null): DioramaTextPlayback {
+            transition: DioramaTextTransition? = null, cut: DioramaTextCut? = null): DioramaTextPlayback {
             require(width.isFinite() && height.isFinite() && width>0 && height>0)
+            require(transition==null || cut==null) { "Supply one incoming anchor: transition or cut" }
+            val anchor=cut?.anchor?:transition
             val mapped=dioramaCoreLines(normalize(core))
             require(mapped.isNotEmpty() && (shots==null || shots.size==mapped.size))
             require(metadata.isEmpty() || metadata.size==mapped.size)
             val seed=dioramaHashSeed(seedName)
             val lyrics=mapped.map{it.lyric}
-            val origin=transition?.let { it.outgoingOrigin+dioramaTransitionOffset(seed,it.epoch) }
+            val origin=anchor?.let { it.outgoingOrigin+dioramaTransitionOffset(seed,it.epoch) }
                 ?:DioramaVec(0.0,0.0,0.0)
             val frames=buildDioramaPath(mapped.size,seed).map { it.copy(position=it.position+origin) }
             // Repeated chorus text shares its immutable plain raster within
@@ -128,8 +161,8 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             val end=endTime?:max(0.0,subjects.maxOf { it.line.renderEnd }+8)
             val track=DioramaCameraTrack(subjects,width,height,end,seed,smoothTime=mode.smooth,
                 moveScale=mode.move,driftScale=mode.drift,checkpoint=checkpoint,
-                initialState=transition?.previous?:DioramaFollowState(),flightEpoch=transition?.epoch?:0)
-            return DioramaTextPlayback(lines,track,width,height)
+                initialState=anchor?.previous?:DioramaFollowState(),flightEpoch=anchor?.epoch?:0)
+            return DioramaTextPlayback(lines,track,width,height,cut?.departure?.outgoingIndex,cut?.departure)
         }
     }
 }

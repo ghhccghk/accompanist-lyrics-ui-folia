@@ -1,0 +1,40 @@
+{
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "sourceFrames": 48,
+  "originalMaterialRows": 244,
+  "finiteGate": 1e-09,
+  "nativeControls": {
+    "numeric-380.txt": "sourceFrames=24 finitePosePeak=1.4210854715202004E-14 materialRows=122 materialPeak=2.842170943040401E-14 gate=1e-9 adaptiveMediaVsSourceFinitePositionResidual=0.11002510718601854 quaternionOneMinusDot=6.78149073041201E-5\nMedia includes outgoing history; not local-only/RAF equivalence or public/Android acceptance\n",
+    "numeric-800.txt": "sourceFrames=24 finitePosePeak=8.881784197001252E-15 materialRows=122 materialPeak=2.842170943040401E-14 gate=1e-9 adaptiveMediaVsSourceFinitePositionResidual=0.10950779247438902 quaternionOneMinusDot=5.4886209774673844E-5\nMedia includes outgoing history; not local-only/RAF equivalence or public/Android acceptance\n"
+  },
+  "tests": [
+    {
+      "name": "DioramaCutStageTest[jvm]",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0"
+    }
+  ],
+  "additionalTargetedRegressionTests": 14,
+  "builds": [
+    ":library:compileAndroidMain",
+    ":sample:desktop-app:compileKotlin"
+  ],
+  "priorNativeLoopPngs": {
+    "count": 80,
+    "allHashesUnchanged": true
+  },
+  "unverified": [
+    "actual mounted React/R3F CameraRig",
+    "Android runtime",
+    "new actual Desktop window/audio",
+    "full sequencer",
+    "GPU resource reclamation/performance"
+  ],
+  "logs": [
+    ".work/diorama-cut-first.log",
+    ".work/diorama-cut-source-boundary.log",
+    ".work/diorama-cut-regression.log",
+    ".work/diorama-cut-final.log"
+  ]
+}

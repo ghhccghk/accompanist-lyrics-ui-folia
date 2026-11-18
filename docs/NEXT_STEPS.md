@@ -8,12 +8,22 @@
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
-| Diorama | core/完整文字透视/三层、13目标、follower/原picker、裁剪/邻行/life/fog、incoming flight/同走廊loop媒体重建 | 无 | 完整双走廊/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
+| Diorama | core/完整文字透视/三层、13目标、follower/原picker、裁剪/邻行/life/fog、incoming flight/同走廊loop/有界双走廊plain媒体重建 | 无 | 完整原挂载/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：镜台有界的跨曲departing文字窗口，与实际原版同字体/视口/
-core内容做完整文字过渡对照；仅保留必要旧plain planes，不递归保留整曲playback。
+当前唯一下一项：镜台原挂载CameraRig与真实文字层的最小切歌片段对照，复用已固定
+双走廊歌词/字体/几何，先验证实际flight refs/frame-keep/事件与提取算子的一致性。
+完成条件为真实原组件的控制边界、时序及完整文本画面证据；不开放公共主题。
+跨曲plain文字窗口为历史下一项，已完成<=6旧plain共享快照/全局索引/原归属及
+中心深度排序，不保留旧core/active raster/整曲playback/job，不递归保留旧快照。
+48原完整文字帧/244材质：有限pose峰1.42e-14、材质峰2.84e-14(门槛1e-9)；
+同union前景均值有限6.331865/媒体20.047587、局部23.651852/97.018091，媒体含
+outgoing历史位置残差.110025world，触边41/41/40、无空帧，仍未正式视觉验收。
+原组件完整挂载/三走廊打断/晚到歌词/换字体等尚未实现；三走廊明确拒绝而非吞掉。
+暂停/乱序seek/offset/reduced/尺寸恢复/重挂/取消通过；Android库/Desktop编译和
+公共三主题及loop/core/offset定向回归通过，80旧loop native PNG hash不变。
+首轮3.2s旧尾窗口测试假设被独立原表否定，失败保存；不改原表/原图。
+证据verification/diorama-cut-stage；无新设备/真实窗口/音频/性能结论。
 loop回程完整文字对照已补，后续不再重复该40帧；跨曲采用同样的固定方法。
-完成条件为源窗口/层级/opacity、完整文字及暂停seek/切曲/释放证据；不开放公共主题。
 同走廊loop为历史下一项，4a69b2a已完成：原32连续有限控制峰8.74e-13、26窗口/
 436材质峰1.42e-14、真实core原对象/文字/raster/世界帧复用、取消/媒体重建通过；
 outgoing窗口与flight同一媒体时间，在3.2s精确结束。15定向JVM/Android库/Desktop

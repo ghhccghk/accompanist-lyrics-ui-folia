@@ -1,7 +1,7 @@
 // Copyright (c) 2026 chthollyphile and contributors
 // SPDX-License-Identifier: AGPL-3.0-only
 // Folia cc6226e4 dioramaSceneLayout.ts / sceneConstants.ts / sceneFrame.ts.
-// Normal and same-corridor outgoing text windows; source: docs/upstream.md.
+// Normal and outgoing text windows in global index space; source: docs/upstream.md.
 package top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama
 
 import kotlin.math.sqrt
@@ -14,8 +14,8 @@ internal fun dioramaMountedTextIndices(current: Int, total: Int): IntRange {
     return maxOf(0, current - 2)..minOf(total - 1, current + 3)
 }
 
-/** Source sorted union: live -2/+3, departing -2/+1. One corridor for loops;
- * cross-song indices require a separate sequencer and are not fabricated. */
+/** Source sorted union: live -2/+3, departing -2/+1. Global index differences
+ * also cover the bounded two-corridor text cut; full sequencer is separate. */
 internal fun dioramaTransitionTextIndices(current: Int, outgoing: Int?, total: Int): List<Int> {
     val live=dioramaMountedTextIndices(current,total)
     if(outgoing==null||total==0)return live.toList()

@@ -1,0 +1,95 @@
+{
+  "baseline": "2ccdc1a",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "originalFrameAndStateAndHistoryUnchanged": true,
+  "originalCallbacks": 452,
+  "worldCornerPeak": 4.054829361166412e-09,
+  "projectedPixelPeak": 1.4825639027549187e-07,
+  "depthPeak": 1.617355138705534e-09,
+  "nativeControl": "worldPeak=4.054829361166412E-9 pixelPeak=1.4825639027549187E-7 depthPeak=1.617355138705534E-9 homographyPeak=5.684341886080802E-14",
+  "geometryQuantization": "Original actual Float32 PlaneGeometry buffers versus native Double planes; tolerances fixed before first run: world/depth1e-6, pixel1e-5, homography1e-9.",
+  "texture": {
+    "width": 1650,
+    "height": 232,
+    "minFilter": 1008,
+    "magFilter": 1006,
+    "anisotropy": 4,
+    "generateMipmaps": true,
+    "flipY": true,
+    "premultiplyAlpha": false,
+    "colorSpace": "srgb",
+    "wrapS": 1001,
+    "wrapT": 1001
+  },
+  "material": {
+    "opacity": 0.3,
+    "color": [
+      0.7379104087672317,
+      0.7835377915215659,
+      0.8387990117372213
+    ],
+    "transparent": true,
+    "blending": 1,
+    "premultipliedAlpha": false,
+    "alphaTest": 0,
+    "depthTest": true,
+    "depthWrite": false,
+    "side": 0,
+    "toneMapped": true
+  },
+  "renderer": {
+    "maxAnisotropy": 16,
+    "samples": 4
+  },
+  "footprints": [
+    {
+      "texturePoint": [
+        0,
+        0
+      ],
+      "screenPixelsPerTexel": [
+        0.05856079745955555,
+        0.04787142053907094
+      ],
+      "textureTexelsPerScreenPixel": [
+        17.07627019066194,
+        20.889290285084307
+      ],
+      "isotropicLod": 4.3846915724727245
+    },
+    {
+      "texturePoint": [
+        825,
+        116
+      ],
+      "screenPixelsPerTexel": [
+        0.059334448267833906,
+        0.04856602410176605
+      ],
+      "textureTexelsPerScreenPixel": [
+        16.8536158874526,
+        20.590526370958088
+      ],
+      "isotropicLod": 4.363908806016556
+    },
+    {
+      "texturePoint": [
+        1650,
+        232
+      ],
+      "screenPixelsPerTexel": [
+        0.060369146049356726,
+        0.04907850489489475
+      ],
+      "textureTexelsPerScreenPixel": [
+        16.56475311382437,
+        20.37551881707835
+      ],
+      "isotropicLod": 4.348764889705758
+    }
+  ],
+  "interpretation": "No measured corner displacement can explain 193 versus409 covered pixels. Heavy minification is real. This does not identify a sampling/compositing cause or prove all projection paths correct.",
+  "productionChanged": false,
+  "visualAcceptance": false,
+  "deviceValidated": false
+}

@@ -201,6 +201,7 @@ class DioramaMountedStageTest {
             val index=probes.indexOfFirst{it[2]=="60"&&it[3].toDouble()==.7}
             assertTrue(index>=0)
             runOnIdle{current=index;method="material"};val production=pixels()
+            exportNeighborGeometry(diagnosticPlanes.getValue(7),drawn!!)
             ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("production.png"))
             runOnIdle{method="input-own"};assertContentEquals(production,pixels(),"Own-texture diagnostic replay must match the real production drawStage exactly")
             ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("own-replay.png"))
@@ -228,6 +229,42 @@ class DioramaMountedStageTest {
         runOnIdle{mounted=true};assertTrue(paused.contentEquals(pixels()))
         out.resolve("numeric-$width.txt").writeText("originalMountedSteps=$stepCount finiteStatePosePeak=$controlPeak widthPeak=$widthPeak gate=1e-9 adaptiveMediaPositionResidual=$mediaPeak\nFinite control reproduces original actual callback-width order with independently prepared core geometry; production media draws native analytic material without original RAF state injection\n")
         out.resolve("material-$width.txt").writeText("originalUnitStates=$materialStates materialPeak=$materialPeak sampledEnvelopePeak=$envelopePeak gate=1e-9\nOwn finite Float32 history/reset from core intervals, original wall breath and own camera life; no original material/pose values drive rendering.\n")
+    }
+
+    /** Compare actual upstream Float32 buffer corners with our independently
+     * prepared core paragraph/frame/placement and projective homography.
+     * Expected world/projected coordinates are assertions, never draw inputs. */
+    private fun exportNeighborGeometry(p:DioramaDepartingPlane,view:DioramaPerspective) {
+        val expected=File("../verification/diorama-fixtures/mounted-geometry-v1/vertices.tsv")
+            .readLines().filterNot{it.startsWith('#')||it.isBlank()}.map{it.split('\t').map(String::toDouble)}
+        val width=p.text.image.width.toDouble();val height=p.text.image.height.toDouble()
+        val scale=dioramaFrameFit(p.text.worldWidth,5.2,view.fov,view.width/view.height)*p.placement.scale
+        val x=dioramaPlaneAxis(p.frame,p.placement,1.0,0.0)*(scale*.62/p.text.fontPx)
+        val y=dioramaPlaneAxis(p.frame,p.placement,0.0,-1.0)*(scale*.62/p.text.fontPx)
+        val center=dioramaComposeLocal(p.frame,p.placement.offsetR,p.placement.offsetU,0.0)
+        val origin=center-x*(width/2)-y*(height/2)
+        val h=view.planeHomography(origin,x,y)
+        val corners=listOf(0.0 to 0.0,width to 0.0,0.0 to height,width to height)
+        var worldPeak=0.0;var pixelPeak=0.0;var depthPeak=0.0;var homographyPeak=0.0
+        val records=corners.mapIndexed { i,(u,v) ->
+            val e=expected[i];assertEquals(u,e[0],0.0);assertEquals(v,e[1],0.0)
+            val world=origin+x*u+y*v;val projected=view.project(world)
+            val row=listOf(u,v,world.x,world.y,world.z,projected.x,projected.y,projected.depth)
+            for(j in 2..7) {
+                val error=abs(e[j]-row[j])
+                when(j){in 2..4->worldPeak=max(worldPeak,error);in 5..6->pixelPeak=max(pixelPeak,error);else->depthPeak=max(depthPeak,error)}
+                assertEquals(e[j],row[j],if(j in 5..6)1e-5 else 1e-6,"actual source mesh7 corner$i field$j (buffer Float32)")
+            }
+            val z=h[6]*u+h[7]*v+h[8]
+            val hx=(h[0]*u+h[1]*v+h[2])/z;val hy=(h[3]*u+h[4]*v+h[5])/z
+            homographyPeak=max(homographyPeak,max(abs(hx-projected.x),abs(hy-projected.y)))
+            assertEquals(projected.x,hx,1e-9);assertEquals(projected.y,hy,1e-9)
+            row.joinToString("\t")
+        }
+        val out=File("../build/verification/diorama-mounted-geometry-kotlin").apply{mkdirs()}
+        out.resolve("vertices.tsv").writeText("# textureX textureY worldX worldY worldZ pixelX pixelY depth\n"+records.joinToString("\n")+"\n")
+        out.resolve("control.txt").writeText("worldPeak=$worldPeak pixelPeak=$pixelPeak depthPeak=$depthPeak homographyPeak=$homographyPeak\n")
+        out.resolve("homography.tsv").writeText(h.joinToString("\t")+"\n")
     }
 
     /** Diagnostic-only replay of the production plain-plane transform. Its own

@@ -16,9 +16,13 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：固定700ms同原cache7控制，读取实际原mesh7的world/view/clip
-角点、UV与材质采样状态，并与本独立core几何/homography逐点比较；先区分几何
-与采样残差，再决定必要修复。不拟合相机/像素，不重复无效filter hint或shader候选。
+当前唯一下一项：固定700ms实际原mesh7/texture的独立克隆控制，对比原采样、
+linear无mip、trilinear各向异性1，核对恢复原完整图/状态；明确区分诊断修改图和
+原验收图，先验证原采样是否解释覆盖扩散，再做native修改，不再盲调hint。
+实际原mesh投影控制已完成：452callback/完整PNG/状态未变，4角本独立core几何
+世界峰4.055e-9/投影1.483e-7px/深度1.617e-9，homography峰5.684e-14px。
+不能解释193/409覆盖差。原texture确为trilinear/aniso4，MSAA4；见
+verification/diorama-mounted-geometry，非全矩阵/设备/视觉通过。
 上一项strict/mipmap假设已做有界反证：公开Bitmap shader经Compose绘制，no-mip
 与生产逐像素相同，trilinear仅23分量变化且MAE13.762021→13.762836微退步。
 候选完整补丁与结果保存verification/diorama-sampling-shader并已精确反向撤回；

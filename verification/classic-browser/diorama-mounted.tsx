@@ -111,6 +111,32 @@ Object.assign(window,{mountedReady:true,mountedInputs:{oldLines,lines,oldSeed,se
      actualBoundingBoxDescent:metrics.actualBoundingBoxDescent},png:canvas.toDataURL('image/png')};
   });
  },
+ // Passive actual GPU inputs; do not update any matrix or render a new frame.
+ // Both Float32 geometry corners and ideal plane parameters are retained so
+ // buffer quantization cannot be mistaken for a camera/placement discrepancy.
+ readMountedNeighborGeometry:(index:number)=>{
+  const state=_roots.get(canvas)!.store.getState(),mesh=refs(DioramaScene)[0].get(index);
+  if(!mesh)throw Error(`Missing actual mounted neighbour ${index}`);
+  const geometry=mesh.geometry,position=geometry.getAttribute('position'),uv=geometry.getAttribute('uv');
+  const mat=mesh.material,map=mat.map,camera=state.camera;
+  const vertices=Array.from({length:position.count},(_,i)=>{
+   const local=new THREE.Vector3().fromBufferAttribute(position,i),world=local.clone().applyMatrix4(mesh.matrixWorld);
+   const view=world.clone().applyMatrix4(camera.matrixWorldInverse);
+   const clip=new THREE.Vector4(view.x,view.y,view.z,1).applyMatrix4(camera.projectionMatrix);
+   return{local:local.toArray(),uv:[uv.getX(i),uv.getY(i)],world:world.toArray(),view:view.toArray(),
+    clip:clip.toArray(),pixel:[(clip.x/clip.w+1)*innerWidth/2,(1-clip.y/clip.w)*600/2],depth:-view.z};
+  });
+  return{index,vertices,indices:Array.from(geometry.index.array),planeParameters:geometry.parameters,
+   worldMatrix:mesh.matrixWorld.toArray(),viewMatrix:camera.matrixWorldInverse.toArray(),
+   projectionMatrix:camera.projectionMatrix.toArray(),
+   material:{opacity:mat.opacity,color:mat.color.toArray(),transparent:mat.transparent,
+    blending:mat.blending,premultipliedAlpha:mat.premultipliedAlpha,alphaTest:mat.alphaTest,
+    depthTest:mat.depthTest,depthWrite:mat.depthWrite,side:mat.side,toneMapped:mat.toneMapped},
+   texture:{width:map.image.width,height:map.image.height,minFilter:map.minFilter,magFilter:map.magFilter,
+    anisotropy:map.anisotropy,generateMipmaps:map.generateMipmaps,flipY:map.flipY,
+    premultiplyAlpha:map.premultiplyAlpha,colorSpace:map.colorSpace,wrapS:map.wrapS,wrapT:map.wrapT},
+   renderer:{maxAnisotropy:state.gl.capabilities.getMaxAnisotropy(),samples:state.gl.getContext().getParameter(state.gl.getContext().SAMPLES)}};
+ },
  // Labelled diagnostic render only: clone an ACTUAL mounted neighbour mesh,
  // retaining its matrix/geometry/texture/material and the mounted camera/fog.
  // Original objects/refs stay unchanged; null restores the original whole scene.

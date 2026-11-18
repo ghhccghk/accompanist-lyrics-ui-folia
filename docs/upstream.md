@@ -1816,3 +1816,15 @@ asset or background runtime copied. Same fixed source full text-only stage,
 48 original/own-finite/own-media frames and244 original materials plus retained
 failure/regression:verification/diorama-cut-stage. No source pose drives native;
 not mounted full CameraRig, general sequencer/font-gate/depth/public acceptance.
+
+### Diorama original mounted camera and text baseline (2026-11-18)
+Untouched pinned CameraRig.tsx + DioramaScene.tsx/DioramaActiveUnitPlanes/cache
+mounted via reference-only @react-three/fiber9.8.1, exact original direct runtime
+and Motion lock. No copied renderer runtime enters the library. Host supplies
+ready append/read head/manual R3F time/cache RAF delivery; Fiber observations
+are passive and source operators/components unchanged. Actual default shots,
+source Float32 envelopes/wall breath/fog/ACES retained.4686 original callbacks,
+48 frames, independent own-core finite-camera control and production-media
+comparison:verification/diorama-mounted. Source callback width handoff and
+previously unaccounted R3F ACES identified; no frame delay or expected pose drives
+production. Parent gating/timeout/full RAF scene, visual/device acceptance pending.

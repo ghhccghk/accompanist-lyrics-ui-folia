@@ -1,0 +1,60 @@
+{
+  "sourceFrames": 48,
+  "originalIntervals": 4686,
+  "extractedVsMountedPeak": 0,
+  "finiteGate": 1e-09,
+  "nativeControls": {
+    "numeric-380.txt": "originalMountedSteps=2343 finiteStatePosePeak=6.039613253960852E-14 widthPeak=4.440892098500626E-16 gate=1e-9 adaptiveMediaPositionResidual=0.1305875347511929\nFinite control reproduces original actual callback-width order with independently prepared core geometry; production media draws native analytic material without original RAF state injection\n",
+    "numeric-800.txt": "originalMountedSteps=2343 finiteStatePosePeak=2.7977620220553945E-14 widthPeak=8.881784197001252E-16 gate=1e-9 adaptiveMediaPositionResidual=0.13041560277857656\nFinite control reproduces original actual callback-width order with independently prepared core geometry; production media draws native analytic material without original RAF state injection\n"
+  },
+  "originalTeardowns": [
+    {
+      "width": 380,
+      "fps": 60,
+      "roots": 0,
+      "queuedRafs": 0
+    },
+    {
+      "width": 380,
+      "fps": 144,
+      "roots": 0,
+      "queuedRafs": 0
+    },
+    {
+      "width": 800,
+      "fps": 60,
+      "roots": 0,
+      "queuedRafs": 0
+    },
+    {
+      "width": 800,
+      "fps": 144,
+      "roots": 0,
+      "queuedRafs": 0
+    }
+  ],
+  "comparisons": {
+    "finite": {
+      "mean_foreground_mae": 7.251752545486899,
+      "peak_foreground_mae": 20.4922286448298,
+      "local_worst": 24.61761229314421
+    },
+    "media": {
+      "mean_foreground_mae": 20.348140962302626,
+      "peak_foreground_mae": 50.14183061252965,
+      "local_worst": 87.85396825396825
+    }
+  },
+  "actualRenderer": {
+    "toneMapping": 4,
+    "outputColorSpace": "srgb"
+  },
+  "validation": "Two targeted JVM tests pass; no new production change/Android runtime/real window/performance claim",
+  "logs": [
+    ".work/diorama-mounted-first.log",
+    ".work/diorama-mounted-shared-three.log",
+    ".work/diorama-mounted-native-first.log",
+    ".work/diorama-mounted-capture.log",
+    ".work/diorama-mounted-native-controls.log"
+  ]
+}

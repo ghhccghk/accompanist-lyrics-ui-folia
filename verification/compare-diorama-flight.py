@@ -9,18 +9,19 @@ from PIL import Image, ImageDraw
 root = Path(__file__).resolve().parents[1]
 loop = '--loop' in sys.argv
 cut = '--cut' in sys.argv
-assert not (loop and cut)
-name = 'diorama-cut-stage' if cut else 'diorama-loop-stage' if loop else 'diorama-flight'
+mounted = '--mounted' in sys.argv
+assert sum([loop, cut, mounted]) <= 1
+name = 'diorama-mounted' if mounted else 'diorama-cut-stage' if cut else 'diorama-loop-stage' if loop else 'diorama-flight'
 source = root / f'build/verification/{name}-browser'
 native = root / f'build/verification/{name}-kotlin'
 out = root / f'verification/{name}'
 out.mkdir(parents=True, exist_ok=True)
 sequence = '--sequence' in sys.argv
-assert not ((loop or cut) and sequence)
+assert not ((loop or cut or mounted) and sequence)
 stem = 'sequence' if sequence else 'scene'
-fixture = 'cut-stage-v1' if cut else 'loop-stage-v1' if loop else 'flight-v1'
+fixture = 'mounted-cut-v1' if mounted else 'cut-stage-v1' if cut else 'loop-stage-v1' if loop else 'flight-v1'
 conditions = json.loads((root / f'verification/diorama-fixtures/{fixture}/{stem}.json').read_text(encoding='utf-8'))
-assert len(conditions['captures']) == (48 if cut else 40 if loop else 67 if sequence else 96)
+assert len(conditions['captures']) == (48 if cut or mounted else 40 if loop else 67 if sequence else 96)
 for suffix in (['sequence'] if sequence else ['380', '800']):
     assert (native / f'numeric-{suffix}.txt').is_file(), 'Wait for completed native captures'
 bg = np.array([22, 36, 53])
@@ -39,7 +40,7 @@ for c in conditions['captures']:
     assert a.shape == b.shape == m.shape
     mask = np.any(a != bg, axis=2) | np.any(b != bg, axis=2) | np.any(m != bg, axis=2)
     boxes = {mode: bounds(im) for mode, im in [('source', a), ('finite', b), ('media', m)]}
-    entry = dict(file=name, scene=c['scene'], fps=c['fps'], time=c['time'],
+    entry = dict(file=name, scene=c.get('scene', 'mounted-latin-cut'), fps=c['fps'], time=c['time'],
                  empty_foreground=not bool(mask.any()), bounds=boxes,
                  edge_touch={mode: box is not None and (box[0] == 0 or box[1] == 0 or box[2] == a.shape[1] or box[3] == a.shape[0])
                              for mode, box in boxes.items()},
@@ -73,10 +74,13 @@ if loop:
 if cut:
     names = ['cut-380-60-0.png', 'cut-800-60-700.png', 'cut-800-144-1600.png',
              'cut-380-60-2099.png', 'cut-800-60-3200.png', 'cut-380-144-3500.png']
+if mounted:
+    names = ['mounted-380-60-0.png', 'mounted-800-60-700.png', 'mounted-800-144-1600.png',
+             'mounted-380-60-2099.png', 'mounted-800-60-3200.png', 'mounted-380-144-3500.png']
 sheet = Image.new('RGB', (1260, len(names)*338), (30, 30, 30))
 draw = ImageDraw.Draw(sheet)
 for i, name in enumerate(names):
-    for j, (label, p) in enumerate([('Original finite + Three', source/name),
+    for j, (label, p) in enumerate([('Original mounted + R3F' if mounted else 'Original finite + Three', source/name),
                                     ('Own finite + shaped core text', native/('finite-'+name)),
                                     ('Own adaptive media + core text', native/('media-'+name))]):
         draw.text((j*420+4, i*338+3), label, fill='white')

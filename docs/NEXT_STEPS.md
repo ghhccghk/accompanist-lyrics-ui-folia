@@ -10,9 +10,19 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、follower/原picker、裁剪/邻行/life/fog、incoming flight/同走廊loop/有界双走廊plain媒体重建 | 无 | 完整原挂载/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：镜台原挂载CameraRig与真实文字层的最小切歌片段对照，复用已固定
-双走廊歌词/字体/几何，先验证实际flight refs/frame-keep/事件与提取算子的一致性。
-完成条件为真实原组件的控制边界、时序及完整文本画面证据；不开放公共主题。
+当前唯一下一项：镜台实际R3F ACES材质色调映射，先从已安装原Three shader建立
+独立颜色/混合/fog数值控制，再补原文字路径，复用冻结mounted48帧同union前后对照。
+不得修改旧直接Three NoToneMapping oracle，或加固定帧延迟仿造source callback顺序。
+原挂载CameraRig+文字层为历史下一项，已完成：真实原React/R3F两组件、default
+shot picker、原Float32 envelope/呼吸/fog/缓存；显式host控制ready edge/媒体/wall/
+manual advance及cache RAF，未改source refs/算法。4686实际区间与提取算子峰0，
+本独立core+字形+有限历史峰6.04e-14/1e-9、宽度峰8.88e-16；原组件卸载root/RAF全0。
+同union前景均值有限7.251753/媒体20.348141，局部24.617612/87.853968，媒体位置
+残差.130588world，触边36/38/38，无空帧；仍未正式视觉/设备/真实窗口验收。
+实际callback先camera再text，切句读上一活动宽；生产重建未人为插入一帧延迟。
+实际R3F toneMapping=ACES(4)，旧直接Three为NoToneMapping；已确认当前原色材质缺项。
+原gate/timeout/三走廊/字体及device仍缺。证据verification/diorama-mounted；仅JVM
+新两项通过，生产未改；reference依赖按原锁校核并限定于verification，无库依赖。
 跨曲plain文字窗口为历史下一项，已完成<=6旧plain共享快照/全局索引/原归属及
 中心深度排序，不保留旧core/active raster/整曲playback/job，不递归保留旧快照。
 48原完整文字帧/244材质：有限pose峰1.42e-14、材质峰2.84e-14(门槛1e-9)；

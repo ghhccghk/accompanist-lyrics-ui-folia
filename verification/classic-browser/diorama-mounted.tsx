@@ -137,6 +137,42 @@ Object.assign(window,{mountedReady:true,mountedInputs:{oldLines,lines,oldSeed,se
     premultiplyAlpha:map.premultiplyAlpha,colorSpace:map.colorSpace,wrapS:map.wrapS,wrapT:map.wrapT},
    renderer:{maxAnisotropy:state.gl.capabilities.getMaxAnisotropy(),samples:state.gl.getContext().getParameter(state.gl.getContext().SAMPLES)}};
  },
+ // Read the ACTUAL uploaded/generated mip texels without rendering or changing
+ // a texture. Restore READ framebuffer/read-buffer exactly; DRAW is untouched.
+ readMountedNeighborMips:(index:number,levels:number[])=>{
+  const state=_roots.get(canvas)!.store.getState(),mesh=refs(DioramaScene)[0].get(index);
+  if(!mesh)throw Error(`Missing actual mounted neighbour ${index}`);
+  const texture=mesh.material.map,gl=state.gl.getContext() as WebGL2RenderingContext;
+  const handle=state.gl.properties.get(texture).__webglTexture;
+  if(!handle||!gl.READ_FRAMEBUFFER)throw Error('Expected already uploaded WebGL2 texture');
+  if(gl.getParameter(gl.PIXEL_PACK_BUFFER_BINDING))throw Error('Unexpected pixel-pack buffer');
+  const before={read:gl.getParameter(gl.READ_FRAMEBUFFER_BINDING),draw:gl.getParameter(gl.DRAW_FRAMEBUFFER_BINDING),
+   buffer:gl.getParameter(gl.READ_BUFFER),version:texture.version,sourceVersion:texture.source.version};
+  const fbo=gl.createFramebuffer();
+  try {
+   gl.bindFramebuffer(gl.READ_FRAMEBUFFER,fbo);gl.readBuffer(gl.COLOR_ATTACHMENT0);
+   const records=levels.map(level=>{
+    const width=Math.max(1,texture.image.width>>level),height=Math.max(1,texture.image.height>>level);
+    gl.framebufferTexture2D(gl.READ_FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,handle,level);
+    const status=gl.checkFramebufferStatus(gl.READ_FRAMEBUFFER);
+    if(status!==gl.FRAMEBUFFER_COMPLETE)throw Error(`Mip framebuffer incomplete level${level}: ${status}`);
+    const pixels=new Uint8Array(width*height*4);gl.readPixels(0,0,width,height,gl.RGBA,gl.UNSIGNED_BYTE,pixels);
+    const error=gl.getError();if(error!==gl.NO_ERROR)throw Error(`Mip read error${error}`);
+    const data=new Uint8ClampedArray(pixels.length);
+    for(let y=0;y<height;y++)data.set(pixels.subarray(y*width*4,(y+1)*width*4),(height-1-y)*width*4);
+    // PNG canvas storage may round tiny-alpha straight RGB. Retain exact raw
+    // GPU bytes separately; PNGs are ONLY labelled visual aids.
+    const canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;
+    canvas.getContext('2d')!.putImageData(new ImageData(data,width,height),0,0);
+    return{level,width,height,rgba:Array.from(data),png:canvas.toDataURL('image/png')};
+   });
+   return{records,textureVersion:before.version,sourceVersion:before.sourceVersion};
+  }finally {
+   gl.bindFramebuffer(gl.READ_FRAMEBUFFER,before.read);gl.readBuffer(before.buffer);gl.deleteFramebuffer(fbo);
+   if(gl.getParameter(gl.DRAW_FRAMEBUFFER_BINDING)!==before.draw||texture.version!==before.version||
+      texture.source.version!==before.sourceVersion)throw Error('Mip read altered original binding/texture versions');
+  }
+ },
  // Labelled diagnostic render only: clone an ACTUAL mounted neighbour mesh,
  // retaining its matrix/geometry/texture/material and the mounted camera/fog.
  // Original objects/refs stay unchanged; null restores the original whole scene.

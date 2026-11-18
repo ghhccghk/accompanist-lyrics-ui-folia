@@ -14,8 +14,9 @@ const require=createRequire(import.meta.url),hash=data=>createHash('sha256').upd
 const layers=process.argv.includes('--layers');
 const geometry=process.argv.includes('--geometry');
 const sampling=process.argv.includes('--sampling');
-if([layers,geometry,sampling].filter(Boolean).length>1)throw Error('Use one diagnostic at a time');
-const label=sampling?'mounted-sampling-v1':geometry?'mounted-geometry-v1':layers?'mounted-input-layers-v1':'mounted-raster-v1';
+const mips=process.argv.includes('--mips');
+if([layers,geometry,sampling,mips].filter(Boolean).length>1)throw Error('Use one diagnostic at a time');
+const label=mips?'mounted-mips-v1':sampling?'mounted-sampling-v1':geometry?'mounted-geometry-v1':layers?'mounted-input-layers-v1':'mounted-raster-v1';
 const fixture=path.join(root,'verification/diorama-fixtures',label);
 if(fs.existsSync(fixture))throw Error('Preserve original cache observations; refusing fixture overwrite');
 const original=JSON.parse(fs.readFileSync(path.join(root,'verification/diorama-fixtures/mounted-cut-v1/scene.json'),'utf8'));
@@ -37,7 +38,7 @@ const server=await createServer({configFile:false,root:path.join(root,'verificat
  plugins:[cameraTargetPlugin(),cameraFlightPlugin()],resolve:{alias:aliases,dedupe:['react','react-dom','three','@react-three/fiber']},
  optimizeDeps:{noDiscovery:true,entries:[],include:['react','react/jsx-runtime','react/jsx-dev-runtime','react-dom','react-dom/client','@react-three/fiber','framer-motion','three']},
  cacheDir:path.join(root,'.work/diorama-mounted-vite-v2'),server:{host:'127.0.0.1',port:4188,strictPort:true,hmr:false,fs:{allow:[root]}}});
-const out=path.join(root,sampling?'build/verification/diorama-mounted-sampling-browser':geometry?'build/verification/diorama-mounted-geometry-browser':layers?'build/verification/diorama-mounted-input-browser':'build/verification/diorama-mounted-raster-browser');
+const out=path.join(root,mips?'build/verification/diorama-mounted-mips-browser':sampling?'build/verification/diorama-mounted-sampling-browser':geometry?'build/verification/diorama-mounted-geometry-browser':layers?'build/verification/diorama-mounted-input-browser':'build/verification/diorama-mounted-raster-browser');
 let browser;
 try {
  await server.listen();browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
@@ -57,6 +58,7 @@ try {
  if(hash(before)!==expectedHash)throw Error(`Original replay differs BEFORE cache read: ${hash(before)} != ${expectedHash}`);
  const rasters=await page.evaluate(()=>window.readMountedLineRasters());
  const meshGeometry=geometry?await page.evaluate(()=>window.readMountedNeighborGeometry(7)):null;
+ const mipData=mips?await page.evaluate(()=>window.readMountedNeighborMips(7,[0,4,5])):null;
  const after=await page.screenshot(),stateAfter=await page.evaluate(()=>window.readMounted());
  if(hash(after)!==expectedHash||JSON.stringify(stateBefore)!==JSON.stringify(stateAfter))throw Error('Passive cache read changed original pixels/state');
  const layerCaptures=[];
@@ -110,6 +112,16 @@ try {
   ...(layers?{layerCaptures,layerScope:'Diagnostic cloned actual mounted neighbour7 only, same material/texture/world matrix/camera/fog/renderer. No original refs or objects mutated. Whole original scene restored byte-identically without another RAF callback. This is layer isolation, not another whole-scene acceptance capture.'}:{}),
   ...(geometry?{meshGeometry,geometryScope:'Passive actual original mesh7 buffer UV/world/view/clip/pixel read, no matrix update or extra render, unchanged original state/pixels.'}:{}),
   ...(sampling?{samplingCaptures,samplingScope:'Isolated clone-only DIAGNOSTICS, not original acceptance frames: original actual mesh7 material/texture, versus independently cloned texture Source with linear/no-mip/aniso1 and trilinear/aniso1. All other state unchanged; no source object mutation, no additional RAF; original full scene restored unchanged.'}:{})};
+ if(mips){
+  record.mips=mipData.records.map(({rgba,png,...r})=>{
+   const data=Buffer.from(rgba),file=`mip-${r.level}.rgba`;
+   fs.writeFileSync(path.join(out,file),data);fs.writeFileSync(path.join(out,`mip-${r.level}.png`),Buffer.from(png.split(',')[1],'base64'));
+   if(r.level!==0)fs.writeFileSync(path.join(fixture,file),data); // bounded synthetic texels only; base is the existing cache7 PNG
+   return{...r,file,sha256:hash(data)};
+  });
+  record.mipScope='Read actual already-generated texture7 mip0/4/5 using temporary READ-only framebuffer attachment. Raw RGBA retained losslessly; PNG visual aids may round tiny-alpha RGB. No render, no extra RAF, no texture writes, exact READ binding/read-buffer restore and DRAW untouched; texture/source versions unchanged.';
+  record.textureVersion=mipData.textureVersion;record.textureSourceVersion=mipData.sourceVersion;
+ }
  fs.writeFileSync(path.join(fixture,'scene.json'),JSON.stringify(record,null,2)+'\n');
  fs.writeFileSync(path.join(fixture,'rasters.tsv'),['# index fontPx advancePx width height textBase64',...records.map(r=>
   [r.index,r.fontPx,r.advancePx,r.width,r.height,Buffer.from(r.text).toString('base64')].join('\t'))].join('\n')+'\n');

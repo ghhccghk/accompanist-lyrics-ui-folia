@@ -1,0 +1,92 @@
+{
+  "baseline": "47980cb",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "originalSceneStateHistoryAndTextureVersionsUnchanged": true,
+  "scope": "Read actual already-generated texture7 mip0/4/5 using temporary READ-only framebuffer attachment. Raw RGBA retained losslessly; PNG visual aids may round tiny-alpha RGB. No render, no extra RAF, no texture writes, exact READ binding/read-buffer restore and DRAW untouched; texture/source versions unchanged.",
+  "gpuMipZeroEqualsOriginalCanvasExactly": true,
+  "rawChannelControl": "All raw channels, including nonzero RGB at zero alpha; independent F16 linear occupancy reduction and ordinary alpha reduction. No pixel mapping fit or source texels fed to a native renderer.",
+  "rows": [
+    {
+      "level": 0,
+      "dimensions": [
+        1650,
+        232
+      ],
+      "rawSha256": "f4932f5c6c563079fe73a24052cc323710e92c7b64d2bdd33ee93ebd942ef117",
+      "alphaMae": 0.0,
+      "alphaPeak": 0,
+      "alphaUnion": 64937,
+      "colorUnionIncludingTransparent": 64937,
+      "sourceNonzeroRgbAtZeroAlpha": 0,
+      "sourceRgbAtPositiveAlpha": [
+        255,
+        255
+      ],
+      "maskedTintRgbMae": 0.0,
+      "opaqueSrgbReductionMae": 0.0,
+      "independentLinearF16RgbMae": 0.0,
+      "independentLinearF16RgbPeak": 0,
+      "nativePngHashes": {
+        "mip-0.png": "7e33b09161ac2a9dc5bda8ea582ee1ef7f2e31d0a41e11e049c70e8fe8b89027",
+        "occupancy-0.png": "676d0a41700a18efb29c325f7e1ec654f919a7b5b8536152d6b9619ba81adf90",
+        "linear-occupancy-0.png": "676d0a41700a18efb29c325f7e1ec654f919a7b5b8536152d6b9619ba81adf90"
+      }
+    },
+    {
+      "level": 4,
+      "dimensions": [
+        103,
+        14
+      ],
+      "rawSha256": "28094aa568a82d61560d5d3a9dd851713ed8b6f5a514a035f0049e637600602d",
+      "alphaMae": 0.04439252336448598,
+      "alphaPeak": 1,
+      "alphaUnion": 428,
+      "colorUnionIncludingTransparent": 444,
+      "sourceNonzeroRgbAtZeroAlpha": 48,
+      "sourceRgbAtPositiveAlpha": [
+        14,
+        255
+      ],
+      "maskedTintRgbMae": 70.3445945945946,
+      "opaqueSrgbReductionMae": 37.851351351351354,
+      "independentLinearF16RgbMae": 0.12387387387387387,
+      "independentLinearF16RgbPeak": 1,
+      "nativePngHashes": {
+        "mip-4.png": "aafeccf52f1f4c1cbea795f7b2b8ab16bdc0950f3f5c9e57031e061d46064d89",
+        "occupancy-4.png": "6397fedeea6c3de50b4a64b05ee08435c9f96d1fe5d952247b37ed8ba7c066da",
+        "linear-occupancy-4.png": "64f6eb69c02d809715d87ab29551a6e96b1e9eebc20b95f01bec737ef6e44eca"
+      }
+    },
+    {
+      "level": 5,
+      "dimensions": [
+        51,
+        7
+      ],
+      "rawSha256": "2c0c06e5969ace70890d6a7ef89d8c9c2fa4aa8f4a9ce112ce913018b3e43252",
+      "alphaMae": 0.05521472392638037,
+      "alphaPeak": 1,
+      "alphaUnion": 163,
+      "colorUnionIncludingTransparent": 167,
+      "sourceNonzeroRgbAtZeroAlpha": 12,
+      "sourceRgbAtPositiveAlpha": [
+        11,
+        251
+      ],
+      "maskedTintRgbMae": 102.1556886227545,
+      "opaqueSrgbReductionMae": 58.455089820359284,
+      "independentLinearF16RgbMae": 0.19760479041916168,
+      "independentLinearF16RgbPeak": 1,
+      "nativePngHashes": {
+        "mip-5.png": "d54e0943a4bab2f4ac5deb9e0c1d82e57148fb1c5cfd2b37593a36377b8ffdce",
+        "occupancy-5.png": "61d8865ec58fea7a04edf19ab0a0a7d134bd3f3c2ce7516571cd4e3ef0ca56ae",
+        "linear-occupancy-5.png": "13ee556863d7294b4bf97458948d47210218340145575d093c44c6068e9b15ae"
+      }
+    }
+  ],
+  "interpretation": "Premultiplied mask tint discards the source linear-light straight-RGB mip channel even when alpha closely matches. Independent F16 linear occupancy matches actual GPU mip RGB within1 byte here. Per-fragment color/tone/fog and anisotropic footprint still require rendering proof; these texel controls are not visual acceptance.",
+  "productionChanged": false,
+  "deviceValidated": false,
+  "visualAcceptance": false
+}

@@ -16,9 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：同700ms/cache7被动读取原实际GPU mip0/4/5 RGBA，与native
-预乘mask金字塔比较颜色/alpha，核对原图/状态恢复，区分straight texture RGB
-和单纯alpha覆盖。不得通过降低LOD追图；只在数据明确后选必要文字采样修复。
+当前唯一下一项：同700ms/cache7做有界native fragment控制，保留独立linear RGB/
+alpha采样后再tint→ACES→sRGB→fog→blend，对原实际层及标注isotropic控制；
+先查现有Skia RuntimeEffect公开能力，不新增JNI/构建框架，不开放Diorama假入口。
+须保留各向异性/逐fragment LOD未等价项，局部及近景失败成立后才扩大生产集成。
+实际GPU mip0/4/5已被动读取：原PNG/状态/452callback/纹理及Source版本不变；
+base RGBA与既有cache7逐字节同。mip4/5 alpha本与原峰1，但mask统一染色丢RGB，
+MAE70.344595/102.155689；独立linear-F16 occupancy RGB峰1，包含alpha0的48/12
+非零RGB分量。原小mip共7196bytes保留，见verification/diorama-mounted-mips。
+仅原始纹理通道数值控制/1项JVM通过，非完整stage/设备/性能或正式视觉验收。
 显式isotropic center-LOD候选已拒绝并撤回：虽mounted48均值改善，plain24有7均值/
 6局部回退、近景Latin/Arabic可见模糊，不能用均值掩盖；全部72原图不变，完整候选
 补丁/失败/同union数值见verification/diorama-minification。候选14测试/Android库/

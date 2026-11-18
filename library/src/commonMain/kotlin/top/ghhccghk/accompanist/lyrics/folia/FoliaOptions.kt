@@ -35,6 +35,9 @@ data class FoliaStatus(
 )
 
 sealed interface FoliaStyle {
+    /** Experimental text/perspective debug preview. See docs/diorama-preview.md. */
+    @Immutable
+    data class Diorama(val tuning:DioramaTuning=DioramaTuning()):FoliaStyle
     /** Whole-song article/camera calibration preview, without a background engine. */
     @Immutable
     data class Fume(val tuning:FumeTuning=FumeTuning()):FoliaStyle
@@ -66,6 +69,19 @@ sealed interface FoliaStyle {
 }
 
 enum class FumeTrackingMode { Smooth, Stepped }
+
+@Immutable
+data class DioramaTuning(
+    val fontScale:Float=1f,
+    /** Stable path/shot input. No chorus/beat metadata is inferred. */
+    val layoutSeed:String="Diorama",
+    /** Optional host background for text fog; transparent disables fog. */
+    val fogColor:Color=Color.Transparent,
+    /** Disable only for host-controlled experiments; platform limits still apply. */
+    val enforceRasterBudget:Boolean=true,
+) {
+    init { require(fontScale.isFinite()&&fontScale in .5f..2f);require(fogColor!=Color.Unspecified) }
+}
 
 @Immutable
 data class FumeTuning(

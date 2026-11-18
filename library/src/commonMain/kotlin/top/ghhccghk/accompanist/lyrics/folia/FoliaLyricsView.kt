@@ -32,6 +32,7 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.styles.cadenza.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.pendolo.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.cappella.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.fume.*
+import top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.model.SourceRef
 import top.ghhccghk.accompanist.lyrics.folia.internal.timeline.PrimaryEpoch
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.GlowBudget
@@ -135,7 +136,29 @@ fun FoliaLyricsView(
         // its missing size before switching to classic/Partita text preparation.
         val mainStyle=typography.main?.let { if(it.fontSize==TextUnit.Unspecified)it.copy(fontSize=responsiveMain.fontSize)else it }?:responsiveMain
         val main = selection.primary?.line?.let(document.lines::get)
-        if(style is FoliaStyle.Fume){
+        if(style is FoliaStyle.Diorama){
+            var ready by remember(document){mutableStateOf(false)}
+            val coreLines=remember(document){dioramaCoreLines(document)}
+            LaunchedEffect(ready,selection.primary,options.quality,style){
+                unitCount=if(ready)selection.primary?.line?.let{dioramaUnits(coreLines[it].lyric).size}?:0 else 0
+                quality=if(unitCount==0)FoliaQuality.Minimal else options.quality
+            }
+            if(document.lines.none{it.text.isNotBlank()})BasicText("暂无可显示歌词",style=mainStyle.copy(color=colors.secondary))
+            else DioramaPlaybackStage(lyrics,{(currentPlayback().positionMillis-options.offsetMillis)/1000.0},
+                typography.main?:typography.secondary,Modifier.fillMaxSize(),scale=typography.scale,
+                tuning=style.tuning,colors=colors,options=options,showText={waiting==null},
+                onClick=onLineClicked,onLongPress=onLinePressed,
+                onState={isReady,diagnostic->
+                    ready=isReady;themeDiagnostic=diagnostic
+                    if(!isReady){unitCount=0;quality=FoliaQuality.Minimal}
+                })
+            waiting?.let{gap->Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center){
+                WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
+                    {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
+                    Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
+                    defaults=WaitingDotsDefaults(breathingDotsColor=colors.active))
+            }}
+        }else if(style is FoliaStyle.Fume){
             val tuning=style.tuning;val lines=fumeLines!!
             // The stage owns preparation invalidation. Paint-only changes or a
             // subtitle style must not reset readiness without restarting its job.

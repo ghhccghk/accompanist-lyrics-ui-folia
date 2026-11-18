@@ -9,7 +9,9 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 val originalLine = SyncedLine("Independent consumer", "Original synthetic text", 1_000, 5_000)
 
 @Composable
-fun Consumer(modifier: Modifier = Modifier, onClick: (Any) -> Unit = {}) {
+fun Consumer(modifier: Modifier = Modifier, onClick: (Any) -> Unit = {},
+    style:FoliaStyle=FoliaStyle.Classic(),onStatus:(FoliaStatus)->Unit={}) {
     FoliaLyricsView(SyncedLyrics(listOf(originalLine)), { FoliaPlaybackSnapshot(2_000, false) },
-        modifier = modifier, options = FoliaOptions(quality = FoliaQuality.Minimal), onLineClicked = onClick)
+        modifier = modifier, options = FoliaOptions(quality = FoliaQuality.Minimal), onLineClicked = onClick,
+        style=style,onStatus=onStatus)
 }

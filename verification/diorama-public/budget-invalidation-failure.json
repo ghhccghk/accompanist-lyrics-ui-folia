@@ -1,0 +1,4 @@
+{
+  "message": "java.lang.AssertionError: budget bypass rebuild preserves in-budget rendering",
+  "cause": "Readiness observer could briefly publish old unitCount with DioramaPreparing during reprepare. Counts now clear in the same preparation callback; test also waits for no preparing diagnostics."
+}

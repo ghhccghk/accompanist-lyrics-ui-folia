@@ -93,7 +93,12 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
 
     companion object {
         fun prepare(line: DioramaLyric, base: TextStyle, measurer: TextMeasurer,
-            resolver: FontFamily.Resolver, checkpoint: () -> Unit = {}): DioramaActiveText {
+            resolver: FontFamily.Resolver, checkpoint: () -> Unit = {}):DioramaActiveText =
+            prepareBounded(line,base,measurer,resolver,checkpoint){_,_,_->}
+
+        fun prepareBounded(line:DioramaLyric,base:TextStyle,measurer:TextMeasurer,
+            resolver:FontFamily.Resolver,checkpoint:()->Unit,
+            reserveRaster:(Int,Int,Int)->Unit): DioramaActiveText {
             checkpoint()
             val density = Density(1f, 1f)
             val style = base.copy(fontSize = 128.sp, lineHeight = TextUnit.Unspecified,
@@ -147,7 +152,9 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
                     (columns.minOfOrNull { it.first } ?: padding)-padding)
                 val right = max(ceil(range.right.toDouble()).toInt()+padding,
                     (columns.maxOfOrNull { it.last+1 } ?: padding)-padding)
-                val image = ImageBitmap(if(sourceWords)width+padding*2 else max(1,right-left),360)
+                val imageWidth=if(sourceWords)width+padding*2 else max(1,right-left)
+                reserveRaster(imageWidth,360,if(bodyLayout===layout)2 else 3)
+                val image = ImageBitmap(imageWidth,360)
                 val shift = if(sourceWords)-range.left else (-padding-left).toFloat()
                 CanvasDrawScope().draw(density, LayoutDirection.Ltr, Canvas(image), Size(image.width.toFloat(), image.height.toFloat())) {
                     for (column in columns) {

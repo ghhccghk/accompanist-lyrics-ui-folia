@@ -44,7 +44,8 @@ internal class DioramaPlainText private constructor(val image: ImageBitmap, val 
 
     companion object {
         fun prepare(text: String, baseStyle: TextStyle, measurer: TextMeasurer,
-            resolver: FontFamily.Resolver): DioramaPlainText {
+            resolver: FontFamily.Resolver,
+            reserveRaster:(Int,Int,Int)->Unit={_,_,_->}): DioramaPlainText {
             val density = Density(1f, 1f)
             var fontPx = 128
             // HTML Canvas normalizes these ASCII whitespace characters to spaces.
@@ -70,7 +71,9 @@ internal class DioramaPlainText private constructor(val image: ImageBitmap, val 
                 fontPx = max(24, floor(fontPx * (4096.0 - padding * 2) / advancePx).toInt())
                 layout = measure(); advancePx = advance()
             }
-            val image = ImageBitmap(advancePx + padding * 2, ceil(fontPx * 1.4).toInt() + padding * 2)
+            val imageWidth=advancePx+padding*2;val imageHeight=ceil(fontPx*1.4).toInt()+padding*2
+            reserveRaster(imageWidth,imageHeight,1)
+            val image = ImageBitmap(imageWidth,imageHeight)
             val metrics = naturalFontMetrics(style(), resolver, density)
             val typographic = dioramaTypographicRatio(style(), resolver)
             val ratio = typographic ?: (metrics.ascent / (metrics.ascent + metrics.descent)).toDouble()

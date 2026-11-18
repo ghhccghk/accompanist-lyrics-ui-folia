@@ -8,19 +8,24 @@
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
-| Diorama | core/完整文字透视/三层、13目标、follower/原picker、裁剪/邻行/life/fog、incoming flight/同走廊loop/有界双走廊plain媒体重建 | 无 | 完整原挂载/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
+| Diorama | core/完整文字透视/三层、follower/原picker、裁剪/邻行/life/fog；内部另有flight/loop/双走廊探针 | sample可选实验调试预览；未接完整曲间sequencer | 完整原挂载/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-8e58a1c已完成插入任务（示例主题选项）：七个实际公开主题使用自适应换行选择项，
+历史截至8e58a1c（示例主题选项）：当时七个实际公开主题使用自适应换行选择项，
 显示中英文名、选中语义与统一校准预览提示；镜台仅说明内部验证，不开放假入口。
 320/900宽度逐项选择、原播放状态不变和原三主题入口/设置17项通过；Android shared/
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
-verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
+verification/theme-options。后来用户授权镜台调试入口，当前共八项，下述新结果取代入口限制。
 
-当前唯一下一项（用户新增授权）：将真实Diorama文字stage接入FoliaStyle和sample，
-标为“实验调试预览”，保留Android普通回退与全部视觉未验项；补公共入口的
-可取消准备、投影命中/来源回调、暂停/seek/resize/卸载回归，构建验签debug APK供调试。
+当前唯一下一项：构建并验签含镜台入口和“纹理预算检查”开关的debug APK交付用户；
+随后继续同48原矩阵3499ms媒体相机/局部残差，不增加无关原型。
+镜台真实core→公共组件→sample已闭环：可取消后台准备、墨迹/实际投影命中和原对象
+回调、暂停/seek/offset/resize/字号/主题切换/重挂、超限错误恢复；纹理预算默认开启，
+可关闭并保存，切换重新准备。21项定向JVM与Android库/shared/Desktop编译通过，
+两张就绪后的离屏画面已图检，见verification/diorama-public；独立Maven两项JVM与
+Android消费编译/边界检查通过。采样器完成失效/准备计数两处接入错误已修，原失败
+保留；等值替换测试改引用状态以真实传入新对象。不是原版正式视觉/设备/真实窗口/性能结论。
 此前“镜台保持未开放”是历史阶段限制，被此次用户开放调试入口授权覆盖；不远程发布。
-内部有界F16 surface已完成：108原Three合成peak1/gate2；同48五图union有限
+b051bcc内部有界F16 surface已完成：108原Three合成peak1/gate2；同48五图union有限
 1.964789→.944027/最坏64 6.883721→3.410853，0均值/局部回退；媒体
 17.365684→16.567190/局部69.117781不变，3499ms两处局部微退保留。
 337旧图hash不变；资源/异常/clip/预算、mounted暂停/重挂/释放及Android库/Desktop

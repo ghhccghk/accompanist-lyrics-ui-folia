@@ -23,6 +23,7 @@ class SampleSession(demoInitially: Boolean = false) {
     var pendoloTuning by mutableStateOf(PendoloTuning())
     var cappellaTuning by mutableStateOf(CappellaTuning())
     var fumeTuning by mutableStateOf(FumeTuning())
+    var dioramaTuning by mutableStateOf(DioramaTuning())
     val lyricStyle: FoliaStyle get() = when(lyricTheme) {
         SampleLyricTheme.Classic -> FoliaStyle.Classic(tuning)
         SampleLyricTheme.Partita -> FoliaStyle.Partita(partitaTuning)
@@ -31,6 +32,7 @@ class SampleSession(demoInitially: Boolean = false) {
         SampleLyricTheme.Pendolo -> FoliaStyle.Pendolo(pendoloTuning)
         SampleLyricTheme.Cappella -> FoliaStyle.Cappella(cappellaTuning)
         SampleLyricTheme.Fume -> FoliaStyle.Fume(fumeTuning)
+        SampleLyricTheme.Diorama -> FoliaStyle.Diorama(dioramaTuning)
     }
     fun lyricStyleForTitle(title:String):FoliaStyle = when(val style=lyricStyle){
         is FoliaStyle.Cappella->style.copy(tuning=style.tuning.copy(title=title))
@@ -45,5 +47,5 @@ class SampleSession(demoInitially: Boolean = false) {
 /** Names are presentation only; enum identifiers remain stable preference keys. */
 enum class SampleLyricTheme(val displayName: String) {
     Classic("流光"), Partita("云阶"), Tilt("倾诉"), Cadenza("心象"),
-    Pendolo("时计"), Cappella("群唱"), Fume("浮名")
+    Pendolo("时计"), Cappella("群唱"), Fume("浮名"), Diorama("镜台")
 }

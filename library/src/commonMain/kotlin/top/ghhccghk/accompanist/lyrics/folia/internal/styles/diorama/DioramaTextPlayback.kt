@@ -1,6 +1,6 @@
 // Copyright (c) 2026 chthollyphile and contributors
 // SPDX-License-Identifier: AGPL-3.0-only
-// Internal text-only playback integration. NOT a public/complete Diorama theme.
+// Text-only playback integration; experimental public preview is not full parity.
 package top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama
 
 import androidx.compose.ui.graphics.drawscope.DrawScope
@@ -170,8 +170,11 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             seedName: String, endTime: Double? = null, checkpoint: () -> Unit = {},
             metadata: List<DioramaShotMetadata> = emptyList(),
             mode: DioramaShotMode = DioramaShotMode.normal,
-            transition: DioramaTextTransition? = null, cut: DioramaTextCut? = null): DioramaTextPlayback {
+            transition: DioramaTextTransition? = null, cut: DioramaTextCut? = null,
+            textScale:Double=1.0,
+            reserveRaster:(Int,Int,Int)->Unit={_,_,_->}): DioramaTextPlayback {
             require(width.isFinite() && height.isFinite() && width>0 && height>0)
+            require(textScale.isFinite()&&textScale>0)
             require(transition==null || cut==null) { "Supply one incoming anchor: transition or cut" }
             val anchor=cut?.anchor?:transition
             val mapped=dioramaCoreLines(normalize(core))
@@ -187,15 +190,16 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             val neighborTexts=mutableMapOf<String,DioramaPlainText>()
             val lines=mapped.map {
                 checkpoint()
-                val active=DioramaActiveText.prepare(it.lyric,style,measurer,resolver,checkpoint)
+                val active=DioramaActiveText.prepareBounded(it.lyric,style,measurer,resolver,checkpoint,reserveRaster)
                 checkpoint()
                 val neighbor=neighborTexts.getOrPut(it.lyric.text) {
-                    DioramaPlainText.prepare(it.lyric.text,style,measurer,resolver)
+                    DioramaPlainText.prepare(it.lyric.text,style,measurer,resolver,reserveRaster)
                 }
                 DioramaPlaybackLine(it,active,neighbor)
             }
             val subjects=lines.mapIndexed { index,line ->
-                val placement=dioramaTextPlacement(index,seed,mode.weave)
+                val rawPlacement=dioramaTextPlacement(index,seed,mode.weave)
+                val placement=rawPlacement.copy(scale=rawPlacement.scale*textScale)
                 val rawWidth=line.text.lineAdvance*.62/128
                 val fit=dioramaFrameFit(rawWidth,5.2,55.0,width/height)*placement.scale
                 val shot=shots?.get(index)?:dioramaPickShot(index,lyrics,seed,metadata,mode)

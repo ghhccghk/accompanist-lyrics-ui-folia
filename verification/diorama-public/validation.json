@@ -1,0 +1,120 @@
+{
+  "baseline": "b051bcc",
+  "implementationHashes": {
+    "FoliaOptions.kt": "0a723627ccafc88110ef5952390ebca329263ec70857a790b153311530baf906",
+    "FoliaLyricsView.kt": "046a20d4731f1764b7f3dfd20406e110fc97388afe95c8b222367c30fcb0acde",
+    "internal/styles/diorama/DioramaPlaybackStage.kt": "fc38716d8bc2b201e67c320edb4fd65d6ed78a81f857ccb77fa390f793e52aef",
+    "internal/styles/diorama/DioramaTextHitTest.kt": "eae3e954163963f58791db26c11a63466835be574ea810bdfb1a398d5189e637",
+    "internal/styles/diorama/DioramaTextPlayback.kt": "08e1a0480b38a2d7e9c21405086f1cc6a0a4607b0537ce7cfede9ad47d4c8400",
+    "internal/styles/diorama/DioramaActiveText.kt": "a3de15d55d52c8c391d588bd7a82f2f2079ce7c3b75c790b23f8bd197b3ed3f8",
+    "internal/styles/diorama/DioramaPlainText.kt": "de19d4bff77086a02f17c15abd8f0f5d4e748d2ece9f40325ccc2f5acba25647"
+  },
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "conditions": {
+    "font": "verification/assets/FoliaParityLatin-Bold.ttf",
+    "fontSha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3",
+    "root": [
+      800,
+      600
+    ],
+    "stageWidths": [
+      800,
+      380
+    ],
+    "density": 1,
+    "mediaMillis": 1600,
+    "offsetEquivalentMediaMillis": 1800,
+    "offsetMillis": 200,
+    "seed": "Diorama",
+    "background": "#162435",
+    "source": "Two original synthetic lyrics-core SyncedLine objects, 700..2600 and 3100..4600 ms"
+  },
+  "suites": [
+    {
+      "module": "library",
+      "suite": "PublicDioramaTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "timestamp": "2026-11-18T10:27:06.240Z"
+    },
+    {
+      "module": "library",
+      "suite": "DioramaTextPlaybackTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "timestamp": "2026-11-18T10:27:35.577Z"
+    },
+    {
+      "module": "library",
+      "suite": "DioramaTextTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "timestamp": "2026-11-18T10:27:37.600Z"
+    },
+    {
+      "module": "library",
+      "suite": "DioramaPreparationCancellationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "timestamp": "2026-11-18T10:27:35.201Z"
+    },
+    {
+      "module": "sample/shared",
+      "suite": "ThemeOptionsTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "timestamp": "2026-11-18T10:27:38.860Z"
+    },
+    {
+      "module": "sample/shared",
+      "suite": "SettingsTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "timestamp": "2026-11-18T10:27:38.715Z"
+    }
+  ],
+  "images": [
+    {
+      "file": "public-800.png",
+      "sha256": "c4ad6ff13741f01f48e91766755187644d7eea5a4450d304cec0eeb32f1d7a09"
+    },
+    {
+      "file": "public-380.png",
+      "sha256": "c8f4faba05e27d541031dad17b961a5d6dad34187d5016fd7dfa63a4a39f2b2e"
+    }
+  ],
+  "assertions": [
+    "public and internal host identical paused pixel arrays",
+    "true source-object click/long press",
+    "inverse actual perspective/alpha blank fallthrough",
+    "paused frame stable",
+    "forward/back seek and offset equivalence",
+    "380/800 resize restore",
+    "system font scale restore",
+    "budget bypass rebuild preserves in-budget pixels",
+    "budget default enabled and disabled limit/edge bypass",
+    "oversize error then replacement recovery",
+    "theme switch/remount and equal-value new-object refs",
+    "preparation cancellation inside shaping/raster/halo/core",
+    "all eight sample entries preserve playback",
+    "budget UI toggle on both widths and preference roundtrip/default compatibility"
+  ],
+  "priorFailures": [
+    "initial-failure.json",
+    "second-failure.json",
+    "budget-invalidation-failure.json"
+  ],
+  "androidLibraryAndSharedCompiled": true,
+  "desktopCompiled": true,
+  "androidDeviceRun": false,
+  "realDesktopWindow": false,
+  "upstreamFullVisualAcceptance": false,
+  "performanceMeasured": false,
+  "publicPreview": "Experimental text perspective; Android ordinary fallback. No full depth/sequencer parity."
+}

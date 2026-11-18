@@ -2035,3 +2035,17 @@ Three solid-color/RGBA/CSS cases, fixed48 five-image-union comparison, two
 media local regressions and resource-test failure are preserved in
 verification/diorama-text-surface. AGPL-3.0-only unchanged; not device,
 performance, Android surface or final visual acceptance.
+
+### Diorama public debug integration (2026-11-18)
+Pinned dioramaSceneLayout.ts, DioramaScene.tsx, CameraRig/cameraPath ports
+already recorded above -> new DioramaPlaybackStage hosts DioramaTextPlayback
+through FoliaStyle.Diorama and sample. Independent cancellable background
+ownership, raster budget, density/type-scale adaptation, completion invalidation,
+inverse actual-plane/alpha hit testing and original core callbacks added.
+No new source/font/cover/audio asset copied; missing chorus/beat input remains
+absent. Alpha/front/near/far/fog checks mirror the actual base-plane geometry;
+glow is deliberately excluded from gesture targets. Existing plain/active
+samplers close on dispose; Android uses ordinary fallback. Public integration
+evidence, initial offset-frame failure and remaining sequencer/depth/media
+camera/platform limits: verification/diorama-public, docs/diorama-preview.md.
+AGPL-3.0-only unchanged; public debug availability does not assert visual parity.

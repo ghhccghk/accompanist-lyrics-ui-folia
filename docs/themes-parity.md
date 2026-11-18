@@ -6,9 +6,11 @@
 
 2026-11-18状态以NEXT_STEPS顶部唯一活动表为准。下文带日期的阶段日志保留当时
 证据；其中“尚未接入口／未实现follower”等句子不是当前活动计划。镜台已接内部
-core文字/follower/picker/裁剪与正常邻行window/life，仍未公开；见diorama-neighbors。
+core文字/follower/picker/裁剪与正常邻行window/life。用户随后授权开放实验调试预览，
+现已接FoliaStyle和sample；见diorama-preview.md。以下历史“未公开”不再表示当前入口状态，
+原失败、视觉和设备未验项仍有效。
 
-## 名称与支持矩阵
+## 历史名称与支持矩阵（当前入口以 NEXT_STEPS 顶部为准）
 
 心象圆环/配色追加：`VisualizerCadenza.tsx:398–413`的群唱圈位于舞台坐标，
 不跟随DOM词的旋转；38个原Canvas圆心/半径/线宽数值最大差1.706e-13，alpha1e-10。

@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 internal fun LyricThemeControls(session: SampleSession) {
     Text("歌词主题")
-    Text("7 个校准预览主题，尚未完成正式视觉验收。", style=MaterialTheme.typography.bodySmall)
+    Text("7 个校准预览主题 + 镜台实验调试预览，尚未完成正式视觉验收。", style=MaterialTheme.typography.bodySmall)
     FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
         for(theme in SampleLyricTheme.entries) {
             FilterChip(
@@ -28,7 +28,14 @@ internal fun LyricThemeControls(session: SampleSession) {
             )
         }
     }
-    Text("镜台 Diorama：内部验证中，暂未开放。",style=MaterialTheme.typography.bodySmall)
+    if(session.lyricTheme==SampleLyricTheme.Diorama){
+        Text("镜台 Diorama · 实验调试预览",style=MaterialTheme.typography.bodySmall)
+        Text("真实文字透视与运镜已接入；镜头、遮挡与 Android 辉光仍待校准。",style=MaterialTheme.typography.bodySmall)
+        ThemeToggle("纹理预算检查",session.dioramaTuning.enforceRasterBudget){session.dioramaTuning=session.dioramaTuning.copy(enforceRasterBudget=it)}
+        Text(if(session.dioramaTuning.enforceRasterBudget)"超出纹理预算会显示错误。" else "纹理预算检查已关闭，超大歌词可能导致内存不足。",style=MaterialTheme.typography.bodySmall)
+        Text("镜台字号倍率 ${session.dioramaTuning.fontScale}")
+        Slider(session.dioramaTuning.fontScale,{session.dioramaTuning=session.dioramaTuning.copy(fontScale=it)},valueRange=.5f..2f)
+    }
     if(session.lyricTheme==SampleLyricTheme.Fume){
         Text("浮名：文章镜头校准预览。短桥接、总览与文字光栅仍有差异。",style=MaterialTheme.typography.bodySmall)
         Text("文章字号倍率 ${session.fumeTuning.fontScale}")

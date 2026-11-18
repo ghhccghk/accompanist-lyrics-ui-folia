@@ -36,6 +36,13 @@ same build ID as its runtime partner.
 | module | `41372ecd2cca36930c0c11b30ebbccdae18c71a18a2d8c1e3c32a5a77e8345a7` |
 
 The first build had no ELF build IDs. The verified build sets a SHA-1 build ID
-on the final crate link, before copying and stripping the ELF. The full APK
-alignment check also needs the rebuilt consumer APK. 16KiB OS behavior and
-ARM64 execution require runtime validation on a suitable system.
+on the final crate link, before copying and stripping the ELF. The `-10` wrapper snapshot was then
+built and verified through the release/R8 consumer. Its two runtime libraries,
+Rust source ZIP and symbols ZIP have the same checksums as `-9`. `zipalign -c
+-P 16 -v 4` passed on the exact APK that ran the lifecycle matrix.
+
+- `-10` Maven AAR SHA-256: `360750eec96e641d1071445de68ef19d67bf42c6e20b742b34ba4bf88476b71d`
+- Release consumer APK SHA-256: `d6d395468ed8baa1b0c15caa52e006c07a9ed1be33c50280c86d9a9b06e348b8`
+
+16KiB OS behavior and ARM64 execution require runtime validation on a suitable
+system. See [the lifecycle matrix](native-renderer-p3.md) for emulator results.

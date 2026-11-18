@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId = "org.example.folianativeconsumer"
         minSdk = 26; targetSdk = 37; versionCode = 1; versionName = "1"
-        testInstrumentationRunner = "org.example.folianativeconsumer.NativeConsumerProbe"
+        testInstrumentationRunner = "org.example.folianativeconsumer.NativeLifecycleProbe"
     }
     buildFeatures { compose = true }
     buildTypes {
@@ -26,6 +26,7 @@ android {
 dependencies {
     implementation("top.ghhccghk.accompanist:lyrics-ui-folia-native-android:0.1.0-SNAPSHOT")
     implementation("androidx.activity:activity-compose:1.13.0")
+    implementation("org.jetbrains.compose.foundation:foundation:1.12.0")
 }
 tasks.register("verifyConsumerTaskBoundary") {
     doLast {

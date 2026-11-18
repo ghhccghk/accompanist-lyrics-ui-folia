@@ -24,7 +24,14 @@ data class FoliaNativeRendererStatus(
     val residentTextureBytes:Long=0,val peakTextureBytes:Long=0,val uploadedBytes:Long=0,
     val backend:String="Vulkan",val sceneVersion:Int=FOLIA_RENDERER_SCENE_VERSION,
     val gpuElapsedNanos:Long?=null,val physicalPresentNanos:Long?=null,
+    val sampledMediaTimeUs:Long?=null,
 )
+
+/** Limits extra owned CPU coverage copies per prepared line scene. Concurrent
+ * lines, transition copies, GPU/driver and original Compose images are separate. */
+data class FoliaNativeRendererConfig(val preparedTextureBudgetBytes:Long=64L*1024*1024) {
+    init { require(preparedTextureBudgetBytes in 1..192L*1024*1024) }
+}
 
 /** Optional Android entry point. Host snapshots are evaluated on UI exactly as
  * in FoliaLyricsView. Workers receive frozen packets and own no media clock.
@@ -35,13 +42,14 @@ fun FoliaNativeLyricsView(
     contentKey:Any=lyrics.id,typography:FoliaTypography=FoliaTypography(),colors:FoliaColors=FoliaColors(),
     options:FoliaOptions=FoliaOptions(),style:FoliaStyle=FoliaStyle.Partita(),
     backend:FoliaRendererBackend=FoliaRendererBackend.Kotlin,active:Boolean=true,
+    rendererConfig:FoliaNativeRendererConfig=FoliaNativeRendererConfig(),
     diagnosticsIntervalFrames:Int=0,
     onRendererStatus:(FoliaNativeRendererStatus)->Unit={},onStatus:(FoliaStatus)->Unit={},
     onLineClicked:(ISyncedLine)->Unit={},onLinePressed:(ISyncedLine)->Unit={},
 ) {
     val observer by rememberUpdatedState(onRendererStatus)
     val supported=style is FoliaStyle.Partita
-    val target=remember(backend,contentKey,style){NativePartitaTarget()}
+    val target=remember(backend,contentKey,supported,rendererConfig){NativePartitaTarget(rendererConfig)}
     var failure by remember(target){mutableStateOf<String?>(null)}
     var loaded by remember(target){mutableStateOf(false)}
     var ready by remember(target){mutableStateOf(false)}
@@ -49,7 +57,7 @@ fun FoliaNativeLyricsView(
     SideEffect{target.onFailure={failure=it};target.overlaysVisible=ready||backend==FoliaRendererBackend.NativeRequired}
     LaunchedEffect(target,supported){
         if(kotlin)observer(FoliaNativeRendererStatus(backend,FoliaRendererPath.Kotlin,"Kotlin"))
-        else if(!supported)failure="UnsupportedTheme:${style::class.simpleName}"
+        else if(!supported)failure="UnsupportedTheme:${style.rendererThemeName()}"
         else {
             observer(FoliaNativeRendererStatus(backend,FoliaRendererPath.Preparing,"Preparing"))
             FoliaNativeRuntime.checkAvailability().fold({loaded=true},{failure="RuntimeUnavailable:${it.message}"})
@@ -66,7 +74,7 @@ fun FoliaNativeLyricsView(
     Box(modifier){
         if(loaded) {
             key(target) {
-            AndroidView(factory={context->FoliaNativeSurfaceView(context).also{view->
+            AndroidView(factory={context->FoliaNativeSurfaceView(context, waitForScene = true).also{view->
                 target.attach(view)
                 view.report={state->if(state.startsWith("Failed:")){failure=state}}
                 view.onPacketSubmitted={packet,stats->
@@ -76,7 +84,8 @@ fun FoliaNativeLyricsView(
                         // explicitly sampled by a diagnostics consumer.
                         if(first||(diagnosticsIntervalFrames>0&&packet.id%diagnosticsIntervalFrames==0L))observer(FoliaNativeRendererStatus(backend,FoliaRendererPath.NativeGpu,"Ready:PartitaMainAndGlow",frameId=packet.id,
                             textureCount=stats?.getOrNull(1)?:0,residentTextureBytes=stats?.getOrNull(2)?:0,
-                            peakTextureBytes=stats?.getOrNull(3)?:0,uploadedBytes=stats?.getOrNull(4)?:0))
+                            peakTextureBytes=stats?.getOrNull(3)?:0,uploadedBytes=stats?.getOrNull(4)?:0,
+                            sampledMediaTimeUs=packet.frames.lastOrNull()?.frame?.mediaTimeUs))
                     }
                     packet.frames.forEach{it.acknowledge()}
                 }
@@ -92,8 +101,19 @@ fun FoliaNativeLyricsView(
     }
 }
 
+private fun FoliaStyle.rendererThemeName(): String = when (this) {
+    is FoliaStyle.Partita -> "Partita"
+    is FoliaStyle.Classic -> "Classic"
+    is FoliaStyle.Diorama -> "Diorama"
+    is FoliaStyle.Fume -> "Fume"
+    is FoliaStyle.Cappella -> "Cappella"
+    is FoliaStyle.Pendolo -> "Pendolo"
+    is FoliaStyle.Tilt -> "Tilt"
+    is FoliaStyle.Cadenza -> "Cadenza"
+}
+
 @OptIn(ExperimentalFoliaRendererBridge::class)
-private class NativePartitaTarget:FoliaPartitaRenderTarget {
+private class NativePartitaTarget(private val config:FoliaNativeRendererConfig):FoliaPartitaRenderTarget {
     override var overlaysVisible by mutableStateOf(false)
     var onFailure:(String)->Unit={}
     private val ui=android.os.Handler(android.os.Looper.getMainLooper())
@@ -117,7 +137,9 @@ private class NativePartitaTarget:FoliaPartitaRenderTarget {
         try{v.publish(ScenePacketEncoder.encode(++nextFrame,width,height,ordered.map{it.upload},frames))}catch(e:Exception){fail(e)}
     }
     @Composable override fun Line(scene:FoliaRendererScene,modifier:Modifier,frame:(Int,Int)->FoliaRendererFrame,onPresented:(FoliaRendererFrame)->Unit){
-        val prepared=remember(scene){runCatching{Entry(SceneUpload(++nextScene,scene))}}
+        val prepared=remember(scene){runCatching{
+            Entry(SceneUpload(++nextScene,scene,config.preparedTextureBudgetBytes))
+        }}
         val entry=prepared.getOrNull()
         if(entry==null){LaunchedEffect(prepared){fail(prepared.exceptionOrNull()!!)};return}
         val build by rememberUpdatedState(frame)

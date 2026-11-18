@@ -1,0 +1,83 @@
+package org.example.folianativeconsumer;
+
+import android.app.Activity;
+import android.app.Instrumentation;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.view.*;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.TextView;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.regex.Pattern;
+
+/** Public Android/AAR APIs against the actual minified coordinate consumer. */
+public final class NativeLifecycleProbe extends Instrumentation {
+    private Activity activity;
+    @Override public void onCreate(Bundle arguments){super.onCreate(arguments);start();}
+    private Intent intent(){return new Intent(Intent.ACTION_MAIN).setClassName(getTargetContext(),"org.example.folianativeconsumer.ConsumerActivity").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);}
+    private String state(){AtomicReference<String> text=new AtomicReference<>("");runOnMainSync(()->text.set(textOf(activity.getWindow().getDecorView())));return text.get();}
+    private String await(String... tokens){
+        long until=SystemClock.uptimeMillis()+30000;String current="";
+        while(SystemClock.uptimeMillis()<until){current=state();boolean found=true;for(String token:tokens)found &= current.contains(token);if(found)return current;SystemClock.sleep(50);}
+        throw new AssertionError("Expected "+Arrays.toString(tokens)+" but got "+current);
+    }
+    private void update(Intent request){runOnMainSync(()->getTargetContext().startActivity(request));}
+    private List<TextureView> textures(){List<TextureView> views=new ArrayList<>();runOnMainSync(()->findTextures(activity.getWindow().getDecorView(),views));return views;}
+    private long value(String state,String name){java.util.regex.Matcher match=Pattern.compile(name+"=(\\d+)").matcher(state);if(!match.find())throw new AssertionError("Missing "+name+": "+state);return Long.parseLong(match.group(1));}
+    private void stable(){SystemClock.sleep(500);String paused=state();for(int i=0;i<10;i++){SystemClock.sleep(100);if(!paused.equals(state()))throw new AssertionError("Paused frame changed: "+paused+" -> "+state());}}
+    private void touch(float x,float y,long hold){long down=SystemClock.uptimeMillis();sendPointerSync(MotionEvent.obtain(down,down,MotionEvent.ACTION_DOWN,x,y,0));SystemClock.sleep(hold);sendPointerSync(MotionEvent.obtain(down,SystemClock.uptimeMillis(),MotionEvent.ACTION_UP,x,y,0));}
+    @Override public void onStart(){
+        Bundle result=new Bundle();
+        try{
+            getUiAutomation(); // Enable accessibility before the composition is created.
+            activity=startActivitySync(intent());
+            String initial=await("ABI=2 NativeGpu Ready:PartitaMainAndGlow","sampled=1500000");stable();
+            long uploads=value(initial,"uploads");
+            update(intent().putExtra("mediaMs",850L));await("NativeGpu","sampled=850000");
+            update(intent().putExtra("mediaMs",1500L));String restored=await("NativeGpu","sampled=1500000");
+            if(value(restored,"uploads")!=uploads)throw new AssertionError("Seeking uploaded prepared textures again");
+            update(intent().putExtra("mediaMs",1600L).putExtra("offset",100));await("NativeGpu","sampled=1500000","media=1600");
+            update(intent().putExtra("mediaMs",1600L).putExtra("backend","NativePreferred").putExtra("theme","Classic"));
+            await("Kotlin Fallback","UnsupportedTheme:","media=1600");
+            if(!textures().isEmpty())throw new AssertionError("Fallback retained native view");
+            update(intent().putExtra("mediaMs",1600L).putExtra("backend","NativeRequired").putExtra("theme","Classic"));
+            await("Failed Failed","UnsupportedTheme:","media=1600");
+            if(!textures().isEmpty())throw new AssertionError("Required failure retained native view");
+            for(String backend:new String[]{"NativePreferred","NativeRequired"}){
+                update(intent().putExtra("mediaMs",1600L).putExtra("backend",backend).putExtra("budget",1L));
+                await(backend.equals("NativePreferred")?"Kotlin Fallback":"Failed Failed","PreparedTextureBudgetExceeded","media=1600");
+            }
+            update(intent().putExtra("mediaMs",1500L));await("NativeGpu","sampled=1500000");
+            AccessibilityNodeInfo line=null;
+            long accessibilityDeadline=SystemClock.uptimeMillis()+10000;
+            while(line==null&&SystemClock.uptimeMillis()<accessibilityDeadline){line=findDescription(getUiAutomation().getRootInActiveWindow(),"Amber echo");if(line==null)SystemClock.sleep(50);}
+            if(line==null||!line.performAction(AccessibilityNodeInfo.ACTION_CLICK))throw new AssertionError("Missing accessible line action");
+            await("CLICK source=true");
+            touch(10,590,50);await("BLANK media=1500");
+            update(intent().putExtra("mediaMs",1501L));await("sampled=1501000");
+            update(intent().putExtra("mediaMs",1700L).putExtra("width",640).putExtra("height",480).putExtra("fontScale",1.5f).putExtra("reduced",true).putExtra("guides",false));
+            await("NativeGpu","sampled=1700000");List<TextureView> resized=textures();
+            if(resized.size()!=1)throw new AssertionError("Expected one surface");
+            runOnMainSync(()->{if(resized.get(0).getWidth()!=640||resized.get(0).getHeight()!=480)throw new AssertionError("Resize not applied");});
+            Instrumentation.ActivityMonitor monitor=addMonitor("org.example.folianativeconsumer.ConsumerActivity",null,false);
+            runOnMainSync(()->activity.recreate());Activity recreated=monitor.waitForActivityWithTimeout(10000);removeMonitor(monitor);
+            if(recreated==null||recreated==activity)throw new AssertionError("Activity did not recreate");
+            activity=recreated;await("NativeGpu","sampled=1700000");stable();
+            if(textures().get(0)==resized.get(0))throw new AssertionError("Recreation reused retired view");
+            update(intent().putExtra("instances",2));await("slot=0 ABI=2 NativeGpu","slot=1 ABI=2 NativeGpu");
+            if(textures().size()!=2)throw new AssertionError("Two independent surfaces missing");
+            update(intent().putExtra("instances",1).putExtra("mediaMs",1502L));await("sampled=1502000");
+            if(textures().size()!=1)throw new AssertionError("Removed instance still attached");
+            update(intent().putExtra("active",false).putExtra("mediaMs",1503L));SystemClock.sleep(400);String inactive=state();SystemClock.sleep(500);
+            if(!inactive.equals(state())||state().contains("sampled=1503000"))throw new AssertionError("Inactive surface submitted");
+            update(intent().putExtra("active",true).putExtra("mediaMs",1503L));await("NativeGpu","sampled=1503000");stable();
+            result.putString("stream","PASS release/R8 AAR: Partita, paused/seek/offset, explicit capability/budget fallback and required failure, source semantics, blank input, resize/font/reduced-motion, recreation, two instances, inactive/resume\n");finish(Activity.RESULT_OK,result);
+        }catch(Throwable error){result.putString("stream","FAIL "+android.util.Log.getStackTraceString(error)+"\n");finish(Activity.RESULT_CANCELED,result);}
+        finally{if(activity!=null)runOnMainSync(()->activity.finish());}
+    }
+    private AccessibilityNodeInfo findDescription(AccessibilityNodeInfo node,String text){if(node==null)return null;CharSequence description=node.getContentDescription();if(description!=null&&text.contentEquals(description))return node;for(int i=0;i<node.getChildCount();i++){AccessibilityNodeInfo found=findDescription(node.getChild(i),text);if(found!=null)return found;}return null;}
+    private static void findTextures(View v,List<TextureView> out){if(v instanceof TextureView)out.add((TextureView)v);if(v instanceof ViewGroup){ViewGroup group=(ViewGroup)v;for(int i=0;i<group.getChildCount();i++)findTextures(group.getChildAt(i),out);}}
+    private String textOf(View view){StringBuilder out=new StringBuilder();if(view instanceof TextView)out.append(((TextView)view).getText());if(view instanceof ViewGroup){ViewGroup group=(ViewGroup)view;for(int i=0;i<group.getChildCount();i++)out.append(textOf(group.getChildAt(i)));}return out.toString();}
+}

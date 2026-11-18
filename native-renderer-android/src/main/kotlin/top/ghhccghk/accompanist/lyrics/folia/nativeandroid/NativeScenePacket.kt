@@ -8,7 +8,9 @@ import java.nio.ByteBuffer
 
 internal data class TextureUpload(val id:Long,val width:Int,val height:Int,val rgba:ByteArray,
     val sigma1:Float,val sigma2:Float,val inkAlpha:Float)
-internal class SceneUpload(val id:Long,scene:FoliaRendererScene) {
+internal class SceneUpload(val id:Long,scene:FoliaRendererScene,budget:Long) {
+    val byteCount=scene.textures.sumOf { it.image.width.toLong()*it.image.height*4 }
+    init { require(byteCount<=budget) { "PreparedTextureBudgetExceeded:required=$byteCount available=$budget" } }
     val textures:List<TextureUpload> = scene.textures.mapIndexed{index,texture->
         val image=texture.image
         require(image.width in 1..8192&&image.height in 1..8192&&index<65535)

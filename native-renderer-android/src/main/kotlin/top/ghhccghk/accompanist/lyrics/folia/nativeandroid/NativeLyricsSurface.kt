@@ -11,7 +11,12 @@ import java.util.concurrent.atomic.AtomicReference
 import java.util.concurrent.atomic.AtomicBoolean
 
 /** Each View owns its worker/session. No global poster or unsynchronised player reads. */
-class FoliaNativeSurfaceView(context: Context) : TextureView(context), TextureView.SurfaceTextureListener {
+class FoliaNativeSurfaceView internal constructor(
+    context: Context,
+    private val waitForScene: Boolean,
+) : TextureView(context), TextureView.SurfaceTextureListener {
+    constructor(context: Context) : this(context, waitForScene = false)
+
     private val thread = HandlerThread("Folia renderer").apply { start() }
     private val worker = Handler(thread.looper)
     private var serial = 0L // UI thread
@@ -23,6 +28,7 @@ class FoliaNativeSurfaceView(context: Context) : TextureView(context), TextureVi
     private val uploaded=mutableSetOf<Long>() // worker only
     private var active=true
     private var lastSubmittedId=-1L
+    private var unopenedSurface: Surface? = null // worker only
     private var handle = 0L // worker only
     private var widthPx = 0
     private var heightPx = 0
@@ -35,41 +41,55 @@ class FoliaNativeSurfaceView(context: Context) : TextureView(context), TextureVi
     private fun stop() {
         if (queued) clock.removeFrameCallback(callback)
         queued = false
+        unopenedSurface?.release()
+        unopenedSurface = null
         if (handle > 0) RendererJni.destroy(handle)
         handle = 0
         uploaded.clear()
         lastSubmittedId=-1L
     }
+    private fun hasScene() = mailbox.get()?.frames?.isNotEmpty() == true
+
     private fun wake() {
-        if (!queued && active && visible && handle > 0 && widthPx > 0 && heightPx > 0) {
+        val canCreate = unopenedSurface != null && (!waitForScene || hasScene())
+        if (!queued && active && visible && (handle > 0 || canCreate) && widthPx > 0 && heightPx > 0) {
             queued = true; clock.postFrameCallback(callback)
         }
     }
     private fun draw() {
         queued = false
-        if (!visible || !active || handle <= 0) return
+        if (!visible || !active) return
         val generation = workerGeneration
         val packet=mailbox.get()
         if(packet!=null&&packet.id==lastSubmittedId)return
+        if (waitForScene && handle <= 0 && packet?.frames.isNullOrEmpty()) return
         if(packet!=null&&(packet.width!=widthPx||packet.height!=heightPx))return
+        if (handle <= 0 && !createSession(generation)) return
         val result = try {
             if(packet==null)RendererJni.frame(handle,widthPx,heightPx)
             else {
                 val wanted=packet.scenes.map{it.id}.toSet()
-                (uploaded-wanted).forEach{check(RendererJni.dropScene(handle,it)==0);uploaded.remove(it)}
+                (uploaded - wanted).forEach { id ->
+                    val status = RendererJni.dropScene(handle, id)
+                    check(status == 0) { "DropScene:$status" }
+                    uploaded.remove(id)
+                }
                 packet.scenes.filter{it.id !in uploaded}.forEach{scene->
                     scene.textures.forEach{texture->
                         val status=RendererJni.upload(handle,texture.id,texture.width,texture.height,
                             texture.rgba.directBuffer(),texture.rgba.size,texture.sigma1,texture.sigma2,texture.inkAlpha)
-                        check(status==0){"Upload:$status"}
+                        check(status == 0) { "Upload:$status:${texture.width}x${texture.height}" }
                     }
                     uploaded+=scene.id
                 }
                 RendererJni.render(handle,packet.bytes.directBuffer(),packet.bytes.size)
             }
-        }catch(e:Exception){post{if(!released&&serial==generation)report("Failed:${e.message}")};-99}
+        } catch (error: Exception) {
+            fail(generation, error.message ?: "WorkerException")
+            return
+        }
         if (result < 0 || (result == 1 && ++failures > 3)) {
-            stop(); post { if (!released && serial == generation) report("Failed:$result") }
+            fail(generation, "Render:$result")
         } else if (result == 1) wake()
         else {
             failures = 0
@@ -101,16 +121,35 @@ class FoliaNativeSurfaceView(context: Context) : TextureView(context), TextureVi
         val generation = ++serial
         val surface = Surface(texture)
         val shown = isShown && windowVisibility == VISIBLE
-        worker.post {
-            stop(); workerGeneration = generation; widthPx = width; heightPx = height; visible = shown; failures = 0
-            try {
-                FoliaNativeRuntime.checkAvailability().getOrThrow()
-                handle = RendererJni.create(surface, width, height)
-                if (handle <= 0) error("Create:$handle")
-                wake()
-            } catch (e: Throwable) {
-                stop(); post { if (!released && serial == generation) report("Failed:${e.message}") }
-            } finally { surface.release() }
+        if (!worker.post {
+            stop()
+            workerGeneration = generation
+            widthPx = width
+            heightPx = height
+            visible = shown
+            failures = 0
+            unopenedSurface = surface
+            wake()
+        }) surface.release()
+    }
+    private fun fail(generation: Long, reason: String) {
+        stop()
+        post { if (!released && serial == generation) report("Failed:$reason") }
+    }
+
+    private fun createSession(generation: Long): Boolean {
+        val surface = unopenedSurface ?: return false
+        unopenedSurface = null
+        return try {
+            FoliaNativeRuntime.checkAvailability().getOrThrow()
+            handle = RendererJni.create(surface, widthPx, heightPx)
+            check(handle > 0) { "Create:$handle" }
+            true
+        } catch (error: Throwable) {
+            fail(generation, error.message ?: "CreateException")
+            false
+        } finally {
+            surface.release()
         }
     }
     override fun onSurfaceTextureSizeChanged(texture: SurfaceTexture, width: Int, height: Int) {

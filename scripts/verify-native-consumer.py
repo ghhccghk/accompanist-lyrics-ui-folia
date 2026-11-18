@@ -12,7 +12,10 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
+
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
@@ -87,7 +90,7 @@ if args.serial:
     subprocess.run([adb, "-s", args.serial, "install", "-r", str(apk)], check=True)
     tests = next((project / "build/outputs/apk/androidTest/release").glob("*.apk"))
     subprocess.run([adb, "-s", args.serial, "install", "-r", "-t", str(tests)], check=True)
-    probe = subprocess.run([adb, "-s", args.serial, "shell", "am", "instrument", "-w", "org.example.folianativeconsumer.test/org.example.folianativeconsumer.NativeConsumerProbe"], check=True, capture_output=True, text=True)
+    probe = subprocess.run([adb, "-s", args.serial, "shell", "am", "instrument", "-w", "org.example.folianativeconsumer.test/org.example.folianativeconsumer.NativeLifecycleProbe"], check=True, capture_output=True, text=True, timeout=300)
     print(probe.stdout)
     assert "PASS release/R8" in probe.stdout and "FAIL " not in probe.stdout, probe.stdout
     evidence["runtime"] = probe.stdout.strip()

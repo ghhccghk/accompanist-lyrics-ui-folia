@@ -10,7 +10,7 @@ This is the single current execution checklist; the design and implementation pr
 - Existing native code is CPU mask/colour only. No renderer was present at the starting commit.
 - Preserved and excluded the pre-existing release signing hunk in `sample/android-app/build.gradle.kts` and untracked `gradle/gradle-daemon-jvm.properties`.
 
-## Current: P3 sample integration and lifecycle/interaction validation
+## Current: visual, real playback and runtime stress validation
 
 P1 platform milestone passed (`ad21f29`); evidence: `verification/native-renderer-p1.md`. P2 real core/prepared Partita + GPU passes, 6 Android Rust tests, existing Partita and bridge JVM tests, isolated release/R8 native consumer and paused frame stability passed; evidence: `verification/native-renderer-p2.md`. This is not complete visual/performance acceptance. Implement and validate the thin sample, persisted per-theme backends, failure/lifecycle and interaction behavior next.
 
@@ -31,7 +31,12 @@ or parent consumption cancels click/long press. Focus/semantics/source mapping
 continue through existing Partita. `:library:jvmTest --tests '*PartitaNativeInputTest*'
 --tests '*RendererBridgeTest*'` PASS (3 tests); Android wrapper compiled. This is
 gesture logic/offscreen validation, not yet an Android physical-touch result.
-Release consumer lifecycle/fallback matrix is being expanded and is not yet PASS.
+The isolated release/R8 lifecycle probe passed. It verifies sizing/font/reduced
+motion, scene rejection and fallback, offset and seek, paused/inactive submission,
+source semantics, blank touch, recreation and two instances. See
+[lifecycle evidence](../verification/native-renderer-p3.md). The renderer defers
+GPU initialization until a valid main scene and keeps the surface across
+Partita tuning and size changes.
 
 The standalone Kotlin coordinate consumer passed JVM render/callback and Android
 compilation on November 19. The check covers both POM and Gradle module metadata
@@ -42,12 +47,12 @@ the optional CPU mask experiment during local publication.
 The P4 local Maven archives passed static checks for both runtime ABIs, 63
 locked crates and matching licenses, paired line-table symbols, and ELF LOAD
 alignment. See [packaging evidence](../verification/native-renderer-p4.md).
-APK zipalign and runtime validation of this snapshot are tracked separately.
+The release APK also passed 16KiB zipalign. ARM64 and 16KiB OS runs remain open.
 
 ## Remaining
 
-- P3: thin native sample and persisted backend selection; input pass-through, cancel behavior and source mapping; explicit fallback/required failures; lifecycle/recreation/multi-instance runtime matrix.
-- P4: independent release/R8 consumer, packaged sources/notices, lifecycle/error/resource tests, visual and paired performance evidence.
+- P3: real Android sample playback and imports, platform touch cancellation/long press, foreground/background and multi-scene visual comparison.
+- P4: repeated lifecycle, device error and resource-pressure evidence, ARM64/16KiB OS behavior, and paired hardware performance.
 - Only after the first theme closes: trace-led second theme, then separately validated desktop host.
 
 ## P0 observations and fixed acceptance conditions

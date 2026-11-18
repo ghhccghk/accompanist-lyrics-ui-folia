@@ -1,0 +1,431 @@
+{
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "originalMotion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "frozen48OriginalImagesUnchanged": true,
+  "nativePreviousMediaExact": 8,
+  "conditions": "Unchanged original 48 matrix, subset 8 images at 3.201/3.499 seconds; own core/font/viewport/geometry. Fixed 5-image union including every non-background pixel; no registration, alpha suppression, timing shift or fitted camera. Source pose/envelope are LABELLED diagnostic controls only, never production inputs.",
+  "inputHashes": {
+    "verification/diorama-fixtures/mounted-cut-v1/scene.json": "5e7d1c9fe03fd6429ac0fc8f576b02afa8bd0d24bac11892287d02423da7e4d3",
+    "verification/diorama-text-surface/comparison.json": "674543affe84a34dfb5676e7c77bd1d040827e011bf6d0f0b96786801deacefa",
+    "verification/diorama-fixtures/mounted-cut-v1/steps.tsv": "4630434b211301bfeb977483456a65aea51ebcec940e4b136d6a994c91d8c7e9",
+    "verification/diorama-fixtures/mounted-material-v1/materials.tsv": "bcbd62003dfe68c021ff400c6ed29b234188e8be1602a40d9f6463f5c8f44cc5",
+    "verification/assets/FoliaParityLatin-Bold.ttf": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+  },
+  "numericCaptures": 48,
+  "baseVariantsPerCapture": 6,
+  "additionalShortPostFlightControls": 8,
+  "finiteSourceStateGate": 1e-09,
+  "finiteSourcePeak": 6.039613253960852e-14,
+  "tests": {
+    "suite": "DioramaMountedCameraIsolationTest[jvm]",
+    "tests": 2,
+    "failures": 0,
+    "errors": 0
+  },
+  "rows": [
+    {
+      "file": "mounted-380-60-3201.png",
+      "unionPixels": 5050,
+      "metrics": {
+        "sourcePoseSourceMaterial": {
+          "mae": 1.5342574257425743,
+          "peak": 59,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 1.768270042194093
+          }
+        },
+        "mediaPoseSourceMaterial": {
+          "mae": 22.43029702970297,
+          "peak": 192,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 23.545093365117204
+          }
+        },
+        "sourcePoseMediaMaterial": {
+          "mae": 1.6537293729372937,
+          "peak": 59,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 1.850801687763713
+          }
+        },
+        "mediaPoseMediaMaterial": {
+          "mae": 22.523894389438944,
+          "peak": 192,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 23.771950735001987
+          }
+        }
+      },
+      "hashes": {
+        "original": "be4214230cee7d59ca85d296de6cc0409d2f8af6e8c7bfad7685cb3a22b00990",
+        "sourcePoseSourceMaterial": "3292248e103e17a5be330579862cad84dba2ae5dbc7a406e6474375acbdda142",
+        "mediaPoseSourceMaterial": "c746cb0d8cca668d193e2c3cb0e23b9c818f18412a4348e4dca2b47f837c641e",
+        "sourcePoseMediaMaterial": "697e6fb0d2867ddcb7817a0076acae7ef619c07e13a3a3dbbc55fbc3158ebb37",
+        "mediaPoseMediaMaterial": "ec769888f9eb40da67e61091f97ab73f1f610816ceea40d0807e599ec0ca8bd9"
+      }
+    },
+    {
+      "file": "mounted-380-60-3499.png",
+      "unionPixels": 7926,
+      "metrics": {
+        "sourcePoseSourceMaterial": {
+          "mae": 1.3682816048448145,
+          "peak": 60,
+          "worst64": {
+            "x": 192,
+            "y": 384,
+            "mae": 1.6675972454866927
+          }
+        },
+        "mediaPoseSourceMaterial": {
+          "mae": 35.74093700058878,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 47.87150050352467
+          }
+        },
+        "sourcePoseMediaMaterial": {
+          "mae": 1.453654638741694,
+          "peak": 60,
+          "worst64": {
+            "x": 128,
+            "y": 384,
+            "mae": 1.7837528604118993
+          }
+        },
+        "mediaPoseMediaMaterial": {
+          "mae": 35.81583816973673,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 47.87150050352467
+          }
+        }
+      },
+      "hashes": {
+        "original": "879248798e77f94987d9d9d71022e1ae3a772d8a454d9a06d9f12826655e7753",
+        "sourcePoseSourceMaterial": "e3cfbcc9f086a6b9d55d73cf6e5dee7d19ce04acea846730a99ced526b84a8d8",
+        "mediaPoseSourceMaterial": "7f70867c499f3b8489ce8e0cddcb260cc6a44bd430c588828a98f3901e2b4aa5",
+        "sourcePoseMediaMaterial": "966eac0642410066eee133c53f81fbaa36768187d05b89665413314d51d236c8",
+        "mediaPoseMediaMaterial": "1767efa9bd166d23b8ff5dbfbe55828d34287cb199c0d7b3189ea13fe379536f"
+      }
+    },
+    {
+      "file": "mounted-380-144-3201.png",
+      "unionPixels": 4772,
+      "metrics": {
+        "sourcePoseSourceMaterial": {
+          "mae": 1.6451522771723945,
+          "peak": 68,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 1.9093264248704662
+          }
+        },
+        "mediaPoseSourceMaterial": {
+          "mae": 28.3752444816988,
+          "peak": 190,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 32.16815976110489
+          }
+        },
+        "sourcePoseMediaMaterial": {
+          "mae": 1.6443839061190277,
+          "peak": 67,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 1.906908462867012
+          }
+        },
+        "mediaPoseMediaMaterial": {
+          "mae": 28.34576697401509,
+          "peak": 190,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 32.12560656961553
+          }
+        }
+      },
+      "hashes": {
+        "original": "3cfa00a8b15c1623849b403c5babba9b36de27d1c004d2977faa21a48a5bcbd3",
+        "sourcePoseSourceMaterial": "259c568ad9e1ed9f38ea8f3bb88324b5935f378c5c395b08cbecb8620ff42194",
+        "mediaPoseSourceMaterial": "b7a7363db0fae0c3d56deffeb186ade5b2eee48713370923834620a5ffb42850",
+        "sourcePoseMediaMaterial": "2a9f0e4a99ff01bcb4ec8e7084368116b05c6dc3f8f90a9d846c73e43938e59f",
+        "mediaPoseMediaMaterial": "ec769888f9eb40da67e61091f97ab73f1f610816ceea40d0807e599ec0ca8bd9"
+      }
+    },
+    {
+      "file": "mounted-380-144-3499.png",
+      "unionPixels": 7307,
+      "metrics": {
+        "sourcePoseSourceMaterial": {
+          "mae": 1.552803248027006,
+          "peak": 70,
+          "worst64": {
+            "x": 128,
+            "y": 384,
+            "mae": 2.005663430420712
+          }
+        },
+        "mediaPoseSourceMaterial": {
+          "mae": 19.884950504082845,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 25.593342330184434
+          }
+        },
+        "sourcePoseMediaMaterial": {
+          "mae": 1.5522558277450846,
+          "peak": 70,
+          "worst64": {
+            "x": 128,
+            "y": 384,
+            "mae": 2.005663430420712
+          }
+        },
+        "mediaPoseMediaMaterial": {
+          "mae": 19.885224214223804,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 25.593342330184434
+          }
+        }
+      },
+      "hashes": {
+        "original": "bbbcb9cc4d4fa6fc346c6d043e79c59c2ca52ead1a9f0b2c90bd02a2924d5008",
+        "sourcePoseSourceMaterial": "e9ca44c37cbf9f2c8575182ad9a18cbf8b95ff550e17962306e239d31fc683ff",
+        "mediaPoseSourceMaterial": "68c34fa0cc6a3edba7afb059d8517424c47bb8ccc131964f2b815b03757340c7",
+        "sourcePoseMediaMaterial": "6eeadd75334d0ac984dddbc7a0fa159b7b379629976e6533ab0b8e32ee2bd4e0",
+        "mediaPoseMediaMaterial": "1767efa9bd166d23b8ff5dbfbe55828d34287cb199c0d7b3189ea13fe379536f"
+      }
+    },
+    {
+      "file": "mounted-800-60-3201.png",
+      "unionPixels": 32969,
+      "metrics": {
+        "sourcePoseSourceMaterial": {
+          "mae": 1.0113237687929064,
+          "peak": 78,
+          "worst64": {
+            "x": 256,
+            "y": 384,
+            "mae": 1.8850645359557467
+          }
+        },
+        "mediaPoseSourceMaterial": {
+          "mae": 34.769217547797425,
+          "peak": 192,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 64.01350681536555
+          }
+        },
+        "sourcePoseMediaMaterial": {
+          "mae": 1.1168572497396545,
+          "peak": 77,
+          "worst64": {
+            "x": 256,
+            "y": 384,
+            "mae": 1.922761729153862
+          }
+        },
+        "mediaPoseMediaMaterial": {
+          "mae": 34.843408454406664,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 64.04882280049566
+          }
+        }
+      },
+      "hashes": {
+        "original": "c00ec4a3e5b3e8ae364d7ce20a8085003e70e5ce8008decad0361438d4aa5e7e",
+        "sourcePoseSourceMaterial": "27a3dc2ff9e81d6050f3854d2c6874876a8acd318edf7909624d1648f8c56a3b",
+        "mediaPoseSourceMaterial": "617c5f9e5c0a19764c32fa8d7a185e2913068e247e73f58f84f8be9f4d419006",
+        "sourcePoseMediaMaterial": "cff8aae8b77da7653a6ee3b879a90295ce25b91e8bb1481788efe273be209c2d",
+        "mediaPoseMediaMaterial": "57cc4309eb92cb46231c40800ffbc645fb825f87d848ff9f9520a653a831861e"
+      }
+    },
+    {
+      "file": "mounted-800-60-3499.png",
+      "unionPixels": 33351,
+      "metrics": {
+        "sourcePoseSourceMaterial": {
+          "mae": 1.1018060427973175,
+          "peak": 85,
+          "worst64": {
+            "x": 320,
+            "y": 384,
+            "mae": 1.7751127511275113
+          }
+        },
+        "mediaPoseSourceMaterial": {
+          "mae": 21.909877764784664,
+          "peak": 192,
+          "worst64": {
+            "x": 0,
+            "y": 448,
+            "mae": 41.25233644859813
+          }
+        },
+        "sourcePoseMediaMaterial": {
+          "mae": 1.18920971884901,
+          "peak": 85,
+          "worst64": {
+            "x": 320,
+            "y": 384,
+            "mae": 1.9388068880688807
+          }
+        },
+        "mediaPoseMediaMaterial": {
+          "mae": 21.99083485752551,
+          "peak": 192,
+          "worst64": {
+            "x": 0,
+            "y": 448,
+            "mae": 41.25233644859813
+          }
+        }
+      },
+      "hashes": {
+        "original": "0100bf2d46df60de88484494c3ed1a84d3d00d0c0dbdfe85e027089f6ac59be7",
+        "sourcePoseSourceMaterial": "67a18b4e8a2a3b903ba1436bd6c4f859917e408a2ddc55340552fe6bba774570",
+        "mediaPoseSourceMaterial": "7c69c722bc8ca9467246becb49f0b62a3360b54f424c9b1c2acd06c91aa51718",
+        "sourcePoseMediaMaterial": "116862c41265c9bd2862a16d7b04d68076fe5991da238c16204e06db1c109f8f",
+        "mediaPoseMediaMaterial": "30412f6ed01332ad191d81ace375bc18a4a45b2334ad5d4dd5ae09af40cf8b4c"
+      }
+    },
+    {
+      "file": "mounted-800-144-3201.png",
+      "unionPixels": 31577,
+      "metrics": {
+        "sourcePoseSourceMaterial": {
+          "mae": 1.1061743251944982,
+          "peak": 82,
+          "worst64": {
+            "x": 256,
+            "y": 384,
+            "mae": 1.8465440710209258
+          }
+        },
+        "mediaPoseSourceMaterial": {
+          "mae": 22.280636750377383,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 37.11119525432286
+          }
+        },
+        "sourcePoseMediaMaterial": {
+          "mae": 1.1266428096399277,
+          "peak": 81,
+          "worst64": {
+            "x": 256,
+            "y": 384,
+            "mae": 1.8338617628408371
+          }
+        },
+        "mediaPoseMediaMaterial": {
+          "mae": 22.283043565464315,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 37.13681686229963
+          }
+        }
+      },
+      "hashes": {
+        "original": "6f95a037d8e1552b4ee758d03db7fe4b03f293f1782e3932912dad789b2462ee",
+        "sourcePoseSourceMaterial": "0224aa6a6cdf19e216e3976e89aab5424981f4fecb58452f0771fcdc06f8d9b7",
+        "mediaPoseSourceMaterial": "d52e46e8938228e4b262119dd435415feba9cb1cacfd3231d91abffa76c3d1b9",
+        "sourcePoseMediaMaterial": "6443f4172e539d2d409c90ada51bc51cc536402e98e7581f3ea557ec6e8c2c7a",
+        "mediaPoseMediaMaterial": "57cc4309eb92cb46231c40800ffbc645fb825f87d848ff9f9520a653a831861e"
+      }
+    },
+    {
+      "file": "mounted-800-144-3499.png",
+      "unionPixels": 31436,
+      "metrics": {
+        "sourcePoseSourceMaterial": {
+          "mae": 1.2088157950545022,
+          "peak": 69,
+          "worst64": {
+            "x": 320,
+            "y": 384,
+            "mae": 1.8045722713864307
+          }
+        },
+        "mediaPoseSourceMaterial": {
+          "mae": 11.296538999872757,
+          "peak": 180,
+          "worst64": {
+            "x": 0,
+            "y": 448,
+            "mae": 22.433333333333334
+          }
+        },
+        "sourcePoseMediaMaterial": {
+          "mae": 1.209515629639055,
+          "peak": 69,
+          "worst64": {
+            "x": 320,
+            "y": 384,
+            "mae": 1.8045722713864307
+          }
+        },
+        "mediaPoseMediaMaterial": {
+          "mae": 11.297482716206472,
+          "peak": 180,
+          "worst64": {
+            "x": 0,
+            "y": 448,
+            "mae": 22.433333333333334
+          }
+        }
+      },
+      "hashes": {
+        "original": "943fc0034db01f309451dbaf0b48e86ee3c900605c19b721a12263d1398f9175",
+        "sourcePoseSourceMaterial": "cc11b07a2cffc605299b46b08d7d955e15ff72cc2c6b70a32d5d8ed0fd7e9ebd",
+        "mediaPoseSourceMaterial": "806f5e0c59123cbb59d1a2b6b1801d598c925f76d6c446556000f2eed990f0c0",
+        "sourcePoseMediaMaterial": "f4d407ab32d1fb29ca451a533bb44cb3f419f044fdd6ef7b98d176e56997668b",
+        "mediaPoseMediaMaterial": "30412f6ed01332ad191d81ace375bc18a4a45b2334ad5d4dd5ae09af40cf8b4c"
+      }
+    }
+  ],
+  "productionChanged": false,
+  "formalVisualAcceptance": false,
+  "deviceRun": false,
+  "rejectedHarness": {
+    "path": ".work/diorama-camera-isolation-imagebitmap-rejected",
+    "log": ".work/diorama-camera-material-cross.log",
+    "failure": "Direct ImageBitmap Canvas differs from previous Compose capture by 12 pixels, peak1, first narrow 3.201s case; rejected. Same original Compose Canvas/capture path reproduces all eight previous media images exactly. Precision gate unchanged; low-level rounding cause not separately isolated."
+  }
+}

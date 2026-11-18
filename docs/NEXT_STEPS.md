@@ -16,8 +16,16 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。后来用户授权镜台调试入口，当前共八项，下述新结果取代入口限制。
 
-当前唯一下一项：回到同48原矩阵3499ms媒体相机局部残差，先隔离原相机/本地
-媒体相机的投影贡献，再提出可证伪的最小修复；不调整阈值、帧延迟或重采原图。
+当前唯一下一项：同原flight初态/target/宽度，隔离飞行段look-only、alignment、
+frame-keep和最终orientation follower，重点3.199→3.2s；先判forcing/顺序/有限采样，
+不调整阈值、帧延迟或重采原图。当前相机单因素及完整交叉已完成：
+48时点/1906 incoming有限回调peak6.04e-14；3499ms 800宽旧初态和current width
+单因素投影仅.214/.018px和.440/.456px，不足解释当前3.324/1.467px。
+8帧原相机/媒体材质交叉确认相机主导：800/3499最坏64 41.252/22.433在换原pose后
+为1.939/1.805；本地全媒体8图逐像素复现旧图，48原图hash不变，2项JVM通过。
+只新增诊断，不是生产修复/视觉验收/Android行为或性能结论；见
+verification/diorama-camera-isolation。ImageBitmap候选12像素差1失败保留，改回原
+Compose capture路径后精确，未放宽阈值。原初态只用于明确标记控制，未进生产。
 84f3bcb调试面板最新debug已构建/原证书双版本v1/v2验签/CRC/16KiB对齐/双ABI Rust/
 交付hash通过：build/deliverables/android/lyrics-ui-folia-debug-84f3bcb-20261118-194351.apk；
 SHA256 164b40662975f8c1688f0441a7a3b81c9bbe9cb1f7b5dbe81273ab84c2e9d228。

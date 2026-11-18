@@ -31,7 +31,7 @@ internal class DioramaPlainRenderer(private val maxEntries:Int=8,
     private val byteBudget:Long=32L*1024*1024,
     private val factory:(DioramaPlainText)->DioramaPlainSampler? = ::createDioramaPlainSampler) {
     private val entries=linkedMapOf<DioramaPlainText,DioramaPlainSampler>()
-    private var requested=emptyList<DioramaPlainText>()
+    private var requested:List<DioramaPlainText>?=null
     private var closed=false
     var residentBytes:Long=0;private set
     var preparations:Int=0;private set
@@ -46,7 +46,9 @@ internal class DioramaPlainRenderer(private val maxEntries:Int=8,
         for(text in entries.keys.toList())if(text !in unique) {
             entries.remove(text)!!.close();residentBytes-=dioramaPlainMipBytes(text.image.width,text.image.height)
         }
-        requested=emptyList() // A failed preparation may be retried explicitly.
+        // Failed preparation is not a successful empty request: an unmount
+        // must still evict any images prepared before that exception.
+        requested=null
         for(text in unique)if(text !in entries && entries.size<maxEntries) {
             val bytes=dioramaPlainMipBytes(text.image.width,text.image.height)
             if(bytes<=byteBudget-residentBytes) {

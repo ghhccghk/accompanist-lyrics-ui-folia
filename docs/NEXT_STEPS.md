@@ -16,8 +16,11 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：修正plain owner在prepare中途失败后empty/unmount无法淘汰残留项的状态，
-补独立失败回归；然后刷新Android debug/独立消费，再定位Arabic输入/放置与700ms入场残差。
+当前唯一下一项：刷新Android debug/独立消费；随后以共享原输入控制定位Arabic输入/放置
+与700ms入场残差，不把已有16局部回退或媒体相机残差说成已修。
+plain owner异常后卸载已修：原生产1项回归先失败，成功A/失败B后空request曾跳过淘汰；
+改用null表示未完成请求，卸载count/bytes归零、原异常透传，5项JVM/Android库/Desktop
+编译通过，见verification/diorama-owner-release。无shader/视觉/设备/性能结论。
 活动BASE采样已接内部可选owner：当前行<=32项/32MiB额外payload估算，帧外准备/释放，
 Android明确不可用/真实旧路径回退。原最坏活动层同813union MAE19.670767→1.308733，
 峰74→22；固定48同7图union有限4.273842→1.961853，但700ms四帧均值/局部回退保留；

@@ -64,6 +64,22 @@ class DioramaPlainRendererTest {
         val failure=IllegalArgumentException("Explicit preparation failure")
         val broken=DioramaPlainRenderer(factory={throw failure})
         assertSame(failure,assertFailsWith<IllegalArgumentException>{broken.prepare(listOf(a))});broken.close()
+        val partialClosed=mutableListOf<DioramaPlainText>()
+        val partial=DioramaPlainRenderer(factory={text->
+            if(text===b)throw failure
+            object:DioramaPlainSampler {
+                override fun draw(scope:androidx.compose.ui.graphics.drawscope.DrawScope,view:DioramaPerspective,
+                    origin:DioramaVec,x:DioramaVec,y:DioramaVec,color:DioramaLinearColor,alpha:Float,fog:DioramaFog?,toneMapping:DioramaToneMapping)=error("Not a drawing fake")
+                override fun close(){partialClosed+=text}
+            }
+        })
+        try {
+            assertSame(failure,assertFailsWith<IllegalArgumentException>{partial.prepare(listOf(a,b))})
+            assertEquals(1,partial.residentCount)
+            partial.prepare(emptyList())
+            assertEquals(listOf(a),partialClosed,"Empty/unmount after partial failure must release the successfully prepared sampler")
+            assertEquals(0,partial.residentCount);assertEquals(0L,partial.residentBytes)
+        }finally{partial.close()}
         assertEquals(8L,dioramaPlainMipBytes(1,1));assertEquals(44L,dioramaPlainMipBytes(2,2))
     }
 

@@ -1,0 +1,24 @@
+{
+  "baseline": "28a4b4e",
+  "preFixRegression": {
+    "test": "DioramaPlainRendererTest.budgetsUnavailableAndDisposal",
+    "tests": 1,
+    "failures": 1,
+    "expected": "A successful sampler closes on empty/unmount after the next sampler throws",
+    "observed": "No close callback; successful sampler remains resident",
+    "localLog": ".work/diorama-plain-owner-partial-failure.log"
+  },
+  "afterFix": {
+    "targetedJvmTests": 5,
+    "failures": 0,
+    "partialUnmountResidentCount": 0,
+    "partialUnmountResidentBytes": 0,
+    "originalExceptionPropagates": true,
+    "androidLibraryCompile": "PASS",
+    "desktopCompile": "PASS"
+  },
+  "shaderOrSourceChanged": false,
+  "deviceValidated": false,
+  "performanceMeasured": false,
+  "formalVisualAcceptance": false
+}

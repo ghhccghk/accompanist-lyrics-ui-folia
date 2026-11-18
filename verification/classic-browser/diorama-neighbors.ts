@@ -9,6 +9,7 @@ import {createSequencerState,appendSegment} from '../../.work/folia-major/src/co
 import {rasterDioramaLine} from '../../.work/folia-major/src/components/visualizer/diorama/dioramaTextRaster';
 import {updateDioramaNeighborLines,updateDioramaActiveUnits} from '../../.work/folia-major/src/components/visualizer/diorama/dioramaSceneFrame';
 import {resolveFrameFitScale,resolveTextLife} from '../../.work/folia-major/src/components/visualizer/diorama/dioramaSceneUnits';
+import {FOG_NEAR,FOG_FAR} from '../../.work/folia-major/src/components/visualizer/diorama/dioramaSceneConstants';
 import latin from '../assets/FoliaParityLatin-Bold.ttf?url';
 import arabic from '../assets/FoliaParityBidi-Bold.ttf?url';
 import cjk from '../assets/FoliaParityChatCJK-Bold.otf?url';
@@ -32,10 +33,23 @@ renderer.setPixelRatio(1);renderer.setSize(innerWidth,600);renderer.setClearColo
 const world=new THREE.Scene(),camera=new THREE.PerspectiveCamera(55,innerWidth/600,.1,1000);
 const primary=new THREE.Color('#dfe5ec'),secondary=new THREE.Color('#758daa'),accent=new THREE.Color('#f17b4d');
 const damped={primary,secondary,accent,bg:new THREE.Color('#162435')};
+const fogEnabled=new URLSearchParams(location.search).has('fog');
+if(fogEnabled)world.fog=new THREE.Fog(damped.bg.getHex(),FOG_NEAR,FOG_FAR);
+// Actual installed Three direct-screen uniform conversion and smoothstep.
+// These supplement, never replace, the WebGL text-stage images.
+const encoded=(c:THREE.Color)=>c.getRGB(new THREE.Color(),renderer.outputColorSpace);
+const fogControls=fogEnabled?[primary,secondary,accent].flatMap((c,index)=>{
+ const a=encoded(c),b=encoded(world.fog!.color);
+ return [...Array.from({length:401},(_,i)=>i/10),12-1e-9,12,12+1e-9,30-1e-9,30,30+1e-9].map(depth=>{
+  const factor=THREE.MathUtils.smoothstep(depth,FOG_NEAR,FOG_FAR);
+  return {index,depth,factor,body:a.toArray(),fog:b.toArray(),result:a.clone().lerp(b,factor).toArray()};
+ });
+}):[];
 const vec=(v:any)=>[v.x,v.y,v.z];
 const windows=Array.from({length:9},(_,total)=>Array.from({length:Math.max(total,1)},(_,current)=>({
  total,current,indices:resolveDioramaMountedIndices(current,null,total)}))).flat();
-Object.assign(window,{neighborsReady:true,neighborInputs:{lines,seed,windows,primary:primary.toArray(),secondary:secondary.toArray(),accent:accent.toArray()},
+Object.assign(window,{neighborsReady:true,neighborInputs:{lines,seed,windows,primary:primary.toArray(),secondary:secondary.toArray(),accent:accent.toArray(),
+ ...(fogEnabled?{fog:{near:FOG_NEAR,far:FOG_FAR,encoded:encoded(world.fog!.color).toArray()},fogControls,threeRevision:THREE.REVISION}:{})},
  drawNeighbors:(current:number,distance:number,time:number)=>{
  for(const child of [...world.children]) {
   child.traverse((o:any)=>{o.geometry?.dispose();if(o.material)o.material.dispose();});world.remove(child);

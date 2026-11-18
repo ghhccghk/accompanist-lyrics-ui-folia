@@ -8,13 +8,23 @@
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
-| Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
+| Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life、可选文字fragment fog | 无 | 切曲/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：镜台正常文字平面的原版fog实现与接入（不增加背景引擎），
-先核对固定Three实际shader顺序/色彩空间，做原文字平面的同视角深度对照；
-无fog旧矩阵保持原样，未解决的Fume/群唱残差继续保留，Diorama不开放入口。
+当前唯一下一项：在当前Tilt字号修复后，复核七公开主题真实Desktop窗口恢复矩阵，
+保留旧窗口证据，在专用实例中验证字号/resize/设置/seek/重挂；随后核对当前产物独立消费。
+只验真实能力，不将window自一致性当原版效果/音频/设备通过。Fume/群唱残差继续保留，
+Diorama不开放入口。此前正常fog“下一项”为历史，已按下列证据完成内部文字接入。
 真实Desktop七主题窗口复核和manifest/图检已保存（059087b/verification/themes-native-window），
 此前“待保存”为历史。没有选歌/真实音频/设备的新证据。
+
+镜台文字fragment fog已接全邻行及活动三层：原view-axis12/30、编码后RGB混合、
+alpha/life保留，透视变换下32段有界梯度；原8bit中间颜色门槛先失败，保留全部失败，
+改half-float stop后原门槛通过而非放宽。1221原控制factor/代数峰0，stop峰.000244。
+54原完整文字同union均值12.221155→3.742278，局部46.276676→21.879310；56原shader
+斜面/普通加色stress均值39.521592→1.824069，局部122.333333→15.982094。预设solid
+ray对照峰原.519/本1.685byte，未删低alpha或配准；108旧无fog图hash不变。
+10定向JVM/Android库/Desktop编译通过，固定contact已图检。证据verification/diorama-fog。
+仍非原mounted CameraRig、depth/跨曲/调色/整曲驻留或设备性能验收；无公共新主题。
 
 Diorama内部偏移已修为media-offset，点击逆映射lineStart+offset，与既有设计和
 两端sample一致；原自测曾复制反号，保留源/失败日志并注明迁移依据，不改上游数据。

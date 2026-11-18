@@ -1,0 +1,7433 @@
+{
+  "scope": "Actual locked Three fog fragment shader and original Folia 12/30 constants; original shared synthetic glyph mask plus opaque-white calibration mask. Same perspective pose, .63 opacity, normal/additive. Frozen geometry isolates RGB/view-depth/perspective, NOT original mounted CameraRig or full-scene/Android acceptance.",
+  "conditions_sha256": "c69e197d94b639968537489f879c822df64cfd5d070c11f6ed5bcf1fbac78d7f",
+  "mask": "Identical source/before/after union, EVERY nonbackground pixel; no alignment, threshold, alpha removal or frame filtering.",
+  "summary": {
+    "before": {
+      "mean_foreground_mae": 39.52159200067456,
+      "worst_frame": 120.74817116592219,
+      "local_worst": 122.33333333333333
+    },
+    "after": {
+      "mean_foreground_mae": 1.8240688086638517,
+      "worst_frame": 7.307819144320056,
+      "local_worst": 15.982093663911845
+    }
+  },
+  "frames": [
+    {
+      "file": "before-glyph-normal-380.png",
+      "source_bounds": [
+        27,
+        159,
+        380,
+        393
+      ],
+      "before_bounds": [
+        26,
+        158,
+        380,
+        393
+      ],
+      "after_bounds": [
+        26,
+        158,
+        380,
+        393
+      ],
+      "source_pixels": 31478,
+      "after_pixels": 31705,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\before-glyph-normal-380.png": "8108928e936ebbce6640ce4c417a323290c3c3f4a135b752ef6e25f4b84f72a9",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-before-glyph-normal-380.png": "33f0eed550fd6fa94473a1bef0662bf1ac99c2165afd94decf296467a1bca496",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-before-glyph-normal-380.png": "33f0eed550fd6fa94473a1bef0662bf1ac99c2165afd94decf296467a1bca496"
+      },
+      "before": {
+        "foreground_mae": 1.8965778268411921,
+        "full_mae": 0.2637324561403509,
+        "worst64": 5.855191256830601,
+        "channel_peak": 21
+      },
+      "after": {
+        "foreground_mae": 1.8965778268411921,
+        "full_mae": 0.2637324561403509,
+        "worst64": 5.855191256830601,
+        "channel_peak": 21
+      }
+    },
+    {
+      "file": "before-glyph-add-380.png",
+      "source_bounds": [
+        27,
+        159,
+        380,
+        393
+      ],
+      "before_bounds": [
+        26,
+        158,
+        380,
+        393
+      ],
+      "after_bounds": [
+        26,
+        158,
+        380,
+        393
+      ],
+      "source_pixels": 31543,
+      "after_pixels": 31705,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\before-glyph-add-380.png": "b169b4564a723a612774c1393c92941d538fc2f6acedaa3ae3b9176f45f19b5c",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-before-glyph-add-380.png": "c82f1ce6844c8a7bf758ef83b749c02072aedf89836f3919e1c2350de992df3a",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-before-glyph-add-380.png": "c82f1ce6844c8a7bf758ef83b749c02072aedf89836f3919e1c2350de992df3a"
+      },
+      "before": {
+        "foreground_mae": 1.5657992955895494,
+        "full_mae": 0.21773538011695906,
+        "worst64": 5.508196721311475,
+        "channel_peak": 21
+      },
+      "after": {
+        "foreground_mae": 1.5657992955895494,
+        "full_mae": 0.21773538011695906,
+        "worst64": 5.508196721311475,
+        "channel_peak": 21
+      }
+    },
+    {
+      "file": "before-solid-normal-380.png",
+      "source_bounds": [
+        0,
+        37,
+        380,
+        563
+      ],
+      "before_bounds": [
+        0,
+        37,
+        380,
+        563
+      ],
+      "after_bounds": [
+        0,
+        37,
+        380,
+        563
+      ],
+      "source_pixels": 182838,
+      "after_pixels": 182894,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\before-solid-normal-380.png": "0e51d933025a1ba53bb20c18fa6e9185ed72663e2aae0fc927e86275102580be",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-before-solid-normal-380.png": "ba9f4d2e686cdf8d8ba12db681abbc59555a224a56ecedab08ab2e5372564a4d",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-before-solid-normal-380.png": "ba9f4d2e686cdf8d8ba12db681abbc59555a224a56ecedab08ab2e5372564a4d"
+      },
+      "before": {
+        "foreground_mae": 1.0473425408524428,
+        "full_mae": 0.8401432748538011,
+        "worst64": 5.353535353535354,
+        "channel_peak": 36
+      },
+      "after": {
+        "foreground_mae": 1.0473425408524428,
+        "full_mae": 0.8401432748538011,
+        "worst64": 5.353535353535354,
+        "channel_peak": 36
+      }
+    },
+    {
+      "file": "before-solid-add-380.png",
+      "source_bounds": [
+        0,
+        37,
+        380,
+        563
+      ],
+      "before_bounds": [
+        0,
+        37,
+        380,
+        563
+      ],
+      "after_bounds": [
+        0,
+        37,
+        380,
+        563
+      ],
+      "source_pixels": 182838,
+      "after_pixels": 182894,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\before-solid-add-380.png": "20fc3653f3c5ed69f4151fbce7091b29c78516212c375bdf8450cb58b7d504a2",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-before-solid-add-380.png": "aa7d7f67c4970ce0d46920f9a4f62f96269941689213c6503d0173d8da90ad73",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-before-solid-add-380.png": "aa7d7f67c4970ce0d46920f9a4f62f96269941689213c6503d0173d8da90ad73"
+      },
+      "before": {
+        "foreground_mae": 0.7240696797051844,
+        "full_mae": 0.5808245614035088,
+        "worst64": 5.922558922558922,
+        "channel_peak": 42
+      },
+      "after": {
+        "foreground_mae": 0.7240696797051844,
+        "full_mae": 0.5808245614035088,
+        "worst64": 5.922558922558922,
+        "channel_peak": 42
+      }
+    },
+    {
+      "file": "near-cross-glyph-normal-380.png",
+      "source_bounds": [
+        0,
+        227,
+        346,
+        414
+      ],
+      "before_bounds": [
+        0,
+        230,
+        346,
+        414
+      ],
+      "after_bounds": [
+        0,
+        230,
+        346,
+        414
+      ],
+      "source_pixels": 15960,
+      "after_pixels": 14409,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\near-cross-glyph-normal-380.png": "d6dc8d2b3aa247f95529cbfecd0b6d3f09ea8845a1de2e76f41652812d8b898f",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-near-cross-glyph-normal-380.png": "bfcf1e1fa95baff54d489958d3647e909101dadde1a07fb1a2a01adc58f6efc9",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-near-cross-glyph-normal-380.png": "4213e5401f256e90b5dede1c4f45b6fe52e7e4680718712cafc2c5d3d47e5346"
+      },
+      "before": {
+        "foreground_mae": 10.994397234024827,
+        "full_mae": 0.7717295321637427,
+        "worst64": 55.360975609756096,
+        "channel_peak": 121
+      },
+      "after": {
+        "foreground_mae": 4.986878280429893,
+        "full_mae": 0.3500438596491228,
+        "worst64": 12.344578313253011,
+        "channel_peak": 71
+      }
+    },
+    {
+      "file": "near-cross-glyph-add-380.png",
+      "source_bounds": [
+        0,
+        225,
+        347,
+        414
+      ],
+      "before_bounds": [
+        0,
+        230,
+        346,
+        414
+      ],
+      "after_bounds": [
+        0,
+        230,
+        346,
+        414
+      ],
+      "source_pixels": 16342,
+      "after_pixels": 14409,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\near-cross-glyph-add-380.png": "24b32bba1534c15dc70902ee6b8b10c9737b67ba7666cc57f90640807d1ad20e",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-near-cross-glyph-add-380.png": "e734dd129f74659105850b60d4fe2843ffa8b2c27d5080367a2d3028ccbf5cae",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-near-cross-glyph-add-380.png": "55fbf9f0361415ede3d3d0efcf5a35b990a4857fd45d9c83c1497988e7c98e0a"
+      },
+      "before": {
+        "foreground_mae": 11.879034064300694,
+        "full_mae": 0.8529459064327486,
+        "worst64": 54.63857677902622,
+        "channel_peak": 131
+      },
+      "after": {
+        "foreground_mae": 5.532730641581659,
+        "full_mae": 0.39726461988304096,
+        "worst64": 14.032119914346895,
+        "channel_peak": 81
+      }
+    },
+    {
+      "file": "near-cross-solid-normal-380.png",
+      "source_bounds": [
+        0,
+        152,
+        350,
+        548
+      ],
+      "before_bounds": [
+        0,
+        152,
+        350,
+        549
+      ],
+      "after_bounds": [
+        0,
+        152,
+        351,
+        549
+      ],
+      "source_pixels": 88548,
+      "after_pixels": 88775,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\near-cross-solid-normal-380.png": "53eff503f25b077797362bf1968580cdbf040897729d49524badb7b0e6c6f43f",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-near-cross-solid-normal-380.png": "c3f0f2523f37cf745afc7d2656c8e0dd7c9e9ba2bfec7c7a900a5a839fd77de5",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-near-cross-solid-normal-380.png": "83bbc5fefb66988fec2536f0d2c6b03f6c76be4fbe29c465bbb3fe219dd78f00"
+      },
+      "before": {
+        "foreground_mae": 8.121806064019525,
+        "full_mae": 3.1623391812865496,
+        "worst64": 84.75773745997866,
+        "channel_peak": 113
+      },
+      "after": {
+        "foreground_mae": 1.086311837041209,
+        "full_mae": 0.4229707602339181,
+        "worst64": 6.0092592592592595,
+        "channel_peak": 56
+      }
+    },
+    {
+      "file": "near-cross-solid-add-380.png",
+      "source_bounds": [
+        0,
+        152,
+        350,
+        548
+      ],
+      "before_bounds": [
+        0,
+        152,
+        351,
+        549
+      ],
+      "after_bounds": [
+        0,
+        152,
+        351,
+        549
+      ],
+      "source_pixels": 88548,
+      "after_pixels": 88775,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\near-cross-solid-add-380.png": "6ca651e339c7857ddf4f0567daf128139e319d03ef5b65f2ba6156291f73b57c",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-near-cross-solid-add-380.png": "d300227bdeeb1f6e094fb061abb94a4273aff0e5b3779023296d1145afd9fb93",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-near-cross-solid-add-380.png": "3896cd211882376e53ed80a6182426921149f16b811be5dd3676c412d2c8c40c"
+      },
+      "before": {
+        "foreground_mae": 8.381958133859007,
+        "full_mae": 3.2636330409356726,
+        "worst64": 84.68231945926716,
+        "channel_peak": 113
+      },
+      "after": {
+        "foreground_mae": 0.6944823054538628,
+        "full_mae": 0.27040643274853804,
+        "worst64": 7.194444444444445,
+        "channel_peak": 66
+      }
+    },
+    {
+      "file": "middle-glyph-normal-380.png",
+      "source_bounds": [
+        0,
+        256,
+        380,
+        345
+      ],
+      "before_bounds": [
+        0,
+        256,
+        380,
+        345
+      ],
+      "after_bounds": [
+        0,
+        256,
+        380,
+        345
+      ],
+      "source_pixels": 9421,
+      "after_pixels": 8832,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\middle-glyph-normal-380.png": "522195e337b35d958e4d3eb788c182e0c892c885369c932d81d71a79bbf5449b",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-middle-glyph-normal-380.png": "327221058ddfd0ac06b99835e3f187d660f71ddd459ff301f5b3618031107b0a",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-middle-glyph-normal-380.png": "6ca6c279cd5097df67c5bee6e4826c02ab7020c941bf502ea152cadf5cc0fb06"
+      },
+      "before": {
+        "foreground_mae": 53.27905004240882,
+        "full_mae": 2.2040701754385963,
+        "worst64": 54.488835082055424,
+        "channel_peak": 90
+      },
+      "after": {
+        "foreground_mae": 2.5998374328527,
+        "full_mae": 0.10755116959064327,
+        "worst64": 3.439775910364146,
+        "channel_peak": 30
+      }
+    },
+    {
+      "file": "middle-glyph-add-380.png",
+      "source_bounds": [
+        0,
+        255,
+        380,
+        345
+      ],
+      "before_bounds": [
+        0,
+        256,
+        380,
+        345
+      ],
+      "after_bounds": [
+        0,
+        256,
+        380,
+        345
+      ],
+      "source_pixels": 9597,
+      "after_pixels": 8832,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\middle-glyph-add-380.png": "0326dc65418b9ac418efac94f66e8efc60cf0435af0603b343c7bacf0c4c0e30",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-middle-glyph-add-380.png": "dffa950e8d28e63ed5d82e6c64b93da432965b818c0186651c736d046a83ee65",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-middle-glyph-add-380.png": "f30889d49a32a8f5b3069d85257d329c03e088fc4a149e0aacc5626619cddcee"
+      },
+      "before": {
+        "foreground_mae": 52.4847032677015,
+        "full_mae": 2.2096520467836256,
+        "worst64": 53.822063113232566,
+        "channel_peak": 93
+      },
+      "after": {
+        "foreground_mae": 2.883460082647498,
+        "full_mae": 0.12139619883040936,
+        "worst64": 3.8224043715846996,
+        "channel_peak": 38
+      }
+    },
+    {
+      "file": "middle-solid-normal-380.png",
+      "source_bounds": [
+        0,
+        208,
+        380,
+        392
+      ],
+      "before_bounds": [
+        0,
+        208,
+        380,
+        392
+      ],
+      "after_bounds": [
+        0,
+        208,
+        380,
+        392
+      ],
+      "source_pixels": 52454,
+      "after_pixels": 52556,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\middle-solid-normal-380.png": "c138b788aa1664d4fce1dd5d5b0a5dd31712c3d1ded75691222ce2146a3ca6ef",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-middle-solid-normal-380.png": "ba5f75f923161d61a6482171975953b30ce62766e97c8b1717f1265b93194a53",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-middle-solid-normal-380.png": "6e265387b433d768efec5c17325f079ab3aca6515cdd305cce42985a884a980a"
+      },
+      "before": {
+        "foreground_mae": 61.16275972296217,
+        "full_mae": 14.098552631578947,
+        "worst64": 61.666666666666664,
+        "channel_peak": 65
+      },
+      "after": {
+        "foreground_mae": 1.0482088946393688,
+        "full_mae": 0.24162134502923976,
+        "worst64": 1.9241293532338308,
+        "channel_peak": 14
+      }
+    },
+    {
+      "file": "middle-solid-add-380.png",
+      "source_bounds": [
+        0,
+        208,
+        380,
+        392
+      ],
+      "before_bounds": [
+        0,
+        208,
+        380,
+        392
+      ],
+      "after_bounds": [
+        0,
+        208,
+        380,
+        392
+      ],
+      "source_pixels": 52454,
+      "after_pixels": 52556,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\middle-solid-add-380.png": "319ce3f4f2f502d360421e52966dc256e1772f19b7cccd3cdf8747205aa409a4",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-middle-solid-add-380.png": "62e7d01ef9bdc9c6c70d485c3b093be0100b08bb60b817aac1241fceee69498b",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-middle-solid-add-380.png": "4be5bfd55d33e337a98211396f80c2bec6f80d8644720f5a41fe6e592aa95444"
+      },
+      "before": {
+        "foreground_mae": 60.829090240251666,
+        "full_mae": 14.021638888888889,
+        "worst64": 61.333333333333336,
+        "channel_peak": 64
+      },
+      "after": {
+        "foreground_mae": 0.7432453002511606,
+        "full_mae": 0.17132456140350877,
+        "worst64": 2.1007462686567164,
+        "channel_peak": 21
+      }
+    },
+    {
+      "file": "whole-band-glyph-normal-380.png",
+      "source_bounds": [
+        0,
+        259,
+        235,
+        433
+      ],
+      "before_bounds": [
+        0,
+        253,
+        256,
+        433
+      ],
+      "after_bounds": [
+        0,
+        253,
+        256,
+        433
+      ],
+      "source_pixels": 10247,
+      "after_pixels": 8982,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\whole-band-glyph-normal-380.png": "7a93a4ffbb668193bbf37f930930795df6531d2da9292ed5b23a1dad66756f01",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-whole-band-glyph-normal-380.png": "164af8c67d7f696108bef46b3fe8edb941558a3a41b11ed262d1d9f39f6245d5",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-whole-band-glyph-normal-380.png": "4875e74fd7c62b48d24fd18b1d4c7a4a2cb28809320135f3dcd513c11e68869c"
+      },
+      "before": {
+        "foreground_mae": 21.401666823322994,
+        "full_mae": 0.9986505847953216,
+        "worst64": 122.33333333333333,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 5.58934110348717,
+        "full_mae": 0.2608114035087719,
+        "worst64": 9.690212373037857,
+        "channel_peak": 71
+      }
+    },
+    {
+      "file": "whole-band-glyph-add-380.png",
+      "source_bounds": [
+        0,
+        247,
+        257,
+        433
+      ],
+      "before_bounds": [
+        0,
+        253,
+        256,
+        433
+      ],
+      "after_bounds": [
+        0,
+        253,
+        256,
+        433
+      ],
+      "source_pixels": 11523,
+      "after_pixels": 9030,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\whole-band-glyph-add-380.png": "650e525d13861078ce96641d08298a2fb7d05a59757642405df64a69916c36eb",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-whole-band-glyph-add-380.png": "b6559133dd4d77b6c99418c905f2e63d5e5d8a3d633f54946d13eb4fd244fd81",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-whole-band-glyph-add-380.png": "c4a667810d087016426447a14e7e22cceda39870fb59c5483ba56417e7b5a5e3"
+      },
+      "before": {
+        "foreground_mae": 21.179438224999277,
+        "full_mae": 1.0703976608187133,
+        "worst64": 57.0952165384035,
+        "channel_peak": 141
+      },
+      "after": {
+        "foreground_mae": 7.307819144320056,
+        "full_mae": 0.36933333333333335,
+        "worst64": 11.960061443932412,
+        "channel_peak": 85
+      }
+    },
+    {
+      "file": "whole-band-solid-normal-380.png",
+      "source_bounds": [
+        0,
+        230,
+        235,
+        536
+      ],
+      "before_bounds": [
+        0,
+        230,
+        259,
+        536
+      ],
+      "after_bounds": [
+        0,
+        230,
+        259,
+        536
+      ],
+      "source_pixels": 47076,
+      "after_pixels": 49230,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\whole-band-solid-normal-380.png": "9ff18ab81d168107f64dd53844e498963f767db5d0ec3c55b20fbe2ac273ec2b",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-whole-band-solid-normal-380.png": "602681745d6e010e3197dcb921577fa8cdadf8cb61c2dc27c2f68e3b5a749cab",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-whole-band-solid-normal-380.png": "a44102116744cbf1604426f8451c779552a0522fa65ceeb35af4639491fe30da"
+      },
+      "before": {
+        "foreground_mae": 22.566433140420347,
+        "full_mae": 4.874052631578947,
+        "worst64": 103.84636251541308,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 0.3239110569600975,
+        "full_mae": 0.06996052631578947,
+        "worst64": 11.11111111111111,
+        "channel_peak": 37
+      }
+    },
+    {
+      "file": "whole-band-solid-add-380.png",
+      "source_bounds": [
+        0,
+        230,
+        259,
+        536
+      ],
+      "before_bounds": [
+        0,
+        230,
+        259,
+        536
+      ],
+      "after_bounds": [
+        0,
+        230,
+        259,
+        536
+      ],
+      "source_pixels": 49113,
+      "after_pixels": 49245,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\whole-band-solid-add-380.png": "a25665556ea29432485ab04f595c81c5da0b837b5fe4f586cb905c85759d4ea3",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-whole-band-solid-add-380.png": "6994033a4932d420ebf4fa67db0b707dbe9f7443fbaf2df6b851dae5e0933263",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-whole-band-solid-add-380.png": "6bdb9ad2203f769fa8aa7a60823a4b14cfa0748ebbca96c76a57fa77ed0cd1b5"
+      },
+      "before": {
+        "foreground_mae": 22.06232781669882,
+        "full_mae": 4.765172514619883,
+        "worst64": 103.17205096588573,
+        "channel_peak": 127
+      },
+      "after": {
+        "foreground_mae": 0.6140995701763292,
+        "full_mae": 0.1326374269005848,
+        "worst64": 10.920227920227921,
+        "channel_peak": 38
+      }
+    },
+    {
+      "file": "off-axis-glyph-normal-380.png",
+      "source_bounds": [
+        34,
+        274,
+        380,
+        440
+      ],
+      "before_bounds": [
+        34,
+        275,
+        380,
+        439
+      ],
+      "after_bounds": [
+        34,
+        275,
+        380,
+        439
+      ],
+      "source_pixels": 14906,
+      "after_pixels": 14062,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\off-axis-glyph-normal-380.png": "35203e7d0447801734c702f0f6e339509438d69bccc391c40cff1fb010c460b7",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-off-axis-glyph-normal-380.png": "7c12695ae2b1871b13d65b39e6b95ea4a6dffd1d0456ae2d773e221974a576ba",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-off-axis-glyph-normal-380.png": "3c678fc320535e256c994d14bb80a2c5c233ad569328a86f0afbb9025757c0b8"
+      },
+      "before": {
+        "foreground_mae": 10.746712215598276,
+        "full_mae": 0.7036739766081871,
+        "worst64": 29.42043551088777,
+        "channel_peak": 78
+      },
+      "after": {
+        "foreground_mae": 2.5086297363074106,
+        "full_mae": 0.16426023391812866,
+        "worst64": 6.8,
+        "channel_peak": 51
+      }
+    },
+    {
+      "file": "off-axis-glyph-add-380.png",
+      "source_bounds": [
+        34,
+        273,
+        380,
+        440
+      ],
+      "before_bounds": [
+        34,
+        275,
+        380,
+        439
+      ],
+      "after_bounds": [
+        34,
+        275,
+        380,
+        439
+      ],
+      "source_pixels": 15156,
+      "after_pixels": 14110,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\off-axis-glyph-add-380.png": "2d944fac3bad8e9e09f598ed9304bc61d94181de9d840d91a890fc0f3d0dd244",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-off-axis-glyph-add-380.png": "8da59d875fb7477a09b494aeb5ffe046763b4d4ef1ae0f0016d53246b962491f",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-off-axis-glyph-add-380.png": "6044f6aa7ece8113ac7dca9ac3538af8e19c637cf983ede34c7671620702b84f"
+      },
+      "before": {
+        "foreground_mae": 10.46443009051762,
+        "full_mae": 0.696343567251462,
+        "worst64": 28.65888978278359,
+        "channel_peak": 84
+      },
+      "after": {
+        "foreground_mae": 3.0781922840319886,
+        "full_mae": 0.20483479532163743,
+        "worst64": 7.533333333333333,
+        "channel_peak": 61
+      }
+    },
+    {
+      "file": "off-axis-solid-normal-380.png",
+      "source_bounds": [
+        0,
+        236,
+        380,
+        518
+      ],
+      "before_bounds": [
+        0,
+        236,
+        380,
+        519
+      ],
+      "after_bounds": [
+        0,
+        236,
+        380,
+        519
+      ],
+      "source_pixels": 75926,
+      "after_pixels": 76119,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\off-axis-solid-normal-380.png": "7eba42e5f8a7cc5d7231cd6378094b49e122e93c08797d0b2b4ea5f62c94f123",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-off-axis-solid-normal-380.png": "cf46da9034f730f257245646191d7a5d24c5d290791e223b14735898be904a6e",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-off-axis-solid-normal-380.png": "4ebd7fcbe2076885877686688b870ad4d935a5a75fa66326a705e71aed43fc95"
+      },
+      "before": {
+        "foreground_mae": 9.649709276869999,
+        "full_mae": 3.222156432748538,
+        "worst64": 32.33888888888889,
+        "channel_peak": 43
+      },
+      "after": {
+        "foreground_mae": 0.35065412704250515,
+        "full_mae": 0.11708771929824562,
+        "worst64": 6.384615384615385,
+        "channel_peak": 35
+      }
+    },
+    {
+      "file": "off-axis-solid-add-380.png",
+      "source_bounds": [
+        0,
+        236,
+        380,
+        518
+      ],
+      "before_bounds": [
+        0,
+        236,
+        380,
+        519
+      ],
+      "after_bounds": [
+        0,
+        236,
+        380,
+        519
+      ],
+      "source_pixels": 75926,
+      "after_pixels": 76132,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\off-axis-solid-add-380.png": "09eb1641064fa395237953735e9c5ba0667213dfeb783765526de87058254d93",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-off-axis-solid-add-380.png": "4165630c809441445641abf85e67773bb43591a39746341f100c8ecaf5e12118",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-off-axis-solid-add-380.png": "16d2bd59387fbd8285dab6aacf4d1d540853f4c499d7325eaaa90733cdfcda0c"
+      },
+      "before": {
+        "foreground_mae": 9.097619923291125,
+        "full_mae": 3.0378070175438596,
+        "worst64": 31.694791666666667,
+        "channel_peak": 46
+      },
+      "after": {
+        "foreground_mae": 0.5176666841801082,
+        "full_mae": 0.17285526315789473,
+        "worst64": 7.67948717948718,
+        "channel_peak": 40
+      }
+    },
+    {
+      "file": "far-cross-glyph-normal-380.png",
+      "source_bounds": [
+        0,
+        281,
+        183,
+        397
+      ],
+      "before_bounds": [
+        0,
+        263,
+        281,
+        396
+      ],
+      "after_bounds": [
+        0,
+        263,
+        281,
+        396
+      ],
+      "source_pixels": 5051,
+      "after_pixels": 5781,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\far-cross-glyph-normal-380.png": "5b1a977165cbfb3bf79e24133526b29c55086d6ecc79b57cafef9731bbe182a2",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-far-cross-glyph-normal-380.png": "d8653a7a0278d2719eb0ded50e0adb0814167d9a232530c269faba8f3f3330e4",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-far-cross-glyph-normal-380.png": "3203dcf82774e8581a292cad4e19d67c2e3b561d061827683abdfc628261c232"
+      },
+      "before": {
+        "foreground_mae": 69.54879983622499,
+        "full_mae": 1.986716374269006,
+        "worst64": 111.05910852713178,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 2.2697169763038025,
+        "full_mae": 0.06483625730994153,
+        "worst64": 5.235897435897436,
+        "channel_peak": 39
+      }
+    },
+    {
+      "file": "far-cross-glyph-add-380.png",
+      "source_bounds": [
+        0,
+        259,
+        282,
+        397
+      ],
+      "before_bounds": [
+        0,
+        263,
+        281,
+        396
+      ],
+      "after_bounds": [
+        0,
+        263,
+        281,
+        396
+      ],
+      "source_pixels": 7914,
+      "after_pixels": 5868,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\far-cross-glyph-add-380.png": "897018372badeee295a356e48073d8069781d96399702098e043e4ed44b22e7e",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-far-cross-glyph-add-380.png": "c999e615c5453f819b688f5cafc8582f1b27495d781e353e3138675ea9a8eae0",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-far-cross-glyph-add-380.png": "3cb5c0f7d7192600dea0438c8cb98ca6e18999fe9783ae2c69811c00d4b4602e"
+      },
+      "before": {
+        "foreground_mae": 58.6131328447477,
+        "full_mae": 2.0344926900584794,
+        "worst64": 75.46576790906688,
+        "channel_peak": 135
+      },
+      "after": {
+        "foreground_mae": 4.057703647544436,
+        "full_mae": 0.14084502923976608,
+        "worst64": 6.712962962962963,
+        "channel_peak": 52
+      }
+    },
+    {
+      "file": "far-cross-solid-normal-380.png",
+      "source_bounds": [
+        0,
+        252,
+        183,
+        430
+      ],
+      "before_bounds": [
+        0,
+        242,
+        286,
+        430
+      ],
+      "after_bounds": [
+        0,
+        242,
+        286,
+        430
+      ],
+      "source_pixels": 23608,
+      "after_pixels": 32150,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\far-cross-solid-normal-380.png": "e6b1b071ec29001613ccc1faec25afb7bf73dd53346cb8ee183d608ae9d7a712",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-far-cross-solid-normal-380.png": "eea69ee4d757e86e5eddff56aed04afc1f95f8e6411250a397251116239d97cb",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-far-cross-solid-normal-380.png": "afddbd4cd9195c6a0c719620e28b8661a60ea2b12bc21c6e33de7c0941b882f5"
+      },
+      "before": {
+        "foreground_mae": 85.6398648508592,
+        "full_mae": 12.080479532163743,
+        "worst64": 122.33194986979167,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 0.687975457579338,
+        "full_mae": 0.09704678362573099,
+        "worst64": 8.312684365781712,
+        "channel_peak": 37
+      }
+    },
+    {
+      "file": "far-cross-solid-add-380.png",
+      "source_bounds": [
+        0,
+        242,
+        286,
+        430
+      ],
+      "before_bounds": [
+        0,
+        242,
+        286,
+        430
+      ],
+      "after_bounds": [
+        0,
+        242,
+        286,
+        430
+      ],
+      "source_pixels": 31969,
+      "after_pixels": 32162,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\far-cross-solid-add-380.png": "9460c34ceeac5e120044840fd1385714d09c68bbdfe2d331e2ec5cd02edea3eb",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-far-cross-solid-add-380.png": "4e52e07aac15e4a5c3e7c6003163ad00ff2f0e64b44cc7a191edb883d6e0997b",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-far-cross-solid-add-380.png": "1eb726f0e6a039061f8c53439c254d4e55374bfef10d1c3485fa6b40f9b17473"
+      },
+      "before": {
+        "foreground_mae": 85.0362539643057,
+        "full_mae": 11.995333333333333,
+        "worst64": 121.66520182291667,
+        "channel_peak": 127
+      },
+      "after": {
+        "foreground_mae": 0.617872022884149,
+        "full_mae": 0.0871578947368421,
+        "worst64": 8.811209439528023,
+        "channel_peak": 43
+      }
+    },
+    {
+      "file": "beyond-glyph-normal-380.png",
+      "source_bounds": null,
+      "before_bounds": [
+        0,
+        260,
+        380,
+        335
+      ],
+      "after_bounds": [
+        0,
+        260,
+        379,
+        335
+      ],
+      "source_pixels": 0,
+      "after_pixels": 5129,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\beyond-glyph-normal-380.png": "22d94deca923a96d1cd7a7d0461279b7fad18bc4e6ebc4d45f5409b0ad231b3d",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-beyond-glyph-normal-380.png": "f7f9c07de08eab749c669a34fe28e781497742208f0011e8e4e44f7e1e929fcc",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-beyond-glyph-normal-380.png": "3d0ba1252f74e8100e8868b7b0968d082a1cdb8848755b4bdbb0acaba85bac9e"
+      },
+      "before": {
+        "foreground_mae": 109.58682486713633,
+        "full_mae": 2.592593567251462,
+        "worst64": 110.61866666666667,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 0.6038808552712891,
+        "full_mae": 0.014286549707602339,
+        "worst64": 0.6104195481788843,
+        "channel_peak": 1
+      }
+    },
+    {
+      "file": "beyond-glyph-add-380.png",
+      "source_bounds": [
+        0,
+        258,
+        380,
+        336
+      ],
+      "before_bounds": [
+        0,
+        260,
+        380,
+        335
+      ],
+      "after_bounds": [
+        0,
+        260,
+        380,
+        335
+      ],
+      "source_pixels": 6780,
+      "after_pixels": 5361,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\beyond-glyph-add-380.png": "6144321757e80c5de098b9de05a6dc8f5e33a01d96374ecbe59a393964e5b54f",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-beyond-glyph-add-380.png": "7528929719face25821ead410c8b745defc1acfedf9de85bfc37ede0e49f9da5",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-beyond-glyph-add-380.png": "399c086dbb3983b58dca513333a9a648b1acdf69a61570c518d5f82a759dd56a"
+      },
+      "before": {
+        "foreground_mae": 87.77294401022465,
+        "full_mae": 2.6104751461988305,
+        "worst64": 90.494512386328,
+        "channel_peak": 133
+      },
+      "after": {
+        "foreground_mae": 1.5779875141326254,
+        "full_mae": 0.0469312865497076,
+        "worst64": 1.9221183800623054,
+        "channel_peak": 18
+      }
+    },
+    {
+      "file": "beyond-solid-normal-380.png",
+      "source_bounds": null,
+      "before_bounds": [
+        0,
+        237,
+        380,
+        363
+      ],
+      "after_bounds": [
+        0,
+        237,
+        380,
+        363
+      ],
+      "source_pixels": 0,
+      "after_pixels": 30782,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\beyond-solid-normal-380.png": "22d94deca923a96d1cd7a7d0461279b7fad18bc4e6ebc4d45f5409b0ad231b3d",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-beyond-solid-normal-380.png": "a621ad91fc978211ee0f62b8de14b7d4ac43500b58f720efd9ee5802dcf421b6",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-beyond-solid-normal-380.png": "4812aa0efdc79c9b09920ad45ae7e053b714e2a5371a1f35b4063e6ec2c1fa48"
+      },
+      "before": {
+        "foreground_mae": 120.74817116592219,
+        "full_mae": 16.361377192982456,
+        "worst64": 122.33333333333333,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 0.6607971342871324,
+        "full_mae": 0.08953801169590643,
+        "worst64": 0.6666666666666666,
+        "channel_peak": 1
+      }
+    },
+    {
+      "file": "beyond-solid-add-380.png",
+      "source_bounds": [
+        0,
+        237,
+        380,
+        363
+      ],
+      "before_bounds": [
+        0,
+        237,
+        380,
+        363
+      ],
+      "after_bounds": [
+        0,
+        237,
+        380,
+        363
+      ],
+      "source_pixels": 30700,
+      "after_pixels": 30894,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\beyond-solid-add-380.png": "651a3ce6203b0378e0ff5612b2cfba8c62932fb4be3613ba4803637c89aa4b1c",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-beyond-solid-add-380.png": "e5eec132ac6baf306311775ac5756cc4a0096b360c83d71a44f6d67ceed317f8",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-beyond-solid-add-380.png": "e9371651ee13c3192bea44b82baafbaa3ba677799f356c5e6226aabf50eee476"
+      },
+      "before": {
+        "foreground_mae": 120.14496881810923,
+        "full_mae": 16.2796432748538,
+        "worst64": 121.66666666666667,
+        "channel_peak": 127
+      },
+      "after": {
+        "foreground_mae": 0.061694827474590534,
+        "full_mae": 0.008359649122807018,
+        "worst64": 1.0614886731391586,
+        "channel_peak": 10
+      }
+    },
+    {
+      "file": "before-glyph-normal-800.png",
+      "source_bounds": [
+        0,
+        159,
+        790,
+        424
+      ],
+      "before_bounds": [
+        0,
+        158,
+        791,
+        424
+      ],
+      "after_bounds": [
+        0,
+        158,
+        791,
+        424
+      ],
+      "source_pixels": 58465,
+      "after_pixels": 58946,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\before-glyph-normal-800.png": "6b362c3e3ab71b8858d3b389feb49b9c38dfc9dfb67251b95cb3f3bfaafe0994",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-before-glyph-normal-800.png": "2667f93a9acf00cc4b3a647579936319ae44064137a223011bf3857e59b1c595",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-before-glyph-normal-800.png": "2667f93a9acf00cc4b3a647579936319ae44064137a223011bf3857e59b1c595"
+      },
+      "before": {
+        "foreground_mae": 1.9014974157138171,
+        "full_mae": 0.23351180555555556,
+        "worst64": 8.48611111111111,
+        "channel_peak": 21
+      },
+      "after": {
+        "foreground_mae": 1.9014974157138171,
+        "full_mae": 0.23351180555555556,
+        "worst64": 8.48611111111111,
+        "channel_peak": 21
+      }
+    },
+    {
+      "file": "before-glyph-add-800.png",
+      "source_bounds": [
+        0,
+        159,
+        791,
+        424
+      ],
+      "before_bounds": [
+        0,
+        158,
+        791,
+        424
+      ],
+      "after_bounds": [
+        0,
+        158,
+        791,
+        424
+      ],
+      "source_pixels": 58612,
+      "after_pixels": 58946,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\before-glyph-add-800.png": "9aeb54847296ac9cae40c4a95cae6abe235637a5e5dca3d17402c946b5ea10d4",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-before-glyph-add-800.png": "b94d17216cbcbb3f8e4fe42351aa29154f9eff103bdda577eebdc9205edb6049",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-before-glyph-add-800.png": "b94d17216cbcbb3f8e4fe42351aa29154f9eff103bdda577eebdc9205edb6049"
+      },
+      "before": {
+        "foreground_mae": 1.5695551861025345,
+        "full_mae": 0.19274791666666666,
+        "worst64": 8.152777777777779,
+        "channel_peak": 21
+      },
+      "after": {
+        "foreground_mae": 1.5695551861025345,
+        "full_mae": 0.19274791666666666,
+        "worst64": 8.152777777777779,
+        "channel_peak": 21
+      }
+    },
+    {
+      "file": "before-solid-normal-800.png",
+      "source_bounds": [
+        0,
+        11,
+        800,
+        589
+      ],
+      "before_bounds": [
+        0,
+        11,
+        800,
+        589
+      ],
+      "after_bounds": [
+        0,
+        11,
+        800,
+        589
+      ],
+      "source_pixels": 384926,
+      "after_pixels": 385244,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\before-solid-normal-800.png": "185306c03e00ab343f7f2db05f11c25897697607fa9a2d1887b8434b215e14fb",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-before-solid-normal-800.png": "2c8610f521264ae25c72a1433bf241ade67a3a780f5d5817f413d629139e9e90",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-before-solid-normal-800.png": "2c8610f521264ae25c72a1433bf241ade67a3a780f5d5817f413d629139e9e90"
+      },
+      "before": {
+        "foreground_mae": 1.0320792363627553,
+        "full_mae": 0.8283381944444445,
+        "worst64": 5.4646464646464645,
+        "channel_peak": 28
+      },
+      "after": {
+        "foreground_mae": 1.0320792363627553,
+        "full_mae": 0.8283381944444445,
+        "worst64": 5.4646464646464645,
+        "channel_peak": 28
+      }
+    },
+    {
+      "file": "before-solid-add-800.png",
+      "source_bounds": [
+        0,
+        11,
+        800,
+        589
+      ],
+      "before_bounds": [
+        0,
+        11,
+        800,
+        589
+      ],
+      "after_bounds": [
+        0,
+        11,
+        800,
+        589
+      ],
+      "source_pixels": 384926,
+      "after_pixels": 385244,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\before-solid-add-800.png": "f80f19ebd733aadfdc6641b4c98fdcc1fcf988b3b8a12ffca2654ec3615678ba",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-before-solid-add-800.png": "f8d5440c390c78f109eab8794cc6692bdad83260c30cacb229c59f9a5b056cff",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-before-solid-add-800.png": "f8d5440c390c78f109eab8794cc6692bdad83260c30cacb229c59f9a5b056cff"
+      },
+      "before": {
+        "foreground_mae": 0.7075411946714291,
+        "full_mae": 0.5678666666666666,
+        "worst64": 6.383838383838384,
+        "channel_peak": 33
+      },
+      "after": {
+        "foreground_mae": 0.7075411946714291,
+        "full_mae": 0.5678666666666666,
+        "worst64": 6.383838383838384,
+        "channel_peak": 33
+      }
+    },
+    {
+      "file": "near-cross-glyph-normal-800.png",
+      "source_bounds": [
+        0,
+        227,
+        556,
+        495
+      ],
+      "before_bounds": [
+        0,
+        230,
+        556,
+        495
+      ],
+      "after_bounds": [
+        0,
+        230,
+        556,
+        495
+      ],
+      "source_pixels": 34158,
+      "after_pixels": 32766,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\near-cross-glyph-normal-800.png": "a460bbe586ed53e312ed04bbab196f6a8fbcd88087d0003e22848f62d84cba6e",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-near-cross-glyph-normal-800.png": "5e0351994b62100deee78691d483cefed324e665385b68c50e34ab5aee50a9ec",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-near-cross-glyph-normal-800.png": "676ccd6a61e419ae355ba910b205b3af53857c49abc540014b7094cfe48d8fa8"
+      },
+      "before": {
+        "foreground_mae": 5.788859462763016,
+        "full_mae": 0.41439791666666664,
+        "worst64": 50.20036101083033,
+        "channel_peak": 121
+      },
+      "after": {
+        "foreground_mae": 3.312893493592542,
+        "full_mae": 0.23715486111111111,
+        "worst64": 14.078341013824884,
+        "channel_peak": 71
+      }
+    },
+    {
+      "file": "near-cross-glyph-add-800.png",
+      "source_bounds": [
+        0,
+        225,
+        557,
+        495
+      ],
+      "before_bounds": [
+        0,
+        230,
+        556,
+        495
+      ],
+      "after_bounds": [
+        0,
+        230,
+        556,
+        495
+      ],
+      "source_pixels": 34583,
+      "after_pixels": 32766,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\near-cross-glyph-add-800.png": "d640c7b5b4d7e8bd29dbea4597c62a4ee2f2b53c21493c8c740034a0d592f561",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-near-cross-glyph-add-800.png": "cc57257733ab20f1154ca66b57feb5bf83d6b563fb44bd3a333d551380d986e1",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-near-cross-glyph-add-800.png": "5038c5136d5dc29d80c6b50d318b1d502c2136f0772666734740c3b97394238f"
+      },
+      "before": {
+        "foreground_mae": 6.394110420026108,
+        "full_mae": 0.4626138888888889,
+        "worst64": 48.699675324675326,
+        "channel_peak": 131
+      },
+      "after": {
+        "foreground_mae": 3.4057628810565923,
+        "full_mae": 0.24640694444444444,
+        "worst64": 15.982093663911845,
+        "channel_peak": 81
+      }
+    },
+    {
+      "file": "near-cross-solid-normal-800.png",
+      "source_bounds": [
+        0,
+        122,
+        560,
+        600
+      ],
+      "before_bounds": [
+        0,
+        122,
+        560,
+        600
+      ],
+      "after_bounds": [
+        0,
+        122,
+        561,
+        600
+      ],
+      "source_pixels": 183814,
+      "after_pixels": 184047,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\near-cross-solid-normal-800.png": "6ab516ac4534a7620d9c0434a4bca5b18048d007f394090601b26fe986bc9672",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-near-cross-solid-normal-800.png": "61674822867606231215e25715dc8fe695a64bdd2ca2b476d23a95e7f477c8fe",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-near-cross-solid-normal-800.png": "aeec107417d8118d297ba7b7232676dc9a1205c051e524bec47672c9951df592"
+      },
+      "before": {
+        "foreground_mae": 4.149793259330497,
+        "full_mae": 1.5911604166666666,
+        "worst64": 73.6237056620401,
+        "channel_peak": 113
+      },
+      "after": {
+        "foreground_mae": 1.098371611599211,
+        "full_mae": 0.42115,
+        "worst64": 9.34375,
+        "channel_peak": 60
+      }
+    },
+    {
+      "file": "near-cross-solid-add-800.png",
+      "source_bounds": [
+        0,
+        122,
+        560,
+        600
+      ],
+      "before_bounds": [
+        0,
+        122,
+        561,
+        600
+      ],
+      "after_bounds": [
+        0,
+        122,
+        561,
+        600
+      ],
+      "source_pixels": 183814,
+      "after_pixels": 184047,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\near-cross-solid-add-800.png": "c37df701ce88d6ae9f37cd7d1f6147388d82854f8bef6a1adc168e2463874b31",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-near-cross-solid-add-800.png": "64046dbbf59526812c1b745b51573c1b7cd21f2d1cc6becc55d6f24a9f0acf92",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-near-cross-solid-add-800.png": "ce639501379b210cbbd72d23e8cf50f35c62957c46ee59d3c78b85b924ddc0d6"
+      },
+      "before": {
+        "foreground_mae": 4.457830517929297,
+        "full_mae": 1.7092715277777777,
+        "worst64": 73.57567746199604,
+        "channel_peak": 113
+      },
+      "after": {
+        "foreground_mae": 0.7483016113637639,
+        "full_mae": 0.28692222222222225,
+        "worst64": 10.7265625,
+        "channel_peak": 71
+      }
+    },
+    {
+      "file": "middle-glyph-normal-800.png",
+      "source_bounds": [
+        0,
+        230,
+        800,
+        385
+      ],
+      "before_bounds": [
+        0,
+        231,
+        800,
+        385
+      ],
+      "after_bounds": [
+        0,
+        231,
+        800,
+        385
+      ],
+      "source_pixels": 21180,
+      "after_pixels": 19803,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\middle-glyph-normal-800.png": "3f090e500628c867d4deeefe24d9cd5cf43bb5d246a3237077146a141b6498a1",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-middle-glyph-normal-800.png": "16ac0811f80534a3812f3021a969da676e187a97602803c69a6c1ce37fccce8a",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-middle-glyph-normal-800.png": "b4d7efc9ab139dc5f60c488c8353ed44b52899a292ef4477d60346f87171c975"
+      },
+      "before": {
+        "foreground_mae": 53.28283638422344,
+        "full_mae": 2.35288125,
+        "worst64": 54.29018053720828,
+        "channel_peak": 94
+      },
+      "after": {
+        "foreground_mae": 2.6018116625778447,
+        "full_mae": 0.11489166666666667,
+        "worst64": 3.991228070175439,
+        "channel_peak": 31
+      }
+    },
+    {
+      "file": "middle-glyph-add-800.png",
+      "source_bounds": [
+        0,
+        230,
+        800,
+        385
+      ],
+      "before_bounds": [
+        0,
+        231,
+        800,
+        385
+      ],
+      "after_bounds": [
+        0,
+        231,
+        800,
+        385
+      ],
+      "source_pixels": 21625,
+      "after_pixels": 19803,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\middle-glyph-add-800.png": "6b2e37ced281d37ed6c99b051abe25e725dbb5b1bb117497ae7ec786c5b21a72",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-middle-glyph-add-800.png": "c8cbbdffcec769cf58c003cd6eab14733a5939ef9b602d17d6d3ec56623173a5",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-middle-glyph-add-800.png": "60124a84ab3e1e0ee4a1b324d7857fabfcd96ff6fd127342ab8933a0b3575d11"
+      },
+      "before": {
+        "foreground_mae": 52.350009247272055,
+        "full_mae": 2.358804166666667,
+        "worst64": 53.37851275399913,
+        "channel_peak": 98
+      },
+      "after": {
+        "foreground_mae": 2.864172985635904,
+        "full_mae": 0.1290548611111111,
+        "worst64": 5.666666666666667,
+        "channel_peak": 40
+      }
+    },
+    {
+      "file": "middle-solid-normal-800.png",
+      "source_bounds": [
+        0,
+        183,
+        800,
+        417
+      ],
+      "before_bounds": [
+        0,
+        183,
+        800,
+        417
+      ],
+      "after_bounds": [
+        0,
+        183,
+        800,
+        417
+      ],
+      "source_pixels": 110376,
+      "after_pixels": 110642,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\middle-solid-normal-800.png": "7e3ccc9506383f28e3aca29d937d774242256070ecae4595d70d9f6f5a07c2c9",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-middle-solid-normal-800.png": "9942d1e98f569dbf8753bda944b2896db70902d263fd5354d476a6a06016841e",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-middle-solid-normal-800.png": "774d81b9475acc2265d71411176e670d22233a129d6fa33ff8102693d86dc3d9"
+      },
+      "before": {
+        "foreground_mae": 61.19417279755126,
+        "full_mae": 14.105511805555556,
+        "worst64": 61.666666666666664,
+        "channel_peak": 76
+      },
+      "after": {
+        "foreground_mae": 1.0626464934955382,
+        "full_mae": 0.24494444444444444,
+        "worst64": 3.625,
+        "channel_peak": 18
+      }
+    },
+    {
+      "file": "middle-solid-add-800.png",
+      "source_bounds": [
+        0,
+        183,
+        800,
+        417
+      ],
+      "before_bounds": [
+        0,
+        183,
+        800,
+        417
+      ],
+      "after_bounds": [
+        0,
+        183,
+        800,
+        417
+      ],
+      "source_pixels": 110376,
+      "after_pixels": 110642,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\middle-solid-add-800.png": "abe6827b076394b71ad3f367d2880f8c40f797bbbdf0872d06eea59aa0530231",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-middle-solid-add-800.png": "5dfdad41eafb030c96f7ae8337b5dc025b01d57417e459f219fd5f4be7797bd1",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-middle-solid-add-800.png": "6c759cc6c419c89d424a7562e5ba879cb22f57c7bd89d56a3f8d866624a48fd7"
+      },
+      "before": {
+        "foreground_mae": 60.87263426185355,
+        "full_mae": 14.031395833333333,
+        "worst64": 61.333333333333336,
+        "channel_peak": 79
+      },
+      "after": {
+        "foreground_mae": 0.7634201599151618,
+        "full_mae": 0.17597152777777778,
+        "worst64": 4.736111111111111,
+        "channel_peak": 26
+      }
+    },
+    {
+      "file": "whole-band-glyph-normal-800.png",
+      "source_bounds": [
+        23,
+        259,
+        445,
+        527
+      ],
+      "before_bounds": [
+        23,
+        253,
+        466,
+        528
+      ],
+      "after_bounds": [
+        23,
+        253,
+        466,
+        528
+      ],
+      "source_pixels": 25974,
+      "after_pixels": 24708,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\whole-band-glyph-normal-800.png": "ee36c56e683680b46f11b440388c929c55b7d0c33d333305f6f79c59fa57f13b",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-whole-band-glyph-normal-800.png": "24b07c8e11f88dd44d43793d7677406db3f3067989e099c2b71699cc24573857",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-whole-band-glyph-normal-800.png": "f2de7762aafbd5249b9de0e2fc248febb2c422fda2c68d709933a3abd18f272a"
+      },
+      "before": {
+        "foreground_mae": 9.707827311357521,
+        "full_mae": 0.5362361111111111,
+        "worst64": 122.33333333333333,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 2.8317744084885974,
+        "full_mae": 0.1564201388888889,
+        "worst64": 10.748633879781421,
+        "channel_peak": 71
+      }
+    },
+    {
+      "file": "whole-band-glyph-add-800.png",
+      "source_bounds": [
+        23,
+        247,
+        467,
+        527
+      ],
+      "before_bounds": [
+        23,
+        253,
+        466,
+        528
+      ],
+      "after_bounds": [
+        23,
+        253,
+        466,
+        528
+      ],
+      "source_pixels": 27329,
+      "after_pixels": 24801,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\whole-band-glyph-add-800.png": "ded4b230126c7fe44c7f042ae5f10302026cb93dfd8d7f3e76e11874fb1a164c",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-whole-band-glyph-add-800.png": "dc922bc2c1e0293f28befaf4c7c8d942484f2576d310f1859980420b284b0905",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-whole-band-glyph-add-800.png": "060a690244c6b9aa790a466ab027d7d329fc4022b4bc0850269144d2f9e7aca9"
+      },
+      "before": {
+        "foreground_mae": 9.803548426297242,
+        "full_mae": 0.5602319444444445,
+        "worst64": 61.02041942604856,
+        "channel_peak": 141
+      },
+      "after": {
+        "foreground_mae": 3.976096731073034,
+        "full_mae": 0.2272173611111111,
+        "worst64": 13.248756218905474,
+        "channel_peak": 85
+      }
+    },
+    {
+      "file": "whole-band-solid-normal-800.png",
+      "source_bounds": [
+        0,
+        230,
+        445,
+        600
+      ],
+      "before_bounds": [
+        0,
+        230,
+        469,
+        600
+      ],
+      "after_bounds": [
+        0,
+        230,
+        469,
+        600
+      ],
+      "source_pixels": 120906,
+      "after_pixels": 123132,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\whole-band-solid-normal-800.png": "623d13f6d386f3298bdb787a6350b1d39467c2081a9fe78177e0ceb78a85fc41",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-whole-band-solid-normal-800.png": "cbb113e12471e6f6c9b8cda9193353f31243e5a30140913c9749fb5307e386b5",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-whole-band-solid-normal-800.png": "c07745abb3fc2db97764550e388a0f5275bd7cc3e2380f0d0b1894fe17992f6b"
+      },
+      "before": {
+        "foreground_mae": 9.646130901630247,
+        "full_mae": 2.4748555555555556,
+        "worst64": 118.92776673293572,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 0.15622826178160687,
+        "full_mae": 0.04008263888888889,
+        "worst64": 7.258064516129032,
+        "channel_peak": 37
+      }
+    },
+    {
+      "file": "whole-band-solid-add-800.png",
+      "source_bounds": [
+        0,
+        230,
+        469,
+        600
+      ],
+      "before_bounds": [
+        0,
+        230,
+        469,
+        600
+      ],
+      "after_bounds": [
+        0,
+        230,
+        469,
+        600
+      ],
+      "source_pixels": 122943,
+      "after_pixels": 123151,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\whole-band-solid-add-800.png": "f3efcd9628098bcea3ed71b081f04d280218c8e4dfd051948ea2b5e4f8fa4dd0",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-whole-band-solid-add-800.png": "0faeddced3f0dce8b4ff12fa7cbeb4427e90dd758f585f40c94c511cb5f3734d",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-whole-band-solid-add-800.png": "81326281d01e6e5f7b48d3c741b32eb7cae2571352c9757b9dc2a05c42ec3d18"
+      },
+      "before": {
+        "foreground_mae": 9.250380968621178,
+        "full_mae": 2.373320138888889,
+        "worst64": 118.25911199469847,
+        "channel_peak": 127
+      },
+      "after": {
+        "foreground_mae": 0.6760237432095557,
+        "full_mae": 0.17344375,
+        "worst64": 7.32258064516129,
+        "channel_peak": 40
+      }
+    },
+    {
+      "file": "off-axis-glyph-normal-800.png",
+      "source_bounds": [
+        244,
+        245,
+        791,
+        440
+      ],
+      "before_bounds": [
+        244,
+        246,
+        800,
+        439
+      ],
+      "after_bounds": [
+        244,
+        246,
+        800,
+        439
+      ],
+      "source_pixels": 19715,
+      "after_pixels": 18298,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\off-axis-glyph-normal-800.png": "c9695a7dc4c3fe9fbd9d654220ce05b8e780c1c88f59325b4f246d26a85ab5f6",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-off-axis-glyph-normal-800.png": "f9857224719190348cc213bd979104b0170e17a2072720034bf2af624a413edd",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-off-axis-glyph-normal-800.png": "33314bf42cbae075324d4c650c0c3cb5dcb93d64035a3f6ae586d9144b190544"
+      },
+      "before": {
+        "foreground_mae": 24.7085340559347,
+        "full_mae": 1.0258159722222222,
+        "worst64": 103.10290093048714,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 2.7005218787635488,
+        "full_mae": 0.11211666666666667,
+        "worst64": 5.54320987654321,
+        "channel_peak": 51
+      }
+    },
+    {
+      "file": "off-axis-glyph-add-800.png",
+      "source_bounds": [
+        244,
+        243,
+        800,
+        440
+      ],
+      "before_bounds": [
+        244,
+        246,
+        800,
+        439
+      ],
+      "after_bounds": [
+        244,
+        246,
+        800,
+        439
+      ],
+      "source_pixels": 20936,
+      "after_pixels": 18381,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\off-axis-glyph-add-800.png": "ce7c753691cfdeaed3519f61880787a18cbbc7b2bc39aefc509ad836cba22104",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-off-axis-glyph-add-800.png": "da007b51672384ace75b0c74844054c5fb4dbc6e2e149106e23309694a79131a",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-off-axis-glyph-add-800.png": "c9c189ba32d52866238e810db80e8b2f562999e1d2349ab9556aa5ec0a01a345"
+      },
+      "before": {
+        "foreground_mae": 23.82047855415553,
+        "full_mae": 1.039763888888889,
+        "worst64": 73.24537561343904,
+        "channel_peak": 133
+      },
+      "after": {
+        "foreground_mae": 3.642373043146239,
+        "full_mae": 0.15898958333333332,
+        "worst64": 7.072463768115942,
+        "channel_peak": 61
+      }
+    },
+    {
+      "file": "off-axis-solid-normal-800.png",
+      "source_bounds": [
+        200,
+        218,
+        792,
+        518
+      ],
+      "before_bounds": [
+        200,
+        217,
+        800,
+        519
+      ],
+      "after_bounds": [
+        200,
+        217,
+        800,
+        519
+      ],
+      "source_pixels": 101812,
+      "after_pixels": 102915,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\off-axis-solid-normal-800.png": "988ca92a1bc1122de7caf8244f79755ab06717d5599dcda3032abc8fff6c02ab",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-off-axis-solid-normal-800.png": "8ae62211fdeb4373d0a3685e098cf03307fd007660dfc512ab5a7c3c49df9718",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-off-axis-solid-normal-800.png": "3cc52f0adb7c3039f78324b442f64dcd40334b42e726dc70978167c2f601d7c8"
+      },
+      "before": {
+        "foreground_mae": 27.49365289084915,
+        "full_mae": 5.895899305555556,
+        "worst64": 119.36575228595179,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 0.40183353734755606,
+        "full_mae": 0.08617152777777778,
+        "worst64": 8.0,
+        "channel_peak": 39
+      }
+    },
+    {
+      "file": "off-axis-solid-add-800.png",
+      "source_bounds": [
+        200,
+        217,
+        800,
+        518
+      ],
+      "before_bounds": [
+        200,
+        217,
+        800,
+        519
+      ],
+      "after_bounds": [
+        200,
+        217,
+        800,
+        519
+      ],
+      "source_pixels": 102595,
+      "after_pixels": 102934,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\off-axis-solid-add-800.png": "60ee3c8d6f2661b98c5c77883ab7ba671d71ebc45b6344e1a27ee38ae595ca55",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-off-axis-solid-add-800.png": "fe681c374ee36bfd75a0b402f6a53ab75091e3ec3f08c8c014c5e667e21a5562",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-off-axis-solid-add-800.png": "2bbac0087ecf45406cb435f98a816bab87bfb560b552cee1478fd7095ee0698c"
+      },
+      "before": {
+        "foreground_mae": 26.930874800033678,
+        "full_mae": 5.775213888888889,
+        "worst64": 118.70640066500415,
+        "channel_peak": 127
+      },
+      "after": {
+        "foreground_mae": 0.5179111534251721,
+        "full_mae": 0.11106388888888889,
+        "worst64": 9.666666666666666,
+        "channel_peak": 43
+      }
+    },
+    {
+      "file": "far-cross-glyph-normal-800.png",
+      "source_bounds": [
+        155,
+        281,
+        393,
+        400
+      ],
+      "before_bounds": [
+        155,
+        263,
+        491,
+        399
+      ],
+      "after_bounds": [
+        155,
+        263,
+        491,
+        399
+      ],
+      "source_pixels": 7231,
+      "after_pixels": 7775,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\far-cross-glyph-normal-800.png": "c11aaa587a41df54a9f8a044e8b5cfc5a94f0e25e6e01a30a5ce00f51589252f",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-far-cross-glyph-normal-800.png": "ec8e824ebfcf5787f8065382636bb5e183548e4cd85c451ed7e5f95ce88a2446",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-far-cross-glyph-normal-800.png": "9c0563af453e7eb159daca42734915ebbd8c763e03ce0c4650e0920bfc2ce2d8"
+      },
+      "before": {
+        "foreground_mae": 58.07868399861958,
+        "full_mae": 1.0518291666666666,
+        "worst64": 110.89897156684816,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 2.4750949039457035,
+        "full_mae": 0.044825,
+        "worst64": 8.945945945945946,
+        "channel_peak": 47
+      }
+    },
+    {
+      "file": "far-cross-glyph-add-800.png",
+      "source_bounds": [
+        155,
+        259,
+        492,
+        400
+      ],
+      "before_bounds": [
+        155,
+        263,
+        491,
+        399
+      ],
+      "after_bounds": [
+        155,
+        263,
+        491,
+        399
+      ],
+      "source_pixels": 10129,
+      "after_pixels": 7877,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\far-cross-glyph-add-800.png": "614313cbb44155ca3ceb2d668a63ce18397c756bd4881b83b53e214f4ba57aa5",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-far-cross-glyph-add-800.png": "9058e9b37d74eed650dc26888f20ae37725827e05c34fd78f8fc1d317fd104d4",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-far-cross-glyph-add-800.png": "9e71d995407cec3b97811a5bc92dfd99d96684e37a49d09af698df3a6945197d"
+      },
+      "before": {
+        "foreground_mae": 50.94803698950209,
+        "full_mae": 1.0751097222222221,
+        "worst64": 72.65523465703971,
+        "channel_peak": 135
+      },
+      "after": {
+        "foreground_mae": 4.00858919932866,
+        "full_mae": 0.08458958333333333,
+        "worst64": 10.864864864864865,
+        "channel_peak": 57
+      }
+    },
+    {
+      "file": "far-cross-solid-normal-800.png",
+      "source_bounds": [
+        128,
+        252,
+        393,
+        457
+      ],
+      "before_bounds": [
+        128,
+        242,
+        496,
+        457
+      ],
+      "after_bounds": [
+        128,
+        242,
+        496,
+        457
+      ],
+      "source_pixels": 36010,
+      "after_pixels": 44572,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\far-cross-solid-normal-800.png": "96762d3cc56b5cf78055406fdc1af2b4d6810f32b7e9b52e1909c183f2e173e6",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-far-cross-solid-normal-800.png": "de985213a5154617287f318b6084fc93180b95bb5e579bb9f7749268eaa9b7a2",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-far-cross-solid-normal-800.png": "5cd9a5b3feb72df6497c284d00e1b992480cbb7d945fb1a28ca51f8a0d21dc49"
+      },
+      "before": {
+        "foreground_mae": 68.24784311966387,
+        "full_mae": 6.339371527777778,
+        "worst64": 122.125,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 0.5952316870766609,
+        "full_mae": 0.055289583333333336,
+        "worst64": 12.032520325203253,
+        "channel_peak": 37
+      }
+    },
+    {
+      "file": "far-cross-solid-add-800.png",
+      "source_bounds": [
+        128,
+        242,
+        496,
+        457
+      ],
+      "before_bounds": [
+        128,
+        242,
+        496,
+        457
+      ],
+      "after_bounds": [
+        128,
+        242,
+        496,
+        457
+      ],
+      "source_pixels": 44371,
+      "after_pixels": 44586,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\far-cross-solid-add-800.png": "8bb6a508116a7a6353e6e51c1051dc5eee73b9c18b3219611881046a9a0bb7af",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-far-cross-solid-add-800.png": "9ef67b8eb07d0975a0107f6d0ec00e55c1dfcc2625cc9a45bb77439b45d4cc55",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-far-cross-solid-add-800.png": "13ebaefb332541d7b1073923039bfe03f901a87581c76589e185eaab436d7e8d"
+      },
+      "before": {
+        "foreground_mae": 67.63498258048116,
+        "full_mae": 6.282444444444445,
+        "worst64": 121.453125,
+        "channel_peak": 127
+      },
+      "after": {
+        "foreground_mae": 0.551750175690426,
+        "full_mae": 0.051250694444444446,
+        "worst64": 12.032520325203253,
+        "channel_peak": 41
+      }
+    },
+    {
+      "file": "beyond-glyph-normal-800.png",
+      "source_bounds": null,
+      "before_bounds": [
+        155,
+        259,
+        644,
+        349
+      ],
+      "after_bounds": [
+        155,
+        260,
+        644,
+        349
+      ],
+      "source_pixels": 0,
+      "after_pixels": 6791,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\beyond-glyph-normal-800.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-beyond-glyph-normal-800.png": "ae6fb3cdec0681bdc09940fafad88b02e12442ba1d6fd9bf2487df10ecc98aa9",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-beyond-glyph-normal-800.png": "5a195e31bf7332e858051152d8f777d6e9dd3e0f9f41955da1beb6f903ae3f0c"
+      },
+      "before": {
+        "foreground_mae": 109.38415231695366,
+        "full_mae": 1.6277729166666666,
+        "worst64": 110.63391557496361,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 0.6035279294414112,
+        "full_mae": 0.00898125,
+        "worst64": 0.6153846153846154,
+        "channel_peak": 1
+      }
+    },
+    {
+      "file": "beyond-glyph-add-800.png",
+      "source_bounds": [
+        154,
+        258,
+        645,
+        350
+      ],
+      "before_bounds": [
+        155,
+        259,
+        644,
+        349
+      ],
+      "after_bounds": [
+        155,
+        260,
+        644,
+        349
+      ],
+      "source_pixels": 9052,
+      "after_pixels": 7099,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\beyond-glyph-add-800.png": "0763d0b15f9a0ef79b46e4e1a01a0a8e94593aff80a84f8bef0afce794b84374",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-beyond-glyph-add-800.png": "77c7595896c42d02c9bfdb53401de0b898f5d2a85daf5261f12b17a54f9a9a84",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-beyond-glyph-add-800.png": "baef299fa8576ee2096537cf286af94efded0a89301edf869658fd0b7664a2d7"
+      },
+      "before": {
+        "foreground_mae": 86.91733863544313,
+        "full_mae": 1.6392972222222222,
+        "worst64": 90.45689069925322,
+        "channel_peak": 133
+      },
+      "after": {
+        "foreground_mae": 1.5813542472108693,
+        "full_mae": 0.029825,
+        "worst64": 2.9444444444444446,
+        "channel_peak": 18
+      }
+    },
+    {
+      "file": "beyond-solid-normal-800.png",
+      "source_bounds": null,
+      "before_bounds": [
+        141,
+        230,
+        659,
+        370
+      ],
+      "after_bounds": [
+        141,
+        230,
+        659,
+        370
+      ],
+      "source_pixels": 0,
+      "after_pixels": 41066,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\beyond-solid-normal-800.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-beyond-solid-normal-800.png": "a8803e49ddb0d8f1e2ba18f8aab4a01a14f10e0ebf325139a470d8abaf366399",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-beyond-solid-normal-800.png": "43733eb40102a22eb9944807e0dc5bf57cd67497935474e10b7232b7ddadbecf"
+      },
+      "before": {
+        "foreground_mae": 120.508869331911,
+        "full_mae": 10.355477777777777,
+        "worst64": 122.33333333333333,
+        "channel_peak": 128
+      },
+      "after": {
+        "foreground_mae": 0.6597974802207838,
+        "full_mae": 0.056697222222222225,
+        "worst64": 0.6666666666666666,
+        "channel_peak": 1
+      }
+    },
+    {
+      "file": "beyond-solid-add-800.png",
+      "source_bounds": [
+        141,
+        230,
+        659,
+        370
+      ],
+      "before_bounds": [
+        141,
+        230,
+        659,
+        370
+      ],
+      "after_bounds": [
+        141,
+        230,
+        659,
+        370
+      ],
+      "source_pixels": 41152,
+      "after_pixels": 41247,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-plane-browser\\beyond-solid-add-800.png": "63fce9dd6b7c24305d5bf77b7346d0b2ea228f07ec02a7eba83d43ae8a13a317",
+        "build\\verification\\diorama-fog-plane-kotlin\\before-beyond-solid-add-800.png": "7370eb70e331a7d0fd357f40c1f8cbb8e0f083d1bd29590c82c6a20080e4fca5",
+        "build\\verification\\diorama-fog-plane-kotlin\\after-beyond-solid-add-800.png": "552f288b04c3ec6d706b3521ed16997b9aa1ab578472c50c237d49fc0e3e7a3d"
+      },
+      "before": {
+        "foreground_mae": 119.8010117907565,
+        "full_mae": 10.294650694444444,
+        "worst64": 121.66666666666667,
+        "channel_peak": 127
+      },
+      "after": {
+        "foreground_mae": 0.06480471307004146,
+        "full_mae": 0.00556875,
+        "worst64": 1.5396825396825398,
+        "channel_peak": 9
+      }
+    }
+  ],
+  "solid_point_controls": {
+    "method": "Fixed plane uv quartiles projected to pixel; analytic ray evaluated at SAME pixel centre. Independent supplementary controls; full image mask unchanged.",
+    "gate": "Original vs scalar <=1 byte, own vs scalar and paired <=2 bytes. Derived rounding/interpolation budget; not fitted to images.",
+    "samples": [
+      {
+        "file": "before-solid-normal-380.png",
+        "pixel": [
+          175,
+          181
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          148.63,
+          157.59,
+          168.29000000000002
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.4099999999999966,
+        "own_error": 1.4099999999999966,
+        "paired_peak": 1
+      },
+      {
+        "file": "before-solid-normal-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          148.63,
+          157.59,
+          168.29000000000002
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.4099999999999966,
+        "own_error": 1.4099999999999966,
+        "paired_peak": 1
+      },
+      {
+        "file": "before-solid-normal-380.png",
+        "pixel": [
+          204,
+          418
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          148.63,
+          157.59,
+          168.29000000000002
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.4099999999999966,
+        "own_error": 1.4099999999999966,
+        "paired_peak": 1
+      },
+      {
+        "file": "before-solid-add-380.png",
+        "pixel": [
+          175,
+          181
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          162.49,
+          180.27,
+          201.68
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.4900000000000091,
+        "own_error": 0.7299999999999898,
+        "paired_peak": 1
+      },
+      {
+        "file": "before-solid-add-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          162.49,
+          180.27,
+          201.68
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.4900000000000091,
+        "own_error": 0.7299999999999898,
+        "paired_peak": 1
+      },
+      {
+        "file": "before-solid-add-380.png",
+        "pixel": [
+          204,
+          418
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          162.49,
+          180.27,
+          201.68
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.4900000000000091,
+        "own_error": 0.7299999999999898,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-380.png",
+        "pixel": [
+          186,
+          240
+        ],
+        "depth": 11.858497998711066,
+        "factor": 0.0,
+        "expected": [
+          148.63,
+          157.59,
+          168.29000000000002
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.4099999999999966,
+        "own_error": 1.4099999999999966,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 12.020490712259617,
+        "factor": 3.8847281823346595e-06,
+        "expected": [
+          148.62950807687025,
+          157.5895276559003,
+          168.28955212968788
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.410472344099702,
+        "own_error": 1.410472344099702,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-380.png",
+        "pixel": [
+          193,
+          358
+        ],
+        "depth": 12.144919740165555,
+        "factor": 0.00019341672634021488,
+        "expected": [
+          148.60550763994354,
+          157.5664824602443,
+          168.26770098562025
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.4335175397557123,
+        "own_error": 1.4335175397557123,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-380.png",
+        "pixel": [
+          297,
+          233
+        ],
+        "depth": 18.942366891491734,
+        "factor": 0.33151813196792596,
+        "expected": [
+          106.64985894890155,
+          117.28071033401989,
+          130.0692745654178
+        ],
+        "original": [
+          107,
+          117,
+          130
+        ],
+        "own": [
+          107,
+          118,
+          130
+        ],
+        "original_error": 0.35014105109844706,
+        "own_error": 0.7192896659801136,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-380.png",
+        "pixel": [
+          298,
+          271
+        ],
+        "depth": 19.044860230341506,
+        "factor": 0.339634669949229,
+        "expected": [
+          105.62206174432914,
+          116.29382048087325,
+          129.13351890155337
+        ],
+        "original": [
+          106,
+          116,
+          129
+        ],
+        "own": [
+          107,
+          117,
+          130
+        ],
+        "original_error": 0.3779382556708555,
+        "own_error": 1.3779382556708555,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-380.png",
+        "pixel": [
+          300,
+          308
+        ],
+        "depth": 19.253210735125325,
+        "factor": 0.35626205044399745,
+        "expected": [
+          103.5165365522766,
+          114.27209728651434,
+          127.21654820431154
+        ],
+        "original": [
+          104,
+          114,
+          127
+        ],
+        "own": [
+          104,
+          115,
+          128
+        ],
+        "original_error": 0.4834634477233948,
+        "own_error": 0.7834517956884639,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-380.png",
+        "pixel": [
+          186,
+          240
+        ],
+        "depth": 11.858497998711066,
+        "factor": 0.0,
+        "expected": [
+          162.49,
+          180.27,
+          201.68
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.4900000000000091,
+        "own_error": 0.7299999999999898,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 12.020490712259617,
+        "factor": 3.8847281823346595e-06,
+        "expected": [
+          162.48950807687027,
+          180.2695276559003,
+          201.67955212968786
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.48950807687026554,
+        "own_error": 0.7304723440996952,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-380.png",
+        "pixel": [
+          193,
+          358
+        ],
+        "depth": 12.144919740165555,
+        "factor": 0.00019341672634021488,
+        "expected": [
+          162.46550763994355,
+          180.2464824602443,
+          201.65770098562024
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.46550763994355293,
+        "own_error": 0.7535175397557055,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-380.png",
+        "pixel": [
+          297,
+          233
+        ],
+        "depth": 18.942366891491734,
+        "factor": 0.33151813196792596,
+        "expected": [
+          120.50985894890155,
+          139.9607103340199,
+          163.45927456541781
+        ],
+        "original": [
+          121,
+          140,
+          163
+        ],
+        "own": [
+          120,
+          140,
+          163
+        ],
+        "original_error": 0.49014105109844763,
+        "own_error": 0.5098589489015524,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-380.png",
+        "pixel": [
+          298,
+          271
+        ],
+        "depth": 19.044860230341506,
+        "factor": 0.339634669949229,
+        "expected": [
+          119.48206174432914,
+          138.97382048087326,
+          162.5235189015534
+        ],
+        "original": [
+          119,
+          139,
+          163
+        ],
+        "own": [
+          120,
+          139,
+          163
+        ],
+        "original_error": 0.48206174432914395,
+        "own_error": 0.517938255670856,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-380.png",
+        "pixel": [
+          300,
+          308
+        ],
+        "depth": 19.253210735125325,
+        "factor": 0.35626205044399745,
+        "expected": [
+          117.3765365522766,
+          136.95209728651434,
+          160.60654820431154
+        ],
+        "original": [
+          117,
+          137,
+          161
+        ],
+        "own": [
+          117,
+          137,
+          161
+        ],
+        "original_error": 0.39345179568846333,
+        "own_error": 0.39345179568846333,
+        "paired_peak": 0
+      },
+      {
+        "file": "middle-solid-normal-380.png",
+        "pixel": [
+          185,
+          266
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-normal-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-normal-380.png",
+        "pixel": [
+          194,
+          333
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-add-380.png",
+        "pixel": [
+          185,
+          266
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "middle-solid-add-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "middle-solid-add-380.png",
+        "pixel": [
+          194,
+          333
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-380.png",
+        "pixel": [
+          95,
+          288
+        ],
+        "depth": 13.202002396524962,
+        "factor": 0.012782304100908798,
+        "expected": [
+          147.0113768317019,
+          156.03579964437048,
+          166.81632816020624
+        ],
+        "original": [
+          147,
+          156,
+          167
+        ],
+        "own": [
+          147,
+          156,
+          167
+        ],
+        "original_error": 0.18367183979376023,
+        "own_error": 0.18367183979376023,
+        "paired_peak": 0
+      },
+      {
+        "file": "whole-band-solid-normal-380.png",
+        "pixel": [
+          98,
+          341
+        ],
+        "depth": 13.359488808791948,
+        "factor": 0.016251387038738865,
+        "expected": [
+          146.57208685928447,
+          155.61399384995974,
+          166.41637758830382
+        ],
+        "original": [
+          147,
+          156,
+          166
+        ],
+        "own": [
+          147,
+          156,
+          166
+        ],
+        "original_error": 0.4279131407155319,
+        "own_error": 0.4279131407155319,
+        "paired_peak": 0
+      },
+      {
+        "file": "whole-band-solid-normal-380.png",
+        "pixel": [
+          100,
+          393
+        ],
+        "depth": 13.466583874942183,
+        "factor": 0.01883368119683293,
+        "expected": [
+          146.24509095004504,
+          155.30001270327708,
+          166.11866489481713
+        ],
+        "original": [
+          146,
+          155,
+          166
+        ],
+        "own": [
+          146,
+          155,
+          165
+        ],
+        "original_error": 0.3000127032770763,
+        "own_error": 1.1186648948171296,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-380.png",
+        "pixel": [
+          188,
+          265
+        ],
+        "depth": 20.80493956016742,
+        "factor": 0.4837475085365205,
+        "expected": [
+          87.3730529940204,
+          98.77114043704447,
+          112.51874974082455
+        ],
+        "original": [
+          87,
+          99,
+          112
+        ],
+        "own": [
+          88,
+          99,
+          112
+        ],
+        "original_error": 0.5187497408245463,
+        "own_error": 0.6269470059796021,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 21.065835505509995,
+        "factor": 0.5054861942685837,
+        "expected": [
+          84.62028321976926,
+          96.12793363888292,
+          110.01249666277499
+        ],
+        "original": [
+          85,
+          96,
+          110
+        ],
+        "own": [
+          84,
+          96,
+          110
+        ],
+        "original_error": 0.37971678023073707,
+        "own_error": 0.6202832197692629,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-380.png",
+        "pixel": [
+          191,
+          333
+        ],
+        "depth": 21.19875270556258,
+        "factor": 0.5165600329888661,
+        "expected": [
+          83.21800302261988,
+          94.78146558888378,
+          108.73579379671364
+        ],
+        "original": [
+          83,
+          95,
+          109
+        ],
+        "own": [
+          83,
+          94,
+          109
+        ],
+        "original_error": 0.26420620328636346,
+        "own_error": 0.7814655888837763,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-380.png",
+        "pixel": [
+          232,
+          255
+        ],
+        "depth": 28.596494079717125,
+        "factor": 0.9827089461712258,
+        "expected": [
+          24.189566146337672,
+          38.10241923504066,
+          54.993485595919374
+        ],
+        "original": [
+          24,
+          38,
+          55
+        ],
+        "own": [
+          24,
+          38,
+          54
+        ],
+        "original_error": 0.18956614633767188,
+        "own_error": 0.993485595919374,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-380.png",
+        "pixel": [
+          232,
+          280
+        ],
+        "depth": 28.596494079717125,
+        "factor": 0.9827089461712258,
+        "expected": [
+          24.189566146337672,
+          38.10241923504066,
+          54.993485595919374
+        ],
+        "original": [
+          24,
+          38,
+          55
+        ],
+        "own": [
+          24,
+          38,
+          54
+        ],
+        "original_error": 0.18956614633767188,
+        "own_error": 0.993485595919374,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-380.png",
+        "pixel": [
+          233,
+          305
+        ],
+        "depth": 28.841981973621806,
+        "factor": 0.9881158277081779,
+        "expected": [
+          23.50489273731344,
+          37.44499650896266,
+          54.370126223524174
+        ],
+        "original": [
+          24,
+          37,
+          54
+        ],
+        "own": [
+          23,
+          37,
+          54
+        ],
+        "original_error": 0.4951072626865596,
+        "own_error": 0.5048927373134404,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-380.png",
+        "pixel": [
+          95,
+          288
+        ],
+        "depth": 13.202002396524962,
+        "factor": 0.012782304100908798,
+        "expected": [
+          160.87137683170192,
+          178.7157996443705,
+          200.20632816020625
+        ],
+        "original": [
+          161,
+          179,
+          200
+        ],
+        "own": [
+          161,
+          179,
+          201
+        ],
+        "original_error": 0.2842003556295083,
+        "own_error": 0.7936718397937454,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-380.png",
+        "pixel": [
+          98,
+          341
+        ],
+        "depth": 13.359488808791948,
+        "factor": 0.016251387038738865,
+        "expected": [
+          160.43208685928448,
+          178.29399384995975,
+          199.8063775883038
+        ],
+        "original": [
+          160,
+          178,
+          200
+        ],
+        "own": [
+          161,
+          179,
+          200
+        ],
+        "original_error": 0.43208685928448176,
+        "own_error": 0.7060061500402526,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-380.png",
+        "pixel": [
+          100,
+          393
+        ],
+        "depth": 13.466583874942183,
+        "factor": 0.01883368119683293,
+        "expected": [
+          160.10509095004505,
+          177.98001270327708,
+          199.50866489481714
+        ],
+        "original": [
+          160,
+          178,
+          200
+        ],
+        "own": [
+          160,
+          178,
+          199
+        ],
+        "original_error": 0.4913351051828556,
+        "own_error": 0.5086648948171444,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-380.png",
+        "pixel": [
+          188,
+          265
+        ],
+        "depth": 20.80493956016742,
+        "factor": 0.4837475085365205,
+        "expected": [
+          101.2330529940204,
+          121.45114043704447,
+          145.90874974082453
+        ],
+        "original": [
+          101,
+          121,
+          146
+        ],
+        "own": [
+          102,
+          122,
+          146
+        ],
+        "original_error": 0.45114043704447226,
+        "own_error": 0.7669470059796026,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 21.065835505509995,
+        "factor": 0.5054861942685837,
+        "expected": [
+          98.48028321976926,
+          118.80793363888291,
+          143.40249666277498
+        ],
+        "original": [
+          98,
+          119,
+          143
+        ],
+        "own": [
+          98,
+          119,
+          144
+        ],
+        "original_error": 0.48028321976926236,
+        "own_error": 0.5975033372250209,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-380.png",
+        "pixel": [
+          191,
+          333
+        ],
+        "depth": 21.19875270556258,
+        "factor": 0.5165600329888661,
+        "expected": [
+          97.07800302261988,
+          117.46146558888378,
+          142.12579379671365
+        ],
+        "original": [
+          97,
+          117,
+          142
+        ],
+        "own": [
+          97,
+          117,
+          143
+        ],
+        "original_error": 0.4614655888837831,
+        "own_error": 0.8742062032863487,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-380.png",
+        "pixel": [
+          232,
+          255
+        ],
+        "depth": 28.596494079717125,
+        "factor": 0.9827089461712258,
+        "expected": [
+          38.04956614633767,
+          60.78241923504065,
+          88.38348559591938
+        ],
+        "original": [
+          38,
+          61,
+          88
+        ],
+        "own": [
+          38,
+          61,
+          88
+        ],
+        "original_error": 0.3834855959193817,
+        "own_error": 0.3834855959193817,
+        "paired_peak": 0
+      },
+      {
+        "file": "whole-band-solid-add-380.png",
+        "pixel": [
+          232,
+          280
+        ],
+        "depth": 28.596494079717125,
+        "factor": 0.9827089461712258,
+        "expected": [
+          38.04956614633767,
+          60.78241923504065,
+          88.38348559591938
+        ],
+        "original": [
+          38,
+          61,
+          88
+        ],
+        "own": [
+          38,
+          61,
+          88
+        ],
+        "original_error": 0.3834855959193817,
+        "own_error": 0.3834855959193817,
+        "paired_peak": 0
+      },
+      {
+        "file": "whole-band-solid-add-380.png",
+        "pixel": [
+          233,
+          305
+        ],
+        "depth": 28.841981973621806,
+        "factor": 0.9881158277081779,
+        "expected": [
+          37.36489273731344,
+          60.12499650896265,
+          87.76012622352417
+        ],
+        "original": [
+          37,
+          60,
+          88
+        ],
+        "own": [
+          37,
+          60,
+          88
+        ],
+        "original_error": 0.36489273731343985,
+        "own_error": 0.36489273731343985,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-normal-380.png",
+        "pixel": [
+          281,
+          290
+        ],
+        "depth": 16.101624841472344,
+        "factor": 0.13210796911929049,
+        "expected": [
+          131.90116787042425,
+          141.52699203478548,
+          153.05927224023702
+        ],
+        "original": [
+          132,
+          142,
+          153
+        ],
+        "own": [
+          132,
+          141,
+          153
+        ],
+        "original_error": 0.4730079652145207,
+        "own_error": 0.5269920347854793,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-normal-380.png",
+        "pixel": [
+          285,
+          334
+        ],
+        "depth": 16.19883067572319,
+        "factor": 0.13785620630512502,
+        "expected": [
+          131.17326859558204,
+          140.82806387535985,
+          152.39655797508215
+        ],
+        "original": [
+          131,
+          141,
+          152
+        ],
+        "own": [
+          131,
+          141,
+          152
+        ],
+        "original_error": 0.3965579750821462,
+        "own_error": 0.3965579750821462,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-normal-380.png",
+        "pixel": [
+          288,
+          377
+        ],
+        "depth": 16.272508773723114,
+        "factor": 0.14227542958817735,
+        "expected": [
+          130.6136623512491,
+          140.29073051637351,
+          151.88706572277903
+        ],
+        "original": [
+          131,
+          140,
+          152
+        ],
+        "own": [
+          130,
+          140,
+          152
+        ],
+        "original_error": 0.3863376487508958,
+        "own_error": 0.6136623512491042,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-add-380.png",
+        "pixel": [
+          281,
+          290
+        ],
+        "depth": 16.101624841472344,
+        "factor": 0.13210796911929049,
+        "expected": [
+          145.76116787042423,
+          164.2069920347855,
+          186.449272240237
+        ],
+        "original": [
+          146,
+          164,
+          186
+        ],
+        "own": [
+          146,
+          164,
+          187
+        ],
+        "original_error": 0.44927224023700774,
+        "own_error": 0.5507277597629923,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-add-380.png",
+        "pixel": [
+          285,
+          334
+        ],
+        "depth": 16.19883067572319,
+        "factor": 0.13785620630512502,
+        "expected": [
+          145.03326859558203,
+          163.50806387535985,
+          185.78655797508213
+        ],
+        "original": [
+          145,
+          164,
+          186
+        ],
+        "own": [
+          145,
+          164,
+          186
+        ],
+        "original_error": 0.4919361246401479,
+        "own_error": 0.4919361246401479,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-add-380.png",
+        "pixel": [
+          288,
+          377
+        ],
+        "depth": 16.272508773723114,
+        "factor": 0.14227542958817735,
+        "expected": [
+          144.47366235124912,
+          162.97073051637352,
+          185.277065722779
+        ],
+        "original": [
+          144,
+          163,
+          185
+        ],
+        "own": [
+          144,
+          163,
+          186
+        ],
+        "original_error": 0.4736623512491178,
+        "own_error": 0.7229342772209861,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-380.png",
+        "pixel": [
+          97,
+          293
+        ],
+        "depth": 22.80744461379385,
+        "factor": 0.648595466328172,
+        "expected": [
+          66.49835609886358,
+          78.72727724915757,
+          93.51342868702504
+        ],
+        "original": [
+          66,
+          79,
+          94
+        ],
+        "own": [
+          67,
+          79,
+          93
+        ],
+        "original_error": 0.49835609886358156,
+        "own_error": 0.5134286870250406,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-380.png",
+        "pixel": [
+          99,
+          324
+        ],
+        "depth": 22.92629046168279,
+        "factor": 0.6580730104744483,
+        "expected": [
+          65.29821468362061,
+          77.57490265641184,
+          92.42076262240086
+        ],
+        "original": [
+          65,
+          78,
+          92
+        ],
+        "own": [
+          65,
+          77,
+          92
+        ],
+        "original_error": 0.4250973435881633,
+        "own_error": 0.5749026564118367,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-380.png",
+        "pixel": [
+          101,
+          354
+        ],
+        "depth": 23.046381369763075,
+        "factor": 0.6675929661349252,
+        "expected": [
+          64.09270269833442,
+          76.41737124765443,
+          91.32320693430447
+        ],
+        "original": [
+          64,
+          76,
+          91
+        ],
+        "own": [
+          64,
+          76,
+          91
+        ],
+        "original_error": 0.41737124765442957,
+        "own_error": 0.41737124765442957,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-normal-380.png",
+        "pixel": [
+          188,
+          276
+        ],
+        "depth": 29.84736221039512,
+        "factor": 0.9997854945954063,
+        "expected": [
+          22.027162819383697,
+          36.026081712144546,
+          53.02473032809561
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.027162819383697467,
+        "own_error": 1.0247303280956075,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 30.05122678064904,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-380.png",
+        "pixel": [
+          191,
+          323
+        ],
+        "depth": 30.154206977079756,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-380.png",
+        "pixel": [
+          245,
+          265
+        ],
+        "depth": 37.00122309028808,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-380.png",
+        "pixel": [
+          245,
+          285
+        ],
+        "depth": 37.00122309028808,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-380.png",
+        "pixel": [
+          246,
+          304
+        ],
+        "depth": 37.157467968798464,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-add-380.png",
+        "pixel": [
+          97,
+          293
+        ],
+        "depth": 22.80744461379385,
+        "factor": 0.648595466328172,
+        "expected": [
+          80.35835609886358,
+          101.40727724915756,
+          126.90342868702504
+        ],
+        "original": [
+          80,
+          101,
+          127
+        ],
+        "own": [
+          81,
+          102,
+          127
+        ],
+        "original_error": 0.40727724915755914,
+        "own_error": 0.641643901136419,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-add-380.png",
+        "pixel": [
+          99,
+          324
+        ],
+        "depth": 22.92629046168279,
+        "factor": 0.6580730104744483,
+        "expected": [
+          79.15821468362061,
+          100.25490265641183,
+          125.81076262240086
+        ],
+        "original": [
+          79,
+          100,
+          126
+        ],
+        "own": [
+          79,
+          100,
+          126
+        ],
+        "original_error": 0.2549026564118293,
+        "own_error": 0.2549026564118293,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-380.png",
+        "pixel": [
+          101,
+          354
+        ],
+        "depth": 23.046381369763075,
+        "factor": 0.6675929661349252,
+        "expected": [
+          77.9527026983344,
+          99.09737124765442,
+          124.71320693430447
+        ],
+        "original": [
+          78,
+          99,
+          125
+        ],
+        "own": [
+          78,
+          99,
+          125
+        ],
+        "original_error": 0.28679306569553376,
+        "own_error": 0.28679306569553376,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-380.png",
+        "pixel": [
+          188,
+          276
+        ],
+        "depth": 29.84736221039512,
+        "factor": 0.9997854945954063,
+        "expected": [
+          35.8871628193837,
+          58.706081712144545,
+          86.4147303280956
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.41473032809560095,
+        "own_error": 0.41473032809560095,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 30.05122678064904,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-380.png",
+        "pixel": [
+          191,
+          323
+        ],
+        "depth": 30.154206977079756,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-380.png",
+        "pixel": [
+          245,
+          265
+        ],
+        "depth": 37.00122309028808,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-380.png",
+        "pixel": [
+          245,
+          285
+        ],
+        "depth": 37.00122309028808,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-380.png",
+        "pixel": [
+          246,
+          304
+        ],
+        "depth": 37.157467968798464,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-normal-380.png",
+        "pixel": [
+          60,
+          295
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-380.png",
+        "pixel": [
+          62,
+          315
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-380.png",
+        "pixel": [
+          65,
+          335
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-380.png",
+        "pixel": [
+          187,
+          280
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-380.png",
+        "pixel": [
+          192,
+          319
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-380.png",
+        "pixel": [
+          314,
+          264
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-380.png",
+        "pixel": [
+          317,
+          284
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-380.png",
+        "pixel": [
+          319,
+          304
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-add-380.png",
+        "pixel": [
+          60,
+          295
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-380.png",
+        "pixel": [
+          62,
+          315
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-380.png",
+        "pixel": [
+          65,
+          335
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-380.png",
+        "pixel": [
+          187,
+          280
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-380.png",
+        "pixel": [
+          190,
+          300
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-380.png",
+        "pixel": [
+          192,
+          319
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-380.png",
+        "pixel": [
+          314,
+          264
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-380.png",
+        "pixel": [
+          317,
+          284
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-380.png",
+        "pixel": [
+          319,
+          304
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "before-solid-normal-800.png",
+        "pixel": [
+          385,
+          181
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          148.63,
+          157.59,
+          168.29000000000002
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.4099999999999966,
+        "own_error": 1.4099999999999966,
+        "paired_peak": 1
+      },
+      {
+        "file": "before-solid-normal-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          148.63,
+          157.59,
+          168.29000000000002
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.4099999999999966,
+        "own_error": 1.4099999999999966,
+        "paired_peak": 1
+      },
+      {
+        "file": "before-solid-normal-800.png",
+        "pixel": [
+          414,
+          418
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          148.63,
+          157.59,
+          168.29000000000002
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.4099999999999966,
+        "own_error": 1.4099999999999966,
+        "paired_peak": 1
+      },
+      {
+        "file": "before-solid-add-800.png",
+        "pixel": [
+          385,
+          181
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          162.49,
+          180.27,
+          201.68
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.4900000000000091,
+        "own_error": 0.7299999999999898,
+        "paired_peak": 1
+      },
+      {
+        "file": "before-solid-add-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          162.49,
+          180.27,
+          201.68
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.4900000000000091,
+        "own_error": 0.7299999999999898,
+        "paired_peak": 1
+      },
+      {
+        "file": "before-solid-add-800.png",
+        "pixel": [
+          414,
+          418
+        ],
+        "depth": 6.0,
+        "factor": 0.0,
+        "expected": [
+          162.49,
+          180.27,
+          201.68
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.4900000000000091,
+        "own_error": 0.7299999999999898,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-800.png",
+        "pixel": [
+          396,
+          240
+        ],
+        "depth": 11.858497998711062,
+        "factor": 0.0,
+        "expected": [
+          148.63,
+          157.59,
+          168.29000000000002
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.4099999999999966,
+        "own_error": 1.4099999999999966,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 12.020490712259617,
+        "factor": 3.8847281823346595e-06,
+        "expected": [
+          148.62950807687025,
+          157.5895276559003,
+          168.28955212968788
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.410472344099702,
+        "own_error": 1.410472344099702,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-800.png",
+        "pixel": [
+          403,
+          358
+        ],
+        "depth": 12.144919740165557,
+        "factor": 0.00019341672634021954,
+        "expected": [
+          148.60550763994354,
+          157.5664824602443,
+          168.26770098562025
+        ],
+        "original": [
+          149,
+          158,
+          168
+        ],
+        "own": [
+          150,
+          159,
+          169
+        ],
+        "original_error": 0.4335175397557123,
+        "own_error": 1.4335175397557123,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-800.png",
+        "pixel": [
+          507,
+          233
+        ],
+        "depth": 18.942366891491734,
+        "factor": 0.33151813196792596,
+        "expected": [
+          106.64985894890155,
+          117.28071033401989,
+          130.0692745654178
+        ],
+        "original": [
+          107,
+          117,
+          130
+        ],
+        "own": [
+          107,
+          118,
+          130
+        ],
+        "original_error": 0.35014105109844706,
+        "own_error": 0.7192896659801136,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-800.png",
+        "pixel": [
+          508,
+          271
+        ],
+        "depth": 19.044860230341506,
+        "factor": 0.339634669949229,
+        "expected": [
+          105.62206174432914,
+          116.29382048087325,
+          129.13351890155337
+        ],
+        "original": [
+          106,
+          116,
+          129
+        ],
+        "own": [
+          107,
+          117,
+          130
+        ],
+        "original_error": 0.3779382556708555,
+        "own_error": 1.3779382556708555,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-normal-800.png",
+        "pixel": [
+          510,
+          308
+        ],
+        "depth": 19.253210735125332,
+        "factor": 0.35626205044399795,
+        "expected": [
+          103.51653655227653,
+          114.27209728651428,
+          127.21654820431148
+        ],
+        "original": [
+          104,
+          114,
+          127
+        ],
+        "own": [
+          104,
+          115,
+          128
+        ],
+        "original_error": 0.48346344772346583,
+        "own_error": 0.7834517956885207,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-800.png",
+        "pixel": [
+          396,
+          240
+        ],
+        "depth": 11.858497998711062,
+        "factor": 0.0,
+        "expected": [
+          162.49,
+          180.27,
+          201.68
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.4900000000000091,
+        "own_error": 0.7299999999999898,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 12.020490712259617,
+        "factor": 3.8847281823346595e-06,
+        "expected": [
+          162.48950807687027,
+          180.2695276559003,
+          201.67955212968786
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.48950807687026554,
+        "own_error": 0.7304723440996952,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-800.png",
+        "pixel": [
+          403,
+          358
+        ],
+        "depth": 12.144919740165557,
+        "factor": 0.00019341672634021954,
+        "expected": [
+          162.46550763994355,
+          180.2464824602443,
+          201.65770098562024
+        ],
+        "original": [
+          162,
+          180,
+          202
+        ],
+        "own": [
+          163,
+          181,
+          202
+        ],
+        "original_error": 0.46550763994355293,
+        "own_error": 0.7535175397557055,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-800.png",
+        "pixel": [
+          507,
+          233
+        ],
+        "depth": 18.942366891491734,
+        "factor": 0.33151813196792596,
+        "expected": [
+          120.50985894890155,
+          139.9607103340199,
+          163.45927456541781
+        ],
+        "original": [
+          121,
+          140,
+          163
+        ],
+        "own": [
+          120,
+          140,
+          163
+        ],
+        "original_error": 0.49014105109844763,
+        "own_error": 0.5098589489015524,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-800.png",
+        "pixel": [
+          508,
+          271
+        ],
+        "depth": 19.044860230341506,
+        "factor": 0.339634669949229,
+        "expected": [
+          119.48206174432914,
+          138.97382048087326,
+          162.5235189015534
+        ],
+        "original": [
+          119,
+          139,
+          163
+        ],
+        "own": [
+          120,
+          139,
+          163
+        ],
+        "original_error": 0.48206174432914395,
+        "own_error": 0.517938255670856,
+        "paired_peak": 1
+      },
+      {
+        "file": "near-cross-solid-add-800.png",
+        "pixel": [
+          510,
+          308
+        ],
+        "depth": 19.253210735125332,
+        "factor": 0.35626205044399795,
+        "expected": [
+          117.37653655227653,
+          136.9520972865143,
+          160.60654820431148
+        ],
+        "original": [
+          117,
+          137,
+          161
+        ],
+        "own": [
+          117,
+          137,
+          161
+        ],
+        "original_error": 0.3934517956885202,
+        "own_error": 0.3934517956885202,
+        "paired_peak": 0
+      },
+      {
+        "file": "middle-solid-normal-800.png",
+        "pixel": [
+          177,
+          292
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-normal-800.png",
+        "pixel": [
+          182,
+          326
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-normal-800.png",
+        "pixel": [
+          186,
+          360
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-normal-800.png",
+        "pixel": [
+          395,
+          266
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-normal-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-normal-800.png",
+        "pixel": [
+          404,
+          333
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-normal-800.png",
+        "pixel": [
+          613,
+          239
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-normal-800.png",
+        "pixel": [
+          617,
+          273
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-normal-800.png",
+        "pixel": [
+          622,
+          307
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          85.315,
+          96.79499999999999,
+          110.645
+        ],
+        "original": [
+          85,
+          97,
+          111
+        ],
+        "own": [
+          87,
+          97,
+          112
+        ],
+        "original_error": 0.355000000000004,
+        "own_error": 1.6850000000000023,
+        "paired_peak": 2
+      },
+      {
+        "file": "middle-solid-add-800.png",
+        "pixel": [
+          177,
+          292
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "middle-solid-add-800.png",
+        "pixel": [
+          182,
+          326
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "middle-solid-add-800.png",
+        "pixel": [
+          186,
+          360
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "middle-solid-add-800.png",
+        "pixel": [
+          395,
+          266
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "middle-solid-add-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "middle-solid-add-800.png",
+        "pixel": [
+          404,
+          333
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "middle-solid-add-800.png",
+        "pixel": [
+          613,
+          239
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "middle-solid-add-800.png",
+        "pixel": [
+          617,
+          273
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "middle-solid-add-800.png",
+        "pixel": [
+          622,
+          307
+        ],
+        "depth": 21.0,
+        "factor": 0.5,
+        "expected": [
+          99.175,
+          119.475,
+          144.035
+        ],
+        "original": [
+          99,
+          119,
+          144
+        ],
+        "own": [
+          100,
+          119,
+          145
+        ],
+        "original_error": 0.4749999999999943,
+        "own_error": 0.9650000000000034,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-800.png",
+        "pixel": [
+          305,
+          288
+        ],
+        "depth": 13.202002396524964,
+        "factor": 0.01278230410090884,
+        "expected": [
+          147.0113768317019,
+          156.03579964437048,
+          166.81632816020624
+        ],
+        "original": [
+          147,
+          156,
+          167
+        ],
+        "own": [
+          147,
+          156,
+          167
+        ],
+        "original_error": 0.18367183979376023,
+        "own_error": 0.18367183979376023,
+        "paired_peak": 0
+      },
+      {
+        "file": "whole-band-solid-normal-800.png",
+        "pixel": [
+          308,
+          341
+        ],
+        "depth": 13.359488808791948,
+        "factor": 0.016251387038738865,
+        "expected": [
+          146.57208685928447,
+          155.61399384995974,
+          166.41637758830382
+        ],
+        "original": [
+          147,
+          156,
+          166
+        ],
+        "own": [
+          147,
+          156,
+          166
+        ],
+        "original_error": 0.4279131407155319,
+        "own_error": 0.4279131407155319,
+        "paired_peak": 0
+      },
+      {
+        "file": "whole-band-solid-normal-800.png",
+        "pixel": [
+          310,
+          393
+        ],
+        "depth": 13.466583874942183,
+        "factor": 0.01883368119683293,
+        "expected": [
+          146.24509095004504,
+          155.30001270327708,
+          166.11866489481713
+        ],
+        "original": [
+          146,
+          155,
+          166
+        ],
+        "own": [
+          146,
+          155,
+          165
+        ],
+        "original_error": 0.3000127032770763,
+        "own_error": 1.1186648948171296,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-800.png",
+        "pixel": [
+          398,
+          265
+        ],
+        "depth": 20.80493956016742,
+        "factor": 0.4837475085365205,
+        "expected": [
+          87.3730529940204,
+          98.77114043704447,
+          112.51874974082455
+        ],
+        "original": [
+          87,
+          99,
+          112
+        ],
+        "own": [
+          88,
+          99,
+          112
+        ],
+        "original_error": 0.5187497408245463,
+        "own_error": 0.6269470059796021,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 21.065835505509995,
+        "factor": 0.5054861942685837,
+        "expected": [
+          84.62028321976926,
+          96.12793363888292,
+          110.01249666277499
+        ],
+        "original": [
+          85,
+          96,
+          110
+        ],
+        "own": [
+          84,
+          96,
+          110
+        ],
+        "original_error": 0.37971678023073707,
+        "own_error": 0.6202832197692629,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-800.png",
+        "pixel": [
+          401,
+          333
+        ],
+        "depth": 21.198752705562576,
+        "factor": 0.516560032988866,
+        "expected": [
+          83.2180030226199,
+          94.78146558888378,
+          108.73579379671364
+        ],
+        "original": [
+          83,
+          95,
+          109
+        ],
+        "own": [
+          83,
+          94,
+          109
+        ],
+        "original_error": 0.26420620328636346,
+        "own_error": 0.7814655888837763,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-800.png",
+        "pixel": [
+          442,
+          255
+        ],
+        "depth": 28.596494079717125,
+        "factor": 0.9827089461712258,
+        "expected": [
+          24.189566146337672,
+          38.10241923504066,
+          54.993485595919374
+        ],
+        "original": [
+          24,
+          38,
+          55
+        ],
+        "own": [
+          24,
+          38,
+          54
+        ],
+        "original_error": 0.18956614633767188,
+        "own_error": 0.993485595919374,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-800.png",
+        "pixel": [
+          442,
+          280
+        ],
+        "depth": 28.596494079717125,
+        "factor": 0.9827089461712258,
+        "expected": [
+          24.189566146337672,
+          38.10241923504066,
+          54.993485595919374
+        ],
+        "original": [
+          24,
+          38,
+          55
+        ],
+        "own": [
+          24,
+          38,
+          54
+        ],
+        "original_error": 0.18956614633767188,
+        "own_error": 0.993485595919374,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-normal-800.png",
+        "pixel": [
+          443,
+          305
+        ],
+        "depth": 28.8419819736218,
+        "factor": 0.9881158277081776,
+        "expected": [
+          23.50489273731347,
+          37.44499650896268,
+          54.3701262235242
+        ],
+        "original": [
+          24,
+          37,
+          54
+        ],
+        "own": [
+          23,
+          37,
+          54
+        ],
+        "original_error": 0.49510726268653116,
+        "own_error": 0.5048927373134688,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-800.png",
+        "pixel": [
+          305,
+          288
+        ],
+        "depth": 13.202002396524964,
+        "factor": 0.01278230410090884,
+        "expected": [
+          160.87137683170192,
+          178.7157996443705,
+          200.20632816020623
+        ],
+        "original": [
+          161,
+          179,
+          200
+        ],
+        "own": [
+          161,
+          179,
+          201
+        ],
+        "original_error": 0.2842003556295083,
+        "own_error": 0.7936718397937739,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-800.png",
+        "pixel": [
+          308,
+          341
+        ],
+        "depth": 13.359488808791948,
+        "factor": 0.016251387038738865,
+        "expected": [
+          160.43208685928448,
+          178.29399384995975,
+          199.8063775883038
+        ],
+        "original": [
+          160,
+          178,
+          200
+        ],
+        "own": [
+          161,
+          179,
+          200
+        ],
+        "original_error": 0.43208685928448176,
+        "own_error": 0.7060061500402526,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-800.png",
+        "pixel": [
+          310,
+          393
+        ],
+        "depth": 13.466583874942183,
+        "factor": 0.01883368119683293,
+        "expected": [
+          160.10509095004505,
+          177.98001270327708,
+          199.50866489481714
+        ],
+        "original": [
+          160,
+          178,
+          200
+        ],
+        "own": [
+          160,
+          178,
+          199
+        ],
+        "original_error": 0.4913351051828556,
+        "own_error": 0.5086648948171444,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-800.png",
+        "pixel": [
+          398,
+          265
+        ],
+        "depth": 20.80493956016742,
+        "factor": 0.4837475085365205,
+        "expected": [
+          101.2330529940204,
+          121.45114043704447,
+          145.90874974082453
+        ],
+        "original": [
+          101,
+          121,
+          146
+        ],
+        "own": [
+          102,
+          122,
+          146
+        ],
+        "original_error": 0.45114043704447226,
+        "own_error": 0.7669470059796026,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 21.065835505509995,
+        "factor": 0.5054861942685837,
+        "expected": [
+          98.48028321976926,
+          118.80793363888291,
+          143.40249666277498
+        ],
+        "original": [
+          98,
+          119,
+          143
+        ],
+        "own": [
+          98,
+          119,
+          144
+        ],
+        "original_error": 0.48028321976926236,
+        "own_error": 0.5975033372250209,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-800.png",
+        "pixel": [
+          401,
+          333
+        ],
+        "depth": 21.198752705562576,
+        "factor": 0.516560032988866,
+        "expected": [
+          97.0780030226199,
+          117.46146558888378,
+          142.12579379671365
+        ],
+        "original": [
+          97,
+          117,
+          142
+        ],
+        "own": [
+          97,
+          117,
+          143
+        ],
+        "original_error": 0.4614655888837831,
+        "own_error": 0.8742062032863487,
+        "paired_peak": 1
+      },
+      {
+        "file": "whole-band-solid-add-800.png",
+        "pixel": [
+          442,
+          255
+        ],
+        "depth": 28.596494079717125,
+        "factor": 0.9827089461712258,
+        "expected": [
+          38.04956614633767,
+          60.78241923504065,
+          88.38348559591938
+        ],
+        "original": [
+          38,
+          61,
+          88
+        ],
+        "own": [
+          38,
+          61,
+          88
+        ],
+        "original_error": 0.3834855959193817,
+        "own_error": 0.3834855959193817,
+        "paired_peak": 0
+      },
+      {
+        "file": "whole-band-solid-add-800.png",
+        "pixel": [
+          442,
+          280
+        ],
+        "depth": 28.596494079717125,
+        "factor": 0.9827089461712258,
+        "expected": [
+          38.04956614633767,
+          60.78241923504065,
+          88.38348559591938
+        ],
+        "original": [
+          38,
+          61,
+          88
+        ],
+        "own": [
+          38,
+          61,
+          88
+        ],
+        "original_error": 0.3834855959193817,
+        "own_error": 0.3834855959193817,
+        "paired_peak": 0
+      },
+      {
+        "file": "whole-band-solid-add-800.png",
+        "pixel": [
+          443,
+          305
+        ],
+        "depth": 28.8419819736218,
+        "factor": 0.9881158277081776,
+        "expected": [
+          37.36489273731347,
+          60.12499650896268,
+          87.7601262235242
+        ],
+        "original": [
+          37,
+          60,
+          88
+        ],
+        "own": [
+          37,
+          60,
+          88
+        ],
+        "original_error": 0.3648927373134683,
+        "own_error": 0.3648927373134683,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-normal-800.png",
+        "pixel": [
+          491,
+          290
+        ],
+        "depth": 16.101624841472344,
+        "factor": 0.13210796911929049,
+        "expected": [
+          131.90116787042425,
+          141.52699203478548,
+          153.05927224023702
+        ],
+        "original": [
+          132,
+          142,
+          153
+        ],
+        "own": [
+          132,
+          141,
+          153
+        ],
+        "original_error": 0.4730079652145207,
+        "own_error": 0.5269920347854793,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-normal-800.png",
+        "pixel": [
+          495,
+          334
+        ],
+        "depth": 16.19883067572319,
+        "factor": 0.13785620630512502,
+        "expected": [
+          131.17326859558204,
+          140.82806387535985,
+          152.39655797508215
+        ],
+        "original": [
+          131,
+          141,
+          152
+        ],
+        "own": [
+          131,
+          141,
+          152
+        ],
+        "original_error": 0.3965579750821462,
+        "own_error": 0.3965579750821462,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-normal-800.png",
+        "pixel": [
+          498,
+          377
+        ],
+        "depth": 16.272508773723114,
+        "factor": 0.14227542958817735,
+        "expected": [
+          130.6136623512491,
+          140.29073051637351,
+          151.88706572277903
+        ],
+        "original": [
+          131,
+          140,
+          152
+        ],
+        "own": [
+          130,
+          140,
+          152
+        ],
+        "original_error": 0.3863376487508958,
+        "own_error": 0.6136623512491042,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-normal-800.png",
+        "pixel": [
+          644,
+          266
+        ],
+        "depth": 20.898454200967485,
+        "factor": 0.49153820916653357,
+        "expected": [
+          86.38651657324186,
+          97.82386914744117,
+          111.62055986519034
+        ],
+        "original": [
+          86,
+          98,
+          112
+        ],
+        "own": [
+          86,
+          98,
+          111
+        ],
+        "original_error": 0.38651657324186317,
+        "own_error": 0.6205598651903443,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-normal-800.png",
+        "pixel": [
+          646,
+          300
+        ],
+        "depth": 20.98015604231954,
+        "factor": 0.4983463395397305,
+        "expected": [
+          85.52440302408392,
+          96.99606857536418,
+          110.83565051446446
+        ],
+        "original": [
+          86,
+          97,
+          111
+        ],
+        "own": [
+          86,
+          97,
+          111
+        ],
+        "original_error": 0.4755969759160763,
+        "own_error": 0.4755969759160763,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-normal-800.png",
+        "pixel": [
+          649,
+          333
+        ],
+        "depth": 21.103913660169397,
+        "factor": 0.5086590868849085,
+        "expected": [
+          84.21849982776405,
+          95.74214162566398,
+          109.64669387303891
+        ],
+        "original": [
+          84,
+          96,
+          110
+        ],
+        "own": [
+          84,
+          96,
+          109
+        ],
+        "original_error": 0.3533061269610869,
+        "own_error": 0.6466938730389131,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-normal-800.png",
+        "pixel": [
+          740,
+          250
+        ],
+        "depth": 25.702943487355462,
+        "factor": 0.8562404253534865,
+        "expected": [
+          40.204274937487995,
+          53.47972668126957,
+          69.57404136099653
+        ],
+        "original": [
+          40,
+          53,
+          70
+        ],
+        "own": [
+          40,
+          53,
+          69
+        ],
+        "original_error": 0.4797266812695682,
+        "own_error": 0.5740413609965316,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-normal-800.png",
+        "pixel": [
+          742,
+          278
+        ],
+        "depth": 25.826640652871944,
+        "factor": 0.863659135042079,
+        "expected": [
+          39.26484372962153,
+          52.577685770233614,
+          68.71873832099871
+        ],
+        "original": [
+          39,
+          53,
+          69
+        ],
+        "own": [
+          39,
+          52,
+          68
+        ],
+        "original_error": 0.42231422976638555,
+        "own_error": 0.7187383209987104,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-normal-800.png",
+        "pixel": [
+          743,
+          306
+        ],
+        "depth": 25.888936788342356,
+        "factor": 0.8673380400739312,
+        "expected": [
+          38.79898398543809,
+          52.130367707410706,
+          68.29459735987646
+        ],
+        "original": [
+          39,
+          52,
+          68
+        ],
+        "own": [
+          39,
+          52,
+          68
+        ],
+        "original_error": 0.2945973598764624,
+        "own_error": 0.2945973598764624,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-add-800.png",
+        "pixel": [
+          491,
+          290
+        ],
+        "depth": 16.101624841472344,
+        "factor": 0.13210796911929049,
+        "expected": [
+          145.76116787042423,
+          164.2069920347855,
+          186.449272240237
+        ],
+        "original": [
+          146,
+          164,
+          186
+        ],
+        "own": [
+          146,
+          164,
+          187
+        ],
+        "original_error": 0.44927224023700774,
+        "own_error": 0.5507277597629923,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-add-800.png",
+        "pixel": [
+          495,
+          334
+        ],
+        "depth": 16.19883067572319,
+        "factor": 0.13785620630512502,
+        "expected": [
+          145.03326859558203,
+          163.50806387535985,
+          185.78655797508213
+        ],
+        "original": [
+          145,
+          164,
+          186
+        ],
+        "own": [
+          145,
+          164,
+          186
+        ],
+        "original_error": 0.4919361246401479,
+        "own_error": 0.4919361246401479,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-add-800.png",
+        "pixel": [
+          498,
+          377
+        ],
+        "depth": 16.272508773723114,
+        "factor": 0.14227542958817735,
+        "expected": [
+          144.47366235124912,
+          162.97073051637352,
+          185.277065722779
+        ],
+        "original": [
+          144,
+          163,
+          185
+        ],
+        "own": [
+          144,
+          163,
+          186
+        ],
+        "original_error": 0.4736623512491178,
+        "own_error": 0.7229342772209861,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-add-800.png",
+        "pixel": [
+          644,
+          266
+        ],
+        "depth": 20.898454200967485,
+        "factor": 0.49153820916653357,
+        "expected": [
+          100.24651657324186,
+          120.50386914744118,
+          145.01055986519034
+        ],
+        "original": [
+          100,
+          121,
+          145
+        ],
+        "own": [
+          100,
+          121,
+          145
+        ],
+        "original_error": 0.49613085255882083,
+        "own_error": 0.49613085255882083,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-add-800.png",
+        "pixel": [
+          646,
+          300
+        ],
+        "depth": 20.98015604231954,
+        "factor": 0.4983463395397305,
+        "expected": [
+          99.38440302408392,
+          119.67606857536417,
+          144.22565051446446
+        ],
+        "original": [
+          99,
+          120,
+          144
+        ],
+        "own": [
+          100,
+          120,
+          145
+        ],
+        "original_error": 0.38440302408392313,
+        "own_error": 0.774349485535538,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-add-800.png",
+        "pixel": [
+          649,
+          333
+        ],
+        "depth": 21.103913660169397,
+        "factor": 0.5086590868849085,
+        "expected": [
+          98.07849982776405,
+          118.42214162566398,
+          143.03669387303893
+        ],
+        "original": [
+          98,
+          118,
+          143
+        ],
+        "own": [
+          98,
+          119,
+          143
+        ],
+        "original_error": 0.4221416256639827,
+        "own_error": 0.5778583743360173,
+        "paired_peak": 1
+      },
+      {
+        "file": "off-axis-solid-add-800.png",
+        "pixel": [
+          740,
+          250
+        ],
+        "depth": 25.702943487355462,
+        "factor": 0.8562404253534865,
+        "expected": [
+          54.064274937487994,
+          76.15972668126958,
+          102.96404136099653
+        ],
+        "original": [
+          54,
+          76,
+          103
+        ],
+        "own": [
+          54,
+          76,
+          103
+        ],
+        "original_error": 0.159726681269575,
+        "own_error": 0.159726681269575,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-add-800.png",
+        "pixel": [
+          742,
+          278
+        ],
+        "depth": 25.826640652871944,
+        "factor": 0.863659135042079,
+        "expected": [
+          53.12484372962153,
+          75.25768577023362,
+          102.10873832099871
+        ],
+        "original": [
+          53,
+          75,
+          102
+        ],
+        "own": [
+          53,
+          75,
+          102
+        ],
+        "original_error": 0.25768577023362127,
+        "own_error": 0.25768577023362127,
+        "paired_peak": 0
+      },
+      {
+        "file": "off-axis-solid-add-800.png",
+        "pixel": [
+          743,
+          306
+        ],
+        "depth": 25.888936788342356,
+        "factor": 0.8673380400739312,
+        "expected": [
+          52.65898398543809,
+          74.8103677074107,
+          101.68459735987648
+        ],
+        "original": [
+          53,
+          75,
+          102
+        ],
+        "own": [
+          53,
+          75,
+          102
+        ],
+        "original_error": 0.3410160145619088,
+        "own_error": 0.3410160145619088,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-normal-800.png",
+        "pixel": [
+          307,
+          293
+        ],
+        "depth": 22.80744461379385,
+        "factor": 0.648595466328172,
+        "expected": [
+          66.49835609886358,
+          78.72727724915757,
+          93.51342868702504
+        ],
+        "original": [
+          66,
+          79,
+          94
+        ],
+        "own": [
+          67,
+          79,
+          93
+        ],
+        "original_error": 0.49835609886358156,
+        "own_error": 0.5134286870250406,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-800.png",
+        "pixel": [
+          309,
+          324
+        ],
+        "depth": 22.926290461682793,
+        "factor": 0.6580730104744487,
+        "expected": [
+          65.29821468362056,
+          77.57490265641178,
+          92.42076262240082
+        ],
+        "original": [
+          65,
+          78,
+          92
+        ],
+        "own": [
+          65,
+          77,
+          92
+        ],
+        "original_error": 0.42509734358822016,
+        "own_error": 0.5749026564117798,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-800.png",
+        "pixel": [
+          311,
+          354
+        ],
+        "depth": 23.04638136976308,
+        "factor": 0.6675929661349256,
+        "expected": [
+          64.09270269833438,
+          76.41737124765439,
+          91.32320693430444
+        ],
+        "original": [
+          64,
+          76,
+          91
+        ],
+        "own": [
+          64,
+          76,
+          91
+        ],
+        "original_error": 0.41737124765438693,
+        "own_error": 0.41737124765438693,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-normal-800.png",
+        "pixel": [
+          398,
+          276
+        ],
+        "depth": 29.84736221039512,
+        "factor": 0.9997854945954063,
+        "expected": [
+          22.027162819383697,
+          36.026081712144546,
+          53.02473032809561
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.027162819383697467,
+        "own_error": 1.0247303280956075,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 30.05122678064904,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-800.png",
+        "pixel": [
+          401,
+          323
+        ],
+        "depth": 30.154206977079756,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-800.png",
+        "pixel": [
+          455,
+          265
+        ],
+        "depth": 37.00122309028808,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-800.png",
+        "pixel": [
+          455,
+          285
+        ],
+        "depth": 37.00122309028808,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-normal-800.png",
+        "pixel": [
+          456,
+          304
+        ],
+        "depth": 37.15746796879847,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          22,
+          36,
+          52
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-add-800.png",
+        "pixel": [
+          307,
+          293
+        ],
+        "depth": 22.80744461379385,
+        "factor": 0.648595466328172,
+        "expected": [
+          80.35835609886358,
+          101.40727724915756,
+          126.90342868702504
+        ],
+        "original": [
+          80,
+          101,
+          127
+        ],
+        "own": [
+          81,
+          102,
+          127
+        ],
+        "original_error": 0.40727724915755914,
+        "own_error": 0.641643901136419,
+        "paired_peak": 1
+      },
+      {
+        "file": "far-cross-solid-add-800.png",
+        "pixel": [
+          309,
+          324
+        ],
+        "depth": 22.926290461682793,
+        "factor": 0.6580730104744487,
+        "expected": [
+          79.15821468362057,
+          100.25490265641179,
+          125.81076262240082
+        ],
+        "original": [
+          79,
+          100,
+          126
+        ],
+        "own": [
+          79,
+          100,
+          126
+        ],
+        "original_error": 0.25490265641178667,
+        "own_error": 0.25490265641178667,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-800.png",
+        "pixel": [
+          311,
+          354
+        ],
+        "depth": 23.04638136976308,
+        "factor": 0.6675929661349256,
+        "expected": [
+          77.95270269833438,
+          99.0973712476544,
+          124.71320693430444
+        ],
+        "original": [
+          78,
+          99,
+          125
+        ],
+        "own": [
+          78,
+          99,
+          125
+        ],
+        "original_error": 0.2867930656955622,
+        "own_error": 0.2867930656955622,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-800.png",
+        "pixel": [
+          398,
+          276
+        ],
+        "depth": 29.84736221039512,
+        "factor": 0.9997854945954063,
+        "expected": [
+          35.8871628193837,
+          58.706081712144545,
+          86.4147303280956
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.41473032809560095,
+        "own_error": 0.41473032809560095,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 30.05122678064904,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-800.png",
+        "pixel": [
+          401,
+          323
+        ],
+        "depth": 30.154206977079756,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-800.png",
+        "pixel": [
+          455,
+          265
+        ],
+        "depth": 37.00122309028808,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-800.png",
+        "pixel": [
+          455,
+          285
+        ],
+        "depth": 37.00122309028808,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "far-cross-solid-add-800.png",
+        "pixel": [
+          456,
+          304
+        ],
+        "depth": 37.15746796879847,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-normal-800.png",
+        "pixel": [
+          270,
+          295
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-800.png",
+        "pixel": [
+          272,
+          315
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-800.png",
+        "pixel": [
+          275,
+          335
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-800.png",
+        "pixel": [
+          397,
+          280
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-800.png",
+        "pixel": [
+          402,
+          319
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-800.png",
+        "pixel": [
+          524,
+          264
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-800.png",
+        "pixel": [
+          527,
+          284
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-normal-800.png",
+        "pixel": [
+          529,
+          304
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          22.0,
+          36.0,
+          53.0
+        ],
+        "original": [
+          22,
+          36,
+          53
+        ],
+        "own": [
+          23,
+          37,
+          53
+        ],
+        "original_error": 0.0,
+        "own_error": 1.0,
+        "paired_peak": 1
+      },
+      {
+        "file": "beyond-solid-add-800.png",
+        "pixel": [
+          270,
+          295
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-800.png",
+        "pixel": [
+          272,
+          315
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-800.png",
+        "pixel": [
+          275,
+          335
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-800.png",
+        "pixel": [
+          397,
+          280
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-800.png",
+        "pixel": [
+          400,
+          300
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-800.png",
+        "pixel": [
+          402,
+          319
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-800.png",
+        "pixel": [
+          524,
+          264
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-800.png",
+        "pixel": [
+          527,
+          284
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      },
+      {
+        "file": "beyond-solid-add-800.png",
+        "pixel": [
+          529,
+          304
+        ],
+        "depth": 36.0,
+        "factor": 1.0,
+        "expected": [
+          35.86,
+          58.68,
+          86.39
+        ],
+        "original": [
+          36,
+          59,
+          86
+        ],
+        "own": [
+          36,
+          59,
+          86
+        ],
+        "original_error": 0.39000000000000057,
+        "own_error": 0.39000000000000057,
+        "paired_peak": 0
+      }
+    ],
+    "original_peak": 0.5187497408245463,
+    "own_peak": 1.6850000000000023,
+    "paired_peak": 2
+  },
+  "status": "Internal text-plane fragment fog only. Raster/coverage/continuous camera/whole-song residency/device validation unresolved; NOT full Diorama acceptance."
+}

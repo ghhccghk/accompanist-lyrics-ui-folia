@@ -31,7 +31,8 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
     fun draw(scope: DrawScope, time: Double, view: DioramaPerspective, frame: DioramaFrame,
         placement: DioramaPlacement, primary: DioramaLinearColor, accent: DioramaLinearColor,
         tuning: DioramaUnitTuning = DioramaUnitTuning(),
-        keywords: Map<Int, DioramaLinearColor> = emptyMap(), life: Double = 1.0) = with(scope) {
+        keywords: Map<Int, DioramaLinearColor> = emptyMap(), life: Double = 1.0,
+        fog: DioramaFog? = null) = with(scope) {
         val fit = dioramaFrameFit(lineAdvance * .62 / 128, 5.2, view.fov, view.width / view.height) * placement.scale
         val unitScale = fit * .62 / 128
         val right = dioramaPlaneAxis(frame, placement, 1.0, 0.0)
@@ -48,7 +49,7 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
             depth: Double = 0.0, lift: Double = 0.0, scale: Double = 1.0, additive: Boolean = false) {
             val origin = center + x * (slice.centerPx + slice.imageOffsetPx * scale) + normal * (depth * fit) + up * (lift * fit) -
                 x * (image.width / 2.0 * scale) + y * (image.height / 2.0 * scale)
-            drawDioramaPlane(image,view,origin,x * scale,y * -scale,alpha.toFloat(),color,additive)
+            drawDioramaPlane(image,view,origin,x * scale,y * -scale,alpha.toFloat(),color,additive,fog)
         }
         // Three sorts by renderOrder: all17 glow, all18 soul, then all19 bodies.
         // Rendering three layers per unit changes overlapping ghosts and halos.

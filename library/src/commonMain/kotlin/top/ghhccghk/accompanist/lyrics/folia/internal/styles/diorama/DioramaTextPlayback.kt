@@ -18,8 +18,9 @@ internal data class DioramaPlaybackLine(val core: DioramaCoreLine, val text: Dio
 /** Core objects -> once-prepared full-shaped text -> media follower -> actual
  * projective three-layer drawing. Original weighted shot picker uses actual
  * source word timings and optional explicit metadata; overrides are calibration.
- * Normal neighbour window is integrated; cross-song flight, depth testing and
- * fog remain separate work. Near/far clipping is shared by all text layers. */
+ * Normal neighbour window and optional host-color fragment fog are integrated;
+ * cross-song flight and depth testing remain separate. Near/far clipping and
+ * optional fog are shared by all text layers. */
 internal class DioramaTextPlayback private constructor(val lines: List<DioramaPlaybackLine>,
     val camera: DioramaCameraTrack, val width: Double, val height: Double) {
     fun lyricTime(mediaSeconds: Double, offsetMillis: Int = 0): Double {
@@ -34,15 +35,15 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
     fun mediaStart(core: DioramaCoreLine, offsetMillis: Int = 0) = core.lyric.start+offsetMillis/1000.0
     fun draw(scope: DrawScope, mediaSeconds: Double, primary: DioramaLinearColor,
         accent: DioramaLinearColor, offsetMillis: Int = 0, reducedMotion: Boolean = false,
-        secondary: DioramaLinearColor = primary) {
+        secondary: DioramaLinearColor = primary, fog: DioramaFog? = null) {
         val time=lyricTime(mediaSeconds,offsetMillis)
-        drawStage(scope,time,camera.perspectiveAt(time,reducedMotion),primary,accent,secondary,reducedMotion)
+        drawStage(scope,time,camera.perspectiveAt(time,reducedMotion),primary,accent,secondary,reducedMotion,fog)
     }
     /** Shared production stage; explicit view also isolates text/window parity
      * from the separately measured media follower residual in verification. */
     fun drawStage(scope: DrawScope, time: Double, view: DioramaPerspective,
         primary: DioramaLinearColor, accent: DioramaLinearColor, secondary: DioramaLinearColor = primary,
-        reducedMotion: Boolean = false) {
+        reducedMotion: Boolean = false, fog: DioramaFog? = null) {
         val index=camera.subjectIndex(time);val s=camera.subjects[index]
         // Original neighbours are transparent, depthWrite=false and order0;
         // active layers have order17/18/19. With no opaque background geometry,
@@ -54,13 +55,13 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             if(neighbor.opacity>0) {
                 val subject=camera.subjects[neighbor.index]
                 lines[neighbor.index].neighbor.draw(scope,view,subject.frame,subject.placement,
-                    neighbor.color.srgb(),neighbor.opacity.toFloat())
+                    neighbor.color.srgb(),neighbor.opacity.toFloat(),fog)
             }
         }
         val activeDelta=dioramaComposeLocal(s.frame,s.placement.offsetR,s.placement.offsetU,0.0)-view.eye
         lines[index].text.draw(scope,time,view,s.frame,s.placement,
             primary,accent,if(reducedMotion)DioramaUnitTuning(soul=0.0)else DioramaUnitTuning(),
-            life=dioramaTextLife(sqrt(activeDelta.dot(activeDelta))))
+            life=dioramaTextLife(sqrt(activeDelta.dot(activeDelta))),fog=fog)
     }
     companion object {
         fun prepare(core: SyncedLyrics, style: TextStyle, measurer: TextMeasurer,

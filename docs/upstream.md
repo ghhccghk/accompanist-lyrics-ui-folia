@@ -1700,3 +1700,18 @@ unit paints and halo-pass boundaries; camera preparation already had checkpoints
 This is independent cooperative cancellation plumbing, not source animation
 logic. Single shaping/blur operations remain atomic; no latency/heap guarantee.
 Verification and unchanged stage hashes are in the same raster-window evidence.
+
+### Diorama normal text fragment fog (2026-11-18)
+Pinned cc6226e4 dioramaSceneConstants.ts:FOG_NEAR/FOG_FAR and DioramaScene.tsx
+scene-owned fog -> DioramaFog.kt, wired through DioramaPlaneDrawing.kt to full
+neighbour lines and active base/halo/soul transforms. Installed Three0.185.1
+meshbasic.glsl.js / fog_vertex / fog_fragment / UniformsUtils output-space
+semantics: view-axis depth, smoothstep12/30, encoded RGB mix after colorspace,
+unchanged alpha. Three copyright/MIT retained in LICENSES/MIT-three-0.185.1.txt.
+Independent Canvas implementation uses 32 bounded gradient intervals and an
+alpha mask; half-float extended-sRGB stops prevent extra byte quantization.
+No source renderer, texture, frame clock or palette damping copied; host colour
+is optional internally. Actual Three54 full-core-stage /56 shared-mask frames,
+1221 scalar controls, initial precision failure and108 unchanged old native
+hashes: verification/diorama-fog. Not full camera/depth/flight/background or final
+visual/Android/performance acceptance; Diorama stays unpublished.

@@ -23,7 +23,7 @@ import kotlin.test.*
 
 @OptIn(ExperimentalTestApi::class)
 class DioramaNeighborStageTest {
-    private fun rows(file:String)=File("../verification/diorama-fixtures/neighbors-v1/$file.tsv").readLines()
+    private fun rows(file:String,family:String="neighbors")=File("../verification/diorama-fixtures/$family-v1/$file.tsv").readLines()
         .filterNot { it.isBlank()||it.startsWith('#') }.map { it.split('\t') }
 
     @Test fun originalSingleSegmentWindows() {
@@ -39,9 +39,12 @@ class DioramaNeighborStageTest {
 
     @Test fun narrow()=capture(380)
     @Test fun wide()=capture(800)
-    private fun capture(width:Int)=runDesktopComposeUiTest(width=width,height=600) {
-        val cases=rows("frames").filter{it[2].toInt()==width}
-        val controls=rows("neighbors").groupBy{it[0]}
+    @Test fun fogNarrow()=capture(380,true)
+    @Test fun fogWide()=capture(800,true)
+    private fun capture(width:Int,withFog:Boolean=false)=runDesktopComposeUiTest(width=width,height=600) {
+        val family=if(withFog)"fog" else "neighbors"
+        val cases=rows("frames",family).filter{it[2].toInt()==width}
+        val controls=rows("neighbors",family).groupBy{it[0]}
         // Actual Three conversions below are independently checked against each
         // original material row; constants are input palette, never geometry.
         fun linear(c:Int):Double {val s=c/255.0;return if(s<=.04045)s/12.92 else ((s+.055)/1.055).pow(2.4)}
@@ -78,16 +81,17 @@ class DioramaNeighborStageTest {
                     // Original fixture stores LYRIC time. Build the media input
                     // using the public inverse before calling the bridge.
                     val time=playback.lyricTime(row[5].toDouble()+offset/1000.0,offset)
-                    if(before) {
+                    if(before && !withFog) {
                         // Exact former production stage: only current active
                         // text; no source geometry, no neighbour placeholder.
                         val i=playback.camera.subjectIndex(time);val s=playback.camera.subjects[i]
                         playback.lines[i].text.draw(this,time,view,s.frame,s.placement,body,accent)
-                    }else playback.drawStage(this,time,view,body,accent,secondary,reduced)
+                    }else playback.drawStage(this,time,view,body,accent,secondary,reduced,
+                        fog=if(withFog&&!before)DioramaFog(Color(0xff162435))else null)
                 }
             }
         }
-        val out=File("../build/verification/diorama-neighbors-kotlin").apply{mkdirs()}
+        val out=File("../build/verification/diorama-$family-kotlin").apply{mkdirs()}
         out.resolve("complete-$width.txt").delete()
         fun pixels():IntArray {waitForIdle();val image=captureToImage();return IntArray(image.width*image.height).also{image.readPixels(it)}}
         val captures=mutableMapOf<Int,IntArray>();var geometryPeak=0.0
@@ -125,6 +129,6 @@ class DioramaNeighborStageTest {
         runOnIdle{reduced=true};pixels();runOnIdle{reduced=false};assertTrue(frozen.contentEquals(pixels()),"setting restore")
         runOnIdle{mounted=false};pixels();assertNull(prepared)
         runOnIdle{mounted=true};assertTrue(frozen.contentEquals(pixels()),"unmount/remount")
-        out.resolve("complete-$width.txt").writeText("frames=${cases.size} geometryPeak=$geometryPeak originalGate=1e-9\nActual core stage, fixed source view; not original CameraRig, fog or device acceptance\n")
+        out.resolve("complete-$width.txt").writeText("frames=${cases.size} geometryPeak=$geometryPeak originalGate=1e-9\nActual core stage, fixed source view; fragmentFog=$withFog; not full original CameraRig, scene or device acceptance\n")
     }
 }

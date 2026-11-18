@@ -45,7 +45,7 @@ internal fun dioramaClipPlane(view: DioramaPerspective, origin: DioramaVec,
  * retain the old draw path exactly, avoiding a gratuitous extra raster clip. */
 internal fun DrawScope.drawDioramaPlane(image: ImageBitmap, view: DioramaPerspective,
     origin: DioramaVec, x: DioramaVec, y: DioramaVec, alpha: Float = 1f,
-    color: Color = Color.White, additive: Boolean = false) {
+    color: Color = Color.White, additive: Boolean = false, fog: DioramaFog? = null) {
     if(alpha<=0)return
     val clip=dioramaClipPlane(view,origin,x,y,image.width.toDouble(),image.height.toDouble())
     if(clip.points.size<3)return
@@ -56,8 +56,11 @@ internal fun DrawScope.drawDioramaPlane(image: ImageBitmap, view: DioramaPerspec
         this[0,3]=h[6].toFloat();this[1,3]=h[7].toFloat();this[3,3]=h[8].toFloat()
     }
     withTransform({transform(matrix)}) {
-        fun body()=drawImage(image,alpha=alpha,colorFilter=ColorFilter.tint(color),
-            blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver)
+        fun body() {
+            if(fog==null)drawImage(image,alpha=alpha,colorFilter=ColorFilter.tint(color),
+                blendMode=if(additive)BlendMode.Plus else BlendMode.SrcOver)
+            else drawDioramaFogMask(image,view,origin,x,y,alpha,color,additive,fog)
+        }
         if(!clip.needsClip)body()else {
             val path=Path().apply {
                 moveTo(clip.points.first().x.toFloat(),clip.points.first().y.toFloat())

@@ -1,0 +1,10 @@
+Initial scalar test: originalThreeScalarUniformsAndBoundedBrushInterpolation
+expected 0.4803968568233363
+actual   0.47843137383461
+unchanged absolute gate 0.0019617843137254903 (.5/255+1e-6)
+Assertion: encoded fragment RGB, NOT linear-color fog.
+Full original failed XML, source test and implementation retained under
+.work/diorama-fog-initial-failure; first build log .work/diorama-fog-first.log.
+Cause: input endpoint byte packing followed by another byte-packed mix output.
+Fix retains original expectations and gates; extended-sRGB half-float stops
+avoid the second whole-byte rounding. Exact raw-algebra checks supplement it.

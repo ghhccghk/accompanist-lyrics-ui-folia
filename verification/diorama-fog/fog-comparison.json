@@ -1,0 +1,2180 @@
+{
+  "scope": "Actual original single-segment window/visible lines/raster/material functions and Three text composition. Frozen source camera; analytic source-unit charges injected at delta0, life original, breath1/audio0. Original scene fog attached directly to Three scene at source12/30, current bg#162435, actual MeshBasicMaterial fragment shader. NO full React CameraRig, damped theme transitions, background, opaque-depth or cross-song transition acceptance.",
+  "conditions_sha256": "b99f8b6ba1da8ff18ee39e0faca35fb66e0948f910c4e4caf65fd53b0b242eff",
+  "mask": "Identical source/before/after union, EVERY nonbackground pixel; no alignment, threshold, alpha removal or frame filtering.",
+  "summary": {
+    "before": {
+      "mean_foreground_mae": 12.221155138932206,
+      "worst_frame": 28.49701314217443,
+      "local_worst": 46.2766761095373
+    },
+    "after": {
+      "mean_foreground_mae": 3.742277714556562,
+      "worst_frame": 10.485979670522257,
+      "local_worst": 21.879310344827587
+    }
+  },
+  "frames": [
+    {
+      "file": "latin-380-0-5.2.png",
+      "source_bounds": [
+        0,
+        210,
+        302,
+        322
+      ],
+      "before_bounds": [
+        0,
+        211,
+        324,
+        323
+      ],
+      "after_bounds": [
+        0,
+        211,
+        324,
+        323
+      ],
+      "source_pixels": 6828,
+      "after_pixels": 6236,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-380-0-5.2.png": "a5f8328f26d3f12087e5aaae587004c0bb6034b42010a4066acde05d736e282b",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-380-0-5.2.png": "fe805eff8c59a64bec3abf9c16ea2f01d7e794e24c0e3edcefb6cc800c2fbc55",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-380-0-5.2.png": "efdb6cca75252ed162090a6533eb17650220311d77dd7751cd5c4eb6ab63c7d8"
+      },
+      "before": {
+        "foreground_mae": 6.314763101554501,
+        "full_mae": 0.1983611111111111,
+        "worst64": 9.847424684159378,
+        "channel_peak": 78
+      },
+      "after": {
+        "foreground_mae": 5.95778646560551,
+        "full_mae": 0.18714766081871345,
+        "worst64": 9.847424684159378,
+        "channel_peak": 78
+      }
+    },
+    {
+      "file": "latin-380-0-14.png",
+      "source_bounds": [
+        90,
+        277,
+        228,
+        310
+      ],
+      "before_bounds": [
+        90,
+        267,
+        255,
+        310
+      ],
+      "after_bounds": [
+        90,
+        267,
+        255,
+        310
+      ],
+      "source_pixels": 1708,
+      "after_pixels": 1509,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-380-0-14.png": "ed537434e82993c86420bb957d0f9d807d77e379989ae173922d583f67298783",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-380-0-14.png": "6b48b1c884d0bb83c3051dc464a0ef93e04fd7143d57d8cc994c8beebee74539",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-380-0-14.png": "8c1a49fcad509a0404f6b3cc27ef069642291f401adffc9e3625e4c9bb1fd341"
+      },
+      "before": {
+        "foreground_mae": 13.980722046968104,
+        "full_mae": 0.11662865497076023,
+        "worst64": 17.134248665141115,
+        "channel_peak": 97
+      },
+      "after": {
+        "foreground_mae": 10.485979670522257,
+        "full_mae": 0.08747514619883041,
+        "worst64": 12.441938178780283,
+        "channel_peak": 89
+      }
+    },
+    {
+      "file": "latin-380-0-36.png",
+      "source_bounds": [
+        151,
+        296,
+        174,
+        303
+      ],
+      "before_bounds": [
+        150,
+        295,
+        202,
+        304
+      ],
+      "after_bounds": [
+        151,
+        296,
+        174,
+        303
+      ],
+      "source_pixels": 132,
+      "after_pixels": 115,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-380-0-36.png": "2d9b3fe933238d8bb55b7dda90d12680fd9557ce324bb6eb1b35118a203feca3",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-380-0-36.png": "557a2ea1d892ee6ddcf98f774439232e3dfb8f5a74bd83cff80b981c22af4d14",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-380-0-36.png": "2a41aec4f3c3608ea4a87f90e78348e61093d17cb8e7af70f9de066de90d1b49"
+      },
+      "before": {
+        "foreground_mae": 26.971524288107204,
+        "full_mae": 0.02354093567251462,
+        "worst64": 44.45454545454545,
+        "channel_peak": 141
+      },
+      "after": {
+        "foreground_mae": 1.9597989949748744,
+        "full_mae": 0.0017105263157894738,
+        "worst64": 2.074468085106383,
+        "channel_peak": 15
+      }
+    },
+    {
+      "file": "latin-380-3-5.2.png",
+      "source_bounds": [
+        32,
+        208,
+        352,
+        323
+      ],
+      "before_bounds": [
+        32,
+        208,
+        362,
+        323
+      ],
+      "after_bounds": [
+        32,
+        208,
+        362,
+        323
+      ],
+      "source_pixels": 8192,
+      "after_pixels": 7921,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-380-3-5.2.png": "539df2e49fc230099086f5e804105b8b2b485efcc8e19b6173b482efec91a3da",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-380-3-5.2.png": "03917e2fbc0477dbb4c598a16b973d71bce6dcd241f5106133c73764d61f6947",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-380-3-5.2.png": "978d079d0f553ed789ea2b6c14744fc1a21a5dba6bf1ccb08b3d43ff6f386c56"
+      },
+      "before": {
+        "foreground_mae": 5.938794293603314,
+        "full_mae": 0.22640350877192983,
+        "worst64": 14.233333333333333,
+        "channel_peak": 87
+      },
+      "after": {
+        "foreground_mae": 5.7786853811934344,
+        "full_mae": 0.2202997076023392,
+        "worst64": 14.233333333333333,
+        "channel_peak": 87
+      }
+    },
+    {
+      "file": "latin-380-3-14.png",
+      "source_bounds": [
+        0,
+        271,
+        251,
+        359
+      ],
+      "before_bounds": [
+        0,
+        269,
+        254,
+        359
+      ],
+      "after_bounds": [
+        0,
+        270,
+        254,
+        359
+      ],
+      "source_pixels": 3784,
+      "after_pixels": 2904,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-380-3-14.png": "a67b67c0d2401fa58c239ecfaf928f0620dea0ff8532d9b4c63f1f858b62c058",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-380-3-14.png": "fd0447956d314e8d8c201850f67320f0c74deb65f150d851f73edfc64f8423f0",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-380-3-14.png": "60fea86e92fbc57e6aa7eefb97e710234391610b43a363e3f18f2741754dd842"
+      },
+      "before": {
+        "foreground_mae": 10.217886593556065,
+        "full_mae": 0.17572076023391814,
+        "worst64": 19.576655052264808,
+        "channel_peak": 100
+      },
+      "after": {
+        "foreground_mae": 9.017342514664627,
+        "full_mae": 0.15507456140350878,
+        "worst64": 15.064459930313589,
+        "channel_peak": 91
+      }
+    },
+    {
+      "file": "latin-380-3-36.png",
+      "source_bounds": [
+        133,
+        294,
+        209,
+        328
+      ],
+      "before_bounds": [
+        134,
+        293,
+        214,
+        328
+      ],
+      "after_bounds": [
+        134,
+        294,
+        208,
+        328
+      ],
+      "source_pixels": 512,
+      "after_pixels": 366,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-380-3-36.png": "81a8873260f6a9293e789287f8e4b6c3e16f1605cda3ef64b06c8b9f23e122ec",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-380-3-36.png": "cd85f9578bf5b79a70030562d9ba2c2c2a497b62cf1102a6ced1b46d14925163",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-380-3-36.png": "42d1452daa023f8472304f7770706e74dbca8f1b4f0bf165020958c1dbcf2e83"
+      },
+      "before": {
+        "foreground_mae": 21.333887043189367,
+        "full_mae": 0.056328947368421055,
+        "worst64": 45.8187134502924,
+        "channel_peak": 140
+      },
+      "after": {
+        "foreground_mae": 2.5636766334440755,
+        "full_mae": 0.006769005847953216,
+        "worst64": 3.768421052631579,
+        "channel_peak": 15
+      }
+    },
+    {
+      "file": "latin-380-7-5.2.png",
+      "source_bounds": [
+        138,
+        281,
+        380,
+        325
+      ],
+      "before_bounds": [
+        137,
+        280,
+        380,
+        326
+      ],
+      "after_bounds": [
+        137,
+        280,
+        380,
+        326
+      ],
+      "source_pixels": 5268,
+      "after_pixels": 5071,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-380-7-5.2.png": "ac5aa11c8452adb5f3a4adcd8259ad8f29609b15f29a14a3fdf763f634070c48",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-380-7-5.2.png": "4160bd8085dc54df1d23f4508d42a99a9ca10897c8cf19b64f96c39622fce149",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-380-7-5.2.png": "4160bd8085dc54df1d23f4508d42a99a9ca10897c8cf19b64f96c39622fce149"
+      },
+      "before": {
+        "foreground_mae": 6.3771565975353175,
+        "full_mae": 0.15509356725146198,
+        "worst64": 11.867378727191811,
+        "channel_peak": 82
+      },
+      "after": {
+        "foreground_mae": 6.3771565975353175,
+        "full_mae": 0.15509356725146198,
+        "worst64": 11.867378727191811,
+        "channel_peak": 82
+      }
+    },
+    {
+      "file": "latin-380-7-14.png",
+      "source_bounds": [
+        113,
+        292,
+        357,
+        370
+      ],
+      "before_bounds": [
+        114,
+        292,
+        357,
+        369
+      ],
+      "after_bounds": [
+        114,
+        292,
+        357,
+        369
+      ],
+      "source_pixels": 3607,
+      "after_pixels": 2590,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-380-7-14.png": "8f9f51f1056b153752c5627314d3dfb05e10c6a3d534d769b85abb20c441a163",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-380-7-14.png": "6d605b3882204ddf7c5353641b80f1aab323ea6d40589e737539ff43d024147f",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-380-7-14.png": "6c0984901777b58f647b03d93c96132441f71231582c384a8115dd981fb640f2"
+      },
+      "before": {
+        "foreground_mae": 10.167806034089873,
+        "full_mae": 0.16308625730994153,
+        "worst64": 23.272988505747126,
+        "channel_peak": 106
+      },
+      "after": {
+        "foreground_mae": 9.738948135994896,
+        "full_mae": 0.1562076023391813,
+        "worst64": 21.879310344827587,
+        "channel_peak": 97
+      }
+    },
+    {
+      "file": "latin-380-7-36.png",
+      "source_bounds": [
+        180,
+        297,
+        273,
+        326
+      ],
+      "before_bounds": [
+        179,
+        297,
+        272,
+        326
+      ],
+      "after_bounds": [
+        180,
+        298,
+        272,
+        326
+      ],
+      "source_pixels": 394,
+      "after_pixels": 265,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-380-7-36.png": "061f30daa43a7421c915691a10c600305e9e18383915d7ff1756b251341c211e",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-380-7-36.png": "c141b48de806b4a39fc22fd3890ee3ecf9f38b43a1f75715425d77b89b4e1fe0",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-380-7-36.png": "ab0878d74eedbcd82732818e3cd4d0f1741a755d0aad07f3a2e83cb0133bd228"
+      },
+      "before": {
+        "foreground_mae": 21.315640481245577,
+        "full_mae": 0.044033625730994154,
+        "worst64": 27.69433465085639,
+        "channel_peak": 140
+      },
+      "after": {
+        "foreground_mae": 2.699221514508139,
+        "full_mae": 0.005576023391812865,
+        "worst64": 3.9956709956709955,
+        "channel_peak": 17
+      }
+    },
+    {
+      "file": "latin-800-0-5.2.png",
+      "source_bounds": [
+        15,
+        206,
+        693,
+        345
+      ],
+      "before_bounds": [
+        13,
+        206,
+        693,
+        348
+      ],
+      "after_bounds": [
+        13,
+        206,
+        693,
+        348
+      ],
+      "source_pixels": 34365,
+      "after_pixels": 34903,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-800-0-5.2.png": "b9785c11e96912910c4cb88ebab66e8f3d100761f39d1779629898626099fed8",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-800-0-5.2.png": "57bdf3364ae6524460cad27d8cd0d4f19d746161d323f4f9903a2473c3af4be9",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-800-0-5.2.png": "c89d28d6dd5da298741c95cfae5ea3c10b47ad487c4a4845ca78ae3825d6c8ee"
+      },
+      "before": {
+        "foreground_mae": 2.836874795684864,
+        "full_mae": 0.21695,
+        "worst64": 14.318840579710145,
+        "channel_peak": 59
+      },
+      "after": {
+        "foreground_mae": 2.5262885474555956,
+        "full_mae": 0.19319791666666666,
+        "worst64": 14.318840579710145,
+        "channel_peak": 59
+      }
+    },
+    {
+      "file": "latin-800-0-14.png",
+      "source_bounds": [
+        230,
+        272,
+        503,
+        319
+      ],
+      "before_bounds": [
+        230,
+        264,
+        503,
+        320
+      ],
+      "after_bounds": [
+        230,
+        265,
+        503,
+        320
+      ],
+      "source_pixels": 6722,
+      "after_pixels": 6517,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-800-0-14.png": "ff90cc36c4c586daddc9ecf79bd93793dd99dcfa8c45297e8aa5380c7ed29ebb",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-800-0-14.png": "25c0a76086bc3789ef2cef4c1e9942ef81a8114474ef8886072b943546a81871",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-800-0-14.png": "3baf5c79c385480d0b528b3de9a9cfa88931b5fad8ea954c5f38ff16c2d04b22"
+      },
+      "before": {
+        "foreground_mae": 9.29462677386758,
+        "full_mae": 0.14691319444444445,
+        "worst64": 14.15916149068323,
+        "channel_peak": 86
+      },
+      "after": {
+        "foreground_mae": 5.446201836474671,
+        "full_mae": 0.08608402777777778,
+        "worst64": 7.545109211775879,
+        "channel_peak": 78
+      }
+    },
+    {
+      "file": "latin-800-0-36.png",
+      "source_bounds": [
+        333,
+        292,
+        381,
+        306
+      ],
+      "before_bounds": [
+        331,
+        290,
+        439,
+        308
+      ],
+      "after_bounds": [
+        333,
+        292,
+        434,
+        306
+      ],
+      "source_pixels": 515,
+      "after_pixels": 534,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-800-0-36.png": "40ff6e044037fbfd8abd3986f09212ef5198259ff48252f1144e41ce71c9de49",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-800-0-36.png": "0f376e982e46874f34187eed04d8f3ef146e2a89bfc5425182e6db8683c644da",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-800-0-36.png": "ff0d5ac0f98810101787a264948b8f06088169f04513751687052056b6562c4b"
+      },
+      "before": {
+        "foreground_mae": 25.475506445672192,
+        "full_mae": 0.04803194444444445,
+        "worst64": 43.39544513457557,
+        "channel_peak": 140
+      },
+      "after": {
+        "foreground_mae": 1.058195211786372,
+        "full_mae": 0.0019951388888888887,
+        "worst64": 1.2741935483870968,
+        "channel_peak": 15
+      }
+    },
+    {
+      "file": "latin-800-3-5.2.png",
+      "source_bounds": [
+        99,
+        197,
+        782,
+        351
+      ],
+      "before_bounds": [
+        97,
+        197,
+        782,
+        351
+      ],
+      "after_bounds": [
+        97,
+        197,
+        782,
+        351
+      ],
+      "source_pixels": 32262,
+      "after_pixels": 32954,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-800-3-5.2.png": "abe8d1813e4c0b91a940ad61c5e41362eb8b06f7ff91b89fa43575926fcebd40",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-800-3-5.2.png": "cee2e466c81c420d02a525647aa76727b806e6b9ce3ffa0467ed718aea7aa4c9",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-800-3-5.2.png": "605bb0ee8ccd4854f8df706c536142a318ef8e52c71a2cc15207eb31a89f231a"
+      },
+      "before": {
+        "foreground_mae": 2.750380297691256,
+        "full_mae": 0.19838263888888888,
+        "worst64": 11.880952380952381,
+        "channel_peak": 67
+      },
+      "after": {
+        "foreground_mae": 2.5741147247414937,
+        "full_mae": 0.18566875,
+        "worst64": 11.880952380952381,
+        "channel_peak": 67
+      }
+    },
+    {
+      "file": "latin-800-3-14.png",
+      "source_bounds": [
+        0,
+        265,
+        560,
+        378
+      ],
+      "before_bounds": [
+        1,
+        263,
+        560,
+        377
+      ],
+      "after_bounds": [
+        1,
+        263,
+        560,
+        377
+      ],
+      "source_pixels": 17021,
+      "after_pixels": 15152,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-800-3-14.png": "eb08a31ee004a34dedb9df222563dce768a84274691839fe780904acfec5f9cd",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-800-3-14.png": "d6aa2f4440a1cf990882e2e68f756725df59eb86d320c4c727cb97bac7f9673b",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-800-3-14.png": "824ed230bffdb63fa72c60da72301c72deb781c9e58a2edb91151537b5ce35f8"
+      },
+      "before": {
+        "foreground_mae": 5.7897851902276685,
+        "full_mae": 0.21262986111111112,
+        "worst64": 13.945430107526882,
+        "channel_peak": 98
+      },
+      "after": {
+        "foreground_mae": 4.563459647530444,
+        "full_mae": 0.16759305555555556,
+        "worst64": 11.309067688378033,
+        "channel_peak": 93
+      }
+    },
+    {
+      "file": "latin-800-3-36.png",
+      "source_bounds": [
+        302,
+        288,
+        460,
+        334
+      ],
+      "before_bounds": [
+        302,
+        286,
+        460,
+        334
+      ],
+      "after_bounds": [
+        302,
+        288,
+        460,
+        334
+      ],
+      "source_pixels": 1912,
+      "after_pixels": 1533,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-800-3-36.png": "ae21d5deaae77ba8ecf2cacc4b5c1abff5e460832e93a55398e59cb809c87fd4",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-800-3-36.png": "94f112442e2a66816a8866de7cd5745ed40155b8957f2899a4296519696e4d0f",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-800-3-36.png": "b6b7912ad8733bc106a28a56ecc258d82b64de0007e37b1130c2464b44e1052c"
+      },
+      "before": {
+        "foreground_mae": 23.666218236173393,
+        "full_mae": 0.10994930555555556,
+        "worst64": 42.858171346292295,
+        "channel_peak": 171
+      },
+      "after": {
+        "foreground_mae": 1.5014947683109119,
+        "full_mae": 0.006975694444444444,
+        "worst64": 2.4019607843137254,
+        "channel_peak": 13
+      }
+    },
+    {
+      "file": "latin-800-7-5.2.png",
+      "source_bounds": [
+        240,
+        259,
+        800,
+        347
+      ],
+      "before_bounds": [
+        239,
+        259,
+        800,
+        349
+      ],
+      "after_bounds": [
+        239,
+        259,
+        800,
+        349
+      ],
+      "source_pixels": 20866,
+      "after_pixels": 21093,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-800-7-5.2.png": "b550cede3361274ec5e3e652f12cf1ee0caeaf1944f0e69fcc6ebb7d7727db7a",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-800-7-5.2.png": "8ed3ad016170daaf4fd01b0cc25d5bc408c3de0e785beaab518c3ebd911fbe00",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-800-7-5.2.png": "8ed3ad016170daaf4fd01b0cc25d5bc408c3de0e785beaab518c3ebd911fbe00"
+      },
+      "before": {
+        "foreground_mae": 2.9883724442028328,
+        "full_mae": 0.1374277777777778,
+        "worst64": 8.777777777777779,
+        "channel_peak": 70
+      },
+      "after": {
+        "foreground_mae": 2.9883724442028328,
+        "full_mae": 0.1374277777777778,
+        "worst64": 8.777777777777779,
+        "channel_peak": 70
+      }
+    },
+    {
+      "file": "latin-800-7-14.png",
+      "source_bounds": [
+        203,
+        283,
+        718,
+        386
+      ],
+      "before_bounds": [
+        204,
+        284,
+        717,
+        386
+      ],
+      "after_bounds": [
+        204,
+        284,
+        717,
+        386
+      ],
+      "source_pixels": 13259,
+      "after_pixels": 11528,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-800-7-14.png": "28724c4b1bafb289e8a0fa3c4df84969d810271d087e57906578f3c0ca760b9e",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-800-7-14.png": "eaa64ac97e591e6f91ca0e0c1ffe77678d4c5b4c6b37090c6a7b297934b3907f",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-800-7-14.png": "359db545830a411de4fba9f3f9c4adaaba8eab0129c7903508d1e3705833c473"
+      },
+      "before": {
+        "foreground_mae": 5.854870234295752,
+        "full_mae": 0.1643388888888889,
+        "worst64": 14.018428184281843,
+        "channel_peak": 96
+      },
+      "after": {
+        "foreground_mae": 5.266434102773448,
+        "full_mae": 0.14782222222222222,
+        "worst64": 12.60049019607843,
+        "channel_peak": 88
+      }
+    },
+    {
+      "file": "latin-800-7-36.png",
+      "source_bounds": [
+        366,
+        295,
+        515,
+        334
+      ],
+      "before_bounds": [
+        365,
+        294,
+        515,
+        334
+      ],
+      "after_bounds": [
+        366,
+        295,
+        515,
+        334
+      ],
+      "source_pixels": 1392,
+      "after_pixels": 1095,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\latin-800-7-36.png": "ba425e3a286f1bb27c8e1c83c9bbc2c5c7b0fbb68d1e8f84033240790704aeb7",
+        "build\\verification\\diorama-fog-kotlin\\before-latin-800-7-36.png": "1999a9ae20e639d34b706a3393d865d96bf5814a1175fd93c9100d4aba14c0b7",
+        "build\\verification\\diorama-fog-kotlin\\after-latin-800-7-36.png": "0390feb8349cfa2b5a127557f42023307859599cabe86646adedc59cd344388d"
+      },
+      "before": {
+        "foreground_mae": 24.75426964034559,
+        "full_mae": 0.08555694444444445,
+        "worst64": 36.1894858463316,
+        "channel_peak": 172
+      },
+      "after": {
+        "foreground_mae": 1.686759091822383,
+        "full_mae": 0.005829861111111111,
+        "worst64": 3.4,
+        "channel_peak": 14
+      }
+    },
+    {
+      "file": "arabic-380-0-5.2.png",
+      "source_bounds": [
+        0,
+        205,
+        301,
+        350
+      ],
+      "before_bounds": [
+        0,
+        205,
+        324,
+        355
+      ],
+      "after_bounds": [
+        0,
+        205,
+        324,
+        355
+      ],
+      "source_pixels": 19716,
+      "after_pixels": 21245,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-380-0-5.2.png": "cfc7874808a1f140c4efc659a1569116bbb6556e19fd8c61457b9f7801de33fd",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-380-0-5.2.png": "11b809131e02dd0684910af343ec67d9e9a860d32aa208fca4a8c38b6bfb09b3",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-380-0-5.2.png": "1bb0c09c945f2bed44bfed1387feefdc099aa1830abc415401eabd58e8af1854"
+      },
+      "before": {
+        "foreground_mae": 2.8546178513351266,
+        "full_mae": 0.2746067251461988,
+        "worst64": 6.879336349924586,
+        "channel_peak": 70
+      },
+      "after": {
+        "foreground_mae": 2.6098724904633808,
+        "full_mae": 0.251062865497076,
+        "worst64": 5.521873074553296,
+        "channel_peak": 70
+      }
+    },
+    {
+      "file": "arabic-380-0-14.png",
+      "source_bounds": [
+        94,
+        272,
+        229,
+        319
+      ],
+      "before_bounds": [
+        95,
+        264,
+        255,
+        321
+      ],
+      "after_bounds": [
+        95,
+        264,
+        255,
+        321
+      ],
+      "source_pixels": 3455,
+      "after_pixels": 3465,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-380-0-14.png": "06b18aa1b33a77e97c40875a4d112d31fd6d8fd1682804b4a4f983d26742a377",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-380-0-14.png": "2a9091cd4333a7bd45beab645fc0c94ccfa90a6255687bd982a207b048abfc4d",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-380-0-14.png": "e48cebd375f2691423b793e4eda867387b675eb632ee13e8172ffd7e3453dda7"
+      },
+      "before": {
+        "foreground_mae": 8.516358102967283,
+        "full_mae": 0.14728070175438596,
+        "worst64": 12.492063492063492,
+        "channel_peak": 77
+      },
+      "after": {
+        "foreground_mae": 5.135514413728971,
+        "full_mae": 0.08881286549707602,
+        "worst64": 9.690854119425548,
+        "channel_peak": 72
+      }
+    },
+    {
+      "file": "arabic-380-0-36.png",
+      "source_bounds": [
+        178,
+        292,
+        204,
+        306
+      ],
+      "before_bounds": [
+        152,
+        291,
+        206,
+        308
+      ],
+      "after_bounds": [
+        152,
+        293,
+        204,
+        306
+      ],
+      "source_pixels": 249,
+      "after_pixels": 262,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-380-0-36.png": "4bbd1de81712916cace07d5d4aafda6fed976d4ce94bbb61767a8b8b71e0b2c3",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-380-0-36.png": "64e80aa28aa2a83a7ccaf6563163907ff002ef7b0966b840bf577edd0bd0ecc4",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-380-0-36.png": "26a893e974c767a8bfbaa39bc7c1e0d56e07195dd990f909aeb57f8f87272526"
+      },
+      "before": {
+        "foreground_mae": 26.232428670842033,
+        "full_mae": 0.05511111111111111,
+        "worst64": 27.992497320471596,
+        "channel_peak": 139
+      },
+      "after": {
+        "foreground_mae": 0.7828810020876826,
+        "full_mae": 0.001644736842105263,
+        "worst64": 0.8928571428571429,
+        "channel_peak": 12
+      }
+    },
+    {
+      "file": "arabic-380-3-5.2.png",
+      "source_bounds": [
+        41,
+        207,
+        376,
+        354
+      ],
+      "before_bounds": [
+        42,
+        207,
+        380,
+        358
+      ],
+      "after_bounds": [
+        42,
+        207,
+        380,
+        358
+      ],
+      "source_pixels": 19908,
+      "after_pixels": 21397,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-380-3-5.2.png": "04ed762bf976fab96fd8d6cc812e85517a62402263bd89c0d263f9825b28a6b2",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-380-3-5.2.png": "10b044eabdb51fba7cc306eb2bc914d13c7276d631b16a96adfd961cf349fdc3",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-380-3-5.2.png": "6a9df773355d056aa30a99e5f6c2ce44b0711effb524d6f1c5115b8941437970"
+      },
+      "before": {
+        "foreground_mae": 2.838440994069983,
+        "full_mae": 0.2750175438596491,
+        "worst64": 7.529244747302669,
+        "channel_peak": 78
+      },
+      "after": {
+        "foreground_mae": 2.709474446607216,
+        "full_mae": 0.2625219298245614,
+        "worst64": 5.982704402515723,
+        "channel_peak": 78
+      }
+    },
+    {
+      "file": "arabic-380-3-14.png",
+      "source_bounds": [
+        0,
+        268,
+        260,
+        367
+      ],
+      "before_bounds": [
+        0,
+        269,
+        261,
+        366
+      ],
+      "after_bounds": [
+        0,
+        269,
+        261,
+        366
+      ],
+      "source_pixels": 6946,
+      "after_pixels": 6349,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-380-3-14.png": "1012714f064a3a0fed2b114b8ed03d99db1f7e6025e0a093bc11170c839d0a84",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-380-3-14.png": "a9eb7efb4057683929479d42868bf07dfee1bae560a0e91f130d901480e529ac",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-380-3-14.png": "3b7c1091d3a5e4b2e7336b051139f70ddf0e955eaf512c70e015a1635323053a"
+      },
+      "before": {
+        "foreground_mae": 5.944046635453962,
+        "full_mae": 0.18932309941520467,
+        "worst64": 13.002583979328165,
+        "channel_peak": 77
+      },
+      "after": {
+        "foreground_mae": 4.554438630313045,
+        "full_mae": 0.14506286549707603,
+        "worst64": 9.146317829457365,
+        "channel_peak": 73
+      }
+    },
+    {
+      "file": "arabic-380-3-36.png",
+      "source_bounds": [
+        133,
+        293,
+        216,
+        331
+      ],
+      "before_bounds": [
+        133,
+        291,
+        218,
+        330
+      ],
+      "after_bounds": [
+        133,
+        293,
+        216,
+        330
+      ],
+      "source_pixels": 937,
+      "after_pixels": 788,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-380-3-36.png": "38e14b0d52879b571c8d68e8667278398ac987796bcb6e24e71a394b37b25d0a",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-380-3-36.png": "884ad8e179af3befedbef83a6b30848330066c7ec0f8e64b5a48fb04bc5a71b8",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-380-3-36.png": "accd9f40df6ac7b63e7d5dba38b2a6d6dec7ac89bf9f956f658c19d82617f589"
+      },
+      "before": {
+        "foreground_mae": 25.371738493110524,
+        "full_mae": 0.1265248538011696,
+        "worst64": 33.766146993318486,
+        "channel_peak": 141
+      },
+      "after": {
+        "foreground_mae": 1.366754617414248,
+        "full_mae": 0.006815789473684211,
+        "worst64": 2.161048689138577,
+        "channel_peak": 11
+      }
+    },
+    {
+      "file": "arabic-380-7-5.2.png",
+      "source_bounds": [
+        146,
+        247,
+        380,
+        338
+      ],
+      "before_bounds": [
+        146,
+        244,
+        380,
+        340
+      ],
+      "after_bounds": [
+        146,
+        244,
+        380,
+        340
+      ],
+      "source_pixels": 11647,
+      "after_pixels": 12148,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-380-7-5.2.png": "f0a77ff14420e0f68b6885db8a3fcbe141b841e938c3792fff635cc452141d9f",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-380-7-5.2.png": "bc6b7f536606dc954d14de746d06b8abb215661b6c63fc72816ca0170014ce34",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-380-7-5.2.png": "bc6b7f536606dc954d14de746d06b8abb215661b6c63fc72816ca0170014ce34"
+      },
+      "before": {
+        "foreground_mae": 3.123629800674151,
+        "full_mae": 0.17205994152046783,
+        "worst64": 8.275,
+        "channel_peak": 72
+      },
+      "after": {
+        "foreground_mae": 3.123629800674151,
+        "full_mae": 0.17205994152046783,
+        "worst64": 8.275,
+        "channel_peak": 72
+      }
+    },
+    {
+      "file": "arabic-380-7-14.png",
+      "source_bounds": [
+        112,
+        279,
+        356,
+        376
+      ],
+      "before_bounds": [
+        113,
+        278,
+        355,
+        376
+      ],
+      "after_bounds": [
+        113,
+        278,
+        355,
+        376
+      ],
+      "source_pixels": 6600,
+      "after_pixels": 5799,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-380-7-14.png": "1cdd2d4178edb83c7a052c78aefbf629b5db2122b84c924200a318089ce39555",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-380-7-14.png": "52661dde66a8de2dfde24bcfc67ef5a70afe8359fbfc242a90f6b73816a6b471",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-380-7-14.png": "57e4f3af1e7b8425da72ead86253f3d55e933558ddd857edc01789f47602d9a5"
+      },
+      "before": {
+        "foreground_mae": 5.48006308837301,
+        "full_mae": 0.16255116959064328,
+        "worst64": 15.735159817351597,
+        "channel_peak": 87
+      },
+      "after": {
+        "foreground_mae": 4.993543299324757,
+        "full_mae": 0.14811988304093568,
+        "worst64": 12.886986301369863,
+        "channel_peak": 83
+      }
+    },
+    {
+      "file": "arabic-380-7-36.png",
+      "source_bounds": [
+        190,
+        293,
+        272,
+        330
+      ],
+      "before_bounds": [
+        181,
+        292,
+        272,
+        329
+      ],
+      "after_bounds": [
+        181,
+        293,
+        272,
+        329
+      ],
+      "source_pixels": 676,
+      "after_pixels": 563,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-380-7-36.png": "98b18b7c3d64ffef29b9310540f2f767b7d830ebd865237d6dcad8cf98e5d936",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-380-7-36.png": "5432393bdeac72aab8108b19ec88181ed7b7efef22fe0d7a69e8296592fa88ad",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-380-7-36.png": "102dbfb86e8feb61b2f12762056b67b6a4516a42eaf9a270129aaa11d0a544f9"
+      },
+      "before": {
+        "foreground_mae": 25.26311541565779,
+        "full_mae": 0.09152339181286549,
+        "worst64": 43.09090909090909,
+        "channel_peak": 139
+      },
+      "after": {
+        "foreground_mae": 1.5799031476997578,
+        "full_mae": 0.005723684210526316,
+        "worst64": 2.8044444444444445,
+        "channel_peak": 10
+      }
+    },
+    {
+      "file": "arabic-800-0-5.2.png",
+      "source_bounds": [
+        126,
+        201,
+        575,
+        368
+      ],
+      "before_bounds": [
+        127,
+        202,
+        582,
+        374
+      ],
+      "after_bounds": [
+        127,
+        202,
+        582,
+        374
+      ],
+      "source_pixels": 37573,
+      "after_pixels": 40659,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-800-0-5.2.png": "1be51cd6d037ed5cfa7907e728ab4a15ec04201b1726dff6330d1344eddf2c61",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-800-0-5.2.png": "043638fa74466db7aa9f4659736a8068c396fbe170b75987627cf768c0fb9f9f",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-800-0-5.2.png": "83e6258bb63669f21217b4a99a73314cf4944c0a456844da40cc3d2eecc74fe7"
+      },
+      "before": {
+        "foreground_mae": 2.608288106559083,
+        "full_mae": 0.22627986111111112,
+        "worst64": 19.565656565656564,
+        "channel_peak": 76
+      },
+      "after": {
+        "foreground_mae": 2.381473832508845,
+        "full_mae": 0.20660277777777777,
+        "worst64": 19.565656565656564,
+        "channel_peak": 76
+      }
+    },
+    {
+      "file": "arabic-800-0-14.png",
+      "source_bounds": [
+        283,
+        269,
+        464,
+        326
+      ],
+      "before_bounds": [
+        284,
+        261,
+        473,
+        328
+      ],
+      "after_bounds": [
+        284,
+        261,
+        473,
+        328
+      ],
+      "source_pixels": 5663,
+      "after_pixels": 6005,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-800-0-14.png": "682d7110cd574f52695ef2bb9f423e878c23470b7a823d9e5c948dddd372408d",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-800-0-14.png": "51dd0bb6fe63010f244f7d2162029318ecabe863ff9e27f54f2c3d69897df523",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-800-0-14.png": "e0362c4c9c86ef47b70a7fef6e9431e20e1bd8bad09fadf2bf9dcc5537fa5233"
+      },
+      "before": {
+        "foreground_mae": 7.607298894885633,
+        "full_mae": 0.10277777777777777,
+        "worst64": 12.440990213010938,
+        "channel_peak": 94
+      },
+      "after": {
+        "foreground_mae": 4.069853508095605,
+        "full_mae": 0.05498541666666667,
+        "worst64": 8.928612550374208,
+        "channel_peak": 88
+      }
+    },
+    {
+      "file": "arabic-800-0-36.png",
+      "source_bounds": [
+        388,
+        290,
+        423,
+        308
+      ],
+      "before_bounds": [
+        354,
+        288,
+        426,
+        311
+      ],
+      "after_bounds": [
+        354,
+        290,
+        423,
+        308
+      ],
+      "source_pixels": 437,
+      "after_pixels": 468,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-800-0-36.png": "b3889dee7732ec85ab6e2c720073058b3520f249235cd71497d20afddfeb1bf8",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-800-0-36.png": "5f65d9c8efc85d4f229d8ad26a5092b77ebce04d292c3ab1397a59bcf9409577",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-800-0-36.png": "2a3181d6455434380492f7bb5303c13aa5befd5d6b2c06848947064a96dd8d99"
+      },
+      "before": {
+        "foreground_mae": 26.93606237816764,
+        "full_mae": 0.04797986111111111,
+        "worst64": 41.804597701149426,
+        "channel_peak": 139
+      },
+      "after": {
+        "foreground_mae": 0.6144249512670565,
+        "full_mae": 0.0010944444444444445,
+        "worst64": 0.7262910798122065,
+        "channel_peak": 10
+      }
+    },
+    {
+      "file": "arabic-800-3-5.2.png",
+      "source_bounds": [
+        206,
+        203,
+        660,
+        373
+      ],
+      "before_bounds": [
+        208,
+        203,
+        667,
+        379
+      ],
+      "after_bounds": [
+        208,
+        203,
+        667,
+        379
+      ],
+      "source_pixels": 36199,
+      "after_pixels": 39482,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-800-3-5.2.png": "5adf2c94b85704af5d0f0d1c9f5859bbe43159d9dba1616a470d9023cbf43cc8",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-800-3-5.2.png": "6e20df847049b65adae7a3e8bbbc294f0a1bc2c878ca4113a881d9d1339995df",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-800-3-5.2.png": "fecba8df750e2671c208ba036c29cbd1e03d986a35a3c4e0976aa3fd4db6a7ff"
+      },
+      "before": {
+        "foreground_mae": 2.5300641279915377,
+        "full_mae": 0.2126097222222222,
+        "worst64": 9.29559748427673,
+        "channel_peak": 79
+      },
+      "after": {
+        "foreground_mae": 2.4021882850720613,
+        "full_mae": 0.2018638888888889,
+        "worst64": 9.29559748427673,
+        "channel_peak": 79
+      }
+    },
+    {
+      "file": "arabic-800-3-14.png",
+      "source_bounds": [
+        100,
+        266,
+        495,
+        375
+      ],
+      "before_bounds": [
+        101,
+        266,
+        497,
+        375
+      ],
+      "after_bounds": [
+        101,
+        266,
+        497,
+        375
+      ],
+      "source_pixels": 14214,
+      "after_pixels": 13504,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-800-3-14.png": "5de23c76aa454b8cd0f4f3a6867bfd19c73915c9ee4fcb0dc1b20e5a17303f42",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-800-3-14.png": "de97ec7454484a8ec8474c8e34904b066d316a6f2bff1d30fe8efd493c4ae41d",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-800-3-14.png": "9a1e93623cbd967256d068b0c2bab8a3002d4d5a24fce2241d2afe1a9d97277c"
+      },
+      "before": {
+        "foreground_mae": 4.467475794354288,
+        "full_mae": 0.1365,
+        "worst64": 13.067802271209084,
+        "channel_peak": 78
+      },
+      "after": {
+        "foreground_mae": 3.2812627846720304,
+        "full_mae": 0.10025625,
+        "worst64": 8.826653306613226,
+        "channel_peak": 72
+      }
+    },
+    {
+      "file": "arabic-800-3-36.png",
+      "source_bounds": [
+        330,
+        291,
+        435,
+        333
+      ],
+      "before_bounds": [
+        331,
+        288,
+        437,
+        332
+      ],
+      "after_bounds": [
+        331,
+        291,
+        435,
+        332
+      ],
+      "source_pixels": 1571,
+      "after_pixels": 1352,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-800-3-36.png": "fb082c2e1b34837aafd6ad7e863e991aa8a990a1b839587c81cd9f7c38d47bf2",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-800-3-36.png": "7a486fcff78debfa72ad5c0652dbe3074f6e15e4c4e85bb7ee257674ac40ca99",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-800-3-36.png": "f871b38f5d82264fabf8e56aad7ff1f1af0d2642eb3d34b0276a8b5680c9102e"
+      },
+      "before": {
+        "foreground_mae": 25.40637381567614,
+        "full_mae": 0.10241944444444444,
+        "worst64": 32.2065560821485,
+        "channel_peak": 175
+      },
+      "after": {
+        "foreground_mae": 1.1574504737295435,
+        "full_mae": 0.004665972222222222,
+        "worst64": 1.8091872791519434,
+        "channel_peak": 11
+      }
+    },
+    {
+      "file": "arabic-800-7-5.2.png",
+      "source_bounds": [
+        322,
+        228,
+        713,
+        351
+      ],
+      "before_bounds": [
+        322,
+        225,
+        720,
+        355
+      ],
+      "after_bounds": [
+        322,
+        225,
+        720,
+        355
+      ],
+      "source_pixels": 27906,
+      "after_pixels": 30773,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-800-7-5.2.png": "1293f4313b7f6a9d3d856c55853abc940b19facb70932a210ea4a24258e609fb",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-800-7-5.2.png": "982b066596826650b05111ba7882a6795b97019efa80d6c8e1928b1f3c3a6f4d",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-800-7-5.2.png": "982b066596826650b05111ba7882a6795b97019efa80d6c8e1928b1f3c3a6f4d"
+      },
+      "before": {
+        "foreground_mae": 2.379909026843488,
+        "full_mae": 0.15478333333333333,
+        "worst64": 7.825301204819277,
+        "channel_peak": 82
+      },
+      "after": {
+        "foreground_mae": 2.379909026843488,
+        "full_mae": 0.15478333333333333,
+        "worst64": 7.825301204819277,
+        "channel_peak": 82
+      }
+    },
+    {
+      "file": "arabic-800-7-14.png",
+      "source_bounds": [
+        284,
+        272,
+        611,
+        384
+      ],
+      "before_bounds": [
+        285,
+        271,
+        610,
+        383
+      ],
+      "after_bounds": [
+        285,
+        271,
+        610,
+        383
+      ],
+      "source_pixels": 11136,
+      "after_pixels": 10483,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-800-7-14.png": "900666c1c8bd1671fc55170e33f20a86700850c48f6b6e8c8939e5b2adf7d9a1",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-800-7-14.png": "14c08ec67b143b3b48399b203b122cd78723b3a8aa2c0e97079151107b1e5b13",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-800-7-14.png": "369dd49f732ab256b814450c7babdb5eb8a7df4776b88606bd15154e2cb5594a"
+      },
+      "before": {
+        "foreground_mae": 4.136638206423884,
+        "full_mae": 0.09891736111111112,
+        "worst64": 11.919565217391304,
+        "channel_peak": 92
+      },
+      "after": {
+        "foreground_mae": 3.6282453389092177,
+        "full_mae": 0.08676041666666667,
+        "worst64": 9.235507246376812,
+        "channel_peak": 86
+      }
+    },
+    {
+      "file": "arabic-800-7-36.png",
+      "source_bounds": [
+        391,
+        291,
+        492,
+        333
+      ],
+      "before_bounds": [
+        384,
+        289,
+        492,
+        333
+      ],
+      "after_bounds": [
+        384,
+        291,
+        492,
+        333
+      ],
+      "source_pixels": 1159,
+      "after_pixels": 985,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\arabic-800-7-36.png": "95d5498d513372b997df8edd7737b8791719aa5581a5a5d9a37b89726dde96ce",
+        "build\\verification\\diorama-fog-kotlin\\before-arabic-800-7-36.png": "515076a3a91089ba26eae93355d9ef27d3c5c2288d1c4b182bbf5ceb39c98fdc",
+        "build\\verification\\diorama-fog-kotlin\\after-arabic-800-7-36.png": "5db88b1d45a26d17f06ac4526592cdb10a5268178d8b2ed910c206ed708c1b64"
+      },
+      "before": {
+        "foreground_mae": 26.067612293144208,
+        "full_mae": 0.0765736111111111,
+        "worst64": 33.32,
+        "channel_peak": 175
+      },
+      "after": {
+        "foreground_mae": 1.1676122931442081,
+        "full_mae": 0.003429861111111111,
+        "worst64": 2.261904761904762,
+        "channel_peak": 10
+      }
+    },
+    {
+      "file": "cjk-380-0-5.2.png",
+      "source_bounds": [
+        0,
+        208,
+        301,
+        337
+      ],
+      "before_bounds": [
+        0,
+        209,
+        324,
+        340
+      ],
+      "after_bounds": [
+        0,
+        209,
+        324,
+        340
+      ],
+      "source_pixels": 10891,
+      "after_pixels": 9446,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-380-0-5.2.png": "ec196f2a5bb039758dabf9a9bacb6fa754c7ef537add75825bb8552315addc03",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-380-0-5.2.png": "bf6a6168c1384645603cfec35c74a5230c8835e5a5e36a6648eb22efdbd7b216",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-380-0-5.2.png": "c68b0efe0ec01f7d4e6c8d42dfc7b4fbc4f69734f9155f2dc328bbab36b3c3c2"
+      },
+      "before": {
+        "foreground_mae": 6.119199245238517,
+        "full_mae": 0.303437134502924,
+        "worst64": 8.631067961165048,
+        "channel_peak": 60
+      },
+      "after": {
+        "foreground_mae": 5.64747331800224,
+        "full_mae": 0.2800453216374269,
+        "worst64": 8.125541125541126,
+        "channel_peak": 60
+      }
+    },
+    {
+      "file": "cjk-380-0-14.png",
+      "source_bounds": [
+        90,
+        275,
+        228,
+        315
+      ],
+      "before_bounds": [
+        88,
+        266,
+        255,
+        316
+      ],
+      "after_bounds": [
+        88,
+        267,
+        255,
+        316
+      ],
+      "source_pixels": 2771,
+      "after_pixels": 2426,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-380-0-14.png": "9d1c91a00c9bf926f033fdc5f965db685cd3e8d784e0dd2211dab8f8284a827a",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-380-0-14.png": "f5e57de2ed9ae852266d5d19409092b4492a77333e241fd2a3a6d74322ecca0e",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-380-0-14.png": "bcde2eb1f0131883fd596cae015968e5a6904ad71cf6b9ccb02b4ffe904fbfc5"
+      },
+      "before": {
+        "foreground_mae": 13.565697613837658,
+        "full_mae": 0.19033625730994153,
+        "worst64": 17.376480541455162,
+        "channel_peak": 89
+      },
+      "after": {
+        "foreground_mae": 9.523705324580598,
+        "full_mae": 0.13362426900584795,
+        "worst64": 12.950366610265087,
+        "channel_peak": 82
+      }
+    },
+    {
+      "file": "cjk-380-0-36.png",
+      "source_bounds": [
+        151,
+        294,
+        167,
+        305
+      ],
+      "before_bounds": [
+        150,
+        293,
+        202,
+        306
+      ],
+      "after_bounds": [
+        151,
+        295,
+        167,
+        305
+      ],
+      "source_pixels": 145,
+      "after_pixels": 131,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-380-0-36.png": "68ffac17dc14e3d1a775180d12f079cf1ecd1bb44d74759f830679b71e7253db",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-380-0-36.png": "e7091b87ae7878e586bb0997f23935aaee9936e371c7e1b07f6652f9c597fbea",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-380-0-36.png": "7b8097f397d4a6ba89f300d58c637b48c8988892fd0974201b1bb7e0b5709b55"
+      },
+      "before": {
+        "foreground_mae": 27.33019853709509,
+        "full_mae": 0.03823830409356725,
+        "worst64": 40.535714285714285,
+        "channel_peak": 133
+      },
+      "after": {
+        "foreground_mae": 0.8944618599791013,
+        "full_mae": 0.0012514619883040937,
+        "worst64": 0.9805269186712485,
+        "channel_peak": 11
+      }
+    },
+    {
+      "file": "cjk-380-3-5.2.png",
+      "source_bounds": [
+        31,
+        206,
+        351,
+        334
+      ],
+      "before_bounds": [
+        28,
+        207,
+        362,
+        334
+      ],
+      "after_bounds": [
+        28,
+        207,
+        362,
+        334
+      ],
+      "source_pixels": 13025,
+      "after_pixels": 12359,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-380-3-5.2.png": "e23cbd9c8abffd254242afe9779885596118d607459f5398d61b7b33fc4919ed",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-380-3-5.2.png": "f5a7c98047448931e7ac2b77def78fb1a15347f42c841fdcae360c3434e81100",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-380-3-5.2.png": "d4ac884a71eff6f67e2d7fb72327d831dcf8368a9a10b9a59e055a6a96694daf"
+      },
+      "before": {
+        "foreground_mae": 5.322142399886194,
+        "full_mae": 0.32817543859649123,
+        "worst64": 9.711775878442545,
+        "channel_peak": 78
+      },
+      "after": {
+        "foreground_mae": 5.113189653128482,
+        "full_mae": 0.3152909356725146,
+        "worst64": 8.464788732394366,
+        "channel_peak": 78
+      }
+    },
+    {
+      "file": "cjk-380-3-14.png",
+      "source_bounds": [
+        0,
+        268,
+        251,
+        367
+      ],
+      "before_bounds": [
+        0,
+        268,
+        254,
+        366
+      ],
+      "after_bounds": [
+        0,
+        269,
+        254,
+        366
+      ],
+      "source_pixels": 6641,
+      "after_pixels": 5427,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-380-3-14.png": "676aa5663e10b25be83bf3c5f47b74cba8df30f088d0c44cf0c24a36075a5740",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-380-3-14.png": "7f0d1abc2f15cfc8fc1775c7810e6d935ba6fa6d1208d7a100fcd8a0ded45bec",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-380-3-14.png": "669be11020db2ab396f2a6ea609151b9824bfb3183463a9187ab1b094a7ae11f"
+      },
+      "before": {
+        "foreground_mae": 8.977562246670526,
+        "full_mae": 0.2720043859649123,
+        "worst64": 18.060518731988473,
+        "channel_peak": 93
+      },
+      "after": {
+        "foreground_mae": 7.626182204207682,
+        "full_mae": 0.23105994152046783,
+        "worst64": 13.027537624079411,
+        "channel_peak": 85
+      }
+    },
+    {
+      "file": "cjk-380-3-36.png",
+      "source_bounds": [
+        133,
+        292,
+        209,
+        331
+      ],
+      "before_bounds": [
+        134,
+        292,
+        213,
+        330
+      ],
+      "after_bounds": [
+        134,
+        293,
+        208,
+        330
+      ],
+      "source_pixels": 924,
+      "after_pixels": 622,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-380-3-36.png": "8d36b7a061ab0458e21ce75746748cf3372da2ed57abcc5734aa105adfc20c10",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-380-3-36.png": "5b86c4839235719c1b2042da7f4e926cfa73a9d4fd38851c668fb9c57bea5dc5",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-380-3-36.png": "78d9127ac90a125c0b6fb6e44687c4f75260e20b5827bfa82dab89d095a68800"
+      },
+      "before": {
+        "foreground_mae": 22.00304414003044,
+        "full_mae": 0.10567251461988304,
+        "worst64": 43.489296636085626,
+        "channel_peak": 168
+      },
+      "after": {
+        "foreground_mae": 2.1987823439878236,
+        "full_mae": 0.010559941520467837,
+        "worst64": 3.3695090439276485,
+        "channel_peak": 11
+      }
+    },
+    {
+      "file": "cjk-380-7-5.2.png",
+      "source_bounds": [
+        138,
+        273,
+        380,
+        333
+      ],
+      "before_bounds": [
+        135,
+        271,
+        380,
+        336
+      ],
+      "after_bounds": [
+        135,
+        271,
+        380,
+        336
+      ],
+      "source_pixels": 8057,
+      "after_pixels": 7658,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-380-7-5.2.png": "68c976c764ad38f6ca5f73699579af832b9115c7831416a4ecf1ab6fccd227bf",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-380-7-5.2.png": "4dd4600a52fa7e1ee140091cfdbacd82da53101b3081a51d8c134412fbe73b2b",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-380-7-5.2.png": "4dd4600a52fa7e1ee140091cfdbacd82da53101b3081a51d8c134412fbe73b2b"
+      },
+      "before": {
+        "foreground_mae": 5.725244557862584,
+        "full_mae": 0.2164795321637427,
+        "worst64": 8.755835667600374,
+        "channel_peak": 86
+      },
+      "after": {
+        "foreground_mae": 5.725244557862584,
+        "full_mae": 0.2164795321637427,
+        "worst64": 8.755835667600374,
+        "channel_peak": 86
+      }
+    },
+    {
+      "file": "cjk-380-7-14.png",
+      "source_bounds": [
+        113,
+        288,
+        357,
+        376
+      ],
+      "before_bounds": [
+        114,
+        288,
+        356,
+        375
+      ],
+      "after_bounds": [
+        114,
+        288,
+        356,
+        375
+      ],
+      "source_pixels": 6329,
+      "after_pixels": 4994,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-380-7-14.png": "ffd6cb99e45577c922db8eeaddcbf9f240c4ffcf06fa1a707213b3f01cae5d68",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-380-7-14.png": "7e50c521fe24bd387136e4d1cca43258c4d7c18575234f4a89815143c148c23d",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-380-7-14.png": "e40b03ad372be62567208c57fc8a806375aadcbbd584440135fecbb5c56fe613"
+      },
+      "before": {
+        "foreground_mae": 8.663251578184829,
+        "full_mae": 0.2447748538011696,
+        "worst64": 21.32998324958124,
+        "channel_peak": 103
+      },
+      "after": {
+        "foreground_mae": 8.206250646797061,
+        "full_mae": 0.23186257309941521,
+        "worst64": 19.649916247906198,
+        "channel_peak": 93
+      }
+    },
+    {
+      "file": "cjk-380-7-36.png",
+      "source_bounds": [
+        180,
+        296,
+        272,
+        328
+      ],
+      "before_bounds": [
+        179,
+        295,
+        272,
+        327
+      ],
+      "after_bounds": [
+        180,
+        297,
+        272,
+        327
+      ],
+      "source_pixels": 711,
+      "after_pixels": 466,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-380-7-36.png": "6e903d2e1003ff401b15b09cc4bc8c2892859ba1e5291f2cb96772a023e912ec",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-380-7-36.png": "c6cf8fbf17b1c0f025eb844756d07664f4db9565908a7dcfcf27e229dd76e8cd",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-380-7-36.png": "c0aa5806892d5261453baf9f63d872eaa6710e1d2dd1ee24abdd881232850020"
+      },
+      "before": {
+        "foreground_mae": 22.113535353535354,
+        "full_mae": 0.08001608187134503,
+        "worst64": 29.301659125188536,
+        "channel_peak": 167
+      },
+      "after": {
+        "foreground_mae": 2.1963636363636363,
+        "full_mae": 0.007947368421052632,
+        "worst64": 3.5851318944844124,
+        "channel_peak": 12
+      }
+    },
+    {
+      "file": "cjk-800-0-5.2.png",
+      "source_bounds": [
+        43,
+        204,
+        644,
+        365
+      ],
+      "before_bounds": [
+        36,
+        204,
+        644,
+        370
+      ],
+      "after_bounds": [
+        36,
+        204,
+        644,
+        370
+      ],
+      "source_pixels": 43928,
+      "after_pixels": 43941,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-800-0-5.2.png": "e02433f5cc9092f383d47aa98777c9bce84dac5f4a0eaa05b2877b7470565806",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-800-0-5.2.png": "88843ab7e397e26a58539d9ff4b0c85abd9fa5a75f6ffc4fb12bed20cb921e03",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-800-0-5.2.png": "eea4e79da9cf4ad05609a9e78ca89355d17dd64b849a52ab3bc321eabad07add"
+      },
+      "before": {
+        "foreground_mae": 2.8686948085516204,
+        "full_mae": 0.2813173611111111,
+        "worst64": 6.995523415977962,
+        "channel_peak": 59
+      },
+      "after": {
+        "foreground_mae": 2.4849836771402067,
+        "full_mae": 0.2436888888888889,
+        "worst64": 4.537389100126743,
+        "channel_peak": 59
+      }
+    },
+    {
+      "file": "cjk-800-0-14.png",
+      "source_bounds": [
+        244,
+        271,
+        487,
+        327
+      ],
+      "before_bounds": [
+        241,
+        262,
+        487,
+        329
+      ],
+      "after_bounds": [
+        241,
+        262,
+        487,
+        329
+      ],
+      "source_pixels": 8417,
+      "after_pixels": 8285,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-800-0-14.png": "d0d2c7a9cd9b766a52e9bb47666f31bfc6b6125b61717c68972c68596fdf537d",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-800-0-14.png": "56db348664f44374fd9fa242847a7e12af1b0e5309f4440ffa00a946cfaeb4fe",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-800-0-14.png": "c3cec03bc72703703a78904bdd2b248a88202ae9946e843d41734027472464f1"
+      },
+      "before": {
+        "foreground_mae": 9.571782598363717,
+        "full_mae": 0.19580277777777777,
+        "worst64": 14.182546374367622,
+        "channel_peak": 99
+      },
+      "after": {
+        "foreground_mae": 4.988389856400856,
+        "full_mae": 0.10204375,
+        "worst64": 6.576651910149205,
+        "channel_peak": 89
+      }
+    },
+    {
+      "file": "cjk-800-0-36.png",
+      "source_bounds": [
+        339,
+        289,
+        368,
+        308
+      ],
+      "before_bounds": [
+        336,
+        287,
+        433,
+        311
+      ],
+      "after_bounds": [
+        339,
+        290,
+        433,
+        309
+      ],
+      "source_pixels": 466,
+      "after_pixels": 522,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-800-0-36.png": "a64973c47b9c1db5dc6e1a2797c62b2ebf2fff68b128226f7dbfc1ee26ad2d68",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-800-0-36.png": "b526d0f33d1b85c6d6cc9ea0510dc4506efc72a2a3c71843b1774c427c3d4a9b",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-800-0-36.png": "65624fd88850a0c336a181184dd20888a6301fb74f5a71e4d374449f97459a4e"
+      },
+      "before": {
+        "foreground_mae": 28.49701314217443,
+        "full_mae": 0.06625555555555555,
+        "worst64": 42.56103286384977,
+        "channel_peak": 135
+      },
+      "after": {
+        "foreground_mae": 0.527479091995221,
+        "full_mae": 0.0012263888888888888,
+        "worst64": 0.6774839743589743,
+        "channel_peak": 11
+      }
+    },
+    {
+      "file": "cjk-800-3-5.2.png",
+      "source_bounds": [
+        126,
+        196,
+        732,
+        367
+      ],
+      "before_bounds": [
+        120,
+        196,
+        732,
+        367
+      ],
+      "after_bounds": [
+        120,
+        197,
+        732,
+        367
+      ],
+      "source_pixels": 40702,
+      "after_pixels": 41163,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-800-3-5.2.png": "a9e897d9cc4e4c0bc33375285365cdb8fd807b2587cf0c11068a5593a7f1656f",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-800-3-5.2.png": "a936b11131248dd8ca3f8c73cc53e6a71c10eb4bb8bc7abe8a09f59f35bd03b3",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-800-3-5.2.png": "b07d977e84ab08a0369315a2487b0952752f38676059380d2429c18ca1c28ab7"
+      },
+      "before": {
+        "foreground_mae": 2.735681883695174,
+        "full_mae": 0.2504402777777778,
+        "worst64": 7.291961246399581,
+        "channel_peak": 63
+      },
+      "after": {
+        "foreground_mae": 2.5105366164489555,
+        "full_mae": 0.22982916666666667,
+        "worst64": 5.12442202606137,
+        "channel_peak": 63
+      }
+    },
+    {
+      "file": "cjk-800-3-14.png",
+      "source_bounds": [
+        31,
+        263,
+        529,
+        388
+      ],
+      "before_bounds": [
+        31,
+        262,
+        528,
+        387
+      ],
+      "after_bounds": [
+        31,
+        262,
+        528,
+        387
+      ],
+      "source_pixels": 24868,
+      "after_pixels": 22811,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-800-3-14.png": "0d1af51a1cbc8daab581763def99436613a5beadd02828a1d2046adfd3820f90",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-800-3-14.png": "36dd93ae0fc64f96bb7bf4ca4b9dc58d78802c2062b8a575445e185937fb7abb",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-800-3-14.png": "d18d22d0c5d18423cc468a2cf6cd046891d1904d178a3648dcc8aa5bcaddb064"
+      },
+      "before": {
+        "foreground_mae": 5.272022196412441,
+        "full_mae": 0.28370069444444446,
+        "worst64": 13.969484664487,
+        "channel_peak": 111
+      },
+      "after": {
+        "foreground_mae": 4.021783455929797,
+        "full_mae": 0.2164222222222222,
+        "worst64": 11.72463768115942,
+        "channel_peak": 101
+      }
+    },
+    {
+      "file": "cjk-800-3-36.png",
+      "source_bounds": [
+        311,
+        286,
+        451,
+        337
+      ],
+      "before_bounds": [
+        311,
+        284,
+        451,
+        337
+      ],
+      "after_bounds": [
+        311,
+        287,
+        451,
+        337
+      ],
+      "source_pixels": 2780,
+      "after_pixels": 2257,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-800-3-36.png": "fe0beb76fbd1777e610110c113a073d00c63ff76ebd90e95cfd28de6af1bb4a4",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-800-3-36.png": "ce0fc69d3c407cb33e5777bdc7ccbcf2c0e21091309d01a7b15a2bb8aa7bfe7a",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-800-3-36.png": "41fbd1463dc1eed2efa1d12cdf146fd4d47abec2df0b2caf99fa56a64815e251"
+      },
+      "before": {
+        "foreground_mae": 24.82482887367766,
+        "full_mae": 0.16622291666666666,
+        "worst64": 46.2766761095373,
+        "channel_peak": 169
+      },
+      "after": {
+        "foreground_mae": 1.3768927608380004,
+        "full_mae": 0.009219444444444445,
+        "worst64": 3.1176470588235294,
+        "channel_peak": 11
+      }
+    },
+    {
+      "file": "cjk-800-7-5.2.png",
+      "source_bounds": [
+        260,
+        244,
+        782,
+        359
+      ],
+      "before_bounds": [
+        255,
+        245,
+        782,
+        363
+      ],
+      "after_bounds": [
+        255,
+        245,
+        782,
+        363
+      ],
+      "source_pixels": 27420,
+      "after_pixels": 27369,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-800-7-5.2.png": "24dfc2f665e9b3a796ded3a5d327192374e6beef55052469266bc84de2fdca55",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-800-7-5.2.png": "e56486f5d75ea8512c1309f0458757e5d0def86602a46221a865627dd60363ac",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-800-7-5.2.png": "e56486f5d75ea8512c1309f0458757e5d0def86602a46221a865627dd60363ac"
+      },
+      "before": {
+        "foreground_mae": 2.845370402229639,
+        "full_mae": 0.17228125,
+        "worst64": 5.6843800322061195,
+        "channel_peak": 85
+      },
+      "after": {
+        "foreground_mae": 2.845370402229639,
+        "full_mae": 0.17228125,
+        "worst64": 5.6843800322061195,
+        "channel_peak": 85
+      }
+    },
+    {
+      "file": "cjk-800-7-14.png",
+      "source_bounds": [
+        228,
+        279,
+        685,
+        395
+      ],
+      "before_bounds": [
+        228,
+        279,
+        684,
+        395
+      ],
+      "after_bounds": [
+        228,
+        279,
+        684,
+        395
+      ],
+      "source_pixels": 19349,
+      "after_pixels": 17302,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-800-7-14.png": "62bb732d06d4a8b238e14c9dc8d26939355f7bd6e754da9f047120342b82b02c",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-800-7-14.png": "863b2d83f8b30bb5f1b57bfbf68f15ff491979d91764445f351ab39d0b074b81",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-800-7-14.png": "4942e12fdb8df4ec1edb813d57627e294dfabc72a1b239d050bba6f804f77174"
+      },
+      "before": {
+        "foreground_mae": 5.143878553759615,
+        "full_mae": 0.21083472222222222,
+        "worst64": 13.149647887323944,
+        "channel_peak": 103
+      },
+      "after": {
+        "foreground_mae": 4.59552370302599,
+        "full_mae": 0.18835902777777777,
+        "worst64": 11.230340375586854,
+        "channel_peak": 93
+      }
+    },
+    {
+      "file": "cjk-800-7-36.png",
+      "source_bounds": [
+        372,
+        293,
+        507,
+        335
+      ],
+      "before_bounds": [
+        369,
+        292,
+        507,
+        335
+      ],
+      "after_bounds": [
+        372,
+        294,
+        507,
+        335
+      ],
+      "source_pixels": 1995,
+      "after_pixels": 1537,
+      "png_sha256": {
+        "build\\verification\\diorama-fog-browser\\cjk-800-7-36.png": "6d8c0f9dc4d01f24ced3430f4447900a977ab89d06a6c7a38f7525e9e9eab8a6",
+        "build\\verification\\diorama-fog-kotlin\\before-cjk-800-7-36.png": "4b29417e104b07e3a04255d75a1bc4103d5c7a90e054a4788dafccaa9b95591a",
+        "build\\verification\\diorama-fog-kotlin\\after-cjk-800-7-36.png": "534322b5952c6cd98a1680e01326f8c1897e83f213437077e163f50c4c537bb1"
+      },
+      "before": {
+        "foreground_mae": 24.569983136593592,
+        "full_mae": 0.12141666666666667,
+        "worst64": 38.916301169590646,
+        "channel_peak": 168
+      },
+      "after": {
+        "foreground_mae": 1.4720348510399102,
+        "full_mae": 0.0072743055555555556,
+        "worst64": 2.6359649122807016,
+        "channel_peak": 11
+      }
+    }
+  ],
+  "status": "Internal text-plane fragment fog only. Raster/coverage/continuous camera/whole-song residency/device validation unresolved; NOT full Diorama acceptance."
+}

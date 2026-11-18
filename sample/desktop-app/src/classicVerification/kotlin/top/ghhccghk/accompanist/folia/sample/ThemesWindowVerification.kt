@@ -41,7 +41,7 @@ fun themesWindowVerificationMain() {
     application(exitProcessOnExit = false) {
         val state = rememberWindowState(width = 800.dp, height = 600.dp)
         var request by remember { mutableStateOf(ThemeWindowRequest()) }
-        Window(onCloseRequest = ::exitApplication, state = state, undecorated = true,
+        Window(onCloseRequest = ::exitApplication, state = state, undecorated = true, focusable = false,
             title = "Folia seven-theme verification") {
             val platformDensity = LocalDensity.current
             val layer = rememberGraphicsLayer()

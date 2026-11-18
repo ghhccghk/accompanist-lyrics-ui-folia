@@ -48,3 +48,21 @@ checks and runtime log remain in build/verification and .work. Compact contact,
 checks, conditions and source hashes are tracked. Android default debug APK
 (including existing Rust sample runtime) also builds after059087b; no connected
 device was available in the earlier single device check this turn.
+
+## Post-Cappella complete-ink regression (2026-11-18)
+
+Production b40c9da, same 105 requests/conditions and DIRECT3D backend. The
+verification-only window is now `focusable=false`; it takes no user input.
+All reconstruction checks pass. Compared with the retained 51bdced run,
+91 hashes are identical and the 14 changed hashes all belong to Cappella.
+`post-cappella-ink/changes.json` lists every changed request, with both hashes.
+The fixed contact was inspected: Tilt large-font overlap and oversized Fume
+framing remain; this pass does not certify original visual parity. No new
+file-picker/audio, Android-device or performance evidence is claimed.
+
+Independent Maven-coordinate consumer at the same production revision passes
+JVM render/core identity, Android compilation and packaged-notice/dependency
+checks. Artifact hashes and scope are in `../consumer/b40c9da-validation.json`.
+Only the file repository under build/local-maven was published. Existing source
+and old window matrices remain unchanged. Logs are `.work/cappella-ink-native-window.log`
+and `.work/cappella-ink-consumer.log`; raw images remain under build/verification.

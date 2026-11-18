@@ -10,9 +10,15 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life、可选文字fragment fog | 无 | 切曲/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：群唱绘制改动后的真实Desktop窗口与独立Maven消费回归；保留旧
-105窗口矩阵，只跑本次共享绘制风险所需一轮，检查真实后端的阶梯alpha和释放。
-之后继续群唱早期fi共享字形透明度/密集投影，不能以均值盖过局部失败。
+当前唯一下一项：群唱早期fi共享字形的透明度归属。先用原ActiveCappellaText和
+固定字体扩展独立cluster归属对照，分离字体塑形cluster与EGC时钟；证据成立后
+修复实际绘制并复用原30帧及必要共享层回归。不能以均值盖过局部失败。
+此前“群唱绘制后真实窗口/独立消费下一项”为历史：b40c9da后已完成一轮105项
+真实DIRECT3D窗口回归及独立Maven JVM绘制/原core身份、Android消费编译与归属打包。
+91项hash不变，14项群唱hash随完整文字修复变化，恢复/暂停等自确定性通过；
+验证窗口focusable=false，不抢用户输入。证据verification/themes-native-window/
+post-cappella-ink和verification/consumer/b40c9da-validation.json。固定contact已图检，
+保留Tilt大字重叠/Fume镜头等残差；这不是原版视觉/选歌音频/Android设备/性能通过。
 Fume有限限幅位移的媒体重建策略仍未成立，已有同初态/frozen-clamp-v1证据；
 不重试focus-only/midpoint-only或固定帧延迟、不改旧oracle。
 最近完成：群唱活动路径单次完整行+内部EGC阶梯alpha，15统一alpha/15变换覆盖

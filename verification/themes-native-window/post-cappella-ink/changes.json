@@ -1,0 +1,93 @@
+{
+  "previousRevision": "51bdced",
+  "productionRevision": "b40c9da",
+  "checks": 105,
+  "unchanged": 91,
+  "changed": [
+    {
+      "theme": "Cappella",
+      "check": "baseline",
+      "before": "0220be05c5f0bf22d73e94010d1c6c44a4659a148b69183888ce9d75a6c721f9",
+      "after": "6c6e1490722b9bec8687a5a8b11a7355caad741a014cb446d5d3d277ffab0074"
+    },
+    {
+      "theme": "Cappella",
+      "check": "forward-seek",
+      "before": "66b1e55d54b8f8c1cde773c2f392169dfdcd4ac235c343cb768469ae18f09928",
+      "after": "657da7b839eb5de8c42bcf56f664d212ff012fb33583e2f831dc9ddd38cc667d"
+    },
+    {
+      "theme": "Cappella",
+      "check": "reverse-seek",
+      "before": "0220be05c5f0bf22d73e94010d1c6c44a4659a148b69183888ce9d75a6c721f9",
+      "after": "6c6e1490722b9bec8687a5a8b11a7355caad741a014cb446d5d3d277ffab0074"
+    },
+    {
+      "theme": "Cappella",
+      "check": "narrow",
+      "before": "297d5a0ab2eb22655a7bd6a6fa725278f998cc1a6907bf57453d165dd10445a9",
+      "after": "e1b65358056675d760f840953a85f91c214de6c3ca0bdec20722c77909682054"
+    },
+    {
+      "theme": "Cappella",
+      "check": "resize-restore",
+      "before": "0220be05c5f0bf22d73e94010d1c6c44a4659a148b69183888ce9d75a6c721f9",
+      "after": "6c6e1490722b9bec8687a5a8b11a7355caad741a014cb446d5d3d277ffab0074"
+    },
+    {
+      "theme": "Cappella",
+      "check": "large-font",
+      "before": "83e2791713d3082829b20a648b120edc2c7ca64e59640270d1f6d49547130566",
+      "after": "01b4c580b77e1052421b6c3b640d0d4b127798109ab2c9e608538ca62c27b028"
+    },
+    {
+      "theme": "Cappella",
+      "check": "font-restore",
+      "before": "0220be05c5f0bf22d73e94010d1c6c44a4659a148b69183888ce9d75a6c721f9",
+      "after": "6c6e1490722b9bec8687a5a8b11a7355caad741a014cb446d5d3d277ffab0074"
+    },
+    {
+      "theme": "Cappella",
+      "check": "reduced",
+      "before": "49814de2697d114fbb2827f0539038e5974ebb6142fb63b6186b9b9a2e9a5ea1",
+      "after": "f0b44796552af218eddd0dbef7b599aaa91057fd661c601a3fbead92312ae6c5"
+    },
+    {
+      "theme": "Cappella",
+      "check": "settings-restore",
+      "before": "0220be05c5f0bf22d73e94010d1c6c44a4659a148b69183888ce9d75a6c721f9",
+      "after": "6c6e1490722b9bec8687a5a8b11a7355caad741a014cb446d5d3d277ffab0074"
+    },
+    {
+      "theme": "Cappella",
+      "check": "offset",
+      "before": "0220be05c5f0bf22d73e94010d1c6c44a4659a148b69183888ce9d75a6c721f9",
+      "after": "6c6e1490722b9bec8687a5a8b11a7355caad741a014cb446d5d3d277ffab0074"
+    },
+    {
+      "theme": "Cappella",
+      "check": "replace-song",
+      "before": "034ba535708eed9193290cf001bc001057703c54bf8842a5394416e10a09171b",
+      "after": "d3b4df6f05b7b5a375e79807ad93304b502deac61af1116c8d28f48ef420441f"
+    },
+    {
+      "theme": "Cappella",
+      "check": "song-restore",
+      "before": "0220be05c5f0bf22d73e94010d1c6c44a4659a148b69183888ce9d75a6c721f9",
+      "after": "6c6e1490722b9bec8687a5a8b11a7355caad741a014cb446d5d3d277ffab0074"
+    },
+    {
+      "theme": "Cappella",
+      "check": "remount",
+      "before": "0220be05c5f0bf22d73e94010d1c6c44a4659a148b69183888ce9d75a6c721f9",
+      "after": "6c6e1490722b9bec8687a5a8b11a7355caad741a014cb446d5d3d277ffab0074"
+    },
+    {
+      "theme": "Cappella",
+      "check": "theme-revisit",
+      "before": "0220be05c5f0bf22d73e94010d1c6c44a4659a148b69183888ce9d75a6c721f9",
+      "after": "6c6e1490722b9bec8687a5a8b11a7355caad741a014cb446d5d3d277ffab0074"
+    }
+  ],
+  "scope": "Real DIRECT3D public-component reconstruction, focusable=false verification window; not original visual/native picker/audio/Android/device performance acceptance."
+}

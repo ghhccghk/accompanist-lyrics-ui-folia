@@ -1,0 +1,17 @@
+{
+  "sourceRevision": "bb84afd38e3db72e48364a18b989a49463338086",
+  "date": "2026-11-18T16:34:04.795933+08:00",
+  "command": "python scripts/verify-consumer.py",
+  "result": "PASS",
+  "publication": "file-backed local verification repository only",
+  "independentJvm": {
+    "tests": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "independentAndroidCompile": "PASS",
+  "artifactCoordinatesDependencyBoundaryAndPackagedNotices": "PASS",
+  "installed": false,
+  "remotePublished": false,
+  "limits": "Not device, real-window, performance or original-theme visual validation; internal JVM sampler remains opt-in and Android fallback remains ordinary."
+}

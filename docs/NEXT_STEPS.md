@@ -24,7 +24,14 @@ JVM opt-in实际stage同48帧有限均值6.739673→4.294389(最坏仍20.364780)
 19.922429→18.684469(局部72.258224→69.117781)，均无均值/局部回退；24自身
 plane与独立控制逐像素相同，168普通基线hash不变。11项JVM/Android库/Desktop
 编译通过；见verification/diorama-plain-sampler。Android明确不可用并真实回退，
-无设备/性能/完整视觉通过，Diorama仍未开放；刷新APK与独立消费属于收尾验证。
+无设备/性能/完整视觉通过，Diorama仍未开放。
+bb84afd的APK刷新与独立消费已完成：本地Maven JVM绘制/来源回调及Android消费编译/
+归属边界通过，见verification/consumer/bb84afd-validation.json。新debug交付
+build/deliverables/android/lyrics-ui-folia-debug-bb84afd-20261118-163142.apk，SHA256
+36edda06c3213ed04d217c9804710dc362bb82b27061900f9ab418c962cb636b；原证书v1/v2、
+ZIP CRC、16KB对齐、双ABI Rust及复制hash核对通过，未安装/传输或复现手机报错。
+见verification/android-debug/2026-11-18-plain-sampler-validation.json。Android仍旧
+普通绘制，七主题与用户签名/daemon遗留未改；不因重新构建宣称手机验签问题解决。
 自身完整塑形24帧控制已完成：同原Latin/Arabic/CJK/长行及380/800/801、两pose，
 同union均值11.742677→1.446805/最坏64局部50.719298→3.363636，24帧无均值或
 局部回退，近景Latin/Arabic不再重现被拒候选的模糊。4项JVM/实际Canvas尺寸恢复、

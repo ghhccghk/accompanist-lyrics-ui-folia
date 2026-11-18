@@ -39,6 +39,11 @@ and rejects native libraries inside the base AAR/JAR, including its nested class
 The first run lacked an SDK path. The passing run used `ANDROID_HOME` and disabled
 the optional CPU mask experiment during local publication.
 
+The P4 local Maven archives passed static checks for both runtime ABIs, 63
+locked crates and matching licenses, paired line-table symbols, and ELF LOAD
+alignment. See [packaging evidence](../verification/native-renderer-p4.md).
+APK zipalign and runtime validation of this snapshot are tracked separately.
+
 ## Remaining
 
 - P3: thin native sample and persisted backend selection; input pass-through, cancel behavior and source mapping; explicit fallback/required failures; lifecycle/recreation/multi-instance runtime matrix.

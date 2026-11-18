@@ -1,6 +1,7 @@
 param(
     [Parameter(Mandatory=$true)][string]$NdkDirectory,
     [Parameter(Mandatory=$true)][string]$OutputDirectory,
+    [string]$SymbolDirectory,
     [string]$Cargo = 'cargo',
     [string[]]$Abis = @('arm64-v8a','x86_64'),
     [switch]$UpdateLock
@@ -36,11 +37,16 @@ Invoke-MaskRustToolchain -Cargo $Cargo -Build {
             $env:CC = Join-Path $bin ($target + '26-clang.cmd')
             $env:AR = Join-Path $bin 'llvm-ar.exe'
             $env:RUSTFLAGS = '-C link-arg=--target=' + $target + '26 -C link-arg=-Wl,-z,max-page-size=16384'
-            & $Cargo '+1.91.1' build --manifest-path (Join-Path $PSScriptRoot 'Cargo.toml') --release --locked --lib --target $target
+            & $Cargo '+1.91.1' rustc --manifest-path (Join-Path $PSScriptRoot 'Cargo.toml') --release --locked --lib --target $target -- -C 'link-arg=-Wl,--build-id=sha1'
             if ($LASTEXITCODE -ne 0) { throw "Renderer build failed: $target" }
             $destination = Join-Path $OutputDirectory $abi
             New-Item -ItemType Directory -Force -Path $destination | Out-Null
             $binary = Join-Path $PSScriptRoot "target/$target/release/liblyrics_folia_renderer.so"
+            if ($SymbolDirectory) {
+                $symbols=Join-Path $SymbolDirectory $abi
+                New-Item -ItemType Directory -Force -Path $symbols | Out-Null
+                Copy-Item -LiteralPath $binary -Destination $symbols
+            }
             Copy-Item -LiteralPath $binary -Destination $destination
             & (Join-Path $bin 'llvm-strip.exe') --strip-debug (Join-Path $destination 'liblyrics_folia_renderer.so')
             if ($LASTEXITCODE -ne 0) { throw 'Strip failed' }

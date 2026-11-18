@@ -12,6 +12,7 @@ abstract class BuildLyricsRenderer : DefaultTask() {
     @get:Internal abstract val ndkDirectory: DirectoryProperty
     @get:Internal abstract val script: RegularFileProperty
     @get:OutputDirectory abstract val outputDirectory: DirectoryProperty
+    @get:OutputDirectory abstract val symbolDirectory: DirectoryProperty
     @get:Inject abstract val processes: ExecOperations
     @TaskAction fun build() {
         require(System.getProperty("os.name").startsWith("Windows")) {
@@ -21,7 +22,7 @@ abstract class BuildLyricsRenderer : DefaultTask() {
             val shell = File(System.getenv("SystemRoot"), "System32/WindowsPowerShell/v1.0/powershell.exe")
             commandLine(shell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", script.get().asFile,
                 "-NdkDirectory", ndkDirectory.get().asFile, "-OutputDirectory", outputDirectory.get().asFile,
-                "-Cargo", cargo.get())
+                "-SymbolDirectory",symbolDirectory.get().asFile,"-Cargo", cargo.get())
         }
     }
 }
@@ -33,6 +34,19 @@ val renderer = tasks.register<BuildLyricsRenderer>("buildLyricsRenderer") {
     script.set(directory.file("build-android.ps1"))
     ndkDirectory.set(androidComponents.sdkComponents.sdkDirectory.map { it.dir("ndk/28.2.13676358") })
     outputDirectory.set(layout.buildDirectory.dir("generated/renderer/jniLibs"))
+    symbolDirectory.set(layout.buildDirectory.dir("generated/renderer/symbols"))
+}
+val dependencyBundle = tasks.register<Exec>("archiveRendererDependencies") {
+    inputs.files(rootProject.files("native/renderer/Cargo.toml", "native/renderer/Cargo.lock", "native/renderer/rust-toolchain.toml",
+        "native/renderer/archive-dependencies.ps1",
+        "scripts/archive-renderer-dependencies.py", "native/experimental-mask/rust-environment.ps1"))
+    inputs.dir(rootProject.file("native/renderer/third-party-license-supplements"))
+    val output=layout.buildDirectory.dir("generated/rendererDependencies")
+    outputs.dir(output)
+    val shell=File(System.getenv("SystemRoot"),"System32/WindowsPowerShell/v1.0/powershell.exe")
+    commandLine(shell,"-NoProfile","-ExecutionPolicy","Bypass","-File",rootProject.file("native/renderer/archive-dependencies.ps1"),
+        "-OutputDirectory",output.get().asFile,"-Cargo",providers.gradleProperty("foliaRustCargo").orElse("cargo").get())
+    dependsOn(renderer)
 }
 kotlin {
     jvmToolchain(21)
@@ -56,17 +70,29 @@ val sourceArchive = tasks.register<Zip>("rendererSourceArchive") {
     from(rootProject.file("native/renderer")) { exclude("target/**") }
     from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md"))
     from(rootProject.file("native/experimental-mask/rust-environment.ps1")) { into("build-support") }
+    from(rootProject.file("scripts/archive-renderer-dependencies.py")) { into("build-support") }
+    dependsOn(dependencyBundle)
+    from(layout.buildDirectory.dir("generated/rendererDependencies/bundle")) { into("third-party") }
+}
+val symbolArchive=tasks.register<Zip>("rendererSymbolArchive") {
+    archiveClassifier.set("native-symbols")
+    from(renderer.map { it.symbolDirectory })
 }
 tasks.withType<Zip>().configureEach {
     if (name != "rendererSourceArchive") {
         from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md")) { into("META-INF/lyrics-ui-folia-native") }
+        dependsOn(dependencyBundle)
+        from(layout.buildDirectory.dir("generated/rendererDependencies/bundle")) {
+            exclude("registry-sources/**")
+            into("META-INF/lyrics-ui-folia-native/dependencies")
+        }
     }
 }
 publishing {
     repositories { maven { name = "Verification"; url = rootProject.layout.buildDirectory.dir("local-maven").get().asFile.toURI() } }
     publications.withType<MavenPublication>().configureEach {
         artifactId = if (name == "kotlinMultiplatform") "lyrics-ui-folia-native" else "lyrics-ui-folia-native-android"
-        if (name != "kotlinMultiplatform") artifact(sourceArchive)
+        if (name != "kotlinMultiplatform") { artifact(sourceArchive);artifact(symbolArchive) }
         pom {
             name.set("lyrics-ui-folia-native-android")
             description.set("Optional experimental Android Vulkan lyrics renderer; precompiled Rust runtime")

@@ -13,8 +13,11 @@ fonts, icons, player, SPW, cryoglyph patch or application dependencies are copie
 
 Transitive Rust dependency versions, sources and checksums are fixed by Cargo.lock.
 `cargo metadata --locked` provides the complete dependency graph and license fields.
-Before a release candidate, archive dependency license texts alongside corresponding
-source and binary hashes. A lockfile alone is not a complete third-party notice bundle.
+The local Maven publication includes the verified dependency manifest and actual
+license texts in the runtime AAR, and the corresponding locked registry tarballs
+in `rust-sources`. Where a crate omitted license files, see the pinned origin,
+revision and checksum in `third-party-license-supplements/SOURCES.json`.
+`native-symbols` contains the unstripped libraries from the same builds.
 
 The reference lock pins its upstream Folia-rust to
 39e33e8e89980289edcb01ad1fa9dde2b676ba9f; this renderer does not depend on that repository.

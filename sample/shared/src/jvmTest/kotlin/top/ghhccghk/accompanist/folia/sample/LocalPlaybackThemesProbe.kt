@@ -104,17 +104,15 @@ object LocalPlaybackThemesProbe {
                 settle();assertSame(player,session.songs.current!!.player)
                 out.resolve("parsed-times.tsv").writeText(session.songs.current!!.lyrics!!.lines.joinToString("\n"){"${it.start}\t${it.end}"}+"\n")
                 onNodeWithText("未加载歌词").assertDoesNotExist();record("attach-actual-parser-translation")
-                val labels=listOf("流光","云阶","倾诉","心象","时计","群唱","浮名")
-                for((i,theme)in SampleLyricTheme.entries.withIndex()) {
+                for(theme in SampleLyricTheme.entries) {
                     seek(1600)
                     click("设置")
-                    val label=labels[i]+if(session.lyricTheme==theme)" ✓" else ""
                     // Scroll semantics await the UI animation clock. Allow it
                     // to run ONLY while real audio is paused; otherwise a
                     // below-fold theme can block forever on a frozen test clock.
                     assertFalse(session.songs.snapshot.isPlaying)
                     mainClock.autoAdvance=true
-                    try {onNodeWithText(label).performScrollTo().performClick()}
+                    try {onNodeWithTag("lyric-theme-${theme.name}").performScrollTo().performClick()}
                     finally {mainClock.autoAdvance=false}
                     settle()
                     click("完成");assertEquals(theme,session.lyricTheme)

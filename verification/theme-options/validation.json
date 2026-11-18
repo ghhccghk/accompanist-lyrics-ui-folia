@@ -1,0 +1,16 @@
+{
+  "tests": 17,
+  "failures": 0,
+  "platform": "JVM offscreen UI / Windows",
+  "compilation": [
+    "Android sample shared",
+    "Desktop application"
+  ],
+  "nativeWindow": false,
+  "androidRuntime": false,
+  "upstreamVisualAcceptance": false,
+  "screenshots": {
+    "build\\verification\\theme-options\\menu-320.png": "9099325c10015e8a9bb53a3ca18d5c69de0652c5cc04b5009ae4f8f66acd0cc3",
+    "build\\verification\\theme-options\\menu-900.png": "d422bcc811786dc5ef578810d3baad84349b31d4b72d9bb42c1de804a887b8e1"
+  }
+}

@@ -42,4 +42,8 @@ class SampleSession(demoInitially: Boolean = false) {
     var preferencesLoaded = false
 }
 
-enum class SampleLyricTheme { Classic, Partita, Tilt, Cadenza, Pendolo, Cappella, Fume }
+/** Names are presentation only; enum identifiers remain stable preference keys. */
+enum class SampleLyricTheme(val displayName: String) {
+    Classic("流光"), Partita("云阶"), Tilt("倾诉"), Cadenza("心象"),
+    Pendolo("时计"), Cappella("群唱"), Fume("浮名")
+}

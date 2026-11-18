@@ -10,6 +10,12 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、follower/原picker、裁剪/邻行/life/fog、incoming flight/同走廊loop/有界双走廊plain媒体重建 | 无 | 完整原挂载/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
+最新插入任务已完成（示例主题选项）：七个实际公开主题使用自适应换行选择项，
+显示中英文名、选中语义与统一校准预览提示；镜台仅说明内部验证，不开放假入口。
+320/900宽度逐项选择、原播放状态不变和原三主题入口/设置17项通过；Android shared/
+Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
+verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
+
 当前唯一下一项：镜台实际R3F ACES材质色调映射，先从已安装原Three shader建立
 独立颜色/混合/fog数值控制，再补原文字路径，复用冻结mounted48帧同union前后对照。
 不得修改旧直接Three NoToneMapping oracle，或加固定帧延迟仿造source callback顺序。

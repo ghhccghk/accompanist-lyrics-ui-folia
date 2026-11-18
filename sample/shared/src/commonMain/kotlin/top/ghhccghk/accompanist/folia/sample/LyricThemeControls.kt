@@ -5,34 +5,30 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.unit.dp
 
 /** Only actual Kotlin renderers are selectable. No placeholders for planned themes. */
 @Composable
 internal fun LyricThemeControls(session: SampleSession) {
     Text("歌词主题")
-    Row {
-        TextButton({session.lyricTheme=SampleLyricTheme.Classic}) {
-            Text("流光${if(session.lyricTheme==SampleLyricTheme.Classic)" ✓" else ""}")
+    Text("7 个校准预览主题，尚未完成正式视觉验收。", style=MaterialTheme.typography.bodySmall)
+    FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+        for(theme in SampleLyricTheme.entries) {
+            FilterChip(
+                selected=session.lyricTheme==theme,
+                onClick={session.lyricTheme=theme},
+                modifier=Modifier.testTag("lyric-theme-${theme.name}"),
+                label={
+                    Column {
+                        Text(theme.displayName)
+                        Text(theme.name,style=MaterialTheme.typography.labelSmall)
+                    }
+                }
+            )
         }
-        TextButton({session.lyricTheme=SampleLyricTheme.Partita}) {
-            Text("云阶${if(session.lyricTheme==SampleLyricTheme.Partita)" ✓" else ""}")
-        }
-        TextButton({session.lyricTheme=SampleLyricTheme.Tilt}) {
-            Text("倾诉${if(session.lyricTheme==SampleLyricTheme.Tilt)" ✓" else ""}")
-        }
     }
-    TextButton({session.lyricTheme=SampleLyricTheme.Cadenza}) {
-        Text("心象${if(session.lyricTheme==SampleLyricTheme.Cadenza)" ✓" else ""}")
-    }
-    TextButton({session.lyricTheme=SampleLyricTheme.Pendolo}) {
-        Text("时计${if(session.lyricTheme==SampleLyricTheme.Pendolo)" ✓" else ""}")
-    }
-    TextButton({session.lyricTheme=SampleLyricTheme.Cappella}) {
-        Text("群唱${if(session.lyricTheme==SampleLyricTheme.Cappella)" ✓" else ""}")
-    }
-    TextButton({session.lyricTheme=SampleLyricTheme.Fume}) {
-        Text("浮名${if(session.lyricTheme==SampleLyricTheme.Fume)" ✓" else ""}")
-    }
+    Text("镜台 Diorama：内部验证中，暂未开放。",style=MaterialTheme.typography.bodySmall)
     if(session.lyricTheme==SampleLyricTheme.Fume){
         Text("浮名：文章镜头校准预览。短桥接、总览与文字光栅仍有差异。",style=MaterialTheme.typography.bodySmall)
         Text("文章字号倍率 ${session.fumeTuning.fontScale}")

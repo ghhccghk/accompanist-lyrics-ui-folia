@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { checkReference, root, upstream } from './reference.mjs';
 const require = createRequire(import.meta.url);
-export async function startReferenceServer(port = 4173) {
+export async function startReferenceServer(port = 4173, { realSubtitles = false } = {}) {
 checkReference();
 const server = await createServer({ configFile: false, root: path.dirname(fileURLToPath(import.meta.url)),
   resolve: { alias: [
@@ -14,7 +14,9 @@ const server = await createServer({ configFile: false, root: path.dirname(fileUR
     { find: /^framer-motion$/, replacement: require.resolve('framer-motion') },
     { find: 'react-i18next', replacement: path.join(root, 'verification/classic-browser/surfaces.tsx') },
     { find: '../VisualizerShell', replacement: path.join(root, 'verification/classic-browser/surfaces.tsx') },
-    { find: '../VisualizerSubtitleOverlay', replacement: path.join(root, 'verification/classic-browser/no-subtitle.tsx') },
+    { find: '../VisualizerSubtitleOverlay', replacement: realSubtitles
+      ? path.join(upstream, 'src/components/visualizer/VisualizerSubtitleOverlay.tsx')
+      : path.join(root, 'verification/classic-browser/no-subtitle.tsx') },
     { find: '../../../stores/useVisualizerSettingsStore', replacement: path.join(root, 'verification/classic-browser/reference-settings.ts') },
     { find: 'pinned-classic', replacement: path.join(upstream, 'src/components/visualizer/classic/Visualizer.tsx') },
     { find: 'pinned-partita', replacement: path.join(upstream, 'src/components/visualizer/partita/VisualizerPartita.tsx') },

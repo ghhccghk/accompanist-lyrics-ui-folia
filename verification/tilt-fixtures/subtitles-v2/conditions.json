@@ -1,0 +1,3047 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "DPR": 1,
+  "height": 600,
+  "clock": "10ms media/RAF/Motion with actual event thresholds; WAAPI disabled as in previous Tilt matrix",
+  "scope": "Actual original Tilt and VisualizerSubtitleOverlay. Host shell/background-only isolation, fixed112px bottom, source translation-only valid layout, original default typography with parity font700, actual default subtitle opacity0.6 and background pad off. No algorithm replacement or collision suppression. Prior v1 injected opacity1 mismatched Kotlin and was preserved as invalid under .work/tilt-subtitles-opacity1, not selected out by image quality.",
+  "captures": [
+    {
+      "file": "380-1-1000.png",
+      "width": 380,
+      "scale": 1,
+      "mediaMs": 1000,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 27.504,
+          "width": 149.453,
+          "height": 37.125,
+          "rect": {
+            "x": 115.265625,
+            "y": 211.52554321289062,
+            "width": 149.453125,
+            "height": 37.125,
+            "top": 211.52554321289062,
+            "right": 264.71875,
+            "bottom": 248.65054321289062,
+            "left": 115.265625
+          },
+          "motion": {
+            "opacity": 0.8112228898372268,
+            "y": 3.7755422032554655
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 27.504,
+          "width": 218.781,
+          "height": 37.125,
+          "rect": {
+            "x": 80.59375,
+            "y": 262.3515930175781,
+            "width": 218.78125,
+            "height": 37.125,
+            "top": 262.3515930175781,
+            "right": 299.375,
+            "bottom": 299.4765930175781,
+            "left": 80.59375
+          },
+          "motion": {
+            "opacity": 0.7261706004297594,
+            "y": 5.476587991404811
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 27.504,
+          "width": 144.25,
+          "height": 37.125,
+          "rect": {
+            "x": 117.859375,
+            "y": 326,
+            "width": 144.25,
+            "height": 37.125,
+            "top": 326,
+            "right": 262.109375,
+            "bottom": 363.125,
+            "left": 117.859375
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 27.504,
+          "width": 223.703,
+          "height": 37.125,
+          "rect": {
+            "x": 78.140625,
+            "y": 375.125,
+            "width": 223.703125,
+            "height": 37.125,
+            "top": 375.125,
+            "right": 301.84375,
+            "bottom": 412.25,
+            "left": 78.140625
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 18,
+          "lineHeight": 27,
+          "rect": {
+            "x": 43.296875,
+            "y": 461,
+            "width": 293.40625,
+            "height": 27,
+            "top": 461,
+            "right": 336.703125,
+            "bottom": 488,
+            "left": 43.296875
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-1-1500.png",
+      "width": 380,
+      "scale": 1,
+      "mediaMs": 1500,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 27.504,
+          "width": 149.453,
+          "height": 37.125,
+          "rect": {
+            "x": 115.265625,
+            "y": 207.75,
+            "width": 149.453125,
+            "height": 37.125,
+            "top": 207.75,
+            "right": 264.71875,
+            "bottom": 244.875,
+            "left": 115.265625
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 27.504,
+          "width": 218.781,
+          "height": 37.125,
+          "rect": {
+            "x": 80.59375,
+            "y": 256.875,
+            "width": 218.78125,
+            "height": 37.125,
+            "top": 256.875,
+            "right": 299.375,
+            "bottom": 294,
+            "left": 80.59375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 27.504,
+          "width": 144.25,
+          "height": 37.125,
+          "rect": {
+            "x": 117.859375,
+            "y": 316.20648193359375,
+            "width": 144.25,
+            "height": 37.125,
+            "top": 316.20648193359375,
+            "right": 262.109375,
+            "bottom": 353.33148193359375,
+            "left": 117.859375
+          },
+          "motion": {
+            "opacity": 0.4896759263152489,
+            "y": 10.206481473695021
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 27.504,
+          "width": 223.703,
+          "height": 37.125,
+          "rect": {
+            "x": 78.140625,
+            "y": 375.125,
+            "width": 223.703125,
+            "height": 37.125,
+            "top": 375.125,
+            "right": 301.84375,
+            "bottom": 412.25,
+            "left": 78.140625
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 18,
+          "lineHeight": 27,
+          "rect": {
+            "x": 43.296875,
+            "y": 461,
+            "width": 293.40625,
+            "height": 27,
+            "top": 461,
+            "right": 336.703125,
+            "bottom": 488,
+            "left": 43.296875
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-1-2400.png",
+      "width": 380,
+      "scale": 1,
+      "mediaMs": 2400,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 27.504,
+          "width": 149.453,
+          "height": 37.125,
+          "rect": {
+            "x": 115.265625,
+            "y": 207.75,
+            "width": 149.453125,
+            "height": 37.125,
+            "top": 207.75,
+            "right": 264.71875,
+            "bottom": 244.875,
+            "left": 115.265625
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 27.504,
+          "width": 218.781,
+          "height": 37.125,
+          "rect": {
+            "x": 80.59375,
+            "y": 256.875,
+            "width": 218.78125,
+            "height": 37.125,
+            "top": 256.875,
+            "right": 299.375,
+            "bottom": 294,
+            "left": 80.59375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 27.504,
+          "width": 144.25,
+          "height": 37.125,
+          "rect": {
+            "x": 117.859375,
+            "y": 306,
+            "width": 144.25,
+            "height": 37.125,
+            "top": 306,
+            "right": 262.109375,
+            "bottom": 343.125,
+            "left": 117.859375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 27.504,
+          "width": 223.703,
+          "height": 37.125,
+          "rect": {
+            "x": 78.140625,
+            "y": 356.0150451660156,
+            "width": 223.703125,
+            "height": 37.125,
+            "top": 356.0150451660156,
+            "right": 301.84375,
+            "bottom": 393.1400451660156,
+            "left": 78.140625
+          },
+          "motion": {
+            "opacity": 0.9554974376788595,
+            "y": 0.8900512464228107
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 18,
+          "lineHeight": 27,
+          "rect": {
+            "x": 43.296875,
+            "y": 461,
+            "width": 293.40625,
+            "height": 27,
+            "top": 461,
+            "right": 336.703125,
+            "bottom": 488,
+            "left": 43.296875
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-1-3200.png",
+      "width": 380,
+      "scale": 1,
+      "mediaMs": 3200,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 27.504,
+          "width": 149.453,
+          "height": 37.125,
+          "rect": {
+            "x": 115.109375,
+            "y": 207.18624877929688,
+            "width": 149.453125,
+            "height": 37.125,
+            "top": 207.18624877929688,
+            "right": 264.5625,
+            "bottom": 244.31124877929688,
+            "left": 115.109375
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 27.504,
+          "width": 218.781,
+          "height": 37.125,
+          "rect": {
+            "x": 80.453125,
+            "y": 256.3112487792969,
+            "width": 218.78125,
+            "height": 37.125,
+            "top": 256.3112487792969,
+            "right": 299.234375,
+            "bottom": 293.4362487792969,
+            "left": 80.453125
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 27.504,
+          "width": 144.25,
+          "height": 37.125,
+          "rect": {
+            "x": 117.71875,
+            "y": 305.4362487792969,
+            "width": 144.25,
+            "height": 37.125,
+            "top": 305.4362487792969,
+            "right": 261.96875,
+            "bottom": 342.5612487792969,
+            "left": 117.71875
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 27.504,
+          "width": 223.703,
+          "height": 37.125,
+          "rect": {
+            "x": 78,
+            "y": 354.5612487792969,
+            "width": 223.703125,
+            "height": 37.125,
+            "top": 354.5612487792969,
+            "right": 301.703125,
+            "bottom": 391.6862487792969,
+            "left": 78
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 18,
+          "lineHeight": 27,
+          "rect": {
+            "x": 43.296875,
+            "y": 470.7705383300781,
+            "width": 293.40625,
+            "height": 27,
+            "top": 470.7705383300781,
+            "right": 336.703125,
+            "bottom": 497.7705383300781,
+            "left": 43.296875
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-1-3500.png",
+      "width": 380,
+      "scale": 1,
+      "mediaMs": 3500,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 27.504,
+          "width": 149.453,
+          "height": 37.125,
+          "rect": {
+            "x": 115.109375,
+            "y": 197.92454528808594,
+            "width": 149.453125,
+            "height": 37.125,
+            "top": 197.92454528808594,
+            "right": 264.5625,
+            "bottom": 235.04954528808594,
+            "left": 115.109375
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 27.504,
+          "width": 218.781,
+          "height": 37.125,
+          "rect": {
+            "x": 80.453125,
+            "y": 247.04953002929688,
+            "width": 218.78125,
+            "height": 37.125,
+            "top": 247.04953002929688,
+            "right": 299.234375,
+            "bottom": 284.1745300292969,
+            "left": 80.453125
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 27.504,
+          "width": 144.25,
+          "height": 37.125,
+          "rect": {
+            "x": 117.71875,
+            "y": 296.1745300292969,
+            "width": 144.25,
+            "height": 37.125,
+            "top": 296.1745300292969,
+            "right": 261.96875,
+            "bottom": 333.2995300292969,
+            "left": 117.71875
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 27.504,
+          "width": 223.703,
+          "height": 37.125,
+          "rect": {
+            "x": 78,
+            "y": 345.299560546875,
+            "width": 223.703125,
+            "height": 37.125,
+            "top": 345.299560546875,
+            "right": 301.703125,
+            "bottom": 382.424560546875,
+            "left": 78
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 18,
+          "lineHeight": 27,
+          "rect": {
+            "x": 43.296875,
+            "y": 461,
+            "width": 293.40625,
+            "height": 27,
+            "top": 461,
+            "right": 336.703125,
+            "bottom": 488,
+            "left": 43.296875
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-1.4-1000.png",
+      "width": 380,
+      "scale": 1.4,
+      "mediaMs": 1000,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 38.496,
+          "width": 209.156,
+          "height": 51.9688,
+          "rect": {
+            "x": 85.421875,
+            "y": 181.83804321289062,
+            "width": 209.15625,
+            "height": 51.96875,
+            "top": 181.83804321289062,
+            "right": 294.578125,
+            "bottom": 233.80679321289062,
+            "left": 85.421875
+          },
+          "motion": {
+            "opacity": 0.8112228898372268,
+            "y": 3.7755422032554655
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 38.496,
+          "width": 306.188,
+          "height": 51.9688,
+          "rect": {
+            "x": 36.90625,
+            "y": 247.50784301757812,
+            "width": 306.1875,
+            "height": 51.96875,
+            "top": 247.50784301757812,
+            "right": 343.09375,
+            "bottom": 299.4765930175781,
+            "left": 36.90625
+          },
+          "motion": {
+            "opacity": 0.7261706004297594,
+            "y": 5.476587991404811
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 38.496,
+          "width": 201.875,
+          "height": 51.9688,
+          "rect": {
+            "x": 89.0625,
+            "y": 326,
+            "width": 201.875,
+            "height": 51.96875,
+            "top": 326,
+            "right": 290.9375,
+            "bottom": 377.96875,
+            "left": 89.0625
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 38.496,
+          "width": 313.062,
+          "height": 51.9688,
+          "rect": {
+            "x": 33.46875,
+            "y": 389.96875,
+            "width": 313.0625,
+            "height": 51.96875,
+            "top": 389.96875,
+            "right": 346.53125,
+            "bottom": 441.9375,
+            "left": 33.46875
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 25.2,
+          "lineHeight": 37.8,
+          "rect": {
+            "x": 16,
+            "y": 412.40625,
+            "width": 348,
+            "height": 75.59375,
+            "top": 412.40625,
+            "right": 364,
+            "bottom": 488,
+            "left": 16
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-1.4-1500.png",
+      "width": 380,
+      "scale": 1.4,
+      "mediaMs": 1500,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 38.496,
+          "width": 209.156,
+          "height": 51.9688,
+          "rect": {
+            "x": 85.421875,
+            "y": 178.0625,
+            "width": 209.15625,
+            "height": 51.96875,
+            "top": 178.0625,
+            "right": 294.578125,
+            "bottom": 230.03125,
+            "left": 85.421875
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 38.496,
+          "width": 306.188,
+          "height": 51.9688,
+          "rect": {
+            "x": 36.90625,
+            "y": 242.03125,
+            "width": 306.1875,
+            "height": 51.96875,
+            "top": 242.03125,
+            "right": 343.09375,
+            "bottom": 294,
+            "left": 36.90625
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 38.496,
+          "width": 201.875,
+          "height": 51.9688,
+          "rect": {
+            "x": 89.0625,
+            "y": 316.20648193359375,
+            "width": 201.875,
+            "height": 51.96875,
+            "top": 316.20648193359375,
+            "right": 290.9375,
+            "bottom": 368.17523193359375,
+            "left": 89.0625
+          },
+          "motion": {
+            "opacity": 0.4896759263152489,
+            "y": 10.206481473695021
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 38.496,
+          "width": 313.062,
+          "height": 51.9688,
+          "rect": {
+            "x": 33.46875,
+            "y": 389.96875,
+            "width": 313.0625,
+            "height": 51.96875,
+            "top": 389.96875,
+            "right": 346.53125,
+            "bottom": 441.9375,
+            "left": 33.46875
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 25.2,
+          "lineHeight": 37.8,
+          "rect": {
+            "x": 16,
+            "y": 412.40625,
+            "width": 348,
+            "height": 75.59375,
+            "top": 412.40625,
+            "right": 364,
+            "bottom": 488,
+            "left": 16
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-1.4-2400.png",
+      "width": 380,
+      "scale": 1.4,
+      "mediaMs": 2400,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 38.496,
+          "width": 209.156,
+          "height": 51.9688,
+          "rect": {
+            "x": 85.421875,
+            "y": 178.0625,
+            "width": 209.15625,
+            "height": 51.96875,
+            "top": 178.0625,
+            "right": 294.578125,
+            "bottom": 230.03125,
+            "left": 85.421875
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 38.496,
+          "width": 306.188,
+          "height": 51.9688,
+          "rect": {
+            "x": 36.90625,
+            "y": 242.03125,
+            "width": 306.1875,
+            "height": 51.96875,
+            "top": 242.03125,
+            "right": 343.09375,
+            "bottom": 294,
+            "left": 36.90625
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 38.496,
+          "width": 201.875,
+          "height": 51.9688,
+          "rect": {
+            "x": 89.0625,
+            "y": 306,
+            "width": 201.875,
+            "height": 51.96875,
+            "top": 306,
+            "right": 290.9375,
+            "bottom": 357.96875,
+            "left": 89.0625
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 38.496,
+          "width": 313.062,
+          "height": 51.9688,
+          "rect": {
+            "x": 33.46875,
+            "y": 370.8587951660156,
+            "width": 313.0625,
+            "height": 51.96875,
+            "top": 370.8587951660156,
+            "right": 346.53125,
+            "bottom": 422.8275451660156,
+            "left": 33.46875
+          },
+          "motion": {
+            "opacity": 0.9554974376788595,
+            "y": 0.8900512464228107
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 25.2,
+          "lineHeight": 37.8,
+          "rect": {
+            "x": 16,
+            "y": 412.40625,
+            "width": 348,
+            "height": 75.59375,
+            "top": 412.40625,
+            "right": 364,
+            "bottom": 488,
+            "left": 16
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-1.4-3200.png",
+      "width": 380,
+      "scale": 1.4,
+      "mediaMs": 3200,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 38.496,
+          "width": 209.156,
+          "height": 51.9688,
+          "rect": {
+            "x": 84.9375,
+            "y": 177.18624877929688,
+            "width": 209.15625,
+            "height": 51.96875,
+            "top": 177.18624877929688,
+            "right": 294.09375,
+            "bottom": 229.15499877929688,
+            "left": 84.9375
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 38.496,
+          "width": 306.188,
+          "height": 51.9688,
+          "rect": {
+            "x": 36.421875,
+            "y": 241.15499877929688,
+            "width": 306.1875,
+            "height": 51.96875,
+            "top": 241.15499877929688,
+            "right": 342.609375,
+            "bottom": 293.1237487792969,
+            "left": 36.421875
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 38.496,
+          "width": 201.875,
+          "height": 51.9688,
+          "rect": {
+            "x": 88.578125,
+            "y": 305.1237487792969,
+            "width": 201.875,
+            "height": 51.96875,
+            "top": 305.1237487792969,
+            "right": 290.453125,
+            "bottom": 357.0924987792969,
+            "left": 88.578125
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 38.496,
+          "width": 313.062,
+          "height": 51.9688,
+          "rect": {
+            "x": 33,
+            "y": 369.0924987792969,
+            "width": 313.0625,
+            "height": 51.96875,
+            "top": 369.0924987792969,
+            "right": 346.0625,
+            "bottom": 421.0612487792969,
+            "left": 33
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 25.2,
+          "lineHeight": 37.8,
+          "rect": {
+            "x": 16,
+            "y": 422.1767883300781,
+            "width": 348,
+            "height": 75.59375,
+            "top": 422.1767883300781,
+            "right": 364,
+            "bottom": 497.7705383300781,
+            "left": 16
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-1.4-3500.png",
+      "width": 380,
+      "scale": 1.4,
+      "mediaMs": 3500,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 38.496,
+          "width": 209.156,
+          "height": 51.9688,
+          "rect": {
+            "x": 84.9375,
+            "y": 167.92454528808594,
+            "width": 209.15625,
+            "height": 51.96873474121094,
+            "top": 167.92454528808594,
+            "right": 294.09375,
+            "bottom": 219.89328002929688,
+            "left": 84.9375
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 38.496,
+          "width": 306.188,
+          "height": 51.9688,
+          "rect": {
+            "x": 36.421875,
+            "y": 231.89328002929688,
+            "width": 306.1875,
+            "height": 51.96875,
+            "top": 231.89328002929688,
+            "right": 342.609375,
+            "bottom": 283.8620300292969,
+            "left": 36.421875
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 38.496,
+          "width": 201.875,
+          "height": 51.9688,
+          "rect": {
+            "x": 88.578125,
+            "y": 295.8620300292969,
+            "width": 201.875,
+            "height": 51.96875,
+            "top": 295.8620300292969,
+            "right": 290.453125,
+            "bottom": 347.8307800292969,
+            "left": 88.578125
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 38.496,
+          "width": 313.062,
+          "height": 51.9688,
+          "rect": {
+            "x": 33,
+            "y": 359.830810546875,
+            "width": 313.0625,
+            "height": 51.96875,
+            "top": 359.830810546875,
+            "right": 346.0625,
+            "bottom": 411.799560546875,
+            "left": 33
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 25.2,
+          "lineHeight": 37.8,
+          "rect": {
+            "x": 16,
+            "y": 412.40625,
+            "width": 348,
+            "height": 75.59375,
+            "top": 412.40625,
+            "right": 364,
+            "bottom": 488,
+            "left": 16
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-2-1000.png",
+      "width": 380,
+      "scale": 2,
+      "mediaMs": 1000,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 55.008,
+          "width": 298.844,
+          "height": 74.2656,
+          "rect": {
+            "x": 40.578125,
+            "y": 137.24429321289062,
+            "width": 298.84375,
+            "height": 74.265625,
+            "top": 137.24429321289062,
+            "right": 339.421875,
+            "bottom": 211.50991821289062,
+            "left": 40.578125
+          },
+          "motion": {
+            "opacity": 0.8112228898372268,
+            "y": 3.7755422032554655
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 55.008,
+          "width": 437.484,
+          "height": 74.2656,
+          "rect": {
+            "x": -28.734375,
+            "y": 225.21096801757812,
+            "width": 437.484375,
+            "height": 74.265625,
+            "top": 225.21096801757812,
+            "right": 408.75,
+            "bottom": 299.4765930175781,
+            "left": -28.734375
+          },
+          "motion": {
+            "opacity": 0.7261706004297594,
+            "y": 5.476587991404811
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 55.008,
+          "width": 288.438,
+          "height": 74.2656,
+          "rect": {
+            "x": 45.78125,
+            "y": 326,
+            "width": 288.4375,
+            "height": 74.265625,
+            "top": 326,
+            "right": 334.21875,
+            "bottom": 400.265625,
+            "left": 45.78125
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 55.008,
+          "width": 447.297,
+          "height": 74.2656,
+          "rect": {
+            "x": -33.640625,
+            "y": 412.265625,
+            "width": 447.296875,
+            "height": 74.265625,
+            "top": 412.265625,
+            "right": 413.65625,
+            "bottom": 486.53125,
+            "left": -33.640625
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 36,
+          "lineHeight": 54,
+          "rect": {
+            "x": 16,
+            "y": 380,
+            "width": 348,
+            "height": 108,
+            "top": 380,
+            "right": 364,
+            "bottom": 488,
+            "left": 16
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-2-1500.png",
+      "width": 380,
+      "scale": 2,
+      "mediaMs": 1500,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 55.008,
+          "width": 298.844,
+          "height": 74.2656,
+          "rect": {
+            "x": 40.578125,
+            "y": 133.46875,
+            "width": 298.84375,
+            "height": 74.265625,
+            "top": 133.46875,
+            "right": 339.421875,
+            "bottom": 207.734375,
+            "left": 40.578125
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 55.008,
+          "width": 437.484,
+          "height": 74.2656,
+          "rect": {
+            "x": -28.734375,
+            "y": 219.734375,
+            "width": 437.484375,
+            "height": 74.265625,
+            "top": 219.734375,
+            "right": 408.75,
+            "bottom": 294,
+            "left": -28.734375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 55.008,
+          "width": 288.438,
+          "height": 74.2656,
+          "rect": {
+            "x": 45.78125,
+            "y": 316.20648193359375,
+            "width": 288.4375,
+            "height": 74.265625,
+            "top": 316.20648193359375,
+            "right": 334.21875,
+            "bottom": 390.47210693359375,
+            "left": 45.78125
+          },
+          "motion": {
+            "opacity": 0.4896759263152489,
+            "y": 10.206481473695021
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 55.008,
+          "width": 447.297,
+          "height": 74.2656,
+          "rect": {
+            "x": -33.640625,
+            "y": 412.265625,
+            "width": 447.296875,
+            "height": 74.265625,
+            "top": 412.265625,
+            "right": 413.65625,
+            "bottom": 486.53125,
+            "left": -33.640625
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 36,
+          "lineHeight": 54,
+          "rect": {
+            "x": 16,
+            "y": 380,
+            "width": 348,
+            "height": 108,
+            "top": 380,
+            "right": 364,
+            "bottom": 488,
+            "left": 16
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-2-2400.png",
+      "width": 380,
+      "scale": 2,
+      "mediaMs": 2400,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 55.008,
+          "width": 298.844,
+          "height": 74.2656,
+          "rect": {
+            "x": 40.578125,
+            "y": 133.46875,
+            "width": 298.84375,
+            "height": 74.265625,
+            "top": 133.46875,
+            "right": 339.421875,
+            "bottom": 207.734375,
+            "left": 40.578125
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 55.008,
+          "width": 437.484,
+          "height": 74.2656,
+          "rect": {
+            "x": -28.734375,
+            "y": 219.734375,
+            "width": 437.484375,
+            "height": 74.265625,
+            "top": 219.734375,
+            "right": 408.75,
+            "bottom": 294,
+            "left": -28.734375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 55.008,
+          "width": 288.438,
+          "height": 74.2656,
+          "rect": {
+            "x": 45.78125,
+            "y": 306,
+            "width": 288.4375,
+            "height": 74.265625,
+            "top": 306,
+            "right": 334.21875,
+            "bottom": 380.265625,
+            "left": 45.78125
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 55.008,
+          "width": 447.297,
+          "height": 74.2656,
+          "rect": {
+            "x": -33.640625,
+            "y": 393.1556701660156,
+            "width": 447.296875,
+            "height": 74.265625,
+            "top": 393.1556701660156,
+            "right": 413.65625,
+            "bottom": 467.4212951660156,
+            "left": -33.640625
+          },
+          "motion": {
+            "opacity": 0.9554974376788595,
+            "y": 0.8900512464228107
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 36,
+          "lineHeight": 54,
+          "rect": {
+            "x": 16,
+            "y": 380,
+            "width": 348,
+            "height": 108,
+            "top": 380,
+            "right": 364,
+            "bottom": 488,
+            "left": 16
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-2-3200.png",
+      "width": 380,
+      "scale": 2,
+      "mediaMs": 3200,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 55.008,
+          "width": 298.844,
+          "height": 74.2656,
+          "rect": {
+            "x": 40.21875,
+            "y": 132.18624877929688,
+            "width": 298.84375,
+            "height": 74.265625,
+            "top": 132.18624877929688,
+            "right": 339.0625,
+            "bottom": 206.45187377929688,
+            "left": 40.21875
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 55.008,
+          "width": 437.484,
+          "height": 74.2656,
+          "rect": {
+            "x": -29.09375,
+            "y": 218.45187377929688,
+            "width": 437.484375,
+            "height": 74.265625,
+            "top": 218.45187377929688,
+            "right": 408.390625,
+            "bottom": 292.7174987792969,
+            "left": -29.09375
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 55.008,
+          "width": 288.438,
+          "height": 74.2656,
+          "rect": {
+            "x": 45.421875,
+            "y": 304.7174987792969,
+            "width": 288.4375,
+            "height": 74.265625,
+            "top": 304.7174987792969,
+            "right": 333.859375,
+            "bottom": 378.9831237792969,
+            "left": 45.421875
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 55.008,
+          "width": 447.297,
+          "height": 74.2656,
+          "rect": {
+            "x": -34,
+            "y": 390.9831237792969,
+            "width": 447.296875,
+            "height": 74.265625,
+            "top": 390.9831237792969,
+            "right": 413.296875,
+            "bottom": 465.2487487792969,
+            "left": -34
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 36,
+          "lineHeight": 54,
+          "rect": {
+            "x": 16,
+            "y": 389.7705383300781,
+            "width": 348,
+            "height": 108,
+            "top": 389.7705383300781,
+            "right": 364,
+            "bottom": 497.7705383300781,
+            "left": 16
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "380-2-3500.png",
+      "width": 380,
+      "scale": 2,
+      "mediaMs": 3500,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 55.008,
+          "width": 298.844,
+          "height": 74.2656,
+          "rect": {
+            "x": 40.21875,
+            "y": 122.9245376586914,
+            "width": 298.84375,
+            "height": 74.26561737060547,
+            "top": 122.9245376586914,
+            "right": 339.0625,
+            "bottom": 197.19015502929688,
+            "left": 40.21875
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 55.008,
+          "width": 437.484,
+          "height": 74.2656,
+          "rect": {
+            "x": -29.09375,
+            "y": 209.19015502929688,
+            "width": 437.484375,
+            "height": 74.265625,
+            "top": 209.19015502929688,
+            "right": 408.390625,
+            "bottom": 283.4557800292969,
+            "left": -29.09375
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 55.008,
+          "width": 288.438,
+          "height": 74.2656,
+          "rect": {
+            "x": 45.421875,
+            "y": 295.455810546875,
+            "width": 288.4375,
+            "height": 74.265625,
+            "top": 295.455810546875,
+            "right": 333.859375,
+            "bottom": 369.721435546875,
+            "left": 45.421875
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 55.008,
+          "width": 447.297,
+          "height": 74.2656,
+          "rect": {
+            "x": -34,
+            "y": 381.721435546875,
+            "width": 447.296875,
+            "height": 74.265625,
+            "top": 381.721435546875,
+            "right": 413.296875,
+            "bottom": 455.987060546875,
+            "left": -34
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 36,
+          "lineHeight": 54,
+          "rect": {
+            "x": 16,
+            "y": 380,
+            "width": 348,
+            "height": 108,
+            "top": 380,
+            "right": 364,
+            "bottom": 488,
+            "left": 16
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-1-1000.png",
+      "width": 800,
+      "scale": 1,
+      "mediaMs": 1000,
+      "main": [
+        {
+          "text": "Synthetic amber echoes",
+          "font": 34.728,
+          "width": 476.734,
+          "height": 46.8906,
+          "rect": {
+            "x": 161.625,
+            "y": 248.88491821289062,
+            "width": 476.734375,
+            "height": 46.890625,
+            "top": 248.88491821289062,
+            "right": 638.359375,
+            "bottom": 295.7755432128906,
+            "left": 161.625
+          },
+          "motion": {
+            "opacity": 0.8112228898372268,
+            "y": 3.7755422032554655
+          }
+        },
+        {
+          "text": "cross the quiet window.",
+          "font": 34.728,
+          "width": 476.359,
+          "height": 46.8906,
+          "rect": {
+            "x": 161.8125,
+            "y": 328,
+            "width": 476.359375,
+            "height": 46.890625,
+            "top": 328,
+            "right": 638.171875,
+            "bottom": 374.890625,
+            "left": 161.8125
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 20,
+          "lineHeight": 30,
+          "rect": {
+            "x": 237,
+            "y": 458,
+            "width": 326,
+            "height": 30,
+            "top": 458,
+            "right": 563,
+            "bottom": 488,
+            "left": 237
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-1-1500.png",
+      "width": 800,
+      "scale": 1,
+      "mediaMs": 1500,
+      "main": [
+        {
+          "text": "Synthetic amber echoes",
+          "font": 34.728,
+          "width": 476.734,
+          "height": 46.8906,
+          "rect": {
+            "x": 161.625,
+            "y": 245.109375,
+            "width": 476.734375,
+            "height": 46.890625,
+            "top": 245.109375,
+            "right": 638.359375,
+            "bottom": 292,
+            "left": 161.625
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the quiet window.",
+          "font": 34.728,
+          "width": 476.359,
+          "height": 46.8906,
+          "rect": {
+            "x": 161.8125,
+            "y": 318.20648193359375,
+            "width": 476.359375,
+            "height": 46.890625,
+            "top": 318.20648193359375,
+            "right": 638.171875,
+            "bottom": 365.09710693359375,
+            "left": 161.8125
+          },
+          "motion": {
+            "opacity": 0.4896759263152489,
+            "y": 10.206481473695021
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 20,
+          "lineHeight": 30,
+          "rect": {
+            "x": 237,
+            "y": 458,
+            "width": 326,
+            "height": 30,
+            "top": 458,
+            "right": 563,
+            "bottom": 488,
+            "left": 237
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-1-2400.png",
+      "width": 800,
+      "scale": 1,
+      "mediaMs": 2400,
+      "main": [
+        {
+          "text": "Synthetic amber echoes",
+          "font": 34.728,
+          "width": 476.734,
+          "height": 46.8906,
+          "rect": {
+            "x": 161.625,
+            "y": 245.109375,
+            "width": 476.734375,
+            "height": 46.890625,
+            "top": 245.109375,
+            "right": 638.359375,
+            "bottom": 292,
+            "left": 161.625
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the quiet window.",
+          "font": 34.728,
+          "width": 476.359,
+          "height": 46.8906,
+          "rect": {
+            "x": 161.8125,
+            "y": 308,
+            "width": 476.359375,
+            "height": 46.890625,
+            "top": 308,
+            "right": 638.171875,
+            "bottom": 354.890625,
+            "left": 161.8125
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 20,
+          "lineHeight": 30,
+          "rect": {
+            "x": 237,
+            "y": 458,
+            "width": 326,
+            "height": 30,
+            "top": 458,
+            "right": 563,
+            "bottom": 488,
+            "left": 237
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-1-3200.png",
+      "width": 800,
+      "scale": 1,
+      "mediaMs": 3200,
+      "main": [
+        {
+          "text": "Synthetic amber echoes",
+          "font": 34.728,
+          "width": 476.734,
+          "height": 46.8906,
+          "rect": {
+            "x": 162,
+            "y": 244.18624877929688,
+            "width": 476.734375,
+            "height": 46.890625,
+            "top": 244.18624877929688,
+            "right": 638.734375,
+            "bottom": 291.0768737792969,
+            "left": 162
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "cross the quiet window.",
+          "font": 34.728,
+          "width": 476.359,
+          "height": 46.8906,
+          "rect": {
+            "x": 162.171875,
+            "y": 307.0768737792969,
+            "width": 476.359375,
+            "height": 46.890625,
+            "top": 307.0768737792969,
+            "right": 638.53125,
+            "bottom": 353.9674987792969,
+            "left": 162.171875
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 20,
+          "lineHeight": 30,
+          "rect": {
+            "x": 237,
+            "y": 467.7705383300781,
+            "width": 326,
+            "height": 30,
+            "top": 467.7705383300781,
+            "right": 563,
+            "bottom": 497.7705383300781,
+            "left": 237
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-1-3500.png",
+      "width": 800,
+      "scale": 1,
+      "mediaMs": 3500,
+      "main": [
+        {
+          "text": "Synthetic amber echoes",
+          "font": 34.728,
+          "width": 476.734,
+          "height": 46.8906,
+          "rect": {
+            "x": 162,
+            "y": 234.92454528808594,
+            "width": 476.734375,
+            "height": 46.89060974121094,
+            "top": 234.92454528808594,
+            "right": 638.734375,
+            "bottom": 281.8151550292969,
+            "left": 162
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "cross the quiet window.",
+          "font": 34.728,
+          "width": 476.359,
+          "height": 46.8906,
+          "rect": {
+            "x": 162.171875,
+            "y": 297.8151550292969,
+            "width": 476.359375,
+            "height": 46.890625,
+            "top": 297.8151550292969,
+            "right": 638.53125,
+            "bottom": 344.7057800292969,
+            "left": 162.171875
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 20,
+          "lineHeight": 30,
+          "rect": {
+            "x": 237,
+            "y": 458,
+            "width": 326,
+            "height": 30,
+            "top": 458,
+            "right": 563,
+            "bottom": 488,
+            "left": 237
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-1.4-1000.png",
+      "width": 800,
+      "scale": 1.4,
+      "mediaMs": 1000,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 59.104,
+          "width": 321.109,
+          "height": 79.7969,
+          "rect": {
+            "x": 239.4375,
+            "y": 120.18179321289062,
+            "width": 321.109375,
+            "height": 79.796875,
+            "top": 120.18179321289062,
+            "right": 560.546875,
+            "bottom": 199.97866821289062,
+            "left": 239.4375
+          },
+          "motion": {
+            "opacity": 0.8112228898372268,
+            "y": 3.7755422032554655
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 59.104,
+          "width": 470.125,
+          "height": 79.7969,
+          "rect": {
+            "x": 164.9375,
+            "y": 217.67971801757812,
+            "width": 470.125,
+            "height": 79.796875,
+            "top": 217.67971801757812,
+            "right": 635.0625,
+            "bottom": 297.4765930175781,
+            "left": 164.9375
+          },
+          "motion": {
+            "opacity": 0.7261706004297594,
+            "y": 5.476587991404811
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 59.104,
+          "width": 309.938,
+          "height": 79.7969,
+          "rect": {
+            "x": 245.03125,
+            "y": 328,
+            "width": 309.9375,
+            "height": 79.796875,
+            "top": 328,
+            "right": 554.96875,
+            "bottom": 407.796875,
+            "left": 245.03125
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 59.104,
+          "width": 480.656,
+          "height": 79.7969,
+          "rect": {
+            "x": 159.671875,
+            "y": 423.796875,
+            "width": 480.65625,
+            "height": 79.796875,
+            "top": 423.796875,
+            "right": 640.328125,
+            "bottom": 503.59375,
+            "left": 159.671875
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 28,
+          "lineHeight": 42,
+          "rect": {
+            "x": 171.796875,
+            "y": 446,
+            "width": 456.40625,
+            "height": 42,
+            "top": 446,
+            "right": 628.203125,
+            "bottom": 488,
+            "left": 171.796875
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-1.4-1500.png",
+      "width": 800,
+      "scale": 1.4,
+      "mediaMs": 1500,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 59.104,
+          "width": 321.109,
+          "height": 79.7969,
+          "rect": {
+            "x": 239.4375,
+            "y": 116.40625,
+            "width": 321.109375,
+            "height": 79.796875,
+            "top": 116.40625,
+            "right": 560.546875,
+            "bottom": 196.203125,
+            "left": 239.4375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 59.104,
+          "width": 470.125,
+          "height": 79.7969,
+          "rect": {
+            "x": 164.9375,
+            "y": 212.203125,
+            "width": 470.125,
+            "height": 79.796875,
+            "top": 212.203125,
+            "right": 635.0625,
+            "bottom": 292,
+            "left": 164.9375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 59.104,
+          "width": 309.938,
+          "height": 79.7969,
+          "rect": {
+            "x": 245.03125,
+            "y": 318.20648193359375,
+            "width": 309.9375,
+            "height": 79.796875,
+            "top": 318.20648193359375,
+            "right": 554.96875,
+            "bottom": 398.00335693359375,
+            "left": 245.03125
+          },
+          "motion": {
+            "opacity": 0.4896759263152489,
+            "y": 10.206481473695021
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 59.104,
+          "width": 480.656,
+          "height": 79.7969,
+          "rect": {
+            "x": 159.671875,
+            "y": 423.796875,
+            "width": 480.65625,
+            "height": 79.796875,
+            "top": 423.796875,
+            "right": 640.328125,
+            "bottom": 503.59375,
+            "left": 159.671875
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 28,
+          "lineHeight": 42,
+          "rect": {
+            "x": 171.796875,
+            "y": 446,
+            "width": 456.40625,
+            "height": 42,
+            "top": 446,
+            "right": 628.203125,
+            "bottom": 488,
+            "left": 171.796875
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-1.4-2400.png",
+      "width": 800,
+      "scale": 1.4,
+      "mediaMs": 2400,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 59.104,
+          "width": 321.109,
+          "height": 79.7969,
+          "rect": {
+            "x": 239.4375,
+            "y": 116.40625,
+            "width": 321.109375,
+            "height": 79.796875,
+            "top": 116.40625,
+            "right": 560.546875,
+            "bottom": 196.203125,
+            "left": 239.4375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 59.104,
+          "width": 470.125,
+          "height": 79.7969,
+          "rect": {
+            "x": 164.9375,
+            "y": 212.203125,
+            "width": 470.125,
+            "height": 79.796875,
+            "top": 212.203125,
+            "right": 635.0625,
+            "bottom": 292,
+            "left": 164.9375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 59.104,
+          "width": 309.938,
+          "height": 79.7969,
+          "rect": {
+            "x": 245.03125,
+            "y": 308,
+            "width": 309.9375,
+            "height": 79.796875,
+            "top": 308,
+            "right": 554.96875,
+            "bottom": 387.796875,
+            "left": 245.03125
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 59.104,
+          "width": 480.656,
+          "height": 79.7969,
+          "rect": {
+            "x": 159.671875,
+            "y": 404.6869201660156,
+            "width": 480.65625,
+            "height": 79.796875,
+            "top": 404.6869201660156,
+            "right": 640.328125,
+            "bottom": 484.4837951660156,
+            "left": 159.671875
+          },
+          "motion": {
+            "opacity": 0.9554974376788595,
+            "y": 0.8900512464228107
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 28,
+          "lineHeight": 42,
+          "rect": {
+            "x": 171.796875,
+            "y": 446,
+            "width": 456.40625,
+            "height": 42,
+            "top": 446,
+            "right": 628.203125,
+            "bottom": 488,
+            "left": 171.796875
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-1.4-3200.png",
+      "width": 800,
+      "scale": 1.4,
+      "mediaMs": 3200,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 59.104,
+          "width": 321.109,
+          "height": 79.7969,
+          "rect": {
+            "x": 239.765625,
+            "y": 115.1862564086914,
+            "width": 321.109375,
+            "height": 79.79686737060547,
+            "top": 115.1862564086914,
+            "right": 560.875,
+            "bottom": 194.98312377929688,
+            "left": 239.765625
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 59.104,
+          "width": 470.125,
+          "height": 79.7969,
+          "rect": {
+            "x": 165.25,
+            "y": 210.98312377929688,
+            "width": 470.125,
+            "height": 79.796875,
+            "top": 210.98312377929688,
+            "right": 635.375,
+            "bottom": 290.7799987792969,
+            "left": 165.25
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 59.104,
+          "width": 309.938,
+          "height": 79.7969,
+          "rect": {
+            "x": 245.34375,
+            "y": 306.7799987792969,
+            "width": 309.9375,
+            "height": 79.796875,
+            "top": 306.7799987792969,
+            "right": 555.28125,
+            "bottom": 386.5768737792969,
+            "left": 245.34375
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 59.104,
+          "width": 480.656,
+          "height": 79.7969,
+          "rect": {
+            "x": 160,
+            "y": 402.5768737792969,
+            "width": 480.65625,
+            "height": 79.796875,
+            "top": 402.5768737792969,
+            "right": 640.65625,
+            "bottom": 482.3737487792969,
+            "left": 160
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 28,
+          "lineHeight": 42,
+          "rect": {
+            "x": 171.796875,
+            "y": 455.7705383300781,
+            "width": 456.40625,
+            "height": 42,
+            "top": 455.7705383300781,
+            "right": 628.203125,
+            "bottom": 497.7705383300781,
+            "left": 171.796875
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-1.4-3500.png",
+      "width": 800,
+      "scale": 1.4,
+      "mediaMs": 3500,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 59.104,
+          "width": 321.109,
+          "height": 79.7969,
+          "rect": {
+            "x": 239.765625,
+            "y": 105.9245376586914,
+            "width": 321.109375,
+            "height": 79.79686737060547,
+            "top": 105.9245376586914,
+            "right": 560.875,
+            "bottom": 185.72140502929688,
+            "left": 239.765625
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 59.104,
+          "width": 470.125,
+          "height": 79.7969,
+          "rect": {
+            "x": 165.25,
+            "y": 201.72140502929688,
+            "width": 470.125,
+            "height": 79.796875,
+            "top": 201.72140502929688,
+            "right": 635.375,
+            "bottom": 281.5182800292969,
+            "left": 165.25
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 59.104,
+          "width": 309.938,
+          "height": 79.7969,
+          "rect": {
+            "x": 245.34375,
+            "y": 297.518310546875,
+            "width": 309.9375,
+            "height": 79.796875,
+            "top": 297.518310546875,
+            "right": 555.28125,
+            "bottom": 377.315185546875,
+            "left": 245.34375
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 59.104,
+          "width": 480.656,
+          "height": 79.7969,
+          "rect": {
+            "x": 160,
+            "y": 393.3151550292969,
+            "width": 480.65625,
+            "height": 79.796875,
+            "top": 393.3151550292969,
+            "right": 640.65625,
+            "bottom": 473.1120300292969,
+            "left": 160
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 28,
+          "lineHeight": 42,
+          "rect": {
+            "x": 171.796875,
+            "y": 446,
+            "width": 456.40625,
+            "height": 42,
+            "top": 446,
+            "right": 628.203125,
+            "bottom": 488,
+            "left": 171.796875
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-2-1000.png",
+      "width": 800,
+      "scale": 2,
+      "mediaMs": 1000,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 60.504,
+          "width": 328.703,
+          "height": 81.6719,
+          "rect": {
+            "x": 235.640625,
+            "y": 116.43179321289062,
+            "width": 328.703125,
+            "height": 81.671875,
+            "top": 116.43179321289062,
+            "right": 564.34375,
+            "bottom": 198.10366821289062,
+            "left": 235.640625
+          },
+          "motion": {
+            "opacity": 0.8112228898372268,
+            "y": 3.7755422032554655
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 60.504,
+          "width": 481.266,
+          "height": 81.6719,
+          "rect": {
+            "x": 159.359375,
+            "y": 215.80471801757812,
+            "width": 481.265625,
+            "height": 81.671875,
+            "top": 215.80471801757812,
+            "right": 640.625,
+            "bottom": 297.4765930175781,
+            "left": 159.359375
+          },
+          "motion": {
+            "opacity": 0.7261706004297594,
+            "y": 5.476587991404811
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 60.504,
+          "width": 317.281,
+          "height": 81.6719,
+          "rect": {
+            "x": 241.359375,
+            "y": 328,
+            "width": 317.28125,
+            "height": 81.671875,
+            "top": 328,
+            "right": 558.640625,
+            "bottom": 409.671875,
+            "left": 241.359375
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 60.504,
+          "width": 492.031,
+          "height": 81.6719,
+          "rect": {
+            "x": 153.984375,
+            "y": 425.671875,
+            "width": 492.03125,
+            "height": 81.671875,
+            "top": 425.671875,
+            "right": 646.015625,
+            "bottom": 507.34375,
+            "left": 153.984375
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 40,
+          "lineHeight": 60,
+          "rect": {
+            "x": 74,
+            "y": 428,
+            "width": 652,
+            "height": 60,
+            "top": 428,
+            "right": 726,
+            "bottom": 488,
+            "left": 74
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-2-1500.png",
+      "width": 800,
+      "scale": 2,
+      "mediaMs": 1500,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 60.504,
+          "width": 328.703,
+          "height": 81.6719,
+          "rect": {
+            "x": 235.640625,
+            "y": 112.65625,
+            "width": 328.703125,
+            "height": 81.671875,
+            "top": 112.65625,
+            "right": 564.34375,
+            "bottom": 194.328125,
+            "left": 235.640625
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 60.504,
+          "width": 481.266,
+          "height": 81.6719,
+          "rect": {
+            "x": 159.359375,
+            "y": 210.328125,
+            "width": 481.265625,
+            "height": 81.671875,
+            "top": 210.328125,
+            "right": 640.625,
+            "bottom": 292,
+            "left": 159.359375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 60.504,
+          "width": 317.281,
+          "height": 81.6719,
+          "rect": {
+            "x": 241.359375,
+            "y": 318.20648193359375,
+            "width": 317.28125,
+            "height": 81.671875,
+            "top": 318.20648193359375,
+            "right": 558.640625,
+            "bottom": 399.87835693359375,
+            "left": 241.359375
+          },
+          "motion": {
+            "opacity": 0.4896759263152489,
+            "y": 10.206481473695021
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 60.504,
+          "width": 492.031,
+          "height": 81.6719,
+          "rect": {
+            "x": 153.984375,
+            "y": 425.671875,
+            "width": 492.03125,
+            "height": 81.671875,
+            "top": 425.671875,
+            "right": 646.015625,
+            "bottom": 507.34375,
+            "left": 153.984375
+          },
+          "motion": {
+            "opacity": 0,
+            "y": 20
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 40,
+          "lineHeight": 60,
+          "rect": {
+            "x": 74,
+            "y": 428,
+            "width": 652,
+            "height": 60,
+            "top": 428,
+            "right": 726,
+            "bottom": 488,
+            "left": 74
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-2-2400.png",
+      "width": 800,
+      "scale": 2,
+      "mediaMs": 2400,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 60.504,
+          "width": 328.703,
+          "height": 81.6719,
+          "rect": {
+            "x": 235.640625,
+            "y": 112.65625,
+            "width": 328.703125,
+            "height": 81.671875,
+            "top": 112.65625,
+            "right": 564.34375,
+            "bottom": 194.328125,
+            "left": 235.640625
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 60.504,
+          "width": 481.266,
+          "height": 81.6719,
+          "rect": {
+            "x": 159.359375,
+            "y": 210.328125,
+            "width": 481.265625,
+            "height": 81.671875,
+            "top": 210.328125,
+            "right": 640.625,
+            "bottom": 292,
+            "left": 159.359375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 60.504,
+          "width": 317.281,
+          "height": 81.6719,
+          "rect": {
+            "x": 241.359375,
+            "y": 308,
+            "width": 317.28125,
+            "height": 81.671875,
+            "top": 308,
+            "right": 558.640625,
+            "bottom": 389.671875,
+            "left": 241.359375
+          },
+          "motion": {
+            "opacity": 1,
+            "y": 0
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 60.504,
+          "width": 492.031,
+          "height": 81.6719,
+          "rect": {
+            "x": 153.984375,
+            "y": 406.5619201660156,
+            "width": 492.03125,
+            "height": 81.671875,
+            "top": 406.5619201660156,
+            "right": 646.015625,
+            "bottom": 488.2337951660156,
+            "left": 153.984375
+          },
+          "motion": {
+            "opacity": 0.9554974376788595,
+            "y": 0.8900512464228107
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 40,
+          "lineHeight": 60,
+          "rect": {
+            "x": 74,
+            "y": 428,
+            "width": 652,
+            "height": 60,
+            "top": 428,
+            "right": 726,
+            "bottom": 488,
+            "left": 74
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-2-3200.png",
+      "width": 800,
+      "scale": 2,
+      "mediaMs": 3200,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 60.504,
+          "width": 328.703,
+          "height": 81.6719,
+          "rect": {
+            "x": 235.65625,
+            "y": 112.1862564086914,
+            "width": 328.703125,
+            "height": 81.67186737060547,
+            "top": 112.1862564086914,
+            "right": 564.359375,
+            "bottom": 193.85812377929688,
+            "left": 235.65625
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 60.504,
+          "width": 481.266,
+          "height": 81.6719,
+          "rect": {
+            "x": 159.375,
+            "y": 209.85812377929688,
+            "width": 481.265625,
+            "height": 81.671875,
+            "top": 209.85812377929688,
+            "right": 640.640625,
+            "bottom": 291.5299987792969,
+            "left": 159.375
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 60.504,
+          "width": 317.281,
+          "height": 81.6719,
+          "rect": {
+            "x": 241.359375,
+            "y": 307.5299987792969,
+            "width": 317.28125,
+            "height": 81.671875,
+            "top": 307.5299987792969,
+            "right": 558.640625,
+            "bottom": 389.2018737792969,
+            "left": 241.359375
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 60.504,
+          "width": 492.031,
+          "height": 81.6719,
+          "rect": {
+            "x": 154,
+            "y": 405.2018737792969,
+            "width": 492.03125,
+            "height": 81.671875,
+            "top": 405.2018737792969,
+            "right": 646.03125,
+            "bottom": 486.8737487792969,
+            "left": 154
+          },
+          "motion": {
+            "opacity": 0.9321877831331221,
+            "y": -0.8137466024025344
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 40,
+          "lineHeight": 60,
+          "rect": {
+            "x": 74,
+            "y": 437.7705383300781,
+            "width": 652,
+            "height": 60,
+            "top": 437.7705383300781,
+            "right": 726,
+            "bottom": 497.7705383300781,
+            "left": 74
+          },
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "file": "800-2-3500.png",
+      "width": 800,
+      "scale": 2,
+      "mediaMs": 3500,
+      "main": [
+        {
+          "text": "Synthetic",
+          "font": 60.504,
+          "width": 328.703,
+          "height": 81.6719,
+          "rect": {
+            "x": 235.65625,
+            "y": 102.9245376586914,
+            "width": 328.703125,
+            "height": 81.67186737060547,
+            "top": 102.9245376586914,
+            "right": 564.359375,
+            "bottom": 184.59640502929688,
+            "left": 235.65625
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "amber echoes",
+          "font": 60.504,
+          "width": 481.266,
+          "height": 81.6719,
+          "rect": {
+            "x": 159.375,
+            "y": 200.59640502929688,
+            "width": 481.265625,
+            "height": 81.671875,
+            "top": 200.59640502929688,
+            "right": 640.640625,
+            "bottom": 282.2682800292969,
+            "left": 159.375
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "cross the",
+          "font": 60.504,
+          "width": 317.281,
+          "height": 81.6719,
+          "rect": {
+            "x": 241.359375,
+            "y": 298.268310546875,
+            "width": 317.28125,
+            "height": 81.671875,
+            "top": 298.268310546875,
+            "right": 558.640625,
+            "bottom": 379.940185546875,
+            "left": 241.359375
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        },
+        {
+          "text": "quiet window.",
+          "font": 60.504,
+          "width": 492.031,
+          "height": 81.6719,
+          "rect": {
+            "x": 154,
+            "y": 395.9401550292969,
+            "width": 492.03125,
+            "height": 81.671875,
+            "top": 395.9401550292969,
+            "right": 646.03125,
+            "bottom": 477.6120300292969,
+            "left": 154
+          },
+          "motion": {
+            "opacity": 0.16037825238017833,
+            "y": -10.07546097143786
+          }
+        }
+      ],
+      "subtitles": [
+        {
+          "text": "Copper translates the quiet light",
+          "font": 40,
+          "lineHeight": 60,
+          "rect": {
+            "x": 74,
+            "y": 428,
+            "width": 652,
+            "height": 60,
+            "top": 428,
+            "right": 726,
+            "bottom": 488,
+            "left": 74
+          },
+          "opacity": "1"
+        }
+      ]
+    }
+  ],
+  "sourceHashes": [
+    {
+      "file": "src/components/visualizer/tilt/VisualizerTilt.tsx",
+      "sha256": "e962ab13d5cb6509d37b1c118f93a3500fe52ff497d0bb7de7f2cf7ca947bf85"
+    },
+    {
+      "file": "src/components/visualizer/VisualizerSubtitleOverlay.tsx",
+      "sha256": "be445a8c4b945ef662efdf006be527f3892c005d5c1d5e8e9fa4f2441562001a"
+    },
+    {
+      "file": "src/components/visualizer/subtitleFontSizes.ts",
+      "sha256": "f7d548c2ee3718798145c096d71b82939e7010ca8515166cb3bae65a1db3d2d9"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "ce30669b1acca119cc886133166dd872f8eeb3b9d05edb8c193e4d18e3b2a000"
+    }
+  ],
+  "hostHashes": [
+    {
+      "file": "verification/classic-browser/main.tsx",
+      "sha256": "7a20e16625a13ab80e51101e8723cb381f9b0331ab6e9ed3f75ba6814ffc7a44"
+    },
+    {
+      "file": "verification/classic-browser/style.css",
+      "sha256": "65420e55087a4a424703e80774f3c6a166fc39209585083f9cef58553a847f68"
+    },
+    {
+      "file": "verification/classic-browser/serve.mjs",
+      "sha256": "db278914e23109c55bcb74a25ceac76e88bd468122575dfe30138ed17d0f7001"
+    },
+    {
+      "file": "verification/classic-browser/capture-tilt-subtitles.mjs",
+      "sha256": "5f49652044c28b14dc1ad304b5bcee9d97ade35a3926d87fa2cda5db231dff30"
+    },
+    {
+      "file": "verification/classic-browser/subtitle-host.ts",
+      "sha256": "1871df8cd387987cd57deae4cc6b34fc85f2d31f7757fe92e8fbcb5020edacc4"
+    },
+    {
+      "file": "verification/classic-fixtures/scenes.tsv",
+      "sha256": "a74a6d7b52051e4dd09d6af1e85833138d92ec7d7d6fccb5b93ab020f0ca9a80"
+    },
+    {
+      "file": "verification/assets/FoliaParityLatin-Bold.ttf",
+      "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+    },
+    {
+      "file": "verification/classic-browser/pnpm-lock.yaml",
+      "sha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad"
+    }
+  ]
+}

@@ -1,0 +1,1073 @@
+{
+  "scope": "Same original/core public inputs,30 frames,all non-background pixels including low alpha. No pixel threshold, registration or collision suppression. Known unused test-root right margin only cropped to viewport.",
+  "originalFixtureSha256": "4f2dbb504dfc04235857c3662540143b72863decd5e9fcb9f0f79ccbc6a337e7",
+  "frames": 30,
+  "meanMAE": 11.119260504103574,
+  "worst64px": 152.33333333333334,
+  "geometryPeaks": {
+    "font": 1.0000000010279564e-06,
+    "width": 0.20274999999998045,
+    "height": 0.015649999999993724,
+    "top": 0.03125
+  },
+  "rows": [
+    {
+      "file": "380-1-1000.png",
+      "foregroundPixels": 7599,
+      "mae": 6.272316532877133,
+      "channelPeak": 110,
+      "worst64px": 19.869918699186993,
+      "hashes": [
+        "306ffce45026c16a19248afb0f9a40c73e0a3de9f2f46acc416b0952d98f573b",
+        "3bbdec5647260fe6768a620435c8721b2177d3218de970cc3bdca16389dfd390"
+      ]
+    },
+    {
+      "file": "380-1-1500.png",
+      "foregroundPixels": 9670,
+      "mae": 14.309927611168563,
+      "channelPeak": 201,
+      "worst64px": 37.91025641025641,
+      "hashes": [
+        "ad4b5b00475f8829a97f4f458034272e4381947a055aed6d690346bc59c86f6a",
+        "1c9a33e0db840a8bbcc99a1069767bd8299169ec36def93e92aa25000b7d837a"
+      ]
+    },
+    {
+      "file": "380-1-2400.png",
+      "foregroundPixels": 13328,
+      "mae": 18.5984643857543,
+      "channelPeak": 201,
+      "worst64px": 37.91025641025641,
+      "hashes": [
+        "066b802c24dc38a9fce00d84f095e53af4915eb9de46eea17e793640be8e164d",
+        "933180e629b1f2c9feabfe0b79568a5e962b8799aca41de33d0cb98ca34c77bd"
+      ],
+      "settledGeometry": [
+        {
+          "role": "main",
+          "index": 0,
+          "expected": {
+            "font": 27.504,
+            "width": 149.453,
+            "height": 37.125,
+            "top": 207.75
+          },
+          "actual": {
+            "font": 27.504,
+            "width": 149.39062,
+            "height": 37.125,
+            "top": 207.75
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.06237999999999033,
+            "height": 0.0,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "main",
+          "index": 1,
+          "expected": {
+            "font": 27.504,
+            "width": 218.781,
+            "height": 37.125,
+            "top": 256.875
+          },
+          "actual": {
+            "font": 27.504,
+            "width": 218.71875,
+            "height": 37.125,
+            "top": 256.875
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.06225000000000591,
+            "height": 0.0,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "main",
+          "index": 2,
+          "expected": {
+            "font": 27.504,
+            "width": 144.25,
+            "height": 37.125,
+            "top": 306
+          },
+          "actual": {
+            "font": 27.504,
+            "width": 144.1875,
+            "height": 37.125,
+            "top": 306.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.0625,
+            "height": 0.0,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "main",
+          "index": 3,
+          "expected": {
+            "font": 27.504,
+            "width": 223.703,
+            "height": 37.125,
+            "top": 355.12499391959284
+          },
+          "actual": {
+            "font": 27.504,
+            "width": 223.60938,
+            "height": 37.125,
+            "top": 355.125
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.09362000000001558,
+            "height": 0.0,
+            "top": 6.080407160879986e-06
+          }
+        },
+        {
+          "role": "subtitle",
+          "index": 0,
+          "expected": {
+            "font": 18,
+            "width": 293.40625,
+            "height": 27,
+            "top": 461
+          },
+          "actual": {
+            "font": 18.0,
+            "width": 293.40625,
+            "height": 27.0,
+            "top": 461.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": 0.0,
+            "height": 0.0,
+            "top": 0.0
+          }
+        }
+      ],
+      "originalMainSubtitleBoxIntersections": [
+        {
+          "row": 0,
+          "verticalPixels": 0
+        },
+        {
+          "row": 1,
+          "verticalPixels": 0
+        },
+        {
+          "row": 2,
+          "verticalPixels": 0
+        },
+        {
+          "row": 3,
+          "verticalPixels": 0
+        }
+      ]
+    },
+    {
+      "file": "380-1-3200.png",
+      "foregroundPixels": 14114,
+      "mae": 24.198975012989468,
+      "channelPeak": 186,
+      "worst64px": 33.730496453900706,
+      "hashes": [
+        "47c94cda8c84c367da4681169e76b133f86ba44b2388aadfe4f7342b8c7dca4a",
+        "9eb2f09dffefba100574351dd216a37a22338d0cb6a7068152e98ad9108a59b5"
+      ]
+    },
+    {
+      "file": "380-1-3500.png",
+      "foregroundPixels": 12264,
+      "mae": 2.4216677538595346,
+      "channelPeak": 66,
+      "worst64px": 5.891503267973857,
+      "hashes": [
+        "b5c44097b914c94e92fdf89fd5691bc485defaf160b69a52c14a43f0514b6231",
+        "d95b5a72f03fb22841ae6e381d21b324608dfc2f71a7b4fdf6d29b1428021109"
+      ]
+    },
+    {
+      "file": "380-1.4-1000.png",
+      "foregroundPixels": 13043,
+      "mae": 4.0129315852692375,
+      "channelPeak": 59,
+      "worst64px": 30.8125,
+      "hashes": [
+        "e4345135aea0af56a63f2982585aabc489d884388d32a5fef6de30d45525783d",
+        "1a45ba90d32a0c0c2ddfc1b01e25d38c0dc6af6f788ddf79d54faaf674c760fe"
+      ]
+    },
+    {
+      "file": "380-1.4-1500.png",
+      "foregroundPixels": 16652,
+      "mae": 12.281848026263111,
+      "channelPeak": 201,
+      "worst64px": 82.88888888888889,
+      "hashes": [
+        "65aec62be1a22c0fc932d22e2a8d769347abad1de9f23ff3f9baef84035e564e",
+        "cc3fccfb3ff7803af515d00a43edbfbd6eb7366bf544e5b3601f2a5b1c78fcf4"
+      ]
+    },
+    {
+      "file": "380-1.4-2400.png",
+      "foregroundPixels": 23357,
+      "mae": 18.028542478343393,
+      "channelPeak": 202,
+      "worst64px": 82.88888888888889,
+      "hashes": [
+        "d3d1f23f0ca216cf63ade90bfcd5725c3d4efc03936ffe9889ec7792d4846ae9",
+        "14408220b30c911fe46b31c62026280b25e365345797dd207179e4d40a402659"
+      ],
+      "settledGeometry": [
+        {
+          "role": "main",
+          "index": 0,
+          "expected": {
+            "font": 38.496,
+            "width": 209.156,
+            "height": 51.9688,
+            "top": 178.0625
+          },
+          "actual": {
+            "font": 38.496,
+            "width": 209.07812,
+            "height": 51.96875,
+            "top": 178.0625
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.07787999999999329,
+            "height": -5.000000000165983e-05,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "main",
+          "index": 1,
+          "expected": {
+            "font": 38.496,
+            "width": 306.188,
+            "height": 51.9688,
+            "top": 242.03125
+          },
+          "actual": {
+            "font": 38.496,
+            "width": 306.125,
+            "height": 51.96875,
+            "top": 242.03125
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.06299999999998818,
+            "height": -5.000000000165983e-05,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "main",
+          "index": 2,
+          "expected": {
+            "font": 38.496,
+            "width": 201.875,
+            "height": 51.9688,
+            "top": 306
+          },
+          "actual": {
+            "font": 38.496,
+            "width": 201.8125,
+            "height": 51.96875,
+            "top": 306.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.0625,
+            "height": -5.000000000165983e-05,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "main",
+          "index": 3,
+          "expected": {
+            "font": 38.496,
+            "width": 313.062,
+            "height": 51.9688,
+            "top": 369.96874391959284
+          },
+          "actual": {
+            "font": 38.496,
+            "width": 312.96875,
+            "height": 51.96875,
+            "top": 369.96875
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.09325000000001182,
+            "height": -5.000000000165983e-05,
+            "top": 6.080407160879986e-06
+          }
+        },
+        {
+          "role": "subtitle",
+          "index": 0,
+          "expected": {
+            "font": 25.2,
+            "width": 348,
+            "height": 75.59375,
+            "top": 412.40625
+          },
+          "actual": {
+            "font": 25.199999,
+            "width": 348.0,
+            "height": 75.59375,
+            "top": 412.40625
+          },
+          "difference": {
+            "font": -1.0000000010279564e-06,
+            "width": 0.0,
+            "height": 0.0,
+            "top": 0.0
+          }
+        }
+      ],
+      "originalMainSubtitleBoxIntersections": [
+        {
+          "row": 0,
+          "verticalPixels": 0
+        },
+        {
+          "row": 1,
+          "verticalPixels": 0
+        },
+        {
+          "row": 2,
+          "verticalPixels": 0
+        },
+        {
+          "row": 3,
+          "verticalPixels": 10.421295166015625
+        }
+      ]
+    },
+    {
+      "file": "380-1.4-3200.png",
+      "foregroundPixels": 24286,
+      "mae": 31.474896373768154,
+      "channelPeak": 186,
+      "worst64px": 55.40909090909091,
+      "hashes": [
+        "04a2aad63b388e931ebf674798cdadd212b2ab2c545c18c069a88189f1303ca2",
+        "9b3330138b3814d92d61b46465e28530e1df62c65f95920bb1c67a055f75223c"
+      ]
+    },
+    {
+      "file": "380-1.4-3500.png",
+      "foregroundPixels": 21787,
+      "mae": 1.8138951362433255,
+      "channelPeak": 64,
+      "worst64px": 4.419141914191419,
+      "hashes": [
+        "1a8206e8bb3833f30d2e09686cf0240ab038207417d203d8d5fa57538c01ec3f",
+        "0123add0c140f09832b5317ed672602f7b97a1f0debe454628eb23d1783429b6"
+      ]
+    },
+    {
+      "file": "380-2-1000.png",
+      "foregroundPixels": 22923,
+      "mae": 3.8853698614201164,
+      "channelPeak": 80,
+      "worst64px": 13.817813765182187,
+      "hashes": [
+        "94b019891f08b80979561082e514bb495264351dce9410a5ed7b14633d6ac5ca",
+        "1bc90dec4dba409bbb41d20787b5028ca3d9b9ffbb0c3273e6db795d8cafb69a"
+      ]
+    },
+    {
+      "file": "380-2-1500.png",
+      "foregroundPixels": 28775,
+      "mae": 8.743098754706052,
+      "channelPeak": 201,
+      "worst64px": 28.15718157181572,
+      "hashes": [
+        "ba280bf3b015a41cf4ab046c7ec06e8dcf59998a2b8286be7832dd2f24d92418",
+        "24f64064fb89c452e61347a4434af7d253cbf2eadc3c6626a28e06fe836c3866"
+      ]
+    },
+    {
+      "file": "380-2-2400.png",
+      "foregroundPixels": 38140,
+      "mae": 9.924899493095612,
+      "channelPeak": 201,
+      "worst64px": 28.408227848101266,
+      "hashes": [
+        "17b63690ad2b00fee695881207fd713c7991564c4a55dd7fa73a3620fb4101e6",
+        "b178ccd0133864c3a9eba812a2b15eac066aa08c93d4297ada2dbde97743af09"
+      ],
+      "settledGeometry": [
+        {
+          "role": "main",
+          "index": 0,
+          "expected": {
+            "font": 55.008,
+            "width": 298.844,
+            "height": 74.2656,
+            "top": 133.46875
+          },
+          "actual": {
+            "font": 55.008,
+            "width": 298.76562,
+            "height": 74.25,
+            "top": 133.5
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.07837999999998146,
+            "height": -0.015600000000006276,
+            "top": 0.03125
+          }
+        },
+        {
+          "role": "main",
+          "index": 1,
+          "expected": {
+            "font": 55.008,
+            "width": 437.484,
+            "height": 74.2656,
+            "top": 219.734375
+          },
+          "actual": {
+            "font": 55.008,
+            "width": 437.42188,
+            "height": 74.25,
+            "top": 219.75
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.06211999999999307,
+            "height": -0.015600000000006276,
+            "top": 0.015625
+          }
+        },
+        {
+          "role": "main",
+          "index": 2,
+          "expected": {
+            "font": 55.008,
+            "width": 288.438,
+            "height": 74.2656,
+            "top": 306
+          },
+          "actual": {
+            "font": 55.008,
+            "width": 288.375,
+            "height": 74.25,
+            "top": 306.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.06299999999998818,
+            "height": -0.015600000000006276,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "main",
+          "index": 3,
+          "expected": {
+            "font": 55.008,
+            "width": 447.297,
+            "height": 74.2656,
+            "top": 392.26561891959284
+          },
+          "actual": {
+            "font": 55.008,
+            "width": 447.21875,
+            "height": 74.25,
+            "top": 392.25
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.07825000000002547,
+            "height": -0.015600000000006276,
+            "top": -0.01561891959283912
+          }
+        },
+        {
+          "role": "subtitle",
+          "index": 0,
+          "expected": {
+            "font": 36,
+            "width": 348,
+            "height": 108,
+            "top": 380
+          },
+          "actual": {
+            "font": 36.0,
+            "width": 348.0,
+            "height": 108.0,
+            "top": 380.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": 0.0,
+            "height": 0.0,
+            "top": 0.0
+          }
+        }
+      ],
+      "originalMainSubtitleBoxIntersections": [
+        {
+          "row": 0,
+          "verticalPixels": 0
+        },
+        {
+          "row": 1,
+          "verticalPixels": 0
+        },
+        {
+          "row": 2,
+          "verticalPixels": 0.265625
+        },
+        {
+          "row": 3,
+          "verticalPixels": 74.265625
+        }
+      ]
+    },
+    {
+      "file": "380-2-3200.png",
+      "foregroundPixels": 39224,
+      "mae": 24.808968998572304,
+      "channelPeak": 186,
+      "worst64px": 42.169330289193304,
+      "hashes": [
+        "c9a4e478e93ccd071b16e620327c47384d112ef4fd26fdd73eb2554450df205b",
+        "944e75823d7463c339a9fc9926d3f163b6ed29dfd8c6d2e06aef4d8e328edd37"
+      ]
+    },
+    {
+      "file": "380-2-3500.png",
+      "foregroundPixels": 34963,
+      "mae": 1.544156203224361,
+      "channelPeak": 61,
+      "worst64px": 3.8015583150718286,
+      "hashes": [
+        "83daf73c5e21e93d93305088eff38363815e1141294a20091037eb9032332118",
+        "0a85edbe69980e4d86f7f934752bd2414b3bbed33528baaac73a1f0baef66584"
+      ]
+    },
+    {
+      "file": "800-1-1000.png",
+      "foregroundPixels": 7479,
+      "mae": 5.036725052368855,
+      "channelPeak": 106,
+      "worst64px": 18.464699074074073,
+      "hashes": [
+        "e6ca3817184a2768538fe41b33d76b8fac138992da5de7ef37ae79aa4892e525",
+        "7c2a9ec672bc612496b7833155d6f665c39c3036af2cdbe31b73fe393b6d3ddb"
+      ]
+    },
+    {
+      "file": "800-1-1500.png",
+      "foregroundPixels": 12865,
+      "mae": 12.376162715377639,
+      "channelPeak": 201,
+      "worst64px": 152.33333333333334,
+      "hashes": [
+        "5fac0d21664608b7a56c87cfb13984833d0aec36e34582fc3cae4b22ba6fcb44",
+        "21c73573a74d6ac29770f3d30155b24a43e5e1cf6058e5e01e42ba56288ff0d7"
+      ]
+    },
+    {
+      "file": "800-1-2400.png",
+      "foregroundPixels": 18175,
+      "mae": 18.599339752407154,
+      "channelPeak": 201,
+      "worst64px": 152.33333333333334,
+      "hashes": [
+        "fad926589fac79e03135d4081f45d11ef99cdfe61f118bb29bd9f8e99eb51ad4",
+        "70b7289fe47450ac68f51a0212831e985988198a7b5cc991dffc0d9099332d64"
+      ],
+      "settledGeometry": [
+        {
+          "role": "main",
+          "index": 0,
+          "expected": {
+            "font": 34.728,
+            "width": 476.734,
+            "height": 46.8906,
+            "top": 245.109375
+          },
+          "actual": {
+            "font": 34.728,
+            "width": 476.54688,
+            "height": 46.875,
+            "top": 245.125
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.18711999999999307,
+            "height": -0.01559999999999917,
+            "top": 0.015625
+          }
+        },
+        {
+          "role": "main",
+          "index": 1,
+          "expected": {
+            "font": 34.728,
+            "width": 476.359,
+            "height": 46.8906,
+            "top": 308
+          },
+          "actual": {
+            "font": 34.728,
+            "width": 476.15625,
+            "height": 46.875,
+            "top": 308.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.20274999999998045,
+            "height": -0.01559999999999917,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "subtitle",
+          "index": 0,
+          "expected": {
+            "font": 20,
+            "width": 326,
+            "height": 30,
+            "top": 458
+          },
+          "actual": {
+            "font": 20.0,
+            "width": 326.01562,
+            "height": 30.0,
+            "top": 458.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": 0.015620000000012624,
+            "height": 0.0,
+            "top": 0.0
+          }
+        }
+      ],
+      "originalMainSubtitleBoxIntersections": [
+        {
+          "row": 0,
+          "verticalPixels": 0
+        },
+        {
+          "row": 1,
+          "verticalPixels": 0
+        }
+      ]
+    },
+    {
+      "file": "800-1-3200.png",
+      "foregroundPixels": 18840,
+      "mae": 22.366135881104032,
+      "channelPeak": 184,
+      "worst64px": 119.63888888888889,
+      "hashes": [
+        "eccd8c4ebd72200d31f5184ed4edfeabeced4193de619f375a14fd93834a6140",
+        "d000605a6ba9da3c66db129d045e481e985152d219f63c9583bd9d0b177ca3c1"
+      ]
+    },
+    {
+      "file": "800-1-3500.png",
+      "foregroundPixels": 16975,
+      "mae": 2.003966617574865,
+      "channelPeak": 60,
+      "worst64px": 5.388623707239459,
+      "hashes": [
+        "0589acd8cebd31f315e8eb92b4174142306ae9c6567c818b58648ebe8d226f88",
+        "d2a1e454b4bd810ac291c864dfe7fcee3ed1654d83989ceb10395ea119e31ea2"
+      ]
+    },
+    {
+      "file": "800-1.4-1000.png",
+      "foregroundPixels": 21154,
+      "mae": 5.74918849075037,
+      "channelPeak": 139,
+      "worst64px": 22.682156133828997,
+      "hashes": [
+        "39e1b9968885ac4c98fd0560d59af7dba5abc4bfd4cddc83ccd3984876c8f280",
+        "3d086c1377bd4adea624db397cfcd1f0d4c0ee6f87cd0af719a338cf51c772fd"
+      ]
+    },
+    {
+      "file": "800-1.4-1500.png",
+      "foregroundPixels": 28731,
+      "mae": 10.256436137505366,
+      "channelPeak": 200,
+      "worst64px": 34.13374485596708,
+      "hashes": [
+        "5d19a338baf6328f68ce66d384dc47aeb5597bca1c88ae68a6621771e880a193",
+        "d25127626c35007f873256d04fd2d89daccc1580b806504a111d99b4cdcfb763"
+      ]
+    },
+    {
+      "file": "800-1.4-2400.png",
+      "foregroundPixels": 40224,
+      "mae": 9.705979846194642,
+      "channelPeak": 186,
+      "worst64px": 21.135564135564135,
+      "hashes": [
+        "34c30cb5d55fd62cfa7ba710f92183c1b801ed08045fd86b8f906152892b0457",
+        "e101c07a8ffd8d70df902fd4a9cabcda1b59890dcc9b8cb387b2f82011e3a6a4"
+      ],
+      "settledGeometry": [
+        {
+          "role": "main",
+          "index": 0,
+          "expected": {
+            "font": 59.104,
+            "width": 321.109,
+            "height": 79.7969,
+            "top": 116.40625
+          },
+          "actual": {
+            "font": 59.104,
+            "width": 321.03125,
+            "height": 79.78125,
+            "top": 116.4375
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.07774999999998045,
+            "height": -0.015649999999993724,
+            "top": 0.03125
+          }
+        },
+        {
+          "role": "main",
+          "index": 1,
+          "expected": {
+            "font": 59.104,
+            "width": 470.125,
+            "height": 79.7969,
+            "top": 212.203125
+          },
+          "actual": {
+            "font": 59.104,
+            "width": 470.03125,
+            "height": 79.78125,
+            "top": 212.21875
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.09375,
+            "height": -0.015649999999993724,
+            "top": 0.015625
+          }
+        },
+        {
+          "role": "main",
+          "index": 2,
+          "expected": {
+            "font": 59.104,
+            "width": 309.938,
+            "height": 79.7969,
+            "top": 308
+          },
+          "actual": {
+            "font": 59.104,
+            "width": 309.875,
+            "height": 79.78125,
+            "top": 308.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.06299999999998818,
+            "height": -0.015649999999993724,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "main",
+          "index": 3,
+          "expected": {
+            "font": 59.104,
+            "width": 480.656,
+            "height": 79.7969,
+            "top": 403.79686891959284
+          },
+          "actual": {
+            "font": 59.104,
+            "width": 480.54688,
+            "height": 79.78125,
+            "top": 403.78125
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.10912000000001854,
+            "height": -0.015649999999993724,
+            "top": -0.01561891959283912
+          }
+        },
+        {
+          "role": "subtitle",
+          "index": 0,
+          "expected": {
+            "font": 28,
+            "width": 456.40625,
+            "height": 42,
+            "top": 446
+          },
+          "actual": {
+            "font": 28.0,
+            "width": 456.40625,
+            "height": 42.0,
+            "top": 446.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": 0.0,
+            "height": 0.0,
+            "top": 0.0
+          }
+        }
+      ],
+      "originalMainSubtitleBoxIntersections": [
+        {
+          "row": 0,
+          "verticalPixels": 0
+        },
+        {
+          "row": 1,
+          "verticalPixels": 0
+        },
+        {
+          "row": 2,
+          "verticalPixels": 0
+        },
+        {
+          "row": 3,
+          "verticalPixels": 38.483795166015625
+        }
+      ]
+    },
+    {
+      "file": "800-1.4-3200.png",
+      "foregroundPixels": 41717,
+      "mae": 18.628009364687458,
+      "channelPeak": 186,
+      "worst64px": 34.35101883890811,
+      "hashes": [
+        "e7afef0ae74c206c0a1233795c47b8b26042bdd24cdf10cc322291685a709de9",
+        "0bfe7c2414c3dea40b9c6b5c1d82f8eb965c2eb1b370794542e581288e642510"
+      ]
+    },
+    {
+      "file": "800-1.4-3500.png",
+      "foregroundPixels": 39238,
+      "mae": 1.1952104252680225,
+      "channelPeak": 59,
+      "worst64px": 3.6791061967288643,
+      "hashes": [
+        "1b9a873400f706895f0841c4740f638858182c2909cd347d2fe6442dc139ca19",
+        "7259c86b5d0c235517dff6aa2132e5b084304cf0d2e348914a5cd4a6d506f8c8"
+      ]
+    },
+    {
+      "file": "800-2-1000.png",
+      "foregroundPixels": 27708,
+      "mae": 5.024385255762476,
+      "channelPeak": 118,
+      "worst64px": 15.975210970464135,
+      "hashes": [
+        "9e8ec60b16227272d57bdafd214d94bfdf3b6ab1dfdbc57b72bea9adf17ab2a9",
+        "232911ca04fb0b67f877d0e3de086578aaa6cc52dd3c2363097a30bc6344dba7"
+      ]
+    },
+    {
+      "file": "800-2-1500.png",
+      "foregroundPixels": 35409,
+      "mae": 8.904751146130456,
+      "channelPeak": 201,
+      "worst64px": 36.800524934383205,
+      "hashes": [
+        "f7c5f60a00cba13217c4052d9be427bb2e9347291b6206fe3516dfd77814b5ed",
+        "b8a58055dd02d4b1f3613896bfc7f90aba3f5e46ad1999ae2878086c54fdc645"
+      ]
+    },
+    {
+      "file": "800-2-2400.png",
+      "foregroundPixels": 44363,
+      "mae": 9.65146631201677,
+      "channelPeak": 201,
+      "worst64px": 23.410161090458487,
+      "hashes": [
+        "280e450c6251c1b26411fabbcc4d65c25d4e26c8dda535931db19b6d997379e8",
+        "e7c114ca9495e43dd2e615d8bb93014128c3079ca0b6905c80b709f4a4d0ffad"
+      ],
+      "settledGeometry": [
+        {
+          "role": "main",
+          "index": 0,
+          "expected": {
+            "font": 60.504,
+            "width": 328.703,
+            "height": 81.6719,
+            "top": 112.65625
+          },
+          "actual": {
+            "font": 60.504,
+            "width": 328.64062,
+            "height": 81.671875,
+            "top": 112.65625
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.06237999999996191,
+            "height": -2.4999999993724487e-05,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "main",
+          "index": 1,
+          "expected": {
+            "font": 60.504,
+            "width": 481.266,
+            "height": 81.6719,
+            "top": 210.328125
+          },
+          "actual": {
+            "font": 60.504,
+            "width": 481.17188,
+            "height": 81.671875,
+            "top": 210.32812
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.09412000000003218,
+            "height": -2.4999999993724487e-05,
+            "top": -4.9999999873762135e-06
+          }
+        },
+        {
+          "role": "main",
+          "index": 2,
+          "expected": {
+            "font": 60.504,
+            "width": 317.281,
+            "height": 81.6719,
+            "top": 308
+          },
+          "actual": {
+            "font": 60.504,
+            "width": 317.20312,
+            "height": 81.671875,
+            "top": 308.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.07787999999999329,
+            "height": -2.4999999993724487e-05,
+            "top": 0.0
+          }
+        },
+        {
+          "role": "main",
+          "index": 3,
+          "expected": {
+            "font": 60.504,
+            "width": 492.031,
+            "height": 81.6719,
+            "top": 405.67186891959284
+          },
+          "actual": {
+            "font": 60.504,
+            "width": 491.9375,
+            "height": 81.671875,
+            "top": 405.67188
+          },
+          "difference": {
+            "font": 0.0,
+            "width": -0.09350000000000591,
+            "height": -2.4999999993724487e-05,
+            "top": 1.10804071482562e-05
+          }
+        },
+        {
+          "role": "subtitle",
+          "index": 0,
+          "expected": {
+            "font": 40,
+            "width": 652,
+            "height": 60,
+            "top": 428
+          },
+          "actual": {
+            "font": 40.0,
+            "width": 652.0,
+            "height": 60.0,
+            "top": 428.0
+          },
+          "difference": {
+            "font": 0.0,
+            "width": 0.0,
+            "height": 0.0,
+            "top": 0.0
+          }
+        }
+      ],
+      "originalMainSubtitleBoxIntersections": [
+        {
+          "row": 0,
+          "verticalPixels": 0
+        },
+        {
+          "row": 1,
+          "verticalPixels": 0
+        },
+        {
+          "row": 2,
+          "verticalPixels": 0
+        },
+        {
+          "row": 3,
+          "verticalPixels": 60
+        }
+      ]
+    },
+    {
+      "file": "800-2-3200.png",
+      "foregroundPixels": 46719,
+      "mae": 20.32599156660031,
+      "channelPeak": 186,
+      "worst64px": 58.62777777777778,
+      "hashes": [
+        "31a7f74b0530cd6e5f4ffc47dae7373c3b2d345c4d772ad51de10b54e749b536",
+        "a5d8cc9bdb41a6cb1c7ac815fcc7fb0c9d8e410b32aff6a05b42fade44b1bea4"
+      ]
+    },
+    {
+      "file": "800-2-3500.png",
+      "foregroundPixels": 44214,
+      "mae": 1.4341083518041042,
+      "channelPeak": 59,
+      "worst64px": 6.433333333333334,
+      "hashes": [
+        "f394a8f08f1e1d79c748fc4a6d92c93ce6383aa59fe4045e74594efae99b919e",
+        "4763cd2b52edc201e3b40512975003dd0dc4c4505953cf71844d5c992d8f7d1e"
+      ]
+    }
+  ]
+}

@@ -41,6 +41,10 @@ function ink(name:string,fallback:string) {
 }
 const themes = { animationIntensity: intensity, fontStyle: 'sans', fontFamily: 'Parity Noto', fontWeight: 700,
   primaryColor: ink('primary','#dfe5ec'), accentColor: ink('accent','#ffffff'), secondaryColor: '#adb9c8', wordColors: [] };
+if(params.has('subtitles')) {
+  Object.assign(themes,{backgroundColor:'#162435'});
+  document.body.style.lineHeight='1.5';
+}
 let lines = [
   { startTime: .7, endTime: 1.9, fullText: 'Amber echo', words: [
     { text: 'Amber ', startTime: .7, endTime: 1.3 }, { text: 'echo', startTime: 1.3, endTime: 1.9 }] },
@@ -64,6 +68,7 @@ if(params.has('scene')) {
   if(params.get('scene')?.startsWith('bidi-')) themes.fontFamily='Parity Bidi';
   if(params.get('scene')==='cjk') themes.fontFamily='Parity CJK';
 }
+if(params.has('subtitles'))lines=lines.map(line=>({...line,translation:'Copper translates the quiet light'}));
 const root = createRoot(document.getElementById('root')!);
 (window as any).mountTime=performance.now();
 (window as any).lineRenderEnds=lines.map(line=>getLineRenderEndTime(line)*1000);
@@ -98,6 +103,7 @@ const root = createRoot(document.getElementById('root')!);
       breathingFloatMultiplier: params.has('breathe') ? 1 : 0, wordSpacing: .7, avoidOverlap: params.has('avoid'), useLegacyLayout: false }}
     partitaTuning={{ showGuideLines: !params.has('noGuides'), useSemanticLayout: true, staggerMin: 20, staggerMax: 100, avoidOverlap: params.has('avoid') }}
     lyricsFontScale={Number(params.get('fontScale')??1)}
+    subtitleOverlayLayout="translation" subtitleOverlayBackground={false}
     tiltTuning={{splitProbability:Number(params.get('split')??.75),tiltStyleProbability:Number(params.get('tilt')??.35),colorScheme:'default'}} />));
   flushSync(() => currentTime.set(seconds));
   if(manual) {

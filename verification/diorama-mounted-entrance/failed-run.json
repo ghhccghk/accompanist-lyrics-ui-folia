@@ -1,0 +1,9 @@
+{
+  "task": ":library:jvmTest --tests *DioramaMountedStageTest",
+  "reason": {
+    "message": "kotlinx.coroutines.test.UncompletedCoroutinesError: After waiting for 1m, the test body did not run to completion",
+    "type": "kotlinx.coroutines.test.UncompletedCoroutinesError"
+  },
+  "stack": "kotlinx.coroutines.test.UncompletedCoroutinesError: After waiting for 1m, the test body did not run to completion\n\tat kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt$runTest$2$1$2.invokeSuspend$lambda$0(TestBuilders.kt:353)\n\tat kotlinx.coroutines.InvokeOnCancelling.invoke(JobSupport.kt:1571)\n\tat kotlinx.coroutines.JobSupport.notifyCancelling(JobSupport.kt:1603)\n\tat kotlinx.coroutines.JobSupport.tryMakeCancelling(JobSupport.kt:826)\n\tat kotlinx.coroutines.JobSupport.makeCancelling(JobSupport.kt:786)\n\tat kotlinx.coroutines.JobSupport.cancelImpl$kotlinx_coroutines_core(JobSupport.kt:702)\n\tat kotlinx.coroutines.JobSupport.cancelCoroutine(JobSupport.kt:689)\n\tat kotlinx.coroutines.TimeoutCoroutine.run(Timeout.kt:243)\n\tat kotlinx.coroutines.EventLoopImplBase$DelayedRunnableTask.run(EventLoop.common.kt:498)\n\tat kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)\n\tat kotlinx.coroutines.DefaultExecutor.run(DefaultExecutor.kt:105)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\n",
+  "resolution": "Removed redundant rejected8-bit captures from ongoing suite; preserve generated inputs/results. Same two tests then passed without changing timeout/assertion/visual thresholds."
+}

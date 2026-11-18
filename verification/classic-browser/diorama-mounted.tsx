@@ -129,13 +129,15 @@ Object.assign(window,{mountedReady:true,mountedInputs:{oldLines,lines,oldSeed,se
  },
  // Diagnostic clone render of existing actual active meshes. Original refs,
  // geometry/material/texture objects and time stay unchanged. Null restores.
- renderMountedActiveLayer:(kind:'base'|'glow'|'soul'|'all'|null)=>{
+ renderMountedActiveLayer:(kind:'base'|'glow'|'soul'|'all'|'neighbors'|null)=>{
   const state=_roots.get(canvas)!.store.getState();
   if(kind===null){state.gl.render(state.scene,state.camera);return;}
   const planes=refs(DioramaScene).find(v=>Array.isArray(v?.baseMats));
   const scene=new THREE.Scene();scene.background=state.scene.background;scene.fog=state.scene.fog;
-  for(const group of planes.unitGroups)for(const mesh of group.children.filter((m:any)=>m.isMesh)){
-   if(kind!=='all'&&mesh.renderOrder!==({glow:17,soul:18,base:19}[kind]))continue;
+  const meshes=kind==='neighbors'?[...refs(DioramaScene)[0].values()]:
+   planes.unitGroups.flatMap((group:any)=>group.children.filter((m:any)=>m.isMesh));
+  for(const mesh of meshes){
+   if(kind!=='all'&&kind!=='neighbors'&&mesh.renderOrder!==({glow:17,soul:18,base:19}[kind]))continue;
    const clone=mesh.clone(false);clone.matrixAutoUpdate=false;clone.matrix.copy(mesh.matrixWorld);scene.add(clone);
   }
   try{state.gl.render(scene,state.camera);}finally{scene.clear();}

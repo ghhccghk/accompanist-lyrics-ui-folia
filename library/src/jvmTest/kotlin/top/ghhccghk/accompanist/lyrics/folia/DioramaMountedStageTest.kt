@@ -52,6 +52,8 @@ class DioramaMountedStageTest {
         val primary=color(0xdfe5ec);val secondary=color(0x758daa);val accent=color(0xf17b4d)
         val fog=DioramaFog(Color(0xff162435))
         var current by mutableIntStateOf(0);var method by mutableStateOf("finite");var mounted by mutableStateOf(true)
+        var entranceLayer by mutableStateOf("all")
+        var transparentStage by mutableStateOf(false)
         var prepared:DioramaTextPlayback?=null;var drawn:DioramaPerspective?=null;var builds=0
         val finiteViews=mutableMapOf<String,DioramaPerspective>()
         val finiteMaterials=mutableMapOf<String,List<DioramaUnitFrame>>()
@@ -78,7 +80,7 @@ class DioramaMountedStageTest {
                     seedName="Outgoing mirror",endTime=12.0)
                 val result=DioramaTextPlayback.prepare(core,style,measurer,resolver,width.toDouble(),600.0,
                     seedName="Incoming mirror",endTime=5.0,cut=old.cutAt(6.8,1))
-                if(width==380)diagnosticPlanes=(old.lines.mapIndexed { i,line ->
+                diagnosticPlanes=(old.lines.mapIndexed { i,line ->
                     val s=old.camera.subjects[i];DioramaDepartingPlane(i,line.neighbor,s.frame,s.placement)
                 }+result.lines.mapIndexed { i,line ->
                     val s=result.camera.subjects[i];DioramaDepartingPlane(i+8,line.neighbor,s.frame,s.placement)
@@ -165,10 +167,34 @@ class DioramaMountedStageTest {
                 else {ready.preparePlainRenderer(plainRenderer,time);ready.prepareActiveBaseRenderer(activeBaseRenderer,time)}
             }
             Canvas(Modifier.fillMaxSize().background(Color(0xff162435))) {
+                val canvas=drawContext.canvas
+                if(transparentStage)canvas.skiaCanvas.saveLayer(org.jetbrains.skia.Canvas.SaveLayerRec(
+                    saveLayerFlags=org.jetbrains.skia.Canvas.SaveLayerFlags(org.jetbrains.skia.Canvas.SaveLayerFlagsSet.F16ColorType)))
+                try {
                 if(ready!=null) {
                     val view=if(!method.endsWith("media"))finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time)
                     drawn=view
-                    if(method=="active-input"||method=="active-base") {
+                    if(method.startsWith("entrance-")) {
+                        val states=finiteMaterials.getValue("${r[2]}-$time")
+                        val sampled=method=="entrance-after"
+                        if(entranceLayer=="full")ready.drawStage(this,time,view,primary,accent,secondary,fog=fog,
+                            activeFrames=states,plainRenderer=plainRenderer,
+                            activeBaseRenderer=if(sampled)activeBaseRenderer else null)
+                        else if(entranceLayer=="neighbors") {
+                            for(n in ready.neighborFramesAt(time,view,primary,secondary))if(n.opacity>0) {
+                                val p=diagnosticPlanes.getValue(n.index)
+                                plainRenderer.draw(p.text,this,view,p.frame,p.placement,n.color,n.opacity.toFloat(),
+                                    fog,DioramaToneMapping.AcesFilmic)
+                            }
+                        }else {
+                            val i=ready.camera.subjectIndex(time);val s=ready.camera.subjects[i]
+                            ready.lines[i].text.drawFrames(this,view,s.frame,s.placement,states.map { state ->
+                                state.copy(baseOpacity=if(entranceLayer in listOf("all","base"))state.baseOpacity else 0.0,
+                                    glowVisible=state.glowVisible&&entranceLayer in listOf("all","glow"),
+                                    soulVisible=state.soulVisible&&entranceLayer in listOf("all","soul"))
+                            },fog,DioramaToneMapping.AcesFilmic,if(sampled)activeBaseRenderer else null)
+                        }
+                    }else if(method=="active-input"||method=="active-base") {
                         val i=ready.camera.subjectIndex(time);val s=ready.camera.subjects[i]
                         ready.lines[i].text.drawFrames(this,view,s.frame,s.placement,
                             finiteMaterials.getValue("${r[2]}-$time"),fog,DioramaToneMapping.AcesFilmic,
@@ -197,6 +223,7 @@ class DioramaMountedStageTest {
                         plainRenderer=if(method.startsWith("sampler")||method.startsWith("base"))plainRenderer else null,
                         activeBaseRenderer=if(method.startsWith("base"))activeBaseRenderer else null)
                 }
+                }finally{if(transparentStage)canvas.restore()}
             }
         }
         val out=File("../build/verification/diorama-mounted-kotlin").apply{mkdirs()}
@@ -227,6 +254,50 @@ class DioramaMountedStageTest {
             val count=activeBaseRenderer.preparations
             mainClock.advanceTimeBy(40);assertContentEquals(basePixels,pixels(),"Active sampler freezes on media time")
             assertEquals(count,activeBaseRenderer.preparations,"No stable-frame mip preparation")
+            val groupOut=File("../build/verification/diorama-transparent-float-kotlin").apply{mkdirs()}
+            for(groupMethod in listOf("material","base","base-media")) {
+                runOnIdle{method=groupMethod;transparentStage=true};val grouped=pixels()
+                ImageIO.write(captureToImage().toAwtImage(),"png",groupOut.resolve("$groupMethod-$name"))
+                mainClock.advanceTimeBy(40);assertContentEquals(grouped,pixels(),"Transparent stage freezes with media")
+            }
+            runOnIdle{transparentStage=false}
+        }
+        // Existing four failed entrance frames, same independently reconstructed
+        // finite view/materials. New diagnostic outputs never replace originals.
+        val entranceOut=File("../build/verification/diorama-mounted-entrance-kotlin").apply{mkdirs()}
+        for(fps in listOf("60","144")) {
+            val index=probes.indexOfFirst{it[2]==fps&&it[3].toDouble()==.7};assertTrue(index>=0)
+            val name="mounted-$width-$fps-700.png"
+            for(kind in listOf("full","all","base","glow","soul","neighbors")) {
+                var before:IntArray?=null
+                for(sample in listOf("before","after")) {
+                    runOnIdle{current=index;method="entrance-$sample";entranceLayer=kind};val image=pixels()
+                    if(kind=="full") {
+                        val folder=if(sample=="before")"diorama-mounted-sampler-kotlin"else"diorama-mounted-active-base-kotlin"
+                        val actual=ImageIO.read(File("../build/verification/$folder/$name"))
+                        assertContentEquals(actual.getRGB(0,0,actual.width,actual.height,null,0,actual.width),image,
+                            "Entrance diagnostic equals actual complete $sample stage")
+                    }
+                    if(sample=="before")before=image else if(kind in listOf("glow","soul","neighbors"))
+                        assertContentEquals(before,image,"Active sampler cannot change $kind")
+                    ImageIO.write(captureToImage().toAwtImage(),"png",entranceOut.resolve("$width-$fps-$sample-$kind.png"))
+                    val count=activeBaseRenderer.preparations;mainClock.advanceTimeBy(75)
+                    assertContentEquals(image,pixels(),"Entrance layer freezes with media time")
+                    assertEquals(count,activeBaseRenderer.preparations)
+                    runOnIdle{transparentStage=true};pixels()
+                    ImageIO.write(captureToImage().toAwtImage(),"png",entranceOut.resolve("$width-$fps-float-$sample-$kind.png"))
+                    runOnIdle{transparentStage=false};assertContentEquals(image,pixels(),"Transparent diagnostic round trip")
+                }
+            }
+            val active=prepared!!.lines[prepared!!.camera.subjectIndex(.7)].text
+            val inputRows=active.slices.mapIndexed { i,slice ->
+                ImageIO.write(slice.body.toAwtImage(),"png",entranceOut.resolve("$width-$fps-unit-$i-body.png"))
+                ImageIO.write(slice.halo.toAwtImage(),"png",entranceOut.resolve("$width-$fps-unit-$i-halo.png"))
+                listOf(i,slice.body.width,slice.body.height,slice.centerPx,slice.imageOffsetPx,slice.unit.charStart,slice.unit.charEnd)
+                    .joinToString("\t")
+            }
+            entranceOut.resolve("$width-$fps-inputs.tsv").writeText("# unit width height pivotPx imageOffsetPx charStart charEnd\n"+
+                inputRows.joinToString("\n")+"\n")
         }
         if(width==380) {
             val diagnostic=File("../build/verification/diorama-mounted-input-kotlin").apply{mkdirs()}

@@ -16,10 +16,16 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：隔离mounted700ms四个入场帧（380/800×60/144Hz）的原/本正文贡献。
-完成条件：重放固定callback前缀并保持原完整PNG/状态/纹理不变，导出原/本分层，
-定位y0局部回退的实际贡献；有独立证据后才最小修复，不调相机/halo/前景口径，
-不重试已拒绝的广泛词注册。无依据则保留失败及下一条可证伪假设。
+当前唯一下一项：按原透明画布合成证据，补有界、显式opt-in的JVM文字surface，
+独立RGBA合成控制/释放验证后复核同48矩阵；无additive时避免无必要中间层，
+Android保留真实普通回退。原相机/halo/前景口径不变，不重试已拒绝的广泛词注册。
+700ms四帧贡献调查已完成：452/1083固定callback，原完整PNG/状态/版本/矩阵精确，
+root/RAF释放为0；y0只有active。原透明premultiplied画布先累积RGBA再叠CSS底色，
+当前direct Plus跳过背景衰减。原raw RGBA独立叠CSS与截图峰<=1。8bit层有16/14
+均值/局部回退未采用；F16诊断同48/10图union sampled1.917132→.913014、局部
+6.883721→3.410853，仍11/10轻微回退，媒体2/3残差全留，不据均值宣称修复。
+337旧PNG不变、2项JVM/暂停/重挂/释放通过，重复控制超60s失败及减负后通过记录保留。
+见verification/diorama-mounted-entrance；无生产/Android新包/设备/正式视觉结论。
 9363bd9后的Android debug/独立消费已完成：原证书v1/v2（37.0.0/30.0.2）、CRC、
 16KB对齐、双ABI Rust及交付hash通过；build/deliverables/android/
 lyrics-ui-folia-debug-9363bd9-20261118-173739.apk，SHA256

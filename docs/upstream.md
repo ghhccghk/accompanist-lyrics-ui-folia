@@ -2012,3 +2012,14 @@ texture/asset, driver source or new dependency copied. Fixed90/180 and exact
 body/gray whole-run ownership, all residuals, allocation tradeoff and limits:
 verification/diorama-cjk-body-coverage. Internal accuracy repair, not public
 Diorama, Android fragment/performance or final visual acceptance.
+
+### Diorama mounted entrance framebuffer isolation (2026-11-18)
+Pinned DioramaActiveUnitPlanes.tsx/DioramaScene.tsx and original Three0.185.1
+WebGLState.js AdditiveBlending alpha/RGB factors -> read-only capture host and
+DioramaMountedStageTest diagnostics. Exact original four700ms callback prefixes,
+full frames/state/resource versions/matrices unchanged; raw transparent canvas
+versus CSS control establishes the missing composition contribution. Ordinary
+8-bit saveLayer candidate rejected; F16 diagnostic retains full48 failures.
+No source code/texture/font copied into runtime, no production or license
+change. Conditions, hashes, timeout failure/recovery and contact retained in
+verification/diorama-mounted-entrance; not Android/performance/final acceptance.

@@ -1,7 +1,7 @@
 # Partita lifecycle and independent release consumer
 
 November 19, 2026 (Asia/Taipei). API 34 x86_64 task-owned emulator,
-SwiftShader Vulkan, 800¡Á600 at 160 dpi, 4096-byte OS pages.
+SwiftShader Vulkan, 800x600 at 160 dpi, 4096-byte OS pages.
 Published `0.1.0-20261118.230350-10` to the local Maven repository.
 `verify-native-consumer.py` built release and release instrumentation APKs
 with R8 in a project and Gradle home outside the checkout, using the coordinate
@@ -10,7 +10,7 @@ without Rust on PATH or a native build task. Both `.so` entries match the AAR.
 `NativeLifecycleProbe` passed the following in one process:
 
 - Real Partita GPU submission and ten stable paused observations.
-- Seek 1500 ¡ú 850 ¡ú 1500 with no extra upload. The shared offset path samples
+- Seek 1500 â†’ 850 â†’ 1500 with no extra upload. The shared offset path samples
   1500 ms for a 1600 ms host snapshot and 100 ms offset.
 - Classic Preferred returns Kotlin with `UnsupportedTheme:Classic`.
   Required reports failure. Both remove the native view.
@@ -18,7 +18,7 @@ without Rust on PATH or a native build task. Both `.so` entries match the AAR.
   and Required without moving the host clock. Native recovers with the normal budget.
 - Accessibility click returns the original lyrics-core object. Touch in blank
   space reaches the parent.
-- 640¡Á480, fontScale 1.5 and reduced motion submit the requested sample.
+- 640Ã—480, fontScale 1.5 and reduced motion submit the requested sample.
   Activity recreation restores the request and creates a new TextureView.
 - Two instances submit independently. Removing one leaves one TextureView.
   Inactive updates do not submit. Reactivation submits the updated sample.
@@ -34,17 +34,18 @@ failure stage and code for future runs.
 The native sample was also tested through Android DocumentsUI. The sample APK
 SHA-256 was `5422e47fae217fc5c27eb87070711d88d44f92e750438c728dc1319dd8b7eb20`.
 Open the 12-second synthetic `uslt-v23.mp3` from
-`verification/generate-embedded-audio.py` as the audio file. The UI showed
-`ÄÚÇ¶¼ÆÊ±¸è´Ê`, advanced to 0:04 with `Echo »ØÉù`, and MediaPlayer reported an
-active NuPlayer/AudioTrack for the sample's separate `:playback` PID. The input
-is silent PCM encoded as MP3, so this checks decode, transport and lyric timing.
+`verification/generate-embedded-audio.py` as the audio file. The UI reported
+timed embedded lyrics and advanced to 0:04 with the embedded second line. The
+sample's separate `:playback` PID owned the active NuPlayer and AudioTrack.
+The fixture is silent PCM encoded as MP3, so this checks decoding, transport
+and lyric timing.
 
-Next use **²¹Ñ¡¸è´Ê£¯·­Òë** to select a UTF-8 LRC with `Amber` at 6 s and `Echo`
-at 8 s, then **Ó¦ÓÃ¸è´Ê**. The UI changed to `Íâ²¿¸è´Ê`. On seeking to 0:08 it
-showed `Echo`, and settings reported `NativeRequired` / `NativeGpu` /
-`Ready:PartitaMainAndGlow`. MediaPlayer stayed in the same playback process.
-Returning from Home preserved the selected file, external lyrics and paused 0:08
-position. This run covered one foreground/background transition while paused.
+In the track's lyric editing dialog, select a UTF-8 LRC with `Amber` at 6 s and
+`Echo` at 8 s, then apply the lyrics. The source label changed to external
+lyrics. After seeking to 0:08 the stage showed `Echo`. Settings reported
+`NativeRequired` / `NativeGpu` / `Ready:PartitaMainAndGlow`. MediaPlayer stayed
+in the same playback process. Returning from Home preserved the selected file,
+external lyrics and paused 0:08 position.
 
 Remaining runtime checks include platform line long press and drag/cancel,
 repeated churn with memory samples, and ARM64 and 16KiB OS runs. Submission

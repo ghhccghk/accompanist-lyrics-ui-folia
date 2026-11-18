@@ -8,15 +8,20 @@
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
-| Diorama | core分组/内部时钟、完整文字透视、三层合成、13镜头目标隔离核对 | 无 | 完整rig/朝向/切曲、深度/栅格/设备尚未验收 |
+| Diorama | core/完整文字透视/三层、13目标、正常阻尼/回正/安全视锥follower及媒体文字闭环 | 无 | weighted picker/切曲/连续残差、深度/栅格/设备尚未验收 |
 
-当前唯一下一项：Diorama真实文字的相机跟随闭环；从已完成desired targets接入
-SmoothDamp、四元数回正/安全视锥/follower及媒体时间可重建轨道，不再新增孤立目标。
-完成条件：同原始状态/目标/积分区间核对实际原CameraRig有限算子；真实core文字
-通过新轨道透视绘制，并核对暂停、逆序seek、重挂、显示调度、尺寸恢复。保持内部，
-不将尚缺picker/切曲/near-depth-fog/设备验收的镜台加入sample。
+当前唯一下一项：Diorama原weighted shot picker接入内部core文字播放；按真实词时长/
+显式可选section信息选镜，不从声部或alignment猜造副歌。完成条件：原固定源码同输入
+选择/anti-repeat相等，真实core连续换行、seek/重挂/source identity回归。保持内部，
+不将尚缺切曲/near-depth-fog/设备验收的镜台加入sample。
 
-Cappella二次提交探针已完成：原1.016667s的两次高度61.265625/122.265625px，
+Diorama正常follower文字闭环已实现：1482同原incoming状态峰2.22e-16，150 snap/
+62安全视锥；96原有限步文字/自产文字finite和media同前景MAE4.675817/13.058764，
+后者最坏57.104488，低alpha范围仍28px且有裁词，不冒充原RAF等价。13定向JVM/
+Android库编译/Desktop编译通过；暂停、显示调度、逆序seek、offset、取消、逻辑尺寸/
+设置/重挂通过。无新设备/真实窗口/性能；详见verification/diorama-follow。
+
+Cappella二次提交探针已完成（6e23b78）：原1.016667s的两次高度61.265625/122.265625px，
 snapshot top仅差2.23e-6px，排除“二次提交必然多衰减一次”的简单原因。独立重跑17条
 trace/全部几何逐值一致且与固定原版基线相等；初次lookup读取错误保留。生产未改，
 22.188593px残差未修复。进一步假设必须分离pre-render DOM/flow/post-RAF状态，

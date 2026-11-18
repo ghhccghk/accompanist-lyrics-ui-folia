@@ -59,14 +59,15 @@ internal fun dioramaTextLife(distance:Double):Double{
 
 internal data class DioramaProjectedPoint(val x:Double,val y:Double,val depth:Double,val clipped:Boolean)
 
-/** Explicit frozen view, deliberately separate from the unported CameraRig's
- * shot language, damping, quaternion followers and cross-song flight. */
+/** World-up lookAt remains the default for existing isolated targets. The text
+ * follower supplies its actual quaternion, preserving reading roll/attitude.
+ * This projection alone does not implement depth testing or cross-song flight. */
 internal class DioramaPerspective(val eye:DioramaVec,look:DioramaVec,val width:Double,val height:Double,
-    val fov:Double=55.0,val near:Double=.1,val far:Double=1000.0){
+    val fov:Double=55.0,val near:Double=.1,val far:Double=1000.0,orientation:DioramaQuaternion?=null){
     init{require(width>0&&height>0&&fov>0&&fov<180&&near>0&&far>near);require(eye!=look)}
-    val forward=(look-eye).normalized()
-    val right=forward.cross(DioramaVec(0.0,1.0,0.0)).normalized()
-    val up=right.cross(forward).normalized()
+    val forward=orientation?.rotate(DioramaVec(0.0,0.0,-1.0))?:(look-eye).normalized()
+    val right=orientation?.rotate(DioramaVec(1.0,0.0,0.0))?:forward.cross(DioramaVec(0.0,1.0,0.0)).normalized()
+    val up=orientation?.rotate(DioramaVec(0.0,1.0,0.0))?:right.cross(forward).normalized()
     private val focal=height/(2*tan(fov*PI/360))
     fun project(world:DioramaVec):DioramaProjectedPoint{
         val d=world-eye;val z=d.dot(forward)

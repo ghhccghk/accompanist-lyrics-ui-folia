@@ -1,0 +1,106 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "three": "0.185.1",
+  "lockSha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad",
+  "sourceFragments": [
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 144,
+      "endLine": 165,
+      "sha256": "17185546e3df4e7780c6bea3dd6322943f7ae77d4a99483feed09192f3ea2dca"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 228,
+      "endLine": 235,
+      "sha256": "9bedebad4d1e02a64ae23d3be563d558539eb027116fbe26f48f0d0aed3d7a28"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 238,
+      "endLine": 240,
+      "sha256": "6afac2b22f01cf1633ac725ac113d0f935a9af62f700b45aba0a25f7d137cd6f"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 249,
+      "endLine": 281,
+      "sha256": "59751830a4e8b0c91113c24a095128e801342a52988df7069048364d3122240d"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 345,
+      "endLine": 349,
+      "sha256": "5799e88e0abe5bcc25bc37519270df90466c7a276f79d806bdd392042a116347"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 61,
+      "endLine": 141,
+      "sha256": "ccf5b31338cba0046fb41cfaafdabb485bcc20a4f27c9a8973e488c975704e1a"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 322,
+      "endLine": 342,
+      "sha256": "463d1d1fab79ad20fb4f305e762285320614b1e7f531998b527afa013443bc16"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 349,
+      "endLine": 361,
+      "sha256": "ed14994d95133211789b1ca42fba9dbf75f8f66018383be67ec614816d615620"
+    },
+    {
+      "file": "src/components/visualizer/diorama/CameraRig.tsx",
+      "startLine": 361,
+      "endLine": 434,
+      "sha256": "37ff2b9bd8912198b93376a4e0e788f02ae75358513540769f9a1ae428ec6f25"
+    }
+  ],
+  "cases": 1482,
+  "seed": "DioramaProbe",
+  "line": {
+    "fullText": "Synthetic mirror plane",
+    "startTime": 0.7,
+    "endTime": 3.1,
+    "words": [
+      {
+        "text": "Synthetic",
+        "startTime": 0.7,
+        "endTime": 1.5
+      },
+      {
+        "text": "mirror",
+        "startTime": 1.5,
+        "endTime": 2.3
+      },
+      {
+        "text": "plane",
+        "startTime": 2.3,
+        "endTime": 3.1
+      }
+    ]
+  },
+  "shots": [
+    "pushIn",
+    "pullBack",
+    "orbit",
+    "track",
+    "crane",
+    "hold",
+    "swell",
+    "spiral",
+    "pendulum",
+    "flyby",
+    "arc",
+    "float",
+    "glide"
+  ],
+  "scope": "Original private normal-follow blocks and original target functions. Independent original incoming states; no Kotlin inputs/expected, no flight, no RAF mount. 60/144/irregular are distinct source finite operators, NOT a fixed playback frequency."
+}

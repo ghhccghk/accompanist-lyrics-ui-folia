@@ -1605,3 +1605,18 @@ Oxc transpilation; injected ref/line/frame inputs/zero transition sweep. Source
 functions/formulas unchanged. Real Three text vs own shaped target-driven text132
 frames, numeric2808 controls; NOT complete CameraRig/RAF/orientation/picker/depth.
 Evidence and unresolved edge clipping/halo differences: verification/diorama-camera-targets.
+
+### Diorama normal camera follower/core text playback (2026-11-18)
+Pinned cc6226e4 cameraPath.ts:121–137 and CameraRig.tsx:57–139,315–434 ->
+DioramaCameraFollow.kt:SmoothDamp,24-unit snap,13 reading ceilings,text-basis
+yaw/roll,alignment decay,safe-cone target and quaternion follower. Flight absent.
+Three.js0.185.1 src/math/{Quaternion,Matrix4,Vector3}.js -> attributed scalar
+basis/slerp/vector algebra; Copyright2010–2026 three.js authors,MIT notice retained
+in LICENSES/MIT-three-0.185.1.txt. No Three binary/runtime dependency. Actual.9995
+normalized-lerp branch retained. DioramaPerspective accepts camera quaternion.
+Independent DioramaCameraTrack uses immutable error-controlled media checkpoints,
+NOT source RAF equivalence. DioramaTextPlayback connects real core refs/full-shaped
+text/offset/three-layer drawing, still explicit shots and internal only.
+1482 original incoming-state steps,96 original text frames, media/raster residuals
+and failed initial tests:verification/diorama-follow. No source asset/background/
+audio copy or fixed-frame playback. No public/sample Diorama or device claim.

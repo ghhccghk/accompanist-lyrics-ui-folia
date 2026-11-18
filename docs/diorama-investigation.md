@@ -7,7 +7,7 @@
 | --- | --- | --- |
 | 文字 | `dioramaSceneLayout.ts:145–230`：CJK字素／其他词分组、前缀宽度；`dioramaTextRaster.ts:29–185`：128px完整字体栈Canvas纹理、邻行4096边界、四层纯halo | 本轮仅共享原纹理隔离投影；内部文字分组/原词身份/完整EGC时钟/core桥接已迁，67原输入641字素/226单元时间峰0；Kotlin完整邻行文字已独立塑形并透视绘制；活动单元切片/辉光待移植，不能把单位独立栅格照抄成逐字塑形 |
 | 路径／摆位 | `cameraPath.ts:223–346`：整曲8世界单位步长、局部正交框架、offset/roll/yaw/scale/look | 已迁入内部DioramaProjection.kt；四seed（含UTF-16 emoji）、12行、四weave的原函数数值对照 |
-| 运镜 | `cameraPath.ts:531–754`：13类shot、读头truck、空档settle、drift；`CameraRig.tsx:200–434`：SmoothDamp、24单位seek snap、回正和安全视锥、四元数跟随 | 尚未移植。冻结lookAt投影不是CameraRig，不能以数学通过代替播放镜头验收；媒体重建策略必须另建对照 |
+| 运镜 | `cameraPath.ts:531–754`：13类shot、读头truck、空档settle、drift；`CameraRig.tsx:200–434`：SmoothDamp、24单位seek snap、回正和安全视锥、四元数跟随 | targets/正常follower已接内部真实文字，1482原初态有限步/96文字帧，另有媒体轨道；尚缺weighted picker/切曲及完整场景验收，不能以数学通过替代播放镜头验收 |
 | 投影 | `VisualizerDiorama.tsx:470–478`：真实R3F/Three透视相机55°；`dioramaSceneUnits.ts:103–142`：固定5.2距离fit、basis×yaw×roll | 最小Double投影／平面单应矩阵与Three数值通过；JVM Compose Matrix实际透视共享纹理9对及独立塑形文字24对可运行；Android仅共同代码构建 |
 | 深度／顺序 | `DioramaScene.tsx:624–651`：邻行正常透明mesh、depthWrite=false、默认depthTest；`DioramaActiveUnitPlanes.tsx:21–75`：glow/soul/base顺序17/18/19，全部depthTest=false/depthWrite=false，前两层Additive | 保留真实z/平面朝向后可研究文字平面专用合成；普通旋转缩放不能替代透视。当前探针没有近面穿越裁剪、遮挡、背面剔除或多平面合成，不能称深度验收 |
 | 距离／雾／色彩 | `dioramaSceneUnits.ts:95`：.9–2近消融／32–40远消失；`DioramaScene.tsx:393–428`：12–30雾、阻尼色；`dioramaSceneFrame.ts:92–140,184+`：邻行／当前单元效果 | life/fit数值已迁；逐像素view-depth雾、线性色彩／additive混色、三种跟唱与envelope尚未实现。单平面均色不能充作最终雾化 |
@@ -58,4 +58,10 @@ additive、局部z/lift/swell。180实际Three帧，注入媒体解析charge/del
 只导出观察，2808数值峰1.066e-14，132同字体真实Three/Compose图MAE5.773035。
 Kotlin用自己的完整塑形宽度计算实际镜头（不是复用原pose）；尚缺原加权shot选择、
 SmoothDamp/朝向回正/跟随/切曲、雾与深度，极端target本身也有裁词，禁止称正式
-效果或开放sample。见verification/diorama-camera-targets。下一轮先回已开放Fume残差。
+效果或开放sample。见verification/diorama-camera-targets。此为c5ceac9历史阶段，当前以NEXT_STEPS唯一活动表为准。
+
+正常follower已接内部core文字：原SmoothDamp/snap/回正/安全视锥/单一朝向writer，
+Perspective保留真实四元数。1482同原incoming通道峰2.22e-16；96原有限步文字与
+自产文字finite/media同前景MAE4.675817/13.058764，后者最坏57.104488，不冒充原RAF等价。
+低alpha范围28px/裁词未完成；暂停、逆序seek、多显示调度、offset、取消、逻辑resize/
+重挂通过。无新设备/真窗口/性能结论，未开放Diorama；见verification/diorama-follow。

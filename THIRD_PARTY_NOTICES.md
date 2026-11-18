@@ -21,7 +21,7 @@ copyright metadata and provenance. They are used by the comparison harness only.
 | Tailwind CSS | 4.3.3 | MIT; verification-only compiler/generated subtitle utilities, matching the pinned Folia lockfile |
 | pretext | 0.0.9 | MIT; original Tilt measurement in verification; its cache behavior informs the independently written per-line compatibility cache. No pretext runtime dependency. See LICENSES/MIT-pretext-0.0.9.txt and docs/upstream.md. |
 | Motion easing | motion-utils 13.3.0 | MIT; specialised cubic-bezier/easeOut port for Fume parent entry. Motion B.V. and original BezierEasing attribution retained in LICENSES/MIT-motion-utils-13.3.0.txt and MIT-bezier-easing.txt. |
-| Three.js | 0.185.1 | MIT; verification-only original Diorama math/material/projection oracle, exact pinned Folia lockfile version. No Kotlin/sample runtime dependency. See LICENSES/MIT-three-0.185.1.txt. |
+| Three.js | 0.185.1 | MIT; original Diorama math/material/projection oracle and attributed scalar quaternion/basis algebra adaptation in DioramaCameraFollow.kt. Exact pinned Folia lockfile version; no Three binary/runtime dependency. See LICENSES/MIT-three-0.185.1.txt. |
 | jni-sys | 0.3.0 | MIT OR Apache-2.0; optional development-only Rust JNI mask experiment, Cargo.lock pins checksum; not linked into default library/sample |
 
 This inventory covers direct dependencies. Transitive binary/source notices and

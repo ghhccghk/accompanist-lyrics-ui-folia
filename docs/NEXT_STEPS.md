@@ -8,14 +8,19 @@
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
-| Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字闭环、原weighted picker | 无 | 切曲/连续残差、near/depth/fog/栅格/设备尚未验收 |
+| Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、文字平面near/far/背面裁剪 | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
 
-当前唯一下一项：Diorama文字平面的near/far与背面有界裁剪，避免相机穿越时无界
-投影/反面文字。完成条件：实际Three平面同姿态近面交叉/后方/远面/背面对照，
-接入现有完整塑形正文/辉光/灵魂层并验证旧前方场景不变；不冒充多平面深度或完整主题。
-其后回到Fume冻结首spring目标的跨clamp完整状态映射实验，不反复猜旧focus/branch补丁。
+当前唯一下一项：Fume冻结原首spring目标/系数的跨clamp完整状态映射实验；从现有
+独立原始handoff-v1记录取真实incoming/target，扫描原clamp两侧的速度并比较(x,v,focus)
+与连续适配、同总时长不同分段。完成条件：先定位非可逆限幅位移，保留全部失败；
+不猜旧focus/branch补丁，不改旧fixture/原验收，不硬编码60Hz或固定延迟。
 
-Diorama原weighted picker已接内部core文字：1404原始controls/13权重，选择完全一致、
+Diorama文字平面裁剪已接完整正文/活动三层：实际Three18同姿态stress，MAE
+99.915892→3.080586（同source/before/after完整前景union）；10个原空白case全部精确
+为空，去除221550错误像素。216旧前方PNG重跑hash完全不变。8定向JVM/Android库
+编译通过；无设备/真窗口/性能结论，不冒充深度buffer/fog/完整镜台。见verification/diorama-clipping。
+
+Diorama原weighted picker已接内部core文字（02b8d8c）：1404原始controls/13权重，选择完全一致、
 权重峰0；默认缺省chorus/part/block未伪造，三个原motion preset接入。真实core默认选镜/
 切句精确边界/offset/逆序seek/设置/逻辑resize/重挂通过；4定向JVM及Android库编译通过。
 不是新原版连续画面或设备通过，camera/栅格残差保留。见verification/diorama-shots。

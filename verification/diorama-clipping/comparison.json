@@ -1,0 +1,425 @@
+{
+  "scope": "Locked actual Three MeshBasicMaterial default FrontSide and GPU homogeneous clipping, shared original synthetic raster, frozen front/near/far/behind/backface geometry. NOT a text shaping/depth buffer/full scene or original CameraRig test.",
+  "mask": "Identical source/before/after union, ALL nonbackground pixels including low alpha; no registration/filter/delay",
+  "frames": [
+    {
+      "file": "front-380.png",
+      "source_pixels": 10358,
+      "before_pixels": 9564,
+      "after_pixels": 9564,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\front-380.png": "442dd2a3127e1eef73d7f7c9b35ebc1aa99df9d0afd1346c9893aa0dc2296781",
+        "build\\verification\\diorama-clipping-kotlin\\before-front-380.png": "38ad5166439ac4562d8e87630691598e708fdc01646a41301be4d375db9ec0e9",
+        "build\\verification\\diorama-clipping-kotlin\\after-front-380.png": "38ad5166439ac4562d8e87630691598e708fdc01646a41301be4d375db9ec0e9"
+      },
+      "before": {
+        "foreground_mae": 4.906867477634035,
+        "full_mae": 0.22291812865497077,
+        "worst64": 10.838541666666666,
+        "channel_peak": 73
+      },
+      "after": {
+        "foreground_mae": 4.906867477634035,
+        "full_mae": 0.22291812865497077,
+        "worst64": 10.838541666666666,
+        "channel_peak": 73
+      }
+    },
+    {
+      "file": "near-cross-380.png",
+      "source_pixels": 7248,
+      "before_pixels": 21779,
+      "after_pixels": 5657,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\near-cross-380.png": "a5e497e671aa97e483f2718d8a0f7d0e1163c65c8d8f62ee54e110976d6fb1b7",
+        "build\\verification\\diorama-clipping-kotlin\\before-near-cross-380.png": "4a2677bed78ad4ab193c3802a363847197f0a049cdd667a8f54da6f5ec3930a3",
+        "build\\verification\\diorama-clipping-kotlin\\after-near-cross-380.png": "23f27de2fcceee284e6eba5e750e0d645d234f5950b623affe8e4d62ef1291ae"
+      },
+      "before": {
+        "foreground_mae": 137.3277135929254,
+        "full_mae": 14.076090643274854,
+        "worst64": 207.34722222222223,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 5.471202396234489,
+        "full_mae": 0.5607982456140351,
+        "worst64": 36.09090909090909,
+        "channel_peak": 159
+      }
+    },
+    {
+      "file": "behind-cross-380.png",
+      "source_pixels": 0,
+      "before_pixels": 0,
+      "after_pixels": 0,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\behind-cross-380.png": "22d94deca923a96d1cd7a7d0461279b7fad18bc4e6ebc4d45f5409b0ad231b3d",
+        "build\\verification\\diorama-clipping-kotlin\\before-behind-cross-380.png": "dc565ad331b089c0fbf1e2880828e5bf1ec916bcfb3414bec02d26f520055c72",
+        "build\\verification\\diorama-clipping-kotlin\\after-behind-cross-380.png": "dc565ad331b089c0fbf1e2880828e5bf1ec916bcfb3414bec02d26f520055c72"
+      },
+      "before": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0,
+        "channel_peak": 0
+      },
+      "after": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "before-near-380.png",
+      "source_pixels": 0,
+      "before_pixels": 54810,
+      "after_pixels": 0,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\before-near-380.png": "22d94deca923a96d1cd7a7d0461279b7fad18bc4e6ebc4d45f5409b0ad231b3d",
+        "build\\verification\\diorama-clipping-kotlin\\before-before-near-380.png": "ded6b6adc8f2d5917168032e7782c3b159e4fbde04cdb35c3f110749fe4e09bf",
+        "build\\verification\\diorama-clipping-kotlin\\after-before-near-380.png": "dc565ad331b089c0fbf1e2880828e5bf1ec916bcfb3414bec02d26f520055c72"
+      },
+      "before": {
+        "foreground_mae": 195.3676336434957,
+        "full_mae": 46.96535087719298,
+        "worst64": 216.96923828125,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "beyond-far-380.png",
+      "source_pixels": 0,
+      "before_pixels": 5470,
+      "after_pixels": 0,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\beyond-far-380.png": "22d94deca923a96d1cd7a7d0461279b7fad18bc4e6ebc4d45f5409b0ad231b3d",
+        "build\\verification\\diorama-clipping-kotlin\\before-beyond-far-380.png": "2c9a5e7b978cc11a8a1f4df4aacf50268e8df76d518d737ea04cabb77f06e904",
+        "build\\verification\\diorama-clipping-kotlin\\after-beyond-far-380.png": "dc565ad331b089c0fbf1e2880828e5bf1ec916bcfb3414bec02d26f520055c72"
+      },
+      "before": {
+        "foreground_mae": 194.71054235222425,
+        "full_mae": 4.671345029239766,
+        "worst64": 200.65365551425032,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "backface-380.png",
+      "source_pixels": 0,
+      "before_pixels": 9564,
+      "after_pixels": 0,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\backface-380.png": "22d94deca923a96d1cd7a7d0461279b7fad18bc4e6ebc4d45f5409b0ad231b3d",
+        "build\\verification\\diorama-clipping-kotlin\\before-backface-380.png": "17d1ad89f138158973727581c027614340c290b3fecf6cf10c3eccfecdb6d1da",
+        "build\\verification\\diorama-clipping-kotlin\\after-backface-380.png": "dc565ad331b089c0fbf1e2880828e5bf1ec916bcfb3414bec02d26f520055c72"
+      },
+      "before": {
+        "foreground_mae": 194.42105813467168,
+        "full_mae": 8.155451754385965,
+        "worst64": 198.95571397710088,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "far-cross-380.png",
+      "source_pixels": 5015,
+      "before_pixels": 6187,
+      "after_pixels": 4179,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\far-cross-380.png": "1dbe899df3da1933aff0a1fe80af43d7329e13071411c68225774bbf6569db93",
+        "build\\verification\\diorama-clipping-kotlin\\before-far-cross-380.png": "b31d32e2613b2156f6e336ce6626238f99c197fd74af3719d73c0e9823299c35",
+        "build\\verification\\diorama-clipping-kotlin\\after-far-cross-380.png": "1f6a06325d71205f6e6a1005c5558ee199fe74f622035a5ac6b92a91636ef318"
+      },
+      "before": {
+        "foreground_mae": 65.50021334091879,
+        "full_mae": 2.019877192982456,
+        "worst64": 204.53333333333333,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 8.258047693547622,
+        "full_mae": 0.2546593567251462,
+        "worst64": 14.771799628942485,
+        "channel_peak": 128
+      }
+    },
+    {
+      "file": "eye-cross-380.png",
+      "source_pixels": 0,
+      "before_pixels": 0,
+      "after_pixels": 0,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\eye-cross-380.png": "22d94deca923a96d1cd7a7d0461279b7fad18bc4e6ebc4d45f5409b0ad231b3d",
+        "build\\verification\\diorama-clipping-kotlin\\before-eye-cross-380.png": "dc565ad331b089c0fbf1e2880828e5bf1ec916bcfb3414bec02d26f520055c72",
+        "build\\verification\\diorama-clipping-kotlin\\after-eye-cross-380.png": "dc565ad331b089c0fbf1e2880828e5bf1ec916bcfb3414bec02d26f520055c72"
+      },
+      "before": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0,
+        "channel_peak": 0
+      },
+      "after": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "near-and-far-380.png",
+      "source_pixels": 10388,
+      "before_pixels": 10760,
+      "after_pixels": 7573,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\near-and-far-380.png": "a7a87cc7b5503a3126b0178e46dcb34065529c846f9f4639468d0e8170549555",
+        "build\\verification\\diorama-clipping-kotlin\\before-near-and-far-380.png": "4b008cf40911ccefe5e5f2879a75d95705541b677d2ef52b000b36728eed23ab",
+        "build\\verification\\diorama-clipping-kotlin\\after-near-and-far-380.png": "24bc0e14b58c3b69d3ff86038b12e7cccb9f6270ebcc040f1ebf09b549a5913b"
+      },
+      "before": {
+        "foreground_mae": 60.86035604665439,
+        "full_mae": 3.623593567251462,
+        "worst64": 157.44031221303948,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 15.329748311847759,
+        "full_mae": 0.9127251461988304,
+        "worst64": 41.789412449098315,
+        "channel_peak": 206
+      }
+    },
+    {
+      "file": "front-800.png",
+      "source_pixels": 23042,
+      "before_pixels": 21094,
+      "after_pixels": 21094,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\front-800.png": "2c7828b0a9955455f589454223536210d99bf4c66298cb4dccf99ae2f1e05a01",
+        "build\\verification\\diorama-clipping-kotlin\\before-front-800.png": "ca4390b7c405424ef17eb1eff3333fee4878baabf1fda4374754b9a87c01ffca",
+        "build\\verification\\diorama-clipping-kotlin\\after-front-800.png": "ca4390b7c405424ef17eb1eff3333fee4878baabf1fda4374754b9a87c01ffca"
+      },
+      "before": {
+        "foreground_mae": 5.255663570870584,
+        "full_mae": 0.25229375,
+        "worst64": 11.395833333333334,
+        "channel_peak": 78
+      },
+      "after": {
+        "foreground_mae": 5.255663570870584,
+        "full_mae": 0.25229375,
+        "worst64": 11.395833333333334,
+        "channel_peak": 78
+      }
+    },
+    {
+      "file": "near-cross-800.png",
+      "source_pixels": 7763,
+      "before_pixels": 48967,
+      "after_pixels": 5954,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\near-cross-800.png": "7f6683b226e165cada677b7e9a874894b5f65e3e9ebc88b5f34c6923d6fc44a9",
+        "build\\verification\\diorama-clipping-kotlin\\before-near-cross-800.png": "04c63fce3d4056f142d6893f4e38119abdd6e9a513e3456c59f70b9150513943",
+        "build\\verification\\diorama-clipping-kotlin\\after-near-cross-800.png": "769c7913d0671237bc32d3734f1f82f7ce673d9a7b9ac1a78698bfd8a50a3fc0"
+      },
+      "before": {
+        "foreground_mae": 162.911152250407,
+        "full_mae": 17.233284722222223,
+        "worst64": 208.34258804258803,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 2.946739929625545,
+        "full_mae": 0.31171597222222225,
+        "worst64": 38.04062015503876,
+        "channel_peak": 179
+      }
+    },
+    {
+      "file": "behind-cross-800.png",
+      "source_pixels": 0,
+      "before_pixels": 0,
+      "after_pixels": 0,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\behind-cross-800.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-clipping-kotlin\\before-behind-cross-800.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-clipping-kotlin\\after-behind-cross-800.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "before": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0,
+        "channel_peak": 0
+      },
+      "after": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "before-near-800.png",
+      "source_pixels": 0,
+      "before_pixels": 123159,
+      "after_pixels": 0,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\before-near-800.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-clipping-kotlin\\before-before-near-800.png": "4e7c67c4516f9045be6a1a29111ba5c64ea369a816eed849146ee81ae1fc8be0",
+        "build\\verification\\diorama-clipping-kotlin\\after-before-near-800.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "before": {
+        "foreground_mae": 196.18193013367545,
+        "full_mae": 50.33660486111111,
+        "worst64": 218.0,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "beyond-far-800.png",
+      "source_pixels": 0,
+      "before_pixels": 7453,
+      "after_pixels": 0,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\beyond-far-800.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-clipping-kotlin\\before-beyond-far-800.png": "ad257f2a9bff89df4545c00bac8b2a3eee059ca56575a97762dd60b191434f1e",
+        "build\\verification\\diorama-clipping-kotlin\\after-beyond-far-800.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "before": {
+        "foreground_mae": 195.6474797620645,
+        "full_mae": 3.037834722222222,
+        "worst64": 201.71070707070706,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "backface-800.png",
+      "source_pixels": 0,
+      "before_pixels": 21094,
+      "after_pixels": 0,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\backface-800.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-clipping-kotlin\\before-backface-800.png": "fe21fc82e1bc5eee10396145586dc1f45cd55a0fb4acc9e9e79aedb8904af0e1",
+        "build\\verification\\diorama-clipping-kotlin\\after-backface-800.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "before": {
+        "foreground_mae": 196.1879681425998,
+        "full_mae": 8.62164375,
+        "worst64": 206.81717451523545,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0.0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "far-cross-800.png",
+      "source_pixels": 9244,
+      "before_pixels": 10032,
+      "after_pixels": 8024,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\far-cross-800.png": "2a3c3574033126eb0b814517cc27e9b75f8430497767566e7da058c75b5c169e",
+        "build\\verification\\diorama-clipping-kotlin\\before-far-cross-800.png": "6d838fb2f94d55fbe6c75418144202bf93483c36c02d597fbb82dfc282364270",
+        "build\\verification\\diorama-clipping-kotlin\\after-far-cross-800.png": "542a41c80a9b596b3eb2bd1cd9bdb44cb9751bed7247be4c2fab8b7fc43fc53a"
+      },
+      "before": {
+        "foreground_mae": 43.58327412670219,
+        "full_mae": 1.0223909722222222,
+        "worst64": 209.41666666666666,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 7.839905269390171,
+        "full_mae": 0.1839111111111111,
+        "worst64": 15.243055555555555,
+        "channel_peak": 128
+      }
+    },
+    {
+      "file": "eye-cross-800.png",
+      "source_pixels": 0,
+      "before_pixels": 0,
+      "after_pixels": 0,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\eye-cross-800.png": "94cc1edff08be886970f816912a15e734bb0c67e233639252ff53158320eecf8",
+        "build\\verification\\diorama-clipping-kotlin\\before-eye-cross-800.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b",
+        "build\\verification\\diorama-clipping-kotlin\\after-eye-cross-800.png": "800ba074a4e35841977c2b4b366d313096a3eb30df27c2c16c3b97d3b0c55d5b"
+      },
+      "before": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0,
+        "channel_peak": 0
+      },
+      "after": {
+        "foreground_mae": 0.0,
+        "full_mae": 0.0,
+        "worst64": 0,
+        "channel_peak": 0
+      }
+    },
+    {
+      "file": "near-and-far-800.png",
+      "source_pixels": 10388,
+      "before_pixels": 35422,
+      "after_pixels": 7573,
+      "png_sha256": {
+        "build\\verification\\diorama-clipping-browser\\near-and-far-800.png": "ffedcd9233175259c248aaa6ecbe16ab701354bb6ec6125f2bfe10c43b9a7b1f",
+        "build\\verification\\diorama-clipping-kotlin\\before-near-and-far-800.png": "567e80ab2a346e29374a45b33b8bef8c2650d750c5f917a952e5654d8de64924",
+        "build\\verification\\diorama-clipping-kotlin\\after-near-and-far-800.png": "761a458b498783e99a99120b5aad363bada5a9cefe084a9aadf91abc2e9b3ba3"
+      },
+      "before": {
+        "foreground_mae": 145.62419471541526,
+        "full_mae": 11.600484027777778,
+        "worst64": 205.18406517536593,
+        "channel_peak": 233
+      },
+      "after": {
+        "foreground_mae": 5.4423812886296865,
+        "full_mae": 0.4335423611111111,
+        "worst64": 42.6172393007836,
+        "channel_peak": 206
+      }
+    }
+  ],
+  "mean_foreground": {
+    "before": 99.91589151612551,
+    "after": 3.080586440987772
+  },
+  "status": "Bounded actual near/far/FrontSide clipping. Shared original raster isolates geometry; not own shaping, inter-plane depth buffer or complete Diorama acceptance."
+}

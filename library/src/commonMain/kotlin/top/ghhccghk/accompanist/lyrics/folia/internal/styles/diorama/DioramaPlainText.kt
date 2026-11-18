@@ -28,8 +28,8 @@ internal class DioramaPlainText private constructor(val image: ImageBitmap, val 
     val fontPx: Int, val padding: Int, val middleBaseline: Double, val hasTypographicMetrics: Boolean) {
     val worldWidth: Double get() = advancePx * .62 / fontPx
 
-    /** Real perspective, same basis/yaw/roll as the source. Caller must handle
-     * near-plane intersections/depth/fog before using this frozen-plane path. */
+    /** Real perspective/FrontSide/near-far clipping, same source basis/yaw/roll.
+     * Inter-plane depth testing/fog remain separate unimplemented capabilities. */
     fun draw(scope: DrawScope, view: DioramaPerspective, frame: DioramaFrame,
         placement: DioramaPlacement, color: Color = Color.White, alpha: Float = 1f) = with(scope) {
         val scale = dioramaFrameFit(worldWidth, 5.2, view.fov, view.width / view.height) * placement.scale
@@ -37,13 +37,7 @@ internal class DioramaPlainText private constructor(val image: ImageBitmap, val 
         val y = dioramaPlaneAxis(frame, placement, 0.0, 1.0) * (scale * .62 / fontPx)
         val center = dioramaComposeLocal(frame, placement.offsetR, placement.offsetU, 0.0)
         val origin = center - x * (image.width / 2.0) + y * (image.height / 2.0)
-        val h = view.planeHomography(origin, x, y * -1.0)
-        val matrix = Matrix().apply {
-            this[0,0] = h[0].toFloat(); this[1,0] = h[1].toFloat(); this[3,0] = h[2].toFloat()
-            this[0,1] = h[3].toFloat(); this[1,1] = h[4].toFloat(); this[3,1] = h[5].toFloat()
-            this[0,3] = h[6].toFloat(); this[1,3] = h[7].toFloat(); this[3,3] = h[8].toFloat()
-        }
-        withTransform({ transform(matrix) }) { drawImage(image, alpha = alpha, colorFilter = ColorFilter.tint(color)) }
+        drawDioramaPlane(image,view,origin,x,y * -1.0,alpha,color)
     }
 
     companion object {

@@ -1631,3 +1631,13 @@ remains absent/false, never inferred from alignment/accompaniment.
 Original exported picker/motion functions + exact private weights extraction,
 1404 source controls with13 weights each,source range/hash/full inputs:
 verification/diorama-shots. Numerical selection is not continuous visual proof.
+
+### Diorama text-plane clipping (2026-11-18)
+Pinned cc6226e4 DioramaActiveUnitPlanes.tsx:24–84 and DioramaScene.tsx neighbour
+materials rely on Three default FrontSide plus GPU homogeneous clipping, even
+with depthTest=false. Independent DioramaPlaneDrawing.kt supplies local-plane
+Double near/far polygon clipping and winding rejection before Canvas perspective;
+now shared by DioramaPlainText and each active base/halo/soul transform. No Three
+renderer/background/texture or clipping implementation copied. Actual locked
+Three0.185.1 shared-raster18-frame stress and216 unchanged own forward hashes:
+verification/diorama-clipping. This is not depth-buffer/fog/full-scene acceptance.

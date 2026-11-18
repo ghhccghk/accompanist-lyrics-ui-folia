@@ -8,14 +8,19 @@
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
-| Diorama | core/完整文字透视/三层、13目标、正常阻尼/回正/安全视锥follower及媒体文字闭环 | 无 | weighted picker/切曲/连续残差、深度/栅格/设备尚未验收 |
+| Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字闭环、原weighted picker | 无 | 切曲/连续残差、near/depth/fog/栅格/设备尚未验收 |
 
-当前唯一下一项：Diorama原weighted shot picker接入内部core文字播放；按真实词时长/
-显式可选section信息选镜，不从声部或alignment猜造副歌。完成条件：原固定源码同输入
-选择/anti-repeat相等，真实core连续换行、seek/重挂/source identity回归。保持内部，
-不将尚缺切曲/near-depth-fog/设备验收的镜台加入sample。
+当前唯一下一项：Diorama文字平面的near/far与背面有界裁剪，避免相机穿越时无界
+投影/反面文字。完成条件：实际Three平面同姿态近面交叉/后方/远面/背面对照，
+接入现有完整塑形正文/辉光/灵魂层并验证旧前方场景不变；不冒充多平面深度或完整主题。
+其后回到Fume冻结首spring目标的跨clamp完整状态映射实验，不反复猜旧focus/branch补丁。
 
-Diorama正常follower文字闭环已实现：1482同原incoming状态峰2.22e-16，150 snap/
+Diorama原weighted picker已接内部core文字：1404原始controls/13权重，选择完全一致、
+权重峰0；默认缺省chorus/part/block未伪造，三个原motion preset接入。真实core默认选镜/
+切句精确边界/offset/逆序seek/设置/逻辑resize/重挂通过；4定向JVM及Android库编译通过。
+不是新原版连续画面或设备通过，camera/栅格残差保留。见verification/diorama-shots。
+
+Diorama正常follower文字闭环已实现（de7baa6）：1482同原incoming状态峰2.22e-16，150 snap/
 62安全视锥；96原有限步文字/自产文字finite和media同前景MAE4.675817/13.058764，
 后者最坏57.104488，低alpha范围仍28px且有裁词，不冒充原RAF等价。13定向JVM/
 Android库编译/Desktop编译通过；暂停、显示调度、逆序seek、offset、取消、逻辑尺寸/

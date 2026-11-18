@@ -1620,3 +1620,14 @@ text/offset/three-layer drawing, still explicit shots and internal only.
 1482 original incoming-state steps,96 original text frames, media/raster residuals
 and failed initial tests:verification/diorama-follow. No source asset/background/
 audio copy or fixed-frame playback. No public/sample Diorama or device claim.
+
+### Diorama weighted shot selection (2026-11-18)
+Pinned cc6226e4 cameraPath.ts:374–548 -> DioramaShotPicker.kt:note durations,
+word count,explicit chorus/part/block metadata,source ordered weights/pick and
+previous-two-base dedupe. Source calm/normal/chaotic motion presets connected
+to internal DioramaTextPlayback placement/move/drift/smooth; default core path
+now selects shots instead of requiring overrides. Missing core extension data
+remains absent/false, never inferred from alignment/accompaniment.
+Original exported picker/motion functions + exact private weights extraction,
+1404 source controls with13 weights each,source range/hash/full inputs:
+verification/diorama-shots. Numerical selection is not continuous visual proof.

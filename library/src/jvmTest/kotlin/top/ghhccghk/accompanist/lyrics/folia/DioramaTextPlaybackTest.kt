@@ -34,7 +34,7 @@ class DioramaTextPlaybackTest {
                 count++
                 val style=TextStyle(fontFamily=FontFamily(Font(File("../verification/assets/FoliaParityLatin-Bold.ttf"),FontWeight.Bold)))
                 DioramaTextPlayback.prepare(core,style,TextMeasurer(resolver,Density(1f),LayoutDirection.Ltr),resolver,
-                    viewport.toDouble(),600.0,listOf(DioramaShot.orbit,DioramaShot.glide),"DioramaProbe",4.0)
+                    viewport.toDouble(),600.0,seedName="DioramaProbe",endTime=4.0)
             }else null
             SideEffect{prepared=playback}
             Canvas(Modifier.fillMaxSize().background(Color(0xff162435))) {
@@ -46,9 +46,14 @@ class DioramaTextPlaybackTest {
         assertTrue(baseline.toSet().size>2,"actual text must be drawn")
         assertSame(first,playback.sourceAt(1.0).source)
         assertSame(second,playback.sourceAt(1.7,200).source)
+        for((i,subject)in playback.camera.subjects.withIndex())
+            assertEquals(dioramaPickShot(i,playback.lines.map{it.core.lyric},dioramaHashSeed("DioramaProbe")),subject.shot,
+                "default core path uses real weighted picker, no invented sections")
         assertEquals(1.7,playback.mediaStart(playback.sourceAt(1.7,200),200),1e-12)
         runOnIdle{time=.8;offset=200};assertTrue(baseline.contentEquals(pixels()),"offset exactly once")
-        runOnIdle{time=2.2;offset=0};val later=pixels();assertFalse(later.contentEquals(baseline))
+        // Cross the actual line switch and both sides of its exact boundary.
+        for(t in listOf(1.899999,1.9,1.900001,2.2)) {runOnIdle{time=t;offset=0};pixels()}
+        val later=pixels();assertFalse(later.contentEquals(baseline))
         runOnIdle{time=1.0};assertTrue(baseline.contentEquals(pixels()),"backward seek")
         runOnIdle{reduced=true};val reducedPixels=pixels()
         runOnIdle{reduced=false};assertTrue(baseline.contentEquals(pixels()),"settings restore")

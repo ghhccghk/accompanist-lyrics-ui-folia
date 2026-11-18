@@ -1,148 +1,186 @@
 # lyrics-ui-folia
 
-独立 Kotlin / Compose Multiplatform 歌词组件，入口 `FoliaLyricsView`，数据依赖已发布的
-`com.mocharealm.accompanist:lyrics-core:0.5.0`。许可为 **AGPL-3.0-only**；证据和来源台账见
-[docs/upstream.md](docs/upstream.md)。仓库分离不代表许可证义务自动隔离。
+用 Kotlin / Compose Multiplatform 实现 Folia 风格歌词，让文字随音乐呈现不同的排版与动画。
 
-本项目 Maven 坐标为 `top.ghhccghk.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`，
-Kotlin 包名前缀为 `top.ghhccghk.accompanist.lyrics.folia`。示例包名也使用新前缀。
-外部 `lyrics-core` 的发布坐标及模型包名保持原样；这是本项目命名迁移，不涉及原工程。
+支持 **Android** 和 **JVM Desktop**，基于已发布的 `lyrics-core` 数据模型，组件入口为
+`FoliaLyricsView`。附带可选择本地歌曲、真实播放的两端示例。
 
-## Implementation status
+> 当前为开发版本，尚未公开发布到 Maven Central。七个主题为校准预览，镜台为实验调试预览；
+> 原版视觉对照与设备验证仍在进行，尚不承诺完整效果等价或 API / ABI 稳定。
 
-当前为可构建、可运行的开发版本，尚未完成首版全部验收，也没有公开发布。
-两端示例默认待选歌，用户选择本地音频后真实播放；歌词和翻译可选。原创合成场景和
-无音频时钟位于“开发／演示”入口。无需原工程、lyrics-ui、SPW或外部播放器。
-库独立使用不需要Rust；sample默认打包实验Rust遮罩，运行时仍默认Kotlin。
-无Rust/NDK时可给sample构建传入 `-PfoliaExperimentalMask=false`。
-平台格式限制与实际运行证据见 [本地播放](docs/local-playback.md)。
+## 📦 项目关系
 
-- classic 安全文字分组、确定性词位姿、spring、计时颜色、缓存辉光、呼吸、整句退出。
-- 云阶Partita已有独立阶梯块、块级入场、引导线和逐词/字素辉光，处于移植校准阶段，
-  完整视觉尚未验收。设置→歌词主题→云阶，可调引导线/语义/错位/避让。
-- 倾诉Tilt及心象Cadenza已有实际独立舞台与示例校准预览，尚未最终视觉验收。
-  心象含词云强调/避让、内部字素辉光、媒体时间响应和显式副歌圆环；设置→歌词主题→心象。
-  [心象入口与限制](docs/cadenza-preview.md)。浮名、群唱、时计均已接入公开校准预览。
-- 镜台 Diorama 已开放真实文字透视／运镜的实验调试预览，设置→歌词主题→镜台。
-  Android 为普通绘制回退，完整深度、曲间编排与原版视觉仍待验收；
-  [镜台使用与限制](docs/diorama-preview.md)，准确状态见[主题对照](docs/themes-parity.md)。
-- 原始 core 模型、仅行时间、多声部、翻译、注音、下一句和空档；不伪造逐词时间。
-- 库从宿主快照支持暂停、随机seek、倍速和循环重建；点击/长按回调返回原始歌词行。
-- 真实音频示例提供播放/暂停、进度拖动、歌词点击、重播和重新选歌；倍速/循环控件仍仅在开发/演示。
-- 窄屏上方信息／下方歌词，宽屏左侧封面控制／右侧歌词；短窗口使用紧凑封面。
-- 本地 UTF-8 标准／增强 LRC 导入、取消、错误提示、重新载入，文件上限 1 MiB。
-- 示例未选外部歌词时自动读取 MP3 ID3、FLAC、M4A／MP4 及 WAV ID3 内嵌歌词；
-  计时文本沿用 core 解析，纯文本单独显示。标签支持／限制见[内嵌歌词](docs/embedded-lyrics.md)，
-  不扩展 Desktop 原有音频解码能力。
-- 真实音频页面提供翻译、注音、下一句、画质、减少动态及偏移设置；开发/演示另有字号、旋转、呼吸、间距和避让调试设置。
-- 示例设置增加可选100%/75%/50%歌词渲染分辨率，默认100%；低档位有画质损失，真机收益待测，见[说明](docs/render-resolution.md)。
-- Android 配置变化保留会话；后台、桌面失焦／最小化暂停，返回后显式继续。
-- 真实播放与开发/演示均可在设置开启“调试信息（后端／FPS）”，默认关闭；显示实际
-  后端、窗口／分辨率、回调FPS、耗时分位数、媒体时间和歌词诊断。统计口径及Windows
-  OpenGL选择见[调试说明](verification/render-debug/README.md)，不等于GPU呈现FPS。
+- **lyrics-core**：歌词解析、数据模型与格式转换。本项目使用已发布的
+  `com.mocharealm.accompanist:lyrics-core:0.5.0`，保留其原有坐标和模型包名。
+- **lyrics-ui**：原有 Compose 歌词界面，是独立的 Apache-2.0 工程。
+- **lyrics-ui-folia**：本仓库，独立实现 Folia 文字显示行为，不依赖原 `lyrics-ui` 或其内部 API，
+  也不需要原工程、SPW 或外部播放器。
 
-文字实现参考固定 Folia v0.7.26 / cc6226e464050a456a2913e062374f23d3844cc5。
-用户三段视频仅作文字视觉方向参考，没有分发其视频、原歌词、封面或字体。
-分组／内部字素计时、避让几何、正文与辉光曲线、呼吸和字幕已建立原版函数／DOM／
-实际 Motion 对照；完整帧仍有文字覆盖、辉光边缘及平台计量残差，尚未完成视觉验收。
-源码依据与逐项结果见 [核心对照](docs/classic-parity.md)，不能称为逐帧等价复刻。
+库只负责歌词显示；音频播放、文件选择与歌曲元数据读取属于示例程序。
+库的 Kotlin 实现独立可用，不要求 Rust 环境或 native 运行时。
 
-## Toolchain
+## ✨ 特性
 
-锁定 Gradle 9.5.0、Kotlin 2.4.10、Compose 1.12.0、Material3 1.9.0、AGP 9.3.2、
-Activity Compose 1.13.0、ICU4J 78.3 和 kotlinx.coroutines 1.11.0。
-**安装 JDK 21**：JVM 编译／测试显式选择 21，避免 daemon 版本改变产物字节码。
-Android 构建需要 SDK platform 37；设置 `ANDROID_HOME` 或未跟踪的 `local.properties`。
-构建脚本没有开发者 SDK 或原工程路径。默认Android sample另需NDK28.2.13676358、
-Rust1.91.1及两个Android target；Windows sample默认构建并捆绑x64 DLL。
-安装步骤与显式关闭方式见 [Rust sample](docs/native-mask-sample.md)。
-Windows/Linux/macOS构建路径、真实验证范围与Maven命令见 [构建说明](docs/BUILDING.md)。
-Kotlin/Native 编译试验与完整 UI 的阻碍见
-[Native 可行性](docs/KOTLIN_NATIVE.md)，目前不提供 Native 桌面播放器。
+- **多种歌词舞台**：逐词辉光、阶梯排版、倾斜分组、词云、轮盘、消息、文章运镜与文字透视。
+- **真实歌词模型**：主唱、伴唱、多声部、翻译与注音，保留完整文字塑形和内部字素计时。
+- **媒体时间驱动**：通过宿主播放快照处理暂停、seek 与时间跳变，点击／长按返回原始歌词行。
+- **可调显示**：主题参数、字体、颜色、字幕、歌词偏移、画质和减少动态效果。
+- **独立示例**：本地音频、外部／内嵌歌词、响应式布局，以及默认关闭的后端／帧率调试信息。
+
+各主题支持范围不同。仅含行时间的歌词会按主题规则派生揭示进度，不将它宣称为真实逐词标注；
+构建或逻辑测试通过也不等于原版视觉验收通过。
+
+## 🎨 歌词主题
+
+以下八项均可从示例的「设置 → 歌词主题」选择。
+
+| 主题 | 名称 | 文字表现 | 当前状态 |
+| --- | --- | --- | --- |
+| Classic | 流光 | 居中歌词、逐词高亮与辉光、句间转场 | 校准预览 |
+| Partita | 云阶 | 阶梯分组、错位入场与引导线 | 校准预览 |
+| Tilt | 倾诉 | 倾斜的分段文字与空间排布 | 校准预览 |
+| Cadenza | 心象 | 碎片／词云式强调与避让 | [校准预览](docs/cadenza-preview.md) |
+| Pendolo | 时计 | 弧形轮盘、刻度与扫描 | [校准预览](docs/pendolo-preview.md) |
+| Cappella | 群唱 | 连续消息、字素揭示与动态布局 | [校准预览](docs/cappella-preview.md) |
+| Fume | 浮名 | 整曲文章、逐步揭示与镜头移动 | [校准预览](docs/fume-preview.md) |
+| Diorama | 镜台 | 真实文字透视、分层与运镜 | [实验调试预览](docs/diorama-preview.md) |
+
+完整视觉验收尚未完成：浮名仍有镜头交接残差，群唱／时计仍有密集场景差异，镜台的完整深度、
+曲间编排与平台一致性尚未完成。准确状态与证据见 [当前进展](docs/NEXT_STEPS.md) 和
+[主题对照](docs/themes-parity.md)。
+
+## 🚀 安装
+
+当前提供本地 Maven 发布，尚无可直接从 Maven Central 下载的正式版本。在本仓库执行：
 
 ```powershell
-.\gradlew.bat :sample:desktop-app:run
-.\gradlew.bat :sample:android-app:assembleDebug
-.\gradlew.bat :library:jvmTest :sample:shared:jvmTest
+.\gradlew.bat :library:publishToMavenLocal
 ```
 
-APK：`sample/android-app/build/outputs/apk/debug/android-app-debug.apk`。
-连接用户允许安装的设备／模拟器后可运行：
-
-```powershell
-adb install -r sample/android-app/build/outputs/apk/debug/android-app-debug.apk
-adb shell am start -n top.ghhccghk.accompanist.folia.sample/.MainActivity
-```
-
-已在 API30／34 x86_64 模拟器安装运行并采集固定字体画面，API30验证Kotlin软件模糊；
-两端暂停和逆向seek重访逐像素一致。实机曾拒绝安装，没有绕过设备限制。
-Linux/macOS、API21..29和实机表现不在已验证矩阵中；模拟器不作为性能结论。
-Desktop真实音频：Space播放/暂停，左右键±5秒。开发/演示另有Ctrl+O导入、Ctrl+R重新载入；
-Esc 交由当前对话框处理。已聚焦控件先处理自己的按键。
-
-## 导入约定
-
-真实音频使用公开AutoParser，开发/演示单文件导入使用EnhancedLrcParser。
-已验证 `[mm:ss.xx]`／`[mm:ss.xxx]` 行时间及
-`<mm:ss.xx>` 增强词时间，不宣称支持其他格式。文件须为 UTF-8，可带 BOM。
-取消和失败保留当前歌词，后台解析有过期请求保护。解析器的末行无限结束时间保持原样，
-演示时钟取末行开始后 5 秒与其他有限结束时间的较大值。
-
-Android 使用 OpenDocument URI，不申请整盘权限。导入能力／历史目前只保留在进程会话，
-退出进程后回到待选歌页，需要重新选择文件；不宣称跨进程 URI 恢复。
-
-“补选歌词／翻译”在原播放器上应用，不重新准备音频或跳转。独立翻译按相同起始
-时间戳匹配，没有匹配时明确报错。取消、失败和过期候选保留原会话。
-有限前奏／间奏采用所有声部时间并集，严格大于5秒，等待文字退场后显示原版等待球；
-无歌词、出错和歌曲结束均有独立状态。减少动态、暂停和seek使用相同媒体时间。
-本项两端构建、Desktop真实音频、API34真实音频与等待球验证见[本地播放记录](docs/local-playback.md)；
-原生系统文件选择完整端到端与实机尚待复核，Desktop仅宣称PCM WAV/AIFF/AU最小支持。
-
-## 最小接入
-
-宿主提供可观察的播放快照和 seek，组件不再次乘倍速，也不创建播放器：
+在消费工程的 `settings.gradle.kts` 中配置 `mavenLocal()`、`google()` 和 `mavenCentral()`，
+然后在 Kotlin Multiplatform 模块的 `build.gradle.kts` 中添加：
 
 ```kotlin
+kotlin {
+    sourceSets {
+        commonMain.dependencies {
+            implementation("top.ghhccghk.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT")
+        }
+    }
+}
+```
+
+`lyrics-core` 已作为 API 依赖传递，无需引入 `lyrics-ui`。Android 库最低 API 21；
+Desktop 使用 JVM，Kotlin/Native 探针不属于完整 UI 发布目标。
+详细发布与独立消费方式见 [构建说明](docs/BUILDING.md) 和
+[独立消费示例](verification/consumer/README.md)。
+
+## 🎤 最小接入
+
+宿主负责解析歌词、播放音频并提供可观察的播放快照：
+
+```kotlin
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
+import top.ghhccghk.accompanist.lyrics.folia.FoliaLyricsView
+import top.ghhccghk.accompanist.lyrics.folia.FoliaOptions
+import top.ghhccghk.accompanist.lyrics.folia.FoliaPlaybackSnapshot
+import top.ghhccghk.accompanist.lyrics.folia.FoliaStyle
+
 @Composable
 fun LyricsPane(
     lyrics: SyncedLyrics,
-    snapshot: () -> FoliaPlaybackSnapshot,
-    seek: (Long) -> Unit,
+    playback: () -> FoliaPlaybackSnapshot,
+    onSeek: (Long) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
+    val options = FoliaOptions(showTranslation = true, offsetMillis = 0)
+
     FoliaLyricsView(
         lyrics = lyrics,
-        playback = snapshot,
-        modifier = Modifier.fillMaxSize(),
-        onLineClicked = { seek(it.start.toLong()) },
+        playback = playback,
+        modifier = modifier,
+        options = options,
+        style = FoliaStyle.Classic(),
+        onLineClicked = { line ->
+            onSeek((line.start.toLong() + options.offsetMillis).coerceAtLeast(0L))
+        },
     )
 }
 ```
 
-使用 `top.ghhccghk.accompanist.lyrics.folia.*` 和 core 公开模型。
-快照含毫秒位置、`isPlaying`、`discontinuity`。正 offset 表示歌词延后：渲染使用媒体时间
-减 offset，点击换回媒体时间时 seek 到 `line.start + offset`。
-可编译源码见 [独立消费示例](verification/consumer/README.md)。API 尚未承诺 ABI 稳定。
+`FoliaPlaybackSnapshot` 包含 `positionMillis`、`isPlaying` 和 `discontinuity`。
+播放器位置已经体现倍速，组件不会再次乘速；seek、循环回跳或切歌时应更新 `discontinuity`。
+真实播放使用播放器时间，不同时运行演示时钟。
 
-## 本地消费验证和交付状态
+正 `offsetMillis` 表示歌词延后：显示时间为媒体时间减偏移，点击歌词换回媒体时间时加回偏移。
+上例包含该换算；更换主题可使用 `FoliaStyle.Partita()` 等对应类型。
+
+## ▶️ 示例程序
+
+首次打开进入待选歌页，选择音频后真实播放。歌词与翻译可选；未选外部歌词时自动尝试读取
+歌曲内嵌歌词。没有歌词仍可播放，并显示「未加载歌词」；纯文本歌词单独展示，不伪造时间。
+
+- 播放／暂停、进度拖动、歌词点击跳转、重播、重新选歌和补选歌词／翻译。
+- 窄屏顶部曲目信息、下方歌词；宽屏左侧封面与控制、右侧歌词。
+- 已验证的 UTF-8 标准／增强 LRC，以及 MP3 ID3、FLAC、M4A／MP4、WAV ID3 内嵌歌词。
+- 合成歌词与无音频时钟位于「开发／演示」，倍速／循环控件目前也仅在该入口提供。
+- 可选画质、减少动态和渲染分辨率；调试信息显示实际后端与帧回调统计，回调 FPS 不等于 GPU 呈现 FPS。
+
+需要 **JDK 21**；Android 构建需要 **SDK platform 37**，示例最低 API 23。工具链版本由仓库锁定。
 
 ```powershell
-./scripts/verify-consumer.ps1
-# 从已提交 HEAD 导出干净源码，验证两端与独立消费（需 SDK 环境变量）
-./scripts/verify-checkout.ps1
+# Desktop
+.\gradlew.bat :sample:desktop-app:run
+
+# Android debug APK
+.\gradlew.bat :sample:android-app:assembleDebug
 ```
 
-只生成 `build/local-maven` 文件仓库，再由独立 Gradle 根目录消费
-`top.ghhccghk.accompanist:lyrics-ui-folia:0.1.0-SNAPSHOT`，运行 JVM 渲染测试、
-编译 Android，并检查二进制／源码包声明。没有配置远程推送或公开发布目标。
+APK 输出：`sample/android-app/build/outputs/apk/debug/android-app-debug.apk`。
+Linux／macOS 使用 `./gradlew`；已提供构建脚本，尚无对应主机完整构建与运行验证。
 
-| 阶段 | 当前状态 |
-| --- | --- |
-| 独立工程、模型、索引、时钟、两端示例 | 已实现并构建／逻辑验证 |
-| classic 和交互 | 已有固定原版数值／DOM和JVM／API30／34画面对照；完整视觉、真实窗口连续录屏及实机待验收 |
-| 导入、设置、生命周期 | 已实现；跨进程导入历史和部分原生边界待补 |
-| Kotlin 优化 | 已按真实歌曲采样修复软件模糊热点；内存分配检查见verification/playback-stutter，整会话改善仍待复测 |
-| Rust | sample CPU遮罩实验已接入；默认Kotlin，局部像素对照通过，不宣称全帧提速 |
-| 本地产物／独立消费 | 干净源码导出构建及独立消费已通过；完整传递依赖审计、CI 和正式验收待完成 |
+示例默认打包 Rust 实验库，运行时仍默认 Kotlin。没有 Rust／NDK 时可显式关闭打包：
 
-详细证据：[Android 运行检查](docs/android-smoke.md)、[性能测量](docs/performance.md)、
-[剩余验收](docs/delivery.md)。
+```powershell
+.\gradlew.bat :sample:desktop-app:run -PfoliaExperimentalMask=false
+.\gradlew.bat :sample:android-app:assembleDebug -PfoliaExperimentalMask=false
+```
+
+Rust 环境见 [构建说明](docs/BUILDING.md) 和 [实验说明](docs/native-mask-sample.md)。
+Windows 可用 `-PfoliaRenderApi=OPENGL` 选择后端，当前 JVM Skiko 路径不支持选择 Vulkan。
+
+**播放限制**：Android 使用私有播放进程；Desktop 最低可靠解码范围是 PCM WAV／AIFF／AU，
+能够读取其他容器标签不代表能够播放该音频。新 Android 跨进程播放与内嵌歌词的完整设备
+流程仍待验证，不能沿用旧单进程结果作为证明。详见 [本地播放](docs/local-playback.md)。
+
+## 📚 文档与验证
+
+- [当前进展与待验收项](docs/NEXT_STEPS.md) · [主题对照](docs/themes-parity.md) · [Classic 对照](docs/classic-parity.md)
+- [构建与本地 Maven](docs/BUILDING.md) · [独立消费验证](verification/consumer/README.md)
+- [本地播放与导入](docs/local-playback.md) · [内嵌歌词](docs/embedded-lyrics.md) · [Android 播放进程](docs/android-playback-process.md)
+- [后端与帧统计](verification/render-debug/README.md) · [渲染分辨率](docs/render-resolution.md) · [性能测量](docs/performance.md)
+
+```powershell
+.\gradlew.bat :library:jvmTest :sample:shared:jvmTest
+python scripts/verify-consumer.py
+```
+
+独立消费脚本在本地发布后，从独立 Gradle 工程验证 JVM 渲染／回调、Android 编译和产物声明，
+不会上传。各项记录分别说明算法、画面、平台运行与性能的验证范围，不以离屏测试替代设备验收。
+
+## 🤝 参与贡献
+
+欢迎提交问题与改进。报告视觉问题时，请提供平台、主题、字体、视口、媒体时间点与可分发的最小
+歌词；性能问题请附设备和测量条件。涉及公共 API 或主题行为的大改动，建议先讨论。
+引入上游代码或资源时请保留来源、固定提交、修改说明和适用许可，不提交无权分发的歌曲、歌词、封面或字体。
+
+## 📜 许可与致谢
+
+本项目采用 **AGPL-3.0-only**，见 [LICENSE](LICENSE)。文字效果参考 Folia 固定版本
+`v0.7.26`，提交 `cc6226e464050a456a2913e062374f23d3844cc5`。
+
+原 `lyrics-core`／`lyrics-ui` 的 Apache-2.0 发布边界保持不变；本仓库许可不改写原项目许可，
+独立仓库也不表示许可证义务自动隔离。逐项来源、版权与修改记录见
+[NOTICE](NOTICE)、[第三方声明](THIRD_PARTY_NOTICES.md) 和 [来源台账](docs/upstream.md)。

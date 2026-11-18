@@ -16,8 +16,12 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：对原CJK800/1100ms的BASE做原/自身texture×原/自身placement输入消融，
-区分canonical分数phase/ceil pivot与采样，保留完整shaping；不调halo/相机或改前景口径。
+当前唯一下一项：验证仅CJK body使用已有Windows前景coverage、halo保留灰度的有界候选，
+同90/180矩阵与完整shaping守恒；保留source/own四路输入证据，不改几何/phase/相机。
+CJK输入cross已完成：同6图union source/source峰6，own/own75；单换source placement
+反而退步。foreground-only保持原几何/phase，7个raw alpha均值/峰全改善，固定stage
+MAE2.628243→1.387852/峰75→21；仅诊断未采用，1项JVM通过，
+见verification/diorama-cjk-input-isolation。下一候选必须保留halo输入并验证矩阵，不能单帧宣布通过。
 原CJK失败层已隔离：同原完整PNG/21mesh输入/版本不变，clone-all精确，释放几何/纹理0；
 native分层重放等于两条实际完整stage路径。旧失败tile(384,320)固定573union内all=base，
 所有glow/soul均纯背景；局部3.979058→5.198953属于未唱正文，不能调halo掩盖。

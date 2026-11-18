@@ -1990,3 +1990,12 @@ ordinary/sampled stage. Existing failing tile is base-only, glow/soul all
 background. Scope/hashes/source files/contact:verification/diorama-cjk-layer-isolation.
 No new product code, runtime asset/dependency or license change; not actual
 mounted RAF, Android/performance or formal theme acceptance.
+
+### Diorama CJK input cross isolation (2026-11-18)
+Same pinned raster/layout source and existing passive CJK base textures/captured
+unit placements -> test-only DioramaCjkInputIsolationTest. Four original/own
+input crosses plus existing Windows foreground-coverage-only control; exact
+own replay equals actual internal sampler, production inputs unchanged.
+All7 raw alpha controls and fixed six-image union/failures/source geometry
+retained:verification/diorama-cjk-input-isolation. No new source asset in runtime,
+adopted coverage policy, product code or final visual/device/performance claim.

@@ -1,0 +1,343 @@
+{
+  "baseline": "08aaa09",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "condition": "Frozen original CJK800x600/DPR1/1100ms BASE. All6 framebuffer inputs share one union. Raw alpha uses same-zero-origin transparent extension only, no registration. Original placement AND texture diagnostic explicitly source-driven; never actual library input.",
+  "unionPixels": 24542,
+  "metrics": {
+    "original": {
+      "mae": 0.0,
+      "peak": 0,
+      "worst64": {
+        "x": 128,
+        "y": 192,
+        "mae": 0.0
+      },
+      "existingFailureRoi": 0.0
+    },
+    "own-own": {
+      "mae": 2.6282427403362942,
+      "peak": 75,
+      "worst64": {
+        "x": 384,
+        "y": 320,
+        "mae": 5.092307692307692
+      },
+      "existingFailureRoi": 5.092307692307692
+    },
+    "source-own": {
+      "mae": 2.499103577540543,
+      "peak": 37,
+      "worst64": {
+        "x": 384,
+        "y": 320,
+        "mae": 3.988603988603989
+      },
+      "existingFailureRoi": 3.988603988603989
+    },
+    "own-source": {
+      "mae": 3.5706272240784505,
+      "peak": 75,
+      "worst64": {
+        "x": 704,
+        "y": 320,
+        "mae": 6.022609819121447
+      },
+      "existingFailureRoi": 5.843874643874644
+    },
+    "source-source": {
+      "mae": 0.6395974248227528,
+      "peak": 6,
+      "worst64": {
+        "x": 448,
+        "y": 320,
+        "mae": 0.7761529808773904
+      },
+      "existingFailureRoi": 0.698005698005698
+    },
+    "foreground-own": {
+      "mae": 1.3878521174585066,
+      "peak": 21,
+      "worst64": {
+        "x": 384,
+        "y": 256,
+        "mae": 2.2581171479849895
+      },
+      "existingFailureRoi": 2.1304843304843306
+    }
+  },
+  "hashes": {
+    "original": "30a66439626a455ee888b53ce180f5aa1563f14b10bc75bb9cd55ba03ed32836",
+    "own-own": "6a32d686f48f35957a70fbb5dd62c91adeda62d4407eafb1238efd8cd1fabfa4",
+    "source-own": "74783156dda870cdb32b21d97cd5e7324140d506651f1149eeea00c59613f5ff",
+    "own-source": "d7554588bfbfb8ebb8f21b071b94cbbd7564f3c12d53cd7128292d1e35dbac21",
+    "source-source": "558835a96a8137a98a8fdfad7d7de7679005323ae53ee0a433c03290bf36502b",
+    "foreground-own": "6777da2360b2294ea73430b1709951c6c2af4466d1301737a846824b03144d13"
+  },
+  "rawAlpha": [
+    {
+      "unit": 0,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "mass": 2051518,
+          "size": [
+            308,
+            360
+          ]
+        },
+        "own": {
+          "mae": 3.2081236520488856,
+          "peak": 130,
+          "mass": 2037177,
+          "size": [
+            308,
+            360
+          ]
+        },
+        "foreground": {
+          "mae": 1.1778097292115983,
+          "peak": 20,
+          "mass": 2041688,
+          "size": [
+            308,
+            360
+          ]
+        }
+      },
+      "hashes": {
+        "original": "9f554451605b44bbb0b76d78f30546dbebedd8ac133bb4ce526d45af630f77a6",
+        "own": "29389296fe01c9254700713a9d197e762294a0b6e8fecc6e0a8c7e035de078af",
+        "foreground": "09e1e5ebbf953631b08367049355b01f7c56f56e05d3a747654c0e110b6128cc"
+      }
+    },
+    {
+      "unit": 1,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "mass": 1636219,
+          "size": [
+            308,
+            360
+          ]
+        },
+        "own": {
+          "mae": 3.570483610171983,
+          "peak": 108,
+          "mass": 1620835,
+          "size": [
+            308,
+            360
+          ]
+        },
+        "foreground": {
+          "mae": 1.8338968102307804,
+          "peak": 20,
+          "mass": 1623743,
+          "size": [
+            308,
+            360
+          ]
+        }
+      },
+      "hashes": {
+        "original": "92aab13d86d5d977eee1538c63f593c989c92de96d460415e3f5b16512c62c56",
+        "own": "64ffb740390a2fcd4aeef375c9f1de78e505a03356cc44dd09d321c95b63ff98",
+        "foreground": "dcf8ea6e3cba93107ba5b4db5b33f685c71def970b6dd39674ed066b67b9a633"
+      }
+    },
+    {
+      "unit": 2,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "mass": 2154503,
+          "size": [
+            308,
+            360
+          ]
+        },
+        "own": {
+          "mae": 6.443432298695456,
+          "peak": 130,
+          "mass": 2108536,
+          "size": [
+            309,
+            360
+          ]
+        },
+        "foreground": {
+          "mae": 1.6096491228070176,
+          "peak": 19,
+          "mass": 2140190,
+          "size": [
+            309,
+            360
+          ]
+        }
+      },
+      "hashes": {
+        "original": "fac3400d45993560fc1e746dff5e47f72ab5f39e2c9c2fec6b03622ccc0e4918",
+        "own": "0a4038819d9e7c334b274315815d30cb86f11d4b96eb150b15d8599f8c6564cc",
+        "foreground": "998fd7a92049364587b74150a18bc9933ab7cddf6636273f4e7dca27001d2a0b"
+      }
+    },
+    {
+      "unit": 3,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "mass": 1968189,
+          "size": [
+            308,
+            360
+          ]
+        },
+        "own": {
+          "mae": 6.298426150121065,
+          "peak": 93,
+          "mass": 1922310,
+          "size": [
+            309,
+            360
+          ]
+        },
+        "foreground": {
+          "mae": 2.0595641646489105,
+          "peak": 20,
+          "mass": 1951177,
+          "size": [
+            309,
+            360
+          ]
+        }
+      },
+      "hashes": {
+        "original": "63b49c9883f74f329946a8b210e9a8fa1f96ada328029efed410c4be5066c759",
+        "own": "01048f91383f4e291d08aac040c05fb872e90e1aa4b4e49a9769db3acd0434b7",
+        "foreground": "5caa877dbc6eb3521be33298293cfaa50317378d990616a5b897cd96017c2a99"
+      }
+    },
+    {
+      "unit": 4,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "mass": 1770544,
+          "size": [
+            308,
+            360
+          ]
+        },
+        "own": {
+          "mae": 6.3647346273924255,
+          "peak": 126,
+          "mass": 1733743,
+          "size": [
+            309,
+            360
+          ]
+        },
+        "foreground": {
+          "mae": 1.929279218134926,
+          "peak": 20,
+          "mass": 1756331,
+          "size": [
+            309,
+            360
+          ]
+        }
+      },
+      "hashes": {
+        "original": "0e60fe616483067275a8aff4bd5099c8f39769c24da318a80ae196c085b2273b",
+        "own": "707162f3af6f52655537e52e934915241e5883f8ef7662d458fd9ab289edde31",
+        "foreground": "1f58d4f8a64f08d82c4e666833adf3daba0549c00530a16de29c3cac146b78fb"
+      }
+    },
+    {
+      "unit": 5,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "mass": 1835843,
+          "size": [
+            308,
+            360
+          ]
+        },
+        "own": {
+          "mae": 4.2725838264299805,
+          "peak": 135,
+          "mass": 1818514,
+          "size": [
+            309,
+            360
+          ]
+        },
+        "foreground": {
+          "mae": 1.7316239316239317,
+          "peak": 20,
+          "mass": 1822674,
+          "size": [
+            309,
+            360
+          ]
+        }
+      },
+      "hashes": {
+        "original": "d858dc089ec50f7cbed072693b06dc74eaab69cb1c426c36bc5d96225ff3070e",
+        "own": "feaa7b927cc07cc76e9f6c7732389d91dcd4859e359385a33b44c4d420314639",
+        "foreground": "5a6ebb3c036a539251f47be54aeb4f3b5a302ad6f2d51680c9d0d88df6ec5d4b"
+      }
+    },
+    {
+      "unit": 6,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "mass": 1469824,
+          "size": [
+            308,
+            360
+          ]
+        },
+        "own": {
+          "mae": 3.1434760873187804,
+          "peak": 130,
+          "mass": 1454934,
+          "size": [
+            309,
+            360
+          ]
+        },
+        "foreground": {
+          "mae": 1.258956840526579,
+          "peak": 20,
+          "mass": 1462269,
+          "size": [
+            309,
+            360
+          ]
+        }
+      },
+      "hashes": {
+        "original": "2c27f39b0075bdef2d047a05d5974d2bd455414afb2c2a188377fac5423b8ed0",
+        "own": "c855bb85caeddababdcaa76c5a19fe5551f6138156a82fb9631002018d8a9c8b",
+        "foreground": "c9806ff44cbfe77895b4afa9b65a8a5b0ddb6b3bd0854fe0936e30d5f7911b53"
+      }
+    }
+  ],
+  "geometry": "# unit ownPivot ownImageOffset ownWidth sourcePivot sourceWidth\n0\t-413.0560302734375\t0.0\t308\t-413.0560302734375\t308.0\n1\t-285.0560302734375\t0.0\t308\t-285.0560302734375\t308.0\n2\t-128.00003051757812\t0.444000244140625\t309\t-128.00003051757812\t308.0\n3\t0.499969482421875\t-0.055999755859375\t309\t-3.0517578125E-5\t308.0\n4\t157.0560302734375\t0.387939453125\t309\t157.0560302734375\t308.0\n5\t285.0560302734375\t0.387939453125\t309\t285.0560302734375\t308.0\n6\t413.0560302734375\t0.387939453125\t309\t413.0560302734375\t308.0\n",
+  "foregroundPolicyAdopted": false,
+  "conclusion": "Pure source/source peak6 versus own75 isolates remaining own input/placement difference. Swapping only source placement worsens; changing only coverage to existing Windows foreground policy improves all7 raw alpha means/peaks and frozen stage. Keep geometry/phase intact. Test a body-only CJK coverage path across fixed matrices, retaining grayscale halo inputs and full shaping; no claim that this single diagnostic validates a production policy.",
+  "productionChanged": false,
+  "formalVisualAcceptance": false,
+  "deviceValidated": false
+}

@@ -52,9 +52,13 @@ real MediaPlayer playback in the `:playback` process, external LRC attachment,
 and seek. Returning from Home preserved paused playback and lyrics selection.
 See [the sample check](../verification/native-renderer-p3.md).
 
+Eleven fixed-time visual pairs were measured from the release consumer. Waiting
+matched pixel for pixel. Peak local differences reached 97/255, so visual
+acceptance remains open. See [visual results](../verification/native-renderer-visual.md).
+
 ## Remaining
 
-- P3: platform touch cancellation/long press, sustained foreground/background and multi-scene visual comparison.
+- P3: platform touch cancellation/long press, sustained foreground/background, remaining visual differences, captions and emoji.
 - P4: repeated lifecycle, device error and resource-pressure evidence, ARM64/16KiB OS behavior, and paired hardware performance.
 - Only after the first theme closes: trace-led second theme, then separately validated desktop host.
 

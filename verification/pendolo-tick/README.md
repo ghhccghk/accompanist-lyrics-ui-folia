@@ -1,5 +1,9 @@
 # Pendolo mechanical tick kernel
 
+Historical dispatcher-kernel reference, preserved unchanged. Actual mounted
+useSpring follower rest-limit correction and independent source migration:
+../pendolo-follower/README.md. This fixture is not the follower's expected track.
+
 Pinned Folia cc6226e464050a456a2913e062374f23d3844cc5 / AGPL-3.0-only.
 Original `VisualizerPendolo.tsx` spring options, wheel-angle and counter-rotation
 expressions are extracted verbatim and hashed; the original motion profile and

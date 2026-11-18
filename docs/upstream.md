@@ -1664,3 +1664,14 @@ advance/span controls and unchanged original per-unit stage matrices are distinc
 oracles: verification/diorama-shaped-mask. Four exact own-coverage controls pass;
 old stage means regress slightly, retained with every frame hash and no waiver.
 This is not original mixed-bidi per-unit equivalence or public theme acceptance.
+
+### Pendolo actual follower rest limits (2026-11-18)
+Pinned VisualizerPendolo.tsx:334–350 useSpring maps through exact installed
+framer-motion13.4.3 useFollowValue / motion-dom13.4.2 attachFollow/FollowAnimation.
+Actual restDelta.001/restSpeed.01 override the ordinary dispatcher defaults.
+PendoloTick.kt now selects those limits; independent analytic first-rest root
+solver in DampedSpring.kt supplies a media-time latch (not copied Motion code,
+not source RAF equality). Original spring/profile formulas/attribution unchanged.
+Legacy dispatcher fixtures and assertions retained separately; no source/expected
+update. Full original wheel27 frames/public real core, original schedule driver,
+old144 unchanged native hashes and residuals: verification/pendolo-follower.

@@ -1,0 +1,158 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "sources": [
+    {
+      "file": ".work/folia-major/src/components/visualizer/pendolo/VisualizerPendolo.tsx",
+      "sha256": "cd0bfbb5f8079a278e0481eb173e8e7b15eb772372b11ba57278f4fbcb1febff"
+    },
+    {
+      "file": "verification/classic-browser/node_modules/.pnpm/motion-dom@13.4.2/node_modules/motion-dom/dist/es/value/follow-value.mjs",
+      "sha256": "1b712473b3b8a31f313617e169f6f46f8a4259b3b4db14edefe5a7e33ca6274d"
+    },
+    {
+      "file": "verification/classic-browser/node_modules/.pnpm/motion-dom@13.4.2/node_modules/motion-dom/dist/es/animation/FollowAnimation.mjs",
+      "sha256": "c080a9deff99cca4703fb18aabef389c5abb8823b3868f42dd9008144d62e6ce"
+    },
+    {
+      "file": "verification/classic-browser/node_modules/.pnpm/motion-dom@13.4.2/node_modules/motion-dom/dist/es/animation/generators/spring.mjs",
+      "sha256": "99ccdb3050e9fc59f9381a61d61e518b05d77d6de14ea4bf85096e37336f9d0a"
+    }
+  ],
+  "hostSha256": "4e57d3bcaad4909ba3f32accb9724ff96e950c88c8021094d7e33efbb2857d10",
+  "lockSha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad",
+  "inputs": {
+    "regular": [
+      [
+        1,
+        2.5,
+        2.8
+      ],
+      [
+        3.1,
+        4,
+        4
+      ],
+      [
+        5,
+        6,
+        6.4
+      ]
+    ],
+    "rapid": [
+      [
+        0.7,
+        0.73,
+        0.73
+      ],
+      [
+        0.78,
+        0.8,
+        0.8
+      ],
+      [
+        0.83,
+        0.86,
+        0.86
+      ],
+      [
+        0.87,
+        0.9,
+        0.9
+      ]
+    ],
+    "overlap": [
+      [
+        0.7,
+        3,
+        3
+      ],
+      [
+        0.78,
+        0.81,
+        0.81
+      ],
+      [
+        1.1,
+        1.18,
+        1.18
+      ],
+      [
+        1.22,
+        2.7,
+        2.7
+      ],
+      [
+        2,
+        2.04,
+        2.04
+      ]
+    ],
+    "tied": [
+      [
+        0,
+        0.4,
+        0.4
+      ],
+      [
+        0,
+        0.2,
+        0.2
+      ],
+      [
+        0.4,
+        0.6,
+        0.6
+      ]
+    ],
+    "empty": [],
+    "mounted": [
+      [
+        0.7,
+        2.8,
+        2.8
+      ],
+      [
+        4.7,
+        6.8,
+        6.8
+      ],
+      [
+        8.7,
+        10.8,
+        10.8
+      ],
+      [
+        12.7,
+        14.8,
+        14.8
+      ],
+      [
+        16.7,
+        18.8,
+        18.8
+      ],
+      [
+        20.7,
+        22.8,
+        22.8
+      ],
+      [
+        24.7,
+        26.8,
+        26.8
+      ],
+      [
+        28.7,
+        30.8,
+        30.8
+      ]
+    ]
+  },
+  "maxRootRefinement": 3.1086244689504383e-15,
+  "scope": "Actual attachFollow supplies restDelta/restSpeed and original raw generator. First-rest root is independent numerical media-time adaptation (100/200 microsecond isolation, 48 bisections), NOT source RAF equality. Existing dispatcher and mounted fixtures remain unchanged. Driver observes source schedule differences, no UI screenshots."
+}

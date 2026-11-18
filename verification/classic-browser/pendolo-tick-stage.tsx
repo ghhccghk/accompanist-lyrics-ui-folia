@@ -7,8 +7,10 @@ for(const[name,url]of[['Pendolo Latin',latinUrl],['Pendolo Arabic',arabicUrl],['
 const q=new URLSearchParams(location.search),scene=q.get('scene')??'latin',intensity=q.get('intensity')??'normal';
 const decode=(s:string)=>new TextDecoder().decode(Uint8Array.from(atob(s),c=>c.charCodeAt(0)));
 const f=raw.split(/\r?\n/).find(r=>r.split('\t')[0]===scene)!.split('\t');
-const lines=Array.from({length:8},(_,i)=>({id:String(i),fullText:decode(f[1]),startTime:+f[2]+i*4,endTime:+f[3]+i*4,
- words:f[4].split('|').map(s=>{const w=s.split('~');return{text:decode(w[0]),startTime:+w[1]+i*4,endTime:+w[2]+i*4}}),
+// Optional stress INPUT only; default original calibration remains unchanged.
+const step=q.get('timing')==='tied'?0:4;
+const lines=Array.from({length:8},(_,i)=>({id:String(i),fullText:decode(f[1]),startTime:+f[2]+i*step,endTime:+f[3]+i*step,
+ words:f[4].split('|').map(s=>{const w=s.split('~');return{text:decode(w[0]),startTime:+w[1]+i*step,endTime:+w[2]+i*step}}),
  translation:scene==='arabic'?'بالعالم':scene==='cjk'?'星光':'beyond',romanization:scene==='arabic'?'مرحبا':scene==='cjk'?'向远方':'Amber echoes'}));
 const family=scene==='arabic'?'Pendolo Arabic':scene==='cjk'?'Pendolo CJK':'Pendolo Latin';
 const theme={fontFamily:family,fontWeight:700,primaryColor:'#dfe5ec',secondaryColor:'#adb9c8',accentColor:'#f17b4d',animationIntensity:intensity};

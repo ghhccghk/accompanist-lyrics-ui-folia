@@ -37,8 +37,13 @@ internal class PendoloTickTrack(lines: List<PendoloLineTime>, intensity: Pendolo
             for (t in (listOf(origin) + timeline.boundaries.filter { it > origin })) {
                 val next = timeline.anchor(t, after = true)
                 if (target == next) continue
-                val state = lastOrNull()?.let { it.spring.sample(t - it.time) } ?: SpringSample(initial, 0.0, true)
-                add(Segment(t, DampedSpring(state.value, next, state.velocity, config.stiffness, config.damping, config.mass)))
+                val state = lastOrNull()?.let { it.spring.sampleContinuous(t - it.time) } ?: SpringSample(initial, 0.0, true)
+                // Original useSpring follows attachFollow's explicit limits,
+                // not JSAnimation's scale-dependent dispatcher defaults.
+                val spring = DampedSpring(state.value, next, state.velocity,
+                    config.stiffness, config.damping, config.mass, restDelta = .001, restSpeed = .01)
+                spring.continuousDuration // resolve once during preparation
+                add(Segment(t, spring))
                 target = next
             }
         }
@@ -49,7 +54,7 @@ internal class PendoloTickTrack(lines: List<PendoloLineTime>, intensity: Pendolo
         val target = timeline.anchor(t)
         var lo = 0; var hi = segments.size
         while (lo < hi) { val m = (lo + hi) / 2; if (segments[m].time <= t) lo = m + 1 else hi = m }
-        val state = if (lo == 0) SpringSample(initial, 0.0, true) else segments[lo - 1].let { it.spring.sample(t - it.time) }
+        val state = if (lo == 0) SpringSample(initial, 0.0, true) else segments[lo - 1].let { it.spring.sampleContinuous(t - it.time) }
         val value = if (reducedMotion) target else state.value
         val rotation = -(value - target) * arcAngleDeg / 8
         return PendoloTickFrame(target, value, if (reducedMotion) 0.0 else state.velocity, rotation, -rotation * .65)

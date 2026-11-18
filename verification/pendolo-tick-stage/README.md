@@ -73,3 +73,9 @@ Desktop compile pass, no device acceptance.
 2026-11-18: exact Motion-lock144-frame audit and targeted JVM recapture completed;
 see `verification/motion-lock-audit/README.md` and `pendolo-dense.json`. Public
 Pendolo already exists; remaining geometry/rotation/raster differences remain open.
+
+Actual follower rest limits subsequently corrected; all144 native PNG hashes
+remain unchanged. A separate source driver explains the7s schedule residual,
+and27 new original/public frames cover corrected tails and large tied jumps.
+See ../pendolo-follower/README.md. This does not resolve the old.325106°/1.364706px
+or full-theme acceptance; no source fixture or expectation here was overwritten.

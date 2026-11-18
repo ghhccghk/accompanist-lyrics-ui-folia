@@ -10,10 +10,21 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
 
-当前唯一下一项：Pendolo密集tick旋转残差的同源事件/连续积分对照。先读pendolo-tick-stage
-和pendolo-sweep现存证据，定位.325106°/1.364706px是否来自事件更新或轨迹重建；以
-固定原始矩阵和公共core入口回归，不重采精确锁或放宽预期。若有局部阻碍保留反例。
-Fume饱和位移策略和Cappella普通密集投影仍未修复，已完成的失败实验不能重试。
+当前唯一下一项：Cappella普通密集投影的同一提交pre-DOM/flow/post-RAF分离探针。
+承接verification/cappella-projection/commit-boundary-v1.json的同一个原前态，记录1.0到
+1.04s阶段，先验证纯观察不改变原几何，再检验源snapshot运输模型。不能重试已否决
+的所有local-event冻结、多衰减或固定帧延迟；22.188593px残差仍未修复。
+Fume饱和位移策略未解，镜台full-stage塑形小退步/长曲准备/雾深度仍待跟进。
+
+Pendolo实际follower停止阈值已修：原useSpring实际attachFollow为.001/.01（包括大跳），
+旧普通dispatcher默认.005/.01或.5/2不适用。54原态/972raw/3501轨迹及独立首rest根，
+峰3.55e-14/4.80e-14/1.31e-14秒；22浮点根边界布尔差明确保留并验两侧。连续首rest
+一次准备锁存，不按RAF累计。新增27原完整轮盘/真实core公共帧，legacy旋转控制峰
+.832573°→1.11e-14°，同前景MAE14.925368→13.753192、最坏41.930028→16.299364，
+最差64px局部82.583333未改善。旧144native图hash完全相同，.325106°/1.364706px仍在；
+原30/60/144源driver证明7s实际167/183/194ms采样而非语义200ms，不加固定延迟追图。
+旧dispatcher fixture/1e-9/1e-8断言另保留。公共暂停/seek/offset/resize/重挂及Cappella
+共享核回归、Android库/Desktop编译通过，无新真窗口/设备/性能。证据verification/pendolo-follower。
 
 Diorama完整塑形遮罩修复：原advance矩形裁斜体756px/混合bidi重复1504px，透明span
 候选也损伤fi合字327px已拒绝。现一次完整栅格、可分离视觉列ownership、原pivot缩放，

@@ -34,11 +34,14 @@ class PendoloTickTest {
         }
         File("../build/verification/pendolo-tick").apply { mkdirs() }.resolve("response-residual.tsv").writeText(residual.joinToString("\n")+"\n")
     }
-    @Test fun originalTimelineAndInterruptedResponsesAtArbitraryMediaQueries() {
+    // Historical dispatcher-based track is retained exactly as a distinct
+    // oracle. Production now uses the actual source follower; see the
+    // independently captured follower-v1 tests, not updated old expectations.
+    @Test fun legacyDispatcherTimelineAndInterruptedResponsesAtArbitraryMediaQueries() {
         val residual = mutableListOf("# scene intensity snap field original native error")
         for ((key,queries) in rows("tick-track").groupBy { it.take(3) }) {
             val lines = scenarios.getValue(key[0]); val intensity = PendoloIntensity.valueOf(key[1].uppercase()); val snap = key[2].toDouble()
-            val track = PendoloTickTrack(lines,intensity,snap)
+            val track = LegacyDispatcherTrack(lines,intensity,snap)
             val timeline = PendoloTimeline(lines)
             for (q in queries + queries.shuffled(Random(811))) {
                 val t=q[3].toDouble(); val actual=track.at(t)
@@ -48,13 +51,34 @@ class PendoloTickTest {
                     residual += (key+listOf(field,pair.first,pair.second,abs(pair.first-pair.second))).joinToString("\t")
                     assertEquals(pair.first,pair.second,1e-8,"$key/$t field$field")
                 }
-                assertEquals(actual,PendoloTickTrack(lines,intensity,snap).at(t),"remount $key/$t")
+                assertEquals(actual,LegacyDispatcherTrack(lines,intensity,snap).at(t),"remount $key/$t")
                 assertEquals(actual,track.at(t),"pause $key/$t")
                 val reduced=track.at(t,true)
                 assertEquals(actual.target,reduced.value); assertEquals(0.0,reduced.velocity); assertEquals(0.0,reduced.wheelRotation,0.0)
             }
         }
         File("../build/verification/pendolo-tick").apply { mkdirs() }.resolve("track-residual.tsv").writeText(residual.joinToString("\n")+"\n")
+    }
+
+    private class LegacyDispatcherTrack(lines:List<PendoloLineTime>,intensity:PendoloIntensity,snap:Double) {
+        private val timeline=PendoloTimeline(lines)
+        private val initial=timeline.anchor(0.0)
+        private val segments:List<Pair<Double,DampedSpring>>
+        init {
+            val config=pendoloTickConfig(intensity,snap);var target=initial
+            segments=buildList {
+                for(t in listOf(0.0)+timeline.boundaries.filter{it>0}) {
+                    val next=timeline.anchor(t,after=true);if(next==target)continue
+                    val state=lastOrNull()?.let{it.second.sample(t-it.first)}?:SpringSample(initial,0.0,true)
+                    add(t to DampedSpring(state.value,next,state.velocity,config.stiffness,config.damping,config.mass));target=next
+                }
+            }
+        }
+        fun at(t:Double,reduced:Boolean=false):PendoloTickFrame {
+            val state=segments.lastOrNull{it.first<=t}?.let{it.second.sample(t-it.first)}?:SpringSample(initial,0.0,true)
+            val target=timeline.anchor(t);val value=if(reduced)target else state.value;val rotation=-(value-target)*100/8
+            return PendoloTickFrame(target,value,if(reduced)0.0 else state.velocity,rotation,-rotation*.65)
+        }
     }
     @Test fun inclusiveEndAndRightLimitAreDistinctWithoutEpsilonInProduction() {
         val timeline=PendoloTimeline(listOf(PendoloLineTime(1.0,2.0)))

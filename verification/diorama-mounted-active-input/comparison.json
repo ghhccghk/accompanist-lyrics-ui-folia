@@ -1,0 +1,193 @@
+{
+  "baseline": "bb84afd",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "condition": "Actual mounted380x600/DPR1/144Hz/incoming3500ms, EXACT original1494 callback prefix; own core/finite camera/material. No original pose/raster drives native stage.",
+  "sourceOriginalFullFrameExact": true,
+  "sourceStateTextureVersionsMatricesExact": true,
+  "sourceCallbacks": 1494,
+  "teardown": {
+    "roots": 0,
+    "queuedRafs": 0
+  },
+  "sourceActiveAllEqualsBase": true,
+  "sourceGlowSoulBackgroundOnly": true,
+  "sourceBodyOpacity": 0.5,
+  "activeOnly": {
+    "sourcePixels": 808,
+    "nativePixels": 418,
+    "unionPixels": 808,
+    "mae": 19.792491749174918,
+    "peak": 74,
+    "worst64": {
+      "x": 128,
+      "y": 320,
+      "mae": 20.62420382165605
+    }
+  },
+  "nativeFullShapeUnitInputs": "# unit width height pivotPx imageOffsetPx opacity charStart charEnd\n0\t784\t360\t-504.0162353515625\t0.0\t0.5\t0\t9\n1\t779\t360\t129.8997802734375\t-0.416015625\t0.5\t10\t18\n2\t419\t360\t580.696044921875\t-0.2122802734375\t0.5\t19\t23\n3\t255\t360\t769.8001708984375\t-0.31640625\t0.5\t24\t25\n",
+  "rawAlphaControls": [
+    {
+      "unit": 0,
+      "comparison": "Raw texture coordinates at same zero origin; unequal extents zero-extended only, no shift/registration. Not a world-space shaping equivalence oracle.",
+      "metrics": {
+        "original": {
+          "rawSize": [
+            784,
+            360
+          ],
+          "alphaUnionMae": 0.0,
+          "alphaPeak": 0,
+          "alphaMass": 6269360
+        },
+        "default": {
+          "rawSize": [
+            784,
+            360
+          ],
+          "alphaUnionMae": 3.5901563225506887,
+          "alphaPeak": 130,
+          "alphaMass": 6192936
+        },
+        "foreground": {
+          "rawSize": [
+            784,
+            360
+          ],
+          "alphaUnionMae": 1.591278439869989,
+          "alphaPeak": 20,
+          "alphaMass": 6228235
+        }
+      },
+      "hashes": {
+        "original": "09c977986f2f0ff0931a7d78ffed83c142ff20323cb122b0f4fe612033c08d42",
+        "default": "179020ff53fa885b6c4d273c83e12ef701340ba121b34e8e0a2baafd8903b2ee",
+        "foreground": "a8b3b942c7521b8f99dbc59a49c20d2eba7c7d61a0c8b73cc9d347c512e183eb"
+      }
+    },
+    {
+      "unit": 1,
+      "comparison": "Raw texture coordinates at same zero origin; unequal extents zero-extended only, no shift/registration. Not a world-space shaping equivalence oracle.",
+      "metrics": {
+        "original": {
+          "rawSize": [
+            779,
+            360
+          ],
+          "alphaUnionMae": 0.0,
+          "alphaPeak": 0,
+          "alphaMass": 6108383
+        },
+        "default": {
+          "rawSize": [
+            779,
+            360
+          ],
+          "alphaUnionMae": 7.299843260188088,
+          "alphaPeak": 210,
+          "alphaMass": 6032799
+        },
+        "foreground": {
+          "rawSize": [
+            779,
+            360
+          ],
+          "alphaUnionMae": 7.459169278996865,
+          "alphaPeak": 130,
+          "alphaMass": 6059731
+        }
+      },
+      "hashes": {
+        "original": "0740f6233eae7531c5edaf223512aef75bb65ea3009c2a237f5b3b20f2811357",
+        "default": "642ddcee48dacc35c32ab20e119a5d553cdf753dee9d7d431eb79dce37287b82",
+        "foreground": "8386d62f05a6448fa3985abf7f48bd04e3c96bde2094f884c5508acc646d01d6"
+      }
+    },
+    {
+      "unit": 2,
+      "comparison": "Raw texture coordinates at same zero origin; unequal extents zero-extended only, no shift/registration. Not a world-space shaping equivalence oracle.",
+      "metrics": {
+        "original": {
+          "rawSize": [
+            418,
+            360
+          ],
+          "alphaUnionMae": 0.0,
+          "alphaPeak": 0,
+          "alphaMass": 2470836
+        },
+        "default": {
+          "rawSize": [
+            419,
+            360
+          ],
+          "alphaUnionMae": 14.220997078503439,
+          "alphaPeak": 228,
+          "alphaMass": 2441821
+        },
+        "foreground": {
+          "rawSize": [
+            419,
+            360
+          ],
+          "alphaUnionMae": 15.92008293280558,
+          "alphaPeak": 188,
+          "alphaMass": 2454640
+        }
+      },
+      "hashes": {
+        "original": "6469029a56c650555bc223e06522437edda47e4bd08f09479627be21c745ea51",
+        "default": "35e637b3bdc5750e9a54b873963506b0c6fa8b34104edff4160a5ae8b671a962",
+        "foreground": "bf7e89c3dd93cdd78e35284ebf83121c91d2f09776d8fac2521b72d9fdb6d885"
+      }
+    },
+    {
+      "unit": 3,
+      "comparison": "Raw texture coordinates at same zero origin; unequal extents zero-extended only, no shift/registration. Not a world-space shaping equivalence oracle.",
+      "metrics": {
+        "original": {
+          "rawSize": [
+            254,
+            360
+          ],
+          "alphaUnionMae": 0.0,
+          "alphaPeak": 0,
+          "alphaMass": 816943
+        },
+        "default": {
+          "rawSize": [
+            255,
+            360
+          ],
+          "alphaUnionMae": 11.06545033304373,
+          "alphaPeak": 228,
+          "alphaMass": 809174
+        },
+        "foreground": {
+          "rawSize": [
+            255,
+            360
+          ],
+          "alphaUnionMae": 12.50709527946713,
+          "alphaPeak": 166,
+          "alphaMass": 812218
+        }
+      },
+      "hashes": {
+        "original": "d8425681886f6703c4a34fe9330a4dcc7a7a7372f3648326e00a92486fe402c0",
+        "default": "3ded839266f40f483725183bab684479df33d664a2164a84dbcf50d81b1de441",
+        "foreground": "5a3c21250cf68b16547a3ce0798e456761dce75edd8326073c8ce208ce787134"
+      }
+    }
+  ],
+  "foregroundPolicyAdopted": false,
+  "conclusion": "The worst finite frame has no visible original glow/soul: do not tune halos to repair it. Base alpha is already correct. Existing Windows foreground policy improves raw unit0 but mean-regresses units1..3; do not adopt it globally on that input-only result. Test active base fragment sampling against this exact layer, then fixed48 full frames; preserve full shaping/fractional input differences.",
+  "productionChanged": false,
+  "formalVisualAcceptance": false,
+  "deviceValidated": false
+}

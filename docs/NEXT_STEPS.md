@@ -16,8 +16,13 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：从既有分层/输入控制定位mounted有限相机最坏区域的活动正文/halo
-贡献，先核对层次、透明度与原缓存再最小修复；不以改相机补采样，不重试旧isotropic。
+当前唯一下一项：验证活动BASE的逐fragment采样，先同380/144/3.5s活动层，再同固定48帧；
+复用有界sampler、帧外准备/显式释放，不改相机/全局字体策略，不碰尚无依据的halo参数。
+最坏区域分层已完成：原1494次精确callback前缀、完整图/状态/纹理版本/matrix均不变；
+原active-all=base-only，glow/soul均不可见，4正文opacity=.5。活动层原808/本418像素，
+同union MAE19.792492/峰74；该口径不等于完整stage。既有Windows前景策略只改善unit0，
+另3均值回退，未采用；完整shaping/分数offset/差1px记录保留。2项JVM/暂停通过、
+原卸载roots/RAF=0，见verification/diorama-mounted-active-input。无生产/设备/正式视觉结论。
 内部邻行stage采样已接入显式owner：帧外准备，<=8项/32MiB额外图像估算预算、
 淘汰/卸载释放、保留共享原raster，父alpha/FrontSide/near/far及linear tint顺序。
 JVM opt-in实际stage同48帧有限均值6.739673→4.294389(最坏仍20.364780)、媒体

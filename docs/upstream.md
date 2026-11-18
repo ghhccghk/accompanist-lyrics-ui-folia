@@ -1936,3 +1936,16 @@ Android capability explicitly unavailable; no AGSL/JNI runtime claim. Fixed48
 mounted and24 own-shaped planes, retained failures/residuals and resource/alpha/
 clipping checks:verification/diorama-plain-sampler. Internal opt-in only, not a
 public Diorama, all-GPU/Android/performance or formal visual equivalence claim.
+
+### Diorama actual active-body input isolation (2026-11-18)
+Pinned DioramaActiveUnitPlanes.tsx / DioramaScene.tsx / dioramaSceneFrame.ts /
+dioramaSceneLayout.ts / dioramaTextRaster.ts -> reference-host passive read of
+actual12 active texture/material/matrix inputs, plus labelled temporary cloned
+layer scenes. Original1494 callback prefix, full framebuffer/state/resource
+versions exact before/after/restoration; upstream files remain untouched.
+Own real-core DioramaMountedStageTest and input-only coverage ablation preserve
+complete shaping/ownership/pivots/clocks. Original3.5s worst finite frame has
+no visible glow/soul; existing foreground raster policy regresses3 unit means
+and is not adopted. Source hashes, failure/contact and raw input comparisons:
+verification/diorama-mounted-active-input. No source asset enters production,
+no new license/runtime dependency, no production or final visual/device claim.

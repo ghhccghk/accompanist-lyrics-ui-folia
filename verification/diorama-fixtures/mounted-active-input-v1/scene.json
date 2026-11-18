@@ -1,0 +1,937 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "rendering": {
+    "@react-three/fiber": "9.8.1",
+    "@babel/runtime": "7.29.7",
+    "@types/webxr": "0.5.24",
+    "base64-js": "1.5.1",
+    "buffer": "6.0.3",
+    "its-fine": "2.1.1",
+    "react-use-measure": "2.1.7",
+    "scheduler": "0.28.0",
+    "suspend-react": "0.1.3",
+    "use-sync-external-store": "1.7.0",
+    "zustand": "5.0.15"
+  },
+  "browser": "151.0.7922.34",
+  "file": "mounted-380-144-3500.png",
+  "expectedPngSha256": "8640dfda46253c7ee53d976f003b3a256ac6996804af388134109256201e1bf3",
+  "width": 380,
+  "height": 600,
+  "DPR": 1,
+  "fps": 144,
+  "time": 3.5,
+  "wall": 10.3,
+  "callbacks": 1494,
+  "callbackHistorySha256": "35e257060fed4d17acf604ea8e03cc8979f3c59e7a999dc237a8897d74b83b15",
+  "state": {
+    "state": {
+      "position": [
+        -11.942105749577156,
+        3.1963750835430487,
+        -77.59140704151211
+      ],
+      "velocity": [
+        -0.0049009392609823295,
+        0.23049194820715307,
+        -1.1594675799942429
+      ],
+      "look": [
+        -13.817470795337774,
+        0.25270953725780876,
+        -81.67889955985282
+      ],
+      "lookVelocity": [
+        -2.1547843550613606,
+        -0.20642403286568548,
+        -0.7429131474517406
+      ],
+      "alignment": 0.7393885916387334,
+      "alignmentOrientation": [
+        -0.13372907040857157,
+        0.1408606349068376,
+        -0.016959812907989088,
+        0.980809452446003
+      ],
+      "orientation": [
+        -0.18735179170819527,
+        0.11068803903209842,
+        -0.0033673751308624647,
+        0.9760308012269314
+      ]
+    },
+    "flight": {
+      "flying": false,
+      "epoch": 1,
+      "start": 6.8,
+      "perp": [
+        -0.9998037833873534,
+        0,
+        0.019808955659851135
+      ],
+      "side": -1,
+      "flightLen": 49.455108233274345
+    },
+    "rasterIndices": [
+      8,
+      9
+    ],
+    "neighbors": [
+      {
+        "index": 8,
+        "position": [
+          -10.873370638455164,
+          2.662610250311775,
+          -75.07631456423071
+        ],
+        "scale": [
+          0.3702697354772757,
+          0.3702697354772757,
+          0.3702697354772757
+        ],
+        "opacity": 0.1,
+        "color": [
+          0.7379104087672317,
+          0.7835377915215659,
+          0.8387990117372213
+        ]
+      },
+      {
+        "index": 9,
+        "position": [
+          -13.738495429056155,
+          0.2157511150819187,
+          -82.10200285077185
+        ],
+        "scale": [
+          0.340296902990014,
+          0.340296902990014,
+          0.340296902990014
+        ],
+        "opacity": 0.3,
+        "color": [
+          0.7379104087672317,
+          0.7835377915215659,
+          0.8387990117372213
+        ]
+      }
+    ],
+    "activeUnits": 4,
+    "activeWidth": 7.808279914855957,
+    "light": [
+      0.013902455568313599,
+      0,
+      0,
+      0
+    ],
+    "soul": [
+      0.011928287334740162,
+      0,
+      0,
+      0
+    ],
+    "unitMaterials": [
+      {
+        "color": [
+          0.7379104087672317,
+          0.7835377915215659,
+          0.8387990117372213
+        ],
+        "opacity": 0.5,
+        "glowOpacity": 0.007251865567160317,
+        "soulOpacity": 0.007156972400844097
+      },
+      {
+        "color": [
+          0.7379104087672317,
+          0.7835377915215659,
+          0.8387990117372213
+        ],
+        "opacity": 0.5,
+        "glowOpacity": 0,
+        "soulOpacity": 0
+      },
+      {
+        "color": [
+          0.7379104087672317,
+          0.7835377915215659,
+          0.8387990117372213
+        ],
+        "opacity": 0.5,
+        "glowOpacity": 0,
+        "soulOpacity": 0
+      },
+      {
+        "color": [
+          0.7379104087672317,
+          0.7835377915215659,
+          0.8387990117372213
+        ],
+        "opacity": 0.5,
+        "glowOpacity": 0,
+        "soulOpacity": 0
+      }
+    ],
+    "current": 10,
+    "outgoing": null,
+    "epoch": 1,
+    "widthAfter": 2.9226731589480304,
+    "renderedPosition": [
+      -11.942105749577156,
+      3.1963750835430487,
+      -77.59140704151211
+    ],
+    "renderedOrientation": [
+      -0.18735179170819527,
+      0.11068803903209842,
+      -0.0033673751308624647,
+      0.9760308012269314
+    ],
+    "renderer": {
+      "toneMapping": 4,
+      "outputColorSpace": "srgb"
+    },
+    "fog": {
+      "near": 12,
+      "far": 30,
+      "color": [
+        0.008023192982520563,
+        0.01764195448412081,
+        0.035601314869097636
+      ]
+    }
+  },
+  "inputs": [
+    {
+      "unit": 0,
+      "order": 17,
+      "visible": false,
+      "width": 784,
+      "height": 360,
+      "worldMatrix": [
+        0.32157529153823455,
+        0.006262911924117525,
+        -0.1914519684657435,
+        0,
+        -0.047791607059353085,
+        0.36489689496332817,
+        -0.06833715507602064,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -17.828784317110657,
+        -2.3900337197925663,
+        -88.4462509518561,
+        1
+      ],
+      "planeParameters": {
+        "width": 3.7975,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0.007251865567160317,
+      "blending": 2,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-0-order-17.png",
+      "sha256": "b8b16b0786344f5a91c28b9e42a2b5edbd147601fb15076e377e091c1f4ac672"
+    },
+    {
+      "unit": 0,
+      "order": 18,
+      "visible": false,
+      "width": 784,
+      "height": 360,
+      "worldMatrix": [
+        0.353732820692058,
+        0.006889203116529278,
+        -0.21059716531231787,
+        0,
+        -0.0525707677652884,
+        0.401386584459661,
+        -0.07517087058362272,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -17.829634681165782,
+        -2.3760437795068814,
+        -88.44722163033279,
+        1
+      ],
+      "planeParameters": {
+        "width": 3.7975,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0.007156972400844097,
+      "blending": 2,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-0-order-18.png",
+      "sha256": "09c977986f2f0ff0931a7d78ffed83c142ff20323cb122b0f4fe612033c08d42"
+    },
+    {
+      "unit": 0,
+      "order": 19,
+      "visible": true,
+      "width": 784,
+      "height": 360,
+      "worldMatrix": [
+        0.32157529153823455,
+        0.006262911924117525,
+        -0.1914519684657435,
+        0,
+        -0.047791607059353085,
+        0.36489689496332817,
+        -0.06833715507602064,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -17.82692934965569,
+        -2.389202168206468,
+        -88.44310802447181,
+        1
+      ],
+      "planeParameters": {
+        "width": 3.7975,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0.5,
+      "blending": 1,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-0-order-19.png",
+      "sha256": "09c977986f2f0ff0931a7d78ffed83c142ff20323cb122b0f4fe612033c08d42"
+    },
+    {
+      "unit": 1,
+      "order": 17,
+      "visible": false,
+      "width": 779,
+      "height": 360,
+      "worldMatrix": [
+        0.32157529153823455,
+        0.006262911924117525,
+        -0.1914519684657435,
+        0,
+        -0.047791607059353085,
+        0.36489689496332817,
+        -0.06833715507602064,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -16.84137770200165,
+        -2.370803260157009,
+        -89.03410998553512,
+        1
+      ],
+      "planeParameters": {
+        "width": 3.77328125,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0,
+      "blending": 2,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-1-order-17.png",
+      "sha256": "29922227f719aa6269a2a1fdc33a2e3f1edaaed63e0b21724ee6663f89279af1"
+    },
+    {
+      "unit": 1,
+      "order": 18,
+      "visible": false,
+      "width": 779,
+      "height": 360,
+      "worldMatrix": [
+        0.353732820692058,
+        0.006889203116529278,
+        -0.21059716531231787,
+        0,
+        -0.0525707677652884,
+        0.401386584459661,
+        -0.07517087058362272,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -16.842228066056773,
+        -2.3568133198713235,
+        -89.0350806640118,
+        1
+      ],
+      "planeParameters": {
+        "width": 3.77328125,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0,
+      "blending": 2,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-1-order-18.png",
+      "sha256": "0740f6233eae7531c5edaf223512aef75bb65ea3009c2a237f5b3b20f2811357"
+    },
+    {
+      "unit": 1,
+      "order": 19,
+      "visible": true,
+      "width": 779,
+      "height": 360,
+      "worldMatrix": [
+        0.32157529153823455,
+        0.006262911924117525,
+        -0.1914519684657435,
+        0,
+        -0.047791607059353085,
+        0.36489689496332817,
+        -0.06833715507602064,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -16.839522734546684,
+        -2.36997170857091,
+        -89.03096705815082,
+        1
+      ],
+      "planeParameters": {
+        "width": 3.77328125,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0.5,
+      "blending": 1,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-1-order-19.png",
+      "sha256": "0740f6233eae7531c5edaf223512aef75bb65ea3009c2a237f5b3b20f2811357"
+    },
+    {
+      "unit": 2,
+      "order": 17,
+      "visible": false,
+      "width": 418,
+      "height": 360,
+      "worldMatrix": [
+        0.32157529153823455,
+        0.006262911924117525,
+        -0.1914519684657435,
+        0,
+        -0.047791607059353085,
+        0.36489689496332817,
+        -0.06833715507602064,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -16.139204153049878,
+        -2.3571279212604965,
+        -89.45215363406405,
+        1
+      ],
+      "planeParameters": {
+        "width": 2.0246875,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0,
+      "blending": 2,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-2-order-17.png",
+      "sha256": "1091b1d5818996651a1b2eea91b852c6252ccfbbbf7a2aa639a2a1e952899056"
+    },
+    {
+      "unit": 2,
+      "order": 18,
+      "visible": false,
+      "width": 418,
+      "height": 360,
+      "worldMatrix": [
+        0.353732820692058,
+        0.006889203116529278,
+        -0.21059716531231787,
+        0,
+        -0.0525707677652884,
+        0.401386584459661,
+        -0.07517087058362272,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -16.140054517105,
+        -2.3431379809748116,
+        -89.45312431254072,
+        1
+      ],
+      "planeParameters": {
+        "width": 2.0246875,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0,
+      "blending": 2,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-2-order-18.png",
+      "sha256": "6469029a56c650555bc223e06522437edda47e4bd08f09479627be21c745ea51"
+    },
+    {
+      "unit": 2,
+      "order": 19,
+      "visible": true,
+      "width": 418,
+      "height": 360,
+      "worldMatrix": [
+        0.32157529153823455,
+        0.006262911924117525,
+        -0.1914519684657435,
+        0,
+        -0.047791607059353085,
+        0.36489689496332817,
+        -0.06833715507602064,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -16.13734918559491,
+        -2.356296369674398,
+        -89.44901070667974,
+        1
+      ],
+      "planeParameters": {
+        "width": 2.0246875,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0.5,
+      "blending": 1,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-2-order-19.png",
+      "sha256": "6469029a56c650555bc223e06522437edda47e4bd08f09479627be21c745ea51"
+    },
+    {
+      "unit": 3,
+      "order": 17,
+      "visible": false,
+      "width": 254,
+      "height": 360,
+      "worldMatrix": [
+        0.32157529153823455,
+        0.006262911924117525,
+        -0.1914519684657435,
+        0,
+        -0.047791607059353085,
+        0.36489689496332817,
+        -0.06833715507602064,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -15.844650023236877,
+        -2.3513912660495833,
+        -89.62751837587197,
+        1
+      ],
+      "planeParameters": {
+        "width": 1.2303125,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0,
+      "blending": 2,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-3-order-17.png",
+      "sha256": "1641e1be713d63159061ffefcc7b023c8ea69c87bb860fc81fe7db76de78ed48"
+    },
+    {
+      "unit": 3,
+      "order": 18,
+      "visible": false,
+      "width": 254,
+      "height": 360,
+      "worldMatrix": [
+        0.353732820692058,
+        0.006889203116529278,
+        -0.21059716531231787,
+        0,
+        -0.0525707677652884,
+        0.401386584459661,
+        -0.07517087058362272,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -15.845500387292002,
+        -2.337401325763898,
+        -89.62848905434865,
+        1
+      ],
+      "planeParameters": {
+        "width": 1.2303125,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0,
+      "blending": 2,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-3-order-18.png",
+      "sha256": "d8425681886f6703c4a34fe9330a4dcc7a7a7372f3648326e00a92486fe402c0"
+    },
+    {
+      "unit": 3,
+      "order": 19,
+      "visible": true,
+      "width": 254,
+      "height": 360,
+      "worldMatrix": [
+        0.32157529153823455,
+        0.006262911924117525,
+        -0.1914519684657435,
+        0,
+        -0.047791607059353085,
+        0.36489689496332817,
+        -0.06833715507602064,
+        0,
+        0.18549674549668438,
+        0.08315515860985682,
+        0.3142927384299321,
+        0,
+        -15.842795055781911,
+        -2.3505597144634844,
+        -89.62437544848768,
+        1
+      ],
+      "planeParameters": {
+        "width": 1.2303125,
+        "height": 1.74375,
+        "widthSegments": 1,
+        "heightSegments": 1
+      },
+      "color": [
+        0.7379104087672317,
+        0.7835377915215659,
+        0.8387990117372213
+      ],
+      "opacity": 0.5,
+      "blending": 1,
+      "premultipliedAlpha": false,
+      "depthTest": false,
+      "depthWrite": false,
+      "side": 0,
+      "toneMapped": true,
+      "texture": {
+        "version": 1,
+        "sourceVersion": 1,
+        "minFilter": 1008,
+        "magFilter": 1006,
+        "anisotropy": 4,
+        "colorSpace": "srgb",
+        "premultiplyAlpha": false,
+        "flipY": true
+      },
+      "file": "unit-3-order-19.png",
+      "sha256": "d8425681886f6703c4a34fe9330a4dcc7a7a7372f3648326e00a92486fe402c0"
+    }
+  ],
+  "layers": [
+    {
+      "kind": "all",
+      "file": "active-all.png",
+      "sha256": "60c3d50f7a53a5925de7888e14f47e2502f2ac4717b1ac343fbfffbb5876d732"
+    },
+    {
+      "kind": "base",
+      "file": "active-base.png",
+      "sha256": "60c3d50f7a53a5925de7888e14f47e2502f2ac4717b1ac343fbfffbb5876d732"
+    },
+    {
+      "kind": "glow",
+      "file": "active-glow.png",
+      "sha256": "22d94deca923a96d1cd7a7d0461279b7fad18bc4e6ebc4d45f5409b0ad231b3d"
+    },
+    {
+      "kind": "soul",
+      "file": "active-soul.png",
+      "sha256": "22d94deca923a96d1cd7a7d0461279b7fad18bc4e6ebc4d45f5409b0ad231b3d"
+    }
+  ],
+  "teardown": {
+    "roots": 0,
+    "queuedRafs": 0
+  },
+  "sourceFiles": [
+    {
+      "file": "DioramaActiveUnitPlanes.tsx",
+      "sha256": "a50ee23298827f232ebcb1f1c0c19fe6cefbdd5fe5c9c1a7d2b5e959453b8948"
+    },
+    {
+      "file": "DioramaScene.tsx",
+      "sha256": "5c2cf760b0fc87084c2d85cad219e0c64bc761defcc51beb4b134328ec974f80"
+    },
+    {
+      "file": "dioramaSceneFrame.ts",
+      "sha256": "b116464bc42a052ba04ed53a17b2f9edc1c435363a20c8c0d010af1e9b1952f5"
+    },
+    {
+      "file": "dioramaSceneLayout.ts",
+      "sha256": "1d0ef0ee78535071b4d913a8e7cbb9e72ebb6822aec9b6f523c68b2920379338"
+    },
+    {
+      "file": "dioramaTextRaster.ts",
+      "sha256": "085bc682dbe3e15ba08cede13108063b4ff1cf0a4a79b35be35be56722a41d28"
+    }
+  ],
+  "hostFiles": [
+    {
+      "file": "diorama-mounted.tsx",
+      "sha256": "3ad56084447ab29aa2169bfcd5ec907fc77440f132a469f03c07fedf9fc81a35"
+    },
+    {
+      "file": "capture-diorama-mounted-active-input.mjs",
+      "sha256": "cf994fe8c43c981a2071cdb919a81f9b983538d65a01fd776fc4b2719db4560e"
+    },
+    {
+      "file": "pnpm-lock.yaml",
+      "sha256": "fa4880c6317028dd7a9aaff852e2a593022086fbf70ec647f37b087b7435be15"
+    }
+  ],
+  "fontSha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3",
+  "originalBeforeAfterRestoredExact": true,
+  "originalStateTextureVersionsMatricesExact": true,
+  "scope": "Actual original active input read, unchanged frozen whole frame and exact full source callback list. Layer images are labelled diagnostic clones of the actual existing meshes/materials/textures, never replacement original acceptance frames. No source ref writes, new RAF or original resource disposal."
+}

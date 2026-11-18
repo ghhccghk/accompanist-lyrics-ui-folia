@@ -111,6 +111,35 @@ Object.assign(window,{mountedReady:true,mountedInputs:{oldLines,lines,oldSeed,se
      actualBoundingBoxDescent:metrics.actualBoundingBoxDescent},png:canvas.toDataURL('image/png')};
   });
  },
+ // Passive actual active-unit textures/materials/geometry. No raster or matrix
+ // updates, hidden envelope injection or additional animation callback.
+ readMountedActivePlanes:()=>{
+  const state=_roots.get(canvas)!.store.getState();
+  const planes=refs(DioramaScene).find(v=>Array.isArray(v?.baseMats));
+  return planes.unitGroups.flatMap((group:any,unit:number)=>group.children.filter((mesh:any)=>mesh.isMesh).map((mesh:any)=>{
+   const mat=mesh.material,map=mat.map,geometry=mesh.geometry;
+   return{unit,order:mesh.renderOrder,visible:mesh.visible,width:map.image.width,height:map.image.height,
+    worldMatrix:mesh.matrixWorld.toArray(),planeParameters:geometry.parameters,
+    color:mat.color.toArray(),opacity:mat.opacity,blending:mat.blending,premultipliedAlpha:mat.premultipliedAlpha,
+    depthTest:mat.depthTest,depthWrite:mat.depthWrite,side:mat.side,toneMapped:mat.toneMapped,
+    texture:{version:map.version,sourceVersion:map.source.version,minFilter:map.minFilter,magFilter:map.magFilter,
+     anisotropy:map.anisotropy,colorSpace:map.colorSpace,premultiplyAlpha:map.premultiplyAlpha,flipY:map.flipY},
+    png:map.image.toDataURL('image/png')};
+  }));
+ },
+ // Diagnostic clone render of existing actual active meshes. Original refs,
+ // geometry/material/texture objects and time stay unchanged. Null restores.
+ renderMountedActiveLayer:(kind:'base'|'glow'|'soul'|'all'|null)=>{
+  const state=_roots.get(canvas)!.store.getState();
+  if(kind===null){state.gl.render(state.scene,state.camera);return;}
+  const planes=refs(DioramaScene).find(v=>Array.isArray(v?.baseMats));
+  const scene=new THREE.Scene();scene.background=state.scene.background;scene.fog=state.scene.fog;
+  for(const group of planes.unitGroups)for(const mesh of group.children.filter((m:any)=>m.isMesh)){
+   if(kind!=='all'&&mesh.renderOrder!==({glow:17,soul:18,base:19}[kind]))continue;
+   const clone=mesh.clone(false);clone.matrixAutoUpdate=false;clone.matrix.copy(mesh.matrixWorld);scene.add(clone);
+  }
+  try{state.gl.render(scene,state.camera);}finally{scene.clear();}
+ },
  // Passive actual GPU inputs; do not update any matrix or render a new frame.
  // Both Float32 geometry corners and ideal plane parameters are retained so
  // buffer quantization cannot be mistaken for a camera/placement discrepancy.

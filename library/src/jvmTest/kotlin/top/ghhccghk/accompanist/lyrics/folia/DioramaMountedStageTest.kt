@@ -163,7 +163,11 @@ class DioramaMountedStageTest {
                 if(ready!=null) {
                     val view=if(method!="media"&&method!="sampler-media")finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time)
                     drawn=view
-                    if(method.startsWith("input-")) {
+                    if(method=="active-input") {
+                        val i=ready.camera.subjectIndex(time);val s=ready.camera.subjects[i]
+                        ready.lines[i].text.drawFrames(this,view,s.frame,s.placement,
+                            finiteMaterials.getValue("${r[2]}-$time"),fog,DioramaToneMapping.AcesFilmic)
+                    }else if(method.startsWith("input-")) {
                         val only=if(method=="input-source-only-7"||method.startsWith("input-source-fragment"))7 else method.removePrefix("input-only-").toIntOrNull()
                         if(method!="input-active")for(n in ready.neighborFramesAt(time,view,primary,secondary)) {
                             if(n.opacity>0 && (only==null||only==n.index)) {
@@ -245,6 +249,21 @@ class DioramaMountedStageTest {
             counts+="active\t${pixels().count{it!=Color(0xff162435).toArgb()}}"
             ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("active.png"))
             diagnostic.resolve("control.txt").writeText("Own replay equals production pixels; only cache7 image is substituted in the labelled source-input diagnostic, never production.\n"+counts.joinToString("\n")+"\n")
+            val worst=probes.indexOfFirst{it[2]=="144"&&it[3].toDouble()==3.5};assertTrue(worst>=0)
+            runOnIdle{current=worst;method="active-input"};val activePixels=pixels()
+            val activeOut=File("../build/verification/diorama-mounted-active-input-kotlin").apply{mkdirs()}
+            ImageIO.write(captureToImage().toAwtImage(),"png",activeOut.resolve("active-all.png"))
+            val text=prepared!!.lines[prepared!!.camera.subjectIndex(3.5)].text
+            val activeStates=finiteMaterials.getValue("144-3.5")
+            assertTrue(activeStates.all{!it.glowVisible&&!it.soulVisible},"Frozen source worst frame has no visible halo/soul")
+            val inputRows=text.slices.mapIndexed { i,slice ->
+                ImageIO.write(slice.image.toAwtImage(),"png",activeOut.resolve("unit-$i-body.png"))
+                ImageIO.write(slice.halo.toAwtImage(),"png",activeOut.resolve("unit-$i-halo.png"))
+                listOf(i,slice.image.width,slice.image.height,slice.centerPx,slice.imageOffsetPx,
+                    activeStates[i].baseOpacity,slice.unit.charStart,slice.unit.charEnd).joinToString("\t")
+            }
+            activeOut.resolve("inputs.tsv").writeText("# unit width height pivotPx imageOffsetPx opacity charStart charEnd\n"+inputRows.joinToString("\n")+"\n")
+            mainClock.advanceTimeBy(500);assertContentEquals(activePixels,pixels(),"Worst-frame active input diagnostic freezes")
         }
         assertEquals(1,builds)
         for(i in listOf(0,probes.lastIndex,3,12,7)) {

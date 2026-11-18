@@ -1,0 +1,90 @@
+{
+  "targeted": {
+    "tests": 8,
+    "failures": 0,
+    "log": ".work/diorama-coverage-candidate.log"
+  },
+  "integration": {
+    "library": [
+      {
+        "name": "FumeMountedPublicTest[jvm]",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "PublicCadenzaTest[jvm]",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "PublicCappellaStageTest[jvm]",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "PublicCappellaTest[jvm]",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "PublicClassicParityTest[jvm]",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "PublicFumeStageTest[jvm]",
+        "tests": 12,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "PublicFumeTest[jvm]",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "PublicPartitaTest[jvm]",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "PublicPendoloTest[jvm]",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "PublicTiltTest[jvm]",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "SubtitlePublicTest[jvm]",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0
+      }
+    ],
+    "sample": [
+      {
+        "name": "ThemeOptionsTest[jvm]",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0
+      }
+    ]
+  },
+  "androidLibraryCompiled": true,
+  "desktopCompiled": true,
+  "regressionLog": ".work/diorama-coverage-regression.log",
+  "androidRuntime": false,
+  "realDesktopWindow": false
+}

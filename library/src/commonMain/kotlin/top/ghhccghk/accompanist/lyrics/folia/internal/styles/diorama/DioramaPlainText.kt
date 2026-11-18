@@ -15,6 +15,7 @@ import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.text.naturalFontMetrics
 import top.ghhccghk.accompanist.lyrics.folia.internal.text.paintedNaturalBaseline
+import top.ghhccghk.accompanist.lyrics.folia.internal.text.classicBodyRasterStyle
 import kotlin.math.*
 
 /** OS/2 typographic ascent fraction, when exposed by the platform font API.
@@ -49,7 +50,11 @@ internal class DioramaPlainText private constructor(val image: ImageBitmap, val 
             // HTML Canvas normalizes these ASCII whitespace characters to spaces.
             // UTF16 offsets and the source timing text remain untouched elsewhere.
             val singleLine = text.replace(Regex("[\t\n\u000c\r]"), " ")
-            fun style() = baseStyle.copy(fontSize = fontPx.sp, lineHeight = TextUnit.Unspecified,
+            // Same browser-foreground coverage policy already used by the other
+            // text styles. Windows only; explicit host paragraph raster settings
+            // and Android/other-OS defaults are retained. Active halo input is
+            // separate and must not inherit foreground LCD/contrast settings.
+            fun style() = classicBodyRasterStyle(baseStyle).copy(fontSize = fontPx.sp, lineHeight = TextUnit.Unspecified,
                 fontWeight = baseStyle.fontWeight ?: FontWeight.Bold, textAlign = TextAlign.Left,
                 textDirection = TextDirection.ContentOrLtr, color = Color.White, shadow = Shadow.None)
             fun measure() = measurer.measure(AnnotatedString(singleLine), style(), softWrap = false, density = density, layoutDirection = LayoutDirection.Ltr)

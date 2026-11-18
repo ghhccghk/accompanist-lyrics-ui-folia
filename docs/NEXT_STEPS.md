@@ -16,13 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：将已由真实mounted缓存8张纹理证实的Windows文字栅格候选，
-与保留的mounted48及Latin/Arabic/CJK/长行24帧做同union前后对照；只有完整画面
-与共享层回归支持时才合入，不将raw纹理改善当主题验收，不拟合像素/延迟。
-700ms原cache读取已完成：452原callback、读取前后整屏哈希/原状态不变；8张
-原/本纹理font/advance/尺寸/基线一致，原路径alpha量低1.149–1.347%，峰差130–133。
-既有Windows前景设置候选8/8改善，alpha MAE3.784223→1.606260/峰20，尚未改生产。
-数据/原hash/未阈值化对照见verification/diorama-mounted-raster，raw问题转为历史下一项。
+当前唯一下一项：固定700ms实际邻行texture作显式shared-input诊断，先断言
+own-texture重放与生产stage逐像素相同，再测共享原cache后仍保留的投影/后端残差；
+不将原纹理接入生产，不改相机/时间/阈值，不重新运行全部源矩阵。
+c3e464c已完成真实cache452callback被动读取/整屏hash和8张原几何控制；随后
+Windows邻行覆盖采用既有前景栅格策略，raw MAE3.784223→1.606260/峰130–133→20。
+同原72图：plain24帧均值全部改善(13.079068→11.776553)，仍11局部回退；mounted
+有限34改善/2回退/12不变，媒体24/12/12、局部峰82.267296→82.462264，全部保留。
+相机/材料数值门槛未变，仍非正式视觉验收。证据verification/diorama-plain-coverage。
+raw候选探索为历史，保留verification/diorama-mounted-raster，不能以新输出覆盖旧报告。
 本轮交付构建/公共入口/独立消费已完成：325c2bd下公开JVM38项与新版选择器2项
 通过；Android debug APK构建、apksigner v1/v2、arm64-v8a/x86_64真实ELF库核对通过。
 APK在sample/android-app/build/outputs/apk/debug/android-app-debug.apk，未安装，

@@ -1871,3 +1871,15 @@ Independent192 original material/44 grouping controls retained; fixed48 original
 PNG, before/after same union and all regressions:verification/diorama-breath.
 Pause/seek/offset/cut/loop/resize/remount/reduced full-shaped stage contracts
 covered. No public Diorama or final visual/device/performance equivalence claim.
+
+### Diorama plain raster foreground coverage (2026-11-18)
+Same pinned dioramaTextRaster.ts:rasterDioramaLine / line-cache call, no new
+source assets or formulas copied. DioramaPlainText.prepare adopts the existing
+host-preserving Windows classicBodyRasterStyle foreground policy, retaining
+complete paragraph shaping,128px em, source advance/padding/middle baseline and
+other-platform defaults. Active base/halo are not changed. Passive actual-cache
+read preserves the original mounted700ms screenshot/state;8 raw input controls
+and frozen72 complete original frames, all same-union regressions retained in
+verification/diorama-mounted-raster and verification/diorama-plain-coverage.
+No fitted gamma/coverage curve or confirmed font-engine cause is claimed. This
+is an input correction, not media-camera, final theme or device acceptance.

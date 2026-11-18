@@ -1675,3 +1675,13 @@ not source RAF equality). Original spring/profile formulas/attribution unchanged
 Legacy dispatcher fixtures and assertions retained separately; no source/expected
 update. Full original wheel27 frames/public real core, original schedule driver,
 old144 unchanged native hashes and residuals: verification/pendolo-follower.
+
+### Diorama direct complete-shaped raster windows (2026-11-18)
+Same pinned dioramaTextRaster.ts:108–145, dioramaSceneLayout.ts unit boundaries,
+and existing independent coverage ownership. DioramaActiveText.kt no longer
+allocates an unbounded full-line bitmap before copying windows; it paints the
+same complete shaped paragraph into integer-clipped unit textures. No source
+code/resources copied by this allocation change. Independent original414 clock/
+unit records, long-run complete coverage and exact existing stage hashes:
+verification/diorama-raster-window. Single huge units/whole-song residency remain
+unbounded; no device memory/performance or public-theme claim.

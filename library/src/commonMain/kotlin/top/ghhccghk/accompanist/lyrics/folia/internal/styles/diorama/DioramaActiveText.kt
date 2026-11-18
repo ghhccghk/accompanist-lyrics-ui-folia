@@ -82,13 +82,9 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
             val ratio = dioramaTypographicRatio(style, resolver) ?: (metrics.ascent / (metrics.ascent + metrics.descent)).toDouble()
             val middle = floor(128 * ratio * 64 + .5) / 64 - 64
             val padding = 90 // ceil(128*.7), original active-unit padding
-            val full = ImageBitmap(max(1,ceil(advance).toInt()) + padding * 2,360)
             val origin = Offset(padding.toFloat(), (180 + middle - paintedNaturalBaseline(layout, metrics)).toFloat())
-            CanvasDrawScope().draw(density,LayoutDirection.Ltr,Canvas(full),Size(full.width.toFloat(),360f)) {
-                drawText(layout,Color.White,origin,shadow=Shadow.None)
-            }
             val units = dioramaUnits(line)
-            val ownership = dioramaShapedColumns(layout,units,full.width,padding)
+            val ownership = dioramaShapedColumns(layout,units,max(1,ceil(advance).toInt())+padding*2,padding)
             val slices = units.mapIndexed { index, unit ->
                 val range = layout.getPathForRange(unit.charStart, unit.charEnd).getBounds()
                 val width = max(1, ceil(range.width.toDouble()).toInt())
@@ -105,7 +101,13 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
                 CanvasDrawScope().draw(density, LayoutDirection.Ltr, Canvas(image), Size(image.width.toFloat(), image.height.toFloat())) {
                     for (column in columns) clipRect((column.first+shift).toFloat(),0f,
                         (column.last+1+shift).toFloat(),360f) {
-                        drawImage(full,Offset(shift.toFloat(),0f))
+                        // Draw the SAME complete shaped paragraph into the
+                        // unit's integer-owned window. Do not first allocate a
+                        // potentially enormous full-line bitmap: a long line
+                        // of small units must not need one giant GPU texture.
+                        // Only the integer raster origin changes, never the
+                        // shaping run, selection ranges, unit pivot or clocks.
+                        drawText(layout,Color.White,origin+Offset(shift.toFloat(),0f),shadow=Shadow.None)
                     }
                 }
                 val center = range.left + width / 2.0 - advance / 2

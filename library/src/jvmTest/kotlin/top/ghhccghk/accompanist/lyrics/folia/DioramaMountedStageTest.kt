@@ -112,7 +112,7 @@ class DioramaMountedStageTest {
                         val life=dioramaTextLife(sqrt(distance.dot(distance)))
                         val materials=active.slices.mapIndexed { i,slice ->
                             dioramaUnitStep(time,slice.unit.start,slice.unit.end,r[5].toDouble(),envelopes[i],
-                                primary,accent,DioramaUnitTuning(),life=life,breath=.9+.1*sin(wall*1.9))
+                                primary,accent,DioramaUnitTuning(),life=life,breath=dioramaBreathAt(wall))
                         }
                         envelopes=materials.map{it.envelope}
                         if(incoming&&time in times) {

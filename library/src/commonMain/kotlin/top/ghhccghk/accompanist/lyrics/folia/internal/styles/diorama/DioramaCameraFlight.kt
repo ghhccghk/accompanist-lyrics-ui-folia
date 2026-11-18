@@ -54,6 +54,6 @@ internal class DioramaCameraFlight(from: DioramaVec, to: DioramaVec, seed: Doubl
 /** Value-only cut anchor. Does not retain the outgoing playback/textures. A
  * backward seek alone never creates a new song, epoch or corridor. */
 internal data class DioramaTextTransition(val previous: DioramaFollowState,
-    val outgoingOrigin: DioramaVec, val epoch: Int) {
-    init { require(epoch > 0) }
+    val outgoingOrigin: DioramaVec, val epoch: Int, val breathSeconds: Double = 0.0) {
+    init { require(epoch > 0 && breathSeconds.isFinite() && breathSeconds>=0.0) }
 }

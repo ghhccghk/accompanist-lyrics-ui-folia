@@ -115,7 +115,7 @@ class DioramaCutStageTest {
                 if(ready!=null) {
                     val time=ready.lyricTime(if(offset==0)r[3].toDouble() else (r[3].toDouble()*1000+offset)/1000,offset)
                     val view=if(mode=="finite")finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time,reduced)
-                    drawn=view;ready.drawStage(this,time,view,primary,accent,secondary,reduced,toneMapping=DioramaToneMapping.None)
+                    drawn=view;ready.drawStage(this,time,view,primary,accent,secondary,reduced,toneMapping=DioramaToneMapping.None,breath=1.0)
                 }
             }
         }

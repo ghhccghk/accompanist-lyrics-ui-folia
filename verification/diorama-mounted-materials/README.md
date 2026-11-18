@@ -1,5 +1,9 @@
 # Full mounted text material-history control — 2026-11-18
 
+Historical baseline through b85e4ce: production used breath1. The subsequent
+media-domain breath change and its complete before/after results are recorded
+in `../diorama-breath`; this report and the original finite oracles are retained.
+
 This supplements the frozen175dabe **original CameraRig + DioramaScene**
 observations, not another isolated target or a browser rerun. All48 source PNGs,
 original input, fonts, dimensions, Motion/R3F/Three lock and time schedules remain
@@ -58,7 +62,7 @@ python verification/compare-diorama-materials.py
 
 Current comparison requires preserved c75652d96 native image hashes to confirm
 the refactor did not change production. Original captures/expected values are
-not rewritten for this control. Next: replace the still-constant production
+not rewritten for this control. Historical next item at b85e4ce: replace the still-constant production
 glow breath with an explicit media-domain phase, retaining pause/seek, offset,
 cut/loop continuity and reduced motion; state the necessary difference from
 upstream wall-time evolution instead of claiming exact RAF equivalence.

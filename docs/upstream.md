@@ -1858,3 +1858,16 @@ source-state injection, dependency, asset or frame-accumulated production clock.
 44 grouping/timing and192 material states, gate1e-9, full48 same-union controls/
 all regressions:verification/diorama-mounted-materials. Source and old fixtures
 unchanged; finite success is not media/material visual equivalence.
+
+### Diorama media-domain glow breath (2026-11-18)
+Pinned DioramaScene.tsx:546–555 -> DioramaUnitFrame.dioramaBreathAt and
+DioramaTextPlayback.drawStage/breathAt. Original .9+.1*sin(time*1.9) factor,
+existing authorship/AGPL-3.0-only retained. Intentional host time adaptation:
+media-offset with immutable cut/loop phase anchor in DioramaTextTransition,
+rather than unfreezable source wall RAF; reduced motion uses1. No new assets,
+dependency, background/audio engine or frame-accumulated production state.
+The frozen mounted fixture naturally shares6.8+t phase, not a fitted delay.
+Independent192 original material/44 grouping controls retained; fixed48 original
+PNG, before/after same union and all regressions:verification/diorama-breath.
+Pause/seek/offset/cut/loop/resize/remount/reduced full-shaped stage contracts
+covered. No public Diorama or final visual/device/performance equivalence claim.

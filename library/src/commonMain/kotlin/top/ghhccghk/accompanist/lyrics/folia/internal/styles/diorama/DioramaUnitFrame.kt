@@ -14,6 +14,13 @@ internal data class DioramaLinearColor(val red: Double, val green: Double, val b
     operator fun times(k: Double) = DioramaLinearColor(red * k, green * k, blue * k)
 }
 internal data class DioramaEnvelope(val light: Double, val soul: Double)
+
+/** Original Scene.tsx glow breath. The host chooses the time domain; production
+ * uses a reconstructible media phase rather than an unfreezable wall RAF. */
+internal fun dioramaBreathAt(phaseSeconds: Double, reducedMotion: Boolean = false): Double {
+    require(phaseSeconds.isFinite())
+    return if(reducedMotion)1.0 else .9+.1*sin(phaseSeconds*1.9)
+}
 internal data class DioramaUnitTuning(val glow: Double = 1.0, val soul: Double = 1.0,
     val soulActive: Boolean = true, val gradient: Double = 1.0)
 internal data class DioramaUnitFrame(val envelope: DioramaEnvelope, val fill: DioramaLinearColor,

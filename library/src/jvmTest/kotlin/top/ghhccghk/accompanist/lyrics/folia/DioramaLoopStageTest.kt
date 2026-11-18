@@ -76,7 +76,7 @@ class DioramaLoopStageTest {
                     val view=if(mode=="finite")finiteViews.getValue("${r[2]}-$time")else loop.camera.perspectiveAt(time)
                     drawn=view
                     fun color(i:Int)=r[i].split(',').map(String::toDouble).let{DioramaLinearColor(it[0],it[1],it[2])}
-                    loop.drawStage(this,time,view,color(6),color(8),color(7),toneMapping=DioramaToneMapping.None)
+                    loop.drawStage(this,time,view,color(6),color(8),color(7),toneMapping=DioramaToneMapping.None,breath=1.0)
                 }
             }
         }

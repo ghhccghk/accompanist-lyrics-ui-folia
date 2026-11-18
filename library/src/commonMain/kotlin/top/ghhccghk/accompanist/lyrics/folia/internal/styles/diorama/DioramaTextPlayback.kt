@@ -25,7 +25,8 @@ internal data class DioramaPlaybackLine(val core: DioramaCoreLine, val text: Dio
 internal class DioramaTextPlayback private constructor(val lines: List<DioramaPlaybackLine>,
     val camera: DioramaCameraTrack, val width: Double, val height: Double,
     private val transitionOutgoingIndex: Int? = null,
-    val departure: DioramaTextDeparture? = null) {
+    val departure: DioramaTextDeparture? = null,
+    val breathOriginSeconds: Double = 0.0) {
     val globalStart: Int get() = departure?.sourceSpan ?: 0
     fun lyricTime(mediaSeconds: Double, offsetMillis: Int = 0): Double {
         require(mediaSeconds.isFinite())
@@ -40,12 +41,17 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
     }
     fun sourceAt(mediaSeconds: Double, offsetMillis: Int = 0): DioramaCoreLine =
         lines[camera.subjectIndex(lyricTime(mediaSeconds,offsetMillis))].core
+    /** Immutable phase survives explicit cuts/loops; arbitrary seeks do not
+     * fabricate a discontinuity or accumulate display-frame/wall-clock time. */
+    fun breathAt(mediaSeconds: Double, offsetMillis: Int = 0, reducedMotion: Boolean = false): Double =
+        dioramaBreathAt(breathOriginSeconds+lyricTime(mediaSeconds,offsetMillis),reducedMotion)
     fun mediaStart(core: DioramaCoreLine, offsetMillis: Int = 0) =
         if(offsetMillis==0)core.lyric.start else (core.lyric.start*1000.0+offsetMillis)/1000.0
     /** Value-only anchor for callers which deliberately retain no old text. */
     fun transitionAt(mediaSeconds: Double, epoch: Int, offsetMillis: Int = 0): DioramaTextTransition {
         val time=lyricTime(mediaSeconds,offsetMillis)
-        return DioramaTextTransition(camera.at(time),camera.subjects[camera.subjectIndex(time)].frame.position,epoch)
+        return DioramaTextTransition(camera.at(time),camera.subjects[camera.subjectIndex(time)].frame.position,epoch,
+            breathOriginSeconds+time)
     }
     /** Capture only the necessary plain text from this active corridor. A
      * third still-visible corridor needs the full sequencer, not silent loss.
@@ -72,7 +78,7 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         checkpoint: () -> Unit = {}): DioramaTextPlayback {
         val time=lyricTime(mediaSeconds,offsetMillis);val previous=camera.at(time)
         return DioramaTextPlayback(lines,camera.restarted(previous,epoch,checkpoint),width,height,
-            globalStart+camera.subjectIndex(time),departure)
+            globalStart+camera.subjectIndex(time),departure,breathOriginSeconds+time)
     }
     fun outgoingTextIndexAt(time: Double): Int? =
         if(time>=0.0&&time<DioramaFlightDuration)transitionOutgoingIndex else null
@@ -106,7 +112,7 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         primary: DioramaLinearColor, accent: DioramaLinearColor, secondary: DioramaLinearColor = primary,
         reducedMotion: Boolean = false, fog: DioramaFog? = null,
         toneMapping: DioramaToneMapping = DioramaToneMapping.AcesFilmic,
-        activeFrames: List<DioramaUnitFrame>? = null) {
+        activeFrames: List<DioramaUnitFrame>? = null, breath: Double? = null) {
         val index=camera.subjectIndex(time);val s=camera.subjects[index]
         // Original neighbours are transparent, depthWrite=false and order0;
         // active layers have order17/18/19. With no opaque background geometry,
@@ -123,7 +129,8 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             val activeDelta=dioramaComposeLocal(s.frame,s.placement.offsetR,s.placement.offsetU,0.0)-view.eye
             lines[index].text.draw(scope,time,view,s.frame,s.placement,
                 primary,accent,if(reducedMotion)DioramaUnitTuning(soul=0.0)else DioramaUnitTuning(),
-                life=dioramaTextLife(sqrt(activeDelta.dot(activeDelta))),fog=fog,toneMapping=toneMapping)
+                life=dioramaTextLife(sqrt(activeDelta.dot(activeDelta))),fog=fog,toneMapping=toneMapping,
+                breath=breath?:dioramaBreathAt(breathOriginSeconds+time,reducedMotion))
         }
     }
     companion object {
@@ -167,7 +174,8 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             val track=DioramaCameraTrack(subjects,width,height,end,seed,smoothTime=mode.smooth,
                 moveScale=mode.move,driftScale=mode.drift,checkpoint=checkpoint,
                 initialState=anchor?.previous?:DioramaFollowState(),flightEpoch=anchor?.epoch?:0)
-            return DioramaTextPlayback(lines,track,width,height,cut?.departure?.outgoingIndex,cut?.departure)
+            return DioramaTextPlayback(lines,track,width,height,cut?.departure?.outgoingIndex,cut?.departure,
+                anchor?.breathSeconds?:0.0)
         }
     }
 }

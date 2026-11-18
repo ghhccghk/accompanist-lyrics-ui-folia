@@ -1,0 +1,45 @@
+{
+  "tests": 21,
+  "suites": [
+    {
+      "name": "DioramaBreathTest[jvm]",
+      "tests": 2
+    },
+    {
+      "name": "DioramaCutStageTest[jvm]",
+      "tests": 3
+    },
+    {
+      "name": "DioramaFlightStageTest[jvm]",
+      "tests": 3
+    },
+    {
+      "name": "DioramaLoopStageTest[jvm]",
+      "tests": 2
+    },
+    {
+      "name": "DioramaMountedStageTest[jvm]",
+      "tests": 2
+    },
+    {
+      "name": "DioramaNeighborStageTest[jvm]",
+      "tests": 5
+    },
+    {
+      "name": "DioramaOffsetContractTest[jvm]",
+      "tests": 1
+    },
+    {
+      "name": "DioramaUnitFrameTest[jvm]",
+      "tests": 3
+    }
+  ],
+  "unchanged_direct_three_png": 610,
+  "unchanged_finite_material_png": 48,
+  "builds": [
+    "library:compileAndroidMain",
+    "sample:desktop-app:compileKotlin"
+  ],
+  "android_runtime": false,
+  "visual_acceptance": false
+}

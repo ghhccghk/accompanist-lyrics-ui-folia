@@ -1,6 +1,6 @@
 """Fixed mounted48 source/before/after comparison; same five-image all-ink union.
 
-Before images are the preserved 175dabe production outputs, never regenerated
+Before images are preserved 175dabe outputs (ACES) or b85e4ce (--breath), never regenerated
 using the patched renderer. Original frozen source frames must keep their hashes.
 """
 from pathlib import Path
@@ -10,10 +10,12 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 root = Path(__file__).resolve().parents[1]
-before = root / '.work/diorama-aces-before'
+import sys
+breath = '--breath' in sys.argv
+before = root / ('.work/diorama-breath-before' if breath else '.work/diorama-aces-before')
 native = root / 'build/verification/diorama-mounted-kotlin'
 source = root / 'build/verification/diorama-mounted-browser'
-out = root / 'verification/diorama-tonemapping'
+out = root / ('verification/diorama-breath' if breath else 'verification/diorama-tonemapping')
 out.mkdir(parents=True, exist_ok=True)
 conditions = root / 'verification/diorama-fixtures/mounted-cut-v1/scene.json'
 captures = json.loads(conditions.read_text(encoding='utf8'))['captures']
@@ -66,11 +68,12 @@ changes = {m: dict(improved=sum(r[m+'-after']['foreground_mae'] < r[m+'-before']
 numeric = {f'numeric-{w}.txt': (native/f'numeric-{w}.txt').read_text() for w in [380, 800]}
 for name, text in numeric.items():
     assert text == (before/'native'/name).read_text(), 'Color fix cannot change camera/control geometry'
-report = dict(baseline='175dabe', source_hashes_unchanged=48, frames=48,
+report = dict(baseline='b85e4ce' if breath else '175dabe', source_hashes_unchanged=48, frames=48,
               conditions_sha256=hashlib.sha256(conditions.read_bytes()).hexdigest(),
               mask='One identical source/before-finite/after-finite/before-media/after-media ALL-nonbackground union; lowest alpha retained, no registration/phase shift/filter/omitted frame.',
               comparisons=summary, changes=changes, unchanged_numeric_controls=numeric,
-              status='Internal original mounted CameraRig+Scene ACES fix only; remaining media camera/envelope/wall-breath/depth/whole-scene/device differences are not visually accepted.',
+              status=('Internal media-phase breath only; wall-clock/RAF, media camera/envelope/depth/whole-scene/device equivalence is not accepted.' if breath else
+                      'Internal original mounted CameraRig+Scene ACES fix only; remaining media camera/envelope/wall-breath/depth/whole-scene/device differences are not visually accepted.'),
               frames_detail=rows)
 (out/'comparison.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf8')
 
@@ -80,7 +83,9 @@ names = ['mounted-380-60-0.png', 'mounted-800-60-700.png', 'mounted-800-144-1600
 sheet = Image.new('RGB', (1500, len(names)*268), (30, 30, 30))
 draw = ImageDraw.Draw(sheet)
 for i, name in enumerate(names):
-    for j, (label, p) in enumerate(zip(['Original mounted', 'Own finite BEFORE', 'Own finite ACES', 'Own media BEFORE', 'Own media ACES'], files(name))):
+    labels=['Original mounted', 'Own finite BEFORE', 'Own finite breath' if breath else 'Own finite ACES',
+            'Own media BEFORE', 'Own media breath' if breath else 'Own media ACES']
+    for j, (label, p) in enumerate(zip(labels, files(name))):
         draw.text((j*300+3, i*268+3), label, fill='white')
         draw.text((j*300+3, i*268+16), name, fill='white')
         im = Image.open(p).convert('RGB'); im.thumbnail((300, 232))

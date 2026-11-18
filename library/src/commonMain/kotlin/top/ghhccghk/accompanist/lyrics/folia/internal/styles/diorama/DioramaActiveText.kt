@@ -33,10 +33,11 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         placement: DioramaPlacement, primary: DioramaLinearColor, accent: DioramaLinearColor,
         tuning: DioramaUnitTuning = DioramaUnitTuning(),
         keywords: Map<Int, DioramaLinearColor> = emptyMap(), life: Double = 1.0,
-        fog: DioramaFog? = null, toneMapping: DioramaToneMapping = DioramaToneMapping.None) {
+        fog: DioramaFog? = null, toneMapping: DioramaToneMapping = DioramaToneMapping.None,
+        breath: Double = 1.0) {
         val states = slices.mapIndexed { i, slice ->
             dioramaUnitFrame(time, slice.unit.start, slice.unit.end,
-                dioramaMediaEnvelope(time, slice.unit.start, slice.unit.end), primary, accent, tuning, keywords[i], life = life)
+                dioramaMediaEnvelope(time, slice.unit.start, slice.unit.end), primary, accent, tuning, keywords[i], life = life, breath = breath)
         }
         drawFrames(scope,view,frame,placement,states,fog,toneMapping)
     }

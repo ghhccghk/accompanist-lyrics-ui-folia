@@ -87,7 +87,7 @@ class DioramaNeighborStageTest {
                         val i=playback.camera.subjectIndex(time);val s=playback.camera.subjects[i]
                         playback.lines[i].text.draw(this,time,view,s.frame,s.placement,body,accent)
                     }else playback.drawStage(this,time,view,body,accent,secondary,reduced,
-                        fog=if(withFog&&!before)DioramaFog(Color(0xff162435))else null,toneMapping=DioramaToneMapping.None)
+                        fog=if(withFog&&!before)DioramaFog(Color(0xff162435))else null,toneMapping=DioramaToneMapping.None,breath=1.0)
                 }
             }
         }

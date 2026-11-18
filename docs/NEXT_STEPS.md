@@ -16,10 +16,17 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：补镜台媒体域辉光呼吸，明确phase锚点和暂停/seek/offset/cut/loop/
-reduced语义，替换当前breath1；复用原mounted48同union，不声称wall/RAF精确等价。
+当前唯一下一项：完成本轮Android debug APK刷新/签名/native ABI检查及必要共享入口
+回归；只构建不安装。随后从固定mounted原版/有限相机+有限材质仍不同的700ms
+完整文字帧定位raster/coverage与投影误差，不再叠加新的isolated target原型。
+媒体域辉光呼吸为历史下一项，已实现：保留原.9+.1*sin(phase*1.9)，phase采用
+media-offset与不可变cut/loop锚点，暂停冻结/乱序seek/resize/重挂恢复，reduced恒1。
+同48原图五图union有限MAE6.954943→6.887058(28改善/0回退/20不变)，媒体
+20.290248→20.258454(22改善/6回退/20不变，7帧局部回退全部保留)；局部峰仍
+20.434397/83.4，不称wall/RAF或视觉等价。21项定向JVM/Android库/Desktop编译
+通过；610旧direct及48有限材质PNG hash不变；见verification/diorama-breath。
 用户新增交付要求：修改后刷新Android debug APK并检查，提供路径；不安装。
-同原mounted有限材质控制为历史下一项：44实际原分组/内部时钟一致，192原材料状态
+b85e4ce同原mounted有限材质控制为历史下一项：44实际原分组/内部时钟一致，192原材料状态
 峰7.21e-12/1e-9，Float32包络零差；独立own-core重放4686区间，无原状态驱动绘制。
 四图同union有限解析/有限历史MAE6.937855→6.817019，局部同20.434397，30改善/
 6回退/12不变全部保留；生产96及旧direct610 PNG哈希不变。证据

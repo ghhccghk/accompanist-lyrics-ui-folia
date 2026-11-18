@@ -16,8 +16,16 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：刷新Android debug/独立消费；随后以共享原输入控制定位Arabic输入/放置
-与700ms入场残差，不把已有16局部回退或媒体相机残差说成已修。
+当前唯一下一项：以共享原输入控制定位Arabic输入/放置与700ms入场残差，不把已有16局部
+回退或媒体相机残差说成已修；先固定自身/原版unit几何与原始alpha，再做最小可证伪修正。
+8ee9a80交付已刷新：Android debug原证书v1/v2(37.0.0/30.0.2)、ZIP CRC/16KB对齐、
+双ABI Rust ELF/副本hash通过；build/deliverables/android/
+lyrics-ui-folia-debug-8ee9a80-20261118-170240.apk，SHA256
+54fa875bf90e98ae684295ebbee7931de05f017710344756877210bd43ffe8fc。未传输/安装，
+手机验签问题未复现；见verification/android-debug/2026-11-18-active-base-validation.json。
+独立本地Maven JVM绘制/回调1项与Android消费编译/归属边界通过，
+见verification/consumer/8ee9a80-validation.json。两项用户签名/daemon遗留hash不变；
+无设备/真实窗口/性能或公开镜台结论，不重新无故跑同矩阵。
 plain owner异常后卸载已修：原生产1项回归先失败，成功A/失败B后空request曾跳过淘汰；
 改用null表示未完成请求，卸载count/bytes归零、原异常透传，5项JVM/Android库/Desktop
 编译通过，见verification/diorama-owner-release。无shader/视觉/设备/性能结论。

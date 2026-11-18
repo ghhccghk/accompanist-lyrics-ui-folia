@@ -1,5 +1,12 @@
 # Diorama independently shaped plain text under frozen perspective
 
+Historical capability report: the implementation and remaining-work list below
+describe the original plain-plane milestone. Active layers, clipped/fogged text,
+mounted CameraRig controls, ACES and media breath were added later (see
+`../diorama-mounted`, `../diorama-tonemapping`, `../diorama-breath`). Original24
+frames/failed baseline evidence remain frozen; their raster residual is still
+unaccepted. Current700ms actual-cache input investigation: `../diorama-mounted-raster`.
+
 Pinned Folia cc6226e464050a456a2913e062374f23d3844cc5, AGPL-3.0-only.
 This replaces shared-original-PNG isolation with Kotlin's OWN complete shaped
 paragraph for a neighbouring/plain lyric plane. It remains an internal bounded

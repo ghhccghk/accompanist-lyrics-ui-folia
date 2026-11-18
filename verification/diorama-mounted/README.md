@@ -3,6 +3,9 @@
 Historical baseline at175dabe: source frames/conditions below remain frozen.
 The subsequently confirmed missing ACES step is corrected and compared without
 rewriting this baseline in `../diorama-tonemapping`; remaining residuals persist.
+The historical "presently lacks"/breath1 findings below were subsequently
+addressed by ACES and `../diorama-breath`; they are not current implementation
+claims. Actual-cache input coverage is now isolated in `../diorama-mounted-raster`.
 
 Unlike the isolated orbit matrices, this mounts the untouched original
 **CameraRig and DioramaScene** React/R3F components together. It is not the

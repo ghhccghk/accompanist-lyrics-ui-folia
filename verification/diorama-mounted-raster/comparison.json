@@ -1,0 +1,389 @@
+{
+  "scope": "Passive actual mounted neighbor-cache canvas read only. Original complete callback history through380/60/700, unchanged screenshot/state before/after. No source raster recreation, texture replacement, ref mutation or extra animation turn.",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "fixtureSha256": "eab402432f48703d734c6e086b7e5f63df04b4fc4746946e0976283f8c93c122",
+  "originalMountedScreenshotUnchanged": true,
+  "actualOriginalCallbacks": 452,
+  "nativeNumericAssertions": "8 actual cache font/advance/width/height rows passed; no original pixels drive production",
+  "nativeMetadata": "# index fontPx advancePx width height padding middleBaseline hasTypographicMetrics\n2\t128\t1598\t1650\t232\t26\t36.46875\ttrue\n3\t128\t1598\t1650\t232\t26\t36.46875\ttrue\n4\t128\t1598\t1650\t232\t26\t36.46875\ttrue\n5\t128\t1598\t1650\t232\t26\t36.46875\ttrue\n6\t128\t1598\t1650\t232\t26\t36.46875\ttrue\n7\t128\t1598\t1650\t232\t26\t36.46875\ttrue\n9\t128\t1613\t1665\t232\t26\t36.46875\ttrue\n10\t128\t1613\t1665\t232\t26\t36.46875\ttrue\n",
+  "mask": "All alpha>0 union, including smallest alpha; no translation, thresholding, registration or excluded row",
+  "mean_foreground_alpha_mae": 3.7842225649125814,
+  "candidate_mean_foreground_alpha_mae": 1.6062604859458736,
+  "candidate_improved_rows": 8,
+  "alpha_sum_relative_range": [
+    -0.013467021754555053,
+    -0.011490492489560133
+  ],
+  "max_raw_bounds_difference": 1,
+  "status": "Input coverage differs despite identical geometry/baseline. Existing Windows body raster settings improve all8 raw rows, but complete-stage/other-font regression checks are still required before production adoption. This does not prove a specific engine cause or explain all projection/backend residual. No production behaviour changed.",
+  "rasters": [
+    {
+      "index": 2,
+      "text": "Synthetic outgoing line 2",
+      "file": "cache-2.png",
+      "width": 1650,
+      "height": 232,
+      "fontPx": 128,
+      "advancePx": 1598,
+      "source_bounds": [
+        31,
+        55,
+        1620,
+        183
+      ],
+      "native_bounds": [
+        32,
+        55,
+        1619,
+        183
+      ],
+      "source_alpha_sum": 15912272,
+      "native_alpha_sum": 15706272,
+      "relative_alpha_sum": -0.012945982823822977,
+      "source_nonzero": 65629,
+      "native_nonzero": 63511,
+      "foreground_alpha_mae": 3.9029392494171784,
+      "worst64_alpha_mae": 53.0,
+      "alpha_peak": 130,
+      "candidate": {
+        "settings": "Existing Windows classicBodyRasterStyle; host explicit paragraph settings retained",
+        "foreground_alpha_mae": 1.6074296423837022,
+        "alpha_peak": 20,
+        "alpha_sum": 15806778,
+        "bounds": [
+          31,
+          55,
+          1620,
+          183
+        ]
+      },
+      "hashes": {
+        "source": "f258fd03991eceb84b64b3d91137961db751a7da92f35a9b4427d8ae0d78f434",
+        "native": "4a3853707ad2c5293f7ff2ca28c5af5f8e40425c06177ed9ef08cd07cb8df934",
+        "body_style_candidate": "c76947706ba566400bbe8e683086724e38a766ba8dce54f4607722bc5ef58776"
+      }
+    },
+    {
+      "index": 3,
+      "text": "Synthetic outgoing line 3",
+      "file": "cache-3.png",
+      "width": 1650,
+      "height": 232,
+      "fontPx": 128,
+      "advancePx": 1598,
+      "source_bounds": [
+        31,
+        55,
+        1619,
+        183
+      ],
+      "native_bounds": [
+        32,
+        55,
+        1618,
+        183
+      ],
+      "source_alpha_sum": 15918521,
+      "native_alpha_sum": 15712480,
+      "relative_alpha_sum": -0.01294347634431614,
+      "source_nonzero": 65684,
+      "native_nonzero": 63564,
+      "foreground_alpha_mae": 3.901421959685768,
+      "worst64_alpha_mae": 53.0,
+      "alpha_peak": 130,
+      "candidate": {
+        "settings": "Existing Windows classicBodyRasterStyle; host explicit paragraph settings retained",
+        "foreground_alpha_mae": 1.6239723524754888,
+        "alpha_peak": 20,
+        "alpha_sum": 15811852,
+        "bounds": [
+          31,
+          55,
+          1619,
+          183
+        ]
+      },
+      "hashes": {
+        "source": "a847ef981e8f048389e8683233d374a897c32564e9065239789e128d7f170e8e",
+        "native": "1aa24eb533acff7ede43698a924baa9564ce37e3360476998e459359c3bc2297",
+        "body_style_candidate": "5b2bc6fb82ea0c3de28e054390623494890301d26347b5812b3ccc90410f6a41"
+      }
+    },
+    {
+      "index": 4,
+      "text": "Synthetic outgoing line 4",
+      "file": "cache-4.png",
+      "width": 1650,
+      "height": 232,
+      "fontPx": 128,
+      "advancePx": 1598,
+      "source_bounds": [
+        31,
+        55,
+        1622,
+        183
+      ],
+      "native_bounds": [
+        32,
+        55,
+        1621,
+        183
+      ],
+      "source_alpha_sum": 15923194,
+      "native_alpha_sum": 15708756,
+      "relative_alpha_sum": -0.013467021754555053,
+      "source_nonzero": 65709,
+      "native_nonzero": 63492,
+      "foreground_alpha_mae": 4.041090261607999,
+      "worst64_alpha_mae": 53.0,
+      "alpha_peak": 130,
+      "candidate": {
+        "settings": "Existing Windows classicBodyRasterStyle; host explicit paragraph settings retained",
+        "foreground_alpha_mae": 1.6253176885966916,
+        "alpha_peak": 20,
+        "alpha_sum": 15816396,
+        "bounds": [
+          31,
+          55,
+          1622,
+          183
+        ]
+      },
+      "hashes": {
+        "source": "aedfffcd0128ddad583cc2e72b974b753558b8e5fd8ffea34ac7c6e13f3d8031",
+        "native": "20956d54ce6ce090931fdc93705a5d7cdbf5f93552d97bbeeec06d00da72a097",
+        "body_style_candidate": "d08aea6af3e1e7d49c3b2cdb5ee0c97cea4a631511fbef721f024c5540ca2a8d"
+      }
+    },
+    {
+      "index": 5,
+      "text": "Synthetic outgoing line 5",
+      "file": "cache-5.png",
+      "width": 1650,
+      "height": 232,
+      "fontPx": 128,
+      "advancePx": 1598,
+      "source_bounds": [
+        31,
+        55,
+        1618,
+        183
+      ],
+      "native_bounds": [
+        32,
+        55,
+        1618,
+        183
+      ],
+      "source_alpha_sum": 15941525,
+      "native_alpha_sum": 15736415,
+      "relative_alpha_sum": -0.012866397662707918,
+      "source_nonzero": 65737,
+      "native_nonzero": 63620,
+      "foreground_alpha_mae": 3.8857873039536335,
+      "worst64_alpha_mae": 53.0,
+      "alpha_peak": 130,
+      "candidate": {
+        "settings": "Existing Windows classicBodyRasterStyle; host explicit paragraph settings retained",
+        "foreground_alpha_mae": 1.6068424175122078,
+        "alpha_peak": 20,
+        "alpha_sum": 15835896,
+        "bounds": [
+          31,
+          55,
+          1618,
+          183
+        ]
+      },
+      "hashes": {
+        "source": "acad4bf38c9f8b54b20d2d5929f503f41304e0c66bb2844f12a425ef27c6cad7",
+        "native": "135610adb6bc87003f3ca4ee6c394206fb64bf984dd39a1f095cbca6ae8fa346",
+        "body_style_candidate": "e4eb4228a91b2512d8dccade25e3a95667662edeebf2bbcc42596d433998b8fb"
+      }
+    },
+    {
+      "index": 6,
+      "text": "Synthetic outgoing line 6",
+      "file": "cache-6.png",
+      "width": 1650,
+      "height": 232,
+      "fontPx": 128,
+      "advancePx": 1598,
+      "source_bounds": [
+        31,
+        55,
+        1620,
+        183
+      ],
+      "native_bounds": [
+        32,
+        55,
+        1619,
+        183
+      ],
+      "source_alpha_sum": 16030906,
+      "native_alpha_sum": 15822910,
+      "relative_alpha_sum": -0.012974687768738669,
+      "source_nonzero": 66134,
+      "native_nonzero": 63986,
+      "foreground_alpha_mae": 3.9008679347990443,
+      "worst64_alpha_mae": 53.0,
+      "alpha_peak": 130,
+      "candidate": {
+        "settings": "Existing Windows classicBodyRasterStyle; host explicit paragraph settings retained",
+        "foreground_alpha_mae": 1.6153415792179515,
+        "alpha_peak": 20,
+        "alpha_sum": 15924077,
+        "bounds": [
+          31,
+          55,
+          1620,
+          183
+        ]
+      },
+      "hashes": {
+        "source": "ea5abe45d1d5beb44bdff637fa9ae111b16bce90d27fba873a94593b54527de3",
+        "native": "c3230889bcd0476bf547812f7e51c34c97b3eb594eec8d2097fe21161c9b4c87",
+        "body_style_candidate": "fac4f7daca19f7ad25ef604d7de181dd98765d7788fc3a96e6a14006974b5d70"
+      }
+    },
+    {
+      "index": 7,
+      "text": "Synthetic outgoing line 7",
+      "file": "cache-7.png",
+      "width": 1650,
+      "height": 232,
+      "fontPx": 128,
+      "advancePx": 1598,
+      "source_bounds": [
+        31,
+        55,
+        1620,
+        183
+      ],
+      "native_bounds": [
+        32,
+        55,
+        1619,
+        183
+      ],
+      "source_alpha_sum": 15747401,
+      "native_alpha_sum": 15543264,
+      "relative_alpha_sum": -0.012963218501897522,
+      "source_nonzero": 64937,
+      "native_nonzero": 62827,
+      "foreground_alpha_mae": 3.906170596116236,
+      "worst64_alpha_mae": 53.0,
+      "alpha_peak": 130,
+      "candidate": {
+        "settings": "Existing Windows classicBodyRasterStyle; host explicit paragraph settings retained",
+        "foreground_alpha_mae": 1.604416588385666,
+        "alpha_peak": 20,
+        "alpha_sum": 15643215,
+        "bounds": [
+          31,
+          55,
+          1620,
+          183
+        ]
+      },
+      "hashes": {
+        "source": "be0bf017e888adb86c6cd22e490704c8d3e24e758456a8eec3b1141fbf912ef9",
+        "native": "5d7973107bcaec1020898ab8edbeb8860bd02590aa39317709b2f07666ebc99c",
+        "body_style_candidate": "39d71ed5fffec501afd7bbd7cefdf88a343207af3c602fce0011ac842b3fea01"
+      }
+    },
+    {
+      "index": 9,
+      "text": "Synthetic incoming line 1",
+      "file": "cache-9.png",
+      "width": 1665,
+      "height": 232,
+      "fontPx": 128,
+      "advancePx": 1613,
+      "source_bounds": [
+        31,
+        55,
+        1618,
+        183
+      ],
+      "native_bounds": [
+        32,
+        55,
+        1618,
+        183
+      ],
+      "source_alpha_sum": 15402560,
+      "native_alpha_sum": 15225577,
+      "relative_alpha_sum": -0.011490492489560133,
+      "source_nonzero": 63391,
+      "native_nonzero": 61731,
+      "foreground_alpha_mae": 3.362259626760897,
+      "worst64_alpha_mae": 53.0,
+      "alpha_peak": 133,
+      "candidate": {
+        "settings": "Existing Windows classicBodyRasterStyle; host explicit paragraph settings retained",
+        "foreground_alpha_mae": 1.5828745405499203,
+        "alpha_peak": 20,
+        "alpha_sum": 15302220,
+        "bounds": [
+          31,
+          55,
+          1618,
+          183
+        ]
+      },
+      "hashes": {
+        "source": "32c79af095514b18a642238f520e0820c76daa75e1288556da39dc7d95882611",
+        "native": "273f206caa4ce7d853cccea32636baa2c4cbbd45835c28102324709e94b7a00e",
+        "body_style_candidate": "dbf5a414b965ae113e91b41f642fe59f5ca0bee353e14d80324d0cbee77cf91a"
+      }
+    },
+    {
+      "index": 10,
+      "text": "Synthetic incoming line 2",
+      "file": "cache-10.png",
+      "width": 1665,
+      "height": 232,
+      "fontPx": 128,
+      "advancePx": 1613,
+      "source_bounds": [
+        31,
+        55,
+        1635,
+        183
+      ],
+      "native_bounds": [
+        32,
+        55,
+        1634,
+        183
+      ],
+      "source_alpha_sum": 15656950,
+      "native_alpha_sum": 15476730,
+      "relative_alpha_sum": -0.011510543241180393,
+      "source_nonzero": 64478,
+      "native_nonzero": 62746,
+      "foreground_alpha_mae": 3.373243586959893,
+      "worst64_alpha_mae": 53.0,
+      "alpha_peak": 133,
+      "candidate": {
+        "settings": "Existing Windows classicBodyRasterStyle; host explicit paragraph settings retained",
+        "foreground_alpha_mae": 1.5838890784453612,
+        "alpha_peak": 20,
+        "alpha_sum": 15554824,
+        "bounds": [
+          31,
+          55,
+          1635,
+          183
+        ]
+      },
+      "hashes": {
+        "source": "63de7a1c37fd678f1fbaa745e2e10385eb2ab6081e63728d44e699e0814e9a62",
+        "native": "b9aeb5432efafb8fe750ab580ec8174b72d28891486e64a6572e7df4e89917ee",
+        "body_style_candidate": "4627c2670aa024fbac938c34720751c7c2b7652af1a49618f304f7237f1b8987"
+      }
+    }
+  ]
+}

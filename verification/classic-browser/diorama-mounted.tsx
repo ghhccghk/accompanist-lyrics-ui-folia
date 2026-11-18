@@ -96,4 +96,19 @@ Object.assign(window,{mountedReady:true,mountedInputs:{oldLines,lines,oldSeed,se
   segment=appendSegment(seq,{seed,lines,round:0,placementOrigin:{x:anchor.x+off.x,y:anchor.y+off.y,z:anchor.z+off.z}});
   epoch=1;return previous;
  },readMounted:read,
+ // Passive export of the ACTUAL mounted neighbour cache. No raster function
+ // calls, context writes, source ref changes or additional animation turns.
+ readMountedLineRasters:()=>{
+  const cache=refs(DioramaScene).find(v=>v?.rasters instanceof Map);
+  return [...cache.rasters.entries()].sort((a,b)=>a[0]-b[0]).map(([index,raster]:any)=>{
+   const canvas=raster.texture.image as HTMLCanvasElement,ctx=canvas.getContext('2d')!;
+   const text=[...oldLines,...lines][index].fullText,metrics=ctx.measureText(text);
+   return{index,text,fontPx:raster.fontPx,advancePx:raster.advancePx,
+    width:raster.canvasWidthPx,height:raster.canvasHeightPx,font:ctx.font,
+    baseline:ctx.textBaseline,align:ctx.textAlign,
+    metrics:{width:metrics.width,actualBoundingBoxLeft:metrics.actualBoundingBoxLeft,
+     actualBoundingBoxRight:metrics.actualBoundingBoxRight,actualBoundingBoxAscent:metrics.actualBoundingBoxAscent,
+     actualBoundingBoxDescent:metrics.actualBoundingBoxDescent},png:canvas.toDataURL('image/png')};
+  });
+ },
  unmountMounted:async()=>{root.unmount();await new Promise(r=>setTimeout(r,600));return{roots:_roots.size,queuedRafs:(window as any).queuedRafs.size}}});

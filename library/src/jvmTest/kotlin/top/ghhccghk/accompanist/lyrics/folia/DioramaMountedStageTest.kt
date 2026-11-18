@@ -16,7 +16,9 @@ import androidx.compose.ui.unit.*
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import com.mocharealm.accompanist.lyrics.core.model.synced.SyncedLine
 import top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama.*
+import top.ghhccghk.accompanist.lyrics.folia.internal.text.classicBodyRasterStyle
 import java.io.File
+import java.util.Base64
 import javax.imageio.ImageIO
 import kotlin.math.*
 import kotlin.test.*
@@ -62,6 +64,7 @@ class DioramaMountedStageTest {
                     seedName="Outgoing mirror",endTime=12.0)
                 val result=DioramaTextPlayback.prepare(core,style,measurer,resolver,width.toDouble(),600.0,
                     seedName="Incoming mirror",endTime=5.0,cut=old.cutAt(6.8,1))
+                if(width==380)exportMountedNeighborRasters(old,result,style,measurer,resolver)
                 controlPeak=0.0;widthPeak=0.0;stepCount=0
                 materialPeak=0.0;materialStates=0;envelopePeak=0.0
                 for((phase,playback) in listOf("outgoing" to old,"incoming" to result))for((local,line) in playback.lines.withIndex()) {
@@ -171,5 +174,31 @@ class DioramaMountedStageTest {
         runOnIdle{mounted=true};assertTrue(paused.contentEquals(pixels()))
         out.resolve("numeric-$width.txt").writeText("originalMountedSteps=$stepCount finiteStatePosePeak=$controlPeak widthPeak=$widthPeak gate=1e-9 adaptiveMediaPositionResidual=$mediaPeak\nFinite control reproduces original actual callback-width order with independently prepared core geometry; production media draws native analytic material without original RAF state injection\n")
         out.resolve("material-$width.txt").writeText("originalUnitStates=$materialStates materialPeak=$materialPeak sampledEnvelopePeak=$envelopePeak gate=1e-9\nOwn finite Float32 history/reset from core intervals, original wall breath and own camera life; no original material/pose values drive rendering.\n")
+    }
+
+    /** Export the independently prepared production rasters BEFORE projection.
+     * Original cached geometry is an assertion, never a drawing input. */
+    private fun exportMountedNeighborRasters(old:DioramaTextPlayback,incoming:DioramaTextPlayback,
+        style:TextStyle,measurer:TextMeasurer,resolver:FontFamily.Resolver) {
+        val expected=File("../verification/diorama-fixtures/mounted-raster-v1/rasters.tsv").readLines()
+            .filterNot{it.startsWith('#')||it.isBlank()}.map{it.split('\t')}
+        val out=File("../build/verification/diorama-mounted-raster-kotlin").apply{mkdirs()}
+        val lines=old.lines+incoming.lines
+        val records=expected.map { r ->
+            val index=r[0].toInt();val line=lines[index];val raster=line.neighbor
+            assertEquals(String(Base64.getDecoder().decode(r[5]),Charsets.UTF_8),line.core.lyric.text)
+            assertEquals(r[1].toInt(),raster.fontPx,"actual mounted cache font $index")
+            assertEquals(r[2].toInt(),raster.advancePx,"actual mounted cache advance $index")
+            assertEquals(r[3].toInt(),raster.image.width,"actual mounted cache width $index")
+            assertEquals(r[4].toInt(),raster.image.height,"actual mounted cache height $index")
+            ImageIO.write(raster.image.toAwtImage(),"png",out.resolve("cache-$index.png"))
+            val body=DioramaPlainText.prepare(line.core.lyric.text,classicBodyRasterStyle(style),measurer,resolver)
+            assertEquals(raster.advancePx,body.advancePx)
+            assertEquals(raster.middleBaseline,body.middleBaseline)
+            ImageIO.write(body.image.toAwtImage(),"png",out.resolve("body-style-cache-$index.png"))
+            listOf(index,raster.fontPx,raster.advancePx,raster.image.width,raster.image.height,
+                raster.padding,raster.middleBaseline,raster.hasTypographicMetrics).joinToString("\t")
+        }
+        out.resolve("rasters.tsv").writeText((listOf("# index fontPx advancePx width height padding middleBaseline hasTypographicMetrics")+records).joinToString("\n")+"\n")
     }
 }

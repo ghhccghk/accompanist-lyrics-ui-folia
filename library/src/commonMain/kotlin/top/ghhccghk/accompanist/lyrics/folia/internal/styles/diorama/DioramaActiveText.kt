@@ -33,7 +33,21 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         placement: DioramaPlacement, primary: DioramaLinearColor, accent: DioramaLinearColor,
         tuning: DioramaUnitTuning = DioramaUnitTuning(),
         keywords: Map<Int, DioramaLinearColor> = emptyMap(), life: Double = 1.0,
-        fog: DioramaFog? = null, toneMapping: DioramaToneMapping = DioramaToneMapping.None) = with(scope) {
+        fog: DioramaFog? = null, toneMapping: DioramaToneMapping = DioramaToneMapping.None) {
+        val states = slices.mapIndexed { i, slice ->
+            dioramaUnitFrame(time, slice.unit.start, slice.unit.end,
+                dioramaMediaEnvelope(time, slice.unit.start, slice.unit.end), primary, accent, tuning, keywords[i], life = life)
+        }
+        drawFrames(scope,view,frame,placement,states,fog,toneMapping)
+    }
+
+    /** Shared renderer for independently resolved material states. Media playback
+     * resolves analytic states above; finite source controls replay their OWN
+     * core clocks/history. Neither path re-rasterizes or changes shaping here. */
+    fun drawFrames(scope: DrawScope, view: DioramaPerspective, frame: DioramaFrame,
+        placement: DioramaPlacement, states: List<DioramaUnitFrame>, fog: DioramaFog? = null,
+        toneMapping: DioramaToneMapping = DioramaToneMapping.None) = with(scope) {
+        require(states.size==slices.size) { "One resolved frame per prepared text unit is required" }
         val fit = dioramaFrameFit(lineAdvance * .62 / 128, 5.2, view.fov, view.width / view.height) * placement.scale
         val unitScale = fit * .62 / 128
         val right = dioramaPlaneAxis(frame, placement, 1.0, 0.0)
@@ -42,10 +56,6 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         val x = right * unitScale
         val y = up * unitScale
         val center = dioramaComposeLocal(frame, placement.offsetR, placement.offsetU, 0.0)
-        val states = slices.mapIndexed { i, slice ->
-            dioramaUnitFrame(time, slice.unit.start, slice.unit.end,
-                dioramaMediaEnvelope(time, slice.unit.start, slice.unit.end), primary, accent, tuning, keywords[i], life = life)
-        }
         fun plane(slice: DioramaActiveSlice, image: ImageBitmap, alpha: Double, color: Color,
             depth: Double = 0.0, lift: Double = 0.0, scale: Double = 1.0, additive: Boolean = false) {
             val origin = center + x * (slice.centerPx + slice.imageOffsetPx * scale) + normal * (depth * fit) + up * (lift * fit) -

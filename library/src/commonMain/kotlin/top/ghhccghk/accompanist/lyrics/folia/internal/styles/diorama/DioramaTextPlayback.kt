@@ -105,7 +105,8 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
     fun drawStage(scope: DrawScope, time: Double, view: DioramaPerspective,
         primary: DioramaLinearColor, accent: DioramaLinearColor, secondary: DioramaLinearColor = primary,
         reducedMotion: Boolean = false, fog: DioramaFog? = null,
-        toneMapping: DioramaToneMapping = DioramaToneMapping.AcesFilmic) {
+        toneMapping: DioramaToneMapping = DioramaToneMapping.AcesFilmic,
+        activeFrames: List<DioramaUnitFrame>? = null) {
         val index=camera.subjectIndex(time);val s=camera.subjects[index]
         // Original neighbours are transparent, depthWrite=false and order0;
         // active layers have order17/18/19. With no opaque background geometry,
@@ -117,10 +118,13 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
                     neighbor.color.srgb(toneMapping),neighbor.opacity.toFloat(),fog)
             }
         }
-        val activeDelta=dioramaComposeLocal(s.frame,s.placement.offsetR,s.placement.offsetU,0.0)-view.eye
-        lines[index].text.draw(scope,time,view,s.frame,s.placement,
-            primary,accent,if(reducedMotion)DioramaUnitTuning(soul=0.0)else DioramaUnitTuning(),
-            life=dioramaTextLife(sqrt(activeDelta.dot(activeDelta))),fog=fog,toneMapping=toneMapping)
+        if(activeFrames!=null)lines[index].text.drawFrames(scope,view,s.frame,s.placement,activeFrames,fog,toneMapping)
+        else {
+            val activeDelta=dioramaComposeLocal(s.frame,s.placement.offsetR,s.placement.offsetU,0.0)-view.eye
+            lines[index].text.draw(scope,time,view,s.frame,s.placement,
+                primary,accent,if(reducedMotion)DioramaUnitTuning(soul=0.0)else DioramaUnitTuning(),
+                life=dioramaTextLife(sqrt(activeDelta.dot(activeDelta))),fog=fog,toneMapping=toneMapping)
+        }
     }
     companion object {
         fun prepare(core: SyncedLyrics, style: TextStyle, measurer: TextMeasurer,

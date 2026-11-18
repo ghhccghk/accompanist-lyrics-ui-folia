@@ -1,0 +1,44 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "browser": "151.0.7922.34",
+  "rendering": {
+    "@react-three/fiber": "9.8.1",
+    "@babel/runtime": "7.29.7",
+    "@types/webxr": "0.5.24",
+    "base64-js": "1.5.1",
+    "buffer": "6.0.3",
+    "its-fine": "2.1.1",
+    "react-use-measure": "2.1.7",
+    "scheduler": "0.28.0",
+    "suspend-react": "0.1.3",
+    "use-sync-external-store": "1.7.0",
+    "zustand": "5.0.15"
+  },
+  "sourceFrames": 48,
+  "originalIntervals": 4686,
+  "unitRows": 44,
+  "materialRows": 192,
+  "mountedManifestSha256": "5e7d1c9fe03fd6429ac0fc8f576b02afa8bd0d24bac11892287d02423da7e4d3",
+  "originalRawSha256": "15b0da76d5b60693182e322bae4299b776f5c053f0b3481838f1fa2fc7e9d53d",
+  "exporterSha256": "33934595b735b7a0c5cd4b7b0dc10adcc4bd9b14be01a9cf65f044acd8a7e999",
+  "sources": [
+    {
+      "file": "DioramaScene.tsx",
+      "sha256": "5c2cf760b0fc87084c2d85cad219e0c64bc761defcc51beb4b134328ec974f80"
+    },
+    {
+      "file": "dioramaSceneFrame.ts",
+      "sha256": "b116464bc42a052ba04ed53a17b2f9edc1c435363a20c8c0d010af1e9b1952f5"
+    },
+    {
+      "file": "dioramaSceneLayout.ts",
+      "sha256": "1d0ef0ee78535071b4d913a8e7cbb9e72ebb6822aec9b6f523c68b2920379338"
+    }
+  ],
+  "scope": "Exact existing 175dabe original CameraRig+Scene capture; 48 material/light/soul snapshots are exported from original mounted observations, also checked against retained raw callbacks. Units/timings are evaluated by actual pinned graphemeTiming/splitDioramaLyricUnits on original synthetic inputs, not native. No browser rerun/expected formula/native-state substitution. Independent native finite history will replay all4686 intervals and assert these192 observed unit states at1e-9."
+}

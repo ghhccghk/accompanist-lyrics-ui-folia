@@ -33,6 +33,11 @@ class DioramaMountedStageTest {
             .filterNot{it.startsWith('#')||it.isBlank()}.map{it.split('\t')}.filter{it[1].toInt()==width}
         val times=listOf(0.0,.7,1.6,2.099,2.1,3.199,3.2,3.201,3.499,3.5,4.5,4.6)
         val probes=rows.filter{it[0]=="incoming"&&it[3].toDouble() in times}
+        val originalMaterials=File("../verification/diorama-fixtures/mounted-material-v1/materials.tsv").readLines()
+            .filterNot{it.startsWith('#')||it.isBlank()}.map{it.split('\t')}.filter{it[0].toInt()==width}
+            .associateBy{"${it[1]}-${it[2].toDouble()}-${it[3]}"}
+        val originalUnits=File("../verification/diorama-fixtures/mounted-material-v1/units.tsv").readLines()
+            .filterNot{it.startsWith('#')||it.isBlank()}.map{it.split('\t')}
         fun core(n:Int,label:String)=SyncedLyrics((0 until n).map{SyncedLine("Synthetic $label line $it",null,700+it*1400,1500+it*1400)})
         val oldCore=core(8,"outgoing");val core=core(3,"incoming")
         fun color(hex:Int):DioramaLinearColor {
@@ -44,7 +49,9 @@ class DioramaMountedStageTest {
         var current by mutableIntStateOf(0);var method by mutableStateOf("finite");var mounted by mutableStateOf(true)
         var prepared:DioramaTextPlayback?=null;var drawn:DioramaPerspective?=null;var builds=0
         val finiteViews=mutableMapOf<String,DioramaPerspective>()
+        val finiteMaterials=mutableMapOf<String,List<DioramaUnitFrame>>()
         var controlPeak=0.0;var widthPeak=0.0;var stepCount=0
+        var materialPeak=0.0;var materialStates=0;var envelopePeak=0.0
         setContent {
             val resolver=LocalFontFamilyResolver.current
             val ready=if(mounted)remember {
@@ -56,8 +63,19 @@ class DioramaMountedStageTest {
                 val result=DioramaTextPlayback.prepare(core,style,measurer,resolver,width.toDouble(),600.0,
                     seedName="Incoming mirror",endTime=5.0,cut=old.cutAt(6.8,1))
                 controlPeak=0.0;widthPeak=0.0;stepCount=0
+                materialPeak=0.0;materialStates=0;envelopePeak=0.0
+                for((phase,playback) in listOf("outgoing" to old,"incoming" to result))for((local,line) in playback.lines.withIndex()) {
+                    val expected=originalUnits.filter { it[0]==phase && it[1].toInt()==local }
+                    assertEquals(expected.size,line.text.slices.size,"actual original display grouping")
+                    for((i,slice) in line.text.slices.withIndex()) {
+                        val u=expected[i];assertEquals(u[7],slice.unit.text)
+                        assertEquals(u[3].toInt(),slice.unit.charStart);assertEquals(u[4].toInt(),slice.unit.charEnd)
+                        assertEquals(u[5].toDouble(),slice.unit.start,1e-12);assertEquals(u[6].toDouble(),slice.unit.end,1e-12)
+                    }
+                }
                 for((fps,group)in rows.groupBy{it[2]}) {
                     var state=DioramaFollowState();var previousWidth=0.0;var lastWall=0.0;var flight:DioramaCameraFlight?=null
+                    var previousIndex=-1;var envelopes=emptyList<DioramaEnvelope>()
                     for(r in group) {
                         val time=r[3].toDouble();val wall=r[4].toDouble();val incoming=r[0]=="incoming"
                         val track=if(incoming)result.camera else old.camera
@@ -85,8 +103,34 @@ class DioramaMountedStageTest {
                             controlPeak=max(controlPeak,abs(r[12+i].toDouble()-v))
                             assertEquals(r[12+i].toDouble(),v,1e-9,"mounted source ${r.take(7)} field$i")
                         }
-                        if(incoming&&time in times)finiteViews["$fps-$time"]=DioramaPerspective(step.renderedPosition,state.look,
-                            width.toDouble(),600.0,orientation=visual)
+                        val active=(if(incoming)result else old).lines[subject.localIndex].text
+                        val globalIndex=if(incoming)8+subject.localIndex else subject.localIndex
+                        if(previousIndex!=globalIndex || envelopes.size!=active.slices.size) {
+                            envelopes=List(active.slices.size){DioramaEnvelope(0.0,0.0)};previousIndex=globalIndex
+                        }
+                        val distance=dioramaComposeLocal(subject.frame,subject.placement.offsetR,subject.placement.offsetU,0.0)-step.renderedPosition
+                        val life=dioramaTextLife(sqrt(distance.dot(distance)))
+                        val materials=active.slices.mapIndexed { i,slice ->
+                            dioramaUnitStep(time,slice.unit.start,slice.unit.end,r[5].toDouble(),envelopes[i],
+                                primary,accent,DioramaUnitTuning(),life=life,breath=.9+.1*sin(wall*1.9))
+                        }
+                        envelopes=materials.map{it.envelope}
+                        if(incoming&&time in times) {
+                            finiteViews["$fps-$time"]=DioramaPerspective(step.renderedPosition,state.look,
+                                width.toDouble(),600.0,orientation=visual)
+                            finiteMaterials["$fps-$time"]=materials
+                            for((i,m) in materials.withIndex()) {
+                                val expected=originalMaterials.getValue("$fps-$time-$i").drop(4).map{it.toDouble()}
+                                val actualMaterial=listOf(m.envelope.light,m.envelope.soul,m.fill.red,m.fill.green,m.fill.blue,
+                                    m.baseOpacity,m.glowOpacity,m.soulOpacity)
+                                for((j,value) in actualMaterial.withIndex()) {
+                                    val error=abs(expected[j]-value);materialPeak=max(materialPeak,error)
+                                    if(j<2)envelopePeak=max(envelopePeak,error)
+                                    assertEquals(expected[j],value,1e-9,"actual original material $fps $time unit$i field$j")
+                                }
+                                materialStates++
+                            }
+                        }
                         stepCount++
                     }
                 }
@@ -96,8 +140,9 @@ class DioramaMountedStageTest {
             val r=probes[current];val time=r[3].toDouble()
             Canvas(Modifier.fillMaxSize().background(Color(0xff162435))) {
                 if(ready!=null) {
-                    val view=if(method=="finite")finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time)
-                    drawn=view;ready.drawStage(this,time,view,primary,accent,secondary,fog=fog)
+                    val view=if(method!="media")finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time)
+                    drawn=view;ready.drawStage(this,time,view,primary,accent,secondary,fog=fog,
+                        activeFrames=if(method=="material")finiteMaterials.getValue("${r[2]}-$time")else null)
                 }
             }
         }
@@ -109,7 +154,10 @@ class DioramaMountedStageTest {
             val r=probes[i];val name="mounted-$width-${r[2]}-${(r[3].toDouble()*1000).roundToInt()}.png"
             assertSame(core.lines[r[6].toInt()-8],prepared!!.sourceAt(r[3].toDouble()).source)
             ImageIO.write(captureToImage().toAwtImage(),"png",out.resolve("finite-$name"))
-            val finite=drawn!!;runOnIdle{method="media"};val image=pixels()
+            val finite=drawn!!
+            runOnIdle{method="material"};pixels()
+            ImageIO.write(captureToImage().toAwtImage(),"png",out.resolve("material-$name"))
+            runOnIdle{method="media"};val image=pixels()
             media[r[3]]?.let{assertTrue(it.contentEquals(image),"source display schedule cannot affect media reconstruction")};media[r[3]]=image
             val d=drawn!!.eye-finite.eye;mediaPeak=maxOf(mediaPeak,abs(d.x),abs(d.y),abs(d.z))
             ImageIO.write(captureToImage().toAwtImage(),"png",out.resolve("media-$name"))
@@ -122,5 +170,6 @@ class DioramaMountedStageTest {
         runOnIdle{mounted=false};pixels();assertNull(prepared)
         runOnIdle{mounted=true};assertTrue(paused.contentEquals(pixels()))
         out.resolve("numeric-$width.txt").writeText("originalMountedSteps=$stepCount finiteStatePosePeak=$controlPeak widthPeak=$widthPeak gate=1e-9 adaptiveMediaPositionResidual=$mediaPeak\nFinite control reproduces original actual callback-width order with independently prepared core geometry; production media draws native analytic material without original RAF state injection\n")
+        out.resolve("material-$width.txt").writeText("originalUnitStates=$materialStates materialPeak=$materialPeak sampledEnvelopePeak=$envelopePeak gate=1e-9\nOwn finite Float32 history/reset from core intervals, original wall breath and own camera life; no original material/pose values drive rendering.\n")
     }
 }

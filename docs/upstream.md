@@ -1844,3 +1844,17 @@ direct-Three NoToneMapping oracles stay unchanged.960 actual shader framebuffer
 controls, failed initial/HDR cases,610 identical old PNG hashes and full mounted48
 same-union before/after with all regressions:verification/diorama-tonemapping.
 Not final visual/device acceptance; source RAF envelopes/breath and pose remain.
+
+### Diorama complete mounted finite material control (2026-11-18)
+Pinned DioramaScene.tsx:499–567 reset/Float32 arrays/wall breath and
+dioramaSceneFrame.ts:updateDioramaActiveUnits -> existing DioramaUnitFrame finite
+operator replayed on own core clocks in DioramaMountedStageTest. Original
+group/timing rows come from pinned graphemeTiming/buildLineGraphemeTimeline and
+dioramaSceneLayout/splitDioramaLyricUnits, expected snapshots from original
+175dabe mounted observations, not copied native results. Shared
+DioramaActiveText.drawFrames/TextPlayback internal seam keeps default analytic
+production path and all96 current PNG hashes unchanged; no new public API,
+source-state injection, dependency, asset or frame-accumulated production clock.
+44 grouping/timing and192 material states, gate1e-9, full48 same-union controls/
+all regressions:verification/diorama-mounted-materials. Source and old fixtures
+unchanged; finite success is not media/material visual equivalence.

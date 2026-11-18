@@ -16,10 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：在同一原mounted矩阵补独立core有限envelope/连续wall breath材质
-控制，分清有限历史材质、媒体重建与文字栅格残差；不向生产注入原输出或固定帧延迟。
-用户新增交付要求：当前修改完构建Android debug APK，检查产物并提供路径；不安装。
-ACES为历史下一项，已修：原Three shader960控制不透明峰147→0(门槛1)、混合/fog
+当前唯一下一项：补镜台媒体域辉光呼吸，明确phase锚点和暂停/seek/offset/cut/loop/
+reduced语义，替换当前breath1；复用原mounted48同union，不声称wall/RAF精确等价。
+用户新增交付要求：修改后刷新Android debug APK并检查，提供路径；不安装。
+同原mounted有限材质控制为历史下一项：44实际原分组/内部时钟一致，192原材料状态
+峰7.21e-12/1e-9，Float32包络零差；独立own-core重放4686区间，无原状态驱动绘制。
+四图同union有限解析/有限历史MAE6.937855→6.817019，局部同20.434397，30改善/
+6回退/12不变全部保留；生产96及旧direct610 PNG哈希不变。证据
+verification/diorama-mounted-materials，不是媒体相机/完整文字/设备视觉验收。
+c75652d已修ACES历史下一项：原Three shader960控制不透明峰147→0(门槛1)、混合/fog
 峰2(门槛2)；首修HDR提前截断峰106失败保留，修运算顺序而非放宽。原48PNG和
 4686 camera数值未变，610旧直接Three-policy PNG hash全不变；25定向JVM/
 Android库/Desktop编译及本地独立Maven JVM绘制/Android消费与归属打包通过。

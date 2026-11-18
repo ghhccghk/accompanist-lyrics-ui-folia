@@ -16,8 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。后来用户授权镜台调试入口，当前共八项，下述新结果取代入口限制。
 
-当前唯一下一项：构建并验签包含调试面板的Android debug，验证本地Maven独立消费；
-随后回到同48原矩阵3499ms媒体相机局部残差。不调整阈值、帧延迟或重采原图。
+当前唯一下一项：回到同48原矩阵3499ms媒体相机局部残差，先隔离原相机/本地
+媒体相机的投影贡献，再提出可证伪的最小修复；不调整阈值、帧延迟或重采原图。
+84f3bcb调试面板最新debug已构建/原证书双版本v1/v2验签/CRC/16KiB对齐/双ABI Rust/
+交付hash通过：build/deliverables/android/lyrics-ui-folia-debug-84f3bcb-20261118-194351.apk；
+SHA256 164b40662975f8c1688f0441a7a3b81c9bbe9cb1f7b5dbe81273ab84c2e9d228。
+未安装/传输；独立Maven两项JVM/Android消费及发布边界通过；见
+verification/android-debug/2026-11-18-render-debug-validation.json和
+verification/consumer/84f3bcb-validation.json。两项外部遗留hash不变。
+已提交：d504d4f Windows完整mip分段/就绪竞态修复；84f3bcb sample后端和帧回调诊断。
 示例后端／帧回调诊断已实现：真播放与演示默认关闭、实际/请求后端、窗口/density、
 FPS/耗时/间隔分位数/报告丢失、媒体和歌词诊断；不可见/卸载停用。4项统计/UI通过，
 真实D3D/OpenGL hook启停/清空/保留后来delegate通过，Android shared编译通过。

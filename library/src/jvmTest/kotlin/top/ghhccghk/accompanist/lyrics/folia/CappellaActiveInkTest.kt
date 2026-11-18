@@ -54,7 +54,8 @@ class CappellaActiveInkTest {
                     val measure=CappellaBubbleMeasure(measurer,base,Density(1f),config,resolver)
                     val paragraph=measure.layout(text)
                     val edges=graphemeBoundaries(text).sorted()
-                    val runs=cappellaInkRuns(paragraph,edges.zipWithNext().mapIndexed{i,(a,b)->CappellaInkGlyph(i,a,b)})
+                    val runs=cappellaInkRuns(paragraph,edges.zipWithNext().mapIndexed{i,(a,b)->CappellaInkGlyph(i,a,b)},
+                        cappellaInkClusters(text,measure.style,resolver,Density(1f)))
                     assertTrue(runs.isNotEmpty())
                     for(x in -50..(paragraph.size.width+50)) {
                         assertEquals(1,runs.count{(it.left==null||x>=it.left)&&(it.right==null||x<it.right)},"disjoint whole-ink ownership $name/$x")

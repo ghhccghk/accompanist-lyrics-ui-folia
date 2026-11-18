@@ -1737,3 +1737,17 @@ original character/CSS observations,15 uniform controls/transformed coverage,
 source visual and240 dense unchanged geometry: verification/cappella-active-ink.
 Early shared-fi CSS opacity/raster difference and22.188593px layout residual
 remain; not final source/Android/performance acceptance.
+
+### Cappella shared shaping-cluster paint ownership (2026-11-18)
+Pinned CappellaBubbleParts.tsx:133–159 inline EGC spans -> CappellaInkClusters.kt,
+platform metadata adapters, CappellaInk.kt and CappellaBubble.kt. Independent
+original24 span-paint controls prove first-logical-EGC ownership of fi/ffi/ffl/
+RTL lam-alef, while all reveal times/counts remain. Whole-row paint unchanged;
+only shared cluster ownership replaces caret splitting. Existing Skia public
+Shaper/RunHandler and Android API29+ Paint advances provide source ranges, not
+per-glyph drawing; no source engine/dependency/resource copied. Below29 and
+unverified font metadata retain caret behavior and remain pending parity work.
+Original30 matrix reused, all-alpha union comparison and retained failed controls:
+verification/cappella-cluster-ink. The earlier shared-fi report is historical
+for these verified cases; dense projection/raster/device/whole-theme acceptance
+remain unresolved. Android behavior is compile-only in this work.

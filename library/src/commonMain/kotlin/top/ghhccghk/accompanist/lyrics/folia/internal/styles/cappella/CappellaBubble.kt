@@ -142,7 +142,7 @@ internal fun CappellaBubbleTarget(line: CappellaLine, time: () -> Double, textSt
         if(!active||reducedMotion)emptyList() else rows.map { (start,end,paragraph) ->
             cappellaInkRuns(paragraph,edges.zipWithNext().mapIndexedNotNull { i,(a,b) ->
                 if(a<start||a>=end)null else CappellaInkGlyph(i,a-start,min(b,end)-start)
-            })
+            },cappellaInkClusters(paragraph.layoutInput.text.text,measure.style,resolver,density))
         }
     }
     val shadows=remember(width,height,density,right,active,decoration) {

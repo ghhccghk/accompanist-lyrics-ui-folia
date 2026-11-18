@@ -1,0 +1,892 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "browser": "151.0.7922.34",
+  "viewport": [
+    800,
+    300
+  ],
+  "DPR": 1,
+  "fontPx": 64,
+  "lineHeight": 92.8,
+  "padding": [
+    16,
+    20
+  ],
+  "border": 1,
+  "source": {
+    "file": "src/components/visualizer/cappella/CappellaBubbleParts.tsx",
+    "sha256": "4be2fabfe5fb48ef358551441fade413ecf63ee66efdaf553a9c4cc881ca184a"
+  },
+  "host": {
+    "file": "verification/classic-browser/cappella-cluster-ink.tsx",
+    "sha256": "1e38f4947e2d32fe555f061f4fdc83cdef9d1044111500358430c9e1466ff7ae"
+  },
+  "locks": [
+    {
+      "file": "verification/classic-browser/pnpm-lock.yaml",
+      "sha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad"
+    },
+    {
+      "file": ".work/folia-major/package-lock.json",
+      "sha256": "ce30669b1acca119cc886133166dd872f8eeb3b9d05edb8c193e4d18e3b2a000"
+    }
+  ],
+  "fonts": [
+    {
+      "name": "FoliaParityLatin-Bold.ttf",
+      "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+    },
+    {
+      "name": "FoliaParityBidi-Bold.ttf",
+      "sha256": "e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699"
+    }
+  ],
+  "observations": [
+    {
+      "file": "fi-all.png",
+      "name": "fi",
+      "text": "fi",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": -1,
+      "characters": [
+        "f",
+        "i"
+      ],
+      "opacities": [
+        1,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          44.296875,
+          87
+        ],
+        [
+          65.296875,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "6097a0ce613e103fac9f3c4590b8cf8a6d0a64ba6b31b4ff4ad072bcba52e6e8"
+    },
+    {
+      "file": "fi-0.png",
+      "name": "fi",
+      "text": "fi",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": 0,
+      "characters": [
+        "f",
+        "i"
+      ],
+      "opacities": [
+        1,
+        0
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          44.296875,
+          87
+        ],
+        [
+          65.296875,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "6097a0ce613e103fac9f3c4590b8cf8a6d0a64ba6b31b4ff4ad072bcba52e6e8"
+    },
+    {
+      "file": "fi-1.png",
+      "name": "fi",
+      "text": "fi",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": 1,
+      "characters": [
+        "f",
+        "i"
+      ],
+      "opacities": [
+        0,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          44.296875,
+          87
+        ],
+        [
+          65.296875,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+    },
+    {
+      "file": "fi-italic-all.png",
+      "name": "fi-italic",
+      "text": "fi",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": true,
+      "owner": -1,
+      "characters": [
+        "f",
+        "i"
+      ],
+      "opacities": [
+        1,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          44.296875,
+          87
+        ],
+        [
+          65.296875,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "b69276ac0e55a045e100f1afc747560c988bcb397d020838028c20b5dae1feae"
+    },
+    {
+      "file": "fi-italic-0.png",
+      "name": "fi-italic",
+      "text": "fi",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": true,
+      "owner": 0,
+      "characters": [
+        "f",
+        "i"
+      ],
+      "opacities": [
+        1,
+        0
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          44.296875,
+          87
+        ],
+        [
+          65.296875,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "b69276ac0e55a045e100f1afc747560c988bcb397d020838028c20b5dae1feae"
+    },
+    {
+      "file": "fi-italic-1.png",
+      "name": "fi-italic",
+      "text": "fi",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": true,
+      "owner": 1,
+      "characters": [
+        "f",
+        "i"
+      ],
+      "opacities": [
+        0,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          44.296875,
+          87
+        ],
+        [
+          65.296875,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+    },
+    {
+      "file": "ffi-all.png",
+      "name": "ffi",
+      "text": "ffi",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": -1,
+      "characters": [
+        "f",
+        "f",
+        "i"
+      ],
+      "opacities": [
+        1,
+        1,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          69.0625,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "479c50b243c70237b642576d8bb74167880fba07218481dcb85691528f657589"
+    },
+    {
+      "file": "ffi-0.png",
+      "name": "ffi",
+      "text": "ffi",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": 0,
+      "characters": [
+        "f",
+        "f",
+        "i"
+      ],
+      "opacities": [
+        1,
+        0,
+        0
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          69.0625,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "479c50b243c70237b642576d8bb74167880fba07218481dcb85691528f657589"
+    },
+    {
+      "file": "ffi-1.png",
+      "name": "ffi",
+      "text": "ffi",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": 1,
+      "characters": [
+        "f",
+        "f",
+        "i"
+      ],
+      "opacities": [
+        0,
+        1,
+        0
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          69.0625,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+    },
+    {
+      "file": "ffi-2.png",
+      "name": "ffi",
+      "text": "ffi",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": 2,
+      "characters": [
+        "f",
+        "f",
+        "i"
+      ],
+      "opacities": [
+        0,
+        0,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          69.0625,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+    },
+    {
+      "file": "ffl-all.png",
+      "name": "ffl",
+      "text": "ffl",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": -1,
+      "characters": [
+        "f",
+        "f",
+        "l"
+      ],
+      "opacities": [
+        1,
+        1,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          69.0625,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "0ab3a7a89ff05050f2d7aa857a58121e69c700fdcb3b2ea913bac8aeabd96d17"
+    },
+    {
+      "file": "ffl-0.png",
+      "name": "ffl",
+      "text": "ffl",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": 0,
+      "characters": [
+        "f",
+        "f",
+        "l"
+      ],
+      "opacities": [
+        1,
+        0,
+        0
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          69.0625,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "0ab3a7a89ff05050f2d7aa857a58121e69c700fdcb3b2ea913bac8aeabd96d17"
+    },
+    {
+      "file": "ffl-1.png",
+      "name": "ffl",
+      "text": "ffl",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": 1,
+      "characters": [
+        "f",
+        "f",
+        "l"
+      ],
+      "opacities": [
+        0,
+        1,
+        0
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          69.0625,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+    },
+    {
+      "file": "ffl-2.png",
+      "name": "ffl",
+      "text": "ffl",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": 2,
+      "characters": [
+        "f",
+        "f",
+        "l"
+      ],
+      "opacities": [
+        0,
+        0,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          69.0625,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ],
+        [
+          90.0625,
+          19,
+          0,
+          87
+        ]
+      ],
+      "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+    },
+    {
+      "file": "lam-alef-all.png",
+      "name": "lam-alef",
+      "text": "لا",
+      "font": "FoliaParityBidi-Bold.ttf",
+      "italic": false,
+      "owner": -1,
+      "characters": [
+        "ل",
+        "ا"
+      ],
+      "opacities": [
+        1,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          -5,
+          40.453125,
+          135
+        ],
+        [
+          21,
+          -5,
+          0,
+          135
+        ]
+      ],
+      "sha256": "2a9fc048a1f3981edadd7d01c4f2d77bc45f2cff687c67609bd3c15f746f65d6"
+    },
+    {
+      "file": "lam-alef-0.png",
+      "name": "lam-alef",
+      "text": "لا",
+      "font": "FoliaParityBidi-Bold.ttf",
+      "italic": false,
+      "owner": 0,
+      "characters": [
+        "ل",
+        "ا"
+      ],
+      "opacities": [
+        1,
+        0
+      ],
+      "rects": [
+        [
+          21,
+          -5,
+          40.453125,
+          135
+        ],
+        [
+          21,
+          -5,
+          0,
+          135
+        ]
+      ],
+      "sha256": "2a9fc048a1f3981edadd7d01c4f2d77bc45f2cff687c67609bd3c15f746f65d6"
+    },
+    {
+      "file": "lam-alef-1.png",
+      "name": "lam-alef",
+      "text": "لا",
+      "font": "FoliaParityBidi-Bold.ttf",
+      "italic": false,
+      "owner": 1,
+      "characters": [
+        "ل",
+        "ا"
+      ],
+      "opacities": [
+        0,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          -5,
+          40.453125,
+          135
+        ],
+        [
+          21,
+          -5,
+          0,
+          135
+        ]
+      ],
+      "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+    },
+    {
+      "file": "latin-separate-all.png",
+      "name": "latin-separate",
+      "text": "fj",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": -1,
+      "characters": [
+        "f",
+        "j"
+      ],
+      "opacities": [
+        1,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          24.78125,
+          87
+        ],
+        [
+          45.78125,
+          19,
+          19.53125,
+          87
+        ]
+      ],
+      "sha256": "66c45ac0807221edaa8cbf1029deed1dde03b06e8b27957ee33973b670598bd1"
+    },
+    {
+      "file": "latin-separate-0.png",
+      "name": "latin-separate",
+      "text": "fj",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": 0,
+      "characters": [
+        "f",
+        "j"
+      ],
+      "opacities": [
+        1,
+        0
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          24.78125,
+          87
+        ],
+        [
+          45.78125,
+          19,
+          19.53125,
+          87
+        ]
+      ],
+      "sha256": "e8a45e6679acc7bcdc4abb58173972643f7d7c5167c816efae2f86f2bff32272"
+    },
+    {
+      "file": "latin-separate-1.png",
+      "name": "latin-separate",
+      "text": "fj",
+      "font": "FoliaParityLatin-Bold.ttf",
+      "italic": false,
+      "owner": 1,
+      "characters": [
+        "f",
+        "j"
+      ],
+      "opacities": [
+        0,
+        1
+      ],
+      "rects": [
+        [
+          21,
+          19,
+          24.78125,
+          87
+        ],
+        [
+          45.78125,
+          19,
+          19.53125,
+          87
+        ]
+      ],
+      "sha256": "245933ea28018c394af1c05a3f654f53fcde06acb70953c9a3045dc09487b6be"
+    },
+    {
+      "file": "arabic-separate-all.png",
+      "name": "arabic-separate",
+      "text": "مرح",
+      "font": "FoliaParityBidi-Bold.ttf",
+      "italic": false,
+      "owner": -1,
+      "characters": [
+        "م",
+        "ر",
+        "ح"
+      ],
+      "opacities": [
+        1,
+        1,
+        1
+      ],
+      "rects": [
+        [
+          93.78125,
+          -5,
+          37.25,
+          135
+        ],
+        [
+          64.96875,
+          -5,
+          28.8125,
+          135
+        ],
+        [
+          21,
+          -5,
+          43.96875,
+          135
+        ]
+      ],
+      "sha256": "dc3ee3f7f9f590766b6fc2d2881f90dfd3f48aa329b28cb9996de8167d8a0f5d"
+    },
+    {
+      "file": "arabic-separate-0.png",
+      "name": "arabic-separate",
+      "text": "مرح",
+      "font": "FoliaParityBidi-Bold.ttf",
+      "italic": false,
+      "owner": 0,
+      "characters": [
+        "م",
+        "ر",
+        "ح"
+      ],
+      "opacities": [
+        1,
+        0,
+        0
+      ],
+      "rects": [
+        [
+          93.78125,
+          -5,
+          37.25,
+          135
+        ],
+        [
+          64.96875,
+          -5,
+          28.8125,
+          135
+        ],
+        [
+          21,
+          -5,
+          43.96875,
+          135
+        ]
+      ],
+      "sha256": "d301a1e8555164ae5a7b6b2a29c270188dba611e567ce9763c6ef065fab57be3"
+    },
+    {
+      "file": "arabic-separate-1.png",
+      "name": "arabic-separate",
+      "text": "مرح",
+      "font": "FoliaParityBidi-Bold.ttf",
+      "italic": false,
+      "owner": 1,
+      "characters": [
+        "م",
+        "ر",
+        "ح"
+      ],
+      "opacities": [
+        0,
+        1,
+        0
+      ],
+      "rects": [
+        [
+          93.78125,
+          -5,
+          37.25,
+          135
+        ],
+        [
+          64.96875,
+          -5,
+          28.8125,
+          135
+        ],
+        [
+          21,
+          -5,
+          43.96875,
+          135
+        ]
+      ],
+      "sha256": "3da4610dcaac3381583aba99ae3c18a3ab8d303d9aa7d28698de85d94ec2ee1e"
+    },
+    {
+      "file": "arabic-separate-2.png",
+      "name": "arabic-separate",
+      "text": "مرح",
+      "font": "FoliaParityBidi-Bold.ttf",
+      "italic": false,
+      "owner": 2,
+      "characters": [
+        "م",
+        "ر",
+        "ح"
+      ],
+      "opacities": [
+        0,
+        0,
+        1
+      ],
+      "rects": [
+        [
+          93.78125,
+          -5,
+          37.25,
+          135
+        ],
+        [
+          64.96875,
+          -5,
+          28.8125,
+          135
+        ],
+        [
+          21,
+          -5,
+          43.96875,
+          135
+        ]
+      ],
+      "sha256": "3c0512c2a09f97059784839baf75d17b29b87ccd2021839775427865e27779bb"
+    }
+  ],
+  "scope": "Unmodified original ActiveCappellaText, all EGCs mounted. Only original CSS animation currentTime is paused at opaque/transparent endpoints to isolate each original span paint. This is cluster-ownership evidence, not natural playback or full-stage acceptance."
+}

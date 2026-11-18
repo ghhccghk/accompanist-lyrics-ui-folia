@@ -1,0 +1,1839 @@
+{
+  "sourceConditions": {
+    "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+    "motion": {
+      "framer-motion": "13.4.3",
+      "motion-dom": "13.4.2",
+      "motion-utils": "13.3.0"
+    },
+    "browser": "151.0.7922.34",
+    "viewport": [
+      800,
+      300
+    ],
+    "DPR": 1,
+    "fontPx": 64,
+    "lineHeight": 92.8,
+    "padding": [
+      16,
+      20
+    ],
+    "border": 1,
+    "source": {
+      "file": "src/components/visualizer/cappella/CappellaBubbleParts.tsx",
+      "sha256": "4be2fabfe5fb48ef358551441fade413ecf63ee66efdaf553a9c4cc881ca184a"
+    },
+    "host": {
+      "file": "verification/classic-browser/cappella-cluster-ink.tsx",
+      "sha256": "1e38f4947e2d32fe555f061f4fdc83cdef9d1044111500358430c9e1466ff7ae"
+    },
+    "locks": [
+      {
+        "file": "verification/classic-browser/pnpm-lock.yaml",
+        "sha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad"
+      },
+      {
+        "file": ".work/folia-major/package-lock.json",
+        "sha256": "ce30669b1acca119cc886133166dd872f8eeb3b9d05edb8c193e4d18e3b2a000"
+      }
+    ],
+    "fonts": [
+      {
+        "name": "FoliaParityLatin-Bold.ttf",
+        "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+      },
+      {
+        "name": "FoliaParityBidi-Bold.ttf",
+        "sha256": "e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699"
+      }
+    ],
+    "observations": [
+      {
+        "file": "fi-all.png",
+        "name": "fi",
+        "text": "fi",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": -1,
+        "characters": [
+          "f",
+          "i"
+        ],
+        "opacities": [
+          1,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            44.296875,
+            87
+          ],
+          [
+            65.296875,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "6097a0ce613e103fac9f3c4590b8cf8a6d0a64ba6b31b4ff4ad072bcba52e6e8"
+      },
+      {
+        "file": "fi-0.png",
+        "name": "fi",
+        "text": "fi",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": 0,
+        "characters": [
+          "f",
+          "i"
+        ],
+        "opacities": [
+          1,
+          0
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            44.296875,
+            87
+          ],
+          [
+            65.296875,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "6097a0ce613e103fac9f3c4590b8cf8a6d0a64ba6b31b4ff4ad072bcba52e6e8"
+      },
+      {
+        "file": "fi-1.png",
+        "name": "fi",
+        "text": "fi",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": 1,
+        "characters": [
+          "f",
+          "i"
+        ],
+        "opacities": [
+          0,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            44.296875,
+            87
+          ],
+          [
+            65.296875,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+      },
+      {
+        "file": "fi-italic-all.png",
+        "name": "fi-italic",
+        "text": "fi",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": true,
+        "owner": -1,
+        "characters": [
+          "f",
+          "i"
+        ],
+        "opacities": [
+          1,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            44.296875,
+            87
+          ],
+          [
+            65.296875,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "b69276ac0e55a045e100f1afc747560c988bcb397d020838028c20b5dae1feae"
+      },
+      {
+        "file": "fi-italic-0.png",
+        "name": "fi-italic",
+        "text": "fi",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": true,
+        "owner": 0,
+        "characters": [
+          "f",
+          "i"
+        ],
+        "opacities": [
+          1,
+          0
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            44.296875,
+            87
+          ],
+          [
+            65.296875,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "b69276ac0e55a045e100f1afc747560c988bcb397d020838028c20b5dae1feae"
+      },
+      {
+        "file": "fi-italic-1.png",
+        "name": "fi-italic",
+        "text": "fi",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": true,
+        "owner": 1,
+        "characters": [
+          "f",
+          "i"
+        ],
+        "opacities": [
+          0,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            44.296875,
+            87
+          ],
+          [
+            65.296875,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+      },
+      {
+        "file": "ffi-all.png",
+        "name": "ffi",
+        "text": "ffi",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": -1,
+        "characters": [
+          "f",
+          "f",
+          "i"
+        ],
+        "opacities": [
+          1,
+          1,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            69.0625,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "479c50b243c70237b642576d8bb74167880fba07218481dcb85691528f657589"
+      },
+      {
+        "file": "ffi-0.png",
+        "name": "ffi",
+        "text": "ffi",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": 0,
+        "characters": [
+          "f",
+          "f",
+          "i"
+        ],
+        "opacities": [
+          1,
+          0,
+          0
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            69.0625,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "479c50b243c70237b642576d8bb74167880fba07218481dcb85691528f657589"
+      },
+      {
+        "file": "ffi-1.png",
+        "name": "ffi",
+        "text": "ffi",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": 1,
+        "characters": [
+          "f",
+          "f",
+          "i"
+        ],
+        "opacities": [
+          0,
+          1,
+          0
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            69.0625,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+      },
+      {
+        "file": "ffi-2.png",
+        "name": "ffi",
+        "text": "ffi",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": 2,
+        "characters": [
+          "f",
+          "f",
+          "i"
+        ],
+        "opacities": [
+          0,
+          0,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            69.0625,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+      },
+      {
+        "file": "ffl-all.png",
+        "name": "ffl",
+        "text": "ffl",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": -1,
+        "characters": [
+          "f",
+          "f",
+          "l"
+        ],
+        "opacities": [
+          1,
+          1,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            69.0625,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "0ab3a7a89ff05050f2d7aa857a58121e69c700fdcb3b2ea913bac8aeabd96d17"
+      },
+      {
+        "file": "ffl-0.png",
+        "name": "ffl",
+        "text": "ffl",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": 0,
+        "characters": [
+          "f",
+          "f",
+          "l"
+        ],
+        "opacities": [
+          1,
+          0,
+          0
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            69.0625,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "0ab3a7a89ff05050f2d7aa857a58121e69c700fdcb3b2ea913bac8aeabd96d17"
+      },
+      {
+        "file": "ffl-1.png",
+        "name": "ffl",
+        "text": "ffl",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": 1,
+        "characters": [
+          "f",
+          "f",
+          "l"
+        ],
+        "opacities": [
+          0,
+          1,
+          0
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            69.0625,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+      },
+      {
+        "file": "ffl-2.png",
+        "name": "ffl",
+        "text": "ffl",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": 2,
+        "characters": [
+          "f",
+          "f",
+          "l"
+        ],
+        "opacities": [
+          0,
+          0,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            69.0625,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ],
+          [
+            90.0625,
+            19,
+            0,
+            87
+          ]
+        ],
+        "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+      },
+      {
+        "file": "lam-alef-all.png",
+        "name": "lam-alef",
+        "text": "لا",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "owner": -1,
+        "characters": [
+          "ل",
+          "ا"
+        ],
+        "opacities": [
+          1,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            -5,
+            40.453125,
+            135
+          ],
+          [
+            21,
+            -5,
+            0,
+            135
+          ]
+        ],
+        "sha256": "2a9fc048a1f3981edadd7d01c4f2d77bc45f2cff687c67609bd3c15f746f65d6"
+      },
+      {
+        "file": "lam-alef-0.png",
+        "name": "lam-alef",
+        "text": "لا",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "owner": 0,
+        "characters": [
+          "ل",
+          "ا"
+        ],
+        "opacities": [
+          1,
+          0
+        ],
+        "rects": [
+          [
+            21,
+            -5,
+            40.453125,
+            135
+          ],
+          [
+            21,
+            -5,
+            0,
+            135
+          ]
+        ],
+        "sha256": "2a9fc048a1f3981edadd7d01c4f2d77bc45f2cff687c67609bd3c15f746f65d6"
+      },
+      {
+        "file": "lam-alef-1.png",
+        "name": "lam-alef",
+        "text": "لا",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "owner": 1,
+        "characters": [
+          "ل",
+          "ا"
+        ],
+        "opacities": [
+          0,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            -5,
+            40.453125,
+            135
+          ],
+          [
+            21,
+            -5,
+            0,
+            135
+          ]
+        ],
+        "sha256": "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f"
+      },
+      {
+        "file": "latin-separate-all.png",
+        "name": "latin-separate",
+        "text": "fj",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": -1,
+        "characters": [
+          "f",
+          "j"
+        ],
+        "opacities": [
+          1,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            24.78125,
+            87
+          ],
+          [
+            45.78125,
+            19,
+            19.53125,
+            87
+          ]
+        ],
+        "sha256": "66c45ac0807221edaa8cbf1029deed1dde03b06e8b27957ee33973b670598bd1"
+      },
+      {
+        "file": "latin-separate-0.png",
+        "name": "latin-separate",
+        "text": "fj",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": 0,
+        "characters": [
+          "f",
+          "j"
+        ],
+        "opacities": [
+          1,
+          0
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            24.78125,
+            87
+          ],
+          [
+            45.78125,
+            19,
+            19.53125,
+            87
+          ]
+        ],
+        "sha256": "e8a45e6679acc7bcdc4abb58173972643f7d7c5167c816efae2f86f2bff32272"
+      },
+      {
+        "file": "latin-separate-1.png",
+        "name": "latin-separate",
+        "text": "fj",
+        "font": "FoliaParityLatin-Bold.ttf",
+        "italic": false,
+        "owner": 1,
+        "characters": [
+          "f",
+          "j"
+        ],
+        "opacities": [
+          0,
+          1
+        ],
+        "rects": [
+          [
+            21,
+            19,
+            24.78125,
+            87
+          ],
+          [
+            45.78125,
+            19,
+            19.53125,
+            87
+          ]
+        ],
+        "sha256": "245933ea28018c394af1c05a3f654f53fcde06acb70953c9a3045dc09487b6be"
+      },
+      {
+        "file": "arabic-separate-all.png",
+        "name": "arabic-separate",
+        "text": "مرح",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "owner": -1,
+        "characters": [
+          "م",
+          "ر",
+          "ح"
+        ],
+        "opacities": [
+          1,
+          1,
+          1
+        ],
+        "rects": [
+          [
+            93.78125,
+            -5,
+            37.25,
+            135
+          ],
+          [
+            64.96875,
+            -5,
+            28.8125,
+            135
+          ],
+          [
+            21,
+            -5,
+            43.96875,
+            135
+          ]
+        ],
+        "sha256": "dc3ee3f7f9f590766b6fc2d2881f90dfd3f48aa329b28cb9996de8167d8a0f5d"
+      },
+      {
+        "file": "arabic-separate-0.png",
+        "name": "arabic-separate",
+        "text": "مرح",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "owner": 0,
+        "characters": [
+          "م",
+          "ر",
+          "ح"
+        ],
+        "opacities": [
+          1,
+          0,
+          0
+        ],
+        "rects": [
+          [
+            93.78125,
+            -5,
+            37.25,
+            135
+          ],
+          [
+            64.96875,
+            -5,
+            28.8125,
+            135
+          ],
+          [
+            21,
+            -5,
+            43.96875,
+            135
+          ]
+        ],
+        "sha256": "d301a1e8555164ae5a7b6b2a29c270188dba611e567ce9763c6ef065fab57be3"
+      },
+      {
+        "file": "arabic-separate-1.png",
+        "name": "arabic-separate",
+        "text": "مرح",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "owner": 1,
+        "characters": [
+          "م",
+          "ر",
+          "ح"
+        ],
+        "opacities": [
+          0,
+          1,
+          0
+        ],
+        "rects": [
+          [
+            93.78125,
+            -5,
+            37.25,
+            135
+          ],
+          [
+            64.96875,
+            -5,
+            28.8125,
+            135
+          ],
+          [
+            21,
+            -5,
+            43.96875,
+            135
+          ]
+        ],
+        "sha256": "3da4610dcaac3381583aba99ae3c18a3ab8d303d9aa7d28698de85d94ec2ee1e"
+      },
+      {
+        "file": "arabic-separate-2.png",
+        "name": "arabic-separate",
+        "text": "مرح",
+        "font": "FoliaParityBidi-Bold.ttf",
+        "italic": false,
+        "owner": 2,
+        "characters": [
+          "م",
+          "ر",
+          "ح"
+        ],
+        "opacities": [
+          0,
+          0,
+          1
+        ],
+        "rects": [
+          [
+            93.78125,
+            -5,
+            37.25,
+            135
+          ],
+          [
+            64.96875,
+            -5,
+            28.8125,
+            135
+          ],
+          [
+            21,
+            -5,
+            43.96875,
+            135
+          ]
+        ],
+        "sha256": "3c0512c2a09f97059784839baf75d17b29b87ccd2021839775427865e27779bb"
+      }
+    ],
+    "scope": "Unmodified original ActiveCappellaText, all EGCs mounted. Only original CSS animation currentTime is paused at opaque/transparent endpoints to isolate each original span paint. This is cluster-ownership evidence, not natural playback or full-stage acceptance."
+  },
+  "activeSourceConditionsSHA256": "f9795e8f7344bc2ff894bd5f844daf9ecb76d5dd6096a3119ffac4d40e698305",
+  "comparison": "Same original/before/after union of every nonzero-alpha pixel; premultiplied RGBA; no fitting, discarded pixels or phase changes.",
+  "controls": [
+    {
+      "file": "fi-all.png",
+      "hashes": [
+        "6097a0ce613e103fac9f3c4590b8cf8a6d0a64ba6b31b4ff4ad072bcba52e6e8",
+        "2a8c7e664a994cf090b07dac63e4a328400e3c71f2aab5612dbe58322db99288",
+        "2a8c7e664a994cf090b07dac63e4a328400e3c71f2aab5612dbe58322db99288"
+      ],
+      "unionPixels": 1193,
+      "before": {
+        "MAE": 7.279966471081307,
+        "worst64": 8.909090909090908
+      },
+      "after": {
+        "MAE": 7.279966471081307,
+        "worst64": 8.909090909090908
+      }
+    },
+    {
+      "file": "fi-0.png",
+      "hashes": [
+        "6097a0ce613e103fac9f3c4590b8cf8a6d0a64ba6b31b4ff4ad072bcba52e6e8",
+        "baa5b0f3e4b5461cde12c41e3ccad10d35f488d22f8242721a0181a5ad809208",
+        "2a8c7e664a994cf090b07dac63e4a328400e3c71f2aab5612dbe58322db99288"
+      ],
+      "unionPixels": 1193,
+      "before": {
+        "MAE": 110.85498742665548,
+        "worst64": 123.95454545454545
+      },
+      "after": {
+        "MAE": 7.279966471081307,
+        "worst64": 8.909090909090908
+      }
+    },
+    {
+      "file": "fi-1.png",
+      "hashes": [
+        "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f",
+        "91e8baa4ba8182c87eab47b86036fbc494e7e7ab1e36eb6db01efe6f253acea9",
+        "21a58561b27b1d036f9a6a625a96714e16be6b562967062cec8458b26b497d96"
+      ],
+      "unionPixels": 538,
+      "before": {
+        "MAE": 229.92379182156134,
+        "worst64": 230.0909090909091
+      },
+      "after": {
+        "MAE": 0.0,
+        "worst64": 0.0
+      }
+    },
+    {
+      "file": "fi-italic-all.png",
+      "hashes": [
+        "b69276ac0e55a045e100f1afc747560c988bcb397d020838028c20b5dae1feae",
+        "3bc4bc3cac63062799f5458a8e6a5b3a92ff1bb812ebec8e0353591bb659c2ca",
+        "3bc4bc3cac63062799f5458a8e6a5b3a92ff1bb812ebec8e0353591bb659c2ca"
+      ],
+      "unionPixels": 1218,
+      "before": {
+        "MAE": 6.700328407224959,
+        "worst64": 21.333333333333332
+      },
+      "after": {
+        "MAE": 6.700328407224959,
+        "worst64": 21.333333333333332
+      }
+    },
+    {
+      "file": "fi-italic-0.png",
+      "hashes": [
+        "b69276ac0e55a045e100f1afc747560c988bcb397d020838028c20b5dae1feae",
+        "ec086b8e02172dc3ef9f2e60e116d5b777af2b4cc87a2a1f4be2c7c0c67ceacd",
+        "3bc4bc3cac63062799f5458a8e6a5b3a92ff1bb812ebec8e0353591bb659c2ca"
+      ],
+      "unionPixels": 1218,
+      "before": {
+        "MAE": 143.16830870279145,
+        "worst64": 223.25984251968504
+      },
+      "after": {
+        "MAE": 6.700328407224959,
+        "worst64": 21.333333333333332
+      }
+    },
+    {
+      "file": "fi-italic-1.png",
+      "hashes": [
+        "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f",
+        "68b3ce80b0cb986064fcf4013989916e04a74a867c9afc4cf70c2d071e51591b",
+        "21a58561b27b1d036f9a6a625a96714e16be6b562967062cec8458b26b497d96"
+      ],
+      "unionPixels": 702,
+      "before": {
+        "MAE": 237.92592592592592,
+        "worst64": 241.4061135371179
+      },
+      "after": {
+        "MAE": 0.0,
+        "worst64": 0.0
+      }
+    },
+    {
+      "file": "ffi-all.png",
+      "hashes": [
+        "479c50b243c70237b642576d8bb74167880fba07218481dcb85691528f657589",
+        "9584e0c93d2e496f672b79bc2d9c02f6f59f5a1723e57325441e45573a871d6b",
+        "9584e0c93d2e496f672b79bc2d9c02f6f59f5a1723e57325441e45573a871d6b"
+      ],
+      "unionPixels": 1914,
+      "before": {
+        "MAE": 8.60501567398119,
+        "worst64": 13.636363636363637
+      },
+      "after": {
+        "MAE": 8.60501567398119,
+        "worst64": 13.636363636363637
+      }
+    },
+    {
+      "file": "ffi-0.png",
+      "hashes": [
+        "479c50b243c70237b642576d8bb74167880fba07218481dcb85691528f657589",
+        "db3266ce95750571fb792ba84cf3953f4a5838f98138f8709a131142511f5b2f",
+        "9584e0c93d2e496f672b79bc2d9c02f6f59f5a1723e57325441e45573a871d6b"
+      ],
+      "unionPixels": 1914,
+      "before": {
+        "MAE": 154.6264367816092,
+        "worst64": 237.0
+      },
+      "after": {
+        "MAE": 8.60501567398119,
+        "worst64": 13.636363636363637
+      }
+    },
+    {
+      "file": "ffi-1.png",
+      "hashes": [
+        "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f",
+        "e6ec3d33cc1ee1e5271409d127f9537acd286743ebc5e648380b41d3031020c2",
+        "21a58561b27b1d036f9a6a625a96714e16be6b562967062cec8458b26b497d96"
+      ],
+      "unionPixels": 642,
+      "before": {
+        "MAE": 243.5981308411215,
+        "worst64": 250.66666666666666
+      },
+      "after": {
+        "MAE": 0.0,
+        "worst64": 0.0
+      }
+    },
+    {
+      "file": "ffi-2.png",
+      "hashes": [
+        "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f",
+        "43487feeb216b00f50b35dd7dff226886e57532c7623c560182156968f6cbd99",
+        "21a58561b27b1d036f9a6a625a96714e16be6b562967062cec8458b26b497d96"
+      ],
+      "unionPixels": 516,
+      "before": {
+        "MAE": 240.88178294573643,
+        "worst64": 246.9
+      },
+      "after": {
+        "MAE": 0.0,
+        "worst64": 0.0
+      }
+    },
+    {
+      "file": "ffl-all.png",
+      "hashes": [
+        "0ab3a7a89ff05050f2d7aa857a58121e69c700fdcb3b2ea913bac8aeabd96d17",
+        "1510326c0f670596b71837272fda2b45fa4513f7cc5dc01430eb21a60bb75a40",
+        "1510326c0f670596b71837272fda2b45fa4513f7cc5dc01430eb21a60bb75a40"
+      ],
+      "unionPixels": 1970,
+      "before": {
+        "MAE": 9.076142131979696,
+        "worst64": 13.636363636363637
+      },
+      "after": {
+        "MAE": 9.076142131979696,
+        "worst64": 13.636363636363637
+      }
+    },
+    {
+      "file": "ffl-0.png",
+      "hashes": [
+        "0ab3a7a89ff05050f2d7aa857a58121e69c700fdcb3b2ea913bac8aeabd96d17",
+        "db3266ce95750571fb792ba84cf3953f4a5838f98138f8709a131142511f5b2f",
+        "1510326c0f670596b71837272fda2b45fa4513f7cc5dc01430eb21a60bb75a40"
+      ],
+      "unionPixels": 1970,
+      "before": {
+        "MAE": 157.8746192893401,
+        "worst64": 237.0
+      },
+      "after": {
+        "MAE": 9.076142131979696,
+        "worst64": 13.636363636363637
+      }
+    },
+    {
+      "file": "ffl-1.png",
+      "hashes": [
+        "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f",
+        "e6ec3d33cc1ee1e5271409d127f9537acd286743ebc5e648380b41d3031020c2",
+        "21a58561b27b1d036f9a6a625a96714e16be6b562967062cec8458b26b497d96"
+      ],
+      "unionPixels": 642,
+      "before": {
+        "MAE": 243.5981308411215,
+        "worst64": 250.66666666666666
+      },
+      "after": {
+        "MAE": 0.0,
+        "worst64": 0.0
+      }
+    },
+    {
+      "file": "ffl-2.png",
+      "hashes": [
+        "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f",
+        "882905cae4864dc79bbe09068bc82689191b81c6776101cec04b5f077d46d2cb",
+        "21a58561b27b1d036f9a6a625a96714e16be6b562967062cec8458b26b497d96"
+      ],
+      "unionPixels": 565,
+      "before": {
+        "MAE": 244.39469026548673,
+        "worst64": 246.9
+      },
+      "after": {
+        "MAE": 0.0,
+        "worst64": 0.0
+      }
+    },
+    {
+      "file": "lam-alef-all.png",
+      "hashes": [
+        "2a9fc048a1f3981edadd7d01c4f2d77bc45f2cff687c67609bd3c15f746f65d6",
+        "67c90cb44f5c70db7e743d315f872fd69dd578c96fdeeb778e5ed27cc8a7ece0",
+        "67c90cb44f5c70db7e743d315f872fd69dd578c96fdeeb778e5ed27cc8a7ece0"
+      ],
+      "unionPixels": 1006,
+      "before": {
+        "MAE": 5.602385685884692,
+        "worst64": 7.291187739463601
+      },
+      "after": {
+        "MAE": 5.602385685884692,
+        "worst64": 7.291187739463601
+      }
+    },
+    {
+      "file": "lam-alef-0.png",
+      "hashes": [
+        "2a9fc048a1f3981edadd7d01c4f2d77bc45f2cff687c67609bd3c15f746f65d6",
+        "f2a81028ab79d1b721360aef82ac2c1fb8279573b5b862069ce8bb8ed94148e3",
+        "67c90cb44f5c70db7e743d315f872fd69dd578c96fdeeb778e5ed27cc8a7ece0"
+      ],
+      "unionPixels": 1006,
+      "before": {
+        "MAE": 90.75944333996024,
+        "worst64": 96.25619834710744
+      },
+      "after": {
+        "MAE": 5.602385685884692,
+        "worst64": 7.291187739463601
+      }
+    },
+    {
+      "file": "lam-alef-1.png",
+      "hashes": [
+        "f7b8e6e759d5e3e57f6e369e810f740377cf32269a8d1d8977dea2dfec38966f",
+        "06ac2bbf72788844575a3d9b608d152d3f4e6e4813270bf1a269791058404976",
+        "21a58561b27b1d036f9a6a625a96714e16be6b562967062cec8458b26b497d96"
+      ],
+      "unionPixels": 365,
+      "before": {
+        "MAE": 235.06301369863013,
+        "worst64": 242.35675675675677
+      },
+      "after": {
+        "MAE": 0.0,
+        "worst64": 0.0
+      }
+    },
+    {
+      "file": "latin-separate-all.png",
+      "hashes": [
+        "66c45ac0807221edaa8cbf1029deed1dde03b06e8b27957ee33973b670598bd1",
+        "7b321370fb101fb0a57b90acf9d02c44b8cf09a0992fc38d46e8abd9db622d58",
+        "7b321370fb101fb0a57b90acf9d02c44b8cf09a0992fc38d46e8abd9db622d58"
+      ],
+      "unionPixels": 1431,
+      "before": {
+        "MAE": 6.751921733053808,
+        "worst64": 7.44804318488529
+      },
+      "after": {
+        "MAE": 6.751921733053808,
+        "worst64": 7.44804318488529
+      }
+    },
+    {
+      "file": "latin-separate-0.png",
+      "hashes": [
+        "e8a45e6679acc7bcdc4abb58173972643f7d7c5167c816efae2f86f2bff32272",
+        "e7d29237f987f5ba9d19cb818278eea8f79b438743936954e18947a9196a94e7",
+        "e7d29237f987f5ba9d19cb818278eea8f79b438743936954e18947a9196a94e7"
+      ],
+      "unionPixels": 755,
+      "before": {
+        "MAE": 23.221192052980133,
+        "worst64": 39.6
+      },
+      "after": {
+        "MAE": 23.221192052980133,
+        "worst64": 39.6
+      }
+    },
+    {
+      "file": "latin-separate-1.png",
+      "hashes": [
+        "245933ea28018c394af1c05a3f654f53fcde06acb70953c9a3045dc09487b6be",
+        "db3e5488d08e4bbe937ecf89a514f8ebff6bc5903a711bdf239e43b62c569cca",
+        "db3e5488d08e4bbe937ecf89a514f8ebff6bc5903a711bdf239e43b62c569cca"
+      ],
+      "unionPixels": 734,
+      "before": {
+        "MAE": 22.43324250681199,
+        "worst64": 23.87909836065574
+      },
+      "after": {
+        "MAE": 22.43324250681199,
+        "worst64": 23.87909836065574
+      }
+    },
+    {
+      "file": "arabic-separate-all.png",
+      "hashes": [
+        "dc3ee3f7f9f590766b6fc2d2881f90dfd3f48aa329b28cb9996de8167d8a0f5d",
+        "3c12be71c3eea6326c46ae2f0a5a9b4755f9b75096578697d753119bc81bfe68",
+        "3c12be71c3eea6326c46ae2f0a5a9b4755f9b75096578697d753119bc81bfe68"
+      ],
+      "unionPixels": 2405,
+      "before": {
+        "MAE": 5.289397089397089,
+        "worst64": 66.0
+      },
+      "after": {
+        "MAE": 5.289397089397089,
+        "worst64": 66.0
+      }
+    },
+    {
+      "file": "arabic-separate-0.png",
+      "hashes": [
+        "d301a1e8555164ae5a7b6b2a29c270188dba611e567ce9763c6ef065fab57be3",
+        "69f6c8d84f88d301e19c7e1dc28d44f0c3c776fe7c0586e5c3bb718906f30573",
+        "69f6c8d84f88d301e19c7e1dc28d44f0c3c776fe7c0586e5c3bb718906f30573"
+      ],
+      "unionPixels": 680,
+      "before": {
+        "MAE": 6.405882352941177,
+        "worst64": 66.0
+      },
+      "after": {
+        "MAE": 6.405882352941177,
+        "worst64": 66.0
+      }
+    },
+    {
+      "file": "arabic-separate-1.png",
+      "hashes": [
+        "3da4610dcaac3381583aba99ae3c18a3ab8d303d9aa7d28698de85d94ec2ee1e",
+        "4673a01203b7e76bb04140e9060c010d13ab63e8227b72b7dfcabf663fab2813",
+        "4673a01203b7e76bb04140e9060c010d13ab63e8227b72b7dfcabf663fab2813"
+      ],
+      "unionPixels": 587,
+      "before": {
+        "MAE": 25.911413969335605,
+        "worst64": 129.57142857142858
+      },
+      "after": {
+        "MAE": 25.911413969335605,
+        "worst64": 129.57142857142858
+      }
+    },
+    {
+      "file": "arabic-separate-2.png",
+      "hashes": [
+        "3c0512c2a09f97059784839baf75d17b29b87ccd2021839775427865e27779bb",
+        "57290f5b7d5761bc47d6244edddf92cb6bcb4bff334b0d85fce88c2657f63d31",
+        "57290f5b7d5761bc47d6244edddf92cb6bcb4bff334b0d85fce88c2657f63d31"
+      ],
+      "unionPixels": 1204,
+      "before": {
+        "MAE": 6.8745847176079735,
+        "worst64": 223.83333333333334
+      },
+      "after": {
+        "MAE": 6.8745847176079735,
+        "worst64": 223.83333333333334
+      }
+    }
+  ],
+  "active30": [
+    {
+      "file": "italic-stagger-100.png",
+      "hashes": [
+        "b69276ac0e55a045e100f1afc747560c988bcb397d020838028c20b5dae1feae",
+        "ec086b8e02172dc3ef9f2e60e116d5b777af2b4cc87a2a1f4be2c7c0c67ceacd",
+        "3bc4bc3cac63062799f5458a8e6a5b3a92ff1bb812ebec8e0353591bb659c2ca"
+      ],
+      "unionPixels": 1218,
+      "before": {
+        "MAE": 143.16830870279145,
+        "worst64": 223.25984251968504
+      },
+      "after": {
+        "MAE": 6.700328407224959,
+        "worst64": 21.333333333333332
+      }
+    },
+    {
+      "file": "italic-stagger-350.png",
+      "hashes": [
+        "f6653174e7b2672d024244e54971c26720050eb8ce577638f7baa689abca6ed7",
+        "d5225aa039e14973448d5aab2046b8b214bd330f63bffd7714268ec8df05cb88",
+        "d5225aa039e14973448d5aab2046b8b214bd330f63bffd7714268ec8df05cb88"
+      ],
+      "unionPixels": 1944,
+      "before": {
+        "MAE": 10.072016460905349,
+        "worst64": 24.866295264623954
+      },
+      "after": {
+        "MAE": 10.072016460905349,
+        "worst64": 24.866295264623954
+      }
+    },
+    {
+      "file": "italic-stagger-650.png",
+      "hashes": [
+        "b00da908aca93a26d1bb72ec206622926cd230d1813da06b5971c6fbdebb103a",
+        "5d746aaa576900cb2a2240b97fd694d00570dd4846bfca0169582e77e300d562",
+        "5d746aaa576900cb2a2240b97fd694d00570dd4846bfca0169582e77e300d562"
+      ],
+      "unionPixels": 5241,
+      "before": {
+        "MAE": 7.008204541118107,
+        "worst64": 9.65089722675367
+      },
+      "after": {
+        "MAE": 7.008204541118107,
+        "worst64": 9.65089722675367
+      }
+    },
+    {
+      "file": "italic-stagger-1200.png",
+      "hashes": [
+        "740696e70aff2df5ec50c00e5b9f19b4f4a994a77ed189c7e1f26acf0f691801",
+        "d4662b739f0c729adc747817dbb9d47c3c07107d172301b01ac25da232003975",
+        "d4662b739f0c729adc747817dbb9d47c3c07107d172301b01ac25da232003975"
+      ],
+      "unionPixels": 6189,
+      "before": {
+        "MAE": 7.143157214412668,
+        "worst64": 10.67457627118644
+      },
+      "after": {
+        "MAE": 7.143157214412668,
+        "worst64": 10.67457627118644
+      }
+    },
+    {
+      "file": "italic-uniform-500.png",
+      "hashes": [
+        "e58f210342f796747d5f67d4721d71057f6ccb782e172d4b812c174d25e41555",
+        "5134752a03784e0bfdef95790fc3cf1a79bf07a7097eed396a52b1aa474eb70f",
+        "5134752a03784e0bfdef95790fc3cf1a79bf07a7097eed396a52b1aa474eb70f"
+      ],
+      "unionPixels": 6189,
+      "before": {
+        "MAE": 5.53837453546615,
+        "worst64": 7.864406779661017
+      },
+      "after": {
+        "MAE": 5.53837453546615,
+        "worst64": 7.864406779661017
+      }
+    },
+    {
+      "file": "italic-uniform-2000.png",
+      "hashes": [
+        "740696e70aff2df5ec50c00e5b9f19b4f4a994a77ed189c7e1f26acf0f691801",
+        "d4662b739f0c729adc747817dbb9d47c3c07107d172301b01ac25da232003975",
+        "d4662b739f0c729adc747817dbb9d47c3c07107d172301b01ac25da232003975"
+      ],
+      "unionPixels": 6189,
+      "before": {
+        "MAE": 7.143157214412668,
+        "worst64": 10.67457627118644
+      },
+      "after": {
+        "MAE": 7.143157214412668,
+        "worst64": 10.67457627118644
+      }
+    },
+    {
+      "file": "arabic-stagger-100.png",
+      "hashes": [
+        "7403e75a8cb549cb88ed5e302d1c3dd26471c9ff23e3af82ef9dd0d5ddea4dc4",
+        "1677482d34f5434546fd6c8f77b4f852344815db95d1dcef41ae335e2f1fa5ca",
+        "1677482d34f5434546fd6c8f77b4f852344815db95d1dcef41ae335e2f1fa5ca"
+      ],
+      "unionPixels": 1212,
+      "before": {
+        "MAE": 4.952145214521452,
+        "worst64": 7.267605633802817
+      },
+      "after": {
+        "MAE": 4.952145214521452,
+        "worst64": 7.267605633802817
+      }
+    },
+    {
+      "file": "arabic-stagger-350.png",
+      "hashes": [
+        "3fa5f6c1636aa981a7bcfad68ee543cec299cf31ef480138713335f661ae04c9",
+        "d4729f1015bd6c82c6c973c0c59fe165e6f25e2cfd66395d86e474648ee6be3c",
+        "d4729f1015bd6c82c6c973c0c59fe165e6f25e2cfd66395d86e474648ee6be3c"
+      ],
+      "unionPixels": 2849,
+      "before": {
+        "MAE": 6.801684801684802,
+        "worst64": 10.253048780487806
+      },
+      "after": {
+        "MAE": 6.801684801684802,
+        "worst64": 10.253048780487806
+      }
+    },
+    {
+      "file": "arabic-stagger-650.png",
+      "hashes": [
+        "89f8bd11faba568178ae8fd169ba391b64b337b133f990bc5829d44c82d9bb75",
+        "c0ac96935ad11e59a1ac84e8259e41dd5984e8ca0035e30aacde66903eb2e465",
+        "c0ac96935ad11e59a1ac84e8259e41dd5984e8ca0035e30aacde66903eb2e465"
+      ],
+      "unionPixels": 5725,
+      "before": {
+        "MAE": 6.869694323144105,
+        "worst64": 10.310344827586206
+      },
+      "after": {
+        "MAE": 6.869694323144105,
+        "worst64": 10.310344827586206
+      }
+    },
+    {
+      "file": "arabic-stagger-1200.png",
+      "hashes": [
+        "50a5fd81d3cd614bea33e6edaae9b7496baee5f80df5a83351b4ad0479b81b62",
+        "197f28db6555ca710d329bdd349c433e9d4aad536506a5ae381eb51b1d278bb7",
+        "197f28db6555ca710d329bdd349c433e9d4aad536506a5ae381eb51b1d278bb7"
+      ],
+      "unionPixels": 7326,
+      "before": {
+        "MAE": 6.698607698607699,
+        "worst64": 13.092753623188406
+      },
+      "after": {
+        "MAE": 6.698607698607699,
+        "worst64": 13.092753623188406
+      }
+    },
+    {
+      "file": "arabic-uniform-500.png",
+      "hashes": [
+        "33487abf1c6d09f575754a688c7935a8a66795100efc4adf1b0b5a15e89efe04",
+        "a99702bd6b4f39193c88936107f2cd0edc4883c31b07485d3f872ca5a0361ea7",
+        "a99702bd6b4f39193c88936107f2cd0edc4883c31b07485d3f872ca5a0361ea7"
+      ],
+      "unionPixels": 7326,
+      "before": {
+        "MAE": 5.377286377286377,
+        "worst64": 9.504347826086956
+      },
+      "after": {
+        "MAE": 5.377286377286377,
+        "worst64": 9.504347826086956
+      }
+    },
+    {
+      "file": "arabic-uniform-2000.png",
+      "hashes": [
+        "50a5fd81d3cd614bea33e6edaae9b7496baee5f80df5a83351b4ad0479b81b62",
+        "197f28db6555ca710d329bdd349c433e9d4aad536506a5ae381eb51b1d278bb7",
+        "197f28db6555ca710d329bdd349c433e9d4aad536506a5ae381eb51b1d278bb7"
+      ],
+      "unionPixels": 7326,
+      "before": {
+        "MAE": 6.698607698607699,
+        "worst64": 13.092753623188406
+      },
+      "after": {
+        "MAE": 6.698607698607699,
+        "worst64": 13.092753623188406
+      }
+    },
+    {
+      "file": "mixed-stagger-100.png",
+      "hashes": [
+        "46579cb47bdc77c78dda2e7a107baddf642848738e8ff2288d8d0ad54524d077",
+        "a158dd21ccdf77a8336439e8a928725ed3c76a853a54a121c646f5ca7aee9eb5",
+        "a158dd21ccdf77a8336439e8a928725ed3c76a853a54a121c646f5ca7aee9eb5"
+      ],
+      "unionPixels": 2293,
+      "before": {
+        "MAE": 5.443959877889228,
+        "worst64": 84.0
+      },
+      "after": {
+        "MAE": 5.443959877889228,
+        "worst64": 84.0
+      }
+    },
+    {
+      "file": "mixed-stagger-350.png",
+      "hashes": [
+        "ee825fa7481c53497b171ea8b6bae1f82f34feed2a4f25b3016eebed812949d2",
+        "0d0e6539e326d1725122a5d8f9812b01b78c5b51646ff010cfdcd86378da3433",
+        "0d0e6539e326d1725122a5d8f9812b01b78c5b51646ff010cfdcd86378da3433"
+      ],
+      "unionPixels": 4591,
+      "before": {
+        "MAE": 6.8945763450228705,
+        "worst64": 22.764705882352942
+      },
+      "after": {
+        "MAE": 6.8945763450228705,
+        "worst64": 22.764705882352942
+      }
+    },
+    {
+      "file": "mixed-stagger-650.png",
+      "hashes": [
+        "812dc442e1d5f86627cf58810d8348e1a94e89da5cb156f016cc4c1b13a1b48b",
+        "c3435e4bcaa65f6a876662f698dbe7a87a09d9ab41c968449e8d35891c9cd3d0",
+        "c3435e4bcaa65f6a876662f698dbe7a87a09d9ab41c968449e8d35891c9cd3d0"
+      ],
+      "unionPixels": 9545,
+      "before": {
+        "MAE": 7.237192247249869,
+        "worst64": 12.816733067729084
+      },
+      "after": {
+        "MAE": 7.237192247249869,
+        "worst64": 12.816733067729084
+      }
+    },
+    {
+      "file": "mixed-stagger-1200.png",
+      "hashes": [
+        "2adb1e5cbefd2d1cd86bb475f778ec66d7f4ee95e6788ea8b7762fde8245043b",
+        "d43703c8f15fe9ec05901af605100ccd51a8b687ac690afa2ff6ee478b08c77a",
+        "d43703c8f15fe9ec05901af605100ccd51a8b687ac690afa2ff6ee478b08c77a"
+      ],
+      "unionPixels": 11240,
+      "before": {
+        "MAE": 7.395996441281139,
+        "worst64": 25.006134969325153
+      },
+      "after": {
+        "MAE": 7.395996441281139,
+        "worst64": 25.006134969325153
+      }
+    },
+    {
+      "file": "mixed-uniform-500.png",
+      "hashes": [
+        "2fb2837762a92294654ba4c38ae447a8c45b7914acc1707d1ebf74413adfa82a",
+        "a634fd03c04e8279b66816de9ecc00a0b17991a73fe709ada5a420df5ff6854a",
+        "a634fd03c04e8279b66816de9ecc00a0b17991a73fe709ada5a420df5ff6854a"
+      ],
+      "unionPixels": 11240,
+      "before": {
+        "MAE": 5.874377224199288,
+        "worst64": 17.39877300613497
+      },
+      "after": {
+        "MAE": 5.874377224199288,
+        "worst64": 17.39877300613497
+      }
+    },
+    {
+      "file": "mixed-uniform-2000.png",
+      "hashes": [
+        "2adb1e5cbefd2d1cd86bb475f778ec66d7f4ee95e6788ea8b7762fde8245043b",
+        "d43703c8f15fe9ec05901af605100ccd51a8b687ac690afa2ff6ee478b08c77a",
+        "d43703c8f15fe9ec05901af605100ccd51a8b687ac690afa2ff6ee478b08c77a"
+      ],
+      "unionPixels": 11240,
+      "before": {
+        "MAE": 7.395996441281139,
+        "worst64": 25.006134969325153
+      },
+      "after": {
+        "MAE": 7.395996441281139,
+        "worst64": 25.006134969325153
+      }
+    },
+    {
+      "file": "latin-stagger-100.png",
+      "hashes": [
+        "0844142ccd55c7967c22222f03bede15a94c882210959866e33984038ce3f9b2",
+        "0253276ddbe322a17e5dab446892e54368e26560495e6f3835e4dbebb9324546",
+        "0253276ddbe322a17e5dab446892e54368e26560495e6f3835e4dbebb9324546"
+      ],
+      "unionPixels": 1587,
+      "before": {
+        "MAE": 8.008191556395715,
+        "worst64": 11.818181818181818
+      },
+      "after": {
+        "MAE": 8.008191556395715,
+        "worst64": 11.818181818181818
+      }
+    },
+    {
+      "file": "latin-stagger-350.png",
+      "hashes": [
+        "60e101043b14907af4a4c649c903dc0ff03905ce031507b9e6b1bad05c41b6d9",
+        "27b036ebcd3b2fb7ea77ae6756efeb22710738ee2c948daa76f1e942c529c314",
+        "27b036ebcd3b2fb7ea77ae6756efeb22710738ee2c948daa76f1e942c529c314"
+      ],
+      "unionPixels": 4265,
+      "before": {
+        "MAE": 9.23516998827667,
+        "worst64": 16.333333333333332
+      },
+      "after": {
+        "MAE": 9.23516998827667,
+        "worst64": 16.333333333333332
+      }
+    },
+    {
+      "file": "latin-stagger-650.png",
+      "hashes": [
+        "4587bc77f8f3f79444fedd7577001ff5219001dbc0d90e455eb30c1217c35cf2",
+        "7feee3beff920694b3e740899939bd70d5c20ea20e3ddf447a1ccba8f291b3fe",
+        "bfbdb796095a2b95d782f6913c1048ab42b119a24ba42d87b2f4b26e0d169df3"
+      ],
+      "unionPixels": 7066,
+      "before": {
+        "MAE": 13.121285026889328,
+        "worst64": 93.0
+      },
+      "after": {
+        "MAE": 8.80215114633456,
+        "worst64": 93.0
+      }
+    },
+    {
+      "file": "latin-stagger-1200.png",
+      "hashes": [
+        "7a09fdc476ea175522c0c2f306f76a8ab4f018539e492f1027584b149bfa6876",
+        "f6a9189fc06bf6967fe084caaecbb116701fded4074741621c2279d6ad80c45e",
+        "f6a9189fc06bf6967fe084caaecbb116701fded4074741621c2279d6ad80c45e"
+      ],
+      "unionPixels": 8783,
+      "before": {
+        "MAE": 8.401229648183993,
+        "worst64": 16.333333333333332
+      },
+      "after": {
+        "MAE": 8.401229648183993,
+        "worst64": 16.333333333333332
+      }
+    },
+    {
+      "file": "latin-uniform-500.png",
+      "hashes": [
+        "741513e4e96a2b201e6ccc8dead963133c42bca3f7078e296f87340a89e75381",
+        "0f0aa0b14c01d2058fdaa2577d039861ee7159ff0a60a6e800b50f0acac02e87",
+        "0f0aa0b14c01d2058fdaa2577d039861ee7159ff0a60a6e800b50f0acac02e87"
+      ],
+      "unionPixels": 8783,
+      "before": {
+        "MAE": 6.435955823750427,
+        "worst64": 11.93939393939394
+      },
+      "after": {
+        "MAE": 6.435955823750427,
+        "worst64": 11.93939393939394
+      }
+    },
+    {
+      "file": "latin-uniform-2000.png",
+      "hashes": [
+        "7a09fdc476ea175522c0c2f306f76a8ab4f018539e492f1027584b149bfa6876",
+        "f6a9189fc06bf6967fe084caaecbb116701fded4074741621c2279d6ad80c45e",
+        "f6a9189fc06bf6967fe084caaecbb116701fded4074741621c2279d6ad80c45e"
+      ],
+      "unionPixels": 8783,
+      "before": {
+        "MAE": 8.401229648183993,
+        "worst64": 16.333333333333332
+      },
+      "after": {
+        "MAE": 8.401229648183993,
+        "worst64": 16.333333333333332
+      }
+    },
+    {
+      "file": "cjk-stagger-100.png",
+      "hashes": [
+        "911441f650c95a627de292b561b30b61ca6104407dddf4c0545e35d5c752e8da",
+        "ecec1d4f22e44ca300a9afd2c9cde882f03af0a63b6d8e1f3c16bbea0a24f44d",
+        "ecec1d4f22e44ca300a9afd2c9cde882f03af0a63b6d8e1f3c16bbea0a24f44d"
+      ],
+      "unionPixels": 2160,
+      "before": {
+        "MAE": 4.602777777777778,
+        "worst64": 9.48913043478261
+      },
+      "after": {
+        "MAE": 4.602777777777778,
+        "worst64": 9.48913043478261
+      }
+    },
+    {
+      "file": "cjk-stagger-350.png",
+      "hashes": [
+        "0a4d1b665c30cc41b1f4fe82c9a41b3a4205958447e74f65a4bc2af253683b9e",
+        "b5977ffad3ee09e6fb7ada53da7b62c7e749e1c99326d9f695517a9c51c946c2",
+        "b5977ffad3ee09e6fb7ada53da7b62c7e749e1c99326d9f695517a9c51c946c2"
+      ],
+      "unionPixels": 4015,
+      "before": {
+        "MAE": 6.418181818181818,
+        "worst64": 11.552552552552553
+      },
+      "after": {
+        "MAE": 6.418181818181818,
+        "worst64": 11.552552552552553
+      }
+    },
+    {
+      "file": "cjk-stagger-650.png",
+      "hashes": [
+        "431794da1c1233779fc20d1173669103e0ade614775489085589e1ae79c2ff51",
+        "a50ffa34018936157eb1a4ae63a0692c064d16696b05d263eec3a0bbbca1641f",
+        "a50ffa34018936157eb1a4ae63a0692c064d16696b05d263eec3a0bbbca1641f"
+      ],
+      "unionPixels": 8607,
+      "before": {
+        "MAE": 5.909957011734635,
+        "worst64": 8.299760191846524
+      },
+      "after": {
+        "MAE": 5.909957011734635,
+        "worst64": 8.299760191846524
+      }
+    },
+    {
+      "file": "cjk-stagger-1200.png",
+      "hashes": [
+        "92d0be024b67a6874b9e1829c92b08eb3dd38ff52eef5e7f5b5e8f3011b09c66",
+        "3e7519d99a2d295cd1e54a58265690e1cfb8bea957459dc73c2317ea96634b9b",
+        "3e7519d99a2d295cd1e54a58265690e1cfb8bea957459dc73c2317ea96634b9b"
+      ],
+      "unionPixels": 8607,
+      "before": {
+        "MAE": 7.974439409782735,
+        "worst64": 12.565393988627132
+      },
+      "after": {
+        "MAE": 7.974439409782735,
+        "worst64": 12.565393988627132
+      }
+    },
+    {
+      "file": "cjk-uniform-500.png",
+      "hashes": [
+        "63880121d4252268ebcac4ff19e8aae13c0da69029c012c870a9788e1c5da2e9",
+        "bb0c7af92e235d801e0bff1ce20299b79da02a4ac964432319d8eb75cabee8f4",
+        "bb0c7af92e235d801e0bff1ce20299b79da02a4ac964432319d8eb75cabee8f4"
+      ],
+      "unionPixels": 8607,
+      "before": {
+        "MAE": 6.139653770187057,
+        "worst64": 9.164906580016247
+      },
+      "after": {
+        "MAE": 6.139653770187057,
+        "worst64": 9.164906580016247
+      }
+    },
+    {
+      "file": "cjk-uniform-2000.png",
+      "hashes": [
+        "92d0be024b67a6874b9e1829c92b08eb3dd38ff52eef5e7f5b5e8f3011b09c66",
+        "3e7519d99a2d295cd1e54a58265690e1cfb8bea957459dc73c2317ea96634b9b",
+        "3e7519d99a2d295cd1e54a58265690e1cfb8bea957459dc73c2317ea96634b9b"
+      ],
+      "unionPixels": 8607,
+      "before": {
+        "MAE": 7.974439409782735,
+        "worst64": 12.565393988627132
+      },
+      "after": {
+        "MAE": 7.974439409782735,
+        "worst64": 12.565393988627132
+      }
+    }
+  ],
+  "scope": "Original active text and span paint, not full-stage Motion projection/Android-device/performance acceptance.",
+  "controlsSummary": {
+    "before": {
+      "MAE": 102.78419727800916,
+      "worst64": 250.66666666666666
+    },
+    "after": {
+      "MAE": 7.142304631767978,
+      "worst64": 223.83333333333334
+    }
+  },
+  "active30Summary": {
+    "before": {
+      "MAE": 11.677861808300298,
+      "worst64": 223.25984251968504
+    },
+    "after": {
+      "MAE": 6.98495800242959,
+      "worst64": 93.0
+    }
+  }
+}

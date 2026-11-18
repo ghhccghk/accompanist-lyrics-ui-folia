@@ -1,0 +1,162 @@
+{
+  "baseRevision": "138ee5a",
+  "production": "cluster-ownership change; exact source hashes below",
+  "date": "2026-11-18",
+  "tests": [
+    {
+      "name": "CappellaActiveInkTest[jvm]",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0"
+    },
+    {
+      "name": "CappellaClusterInkTest[jvm]",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0"
+    },
+    {
+      "name": "CappellaCompleteTextTest[jvm]",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0"
+    },
+    {
+      "name": "CappellaCoreAdapterTest[jvm]",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0"
+    },
+    {
+      "name": "CappellaPresenceTest[jvm]",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0"
+    },
+    {
+      "name": "CappellaRevealTest[jvm]",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0"
+    },
+    {
+      "name": "PublicCappellaTest[jvm]",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0"
+    }
+  ],
+  "AndroidLibraryCompilation": "passed",
+  "DesktopCompilation": "passed",
+  "dense240": {
+    "geometryTablesIdentical": 6,
+    "pngHashesIdentical": 240,
+    "comparisonSHA256": "8c44794f431407d61e5835dd1058d0f802a296230c79673f32571bc6b88e3ace",
+    "unresolvedGeometryPx": 22.1885925046
+  },
+  "nativeWindow": {
+    "backend": "DIRECT3D",
+    "checks": 105,
+    "allHashesIdenticalTo": "verification/themes-native-window/post-cappella-ink/checks.tsv",
+    "checksSHA256": "a1385d42b50055fe6d1554438821b58ee751b1605ea3f7c6a9691c9768feb7b1",
+    "focusable": false,
+    "contactSHA256": "a99050bd049aeda363f192b9ff62970b76a2a5e708fb351f5a88512f5b2eed92"
+  },
+  "independentConsumer": {
+    "jvmTests": 1,
+    "failures": 0,
+    "androidCompile": "passed",
+    "packagedNoticesAndBoundary": "passed",
+    "remotePublication": false,
+    "artifacts": [
+      {
+        "module": "lyrics-ui-folia",
+        "name": "lyrics-ui-folia-0.1.0-20261118.025630-9.jar",
+        "bytes": 66664,
+        "sha256": "9dfd077c752f00e26ce319e9c440b19721925c7918383667a7feff77cb01e02e"
+      },
+      {
+        "module": "lyrics-ui-folia",
+        "name": "lyrics-ui-folia-0.1.0-20261118.025630-9-kotlin-tooling-metadata.json",
+        "bytes": 874,
+        "sha256": "99b97db4ef026704b82c67d7d06cc23bf95dcf54c236aace8e8e2aa599257adb"
+      },
+      {
+        "module": "lyrics-ui-folia",
+        "name": "lyrics-ui-folia-0.1.0-20261118.025630-9-sources.jar",
+        "bytes": 320165,
+        "sha256": "21b4222ca0f2afbeafd04623088b9ea11b3becfaeb8ebcd4bddbbce998d0b988"
+      },
+      {
+        "module": "lyrics-ui-folia",
+        "name": "lyrics-ui-folia-0.1.0-20261118.025630-9.pom",
+        "bytes": 1984,
+        "sha256": "46b91faa0cda6cfe0ce21c7f5738fa946c88008df6f78151dc4cd282f8f7c8b6"
+      },
+      {
+        "module": "lyrics-ui-folia",
+        "name": "lyrics-ui-folia-0.1.0-20261118.025630-9.module",
+        "bytes": 6495,
+        "sha256": "08cda17f616abcbd9b6ac656b2086db867ae1a425d00137d89ad019806feb20b"
+      },
+      {
+        "module": "lyrics-ui-folia-jvm",
+        "name": "lyrics-ui-folia-jvm-0.1.0-20261118.025630-9.jar",
+        "bytes": 1741611,
+        "sha256": "b91bb6e9303442a2ffa93955eb7d0e59b4b8abe835f9d43ee6e6a5f2b9bd4fe1"
+      },
+      {
+        "module": "lyrics-ui-folia-jvm",
+        "name": "lyrics-ui-folia-jvm-0.1.0-20261118.025630-9.module",
+        "bytes": 5026,
+        "sha256": "3f83f40e477d608bb6581b9571b176fe4db147edbebc35d8358ea4d8310b10af"
+      },
+      {
+        "module": "lyrics-ui-folia-jvm",
+        "name": "lyrics-ui-folia-jvm-0.1.0-20261118.025630-9.pom",
+        "bytes": 2595,
+        "sha256": "108e8cb5853714ddeffffbf3ce72e7d7305a37131ef1cba88d8f64d47f189667"
+      },
+      {
+        "module": "lyrics-ui-folia-jvm",
+        "name": "lyrics-ui-folia-jvm-0.1.0-20261118.025630-9-sources.jar",
+        "bytes": 332431,
+        "sha256": "ba80e366ba03bd283e5baabc34289eab86848d8bd66700ecdffb02ccf6a38fd6"
+      },
+      {
+        "module": "lyrics-ui-folia-android",
+        "name": "lyrics-ui-folia-android-0.1.0-20261118.025630-9.pom",
+        "bytes": 2629,
+        "sha256": "97d2f41e44ec59c733977ce0a32f673b87a16a10231c2e9c16694d7ac12f6548"
+      },
+      {
+        "module": "lyrics-ui-folia-android",
+        "name": "lyrics-ui-folia-android-0.1.0-20261118.025630-9.aar",
+        "bytes": 1656174,
+        "sha256": "e7730bffff0ba7741f9417005f92695f7880e7ecf124855fed4976218abe1400"
+      },
+      {
+        "module": "lyrics-ui-folia-android",
+        "name": "lyrics-ui-folia-android-0.1.0-20261118.025630-9.module",
+        "bytes": 5022,
+        "sha256": "2f796719969bd40475c463797d3e456446b741de0438296c4d7883e6b5d3a86a"
+      },
+      {
+        "module": "lyrics-ui-folia-android",
+        "name": "lyrics-ui-folia-android-0.1.0-20261118.025630-9-sources.jar",
+        "bytes": 330624,
+        "sha256": "89649b204588ccccacc209724b173e2ac8c8e12693670987d899db6a260662b8"
+      }
+    ]
+  },
+  "androidRuntime": "one adb devices -l check: no attached devices; not run",
+  "sourceSHA256": {
+    "library/src/androidMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/cappella/CappellaInkClusters.android.kt": "417197139d39b2c3b3327e663e5cd10539d98fb60f526179bbe17493e6f21fce",
+    "library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/cappella/CappellaInk.kt": "b6ba2182630fa0d515fe94044e1712417780f7ee02a6fcfe8d24d41ef9e7dfbc",
+    "library/src/commonMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/cappella/CappellaInkClusters.kt": "d2a56f7c875fdb7090dcd0790279a648f4103ea1ea41fe916410d0757807a798",
+    "library/src/jvmMain/kotlin/top/ghhccghk/accompanist/lyrics/folia/internal/styles/cappella/CappellaInkClusters.jvm.kt": "69b7aae148912cfaa9ae5612ff1189495e516bdf29c5224a28c48f14a916b8ac",
+    "library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/CappellaActiveInkTest.kt": "54babc34a9cd84f9e072b7926949f4fd15b5cd69fe9a520dab4a2238e5b7ddab",
+    "library/src/jvmTest/kotlin/top/ghhccghk/accompanist/lyrics/folia/CappellaClusterInkTest.kt": "07017a4205e4b7a64be12a5ac97aeb218ca4bd1202e58c66d3f24993ed4beadd"
+  },
+  "scope": "Window reconstruction/packaged consumption; not Android device, real file picker/audio, whole original-theme acceptance or performance."
+}

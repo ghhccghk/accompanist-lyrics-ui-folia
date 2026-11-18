@@ -10,9 +10,17 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life、可选文字fragment fog | 无 | 切曲/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：群唱早期fi共享字形的透明度归属。先用原ActiveCappellaText和
-固定字体扩展独立cluster归属对照，分离字体塑形cluster与EGC时钟；证据成立后
-修复实际绘制并复用原30帧及必要共享层回归。不能以均值盖过局部失败。
+当前唯一下一项：群唱密集projection的同原incoming局部交接；复用frame-phases-v2
+分离原precommit DOM/实时flow/RAF与提交后target，先检验原始输入对应关系，
+再考虑媒体重建修复。不重试已否证的freeze/多衰减/固定帧延迟；保留22.188593px。
+最近完成：群唱共享塑形cluster按首个逻辑EGC时钟绘制，原fi/ffi/ffl/RTL lam-alef
+24个独立span端点对照验证；保留原所有字素时钟和完整行单次绘制。原30帧固定union
+均值11.677862→6.984958，最坏64px223.259843→93；italic100ms最坏局部→21.333333。
+19项定向JVM/Android库与Desktop编译通过；240密集PNG和六表、105真实DIRECT3D
+窗口hash全部不变，独立Maven消费通过。ADB一次无设备；Android29+新元数据路径
+仅编译、旧API/自定义font metadata继续待验，不称正式视觉/设备/性能通过。
+证据verification/cappella-cluster-ink，旧失败/original30未改；前述fi下一项为历史。
+138ee5a已保存此前b40c9da的真实窗口/独立消费回归。
 此前“群唱绘制后真实窗口/独立消费下一项”为历史：b40c9da后已完成一轮105项
 真实DIRECT3D窗口回归及独立Maven JVM绘制/原core身份、Android消费编译与归属打包。
 91项hash不变，14项群唱hash随完整文字修复变化，恢复/暂停等自确定性通过；

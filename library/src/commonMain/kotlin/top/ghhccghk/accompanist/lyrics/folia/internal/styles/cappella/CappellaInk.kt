@@ -19,9 +19,10 @@ internal data class CappellaInkRun(val index:Int,val left:Int?,val right:Int?)
  * Each texel column has exactly one clock owner, including ligature/bidi ink
  * outside a selection's caret box. A logical EGC can own disjoint visual runs.
  * Rebuilt only when the shown row layout changes, not on each fade tick. */
-internal fun cappellaInkRuns(layout:TextLayoutResult,glyphs:List<CappellaInkGlyph>):List<CappellaInkRun> {
+internal fun cappellaInkRuns(layout:TextLayoutResult,glyphs:List<CappellaInkGlyph>,
+    clusters:List<CappellaInkCluster> = emptyList()):List<CappellaInkRun> {
     if(glyphs.isEmpty())return emptyList()
-    val intervals=glyphs.map{it.index to layout.getPathForRange(it.begin,it.end).getBounds()}
+    val intervals=cappellaClusterOwners(glyphs,clusters).map{it.index to layout.getPathForRange(it.begin,it.end).getBounds()}
     val first=floor(intervals.minOf{it.second.left}).toInt()-1
     val last=ceil(intervals.maxOf{it.second.right}).toInt()+1
     val result=mutableListOf<CappellaInkRun>()

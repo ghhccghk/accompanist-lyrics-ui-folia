@@ -1,0 +1,17 @@
+{
+  "source": {
+    "file": "italic-stagger-100.png",
+    "pixels": 1218,
+    "sha256": "b69276ac0e55a045e100f1afc747560c988bcb397d020838028c20b5dae1feae"
+  },
+  "native": {
+    "file": "italic-stagger-100.png",
+    "pixels": 445,
+    "sha256": "ec086b8e02172dc3ef9f2e60e116d5b777af2b4cc87a2a1f4be2c7c0c67ceacd"
+  },
+  "sourceOpacity": [
+    1,
+    0
+  ],
+  "observation": "Original CSS paints full fi ligature under first f span opacity although second i span alpha is zero; native caret clock partition keeps only the left fragment. Unresolved source cluster-ownership difference, not raster-only or intentional exception."
+}

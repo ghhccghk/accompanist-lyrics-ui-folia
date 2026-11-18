@@ -7,14 +7,18 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 root = Path(__file__).resolve().parents[1]
-source = root / 'build/verification/diorama-flight-browser'
-native = root / 'build/verification/diorama-flight-kotlin'
-out = root / 'verification/diorama-flight'
+loop = '--loop' in sys.argv
+name = 'diorama-loop-stage' if loop else 'diorama-flight'
+source = root / f'build/verification/{name}-browser'
+native = root / f'build/verification/{name}-kotlin'
+out = root / f'verification/{name}'
 out.mkdir(parents=True, exist_ok=True)
 sequence = '--sequence' in sys.argv
+assert not (loop and sequence)
 stem = 'sequence' if sequence else 'scene'
-conditions = json.loads((root / f'verification/diorama-fixtures/flight-v1/{stem}.json').read_text(encoding='utf-8'))
-assert len(conditions['captures']) == (67 if sequence else 96)
+fixture = 'loop-stage-v1' if loop else 'flight-v1'
+conditions = json.loads((root / f'verification/diorama-fixtures/{fixture}/{stem}.json').read_text(encoding='utf-8'))
+assert len(conditions['captures']) == (40 if loop else 67 if sequence else 96)
 for suffix in (['sequence'] if sequence else ['380', '800']):
     assert (native / f'numeric-{suffix}.txt').is_file(), 'Wait for completed native captures'
 bg = np.array([22, 36, 53])
@@ -54,13 +58,16 @@ report = dict(scope=conditions['scope'], comparisons=summary,
               blank_frames={mode: [r['file'] for r in rows if r['bounds'][mode] is None] for mode in ['source', 'finite', 'media']},
               edge_touch={mode: [r['file'] for r in rows if r['edge_touch'][mode]] for mode in ['source', 'finite', 'media']},
               mask='Identical source/own-finite/own-media ALL nonbackground union including lowest alpha; no registration, phase shift or threshold filtering.',
-              status='Internal incoming-text flight only. Finite operator gate is distinct from adaptive-media/RAF residual and raster/readability. NOT full dual-corridor CameraRig, public theme or device acceptance.',
+              status='Internal text-camera flight/return only. Finite operator gate is distinct from adaptive-media/RAF residual and raster/readability. NOT full dual-corridor CameraRig, public theme or device acceptance.',
               frames=rows)
 (out/('sequence-comparison.json' if sequence else 'comparison.json')).write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
 names = ['latin-380-60-700.png', 'latin-800-60-1600.png', 'arabic-800-144-2400.png',
          'arabic-380-60-3199.png', 'cjk-800-60-3200.png', 'cjk-380-144-4200.png']
 if sequence:
     names = [f'sequence-latin-800-60-{t}.png' for t in (0, 700, 1600, 2400, 3200, 4200)]
+if loop:
+    names = ['loop-380-60-0.png', 'loop-800-60-700.png', 'loop-800-144-1600.png',
+             'loop-380-60-2099.png', 'loop-800-60-3200.png', 'loop-380-144-4500.png']
 sheet = Image.new('RGB', (1260, len(names)*338), (30, 30, 30))
 draw = ImageDraw.Draw(sheet)
 for i, name in enumerate(names):

@@ -1791,3 +1791,13 @@ instead of source wall timeout to reconstruct pause/seek, stated adaptation.
 Verbatim original edge + real sequencer/camera32 controls,26 original windows/
 436 materials, actual core lifecycle/native contact and remaining crop/overlap:
 verification/diorama-loop. No source assets, background engine or public entry.
+
+### Diorama complete text-only loop comparison (2026-11-18)
+Actual pinned sequencer/visible window/plain and active raster/layout/material
+functions plus unchanged extracted CameraRig finite flight blocks compose the
+original text-only stage. Actual core line-level inputs, same font/geometry,
+outgoing epoch2 refs then same-corridor epoch3.40 source frames and own finite/
+independent media full text:verification/diorama-loop-stage. Original input,
+step/ref/host/font/lock/source hashes retained; explicit local clock/window and
+analytic charge injections disclosed. No modified upstream logic, source output
+pose driving native, or mounted full-scene/RAF-envelope/visual acceptance claim.

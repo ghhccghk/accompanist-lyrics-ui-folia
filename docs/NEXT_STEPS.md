@@ -12,19 +12,25 @@
 
 当前唯一下一项：镜台有界的跨曲departing文字窗口，与实际原版同字体/视口/
 core内容做完整文字过渡对照；仅保留必要旧plain planes，不递归保留整曲playback。
-同时用完整原文字检查loop回程的明显放大/裁切/重叠，分清原行为与媒体/光栅残差。
+loop回程完整文字对照已补，后续不再重复该40帧；跨曲采用同样的固定方法。
 完成条件为源窗口/层级/opacity、完整文字及暂停seek/切曲/释放证据；不开放公共主题。
-同走廊loop为历史下一项，本轮已完成：原32连续有限控制峰8.74e-13、26窗口/
+同走廊loop为历史下一项，4a69b2a已完成：原32连续有限控制峰8.74e-13、26窗口/
 436材质峰1.42e-14、真实core原对象/文字/raster/世界帧复用、取消/媒体重建通过；
 outgoing窗口与flight同一媒体时间，在3.2s精确结束。15定向JVM/Android库/Desktop
-编译通过。实际native contact仍有强放大/裁切/重叠，无完整原loop光栅结论，
+编译通过。实际native contact仍有强放大/裁切/重叠，该提交时无完整原loop光栅结论，
 见verification/diorama-loop；显式loop edge与任意顺序seek区分，无新设备/窗口。
+随后新增40帧原完整文字层对照，原版同样有回程强放大/裁切；本有限相机峰1.42e-14，
+同union前景均值有限4.765380/媒体14.574012，最坏局部36.963333/80.101010，
+触边24/23/22不完全相同，媒体含outgoing历史位置残差.066822world，未正式验收。
+原文字函数+有限camera组合，非mounted React/RAF包络；见verification/diorama-loop-stage。
+4a69b2a当前产物独立Maven消费JVM绘制/回调、Android编译/边界/归属打包通过，
+证据verification/consumer/4a69b2a-validation.json；仅本地，不是设备/窗口/性能结论。
 此前incoming flight为历史下一项，486b8c1已完成：480原同初态有限控制峰1.42e-14、
 96真实core原Three/本有限/本媒体文字帧，另67连续观察且原8关键帧及step完全不变。
 同矩阵前景均值有限3.955025/媒体12.366458，媒体位置残差.035038world；
 21/21/26空帧、47/47/42触边均保留，不称原版视觉验收。12定向JVM/Android库/
 Desktop编译通过；暂停/乱序seek/offset/resize/reduced/重挂通过，无新设备或窗口。
-证据verification/diorama-flight；完整outgoing corridor/loop/late-lyrics gate仍未实现。
+证据verification/diorama-flight；截至486b8c1完整outgoing corridor/loop/late-lyrics gate未实现。
 正常有限1482原控制通过；de7baa6旧normal图表因不是当前基线仅120/288hash匹配，
 失败原样记录，不将此称无变化，亦不改旧报告/期望。详该README/失败日志。
 loop回归另发现实际2100ms行在media2300/offset200时因秒浮点相减误选前行；

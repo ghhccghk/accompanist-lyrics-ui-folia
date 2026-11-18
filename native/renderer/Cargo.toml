@@ -1,0 +1,22 @@
+[package]
+name = "lyrics-folia-renderer"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.91"
+license = "AGPL-3.0-only"
+
+[lib]
+name = "lyrics_folia_renderer"
+crate-type = ["cdylib", "rlib"]
+
+[target.'cfg(target_os = "android")'.dependencies]
+jni-sys = "=0.3.0"
+raw-window-handle = "=0.6.2"
+pollster = "=0.4.0"
+wgpu = { version = "=27.0.1", default-features = false, features = ["std", "parking_lot", "vulkan", "wgsl"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+panic = "unwind"
+strip = false

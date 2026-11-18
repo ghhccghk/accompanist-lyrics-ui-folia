@@ -1,0 +1,73 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "three": "0.185.1",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "browser": "151.0.7922.34",
+  "DPR": 1,
+  "outputColorSpace": "srgb",
+  "toneMappingExposure": 1,
+  "fog": [
+    12,
+    30
+  ],
+  "context": {
+    "alpha": true,
+    "antialias": false,
+    "depth": true,
+    "desynchronized": false,
+    "failIfMajorPerformanceCaveat": false,
+    "powerPreference": "default",
+    "premultipliedAlpha": true,
+    "preserveDrawingBuffer": true,
+    "stencil": false,
+    "xrCompatible": false
+  },
+  "originalLockSha256": "ce30669b1acca119cc886133166dd872f8eeb3b9d05edb8c193e4d18e3b2a000",
+  "lockSha256": "fa4880c6317028dd7a9aaff852e2a593022086fbf70ec647f37b087b7435be15",
+  "hostFiles": [
+    {
+      "file": "diorama-tonemapping.ts",
+      "sha256": "2c8d23addc62bd9d0764c0d8f1a4453508cc1df684ac83953332877ef0ba1434"
+    },
+    {
+      "file": "diorama-tonemapping.html",
+      "sha256": "714537fac8be1efa96c4f786f136d0afd9483a7199bdd2e89f28c3d813109c92"
+    },
+    {
+      "file": "capture-diorama-tonemapping.mjs",
+      "sha256": "cddc23ab98ce61431c11eed59ee6e3890d46e72d57d6049f51b11a84b3ef9a59"
+    }
+  ],
+  "shaderFiles": [
+    {
+      "file": "ShaderLib/meshbasic.glsl.js",
+      "sha256": "da0944dc1e73d0d77a5cde9b93f7d1bdc5c1e825e28e8c582ab1f06692992495"
+    },
+    {
+      "file": "ShaderChunk/tonemapping_pars_fragment.glsl.js",
+      "sha256": "447958b93d07616c83d9273829ed810eb734d02ebbe60f12fc9bdda4f7928f44"
+    },
+    {
+      "file": "ShaderChunk/tonemapping_fragment.glsl.js",
+      "sha256": "f03f887404ceb572e1197d7a8f9a47aa23e3c5ef53ddf3b84af22ebce4954f21"
+    },
+    {
+      "file": "ShaderChunk/colorspace_pars_fragment.glsl.js",
+      "sha256": "609ef2ba45f73b95a8980cb91b62b61d65581d75067e7c1e45b976aaa397052a"
+    },
+    {
+      "file": "ShaderChunk/fog_fragment.glsl.js",
+      "sha256": "611d35fe58f82cd1ba3f85da61206351b6fb7be95a100fbb7b3800018072309a"
+    },
+    {
+      "file": "UniformsUtils.js",
+      "sha256": "2f5bb9c21190ba37cd5d80d9eb8501e4ff06ac91e678dc7d59dcc80f6b53011e"
+    }
+  ],
+  "cases": 960,
+  "scope": "Actual original-lock Three MeshBasicMaterial default-framebuffer readPixels, no JS ACES expected formula.16 linear RGB including source palette/HDR/black, alpha1/.63/.2, normal/additive, fog6/12/21/30/36, None/ACES. Solid center pixel; no text/camera/antialias oracle. Fixed initial gates: opaque color <=1 byte; full Compose blend/fog <=2 bytes. Source unchanged."
+}

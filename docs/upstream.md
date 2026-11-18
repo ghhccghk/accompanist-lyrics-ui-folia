@@ -1828,3 +1828,19 @@ source Float32 envelopes/wall breath/fog/ACES retained.4686 original callbacks,
 comparison:verification/diorama-mounted. Source callback width handoff and
 previously unaccounted R3F ACES identified; no frame delay or expected pose drives
 production. Parent gating/timeout/full RAF scene, visual/device acceptance pending.
+
+### Diorama R3F ACES material output (2026-11-18)
+Pinned original DioramaScene.tsx plain MeshBasicMaterial and
+DioramaActiveUnitPlanes.tsx glow/soul/base use R3F ACESFilmic/exposure1. Adapted
+original-lock Three0.185.1 ShaderChunk/tonemapping_pars_fragment.glsl.js
+ACESInputMat/RRTAndODTFit/ACESOutputMat -> DioramaToneMapping.kt; copyright
+2010–2026 three.js authors, MIT, existing full LICENSES/MIT-three-0.185.1.txt
+retained and packaged. Double arithmetic, explicit internal None/ACES policy,
+linear RGB -> ACES -> sRGB -> original encoded fog -> blend; no alpha mapping.
+DioramaActiveText/TextPlayback apply the same mapping to all text materials.
+DioramaFog preserves encoded HDR until fog instead of early byte clamping.
+No texture/font/audio/background assets or upstream runtime copied. Original
+direct-Three NoToneMapping oracles stay unchanged.960 actual shader framebuffer
+controls, failed initial/HDR cases,610 identical old PNG hashes and full mounted48
+same-union before/after with all regressions:verification/diorama-tonemapping.
+Not final visual/device acceptance; source RAF envelopes/breath and pose remain.

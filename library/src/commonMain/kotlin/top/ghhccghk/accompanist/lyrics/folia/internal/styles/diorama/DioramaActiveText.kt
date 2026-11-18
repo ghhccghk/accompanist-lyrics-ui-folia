@@ -6,6 +6,7 @@ package top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama
 
 import androidx.compose.ui.geometry.*
 import androidx.compose.ui.graphics.*
+import androidx.compose.ui.graphics.colorspace.ColorSpaces
 import androidx.compose.ui.graphics.drawscope.*
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.*
@@ -32,7 +33,7 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         placement: DioramaPlacement, primary: DioramaLinearColor, accent: DioramaLinearColor,
         tuning: DioramaUnitTuning = DioramaUnitTuning(),
         keywords: Map<Int, DioramaLinearColor> = emptyMap(), life: Double = 1.0,
-        fog: DioramaFog? = null) = with(scope) {
+        fog: DioramaFog? = null, toneMapping: DioramaToneMapping = DioramaToneMapping.None) = with(scope) {
         val fit = dioramaFrameFit(lineAdvance * .62 / 128, 5.2, view.fov, view.width / view.height) * placement.scale
         val unitScale = fit * .62 / 128
         val right = dioramaPlaneAxis(frame, placement, 1.0, 0.0)
@@ -55,16 +56,16 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         // Rendering three layers per unit changes overlapping ghosts and halos.
         for ((i, slice) in slices.withIndex()) {
             val state = states[i]
-            if (state.glowVisible) plane(slice, slice.halo, state.glowOpacity, state.fill.srgb(), depth = -.01, additive = true)
+            if (state.glowVisible) plane(slice, slice.halo, state.glowOpacity, state.fill.srgb(toneMapping), depth = -.01, additive = true)
         }
         for ((i, slice) in slices.withIndex()) {
             val state = states[i]
-            if (state.soulVisible) plane(slice, slice.image, state.soulOpacity, state.fill.srgb(),
+            if (state.soulVisible) plane(slice, slice.image, state.soulOpacity, state.fill.srgb(toneMapping),
                 depth = -.005, lift = state.soulLift, scale = state.soulScale, additive = true)
         }
         for ((i, slice) in slices.withIndex()) {
             val state = states[i]
-            plane(slice, slice.image, state.baseOpacity, state.fill.srgb())
+            plane(slice, slice.image, state.baseOpacity, state.fill.srgb(toneMapping))
         }
     }
 
@@ -127,9 +128,14 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
 }
 
 /** Three's material channels are linear; encode exactly once for Compose. */
-internal fun DioramaLinearColor.srgb(): Color {
+internal fun DioramaLinearColor.srgb(toneMapping: DioramaToneMapping = DioramaToneMapping.None): Color {
+    val mapped=if(toneMapping==DioramaToneMapping.AcesFilmic)dioramaAcesFilmic(this)else this
     fun channel(v: Double) = (if (v < .0031308) v * 12.92 else 1.055 * v.pow(1 / 2.4) - .055).toFloat()
-    return Color(channel(red), channel(green), channel(blue))
+    val r=channel(mapped.red);val g=channel(mapped.green);val b=channel(mapped.blue)
+    // NoToneMapping may emit >1 before encoded fog. Preserve that input until
+    // fog has mixed it; clamping first changes even an ordinary LDR framebuffer.
+    // Existing in-gamut direct-Three controls retain identical byte packing.
+    return Color(r,g,b,colorSpace=if(maxOf(r,g,b)>1f)ColorSpaces.ExtendedSrgb else ColorSpaces.Srgb)
 }
 
 /** Original pure-shadow ladder: shadowColor modulates source coverage BEFORE

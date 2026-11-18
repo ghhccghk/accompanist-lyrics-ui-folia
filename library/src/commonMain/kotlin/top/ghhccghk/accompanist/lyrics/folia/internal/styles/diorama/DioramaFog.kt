@@ -25,7 +25,10 @@ internal data class DioramaFog(val color: Color, val near: Double = 12.0, val fa
         return t*t*(3-2*t)
     }
     fun mixEncoded(body: Color, factor: Double): Color {
-        val a=body.convert(ColorSpaces.Srgb)
+        // Extended sRGB has the same transfer function and may carry an HDR
+        // NoToneMapping input. Converting it to byte-packed sRGB here would
+        // clamp BEFORE fog, unlike the original fragment shader.
+        val a=if(body.colorSpace==ColorSpaces.ExtendedSrgb)body else body.convert(ColorSpaces.Srgb)
         fun mix(x: Float,y: Float)=dioramaFogMixChannel(x.toDouble(),y.toDouble(),factor).toFloat()
         // sRGB Color packs immediately to bytes. Keep the interpolated stops in
         // extended sRGB (same transfer function, half-float storage), so the

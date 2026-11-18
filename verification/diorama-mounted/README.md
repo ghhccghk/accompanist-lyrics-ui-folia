@@ -1,5 +1,9 @@
 # Actual mounted Diorama text / camera — 2026-11-18
 
+Historical baseline at175dabe: source frames/conditions below remain frozen.
+The subsequently confirmed missing ACES step is corrected and compared without
+rewriting this baseline in `../diorama-tonemapping`; remaining residuals persist.
+
 Unlike the isolated orbit matrices, this mounts the untouched original
 **CameraRig and DioramaScene** React/R3F components together. It is not the
 VisualizerDiorama parent, readiness gate, timeout or complete background theme.

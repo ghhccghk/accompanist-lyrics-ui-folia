@@ -1,0 +1,31 @@
+{
+  "originalShaderCases": 960,
+  "opaquePeak": 0,
+  "opaqueGate": 1,
+  "fullBlendFogPeak": 2,
+  "fullGate": 2,
+  "retainedFailures": {
+    "missingACESPeak": 147,
+    "firstFixPrematureHDRClampPeak": 106
+  },
+  "frozenOriginalPNGsUnchanged": 48,
+  "oldDirectNativePNGsUnchanged": 610,
+  "targetedJvmTests": 25,
+  "compilation": [
+    "Android library",
+    "Desktop sample"
+  ],
+  "independentConsumer": "Local Maven coordinates: JVM actual draw/core callback, Android compilation, dependency/notices boundary passed",
+  "androidRuntime": false,
+  "nativeWindow": false,
+  "upstreamVisualAcceptance": false,
+  "performanceConclusion": false,
+  "logs": [
+    ".work/diorama-tonemapping-source.log",
+    ".work/diorama-tonemapping-before.log",
+    ".work/diorama-tonemapping-after.log",
+    ".work/diorama-tonemapping-hdr.log",
+    ".work/diorama-tonemapping-regression.log",
+    ".work/diorama-tonemapping-consumer.log"
+  ]
+}

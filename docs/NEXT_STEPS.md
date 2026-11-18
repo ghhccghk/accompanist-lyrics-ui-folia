@@ -10,15 +10,23 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、follower/原picker、裁剪/邻行/life/fog、incoming flight/同走廊loop/有界双走廊plain媒体重建 | 无 | 完整原挂载/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-最新插入任务已完成（示例主题选项）：七个实际公开主题使用自适应换行选择项，
+8e58a1c已完成插入任务（示例主题选项）：七个实际公开主题使用自适应换行选择项，
 显示中英文名、选中语义与统一校准预览提示；镜台仅说明内部验证，不开放假入口。
 320/900宽度逐项选择、原播放状态不变和原三主题入口/设置17项通过；Android shared/
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：镜台实际R3F ACES材质色调映射，先从已安装原Three shader建立
-独立颜色/混合/fog数值控制，再补原文字路径，复用冻结mounted48帧同union前后对照。
-不得修改旧直接Three NoToneMapping oracle，或加固定帧延迟仿造source callback顺序。
+当前唯一下一项：在同一原mounted矩阵补独立core有限envelope/连续wall breath材质
+控制，分清有限历史材质、媒体重建与文字栅格残差；不向生产注入原输出或固定帧延迟。
+用户新增交付要求：当前修改完构建Android debug APK，检查产物并提供路径；不安装。
+ACES为历史下一项，已修：原Three shader960控制不透明峰147→0(门槛1)、混合/fog
+峰2(门槛2)；首修HDR提前截断峰106失败保留，修运算顺序而非放宽。原48PNG和
+4686 camera数值未变，610旧直接Three-policy PNG hash全不变；25定向JVM/
+Android库/Desktop编译及本地独立Maven JVM绘制/Android消费与归属打包通过。
+同五图union有限MAE7.251753→6.954840/局部24.617612→20.434397，媒体
+20.348141→20.289881/局部87.853968→83.4；有限26/媒体27帧均值回退如实保留，
+不是原版视觉通过。证据verification/diorama-tonemapping，镜台继续内部；无新设备/
+真实窗口/音频/性能证据。原直接Three NoToneMapping oracle未改，未加入固定延迟。
 原挂载CameraRig+文字层为历史下一项，已完成：真实原React/R3F两组件、default
 shot picker、原Float32 envelope/呼吸/fog/缓存；显式host控制ready edge/媒体/wall/
 manual advance及cache RAF，未改source refs/算法。4686实际区间与提取算子峰0，
@@ -26,7 +34,7 @@ manual advance及cache RAF，未改source refs/算法。4686实际区间与提�
 同union前景均值有限7.251753/媒体20.348141，局部24.617612/87.853968，媒体位置
 残差.130588world，触边36/38/38，无空帧；仍未正式视觉/设备/真实窗口验收。
 实际callback先camera再text，切句读上一活动宽；生产重建未人为插入一帧延迟。
-实际R3F toneMapping=ACES(4)，旧直接Three为NoToneMapping；已确认当前原色材质缺项。
+截至175dabe实际R3F toneMapping=ACES(4)，旧直接Three为NoToneMapping；当时材质缺项已由上节补齐。
 原gate/timeout/三走廊/字体及device仍缺。证据verification/diorama-mounted；仅JVM
 新两项通过，生产未改；reference依赖按原锁校核并限定于verification，无库依赖。
 跨曲plain文字窗口为历史下一项，已完成<=6旧plain共享快照/全局索引/原归属及

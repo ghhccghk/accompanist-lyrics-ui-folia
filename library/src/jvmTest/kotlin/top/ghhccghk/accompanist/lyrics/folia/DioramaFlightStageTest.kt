@@ -78,7 +78,7 @@ class DioramaFlightStageTest {
                     drawn=view
                     fun color(i:Int)=r[i].split(',').map(String::toDouble).let{DioramaLinearColor(it[0],it[1],it[2])}
                     // Production full core -> camera -> shaped text stage, including distance life.
-                    prepared.drawStage(this,time,view,color(8),color(9))
+                    prepared.drawStage(this,time,view,color(8),color(9),toneMapping=DioramaToneMapping.None)
                 }
             }
         }

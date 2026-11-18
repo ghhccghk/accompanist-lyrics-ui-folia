@@ -16,14 +16,20 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。后来用户授权镜台调试入口，当前共八项，下述新结果取代入口限制。
 
-当前唯一下一项：构建并验签含镜台入口和“纹理预算检查”开关的debug APK交付用户；
-随后继续同48原矩阵3499ms媒体相机/局部残差，不增加无关原型。
-镜台真实core→公共组件→sample已闭环：可取消后台准备、墨迹/实际投影命中和原对象
+当前唯一下一项：同48原矩阵3499ms媒体相机/局部残差，先从实际固定callback附近
+状态与媒体重建差分离出局部原因，不调整阈值、帧延迟或重采原图。
+d508bc6镜台真实core→公共组件→sample已闭环：可取消后台准备、墨迹/实际投影命中和原对象
 回调、暂停/seek/offset/resize/字号/主题切换/重挂、超限错误恢复；纹理预算默认开启，
 可关闭并保存，切换重新准备。21项定向JVM与Android库/shared/Desktop编译通过，
 两张就绪后的离屏画面已图检，见verification/diorama-public；独立Maven两项JVM与
 Android消费编译/边界检查通过。采样器完成失效/准备计数两处接入错误已修，原失败
 保留；等值替换测试改引用状态以真实传入新对象。不是原版正式视觉/设备/真实窗口/性能结论。
+d508bc6 debug已交付：build/deliverables/android/
+lyrics-ui-folia-debug-d508bc6-20261118-183138.apk；SHA256
+2e4ac537b9a1bb559e68597454e15f3e8673f5f8d8dd170067a1bca8128f6800。
+原debug证书v1/v2（37.0.0/30.0.2）、ZIP CRC、16KB对齐、双ABI Rust和副本hash通过；
+未传输/安装。见verification/android-debug/2026-11-18-diorama-preview-validation.json、
+verification/consumer/d508bc6-validation.json；两项用户遗留hash未变，无设备结论。
 此前“镜台保持未开放”是历史阶段限制，被此次用户开放调试入口授权覆盖；不远程发布。
 b051bcc内部有界F16 surface已完成：108原Three合成peak1/gate2；同48五图union有限
 1.964789→.944027/最坏64 6.883721→3.410853，0均值/局部回退；媒体

@@ -1,0 +1,18 @@
+{
+  "sourceRevision": "d508bc6f476de6236c2a9b05dcf2ae64a6f00c75",
+  "date": "2026-11-18T18:31:40.111878+08:00",
+  "command": "python scripts/verify-consumer.py",
+  "result": "PASS",
+  "publication": "file-backed local verification repository only",
+  "independentJvm": {
+    "tests": 2,
+    "failures": 0,
+    "errors": 0,
+    "scope": "Classic render/source callback; Diorama public configuration and asynchronous preparation"
+  },
+  "independentAndroidCompile": "PASS",
+  "artifactCoordinatesDependencyBoundaryAndPackagedNotices": "PASS",
+  "installed": false,
+  "remotePublished": false,
+  "limits": "Offscreen JVM only; no device, real-window, performance or original-theme visual claim. Android ordinary rendering fallback."
+}

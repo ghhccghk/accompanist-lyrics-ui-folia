@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.*
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.platform.LocalFontFamilyResolver
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runDesktopComposeUiTest
@@ -19,7 +20,9 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.text.classicBodyRasterStyle
 import java.io.File
 import java.util.Base64
+import java.security.MessageDigest
 import javax.imageio.ImageIO
+import org.jetbrains.skia.Image
 import kotlin.math.*
 import kotlin.test.*
 
@@ -52,6 +55,13 @@ class DioramaMountedStageTest {
         var prepared:DioramaTextPlayback?=null;var drawn:DioramaPerspective?=null;var builds=0
         val finiteViews=mutableMapOf<String,DioramaPerspective>()
         val finiteMaterials=mutableMapOf<String,List<DioramaUnitFrame>>()
+        var diagnosticPlanes=emptyMap<Int,DioramaDepartingPlane>()
+        val sourceCache7 by lazy {
+            val bytes=File("../verification/diorama-fixtures/mounted-raster-v1/cache-7.png").readBytes()
+            assertEquals("be0bf017e888adb86c6cd22e490704c8d3e24e758456a8eec3b1141fbf912ef9",
+                MessageDigest.getInstance("SHA-256").digest(bytes).joinToString(""){"%02x".format(it)})
+            Image.makeFromEncoded(bytes).toComposeImageBitmap()
+        }
         var controlPeak=0.0;var widthPeak=0.0;var stepCount=0
         var materialPeak=0.0;var materialStates=0;var envelopePeak=0.0
         setContent {
@@ -64,6 +74,11 @@ class DioramaMountedStageTest {
                     seedName="Outgoing mirror",endTime=12.0)
                 val result=DioramaTextPlayback.prepare(core,style,measurer,resolver,width.toDouble(),600.0,
                     seedName="Incoming mirror",endTime=5.0,cut=old.cutAt(6.8,1))
+                if(width==380)diagnosticPlanes=(old.lines.mapIndexed { i,line ->
+                    val s=old.camera.subjects[i];DioramaDepartingPlane(i,line.neighbor,s.frame,s.placement)
+                }+result.lines.mapIndexed { i,line ->
+                    val s=result.camera.subjects[i];DioramaDepartingPlane(i+8,line.neighbor,s.frame,s.placement)
+                }).associateBy{it.index}
                 if(width==380)exportMountedNeighborRasters(old,result,style,measurer,resolver)
                 controlPeak=0.0;widthPeak=0.0;stepCount=0
                 materialPeak=0.0;materialStates=0;envelopePeak=0.0
@@ -144,7 +159,23 @@ class DioramaMountedStageTest {
             Canvas(Modifier.fillMaxSize().background(Color(0xff162435))) {
                 if(ready!=null) {
                     val view=if(method!="media")finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time)
-                    drawn=view;ready.drawStage(this,time,view,primary,accent,secondary,fog=fog,
+                    drawn=view
+                    if(method.startsWith("input-")) {
+                        val only=if(method=="input-source-only-7")7 else method.removePrefix("input-only-").toIntOrNull()
+                        if(method!="input-active")for(n in ready.neighborFramesAt(time,view,primary,secondary)) {
+                            if(n.opacity>0 && (only==null||only==n.index)) {
+                                val p=diagnosticPlanes.getValue(n.index)
+                                drawInputPlane(this,view,p,
+                                    if(method.startsWith("input-source")&&n.index==7)sourceCache7 else p.text.image,
+                                    n.color.srgb(DioramaToneMapping.AcesFilmic),n.opacity.toFloat(),fog)
+                            }
+                        }
+                        if(only==null) {
+                            val i=ready.camera.subjectIndex(time);val s=ready.camera.subjects[i]
+                            ready.lines[i].text.drawFrames(this,view,s.frame,s.placement,
+                                finiteMaterials.getValue("${r[2]}-$time"),fog,DioramaToneMapping.AcesFilmic)
+                        }
+                    }else ready.drawStage(this,time,view,primary,accent,secondary,fog=fog,
                         activeFrames=if(method=="material")finiteMaterials.getValue("${r[2]}-$time")else null)
                 }
             }
@@ -165,6 +196,29 @@ class DioramaMountedStageTest {
             val d=drawn!!.eye-finite.eye;mediaPeak=maxOf(mediaPeak,abs(d.x),abs(d.y),abs(d.z))
             ImageIO.write(captureToImage().toAwtImage(),"png",out.resolve("media-$name"))
         }
+        if(width==380) {
+            val diagnostic=File("../build/verification/diorama-mounted-input-kotlin").apply{mkdirs()}
+            val index=probes.indexOfFirst{it[2]=="60"&&it[3].toDouble()==.7}
+            assertTrue(index>=0)
+            runOnIdle{current=index;method="material"};val production=pixels()
+            ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("production.png"))
+            runOnIdle{method="input-own"};assertContentEquals(production,pixels(),"Own-texture diagnostic replay must match the real production drawStage exactly")
+            ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("own-replay.png"))
+            runOnIdle{method="input-source"};pixels()
+            ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-cache7.png"))
+            runOnIdle{method="input-source-only-7"};pixels()
+            ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-neighbor-7.png"))
+            val counts=mutableListOf<String>()
+            for(n in listOf(2,3,4,5,6,7,9,10)) {
+                runOnIdle{method="input-only-$n"}
+                val image=pixels();counts+="$n\t${image.count{it!=Color(0xff162435).toArgb()}}"
+                ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("neighbor-$n.png"))
+            }
+            runOnIdle{method="input-active"}
+            counts+="active\t${pixels().count{it!=Color(0xff162435).toArgb()}}"
+            ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("active.png"))
+            diagnostic.resolve("control.txt").writeText("Own replay equals production pixels; only cache7 image is substituted in the labelled source-input diagnostic, never production.\n"+counts.joinToString("\n")+"\n")
+        }
         assertEquals(1,builds)
         for(i in listOf(0,probes.lastIndex,3,12,7)) {
             runOnIdle{current=i;method="media"};assertTrue(media.getValue(probes[i][3]).contentEquals(pixels()))
@@ -174,6 +228,20 @@ class DioramaMountedStageTest {
         runOnIdle{mounted=true};assertTrue(paused.contentEquals(pixels()))
         out.resolve("numeric-$width.txt").writeText("originalMountedSteps=$stepCount finiteStatePosePeak=$controlPeak widthPeak=$widthPeak gate=1e-9 adaptiveMediaPositionResidual=$mediaPeak\nFinite control reproduces original actual callback-width order with independently prepared core geometry; production media draws native analytic material without original RAF state injection\n")
         out.resolve("material-$width.txt").writeText("originalUnitStates=$materialStates materialPeak=$materialPeak sampledEnvelopePeak=$envelopePeak gate=1e-9\nOwn finite Float32 history/reset from core intervals, original wall breath and own camera life; no original material/pose values drive rendering.\n")
+    }
+
+    /** Diagnostic-only replay of the production plain-plane transform. Its own
+     * texture result MUST match drawStage byte-for-byte before substituting the
+     * original cache7 image. No source geometry/pose/material drives drawing. */
+    private fun drawInputPlane(scope:DrawScope,view:DioramaPerspective,p:DioramaDepartingPlane,
+        image:ImageBitmap,color:Color,alpha:Float,fog:DioramaFog) {
+        assertEquals(p.text.image.width,image.width);assertEquals(p.text.image.height,image.height)
+        val scale=dioramaFrameFit(p.text.worldWidth,5.2,view.fov,view.width/view.height)*p.placement.scale
+        val x=dioramaPlaneAxis(p.frame,p.placement,1.0,0.0)*(scale*.62/p.text.fontPx)
+        val y=dioramaPlaneAxis(p.frame,p.placement,0.0,1.0)*(scale*.62/p.text.fontPx)
+        val center=dioramaComposeLocal(p.frame,p.placement.offsetR,p.placement.offsetU,0.0)
+        val origin=center-x*(image.width/2.0)+y*(image.height/2.0)
+        scope.drawDioramaPlane(image,view,origin,x,y*-1.0,alpha,color,fog=fog)
     }
 
     /** Export the independently prepared production rasters BEFORE projection.

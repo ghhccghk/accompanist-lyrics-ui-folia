@@ -1,0 +1,62 @@
+{
+  "sourceRevision": "46f89e7f1ec94594febf6fab4f950fcd0b367474",
+  "date": "2026-11-18T15:12:05.368952+08:00",
+  "request": "Refresh Android debug APK after independently verified Diorama neighbour foreground coverage change",
+  "build": {
+    "task": ":sample:android-app:assembleDebug",
+    "flags": [
+      "-I",
+      "<temporary output-isolation init script>"
+    ],
+    "exitCode": 0,
+    "executedTasks": 7,
+    "upToDateTasks": 52,
+    "appOutputIsolated": true,
+    "isolation": "Temporary Gradle init script changes only sample:android-app buildDirectory. Isolated output avoids the previously observed original APK lock; no user processes were closed and no signing configuration was changed."
+  },
+  "deliveredApk": "build/deliverables/android/lyrics-ui-folia-debug-46f89e7-20261118-151205.apk",
+  "bytes": 29003379,
+  "sha256": "2bbf927e118a2c655db184c84b68f0b0394fc400dbff68388eaec7e430a43cf3",
+  "sameAsPreviousRecordedApk": false,
+  "signatureChecks": [
+    {
+      "buildTools": "37.0.0",
+      "exitCode": 0,
+      "v1": true,
+      "v2": true,
+      "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+    },
+    {
+      "buildTools": "30.0.2",
+      "exitCode": 0,
+      "v1": true,
+      "v2": true,
+      "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+    }
+  ],
+  "deliverySignatureCheck": {
+    "buildTools": "37.0.0",
+    "exitCode": 0,
+    "v1": true,
+    "v2": true,
+    "certificateSha256": "61cd4113a669e8abc553ed9dfac621fabeaaed1793b7b7b3362dd6a0597338f4"
+  },
+  "originalDebugCertificateRetained": true,
+  "zipCrcCheck": "all entries passed",
+  "zipalign16KiB": {
+    "buildTools": "37.0.0",
+    "exitCode": 0
+  },
+  "rustLibraries": {
+    "lib/arm64-v8a/libfolia_mask_experiment.so": 183,
+    "lib/x86_64/libfolia_mask_experiment.so": 62
+  },
+  "copyMatchesBuildOutput": true,
+  "installed": false,
+  "phoneVerificationFailureReproduced": false,
+  "phoneInstallationResolved": "not established; no device installation performed",
+  "preservedExternalInputs": [
+    "sample/android-app/build.gradle.kts release/debug signing change",
+    "gradle/gradle-daemon-jvm.properties"
+  ]
+}

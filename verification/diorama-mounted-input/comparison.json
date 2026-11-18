@@ -1,0 +1,109 @@
+{
+  "baseline": "46f89e7",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "ownReplayMatchesProduction": true,
+  "originalFullFrameRestoredUnchanged": true,
+  "actualSourceCacheSha256": "be0bf017e888adb86c6cd22e490704c8d3e24e758456a8eec3b1141fbf912ef9",
+  "originalCallbacks": 452,
+  "conditions": "380x600,DPR1,60Hz original full outgoing0..6.8/incoming0...7, same mounted camera/fog/ACES/font/geometry/material state",
+  "sourceLayer": "Diagnostic cloned actual mounted neighbour7 only, same material/texture/world matrix/camera/fog/renderer. No original refs or objects mutated. Whole original scene restored byte-identically without another RAF callback. This is layer isolation, not another whole-scene acceptance capture.",
+  "control": "Only the TEST cache7 image changes. Every camera, core geometry, width and material state is native independently reconstructed. The original clone layer is an isolated diagnostic, not an original whole-scene acceptance claim.",
+  "mask": "All three-image nonbackground union, including lowest RGB/alpha contribution; no registration, pixel shift, threshold, filter, time shift or excluded pixel",
+  "stage": {
+    "union_pixels": 529,
+    "measurements": {
+      "source": {
+        "nonbackground": 501,
+        "bounds": [
+          140,
+          25,
+          270,
+          425
+        ],
+        "positive_rgb_mass": 22485
+      },
+      "own-input": {
+        "nonbackground": 282,
+        "bounds": [
+          140,
+          27,
+          270,
+          424
+        ],
+        "positive_rgb_mass": 28204,
+        "foreground_mae": 11.0705734089477,
+        "worst64": 13.893617021276595,
+        "channel_peak": 46
+      },
+      "shared-cache7-input": {
+        "nonbackground": 282,
+        "bounds": [
+          140,
+          27,
+          270,
+          424
+        ],
+        "positive_rgb_mass": 28389,
+        "foreground_mae": 11.114051669817265,
+        "worst64": 13.972813238770685,
+        "channel_peak": 46
+      }
+    },
+    "hashes": {
+      "build/verification/diorama-mounted-input-browser/mounted-before.png": "228c7487e721a0e2ec15b4bb311a78d8ef6dc94956541a1dd1dc18ff9db4d54e",
+      "build/verification/diorama-mounted-input-kotlin/production.png": "02b5a7f18f0025be580d09f961ac17b9e2a7d8e985b77f28fc2224e0b35cda99",
+      "build/verification/diorama-mounted-input-kotlin/source-cache7.png": "27d4d4dd34b87d3e0469f910b891347e8d31147af32e7997d606c74a4ed964e7"
+    }
+  },
+  "neighbor7": {
+    "union_pixels": 409,
+    "measurements": {
+      "source": {
+        "nonbackground": 409,
+        "bounds": [
+          176,
+          416,
+          270,
+          425
+        ],
+        "positive_rgb_mass": 22421
+      },
+      "own-input": {
+        "nonbackground": 193,
+        "bounds": [
+          177,
+          417,
+          270,
+          424
+        ],
+        "positive_rgb_mass": 27493,
+        "foreground_mae": 13.705786471067645,
+        "worst64": 13.893617021276595,
+        "channel_peak": 46
+      },
+      "shared-cache7-input": {
+        "nonbackground": 193,
+        "bounds": [
+          177,
+          417,
+          270,
+          424
+        ],
+        "positive_rgb_mass": 27678,
+        "foreground_mae": 13.76202118989405,
+        "worst64": 13.972813238770685,
+        "channel_peak": 46
+      }
+    },
+    "hashes": {
+      "build/verification/diorama-mounted-input-browser/source-neighbor-7.png": "aae3adee428ea92d2c30049e58d2869562144d9a4166c5069ea0594f70621992",
+      "build/verification/diorama-mounted-input-kotlin/neighbor-7.png": "428ef547b91700bdb4089a92170169108b7e2a93d14086e92837f5b3bcc2ee38",
+      "build/verification/diorama-mounted-input-kotlin/source-neighbor-7.png": "18033bf8cb7618e873ef5f399083b5fbff3ed50f153d25f8a8a96bc54007c674"
+    }
+  },
+  "separateNativeLayerCounts": "Own replay equals production pixels; only cache7 image is substituted in the labelled source-input diagnostic, never production.\n2\t0\n3\t0\n4\t0\n5\t0\n6\t0\n7\t193\n9\t0\n10\t0\nactive\t89\n",
+  "interpretation": "The actual original cache7 texture does not remove the mounted/native isolated-plane residual. Texture coverage alone is insufficient. Isolated source plane covers409 pixels vs193 native with either texture; investigate minification/compositing rather than fitting font alpha or camera/time. Exact graphics-backend cause not yet established.",
+  "nativePublicOrRuntimeChange": false,
+  "deviceValidated": false,
+  "visualAcceptance": false
+}

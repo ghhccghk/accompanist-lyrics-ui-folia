@@ -111,4 +111,18 @@ Object.assign(window,{mountedReady:true,mountedInputs:{oldLines,lines,oldSeed,se
      actualBoundingBoxDescent:metrics.actualBoundingBoxDescent},png:canvas.toDataURL('image/png')};
   });
  },
+ // Labelled diagnostic render only: clone an ACTUAL mounted neighbour mesh,
+ // retaining its matrix/geometry/texture/material and the mounted camera/fog.
+ // Original objects/refs stay unchanged; null restores the original whole scene.
+ renderMountedNeighborLayer:(index:number|null)=>{
+  const state=_roots.get(canvas)!.store.getState();
+  if(index===null){state.gl.render(state.scene,state.camera);return;}
+  const mesh=refs(DioramaScene)[0].get(index);
+  if(!mesh)throw Error(`Missing actual mounted neighbour ${index}`);
+  mesh.updateWorldMatrix(true,false);
+  const clone=mesh.clone(),material=mesh.material.clone();
+  clone.material=material;clone.matrix.copy(mesh.matrixWorld);clone.matrixAutoUpdate=false;
+  const scene=new THREE.Scene();scene.fog=state.scene.fog?.clone()??null;scene.add(clone);
+  try{state.gl.render(scene,state.camera);}finally{material.dispose();scene.remove(clone);}
+ },
  unmountMounted:async()=>{root.unmount();await new Promise(r=>setTimeout(r,600));return{roots:_roots.size,queuedRafs:(window as any).queuedRafs.size}}});

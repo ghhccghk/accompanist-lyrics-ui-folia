@@ -16,15 +16,22 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：固定700ms实际邻行texture作显式shared-input诊断，先断言
-own-texture重放与生产stage逐像素相同，再测共享原cache后仍保留的投影/后端残差；
-不将原纹理接入生产，不改相机/时间/阈值，不重新运行全部源矩阵。
+当前唯一下一项：以固定700ms同原cache7输入为控制，核对已安装Compose
+SkiaBackedCanvas.drawImageRect的strict=true与实际mipmap采样的关系；只在该控制
+验证新的采样路径，成立后才扩大原矩阵，不重复无效Medium hint或拟合相机/像素。
+同输入控制已完成：own-texture重放与生产stage逐像素相同；源完整图/状态在分层
+clone渲染后仍同原hash。源实际邻行7=409非背景像素，本=193；共享源cache7后
+局部MAE13.705786→13.762021，覆盖输入不足以解释残差，见verification/diorama-mounted-input。
+只保留35KB合成源测试纹理，不进入生产；数据/原失败均保留，不称图形后端等价。
 c3e464c已完成真实cache452callback被动读取/整屏hash和8张原几何控制；随后
 Windows邻行覆盖采用既有前景栅格策略，raw MAE3.784223→1.606260/峰130–133→20。
 同原72图：plain24帧均值全部改善(13.079068→11.776553)，仍11局部回退；mounted
 有限34改善/2回退/12不变，媒体24/12/12、局部峰82.267296→82.462264，全部保留。
 相机/材料数值门槛未变，仍非正式视觉验收。证据verification/diorama-plain-coverage。
 raw候选探索为历史，保留verification/diorama-mounted-raster，不能以新输出覆盖旧报告。
+46f89e7新增Android debug交付已构建/v1/v2/ZIP/16KB/双ABI Rust核对，未安装；
+见verification/android-debug/2026-11-18-plain-coverage-validation.json。Android语义未因
+Windows栅格修正改变，无新设备/性能结论；旧被占用APK未覆盖，两个外部遗留未提交。
 本轮交付构建/公共入口/独立消费已完成：325c2bd下公开JVM38项与新版选择器2项
 通过；Android debug APK构建、apksigner v1/v2、arm64-v8a/x86_64真实ELF库核对通过。
 APK在sample/android-app/build/outputs/apk/debug/android-app-debug.apk，未安装，

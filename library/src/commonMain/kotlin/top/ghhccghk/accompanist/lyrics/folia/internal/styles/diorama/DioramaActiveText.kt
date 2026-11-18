@@ -16,9 +16,17 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.text.*
 import kotlin.math.*
 import top.ghhccghk.accompanist.lyrics.folia.internal.rendering.blurPremultiplied
 
-internal data class DioramaActiveSlice(val unit: DioramaUnit, val image: ImageBitmap, val centerPx: Double,
-    val rangeLeft: Float, val rangeRight: Float, val halo: ImageBitmap, val imageOffsetPx: Double = 0.0,
-    val body:ImageBitmap=image)
+internal class DioramaActiveSlice(val unit: DioramaUnit, image: ImageBitmap, val centerPx: Double,
+    val rangeLeft: Float, val rangeRight: Float, halo: ImageBitmap, val imageOffsetPx: Double = 0.0,
+    body:ImageBitmap=image,retain:(ImageBitmap)->DioramaRaster=::DioramaRaster) {
+    private val sourceRaster=retain(image)
+    private val haloRaster=retain(halo)
+    private val bodyRaster=if(body===image)sourceRaster else retain(body)
+    val image:ImageBitmap get()=sourceRaster.image
+    val halo:ImageBitmap get()=haloRaster.image
+    val body:ImageBitmap get()=bodyRaster.image
+    val rasters:List<DioramaRaster> get()=listOf(sourceRaster,haloRaster,bodyRaster).distinct()
+}
 
 /** Full-shaped slices and the original registered halo / crisp soul / base order.
  * Text and halo textures are prepared once, never from the display-frame loop. */
@@ -94,11 +102,12 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
     companion object {
         fun prepare(line: DioramaLyric, base: TextStyle, measurer: TextMeasurer,
             resolver: FontFamily.Resolver, checkpoint: () -> Unit = {}):DioramaActiveText =
-            prepareBounded(line,base,measurer,resolver,checkpoint){_,_,_->}
+            prepareBounded(line,base,measurer,resolver,checkpoint,reserveRaster={_,_,_->})
 
         fun prepareBounded(line:DioramaLyric,base:TextStyle,measurer:TextMeasurer,
             resolver:FontFamily.Resolver,checkpoint:()->Unit,
-            reserveRaster:(Int,Int,Int)->Unit): DioramaActiveText {
+            reserveRaster:(Int,Int,Int)->Unit,
+            retain:(ImageBitmap)->DioramaRaster=::DioramaRaster): DioramaActiveText {
             checkpoint()
             val density = Density(1f, 1f)
             val style = base.copy(fontSize = 128.sp, lineHeight = TextUnit.Unspecified,
@@ -185,7 +194,7 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
                     if(direction==ResolvedTextDirection.Rtl)advance/2-start else -advance/2+start
                 }else range.left + width / 2.0 - advance / 2
                 DioramaActiveSlice(unit, image, center, range.left, range.right, prepareDioramaHalo(image,checkpoint),
-                    if(sourceWords)0.0 else left + image.width/2.0 - advance/2 - center,body)
+                    if(sourceWords)0.0 else left + image.width/2.0 - advance/2 - center,body,retain)
             }
             checkpoint()
             return DioramaActiveText(slices, advance, middle)

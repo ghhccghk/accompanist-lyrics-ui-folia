@@ -44,7 +44,7 @@ internal class DioramaPlainRenderer(private val maxEntries:Int=8,
         if(unique==requested)return
         // No stale corridor/paragraph ownership after a change or empty set.
         for(text in entries.keys.toList())if(text !in unique) {
-            entries.remove(text)!!.close();residentBytes-=dioramaPlainMipBytes(text.image.width,text.image.height)
+            entries.remove(text)!!.close();residentBytes-=dioramaPlainMipBytes(text.raster.width,text.raster.height)
         }
         // Failed preparation is not a successful empty request: an unmount
         // must still evict any images prepared before that exception.

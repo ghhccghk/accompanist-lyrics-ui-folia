@@ -16,9 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。后来用户授权镜台调试入口，当前共八项，下述新结果取代入口限制。
 
-当前唯一下一项（用户追加）：镜台纹理超过内存预算后转临时磁盘缓存，后台准备／加载
-当前文字和邻行，验证图像不变、乱序 seek、取消／卸载与错误恢复。完成后回到同48
-原矩阵3499ms媒体相机局部残差；不调整阈值、帧延迟或重采原图。
+当前唯一下一项（用户报告）：修复Windows镜台fragment的ps_5_1超过16个sampler，
+完整mip链改为共享图集并用原独立控制矩阵验证，保留全部过滤／颜色语义。
+随后提供实际可用的Desktop启动后端参数（当前Skiko无JVM Vulkan解析支持），
+再构建Android debug／独立消费，回到同48原矩阵3499ms媒体相机局部残差。
+不调整阈值、帧延迟或重采原图。
+镜台会话磁盘缓存：默认32MiB retained ARGB软目标，后台窗口读盘和下一窗口预取，
+正常卸载删自有文件、错误可见。强制磁盘vs内存逐像素、乱序seek/暂停/offset/resize/
+原对象/取消/失败恢复及设置验证，证据见verification/diorama-raster-cache。
+不是PSS／设备／正式视觉结论；强杀残留与额外sampler内存仍待独立评估。
 2026-11-18 用户调整等待效果：Diorama／Fume／Cappella／Pendolo 保留自身连续文字
 舞台，不再叠加独立等待球；Classic／Partita／Tilt／Cadenza 沿用有限空档与退场避让。
 3项定向JVM（含八主题空档切换、镜台前奏/间奏与内部舞台逐像素相同、原等待全声部

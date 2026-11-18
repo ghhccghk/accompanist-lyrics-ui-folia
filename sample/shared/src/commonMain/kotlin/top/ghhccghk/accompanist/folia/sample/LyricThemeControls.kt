@@ -32,7 +32,9 @@ internal fun LyricThemeControls(session: SampleSession) {
         Text("镜台 Diorama · 实验调试预览",style=MaterialTheme.typography.bodySmall)
         Text("真实文字透视与运镜已接入；镜头、遮挡与 Android 辉光仍待校准。",style=MaterialTheme.typography.bodySmall)
         ThemeToggle("纹理预算检查",session.dioramaTuning.enforceRasterBudget){session.dioramaTuning=session.dioramaTuning.copy(enforceRasterBudget=it)}
-        Text(if(session.dioramaTuning.enforceRasterBudget)"超出纹理预算会显示错误。" else "纹理预算检查已关闭，超大歌词可能导致内存不足。",style=MaterialTheme.typography.bodySmall)
+        Text(if(session.dioramaTuning.enforceRasterBudget)"单张纹理或驻留窗口超出预算会显示错误。" else "纹理预算检查已关闭，超大歌词可能导致内存不足。",style=MaterialTheme.typography.bodySmall)
+        ThemeToggle("纹理磁盘缓存",session.dioramaTuning.cacheTexturesOnDisk){session.dioramaTuning=session.dioramaTuning.copy(cacheTexturesOnDisk=it)}
+        Text(if(session.dioramaTuning.cacheTexturesOnDisk)"超过纹理内存目标后转临时缓存，后台加载当前句与邻行。" else "整曲纹理保存在内存中。",style=MaterialTheme.typography.bodySmall)
         Text("镜台字号倍率 ${session.dioramaTuning.fontScale}")
         Slider(session.dioramaTuning.fontScale,{session.dioramaTuning=session.dioramaTuning.copy(fontScale=it)},valueRange=.5f..2f)
     }

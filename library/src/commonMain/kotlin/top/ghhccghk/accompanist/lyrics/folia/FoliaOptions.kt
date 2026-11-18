@@ -79,8 +79,15 @@ data class DioramaTuning(
     val fogColor:Color=Color.Transparent,
     /** Disable only for host-controlled experiments; platform limits still apply. */
     val enforceRasterBudget:Boolean=true,
+    /** Spill prepared glyph textures to session-local disk above the memory
+     * target. Current/next windows load asynchronously, never during drawing. */
+    val cacheTexturesOnDisk:Boolean=true,
+    /** Soft retained ARGB payload target; current window may need more.
+     * Does not include blur scratch, GPU copies or retired in-flight frames. */
+    val rasterMemoryBudgetBytes:Long=32L*1024*1024,
 ) {
-    init { require(fontScale.isFinite()&&fontScale in .5f..2f);require(fogColor!=Color.Unspecified) }
+    init { require(fontScale.isFinite()&&fontScale in .5f..2f);require(fogColor!=Color.Unspecified)
+        require(rasterMemoryBudgetBytes in 1..96L*1024*1024) }
 }
 
 @Immutable

@@ -5,13 +5,15 @@ import kotlin.test.*
 
 class SettingsTest {
     @Test fun dioramaDebugPreviewPreferencesAreCompatible(){
-        val settings=SampleSettings(lyricTheme=SampleLyricTheme.Diorama,dioramaTuning=DioramaTuning(fontScale=1.3f,enforceRasterBudget=false))
+        val settings=SampleSettings(lyricTheme=SampleLyricTheme.Diorama,dioramaTuning=DioramaTuning(fontScale=1.3f,enforceRasterBudget=false,
+            cacheTexturesOnDisk=false,rasterMemoryBudgetBytes=16L*1024*1024))
         assertEquals(settings,SampleSettings.decode(settings.encode()))
         val session=SampleSession();session.applySettings(settings)
         assertEquals(FoliaStyle.Diorama(settings.dioramaTuning),session.lyricStyle)
         assertEquals(settings,session.settings());assertFalse(session.demo)
         assertEquals(DioramaTuning(),SampleSettings.decode("version=1").dioramaTuning)
         assertEquals(DioramaTuning(),SampleSettings.decode("version=1\ndioramaFont=NaN").dioramaTuning)
+        assertEquals(DioramaTuning(),SampleSettings.decode("version=1\ndioramaRasterMemory=-1\ndioramaDiskCache=invalid").dioramaTuning)
     }
     @Test fun fumeControlsRoundTripAndRealThemeIsSelectable() {
         val tuning=FumeTuning(1.5f,1.2f,.3f,1.8f,FumeTrackingMode.Stepped,.7f,false)

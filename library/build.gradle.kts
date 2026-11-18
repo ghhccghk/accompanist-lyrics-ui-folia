@@ -20,6 +20,10 @@ kotlin {
     }
     jvm()
     sourceSets {
+        // Both supported targets are JVM-based. Share only the private disk
+        // residency implementation; bitmap packing and cache roots stay native.
+        jvmMain { kotlin.srcDir("src/jvmAndroidMain/kotlin") }
+        androidMain { kotlin.srcDir("src/jvmAndroidMain/kotlin") }
         commonMain { resources.srcDir(prepareLicenseResources.map { it.destinationDir.parentFile.parentFile }) }
         commonMain.dependencies {
             api(libs.lyrics.core)

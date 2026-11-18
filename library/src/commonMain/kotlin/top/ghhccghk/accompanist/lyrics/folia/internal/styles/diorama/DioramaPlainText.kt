@@ -25,8 +25,9 @@ internal expect fun dioramaTypographicRatio(style: TextStyle, resolver: FontFami
 /** One complete shaped neighbouring-line raster, not an active-unit/glow stage.
  * Fixed source texture em is independent of viewport density/system font scale.
  * Prepare once per content/font change; camera queries never reshape the text. */
-internal class DioramaPlainText private constructor(val image: ImageBitmap, val advancePx: Int,
+internal class DioramaPlainText private constructor(val raster:DioramaRaster, val advancePx: Int,
     val fontPx: Int, val padding: Int, val middleBaseline: Double, val hasTypographicMetrics: Boolean) {
+    val image:ImageBitmap get()=raster.image
     val worldWidth: Double get() = advancePx * .62 / fontPx
 
     /** Real perspective/FrontSide/near-far clipping, same source basis/yaw/roll.
@@ -45,7 +46,8 @@ internal class DioramaPlainText private constructor(val image: ImageBitmap, val 
     companion object {
         fun prepare(text: String, baseStyle: TextStyle, measurer: TextMeasurer,
             resolver: FontFamily.Resolver,
-            reserveRaster:(Int,Int,Int)->Unit={_,_,_->}): DioramaPlainText {
+            reserveRaster:(Int,Int,Int)->Unit={_,_,_->},
+            retain:(ImageBitmap)->DioramaRaster=::DioramaRaster): DioramaPlainText {
             val density = Density(1f, 1f)
             var fontPx = 128
             // HTML Canvas normalizes these ASCII whitespace characters to spaces.
@@ -84,7 +86,7 @@ internal class DioramaPlainText private constructor(val image: ImageBitmap, val 
                 Size(image.width.toFloat(), image.height.toFloat())) {
                 drawText(layout, Color.White, origin, shadow = Shadow.None)
             }
-            return DioramaPlainText(image, advancePx, fontPx, padding, middle, typographic != null)
+            return DioramaPlainText(retain(image), advancePx, fontPx, padding, middle, typographic != null)
         }
     }
 }

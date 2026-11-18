@@ -2049,3 +2049,14 @@ samplers close on dispose; Android uses ordinary fallback. Public integration
 evidence, initial offset-frame failure and remaining sequencer/depth/media
 camera/platform limits: verification/diorama-public, docs/diorama-preview.md.
 AGPL-3.0-only unchanged; public debug availability does not assert visual parity.
+
+### Diorama session raster residency (2026-11-18)
+Independent adaptation of the already attributed text playback port, not an
+upstream algorithm change: DioramaRasterCache + JVM/Android native premultiplied
+byte codecs and session-local compressed file; DioramaPlainText/ActiveText retain
+handles instead of whole-song images. Preparation spills above a soft memory
+target; background window load + UI publication keep Canvas/hit testing free of
+disk IO. No new upstream code/assets or license change. Public exact pixels,
+raw-byte roundtrip, cancellation/seek/cleanup/errors and settings evidence:
+verification/diorama-raster-cache. No PSS/performance/device claim; process-kill
+orphan cleanup remains unimplemented.

@@ -26,8 +26,21 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
     val camera: DioramaCameraTrack, val width: Double, val height: Double,
     private val transitionOutgoingIndex: Int? = null,
     val departure: DioramaTextDeparture? = null,
-    val breathOriginSeconds: Double = 0.0) {
+    val breathOriginSeconds: Double = 0.0,
+    val rasterCache:DioramaRasterCache?=null) {
     val globalStart: Int get() = departure?.sourceSpan ?: 0
+    /** Active image/halo/body plus the actual plain neighbour window. Geometry
+     * and camera retain metadata only; these handles never load themselves. */
+    fun rastersAt(time:Double):List<DioramaRaster> {
+        val index=camera.subjectIndex(time)
+        return (lines[index].text.slices.flatMap{it.rasters}+
+            mountedTextIndicesAt(time).filter{it!=globalStart+index}.map{plainAt(it).text.raster}).distinct()
+    }
+    fun prefetchRastersAt(time:Double):List<DioramaRaster> {
+        val next=camera.subjectIndex(time)+1
+        return if(next>=lines.size)emptyList()else rastersAt(camera.subjects[next].line.line.start)
+    }
+    fun hasRastersAt(time:Double):Boolean=rastersAt(time).all{it.isResident}
     fun lyricTime(mediaSeconds: Double, offsetMillis: Int = 0): Double {
         require(mediaSeconds.isFinite())
         // Same host contract as FoliaLyricsView: positive offset delays lyrics.
@@ -78,7 +91,7 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         checkpoint: () -> Unit = {}): DioramaTextPlayback {
         val time=lyricTime(mediaSeconds,offsetMillis);val previous=camera.at(time)
         return DioramaTextPlayback(lines,camera.restarted(previous,epoch,checkpoint),width,height,
-            globalStart+camera.subjectIndex(time),departure,breathOriginSeconds+time)
+            globalStart+camera.subjectIndex(time),departure,breathOriginSeconds+time,rasterCache)
     }
     fun outgoingTextIndexAt(time: Double): Int? =
         if(time>=0.0&&time<DioramaFlightDuration)transitionOutgoingIndex else null
@@ -172,11 +185,13 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             mode: DioramaShotMode = DioramaShotMode.normal,
             transition: DioramaTextTransition? = null, cut: DioramaTextCut? = null,
             textScale:Double=1.0,
-            reserveRaster:(Int,Int,Int)->Unit={_,_,_->}): DioramaTextPlayback {
+            reserveRaster:(Int,Int,Int)->Unit={_,_,_->},
+            rasterCache:DioramaRasterCache?=null): DioramaTextPlayback {
             require(width.isFinite() && height.isFinite() && width>0 && height>0)
             require(textScale.isFinite()&&textScale>0)
             require(transition==null || cut==null) { "Supply one incoming anchor: transition or cut" }
             val anchor=cut?.anchor?:transition
+            require(rasterCache==null||anchor==null){"Disk residency does not yet support retained multi-corridor cuts"}
             val mapped=dioramaCoreLines(normalize(core))
             require(mapped.isNotEmpty() && (shots==null || shots.size==mapped.size))
             require(metadata.isEmpty() || metadata.size==mapped.size)
@@ -188,12 +203,14 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             // Repeated chorus text shares its immutable plain raster within
             // this preparation/font configuration, never a global song cache.
             val neighborTexts=mutableMapOf<String,DioramaPlainText>()
+            val retain:(androidx.compose.ui.graphics.ImageBitmap)->DioramaRaster=
+                if(rasterCache==null)::DioramaRaster else rasterCache::retain
             val lines=mapped.map {
                 checkpoint()
-                val active=DioramaActiveText.prepareBounded(it.lyric,style,measurer,resolver,checkpoint,reserveRaster)
+                val active=DioramaActiveText.prepareBounded(it.lyric,style,measurer,resolver,checkpoint,reserveRaster,retain)
                 checkpoint()
                 val neighbor=neighborTexts.getOrPut(it.lyric.text) {
-                    DioramaPlainText.prepare(it.lyric.text,style,measurer,resolver,reserveRaster)
+                    DioramaPlainText.prepare(it.lyric.text,style,measurer,resolver,reserveRaster,retain)
                 }
                 DioramaPlaybackLine(it,active,neighbor)
             }
@@ -210,7 +227,7 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
                 moveScale=mode.move,driftScale=mode.drift,checkpoint=checkpoint,
                 initialState=anchor?.previous?:DioramaFollowState(),flightEpoch=anchor?.epoch?:0)
             return DioramaTextPlayback(lines,track,width,height,cut?.departure?.outgoingIndex,cut?.departure,
-                anchor?.breathSeconds?:0.0)
+                anchor?.breathSeconds?:0.0,rasterCache)
         }
     }
 }

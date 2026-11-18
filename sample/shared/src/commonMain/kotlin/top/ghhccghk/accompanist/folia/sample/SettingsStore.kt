@@ -38,6 +38,8 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
         "cappellaFont=${cappellaTuning.fontScale}",
         "dioramaFont=${dioramaTuning.fontScale}",
         "dioramaRasterBudget=${dioramaTuning.enforceRasterBudget}",
+        "dioramaDiskCache=${dioramaTuning.cacheTexturesOnDisk}",
+        "dioramaRasterMemory=${dioramaTuning.rasterMemoryBudgetBytes}",
         "fumeFont=${fumeTuning.fontScale}","fumeHero=${fumeTuning.heroScale}","fumeHold=${fumeTuning.textHoldRatio}",
         "fumeSpeed=${fumeTuning.cameraSpeed}","fumeTracking=${fumeTuning.trackingMode}",
         "fumeGlow=${fumeTuning.glowIntensity}","fumeSymbols=${fumeTuning.showPrintSymbols}",
@@ -95,7 +97,9 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
                     textHoldRatio=number("fumeHold",1f,0f..1f),cameraSpeed=number("fumeSpeed",1f,.55f..1.85f),
                     trackingMode=FumeTrackingMode.entries.find{it.name==fields["fumeTracking"]}?:FumeTrackingMode.Smooth,
                     glowIntensity=number("fumeGlow",1f,0f..1.8f),showPrintSymbols=boolean("fumeSymbols",true)),
-                DioramaTuning(fontScale=number("dioramaFont",1f,.5f..2f),enforceRasterBudget=boolean("dioramaRasterBudget",true)))
+                DioramaTuning(fontScale=number("dioramaFont",1f,.5f..2f),enforceRasterBudget=boolean("dioramaRasterBudget",true),
+                    cacheTexturesOnDisk=boolean("dioramaDiskCache",true),
+                    rasterMemoryBudgetBytes=fields["dioramaRasterMemory"]?.toLongOrNull()?.takeIf{it in 1..96L*1024*1024}?:32L*1024*1024))
         }
     }
 }

@@ -26,14 +26,15 @@ import kotlin.math.pow
 
 /** Explicit retained-raster payload bound, excluding transient blur/driver
  * overhead; not a total-memory promise. Reject BEFORE allocating an image. */
-internal class DioramaRasterBudget(private val limit:Long=96L*1024*1024,private val enforce:Boolean=true) {
+internal class DioramaRasterBudget(private val limit:Long=96L*1024*1024,private val enforce:Boolean=true,
+    private val cumulative:Boolean=true) {
     var bytes:Long=0;private set
     fun reserve(width:Int,height:Int,copies:Int) {
         if(!enforce)return
         check(width in 1..8192&&height in 1..8192&&copies in 1..3){"镜台文字纹理过大，请缩短单行歌词"}
         val extra=width.toLong()*height*4*copies
-        check(extra<=limit-bytes){"镜台整曲文字超出实验预览纹理预算，请使用较短歌词"}
-        bytes+=extra
+        check(extra<=limit-(if(cumulative)bytes else 0)){"镜台文字超出实验预览纹理预算，请使用较短歌词"}
+        bytes=if(cumulative)bytes+extra else maxOf(bytes,extra)
     }
 }
 
@@ -55,6 +56,8 @@ internal fun DioramaPlaybackStage(core:SyncedLyrics,time:()->Double,textStyle:Te
     onClick:((ISyncedLine)->Unit)?=null,onLongPress:((ISyncedLine)->Unit)?=null,
     onState:(Boolean,String?)->Unit={_,_->},onPrepared:(DioramaTextPlayback)->Unit={}) {
     val density=LocalDensity.current;val resolver=LocalFontFamilyResolver.current;val direction=LocalLayoutDirection.current
+    val platformDiskFactory=rememberDioramaRasterDiskFactory()
+    val diskFactory=LocalDioramaRasterDiskFactory.current?:platformDiskFactory
     val clock by rememberUpdatedState(time);val status by rememberUpdatedState(onState)
     val observer by rememberUpdatedState(onPrepared)
     val visible by rememberUpdatedState(showText)
@@ -69,25 +72,32 @@ internal fun DioramaPlaybackStage(core:SyncedLyrics,time:()->Double,textStyle:Te
         // Geometry lives in logical pixels; actual Canvas is scaled once below.
         val width=maxWidth.value.toDouble();val height=maxHeight.value.toDouble()
         var prepared by remember(DioramaIdentityKey(core),width,height,textStyle,resolver,direction,scale,tuning.fontScale,
-            tuning.layoutSeed,tuning.enforceRasterBudget,density.fontScale,mode){mutableStateOf<DioramaTextPlayback?>(null)}
+            tuning.layoutSeed,tuning.enforceRasterBudget,tuning.cacheTexturesOnDisk,tuning.rasterMemoryBudgetBytes,density.fontScale,mode){mutableStateOf<DioramaTextPlayback?>(null)}
         var failure by remember(DioramaIdentityKey(core),width,height,textStyle,resolver,direction,scale,tuning.fontScale,
-            tuning.layoutSeed,tuning.enforceRasterBudget,density.fontScale,mode){mutableStateOf<String?>(null)}
+            tuning.layoutSeed,tuning.enforceRasterBudget,tuning.cacheTexturesOnDisk,tuning.rasterMemoryBudgetBytes,density.fontScale,mode){mutableStateOf<String?>(null)}
         LaunchedEffect(DioramaIdentityKey(core),width,height,textStyle,resolver,direction,scale,tuning.fontScale,
-            tuning.layoutSeed,tuning.enforceRasterBudget,density.fontScale,mode) {
+            tuning.layoutSeed,tuning.enforceRasterBudget,tuning.cacheTexturesOnDisk,tuning.rasterMemoryBudgetBytes,density.fontScale,mode) {
             status(false,"DioramaPreparing")
             if(width<=0||height<=0)return@LaunchedEffect
+            val cache=if(tuning.cacheTexturesOnDisk)DioramaRasterCache(tuning.rasterMemoryBudgetBytes,
+                enforce=tuning.enforceRasterBudget,diskFactory=diskFactory)else null
             try {
-                val result=withContext(Dispatchers.Default) {
-                    val context=coroutineContext;val budget=DioramaRasterBudget(enforce=tuning.enforceRasterBudget)
-                    DioramaTextPlayback.prepare(core,textStyle,TextMeasurer(resolver,Density(1f,1f),direction,cacheSize=128),
+                val (result,window)=withContext(Dispatchers.Default) {
+                    val context=coroutineContext;val budget=DioramaRasterBudget(enforce=tuning.enforceRasterBudget,cumulative=cache==null)
+                    val result=DioramaTextPlayback.prepare(core,textStyle,TextMeasurer(resolver,Density(1f,1f),direction,cacheSize=128),
                         resolver,width,height,seedName=tuning.layoutSeed,checkpoint={context.ensureActive()},mode=mode,
-                        textScale=(scale*tuning.fontScale*density.fontScale).toDouble(),reserveRaster=budget::reserve)
-                        .also{context.ensureActive()}
+                        textScale=(scale*tuning.fontScale*density.fontScale).toDouble(),reserveRaster=budget::reserve,rasterCache=cache)
+                    context.ensureActive()
+                    val t=clock().coerceIn(0.0,result.camera.endTime)
+                    result to cache?.load(result.rastersAt(t),result.prefetchRastersAt(t)){context.ensureActive()}
                 }
+                if(window!=null)cache!!.publish(window)
                 prepared=result;observer(result);status(true,null)
+                awaitCancellation()
             }catch(cancelled:CancellationException){throw cancelled}
-            catch(error:IllegalArgumentException){failure=error.message?:"镜台输入无效";status(false,"DioramaPreparationFailed: $failure")}
-            catch(error:IllegalStateException){failure=error.message?:"镜台准备失败";status(false,"DioramaPreparationFailed: $failure")}
+            catch(error:IllegalArgumentException){ensureActive();failure=error.message?:"镜台输入无效";status(false,"DioramaPreparationFailed: $failure")}
+            catch(error:IllegalStateException){ensureActive();failure=error.message?:"镜台准备失败";status(false,"DioramaPreparationFailed: $failure")}
+            finally{withContext(NonCancellable+Dispatchers.IO){cache?.close()}}
         }
         val p=prepared
         val plain=remember(p){DioramaPlainRenderer()};val active=remember(p){DioramaActiveBaseRenderer()}
@@ -100,17 +110,34 @@ internal fun DioramaPlaybackStage(core:SyncedLyrics,time:()->Double,textStyle:Te
         val current by remember(p){derivedStateOf{p.camera.subjectIndex(clock().coerceIn(0.0,p.camera.endTime))}}
         // No image/mip preparation in Canvas or on every media tick.
         var preparedIndex by remember(p){mutableIntStateOf(-1)}
+        var windowVersion by remember(p){mutableIntStateOf(0)}
+        var windowFailure by remember(p){mutableStateOf<String?>(null)}
         LaunchedEffect(p,current){
             val t=clock().coerceIn(0.0,p.camera.endTime)
-            p.preparePlainRenderer(plain,t);p.prepareActiveBaseRenderer(active,t)
+            try{
+                windowFailure=null
+                if(!p.hasRastersAt(t))status(false,"DioramaTextureLoading")
+                val context=coroutineContext
+                val window=withContext(Dispatchers.IO){p.rasterCache?.load(p.rastersAt(t),p.prefetchRastersAt(t)){context.ensureActive()}}
+                if(window!=null)p.rasterCache!!.publish(window)
+                // Old sampler handles are retired on the drawing thread too.
+                p.preparePlainRenderer(plain,t);p.prepareActiveBaseRenderer(active,t)
+                windowVersion++;status(true,null)
+            }catch(cancelled:CancellationException){throw cancelled}
+            catch(error:IllegalStateException){ensureActive();windowFailure=error.message?:"镜台纹理加载失败";status(false,"DioramaTextureFailed: $windowFailure")}
             // Sampler owners are intentionally not Compose state. Publish their
             // completion so a paused frame cannot retain the initial fallback.
             preparedIndex=current
         }
+        // A random seek can leave the prefetched window. Keep the media clock
+        // running; render a truthful loading state until asynchronous IO ends.
+        val available by remember(p,current){derivedStateOf{windowVersion;p.hasRastersAt(clock().coerceIn(0.0,p.camera.endTime))}}
+        if(!available||windowFailure!=null)BasicText(windowFailure?:"正在读取镜台纹理…",style=textStyle.copy(color=colors.secondary))
         val input=if(onClick==null&&onLongPress==null)Modifier else Modifier.pointerInput(p,density,reduced,fog){
             awaitEachGesture {
                 val down=awaitFirstDown(requireUnconsumed=false)
-                fun hit(point:Offset):Int? {if(!visible())return null;val t=clock().coerceIn(0.0,p.camera.endTime)
+                fun hit(point:Offset):Int? {if(!visible()||!available||windowFailure!=null)return null;val t=clock().coerceIn(0.0,p.camera.endTime)
+                    if(!p.hasRastersAt(t))return null
                     return p.hitTest(t,p.camera.perspectiveAt(t,reduced),point/density.density,reduced,fog)}
                 val i=hit(down.position)?:return@awaitEachGesture
                 down.consume()
@@ -122,10 +149,11 @@ internal fun DioramaPlaybackStage(core:SyncedLyrics,time:()->Double,textStyle:Te
             }
         }
         Canvas(Modifier.fillMaxSize().then(input).semantics {
-            contentDescription=if(visible())p.lines[current].core.lyric.text else ""
+            contentDescription=if(visible()&&available&&windowFailure==null)p.lines[current].core.lyric.text else ""
         }) {
-            if(!visible())return@Canvas
+            if(!visible()||!available||windowFailure!=null)return@Canvas
             val t=clock().coerceIn(0.0,p.camera.endTime)
+            if(!p.hasRastersAt(t))return@Canvas
             val s=density.density
             scale(s,s,Offset.Zero){inset(0f,0f,size.width-width.toFloat(),size.height-height.toFloat()){
             clipRect(0f,0f,width.toFloat(),height.toFloat()){

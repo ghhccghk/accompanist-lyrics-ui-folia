@@ -10,10 +10,18 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、文字平面near/far/背面裁剪 | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
 
-当前唯一下一项：Fume冻结原首spring目标/系数的跨clamp完整状态映射实验；从现有
-独立原始handoff-v1记录取真实incoming/target，扫描原clamp两侧的速度并比较(x,v,focus)
-与连续适配、同总时长不同分段。完成条件：先定位非可逆限幅位移，保留全部失败；
-不猜旧focus/branch补丁，不改旧fixture/原验收，不硬编码60Hz或固定延迟。
+当前唯一下一项：Diorama内部真实core文字舞台的邻行窗口／生命周期。原版前2后3窗口、
+原opacity与欧氏距离life、固定hero-distance fit、透视排序须由原函数和真实Three对照；
+接完整文字舞台，验证暂停/逆序seek/offset/换输入/尺寸恢复。保持未公开，不冒充fog/
+depth/切曲或完整镜台。Fume局部交接修复尚未成立，以下有界证据已保存，暂不猜参数。
+
+Fume冻结原首spring实验v1完成：6个真实源incoming/756原有限算子映射，完整9态峰0；
+96个无饱和校准控制log峰3.87e-12。8个合法输入、饱和、校准时长控制仍有位置差
+.684600世界单位（512/1024数值细化差.003026，不作为精确误差界）；源整段用终值限速
+更新位移，且1步/2步同总时长X峰差4.805517，不能靠RK步长缩小或focus-only修好。
+108对全9态合并不都在合法速度域内，报告明确区分。生产/旧fixture/92图未变，
+4个定向测试类通过。尚需明确的分支局部饱和位移重建策略和原mounted矩阵改善；
+见verification/fume-camera-handoff/frozen-clamp-v1.md。不是行为修复或视觉验收。
 
 Diorama文字平面裁剪已接完整正文/活动三层：实际Three18同姿态stress，MAE
 99.915892→3.080586（同source/before/after完整前景union）；10个原空白case全部精确

@@ -1,5 +1,10 @@
 # Fume handoff investigation: rejected single-factor candidate
 
+Latest bounded experiment: [frozen-clamp-v1.md](frozen-clamp-v1.md). Original
+frozen finite maps and admissible saturated controls isolate the displacement
+defect; no production camera repair has passed. Earlier "next experiment"
+statements below are historical as of that experiment; failures remain valid.
+
 Pinned cc6226e464050a456a2913e062374f23d3844cc5. Production FumeCameraTrack is
 UNCHANGED. Candidate was tested, failed and restored byte-for-byte. No thresholds,
 fixtures or assertions weakened; existing camera-continuous table preserved.

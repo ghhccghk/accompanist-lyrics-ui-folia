@@ -1,0 +1,216 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "incomingSha256": "9c79eeba4c8c7501a69dec3117cae643574cc80b37221a455764685c4bfe8186",
+  "stepsSha256": "bd0cf593d0c7c452233bfb7aa8d70ecbcf74d15ea8746098d940239fbc20dec8",
+  "sourceSha256": "c56f88d8da5d44c39378c3305f23d2436b5c9790df25e6ca9d8e6f29835043cf",
+  "fragment": {
+    "startLine": 329,
+    "endLine": 371,
+    "sha256": "f85814b070f933fba89aa0a64afeefcc4967baa9332365f8c2fa2220915b0df2"
+  },
+  "controls": [
+    {
+      "case": "380-false-5.4",
+      "from": 5.516666666666667,
+      "time": 5.533333333333333,
+      "dt": 0.016666666666666607,
+      "actualSourcePeak": 0,
+      "originalIncoming": [
+        509.31013648571934,
+        631.8818659570579,
+        0.9344141944694249,
+        0.12639425031788204,
+        358.638289977164,
+        528.8815197970957,
+        1.4128132034811538,
+        0.0003769237721895353,
+        1.4156560682905293
+      ],
+      "target": [
+        361.62157412319857,
+        527.9395695039241,
+        1.415893402316212
+      ],
+      "duration": 0.13,
+      "phase": 1,
+      "strength": 208,
+      "damping": 24,
+      "limit": 1320,
+      "scaleStrength": 54,
+      "scaleDamping": 13.5,
+      "scope": "Freeze target/phase/duration/distance; same original spring source block, no future target or branch."
+    },
+    {
+      "case": "380-true-5.4",
+      "from": 5.516666666666667,
+      "time": 5.533333333333333,
+      "dt": 0.016666666666666607,
+      "actualSourcePeak": 0,
+      "originalIncoming": [
+        514.5689106810452,
+        631.8818659570585,
+        0.49069940982323423,
+        0.12639425031703616,
+        365.37395962478683,
+        528.8815197970957,
+        1.412813204035278,
+        0.00037692346474918573,
+        1.4156560682954067
+      ],
+      "target": [
+        364.68545018853956,
+        527.9395695039241,
+        1.415893402316212
+      ],
+      "duration": 0.13,
+      "phase": 1,
+      "strength": 208,
+      "damping": 24,
+      "limit": 1320,
+      "scaleStrength": 54,
+      "scaleDamping": 13.5,
+      "scope": "Freeze target/phase/duration/distance; same original spring source block, no future target or branch."
+    },
+    {
+      "case": "800-false-3",
+      "from": 3.1166666666666667,
+      "time": 3.1333333333333333,
+      "dt": 0.016666666666666607,
+      "actualSourcePeak": 0,
+      "originalIncoming": [
+        1155.4210119177164,
+        584.768462487806,
+        12.446449306251806,
+        1.1664306026798001,
+        715.9379006176931,
+        556.2461848053879,
+        1.2082897364723204,
+        -0.0003864519079660715,
+        1.5216483577152715
+      ],
+      "target": [
+        716.1871154257086,
+        556.1731142944902,
+        1.5242190359924366
+      ],
+      "duration": 0.13,
+      "phase": 1,
+      "strength": 208,
+      "damping": 24,
+      "limit": 1320,
+      "scaleStrength": 54,
+      "scaleDamping": 13.5,
+      "scope": "Freeze target/phase/duration/distance; same original spring source block, no future target or branch."
+    },
+    {
+      "case": "800-false-5.4",
+      "from": 5.516666666666667,
+      "time": 5.533333333333333,
+      "dt": 0.016666666666666607,
+      "actualSourcePeak": 0,
+      "originalIncoming": [
+        870.2198058332499,
+        650.4221050481833,
+        0.9277718383559922,
+        0.11723524763300472,
+        719.5361166259825,
+        723.3434140201409,
+        1.523189338303669,
+        0.0004063138325651706,
+        1.5262541995349985
+      ],
+      "target": [
+        722.5184716978515,
+        723.9656876558137,
+        1.526510074372166
+      ],
+      "duration": 0.13,
+      "phase": 1,
+      "strength": 208,
+      "damping": 24,
+      "limit": 1320,
+      "scaleStrength": 54,
+      "scaleDamping": 13.5,
+      "scope": "Freeze target/phase/duration/distance; same original spring source block, no future target or branch."
+    },
+    {
+      "case": "800-true-3",
+      "from": 3.1166666666666667,
+      "time": 3.1333333333333333,
+      "dt": 0.016666666666666607,
+      "actualSourcePeak": 0,
+      "originalIncoming": [
+        1155.6517732908324,
+        584.768462487806,
+        16.50935209064231,
+        1.1664306026798001,
+        719.4763324640141,
+        556.2461848053879,
+        1.2082897364723204,
+        -0.0003864519079660715,
+        1.5216483577152715
+      ],
+      "target": [
+        716.1871154257086,
+        556.1731142944902,
+        1.5242190359924366
+      ],
+      "duration": 0.13,
+      "phase": 1,
+      "strength": 208,
+      "damping": 24,
+      "limit": 1320,
+      "scaleStrength": 54,
+      "scaleDamping": 13.5,
+      "scope": "Freeze target/phase/duration/distance; same original spring source block, no future target or branch."
+    },
+    {
+      "case": "800-true-5.4",
+      "from": 5.516666666666667,
+      "time": 5.533333333333333,
+      "dt": 0.016666666666666607,
+      "actualSourcePeak": 0,
+      "originalIncoming": [
+        875.4785800206548,
+        650.4221050481833,
+        0.48405706807974686,
+        0.11723524763300472,
+        726.2717862735354,
+        723.3434140201409,
+        1.523189338303669,
+        0.0004063138325651706,
+        1.5262541995349985
+      ],
+      "target": [
+        725.5823477631925,
+        723.9656876558137,
+        1.526510074372166
+      ],
+      "duration": 0.13,
+      "phase": 1,
+      "strength": 208,
+      "damping": 24,
+      "limit": 1320,
+      "scaleStrength": 54,
+      "scaleDamping": 13.5,
+      "scope": "Freeze target/phase/duration/distance; same original spring source block, no future target or branch."
+    }
+  ],
+  "skipped": [
+    {
+      "case": "380-false-3",
+      "reason": "No actual spring in preserved250ms window. No synthetic continuation substituted."
+    },
+    {
+      "case": "380-true-3",
+      "reason": "No actual spring in preserved250ms window. No synthetic continuation substituted."
+    }
+  ],
+  "cases": 756,
+  "scope": "CONTROLLED frozen original spring block from actual original first-spring incoming state. Target/phase/duration/distance fixed; some algebraic velocity sweeps deliberately exceed normally admissible velocities. No mounted/whole-song visual repair, no source fixture or expected threshold changed."
+}

@@ -10,11 +10,22 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
 
-当前唯一下一项：Cappella普通密集投影的同一提交pre-DOM/flow/post-RAF分离探针。
-承接verification/cappella-projection/commit-boundary-v1.json的同一个原前态，记录1.0到
-1.04s阶段，先验证纯观察不改变原几何，再检验源snapshot运输模型。不能重试已否决
-的所有local-event冻结、多衰减或固定帧延迟；22.188593px残差仍未修复。
-Fume饱和位移策略未解，镜台full-stage塑形小退步/长曲准备/雾深度仍待跟进。
+当前唯一下一项：镜台长行准备的纹理宽度边界，保留完整塑形/内部时钟与现有画面。
+先量化整行临时位图和单元纹理的分配界限；去除无上限整行临时位图，不把优化声明为
+设备收益。用原source单位/时钟及既有完整coverage检查，必要时保留明确未解决边界。
+
+Cappella同一提交分阶段探针已完成：30条纯读取观察/control均与原几何相同，独立重跑
+全部状态和trace精确相同。11条原incoming DOM经原own y/scale逆变换重建snapshot峰0。
+1.016667s的local React提交在RAF任务返回后才恢复frame110/目标204.53125，不能把任务内
+49px状态当最终值。源运输identity成立，但媒体事件precommit/live flow/target分离尚无
+通过的生产修复；保留22.188593px、旧失败候选，不重试冻结/多衰减/固定延迟。
+见verification/cappella-projection/frame-phases-v{1,2}.json和README。
+Fume饱和位移策略仍未解；镜台full-stage塑形小退步/整曲准备/雾深度继续保留。
+
+已完成哈希：c4ef479完整塑形coverage修复，c8ef3e9实际Pendolo follower停止阈值。
+c8ef3e9后scripts/verify-consumer.ps1独立本地Maven消费通过：JVM运行/core身份、Android
+消费编译和打包声明。首次独立项目缺SDK环境失败保留，仅读根local.properties后临时设
+进程ANDROID_HOME重跑成功并恢复环境，未写个人路径/远程发布。日志.work/consumer-c8ef3e9{-sdk,}.log。
 
 Pendolo实际follower停止阈值已修：原useSpring实际attachFollow为.001/.01（包括大跳），
 旧普通dispatcher默认.005/.01或.5/2不适用。54原态/972raw/3501轨迹及独立首rest根，

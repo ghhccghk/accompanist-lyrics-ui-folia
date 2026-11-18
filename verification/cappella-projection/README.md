@@ -1,5 +1,8 @@
 # Dense projection snapshot probe — rejected
 
+Latest bounded evidence: **Frame phases v2** below. Earlier “next probe”
+instructions are historical; the rejected production candidate stays rejected.
+
 Pinned original cc6226e4, exact Motion13.4.3/dom13.4.2/utils13.3.0. This is a
 FAILED candidate, not a behavior repair. Production CappellaPlaybackPreparation
 was restored byte-for-byte; hashes in comparison.json. Original240 images/999
@@ -108,3 +111,49 @@ node verification/classic-browser/probe-cappella-commit-boundary.mjs .work/cappe
 The default output refuses overwrite; use a fresh path for an audit. No new full
 pressure matrix was run. Continue the independent, already authorised Diorama
 text follower rather than retry a disproved Cappella compensation rule.
+
+## Frame phases v2 (2026-11-18)
+
+`probe-cappella-frame-phases.mjs` observes the same original rapid/chaotic prefix,
+through1.1s, on its dedicated4191 server/browser. It performs pure reads, including
+DOM rectangles (which can force layout); no setters, wrappers, prototype changes
+or snapshot writes. Original control and instrumented geometry both equal the
+preserved pressure baseline. A separate fresh-path run
+`.work/cappella-frame-phases-repeat-final.json` reproduces ALL states/trace records
+byte-for-value. Both exact Motion locks, Chromium151, source/host/font hashes and
+380×480/DPR1 conditions are embedded in the records. v1 retains24 observations;
+v2 adds6 **after-browser-task** observations (30 total). Keep both: the narrower
+v1 phase must not be described as the final React commit.
+
+For `line-0.94-3` at1.0166666666666666s, before-media has frame110px,
+flowTop97, stored layout157.5, projection19.2290628493. After media commit the
+frame becomes49px; after RAF flowTop157/rowHeight61 and progress.1403623690.
+Only AFTER the browser task returns does frame110px/rowHeight122 reappear,
+with layout204.53125, progress0 and delta-40.3490486484. At1.02s the new original
+snapshot163.6978263516 transports to target48 and delta115.6978263516. A sibling
+also reenters normal flow in this transaction. These are distinct flow, own
+transform, snapshot and target measurements, not a second simple time decay.
+
+`analyze-cappella-frame-phases.py` independently removes own translation/scale
+from the original **incoming DOM rectangle**, following the semantics of actual
+motion-dom13.4.2 `projection/node/create-projection-node.mjs:636–737` and
+`projection/geometry/delta-remove.mjs:removeAxisDelta`. It does not use native
+values or the snapshot as an input. All11 observed snapshot tops reconstruct
+with peak0 (1e-9 gate). For the key row the resulting164.18219912323443 exactly
+equals the captured original snapshot; rounded offsetTop + panelTop + delta is
+164.2290628493, and stale measured layout is157.5. Neither is the same input.
+
+This validates the source inverse-transform identity only. A usable native fix
+still needs media-reconstructible precommit/live flow and post-transaction target
+semantics; the current heuristic mixes a prior measured top with a current event.
+Do not replace that unresolved scheduling problem with a fixed RAF delay, freeze
+all local commits or lower the22.188593px pressure standard. Production, original
+fixtures, the240 source frames and previous rejected comparisons are unchanged.
+No new visual/device/performance pass is claimed by this diagnostic.
+
+```
+node verification/classic-browser/probe-cappella-frame-phases.mjs .work/cappella-frame-phases-repeat-next.json
+python verification/analyze-cappella-frame-phases.py
+```
+The probe refuses overwrite and closes its own browser/server. Python analysis,
+Node syntax check, original/control identity and independent repeat passed.

@@ -69,7 +69,8 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
 
     companion object {
         fun prepare(line: DioramaLyric, base: TextStyle, measurer: TextMeasurer,
-            resolver: FontFamily.Resolver): DioramaActiveText {
+            resolver: FontFamily.Resolver, checkpoint: () -> Unit = {}): DioramaActiveText {
+            checkpoint()
             val density = Density(1f, 1f)
             val style = base.copy(fontSize = 128.sp, lineHeight = TextUnit.Unspecified,
                 fontWeight = base.fontWeight ?: FontWeight.Bold, textAlign = TextAlign.Left,
@@ -77,6 +78,7 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
             val text = line.text.replace(Regex("[\t\n\u000c\r]"), " ")
             val layout = measurer.measure(AnnotatedString(text), style, softWrap = false,
                 density = density, layoutDirection = LayoutDirection.Ltr)
+            checkpoint()
             val advance = if (text.isEmpty()) 0.0 else layout.getPathForRange(0, text.length).getBounds().width.toDouble()
             val metrics = naturalFontMetrics(style, resolver, density)
             val ratio = dioramaTypographicRatio(style, resolver) ?: (metrics.ascent / (metrics.ascent + metrics.descent)).toDouble()
@@ -84,8 +86,9 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
             val padding = 90 // ceil(128*.7), original active-unit padding
             val origin = Offset(padding.toFloat(), (180 + middle - paintedNaturalBaseline(layout, metrics)).toFloat())
             val units = dioramaUnits(line)
-            val ownership = dioramaShapedColumns(layout,units,max(1,ceil(advance).toInt())+padding*2,padding)
+            val ownership = dioramaShapedColumns(layout,units,max(1,ceil(advance).toInt())+padding*2,padding,checkpoint)
             val slices = units.mapIndexed { index, unit ->
+                checkpoint()
                 val range = layout.getPathForRange(unit.charStart, unit.charEnd).getBounds()
                 val width = max(1, ceil(range.width.toDouble()).toInt())
                 val columns = ownership[index]
@@ -99,21 +102,24 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
                 val image = ImageBitmap(max(1,right-left),360)
                 val shift = -padding-left
                 CanvasDrawScope().draw(density, LayoutDirection.Ltr, Canvas(image), Size(image.width.toFloat(), image.height.toFloat())) {
-                    for (column in columns) clipRect((column.first+shift).toFloat(),0f,
-                        (column.last+1+shift).toFloat(),360f) {
-                        // Draw the SAME complete shaped paragraph into the
-                        // unit's integer-owned window. Do not first allocate a
-                        // potentially enormous full-line bitmap: a long line
-                        // of small units must not need one giant GPU texture.
-                        // Only the integer raster origin changes, never the
-                        // shaping run, selection ranges, unit pivot or clocks.
-                        drawText(layout,Color.White,origin+Offset(shift.toFloat(),0f),shadow=Shadow.None)
+                    for (column in columns) {
+                        checkpoint()
+                        clipRect((column.first+shift).toFloat(),0f,(column.last+1+shift).toFloat(),360f) {
+                            // Draw the SAME complete shaped paragraph into the
+                            // unit's integer-owned window. Do not first allocate a
+                            // potentially enormous full-line bitmap: a long line
+                            // of small units must not need one giant GPU texture.
+                            // Only the integer raster origin changes, never the
+                            // shaping run, selection ranges, unit pivot or clocks.
+                            drawText(layout,Color.White,origin+Offset(shift.toFloat(),0f),shadow=Shadow.None)
+                        }
                     }
                 }
                 val center = range.left + width / 2.0 - advance / 2
-                DioramaActiveSlice(unit, image, center, range.left, range.right, prepareDioramaHalo(image),
+                DioramaActiveSlice(unit, image, center, range.left, range.right, prepareDioramaHalo(image,checkpoint),
                     left + image.width/2.0 - advance/2 - center)
             }
+            checkpoint()
             return DioramaActiveText(slices, advance, middle)
         }
     }
@@ -127,18 +133,22 @@ internal fun DioramaLinearColor.srgb(): Color {
 
 /** Original pure-shadow ladder: shadowColor modulates source coverage BEFORE
  * the blur, rather than multiplying an already rounded 8-bit blur result. */
-internal fun prepareDioramaHalo(body: ImageBitmap): ImageBitmap {
+internal fun prepareDioramaHalo(body: ImageBitmap, checkpoint: () -> Unit = {}): ImageBitmap {
+    checkpoint()
     val halo = ImageBitmap(body.width, body.height)
     val passes = listOf(10.24f to .95f, 10.24f to .85f, 20.48f to .55f, 29.696f to .3f)
     CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, Canvas(halo), Size(body.width.toFloat(), body.height.toFloat())) {
         for ((sigma, alpha) in passes) {
+            checkpoint()
             val shadowSource = ImageBitmap(body.width, body.height)
             CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, Canvas(shadowSource), size) {
                 drawImage(body, alpha = alpha)
             }
             val blur = blurPremultiplied(shadowSource, sigma)
+            checkpoint()
             drawImage(blur.image, topLeft = blur.origin, blendMode = BlendMode.Plus)
         }
     }
+    checkpoint()
     return halo
 }

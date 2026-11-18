@@ -15,9 +15,10 @@ import kotlin.math.max
  * a ligature split. Colour-only text spans are unsuitable: they can split the
  * shaping/style run and remove a piece of a cross-unit fi ligature. */
 internal fun dioramaShapedColumns(layout: TextLayoutResult, units: List<DioramaUnit>,
-    width: Int, padding: Int): List<List<IntRange>> {
+    width: Int, padding: Int, checkpoint: () -> Unit = {}): List<List<IntRange>> {
     data class Interval(val left: Float, val right: Float, val owner: Int)
     val intervals = units.flatMapIndexed { index, unit ->
+        checkpoint()
         var cursor = unit.charStart
         unit.timeline.map { glyph ->
             val start = cursor
@@ -31,6 +32,7 @@ internal fun dioramaShapedColumns(layout: TextLayoutResult, units: List<DioramaU
     var previous = -1
     var start = 0
     for (x in 0 until width) {
+        if(x%256==0)checkpoint()
         val center = x + .5 - padding
         // A shaping cluster may straddle source word boundaries. Partition its
         // existing coverage at those caret advances, retaining every unit's
@@ -48,5 +50,6 @@ internal fun dioramaShapedColumns(layout: TextLayoutResult, units: List<DioramaU
         }
     }
     if (previous >= 0) ranges[previous] += start until width
+    checkpoint()
     return ranges
 }

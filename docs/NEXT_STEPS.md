@@ -10,9 +10,14 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
 
-当前唯一下一项：镜台长行准备内部的取消检查。现仅在每行前后check，需把取消传到
-ownership扫描、单元栅格与halo pass之间，防止切歌/resize取消后仍做完整旧长行。
-保持未取消的原画面逐像素一致、完整单位/时钟不变，异常原样传播，不吞取消。
+当前唯一下一项：已开放Tilt大字号与字幕重叠的固定原版条件对照；先判断原版布局/字号
+规则与公共入口差异，再修真实问题。真实Desktop七主题窗口当前复核已完成，待保存
+当前manifest/图检与本轮共享Pendolo变更的运行结论；不冒充选歌/音频/设备验证。
+
+镜台长行取消检查已接到ownership/每256列、单元paint和halo pass边界，原异常原样
+传播，不返回部分对象；actual core重试和draw/seek无准备检查通过，418旧hash不变。
+单次native shaping/draw/blur仍为原子操作，不保证硬取消时限，也不解决整曲驻留。
+JVM/Android库/Desktop编译通过，证据同verification/diorama-raster-window。
 
 镜台完整行临时位图已移除：同一完整shaped layout直接绘制整数owned窗口，旧90/180/54
 舞台图及单元/控制图共418hash全部不变。两条32词长行advance9205/10136px，独立原414
@@ -29,7 +34,8 @@ Cappella同一提交分阶段探针已完成：30条纯读取观察/control均�
 见verification/cappella-projection/frame-phases-v{1,2}.json和README。
 Fume饱和位移策略仍未解；镜台full-stage塑形小退步/整曲准备/雾深度继续保留。
 
-已完成哈希：c4ef479完整塑形coverage修复，c8ef3e9实际Pendolo follower停止阈值。
+已完成哈希：c4ef479完整塑形coverage修复，c8ef3e9实际Pendolo follower停止阈值，
+f35aa63群唱帧阶段诊断（非修复），983660f镜台移除完整行临时位图。
 c8ef3e9后scripts/verify-consumer.ps1独立本地Maven消费通过：JVM运行/core身份、Android
 消费编译和打包声明。首次独立项目缺SDK环境失败保留，仅读根local.properties后临时设
 进程ANDROID_HOME重跑成功并恢复环境，未写个人路径/远程发布。日志.work/consumer-c8ef3e9{-sdk,}.log。

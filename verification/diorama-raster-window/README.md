@@ -60,5 +60,30 @@ python verification/compare-diorama-raster-window.py
 Generator refuses overwrite. Comparator requires the preserved before manifest
 and completed native outputs; it fails on any changed/missing hash. Use Windows
 `gradlew.bat`. Next: allow cancellation **inside** long-line ownership/raster/halo
-preparation, not just before/after each line; whole-song bounded residency and
-single-unit tiling remain further prerequisites before public exposure.
+preparation, not just before/after each line (completed below); whole-song bounded
+residency and single-unit tiling remain further prerequisites before public exposure.
+
+## Preparation cancellation follow-up
+
+The caller's existing checkpoint now reaches each ownership-unit interval,
+every256 columns, each unit/window paint and the boundaries of each halo pass.
+`DioramaTextPlayback.prepare` forwards it into active text preparation instead
+of only checking before/after the complete line. Exceptions propagate unchanged;
+there is no partial playback object returned, global cache, silent catch, timer
+or new worker. Prepared drawing/seek never retain or invoke the checkpoint.
+
+Cancellation tests interrupt ownership scanning, early/middle/final preparation,
+halo passes and the actual core preparation path; require the original exception
+identity and no subsequent callback; then prepare/draw/seek the same source again.
+They passed along with long-run clock/coverage, existing shape/active-layer and
+core lifecycle checks.418 prior native hashes remain unchanged. Android library
+and Desktop sample compilation passed (`.work/diorama-preparation-cancel.log`).
+These are **cooperative boundaries**, not a hard cancellation-latency guarantee:
+one native text-shaping/draw call or one blur operation is still atomic. Remaining
+whole-song residency, single giant unit, original-stage residuals and device
+measurements are not solved by cancellation.
+
+```
+./gradlew :library:jvmTest --tests '*DioramaPreparationCancellationTest' --tests '*DioramaRasterWindowTest' --tests '*DioramaShapedMaskTest' --tests '*DioramaActiveLayersTest' --tests '*DioramaTextPlaybackTest' :library:compileAndroidMain :sample:desktop-app:compileKotlin
+python verification/compare-diorama-raster-window.py
+```

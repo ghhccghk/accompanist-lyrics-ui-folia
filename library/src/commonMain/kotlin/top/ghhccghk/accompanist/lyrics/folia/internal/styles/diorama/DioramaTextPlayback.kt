@@ -77,7 +77,7 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             val neighborTexts=mutableMapOf<String,DioramaPlainText>()
             val lines=mapped.map {
                 checkpoint()
-                val active=DioramaActiveText.prepare(it.lyric,style,measurer,resolver)
+                val active=DioramaActiveText.prepare(it.lyric,style,measurer,resolver,checkpoint)
                 checkpoint()
                 val neighbor=neighborTexts.getOrPut(it.lyric.text) {
                     DioramaPlainText.prepare(it.lyric.text,style,measurer,resolver)

@@ -1685,3 +1685,9 @@ code/resources copied by this allocation change. Independent original414 clock/
 unit records, long-run complete coverage and exact existing stage hashes:
 verification/diorama-raster-window. Single huge units/whole-song residency remain
 unbounded; no device memory/performance or public-theme claim.
+
+The existing caller checkpoint is also propagated into ownership column scans,
+unit paints and halo-pass boundaries; camera preparation already had checkpoints.
+This is independent cooperative cancellation plumbing, not source animation
+logic. Single shaping/blur operations remain atomic; no latency/heap guarantee.
+Verification and unchanged stage hashes are in the same raster-window evidence.

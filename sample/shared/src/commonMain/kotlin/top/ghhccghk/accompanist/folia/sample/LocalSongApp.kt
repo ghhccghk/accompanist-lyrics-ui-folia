@@ -38,6 +38,9 @@ fun FoliaSampleApp(
     var lyrics by remember { mutableStateOf<LyricsSource?>(null) }
     var translation by remember { mutableStateOf<LyricsSource?>(null) }
     var settings by remember { mutableStateOf(false) }
+    var renderDebug by remember { mutableStateOf(false) }
+    var renderStatus by remember { mutableStateOf<FoliaStatus?>(null) }
+    LaunchedEffect(songs.current?.revision,session.lyricTheme){renderStatus=null}
     fun cancelSelection() {
         work?.cancel(); songs.cancelPending(); selection = false
     }
@@ -189,6 +192,7 @@ fun FoliaSampleApp(
                                 options = session.options,
                                 typography = FoliaTypography(scale = session.fontScale),
                                 style = session.lyricStyleForTitle(song.player.metadata.title),
+                                onStatus = { renderStatus=it },
                                 onLineClicked = { line -> songs.control { it.seek(line.start.toLong() + session.options.offsetMillis) } })
                         } }
                     }
@@ -206,6 +210,8 @@ fun FoliaSampleApp(
                         panel(Modifier.weight(1f).fillMaxHeight())
                     }
                 }
+                RenderDebugOverlay(renderDebug,visible,session,{songs.snapshot},renderStatus,{renderDebug=false},
+                    Modifier.align(Alignment.TopEnd))
             }
         }
         if (selection) AlertDialog(
@@ -285,6 +291,7 @@ fun FoliaSampleApp(
                     ExperimentalMaskControls(session)
                     LyricThemeControls(session)
                     RenderResolutionControls(session)
+                    RenderDebugToggle(renderDebug) { renderDebug=it }
                     AudioToggle("翻译", session.options.showTranslation) {
                         session.options = session.options.copy(showTranslation = it)
                     }

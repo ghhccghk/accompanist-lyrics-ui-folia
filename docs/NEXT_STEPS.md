@@ -16,10 +16,13 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。后来用户授权镜台调试入口，当前共八项，下述新结果取代入口限制。
 
-当前唯一下一项（用户追加）：示例增加可关闭的实际后端／帧回调调试信息，核对真实
-窗口hook启停、统计口径和Android编译；已有后端参数同时收尾。
-然后构建Android debug／独立消费，回到同48原矩阵3499ms媒体相机局部残差。
-不调整阈值、帧延迟或重采原图。
+当前唯一下一项：构建并验签包含调试面板的Android debug，验证本地Maven独立消费；
+随后回到同48原矩阵3499ms媒体相机局部残差。不调整阈值、帧延迟或重采原图。
+示例后端／帧回调诊断已实现：真播放与演示默认关闭、实际/请求后端、窗口/density、
+FPS/耗时/间隔分位数/报告丢失、媒体和歌词诊断；不可见/卸载停用。4项统计/UI通过，
+真实D3D/OpenGL hook启停/清空/保留后来delegate通过，Android shared编译通过。
+Windows可显式-PfoliaRenderApi=OPENGL；VULKAN明确拒绝。不是GPU呈现/音频性能或
+Android设备结论，API23帧数据明确不可用。见verification/render-debug。
 Windows sampler超限：图集候选45像素差1已撤回，保留失败；改为全mip分段（每pass
 至多14child）。原24平面控制及彩色alpha跨LOD6边界逐像素精确，公共缓存就绪竞态
 修正，11项JVM通过、Android编译通过；见verification/windows-rendering。

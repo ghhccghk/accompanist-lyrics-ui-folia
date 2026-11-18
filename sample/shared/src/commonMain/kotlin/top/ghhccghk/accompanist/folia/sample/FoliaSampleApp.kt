@@ -46,6 +46,7 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
     var settings by remember { mutableStateOf(false) }
     var picker by remember { mutableStateOf(false) }
     var debug by remember { mutableStateOf(false) }
+    var renderDebug by remember { mutableStateOf(false) }
     var pressed by remember { mutableStateOf<ISyncedLine?>(null) }
     var status by remember { mutableStateOf<FoliaStatus?>(null) }
     var preferenceError by remember { mutableStateOf<String?>(null) }
@@ -140,6 +141,7 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
                     verticalArrangement = Arrangement.Center) { metadata(true); Transport(clock, visible) }
                 lyrics(Modifier.weight(1f).fillMaxHeight())
             }
+            RenderDebugOverlay(renderDebug,visible,session,{clock.snapshot},status,{renderDebug=false},Modifier.align(Alignment.TopEnd))
         }
         if (picker) AlertDialog(onDismissRequest = { picker = false }, title = { Text("合成场景") }, text = {
             Column(Modifier.heightIn(max = 440.dp).verticalScroll(rememberScrollState())) {
@@ -153,6 +155,7 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
             Column(Modifier.heightIn(max = 420.dp).verticalScroll(rememberScrollState())) {
                 LyricThemeControls(session)
                 RenderResolutionControls(session)
+                RenderDebugToggle(renderDebug) { renderDebug=it }
                 Toggle("显示下一句", options.showNextLine) { options = options.copy(showNextLine = it) }
                 Toggle("减少动态效果", options.reducedMotion) { options = options.copy(reducedMotion = it) }
                 if(session.lyricTheme==SampleLyricTheme.Classic) {

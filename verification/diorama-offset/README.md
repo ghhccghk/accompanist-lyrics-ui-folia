@@ -43,6 +43,17 @@ Android library/Desktop compilation pass. Log
 Since every original Diorama oracle uses offset0, no source matrix was needlessly
 recaptured; their numerical/visual residuals remain, not inherited as acceptance.
 
+Follow-up caller audit found one additional verification adapter which still
+constructed media as fixtureLyric-offset. Its old request now failed both
+narrow/wide offset checks (log `.work/diorama-offset-neighbor-old-bridge.log`).
+It now builds media as fixtureLyric+offset; the same unchanged original lyric
+times/poses/source tables feed the bridge. No assertions were disabled. Neighbor
+and offset classes pass; all108 existing native before/after neighbour image
+hashes are EXACTLY unchanged, verified against the saved pre-run manifest
+`.work/diorama-offset-neighbor-before.json`. Log
+`.work/diorama-offset-neighbor-fixed-bridge.log`. This repairs the test-host
+conversion omitted from9e46baa, not a second production offset convention.
+
 ```
 ./gradlew :library:jvmTest --tests '*DioramaOffsetContractTest' --tests '*DioramaTextPlaybackTest' --tests '*DioramaCameraTrackTest' --tests '*PublicTiltTest' --tests '*TiltSubtitleStageTest' :library:compileAndroidMain :sample:desktop-app:compileKotlin
 ```

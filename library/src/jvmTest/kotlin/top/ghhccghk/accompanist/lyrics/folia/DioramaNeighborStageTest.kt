@@ -75,7 +75,9 @@ class DioramaNeighborStageTest {
                     val row=cases[current]
                     val view=DioramaPerspective(DioramaVec(row[6].toDouble(),row[7].toDouble(),row[8].toDouble()),
                         DioramaVec(row[9].toDouble(),row[10].toDouble(),row[11].toDouble()),width.toDouble(),600.0)
-                    val time=playback.lyricTime(row[5].toDouble()-offset/1000.0,offset)
+                    // Original fixture stores LYRIC time. Build the media input
+                    // using the public inverse before calling the bridge.
+                    val time=playback.lyricTime(row[5].toDouble()+offset/1000.0,offset)
                     if(before) {
                         // Exact former production stage: only current active
                         // text; no source geometry, no neighbour placeholder.

@@ -21,7 +21,9 @@ Diorama内部偏移已修为media-offset，点击逆映射lineStart+offset，与
 新增独立契约回归先失败（+200ms在1.7s误选1.9s行，正确应2.1s才进入），再通过
 正/负/零偏移/原对象/点击往返/完整文字镜头像素/减少动态/暂停/不重准备验证。
 8定向JVM与Android库/Desktop编译通过；仍内部主题，无新原图/设备/性能声明。
-证据verification/diorama-offset。
+证据verification/diorama-offset（9e46baa）；补充caller审计修正唯一遗留的邻行验证器
+fixtureLyric→media转换（先因旧反号失败，未弱化断言），4项补验通过，108旧native图
+hash完全不变，原数值/原图未更新。日志.work/diorama-offset-neighbor-fixed-bridge.log。
 
 Tilt真实原版正文+字幕整屏30帧对照已完成：真实原overlay/默认.6透明度、有效单行翻译
 配置/同真实core/字体/视口/字号，公开对内部像素完全相同。字号/宽/高/top峰

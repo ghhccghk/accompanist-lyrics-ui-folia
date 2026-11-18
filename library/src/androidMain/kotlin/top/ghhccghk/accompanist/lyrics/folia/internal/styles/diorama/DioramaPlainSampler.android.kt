@@ -5,3 +5,5 @@ package top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama
 // yet. Explicitly report unavailable; ordinary Kotlin/Compose planes remain.
 // Never emulate this as an enabled Android backend or add a native dependency.
 internal actual fun createDioramaPlainSampler(text:DioramaPlainText):DioramaPlainSampler?=null
+
+internal actual fun createDioramaActiveBaseSampler(image:androidx.compose.ui.graphics.ImageBitmap):DioramaPlainSampler?=null

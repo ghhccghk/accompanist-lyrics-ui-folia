@@ -97,6 +97,10 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         val current=globalStart+camera.subjectIndex(time)
         renderer.prepare(mountedTextIndicesAt(time).filter{it!=current}.map{plainAt(it).text})
     }
+    /** Current line only, not all song images. Same lyric-time domain as stage. */
+    fun prepareActiveBaseRenderer(renderer:DioramaActiveBaseRenderer,time:Double) {
+        renderer.prepare(lines[camera.subjectIndex(time)].text)
+    }
     fun neighborFramesAt(time: Double, view: DioramaPerspective, primary: DioramaLinearColor,
         secondary: DioramaLinearColor = primary): List<DioramaNeighborFrame> {
         val current=globalStart+camera.subjectIndex(time)
@@ -119,7 +123,8 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         reducedMotion: Boolean = false, fog: DioramaFog? = null,
         toneMapping: DioramaToneMapping = DioramaToneMapping.AcesFilmic,
         activeFrames: List<DioramaUnitFrame>? = null, breath: Double? = null,
-        plainRenderer: DioramaPlainRenderer? = null) {
+        plainRenderer: DioramaPlainRenderer? = null,
+        activeBaseRenderer: DioramaActiveBaseRenderer? = null) {
         val index=camera.subjectIndex(time);val s=camera.subjects[index]
         // Original neighbours are transparent, depthWrite=false and order0;
         // active layers have order17/18/19. With no opaque background geometry,
@@ -133,13 +138,13 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
                     neighbor.opacity.toFloat(),fog,toneMapping)
             }
         }
-        if(activeFrames!=null)lines[index].text.drawFrames(scope,view,s.frame,s.placement,activeFrames,fog,toneMapping)
+        if(activeFrames!=null)lines[index].text.drawFrames(scope,view,s.frame,s.placement,activeFrames,fog,toneMapping,activeBaseRenderer)
         else {
             val activeDelta=dioramaComposeLocal(s.frame,s.placement.offsetR,s.placement.offsetU,0.0)-view.eye
             lines[index].text.draw(scope,time,view,s.frame,s.placement,
                 primary,accent,if(reducedMotion)DioramaUnitTuning(soul=0.0)else DioramaUnitTuning(),
                 life=dioramaTextLife(sqrt(activeDelta.dot(activeDelta))),fog=fog,toneMapping=toneMapping,
-                breath=breath?:dioramaBreathAt(breathOriginSeconds+time,reducedMotion))
+                breath=breath?:dioramaBreathAt(breathOriginSeconds+time,reducedMotion),baseRenderer=activeBaseRenderer)
         }
     }
     companion object {

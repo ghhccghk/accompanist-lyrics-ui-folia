@@ -16,8 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：验证活动BASE的逐fragment采样，先同380/144/3.5s活动层，再同固定48帧；
-复用有界sampler、帧外准备/显式释放，不改相机/全局字体策略，不碰尚无依据的halo参数。
+当前唯一下一项：修正plain owner在prepare中途失败后empty/unmount无法淘汰残留项的状态，
+补独立失败回归；然后刷新Android debug/独立消费，再定位Arabic输入/放置与700ms入场残差。
+活动BASE采样已接内部可选owner：当前行<=32项/32MiB额外payload估算，帧外准备/释放，
+Android明确不可用/真实旧路径回退。原最坏活动层同813union MAE19.670767→1.308733，
+峰74→22；固定48同7图union有限4.273842→1.961853，但700ms四帧均值/局部回退保留；
+媒体18.583225→17.276814/局部69.117781未降。自身90完整塑形均值6.580503→3.423427，
+16Arabic局部回退(峰26.238095→33.035714)未解决；原输入90诊断均值.445855/峰8/
+局部1.8125，非全GPU等价。16项JVM/Android库/Desktop编译通过，567旧PNG不变；
+见verification/diorama-active-base-sampler。无公开镜台/设备/正式视觉结论，不用均值掩盖失败。
 最坏区域分层已完成：原1494次精确callback前缀、完整图/状态/纹理版本/matrix均不变；
 原active-all=base-only，glow/soul均不可见，4正文opacity=.5。活动层原808/本418像素，
 同union MAE19.792492/峰74；该口径不等于完整stage。既有Windows前景策略只改善unit0，

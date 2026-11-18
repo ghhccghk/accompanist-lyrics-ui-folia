@@ -1949,3 +1949,19 @@ no visible glow/soul; existing foreground raster policy regresses3 unit means
 and is not adopted. Source hashes, failure/contact and raw input comparisons:
 verification/diorama-mounted-active-input. No source asset enters production,
 no new license/runtime dependency, no production or final visual/device claim.
+
+### Diorama bounded active BASE sampler (2026-11-18)
+Same pinned dioramaTextRaster.ts:58–62 CanvasTexture aniso4/sRGB and
+DioramaActiveUnitPlanes.tsx:63–77 normal base renderOrder19 -> optional
+DioramaActiveBaseRenderer.kt / ActiveText.drawFrames / TextPlayback.drawStage.
+Reuses existing independently written JVM fragment sampler/attributed Three MIT
+material algebra; no new copied driver, font, reference raster or dependency.
+Current-line-only bounded explicit ownership, preparation outside Canvas, real
+unavailable/over-budget fallback, partial-failure retry/unmount and disposal;
+Android factory returns unavailable. Original shaping/pivots/clocks/camera and
+additive glow/soul are unchanged. Deterministic extraction of original90 unit
+values plus existing passive original base textures is DIAGNOSTIC ONLY, never
+product input; provenance:active-base-sampler-input-v1. Fixed48/90 comparisons,
+all four entrance and16 Arabic local failures, source-input isolation and567
+unchanged old outputs:verification/diorama-active-base-sampler. Internal opt-in
+capability, not complete cross-platform/visual/device/performance acceptance.

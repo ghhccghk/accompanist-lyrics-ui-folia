@@ -25,21 +25,22 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
     val lineAdvance: Double, val middleBaseline: Double) {
     fun drawBase(scope: DrawScope, time: Double, view: DioramaPerspective, frame: DioramaFrame,
         placement: DioramaPlacement, primary: DioramaLinearColor, accent: DioramaLinearColor,
-        gradient: Double = 1.0, keywords: Map<Int, DioramaLinearColor> = emptyMap()) =
+        gradient: Double = 1.0, keywords: Map<Int, DioramaLinearColor> = emptyMap(),
+        baseRenderer: DioramaActiveBaseRenderer? = null) =
         draw(scope, time, view, frame, placement, primary, accent,
-            DioramaUnitTuning(glow = 0.0, soul = 0.0, gradient = gradient), keywords)
+            DioramaUnitTuning(glow = 0.0, soul = 0.0, gradient = gradient), keywords,baseRenderer=baseRenderer)
 
     fun draw(scope: DrawScope, time: Double, view: DioramaPerspective, frame: DioramaFrame,
         placement: DioramaPlacement, primary: DioramaLinearColor, accent: DioramaLinearColor,
         tuning: DioramaUnitTuning = DioramaUnitTuning(),
         keywords: Map<Int, DioramaLinearColor> = emptyMap(), life: Double = 1.0,
         fog: DioramaFog? = null, toneMapping: DioramaToneMapping = DioramaToneMapping.None,
-        breath: Double = 1.0) {
+        breath: Double = 1.0, baseRenderer: DioramaActiveBaseRenderer? = null) {
         val states = slices.mapIndexed { i, slice ->
             dioramaUnitFrame(time, slice.unit.start, slice.unit.end,
                 dioramaMediaEnvelope(time, slice.unit.start, slice.unit.end), primary, accent, tuning, keywords[i], life = life, breath = breath)
         }
-        drawFrames(scope,view,frame,placement,states,fog,toneMapping)
+        drawFrames(scope,view,frame,placement,states,fog,toneMapping,baseRenderer)
     }
 
     /** Shared renderer for independently resolved material states. Media playback
@@ -47,7 +48,8 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
      * core clocks/history. Neither path re-rasterizes or changes shaping here. */
     fun drawFrames(scope: DrawScope, view: DioramaPerspective, frame: DioramaFrame,
         placement: DioramaPlacement, states: List<DioramaUnitFrame>, fog: DioramaFog? = null,
-        toneMapping: DioramaToneMapping = DioramaToneMapping.None) = with(scope) {
+        toneMapping: DioramaToneMapping = DioramaToneMapping.None,
+        baseRenderer: DioramaActiveBaseRenderer? = null) = with(scope) {
         require(states.size==slices.size) { "One resolved frame per prepared text unit is required" }
         val fit = dioramaFrameFit(lineAdvance * .62 / 128, 5.2, view.fov, view.width / view.height) * placement.scale
         val unitScale = fit * .62 / 128
@@ -57,26 +59,29 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         val x = right * unitScale
         val y = up * unitScale
         val center = dioramaComposeLocal(frame, placement.offsetR, placement.offsetU, 0.0)
-        fun plane(slice: DioramaActiveSlice, image: ImageBitmap, alpha: Double, color: Color,
-            depth: Double = 0.0, lift: Double = 0.0, scale: Double = 1.0, additive: Boolean = false) {
+        fun plane(slice: DioramaActiveSlice, image: ImageBitmap, alpha: Double, color: DioramaLinearColor,
+            depth: Double = 0.0, lift: Double = 0.0, scale: Double = 1.0, additive: Boolean = false,
+            sampleBase: Boolean = false) {
             val origin = center + x * (slice.centerPx + slice.imageOffsetPx * scale) + normal * (depth * fit) + up * (lift * fit) -
                 x * (image.width / 2.0 * scale) + y * (image.height / 2.0 * scale)
-            drawDioramaPlane(image,view,origin,x * scale,y * -scale,alpha.toFloat(),color,additive,fog)
+            if(sampleBase&&baseRenderer?.draw(image,this,view,origin,x*scale,y*-scale,color,
+                    alpha.toFloat(),fog,toneMapping)==true)return
+            drawDioramaPlane(image,view,origin,x * scale,y * -scale,alpha.toFloat(),color.srgb(toneMapping),additive,fog)
         }
         // Three sorts by renderOrder: all17 glow, all18 soul, then all19 bodies.
         // Rendering three layers per unit changes overlapping ghosts and halos.
         for ((i, slice) in slices.withIndex()) {
             val state = states[i]
-            if (state.glowVisible) plane(slice, slice.halo, state.glowOpacity, state.fill.srgb(toneMapping), depth = -.01, additive = true)
+            if (state.glowVisible) plane(slice, slice.halo, state.glowOpacity, state.fill, depth = -.01, additive = true)
         }
         for ((i, slice) in slices.withIndex()) {
             val state = states[i]
-            if (state.soulVisible) plane(slice, slice.image, state.soulOpacity, state.fill.srgb(toneMapping),
+            if (state.soulVisible) plane(slice, slice.image, state.soulOpacity, state.fill,
                 depth = -.005, lift = state.soulLift, scale = state.soulScale, additive = true)
         }
         for ((i, slice) in slices.withIndex()) {
             val state = states[i]
-            plane(slice, slice.image, state.baseOpacity, state.fill.srgb(toneMapping))
+            plane(slice, slice.image, state.baseOpacity, state.fill, sampleBase = true)
         }
     }
 

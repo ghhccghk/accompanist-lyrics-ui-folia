@@ -1,0 +1,21 @@
+{
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "scope": "Deterministic extraction of original unit values from existing active-base.json; original base textures passively exported by existing active-layers capture. Diagnostic SHARED INPUT ONLY, never production. No source recapture, original rewrite or own geometry-as-expected.",
+  "files": {
+    "verification/diorama-fixtures/active-base.json": "7303f557d21889d854098343a2589c4d1bdb1819aba048f2b89b6b10f88f5532",
+    "verification/diorama-fixtures/active-layers.json": "7a86609076ade4097a339a1580c9e189689c1a50d91cbfbbeac430ed68d6e170",
+    "build/verification/diorama-active-layers-browser/arabic-unit0-base.png": "7133659c6136bf5930f895b6043100b718ac82bb503b00edbe31ce00765494f3",
+    "build/verification/diorama-active-layers-browser/arabic-unit1-base.png": "f95c9e431eed8c37f2c9717aaba5d1d304b051f06e596418ba6647dede15b4cd",
+    "build/verification/diorama-active-layers-browser/cjk-unit0-base.png": "9f554451605b44bbb0b76d78f30546dbebedd8ac133bb4ce526d45af630f77a6",
+    "build/verification/diorama-active-layers-browser/cjk-unit1-base.png": "92aab13d86d5d977eee1538c63f593c989c92de96d460415e3f5b16512c62c56",
+    "build/verification/diorama-active-layers-browser/cjk-unit2-base.png": "fac3400d45993560fc1e746dff5e47f72ab5f39e2c9c2fec6b03622ccc0e4918",
+    "build/verification/diorama-active-layers-browser/cjk-unit3-base.png": "63b49c9883f74f329946a8b210e9a8fa1f96ada328029efed410c4be5066c759",
+    "build/verification/diorama-active-layers-browser/cjk-unit4-base.png": "0e60fe616483067275a8aff4bd5099c8f39769c24da318a80ae196c085b2273b",
+    "build/verification/diorama-active-layers-browser/cjk-unit5-base.png": "d858dc089ec50f7cbed072693b06dc74eaab69cb1c426c36bc5d96225ff3070e",
+    "build/verification/diorama-active-layers-browser/cjk-unit6-base.png": "2c27f39b0075bdef2d047a05d5974d2bd455414afb2c2a188377fac5423b8ed0",
+    "build/verification/diorama-active-layers-browser/latin-unit0-base.png": "09c977986f2f0ff0931a7d78ffed83c142ff20323cb122b0f4fe612033c08d42",
+    "build/verification/diorama-active-layers-browser/latin-unit1-base.png": "ecaa4616892f59ca24df32a6fa7f5dc7260e9be9a4f45f3517c05316f4b0c94f",
+    "build/verification/diorama-active-layers-browser/latin-unit2-base.png": "7666d07db84ce3900913c194f1c33fc2c456981716cd9aa7b133aa609284a180"
+  }
+}

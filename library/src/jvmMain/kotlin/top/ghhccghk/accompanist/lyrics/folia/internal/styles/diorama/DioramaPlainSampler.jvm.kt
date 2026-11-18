@@ -24,6 +24,9 @@ import kotlin.math.max
 internal actual fun createDioramaPlainSampler(text:DioramaPlainText):DioramaPlainSampler? =
     SkiaDioramaPlainSampler(text.image)
 
+internal actual fun createDioramaActiveBaseSampler(image:ImageBitmap):DioramaPlainSampler? =
+    SkiaDioramaPlainSampler(image)
+
 /** Immutable prepared image pyramid + owned shader state; uniforms change at
  * draw time, never glyphs/mips. Full color kept separate from coverage, including
  * color at zero-alpha lower mip texels. No original fixture is a runtime input. */

@@ -1,6 +1,6 @@
 # Rust renderer execution record
 
-Updated: 2026-11-18. Starting commit: `fdcc1e5`, branch `codex/initial-implementation`.
+Updated: 2026-11-19. Starting commit: `fdcc1e5`, branch `codex/initial-implementation`.
 This is the single current execution checklist; the design and implementation prompt remain the requirements.
 
 ## Completed
@@ -32,6 +32,12 @@ continue through existing Partita. `:library:jvmTest --tests '*PartitaNativeInpu
 --tests '*RendererBridgeTest*'` PASS (3 tests); Android wrapper compiled. This is
 gesture logic/offscreen validation, not yet an Android physical-touch result.
 Release consumer lifecycle/fallback matrix is being expanded and is not yet PASS.
+
+The standalone Kotlin coordinate consumer passed JVM render/callback and Android
+compilation on November 19. The check covers both POM and Gradle module metadata
+and rejects native libraries inside the base AAR/JAR, including its nested classes JAR.
+The first run lacked an SDK path. The passing run used `ANDROID_HOME` and disabled
+the optional CPU mask experiment during local publication.
 
 ## Remaining
 

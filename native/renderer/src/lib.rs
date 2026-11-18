@@ -1,7 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 //! Optional Android renderer. No playback, clock, network or application bridge.
-pub const ABI_VERSION: i32 = 1;
+pub const ABI_VERSION: i32 = 2;
 pub const MAX_DIMENSION: u32 = 8192;
+pub mod protocol;
+#[cfg(target_os = "android")]
+mod gpu;
 
 pub fn dimensions(width: i32, height: i32) -> Result<(u32, u32), i32> {
     if width <= 0 || height <= 0 || width as u32 > MAX_DIMENSION || height as u32 > MAX_DIMENSION {

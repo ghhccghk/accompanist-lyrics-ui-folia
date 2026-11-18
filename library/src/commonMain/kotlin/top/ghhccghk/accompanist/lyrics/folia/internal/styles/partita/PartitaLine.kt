@@ -30,15 +30,17 @@ import top.ghhccghk.accompanist.lyrics.folia.internal.styles.classic.classicBody
 import top.ghhccghk.accompanist.lyrics.folia.internal.text.*
 import kotlin.math.*
 
-private data class PartitaGlyph(val timing: TimedGrapheme, val origin: Offset, val image: ImageBitmap)
-private data class PartitaCell(val unit: DisplayUnit, val layout: TextLayoutResult, val body: BodyParagraphRaster,
+internal data class PartitaGlyph(val timing: TimedGrapheme, val origin: Offset, val image: ImageBitmap,
+    val gpuSigmas:List<Float> = emptyList())
+internal data class PartitaCell(val unit: DisplayUnit, val layout: TextLayoutResult, val body: BodyParagraphRaster,
     val pose: Pose, val baseline: Float, val glyphs: List<PartitaGlyph> = emptyList())
-private data class PartitaPrepared(val rows: List<List<PartitaCell>>, val geometry: PartitaGeometry,
+internal data class PartitaPrepared(val rows: List<List<PartitaCell>>, val geometry: PartitaGeometry,
     val quality: FoliaQuality)
 private class PartitaDrawnFrame { var time: Long?=null; var size=Size.Zero }
 
 /** Independent chunk stage, sharing only shaped text/GlowWord drawing primitives with classic. */
 @Composable
+@OptIn(ExperimentalFoliaRendererBridge::class)
 internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnapshot,
     textStyle: TextStyle, colors: FoliaColors, options: FoliaOptions,
     config: PartitaConfig = PartitaConfig(), modifier: Modifier = Modifier,
@@ -49,6 +51,12 @@ internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
     onClick: (() -> Unit)? = null, onLongPress: (() -> Unit)? = null) {
     val density = LocalDensity.current
     val resolver = LocalFontFamilyResolver.current
+    val renderTarget = LocalFoliaPartitaRenderTarget.current
+    // Observe asynchronous font completion, including a stable resolver instance.
+    val resolvedFont = resolver.resolve(textStyle.fontFamily,
+        textStyle.fontWeight ?: androidx.compose.ui.text.font.FontWeight.Normal,
+        textStyle.fontStyle ?: androidx.compose.ui.text.font.FontStyle.Normal,
+        textStyle.fontSynthesis ?: androidx.compose.ui.text.font.FontSynthesis.All).value
     val maskProcessor = top.ghhccghk.accompanist.lyrics.folia.LocalFoliaMaskProcessor.current
     val measurer = rememberTextMeasurer(cacheSize = 64)
     val nativeInk = LocalClassicNativeBodyInk.current
@@ -63,7 +71,7 @@ internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             })
         }
         val prepared = remember(layout,textStyle,cssWidth,cssHeight,options.quality,config.avoidOverlap,
-            colors.active.alpha,measurer,resolver,density,nativeInk,maskBudgetBytes,maskProcessor) {
+            colors.active.alpha,measurer,resolver,resolvedFont,density,nativeInk,maskBudgetBytes,maskProcessor,renderTarget) {
             fun prepare(fit: Double): PartitaPrepared {
                 val size = partitaFontSize(textStyle.fontSize.value.toDouble(),cssWidth,fit)
                 // Blink's glyph cache uses hundredths; CSS line boxes/em lengths
@@ -146,8 +154,10 @@ internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                         CanvasDrawScope().draw(density,LayoutDirection.Ltr,BitmapCanvas(image),Size(image.width.toFloat(),image.height.toFloat())) {
                             withTransform({translate(-origin.x,-origin.y)}) {clipPath(path){drawParagraphShadowSource(cell.layout)}}
                         }
-                        PartitaGlyph(g,origin,compositeGlowMasks(blurredMasks(image,
-                            FloatArray(layers){max(1f,radii[it]*density.density/2)},maskProcessor),colors.active.alpha))
+                        val sigmas=List(layers){max(1f,radii[it]*density.density/2)}
+                        if(renderTarget!=null) PartitaGlyph(g,origin,image,sigmas)
+                        else PartitaGlyph(g,origin,compositeGlowMasks(blurredMasks(image,
+                            sigmas.toFloatArray(),maskProcessor),colors.active.alpha))
                     })
                 } })
         }
@@ -198,6 +208,15 @@ internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
                 if(event.key!=Key.Enter && event.key!=Key.Spacebar) false
                 else {if(event.type==KeyEventType.KeyUp)click?.invoke();true}
             }.focusable()
+        if(renderTarget!=null) {
+            val plan=remember(prepared,layout,colors,options,config,density,enterUs,leaveUs) {
+                PartitaNativePlan(line,prepared,layout,colors,options,config,density,enterUs,leaveUs)
+            }
+            renderTarget.Line(plan.scene,Modifier.fillMaxSize().then(input),
+                frame={width,height->plan.frame((currentPlayback().positionMillis-options.offsetMillis)*1000,width,height)},
+                onPresented={frame->drawn.time=frame.mediaTimeUs;drawn.size=Size(frame.width.toFloat(),frame.height.toFloat())})
+            return@BoxWithConstraints
+        }
         val lineLayer=rememberClassicLayer()
         val rowLayers=prepared.rows.map { rememberClassicLayer() }
         val wordLayers=prepared.rows.map { row -> row.map { rememberClassicLayer() } }

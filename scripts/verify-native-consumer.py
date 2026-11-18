@@ -27,6 +27,12 @@ work.mkdir(parents=True, exist_ok=True)
 project = work / "app"
 project.mkdir(exist_ok=True)
 shutil.copytree(ROOT / "verification/native-consumer", project, dirs_exist_ok=True)
+assets=project / "src/main/assets"
+assets.mkdir(parents=True,exist_ok=True)
+for name in ("FoliaParityLatin-Bold.ttf","NotoSansArabic-Bold.ttf","FoliaParityCJK-Bold.otf","FoliaParityBidi-Bold.ttf","OFL.txt","NotoSansArabic-OFL.txt"):
+    source=ROOT / "verification/assets" / name
+    if source.exists():shutil.copy2(source,assets/name)
+shutil.copy2(ROOT / "verification/classic-fixtures/scenes.tsv",assets/"scenes.tsv")
 shutil.copytree(ROOT / "gradle/wrapper", project / "gradle/wrapper", dirs_exist_ok=True)
 for name in ("gradlew", "gradlew.bat"):
     shutil.copy2(ROOT / name, project / name)

@@ -10,14 +10,13 @@ This is the single current execution checklist; the design and implementation pr
 - Existing native code is CPU mask/colour only. No renderer was present at the starting commit.
 - Preserved and excluded the pre-existing release signing hunk in `sample/android-app/build.gradle.kts` and untracked `gradle/gradle-daemon-jvm.properties`.
 
-## Current: P2 prepared Partita scene and GPU passes
+## Current: P3 sample integration and lifecycle/interaction validation
 
-P1 platform milestone passed: separate minSdk 26 AAR, dedicated JNI library, versioned multi-instance handles, ordered TextureView lifetime, coordinate-only release/R8 consumption and actual Vulkan submit/present on a new owned x86_64 emulator. Evidence: `verification/native-renderer-p1.md`. This is not theme completion. Implement the narrow prepared-scene adapter and GPU text/blur/composition next.
+P1 platform milestone passed (`ad21f29`); evidence: `verification/native-renderer-p1.md`. P2 real core/prepared Partita + GPU passes, 6 Android Rust tests, existing Partita and bridge JVM tests, isolated release/R8 native consumer and paused frame stability passed; evidence: `verification/native-renderer-p2.md`. This is not complete visual/performance acceptance. Implement and validate the thin sample, persisted per-theme backends, failure/lifecycle and interaction behavior next.
 
 ## Remaining
 
-- P2: narrow experimental prepared-scene bridge; real core objects stay in Kotlin, whole-run shaping and cache invalidation, prepare-only texture transfer.
-- P3: complete Partita GPU blur/glow, transforms, guides, overlays, hit/source mapping, backend selection and explicit fallback/required failures; thin native sample.
+- P3: thin native sample and persisted backend selection; input pass-through, cancel behavior and source mapping; explicit fallback/required failures; lifecycle/recreation/multi-instance runtime matrix.
 - P4: independent release/R8 consumer, packaged sources/notices, lifecycle/error/resource tests, visual and paired performance evidence.
 - Only after the first theme closes: trace-led second theme, then separately validated desktop host.
 
@@ -36,9 +35,9 @@ P1 platform milestone passed: separate minSdk 26 AAR, dedicated JNI library, ver
 - Git identity configured; no staged changes at start.
 - Android SDK and pinned NDK present; project-local Rust 1.91.1 present.
 - ARM64/x86_64 locked builds, AAR publication, Rust 2/2 tests on Android and isolated release/R8 packaged runtime probe: PASS. Exact hashes, initial failures and scope are in `verification/native-renderer-p1.md`.
-- Partita scene adapter initial JVM compilation: PASS, not yet submitted to native GPU.
+- Partita scene adapter + real GPU submit in isolated minified consumer: PASS; 6/6 Rust Android tests; 2/2 bridge tests and existing Partita suite PASS. Paused diagnostics no longer resubmit unchanged frames. See P2 evidence for exact limits and open visual differences.
 - ARM64 runtime, actual Partita visual/interaction/lifecycle/performance and 16KiB OS: pending.
 
 ## Next action / acceptance commands
 
-Complete the prepared Partita bridge and bounded native command parser/GPU passes, run scene/FFI tests and paired synthetic runtime captures, then commit the feature separately. Keep P1 and future GPU/theme evidence distinct.
+Compile/test the thin native sample and original sample; persist backend per theme with old-settings compatibility. Then extend release consumer with lifecycle/failure/interaction matrix. Keep defaults Kotlin and all unverified hardware/visual/performance gates explicit.

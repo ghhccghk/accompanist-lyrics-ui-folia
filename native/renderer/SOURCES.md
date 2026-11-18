@@ -9,6 +9,7 @@ fonts, icons, player, SPW, cryoglyph patch or application dependencies are copie
 | Folia-rust-android | same revision, crates/folia-bridge/src/monet.rs | src/android.rs: independently implemented NativeWindow/surface/device lifecycle using wgpu 27; no application bridge or iced dependency |
 | Folia-rust-android | same revision, styles/partita.rs and styles/glow.rs in crates/folia-visualizer | inspected, not copied: enlarged translucent text halo is unsuitable for equivalent Partita glow |
 | lyrics-ui-folia | fdcc1e5, native/experimental-mask/rust-environment.ps1 | producer build reuses local tool lookup only; CPU experiment runtime is not linked |
+| lyrics-ui-folia | fdcc1e5, PartitaLine.kt, partita samplers, classic/GlowPrimitives.kt | FoliaRendererBridge.kt + PartitaNativeScene.kt reuse current prepared cells and samplers; src/gpu.rs and blur/halo/draw.wgsl independently implement the existing three-box kernel/phase, small Gaussian and integer halo alpha on GPU. GPU conformance tests use an independent naive f64 implementation; no reference simplified halo copied |
 
 Transitive Rust dependency versions, sources and checksums are fixed by Cargo.lock.
 `cargo metadata --locked` provides the complete dependency graph and license fields.

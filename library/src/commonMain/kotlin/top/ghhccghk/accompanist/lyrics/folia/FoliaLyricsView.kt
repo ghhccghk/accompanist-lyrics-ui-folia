@@ -41,7 +41,7 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 
 /** Host owns media time and seeking. Whole runs are shaped by Compose, never per UTF-16 char. */
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class,ExperimentalFoliaRendererBridge::class)
 @Composable
 fun FoliaLyricsView(
     lyrics: SyncedLyrics,
@@ -277,7 +277,7 @@ fun FoliaLyricsView(
                         onPrepared={actual,count->quality=actual;unitCount=count},
                         onClick={onLineClicked(main.source)},onLongPress={onLinePressed(main.source)})
                 }
-                waiting?.let {gap->
+                waiting?.takeIf { LocalFoliaPartitaRenderTarget.current?.overlaysVisible!=false }?.let {gap->
                     WaitingBreathingDots((gap.startUs/1000).toInt(),(gap.endUs/1000).toInt(),
                         {(currentPlayback().positionMillis-options.offsetMillis).coerceIn(Int.MIN_VALUE.toLong(),Int.MAX_VALUE.toLong()).toInt()},
                         Modifier.semantics{contentDescription="等待演唱"},reducedMotion=options.reducedMotion,
@@ -338,7 +338,7 @@ fun FoliaLyricsView(
                 }
             }
         }
-        if(style !is FoliaStyle.Pendolo) ClassicSubtitles(subtitles,document.lines,playback,typography,colors,options,maxWidth,
+        if(style !is FoliaStyle.Pendolo && (style !is FoliaStyle.Partita || LocalFoliaPartitaRenderTarget.current?.overlaysVisible!=false)) ClassicSubtitles(subtitles,document.lines,playback,typography,colors,options,maxWidth,
             selection.primary?.enterUs?:subtitles.line?.let {document.lines[it].startUs},
             Modifier.align(Alignment.BottomCenter).padding(bottom=112.dp),partita=style is FoliaStyle.Partita) {
             selection.secondary.forEach { secondary ->

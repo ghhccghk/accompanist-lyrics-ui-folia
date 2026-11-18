@@ -27,11 +27,22 @@ public final class NativeConsumerProbe extends Instrumentation {
                 runOnMainSync(() -> text.set(textOf(target.getWindow().getDecorView())));
                 state = text.get();
                 if (state.contains("FAILED") || state.contains("Failed:")) throw new AssertionError(state);
-                if (state.contains("ABI=1 SurfaceReady")) break;
+                if (state.contains("ABI=2 NativeGpu Ready:PartitaMainAndGlow")) break;
                 SystemClock.sleep(50);
             }
-            if (!state.contains("ABI=1 SurfaceReady")) throw new AssertionError("No actual native present: " + state);
-            result.putString("stream", "PASS release/R8 packaged AAR ABI=1 and Vulkan TextureView submit/present\n");
+            if (!state.contains("ABI=2 NativeGpu Ready:PartitaMainAndGlow")) throw new AssertionError("No actual native Partita submit: " + state);
+            // Allow the first-frame handoff to settle, then require a paused,
+            // unchanged scene to stop submitting despite diagnostic callbacks.
+            SystemClock.sleep(500);
+            AtomicReference<String> paused = new AtomicReference<>("");
+            runOnMainSync(() -> paused.set(textOf(target.getWindow().getDecorView())));
+            for (int i=0;i<10;i++) {
+                SystemClock.sleep(100);
+                AtomicReference<String> next = new AtomicReference<>("");
+                runOnMainSync(() -> next.set(textOf(target.getWindow().getDecorView())));
+                if (!paused.get().equals(next.get())) throw new AssertionError("Paused frame changed: " + paused + " -> " + next);
+            }
+            result.putString("stream", "PASS release/R8 packaged AAR ABI=2, real core Partita Vulkan submission and paused frame stability\n");
             finish(Activity.RESULT_OK,result);
         } catch (Throwable error) {
             result.putString("stream", "FAIL " + error + "\n");

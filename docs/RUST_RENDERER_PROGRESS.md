@@ -82,6 +82,11 @@ reached 97/255, so main-stage visual acceptance remains open. See
 - Partita scene adapter + real GPU submit in isolated minified consumer: PASS; 6/6 Rust Android tests; 2/2 bridge tests and existing Partita suite PASS. Paused diagnostics no longer resubmit unchanged frames. See P2 evidence for exact limits and open visual differences.
 - ARM64 runtime and paired physical-device performance: pending; Partita visual differences remain documented.
 
-## Next action / acceptance commands
+## Next action / acceptance gate
 
-Compile/test the thin native sample and original sample; persist backend per theme with old-settings compatibility. Then extend release consumer with lifecycle/failure/interaction matrix. Keep defaults Kotlin and all unverified hardware/visual/performance gates explicit.
+Keep this theme on the experimental, explicitly selected path. The first-theme
+exit gate remains: resolve the measured local visual differences without
+changing the Kotlin scene or reducing effects, complete sustained foreground /
+background and remaining glyph/caption cases, and collect a paired physical
+performance trace. Do not start P5 while those gates remain open. ARM64 runtime
+needs a suitable host or device; the connected physical device remains out of scope.

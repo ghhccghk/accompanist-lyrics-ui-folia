@@ -1910,3 +1910,13 @@ Same-union original-default channel peak2, retained pixel-count residuals,
 pause/round-trip and168 unchanged production hashes:
 verification/diorama-anisotropic-control. Not other-GPU/own-glyph/full-stage,
 production/Android or formal theme acceptance; no source asset enters runtime.
+
+### Diorama own-shaped fragment plane matrix (2026-11-18)
+Same pinned rasterDioramaLine/frame placement and fixed original24 Three plane
+frames, no new source/runtime asset. DioramaPlainFragmentMatrixTest reuses own
+complete paragraph preparation and derives original seed/offset camera inputs;
+test helper permits full mip chains and explicitly original None/no-fog policy.
+No shaping/timing/geometry change. Four-script/three-size/near-view numerical
+comparison, original hashes and previous-failure contact retained in
+verification/diorama-plain-fragment; actual Canvas resize/pause/remount/disposal
+checked. No production, Android, full mounted-stage or formal acceptance claim.

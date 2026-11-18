@@ -18,7 +18,7 @@ import javax.imageio.ImageIO
 /** Single shared-cache7 diagnostic, explicit mip0..5, per-fragment isotropic or
  * bounded four-tap anisotropic LOD, linear-light RGB distinct from alpha.
  * No general glyph/near-plane support or original GPU mip input. */
-internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseable {
+internal class DioramaFragmentControl(private val base:ImageBitmap,private val maxMipLevel:Int=5):AutoCloseable {
     private val masks=mutableListOf(base)
     private val colors=mutableListOf<ImageBitmap>()
     private val children=mutableListOf<org.jetbrains.skia.Shader>()
@@ -26,11 +26,12 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
     private val builder:RuntimeShaderBuilder
 
     init {
+        require(maxMipLevel in 0..12)
         val pixels=IntArray(base.width*base.height).also{base.readPixels(it)}
         val occupancy=ByteArray(pixels.size*4)
         for(i in pixels.indices) {
             val alpha=pixels[i] ushr 24
-            require(alpha==0 || pixels[i] and 0xffffff==0xffffff){"Bounded white source-cache control only"}
+            require(alpha==0 || pixels[i] and 0xffffff==0xffffff){"White diagnostic raster only"}
             val value=if(alpha>0)255.toByte()else 0
             occupancy[i*4]=value;occupancy[i*4+1]=value;occupancy[i*4+2]=value;occupancy[i*4+3]=255.toByte()
         }
@@ -43,12 +44,12 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
             return image
         }
         colors+=reduce(opaque,base.width,base.height,true)
-        repeat(5) {
+        repeat(maxMipLevel) {
             val w=max(1,masks.last().width/2);val h=max(1,masks.last().height/2)
             masks+=reduce(masks.last(),w,h,false);colors+=reduce(colors.last(),w,h,true)
         }
-        val declarations=(0..5).joinToString("\n"){"uniform shader c$it; uniform shader a$it; uniform float2 size$it;"}
-        val branches=(0..5).joinToString("\n"){
+        val declarations=(0..maxMipLevel).joinToString("\n"){"uniform shader c$it; uniform shader a$it; uniform float2 size$it;"}
+        val branches=(0..maxMipLevel).joinToString("\n"){
             "if(level==$it) { float2 uv=p*size$it/baseSize; return float2(toLinearSrgb(c$it.eval(uv).rgb).r,a$it.eval(uv).a); }"
         }
         effect=RuntimeEffect.makeForShader("""
@@ -58,6 +59,7 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
             uniform float3 primary; uniform float3 fogColor; uniform float opacity;
             uniform int diagnostic;
             uniform float maxAniso;
+            uniform int toneMapped; uniform int fogEnabled;
             float2 sampleLevel(int level,float2 p) { $branches return float2(0); }
             float3 aces(float3 c) {
                 c=c/.6;
@@ -74,8 +76,8 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
                 float2 dx=(hx.xy*z-a*hz.xy)/(z*z);float2 dy=(hy.xy*z-b*hz.xy)/(z*z);
                 float determinant=dx.x*dy.y-dx.y*dy.x;
                 float rho=max(length(float2(dy.y,dy.x)),length(float2(dx.y,dx.x)))/abs(determinant);
-                float lod=clamp(log2(max(rho,1)),0,5);int low=int(floor(lod));
-                float2 tex=mix(sampleLevel(low,p),sampleLevel(low<5?low+1:5,p),fract(lod));
+                float lod=clamp(log2(max(rho,1)),0,$maxMipLevel);int low=int(floor(lod));
+                float2 tex=mix(sampleLevel(low,p),sampleLevel(low<$maxMipLevel?low+1:$maxMipLevel,p),fract(lod));
                 if(maxAniso>1) {
                     // Independent area/longest-axis footprint construction.
                     // Driver-informed investigation, not a claim all GPU
@@ -86,13 +88,13 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
                     float area=abs(tx.x*ty.y-tx.y*ty.x);
                     float ratio=min(maxAniso,max(sx,sy)/area);
                     float2 axis=sx>=sy?tx:ty;
-                    float level=clamp(log2(sqrt(max(sx,sy))/ratio),0,5);
+                    float level=clamp(log2(sqrt(max(sx,sy))/ratio),0,$maxMipLevel);
                     int first=int(floor(level));int count=int(floor(ratio+.5));
                     tex=float2(0);
                     for(int i=0;i<4;++i) {
                         if(i<count) {
                             float2 point=p+axis*((float(i)+.5)/float(count)-.5);
-                            tex+=mix(sampleLevel(first,point),sampleLevel(first<5?first+1:5,point),fract(level))/float(count);
+                            tex+=mix(sampleLevel(first,point),sampleLevel(first<$maxMipLevel?first+1:$maxMipLevel,point),fract(level))/float(count);
                         }
                     }
                 }
@@ -101,14 +103,15 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
                 if(diagnostic==3)return float4(aces(primary*tex.x),1);
                 if(diagnostic==4)return float4(encoded(aces(primary*tex.x)),1);
                 if(diagnostic==5)return float4(primary,1);
-                float3 rgb=encoded(aces(primary*tex.x));
-                rgb=mix(rgb,fogColor,smoothstep(12,30,z));float alpha=tex.y*opacity;
+                float3 linear=primary*tex.x;
+                float3 rgb=encoded(toneMapped==1?aces(linear):linear);
+                if(fogEnabled==1)rgb=mix(rgb,fogColor,smoothstep(12,30,z));float alpha=tex.y*opacity;
                 return float4(rgb*alpha,alpha);
             }
         """.trimIndent())
         builder=RuntimeShaderBuilder(effect)
         builder.uniform("baseSize",base.width.toFloat(),base.height.toFloat())
-        for(i in 0..5) {
+        for(i in 0..maxMipLevel) {
             val c=colors[i].asSkiaBitmap().makeShader(sampling=FilterMipmap(FilterMode.LINEAR,MipmapMode.NONE))
             val a=masks[i].asSkiaBitmap().makeShader(sampling=FilterMipmap(FilterMode.LINEAR,MipmapMode.NONE))
             children+=c;children+=a;builder.child("c$i",c);builder.child("a$i",a)
@@ -135,7 +138,8 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
         }
     }
 
-    fun draw(scope:DrawScope,view:DioramaPerspective,p:DioramaDepartingPlane,color:DioramaLinearColor,alpha:Float,diagnostic:Int=0,maxAniso:Float=1f) {
+    fun draw(scope:DrawScope,view:DioramaPerspective,p:DioramaDepartingPlane,color:DioramaLinearColor,alpha:Float,diagnostic:Int=0,maxAniso:Float=1f,
+        toneMapped:Boolean=true,fogEnabled:Boolean=true) {
         require(maxAniso==1f || maxAniso==4f){"Only the two bounded sampler controls are supported"}
         val scale=dioramaFrameFit(p.text.worldWidth,5.2,view.fov,view.width/view.height)*p.placement.scale
         val x=dioramaPlaneAxis(p.frame,p.placement,1.0,0.0)*(scale*.62/p.text.fontPx)
@@ -149,6 +153,7 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
         builder.uniform("fogColor",22/255f,36/255f,53/255f);builder.uniform("opacity",alpha)
         builder.uniform("diagnostic",diagnostic)
         builder.uniform("maxAniso",maxAniso)
+        builder.uniform("toneMapped",if(toneMapped)1 else 0);builder.uniform("fogEnabled",if(fogEnabled)1 else 0)
         val matrix=Matrix().apply {
             this[0,0]=h[0].toFloat();this[1,0]=h[1].toFloat();this[3,0]=h[2].toFloat()
             this[0,1]=h[3].toFloat();this[1,1]=h[4].toFloat();this[3,1]=h[5].toFloat()

@@ -16,9 +16,14 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：将已成立的aniso4片段控制用于自身完整塑形的邻行输入，
-复用原24帧Latin/Arabic/CJK/长行、近景和380/800/801尺寸矩阵；检查局部回退、
-裁切、暂停及尺寸恢复，未成立前不将shader进入生产或开放Diorama。
+当前唯一下一项：将已成立采样接入有界、显式持有/释放的内部文字stage邻行路径；
+帧外准备，保留FrontSide/near/far/父alpha与linear tint顺序，不为整曲驻留shader/mips。
+复查同mounted48/plane24后再采用；Android能力分开记录，Diorama仍未开放。
+自身完整塑形24帧控制已完成：同原Latin/Arabic/CJK/长行及380/800/801、两pose，
+同union均值11.742677→1.446805/最坏64局部50.719298→3.363636，24帧无均值或
+局部回退，近景Latin/Arabic不再重现被拒候选的模糊。4项JVM/实际Canvas尺寸恢复、
+乱序view/卸载资源/重挂/暂停精确；原图/旧局部控制/168生产hash不变，见
+verification/diorama-plain-fragment。仅测试控制，非生产/设备/正式视觉通过。
 此前同700ms/cache7的默认aniso4控制已完成：同520像素union原版峰14→2、
 MAE2.548718→.296795，原409/本390覆盖及残差保留，非完全像素相等。
 独立inverse-Jacobian/area/longest-axis四tap，无LOD拟合；SwiftShader参考revision

@@ -1,0 +1,1356 @@
+{
+  "baseline": "438176e",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "fonts": [
+    {
+      "file": "FoliaParityLatin-Bold.ttf",
+      "sha256": "adbf4886a018c81066273f569b8ec612b5e75b883076a5aa4b1d33d5778d16d3"
+    },
+    {
+      "file": "FoliaParityBidi-Bold.ttf",
+      "sha256": "e27d0897aa4b4dc4803632d242b90fa34d28a15e390435fc7d5fc3941d1ce699"
+    },
+    {
+      "file": "FoliaParityChatCJK-Bold.otf",
+      "sha256": "c111c58ed2c29b4544cfbc0f3db1cdf8b596f75861ac486eb5790ef66bdafbac"
+    }
+  ],
+  "conditions": "Unchanged original24 Latin/Arabic/CJK/long text,380/800/801x600,DPR1,two original poses. Native independently shapes white paragraphs, full mip pyramid, per-fragment aniso4; original isolated Three has NO tone mapping/fog. No source raster/pose output drives drawing.",
+  "mask": "All-three-image per-frame nonbackground union; no threshold, low-alpha deletion, registration, LOD fitting or time shift.",
+  "means": {
+    "production": 11.742676952329234,
+    "fragment": 1.4468047602906349
+  },
+  "worst64": {
+    "production": 50.719298245614034,
+    "fragment": 3.3636363636363638
+  },
+  "meanRegressions": [],
+  "localRegressions": [],
+  "rows": [
+    {
+      "file": "latin-380-1.7-0.8.png",
+      "scene": "latin",
+      "viewport": [
+        380,
+        600
+      ],
+      "unionPixels": 4061,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 4039,
+          "bounds": [
+            41,
+            276,
+            352,
+            323
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 20.143068209800543,
+          "peak": 157,
+          "worst64": 34.58730158730159,
+          "pixels": 2921,
+          "bounds": [
+            42,
+            278,
+            351,
+            323
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 0.9531314126241484,
+          "peak": 12,
+          "worst64": 1.2823529411764707,
+          "pixels": 4052,
+          "bounds": [
+            41,
+            276,
+            352,
+            323
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "16bfc7c1b1f94514d5a9f64db729f6b2378c0fa052293b9aa9b468812bb794eb",
+        "production": "ffeae434cc1f827441caceef3a77436aea0dc98cfaba1b59943d21b0be3bc193",
+        "fragment": "f27db3e063fbcc24fb26a9c5bc60f6d5001d22a2cbe659967fc709e1ae8ae223"
+      }
+    },
+    {
+      "file": "latin-380--3.6-1.9.png",
+      "scene": "latin",
+      "viewport": [
+        380,
+        600
+      ],
+      "unionPixels": 2751,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 2745,
+          "bounds": [
+            57,
+            274,
+            284,
+            318
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 24.86223191566703,
+          "peak": 167,
+          "worst64": 28.895081967213116,
+          "pixels": 1784,
+          "bounds": [
+            58,
+            275,
+            283,
+            317
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.1208045559190598,
+          "peak": 16,
+          "worst64": 1.2988662131519275,
+          "pixels": 2748,
+          "bounds": [
+            57,
+            274,
+            284,
+            318
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "97c2030748ba3fc85fb9030a10665c8c40749024b2c1d206269ea948cc9cf701",
+        "production": "6eacad3e9d9fd1be43916171a08306f4c14691818ff6582bb8e5e5091348391f",
+        "fragment": "8373f31888b3bde284017b77ed0dca25ed282840dbde2fd57cd53af2da98a5f1"
+      }
+    },
+    {
+      "file": "latin-800-1.7-0.8.png",
+      "scene": "latin",
+      "viewport": [
+        800,
+        600
+      ],
+      "unionPixels": 15130,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 15087,
+          "bounds": [
+            115,
+            255,
+            782,
+            351
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 7.914760960564001,
+          "peak": 136,
+          "worst64": 24.177777777777777,
+          "pixels": 13363,
+          "bounds": [
+            116,
+            256,
+            782,
+            351
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.08019387530293,
+          "peak": 16,
+          "worst64": 1.552828902522154,
+          "pixels": 15111,
+          "bounds": [
+            115,
+            255,
+            782,
+            351
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "c26f49b6e3da1afd41dc8b80cc69b565123ea534acfd847091e1970108b835b4",
+        "production": "8a266dcd5432d034257edc4c7a5a6d3bed2cda26dec632ad7d8adbdc534955bb",
+        "fragment": "2fd7d71c4982cf12b978b099c03ef67360fccbff50d9bbbbbaeb6ddebaa369c3"
+      }
+    },
+    {
+      "file": "latin-800--3.6-1.9.png",
+      "scene": "latin",
+      "viewport": [
+        800,
+        600
+      ],
+      "unionPixels": 10752,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 10730,
+          "bounds": [
+            70,
+            236,
+            577,
+            334
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 9.559120783730158,
+          "peak": 130,
+          "worst64": 31.30666666666667,
+          "pixels": 9185,
+          "bounds": [
+            71,
+            237,
+            576,
+            333
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.1987537202380953,
+          "peak": 18,
+          "worst64": 3.3636363636363638,
+          "pixels": 10731,
+          "bounds": [
+            70,
+            236,
+            577,
+            334
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "1fc23c8ab7672579778e79f9d4351790ad57cb079fe45913ff87c6b3c5745a33",
+        "production": "2cd4eaf3d47dc2c867df7044a877f9940754a0a165241c77db61b0be5d078fa6",
+        "fragment": "9b9d5d20c65f4c1c42f82e5d299d05aca7ed1657f2dc3292eab5ce8d4e4a12d6"
+      }
+    },
+    {
+      "file": "latin-801-1.7-0.8.png",
+      "scene": "latin",
+      "viewport": [
+        801,
+        600
+      ],
+      "unionPixels": 15184,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 15148,
+          "bounds": [
+            115,
+            255,
+            783,
+            351
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 7.828811029153495,
+          "peak": 122,
+          "worst64": 21.044444444444444,
+          "pixels": 13400,
+          "bounds": [
+            116,
+            256,
+            783,
+            351
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.0718519494204426,
+          "peak": 17,
+          "worst64": 1.689922480620155,
+          "pixels": 15159,
+          "bounds": [
+            115,
+            255,
+            783,
+            351
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "fd540a5810871b40915c2d979a6c22e992ff3eab6469ad913826331a16d51d6f",
+        "production": "4432558d4b5289c0cf5d8f994f3957ec478515156fdec5f1a2a7a7575af38b1b",
+        "fragment": "9e5bfaf6630fe4e7bc2bdcdff4a978f2668df4eb37efa6662b309a83ffcda9a1"
+      }
+    },
+    {
+      "file": "latin-801--3.6-1.9.png",
+      "scene": "latin",
+      "viewport": [
+        801,
+        600
+      ],
+      "unionPixels": 10797,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 10773,
+          "bounds": [
+            70,
+            236,
+            578,
+            334
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 9.570621468926554,
+          "peak": 129,
+          "worst64": 31.192307692307693,
+          "pixels": 9220,
+          "bounds": [
+            71,
+            236,
+            577,
+            333
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.1495785866444383,
+          "peak": 19,
+          "worst64": 2.0833333333333335,
+          "pixels": 10768,
+          "bounds": [
+            70,
+            236,
+            578,
+            334
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "9a0abc53add8e2a5c2c6c631fe331e681f63a4fbad70e332c7fce2a4b45d972f",
+        "production": "3326cd141d37074259e256fa51eb25529752402c974662a6b004a309b06ede3d",
+        "fragment": "a1b8f199104fc9aceecc181643ebf7942bbfba26443e1c70e1623042019a98aa"
+      }
+    },
+    {
+      "file": "arabic-380-1.7-0.8.png",
+      "scene": "arabic",
+      "viewport": [
+        380,
+        600
+      ],
+      "unionPixels": 6792,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 6756,
+          "bounds": [
+            41,
+            257,
+            350,
+            333
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 7.769483706321163,
+          "peak": 121,
+          "worst64": 19.692307692307693,
+          "pixels": 6083,
+          "bounds": [
+            41,
+            258,
+            350,
+            332
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.2076462504907735,
+          "peak": 12,
+          "worst64": 3.2222222222222223,
+          "pixels": 6785,
+          "bounds": [
+            41,
+            257,
+            350,
+            333
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "59a461d047dd305259c47975b789f3dafb5c14e2746377bd8448fa96b94edf4f",
+        "production": "1e9ae90fb97099ef03fd1f2a1e1a450cdd1f8dce00e5abf049ed0b368d2d3b8c",
+        "fragment": "576595542492f7cb282a733cad23565d6f6f03c69d15bf9c88818e02a014576f"
+      }
+    },
+    {
+      "file": "arabic-380--3.6-1.9.png",
+      "scene": "arabic",
+      "viewport": [
+        380,
+        600
+      ],
+      "unionPixels": 4692,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 4687,
+          "bounds": [
+            55,
+            258,
+            283,
+            324
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 10.553566354077862,
+          "peak": 109,
+          "worst64": 17.627906976744185,
+          "pixels": 3881,
+          "bounds": [
+            55,
+            259,
+            283,
+            324
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.075234441602728,
+          "peak": 12,
+          "worst64": 1.8682170542635659,
+          "pixels": 4683,
+          "bounds": [
+            55,
+            258,
+            283,
+            324
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "a8740295a106b2a80d33dad945972cb19e1787de862413f61430c7e9342bffd1",
+        "production": "37fddcf7ea2fe3691795cd255773d35f4e3ac487a2587a4b11b47f777d77a87f",
+        "fragment": "cbc15399223bdf140c2dcef17b130ff822556ad05923fd2d3bf806af6f28279f"
+      }
+    },
+    {
+      "file": "arabic-800-1.7-0.8.png",
+      "scene": "arabic",
+      "viewport": [
+        800,
+        600
+      ],
+      "unionPixels": 11901,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 11898,
+          "bounds": [
+            206,
+            244,
+            623,
+            345
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 4.525642102904518,
+          "peak": 79,
+          "worst64": 22.739583333333332,
+          "pixels": 10985,
+          "bounds": [
+            207,
+            245,
+            623,
+            344
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.0268884967649778,
+          "peak": 13,
+          "worst64": 2.3015873015873014,
+          "pixels": 11884,
+          "bounds": [
+            206,
+            244,
+            623,
+            345
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "36f7d5a4097c91b99ba4ffdc5e25cd70220b26a5a6da962bb4a154c8238d4e90",
+        "production": "6025b259e8a3aa2c31b4f982e9ead816426108fd4c5e8b8860b6d6dcfcdf98d4",
+        "fragment": "d9bff3ace003787e1fb0fd28f9362a9cfa799804810bb1c6e1f87758daf8e6ad"
+      }
+    },
+    {
+      "file": "arabic-800--3.6-1.9.png",
+      "scene": "arabic",
+      "viewport": [
+        800,
+        600
+      ],
+      "unionPixels": 8028,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 8018,
+          "bounds": [
+            211,
+            241,
+            521,
+            332
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 6.3192160770636105,
+          "peak": 100,
+          "worst64": 25.333333333333332,
+          "pixels": 7288,
+          "bounds": [
+            211,
+            242,
+            521,
+            331
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.0627387477163261,
+          "peak": 13,
+          "worst64": 2.4444444444444446,
+          "pixels": 8022,
+          "bounds": [
+            211,
+            241,
+            521,
+            332
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "4c92800765e130dcf14040717d36ad38dd4e62d3aeed801c45adb42aeae8d158",
+        "production": "d8b51ae85c3dca16e52c9762e0615d1e3070858b8b66555d3dbb4bfe1e27c323",
+        "fragment": "2c608ab35f5278605e88963d41f763ada7ac9eb80a1a4c891a215ba3922fe82f"
+      }
+    },
+    {
+      "file": "arabic-801-1.7-0.8.png",
+      "scene": "arabic",
+      "viewport": [
+        801,
+        600
+      ],
+      "unionPixels": 11931,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 11927,
+          "bounds": [
+            207,
+            244,
+            624,
+            345
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 4.4687229346520265,
+          "peak": 80,
+          "worst64": 25.319444444444443,
+          "pixels": 10967,
+          "bounds": [
+            208,
+            244,
+            623,
+            344
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.024613751292152,
+          "peak": 13,
+          "worst64": 2.5784313725490198,
+          "pixels": 11915,
+          "bounds": [
+            207,
+            244,
+            624,
+            345
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "9c45958e40fb76d1edc6ffb11dfff202015477c91a77734067625f781672fdb9",
+        "production": "64761fb656ece125558b883b963a20fcb1a1e6c85c4f31a1a640e35a31d9df8c",
+        "fragment": "ce560ee2f64330f8d67bc436c5230dee6202b08794baa278f29bcbf49a62440e"
+      }
+    },
+    {
+      "file": "arabic-801--3.6-1.9.png",
+      "scene": "arabic",
+      "viewport": [
+        801,
+        600
+      ],
+      "unionPixels": 8040,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 8024,
+          "bounds": [
+            211,
+            241,
+            522,
+            332
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 6.2522388059701495,
+          "peak": 105,
+          "worst64": 26.38095238095238,
+          "pixels": 7301,
+          "bounds": [
+            212,
+            242,
+            521,
+            331
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.0571724709784411,
+          "peak": 11,
+          "worst64": 2.5833333333333335,
+          "pixels": 8032,
+          "bounds": [
+            211,
+            241,
+            522,
+            332
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "d2d83d9c79ba96cca992f319be01cd114ace926ec411914746c38adfa0900364",
+        "production": "8991bb6d1a689690b5c8986fdd7d9ed67d58825b6eaa8370dc6109a1a88ccc46",
+        "fragment": "46a0793e9c4902f1b947702dd107e0fab6e1e38562ebc15b7a513cb64b6983ea"
+      }
+    },
+    {
+      "file": "cjk-380-1.7-0.8.png",
+      "scene": "cjk",
+      "viewport": [
+        380,
+        600
+      ],
+      "unionPixels": 8479,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 8459,
+          "bounds": [
+            41,
+            271,
+            351,
+            335
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 14.625702716515312,
+          "peak": 131,
+          "worst64": 23.071428571428573,
+          "pixels": 6589,
+          "bounds": [
+            42,
+            271,
+            351,
+            334
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.302590714313795,
+          "peak": 13,
+          "worst64": 1.4988847583643123,
+          "pixels": 8456,
+          "bounds": [
+            41,
+            271,
+            351,
+            335
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "d76d3b71cb1ef6c401968c28aeb0cda2d9f8899971a521c15dac9f2803793b40",
+        "production": "dc25fe2bd87b98bec0b15389e84a8a608dedf2420f3c79be9e38e219e3f85f65",
+        "fragment": "e6c5db82d13a440f02d7e40ac41b770f40dfa85c89cec7abae6f7664d33c5337"
+      }
+    },
+    {
+      "file": "cjk-380--3.6-1.9.png",
+      "scene": "cjk",
+      "viewport": [
+        380,
+        600
+      ],
+      "unionPixels": 5312,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 5306,
+          "bounds": [
+            56,
+            268,
+            285,
+            325
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 19.28972138554217,
+          "peak": 164,
+          "worst64": 27.655172413793103,
+          "pixels": 4061,
+          "bounds": [
+            57,
+            269,
+            284,
+            324
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.113328313253012,
+          "peak": 11,
+          "worst64": 1.4871794871794872,
+          "pixels": 5303,
+          "bounds": [
+            56,
+            268,
+            285,
+            325
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "6124e7a48cc994ff87c3f55575c1d87c0938de56dfb691a4e0b6b78ba62917d2",
+        "production": "b6b9efe8d8f14fde1eb39c72bf3b0e42bc00b2829c60a738802dd6957cb6eb85",
+        "fragment": "eb8f9dc39bd78011b0192f042646ba62da071f1baedb8f2c84f52244916920ec"
+      }
+    },
+    {
+      "file": "cjk-800-1.7-0.8.png",
+      "scene": "cjk",
+      "viewport": [
+        800,
+        600
+      ],
+      "unionPixels": 24434,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 24420,
+          "bounds": [
+            150,
+            250,
+            721,
+            366
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 5.660527680008731,
+          "peak": 117,
+          "worst64": 14.11111111111111,
+          "pixels": 22104,
+          "bounds": [
+            150,
+            250,
+            720,
+            366
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.1185370112684512,
+          "peak": 16,
+          "worst64": 2.2916666666666665,
+          "pixels": 24398,
+          "bounds": [
+            150,
+            250,
+            721,
+            366
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "6999950bf4c85d1cc17a9d9f1948f087321058fbdff5bd4bd05eaa308d064d55",
+        "production": "0f9e9a56c0a1aa3c2e6d433737c723a261bebf03ea6d27dca3529e4f5d955ade",
+        "fragment": "4d03ea9d4eb1d118d2234d41199920c971939a0e8967cbf27773835db5d06b1e"
+      }
+    },
+    {
+      "file": "cjk-800--3.6-1.9.png",
+      "scene": "cjk",
+      "viewport": [
+        800,
+        600
+      ],
+      "unionPixels": 16710,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 16680,
+          "bounds": [
+            128,
+            234,
+            560,
+            341
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 7.7463195691202875,
+          "peak": 121,
+          "worst64": 13.781054512957999,
+          "pixels": 14831,
+          "bounds": [
+            128,
+            235,
+            559,
+            341
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.155475763016158,
+          "peak": 15,
+          "worst64": 1.8401084010840107,
+          "pixels": 16689,
+          "bounds": [
+            128,
+            234,
+            560,
+            341
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "2b225ebb4504c4b6f5dd3ba7d111f645dbc4e40d2b9b60a3cc6e2e22e7251afa",
+        "production": "eb543c40f73cd920bb1bab6fd5189718bec5b6e3107e6d1fa21715c696bab4fd",
+        "fragment": "afb42748e320dfcee79af6737eb66778e44ff5bbbb0bc1c05d65fb277c9a12a3"
+      }
+    },
+    {
+      "file": "cjk-801-1.7-0.8.png",
+      "scene": "cjk",
+      "viewport": [
+        801,
+        600
+      ],
+      "unionPixels": 24369,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 24358,
+          "bounds": [
+            151,
+            250,
+            721,
+            366
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 5.716620843421286,
+          "peak": 99,
+          "worst64": 15.632911392405063,
+          "pixels": 22068,
+          "bounds": [
+            151,
+            250,
+            720,
+            366
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.1260617998276499,
+          "peak": 16,
+          "worst64": 2.0437158469945356,
+          "pixels": 24320,
+          "bounds": [
+            151,
+            250,
+            721,
+            366
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "477d2529dee82eceb6e1a9f638100d12b7e82b11a02b781f66451444440cf7f6",
+        "production": "a742713449b07194667ccdf9310db2572e2422c7e59240e378f85e017783723b",
+        "fragment": "07b2a87fcf5d7929b240f9b7ea99a52cec9ccf656b8884de8442fbe9f1e4067e"
+      }
+    },
+    {
+      "file": "cjk-801--3.6-1.9.png",
+      "scene": "cjk",
+      "viewport": [
+        801,
+        600
+      ],
+      "unionPixels": 16699,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 16666,
+          "bounds": [
+            128,
+            234,
+            561,
+            341
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 7.835020061081502,
+          "peak": 121,
+          "worst64": 14.295375218150086,
+          "pixels": 14781,
+          "bounds": [
+            129,
+            235,
+            560,
+            341
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 1.1509471625047407,
+          "peak": 16,
+          "worst64": 1.8222222222222222,
+          "pixels": 16666,
+          "bounds": [
+            128,
+            234,
+            561,
+            341
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "5222fc99b7d726eccaea3476dba6bde968abc124db8a0e0ec310934259508452",
+        "production": "f5bdd8593b8798b0e36905b826e6c8527a7f879992ca94a9b69b0c583b5adee9",
+        "fragment": "d1e880785c6bd94043618083a954377df69b17ba775dda2dbf6d52df7583cfcd"
+      }
+    },
+    {
+      "file": "long-380-1.7-0.8.png",
+      "scene": "long",
+      "viewport": [
+        380,
+        600
+      ],
+      "unionPixels": 4021,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 3996,
+          "bounds": [
+            0,
+            276,
+            380,
+            323
+          ],
+          "touchesEdge": true
+        },
+        "production": {
+          "mae": 14.029180137610876,
+          "peak": 129,
+          "worst64": 16.477844914400805,
+          "pixels": 3472,
+          "bounds": [
+            0,
+            276,
+            380,
+            323
+          ],
+          "touchesEdge": true
+        },
+        "fragment": {
+          "mae": 2.6795987731078506,
+          "peak": 20,
+          "worst64": 2.9743589743589745,
+          "pixels": 3997,
+          "bounds": [
+            0,
+            276,
+            380,
+            323
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "971b78ea027d952627177d3d1221bbad048a152a9804c0a8d59d487f8a1a470a",
+        "production": "c45cd4952307627939b38d705f3410cf74e7ee9476c3482070694c3407684378",
+        "fragment": "930fff7b0a9e80e86f520bbfa9700d655f9ef80906aff16f2873277bf66e34e2"
+      }
+    },
+    {
+      "file": "long-380--3.6-1.9.png",
+      "scene": "long",
+      "viewport": [
+        380,
+        600
+      ],
+      "unionPixels": 3782,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 3768,
+          "bounds": [
+            0,
+            270,
+            380,
+            326
+          ],
+          "touchesEdge": true
+        },
+        "production": {
+          "mae": 19.78239026969857,
+          "peak": 161,
+          "worst64": 40.55555555555556,
+          "pixels": 2873,
+          "bounds": [
+            0,
+            270,
+            380,
+            326
+          ],
+          "touchesEdge": true
+        },
+        "fragment": {
+          "mae": 2.3647981667548033,
+          "peak": 16,
+          "worst64": 2.620294599018003,
+          "pixels": 3767,
+          "bounds": [
+            0,
+            270,
+            380,
+            326
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "d1c7263b30d43afbcd118bcda9b72cf011d0e14768068defbc7b7194c0d24336",
+        "production": "528781c2c0321a9f25aa4d9d49c9642d50f78f0b63825351bfd697dadc8a46e5",
+        "fragment": "0b224594fdf72099fb0d569b8b78602fb3d9c1a000503057dca0df527f17926f"
+      }
+    },
+    {
+      "file": "long-800-1.7-0.8.png",
+      "scene": "long",
+      "viewport": [
+        800,
+        600
+      ],
+      "unionPixels": 8850,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 8785,
+          "bounds": [
+            0,
+            261,
+            800,
+            341
+          ],
+          "touchesEdge": true
+        },
+        "production": {
+          "mae": 13.190809792843691,
+          "peak": 147,
+          "worst64": 18.481640438721985,
+          "pixels": 7443,
+          "bounds": [
+            0,
+            261,
+            800,
+            341
+          ],
+          "touchesEdge": true
+        },
+        "fragment": {
+          "mae": 2.546779661016949,
+          "peak": 20,
+          "worst64": 2.858307849133537,
+          "pixels": 8798,
+          "bounds": [
+            0,
+            261,
+            800,
+            341
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "64956fbe41ebfd95eae7ce2021d8a92eab9c0a6521ccc81d87d440a2a656d14f",
+        "production": "fb442ce679fd71830354d457f32301f4412f721a031961b75c7b01125639d739",
+        "fragment": "9701b4f00eb6375273e8ac2bac08502c9ee6f75bfe7485468369754770e2fb22"
+      }
+    },
+    {
+      "file": "long-800--3.6-1.9.png",
+      "scene": "long",
+      "viewport": [
+        800,
+        600
+      ],
+      "unionPixels": 7686,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 7660,
+          "bounds": [
+            1,
+            244,
+            774,
+            346
+          ],
+          "touchesEdge": false
+        },
+        "production": {
+          "mae": 20.172261254228466,
+          "peak": 183,
+          "worst64": 50.142857142857146,
+          "pixels": 5879,
+          "bounds": [
+            1,
+            244,
+            773,
+            345
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 2.3015873015873014,
+          "peak": 18,
+          "worst64": 3.0155367231638417,
+          "pixels": 7661,
+          "bounds": [
+            1,
+            244,
+            774,
+            346
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "ea8c92a4b0666948982f6e1dd269fecf4edce612fdffd9f35a2f0c44b9e7a29e",
+        "production": "7950d13060be275a8257cb68d5e8da71202369052799bbc2d6e7e594756c9ac3",
+        "fragment": "469dcc3f78306ea9dc70ab69e5561b4fe4348ef5a6f0eed60565c2f49c39443a"
+      }
+    },
+    {
+      "file": "long-801-1.7-0.8.png",
+      "scene": "long",
+      "viewport": [
+        801,
+        600
+      ],
+      "unionPixels": 8865,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 8812,
+          "bounds": [
+            0,
+            260,
+            801,
+            341
+          ],
+          "touchesEdge": true
+        },
+        "production": {
+          "mae": 13.553525098702764,
+          "peak": 137,
+          "worst64": 18.548541367766617,
+          "pixels": 7432,
+          "bounds": [
+            0,
+            261,
+            801,
+            341
+          ],
+          "touchesEdge": true
+        },
+        "fragment": {
+          "mae": 2.5316036849031773,
+          "peak": 19,
+          "worst64": 2.9019607843137254,
+          "pixels": 8826,
+          "bounds": [
+            0,
+            260,
+            801,
+            341
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "af06c29e301fbd341803b8d76deffe9b14eba45bb843b18ce41c947b58b66157",
+        "production": "30cd64a3c9ac49e2543c7f2861f71b1e61f657c735bd7d624cae7ef6e78cb782",
+        "fragment": "0b1b535e940876d0c5fcdd97fecde2a96e8f04697c774994375db5592887b479"
+      }
+    },
+    {
+      "file": "long-801--3.6-1.9.png",
+      "scene": "long",
+      "viewport": [
+        801,
+        600
+      ],
+      "unionPixels": 7672,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 7649,
+          "bounds": [
+            0,
+            244,
+            774,
+            346
+          ],
+          "touchesEdge": true
+        },
+        "production": {
+          "mae": 20.454683698296837,
+          "peak": 175,
+          "worst64": 50.719298245614034,
+          "pixels": 5854,
+          "bounds": [
+            2,
+            244,
+            773,
+            345
+          ],
+          "touchesEdge": false
+        },
+        "fragment": {
+          "mae": 2.3033976364268334,
+          "peak": 33,
+          "worst64": 2.981638418079096,
+          "pixels": 7651,
+          "bounds": [
+            0,
+            244,
+            774,
+            346
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "7049c7e17eb485f295cbd7e062957bb805cca9fd1422f430902465cfaadfb9d7",
+        "production": "f471b8eafd7ecdb0fcae34e2d090dab407af85cd8c66d135a4a955e0cc1a67ae",
+        "fragment": "cfd5935110944b932e182e4bf2dfad3b98c226597f7efb433c169e99872beb1c"
+      }
+    }
+  ],
+  "productionChanged": false,
+  "androidRuntime": false,
+  "formalVisualAcceptance": false
+}

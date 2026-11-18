@@ -16,9 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：将已成立采样接入有界、显式持有/释放的内部文字stage邻行路径；
-帧外准备，保留FrontSide/near/far/父alpha与linear tint顺序，不为整曲驻留shader/mips。
-复查同mounted48/plane24后再采用；Android能力分开记录，Diorama仍未开放。
+当前唯一下一项：从既有分层/输入控制定位mounted有限相机最坏区域的活动正文/halo
+贡献，先核对层次、透明度与原缓存再最小修复；不以改相机补采样，不重试旧isotropic。
+内部邻行stage采样已接入显式owner：帧外准备，<=8项/32MiB额外图像估算预算、
+淘汰/卸载释放、保留共享原raster，父alpha/FrontSide/near/far及linear tint顺序。
+JVM opt-in实际stage同48帧有限均值6.739673→4.294389(最坏仍20.364780)、媒体
+19.922429→18.684469(局部72.258224→69.117781)，均无均值/局部回退；24自身
+plane与独立控制逐像素相同，168普通基线hash不变。11项JVM/Android库/Desktop
+编译通过；见verification/diorama-plain-sampler。Android明确不可用并真实回退，
+无设备/性能/完整视觉通过，Diorama仍未开放；刷新APK与独立消费属于收尾验证。
 自身完整塑形24帧控制已完成：同原Latin/Arabic/CJK/长行及380/800/801、两pose，
 同union均值11.742677→1.446805/最坏64局部50.719298→3.363636，24帧无均值或
 局部回退，近景Latin/Arabic不再重现被拒候选的模糊。4项JVM/实际Canvas尺寸恢复、

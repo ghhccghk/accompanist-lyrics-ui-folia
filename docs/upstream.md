@@ -1920,3 +1920,19 @@ No shaping/timing/geometry change. Four-script/three-size/near-view numerical
 comparison, original hashes and previous-failure contact retained in
 verification/diorama-plain-fragment; actual Canvas resize/pause/remount/disposal
 checked. No production, Android, full mounted-stage or formal acceptance claim.
+
+### Diorama bounded internal plain renderer (2026-11-18)
+Same pinned dioramaTextRaster.ts CanvasTexture(anisotropy4,SRGBColorSpace),
+DioramaScene.tsx plain material -> DioramaPlainRenderer.kt and JVM
+DioramaPlainSampler.jvm.kt. Independent capped4 inverse-Jacobian sampling from
+the validated controls, separate native full-RGB/F16 and alpha pyramids, original
+linear material order and already attributed Three MIT ACES/sRGB algebra.
+Copyright2010–2026 three.js authors/full MIT notice retained. No driver source,
+reference raster/mip/font or background runtime is copied into production.
+Existing clipping/Canvas transform is factored unchanged for both bodies;
+TextPlayback's explicit optional renderer prepares only visible paragraphs
+outside Canvas, bounded ownership/eviction/disposal and real ordinary fallback.
+Android capability explicitly unavailable; no AGSL/JNI runtime claim. Fixed48
+mounted and24 own-shaped planes, retained failures/residuals and resource/alpha/
+clipping checks:verification/diorama-plain-sampler. Internal opt-in only, not a
+public Diorama, all-GPU/Android/performance or formal visual equivalence claim.

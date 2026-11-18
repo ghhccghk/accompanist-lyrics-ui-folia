@@ -63,6 +63,7 @@ class DioramaMountedStageTest {
             Image.makeFromEncoded(bytes).toComposeImageBitmap()
         }
         val fragmentControl=if(width==380)DioramaFragmentControl(sourceCache7)else null
+        val plainRenderer=DioramaPlainRenderer()
         fragmentControl?.exportChildColorControls()
         var controlPeak=0.0;var widthPeak=0.0;var stepCount=0
         var materialPeak=0.0;var materialStates=0;var envelopePeak=0.0
@@ -156,11 +157,11 @@ class DioramaMountedStageTest {
                 }
                 result
             }else null
-            SideEffect{prepared=ready}
             val r=probes[current];val time=r[3].toDouble()
+            SideEffect{prepared=ready;if(ready==null)plainRenderer.prepare(emptyList())else ready.preparePlainRenderer(plainRenderer,time)}
             Canvas(Modifier.fillMaxSize().background(Color(0xff162435))) {
                 if(ready!=null) {
-                    val view=if(method!="media")finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time)
+                    val view=if(method!="media"&&method!="sampler-media")finiteViews.getValue("${r[2]}-$time")else ready.camera.perspectiveAt(time)
                     drawn=view
                     if(method.startsWith("input-")) {
                         val only=if(method=="input-source-only-7"||method.startsWith("input-source-fragment"))7 else method.removePrefix("input-only-").toIntOrNull()
@@ -182,7 +183,8 @@ class DioramaMountedStageTest {
                                 finiteMaterials.getValue("${r[2]}-$time"),fog,DioramaToneMapping.AcesFilmic)
                         }
                     }else ready.drawStage(this,time,view,primary,accent,secondary,fog=fog,
-                        activeFrames=if(method=="material")finiteMaterials.getValue("${r[2]}-$time")else null)
+                        activeFrames=if(method=="material"||method=="sampler")finiteMaterials.getValue("${r[2]}-$time")else null,
+                        plainRenderer=if(method.startsWith("sampler"))plainRenderer else null)
                 }
             }
         }
@@ -197,10 +199,15 @@ class DioramaMountedStageTest {
             val finite=drawn!!
             runOnIdle{method="material"};pixels()
             ImageIO.write(captureToImage().toAwtImage(),"png",out.resolve("material-$name"))
+            runOnIdle{method="sampler"};pixels()
+            val samplerOut=File("../build/verification/diorama-mounted-sampler-kotlin").apply{mkdirs()}
+            ImageIO.write(captureToImage().toAwtImage(),"png",samplerOut.resolve(name))
             runOnIdle{method="media"};val image=pixels()
             media[r[3]]?.let{assertTrue(it.contentEquals(image),"source display schedule cannot affect media reconstruction")};media[r[3]]=image
             val d=drawn!!.eye-finite.eye;mediaPeak=maxOf(mediaPeak,abs(d.x),abs(d.y),abs(d.z))
             ImageIO.write(captureToImage().toAwtImage(),"png",out.resolve("media-$name"))
+            runOnIdle{method="sampler-media"};pixels()
+            ImageIO.write(captureToImage().toAwtImage(),"png",samplerOut.resolve("media-$name"))
         }
         if(width==380) {
             val diagnostic=File("../build/verification/diorama-mounted-input-kotlin").apply{mkdirs()}
@@ -245,10 +252,12 @@ class DioramaMountedStageTest {
         }
         val paused=pixels();mainClock.advanceTimeBy(800);assertTrue(paused.contentEquals(pixels()))
         runOnIdle{mounted=false};pixels();assertNull(prepared)
+        assertEquals(0,plainRenderer.residentCount);assertEquals(0L,plainRenderer.residentBytes)
         runOnIdle{mounted=true};assertTrue(paused.contentEquals(pixels()))
         out.resolve("numeric-$width.txt").writeText("originalMountedSteps=$stepCount finiteStatePosePeak=$controlPeak widthPeak=$widthPeak gate=1e-9 adaptiveMediaPositionResidual=$mediaPeak\nFinite control reproduces original actual callback-width order with independently prepared core geometry; production media draws native analytic material without original RAF state injection\n")
         out.resolve("material-$width.txt").writeText("originalUnitStates=$materialStates materialPeak=$materialPeak sampledEnvelopePeak=$envelopePeak gate=1e-9\nOwn finite Float32 history/reset from core intervals, original wall breath and own camera life; no original material/pose values drive rendering.\n")
         fragmentControl?.close()
+        plainRenderer.close()
     }
 
     /** Compare actual upstream Float32 buffer corners with our independently

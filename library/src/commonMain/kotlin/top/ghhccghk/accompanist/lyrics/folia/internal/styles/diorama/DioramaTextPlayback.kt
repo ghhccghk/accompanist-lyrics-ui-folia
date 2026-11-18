@@ -91,6 +91,12 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         val i=globalIndex-globalStart;val s=camera.subjects[i]
         DioramaDepartingPlane(globalIndex,lines[i].neighbor,s.frame,s.placement)
     }
+    /** Prepare only this time's bounded visible paragraphs, outside Canvas.
+     * Includes retained departing rasters without retaining old playback. */
+    fun preparePlainRenderer(renderer:DioramaPlainRenderer,time:Double) {
+        val current=globalStart+camera.subjectIndex(time)
+        renderer.prepare(mountedTextIndicesAt(time).filter{it!=current}.map{plainAt(it).text})
+    }
     fun neighborFramesAt(time: Double, view: DioramaPerspective, primary: DioramaLinearColor,
         secondary: DioramaLinearColor = primary): List<DioramaNeighborFrame> {
         val current=globalStart+camera.subjectIndex(time)
@@ -112,7 +118,8 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         primary: DioramaLinearColor, accent: DioramaLinearColor, secondary: DioramaLinearColor = primary,
         reducedMotion: Boolean = false, fog: DioramaFog? = null,
         toneMapping: DioramaToneMapping = DioramaToneMapping.AcesFilmic,
-        activeFrames: List<DioramaUnitFrame>? = null, breath: Double? = null) {
+        activeFrames: List<DioramaUnitFrame>? = null, breath: Double? = null,
+        plainRenderer: DioramaPlainRenderer? = null) {
         val index=camera.subjectIndex(time);val s=camera.subjects[index]
         // Original neighbours are transparent, depthWrite=false and order0;
         // active layers have order17/18/19. With no opaque background geometry,
@@ -120,8 +127,10 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         neighborFramesAt(time,view,primary,secondary).forEach { neighbor ->
             if(neighbor.opacity>0) {
                 val p=plainAt(neighbor.index)
-                p.text.draw(scope,view,p.frame,p.placement,
+                if(plainRenderer==null)p.text.draw(scope,view,p.frame,p.placement,
                     neighbor.color.srgb(toneMapping),neighbor.opacity.toFloat(),fog)
+                else plainRenderer.draw(p.text,scope,view,p.frame,p.placement,neighbor.color,
+                    neighbor.opacity.toFloat(),fog,toneMapping)
             }
         }
         if(activeFrames!=null)lines[index].text.drawFrames(scope,view,s.frame,s.placement,activeFrames,fog,toneMapping)

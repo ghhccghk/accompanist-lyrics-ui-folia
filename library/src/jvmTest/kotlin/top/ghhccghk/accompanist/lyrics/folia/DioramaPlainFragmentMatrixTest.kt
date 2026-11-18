@@ -40,6 +40,8 @@ class DioramaPlainFragmentMatrixTest {
         var current by mutableIntStateOf(0)
         var mounted by mutableStateOf(true)
         var viewportWidth by mutableIntStateOf(width)
+        var useSampler by mutableStateOf(false)
+        val renderer=DioramaPlainRenderer()
         var prepared:DioramaPlainText?=null
         var builds=0
         val out=File("../build/verification/diorama-plain-fragment-kotlin").apply{mkdirs()}
@@ -65,14 +67,15 @@ class DioramaPlainFragmentMatrixTest {
                         .also{controls+=it}
                 }else null
                 DisposableEffect(control){onDispose{control?.close();controls.remove(control)}}
-                SideEffect{prepared=raster}
+                SideEffect{prepared=raster;renderer.prepare(if(raster==null)emptyList()else listOf(raster))}
                 Canvas(Modifier.fillMaxHeight().width(viewportWidth.dp).background(Color(0xff162435))) {
                     if(raster!=null&&control!=null) {
                         val eye=dioramaComposeLocal(path[3],placement.offsetR+row[3].toDouble(),placement.offsetU+row[4].toDouble(),-5.2)
                         val look=dioramaComposeLocal(path[3],placement.offsetR+placement.lookR,placement.offsetU,0.0)
-                        control.draw(this,DioramaPerspective(eye,look,size.width.toDouble(),600.0),
-                            DioramaDepartingPlane(3,raster,path[3],placement),DioramaLinearColor(1.0,1.0,1.0),1f,
-                            maxAniso=4f,toneMapped=false,fogEnabled=false)
+                        val view=DioramaPerspective(eye,look,size.width.toDouble(),600.0)
+                        if(useSampler)renderer.draw(raster,this,view,path[3],placement,DioramaLinearColor(1.0,1.0,1.0),1f,null,DioramaToneMapping.None)
+                        else control.draw(this,view,DioramaDepartingPlane(3,raster,path[3],placement),
+                            DioramaLinearColor(1.0,1.0,1.0),1f,maxAniso=4f,toneMapped=false,fogEnabled=false)
                     }
                 }
             }
@@ -84,6 +87,12 @@ class DioramaPlainFragmentMatrixTest {
                 assertTrue(image.any{it!=Color(0xff162435).toArgb()})
                 captured[i]=image
                 ImageIO.write(captureToImage().toAwtImage(),"png",out.resolve(rows[i][0]))
+                runOnIdle{useSampler=true};assertContentEquals(image,pixels(),"Internal library sampler retains independently validated control")
+                val samplerOut=File("../build/verification/diorama-plain-sampler-kotlin").apply{mkdirs()}
+                ImageIO.write(captureToImage().toAwtImage(),"png",samplerOut.resolve(rows[i][0]))
+                assertEquals(1,renderer.residentCount)
+                assertEquals(dioramaPlainMipBytes(raster.image.width,raster.image.height),renderer.residentBytes)
+                runOnIdle{useSampler=false};assertContentEquals(image,pixels())
                 if(i%2==1)assertEquals((i+1)/2,builds,"Camera queries must not reprepare paragraphs/mips")
                 assertEquals(1,controls.size,"Old paragraph samplers are disposed")
             }
@@ -95,9 +104,13 @@ class DioramaPlainFragmentMatrixTest {
             runOnIdle{viewportWidth=width/2};assertFalse(paused.contentEquals(pixels()),"Actual canvas resize changes projection")
             assertEquals(before,builds,"Viewport resize must reuse complete paragraph/mips")
             runOnIdle{viewportWidth=width};assertContentEquals(paused,pixels(),"Canvas size restoration is exact")
+            runOnIdle{useSampler=true};assertContentEquals(paused,pixels())
+            val preparedBefore=renderer.preparations;mainClock.advanceTimeBy(700);assertContentEquals(paused,pixels())
+            assertEquals(preparedBefore,renderer.preparations,"Stable sampler frames prepare no images")
             runOnIdle{mounted=false};pixels();assertNull(prepared);assertTrue(controls.isEmpty(),"Unmount disposes children/effect/builder")
+            assertEquals(0,renderer.residentCount);assertEquals(0L,renderer.residentBytes)
             runOnIdle{mounted=true};assertContentEquals(paused,pixels(),"Remount reconstructs shaped plane")
             runOnIdle{mounted=false};pixels();assertTrue(controls.isEmpty())
-        }finally{controls.toList().forEach{it.close()};controls.clear()}
+        }finally{controls.toList().forEach{it.close()};controls.clear();renderer.close()}
     }
 }

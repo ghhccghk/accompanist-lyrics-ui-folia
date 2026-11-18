@@ -1,0 +1,23 @@
+{
+  "targetedJvmTests": 11,
+  "failures": 0,
+  "androidLibraryCompile": "PASS",
+  "desktopCompile": "PASS",
+  "mountedOriginalFrames": 48,
+  "finiteMeanRegressions": 0,
+  "finiteLocalRegressions": 0,
+  "mediaMeanRegressions": 0,
+  "mediaLocalRegressions": 0,
+  "ownPlain24ExactlyMatchIndependentControl": true,
+  "ordinaryBaselinePngHashesUnchanged": 168,
+  "parentAlphaAndClip": "PASS",
+  "nearFarCrossingAndFrontSide": "PASS",
+  "coloredInputByteOrder": "PASS",
+  "resourceBudgetFallbackErrorPropagationAndRelease": "PASS",
+  "fixedContactInspected": true,
+  "androidSamplerAvailable": false,
+  "androidRuntime": false,
+  "realWindow": false,
+  "performanceMeasured": false,
+  "formalVisualAcceptance": false
+}

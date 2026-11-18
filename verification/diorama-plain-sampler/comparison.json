@@ -1,0 +1,3783 @@
+{
+  "baseline": "9eaa844",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "conditions": "Original48 mounted frames, independent own core/text/finite or media camera, original material policies. Sampler replaces ONLY plain neighbors; active text/glow unchanged. Same five-image per-frame foreground union, no registration, alpha deletion, LOD fit or time shift.",
+  "finite": {
+    "means": {
+      "beforeFinite": 6.739672645397094,
+      "afterFinite": 4.294388577390365
+    },
+    "worst64": {
+      "beforeFinite": 20.364779874213838,
+      "afterFinite": 20.364779874213838
+    },
+    "meanRegressions": [],
+    "localRegressions": []
+  },
+  "media": {
+    "means": {
+      "beforeMedia": 19.92242915019865,
+      "afterMedia": 18.68446942202092
+    },
+    "worst64": {
+      "beforeMedia": 72.25822368421052,
+      "afterMedia": 69.11778080945885
+    },
+    "meanRegressions": [],
+    "localRegressions": []
+  },
+  "rows": [
+    {
+      "file": "mounted-380-60-0.png",
+      "unionPixels": 3110,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 2584,
+          "bounds": [
+            103,
+            250,
+            304,
+            348
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 13.584351554126474,
+          "peak": 88,
+          "worst64": 16.517708333333335,
+          "pixels": 1426,
+          "bounds": [
+            104,
+            250,
+            303,
+            348
+          ],
+          "touchesEdge": false
+        },
+        "afterFinite": {
+          "mae": 0.5887459807073955,
+          "peak": 4,
+          "worst64": 0.8657243816254417,
+          "pixels": 2416,
+          "bounds": [
+            103,
+            259,
+            304,
+            348
+          ],
+          "touchesEdge": false
+        },
+        "beforeMedia": {
+          "mae": 41.63547695605573,
+          "peak": 137,
+          "worst64": 68.42281420765028,
+          "pixels": 1399,
+          "bounds": [
+            105,
+            249,
+            301,
+            347
+          ],
+          "touchesEdge": false
+        },
+        "afterMedia": {
+          "mae": 34.97256162915327,
+          "peak": 136,
+          "worst64": 61.39139344262295,
+          "pixels": 2387,
+          "bounds": [
+            104,
+            258,
+            301,
+            347
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "1716dd822116e395e8f62c68c120a42fede0a7e9bc69ba27cd3bfd9839d4c20f",
+        "beforeFinite": "b5bfe3237873f2a2a7a5262dfc5e873b80e81f9ce8c7d3f1c654001d7728fa55",
+        "afterFinite": "9e891352f481a34229dfcff3b1111a6302fa3afe2aa1716546eb55e7aaae1bd9",
+        "beforeMedia": "eea96683fd75fabc6de67841e5e2317ffe32507307029a54119576a5272b40a3",
+        "afterMedia": "701b3aaa271020b51dc84b1a7119a0d300fb81476a5d832d12f58a7b818e6052"
+      }
+    },
+    {
+      "file": "mounted-380-60-700.png",
+      "unionPixels": 726,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 501,
+          "bounds": [
+            140,
+            25,
+            270,
+            425
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 8.066574839302111,
+          "peak": 46,
+          "worst64": 10.663082437275985,
+          "pixels": 282,
+          "bounds": [
+            140,
+            27,
+            270,
+            424
+          ],
+          "touchesEdge": false
+        },
+        "afterFinite": {
+          "mae": 0.5752984389348026,
+          "peak": 11,
+          "worst64": 1.803357314148681,
+          "pixels": 479,
+          "bounds": [
+            140,
+            27,
+            270,
+            425
+          ],
+          "touchesEdge": false
+        },
+        "beforeMedia": {
+          "mae": 17.614784205693297,
+          "peak": 57,
+          "worst64": 22.239294710327457,
+          "pixels": 223,
+          "bounds": [
+            147,
+            30,
+            275,
+            426
+          ],
+          "touchesEdge": false
+        },
+        "afterMedia": {
+          "mae": 13.780532598714418,
+          "peak": 52,
+          "worst64": 17.107472712006718,
+          "pixels": 428,
+          "bounds": [
+            147,
+            30,
+            275,
+            427
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "228c7487e721a0e2ec15b4bb311a78d8ef6dc94956541a1dd1dc18ff9db4d54e",
+        "beforeFinite": "02b5a7f18f0025be580d09f961ac17b9e2a7d8e985b77f28fc2224e0b35cda99",
+        "afterFinite": "f8adfdcbd07dd46c55471cd0a224ae52c7140a0bf8ec0cb91b0467593e7d673e",
+        "beforeMedia": "8e7f7bf87df98a933e85be7a5b56333de550ba2f53e836a3406c6025f0456313",
+        "afterMedia": "29c2bdc5f1d1455fb12e54fa57b0349c3f1932446b800abad8b77c10c6332363"
+      }
+    },
+    {
+      "file": "mounted-380-60-1600.png",
+      "unionPixels": 169,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 92,
+          "bounds": [
+            0,
+            199,
+            8,
+            216
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.483234714003944,
+          "peak": 125,
+          "worst64": 6.483234714003944,
+          "pixels": 129,
+          "bounds": [
+            0,
+            197,
+            9,
+            217
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 6.483234714003944,
+          "peak": 125,
+          "worst64": 6.483234714003944,
+          "pixels": 129,
+          "bounds": [
+            0,
+            197,
+            9,
+            217
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 18.159763313609467,
+          "peak": 177,
+          "worst64": 18.159763313609467,
+          "pixels": 167,
+          "bounds": [
+            0,
+            196,
+            11,
+            218
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 18.159763313609467,
+          "peak": 177,
+          "worst64": 18.159763313609467,
+          "pixels": 167,
+          "bounds": [
+            0,
+            196,
+            11,
+            218
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "f2e47d1b99e68bac8b02bc853700d4fb9f68c4af3c0b10eb244c93553049238a",
+        "beforeFinite": "c04251c4e0d53d61283f33285a563a74bf772ea2e4082e1f49c8575253b17cbb",
+        "afterFinite": "c04251c4e0d53d61283f33285a563a74bf772ea2e4082e1f49c8575253b17cbb",
+        "beforeMedia": "383ae3d6601dc6c6a671b82b685afc3c9ff49437d35836a8126c0b6a60ef01e7",
+        "afterMedia": "383ae3d6601dc6c6a671b82b685afc3c9ff49437d35836a8126c0b6a60ef01e7"
+      }
+    },
+    {
+      "file": "mounted-380-60-2099.png",
+      "unionPixels": 1037,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 943,
+          "bounds": [
+            0,
+            304,
+            42,
+            376
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 14.02410800385728,
+          "peak": 138,
+          "worst64": 14.56605222734255,
+          "pixels": 793,
+          "bounds": [
+            0,
+            304,
+            41,
+            376
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 14.02410800385728,
+          "peak": 138,
+          "worst64": 14.56605222734255,
+          "pixels": 793,
+          "bounds": [
+            0,
+            304,
+            41,
+            376
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 17.682095789135325,
+          "peak": 177,
+          "worst64": 18.252304147465438,
+          "pixels": 781,
+          "bounds": [
+            0,
+            304,
+            41,
+            375
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 17.682095789135325,
+          "peak": 177,
+          "worst64": 18.252304147465438,
+          "pixels": 781,
+          "bounds": [
+            0,
+            304,
+            41,
+            375
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "89b878b41439c0f23f54c8e91918ad82ba642c32eed696b998f00cfd225c2fc2",
+        "beforeFinite": "63ab6d77d6352dd3e44c60823d6d127dd1d46ca13b355d135e392640c399746a",
+        "afterFinite": "63ab6d77d6352dd3e44c60823d6d127dd1d46ca13b355d135e392640c399746a",
+        "beforeMedia": "111368d7f677e5e9b8d220f34c16851fa83b9be2b6f6939532d10f021cab3889",
+        "afterMedia": "111368d7f677e5e9b8d220f34c16851fa83b9be2b6f6939532d10f021cab3889"
+      }
+    },
+    {
+      "file": "mounted-380-60-2100.png",
+      "unionPixels": 548,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 519,
+          "bounds": [
+            0,
+            310,
+            42,
+            376
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 9.767031630170317,
+          "peak": 42,
+          "worst64": 10.468926553672317,
+          "pixels": 273,
+          "bounds": [
+            0,
+            311,
+            41,
+            376
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 0.5815085158150851,
+          "peak": 8,
+          "worst64": 0.5848670756646217,
+          "pixels": 492,
+          "bounds": [
+            0,
+            310,
+            42,
+            376
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 13.20316301703163,
+          "peak": 58,
+          "worst64": 16.056497175141242,
+          "pixels": 269,
+          "bounds": [
+            0,
+            310,
+            40,
+            375
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 7.111313868613139,
+          "peak": 33,
+          "worst64": 8.135593220338983,
+          "pixels": 488,
+          "bounds": [
+            0,
+            310,
+            41,
+            376
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "28fcdf654fbd54fd8fa2cf3e9a04fb16348bb54c8869cb4dc386be3d536130f6",
+        "beforeFinite": "3a70fb128865dc5841e720ee7cbb313d51de74ed7f3135e719339c99c3127dd3",
+        "afterFinite": "70f0426969ee9840211164db1ff2d26f932363dc4e89257a637e0e921c42825d",
+        "beforeMedia": "75dc54c27fca4dd8e93c51eaae089bca61aa8cfbbbf5b0a62edfb8b0b1197ed3",
+        "afterMedia": "5082fcbd2a850fcbc1c7928bde13fb4bd9c88e7c0630af22c1262b65d5c8da3b"
+      }
+    },
+    {
+      "file": "mounted-380-60-3199.png",
+      "unionPixels": 6123,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 4434,
+          "bounds": [
+            0,
+            298,
+            159,
+            379
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.294191300560727,
+          "peak": 136,
+          "worst64": 7.020904436860068,
+          "pixels": 5430,
+          "bounds": [
+            0,
+            299,
+            165,
+            385
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 5.88709238390767,
+          "peak": 136,
+          "worst64": 7.020904436860068,
+          "pixels": 5521,
+          "bounds": [
+            0,
+            298,
+            165,
+            385
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 21.51821002776417,
+          "peak": 192,
+          "worst64": 23.437997724687143,
+          "pixels": 5139,
+          "bounds": [
+            0,
+            298,
+            158,
+            383
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 21.295171212368665,
+          "peak": 192,
+          "worst64": 23.437997724687143,
+          "pixels": 5226,
+          "bounds": [
+            0,
+            297,
+            158,
+            383
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "7ca56d814cb4f0e11f731a39818adad3591d024c0cb243ecbc5abcc2050c2fd1",
+        "beforeFinite": "d58d1dbe7661acc9988fdf3c9067110b2ab0141fe586011f62912a9b55c24f46",
+        "afterFinite": "7336ca41ea4d3cfdbea3098b3ac91c8d9c0debfcf8ef5b72868d1f37ba6394f7",
+        "beforeMedia": "f785c96ebd5b56222a790e402b652984f8a0bf47698202fe1f41a8f3036c5b27",
+        "afterMedia": "b62d6c1e1aa90054e34d6b4f43a6c5f54526327096b0eb72e7604c774911a2c0"
+      }
+    },
+    {
+      "file": "mounted-380-60-3200.png",
+      "unionPixels": 6166,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 4476,
+          "bounds": [
+            0,
+            298,
+            160,
+            379
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.408855011352578,
+          "peak": 128,
+          "worst64": 7.184400169563374,
+          "pixels": 5461,
+          "bounds": [
+            0,
+            299,
+            166,
+            385
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 6.012055357335928,
+          "peak": 128,
+          "worst64": 7.184400169563374,
+          "pixels": 5562,
+          "bounds": [
+            0,
+            298,
+            166,
+            385
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 21.280624932425127,
+          "peak": 192,
+          "worst64": 22.793273986152325,
+          "pixels": 5167,
+          "bounds": [
+            0,
+            298,
+            158,
+            383
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 21.064060979565358,
+          "peak": 192,
+          "worst64": 22.793273986152325,
+          "pixels": 5240,
+          "bounds": [
+            0,
+            298,
+            158,
+            383
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "8f846a51663be38b86e0d0b17b93f989f54e7646445b923d68af181631fb7811",
+        "beforeFinite": "dc600eef2cd067c14ba25b98120b98c94b42754ffd591a79c91da4c24f9ff9a6",
+        "afterFinite": "51b6f7055032454a933aa843020b7e9710ef160762a969e0b8c1364947f365d3",
+        "beforeMedia": "b495aa57b2c1e13395c58ea0157fc399c40c94a5be19d99f043376f06af6948b",
+        "afterMedia": "06450dee4bcd51c5eb4235bdd933cf09c7dc8273f63e9f52f21a0678667f6510"
+      }
+    },
+    {
+      "file": "mounted-380-60-3201.png",
+      "unionPixels": 6181,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 4487,
+          "bounds": [
+            0,
+            298,
+            160,
+            380
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.170360783044814,
+          "peak": 131,
+          "worst64": 6.997601918465228,
+          "pixels": 5478,
+          "bounds": [
+            0,
+            300,
+            167,
+            385
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 5.766920131586043,
+          "peak": 131,
+          "worst64": 6.997601918465228,
+          "pixels": 5574,
+          "bounds": [
+            0,
+            299,
+            167,
+            385
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 21.18556867820741,
+          "peak": 192,
+          "worst64": 22.737762730991676,
+          "pixels": 5193,
+          "bounds": [
+            0,
+            298,
+            159,
+            383
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 20.947635226230922,
+          "peak": 192,
+          "worst64": 22.737762730991676,
+          "pixels": 5270,
+          "bounds": [
+            0,
+            298,
+            159,
+            383
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "be4214230cee7d59ca85d296de6cc0409d2f8af6e8c7bfad7685cb3a22b00990",
+        "beforeFinite": "2571bdd08ad716f8c70f22a95fa0bb3de60ddc3c5847aa0ef63eecb0d2d4227b",
+        "afterFinite": "2cdc2f4f051249186b5c0fb9c65a385ab65967902af197843e2614f52ab42ee2",
+        "beforeMedia": "27dd74627972d6420eaf7d3824877ba9379e44f754267456769d639911693422",
+        "afterMedia": "22330d26a0135951d587c3d57bf065e799fc0271dbd3f26d63c6bf2b8baee107"
+      }
+    },
+    {
+      "file": "mounted-380-60-3499.png",
+      "unionPixels": 9517,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 6794,
+          "bounds": [
+            0,
+            320,
+            260,
+            423
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.771951945641133,
+          "peak": 129,
+          "worst64": 9.609394313967861,
+          "pixels": 7573,
+          "bounds": [
+            0,
+            321,
+            260,
+            430
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 6.107246681377185,
+          "peak": 129,
+          "worst64": 9.609394313967861,
+          "pixels": 7855,
+          "bounds": [
+            0,
+            320,
+            260,
+            430
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 33.77986760533781,
+          "peak": 191,
+          "worst64": 53.9507622579316,
+          "pixels": 7939,
+          "bounds": [
+            0,
+            321,
+            266,
+            430
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 33.32909530314175,
+          "peak": 191,
+          "worst64": 53.9507622579316,
+          "pixels": 8199,
+          "bounds": [
+            0,
+            321,
+            266,
+            430
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "879248798e77f94987d9d9d71022e1ae3a772d8a454d9a06d9f12826655e7753",
+        "beforeFinite": "44b876c8c48f1f2478351160128675b467993b84c3e4a7a2a130a2f27eba4ead",
+        "afterFinite": "73d722bc298e9c15d3e34fd0d0501f073bfcc7f3e0cfd4c74f84a7fcb1d52ea7",
+        "beforeMedia": "0a32c73381bbc9e218fad8d17b26e61772f61db6eec867c1497c499ce9da5c2f",
+        "afterMedia": "c403f8a3619cfe082f36bf03497529737c6c1e0dceb352dbdd5cb879f09a0c53"
+      }
+    },
+    {
+      "file": "mounted-380-60-3500.png",
+      "unionPixels": 4422,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 3627,
+          "bounds": [
+            0,
+            320,
+            260,
+            422
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 7.874340419116539,
+          "peak": 77,
+          "worst64": 19.681818181818183,
+          "pixels": 2207,
+          "bounds": [
+            0,
+            321,
+            259,
+            421
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.8304688677823004,
+          "peak": 77,
+          "worst64": 19.681818181818183,
+          "pixels": 3048,
+          "bounds": [
+            0,
+            321,
+            259,
+            422
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 34.150233680084426,
+          "peak": 96,
+          "worst64": 41.874845105328376,
+          "pixels": 2176,
+          "bounds": [
+            0,
+            321,
+            256,
+            420
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 31.610357304387154,
+          "peak": 96,
+          "worst64": 41.874845105328376,
+          "pixels": 2969,
+          "bounds": [
+            0,
+            321,
+            256,
+            421
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "74d324c79e5c4ab20f7bcff884a52324f8cb69ce9f1822984faa85f8161d930b",
+        "beforeFinite": "66b8a0b6d99031936d5495e101a153db22e481ea8d867b37ceae6b2c6c6f0d86",
+        "afterFinite": "cba75c85d23d402cb2cf14cfcf371040c20130c03ba201fcf79bdf4e78e43855",
+        "beforeMedia": "b7d43e404405c4e2a73af0f6cfdbd4dbbc2cb36d88b7609b52d22bd754a0adc3",
+        "afterMedia": "e8b45f34bb02aff2a351c56451d0c0758f242e4eb1fa2de5048f182c1b5fbb49"
+      }
+    },
+    {
+      "file": "mounted-380-60-4500.png",
+      "unionPixels": 12012,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 9353,
+          "bounds": [
+            87,
+            348,
+            380,
+            400
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.2205294705294705,
+          "peak": 128,
+          "worst64": 9.272271714922049,
+          "pixels": 11784,
+          "bounds": [
+            87,
+            349,
+            380,
+            407
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 6.2205294705294705,
+          "peak": 128,
+          "worst64": 9.272271714922049,
+          "pixels": 11784,
+          "bounds": [
+            87,
+            349,
+            380,
+            407
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 9.60983460983461,
+          "peak": 179,
+          "worst64": 17.916295471417964,
+          "pixels": 11664,
+          "bounds": [
+            88,
+            349,
+            380,
+            407
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 9.60983460983461,
+          "peak": 179,
+          "worst64": 17.916295471417964,
+          "pixels": 11664,
+          "bounds": [
+            88,
+            349,
+            380,
+            407
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "8824b57674d36fd3d853e36acc0228fbb542c99e7306715c483f14d637c440e0",
+        "beforeFinite": "a2b912debf8316df9a1ecc2d2ddd9ff484cf40e405a38a6f86ebcffbbfd4e154",
+        "afterFinite": "a2b912debf8316df9a1ecc2d2ddd9ff484cf40e405a38a6f86ebcffbbfd4e154",
+        "beforeMedia": "3b391d0222d0fdb19bdb00965abf4f9b6966f4fa059d948c15e11aa7cc0d5c3a",
+        "afterMedia": "3b391d0222d0fdb19bdb00965abf4f9b6966f4fa059d948c15e11aa7cc0d5c3a"
+      }
+    },
+    {
+      "file": "mounted-380-60-4600.png",
+      "unionPixels": 13996,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 10323,
+          "bounds": [
+            74,
+            351,
+            380,
+            406
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 5.52598361436601,
+          "peak": 122,
+          "worst64": 8.421265413381848,
+          "pixels": 13703,
+          "bounds": [
+            75,
+            352,
+            380,
+            416
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 5.52598361436601,
+          "peak": 122,
+          "worst64": 8.421265413381848,
+          "pixels": 13703,
+          "bounds": [
+            75,
+            352,
+            380,
+            416
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 8.396160807849862,
+          "peak": 185,
+          "worst64": 14.504346068324237,
+          "pixels": 13587,
+          "bounds": [
+            75,
+            351,
+            380,
+            415
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 8.396160807849862,
+          "peak": 185,
+          "worst64": 14.504346068324237,
+          "pixels": 13587,
+          "bounds": [
+            75,
+            351,
+            380,
+            415
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "abdbf2bc478ad138f11e1ee7048e99f1d9afd12bfe7ab73974ebaf4cfb2c8722",
+        "beforeFinite": "5028f017c1ed6d7d37236978861bcbefb5779b62417322429d48e47553e1c252",
+        "afterFinite": "5028f017c1ed6d7d37236978861bcbefb5779b62417322429d48e47553e1c252",
+        "beforeMedia": "eeeb3d094eeea9e92d5c89eb35d3c0b6e60843d99f1aff3d8f2fc355260c489a",
+        "afterMedia": "eeeb3d094eeea9e92d5c89eb35d3c0b6e60843d99f1aff3d8f2fc355260c489a"
+      }
+    },
+    {
+      "file": "mounted-380-144-0.png",
+      "unionPixels": 2708,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 2548,
+          "bounds": [
+            104,
+            249,
+            301,
+            347
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 16.326317085179713,
+          "peak": 94,
+          "worst64": 19.253697383390215,
+          "pixels": 1370,
+          "bounds": [
+            104,
+            250,
+            301,
+            347
+          ],
+          "touchesEdge": false
+        },
+        "afterFinite": {
+          "mae": 0.6388478581979321,
+          "peak": 4,
+          "worst64": 0.9363395225464191,
+          "pixels": 2404,
+          "bounds": [
+            104,
+            259,
+            301,
+            347
+          ],
+          "touchesEdge": false
+        },
+        "beforeMedia": {
+          "mae": 17.825701624815363,
+          "peak": 112,
+          "worst64": 21.212741751990897,
+          "pixels": 1399,
+          "bounds": [
+            105,
+            249,
+            301,
+            347
+          ],
+          "touchesEdge": false
+        },
+        "afterMedia": {
+          "mae": 8.362259970457902,
+          "peak": 52,
+          "worst64": 12.707622298065983,
+          "pixels": 2387,
+          "bounds": [
+            104,
+            258,
+            301,
+            347
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "d435003292d0b5190a2394b89c3f2cf28cf0985c58a7af5e26c57e0f26911c54",
+        "beforeFinite": "472911f270926f063be35fbfd3177200ae4a073f0f84ffc72524ef4c54dcfe0e",
+        "afterFinite": "1f53a61fce09e9bda9e68d7a164e080c7fccb4468d634194c8aa7f7f7f9882ed",
+        "beforeMedia": "eea96683fd75fabc6de67841e5e2317ffe32507307029a54119576a5272b40a3",
+        "afterMedia": "701b3aaa271020b51dc84b1a7119a0d300fb81476a5d832d12f58a7b818e6052"
+      }
+    },
+    {
+      "file": "mounted-380-144-700.png",
+      "unionPixels": 617,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 491,
+          "bounds": [
+            144,
+            25,
+            274,
+            426
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 9.044840626688277,
+          "peak": 48,
+          "worst64": 11.19767441860465,
+          "pixels": 259,
+          "bounds": [
+            144,
+            28,
+            273,
+            426
+          ],
+          "touchesEdge": false
+        },
+        "afterFinite": {
+          "mae": 0.4516477579686656,
+          "peak": 4,
+          "worst64": 0.8649425287356322,
+          "pixels": 449,
+          "bounds": [
+            144,
+            28,
+            273,
+            426
+          ],
+          "touchesEdge": false
+        },
+        "beforeMedia": {
+          "mae": 19.506753106428956,
+          "peak": 57,
+          "worst64": 24.253731343283583,
+          "pixels": 223,
+          "bounds": [
+            147,
+            30,
+            275,
+            426
+          ],
+          "touchesEdge": false
+        },
+        "afterMedia": {
+          "mae": 13.544030253916802,
+          "peak": 52,
+          "worst64": 18.44776119402985,
+          "pixels": 428,
+          "bounds": [
+            147,
+            30,
+            275,
+            427
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "2c98eb6231fe105e0aca299c5c341b539a8c28d583c3a11fa953a0f318ba315d",
+        "beforeFinite": "c943b080554257fc9470213d15ab773e140b32523df99b8bef77782f24c977ff",
+        "afterFinite": "fc7a5ef7184aa83ee0c4e6776dc1db5e58fc564f72c6c48a87abec0d9e48c0ce",
+        "beforeMedia": "8e7f7bf87df98a933e85be7a5b56333de550ba2f53e836a3406c6025f0456313",
+        "afterMedia": "29c2bdc5f1d1455fb12e54fa57b0349c3f1932446b800abad8b77c10c6332363"
+      }
+    },
+    {
+      "file": "mounted-380-144-1600.png",
+      "unionPixels": 169,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 124,
+          "bounds": [
+            0,
+            198,
+            10,
+            217
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 9.42800788954635,
+          "peak": 148,
+          "worst64": 9.42800788954635,
+          "pixels": 166,
+          "bounds": [
+            0,
+            196,
+            11,
+            218
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 9.42800788954635,
+          "peak": 148,
+          "worst64": 9.42800788954635,
+          "pixels": 166,
+          "bounds": [
+            0,
+            196,
+            11,
+            218
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 10.570019723865878,
+          "peak": 135,
+          "worst64": 10.570019723865878,
+          "pixels": 167,
+          "bounds": [
+            0,
+            196,
+            11,
+            218
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 10.570019723865878,
+          "peak": 135,
+          "worst64": 10.570019723865878,
+          "pixels": 167,
+          "bounds": [
+            0,
+            196,
+            11,
+            218
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "89cb92dd1ce6620e335629196ec11e3f53774a66434a8265cbcf224bbf757352",
+        "beforeFinite": "6fff5651f7336f340a503573c4c4e02253a77f89ae12162a9f6764b3b5b672ff",
+        "afterFinite": "6fff5651f7336f340a503573c4c4e02253a77f89ae12162a9f6764b3b5b672ff",
+        "beforeMedia": "383ae3d6601dc6c6a671b82b685afc3c9ff49437d35836a8126c0b6a60ef01e7",
+        "afterMedia": "383ae3d6601dc6c6a671b82b685afc3c9ff49437d35836a8126c0b6a60ef01e7"
+      }
+    },
+    {
+      "file": "mounted-380-144-2099.png",
+      "unionPixels": 1057,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 953,
+          "bounds": [
+            0,
+            303,
+            42,
+            376
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 13.546199936928414,
+          "peak": 159,
+          "worst64": 14.32227307398932,
+          "pixels": 799,
+          "bounds": [
+            0,
+            304,
+            41,
+            375
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 13.546199936928414,
+          "peak": 159,
+          "worst64": 14.32227307398932,
+          "pixels": 799,
+          "bounds": [
+            0,
+            304,
+            41,
+            375
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 26.68338063702302,
+          "peak": 189,
+          "worst64": 28.128909229595727,
+          "pixels": 781,
+          "bounds": [
+            0,
+            304,
+            41,
+            375
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 26.68338063702302,
+          "peak": 189,
+          "worst64": 28.128909229595727,
+          "pixels": 781,
+          "bounds": [
+            0,
+            304,
+            41,
+            375
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "cf053cfbff854191657f8ce2f305d13c62e914cc13545bd1ff4d04b8b70120b3",
+        "beforeFinite": "bfaab716f60e35bcd9732947d7ddb4fdaa8179f465a389d6b1edc71e4d45b3ee",
+        "afterFinite": "bfaab716f60e35bcd9732947d7ddb4fdaa8179f465a389d6b1edc71e4d45b3ee",
+        "beforeMedia": "111368d7f677e5e9b8d220f34c16851fa83b9be2b6f6939532d10f021cab3889",
+        "afterMedia": "111368d7f677e5e9b8d220f34c16851fa83b9be2b6f6939532d10f021cab3889"
+      }
+    },
+    {
+      "file": "mounted-380-144-2100.png",
+      "unionPixels": 574,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 525,
+          "bounds": [
+            0,
+            310,
+            42,
+            376
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 9.576655052264808,
+          "peak": 47,
+          "worst64": 9.712031558185405,
+          "pixels": 278,
+          "bounds": [
+            0,
+            310,
+            41,
+            376
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 0.37340301974448314,
+          "peak": 3,
+          "worst64": 0.3793556870479947,
+          "pixels": 497,
+          "bounds": [
+            0,
+            310,
+            42,
+            376
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 19.61672473867596,
+          "peak": 58,
+          "worst64": 21.557213930348258,
+          "pixels": 269,
+          "bounds": [
+            0,
+            310,
+            40,
+            375
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 14.869337979094077,
+          "peak": 50,
+          "worst64": 15.308457711442786,
+          "pixels": 488,
+          "bounds": [
+            0,
+            310,
+            41,
+            376
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "cb082c9e0d1c0e469fa059f1243d4736d941fab750afedd1f8a50a67367cb795",
+        "beforeFinite": "d0b0563cf3a166b81506a9d847168df6c3959a52be42e249c4801581fb1cf43b",
+        "afterFinite": "ea9e3df489b4376cbb298d2e00da3b642832137cc34b871faeea77791d989f00",
+        "beforeMedia": "75dc54c27fca4dd8e93c51eaae089bca61aa8cfbbbf5b0a62edfb8b0b1197ed3",
+        "afterMedia": "5082fcbd2a850fcbc1c7928bde13fb4bd9c88e7c0630af22c1262b65d5c8da3b"
+      }
+    },
+    {
+      "file": "mounted-380-144-3199.png",
+      "unionPixels": 5734,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 4345,
+          "bounds": [
+            0,
+            298,
+            156,
+            379
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.5332519474479716,
+          "peak": 136,
+          "worst64": 7.29973474801061,
+          "pixels": 5273,
+          "bounds": [
+            0,
+            299,
+            161,
+            384
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 6.154400651087083,
+          "peak": 136,
+          "worst64": 7.29973474801061,
+          "pixels": 5362,
+          "bounds": [
+            0,
+            298,
+            161,
+            384
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 27.05993489129171,
+          "peak": 191,
+          "worst64": 30.3517536103743,
+          "pixels": 5139,
+          "bounds": [
+            0,
+            298,
+            158,
+            383
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 26.832810138356006,
+          "peak": 191,
+          "worst64": 30.3517536103743,
+          "pixels": 5226,
+          "bounds": [
+            0,
+            297,
+            158,
+            383
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "62202dd6656f1ed28942e9ef42b30cc36e274a0695f125b445af5c5259512a2e",
+        "beforeFinite": "cf3a105fce349fc484d6b8f5859edf1a62f93a9fe9b9c1ef13389c931d26c8bc",
+        "afterFinite": "972ba0694f3f49639960b0b382394201d76af5dfd17a675e3667a1185e0cb94c",
+        "beforeMedia": "f785c96ebd5b56222a790e402b652984f8a0bf47698202fe1f41a8f3036c5b27",
+        "afterMedia": "b62d6c1e1aa90054e34d6b4f43a6c5f54526327096b0eb72e7604c774911a2c0"
+      }
+    },
+    {
+      "file": "mounted-380-144-3200.png",
+      "unionPixels": 5744,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 4365,
+          "bounds": [
+            0,
+            298,
+            157,
+            379
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.400824048282265,
+          "peak": 123,
+          "worst64": 7.151930445033893,
+          "pixels": 5287,
+          "bounds": [
+            0,
+            299,
+            162,
+            384
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 6.032729805013927,
+          "peak": 123,
+          "worst64": 7.151930445033893,
+          "pixels": 5380,
+          "bounds": [
+            0,
+            298,
+            162,
+            384
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 26.801880222841227,
+          "peak": 191,
+          "worst64": 29.92315967419702,
+          "pixels": 5167,
+          "bounds": [
+            0,
+            298,
+            158,
+            383
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 26.62024141132776,
+          "peak": 191,
+          "worst64": 29.92315967419702,
+          "pixels": 5240,
+          "bounds": [
+            0,
+            298,
+            158,
+            383
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "a1441fb53f0c1554725ec3f73002d15a204d09f5e3eb2fb7d734a224f4916ac6",
+        "beforeFinite": "ab7e18b3ef6f23a33e2ddcd460d7b4ac41783003e1a11b54fdc3f7d97fc501d3",
+        "afterFinite": "62f5f2fc3f2b9e135275ceae01b3a7fd8f0b29bd3b45f6c29869422a7c68547c",
+        "beforeMedia": "b495aa57b2c1e13395c58ea0157fc399c40c94a5be19d99f043376f06af6948b",
+        "afterMedia": "06450dee4bcd51c5eb4235bdd933cf09c7dc8273f63e9f52f21a0678667f6510"
+      }
+    },
+    {
+      "file": "mounted-380-144-3201.png",
+      "unionPixels": 5782,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 4380,
+          "bounds": [
+            0,
+            298,
+            157,
+            379
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.544275337253546,
+          "peak": 123,
+          "worst64": 7.3651142355008785,
+          "pixels": 5318,
+          "bounds": [
+            0,
+            299,
+            162,
+            384
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 6.157961489680618,
+          "peak": 123,
+          "worst64": 7.3651142355008785,
+          "pixels": 5408,
+          "bounds": [
+            0,
+            298,
+            162,
+            384
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 27.121353626196242,
+          "peak": 191,
+          "worst64": 30.538331019589695,
+          "pixels": 5193,
+          "bounds": [
+            0,
+            298,
+            159,
+            383
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 26.89744033206503,
+          "peak": 191,
+          "worst64": 30.538331019589695,
+          "pixels": 5270,
+          "bounds": [
+            0,
+            298,
+            159,
+            383
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "3cfa00a8b15c1623849b403c5babba9b36de27d1c004d2977faa21a48a5bcbd3",
+        "beforeFinite": "c9c23e019e15ade15f344b720df86fb04433d1c4c6b207da54b8314f7db622b2",
+        "afterFinite": "c1e380561978a9d7fb8c12a4474f1667abac149cccd68079f84673fee5f44b72",
+        "beforeMedia": "27dd74627972d6420eaf7d3824877ba9379e44f754267456769d639911693422",
+        "afterMedia": "22330d26a0135951d587c3d57bf065e799fc0271dbd3f26d63c6bf2b8baee107"
+      }
+    },
+    {
+      "file": "mounted-380-144-3499.png",
+      "unionPixels": 9160,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 6857,
+          "bounds": [
+            0,
+            320,
+            260,
+            423
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 7.064374090247453,
+          "peak": 131,
+          "worst64": 9.82451187955775,
+          "pixels": 7959,
+          "bounds": [
+            0,
+            321,
+            268,
+            430
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 6.328093158660844,
+          "peak": 131,
+          "worst64": 9.82451187955775,
+          "pixels": 8230,
+          "bounds": [
+            0,
+            320,
+            268,
+            430
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 18.5481077147016,
+          "peak": 190,
+          "worst64": 29.909903552105387,
+          "pixels": 7939,
+          "bounds": [
+            0,
+            321,
+            266,
+            430
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 17.937190684133917,
+          "peak": 190,
+          "worst64": 29.909903552105387,
+          "pixels": 8199,
+          "bounds": [
+            0,
+            321,
+            266,
+            430
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "bbbcb9cc4d4fa6fc346c6d043e79c59c2ca52ead1a9f0b2c90bd02a2924d5008",
+        "beforeFinite": "ffdd8da86de310224d90fe5e08eef13fc7beeff2d44ad38d21015ae76e69b8a1",
+        "afterFinite": "ed1c369b56724644dd1c786467003c6241e662041c1b5caa40b9bb721b7ac9dc",
+        "beforeMedia": "0a32c73381bbc9e218fad8d17b26e61772f61db6eec867c1497c499ce9da5c2f",
+        "afterMedia": "c403f8a3619cfe082f36bf03497529737c6c1e0dceb352dbdd5cb879f09a0c53"
+      }
+    },
+    {
+      "file": "mounted-380-144-3500.png",
+      "unionPixels": 4021,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 3595,
+          "bounds": [
+            0,
+            320,
+            258,
+            422
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 8.626709773688138,
+          "peak": 74,
+          "worst64": 20.364779874213838,
+          "pixels": 2215,
+          "bounds": [
+            0,
+            321,
+            257,
+            421
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 4.25176158501202,
+          "peak": 74,
+          "worst64": 20.364779874213838,
+          "pixels": 3001,
+          "bounds": [
+            0,
+            321,
+            258,
+            422
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 23.890574483959213,
+          "peak": 96,
+          "worst64": 48.11726907630522,
+          "pixels": 2176,
+          "bounds": [
+            0,
+            321,
+            256,
+            420
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 22.638149714001493,
+          "peak": 96,
+          "worst64": 48.11726907630522,
+          "pixels": 2969,
+          "bounds": [
+            0,
+            321,
+            256,
+            421
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "8640dfda46253c7ee53d976f003b3a256ac6996804af388134109256201e1bf3",
+        "beforeFinite": "a1f584bd71ec5f0b189483ef7b53bc94a73d8861790fba46e1e79afc2386c412",
+        "afterFinite": "7d9f73dfe63950d417d353c07a20b3ca4d41ca7ddf4a0c175b6fad2c7aa9f032",
+        "beforeMedia": "b7d43e404405c4e2a73af0f6cfdbd4dbbc2cb36d88b7609b52d22bd754a0adc3",
+        "afterMedia": "e8b45f34bb02aff2a351c56451d0c0758f242e4eb1fa2de5048f182c1b5fbb49"
+      }
+    },
+    {
+      "file": "mounted-380-144-4500.png",
+      "unionPixels": 11940,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 9320,
+          "bounds": [
+            87,
+            348,
+            380,
+            399
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.170044667783361,
+          "peak": 130,
+          "worst64": 9.361556908319498,
+          "pixels": 11725,
+          "bounds": [
+            88,
+            349,
+            380,
+            407
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 6.170044667783361,
+          "peak": 130,
+          "worst64": 9.361556908319498,
+          "pixels": 11725,
+          "bounds": [
+            88,
+            349,
+            380,
+            407
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 7.163456169737577,
+          "peak": 151,
+          "worst64": 12.174691016417635,
+          "pixels": 11664,
+          "bounds": [
+            88,
+            349,
+            380,
+            407
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 7.163456169737577,
+          "peak": 151,
+          "worst64": 12.174691016417635,
+          "pixels": 11664,
+          "bounds": [
+            88,
+            349,
+            380,
+            407
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "4ef4ad58b5788ff176e206215d7ddae87c33f9a33a7539fbb4912bc367e6042d",
+        "beforeFinite": "12b11cf262bdf24f918cbf1d9b7d9168ae87384f24ae4b0ea501e079f2e0dcdf",
+        "afterFinite": "12b11cf262bdf24f918cbf1d9b7d9168ae87384f24ae4b0ea501e079f2e0dcdf",
+        "beforeMedia": "3b391d0222d0fdb19bdb00965abf4f9b6966f4fa059d948c15e11aa7cc0d5c3a",
+        "afterMedia": "3b391d0222d0fdb19bdb00965abf4f9b6966f4fa059d948c15e11aa7cc0d5c3a"
+      }
+    },
+    {
+      "file": "mounted-380-144-4600.png",
+      "unionPixels": 13861,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 10324,
+          "bounds": [
+            74,
+            350,
+            380,
+            406
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 5.614024962123945,
+          "peak": 122,
+          "worst64": 8.132970137207426,
+          "pixels": 13620,
+          "bounds": [
+            75,
+            351,
+            380,
+            415
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 5.614024962123945,
+          "peak": 122,
+          "worst64": 8.132970137207426,
+          "pixels": 13620,
+          "bounds": [
+            75,
+            351,
+            380,
+            415
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 6.287882067190919,
+          "peak": 175,
+          "worst64": 10.201977401129943,
+          "pixels": 13587,
+          "bounds": [
+            75,
+            351,
+            380,
+            415
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 6.287882067190919,
+          "peak": 175,
+          "worst64": 10.201977401129943,
+          "pixels": 13587,
+          "bounds": [
+            75,
+            351,
+            380,
+            415
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "860d5709295e15ec6ec3fd72169f210bcbdff4759c89484a142278c5cf260c7a",
+        "beforeFinite": "2c3f511195005f8672ea230406b2d4663bec9fc9f20a9d07aa7040fb1b72f901",
+        "afterFinite": "2c3f511195005f8672ea230406b2d4663bec9fc9f20a9d07aa7040fb1b72f901",
+        "beforeMedia": "eeeb3d094eeea9e92d5c89eb35d3c0b6e60843d99f1aff3d8f2fc355260c489a",
+        "afterMedia": "eeeb3d094eeea9e92d5c89eb35d3c0b6e60843d99f1aff3d8f2fc355260c489a"
+      }
+    },
+    {
+      "file": "mounted-800-60-0.png",
+      "unionPixels": 10424,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 8691,
+          "bounds": [
+            206,
+            249,
+            627,
+            363
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 8.48807239703249,
+          "peak": 79,
+          "worst64": 9.698954070031833,
+          "pixels": 6194,
+          "bounds": [
+            206,
+            248,
+            627,
+            362
+          ],
+          "touchesEdge": false
+        },
+        "afterFinite": {
+          "mae": 0.5944614991046303,
+          "peak": 7,
+          "worst64": 0.7609905397885365,
+          "pixels": 8378,
+          "bounds": [
+            206,
+            254,
+            627,
+            362
+          ],
+          "touchesEdge": false
+        },
+        "beforeMedia": {
+          "mae": 42.49421207469941,
+          "peak": 137,
+          "worst64": 72.25822368421052,
+          "pixels": 5962,
+          "bounds": [
+            209,
+            248,
+            622,
+            361
+          ],
+          "touchesEdge": false
+        },
+        "afterMedia": {
+          "mae": 40.284024047070865,
+          "peak": 136,
+          "worst64": 69.11778080945885,
+          "pixels": 8137,
+          "bounds": [
+            209,
+            253,
+            622,
+            361
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "881bda7e88c94b1f16c679dadadc8cbebd6505244b36763a300ffa13b4668184",
+        "beforeFinite": "ba515a71bf284258c5f5b484960dd50c3b81764b9e8b783508d79fc9cb5d95d3",
+        "afterFinite": "8dc4956d502c79cc08a33c1880940029602bc53bcd3e120d85cc766ea45d741e",
+        "beforeMedia": "fac0d4706e6c355a9a01c86699000e215a866c49471c537a2d2b9713c0ee467f",
+        "afterMedia": "24b3ae27015225f3825db35d7272425153303ddcbfbe1bd66ac9a6b1664876ba"
+      }
+    },
+    {
+      "file": "mounted-800-60-700.png",
+      "unionPixels": 2671,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 1733,
+          "bounds": [
+            373,
+            35,
+            578,
+            446
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 4.861599900162236,
+          "peak": 42,
+          "worst64": 8.225225225225225,
+          "pixels": 1392,
+          "bounds": [
+            374,
+            37,
+            577,
+            446
+          ],
+          "touchesEdge": false
+        },
+        "afterFinite": {
+          "mae": 0.6470735055534756,
+          "peak": 11,
+          "worst64": 2.859106529209622,
+          "pixels": 1884,
+          "bounds": [
+            374,
+            37,
+            578,
+            446
+          ],
+          "touchesEdge": false
+        },
+        "beforeMedia": {
+          "mae": 20.93510545363784,
+          "peak": 58,
+          "worst64": 33.08163265306123,
+          "pixels": 1141,
+          "bounds": [
+            379,
+            38,
+            582,
+            448
+          ],
+          "touchesEdge": false
+        },
+        "afterMedia": {
+          "mae": 19.04280544115812,
+          "peak": 58,
+          "worst64": 27.591836734693878,
+          "pixels": 1659,
+          "bounds": [
+            379,
+            38,
+            583,
+            448
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "7f7bf1ea2cd990ff37020f735975be7436c724b542956e0185cc3f1bc866196f",
+        "beforeFinite": "26010c44d7c4a9c7f0f830d191547ed98194d96118ba19098cf2007e1f9af90b",
+        "afterFinite": "8e6d87177e9654ce79882555133ea4c7ff42da6cc7731df260dfe9a16d5a4e01",
+        "beforeMedia": "50c56a88f794d014409e081093a44ca0a7820bb2f52ea7c064e05470c6c0270d",
+        "afterMedia": "f39ee876e3f16cf906edbab408003d85f01f9f0c00c5cf67be986d3f492877c1"
+      }
+    },
+    {
+      "file": "mounted-800-60-1600.png",
+      "unionPixels": 7639,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 6186,
+          "bounds": [
+            0,
+            170,
+            323,
+            337
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.468822271676048,
+          "peak": 112,
+          "worst64": 8.905234159779614,
+          "pixels": 6863,
+          "bounds": [
+            0,
+            166,
+            325,
+            336
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 5.7326875245450974,
+          "peak": 112,
+          "worst64": 8.905234159779614,
+          "pixels": 7127,
+          "bounds": [
+            0,
+            166,
+            325,
+            336
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 14.855783915870315,
+          "peak": 188,
+          "worst64": 19.825047199496538,
+          "pixels": 6860,
+          "bounds": [
+            0,
+            165,
+            326,
+            336
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 14.50220360431121,
+          "peak": 188,
+          "worst64": 19.825047199496538,
+          "pixels": 7122,
+          "bounds": [
+            0,
+            165,
+            326,
+            336
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "f24291448e88eebe22095f51109cd21d0bf687dd8b56de02468e5737ed873d1e",
+        "beforeFinite": "bee5313a5f1b473b3b95f14903d4a2f8344f79aa5324ad290375d4b27cfa3cc4",
+        "afterFinite": "a39cc9ad49d9211a593d8cd9037fc937931d73ca5429a488c2b179be5764309a",
+        "beforeMedia": "44b6d9603baa6278dc2413e8ee9c987d4c63e2b3ce334d90ba52227adacbc031",
+        "afterMedia": "9b76d8ef66454e24d2b6a844a463343036c7d00e413b7ee1d6bcbfaea7bcc2f2"
+      }
+    },
+    {
+      "file": "mounted-800-60-2099.png",
+      "unionPixels": 10087,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 9223,
+          "bounds": [
+            0,
+            252,
+            350,
+            518
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.781071345956843,
+          "peak": 132,
+          "worst64": 15.066666666666666,
+          "pixels": 7834,
+          "bounds": [
+            0,
+            252,
+            349,
+            517
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 6.154951918310697,
+          "peak": 132,
+          "worst64": 15.066666666666666,
+          "pixels": 8107,
+          "bounds": [
+            0,
+            252,
+            349,
+            517
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 17.060639106440632,
+          "peak": 190,
+          "worst64": 41.946666666666665,
+          "pixels": 7796,
+          "bounds": [
+            0,
+            252,
+            348,
+            518
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 16.68629589240276,
+          "peak": 190,
+          "worst64": 41.946666666666665,
+          "pixels": 8068,
+          "bounds": [
+            0,
+            252,
+            348,
+            518
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "559d1d43741a3c1277881dc50ed9fcf3c388a9684a357b498686b9ac199952e8",
+        "beforeFinite": "2b584f37b6f22fa171566c10067e8a8a41bb072b084088acc8a8491f563cdb7e",
+        "afterFinite": "79c2faac89cd3d8c85b2e801d0f2327d10862cda9c8d047e39a898dfbee1d173",
+        "beforeMedia": "cd1173473c6a0ca380617ea918ac1f764f392b1dc4910d9e6bab5fc541718c36",
+        "afterMedia": "523970ceb47e7a4bf59f299ebc7c197e101fcfa7ac8ea3876c37db11528b3587"
+      }
+    },
+    {
+      "file": "mounted-800-60-2100.png",
+      "unionPixels": 5436,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 4856,
+          "bounds": [
+            0,
+            264,
+            350,
+            508
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.363134657836644,
+          "peak": 64,
+          "worst64": 11.0,
+          "pixels": 3472,
+          "bounds": [
+            0,
+            265,
+            349,
+            507
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.200269806230071,
+          "peak": 64,
+          "worst64": 11.0,
+          "pixels": 4244,
+          "bounds": [
+            0,
+            265,
+            350,
+            508
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 24.335847436840815,
+          "peak": 96,
+          "worst64": 55.82019190654985,
+          "pixels": 3432,
+          "bounds": [
+            0,
+            265,
+            347,
+            508
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 23.335172921265638,
+          "peak": 96,
+          "worst64": 55.82019190654985,
+          "pixels": 4212,
+          "bounds": [
+            0,
+            264,
+            348,
+            508
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "f3b6806a6a3dd5edb370e84e9531653e1c9248fd6d0bf808d470ae90f7fe04a0",
+        "beforeFinite": "75d9f495e4997a37afd2fdbd831bf3d03ff81aa731bfcada506d8973193f7995",
+        "afterFinite": "440da548f4d6f427c654825fed9dedc46810ffda5679f1a9b49ada146fdc6a2c",
+        "beforeMedia": "e9f7b2a732914f39572e8dbcd250bc6f08f93a70c024700d1441e9401a2178d6",
+        "afterMedia": "801648d440603cfca0ef2df46cee67ce77cf486f81e597225f8a700cedce1a73"
+      }
+    },
+    {
+      "file": "mounted-800-60-3199.png",
+      "unionPixels": 40928,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 29328,
+          "bounds": [
+            0,
+            301,
+            518,
+            428
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 3.9137021110242376,
+          "peak": 111,
+          "worst64": 7.017164435290079,
+          "pixels": 38243,
+          "bounds": [
+            0,
+            302,
+            530,
+            453
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.6142494136043783,
+          "peak": 111,
+          "worst64": 7.017164435290079,
+          "pixels": 38678,
+          "bounds": [
+            0,
+            301,
+            530,
+            453
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 29.852773977065414,
+          "peak": 192,
+          "worst64": 46.977731202515066,
+          "pixels": 37736,
+          "bounds": [
+            0,
+            301,
+            523,
+            449
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 29.69108352879854,
+          "peak": 192,
+          "worst64": 46.977731202515066,
+          "pixels": 38157,
+          "bounds": [
+            0,
+            300,
+            523,
+            449
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "330ea222a900f9e087d3f04134869e2b9423d2ef740d977af839ebb7f4008f09",
+        "beforeFinite": "645f419bd5d8eb262b48bedb779eb20ac3200b179bde8774f70201d2554f953e",
+        "afterFinite": "dd417b8a819edaa72ae35f05c729a9bb4874396728c59b12859a32b1c94796de",
+        "beforeMedia": "fb6365dcc816162980aaeb9dece3e4bab0ae9d4bfb47b3e921693cc6905e38f1",
+        "afterMedia": "163fb2a38434674538e254ca76cdf82fd5eedb46c9da639464554abfa6c07822"
+      }
+    },
+    {
+      "file": "mounted-800-60-3200.png",
+      "unionPixels": 40995,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 29359,
+          "bounds": [
+            0,
+            301,
+            518,
+            429
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 3.9099727609058017,
+          "peak": 111,
+          "worst64": 6.863741073485372,
+          "pixels": 38272,
+          "bounds": [
+            0,
+            302,
+            530,
+            453
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.613733382119771,
+          "peak": 111,
+          "worst64": 6.863741073485372,
+          "pixels": 38714,
+          "bounds": [
+            0,
+            301,
+            530,
+            453
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 29.838972232386062,
+          "peak": 192,
+          "worst64": 46.935354591392226,
+          "pixels": 37759,
+          "bounds": [
+            0,
+            301,
+            524,
+            449
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 29.682018132292555,
+          "peak": 192,
+          "worst64": 46.935354591392226,
+          "pixels": 38196,
+          "bounds": [
+            0,
+            300,
+            524,
+            449
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "276fe11d5dfab965ae21ba90cd595578542b89450f3a4a415ab407a515858ebd",
+        "beforeFinite": "d2f9786727a1865ce95d3a8a80b70f44590c51b10fdcd748a55e884c7c10b40f",
+        "afterFinite": "fbb9db6032b9ace134d28e9ecf4e0afd01f91b860cd4d6be15066e37b61ed2d5",
+        "beforeMedia": "80b7eb39cc4a210cc78e1d74def783ff24fdeea8bea650a8671abc564309fff4",
+        "afterMedia": "2a37cc927245f62acf784eb6d9df18df79b94d3e64fb0a98e935657418a18abd"
+      }
+    },
+    {
+      "file": "mounted-800-60-3201.png",
+      "unionPixels": 41028,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 29323,
+          "bounds": [
+            0,
+            301,
+            519,
+            429
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 3.804913717461246,
+          "peak": 109,
+          "worst64": 6.813633737723859,
+          "pixels": 38328,
+          "bounds": [
+            0,
+            303,
+            531,
+            454
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.5062802638848267,
+          "peak": 109,
+          "worst64": 6.813633737723859,
+          "pixels": 38752,
+          "bounds": [
+            0,
+            302,
+            531,
+            454
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 29.82433947548016,
+          "peak": 192,
+          "worst64": 46.88810580353258,
+          "pixels": 37831,
+          "bounds": [
+            0,
+            301,
+            524,
+            450
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 29.669136524649833,
+          "peak": 192,
+          "worst64": 46.88810580353258,
+          "pixels": 38249,
+          "bounds": [
+            0,
+            300,
+            524,
+            450
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "c00ec4a3e5b3e8ae364d7ce20a8085003e70e5ce8008decad0361438d4aa5e7e",
+        "beforeFinite": "1fe5503aaf8e1fd7ce6c4dfb4dec88b1397d706bdf94cac87aad15491e02f9c8",
+        "afterFinite": "c82aef2223927832254867827170db80ca48560fc691eefe1bbb2246de4914c7",
+        "beforeMedia": "11a04440ad03bf6ccc16827a2cdb34b55bcbc5cd9f4526dfd9ed2350505ee7b3",
+        "afterMedia": "ec738dc206fa5af3f587510811b69fdb56ef9bd101c7cc7f0cecdc71e0ec0611"
+      }
+    },
+    {
+      "file": "mounted-800-60-3499.png",
+      "unionPixels": 42013,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 29746,
+          "bounds": [
+            0,
+            321,
+            603,
+            458
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 3.6945548600036497,
+          "peak": 124,
+          "worst64": 7.15625,
+          "pixels": 35781,
+          "bounds": [
+            0,
+            322,
+            602,
+            473
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.396900959226906,
+          "peak": 124,
+          "worst64": 7.15625,
+          "pixels": 36359,
+          "bounds": [
+            0,
+            321,
+            602,
+            473
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 18.952594038353208,
+          "peak": 192,
+          "worst64": 50.357638888888886,
+          "pixels": 37477,
+          "bounds": [
+            0,
+            322,
+            619,
+            472
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 18.796142463840557,
+          "peak": 192,
+          "worst64": 50.357638888888886,
+          "pixels": 38057,
+          "bounds": [
+            0,
+            321,
+            619,
+            472
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "0100bf2d46df60de88484494c3ed1a84d3d00d0c0dbdfe85e027089f6ac59be7",
+        "beforeFinite": "dc3927b403dde98e50b57b2cf2e833ec743c0992b945eb94f5fd8ef0893b26ce",
+        "afterFinite": "725808a4a88cc4526123065945844a95aa8b812c7fa1f0a24975490d8bf4d5c3",
+        "beforeMedia": "97728eea1fc249f05a55261085dfdf3e8049149ba4951a2d5f87331e9570df89",
+        "afterMedia": "7a2afec6b8febf7b94f586c9259c14a70ec6c9ba14b5bc3e4ed7c2ecdda296a5"
+      }
+    },
+    {
+      "file": "mounted-800-60-3500.png",
+      "unionPixels": 16253,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 13497,
+          "bounds": [
+            18,
+            321,
+            600,
+            454
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 4.30041633339486,
+          "peak": 70,
+          "worst64": 10.108757062146893,
+          "pixels": 10578,
+          "bounds": [
+            18,
+            322,
+            599,
+            453
+          ],
+          "touchesEdge": false
+        },
+        "afterFinite": {
+          "mae": 2.234131134764864,
+          "peak": 70,
+          "worst64": 10.108757062146893,
+          "pixels": 12002,
+          "bounds": [
+            18,
+            322,
+            600,
+            454
+          ],
+          "touchesEdge": false
+        },
+        "beforeMedia": {
+          "mae": 27.28585491909186,
+          "peak": 97,
+          "worst64": 58.10550996483001,
+          "pixels": 10629,
+          "bounds": [
+            15,
+            322,
+            597,
+            454
+          ],
+          "touchesEdge": false
+        },
+        "afterMedia": {
+          "mae": 26.716667692118378,
+          "peak": 97,
+          "worst64": 58.10550996483001,
+          "pixels": 12045,
+          "bounds": [
+            15,
+            322,
+            597,
+            454
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "61e4c01d9f4cdecf155f92478f9842733000ad18b9e86b07ce39181e36a00888",
+        "beforeFinite": "8749c2569293ea2a13b2f5abfa992f9d5ce618e87783f67d69f20113f3d1b065",
+        "afterFinite": "30cab52c975a8e0388dbf172b532922fe506a7b980ff4f393794627f194b5224",
+        "beforeMedia": "92648a2a2e7f30af63e60966433f4852dd551e8ce893faa4070e37c95e8d5ece",
+        "afterMedia": "dab67f3b1b4f887e26430a8dd5318e7340bc212e507960c2387fd6795feb6c23"
+      }
+    },
+    {
+      "file": "mounted-800-60-4500.png",
+      "unionPixels": 60304,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 45350,
+          "bounds": [
+            86,
+            316,
+            795,
+            423
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 3.72918877686389,
+          "peak": 102,
+          "worst64": 7.6718222222222225,
+          "pixels": 59813,
+          "bounds": [
+            87,
+            317,
+            800,
+            440
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.72918877686389,
+          "peak": 102,
+          "worst64": 7.6718222222222225,
+          "pixels": 59813,
+          "bounds": [
+            87,
+            317,
+            800,
+            440
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 7.275835765455028,
+          "peak": 189,
+          "worst64": 15.309777777777779,
+          "pixels": 59228,
+          "bounds": [
+            89,
+            317,
+            800,
+            439
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 7.275835765455028,
+          "peak": 189,
+          "worst64": 15.309777777777779,
+          "pixels": 59228,
+          "bounds": [
+            89,
+            317,
+            800,
+            439
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "98f17567aa75759e5f498dc9239d0eee591f250c175cecd17836953518cd4bbc",
+        "beforeFinite": "db5247dd6dba91ee0e470b27b782b5cd0030ea293670d9f1a1f331df7fbc14c5",
+        "afterFinite": "db5247dd6dba91ee0e470b27b782b5cd0030ea293670d9f1a1f331df7fbc14c5",
+        "beforeMedia": "4540c24abf4e45e79d6b8beb262e2fa91cad924980f50ccda73dd59cff62ceb3",
+        "afterMedia": "4540c24abf4e45e79d6b8beb262e2fa91cad924980f50ccda73dd59cff62ceb3"
+      }
+    },
+    {
+      "file": "mounted-800-60-4600.png",
+      "unionPixels": 70386,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 51419,
+          "bounds": [
+            51,
+            315,
+            800,
+            430
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 3.405449947432728,
+          "peak": 108,
+          "worst64": 7.080611785874944,
+          "pixels": 69882,
+          "bounds": [
+            52,
+            315,
+            800,
+            450
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.405449947432728,
+          "peak": 108,
+          "worst64": 7.080611785874944,
+          "pixels": 69882,
+          "bounds": [
+            52,
+            315,
+            800,
+            450
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 6.792259824396897,
+          "peak": 190,
+          "worst64": 12.600719748088169,
+          "pixels": 69286,
+          "bounds": [
+            54,
+            315,
+            800,
+            449
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 6.792259824396897,
+          "peak": 190,
+          "worst64": 12.600719748088169,
+          "pixels": 69286,
+          "bounds": [
+            54,
+            315,
+            800,
+            449
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "fb6cf87b553484d8f57abeb3ca683f58351629c9af81a3f0d71d471aa018eeed",
+        "beforeFinite": "917fe57a5238cfc68c6887da7f557164e225ed32509de4957a8767a5573a1a2b",
+        "afterFinite": "917fe57a5238cfc68c6887da7f557164e225ed32509de4957a8767a5573a1a2b",
+        "beforeMedia": "739c50f409f34bd5aa9e1f190b9c25a3747874ecf926f0c368ce747d26a91c91",
+        "afterMedia": "739c50f409f34bd5aa9e1f190b9c25a3747874ecf926f0c368ce747d26a91c91"
+      }
+    },
+    {
+      "file": "mounted-800-144-0.png",
+      "unionPixels": 8875,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 8486,
+          "bounds": [
+            208,
+            247,
+            622,
+            362
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 9.980056338028168,
+          "peak": 87,
+          "worst64": 12.799169497923744,
+          "pixels": 6015,
+          "bounds": [
+            209,
+            248,
+            622,
+            361
+          ],
+          "touchesEdge": false
+        },
+        "afterFinite": {
+          "mae": 0.5990234741784037,
+          "peak": 6,
+          "worst64": 0.826797385620915,
+          "pixels": 8159,
+          "bounds": [
+            208,
+            253,
+            622,
+            361
+          ],
+          "touchesEdge": false
+        },
+        "beforeMedia": {
+          "mae": 13.367549295774648,
+          "peak": 112,
+          "worst64": 17.215553038882597,
+          "pixels": 5962,
+          "bounds": [
+            209,
+            248,
+            622,
+            361
+          ],
+          "touchesEdge": false
+        },
+        "afterMedia": {
+          "mae": 9.141333333333334,
+          "peak": 79,
+          "worst64": 14.901472253680634,
+          "pixels": 8137,
+          "bounds": [
+            209,
+            253,
+            622,
+            361
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "18249d5a16cafdf4e68a01be507fe1d8effaf94faf0d0f31e5c1873bf013dd38",
+        "beforeFinite": "cb007679bf16973e49be23e54dbf746ef789386909378b9e52ee2a30db35ff09",
+        "afterFinite": "48d1c24ff96290bf3c7ed7df508a7dc27aad67fa0d402dc58171e274fc845bf0",
+        "beforeMedia": "fac0d4706e6c355a9a01c86699000e215a866c49471c537a2d2b9713c0ee467f",
+        "afterMedia": "24b3ae27015225f3825db35d7272425153303ddcbfbe1bd66ac9a6b1664876ba"
+      }
+    },
+    {
+      "file": "mounted-800-144-700.png",
+      "unionPixels": 2354,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 1738,
+          "bounds": [
+            377,
+            35,
+            581,
+            448
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 5.638204474653072,
+          "peak": 40,
+          "worst64": 7.28579418344519,
+          "pixels": 1288,
+          "bounds": [
+            376,
+            38,
+            580,
+            447
+          ],
+          "touchesEdge": false
+        },
+        "afterFinite": {
+          "mae": 0.5661285754743699,
+          "peak": 5,
+          "worst64": 1.1494252873563218,
+          "pixels": 1822,
+          "bounds": [
+            376,
+            38,
+            581,
+            447
+          ],
+          "touchesEdge": false
+        },
+        "beforeMedia": {
+          "mae": 18.868734069668648,
+          "peak": 58,
+          "worst64": 27.607843137254903,
+          "pixels": 1141,
+          "bounds": [
+            379,
+            38,
+            582,
+            448
+          ],
+          "touchesEdge": false
+        },
+        "afterMedia": {
+          "mae": 16.744831492495045,
+          "peak": 58,
+          "worst64": 25.143790849673202,
+          "pixels": 1659,
+          "bounds": [
+            379,
+            38,
+            583,
+            448
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "411203438844c921c8846d43207367632160094c79db4b7dc8e10d30709ed094",
+        "beforeFinite": "692c253bd7ca660f13f59299f6e83d22f1c812de29ffdec2cbe6ba8c2fabf9b7",
+        "afterFinite": "fb04404f3275aa51c05f05de7a1e0da2f5ce6bda6de3b6f75af02d416484801b",
+        "beforeMedia": "50c56a88f794d014409e081093a44ca0a7820bb2f52ea7c064e05470c6c0270d",
+        "afterMedia": "f39ee876e3f16cf906edbab408003d85f01f9f0c00c5cf67be986d3f492877c1"
+      }
+    },
+    {
+      "file": "mounted-800-144-1600.png",
+      "unionPixels": 7862,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 6189,
+          "bounds": [
+            0,
+            169,
+            325,
+            338
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.29186805732214,
+          "peak": 118,
+          "worst64": 8.963146314631462,
+          "pixels": 6836,
+          "bounds": [
+            0,
+            165,
+            327,
+            337
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 5.566098533028067,
+          "peak": 118,
+          "worst64": 8.963146314631462,
+          "pixels": 7105,
+          "bounds": [
+            0,
+            165,
+            327,
+            337
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 14.955863647926737,
+          "peak": 186,
+          "worst64": 19.66996699669967,
+          "pixels": 6860,
+          "bounds": [
+            0,
+            165,
+            326,
+            336
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 14.421182057152548,
+          "peak": 186,
+          "worst64": 19.66996699669967,
+          "pixels": 7122,
+          "bounds": [
+            0,
+            165,
+            326,
+            336
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "d7642b67c2e89a4822b7532e79c5d237b728753d532d52ae40c0fc9845a94bb5",
+        "beforeFinite": "aa67dd262e183ea64dc88e531a8da9b5ce3ca0d751a546069513f254fa2bfaff",
+        "afterFinite": "ce6dc03dd16edef663c908ded20a8d185c53a006e23830e01916bf11dc44a6e7",
+        "beforeMedia": "44b6d9603baa6278dc2413e8ee9c987d4c63e2b3ce334d90ba52227adacbc031",
+        "afterMedia": "9b76d8ef66454e24d2b6a844a463343036c7d00e413b7ee1d6bcbfaea7bcc2f2"
+      }
+    },
+    {
+      "file": "mounted-800-144-2099.png",
+      "unionPixels": 10628,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 9169,
+          "bounds": [
+            0,
+            251,
+            350,
+            516
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 6.328754234098607,
+          "peak": 128,
+          "worst64": 19.17391304347826,
+          "pixels": 7790,
+          "bounds": [
+            0,
+            252,
+            349,
+            516
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 5.7499059089198346,
+          "peak": 128,
+          "worst64": 19.17391304347826,
+          "pixels": 8074,
+          "bounds": [
+            0,
+            252,
+            349,
+            516
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 27.124388407978923,
+          "peak": 191,
+          "worst64": 46.44927536231884,
+          "pixels": 7796,
+          "bounds": [
+            0,
+            252,
+            348,
+            518
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 26.744385898883454,
+          "peak": 191,
+          "worst64": 46.44927536231884,
+          "pixels": 8068,
+          "bounds": [
+            0,
+            252,
+            348,
+            518
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "a8e2811da0cca5916112b24267c87bb7911274f6516c42277857889ce35557f4",
+        "beforeFinite": "b065df86a3358768ed4f1ef192254c78f6df7518ef2c88b19400d6246263b103",
+        "afterFinite": "6b869ace147ac659607cb0cd2d08c4d4523050a3263b426ab17aa060c008d055",
+        "beforeMedia": "cd1173473c6a0ca380617ea918ac1f764f392b1dc4910d9e6bab5fc541718c36",
+        "afterMedia": "523970ceb47e7a4bf59f299ebc7c197e101fcfa7ac8ea3876c37db11528b3587"
+      }
+    },
+    {
+      "file": "mounted-800-144-2100.png",
+      "unionPixels": 5874,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 4836,
+          "bounds": [
+            0,
+            264,
+            350,
+            507
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 5.842015662240382,
+          "peak": 71,
+          "worst64": 13.533333333333333,
+          "pixels": 3432,
+          "bounds": [
+            0,
+            265,
+            349,
+            506
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 2.921972534332085,
+          "peak": 71,
+          "worst64": 13.533333333333333,
+          "pixels": 4200,
+          "bounds": [
+            0,
+            264,
+            350,
+            507
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 30.724946090114628,
+          "peak": 96,
+          "worst64": 59.96386520503451,
+          "pixels": 3432,
+          "bounds": [
+            0,
+            265,
+            347,
+            508
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 29.943366246737032,
+          "peak": 96,
+          "worst64": 59.96386520503451,
+          "pixels": 4212,
+          "bounds": [
+            0,
+            264,
+            348,
+            508
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "e088a3c1fde23c66735c786e1216bc814dcc317a7f42c108a1ecf0c23e65485e",
+        "beforeFinite": "4c014711bdd59b70255388929afe86ba9a83ea6f0bce84672d8a46875c81b119",
+        "afterFinite": "4de38c174560bc3ed488622e5aab44fb19b389b7a0509bd5d04be41e35aed6b6",
+        "beforeMedia": "e9f7b2a732914f39572e8dbcd250bc6f08f93a70c024700d1441e9401a2178d6",
+        "afterMedia": "801648d440603cfca0ef2df46cee67ce77cf486f81e597225f8a700cedce1a73"
+      }
+    },
+    {
+      "file": "mounted-800-144-3199.png",
+      "unionPixels": 40109,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 29435,
+          "bounds": [
+            0,
+            301,
+            517,
+            429
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 4.006449092888546,
+          "peak": 112,
+          "worst64": 6.856209150326797,
+          "pixels": 37987,
+          "bounds": [
+            0,
+            302,
+            527,
+            451
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.708452799454819,
+          "peak": 112,
+          "worst64": 6.856209150326797,
+          "pixels": 38421,
+          "bounds": [
+            0,
+            301,
+            527,
+            451
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 19.23820921322729,
+          "peak": 189,
+          "worst64": 26.88821725799387,
+          "pixels": 37736,
+          "bounds": [
+            0,
+            301,
+            523,
+            449
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 19.021508057210767,
+          "peak": 189,
+          "worst64": 26.88821725799387,
+          "pixels": 38157,
+          "bounds": [
+            0,
+            300,
+            523,
+            449
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "dbb91a64604c403e1f46835daa679a140df7cac6c72b37aea697e44c87ee859c",
+        "beforeFinite": "3bd5144436ca367db408f2a5f94637127e03d4f8b1ef7886083b4ea76d1f8b7c",
+        "afterFinite": "402a46794a97e3e0c3f7e5dfe302bf1f91589a5ecd10643155e66caaa308321a",
+        "beforeMedia": "fb6365dcc816162980aaeb9dece3e4bab0ae9d4bfb47b3e921693cc6905e38f1",
+        "afterMedia": "163fb2a38434674538e254ca76cdf82fd5eedb46c9da639464554abfa6c07822"
+      }
+    },
+    {
+      "file": "mounted-800-144-3200.png",
+      "unionPixels": 40136,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 29444,
+          "bounds": [
+            0,
+            301,
+            518,
+            429
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 3.9267407481230485,
+          "peak": 113,
+          "worst64": 6.860677534975141,
+          "pixels": 38028,
+          "bounds": [
+            0,
+            302,
+            527,
+            452
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.6186299913627002,
+          "peak": 113,
+          "worst64": 6.860677534975141,
+          "pixels": 38471,
+          "bounds": [
+            0,
+            301,
+            527,
+            452
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 19.177529732243705,
+          "peak": 190,
+          "worst64": 26.61178115714036,
+          "pixels": 37759,
+          "bounds": [
+            0,
+            301,
+            524,
+            449
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 18.9564896020198,
+          "peak": 190,
+          "worst64": 26.61178115714036,
+          "pixels": 38196,
+          "bounds": [
+            0,
+            300,
+            524,
+            449
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "60a532cacb6ff545157dcfe2fa2a0e13f76f5a104c1791ed2467cdfb7ebd6fec",
+        "beforeFinite": "7177e401c3a0536ec527a268ce59c3a26de9230491aba68d32386ea518708ac7",
+        "afterFinite": "b19fcf2bd618e7cc81534d5e9096584699211463d31caf04334df493b2c2cbd4",
+        "beforeMedia": "80b7eb39cc4a210cc78e1d74def783ff24fdeea8bea650a8671abc564309fff4",
+        "afterMedia": "2a37cc927245f62acf784eb6d9df18df79b94d3e64fb0a98e935657418a18abd"
+      }
+    },
+    {
+      "file": "mounted-800-144-3201.png",
+      "unionPixels": 40183,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 29458,
+          "bounds": [
+            0,
+            301,
+            518,
+            429
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 3.9220400003318154,
+          "peak": 121,
+          "worst64": 6.868106350864972,
+          "pixels": 38066,
+          "bounds": [
+            0,
+            302,
+            528,
+            452
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.62341454512273,
+          "peak": 121,
+          "worst64": 6.868106350864972,
+          "pixels": 38493,
+          "bounds": [
+            0,
+            302,
+            528,
+            452
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 19.173224166106728,
+          "peak": 189,
+          "worst64": 26.664050235478808,
+          "pixels": 37831,
+          "bounds": [
+            0,
+            301,
+            524,
+            450
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 18.95834888717451,
+          "peak": 189,
+          "worst64": 26.664050235478808,
+          "pixels": 38249,
+          "bounds": [
+            0,
+            300,
+            524,
+            450
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "6f95a037d8e1552b4ee758d03db7fe4b03f293f1782e3932912dad789b2462ee",
+        "beforeFinite": "a3537e74656ce8c0d4859abd218522b1725076186daa680bea93d0f63fbb14c0",
+        "afterFinite": "76d19b83397a5223caec1205a3e0a0f09d380b20ca51ba13695d172028d95f77",
+        "beforeMedia": "11a04440ad03bf6ccc16827a2cdb34b55bcbc5cd9f4526dfd9ed2350505ee7b3",
+        "afterMedia": "ec738dc206fa5af3f587510811b69fdb56ef9bd101c7cc7f0cecdc71e0ec0611"
+      }
+    },
+    {
+      "file": "mounted-800-144-3499.png",
+      "unionPixels": 40732,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 30068,
+          "bounds": [
+            0,
+            321,
+            603,
+            457
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 3.8904955972372255,
+          "peak": 108,
+          "worst64": 7.828178694158075,
+          "pixels": 37553,
+          "bounds": [
+            0,
+            322,
+            620,
+            473
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.5713525810992177,
+          "peak": 108,
+          "worst64": 7.828178694158075,
+          "pixels": 38108,
+          "bounds": [
+            0,
+            321,
+            620,
+            473
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 10.314854823398475,
+          "peak": 187,
+          "worst64": 27.59106529209622,
+          "pixels": 37477,
+          "bounds": [
+            0,
+            322,
+            619,
+            472
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 10.25142394186389,
+          "peak": 187,
+          "worst64": 27.59106529209622,
+          "pixels": 38057,
+          "bounds": [
+            0,
+            321,
+            619,
+            472
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "943fc0034db01f309451dbaf0b48e86ee3c900605c19b721a12263d1398f9175",
+        "beforeFinite": "9d72448b916a5b29c07ee6b083214b83feeac6396c8f3b3f1ecf5ed75294392e",
+        "afterFinite": "3c942f23ce97b600803bb3f354f72520b5cdac32e4251a4aab3ebad05a2d7fdc",
+        "beforeMedia": "97728eea1fc249f05a55261085dfdf3e8049149ba4951a2d5f87331e9570df89",
+        "afterMedia": "7a2afec6b8febf7b94f586c9259c14a70ec6c9ba14b5bc3e4ed7c2ecdda296a5"
+      }
+    },
+    {
+      "file": "mounted-800-144-3500.png",
+      "unionPixels": 14605,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 13563,
+          "bounds": [
+            16,
+            321,
+            599,
+            454
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 4.762843774962913,
+          "peak": 62,
+          "worst64": 11.197860962566844,
+          "pixels": 10624,
+          "bounds": [
+            16,
+            322,
+            598,
+            454
+          ],
+          "touchesEdge": false
+        },
+        "afterFinite": {
+          "mae": 2.4990984822549356,
+          "peak": 62,
+          "worst64": 11.197860962566844,
+          "pixels": 12074,
+          "bounds": [
+            16,
+            322,
+            599,
+            454
+          ],
+          "touchesEdge": false
+        },
+        "beforeMedia": {
+          "mae": 15.243409791167409,
+          "peak": 97,
+          "worst64": 34.03921568627451,
+          "pixels": 10629,
+          "bounds": [
+            15,
+            322,
+            597,
+            454
+          ],
+          "touchesEdge": false
+        },
+        "afterMedia": {
+          "mae": 14.541116056145155,
+          "peak": 97,
+          "worst64": 34.03921568627451,
+          "pixels": 12045,
+          "bounds": [
+            15,
+            322,
+            597,
+            454
+          ],
+          "touchesEdge": false
+        }
+      },
+      "hashes": {
+        "original": "a178be6e270e0af942296f378ced12d14c364961851c064dbd13e1ea99b2f05e",
+        "beforeFinite": "666781274735f807e6c16562bc6a1102cd142f7107e616e57982686d2aab4609",
+        "afterFinite": "b4394e59cafd3a68a1712cda63bc8f0fc3149318f6772d2b2e2e6c044d099e63",
+        "beforeMedia": "92648a2a2e7f30af63e60966433f4852dd551e8ce893faa4070e37c95e8d5ece",
+        "afterMedia": "dab67f3b1b4f887e26430a8dd5318e7340bc212e507960c2387fd6795feb6c23"
+      }
+    },
+    {
+      "file": "mounted-800-144-4500.png",
+      "unionPixels": 59880,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 45354,
+          "bounds": [
+            87,
+            316,
+            797,
+            423
+          ],
+          "touchesEdge": false
+        },
+        "beforeFinite": {
+          "mae": 3.746621019817413,
+          "peak": 104,
+          "worst64": 7.755904812644291,
+          "pixels": 59539,
+          "bounds": [
+            88,
+            317,
+            800,
+            440
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.746621019817413,
+          "peak": 104,
+          "worst64": 7.755904812644291,
+          "pixels": 59539,
+          "bounds": [
+            88,
+            317,
+            800,
+            440
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 4.864579158316634,
+          "peak": 164,
+          "worst64": 10.832445391582311,
+          "pixels": 59228,
+          "bounds": [
+            89,
+            317,
+            800,
+            439
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 4.864579158316634,
+          "peak": 164,
+          "worst64": 10.832445391582311,
+          "pixels": 59228,
+          "bounds": [
+            89,
+            317,
+            800,
+            439
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "eadc0ba84393d85f80f4a40a7a8eb84258bd46d9f0e52cae2ec0f3f0b7d0882c",
+        "beforeFinite": "d7c91d05fa83cb831b1257c9a4c0c3632551c6afb306dd8d8bcb24e2d757480f",
+        "afterFinite": "d7c91d05fa83cb831b1257c9a4c0c3632551c6afb306dd8d8bcb24e2d757480f",
+        "beforeMedia": "4540c24abf4e45e79d6b8beb262e2fa91cad924980f50ccda73dd59cff62ceb3",
+        "afterMedia": "4540c24abf4e45e79d6b8beb262e2fa91cad924980f50ccda73dd59cff62ceb3"
+      }
+    },
+    {
+      "file": "mounted-800-144-4600.png",
+      "unionPixels": 69896,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": 0.0,
+          "pixels": 51249,
+          "bounds": [
+            52,
+            315,
+            800,
+            430
+          ],
+          "touchesEdge": true
+        },
+        "beforeFinite": {
+          "mae": 3.3802601961008736,
+          "peak": 101,
+          "worst64": 6.928468468468468,
+          "pixels": 69520,
+          "bounds": [
+            53,
+            315,
+            800,
+            450
+          ],
+          "touchesEdge": true
+        },
+        "afterFinite": {
+          "mae": 3.3802601961008736,
+          "peak": 101,
+          "worst64": 6.928468468468468,
+          "pixels": 69520,
+          "bounds": [
+            53,
+            315,
+            800,
+            450
+          ],
+          "touchesEdge": true
+        },
+        "beforeMedia": {
+          "mae": 4.427539964137194,
+          "peak": 168,
+          "worst64": 9.028288288288289,
+          "pixels": 69286,
+          "bounds": [
+            54,
+            315,
+            800,
+            449
+          ],
+          "touchesEdge": true
+        },
+        "afterMedia": {
+          "mae": 4.427539964137194,
+          "peak": 168,
+          "worst64": 9.028288288288289,
+          "pixels": 69286,
+          "bounds": [
+            54,
+            315,
+            800,
+            449
+          ],
+          "touchesEdge": true
+        }
+      },
+      "hashes": {
+        "original": "d65c8f8ee0ea12eb19af90ff24e1230b3e4c5d4d63413449eacd9da8cc5cb83f",
+        "beforeFinite": "3ba14f0b57d5220ae3b29f171a29f4944e37d7b1a23342ad4ee29eb1d2b8aa9d",
+        "afterFinite": "3ba14f0b57d5220ae3b29f171a29f4944e37d7b1a23342ad4ee29eb1d2b8aa9d",
+        "beforeMedia": "739c50f409f34bd5aa9e1f190b9c25a3747874ecf926f0c368ce747d26a91c91",
+        "afterMedia": "739c50f409f34bd5aa9e1f190b9c25a3747874ecf926f0c368ce747d26a91c91"
+      }
+    }
+  ],
+  "ownPlain24ExactlyMatchIndependentControl": true,
+  "allocationPolicy": "Explicitly prepare visible paragraphs outside Canvas; max8 entries/32MiB estimated image payload, fallback for unsupported or over-budget; close eviction/unmount.",
+  "platforms": {
+    "jvm": "Internal opt-in calibrated Skia path; no public Diorama",
+    "android": "Explicit unavailable factory; ordinary planes, no AGSL runtime claim"
+  },
+  "formalVisualAcceptance": false,
+  "deviceValidated": false
+}

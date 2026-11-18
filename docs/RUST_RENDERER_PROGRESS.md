@@ -20,9 +20,7 @@ Owned-emulator UI: song selection/LRC/settings/demo remain present; selecting
 Partita + NativeRequired reports `NativeGpu Ready:PartitaMainAndGlow`. Force-stop
 and cold restart retain the requested backend/theme (paused demo restarts at 0;
 `Preparing` before a main scene is expected). Existing LocalSong, SongSelection,
-EmbeddedLyrics and EmbeddedLyricsUi regression tests PASS. Actual Android
-OpenDocument/audio-service/import flow is still unverified. Interaction/lifecycle
-release-consumer checks are next. Initial sample build
+EmbeddedLyrics and EmbeddedLyricsUi regression tests PASS. Initial sample build
 failed on Activity `visible`/`setVisible` collision; renamed `hostVisible`.
 
 Sample integration committed `44830ff`. Native input now hits before consuming
@@ -49,9 +47,14 @@ locked crates and matching licenses, paired line-table symbols, and ELF LOAD
 alignment. See [packaging evidence](../verification/native-renderer-p4.md).
 The release APK also passed 16KiB zipalign. ARM64 and 16KiB OS runs remain open.
 
+The native sample passed Android OpenDocument selection, timed embedded tags,
+real MediaPlayer playback in the `:playback` process, external LRC attachment,
+and seek. Returning from Home preserved paused playback and lyrics selection.
+See [the sample check](../verification/native-renderer-p3.md).
+
 ## Remaining
 
-- P3: real Android sample playback and imports, platform touch cancellation/long press, foreground/background and multi-scene visual comparison.
+- P3: platform touch cancellation/long press, sustained foreground/background and multi-scene visual comparison.
 - P4: repeated lifecycle, device error and resource-pressure evidence, ARM64/16KiB OS behavior, and paired hardware performance.
 - Only after the first theme closes: trace-led second theme, then separately validated desktop host.
 

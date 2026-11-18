@@ -16,8 +16,16 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：以共享原输入控制定位Arabic输入/放置与700ms入场残差，不把已有16局部
-回退或媒体相机残差说成已修；先固定自身/原版unit几何与原始alpha，再做最小可证伪修正。
+当前唯一下一项：刷新RTL修复后的debug交付，然后隔离原CJK800/1100ms三层，定位新观察到的
+12个sampled-vs-old-ordinary局部残差；不能借此调相机/抹低alpha或降低最终标准。
+RTL安全独立词原始右边界注册已修：原pivot差.656036/.720062px，按原ceil/prefix公式
+现为0；仍画同一完整paragraph，跨单元cluster/混合bidi保留canonical。更广泛全词候选
+虽均值更好但10个Latin局部回退，完整补丁/失败保留并撤回。最终同90七图union普通
+6.578335→5.735074、sample3.422528→2.344873/局部33.035714→8.970537，均无新均值/
+局部回退；180完整层普通4.438836→3.899779亦0回退。完整sample对旧ordinary有12个
+CJK局部残差，旧sample180未采，不伪称是RTL前后回退。353 mounted/unsafe PNG不变，
+12项JVM/Android库/Desktop编译通过，见verification/diorama-rtl-registration。无正式视觉/
+设备验收；700ms四帧/媒体相机/Android采样/整曲内存仍待解。
 8ee9a80交付已刷新：Android debug原证书v1/v2(37.0.0/30.0.2)、ZIP CRC/16KB对齐、
 双ABI Rust ELF/副本hash通过；build/deliverables/android/
 lyrics-ui-folia-debug-8ee9a80-20261118-170240.apk，SHA256

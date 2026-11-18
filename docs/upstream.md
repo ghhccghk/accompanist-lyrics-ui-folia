@@ -1965,3 +1965,16 @@ product input; provenance:active-base-sampler-input-v1. Fixed48/90 comparisons,
 all four entrance and16 Arabic local failures, source-input isolation and567
 unchanged old outputs:verification/diorama-active-base-sampler. Internal opt-in
 capability, not complete cross-platform/visual/device/performance acceptance.
+
+### Diorama source right-edge RTL word registration (2026-11-18)
+Pinned dioramaSceneLayout.ts:layoutDioramaActiveUnits (total/prefix/unit advance,
+ceil-sized RTL right anchor) and dioramaTextRaster.ts:rasterDioramaUnit pad90 ->
+DioramaActiveText.prepare. Independent existing original unit observations
+demonstrate .656036/.720062px old pivot errors. Only whitespace-separated,
+single-direction RTL words adopt original measurement/registration; actual
+glyphs still come from the complete paragraph and every source unit/clock stays.
+Unsafe clusters/mixed bidi retain exact canonical ownership. Broader all-word
+candidate rejected for10 Latin local regressions; patch and same90/180 fixed
+comparisons/12 CJK sampled residuals retained in verification/diorama-rtl-registration.
+No source font/raster or new dependency copied into runtime; original authorship/
+AGPL-3.0-only unchanged. Not public Diorama, device/performance/final acceptance.

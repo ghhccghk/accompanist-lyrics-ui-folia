@@ -105,20 +105,37 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
             val origin = Offset(padding.toFloat(), (180 + middle - paintedNaturalBaseline(layout, metrics)).toFloat())
             val units = dioramaUnits(line)
             val ownership = dioramaShapedColumns(layout,units,max(1,ceil(advance).toInt())+padding*2,padding,checkpoint)
+            // The source anchors a ceil-sized RTL word from the RIGHT edge;
+            // a left-anchored canonical crop does not have that raster phase.
+            // Only safe whitespace-separated, single-direction RTL words use
+            // that registration, still drawing this SAME complete paragraph.
+            // A cross-unit cluster or mixed bidi must retain canonical column
+            // ownership/phase; never reshape fragments or discard clocks.
+            val direction=if(text.isNotEmpty())layout.getParagraphDirection(0)else ResolvedTextDirection.Ltr
+            val sourceWords=direction==ResolvedTextDirection.Rtl&&units.isNotEmpty()&&units.all { unit ->
+                (unit.charStart==0||text[unit.charStart-1].isWhitespace())&&
+                    (unit.charEnd==text.length||text[unit.charEnd].isWhitespace())
+            }&&text.indices.all{text[it].isWhitespace()||layout.getBidiRunDirection(it)==direction}
+            fun measuredAdvance(value:String):Double {
+                if(value.isEmpty())return 0.0
+                val measured=measurer.measure(AnnotatedString(value),style,softWrap=false,
+                    density=density,layoutDirection=LayoutDirection.Ltr)
+                return measured.getPathForRange(0,value.length).getBounds().width.toDouble()
+            }
             val slices = units.mapIndexed { index, unit ->
                 checkpoint()
                 val range = layout.getPathForRange(unit.charStart, unit.charEnd).getBounds()
-                val width = max(1, ceil(range.width.toDouble()).toInt())
+                val width = max(1, ceil(if(sourceWords)measuredAdvance(unit.text)else range.width.toDouble()).toInt())
                 val columns = ownership[index]
-                // Integer texture crops keep the complete paragraph's raster
-                // phase. Preserve the original unit pivot separately so soul
-                // scaling does not pivot around an asymmetrical ink crop.
+                // Canonical crops keep complete-run phase for cross-unit
+                // clusters/mixed bidi. Safe RTL words use original right-edge
+                // registration instead; neither branch shapes separate glyphs.
                 val left = min(floor(range.left.toDouble()).toInt()-padding,
                     (columns.minOfOrNull { it.first } ?: padding)-padding)
                 val right = max(ceil(range.right.toDouble()).toInt()+padding,
                     (columns.maxOfOrNull { it.last+1 } ?: padding)-padding)
-                val image = ImageBitmap(max(1,right-left),360)
-                val shift = -padding-left
+                val image = ImageBitmap(if(sourceWords)width+padding*2 else max(1,right-left),360)
+                val shift = if(sourceWords)-range.left else (-padding-left).toFloat()
                 CanvasDrawScope().draw(density, LayoutDirection.Ltr, Canvas(image), Size(image.width.toFloat(), image.height.toFloat())) {
                     for (column in columns) {
                         checkpoint()
@@ -127,15 +144,18 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
                             // unit's integer-owned window. Do not first allocate a
                             // potentially enormous full-line bitmap: a long line
                             // of small units must not need one giant GPU texture.
-                            // Only the integer raster origin changes, never the
-                            // shaping run, selection ranges, unit pivot or clocks.
+                            // Only raster placement changes, never the shaping
+                            // run, selection ranges or internal clocks.
                             drawText(layout,Color.White,origin+Offset(shift.toFloat(),0f),shadow=Shadow.None)
                         }
                     }
                 }
-                val center = range.left + width / 2.0 - advance / 2
+                val center = if(sourceWords) {
+                    val start=measuredAdvance(text.substring(0,unit.charStart))+width/2.0
+                    if(direction==ResolvedTextDirection.Rtl)advance/2-start else -advance/2+start
+                }else range.left + width / 2.0 - advance / 2
                 DioramaActiveSlice(unit, image, center, range.left, range.right, prepareDioramaHalo(image,checkpoint),
-                    left + image.width/2.0 - advance/2 - center)
+                    if(sourceWords)0.0 else left + image.width/2.0 - advance/2 - center)
             }
             checkpoint()
             return DioramaActiveText(slices, advance, middle)

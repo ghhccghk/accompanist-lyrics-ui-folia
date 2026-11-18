@@ -32,6 +32,8 @@ class DioramaActiveLayersTest {
         var materialPeak = 0.0
         fun decode(value: String) = String(Base64.getDecoder().decode(value), Charsets.UTF_8)
         var current by mutableIntStateOf(0)
+        var sampling by mutableStateOf(false)
+        val renderer=DioramaActiveBaseRenderer()
         var mounted by mutableStateOf(true)
         var builds = 0
         var prepared: DioramaActiveText? = null
@@ -47,19 +49,21 @@ class DioramaActiveLayersTest {
                 builds++
                 DioramaActiveText.prepare(line, style, TextMeasurer(resolver, Density(1f), LayoutDirection.Ltr), resolver)
             } else null
-            SideEffect { prepared = stage }
+            SideEffect { prepared = stage;renderer.prepare(stage) }
             Canvas(Modifier.fillMaxSize().background(Color(0xff162435))) {
                 fun color(i: Int) = r[i].split(',').map(String::toDouble).let { DioramaLinearColor(it[0], it[1], it[2]) }
                 fun vec(i: Int) = DioramaVec(r[i].toDouble(), r[i + 1].toDouble(), r[i + 2].toDouble())
                 stage?.draw(this, r[3].toDouble(), DioramaPerspective(vec(9), vec(12), width.toDouble(), 600.0), path[3], placement, color(7), color(8),
-                    DioramaUnitTuning(soulActive = r[15].toBoolean()))
+                    DioramaUnitTuning(soulActive = r[15].toBoolean()),baseRenderer=if(sampling)renderer else null)
             }
         }
         val out = File("../build/verification/diorama-active-layers-kotlin").apply { mkdirs() }
         fun pixels(): IntArray { waitForIdle(); val image = captureToImage(); return IntArray(image.width * image.height).also { image.readPixels(it) } }
         val captures = mutableMapOf<Int, IntArray>()
+        val sampled=mutableMapOf<Int,IntArray>()
+        val samplerOut=File("../build/verification/diorama-active-layers-sampler-kotlin").apply{mkdirs()}
         for (i in rows.indices) {
-            runOnIdle { current = i }; waitForIdle()
+            runOnIdle { current = i;sampling=false }; waitForIdle()
             val p = assertNotNull(prepared); val r = rows[i]
             assertEquals(r[6].toDouble() * 128 / .62, p.lineAdvance, .001, "${r[0]} complete-shaped width")
             assertEquals(ceilExpectedUnits(r[1]), p.slices.size)
@@ -87,16 +91,21 @@ class DioramaActiveLayersTest {
             }
             captures[i] = pixels()
             ImageIO.write(captureToImage().toAwtImage(), "png", out.resolve(r[0]))
+            runOnIdle{sampling=true};sampled[i]=pixels()
+            ImageIO.write(captureToImage().toAwtImage(),"png",samplerOut.resolve(r[0]))
         }
         out.resolve("materials-$width.txt").writeText("materialPeak=$materialPeak\n")
         assertEquals(3, builds, "media probes cannot reprepare line rasters")
         for (i in listOf(38, 0, 43, 19, 34, 2)) {
-            runOnIdle { current = i }; assertTrue(captures[i]!!.contentEquals(pixels()), "reverse seek ${rows[i][0]}")
+            runOnIdle { current = i;sampling=false }; assertTrue(captures[i]!!.contentEquals(pixels()), "reverse seek ${rows[i][0]}")
+            runOnIdle{sampling=true};assertContentEquals(sampled[i],pixels(),"sampled reverse seek ${rows[i][0]}")
         }
         val freeze = pixels(); val before = builds; mainClock.advanceTimeBy(1000)
         assertTrue(freeze.contentEquals(pixels())); assertEquals(before, builds)
         runOnIdle { mounted = false }; pixels(); assertNull(prepared)
+        assertEquals(0,renderer.residentCount);assertEquals(0L,renderer.residentBytes)
         runOnIdle { mounted = true }; assertTrue(freeze.contentEquals(pixels()), "remount")
+        renderer.close()
     }
     private fun ceilExpectedUnits(scene: String) = when (scene) { "arabic" -> 2; "cjk" -> 7; else -> 3 }
 }

@@ -170,7 +170,7 @@ class DioramaMountedStageTest {
                                 if(method.startsWith("input-source-fragment"))fragmentControl!!.draw(this,view,p,n.color,n.opacity.toFloat(),
                                     when{method.endsWith("-linear-color")->1;method.endsWith("-alpha")->2;
                                         method.endsWith("-aces-linear")->3;method.endsWith("-aces-encoded")->4;
-                                        method.endsWith("-primary")->5;else->0})
+                                        method.endsWith("-primary")->5;else->0},if(method.endsWith("-aniso4"))4f else 1f)
                                 else drawInputPlane(this,view,p,
                                     if(method.startsWith("input-source")&&n.index==7)sourceCache7 else p.text.image,
                                     n.color.srgb(DioramaToneMapping.AcesFilmic),n.opacity.toFloat(),fog)
@@ -223,6 +223,11 @@ class DioramaMountedStageTest {
                 ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("fragment-$channel.png"))
             }
             runOnIdle{method="input-source-fragment"};assertContentEquals(fragmentPixels,pixels(),"fragment channel diagnostic round trip")
+            runOnIdle{method="input-source-fragment-aniso4"};val anisoPixels=pixels()
+            ImageIO.write(captureToImage().toAwtImage(),"png",diagnostic.resolve("source-neighbor-7-fragment-aniso4.png"))
+            mainClock.advanceTimeBy(400);assertContentEquals(anisoPixels,pixels(),"anisotropic control freezes with media")
+            runOnIdle{method="input-source-fragment"};assertContentEquals(fragmentPixels,pixels(),"isotropic output remains exact")
+            runOnIdle{method="input-source-fragment-aniso4"};assertContentEquals(anisoPixels,pixels(),"anisotropic round trip has no accumulated state")
             val counts=mutableListOf<String>()
             for(n in listOf(2,3,4,5,6,7,9,10)) {
                 runOnIdle{method="input-only-$n"}

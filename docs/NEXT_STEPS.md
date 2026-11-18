@@ -16,9 +16,15 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：同700ms/cache7的默认aniso4 footprint控制，保留已成立的
-isotropic诊断，不以其替代原默认；数值成立后查近景Latin/Arabic/尺寸矩阵，
-不因单帧改善开放Diorama或在生产引入未验收shader。
+当前唯一下一项：将已成立的aniso4片段控制用于自身完整塑形的邻行输入，
+复用原24帧Latin/Arabic/CJK/长行、近景和380/800/801尺寸矩阵；检查局部回退、
+裁切、暂停及尺寸恢复，未成立前不将shader进入生产或开放Diorama。
+此前同700ms/cache7的默认aniso4控制已完成：同520像素union原版峰14→2、
+MAE2.548718→.296795，原409/本390覆盖及残差保留，非完全像素相等。
+独立inverse-Jacobian/area/longest-axis四tap，无LOD拟合；SwiftShader参考revision
+未证明匹配当前浏览器驱动，不泛化等价。原isotropic哈希及168生产图不变，暂停/
+sampler往返精确、narrow通过；见verification/diorama-anisotropic-control。
+仅局部JVM测试控制，无生产/Android/完整主题验收；不重跑同一源单帧。
 有界JVM RuntimeEffect独立linear RGB/alpha/逐fragment LOD→tint→ACES→显式sRGB
 →fog→blend控制已完成：同原isotropic诊断通道峰2/MAE约.326，独立真实GPU mip
 scalar oracle峰2；原aniso4仍峰14。首轮上下文OETF亮度失败11802mass与通道定位

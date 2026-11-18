@@ -15,9 +15,9 @@ import kotlin.math.*
 import java.io.File
 import javax.imageio.ImageIO
 
-/** Single shared-cache7 diagnostic, explicit mip0..5, isotropic PER-FRAGMENT
- * LOD, linear-light straight RGB distinct from alpha. Does not implement aniso4
- * or support other glyph rasters/near-plane crossings. No source mip input. */
+/** Single shared-cache7 diagnostic, explicit mip0..5, per-fragment isotropic or
+ * bounded four-tap anisotropic LOD, linear-light RGB distinct from alpha.
+ * No general glyph/near-plane support or original GPU mip input. */
 internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseable {
     private val masks=mutableListOf(base)
     private val colors=mutableListOf<ImageBitmap>()
@@ -57,6 +57,7 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
             uniform float3 hx; uniform float3 hy; uniform float3 hz;
             uniform float3 primary; uniform float3 fogColor; uniform float opacity;
             uniform int diagnostic;
+            uniform float maxAniso;
             float2 sampleLevel(int level,float2 p) { $branches return float2(0); }
             float3 aces(float3 c) {
                 c=c/.6;
@@ -75,6 +76,26 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
                 float rho=max(length(float2(dy.y,dy.x)),length(float2(dx.y,dx.x)))/abs(determinant);
                 float lod=clamp(log2(max(rho,1)),0,5);int low=int(floor(lod));
                 float2 tex=mix(sampleLevel(low,p),sampleLevel(low<5?low+1:5,p),fract(lod));
+                if(maxAniso>1) {
+                    // Independent area/longest-axis footprint construction.
+                    // Driver-informed investigation, not a claim all GPU
+                    // implementations choose this anisotropic sampling rule.
+                    float2 tx=float2(dy.y,-dy.x)/determinant;
+                    float2 ty=float2(-dx.y,dx.x)/determinant;
+                    float sx=dot(tx,tx);float sy=dot(ty,ty);
+                    float area=abs(tx.x*ty.y-tx.y*ty.x);
+                    float ratio=min(maxAniso,max(sx,sy)/area);
+                    float2 axis=sx>=sy?tx:ty;
+                    float level=clamp(log2(sqrt(max(sx,sy))/ratio),0,5);
+                    int first=int(floor(level));int count=int(floor(ratio+.5));
+                    tex=float2(0);
+                    for(int i=0;i<4;++i) {
+                        if(i<count) {
+                            float2 point=p+axis*((float(i)+.5)/float(count)-.5);
+                            tex+=mix(sampleLevel(first,point),sampleLevel(first<5?first+1:5,point),fract(level))/float(count);
+                        }
+                    }
+                }
                 if(diagnostic==1)return float4(tex.xxx,1);
                 if(diagnostic==2)return float4(tex.yyy,1);
                 if(diagnostic==3)return float4(aces(primary*tex.x),1);
@@ -114,7 +135,8 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
         }
     }
 
-    fun draw(scope:DrawScope,view:DioramaPerspective,p:DioramaDepartingPlane,color:DioramaLinearColor,alpha:Float,diagnostic:Int=0) {
+    fun draw(scope:DrawScope,view:DioramaPerspective,p:DioramaDepartingPlane,color:DioramaLinearColor,alpha:Float,diagnostic:Int=0,maxAniso:Float=1f) {
+        require(maxAniso==1f || maxAniso==4f){"Only the two bounded sampler controls are supported"}
         val scale=dioramaFrameFit(p.text.worldWidth,5.2,view.fov,view.width/view.height)*p.placement.scale
         val x=dioramaPlaneAxis(p.frame,p.placement,1.0,0.0)*(scale*.62/p.text.fontPx)
         val y=dioramaPlaneAxis(p.frame,p.placement,0.0,-1.0)*(scale*.62/p.text.fontPx)
@@ -126,6 +148,7 @@ internal class DioramaFragmentControl(private val base:ImageBitmap):AutoCloseabl
         builder.uniform("primary",color.red.toFloat(),color.green.toFloat(),color.blue.toFloat())
         builder.uniform("fogColor",22/255f,36/255f,53/255f);builder.uniform("opacity",alpha)
         builder.uniform("diagnostic",diagnostic)
+        builder.uniform("maxAniso",maxAniso)
         val matrix=Matrix().apply {
             this[0,0]=h[0].toFloat();this[1,0]=h[1].toFloat();this[3,0]=h[2].toFloat()
             this[0,1]=h[3].toFloat();this[1,1]=h[4].toFloat();this[3,1]=h[5].toFloat()

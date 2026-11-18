@@ -1,0 +1,73 @@
+{
+  "baseline": "4147b4a",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "browser": "151.0.7922.34",
+  "condition": "Unchanged real mounted380x600/DPR1/700ms mesh7/cache7; native own core/finite camera/material. Same five-image nonbackground union; no alpha deletion, registration, LOD fitting or time shift.",
+  "method": "Inverse-Jacobian area/longest-derivative ratio capped4, rounded taps along longest derivative; trilinear LOD per fragment; independent linear RGB and alpha; existing source tint/ACES/explicit OETF/fog/blend.",
+  "driverMathReference": {
+    "project": "google/swiftshader",
+    "revision": "708e9e77773860bbb2ad9bb2d61b451de4b84e31",
+    "file": "src/Pipeline/SamplerCore.cpp",
+    "limitation": "Reference math only; not proven to match bundled Chromium driver revision or other GPUs. Independently expressed formulas, no driver implementation copied."
+  },
+  "unionPixels": 520,
+  "measurements": {
+    "original": {
+      "sha256": "aae3adee428ea92d2c30049e58d2869562144d9a4166c5069ea0594f70621992",
+      "pixels": 409,
+      "positiveRgbMass": 22421,
+      "originalMae": 0.0,
+      "originalPeak": 0,
+      "isotropicMae": 2.432051282051282,
+      "isotropicPeak": 13,
+      "worst64": 0.0
+    },
+    "isotropic-source-diagnostic": {
+      "sha256": "412536fd2b7aeaaeb7eea295d2f191fffc3fdd4ac762f538d20535157a773ef0",
+      "pixels": 512,
+      "positiveRgbMass": 20614,
+      "originalMae": 2.432051282051282,
+      "originalPeak": 13,
+      "isotropicMae": 0.0,
+      "isotropicPeak": 0,
+      "worst64": 2.49953314659197
+    },
+    "production-shared-input": {
+      "sha256": "18033bf8cb7618e873ef5f399083b5fbff3ed50f153d25f8a8a96bc54007c674",
+      "pixels": 193,
+      "positiveRgbMass": 27678,
+      "originalMae": 10.824358974358974,
+      "originalPeak": 46,
+      "isotropicMae": 12.623076923076923,
+      "isotropicPeak": 49,
+      "worst64": 11.03734827264239
+    },
+    "fragment-isotropic": {
+      "sha256": "9a91fd420158d7c52f22045b349bd47bea37315a791b6e143bffd191fe9b0e5f",
+      "pixels": 451,
+      "positiveRgbMass": 20570,
+      "originalMae": 2.5487179487179485,
+      "originalPeak": 14,
+      "isotropicMae": 0.32564102564102565,
+      "isotropicPeak": 2,
+      "worst64": 2.6293183940242764
+    },
+    "fragment-aniso4": {
+      "sha256": "3cbdd042cd91e1e649eb3ebe301d57a6150c40b7af348c79e74a73bfc2e98b79",
+      "pixels": 390,
+      "positiveRgbMass": 22385,
+      "originalMae": 0.2967948717948718,
+      "originalPeak": 2,
+      "isotropicMae": 2.2967948717948716,
+      "isotropicPeak": 12,
+      "worst64": 0.3081232492997199
+    }
+  },
+  "preservedProductionHashes": 168,
+  "localChannelGate": 2,
+  "localChannelGatePassed": true,
+  "interpretation": "Local default-aniso4/shared-cache control now agrees within2 channel bytes. This does not validate own glyph input, whole stage, near views, other devices or a production renderer.",
+  "productionChanged": false,
+  "androidRuntime": false,
+  "formalVisualAcceptance": false
+}

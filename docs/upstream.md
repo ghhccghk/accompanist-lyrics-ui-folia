@@ -1897,3 +1897,16 @@ prepared from core. Raw mip and scalar/fragment source controls, failed isotropi
 and context-conversion experiments:verification/diorama-mounted-mips,
 verification/diorama-minification,verification/diorama-fragment-control.
 No production sampler, default aniso4 equivalence, Android or public Diorama claim.
+
+### Diorama bounded anisotropic footprint control (2026-11-18)
+Same pinned source CanvasTexture(anisotropy4), actual untouched mesh7/cache7
+and frozen380×600/700ms layer -> test-only DioramaFragmentControl maxAniso4.
+Independent inverse-Jacobian/area/longest-axis1..4-tap math, informed by official
+google/swiftshader708e9e77773860bbb2ad9bb2d61b451de4b84e31
+src/Pipeline/SamplerCore.cpp; no driver implementation copied. This reference
+revision is NOT proven to match Chromium's bundled driver. Independent base
+RGB/alpha mip preparation and source material algebra remain unchanged.
+Same-union original-default channel peak2, retained pixel-count residuals,
+pause/round-trip and168 unchanged production hashes:
+verification/diorama-anisotropic-control. Not other-GPU/own-glyph/full-stage,
+production/Android or formal theme acceptance; no source asset enters runtime.

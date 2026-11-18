@@ -16,9 +16,16 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：按原透明画布合成证据，补有界、显式opt-in的JVM文字surface，
-独立RGBA合成控制/释放验证后复核同48矩阵；无additive时避免无必要中间层，
-Android保留真实普通回退。原相机/halo/前景口径不变，不重试已拒绝的广泛词注册。
+当前唯一下一项（用户新增授权）：将真实Diorama文字stage接入FoliaStyle和sample，
+标为“实验调试预览”，保留Android普通回退与全部视觉未验项；补公共入口的
+可取消准备、投影命中/来源回调、暂停/seek/resize/卸载回归，构建验签debug APK供调试。
+此前“镜台保持未开放”是历史阶段限制，被此次用户开放调试入口授权覆盖；不远程发布。
+内部有界F16 surface已完成：108原Three合成peak1/gate2；同48五图union有限
+1.964789→.944027/最坏64 6.883721→3.410853，0均值/局部回退；媒体
+17.365684→16.567190/局部69.117781不变，3499ms两处局部微退保留。
+337旧图hash不变；资源/异常/clip/预算、mounted暂停/重挂/释放及Android库/Desktop
+编译通过。saveCount测试基线边界失败与修正保留；见verification/diorama-text-surface。
+这不是Android surface、设备/性能或正式视觉验收。
 700ms四帧贡献调查已完成：452/1083固定callback，原完整PNG/状态/版本/矩阵精确，
 root/RAF释放为0；y0只有active。原透明premultiplied画布先累积RGBA再叠CSS底色，
 当前direct Plus跳过背景衰减。原raw RGBA独立叠CSS与截图峰<=1。8bit层有16/14

@@ -1,0 +1,2846 @@
+{
+  "baseline": "d46f46c",
+  "sourceRevision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "condition": "Same 48 original PNG/state/font/viewport/time. Five-image union per frame includes every nonbackground pixel. No registration, delay, alpha suppression, camera/geometry adjustment. Other union means are not comparable.",
+  "finite": {
+    "means": {
+      "finiteBefore": 1.9647891006759426,
+      "finiteAfter": 0.9440271479993593
+    },
+    "worst64": {
+      "finiteBefore": 6.883720930232558,
+      "finiteAfter": 3.4108527131782944
+    },
+    "meanRegressions": [],
+    "localRegressions": []
+  },
+  "media": {
+    "means": {
+      "mediaBefore": 17.365684452836707,
+      "mediaAfter": 16.56719019860454
+    },
+    "worst64": {
+      "mediaBefore": 69.11778080945885,
+      "mediaAfter": 69.11778080945885
+    },
+    "meanRegressions": [],
+    "localRegressions": [
+      {
+        "file": "mounted-800-60-3499.png",
+        "before": {
+          "x": 0,
+          "y": 448,
+          "mae": 41.246105919003114
+        },
+        "after": {
+          "x": 0,
+          "y": 448,
+          "mae": 41.25233644859813
+        }
+      },
+      {
+        "file": "mounted-800-144-3499.png",
+        "before": {
+          "x": 0,
+          "y": 448,
+          "mae": 22.426666666666666
+        },
+        "after": {
+          "x": 0,
+          "y": 448,
+          "mae": 22.433333333333334
+        }
+      }
+    ]
+  },
+  "rows": [
+    {
+      "file": "mounted-380-60-0.png",
+      "unionPixels": 3038,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 192,
+            "y": 192,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.6026991441737986,
+          "peak": 4,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 0.8657243816254417
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.6026991441737986,
+          "peak": 4,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 0.8657243816254417
+          }
+        },
+        "mediaBefore": {
+          "mae": 35.80140443274084,
+          "peak": 136,
+          "worst64": {
+            "x": 256,
+            "y": 320,
+            "mae": 61.39139344262295
+          }
+        },
+        "mediaAfter": {
+          "mae": 35.80140443274084,
+          "peak": 136,
+          "worst64": {
+            "x": 256,
+            "y": 320,
+            "mae": 61.39139344262295
+          }
+        }
+      },
+      "hashes": {
+        "original": "1716dd822116e395e8f62c68c120a42fede0a7e9bc69ba27cd3bfd9839d4c20f",
+        "finiteBefore": "9e891352f481a34229dfcff3b1111a6302fa3afe2aa1716546eb55e7aaae1bd9",
+        "finiteAfter": "9e891352f481a34229dfcff3b1111a6302fa3afe2aa1716546eb55e7aaae1bd9",
+        "mediaBefore": "701b3aaa271020b51dc84b1a7119a0d300fb81476a5d832d12f58a7b818e6052",
+        "mediaAfter": "701b3aaa271020b51dc84b1a7119a0d300fb81476a5d832d12f58a7b818e6052"
+      }
+    },
+    {
+      "file": "mounted-380-60-700.png",
+      "unionPixels": 707,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 128,
+            "y": 0,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.6445073078736445,
+          "peak": 10,
+          "worst64": {
+            "x": 128,
+            "y": 0,
+            "mae": 2.4055555555555554
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.29655822725129655,
+          "peak": 2,
+          "worst64": {
+            "x": 128,
+            "y": 0,
+            "mae": 0.3527777777777778
+          }
+        },
+        "mediaBefore": {
+          "mae": 14.137670909948138,
+          "peak": 52,
+          "worst64": {
+            "x": 192,
+            "y": 384,
+            "mae": 17.107472712006718
+          }
+        },
+        "mediaAfter": {
+          "mae": 14.137670909948138,
+          "peak": 52,
+          "worst64": {
+            "x": 192,
+            "y": 384,
+            "mae": 17.107472712006718
+          }
+        }
+      },
+      "hashes": {
+        "original": "228c7487e721a0e2ec15b4bb311a78d8ef6dc94956541a1dd1dc18ff9db4d54e",
+        "finiteBefore": "367c78546881799f6758aa7f597fe528cf3a2d7a3742acccf6a50b48d32fb8cd",
+        "finiteAfter": "265c1c6a543af917bc871086d5ea174f9f32590d353b0b4feab66dee6ec93213",
+        "mediaBefore": "a30764010c6c16c22ca3f81b6c73f85744853156e22706b6fa74ed2d7bb78cc6",
+        "mediaAfter": "a30764010c6c16c22ca3f81b6c73f85744853156e22706b6fa74ed2d7bb78cc6"
+      }
+    },
+    {
+      "file": "mounted-380-60-1600.png",
+      "unionPixels": 169,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 192,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.1597633136094676,
+          "peak": 42,
+          "worst64": {
+            "x": 0,
+            "y": 192,
+            "mae": 2.1597633136094676
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.1084812623274163,
+          "peak": 33,
+          "worst64": {
+            "x": 0,
+            "y": 192,
+            "mae": 1.1084812623274163
+          }
+        },
+        "mediaBefore": {
+          "mae": 13.684418145956608,
+          "peak": 161,
+          "worst64": {
+            "x": 0,
+            "y": 192,
+            "mae": 13.684418145956608
+          }
+        },
+        "mediaAfter": {
+          "mae": 12.50887573964497,
+          "peak": 163,
+          "worst64": {
+            "x": 0,
+            "y": 192,
+            "mae": 12.50887573964497
+          }
+        }
+      },
+      "hashes": {
+        "original": "f2e47d1b99e68bac8b02bc853700d4fb9f68c4af3c0b10eb244c93553049238a",
+        "finiteBefore": "5769320a01f3fd8cf942e4f3ffe0d702f777e52eacfcea2dde6a987c25425f83",
+        "finiteAfter": "dd31af24240f7fa8517b2f013617cabf7c0179d540d3e63d2dac9f81f7bc6a25",
+        "mediaBefore": "cea3c79ca3ed6ca2a330c90a519200afe8312d9da5d52cd6f7569ef6a198fe6c",
+        "mediaAfter": "aa44e7459620b3a4365589231e0f72fc0fb21a376fd73cda5fd34b1335729ff9"
+      }
+    },
+    {
+      "file": "mounted-380-60-2099.png",
+      "unionPixels": 1044,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 3.1206896551724137,
+          "peak": 42,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 3.3236434108527133
+          }
+        },
+        "finiteAfter": {
+          "mae": 2.089080459770115,
+          "peak": 42,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 2.107415902140673
+          }
+        },
+        "mediaBefore": {
+          "mae": 10.790549169859515,
+          "peak": 107,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 11.011850152905199
+          }
+        },
+        "mediaAfter": {
+          "mae": 9.765644955300127,
+          "peak": 107,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 10.066131498470948
+          }
+        }
+      },
+      "hashes": {
+        "original": "89b878b41439c0f23f54c8e91918ad82ba642c32eed696b998f00cfd225c2fc2",
+        "finiteBefore": "ac28c517f4fa459940759838a5561e8b94750244cc65b238119d590d15e0491c",
+        "finiteAfter": "750cccc2a791588814c52da582746c13e40d784797a578ef22ddbec56245bddd",
+        "mediaBefore": "edba5fb758ac293934523ee50923881d68003e5dfb1a09e4f814f5840118e864",
+        "mediaAfter": "c580bac4c9f98fdc4ea7473110cf14a5dc204cc25d81dec97eb9a038ad78da60"
+      }
+    },
+    {
+      "file": "mounted-380-60-2100.png",
+      "unionPixels": 548,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.5815085158150851,
+          "peak": 8,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 0.5848670756646217
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.5815085158150851,
+          "peak": 8,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 0.5848670756646217
+          }
+        },
+        "mediaBefore": {
+          "mae": 7.111313868613139,
+          "peak": 33,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 8.135593220338983
+          }
+        },
+        "mediaAfter": {
+          "mae": 7.111313868613139,
+          "peak": 33,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 8.135593220338983
+          }
+        }
+      },
+      "hashes": {
+        "original": "28fcdf654fbd54fd8fa2cf3e9a04fb16348bb54c8869cb4dc386be3d536130f6",
+        "finiteBefore": "70f0426969ee9840211164db1ff2d26f932363dc4e89257a637e0e921c42825d",
+        "finiteAfter": "70f0426969ee9840211164db1ff2d26f932363dc4e89257a637e0e921c42825d",
+        "mediaBefore": "5082fcbd2a850fcbc1c7928bde13fb4bd9c88e7c0630af22c1262b65d5c8da3b",
+        "mediaAfter": "5082fcbd2a850fcbc1c7928bde13fb4bd9c88e7c0630af22c1262b65d5c8da3b"
+      }
+    },
+    {
+      "file": "mounted-380-60-3199.png",
+      "unionPixels": 6123,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.8596004137405413,
+          "peak": 52,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 3.583617747440273
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.2647939463226088,
+          "peak": 53,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 1.4793799772468714
+          }
+        },
+        "mediaBefore": {
+          "mae": 19.793401927159888,
+          "peak": 192,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 21.56058020477816
+          }
+        },
+        "mediaAfter": {
+          "mae": 18.718928629756654,
+          "peak": 192,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 20.058589306029578
+          }
+        }
+      },
+      "hashes": {
+        "original": "7ca56d814cb4f0e11f731a39818adad3591d024c0cb243ecbc5abcc2050c2fd1",
+        "finiteBefore": "c0e6a68de80ec24dd132ad97f8f5b956a6a1634cf6921f3bb9ca982562b35fdf",
+        "finiteAfter": "826c1a9bf3e75c4f8c3248bfb20ee097f5c26353d4855a9422e193e091273eff",
+        "mediaBefore": "7c2a4b53d84c1afb5c1e24d5e2f189d82a183b7a91e5a135425b534e72cae1f9",
+        "mediaAfter": "e7b4246d54346ffe05263596dc98c0cb351f9ea7bd2f7ca4a445ead3ff4a498b"
+      }
+    },
+    {
+      "file": "mounted-380-60-3200.png",
+      "unionPixels": 6166,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.9515623310628176,
+          "peak": 66,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 3.6080259997173942
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.342253216563953,
+          "peak": 67,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 1.5455361148497084
+          }
+        },
+        "mediaBefore": {
+          "mae": 19.606876419072332,
+          "peak": 191,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 21.3097357637417
+          }
+        },
+        "mediaAfter": {
+          "mae": 18.530597902475943,
+          "peak": 192,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 19.812208562950403
+          }
+        }
+      },
+      "hashes": {
+        "original": "8f846a51663be38b86e0d0b17b93f989f54e7646445b923d68af181631fb7811",
+        "finiteBefore": "9b73b3819efdef8d6f96fd855022beb672f77f9121bc864eda7519a179042a74",
+        "finiteAfter": "3d2d082224aba2a4ab3102e79f67a7923b6fdf0769b968b170372f1a39fe4139",
+        "mediaBefore": "87c9bbdd6c4a64e8dcfb37791405110051451cce4dec2f9c404d61d628cef8d6",
+        "mediaAfter": "af5221056cc30d5e8bc5b65ab8e44cbec87055fb15245e06dff3fe5d12934655"
+      }
+    },
+    {
+      "file": "mounted-380-60-3201.png",
+      "unionPixels": 6181,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.840640673030254,
+          "peak": 59,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 3.480039497813514
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.2535188480828345,
+          "peak": 59,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 1.4779235435181266
+          }
+        },
+        "mediaBefore": {
+          "mae": 19.469449387909183,
+          "peak": 192,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 21.007617435463395
+          }
+        },
+        "mediaAfter": {
+          "mae": 18.402469934746264,
+          "peak": 192,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 19.551840880236988
+          }
+        }
+      },
+      "hashes": {
+        "original": "be4214230cee7d59ca85d296de6cc0409d2f8af6e8c7bfad7685cb3a22b00990",
+        "finiteBefore": "39a74e09331c3b99a96ec75be5137d06210f96a0c3a250f029a828d1644a9236",
+        "finiteAfter": "3292248e103e17a5be330579862cad84dba2ae5dbc7a406e6474375acbdda142",
+        "mediaBefore": "70488e718426a8b952b9b5ae2c561978f6076e9f3d17b95c6e689a548b8be3dc",
+        "mediaAfter": "ec769888f9eb40da67e61091f97ab73f1f610816ceea40d0807e599ec0ca8bd9"
+      }
+    },
+    {
+      "file": "mounted-380-60-3499.png",
+      "unionPixels": 9575,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.065657093124456,
+          "peak": 60,
+          "worst64": {
+            "x": 192,
+            "y": 384,
+            "mae": 2.664804469273743
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.1326370757180158,
+          "peak": 60,
+          "worst64": {
+            "x": 192,
+            "y": 384,
+            "mae": 1.2834837415843003
+          }
+        },
+        "mediaBefore": {
+          "mae": 30.316240208877286,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 48.26437474869321
+          }
+        },
+        "mediaAfter": {
+          "mae": 29.647658833768496,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 47.7848813831926
+          }
+        }
+      },
+      "hashes": {
+        "original": "879248798e77f94987d9d9d71022e1ae3a772d8a454d9a06d9f12826655e7753",
+        "finiteBefore": "98d8beb1336a4d6ba178126752d6a5cbddaff40dee11d494091c56c2086905e6",
+        "finiteAfter": "e3cfbcc9f086a6b9d55d73cf6e5dee7d19ce04acea846730a99ced526b84a8d8",
+        "mediaBefore": "f891d2144e1cb10db68cc1153fe2e1dd0d5bb8829b2346477d833c0954ac6cb2",
+        "mediaAfter": "1767efa9bd166d23b8ff5dbfbe55828d34287cb199c0d7b3189ea13fe379536f"
+      }
+    },
+    {
+      "file": "mounted-380-60-3500.png",
+      "unionPixels": 4530,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.4776306107431935,
+          "peak": 22,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 1.1033333333333333
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.4776306107431935,
+          "peak": 22,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 1.1033333333333333
+          }
+        },
+        "mediaBefore": {
+          "mae": 29.09727740986019,
+          "peak": 90,
+          "worst64": {
+            "x": 128,
+            "y": 384,
+            "mae": 30.599488864549105
+          }
+        },
+        "mediaAfter": {
+          "mae": 29.09727740986019,
+          "peak": 90,
+          "worst64": {
+            "x": 128,
+            "y": 384,
+            "mae": 30.599488864549105
+          }
+        }
+      },
+      "hashes": {
+        "original": "74d324c79e5c4ab20f7bcff884a52324f8cb69ce9f1822984faa85f8161d930b",
+        "finiteBefore": "599147f633edd9c059e9b0b0c8236c36d10f1667d3a17c57b1e7a87db3b29863",
+        "finiteAfter": "599147f633edd9c059e9b0b0c8236c36d10f1667d3a17c57b1e7a87db3b29863",
+        "mediaBefore": "99e0cb13437cf3a08140c3fbb277babd17bce94e6f33b1bd94432d78a3296388",
+        "mediaAfter": "99e0cb13437cf3a08140c3fbb277babd17bce94e6f33b1bd94432d78a3296388"
+      }
+    },
+    {
+      "file": "mounted-380-60-4500.png",
+      "unionPixels": 12012,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 3.1958319458319457,
+          "peak": 76,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 5.684298440979956
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.2654845154845156,
+          "peak": 77,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 2.0987379361544174
+          }
+        },
+        "mediaBefore": {
+          "mae": 8.407481407481407,
+          "peak": 162,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 16.676132145508536
+          }
+        },
+        "mediaAfter": {
+          "mae": 6.655178155178155,
+          "peak": 161,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 13.575723830734967
+          }
+        }
+      },
+      "hashes": {
+        "original": "8824b57674d36fd3d853e36acc0228fbb542c99e7306715c483f14d637c440e0",
+        "finiteBefore": "86bc4f587d6bccb8189369c05b5d26ea5e83bacd04f308084724205d57323ccb",
+        "finiteAfter": "d0a99fddfb6882ef324bcc8e24552491b14013f3d0380e2a43a71e8d2accc3f2",
+        "mediaBefore": "16a6b55fb02c5e0c780d755828d644102d6f5b647e97ffe49013f329a09534cd",
+        "mediaAfter": "fd1425b4cdcca5d8b9e8faa71bc551e9b06f3e1cc7d66063076b785d8e3bd975"
+      }
+    },
+    {
+      "file": "mounted-380-60-4600.png",
+      "unionPixels": 13996,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.875297704105935,
+          "peak": 68,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 5.8738629472407515
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.1754310755453938,
+          "peak": 69,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 1.9642207398423286
+          }
+        },
+        "mediaBefore": {
+          "mae": 7.315494903305706,
+          "peak": 164,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 13.281180513442491
+          }
+        },
+        "mediaAfter": {
+          "mae": 5.755215775935982,
+          "peak": 164,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 10.06953709318779
+          }
+        }
+      },
+      "hashes": {
+        "original": "abdbf2bc478ad138f11e1ee7048e99f1d9afd12bfe7ab73974ebaf4cfb2c8722",
+        "finiteBefore": "1f64c2da1c53dbd972804567595b03d47ce392ad91ce97e9ea3f7912321bad3d",
+        "finiteAfter": "dfb94630752006db87784fa09f052c140b32a7b04bf9ba8de5957c441d171d8f",
+        "mediaBefore": "2e89ac5f4289a39a63165083f3ecb7e7dba902ccceb81027bd70cabf0362656d",
+        "mediaAfter": "0f58f11437b4c74cc567e2d166f58d50b7c27b2a7c297d167a8ef0c05a371859"
+      }
+    },
+    {
+      "file": "mounted-380-144-0.png",
+      "unionPixels": 2661,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 192,
+            "y": 192,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.6501315295001879,
+          "peak": 4,
+          "worst64": {
+            "x": 256,
+            "y": 320,
+            "mae": 0.9363395225464191
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.6501315295001879,
+          "peak": 4,
+          "worst64": {
+            "x": 256,
+            "y": 320,
+            "mae": 0.9363395225464191
+          }
+        },
+        "mediaBefore": {
+          "mae": 8.509958662157084,
+          "peak": 52,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 12.707622298065983
+          }
+        },
+        "mediaAfter": {
+          "mae": 8.509958662157084,
+          "peak": 52,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 12.707622298065983
+          }
+        }
+      },
+      "hashes": {
+        "original": "d435003292d0b5190a2394b89c3f2cf28cf0985c58a7af5e26c57e0f26911c54",
+        "finiteBefore": "1f53a61fce09e9bda9e68d7a164e080c7fccb4468d634194c8aa7f7f7f9882ed",
+        "finiteAfter": "1f53a61fce09e9bda9e68d7a164e080c7fccb4468d634194c8aa7f7f7f9882ed",
+        "mediaBefore": "701b3aaa271020b51dc84b1a7119a0d300fb81476a5d832d12f58a7b818e6052",
+        "mediaAfter": "701b3aaa271020b51dc84b1a7119a0d300fb81476a5d832d12f58a7b818e6052"
+      }
+    },
+    {
+      "file": "mounted-380-144-700.png",
+      "unionPixels": 615,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 128,
+            "y": 0,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.5002710027100271,
+          "peak": 5,
+          "worst64": {
+            "x": 128,
+            "y": 0,
+            "mae": 1.1345029239766082
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.3544715447154472,
+          "peak": 2,
+          "worst64": {
+            "x": 128,
+            "y": 384,
+            "mae": 0.4577114427860697
+          }
+        },
+        "mediaBefore": {
+          "mae": 13.575067750677507,
+          "peak": 52,
+          "worst64": {
+            "x": 128,
+            "y": 384,
+            "mae": 18.44776119402985
+          }
+        },
+        "mediaAfter": {
+          "mae": 13.575067750677507,
+          "peak": 52,
+          "worst64": {
+            "x": 128,
+            "y": 384,
+            "mae": 18.44776119402985
+          }
+        }
+      },
+      "hashes": {
+        "original": "2c98eb6231fe105e0aca299c5c341b539a8c28d583c3a11fa953a0f318ba315d",
+        "finiteBefore": "8461c06b42d4a1273862ccdde4382d85fe12b177c7de64a484c7a3826c57ee01",
+        "finiteAfter": "9d7ddf0b3cbb2d1e388cf30fb5ecfe65f5e21df60f522c4b7d468df1af8ccfd3",
+        "mediaBefore": "a30764010c6c16c22ca3f81b6c73f85744853156e22706b6fa74ed2d7bb78cc6",
+        "mediaAfter": "a30764010c6c16c22ca3f81b6c73f85744853156e22706b6fa74ed2d7bb78cc6"
+      }
+    },
+    {
+      "file": "mounted-380-144-1600.png",
+      "unionPixels": 169,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 192,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 3.2051282051282053,
+          "peak": 47,
+          "worst64": {
+            "x": 0,
+            "y": 192,
+            "mae": 3.2051282051282053
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.5562130177514792,
+          "peak": 38,
+          "worst64": {
+            "x": 0,
+            "y": 192,
+            "mae": 1.5562130177514792
+          }
+        },
+        "mediaBefore": {
+          "mae": 5.905325443786983,
+          "peak": 62,
+          "worst64": {
+            "x": 0,
+            "y": 192,
+            "mae": 5.905325443786983
+          }
+        },
+        "mediaAfter": {
+          "mae": 4.560157790927022,
+          "peak": 55,
+          "worst64": {
+            "x": 0,
+            "y": 192,
+            "mae": 4.560157790927022
+          }
+        }
+      },
+      "hashes": {
+        "original": "89cb92dd1ce6620e335629196ec11e3f53774a66434a8265cbcf224bbf757352",
+        "finiteBefore": "8772666cfe9e6dacb8d997f879db551ab978c204470e94f853cb71515fb56824",
+        "finiteAfter": "e3ed506f6936cc8edf5568949ab19b71a503edc7da16ace9a87a686ee6525290",
+        "mediaBefore": "cea3c79ca3ed6ca2a330c90a519200afe8312d9da5d52cd6f7569ef6a198fe6c",
+        "mediaAfter": "aa44e7459620b3a4365589231e0f72fc0fb21a376fd73cda5fd34b1335729ff9"
+      }
+    },
+    {
+      "file": "mounted-380-144-2099.png",
+      "unionPixels": 1068,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 3.1885143570536827,
+          "peak": 40,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 3.204710144927536
+          }
+        },
+        "finiteAfter": {
+          "mae": 2.18039950062422,
+          "peak": 40,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 2.2322775263951735
+          }
+        },
+        "mediaBefore": {
+          "mae": 20.48501872659176,
+          "peak": 162,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 21.441176470588236
+          }
+        },
+        "mediaAfter": {
+          "mae": 19.624843945068665,
+          "peak": 162,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 20.65233785822021
+          }
+        }
+      },
+      "hashes": {
+        "original": "cf053cfbff854191657f8ce2f305d13c62e914cc13545bd1ff4d04b8b70120b3",
+        "finiteBefore": "3b8b8d9a39052f92bdd83c35c812923045a694cb88f6c6d1f496d91967e0c2fe",
+        "finiteAfter": "dce8181fffba3638fc8cd9dd9d261aa89741700a234d4d410706a00edbf1b96e",
+        "mediaBefore": "edba5fb758ac293934523ee50923881d68003e5dfb1a09e4f814f5840118e864",
+        "mediaAfter": "c580bac4c9f98fdc4ea7473110cf14a5dc204cc25d81dec97eb9a038ad78da60"
+      }
+    },
+    {
+      "file": "mounted-380-144-2100.png",
+      "unionPixels": 574,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.37340301974448314,
+          "peak": 3,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 0.3793556870479947
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.37340301974448314,
+          "peak": 3,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 0.3793556870479947
+          }
+        },
+        "mediaBefore": {
+          "mae": 14.869337979094077,
+          "peak": 50,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 15.308457711442786
+          }
+        },
+        "mediaAfter": {
+          "mae": 14.869337979094077,
+          "peak": 50,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 15.308457711442786
+          }
+        }
+      },
+      "hashes": {
+        "original": "cb082c9e0d1c0e469fa059f1243d4736d941fab750afedd1f8a50a67367cb795",
+        "finiteBefore": "ea9e3df489b4376cbb298d2e00da3b642832137cc34b871faeea77791d989f00",
+        "finiteAfter": "ea9e3df489b4376cbb298d2e00da3b642832137cc34b871faeea77791d989f00",
+        "mediaBefore": "5082fcbd2a850fcbc1c7928bde13fb4bd9c88e7c0630af22c1262b65d5c8da3b",
+        "mediaAfter": "5082fcbd2a850fcbc1c7928bde13fb4bd9c88e7c0630af22c1262b65d5c8da3b"
+      }
+    },
+    {
+      "file": "mounted-380-144-3199.png",
+      "unionPixels": 5734,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 3.0245901639344264,
+          "peak": 68,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 3.6203949307397583
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.3335077316591093,
+          "peak": 68,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 1.5473032714412025
+          }
+        },
+        "mediaBefore": {
+          "mae": 24.40902220672015,
+          "peak": 190,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 27.437223695844384
+          }
+        },
+        "mediaAfter": {
+          "mae": 23.396291128938497,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 26.2165820642978
+          }
+        }
+      },
+      "hashes": {
+        "original": "62202dd6656f1ed28942e9ef42b30cc36e274a0695f125b445af5c5259512a2e",
+        "finiteBefore": "cc213161d89c1ce7898d0b0fc308ae32b21c539e23b8beae4d90d1c7bb629a67",
+        "finiteAfter": "f63e79495a1d5fb2f42553e95fb6b26aa324b0f55a211d238aa534b8df98d267",
+        "mediaBefore": "7c2a4b53d84c1afb5c1e24d5e2f189d82a183b7a91e5a135425b534e72cae1f9",
+        "mediaAfter": "e7b4246d54346ffe05263596dc98c0cb351f9ea7bd2f7ca4a445ead3ff4a498b"
+      }
+    },
+    {
+      "file": "mounted-380-144-3200.png",
+      "unionPixels": 5744,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.937325905292479,
+          "peak": 57,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 3.564249926318892
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.2975278551532032,
+          "peak": 57,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 1.5352195697023283
+          }
+        },
+        "mediaBefore": {
+          "mae": 24.250754410399256,
+          "peak": 190,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 27.089890951959916
+          }
+        },
+        "mediaAfter": {
+          "mae": 23.23096564531105,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 26.01137236821884
+          }
+        }
+      },
+      "hashes": {
+        "original": "a1441fb53f0c1554725ec3f73002d15a204d09f5e3eb2fb7d734a224f4916ac6",
+        "finiteBefore": "c0b3f62955ba623bd9a680a65a8cc1f5cc2fe3b0fd40d4cfe66e3c8c4e2120c0",
+        "finiteAfter": "c4661a530be50a6172d8746caf0ecd35671d55b6bd2f130a6f57873ffa98ab5f",
+        "mediaBefore": "87c9bbdd6c4a64e8dcfb37791405110051451cce4dec2f9c404d61d628cef8d6",
+        "mediaAfter": "af5221056cc30d5e8bc5b65ab8e44cbec87055fb15245e06dff3fe5d12934655"
+      }
+    },
+    {
+      "file": "mounted-380-144-3201.png",
+      "unionPixels": 5782,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 3.013086590568431,
+          "peak": 67,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 3.7031341534856472
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.3577770091087282,
+          "peak": 68,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 1.6190685413005272
+          }
+        },
+        "mediaBefore": {
+          "mae": 24.378704023982475,
+          "peak": 190,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 27.571494678389634
+          }
+        },
+        "mediaAfter": {
+          "mae": 23.39432722241439,
+          "peak": 190,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 26.550825235230604
+          }
+        }
+      },
+      "hashes": {
+        "original": "3cfa00a8b15c1623849b403c5babba9b36de27d1c004d2977faa21a48a5bcbd3",
+        "finiteBefore": "ea588ea8e487736eb9fc29b3ecd82a85a77a0a9408392b1bc0df8a6ce9a9bfee",
+        "finiteAfter": "259c568ad9e1ed9f38ea8f3bb88324b5935f378c5c395b08cbecb8620ff42194",
+        "mediaBefore": "70488e718426a8b952b9b5ae2c561978f6076e9f3d17b95c6e689a548b8be3dc",
+        "mediaAfter": "ec769888f9eb40da67e61091f97ab73f1f610816ceea40d0807e599ec0ca8bd9"
+      }
+    },
+    {
+      "file": "mounted-380-144-3499.png",
+      "unionPixels": 9237,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.2138140088773413,
+          "peak": 70,
+          "worst64": {
+            "x": 192,
+            "y": 384,
+            "mae": 2.8285588364918466
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.2283569701562556,
+          "peak": 70,
+          "worst64": {
+            "x": 128,
+            "y": 384,
+            "mae": 1.440232389251997
+          }
+        },
+        "mediaBefore": {
+          "mae": 16.55411208545343,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 26.10213243546577
+          }
+        },
+        "mediaAfter": {
+          "mae": 15.730359784922955,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 25.541638608305274
+          }
+        }
+      },
+      "hashes": {
+        "original": "bbbcb9cc4d4fa6fc346c6d043e79c59c2ca52ead1a9f0b2c90bd02a2924d5008",
+        "finiteBefore": "4fdbf42f31f691d4e1d7643f9f6ac6e44d840efc51fde2275f7585ebe023ac4b",
+        "finiteAfter": "e9ca44c37cbf9f2c8575182ad9a18cbf8b95ff550e17962306e239d31fc683ff",
+        "mediaBefore": "f891d2144e1cb10db68cc1153fe2e1dd0d5bb8829b2346477d833c0954ac6cb2",
+        "mediaAfter": "1767efa9bd166d23b8ff5dbfbe55828d34287cb199c0d7b3189ea13fe379536f"
+      }
+    },
+    {
+      "file": "mounted-380-144-3500.png",
+      "unionPixels": 4094,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.5295554469956033,
+          "peak": 22,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 1.303921568627451
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.5295554469956033,
+          "peak": 22,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 1.303921568627451
+          }
+        },
+        "mediaBefore": {
+          "mae": 19.4241165933887,
+          "peak": 93,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 32.01133786848072
+          }
+        },
+        "mediaAfter": {
+          "mae": 19.4241165933887,
+          "peak": 93,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 32.01133786848072
+          }
+        }
+      },
+      "hashes": {
+        "original": "8640dfda46253c7ee53d976f003b3a256ac6996804af388134109256201e1bf3",
+        "finiteBefore": "8edd83c6e76b7e0335becef077fd0fa5cdb69f5e139342831e616cfe9ddab4ca",
+        "finiteAfter": "8edd83c6e76b7e0335becef077fd0fa5cdb69f5e139342831e616cfe9ddab4ca",
+        "mediaBefore": "99e0cb13437cf3a08140c3fbb277babd17bce94e6f33b1bd94432d78a3296388",
+        "mediaAfter": "99e0cb13437cf3a08140c3fbb277babd17bce94e6f33b1bd94432d78a3296388"
+      }
+    },
+    {
+      "file": "mounted-380-144-4500.png",
+      "unionPixels": 11940,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 3.272640982691234,
+          "peak": 62,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 6.047408227264342
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.3326353992183138,
+          "peak": 63,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 2.320973990038738
+          }
+        },
+        "mediaBefore": {
+          "mae": 5.340675600223339,
+          "peak": 109,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 10.396790260099612
+          }
+        },
+        "mediaAfter": {
+          "mae": 3.4369346733668342,
+          "peak": 108,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 6.934144991698949
+          }
+        }
+      },
+      "hashes": {
+        "original": "4ef4ad58b5788ff176e206215d7ddae87c33f9a33a7539fbb4912bc367e6042d",
+        "finiteBefore": "070eca81362d2c2be80034b410a82b18ae09b0e5f5e3b6b1995c72379ae0f567",
+        "finiteAfter": "f82c769d8944fe57882c813ad67679a772dea828e4ee5783aa48d8b4a36b3ece",
+        "mediaBefore": "16a6b55fb02c5e0c780d755828d644102d6f5b647e97ffe49013f329a09534cd",
+        "mediaAfter": "fd1425b4cdcca5d8b9e8faa71bc551e9b06f3e1cc7d66063076b785d8e3bd975"
+      }
+    },
+    {
+      "file": "mounted-380-144-4600.png",
+      "unionPixels": 13861,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 64,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.8375297597575933,
+          "peak": 46,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 5.52683615819209
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.175504412861025,
+          "peak": 47,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 1.9178773204196933
+          }
+        },
+        "mediaBefore": {
+          "mae": 4.507370800567539,
+          "peak": 103,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 8.58232445520581
+          }
+        },
+        "mediaAfter": {
+          "mae": 2.808287040377077,
+          "peak": 104,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 4.905569007263923
+          }
+        }
+      },
+      "hashes": {
+        "original": "860d5709295e15ec6ec3fd72169f210bcbdff4759c89484a142278c5cf260c7a",
+        "finiteBefore": "39546447327dfc6c3f8255b2c50fc11ed78025c1d5e23b10091af3977d130e0a",
+        "finiteAfter": "085f6f2c6cfe99965062bd082db01d946266054f296bce51e48edafac3d8466c",
+        "mediaBefore": "2e89ac5f4289a39a63165083f3ecb7e7dba902ccceb81027bd70cabf0362656d",
+        "mediaAfter": "0f58f11437b4c74cc567e2d166f58d50b7c27b2a7c297d167a8ef0c05a371859"
+      }
+    },
+    {
+      "file": "mounted-800-60-0.png",
+      "unionPixels": 10358,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 320,
+            "y": 192,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.5982493402844822,
+          "peak": 7,
+          "worst64": {
+            "x": 448,
+            "y": 320,
+            "mae": 0.7609905397885365
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.5982493402844822,
+          "peak": 7,
+          "worst64": {
+            "x": 448,
+            "y": 320,
+            "mae": 0.7609905397885365
+          }
+        },
+        "mediaBefore": {
+          "mae": 40.54070927463474,
+          "peak": 136,
+          "worst64": {
+            "x": 576,
+            "y": 320,
+            "mae": 69.11778080945885
+          }
+        },
+        "mediaAfter": {
+          "mae": 40.54070927463474,
+          "peak": 136,
+          "worst64": {
+            "x": 576,
+            "y": 320,
+            "mae": 69.11778080945885
+          }
+        }
+      },
+      "hashes": {
+        "original": "881bda7e88c94b1f16c679dadadc8cbebd6505244b36763a300ffa13b4668184",
+        "finiteBefore": "8dc4956d502c79cc08a33c1880940029602bc53bcd3e120d85cc766ea45d741e",
+        "finiteAfter": "8dc4956d502c79cc08a33c1880940029602bc53bcd3e120d85cc766ea45d741e",
+        "mediaBefore": "24b3ae27015225f3825db35d7272425153303ddcbfbe1bd66ac9a6b1664876ba",
+        "mediaAfter": "24b3ae27015225f3825db35d7272425153303ddcbfbe1bd66ac9a6b1664876ba"
+      }
+    },
+    {
+      "file": "mounted-800-60-700.png",
+      "unionPixels": 2494,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 320,
+            "y": 0,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.7141138732959101,
+          "peak": 10,
+          "worst64": {
+            "x": 320,
+            "y": 0,
+            "mae": 3.0652920962199315
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.26837743918738305,
+          "peak": 2,
+          "worst64": {
+            "x": 320,
+            "y": 384,
+            "mae": 0.3918918918918919
+          }
+        },
+        "mediaBefore": {
+          "mae": 20.36474204758086,
+          "peak": 58,
+          "worst64": {
+            "x": 576,
+            "y": 384,
+            "mae": 27.591836734693878
+          }
+        },
+        "mediaAfter": {
+          "mae": 20.36474204758086,
+          "peak": 58,
+          "worst64": {
+            "x": 576,
+            "y": 384,
+            "mae": 27.591836734693878
+          }
+        }
+      },
+      "hashes": {
+        "original": "7f7bf1ea2cd990ff37020f735975be7436c724b542956e0185cc3f1bc866196f",
+        "finiteBefore": "83a63a45046c413430628ff1995d1d8affae5cc0431b434572855800e67dec3b",
+        "finiteAfter": "397f83de15b412f532c35628aaa9ef82dad200a51b5244d3c1c1a563e18583ee",
+        "mediaBefore": "4d40c4baccb40628b25d8c2e86cc77d7307745fac35a34e71c82818b4904e36f",
+        "mediaAfter": "4d40c4baccb40628b25d8c2e86cc77d7307745fac35a34e71c82818b4904e36f"
+      }
+    },
+    {
+      "file": "mounted-800-60-1600.png",
+      "unionPixels": 7640,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 256,
+            "y": 128,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.8851221640488656,
+          "peak": 50,
+          "worst64": {
+            "x": 256,
+            "y": 128,
+            "mae": 4.9928374655647385
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.2348603839441537,
+          "peak": 51,
+          "worst64": {
+            "x": 256,
+            "y": 128,
+            "mae": 1.921763085399449
+          }
+        },
+        "mediaBefore": {
+          "mae": 13.47133507853403,
+          "peak": 183,
+          "worst64": {
+            "x": 192,
+            "y": 192,
+            "mae": 18.620232172470978
+          }
+        },
+        "mediaAfter": {
+          "mae": 12.266012216404887,
+          "peak": 183,
+          "worst64": {
+            "x": 192,
+            "y": 256,
+            "mae": 17.94566813509545
+          }
+        }
+      },
+      "hashes": {
+        "original": "f24291448e88eebe22095f51109cd21d0bf687dd8b56de02468e5737ed873d1e",
+        "finiteBefore": "c95cf65b3dc38c293ce573a5dc0595cb2266c19be85e62ef227b56b10d6c3ccd",
+        "finiteAfter": "22bfa1d5387d5563aa91843c7d0a5323865591ebd5b90db10af4ea28ae80d08e",
+        "mediaBefore": "34d9d4d1b00aedccf33ee8ec6faf576f57fd90cd6fe1fdb98e6ca3217b4f544f",
+        "mediaAfter": "23747816a1bfcc90150881cc8fcd15c0a9566a0a4acaa65507a320488cd2003b"
+      }
+    },
+    {
+      "file": "mounted-800-60-2099.png",
+      "unionPixels": 10257,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 320,
+            "y": 192,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.184816873029801,
+          "peak": 62,
+          "worst64": {
+            "x": 192,
+            "y": 320,
+            "mae": 3.6344884488448845
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.292450684085665,
+          "peak": 62,
+          "worst64": {
+            "x": 256,
+            "y": 384,
+            "mae": 2.2432432432432434
+          }
+        },
+        "mediaBefore": {
+          "mae": 14.927496668941536,
+          "peak": 190,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 38.986666666666665
+          }
+        },
+        "mediaAfter": {
+          "mae": 14.127652659972052,
+          "peak": 190,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 38.986666666666665
+          }
+        }
+      },
+      "hashes": {
+        "original": "559d1d43741a3c1277881dc50ed9fcf3c388a9684a357b498686b9ac199952e8",
+        "finiteBefore": "82d412969503661ea2d5d5e1bfcd80a2714f79d192d63268fa859e53e57253c9",
+        "finiteAfter": "db5157724ce8f360f43680568e98e929d59d18942ab21baeede24bfe2940211a",
+        "mediaBefore": "535d37fa2eda917c4c2da4c7b5b33727a76facc19c7caae3aac4091a3e9fa276",
+        "mediaAfter": "a78b6708246e17188cb22c6fbfdcd1eb08a18ac88f828d8186eda4aedc6ccc95"
+      }
+    },
+    {
+      "file": "mounted-800-60-2100.png",
+      "unionPixels": 5540,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 256,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.7143802647412756,
+          "peak": 28,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 1.5178997613365155
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.7143802647412756,
+          "peak": 28,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 1.5178997613365155
+          }
+        },
+        "mediaBefore": {
+          "mae": 21.255655836341756,
+          "peak": 96,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 48.0843277645187
+          }
+        },
+        "mediaAfter": {
+          "mae": 21.255655836341756,
+          "peak": 96,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 48.0843277645187
+          }
+        }
+      },
+      "hashes": {
+        "original": "f3b6806a6a3dd5edb370e84e9531653e1c9248fd6d0bf808d470ae90f7fe04a0",
+        "finiteBefore": "13ec53d87bacdf89748d26f17c00fef383305dc88f90327fe01e51630f287d36",
+        "finiteAfter": "13ec53d87bacdf89748d26f17c00fef383305dc88f90327fe01e51630f287d36",
+        "mediaBefore": "8bd86436eda50aba8d1aa7b76acc6a69c6886c0711da41229cdca8183607ef88",
+        "mediaAfter": "8bd86436eda50aba8d1aa7b76acc6a69c6886c0711da41229cdca8183607ef88"
+      }
+    },
+    {
+      "file": "mounted-800-60-3199.png",
+      "unionPixels": 40928,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 256,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.4217894839718532,
+          "peak": 86,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 5.729030781553954
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.8282675267135783,
+          "peak": 88,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 1.4698478086737612
+          }
+        },
+        "mediaBefore": {
+          "mae": 28.975664581704457,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 45.68264780368527
+          }
+        },
+        "mediaAfter": {
+          "mae": 28.034540330987753,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 45.24408348615842
+          }
+        }
+      },
+      "hashes": {
+        "original": "330ea222a900f9e087d3f04134869e2b9423d2ef740d977af839ebb7f4008f09",
+        "finiteBefore": "6cbc71750a99a8a5543cbeba615525b60eae1a1bdb3ad0425c68093331cf2311",
+        "finiteAfter": "d5d6e6a8d720fc4b9f8cdd788eb3d97634144b3b0e815818068389d43cc932cd",
+        "mediaBefore": "bc088e18c6ffebb2deb38d74fb8362a34794f6c4e98099ceafeb54675d5926ae",
+        "mediaAfter": "3b65b25515ae9d97d9f8810f580e3b96f352dd2d42234ac86dd23b510e6f3b07"
+      }
+    },
+    {
+      "file": "mounted-800-60-3200.png",
+      "unionPixels": 40995,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 256,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.4109525551896573,
+          "peak": 84,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 5.6095369730476845
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.8304752612107168,
+          "peak": 84,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 1.3969131536512325
+          }
+        },
+        "mediaBefore": {
+          "mae": 28.94664389966256,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 45.58085032235581
+          }
+        },
+        "mediaAfter": {
+          "mae": 27.99778834817254,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 45.11648370796306
+          }
+        }
+      },
+      "hashes": {
+        "original": "276fe11d5dfab965ae21ba90cd595578542b89450f3a4a415ab407a515858ebd",
+        "finiteBefore": "13f629dce42d5ec12ec3882ec30ad17e23cebd175397ffe53394b94a7b71101f",
+        "finiteAfter": "9b2a29a2ab25a7109738d7ae79ccb71ade85bf6780767c75557fd30e6fc1fa38",
+        "mediaBefore": "6af12b2a2c790aaf287c8ac22ac9118dfb30fb3fcd358367330dc10d664b514a",
+        "mediaAfter": "02f9707d51710c19f58042e628c648376e10259982967dfd805f9c01e6348a0e"
+      }
+    },
+    {
+      "file": "mounted-800-60-3201.png",
+      "unionPixels": 41028,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 256,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.3623947872997304,
+          "peak": 77,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 5.561294049682265
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.8126726463228364,
+          "peak": 78,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 1.4099364529173888
+          }
+        },
+        "mediaBefore": {
+          "mae": 28.939951577784278,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 45.428347689898196
+          }
+        },
+        "mediaAfter": {
+          "mae": 27.99922816938026,
+          "peak": 191,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 44.9729400504655
+          }
+        }
+      },
+      "hashes": {
+        "original": "c00ec4a3e5b3e8ae364d7ce20a8085003e70e5ce8008decad0361438d4aa5e7e",
+        "finiteBefore": "70b74c13685b4a46ed0b2131daa29da6cff17a4f1e61808c3d7430820c716c9e",
+        "finiteAfter": "27a3dc2ff9e81d6050f3854d2c6874876a8acd318edf7909624d1648f8c56a3b",
+        "mediaBefore": "d9136f40022924b315b9e79664cbd9eb66e9ba5e448a4b8587b0826eea980dd5",
+        "mediaAfter": "57cc4309eb92cb46231c40800ffbc645fb825f87d848ff9f9520a653a831861e"
+      }
+    },
+    {
+      "file": "mounted-800-60-3499.png",
+      "unionPixels": 42377,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 1.88254634982813,
+          "peak": 86,
+          "worst64": {
+            "x": 448,
+            "y": 384,
+            "mae": 3.192846034214619
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.8671291817102045,
+          "peak": 85,
+          "worst64": {
+            "x": 320,
+            "y": 384,
+            "mae": 1.5606019644949085
+          }
+        },
+        "mediaBefore": {
+          "mae": 18.185698216799995,
+          "peak": 192,
+          "worst64": {
+            "x": 0,
+            "y": 448,
+            "mae": 41.246105919003114
+          }
+        },
+        "mediaAfter": {
+          "mae": 17.306943231784537,
+          "peak": 192,
+          "worst64": {
+            "x": 0,
+            "y": 448,
+            "mae": 41.25233644859813
+          }
+        }
+      },
+      "hashes": {
+        "original": "0100bf2d46df60de88484494c3ed1a84d3d00d0c0dbdfe85e027089f6ac59be7",
+        "finiteBefore": "9b39f034cf5c4bbe1a4464c53ebae66d5e7706f0a9b02a6c6aa563300f019b25",
+        "finiteAfter": "67a18b4e8a2a3b903ba1436bd6c4f859917e408a2ddc55340552fe6bba774570",
+        "mediaBefore": "b4050724a31e54b76d1b42933072118168662c335fd61b73d72e8a59e83a0603",
+        "mediaAfter": "30412f6ed01332ad191d81ace375bc18a4a45b2334ad5d4dd5ae09af40cf8b4c"
+      }
+    },
+    {
+      "file": "mounted-800-60-3500.png",
+      "unionPixels": 16526,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.5347129775303562,
+          "peak": 31,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 1.487627365356623
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.5347129775303562,
+          "peak": 31,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 1.487627365356623
+          }
+        },
+        "mediaBefore": {
+          "mae": 25.328290774133688,
+          "peak": 96,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 48.585516739446874
+          }
+        },
+        "mediaAfter": {
+          "mae": 25.328290774133688,
+          "peak": 96,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 48.585516739446874
+          }
+        }
+      },
+      "hashes": {
+        "original": "61e4c01d9f4cdecf155f92478f9842733000ad18b9e86b07ce39181e36a00888",
+        "finiteBefore": "cb6e6bcf9c8dc6af4816ac0dd0f2e30d04cca488309d92a0c7a65d951de4983f",
+        "finiteAfter": "cb6e6bcf9c8dc6af4816ac0dd0f2e30d04cca488309d92a0c7a65d951de4983f",
+        "mediaBefore": "894b3a6f25438d49fa1f0380e7f2fb27da2b5c4ba7510c2156e06bafdd29d71d",
+        "mediaAfter": "894b3a6f25438d49fa1f0380e7f2fb27da2b5c4ba7510c2156e06bafdd29d71d"
+      }
+    },
+    {
+      "file": "mounted-800-60-4500.png",
+      "unionPixels": 60304,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 512,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.8038328026886,
+          "peak": 68,
+          "worst64": {
+            "x": 512,
+            "y": 256,
+            "mae": 6.791666666666667
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.7860230388255063,
+          "peak": 68,
+          "worst64": {
+            "x": 512,
+            "y": 256,
+            "mae": 1.875
+          }
+        },
+        "mediaBefore": {
+          "mae": 7.063428628283364,
+          "peak": 186,
+          "worst64": {
+            "x": 512,
+            "y": 256,
+            "mae": 14.895833333333334
+          }
+        },
+        "mediaAfter": {
+          "mae": 5.249303528787477,
+          "peak": 187,
+          "worst64": {
+            "x": 640,
+            "y": 320,
+            "mae": 10.488444444444445
+          }
+        }
+      },
+      "hashes": {
+        "original": "98f17567aa75759e5f498dc9239d0eee591f250c175cecd17836953518cd4bbc",
+        "finiteBefore": "f18e27f3d9ad699b6119bfce1e86fd6df654a1c426c59516b318407d47faa11a",
+        "finiteAfter": "f065229f8b552e8fd4d5dc135980094c2ff1c33e8d552af18416c83672d2460e",
+        "mediaBefore": "bfc5453bb695e772273d307b02ff807cfadab2545adfad4d799a8b98cd78ca58",
+        "mediaAfter": "9134946cf02c5b86fb13a48c82063ceed18598e7e215a4b032fdb08fa4eeda84"
+      }
+    },
+    {
+      "file": "mounted-800-60-4600.png",
+      "unionPixels": 70386,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 576,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.616112105627066,
+          "peak": 84,
+          "worst64": {
+            "x": 640,
+            "y": 256,
+            "mae": 6.271317829457364
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.8037820021026909,
+          "peak": 85,
+          "worst64": {
+            "x": 640,
+            "y": 256,
+            "mae": 3.3488372093023258
+          }
+        },
+        "mediaBefore": {
+          "mae": 6.607743964235312,
+          "peak": 185,
+          "worst64": {
+            "x": 640,
+            "y": 320,
+            "mae": 12.467926225820962
+          }
+        },
+        "mediaAfter": {
+          "mae": 4.956028187423636,
+          "peak": 186,
+          "worst64": {
+            "x": 128,
+            "y": 384,
+            "mae": 9.537769463744878
+          }
+        }
+      },
+      "hashes": {
+        "original": "fb6cf87b553484d8f57abeb3ca683f58351629c9af81a3f0d71d471aa018eeed",
+        "finiteBefore": "e8508362cac9ae4a42b4c6e9cfb73ca13deb36efafe855f2bf01f85226f93a2c",
+        "finiteAfter": "b3f03d35df732c8b6766f78798a8a2e47de462fc2e86dcd1c242c856ce4d8544",
+        "mediaBefore": "f638081e02cb9cc9296a64b8dd0f104642295a9655e537093a807461919580f4",
+        "mediaAfter": "b3e06addeced1340f7cade42eff00b6c1dd22548c04822ec9bfcc1e9ceb1951f"
+      }
+    },
+    {
+      "file": "mounted-800-144-0.png",
+      "unionPixels": 8816,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 320,
+            "y": 192,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.6030323653962493,
+          "peak": 6,
+          "worst64": {
+            "x": 512,
+            "y": 256,
+            "mae": 0.826797385620915
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.6030323653962493,
+          "peak": 6,
+          "worst64": {
+            "x": 512,
+            "y": 256,
+            "mae": 0.826797385620915
+          }
+        },
+        "mediaBefore": {
+          "mae": 9.202510586811858,
+          "peak": 79,
+          "worst64": {
+            "x": 192,
+            "y": 320,
+            "mae": 14.901472253680634
+          }
+        },
+        "mediaAfter": {
+          "mae": 9.202510586811858,
+          "peak": 79,
+          "worst64": {
+            "x": 192,
+            "y": 320,
+            "mae": 14.901472253680634
+          }
+        }
+      },
+      "hashes": {
+        "original": "18249d5a16cafdf4e68a01be507fe1d8effaf94faf0d0f31e5c1873bf013dd38",
+        "finiteBefore": "48d1c24ff96290bf3c7ed7df508a7dc27aad67fa0d402dc58171e274fc845bf0",
+        "finiteAfter": "48d1c24ff96290bf3c7ed7df508a7dc27aad67fa0d402dc58171e274fc845bf0",
+        "mediaBefore": "24b3ae27015225f3825db35d7272425153303ddcbfbe1bd66ac9a6b1664876ba",
+        "mediaAfter": "24b3ae27015225f3825db35d7272425153303ddcbfbe1bd66ac9a6b1664876ba"
+      }
+    },
+    {
+      "file": "mounted-800-144-700.png",
+      "unionPixels": 2210,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 320,
+            "y": 0,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.6245852187028658,
+          "peak": 5,
+          "worst64": {
+            "x": 320,
+            "y": 0,
+            "mae": 1.3444444444444446
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.45429864253393665,
+          "peak": 3,
+          "worst64": {
+            "x": 384,
+            "y": 384,
+            "mae": 0.5011185682326622
+          }
+        },
+        "mediaBefore": {
+          "mae": 17.799849170437405,
+          "peak": 58,
+          "worst64": {
+            "x": 576,
+            "y": 384,
+            "mae": 25.143790849673202
+          }
+        },
+        "mediaAfter": {
+          "mae": 17.799849170437405,
+          "peak": 58,
+          "worst64": {
+            "x": 576,
+            "y": 384,
+            "mae": 25.143790849673202
+          }
+        }
+      },
+      "hashes": {
+        "original": "411203438844c921c8846d43207367632160094c79db4b7dc8e10d30709ed094",
+        "finiteBefore": "4bdf452ed11b8f91cbed61d0b7478d5d20afd9419dd91868872abf77d316f920",
+        "finiteAfter": "8b499df2e2c4eebb34be60e648f2205f097c43f6360d5620ceaabf8d2b8a2450",
+        "mediaBefore": "4d40c4baccb40628b25d8c2e86cc77d7307745fac35a34e71c82818b4904e36f",
+        "mediaAfter": "4d40c4baccb40628b25d8c2e86cc77d7307745fac35a34e71c82818b4904e36f"
+      }
+    },
+    {
+      "file": "mounted-800-144-1600.png",
+      "unionPixels": 7862,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 256,
+            "y": 128,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.782201305859408,
+          "peak": 62,
+          "worst64": {
+            "x": 256,
+            "y": 128,
+            "mae": 5.224972497249725
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.1780717374713814,
+          "peak": 52,
+          "worst64": {
+            "x": 256,
+            "y": 128,
+            "mae": 1.9812981298129813
+          }
+        },
+        "mediaBefore": {
+          "mae": 13.47918256592894,
+          "peak": 174,
+          "worst64": {
+            "x": 256,
+            "y": 128,
+            "mae": 17.057755775577558
+          }
+        },
+        "mediaAfter": {
+          "mae": 12.191299923683541,
+          "peak": 175,
+          "worst64": {
+            "x": 256,
+            "y": 128,
+            "mae": 14.742574257425742
+          }
+        }
+      },
+      "hashes": {
+        "original": "d7642b67c2e89a4822b7532e79c5d237b728753d532d52ae40c0fc9845a94bb5",
+        "finiteBefore": "4b47a4c5431dbb03fcfe7ae46b8ff799b66bf15328b71b15b244f55f87b8f62f",
+        "finiteAfter": "f8ae7ae2266f0d519eea145e7bdab08600c29ce45f003475e749362f9fefaff1",
+        "mediaBefore": "34d9d4d1b00aedccf33ee8ec6faf576f57fd90cd6fe1fdb98e6ca3217b4f544f",
+        "mediaAfter": "23747816a1bfcc90150881cc8fcd15c0a9566a0a4acaa65507a320488cd2003b"
+      }
+    },
+    {
+      "file": "mounted-800-144-2099.png",
+      "unionPixels": 10879,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 320,
+            "y": 192,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 1.985078285381622,
+          "peak": 62,
+          "worst64": {
+            "x": 192,
+            "y": 320,
+            "mae": 3.3079877112135176
+          }
+        },
+        "finiteAfter": {
+          "mae": 1.1557434813248766,
+          "peak": 62,
+          "worst64": {
+            "x": 256,
+            "y": 384,
+            "mae": 2.0912698412698414
+          }
+        },
+        "mediaBefore": {
+          "mae": 24.92802647302142,
+          "peak": 190,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 42.013888888888886
+          }
+        },
+        "mediaAfter": {
+          "mae": 24.21883138768882,
+          "peak": 190,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 42.013888888888886
+          }
+        }
+      },
+      "hashes": {
+        "original": "a8e2811da0cca5916112b24267c87bb7911274f6516c42277857889ce35557f4",
+        "finiteBefore": "4f89a9d575975f2803ac7332ac5236ca93d027c31fc3e92b965449a8d22d959c",
+        "finiteAfter": "ed272624dc64b9320696b8003e8f00dedb7a918d2c73e225aef826272050e631",
+        "mediaBefore": "535d37fa2eda917c4c2da4c7b5b33727a76facc19c7caae3aac4091a3e9fa276",
+        "mediaAfter": "a78b6708246e17188cb22c6fbfdcd1eb08a18ac88f828d8186eda4aedc6ccc95"
+      }
+    },
+    {
+      "file": "mounted-800-144-2100.png",
+      "unionPixels": 5974,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 256,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.6317375292936056,
+          "peak": 27,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 1.4673619157976052
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.6317375292936056,
+          "peak": 27,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 1.4673619157976052
+          }
+        },
+        "mediaBefore": {
+          "mae": 27.85085369936391,
+          "peak": 96,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 50.94553881807648
+          }
+        },
+        "mediaAfter": {
+          "mae": 27.85085369936391,
+          "peak": 96,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 50.94553881807648
+          }
+        }
+      },
+      "hashes": {
+        "original": "e088a3c1fde23c66735c786e1216bc814dcc317a7f42c108a1ecf0c23e65485e",
+        "finiteBefore": "407e1870282160f158bec51bb1fea7dc6b1568d5b87f9925ed9a1be5f91471f5",
+        "finiteAfter": "407e1870282160f158bec51bb1fea7dc6b1568d5b87f9925ed9a1be5f91471f5",
+        "mediaBefore": "8bd86436eda50aba8d1aa7b76acc6a69c6886c0711da41229cdca8183607ef88",
+        "mediaAfter": "8bd86436eda50aba8d1aa7b76acc6a69c6886c0711da41229cdca8183607ef88"
+      }
+    },
+    {
+      "file": "mounted-800-144-3199.png",
+      "unionPixels": 40109,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 256,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.5223432812253277,
+          "peak": 80,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 5.542712991629401
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.8800435479983711,
+          "peak": 81,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 1.4768948515078546
+          }
+        },
+        "mediaBefore": {
+          "mae": 18.709857305509153,
+          "peak": 188,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 26.588085851949188
+          }
+        },
+        "mediaAfter": {
+          "mae": 17.588936813848928,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 26.07437582128778
+          }
+        }
+      },
+      "hashes": {
+        "original": "dbb91a64604c403e1f46835daa679a140df7cac6c72b37aea697e44c87ee859c",
+        "finiteBefore": "d28bd3016a21ec70ca9f680db8aa1038a170a452241138efabe21892ebe6ef4b",
+        "finiteAfter": "04a0939db6ec8687428891b6abed692760242129ec493bebf33f99d30a764371",
+        "mediaBefore": "bc088e18c6ffebb2deb38d74fb8362a34794f6c4e98099ceafeb54675d5926ae",
+        "mediaAfter": "3b65b25515ae9d97d9f8810f580e3b96f352dd2d42234ac86dd23b510e6f3b07"
+      }
+    },
+    {
+      "file": "mounted-800-144-3200.png",
+      "unionPixels": 40136,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 256,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.420295993621686,
+          "peak": 83,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 5.528962885882761
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.8605491329479769,
+          "peak": 83,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 1.4542721701930859
+          }
+        },
+        "mediaBefore": {
+          "mae": 18.67047870573384,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 26.281506729592728
+          }
+        },
+        "mediaAfter": {
+          "mae": 17.54300378712378,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 25.739993008215347
+          }
+        }
+      },
+      "hashes": {
+        "original": "60a532cacb6ff545157dcfe2fa2a0e13f76f5a104c1791ed2467cdfb7ebd6fec",
+        "finiteBefore": "306fba7342fe4ce68bbeded95fb2b5a596b68dd435edfaea1e68fb26f82181d3",
+        "finiteAfter": "f0e8908f6300c829bd6abf361e83d4d9ed338d79b30ed0a768818d519ca4e1f2",
+        "mediaBefore": "6af12b2a2c790aaf287c8ac22ac9118dfb30fb3fcd358367330dc10d664b514a",
+        "mediaAfter": "02f9707d51710c19f58042e628c648376e10259982967dfd805f9c01e6348a0e"
+      }
+    },
+    {
+      "file": "mounted-800-144-3201.png",
+      "unionPixels": 40183,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 256,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.4312520219993528,
+          "peak": 81,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 5.640543364681296
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.8692647802968088,
+          "peak": 82,
+          "worst64": {
+            "x": 384,
+            "y": 320,
+            "mae": 1.509114129803785
+          }
+        },
+        "mediaBefore": {
+          "mae": 18.635517507403627,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 26.194749694749696
+          }
+        },
+        "mediaAfter": {
+          "mae": 17.51068030427461,
+          "peak": 189,
+          "worst64": {
+            "x": 0,
+            "y": 384,
+            "mae": 25.661521018663876
+          }
+        }
+      },
+      "hashes": {
+        "original": "6f95a037d8e1552b4ee758d03db7fe4b03f293f1782e3932912dad789b2462ee",
+        "finiteBefore": "b5fb59c5e8d9b3c6eed0dea857cd0a15ec1ffcf5238684a7dbcdf2dc56609667",
+        "finiteAfter": "0224aa6a6cdf19e216e3976e89aab5424981f4fecb58452f0771fcdc06f8d9b7",
+        "mediaBefore": "d9136f40022924b315b9e79664cbd9eb66e9ba5e448a4b8587b0826eea980dd5",
+        "mediaAfter": "57cc4309eb92cb46231c40800ffbc645fb825f87d848ff9f9520a653a831861e"
+      }
+    },
+    {
+      "file": "mounted-800-144-3499.png",
+      "unionPixels": 41032,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 0,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.0354926236433353,
+          "peak": 69,
+          "worst64": {
+            "x": 448,
+            "y": 320,
+            "mae": 3.515151515151515
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.9261145772405277,
+          "peak": 69,
+          "worst64": {
+            "x": 0,
+            "y": 448,
+            "mae": 1.57
+          }
+        },
+        "mediaBefore": {
+          "mae": 9.651280301553259,
+          "peak": 180,
+          "worst64": {
+            "x": 0,
+            "y": 448,
+            "mae": 22.426666666666666
+          }
+        },
+        "mediaAfter": {
+          "mae": 8.655382790667447,
+          "peak": 180,
+          "worst64": {
+            "x": 0,
+            "y": 448,
+            "mae": 22.433333333333334
+          }
+        }
+      },
+      "hashes": {
+        "original": "943fc0034db01f309451dbaf0b48e86ee3c900605c19b721a12263d1398f9175",
+        "finiteBefore": "0854653c7e9e457974d87dbae216d64a54e8e8efc45fd282bdd06d1dc2492bd3",
+        "finiteAfter": "cc11b07a2cffc605299b46b08d7d955e15ff72cc2c6b70a32d5d8ed0fd7e9ebd",
+        "mediaBefore": "b4050724a31e54b76d1b42933072118168662c335fd61b73d72e8a59e83a0603",
+        "mediaAfter": "30412f6ed01332ad191d81ace375bc18a4a45b2334ad5d4dd5ae09af40cf8b4c"
+      }
+    },
+    {
+      "file": "mounted-800-144-3500.png",
+      "unionPixels": 14940,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 128,
+            "y": 320,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 0.6044399821508255,
+          "peak": 31,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 1.6528272044286278
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.6044399821508255,
+          "peak": 31,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 1.6528272044286278
+          }
+        },
+        "mediaBefore": {
+          "mae": 13.684895136099955,
+          "peak": 94,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 27.1075523922499
+          }
+        },
+        "mediaAfter": {
+          "mae": 13.684895136099955,
+          "peak": 94,
+          "worst64": {
+            "x": 320,
+            "y": 320,
+            "mae": 27.1075523922499
+          }
+        }
+      },
+      "hashes": {
+        "original": "a178be6e270e0af942296f378ced12d14c364961851c064dbd13e1ea99b2f05e",
+        "finiteBefore": "e41ba18e0a5d3f17c8eaf3330c3ad552f8fdfa24e4b04bdf8fca5ed891abb2ea",
+        "finiteAfter": "e41ba18e0a5d3f17c8eaf3330c3ad552f8fdfa24e4b04bdf8fca5ed891abb2ea",
+        "mediaBefore": "894b3a6f25438d49fa1f0380e7f2fb27da2b5c4ba7510c2156e06bafdd29d71d",
+        "mediaAfter": "894b3a6f25438d49fa1f0380e7f2fb27da2b5c4ba7510c2156e06bafdd29d71d"
+      }
+    },
+    {
+      "file": "mounted-800-144-4500.png",
+      "unionPixels": 59880,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 512,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.8047261189044757,
+          "peak": 82,
+          "worst64": {
+            "x": 640,
+            "y": 320,
+            "mae": 6.680074587107086
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.7925573368960143,
+          "peak": 83,
+          "worst64": {
+            "x": 576,
+            "y": 256,
+            "mae": 1.6862745098039216
+          }
+        },
+        "mediaBefore": {
+          "mae": 4.467356936094411,
+          "peak": 151,
+          "worst64": {
+            "x": 640,
+            "y": 320,
+            "mae": 10.17607884922749
+          }
+        },
+        "mediaAfter": {
+          "mae": 2.5139222890224895,
+          "peak": 150,
+          "worst64": {
+            "x": 640,
+            "y": 320,
+            "mae": 5.227401882436512
+          }
+        }
+      },
+      "hashes": {
+        "original": "eadc0ba84393d85f80f4a40a7a8eb84258bd46d9f0e52cae2ec0f3f0b7d0882c",
+        "finiteBefore": "cdb0b67e65865a8409e6b0b5fee09164ed098e1e758874f89f26d01ba6876ccf",
+        "finiteAfter": "f141a893c7596e71356055d43e9e7ad66a43e321576eb4b0bf4aff640f655c25",
+        "mediaBefore": "bfc5453bb695e772273d307b02ff807cfadab2545adfad4d799a8b98cd78ca58",
+        "mediaAfter": "9134946cf02c5b86fb13a48c82063ceed18598e7e215a4b032fdb08fa4eeda84"
+      }
+    },
+    {
+      "file": "mounted-800-144-4600.png",
+      "unionPixels": 69896,
+      "metrics": {
+        "original": {
+          "mae": 0.0,
+          "peak": 0,
+          "worst64": {
+            "x": 576,
+            "y": 256,
+            "mae": 0.0
+          }
+        },
+        "finiteBefore": {
+          "mae": 2.6142888481935067,
+          "peak": 82,
+          "worst64": {
+            "x": 640,
+            "y": 256,
+            "mae": 6.883720930232558
+          }
+        },
+        "finiteAfter": {
+          "mae": 0.8265089084735416,
+          "peak": 83,
+          "worst64": {
+            "x": 640,
+            "y": 256,
+            "mae": 3.4108527131782944
+          }
+        },
+        "mediaBefore": {
+          "mae": 4.124642325741101,
+          "peak": 159,
+          "worst64": {
+            "x": 640,
+            "y": 320,
+            "mae": 8.78846846846847
+          }
+        },
+        "mediaAfter": {
+          "mae": 2.3451842737781847,
+          "peak": 161,
+          "worst64": {
+            "x": 640,
+            "y": 256,
+            "mae": 5.131782945736434
+          }
+        }
+      },
+      "hashes": {
+        "original": "d65c8f8ee0ea12eb19af90ff24e1230b3e4c5d4d63413449eacd9da8cc5cb83f",
+        "finiteBefore": "31760f248952329d1d9897f961c4eec56a36c23b887d4fb46da3301e02cb4e6a",
+        "finiteAfter": "f8699a685aadf88d68d0ddbc3c185bdbe5f05ea3798e9b9d99aabc04461b6563",
+        "mediaBefore": "f638081e02cb9cc9296a64b8dd0f104642295a9655e537093a807461919580f4",
+        "mediaAfter": "b3e06addeced1340f7cade42eff00b6c1dd22548c04822ec9bfcc1e9ceb1951f"
+      }
+    }
+  ],
+  "oldHashesUnchanged": 337,
+  "androidSurfaceImplemented": false,
+  "formalVisualAcceptance": false,
+  "performanceMeasured": false
+}

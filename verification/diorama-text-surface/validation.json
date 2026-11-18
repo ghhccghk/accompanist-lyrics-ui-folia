@@ -1,0 +1,32 @@
+{
+  "suites": [
+    {
+      "suite": "DioramaTextSurfaceTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "suite": "DioramaMountedStageTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "suite": "DioramaActiveBaseRendererTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0
+    }
+  ],
+  "androidLibraryCompiled": true,
+  "desktopCompiled": true,
+  "originalThreeOracle": "originalThreeCases=108 channelPeak=1 gate=2",
+  "priorFailure": {
+    "test": "budgetExceptionClipAndMatrixRestoration",
+    "message": "expected:<1> but was:<2>",
+    "cause": "Test sampled outer saveCount before CanvasDrawScope owned its save. Surface and outer caller now each checked against their own entry count and matrix; production restoration unchanged."
+  },
+  "deviceRun": false,
+  "realDesktopWindow": false
+}

@@ -74,7 +74,9 @@ class DioramaActiveBaseRendererTest {
         failedThenUnmounted.close();assertEquals(events,closed)
     }
 
-    @Test fun coreMediaOffsetResizeFallbackAndRemount()=runDesktopComposeUiTest(width=800,height=600) {
+    @Test fun coreMediaOffsetResizeFallbackAndRemount()=lifecycle(false)
+    @Test fun transparentSurfaceMediaOffsetResizeAndRemount()=lifecycle(true)
+    private fun lifecycle(surface:Boolean)=runDesktopComposeUiTest(width=800,height=600) {
         val core=SyncedLyrics(listOf(SyncedLine("Synthetic incoming line",null,700,1500),SyncedLine("Second shaped line",null,2100,3000)))
         val renderer=DioramaActiveBaseRenderer()
         val unavailable=DioramaActiveBaseRenderer(factory={null})
@@ -101,13 +103,14 @@ class DioramaActiveBaseRendererTest {
                 Canvas(Modifier.width(viewport.dp).fillMaxHeight().background(Color(0xff162435))) {
                     playback?.drawStage(this,t,playback.camera.perspectiveAt(t,reduced),DioramaLinearColor(.7,.8,.9),
                         DioramaLinearColor(.8,.2,.1),reducedMotion=reduced,
-                        activeBaseRenderer=when(mode){"sample"->renderer;"none"->unavailable;"budget"->budget;else->null})
+                        activeBaseRenderer=when(mode){"sample","surface"->renderer;"none"->unavailable;"budget"->budget;else->null},
+                        transparentTextSurface=mode=="surface")
                 }
             }
             fun pixels():IntArray{waitForIdle();val im=captureToImage();return IntArray(im.width*im.height).also{im.readPixels(it)}}
             val ordinary=pixels()
             for(m in listOf("none","budget")){runOnIdle{mode=m};assertContentEquals(ordinary,pixels(),"Real ordinary fallback $m")}
-            runOnIdle{mode="sample"};val original=pixels();val count=renderer.preparations
+            runOnIdle{mode=if(surface)"surface"else"sample"};val original=pixels();val count=renderer.preparations
             assertTrue(renderer.residentCount>0);assertTrue(renderer.residentBytes<=32L*1024*1024)
             mainClock.advanceTimeBy(1000);assertContentEquals(original,pixels());assertEquals(count,renderer.preparations)
             runOnIdle{time=1.1;offset=200};assertContentEquals(original,pixels(),"Offset exactly once")

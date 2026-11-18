@@ -2023,3 +2023,15 @@ versus CSS control establishes the missing composition contribution. Ordinary
 No source code/texture/font copied into runtime, no production or license
 change. Conditions, hashes, timeout failure/recovery and contact retained in
 verification/diorama-mounted-entrance; not Android/performance/final acceptance.
+
+### Diorama bounded transparent text surface (2026-11-18)
+Same pinned DioramaScene.tsx / DioramaActiveUnitPlanes.tsx and actual Three
+transparent framebuffer order -> DioramaTextPlayback.drawStage opt-in,
+DioramaActiveText.framesAt extraction and independent platform TextSurface
+adapter. JVM uses bounded local Skia F16 saveLayer only for visible additive
+layers; Android returns unavailable and preserves ordinary rendering. No
+upstream asset/font or driver implementation copied. Actual 108 original
+Three solid-color/RGBA/CSS cases, fixed48 five-image-union comparison, two
+media local regressions and resource-test failure are preserved in
+verification/diorama-text-surface. AGPL-3.0-only unchanged; not device,
+performance, Android surface or final visual acceptance.

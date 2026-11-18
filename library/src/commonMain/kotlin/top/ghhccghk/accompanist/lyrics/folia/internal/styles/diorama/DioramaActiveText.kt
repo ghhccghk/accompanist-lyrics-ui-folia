@@ -37,12 +37,17 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         keywords: Map<Int, DioramaLinearColor> = emptyMap(), life: Double = 1.0,
         fog: DioramaFog? = null, toneMapping: DioramaToneMapping = DioramaToneMapping.None,
         breath: Double = 1.0, baseRenderer: DioramaActiveBaseRenderer? = null) {
-        val states = slices.mapIndexed { i, slice ->
+        val states = framesAt(time,primary,accent,tuning,keywords,life,breath)
+        drawFrames(scope,view,frame,placement,states,fog,toneMapping,baseRenderer)
+    }
+
+    internal fun framesAt(time:Double,primary:DioramaLinearColor,accent:DioramaLinearColor,
+        tuning:DioramaUnitTuning=DioramaUnitTuning(),keywords:Map<Int,DioramaLinearColor> = emptyMap(),
+        life:Double=1.0,breath:Double=1.0):List<DioramaUnitFrame> =
+        slices.mapIndexed { i, slice ->
             dioramaUnitFrame(time, slice.unit.start, slice.unit.end,
                 dioramaMediaEnvelope(time, slice.unit.start, slice.unit.end), primary, accent, tuning, keywords[i], life = life, breath = breath)
         }
-        drawFrames(scope,view,frame,placement,states,fog,toneMapping,baseRenderer)
-    }
 
     /** Shared renderer for independently resolved material states. Media playback
      * resolves analytic states above; finite source controls replay their OWN

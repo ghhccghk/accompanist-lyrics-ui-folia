@@ -33,7 +33,9 @@ import kotlin.test.*
 class DioramaMountedStageTest {
     @Test fun narrow()=capture(380)
     @Test fun wide()=capture(800)
-    private fun capture(width:Int)=runDesktopComposeUiTest(width=width,height=600) {
+    @Test fun surfaceNarrow()=capture(380,surfaceOnly=true)
+    @Test fun surfaceWide()=capture(800,surfaceOnly=true)
+    private fun capture(width:Int,surfaceOnly:Boolean=false)=runDesktopComposeUiTest(width=width,height=600) {
         val rows=File("../verification/diorama-fixtures/mounted-cut-v1/steps.tsv").readLines()
             .filterNot{it.startsWith('#')||it.isBlank()}.map{it.split('\t')}.filter{it[1].toInt()==width}
         val times=listOf(0.0,.7,1.6,2.099,2.1,3.199,3.2,3.201,3.499,3.5,4.5,4.6)
@@ -219,9 +221,10 @@ class DioramaMountedStageTest {
                                 finiteMaterials.getValue("${r[2]}-$time"),fog,DioramaToneMapping.AcesFilmic)
                         }
                     }else ready.drawStage(this,time,view,primary,accent,secondary,fog=fog,
-                        activeFrames=if(method in listOf("material","sampler","base"))finiteMaterials.getValue("${r[2]}-$time")else null,
-                        plainRenderer=if(method.startsWith("sampler")||method.startsWith("base"))plainRenderer else null,
-                        activeBaseRenderer=if(method.startsWith("base"))activeBaseRenderer else null)
+                        activeFrames=if(method in listOf("material","sampler","base","surface"))finiteMaterials.getValue("${r[2]}-$time")else null,
+                        plainRenderer=if(method.startsWith("sampler")||method.startsWith("base")||method.startsWith("surface"))plainRenderer else null,
+                        activeBaseRenderer=if(method.startsWith("base")||method.startsWith("surface"))activeBaseRenderer else null,
+                        transparentTextSurface=method.startsWith("surface"))
                 }
                 }finally{if(transparentStage)canvas.restore()}
             }
@@ -230,6 +233,30 @@ class DioramaMountedStageTest {
         fun pixels():IntArray{waitForIdle();val im=captureToImage();return IntArray(im.width*im.height).also{im.readPixels(it)}}
         val media=mutableMapOf<String,IntArray>();var mediaPeak=0.0
         for(i in probes.indices) {
+            if(surfaceOnly) {
+                val r=probes[i];val name="mounted-$width-${r[2]}-${(r[3].toDouble()*1000).roundToInt()}.png"
+                val surfaceOut=File("../build/verification/diorama-text-surface-kotlin").apply{mkdirs()}
+                for(mode in listOf("surface","surface-media")) {
+                    runOnIdle{current=i;method=mode};val image=pixels()
+                    if(mode=="surface-media") {
+                        media[r[3]]?.let{assertContentEquals(it,image,"Surface cannot add display-schedule state")}
+                        media[r[3]]=image
+                    }else {
+                        val states=finiteMaterials.getValue("${r[2]}-${r[3].toDouble()}")
+                        val expectedFolder=if(states.any{it.glowVisible||it.soulVisible})"diorama-transparent-float-kotlin"
+                            else "diorama-mounted-active-base-kotlin"
+                        val expected=ImageIO.read(File("../build/verification/$expectedFolder/"+
+                            if(expectedFolder=="diorama-transparent-float-kotlin")"base-$name"else name))
+                        assertContentEquals(expected.getRGB(0,0,expected.width,expected.height,null,0,expected.width),image,
+                            "Actual integrated surface matches fixed F16 control; normal-only bypass is exact")
+                    }
+                    assertSame(core.lines[r[6].toInt()-8],prepared!!.sourceAt(r[3].toDouble()).source)
+                    ImageIO.write(captureToImage().toAwtImage(),"png",surfaceOut.resolve(if(mode=="surface")name else"media-$name"))
+                    val count=activeBaseRenderer.preparations;mainClock.advanceTimeBy(75)
+                    assertContentEquals(image,pixels());assertEquals(count,activeBaseRenderer.preparations)
+                }
+                continue
+            }
             runOnIdle{current=i;method="finite"};pixels()
             val r=probes[i];val name="mounted-$width-${r[2]}-${(r[3].toDouble()*1000).roundToInt()}.png"
             assertSame(core.lines[r[6].toInt()-8],prepared!!.sourceAt(r[3].toDouble()).source)
@@ -265,7 +292,7 @@ class DioramaMountedStageTest {
         // Existing four failed entrance frames, same independently reconstructed
         // finite view/materials. New diagnostic outputs never replace originals.
         val entranceOut=File("../build/verification/diorama-mounted-entrance-kotlin").apply{mkdirs()}
-        for(fps in listOf("60","144")) {
+        if(!surfaceOnly)for(fps in listOf("60","144")) {
             val index=probes.indexOfFirst{it[2]==fps&&it[3].toDouble()==.7};assertTrue(index>=0)
             val name="mounted-$width-$fps-700.png"
             for(kind in listOf("full","all","base","glow","soul","neighbors")) {
@@ -299,7 +326,7 @@ class DioramaMountedStageTest {
             entranceOut.resolve("$width-$fps-inputs.tsv").writeText("# unit width height pivotPx imageOffsetPx charStart charEnd\n"+
                 inputRows.joinToString("\n")+"\n")
         }
-        if(width==380) {
+        if(width==380&&!surfaceOnly) {
             val diagnostic=File("../build/verification/diorama-mounted-input-kotlin").apply{mkdirs()}
             val index=probes.indexOfFirst{it[2]=="60"&&it[3].toDouble()==.7}
             assertTrue(index>=0)
@@ -357,7 +384,7 @@ class DioramaMountedStageTest {
         }
         assertEquals(1,builds)
         for(i in listOf(0,probes.lastIndex,3,12,7)) {
-            runOnIdle{current=i;method="media"};assertTrue(media.getValue(probes[i][3]).contentEquals(pixels()))
+            runOnIdle{current=i;method=if(surfaceOnly)"surface-media"else"media"};assertTrue(media.getValue(probes[i][3]).contentEquals(pixels()))
         }
         val paused=pixels();mainClock.advanceTimeBy(800);assertTrue(paused.contentEquals(pixels()))
         runOnIdle{mounted=false};pixels();assertNull(prepared)

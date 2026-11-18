@@ -124,8 +124,25 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         toneMapping: DioramaToneMapping = DioramaToneMapping.AcesFilmic,
         activeFrames: List<DioramaUnitFrame>? = null, breath: Double? = null,
         plainRenderer: DioramaPlainRenderer? = null,
-        activeBaseRenderer: DioramaActiveBaseRenderer? = null) {
+        activeBaseRenderer: DioramaActiveBaseRenderer? = null,
+        transparentTextSurface:Boolean=false) {
         val index=camera.subjectIndex(time);val s=camera.subjects[index]
+        var resolvedFrames=activeFrames
+        if(transparentTextSurface) {
+            if(resolvedFrames==null) {
+                val delta=dioramaComposeLocal(s.frame,s.placement.offsetR,s.placement.offsetU,0.0)-view.eye
+                resolvedFrames=lines[index].text.framesAt(time,primary,accent,
+                    if(reducedMotion)DioramaUnitTuning(soul=0.0)else DioramaUnitTuning(),
+                    life=dioramaTextLife(sqrt(delta.dot(delta))),
+                    breath=breath?:dioramaBreathAt(breathOriginSeconds+time,reducedMotion))
+            }
+            // Normal-over composition is associative; without additive layers
+            // an intermediate surface adds only avoidable rounding/allocation.
+            if(resolvedFrames.any{it.glowVisible||it.soulVisible}&&scope.tryDioramaTextSurface {
+                drawStage(scope,time,view,primary,accent,secondary,reducedMotion,fog,toneMapping,
+                    resolvedFrames,breath,plainRenderer,activeBaseRenderer,transparentTextSurface=false)
+            })return
+        }
         // Original neighbours are transparent, depthWrite=false and order0;
         // active layers have order17/18/19. With no opaque background geometry,
         // far-to-near centre sorting reproduces that transparent text ordering.
@@ -138,7 +155,7 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
                     neighbor.opacity.toFloat(),fog,toneMapping)
             }
         }
-        if(activeFrames!=null)lines[index].text.drawFrames(scope,view,s.frame,s.placement,activeFrames,fog,toneMapping,activeBaseRenderer)
+        if(resolvedFrames!=null)lines[index].text.drawFrames(scope,view,s.frame,s.placement,resolvedFrames,fog,toneMapping,activeBaseRenderer)
         else {
             val activeDelta=dioramaComposeLocal(s.frame,s.placement.offsetR,s.placement.offsetU,0.0)-view.eye
             lines[index].text.draw(scope,time,view,s.frame,s.placement,

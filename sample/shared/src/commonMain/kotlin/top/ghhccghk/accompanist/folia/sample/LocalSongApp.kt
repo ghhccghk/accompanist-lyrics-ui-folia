@@ -187,7 +187,7 @@ fun FoliaSampleApp(
                         else if (!songs.snapshot.isPlaying && songs.snapshot.positionMillis >= song.player.durationMillis)
                             Box(modifier, contentAlignment = Alignment.Center) { Text("播放结束") }
                         else SampleRenderStage(session.renderResolution,modifier) { SampleMaskScope(session) {
-                            FoliaLyricsView(
+                            SampleLyricsRegion(session,visible,
                                 displayLyrics!!,
                                 { songs.snapshot },
                                 Modifier.fillMaxSize(),

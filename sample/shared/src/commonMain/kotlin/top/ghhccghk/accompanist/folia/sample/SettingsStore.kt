@@ -23,7 +23,8 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
     val pendoloTuning:PendoloTuning=PendoloTuning(),
     val cappellaTuning:CappellaTuning=CappellaTuning(),
     val fumeTuning:FumeTuning=FumeTuning(),
-    val dioramaTuning:DioramaTuning=DioramaTuning()) {
+    val dioramaTuning:DioramaTuning=DioramaTuning(),
+    val rendererBackends:Map<SampleLyricTheme,SampleRendererBackend> = emptyMap()) {
     fun encode(): String = listOf("version=1", "translation=${options.showTranslation}",
         "phonetic=${options.showPhonetic}", "next=${options.showNextLine}", "motion=${options.reducedMotion}",
         "quality=${options.quality}", "offset=${options.offsetMillis}", "rotation=${tuning.enableWordRotation}",
@@ -51,7 +52,9 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
         "cadenzaMotion=${cadenzaTuning.motionAmount}","cadenzaChorus=${cadenzaTuning.chorusLineIndices.sorted().joinToString(",")}",
         "cadenzaWords=${cadenzaTuning.wordColors.joinToString("|"){entry->
             entry.word.map{it.code.toString(16).padStart(4,'0')}.joinToString("")+"~"+entry.color.toArgb().toUInt().toString(16)
-        }}").joinToString("\n")
+        }}").plus(SampleLyricTheme.entries.mapNotNull { theme ->
+            rendererBackends[theme]?.let { "renderer.${theme.name}=${it.name}" }
+        }).joinToString("\n")
 
     companion object {
         fun decode(value: String): SampleSettings {
@@ -99,14 +102,17 @@ data class SampleSettings(val options: FoliaOptions = FoliaOptions(),
                     glowIntensity=number("fumeGlow",1f,0f..1.8f),showPrintSymbols=boolean("fumeSymbols",true)),
                 DioramaTuning(fontScale=number("dioramaFont",1f,.5f..2f),enforceRasterBudget=boolean("dioramaRasterBudget",true),
                     cacheTexturesOnDisk=boolean("dioramaDiskCache",true),
-                    rasterMemoryBudgetBytes=fields["dioramaRasterMemory"]?.toLongOrNull()?.takeIf{it in 1..96L*1024*1024}?:32L*1024*1024))
+                    rasterMemoryBudgetBytes=fields["dioramaRasterMemory"]?.toLongOrNull()?.takeIf{it in 1..96L*1024*1024}?:32L*1024*1024),
+                SampleLyricTheme.entries.mapNotNull { theme ->
+                    SampleRendererBackend.entries.find { it.name==fields["renderer.${theme.name}"] }?.let { theme to it }
+                }.toMap())
         }
     }
 }
 
 fun SampleSession.settings() = SampleSettings(options, tuning, fontScale, lyricTheme, partitaTuning, renderResolution, tiltTuning,cadenzaTuning,pendoloTuning,cappellaTuning.copy(title="歌词",agents=emptyList()),
     fumeTuning.copy(layoutSeed="Fume",chorusLineIndices=emptySet(),wordColors=emptyList()),
-    dioramaTuning.copy(layoutSeed="Diorama",fogColor=Color.Transparent))
+    dioramaTuning.copy(layoutSeed="Diorama",fogColor=Color.Transparent),rendererBackends.toMap())
 fun SampleSession.applySettings(value: SampleSettings) {
     options = value.options; tuning = value.tuning; fontScale = value.fontScale
     lyricTheme=value.lyricTheme;partitaTuning=value.partitaTuning
@@ -117,4 +123,5 @@ fun SampleSession.applySettings(value: SampleSettings) {
     cappellaTuning=value.cappellaTuning
     fumeTuning=value.fumeTuning
     dioramaTuning=value.dioramaTuning
+    rendererBackends=value.rendererBackends.toMap()
 }

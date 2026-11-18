@@ -14,6 +14,7 @@ dependencyResolutionManagement {
 rootProject.name = "lyrics-ui-folia"
 include(":library", ":sample:shared", ":sample:android-app", ":sample:desktop-app")
 include(":native-renderer-android")
+include(":sample:android-native-app")
 // Opt-in feasibility experiment; never adds unsupported variants to the published library.
 if (providers.gradleProperty("foliaNativeProbe").orNull == "true") {
     include(":sample:native-probe")

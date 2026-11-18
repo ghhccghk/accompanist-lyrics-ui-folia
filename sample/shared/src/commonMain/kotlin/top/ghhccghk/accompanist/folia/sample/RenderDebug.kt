@@ -99,6 +99,13 @@ internal fun RenderDebugOverlay(enabled:Boolean,visible:Boolean,session:SampleSe
                 TextButton(onClose){Text("关闭调试信息")}
             }
             Text("后端 $backend（请求 ${host?.requestedBackend?:"AUTO"}）",style=MaterialTheme.typography.bodySmall)
+            val renderer=session.rendererReport
+            Text("歌词绘制 ${renderer.requested} → ${renderer.actual} · ${renderer.state}",style=MaterialTheme.typography.bodySmall)
+            renderer.reason?.let{Text("回退／失败：$it",style=MaterialTheme.typography.bodySmall)}
+            if(renderer.actual=="NativeGpu"){
+                Text("GPU提交帧 ${renderer.frameId} · 纹理 ${renderer.textureBytes} B · 累计上传 ${renderer.uploadedBytes} B",style=MaterialTheme.typography.bodySmall)
+                Text("Rust GPU 主文字／辉光；字幕与等待为 Kotlin 覆盖层。GPU耗时和实际呈现时间未知。旧 CPU 遮罩／颜色处理器不用于 native 主舞台。",style=MaterialTheme.typography.bodySmall)
+            }
             Text("窗口 ${windowSize.width}×${windowSize.height} px · density ${density.density} · fontScale ${density.fontScale}",style=MaterialTheme.typography.bodySmall)
             Text("窗口回调 FPS ${number(frames.fps)} · ${frames.frames} 样本 / 最近2秒",style=MaterialTheme.typography.bodySmall)
             Text("耗时均值 ${number(frames.meanMillis)} / P95 ${number(frames.p95Millis)} / 最大 ${number(frames.maxMillis)} ms",style=MaterialTheme.typography.bodySmall)

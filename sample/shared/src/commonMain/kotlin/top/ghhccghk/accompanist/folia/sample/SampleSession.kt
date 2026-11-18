@@ -17,6 +17,10 @@ class SampleSession(demoInitially: Boolean = false) {
     var options by mutableStateOf(FoliaOptions())
     var tuning by mutableStateOf(ClassicTuning())
     var lyricTheme by mutableStateOf(SampleLyricTheme.Classic)
+    var rendererBackends by mutableStateOf<Map<SampleLyricTheme,SampleRendererBackend>>(emptyMap())
+    val rendererBackend:SampleRendererBackend get()=rendererBackends[lyricTheme]?:SampleRendererBackend.Kotlin
+    fun setRendererBackend(value:SampleRendererBackend){rendererBackends=rendererBackends+(lyricTheme to value)}
+    var rendererReport by mutableStateOf(SampleRendererReport())
     var partitaTuning by mutableStateOf(PartitaTuning())
     var tiltTuning by mutableStateOf(TiltTuning())
     var cadenzaTuning by mutableStateOf(CadenzaTuning())

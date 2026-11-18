@@ -14,6 +14,17 @@ This is the single current execution checklist; the design and implementation pr
 
 P1 platform milestone passed (`ad21f29`); evidence: `verification/native-renderer-p1.md`. P2 real core/prepared Partita + GPU passes, 6 Android Rust tests, existing Partita and bridge JVM tests, isolated release/R8 native consumer and paused frame stability passed; evidence: `verification/native-renderer-p2.md`. This is not complete visual/performance acceptance. Implement and validate the thin sample, persisted per-theme backends, failure/lifecycle and interaction behavior next.
 
+P2 committed as `c0038b6`. Thin native sample and original Android debug APK both
+build. Settings 11/11 pass, including per-theme backend persistence and old input.
+Owned-emulator UI: song selection/LRC/settings/demo remain present; selecting
+Partita + NativeRequired reports `NativeGpu Ready:PartitaMainAndGlow`. Force-stop
+and cold restart retain the requested backend/theme (paused demo restarts at 0;
+`Preparing` before a main scene is expected). Existing LocalSong, SongSelection,
+EmbeddedLyrics and EmbeddedLyricsUi regression tests PASS. Actual Android
+OpenDocument/audio-service/import flow is still unverified. Interaction/lifecycle
+release-consumer checks are next. Initial sample build
+failed on Activity `visible`/`setVisible` collision; renamed `hostVisible`.
+
 ## Remaining
 
 - P3: thin native sample and persisted backend selection; input pass-through, cancel behavior and source mapping; explicit fallback/required failures; lifecycle/recreation/multi-instance runtime matrix.

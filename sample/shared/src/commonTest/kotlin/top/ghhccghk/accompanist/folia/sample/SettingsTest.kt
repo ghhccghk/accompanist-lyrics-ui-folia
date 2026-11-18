@@ -4,6 +4,24 @@ import top.ghhccghk.accompanist.lyrics.folia.*
 import kotlin.test.*
 
 class SettingsTest {
+    @Test fun rendererChoiceIsRememberedPerThemeAndOldSettingsRemainKotlin() {
+        val session=SampleSession()
+        assertEquals(SampleRendererBackend.Kotlin,session.rendererBackend)
+        session.lyricTheme=SampleLyricTheme.Partita
+        session.setRendererBackend(SampleRendererBackend.NativePreferred)
+        session.lyricTheme=SampleLyricTheme.Classic
+        assertEquals(SampleRendererBackend.Kotlin,session.rendererBackend)
+        session.setRendererBackend(SampleRendererBackend.NativeRequired)
+        val saved=session.settings()
+        assertEquals(saved,SampleSettings.decode(saved.encode()))
+        val restored=SampleSession().also { it.applySettings(SampleSettings.decode(saved.encode())) }
+        restored.lyricTheme=SampleLyricTheme.Partita
+        assertEquals(SampleRendererBackend.NativePreferred,restored.rendererBackend)
+        restored.lyricTheme=SampleLyricTheme.Classic
+        assertEquals(SampleRendererBackend.NativeRequired,restored.rendererBackend)
+        assertTrue(SampleSettings.decode("version=1").rendererBackends.isEmpty())
+        assertTrue(SampleSettings.decode("version=1\nrenderer.Unknown=NativeRequired\nrenderer.Partita=Unknown").rendererBackends.isEmpty())
+    }
     @Test fun dioramaDebugPreviewPreferencesAreCompatible(){
         val settings=SampleSettings(lyricTheme=SampleLyricTheme.Diorama,dioramaTuning=DioramaTuning(fontScale=1.3f,enforceRasterBudget=false,
             cacheTexturesOnDisk=false,rasterMemoryBudgetBytes=16L*1024*1024))

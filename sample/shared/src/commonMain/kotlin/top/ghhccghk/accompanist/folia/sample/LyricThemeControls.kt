@@ -13,6 +13,18 @@ import androidx.compose.ui.unit.dp
 internal fun LyricThemeControls(session: SampleSession) {
     Text("歌词主题")
     Text("7 个校准预览主题 + 镜台实验调试预览，尚未完成正式视觉验收。", style=MaterialTheme.typography.bodySmall)
+    if(LocalSampleLyricsRenderer.current.supportsBackendSelection){
+        Text("当前主题绘制后端（实验，默认 Kotlin）")
+        FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp)){
+            for(backend in SampleRendererBackend.entries)FilterChip(
+                selected=session.rendererBackend==backend,onClick={session.setRendererBackend(backend)},
+                modifier=Modifier.testTag("renderer-backend-${backend.name}"),label={Text(backend.name)})
+        }
+        Text("Rust GPU 目前仅接云阶主舞台；字幕／等待使用 Kotlin 覆盖层。Preferred 失败会说明原因，Required 失败直接显示。",style=MaterialTheme.typography.bodySmall)
+        val report=session.rendererReport
+        Text("请求 ${session.rendererBackend} · 实际 ${report.actual} · ${report.state}",style=MaterialTheme.typography.bodySmall)
+        report.reason?.let{Text(it,style=MaterialTheme.typography.bodySmall)}
+    }
     FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
         for(theme in SampleLyricTheme.entries) {
             FilterChip(

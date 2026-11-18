@@ -129,7 +129,7 @@ internal fun DemoFoliaSampleApp(visible: Boolean = true, session: SampleSession 
                 }
             }
             val lyrics: @Composable (Modifier) -> Unit = { modifier ->
-                SampleRenderStage(session.renderResolution,modifier) { SampleMaskScope(session) { FoliaLyricsView(displayLyrics, { clock.snapshot }, Modifier.fillMaxSize(), contentKey = scene.id, options = options,
+                SampleRenderStage(session.renderResolution,modifier) { SampleMaskScope(session) { SampleLyricsRegion(session,visible,displayLyrics, { clock.snapshot }, Modifier.fillMaxSize(), contentKey = scene.id, options = options,
                     typography = FoliaTypography(scale = fontScale), style = session.lyricStyleForTitle(scene.title),
                     onStatus = { status = it },
                     onLineClicked = { clock.seek(it.start.toLong() + options.offsetMillis) }, onLinePressed = { pressed = it }) } }

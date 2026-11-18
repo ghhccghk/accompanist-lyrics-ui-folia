@@ -8,11 +8,17 @@
 | Pendolo | core桥接、轮盘、扫描、字幕、副歌/交互 | sample已可选校准预览 | 未完成，密集tick/旋转/栅格差待校准 |
 | Cappella | core/消息/揭示/动态presence舞台 | sample已可选文字对话校准预览 | 密集布局/光栅/设备未最终验收 |
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
-| Diorama | core/完整文字透视/三层、13目标、follower/原picker、裁剪/邻行/life/fog、incoming flight媒体重建 | 无 | 完整双走廊/循环/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
+| Diorama | core/完整文字透视/三层、13目标、follower/原picker、裁剪/邻行/life/fog、incoming flight/同走廊loop媒体重建 | 无 | 完整双走廊/连续残差、depth/栅格/整曲驻留/设备尚未验收 |
 
-当前唯一下一项：镜台同走廊loop restart文字镜头闭环；复核原loop/epoch语义，
-复用当前真实core/flight轨道，回到原走廊而非另加46单位；正反seek不能误触发切曲。
-完成条件为原控制、实际文字暂停/重建/循环及回调，仍不开放公共主题。
+当前唯一下一项：镜台有界的跨曲departing文字窗口，与实际原版同字体/视口/
+core内容做完整文字过渡对照；仅保留必要旧plain planes，不递归保留整曲playback。
+同时用完整原文字检查loop回程的明显放大/裁切/重叠，分清原行为与媒体/光栅残差。
+完成条件为源窗口/层级/opacity、完整文字及暂停seek/切曲/释放证据；不开放公共主题。
+同走廊loop为历史下一项，本轮已完成：原32连续有限控制峰8.74e-13、26窗口/
+436材质峰1.42e-14、真实core原对象/文字/raster/世界帧复用、取消/媒体重建通过；
+outgoing窗口与flight同一媒体时间，在3.2s精确结束。15定向JVM/Android库/Desktop
+编译通过。实际native contact仍有强放大/裁切/重叠，无完整原loop光栅结论，
+见verification/diorama-loop；显式loop edge与任意顺序seek区分，无新设备/窗口。
 此前incoming flight为历史下一项，486b8c1已完成：480原同初态有限控制峰1.42e-14、
 96真实core原Three/本有限/本媒体文字帧，另67连续观察且原8关键帧及step完全不变。
 同矩阵前景均值有限3.955025/媒体12.366458，媒体位置残差.035038world；
@@ -22,9 +28,9 @@ Desktop编译通过；暂停/乱序seek/offset/resize/reduced/重挂通过，无
 正常有限1482原控制通过；de7baa6旧normal图表因不是当前基线仅120/288hash匹配，
 失败原样记录，不将此称无变化，亦不改旧报告/期望。详该README/失败日志。
 loop回归另发现实际2100ms行在media2300/offset200时因秒浮点相减误选前行；
-现按core毫秒单位换算，无round/epsilon/帧延迟，十组正负offset精确边界及前后
+f7c2ecc按core毫秒单位换算，无round/epsilon/帧延迟，十组正负offset精确边界及前后
 0.1µs/完整文字像素/点击逆映射通过。证据verification/diorama-offset新增边界节；
-旧loop失败保留。loop实现与原32帧数值/实际文字回归已通过，待独立整理提交。
+旧loop失败保留。loop当前结果以verification/diorama-loop为准，不覆盖原失败记录。
 群唱当前局部探针已收束：159条原target/live-value/DOM记录及完整独立重复一致；
 1.016667s目标110→49后保持49，inline却110→49→110、MV一直110，证伪再次切target。
 原v2所有phase值不变。媒体重建尚缺可成立的瞬时DOM写入/解析交接策略，

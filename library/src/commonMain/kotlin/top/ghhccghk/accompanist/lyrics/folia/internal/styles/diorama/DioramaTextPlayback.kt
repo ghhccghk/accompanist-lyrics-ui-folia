@@ -23,7 +23,8 @@ internal data class DioramaPlaybackLine(val core: DioramaCoreLine, val text: Dio
  * depth testing remain separate. Near/far clipping and optional fog are shared
  * by all text layers. */
 internal class DioramaTextPlayback private constructor(val lines: List<DioramaPlaybackLine>,
-    val camera: DioramaCameraTrack, val width: Double, val height: Double) {
+    val camera: DioramaCameraTrack, val width: Double, val height: Double,
+    private val transitionOutgoingIndex: Int? = null) {
     fun lyricTime(mediaSeconds: Double, offsetMillis: Int = 0): Double {
         require(mediaSeconds.isFinite())
         // Same host contract as FoliaLyricsView: positive offset delays lyrics.
@@ -45,6 +46,19 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         val time=lyricTime(mediaSeconds,offsetMillis)
         return DioramaTextTransition(camera.at(time),camera.subjects[camera.subjectIndex(time)].frame.position,epoch)
     }
+    /** Caller supplies a real loop discontinuity, not a generic backwards seek.
+     * Folia VisualizerDiorama:402–422 keeps the segment and flies to its start.
+     * Reuses shaped text, original core refs and world frames; prepares only
+     * the incoming media camera from captured outgoing base refs. */
+    fun loopAt(mediaSeconds: Double, epoch: Int, offsetMillis: Int = 0,
+        checkpoint: () -> Unit = {}): DioramaTextPlayback {
+        val time=lyricTime(mediaSeconds,offsetMillis);val previous=camera.at(time)
+        return DioramaTextPlayback(lines,camera.restarted(previous,epoch,checkpoint),width,height,camera.subjectIndex(time))
+    }
+    fun outgoingTextIndexAt(time: Double): Int? =
+        if(time>=0.0&&time<DioramaFlightDuration)transitionOutgoingIndex else null
+    fun mountedTextIndicesAt(time: Double): List<Int> =
+        dioramaTransitionTextIndices(camera.subjectIndex(time),outgoingTextIndexAt(time),lines.size)
     fun draw(scope: DrawScope, mediaSeconds: Double, primary: DioramaLinearColor,
         accent: DioramaLinearColor, offsetMillis: Int = 0, reducedMotion: Boolean = false,
         secondary: DioramaLinearColor = primary, fog: DioramaFog? = null) {
@@ -60,9 +74,10 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
         // Original neighbours are transparent, depthWrite=false and order0;
         // active layers have order17/18/19. With no opaque background geometry,
         // far-to-near centre sorting reproduces that transparent text ordering.
-        dioramaMountedTextIndices(index,lines.size).filter { it!=index }.map { i ->
+        val outgoing=outgoingTextIndexAt(time)
+        mountedTextIndicesAt(time).filter { it!=index }.map { i ->
             val subject=camera.subjects[i];val text=lines[i].neighbor
-            dioramaNeighborFrame(i,index,text.advancePx,text.fontPx,subject.frame,subject.placement,view,primary,secondary)
+            dioramaNeighborFrame(i,index,text.advancePx,text.fontPx,subject.frame,subject.placement,view,primary,secondary,outgoing)
         }.sortedWith(compareByDescending<DioramaNeighborFrame>{it.depth}.thenBy{it.index}).forEach { neighbor ->
             if(neighbor.opacity>0) {
                 val subject=camera.subjects[neighbor.index]

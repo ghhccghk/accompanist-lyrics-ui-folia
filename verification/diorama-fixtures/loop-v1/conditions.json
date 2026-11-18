@@ -1,0 +1,157 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "sourceFragments": [
+    {
+      "file": "src/components/visualizer/diorama/VisualizerDiorama.tsx",
+      "startLine": 54,
+      "endLine": 54,
+      "sha256": "64bdd8178d450ceccb3c7e542fee6df35e257ff8d0918350e707808a41d8b196"
+    },
+    {
+      "file": "src/components/visualizer/diorama/VisualizerDiorama.tsx",
+      "startLine": 364,
+      "endLine": 428,
+      "sha256": "883a963cdd3efc9ab9691d4819931074d85269e52763fbd64cd9649036210240"
+    }
+  ],
+  "lines": [
+    {
+      "fullText": "Synthetic loop line 0",
+      "startTime": 0.7,
+      "endTime": 1.5,
+      "words": []
+    },
+    {
+      "fullText": "Synthetic loop line 1",
+      "startTime": 2.0999999999999996,
+      "endTime": 2.9,
+      "words": []
+    },
+    {
+      "fullText": "Synthetic loop line 2",
+      "startTime": 3.5,
+      "endTime": 4.3,
+      "words": []
+    }
+  ],
+  "times": [
+    0,
+    0.7,
+    1.6,
+    2.099,
+    2.1,
+    3.2,
+    3.5,
+    4.5
+  ],
+  "scenarios": [
+    {
+      "seed": "DioramaProbe",
+      "width": 380,
+      "edge": {
+        "isNewSong": false,
+        "isLoopRestart": true,
+        "startingTransition": true,
+        "transition": {
+          "epoch": 3,
+          "outgoingIndex": 2
+        },
+        "epoch": 3,
+        "key": "DioramaProbe#0",
+        "origin": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "globalStart": 0,
+        "segments": 1,
+        "lastIndex": 0
+      },
+      "originalFramesRetained": true,
+      "nextGlobalStart": 3
+    },
+    {
+      "seed": "DioramaProbe",
+      "width": 800,
+      "edge": {
+        "isNewSong": false,
+        "isLoopRestart": true,
+        "startingTransition": true,
+        "transition": {
+          "epoch": 3,
+          "outgoingIndex": 2
+        },
+        "epoch": 3,
+        "key": "DioramaProbe#0",
+        "origin": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "globalStart": 0,
+        "segments": 1,
+        "lastIndex": 0
+      },
+      "originalFramesRetained": true,
+      "nextGlobalStart": 3
+    },
+    {
+      "seed": "Incoming mirror",
+      "width": 380,
+      "edge": {
+        "isNewSong": false,
+        "isLoopRestart": true,
+        "startingTransition": true,
+        "transition": {
+          "epoch": 3,
+          "outgoingIndex": 2
+        },
+        "epoch": 3,
+        "key": "Incoming mirror#0",
+        "origin": {
+          "x": -28.924591107490706,
+          "y": 31.000970534179235,
+          "z": -17.841184243301235
+        },
+        "globalStart": 0,
+        "segments": 1,
+        "lastIndex": 0
+      },
+      "originalFramesRetained": true,
+      "nextGlobalStart": 3
+    },
+    {
+      "seed": "Incoming mirror",
+      "width": 800,
+      "edge": {
+        "isNewSong": false,
+        "isLoopRestart": true,
+        "startingTransition": true,
+        "transition": {
+          "epoch": 3,
+          "outgoingIndex": 2
+        },
+        "epoch": 3,
+        "key": "Incoming mirror#0",
+        "origin": {
+          "x": -28.924591107490706,
+          "y": 31.000970534179235,
+          "z": -17.841184243301235
+        },
+        "globalStart": 0,
+        "segments": 1,
+        "lastIndex": 0
+      },
+      "originalFramesRetained": true,
+      "nextGlobalStart": 3
+    }
+  ],
+  "records": 32,
+  "harnessSha256": "edda39fb505bc13fa39aa1e0561aafeeb4863b03c15a7ca38234c7cb91d1a28e",
+  "scope": "Original VisualizerDiorama restart branch with actual sequencer and camera blocks. Same corridor/frames; original outgoing 60Hz refs and continuous finite loop trajectory. Fixed synthetic 12-world-unit track width. Not mounted React/full text raster or production display-scheduled camera."
+}

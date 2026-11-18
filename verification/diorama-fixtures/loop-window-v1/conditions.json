@@ -1,0 +1,41 @@
+{
+  "revision": "cc6226e464050a456a2913e062374f23d3844cc5",
+  "motion": {
+    "framer-motion": "13.4.3",
+    "motion-dom": "13.4.2",
+    "motion-utils": "13.3.0"
+  },
+  "seed": "DioramaLoopWindow",
+  "origin": {
+    "x": 3,
+    "y": 2,
+    "z": -6
+  },
+  "windows": 26,
+  "materialRows": 436,
+  "sourceHashes": [
+    {
+      "file": "dioramaSceneLayout.ts",
+      "sha256": "1d0ef0ee78535071b4d913a8e7cbb9e72ebb6822aec9b6f523c68b2920379338"
+    },
+    {
+      "file": "dioramaSceneFrame.ts",
+      "sha256": "b116464bc42a052ba04ed53a17b2f9edc1c435363a20c8c0d010af1e9b1952f5"
+    },
+    {
+      "file": "dioramaSceneConstants.ts",
+      "sha256": "9809b495e1ef33f358c6868b68c701549603a24799715acf68cc83afd43cc002"
+    },
+    {
+      "file": "dioramaSequencer.ts",
+      "sha256": "840b37e72c0947daa238a91e15efee1436cb66aef1da6655dd9db809a19b0efa"
+    },
+    {
+      "file": "cameraPath.ts",
+      "sha256": "71adb1bcb6b7c099a147848065004d48de1d3fa2f45122681cd2fb50d0ce3e76"
+    }
+  ],
+  "harnessSha256": "8a645efc21dee0d23b9024455e86e98d1cb267d7258f1b5c14c5f1e6ad6cdb46",
+  "lockSha256": "6ca0224da4f91ee7e91b88814d65d749a58f0fe7cf199cbe343027ab000a01ad",
+  "scope": "Actual original mounted/visible/neighbor-material functions with original Three objects. Single-segment loop windows, null/overlap/endpoints. Fixed synthetic advance and camera controls; no raster/React mount/full source scene or device proof."
+}

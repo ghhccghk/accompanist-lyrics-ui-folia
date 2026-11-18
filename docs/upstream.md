@@ -1779,3 +1779,15 @@ in milliseconds until the final seconds conversion, without rounding/epsilon;
 zero offset is identity. Independent core/strict-neighbour/pixel/click regression
 and retained failing loop probe:verification/diorama-offset. Original camera,
 timing and image fixtures unchanged. No public/device or performance claim.
+
+### Diorama same-corridor text return (2026-11-18)
+Pinned cc6226e4 VisualizerDiorama.tsx:364–428,sceneLayout.ts:26–78,
+sceneConstants.ts:8–16,31–46,sceneFrame.ts:103–131 -> CameraTrack.restarted,
+TextPlayback.loopAt/outgoing draw path and DioramaNeighbors.kt. Same prepared
+corridor/text/rasters/core refs, outgoing index window/nearest-cluster tie rules,
+original soft primary opacities and distance life. Caller explicitly signals a
+loop; query order never fabricates player events. Flight/window uses media3.2s
+instead of source wall timeout to reconstruct pause/seek, stated adaptation.
+Verbatim original edge + real sequencer/camera32 controls,26 original windows/
+436 materials, actual core lifecycle/native contact and remaining crop/overlap:
+verification/diorama-loop. No source assets, background engine or public entry.

@@ -1,5 +1,8 @@
 # Internal incoming-text flight — 2026-11-18
 
+Historical scope at486b8c1. Same-corridor return/window was added subsequently;
+see `../diorama-loop`. Original flight fixtures/results below remain unchanged.
+
 Pinned Folia v0.7.26 / cc6226e464050a456a2913e062374f23d3844cc5,
 AGPL-3.0-only. This closes ONE internal incoming-text flight path, not the
 complete dual-corridor transition, a public Diorama theme or final acceptance.

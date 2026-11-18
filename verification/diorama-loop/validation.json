@@ -1,0 +1,21 @@
+{
+  "scope": "Native real-core loop pictures, not original raster equality, real window or device acceptance.",
+  "source_finite": "originalScenarios=4 sourceProbeFrames=32 finiteStateAndPosePeak=8.739675649849232E-13 finiteGate=1e-9 adaptiveMediaVsSourceFinitePositionResidual=0.07429877479374625\nNo source RAF equality claim for adaptive media track\n",
+  "source_windows": "originalWindows=26 originalMaterialRows=436 numericPeak=1.4210854715202004E-14 gate=1e-9\n",
+  "jvm_class": {
+    "tests": 3,
+    "failures": 0
+  },
+  "native_png_sha256": {
+    "core-loop-0.png": "c95976ce5b733489ff2d6e52ff00fb63819ce32ddf05a41aac8562e7af4d13db",
+    "core-loop-700.png": "ccf07fa14d99710d77ff0c081727cb7fb05dd2fe99d03a2a72db3a9a762f9635",
+    "core-loop-1600.png": "40cba815750a66cfef2c6353efcdcac228b605ba142667c357ea696b480d6680",
+    "core-loop-2099.png": "8e7f4e28729bf585275e68e256b0f15b52fac8a92c5be505e063e1077cf5affe",
+    "core-loop-2100.png": "9952007fe9ca143c6e9a97dacba4f756b65aec9395bd38942b460f9e4f3e7b6f",
+    "core-loop-3199.png": "d909a48d7155e6ebf9f7a38c2391cba808ae8d8459525fd90b2cb32ad333cacb",
+    "core-loop-3200.png": "3f9a730dd142b6799885a181221d9828d991ab7c52f982458ec5720a74d42fa2",
+    "core-loop-3201.png": "ae2306bdd1210b0c4d24cf958e676c9f2e2f19933ea17d82330321c2882f7334",
+    "core-loop-3500.png": "2555efe5a1f7ee806a034dd1c727512f1c17a745cb82cf7501a373ec6a9aa57c",
+    "core-loop-4500.png": "a91d42abd73b73c55d3183513dd85cf6a618b36a24936b3c923210adff70d280"
+  }
+}

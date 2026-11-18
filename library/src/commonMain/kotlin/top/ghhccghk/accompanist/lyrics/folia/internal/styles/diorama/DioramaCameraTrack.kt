@@ -121,6 +121,15 @@ internal class DioramaCameraTrack(val subjects: List<DioramaCameraSubject>, val 
         return DioramaPerspective(eye,state.look,width,height,orientation=orientation)
     }
 
+    /** Explicit repeat edge: fly back within the SAME prepared corridor.
+     * Ordinary at()/perspectiveAt() queries (including backwards scrubs) never
+     * mutate an epoch or start a flight. Text/shot/timing preparation is reused. */
+    fun restarted(previous: DioramaFollowState, epoch: Int, checkpoint: () -> Unit = {}): DioramaCameraTrack {
+        require(epoch > 0)
+        return DioramaCameraTrack(subjects,width,height,endTime,seed,smoothTime,moveScale,
+            driftScale,tolerance,checkpoint,previous,epoch)
+    }
+
     private fun distance(a: DioramaFollowState,b: DioramaFollowState): Double {
         fun vector(a: DioramaVec,b: DioramaVec)=(a-b).let { maxOf(abs(it.x),abs(it.y),abs(it.z)) }
         fun quaternion(a: DioramaQuaternion?,b: DioramaQuaternion?): Double {

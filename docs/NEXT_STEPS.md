@@ -16,8 +16,18 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。此项不改变主题能力或偏好存储键；现继续下面唯一下一项。
 
-当前唯一下一项：刷新body coverage改动后的Android debug/独立消费；再隔离mounted700ms
-四个入场帧的原/本正文贡献，不调相机/halo/前景口径或重试已拒绝的广泛词注册。
+当前唯一下一项：隔离mounted700ms四个入场帧（380/800×60/144Hz）的原/本正文贡献。
+完成条件：重放固定callback前缀并保持原完整PNG/状态/纹理不变，导出原/本分层，
+定位y0局部回退的实际贡献；有独立证据后才最小修复，不调相机/halo/前景口径，
+不重试已拒绝的广泛词注册。无依据则保留失败及下一条可证伪假设。
+9363bd9后的Android debug/独立消费已完成：原证书v1/v2（37.0.0/30.0.2）、CRC、
+16KB对齐、双ABI Rust及交付hash通过；build/deliverables/android/
+lyrics-ui-folia-debug-9363bd9-20261118-173739.apk，SHA256
+8d2dc0300c794835b86aafed9ac6a4ce34924d44a100604347a349954499add9。
+本地Maven独立JVM绘制/回调1项、Android消费编译及归属边界通过；记录见
+verification/android-debug/2026-11-18-cjk-body-validation.json和
+verification/consumer/9363bd9-validation.json。未传输/安装，未复现或宣称解决手机验签；
+没有新的设备/真实窗口/性能/正式视觉结论，两项用户遗留hash不变。
 CJK正文coverage已独立：body用已有host-preserving Windows前景策略，灰度image仍供
 halo/soul；只在原独立显示单元class整行适用且平台策略实际改变时多一张body图。
 同90/180五图union四条ordinary/sample均值与局部0回退，完整sample1.797512→1.466458/

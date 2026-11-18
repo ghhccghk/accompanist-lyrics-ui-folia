@@ -24,11 +24,14 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
     val camera: DioramaCameraTrack, val width: Double, val height: Double) {
     fun lyricTime(mediaSeconds: Double, offsetMillis: Int = 0): Double {
         require(mediaSeconds.isFinite())
-        return (mediaSeconds+offsetMillis/1000.0).coerceIn(0.0,camera.endTime)
+        // Same host contract as FoliaLyricsView: positive offset delays lyrics.
+        // Only the bounded internal camera input is clamped, never the source
+        // timestamps or the inverse click target returned to the media host.
+        return (mediaSeconds-offsetMillis/1000.0).coerceIn(0.0,camera.endTime)
     }
     fun sourceAt(mediaSeconds: Double, offsetMillis: Int = 0): DioramaCoreLine =
         lines[camera.subjectIndex(lyricTime(mediaSeconds,offsetMillis))].core
-    fun mediaStart(core: DioramaCoreLine, offsetMillis: Int = 0) = core.lyric.start-offsetMillis/1000.0
+    fun mediaStart(core: DioramaCoreLine, offsetMillis: Int = 0) = core.lyric.start+offsetMillis/1000.0
     fun draw(scope: DrawScope, mediaSeconds: Double, primary: DioramaLinearColor,
         accent: DioramaLinearColor, offsetMillis: Int = 0, reducedMotion: Boolean = false,
         secondary: DioramaLinearColor = primary) {

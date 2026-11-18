@@ -45,12 +45,16 @@ class DioramaTextPlaybackTest {
         val baseline=pixels();val playback=prepared!!
         assertTrue(baseline.toSet().size>2,"actual text must be drawn")
         assertSame(first,playback.sourceAt(1.0).source)
-        assertSame(second,playback.sourceAt(1.7,200).source)
+        // Existing public contract is media - offset (DESIGN.md:338).
+        // The old internal-only check followed the implementation's reversed
+        // convention; preserve that failure in the offset-contract evidence.
+        assertSame(first,playback.sourceAt(1.7,200).source)
+        assertSame(second,playback.sourceAt(2.1,200).source)
         for((i,subject)in playback.camera.subjects.withIndex())
             assertEquals(dioramaPickShot(i,playback.lines.map{it.core.lyric},dioramaHashSeed("DioramaProbe")),subject.shot,
                 "default core path uses real weighted picker, no invented sections")
-        assertEquals(1.7,playback.mediaStart(playback.sourceAt(1.7,200),200),1e-12)
-        runOnIdle{time=.8;offset=200};assertTrue(baseline.contentEquals(pixels()),"offset exactly once")
+        assertEquals(2.1,playback.mediaStart(playback.sourceAt(2.1,200),200),1e-12)
+        runOnIdle{time=1.2;offset=200};assertTrue(baseline.contentEquals(pixels()),"offset exactly once")
         // Cross the actual line switch and both sides of its exact boundary.
         for(t in listOf(1.899999,1.9,1.900001,2.2)) {runOnIdle{time=t;offset=0};pixels()}
         val later=pixels();assertFalse(later.contentEquals(baseline))

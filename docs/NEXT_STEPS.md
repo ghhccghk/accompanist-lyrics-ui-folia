@@ -10,11 +10,18 @@
 | Fume | 实际core/文章/揭示/可取消镜头准备 | sample已可选文章镜头校准预览 | 短桥接/总览/光栅及完整生命周期未最终验收 |
 | Diorama | core/完整文字透视/三层、13目标、正常follower/媒体文字、原picker、near/far/背面裁剪、正常邻行窗口/life | 无 | 切曲/连续残差、depth/fog/栅格/设备尚未验收 |
 
-当前唯一下一项：修正Diorama内部媒体/歌词偏移和点击逆映射的符号，使其与
-DESIGN既有media-offset及sample line.start+offset契约一致；先保留失败回归再最小修复，
-不新增公开入口。随后回到镜台剩余真实文字能力，未解决的Fume/群唱残差继续保留。
+当前唯一下一项：镜台正常文字平面的原版fog实现与接入（不增加背景引擎），
+先核对固定Three实际shader顺序/色彩空间，做原文字平面的同视角深度对照；
+无fog旧矩阵保持原样，未解决的Fume/群唱残差继续保留，Diorama不开放入口。
 真实Desktop七主题窗口复核和manifest/图检已保存（059087b/verification/themes-native-window），
 此前“待保存”为历史。没有选歌/真实音频/设备的新证据。
+
+Diorama内部偏移已修为media-offset，点击逆映射lineStart+offset，与既有设计和
+两端sample一致；原自测曾复制反号，保留源/失败日志并注明迁移依据，不改上游数据。
+新增独立契约回归先失败（+200ms在1.7s误选1.9s行，正确应2.1s才进入），再通过
+正/负/零偏移/原对象/点击往返/完整文字镜头像素/减少动态/暂停/不重准备验证。
+8定向JVM与Android库/Desktop编译通过；仍内部主题，无新原图/设备/性能声明。
+证据verification/diorama-offset。
 
 Tilt真实原版正文+字幕整屏30帧对照已完成：真实原overlay/默认.6透明度、有效单行翻译
 配置/同真实core/字体/视口/字号，公开对内部像素完全相同。字号/宽/高/top峰

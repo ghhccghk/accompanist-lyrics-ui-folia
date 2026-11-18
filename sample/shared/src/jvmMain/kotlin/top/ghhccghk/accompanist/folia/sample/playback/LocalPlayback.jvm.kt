@@ -12,6 +12,7 @@ import javax.sound.sampled.*
 
 internal class DesktopSongFile(val file: File) : LyricsSource {
     override val name get() = file.name
+    override suspend fun embeddedLyrics() = withContext(Dispatchers.IO) { readEmbeddedLyrics { file.inputStream().buffered() } }
     override suspend fun read() = withContext(Dispatchers.IO) {
         file.inputStream().use { it.readNBytes(MAX_IMPORT_BYTES + 1).also { bytes ->
             require(bytes.size <= MAX_IMPORT_BYTES) { "歌词文件超过 1 MiB" }

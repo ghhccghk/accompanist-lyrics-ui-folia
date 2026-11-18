@@ -162,6 +162,8 @@ fun FoliaSampleApp(
                                 maxLines = 2
                             )
                             Text(song.player.metadata.artist)
+                            song.content.sourceLabel?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
+                            song.content.notice?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
                             FlowRow {
                                 TextButton(::openSelection) { Text("重新选歌") }
                                 TextButton({
@@ -177,7 +179,8 @@ fun FoliaSampleApp(
                         }
                     }
                     val panel: @Composable (Modifier) -> Unit = { modifier ->
-                        if (song.lyrics == null) Box(
+                        if (song.content.plainText != null) PlainLyricsPanel(song.content.plainText, modifier)
+                        else if (song.lyrics == null) Box(
                             modifier,
                             contentAlignment = Alignment.Center
                         ) { Text("未加载歌词") }
@@ -236,12 +239,12 @@ fun FoliaSampleApp(
                     }) { Text("清除歌词") }
                     OutlinedButton(
                         { pick(FileRole.Translation) },
-                        enabled = !songs.loading && lyrics != null
+                        enabled = !songs.loading && audio != null
                     ) { Text(translation?.name ?: "翻译文件（可选）") }
                     if (translation != null) TextButton({ translation = null }) { Text("清除翻译") }
                     Text(localAudioFormats, style = MaterialTheme.typography.bodySmall)
                     Text(
-                        "歌词使用 UTF-8；独立翻译按相同起始时间戳匹配。",
+                        "不选歌词文件时自动读取音频内嵌歌词；外部歌词优先。外部文件使用 UTF-8，翻译按相同起始时间戳匹配。",
                         style = MaterialTheme.typography.bodySmall
                     )
                     if (songs.loading) Text("正在准备…原会话保留")
@@ -258,10 +261,10 @@ fun FoliaSampleApp(
                     {
                         val files = SongFiles(audio!!, lyrics, translation); work?.cancel()
                         work = scope.launch {
-                            val success = if (editingLyrics) songs.attachLyrics(
+                            val success = if (editingLyrics) songs.attachContent(
                                 files,
-                                ::loadSongLyrics
-                            ) else songs.open(files, prepare, ::loadSongLyrics)
+                                ::loadSongContent
+                            ) else songs.openContent(files, prepare, ::loadSongContent)
                             if (success) {
                                 session.clock.pause(); selection =
                                     false; if (!latestVisible) songs.control { it.pause() }
@@ -317,6 +320,15 @@ fun FoliaSampleApp(
                 }
             },
             confirmButton = { TextButton({ settings = false }) { Text("完成") } })
+    }
+}
+
+@Composable
+private fun PlainLyricsPanel(text: String, modifier: Modifier) {
+    // Plain tags carry no trustworthy clock. Keep the complete text readable and selectable.
+    androidx.compose.foundation.text.selection.SelectionContainer(modifier) {
+        Text(text, Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
+            style = MaterialTheme.typography.bodyLarge)
     }
 }
 

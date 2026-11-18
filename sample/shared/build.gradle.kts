@@ -88,6 +88,17 @@ tasks.register<JavaExec>("verifyLocalAudio") {
     dependsOn(test.compileTaskProvider)
     workingDir = rootProject.projectDir
 }
+
+tasks.register<JavaExec>("verifyEmbeddedAudio") {
+    group = "verification"
+    description = "Verify independently tagged audio and real Java Sound playback of the original tagged WAV"
+    val test = kotlin.targets.getByName("jvm").compilations.getByName("test")
+    classpath = files(test.output.allOutputs, test.runtimeDependencyFiles)
+    mainClass.set("top.ghhccghk.accompanist.folia.sample.EmbeddedAudioProbe")
+    dependsOn(test.compileTaskProvider)
+    workingDir = rootProject.projectDir
+    timeout.set(Duration.ofMinutes(1))
+}
 // Explicit hardware integration, never part of the ordinary JVM test suite.
 tasks.register<JavaExec>("verifyLocalPlaybackThemes") {
     group = "verification"

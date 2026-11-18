@@ -1,0 +1,10 @@
+Sample production source/tag/parser path; files generated with FFmpeg and Mutagen, no user audio
+lyrics.flac: timed tags parsed; starts=1000,3000
+timed.m4a: timed tags parsed; starts=1000,3000
+timed.wav: timed tags parsed; starts=1000,3000
+unsyncedlyrics.flac: timed tags parsed; starts=1000,3000
+uslt-v23.mp3: timed tags parsed; starts=1000,3000
+uslt-v24.mp3: timed tags parsed; starts=1000,3000
+real tagged WAV device cursor=492ms
+paused seek=1500ms stable; same player snapshot drives lyrics
+session closed; Clip released

@@ -16,7 +16,13 @@
 Desktop编译通过，离屏截图已图检。不是Android运行或主题视觉验收，见
 verification/theme-options。后来用户授权镜台调试入口，当前共八项，下述新结果取代入口限制。
 
-当前唯一下一项：同原flight初态/target/宽度，隔离飞行段look-only、alignment、
+当前唯一下一项（用户新增收尾）：构建／原证书验签含内嵌歌词的Android debug APK。
+sample标签读取已实现：外部优先、真实core计时、纯文本独立显示、损坏标签提示不阻断音频；
+20项数据／事务／离屏UI与Android shared／Desktop编译通过，独立Mutagen／FFmpeg六容器
+实例通过，生产Java Sound tagged WAV播放／暂停seek／释放通过；Android设备／原生选择器
+未验证，不扩展Desktop解码范围，见verification/embedded-lyrics。APK收尾后接续镜台定位。
+
+已保存的核心接续项：同原flight初态/target/宽度，隔离飞行段look-only、alignment、
 frame-keep和最终orientation follower，重点3.199→3.2s；先判forcing/顺序/有限采样，
 不调整阈值、帧延迟或重采原图。当前相机单因素及完整交叉已完成：
 48时点/1906 incoming有限回调peak6.04e-14；3499ms 800宽旧初态和current width

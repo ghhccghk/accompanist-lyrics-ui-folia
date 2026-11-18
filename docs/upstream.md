@@ -2070,3 +2070,15 @@ explicitly initialized; public window readiness published after samplers.
 Frozen 0d836a5 single-pass control, prior independent24 matrix, rejected atlas
 candidate and actual-backend window conditions: verification/windows-rendering.
 Not a new upstream visual/performance/device acceptance or license change.
+
+### Sample embedded audio lyrics (2026-11-18)
+New sample-only EmbeddedLyricsReader is independently written from ID3 frame,
+FLAC Vorbis-comment and MP4 metadata structures; no tag-library implementation
+or media asset copied. Existing Apache-attributed SelectedLyrics.kt is extended
+with explicit-file precedence, tag/plain-text selection and timestamp translation
+composition; its original attribution remains. Platform file capabilities read
+bounded metadata streams, not the original Accompanist source. Format references,
+unimplemented frames and independent Mutagen/FFmpeg verification versions are in
+docs/embedded-lyrics.md and verification/embedded-lyrics. Verification tools/audio
+are not runtime dependencies or distributed resources. No library API, player
+process contract, license or original-theme visual acceptance change.

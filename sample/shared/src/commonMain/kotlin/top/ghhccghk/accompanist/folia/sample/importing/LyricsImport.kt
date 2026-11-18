@@ -10,7 +10,11 @@ const val MAX_IMPORT_BYTES = 1024 * 1024
 interface LyricsSource {
     val name: String
     suspend fun read(): ByteArray
+    /** Sample audio tags only; ordinary text sources need no metadata reader. */
+    suspend fun embeddedLyrics(): EmbeddedLyrics = EmbeddedLyrics()
 }
+
+data class EmbeddedLyrics(val texts: List<String> = emptyList(), val notice: String? = null)
 
 @Composable
 expect fun rememberLyricsPicker(onSelected: (LyricsSource) -> Unit, onError: (String) -> Unit): () -> Unit

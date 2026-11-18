@@ -3,6 +3,7 @@ package top.ghhccghk.accompanist.folia.sample.playback
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.ImageBitmap
 import top.ghhccghk.accompanist.folia.sample.importing.LyricsSource
+import top.ghhccghk.accompanist.folia.sample.importing.SongLyricsContent
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import top.ghhccghk.accompanist.lyrics.folia.FoliaPlaybackSnapshot
 import kotlinx.coroutines.CancellationException
@@ -28,7 +29,9 @@ interface LocalAudioPlayer {
 @Composable expect fun rememberSongFilePicker(onSelected: (FileRole, LyricsSource?) -> Unit, onError: (String) -> Unit): (FileRole) -> Unit
 @Composable expect fun rememberAudioPreparation(): suspend (LyricsSource) -> LocalAudioPlayer
 expect val localAudioFormats: String
-data class LoadedSong(val files: SongFiles, val player: LocalAudioPlayer, val lyrics: SyncedLyrics?, val revision: Long)
+data class LoadedSong(val files: SongFiles, val player: LocalAudioPlayer, val content: SongLyricsContent, val revision: Long) {
+    val lyrics: SyncedLyrics? get() = content.lyrics
+}
 
 /** UI-thread confined. A candidate owns its resources until a generation-checked swap. */
 class SongSession {
@@ -70,14 +73,17 @@ class SongSession {
     fun cancelPending() { ++generation; loading = false }
     fun dismissError() { error = null }
     suspend fun attachLyrics(files: SongFiles, parse: suspend (SongFiles) -> SyncedLyrics?): Boolean {
+        return attachContent(files) { SongLyricsContent(parse(it)) }
+    }
+    suspend fun attachContent(files: SongFiles, load: suspend (SongFiles) -> SongLyricsContent): Boolean {
         val original=current ?: return false
         val token=++generation
         loading=true;error=null
         try {
             require(files.audio === original.files.audio) { "补选只能应用于原音频，请使用重新选歌" }
-            val lyrics=parse(files)
+            val content=load(files)
             if(token!=generation || closed || current !== original) return false
-            current=original.copy(files=files,lyrics=lyrics,revision=token)
+            current=original.copy(files=files,content=content,revision=token)
             return true
         } catch(cancelled:CancellationException){throw cancelled}
         catch(failure:Exception){if(token==generation && !closed)error=failure.message?:failure.toString();return false}
@@ -85,17 +91,22 @@ class SongSession {
     }
     suspend fun open(files: SongFiles, prepare: suspend (LyricsSource) -> LocalAudioPlayer,
         parse: suspend (SongFiles) -> SyncedLyrics? = { null }): Boolean {
+        return openContent(files, prepare) { SongLyricsContent(parse(it)) }
+    }
+    suspend fun openContent(files: SongFiles, prepare: suspend (LyricsSource) -> LocalAudioPlayer,
+        load: suspend (SongFiles) -> SongLyricsContent): Boolean {
         check(!closed)
         val token = ++generation
         loading = true; error = null
         var candidate: LocalAudioPlayer? = null
         try {
-            val lyrics = parse(files)
+            val content = load(files)
+            if (token != generation || closed) return false
             candidate = prepare(files.audio)
             if (token != generation || closed) return false
             candidate.play()
             val previous = current
-            current = LoadedSong(files, candidate, lyrics, token)
+            current = LoadedSong(files, candidate, content, token)
             candidate = null
             playbackFault=false; nativeRevision = null; poll()
             previous?.player?.close()

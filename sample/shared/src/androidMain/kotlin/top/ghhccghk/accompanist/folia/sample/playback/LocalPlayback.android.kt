@@ -15,6 +15,9 @@ import top.ghhccghk.accompanist.folia.sample.importing.*
 import kotlinx.coroutines.*
 
 class AndroidSongFile(val context: Context, val uri: Uri, override val name: String) : LyricsSource {
+    override suspend fun embeddedLyrics() = withContext(Dispatchers.IO) {
+        readEmbeddedLyrics { requireNotNull(context.contentResolver.openInputStream(uri)) { "无法读取音频标签" } }
+    }
     override suspend fun read() = withContext(Dispatchers.IO) {
         requireNotNull(context.contentResolver.openInputStream(uri)) { "无法读取所选歌词" }.use { stream ->
             val output = java.io.ByteArrayOutputStream(); val buffer = ByteArray(8192)

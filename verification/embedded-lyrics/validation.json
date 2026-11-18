@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-18",
+  "baseRevision": "40872ab25d8b44b00947bad3138a138f71143986",
+  "sourceFiles": {
+    "sample/shared/src/androidMain/kotlin/top/ghhccghk/accompanist/folia/sample/playback/LocalPlayback.android.kt": "47a7c1fae231502f6bbb4c70155c11b4d383a631055e3897bc3aca91f086bcf8",
+    "sample/shared/src/commonMain/kotlin/top/ghhccghk/accompanist/folia/sample/importing/LyricsImport.kt": "1ffafc515e1192f9fc82a28903842a5cd8a1a5c209a28dee7d21eb29ba1afe70",
+    "sample/shared/src/commonMain/kotlin/top/ghhccghk/accompanist/folia/sample/importing/SelectedLyrics.kt": "cb0b00da7edf645605e041473d1b2a76ad7784cbd39b881740e45eee056bce66",
+    "sample/shared/src/commonMain/kotlin/top/ghhccghk/accompanist/folia/sample/LocalSongApp.kt": "d37b1e78e509de4ac73e60eac44978c02f0ae3eae22634a09a0241e127bbd25a",
+    "sample/shared/src/commonMain/kotlin/top/ghhccghk/accompanist/folia/sample/playback/LocalPlayback.kt": "6407bd2a3c9b1fe57f03d5a8901a707163a647301721a1285faffc7925f179c3",
+    "sample/shared/src/jvmAndAndroidMain/kotlin/top/ghhccghk/accompanist/folia/sample/importing/EmbeddedLyricsReader.kt": "45bb2831cd29063e113dea1c8a404b13964192b16f12ec73ea328d4d3ddf096e",
+    "sample/shared/src/jvmMain/kotlin/top/ghhccghk/accompanist/folia/sample/playback/LocalPlayback.jvm.kt": "7004d09e7a2261da6ae623bedd15fc61d8046ed5939bb7518cf4775fbc4cde33",
+    "sample/shared/src/jvmTest/kotlin/top/ghhccghk/accompanist/folia/sample/EmbeddedAudioProbe.kt": "f5d1339a1d1841600722434f06a115e4cfd5eab9143dbe9015c08cb04bbd10cb",
+    "sample/shared/src/jvmTest/kotlin/top/ghhccghk/accompanist/folia/sample/EmbeddedLyricsTest.kt": "336c0ab51b2326d9bdc4ba6afa106660eed9446cd659f71ced615a6d99d234d7",
+    "sample/shared/src/jvmTest/kotlin/top/ghhccghk/accompanist/folia/sample/EmbeddedLyricsUiTest.kt": "5bf17c76d1e0b59b55e98e6f59b710fcb422141606e5ea1745d1e7383d356134"
+  },
+  "validationLog": {
+    "path": ".work/embedded-validation-final.log",
+    "sha256": "d763f76d550198c237fb131ace143cfcdb0d7d2f30cad10f774515eccb909bdc",
+    "buildSuccessful": true,
+    "tasks": [
+      ":sample:shared:jvmTest (4 selected classes)",
+      ":sample:shared:verifyEmbeddedAudio",
+      ":sample:shared:compileAndroidMain",
+      ":sample:desktop-app:compileKotlin"
+    ]
+  },
+  "suites": [
+    {
+      "name": "EmbeddedLyricsTest[jvm]",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "resultSha256": "996c4c0ea534e7c0c15157aa8a7c1be8922ed2c4bb573852f530bd111ee4d1d8"
+    },
+    {
+      "name": "EmbeddedLyricsUiTest[jvm]",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "resultSha256": "d8e7c9732fb6b7e47cf343231a3c3953add3ccc20b4f2a338753d1c695a9a6a6"
+    },
+    {
+      "name": "LocalSongTest[jvm]",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "resultSha256": "a7153936ab87522987a96cfee960c6768b6394eb7228d9711489dd9db7532049"
+    },
+    {
+      "name": "SongSelectionTest[jvm]",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "resultSha256": "f84799ce419489951ab5f908a1d60667a046354beca25bf07119bb28b9343c82"
+    }
+  ],
+  "independentFixtures": {
+    "manifest": "fixtures-manifest.json",
+    "sha256": "fed68774ec2e23ead6a812cefc7379e2ea3651e8a6bd0315a4b3e21d954b3079",
+    "files": 6,
+    "tagReadingPassed": true
+  },
+  "desktopAudio": {
+    "productionClip": true,
+    "input": "original silent WAV tagged by Mutagen",
+    "record": "desktop-production-tags-and-audio.txt",
+    "sha256": "fae500c2095bbfe60a7dbd1ae2695eb19ab73980cb227adce67bed24b13e743a"
+  },
+  "ui": {
+    "host": "offscreen Compose; test-only transport",
+    "captures": {
+      "embedded-plain-wide.png": "6735d8e2cb18b0693ca714b5190867bb490d6a689c35dc384e28fe2712146881",
+      "embedded-timed-narrow.png": "b7c4f0335ecb6a60251ded37f9930247dbed65f59051609fd3369c078f2cb27f"
+    },
+    "visuallyInspected": true
+  },
+  "android": {
+    "compilation": true,
+    "installed": false,
+    "uriOrPlaybackProcessDeviceVerification": false
+  },
+  "realDesktopWindow": false,
+  "excludedExternalInputs": {
+    "sample/android-app/build.gradle.kts": "996a8f576f56ae1f75d6da081ad72201f1c8c73d",
+    "gradle/gradle-daemon-jvm.properties": "fa4ed510e60d04aa68cf65ecb699f5c9d15b4b15"
+  },
+  "limitations": [
+    "No Android install or user device operation",
+    "No new Desktop compressed codec support",
+    "SYLT/Ogg/APEv2/Lyrics3/MP4 freeform unimplemented",
+    "No library/render performance or original-theme visual parity claim"
+  ]
+}

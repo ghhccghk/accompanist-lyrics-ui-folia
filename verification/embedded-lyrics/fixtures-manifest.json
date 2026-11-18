@@ -1,0 +1,37 @@
+{
+  "input": "original 12-second 16kHz mono silent PCM; original two-line text above; no user resources",
+  "mutagen": "1.47.0",
+  "imageio-ffmpeg": "0.6.0",
+  "ffmpeg": "ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+  "expectedStartsMs": [
+    1000,
+    3000
+  ],
+  "lyrics": "[00:01.00]Amber 光\n[00:03.00]Echo 回声",
+  "fixtures": {
+    "lyrics.flac": {
+      "bytes": 10164,
+      "sha256": "439c2422de4376bf5c283dcdbf9d6f133a2dcd99fe027225bf587306c55bf6a0"
+    },
+    "timed.m4a": {
+      "bytes": 3432,
+      "sha256": "ac55d61308b5e874899dd85006d7ae2bfbb2b0131b351f8e3c1e610207d1d62b"
+    },
+    "timed.wav": {
+      "bytes": 385178,
+      "sha256": "a9329df215b5bb70b2d11068a9cc8a778439ffe6dfa68bc0565dc61e98a1b15c"
+    },
+    "unsyncedlyrics.flac": {
+      "bytes": 10164,
+      "sha256": "34735bbaeea0915884935acad5799dab1bb95c0a4a0defc04540194346d5f27f"
+    },
+    "uslt-v23.mp3": {
+      "bytes": 49785,
+      "sha256": "022d6eb423a6d33fa85c8aa81a9c2ff9dde95bc6a2735fe55ae3a4d917c6f0bb"
+    },
+    "uslt-v24.mp3": {
+      "bytes": 49739,
+      "sha256": "6ea3e2bc9933b050a2a578f669e810251b6c54d79e1c783090d8c4dd038225ab"
+    }
+  }
+}

@@ -71,3 +71,48 @@ resident bytes after resize. It rejects an 8192x8192 over-budget allocation
 without inflating resident accounting, then drops scenes separately and checks
 the remaining texture count and byte totals. Scene retirement and resize wait
 up to two seconds for submitted GPU work before releasing scratch allocations.
+
+## Large Partita viewport budget regression
+
+On November 19, 2026, the pre-fix Release/R8 consumer reported
+`Failed:Render:-40` before its first frame in `NativeRequired` mode. The
+`baseline` scene was paused at 3300 ms with a requested 2160x3000 viewport on
+the task-owned API 34 emulator. Its display override was 2160x2400. During
+that transition both lines need isolated blur layers. Near-viewport-sized
+layers and their floating-point scratch textures exhausted the 192 MiB GPU
+texture budget.
+
+The scene adapter now bounds isolated layers by their transformed contents.
+It keeps the original clipping and pixel grid, includes the blur footprint
+and a transparent sampling border, and rounds outward to 64-pixel increments
+to increase scratch reuse. The 192 MiB cap, blur passes, scene v2 packet format
+and JNI ABI 2 keep their existing definitions.
+
+- Published the core Android snapshot `0.1.0-20261119.032741-27` and optional
+  runtime snapshot `0.1.0-20261119.032741-15` to the local verification
+  repository. The coordinate-only consumer built its minified Release APK
+  and instrumentation APK without Rust on the path or consumer native build
+  tasks. Both packaged ABIs matched the AAR. `zipalign -c -P 16 4` passed for
+  the Release APK with SHA-256
+  `19b87c4b758d21924e7756dd295d72e635498a17a87e5e7ca8b4aee3bdc36658`.
+- The original 3300 ms case produced `NativeGpu Ready:PartitaMainAndGlow`,
+  `sampled=3300000` and `frame=1` on API 34. Twelve subsequent samples at
+  2160x2400 passed in the same process, including the transition and seeks
+  in both directions. The Release/R8 probe now verifies the measured
+  2160x2400 surface and advancing native frames at six seek times. The
+  full probe passed on API 34 / 4096-byte pages and API 35 / 16384-byte pages.
+- Repeated all 21 paired Kotlin/NativeRequired screenshot cases at their
+  original sizes, density, effects and timestamps. Comparing rows 40 onward
+  with the pre-fix captures, every Kotlin frame matched. Nine native frames
+  matched exactly. The other twelve changed between 1 and 25 pixels per
+  frame, with a maximum difference of 1 per RGB channel. Existing local
+  Kotlin/native edge differences remain in the visual acceptance record.
+- Rebuilt the native sample debug APK and verified real playback of
+  `FoliaNativeEmbeddedProbe.mp3` with embedded timed lyrics and native
+  status `Ready:PartitaMainAndGlow`. Ten targeted Partita and bridge JVM
+  tests passed. The broader desktop `PartitaParityTest` run stalled in
+  Compose's test clock and was stopped. The Android screenshot matrix above
+  completed separately.
+
+The runtime results cover x86_64 SwiftShader. ARM64 execution and paired
+physical-device performance remain open.

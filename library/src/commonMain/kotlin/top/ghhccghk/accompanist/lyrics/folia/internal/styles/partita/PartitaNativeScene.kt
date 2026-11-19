@@ -2,6 +2,7 @@
 @file:OptIn(top.ghhccghk.accompanist.lyrics.folia.ExperimentalFoliaRendererBridge::class)
 package top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita
 
+import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.*
@@ -46,6 +47,60 @@ internal class PartitaNativePlan(line:NormalizedLine, private val prepared:Parti
     }
     val scene=FoliaRendererScene(line.source,textures.toList())
 
+    private fun FoliaRendererCommand.coverageIn(parent: FoliaRendererTransform): Rect? = when (this) {
+        is FoliaRendererImage -> if (opacity <= 0f || color.alpha <= 0f) null else {
+            val image = textures[texture].image
+            parent.then(transform).quadBounds(image.width, image.height)
+        }
+        is FoliaRendererGroup -> when {
+            opacity <= 0f || commands.isEmpty() -> null
+            allowDirectDraw && opacity == 1f && blurSigma <= .01f ->
+                commands.coverageIn(parent.then(transform))
+            else -> parent.then(transform).quadBounds(width, height)
+        }
+    }
+
+    private fun List<FoliaRendererCommand>.coverageIn(parent: FoliaRendererTransform): Rect? {
+        var bounds: Rect? = null
+        for (command in this) {
+            val next = command.coverageIn(parent) ?: continue
+            bounds = bounds?.let {
+                Rect(min(it.left, next.left), min(it.top, next.top),
+                    max(it.right, next.right), max(it.bottom, next.bottom))
+            } ?: next
+        }
+        return bounds
+    }
+
+    /** Keep isolated layers on the original pixel grid. Reserve the full blur
+     * footprint and a transparent texel for linear sampling around a crop. */
+    private fun FoliaRendererGroup.fitOffscreen(): FoliaRendererGroup {
+        if (opacity == 0f || (allowDirectDraw && opacity == 1f && blurSigma <= .01f)) return this
+        val bounds = commands.coverageIn(FoliaRendererTransform())
+            ?.intersect(Rect(0f, 0f, width.toFloat(), height.toFloat()))
+        if (bounds == null || bounds.isEmpty) return copy(width = 1, height = 1, commands = emptyList())
+        // Three box passes per axis (or one small Gaussian) fit within this radius.
+        val margin = if (blurSigma > .01f) ceil(3f * blurSigma).toInt() + 4 else 1
+        // Round out to common sizes so animation can reuse scratch textures.
+        val tile = 64
+        fun leading(edge: Float) = (floor((edge - margin) / tile).toInt() * tile).coerceAtLeast(0)
+        fun trailing(edge: Float, limit: Int) = (ceil((edge + margin) / tile).toInt() * tile).coerceAtMost(limit)
+        val left = leading(bounds.left)
+        val top = leading(bounds.top)
+        val right = trailing(bounds.right, width)
+        val bottom = trailing(bounds.bottom, height)
+        if (left == 0 && top == 0 && right == width && bottom == height) return this
+        val shift = translate(-left.toFloat(), -top.toFloat())
+        return copy(width = right - left, height = bottom - top,
+            transform = transform.then(translate(left.toFloat(), top.toFloat())),
+            commands = commands.map { command ->
+                when (command) {
+                    is FoliaRendererImage -> command.copy(transform = shift.then(command.transform))
+                    is FoliaRendererGroup -> command.copy(transform = shift.then(command.transform))
+                }
+            })
+    }
+
     fun frame(time:Long,width:Int,height:Int):FoliaRendererFrame {
         val motion=sampleLine(time,enterUs,leaveUs,profile,options.reducedMotion,1f,d,options.animationIntensity)
         val geometry=prepared.geometry
@@ -70,7 +125,7 @@ internal class PartitaNativePlan(line:NormalizedLine, private val prepared:Parti
                     }
                     val t=translate(rp+x,rp+y).then(scale(if(horizontal)chunk.guide else 1f,if(horizontal)1f else chunk.guide))
                         .then(translate(-(if(horizontal&&right)g.size.width else 0f)-g.padding,-(if(horizontal)0f else g.size.height)-g.padding))
-                    rowCommands+=FoliaRendererGroup(image.width,image.height,children,chunk.guide.coerceIn(0f,1f),transform=t,allowDirectDraw=true)
+                    rowCommands+=FoliaRendererGroup(image.width,image.height,children,chunk.guide.coerceIn(0f,1f),transform=t,allowDirectDraw=true).fitOffscreen()
                 }
                 addGuide(guides[ri].first,false,if(right)(geo.box.width*d+7*d).toFloat() else -8*d,((geo.box.height+16)*d).toFloat(),69/255f)
                 addGuide(guides[ri].second,true,if(right)((geo.box.width+16)*d).toFloat() else -16*d,((geo.box.height+7)*d).toFloat(),53/255f)
@@ -90,18 +145,27 @@ internal class PartitaNativePlan(line:NormalizedLine, private val prepared:Parti
                     val bp=ceil(32*d).toInt()
                     children+=FoliaRendererGroup(cell.layout.size.width+2*bp,cell.layout.size.height+2*bp,
                         listOf(FoliaRendererImage(body,ink,transform=translate(bp+bodyOrigin.x,bp+bodyOrigin.y))),
-                        blurSigma=word.blur*d,transform=translate((wp-bp).toFloat(),(wp-bp).toFloat()))
+                        blurSigma=word.blur*d,transform=translate((wp-bp).toFloat(),(wp-bp).toFloat())).fitOffscreen()
                 }else children+=FoliaRendererImage(body,ink,transform=translate(wp+bodyOrigin.x,wp+bodyOrigin.y))
                 val t=translate((rp+(box.left+box.width/2+word.x)*d).toFloat(),(rp+(box.top+box.height/2+word.y)*d).toFloat())
                     .then(rotate(word.rotation)).then(scale(word.scale))
                     .then(translate((-box.width*d/2-wp).toFloat(),(-box.height*d/2+cell.baseline-wp).toFloat()))
-                rowCommands+=FoliaRendererGroup(cell.layout.size.width+2*wp,cell.layout.size.height+2*wp,children,word.alpha.coerceIn(0f,1f),transform=t,allowDirectDraw=true)
+                rowCommands+=FoliaRendererGroup(cell.layout.size.width+2*wp,cell.layout.size.height+2*wp,children,word.alpha.coerceIn(0f,1f),transform=t,allowDirectDraw=true).fitOffscreen()
             }
             val t=lineTransform.then(translate((origin.x+(geo.box.left+geo.box.width/2+chunk.x)*d).toFloat(),(origin.y+(geo.box.top+geo.box.height/2+chunk.y)*d).toFloat()))
                 .then(rotate(chunk.rotation)).then(scale(chunk.scale)).then(translate((-geo.box.width*d/2-rp).toFloat(),(-geo.box.height*d/2-rp).toFloat()))
-            FoliaRendererGroup(ceil(geo.box.width*d).toInt()+2*rp,ceil(geo.box.height*d).toInt()+2*rp,rowCommands,chunk.alpha.coerceIn(0f,1f),transform=t,allowDirectDraw=true)
+            FoliaRendererGroup(ceil(geo.box.width*d).toInt()+2*rp,ceil(geo.box.height*d).toInt()+2*rp,rowCommands,chunk.alpha.coerceIn(0f,1f),transform=t,allowDirectDraw=true).fitOffscreen()
         }
         return FoliaRendererFrame(time,width,height,FoliaRendererGroup(width+2*p,height+2*p,rows,motion.alpha,motion.blur,translate(-p.toFloat(),-p.toFloat()),
-            allowDirectDraw=!partitaLineNeedsOffscreen(time,enterUs,leaveUs,profile,options.reducedMotion)))
+            allowDirectDraw=!partitaLineNeedsOffscreen(time,enterUs,leaveUs,profile,options.reducedMotion)).fitOffscreen())
     }
+}
+
+private fun FoliaRendererTransform.quadBounds(width: Int, height: Int): Rect {
+    val ax = a * width
+    val ay = b * width
+    val bx = c * height
+    val by = d * height
+    return Rect(x + minOf(0f, ax, bx, ax + bx), y + minOf(0f, ay, by, ay + by),
+        x + maxOf(0f, ax, bx, ax + bx), y + maxOf(0f, ay, by, ay + by))
 }

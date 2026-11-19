@@ -129,7 +129,22 @@ public final class NativeLifecycleProbe extends Instrumentation {
                 await("NativeGpu", "sampled=" + time * 1000);
                 awaitWorkers(1);
             }
-            result.putString("stream","PASS release/R8 AAR: Partita, paused/seek/offset, explicit capability/budget fallback and required failure, source semantics, tap/long press/drag/cancel/blank input, resize/font/reduced-motion, recreation, two instances, inactive/resume, repeated worker retirement\n");finish(Activity.RESULT_OK,result);
+            // A large surface used to exhaust GPU scratch at the overlapping line transition.
+            long previousFrame = 0;
+            for (long time : new long[]{3300, 3450, 3550, 850, 1500, 3300}) {
+                update(intent().putExtra("width", 2160).putExtra("height", 2400).putExtra("mediaMs", time));
+                String drawn = await("NativeGpu", "Ready:PartitaMainAndGlow", "sampled=" + time * 1000);
+                long frame = value(drawn, "frame");
+                if (frame <= previousFrame) throw new AssertionError("Large viewport frame did not advance: " + drawn);
+                previousFrame = frame;
+            }
+            TextureView largeSurface = textures().get(0);
+            runOnMainSync(() -> {
+                if (largeSurface.getWidth() != 2160 || largeSurface.getHeight() != 2400) {
+                    throw new AssertionError("Large viewport resize did not reach the native surface");
+                }
+            });
+            result.putString("stream","PASS release/R8 AAR: Partita, paused/seek/offset, explicit capability/budget fallback and required failure, source semantics, tap/long press/drag/cancel/blank input, resize/font/reduced-motion, recreation, two instances, inactive/resume, repeated worker retirement, large viewport transitions\n");finish(Activity.RESULT_OK,result);
         }catch(Throwable error){result.putString("stream","FAIL "+android.util.Log.getStackTraceString(error)+"\n");finish(Activity.RESULT_CANCELED,result);}
         finally{if(activity!=null)runOnMainSync(()->activity.finish());}
     }

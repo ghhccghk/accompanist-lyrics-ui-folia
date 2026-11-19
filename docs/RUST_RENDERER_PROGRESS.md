@@ -92,6 +92,10 @@ pixel peaks remain open.
 - Matched release-consumer captures: 13 original Latin/wrap/Arabic/CJK/bidi/cluster/large/waiting/subtitle pairs, 3 emoji timestamps and 7 subtitle timestamps. Full aggregate metrics and residual pixels are in `verification/native-renderer-visual.md`; the subtitle region matched exactly during enter/hold/exit.
 - Real playback: three Home transitions and one 800x600 to 600x800 rotation retained the embedded song and paused media time; explicit resume advanced from the retained position. UI and playback PIDs remained stable. Per-process PSS is recorded in `verification/native-renderer-p3.md`.
 - Scene resize and independent retirement checks verify resident GPU bytes return to baseline after four viewport sizes, over-budget allocation is rejected without counter growth, and two scenes release independently.
+- Fixed `Render:-40` during large Partita transitions by sizing isolated GPU
+  layers to their drawn content and blur footprint. The independent Release/R8
+  consumer passed the new 2160x2400 transition regression on both x86_64
+  page sizes. See [budget regression evidence](../verification/native-renderer-p4.md#large-partita-viewport-budget-regression).
 - ARM64 runtime and paired physical-device performance remain unverified. Local SwiftShader provides Vulkan correctness, not hardware performance. Partita visual edge differences remain documented.
 
 ## Next action / acceptance gate

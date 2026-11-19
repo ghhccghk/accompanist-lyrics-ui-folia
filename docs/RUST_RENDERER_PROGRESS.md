@@ -110,8 +110,13 @@ matrix remains open.
   destruction and B returned a new GPU error rather than `-98`; do not claim
   this driver-level failure is fixed. The first OOM from the review remains
   unclassified. This tests unwind, not abort or a native crash.
-- R1 host behavior: verify Preferred/Required against a runtime failure in
-  the independent consumer, with the same lyric source and media snapshot.
+- R1 host behavior (`45eff40`): API 35 x86_64 / 16 KiB, Release/R8,
+  `--availability session-fault` passed. After a real frame, the test-only
+  consumer passes an invalid texture ID through JNI. Upload returns `-42`
+  and the regular worker reports `Failed:Render:-4` on its next request.
+  Preferred falls back to Kotlin and returns the original lyric line on click
+  at 1516 ms. Required exposes the failure. Both workers retire and repeated
+  destroy succeeds.
 - R2: guarded the test consumer's API 30 window calls without changing
   minSdk 26. The independent Release/R8 APK without the renderer `.so`
   passed `availability=absent` on separate API 26, 28, and 29 x86_64 images:
@@ -135,12 +140,19 @@ matrix remains open.
   to the target-only baseline. No production budget or policy changed.
   Reproduce using `scripts/probe-native-pressure.py` and
   `scripts/test-renderer-android.ps1 -Pressure` on a task-owned emulator.
-- R4: captured eight Partita and eight Diorama pairs against Android Kotlin
-  on API 34. Partita lifecycle passed. Partita edge coverage and broader
-  Diorama discrepancies are still open. Upstream Folia parity, Diorama
-  full input matrix and ARM64 hardware gates remain pending. Results are in
-  `verification/native-renderer-visual.md`.
-- Current next item: R5 local candidate.
+- R4 (`b989b0b`, `8e38cfd`): captured eight Partita and eight Diorama pairs
+  against Android Kotlin on API 34. Matched baseline browser captures also
+  ran for both themes against the pinned Folia text stages. On API 35,
+  both Diorama backends passed tap and long press with the original source
+  object at 1500 ms. The transition test reached the blank handler in both.
+  Partita lifecycle passed. Partita edge coverage, broader Diorama visual
+  differences, the wider interaction matrix and ARM64 performance remain
+  open. See [Android and upstream results](../verification/native-renderer-visual.md).
+- R5 (`71593c2`, `ae5c1c9`): locally published matching Kotlin and native
+  candidates. RC.2 ran all 76 producer tasks and passed both Release/R8 app
+  probes on the API 35 x86_64 16 KiB emulator. Core packages, runtime, symbols,
+  16 KiB alignment and dependency archives checked out. The offline Rust source rebuild outside the checkout
+  needed nine additional locked Windows host crates. See [candidate evidence](../verification/native-renderer-candidate.md).
 
 ## Remaining
 

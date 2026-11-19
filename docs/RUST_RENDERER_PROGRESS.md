@@ -78,6 +78,11 @@ calibrated mip and F16 paths and paired picture/performance acceptance remain
 open. The frame protocol uses v3 for projective planes and v2 for Partita.
 The JNI ABI remains 2. Local snapshots: core Android `0.1.0-20261119.040652-28`,
 native Android `0.1.0-20261119.040652-16`.
+The next increment uses an F16 attachment for the projective text pass and
+checks blend and filter support on the Vulkan adapter. Unsupported devices
+follow the requested backend's failure policy. Attachment bytes count toward
+the existing GPU budget. Local native snapshot `0.1.0-20261119.041541-17`
+passed the API 34 Release/R8 Diorama smoke and Partita lifecycle checks.
 
 ## Remaining
 

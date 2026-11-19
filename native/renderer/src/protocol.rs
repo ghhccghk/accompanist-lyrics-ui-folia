@@ -28,7 +28,7 @@ pub struct Group {
     pub transform:Transform, pub commands:Vec<Command>,
     pub direct: bool,
 }
-pub struct Frame { pub id:u64, pub width:u32, pub height:u32, pub commands:Vec<Command> }
+pub struct Frame { pub id:u64, pub width:u32, pub height:u32, pub commands:Vec<Command>, pub projective: bool }
 struct Reader<'a> { bytes:&'a [u8], at:usize, count:usize, pixels:u64, version:u32 }
 impl Reader<'_> {
     fn u32(&mut self)->Result<u32,i32> {
@@ -99,6 +99,17 @@ impl Reader<'_> {
         }
     }
 }
+// Projective text draws in viewport coordinates and never enters an RGBA8
+// isolated group. Keeping v3 homogeneous makes its F16 contract explicit.
+fn projective_command(command: &Command) -> bool {
+    match command {
+        Command::Plane(_) => true,
+        Command::Group(group) => group.direct && group.transform.0 == [1., 0., 0., 1., 0., 0.]
+            && group.commands.iter().all(projective_command),
+        Command::Image { .. } => false,
+    }
+}
+
 pub fn parse(bytes:&[u8])->Result<Frame,i32> {
     if bytes.len()>MAX_PACKET {return Err(-30);}
     let mut r=Reader{bytes,at:0,count:0,pixels:0,version:0};
@@ -108,7 +119,9 @@ pub fn parse(bytes:&[u8])->Result<Frame,i32> {
     let id=r.u64()?;let(width,height)=crate::dimensions(r.u32()? as i32,r.u32()? as i32)?;
     let commands=r.commands(0)?;
     if r.at!=bytes.len(){return Err(-30);}
-    Ok(Frame{id,width,height,commands})
+    let projective = r.version >= 3;
+    if projective && !commands.iter().all(projective_command) { return Err(-31); }
+    Ok(Frame{id,width,height,commands,projective})
 }
 
 #[cfg(test)] mod tests {

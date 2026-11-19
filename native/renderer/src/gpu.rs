@@ -6,11 +6,16 @@ use wgpu::util::DeviceExt;
 const IDENTITY: Transform = Transform([1., 0., 0., 1., 0., 0.]);
 
 const FORMAT:wgpu::TextureFormat=wgpu::TextureFormat::Rgba8Unorm;
+pub(crate) const TEXT_COMPOSITE: wgpu::TextureFormat = wgpu::TextureFormat::Rgba16Float;
 const FLOAT:wgpu::TextureFormat=wgpu::TextureFormat::Rgba32Float;
 const BUDGET:u64=192*1024*1024;
 #[derive(Clone)]
 pub struct Image { pub texture:wgpu::Texture, pub view:wgpu::TextureView, pub width:u32, pub height:u32, format:wgpu::TextureFormat }
-impl Image { fn bytes(&self)->u64{self.width as u64*self.height as u64*if self.format==FLOAT{16}else{4}} }
+impl Image { fn bytes(&self)->u64{texture_bytes(self.width, self.height, self.format)} }
+fn texture_bytes(width: u32, height: u32, format: wgpu::TextureFormat) -> u64 {
+    let bytes_per_pixel = match format { FLOAT => 16, TEXT_COMPOSITE => 8, _ => 4 };
+    u64::from(width) * u64::from(height) * bytes_per_pixel
+}
 
 pub struct Gpu {
     device:wgpu::Device, queue:wgpu::Queue,
@@ -18,6 +23,7 @@ pub struct Gpu {
     draw:wgpu::RenderPipeline, present:wgpu::RenderPipeline,
     blur:wgpu::RenderPipeline, blur_float:wgpu::RenderPipeline, halo:wgpu::RenderPipeline,
     sampler:wgpu::Sampler,
+    supports_text_composite: bool,
     plane_pipelines: Option<[wgpu::RenderPipeline; 2]>,
     images:BTreeMap<u64,Image>, pool:Vec<Image>, resident:u64,
     pub submitted:u64, pub uploaded_bytes:u64, pub peak_bytes:u64,
@@ -69,7 +75,7 @@ fn clear(encoder:&mut wgpu::CommandEncoder,target:&wgpu::TextureView) {
             ops:wgpu::Operations{load:wgpu::LoadOp::Clear(wgpu::Color::TRANSPARENT),store:wgpu::StoreOp::Store}})],..Default::default()});
 }
 impl Gpu {
-    pub fn new(device:wgpu::Device,queue:wgpu::Queue,surface_format:wgpu::TextureFormat)->Self {
+    pub fn new(device:wgpu::Device,queue:wgpu::Queue,surface_format:wgpu::TextureFormat,supports_text_composite:bool)->Self {
         let layout=device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor{label:None,entries:&[
             texture_entry(0,true),wgpu::BindGroupLayoutEntry{binding:1,visibility:wgpu::ShaderStages::FRAGMENT,ty:wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),count:None},uniform_entry(2,true)]});
         let blur_layout=device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor{label:None,entries:&[texture_entry(0,false),uniform_entry(1,false)]});
@@ -80,10 +86,10 @@ impl Gpu {
         let blur_float=pipeline(&device,&blur_layout,include_str!("blur.wgsl"),FLOAT,false);
         let halo=pipeline(&device,&halo_layout,include_str!("halo.wgsl"),FORMAT,false);
         let sampler=device.create_sampler(&wgpu::SamplerDescriptor{mag_filter:wgpu::FilterMode::Linear,min_filter:wgpu::FilterMode::Linear,..Default::default()});
-        Self{device,queue,layout,blur_layout,halo_layout,draw,present,blur,blur_float,halo,sampler,plane_pipelines:None,images:BTreeMap::new(),pool:Vec::new(),resident:0,submitted:0,uploaded_bytes:0,peak_bytes:0}
+        Self{device,queue,layout,blur_layout,halo_layout,draw,present,blur,blur_float,halo,sampler,supports_text_composite,plane_pipelines:None,images:BTreeMap::new(),pool:Vec::new(),resident:0,submitted:0,uploaded_bytes:0,peak_bytes:0}
     }
     fn allocate(&mut self,w:u32,h:u32,format:wgpu::TextureFormat)->Result<Image,i32> {
-        let bytes=w as u64*h as u64*if format==FLOAT{16}else{4};
+        let bytes=texture_bytes(w,h,format);
         // Never undercount retired in-flight resources by dropping scratch here.
         if self.resident+bytes>BUDGET {return Err(-40);}
         let texture=self.device.create_texture(&wgpu::TextureDescriptor{label:Some("Folia texture"),size:wgpu::Extent3d{width:w,height:h,depth_or_array_layers:1},mip_level_count:1,sample_count:1,dimension:wgpu::TextureDimension::D2,format,
@@ -116,9 +122,9 @@ impl Gpu {
             };
             let shader = include_str!("plane.wgsl");
             [
-                pipeline_with_blend(&self.device, &self.layout, shader, FORMAT,
+                pipeline_with_blend(&self.device, &self.layout, shader, TEXT_COMPOSITE,
                     Some(wgpu::BlendState::PREMULTIPLIED_ALPHA_BLENDING)),
-                pipeline_with_blend(&self.device, &self.layout, shader, FORMAT,
+                pipeline_with_blend(&self.device, &self.layout, shader, TEXT_COMPOSITE,
                     Some(wgpu::BlendState {color: add, alpha: add})),
             ]
         });
@@ -232,7 +238,13 @@ impl Gpu {
     }
     pub fn render(&mut self,frame:&Frame,target:&wgpu::TextureView)->Result<(),i32> {
         let mut encoder=self.device.create_command_encoder(&Default::default());
-        let image=self.take(frame.width,frame.height,FORMAT)?;
+        let format = if frame.projective {
+            if !self.supports_text_composite { return Err(-45); }
+            TEXT_COMPOSITE
+        } else {
+            FORMAT
+        };
+        let image=self.take(frame.width,frame.height,format)?;
         clear(&mut encoder,&image.view);
         self.commands(&mut encoder,&image.view,(frame.width,frame.height),&frame.commands,IDENTITY)?;
         clear(&mut encoder,target);
@@ -327,7 +339,7 @@ mod tests {
             required_limits:wgpu::Limits::downlevel_defaults().using_resolution(adapter.limits()),
             ..Default::default()
         })).unwrap();
-        Gpu::new(device,queue,FORMAT)
+        Gpu::new(device,queue,FORMAT,true)
     }
 
     #[test]
@@ -344,6 +356,7 @@ mod tests {
         let target_bytes = target.bytes();
         for (index, width) in [64, 80, 96, 112].into_iter().enumerate() {
             let frame = Frame {
+                projective: false,
                 id: index as u64 + 1, width, height: 64, commands: vec![Command::Image {
                     texture: second_scene, color: [1.; 4], transform: IDENTITY,
                 }],

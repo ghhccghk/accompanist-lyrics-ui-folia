@@ -54,7 +54,11 @@ impl Session {
         let l = lost.clone(); device.set_device_lost_callback(move |_,_| { l.store(true,std::sync::atomic::Ordering::Release); });
         surface.configure(&device,&config);
         if !adapter.get_texture_format_features(wgpu::TextureFormat::Rgba32Float).allowed_usages.contains(wgpu::TextureUsages::RENDER_ATTACHMENT){return Err(-15);}
-        let gpu=crate::gpu::Gpu::new(device.clone(),queue.clone(),format);
+        let text_format = adapter.get_texture_format_features(crate::gpu::TEXT_COMPOSITE);
+        let supports_text_composite = text_format.allowed_usages.contains(
+            wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_DST)
+            && text_format.flags.contains(wgpu::TextureFormatFeatureFlags::BLENDABLE | wgpu::TextureFormatFeatureFlags::FILTERABLE);
+        let gpu=crate::gpu::Gpu::new(device.clone(),queue.clone(),format,supports_text_composite);
         Ok(Self { surface, device, queue, config, errors, lost, recoveries: 0, gpu })
     }
     fn frame(&mut self, width: u32, height: u32, scene:Option<&crate::protocol::Frame>) -> Result<i32,i32> {

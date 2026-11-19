@@ -89,7 +89,8 @@ class FoliaNativeSurfaceView internal constructor(
             return
         }
         if (result < 0 || (result == 1 && ++failures > 3)) {
-            fail(generation, "Render:$result")
+            val reason = if (result == -45) "UnsupportedCapability:DioramaF16Blend" else "Render:$result"
+            fail(generation, reason)
         } else if (result == 1) wake()
         else {
             failures = 0

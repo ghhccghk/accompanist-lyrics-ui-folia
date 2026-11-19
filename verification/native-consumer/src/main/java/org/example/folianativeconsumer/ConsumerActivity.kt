@@ -3,6 +3,7 @@ package org.example.folianativeconsumer
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.SystemClock
 import android.view.View
 import android.view.WindowInsets
 import android.widget.FrameLayout
@@ -31,11 +32,17 @@ import java.io.File
 class ConsumerActivity : ComponentActivity() {
     private data class Request(val ms:Long,val width:Int,val height:Int,val scene:String,val backend:FoliaRendererBackend,
         val reduced:Boolean,val fontScale:Float,val guides:Boolean,val theme:String,
-        val offset:Int,val instances:Int,val active:Boolean,val budget:Long)
+        val offset:Int,val instances:Int,val active:Boolean,val budget:Long,
+        val playForMs:Long,val startedAt:Long = SystemClock.elapsedRealtime()) {
+        fun playback():FoliaPlaybackSnapshot {
+            val elapsed = (SystemClock.elapsedRealtime() - startedAt).coerceIn(0, playForMs)
+            return FoliaPlaybackSnapshot(ms + elapsed, elapsed < playForMs, startedAt)
+        }
+    }
     private fun request(i:Intent)=Request(i.getLongExtra("mediaMs",1500),i.getIntExtra("width",800),i.getIntExtra("height",600),
         i.getStringExtra("scene")?:"baseline",FoliaRendererBackend.valueOf(i.getStringExtra("backend")?:"NativeRequired"),
         i.getBooleanExtra("reduced",false),i.getFloatExtra("fontScale",1f),i.getBooleanExtra("guides",true),i.getStringExtra("theme")?:"Partita",
-        i.getIntExtra("offset",0),i.getIntExtra("instances",1).coerceIn(1,2),i.getBooleanExtra("active",true),i.getLongExtra("budget",64L*1024*1024))
+        i.getIntExtra("offset",0),i.getIntExtra("instances",1).coerceIn(1,2),i.getBooleanExtra("active",true),i.getLongExtra("budget",64L*1024*1024),i.getLongExtra("playForMs",0).coerceIn(0,60_000))
     private lateinit var current:MutableState<Request>
     private var hostVisible by mutableStateOf(false)
     override fun onStart(){super.onStart();hostVisible=true}
@@ -87,7 +94,7 @@ class ConsumerActivity : ComponentActivity() {
             }
             val family=fonts.getValue(when{r.scene=="arabic"->"NotoSansArabic-Bold.ttf";r.scene=="cjk"->"FoliaParityCJK-Bold.otf";r.scene.startsWith("bidi-")->"FoliaParityBidi-Bold.ttf";else->"FoliaParityLatin-Bold.ttf"})
             CompositionLocalProvider(LocalDensity provides Density(1f,r.fontScale)){
-                Layout(content={repeat(r.instances){slot->key(slot){FoliaNativeLyricsView(source,{FoliaPlaybackSnapshot(r.ms,false,r.ms)},
+                Layout(content={repeat(r.instances){slot->key(slot){FoliaNativeLyricsView(source,r::playback,
                     typography=FoliaTypography(secondary=TextStyle(fontFamily=family,fontWeight=FontWeight.Bold)),
                     options=FoliaOptions(showTranslation=r.scene == "subtitle",showPhonetic=false,showNextLine=false,reducedMotion=r.reduced,offsetMillis=r.offset),
                     style=when (r.theme) {
@@ -99,7 +106,7 @@ class ConsumerActivity : ComponentActivity() {
                     diagnosticsIntervalFrames=1,
                     onRendererStatus={s->
                         status(slot,"slot=$slot ABI=${FoliaNativeRuntime.ABI_VERSION} ${s.actual} ${s.state} ${s.reason.orEmpty()} frame=${s.frameId} media=${r.ms} sampled=${s.sampledMediaTimeUs} uploads=${s.uploadedBytes}")
-                        android.util.Log.i("FoliaNativeConsumer","STATE slot=$slot request=${r.backend} scene=${r.scene} media=${r.ms} sampled=${s.sampledMediaTimeUs} path=${s.actual} state=${s.state} frame=${s.frameId} reason=${s.reason}")
+                        android.util.Log.i("FoliaNativeConsumer","STATE slot=$slot request=${r.backend} scene=${r.scene} media=${r.ms} sampled=${s.sampledMediaTimeUs} path=${s.actual} state=${s.state} frame=${s.frameId} textures=${s.textureCount} resident=${s.residentTextureBytes} peak=${s.peakTextureBytes} uploaded=${s.uploadedBytes} reason=${s.reason}")
                     },
                     onLineClicked={line->status(slot,"CLICK source=${source.lines.any{it===line}} media=${r.ms}")},
                     onLinePressed={line->status(slot,"LONG source=${source.lines.any{it===line}} media=${r.ms}")})}}},

@@ -121,8 +121,22 @@ matrix remains open.
   compatible Vulkan surface adapter (`Create:-11`); no native frame is
   claimed on API 26¨C29. `scripts/verify-native-consumer.py --availability
   absent` builds the control; `--availability present` requires a real submit.
-- Current next item: R3 pressure diagnostics; R4 paired visual/interaction
-  checks and R5 local candidate follow.
+- R3: API 34 x86_64 (`-gpu host`, NVIDIA), fresh process: the wall-clock
+  playback window, 98 baseline and 76 wrap timestamps, theme changes,
+  seeks, font and viewport changes completed. Estimated renderer texture
+  bytes reached 162,685,248 in wrap, plateaued from 1900 ms to the end
+  and fell on theme replacement. PSS checkpoints ranged from 40,905 to
+  77,762 KiB. This does not reproduce the original SwiftShader OOM or
+  prove its cause. A separate offscreen Vulkan process measured 137,088
+  bytes of source, 365,312 bytes of Diorama mips, 29,582,400 bytes of
+  Partita scratch (upper bound before the fence, idle after), and 137,088
+  bytes of pending upload payload before submission. These are texture and
+  payload estimates, not actual GPU allocation sizes. Retirement returned
+  to the target-only baseline. No production budget or policy changed.
+  Reproduce using `scripts/probe-native-pressure.py` and
+  `scripts/test-renderer-android.ps1 -Pressure` on a task-owned emulator.
+- Current next item: R4 paired visual and interaction checks, then R5
+  local candidate.
 
 ## Remaining
 

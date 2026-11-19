@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$Sdk,[Parameter(Mandatory=$true)][string]$Serial,[string]$Cargo='cargo')
+param([Parameter(Mandatory=$true)][string]$Sdk,[Parameter(Mandatory=$true)][string]$Serial,[string]$Cargo='cargo',[switch]$Pressure)
 $ErrorActionPreference='Stop'
 if ($Serial -notlike 'emulator-*') { throw 'Specify the task-owned emulator explicitly' }
 $root=Split-Path $PSScriptRoot
@@ -19,7 +19,8 @@ Invoke-MaskRustToolchain -Cargo $Cargo -Build {
         & $adb -s $Serial push $binary.FullName /data/local/tmp/folia-renderer-tests
         if($LASTEXITCODE -ne 0){throw 'Test upload failed'}
         & $adb -s $Serial shell chmod 755 /data/local/tmp/folia-renderer-tests
-        & $adb -s $Serial shell /data/local/tmp/folia-renderer-tests --test-threads=1
+        $testArguments = if ($Pressure) { @('--ignored','--nocapture','real_vulkan_sample_texture_pressure') } else { @('--test-threads=1') }
+        & $adb -s $Serial shell /data/local/tmp/folia-renderer-tests @testArguments
         if($LASTEXITCODE -ne 0){throw 'Android Rust tests failed'}
     } finally {$env:RUSTFLAGS=$savedFlags;$env:CARGO_TARGET_X86_64_LINUX_ANDROID_LINKER=$savedLinker}
 }

@@ -494,6 +494,51 @@ mod tests {
         assert_eq!(gpu.resident, target_bytes);
     }
 
+    // Run this in a separate process from the A/B/C recovery regression.
+    #[test]
+    #[ignore = "explicit Vulkan texture pressure diagnostic"]
+    fn real_vulkan_sample_texture_pressure() {
+        let mut gpu = open_gpu();
+        let target = gpu.allocate(800, 600, FORMAT).unwrap();
+        let word = (1 << 16) | 1;
+        let pixels = vec![255; 168 * 204 * 4];
+        // A raw upload remains queued until the next submit. The payload is
+        // known; actual staging allocation also depends on HAL row alignment.
+        gpu.upload(word, 168, 204, &pixels, &[], 1.).unwrap();
+        println!("staging_payload_pending_before_submit={}", pixels.len());
+        let source = gpu.images[&word].bytes();
+        for index in 0..100 {
+            let frame = Frame { id: index + 1, width: 800, height: 600, projective: false,
+                commands: vec![Command::Group(Group {
+                    width: 160 + (index % 20) as u32, height: 204, sigma: 0.7, opacity: 0.6,
+                    transform: IDENTITY, direct: false, commands: vec![Command::Image {
+                        texture: word, color: [1.; 4], transform: IDENTITY,
+                    }],
+                })],
+            };
+            gpu.render(&frame, &target.view).unwrap();
+        }
+        let bytes = |images: &[Image]| images.iter().map(Image::bytes).sum::<u64>();
+        let potentially_busy = bytes(&gpu.pool);
+        gpu.wait_for_submitted_work().unwrap(); // diagnostic checkpoint only
+        let idle = bytes(&gpu.pool);
+        assert_eq!(idle, potentially_busy);
+        assert_eq!(gpu.resident, source + idle + target.bytes());
+        println!("Partita source={source} mip=0 scratch_upper_bound_before_fence={potentially_busy} scratch_idle_after_fence={idle}");
+        gpu.resize().unwrap();
+        let mut encoder = gpu.device.create_command_encoder(&Default::default());
+        gpu.prepare_plane_mips(&mut encoder, word).unwrap();
+        gpu.queue.submit(Some(encoder.finish()));
+        gpu.wait_for_submitted_work().unwrap();
+        let mip = gpu.mips[&word].bytes();
+        assert!(mip > source);
+        assert_eq!(gpu.resident, source + mip + target.bytes());
+        println!("Diorama source={source} mip={mip} scratch_idle=0");
+        gpu.drop_scene(1).unwrap();
+        assert_eq!(gpu.resident, target.bytes());
+        println!("retired source=0 mip=0 scratch_idle=0 staging_payload_after_fence=0");
+    }
+
     #[test] fn real_vulkan_shadow_and_small_gaussian_match_f64_reference(){
         let mut gpu = open_gpu();
         let(w,h)=(31usize,17usize);

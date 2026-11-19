@@ -1,6 +1,7 @@
 """Check a local Maven build, paired symbols and consuming APK."""
 import argparse
 from contextlib import nullcontext
+from io import BytesIO
 import hashlib
 import json
 from pathlib import Path
@@ -12,6 +13,7 @@ from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT = "lyrics-ui-folia-native-android"
+CORE_ARTIFACTS = ("lyrics-ui-folia", "lyrics-ui-folia-android", "lyrics-ui-folia-jvm")
 VERSION = "0.1.0-SNAPSHOT"
 NOTICES = "META-INF/lyrics-ui-folia-native/dependencies/"
 
@@ -20,7 +22,7 @@ def sha256(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def files_for_snapshot(directory):
+def files_for_snapshot(directory, artifact):
     metadata = ET.parse(directory / "maven-metadata.xml")
     files = {}
     for snapshot in metadata.findall("versioning/snapshotVersions/snapshotVersion"):
@@ -28,15 +30,14 @@ def files_for_snapshot(directory):
         classifier = snapshot.findtext("classifier", "")
         version = snapshot.findtext("value")
         suffix = f"-{classifier}" if classifier else ""
-        files[classifier or extension] = directory / f"{ARTIFACT}-{version}{suffix}.{extension}"
+        files[classifier or extension] = directory / f"{artifact}-{version}{suffix}.{extension}"
     return files
 
 
 def publication_files(repository, artifact, version):
     directory = repository / "top/ghhccghk/accompanist" / artifact / version
     if version.endswith("-SNAPSHOT"):
-        assert artifact == ARTIFACT
-        return files_for_snapshot(directory)
+        return files_for_snapshot(directory, artifact)
     stem = f"{artifact}-{version}"
     files = {}
     for path in directory.glob(stem + "*"):
@@ -60,6 +61,35 @@ def inspect_elf(readelf, binary):
             "load_alignments": [row[-1] for row in loads]}
 
 
+def verify_core(repository, version, core_apk=None):
+    verified = {}
+    for artifact in CORE_ARTIFACTS:
+        files = publication_files(repository, artifact, version)
+        binary = "aar" if artifact.endswith("-android") else "jar"
+        for required in (binary, "sources", "pom", "module"):
+            assert files[required].is_file(), files[required]
+        for kind, path in files.items():
+            if path.suffix in (".jar", ".aar"):
+                with ZipFile(path) as archive:
+                    members = archive.namelist()
+                    assert not any(name.lower().endswith((".so", ".dll", ".dylib")) for name in members), path
+                    if path.suffix == ".aar":
+                        for name in members:
+                            if name.endswith(".jar"):
+                                with ZipFile(BytesIO(archive.read(name))) as nested:
+                                    assert not any(member.lower().endswith((".so", ".dll", ".dylib"))
+                                                   for member in nested.namelist()), (path, name)
+            if kind in ("pom", "module"):
+                assert b"lyrics-ui-folia-native" not in path.read_bytes(), path
+        verified[artifact] = {kind: sha256(path.read_bytes()) for kind, path in files.items()}
+    if core_apk:
+        with ZipFile(core_apk) as archive:
+            assert not any("liblyrics_folia_renderer.so" in name or "folia_mask_experiment" in name
+                           for name in archive.namelist()), core_apk
+        verified["consumer-apk"] = sha256(core_apk.read_bytes())
+    return verified
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repository", type=Path, default=ROOT / "build/local-maven")
@@ -67,6 +97,7 @@ def main():
     parser.add_argument("--readelf", type=Path, required=True)
     parser.add_argument("--zipalign", type=Path)
     parser.add_argument("--apk", type=Path)
+    parser.add_argument("--core-apk", type=Path, help="Also verify all three Kotlin publications and the core-only APK")
     args = parser.parse_args()
     if bool(args.apk) != bool(args.zipalign):
         parser.error("Specify --apk and --zipalign together")
@@ -118,6 +149,8 @@ def main():
         evidence["apk_alignment"] = "PASS zipalign -c -P 16 -v 4"
         files["consumer-apk"] = args.apk
     evidence["sha256"] = {key: sha256(path.read_bytes()) for key, path in files.items()}
+    if args.core_apk:
+        evidence["core_sha256"] = verify_core(args.repository, args.version, args.core_apk)
     print(json.dumps(evidence, indent=2))
 
 

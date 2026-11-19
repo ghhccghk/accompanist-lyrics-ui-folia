@@ -28,7 +28,7 @@ parser.add_argument("--repository", type=Path, help="Explicit local Maven reposi
 parser.add_argument("--version", default="0.1.0-SNAPSHOT")
 parser.add_argument("--core-only", action="store_true", help="Build only against the Kotlin coordinate")
 parser.add_argument("--serial", help="Explicit task-owned emulator only; never autodetect a device")
-parser.add_argument("--availability", choices=("kotlin", "present", "absent"),
+parser.add_argument("--availability", choices=("kotlin", "present", "absent", "session-fault"),
                     help="Run the startup/availability probe instead of the full lifecycle probe")
 args = parser.parse_args()
 if args.core_only and args.availability:
@@ -41,7 +41,7 @@ work.mkdir(parents=True, exist_ok=True)
 project = work / ("core-app" if args.core_only else "app")
 project.mkdir(exist_ok=True)
 fixture = ROOT / "verification/native-consumer"
-for filename in ("build.gradle.kts", "settings.gradle.kts"):
+for filename in ("build.gradle.kts", "settings.gradle.kts", "session-fault-probe.pro"):
     shutil.copy2(fixture / filename, project / filename)
 (project / "src/main").mkdir(parents=True, exist_ok=True)
 shutil.copy2(fixture / "src/main/AndroidManifest.xml", project / "src/main/AndroidManifest.xml")
@@ -98,6 +98,8 @@ if args.core_only:
 omit_renderer = args.availability == "absent"
 if omit_renderer:
     command.append("-PfoliaConsumerWithoutNativeRuntime=true")
+if args.availability == "session-fault":
+    command.append("-PfoliaConsumerSessionFaultProbe=true")
 log = work / ("core-build.log" if args.core_only else "build.log")
 with log.open("w", encoding="utf-8") as output:
     result = subprocess.run(command, cwd=project, env=env, stdout=output, stderr=subprocess.STDOUT)

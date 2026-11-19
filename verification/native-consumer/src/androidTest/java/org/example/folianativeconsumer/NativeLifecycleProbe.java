@@ -8,6 +8,8 @@ import android.os.SystemClock;
 import android.view.*;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.TextView;
+import java.lang.reflect.Field;
+import java.nio.ByteBuffer;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Pattern;
@@ -97,12 +99,40 @@ public final class NativeLifecycleProbe extends Instrumentation {
             throw new AssertionError("Unknown availability mode: " + mode);
         }
     }
+    private void checkSessionFault() throws ReflectiveOperationException {
+        activity = startActivitySync(intent().putExtra("backend", "NativePreferred"));
+        Class<?> jni = Class.forName("top.ghhccghk.accompanist.lyrics.folia.nativeandroid.RendererJni");
+        var upload = jni.getMethod("upload", long.class, long.class, int.class, int.class,
+                ByteBuffer.class, int.class, float.class, float.class, float.class);
+        var destroy = jni.getMethod("destroy", long.class);
+        for (String backend : new String[]{"NativePreferred", "NativeRequired"}) {
+            update(intent().putExtra("backend", backend).putExtra("mediaMs", 1500L));
+            await("NativeGpu Ready:PartitaMainAndGlow", "sampled=1500000");
+            TextureView surface = textures().get(0);
+            Field handle = surface.getClass().getDeclaredField("handle");
+            handle.setAccessible(true);
+            long id = handle.getLong(surface);
+            if (id <= 0) throw new AssertionError("No live session");
+            // The byte buffer is valid; a reserved zero texture ID fails inside
+            // the session's upload operation. The normal worker detects the
+            // retired slot on its next frame. No fault switch in the AAR.
+            int uploadFailure = (int) upload.invoke(null, id, 0L, 1, 1, ByteBuffer.allocateDirect(4), 4, 0f, 0f, 1f);
+            if (uploadFailure != -42) throw new AssertionError("Expected Upload:-42; got " + uploadFailure);
+            update(intent().putExtra("backend", backend).putExtra("mediaMs", 1516L));
+            boolean preferred = backend.equals("NativePreferred");
+            await(preferred ? "Kotlin Fallback" : "Failed Failed", "Failed:Render:-4", "media=1516");
+            if (preferred) assertSourceAction("Amber", 1516);
+            awaitWorkers(0);
+            if ((int) destroy.invoke(null, id) != 0) throw new AssertionError("Duplicate destroy failed");
+        }
+    }
     @Override public void onStart(){
         Bundle result=new Bundle();
         try{
             getUiAutomation(); // Enable accessibility before the composition is created.
             if (availability != null) {
-                checkAvailability(availability);
+                if (availability.equals("session-fault")) checkSessionFault();
+                else checkAvailability(availability);
                 result.putString("stream", "PASS API " + android.os.Build.VERSION.SDK_INT + " availability=" + availability + "\n");
                 finish(Activity.RESULT_OK, result);
                 return;

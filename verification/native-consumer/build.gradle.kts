@@ -20,6 +20,9 @@ android {
             isMinifyEnabled = true
             signingConfig = signingConfigs.getByName("debug")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
+            if (providers.gradleProperty("foliaConsumerSessionFaultProbe").isPresent) {
+                proguardFiles("session-fault-probe.pro")
+            }
         }
     }
     testBuildType = "release"

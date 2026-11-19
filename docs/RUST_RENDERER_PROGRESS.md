@@ -59,10 +59,13 @@ under their composed transform. Forced offscreen transitions, group alpha and
 blur still use isolated layers. The independent release/R8 lifecycle and source,
 symbol and 16 KiB package checks passed again. See
 [visual results](../verification/native-renderer-visual.md) for the paired rerun.
+The release consumer also captured three emoji and seven subtitle timing pairs.
+The subtitle band matched through appearance and removal. Isolated main-stage
+pixel peaks remain open.
 
 ## Remaining
 
-- P3: sustained foreground/background, remaining main-stage visual differences and emoji.
+- P3: sustained foreground/background and residual main-stage edge coverage.
 - P4: ARM64 runtime, device-error/resource-pressure evidence and paired hardware performance.
 - Only after the first theme closes: trace-led second theme, then separately validated desktop host.
 

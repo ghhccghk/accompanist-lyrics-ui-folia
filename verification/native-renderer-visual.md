@@ -91,3 +91,38 @@ passed the full lifecycle probe. Both packaged ABIs, matching symbol build
 IDs, 63 crate sources and licenses, and 16 KiB APK alignment were checked.
 JNI ABI stays at 2. Rust accepts v1 packets with the original isolation
 behavior and requires scene v2 for direct groups.
+
+## Emoji and subtitle timing
+
+The same release/R8 consumer captured a profession ZWJ sequence with skin
+tone and a regional-indicator flag, alongside Latin words. A second scene
+sampled subtitle entrance, the retained translation and its removal when
+the untranslated next line became primary. The AAR loaded the same native
+binaries as the scene v2 rerun.
+
+| Case | Mean | P99 | Peak | Worst tile mean |
+| --- | ---: | ---: | ---: | ---: |
+| emoji-850 | 0.358 | 2 | 3 | 0.691 |
+| emoji-1500 | 0.284 | 1 | 8 | 1.000 |
+| emoji-2280 | 0.440 | 2 | 44 | 1.000 |
+| subtitle-750 | 0.310 | 1 | 2 | 0.462 |
+| subtitle-850 | 0.362 | 2 | 3 | 0.609 |
+| subtitle-1000 | 0.207 | 2 | 52 | 0.667 |
+| subtitle-1500 | 0.327 | 2 | 11 | 0.736 |
+| subtitle-3199 | 0.358 | 2 | 8 | 2.000 |
+| subtitle-3300 | 0.653 | 2 | 4 | 1.151 |
+| subtitle-3500 | 0.265 | 2 | 29 | 1.111 |
+
+The subtitle band (full width, rows 440 through 509) matched pixel for
+pixel at all seven times. It had 1,131 foreground pixels at 750 ms, 1,199
+at 850 ms, 1,030 at 1000, 1500 and 3199 ms, and none at 3300 and 3500 ms.
+The largest remaining main-stage errors in these scenes are isolated pixels:
+44 at (588, 357) in emoji-2280 and 52 at (433, 288) in subtitle-1000.
+The scene comparison keeps those pixels and all low-alpha coverage in the results.
+
+With the release consumer installed on the task-owned 800x600, 160 dpi
+emulator, capture the same matrix with:
+
+```powershell
+python scripts/capture-renderer-pairs.py --adb <adb.exe> --serial emulator-5580 --output .work/renderer-pairs
+```

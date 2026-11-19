@@ -73,6 +73,8 @@ class ConsumerActivity : ComponentActivity() {
                 else if (r.scene == "subtitle") SyncedLyrics(listOf(
                     line("Amber ", "echo", 700, 1300, 2900, "Translation probe"),
                     line("Silver ", "light", 3200, 3650, 4100)))
+                else if (r.scene == "emoji") SyncedLyrics(listOf(
+                    line("Glow \uD83D\uDC69\uD83C\uDFFD\u200D\uD83C\uDFA4 ", "\uD83C\uDDF9\uD83C\uDDFC echo", 700, 1300, 2500)))
                 else if(r.scene=="waiting")SyncedLyrics(listOf(line("Amber ","echo",10000,11000,12000),line("Silver ","light",36000,37000,38000)))
                 else {
                     val selected=rows.filter{it[0]==r.scene};require(selected.isNotEmpty())

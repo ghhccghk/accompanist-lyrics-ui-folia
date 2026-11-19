@@ -65,7 +65,9 @@ pixel peaks remain open.
 
 ## Remaining
 
-- P3: sustained foreground/background and residual main-stage edge coverage.
+- P3: residual main-stage edge coverage. The real playback sample passed three
+  Home round trips and a rotation while playing, with pause on stop and resume
+  at the retained position. See the P3 evidence for both process PSS readings.
 - P4: ARM64 runtime, device-error/resource-pressure evidence and paired hardware performance.
 - Only after the first theme closes: trace-led second theme, then separately validated desktop host.
 
@@ -91,7 +93,6 @@ pixel peaks remain open.
 
 Keep this theme on the experimental, explicitly selected path. The first-theme
 exit gate remains: resolve the measured local visual differences without
-changing the Kotlin scene or reducing effects, complete sustained foreground /
-background and remaining glyph/caption cases, and collect a paired physical
+changing the Kotlin scene or reducing effects, and collect a paired physical
 performance trace. Do not start P5 while those gates remain open. ARM64 runtime
 needs a suitable host or device; the connected physical device remains out of scope.

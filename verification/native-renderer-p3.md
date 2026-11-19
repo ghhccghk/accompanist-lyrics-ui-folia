@@ -46,3 +46,23 @@ hang during frequent view replacement. Deferring Vulkan initialization until a
 nonempty scene was insufficient. Reusing the surface for tuning and size changes
 allowed the entire matrix to pass. The earlier error was not isolated.
 Submission diagnostics here do not measure physical presents or performance.
+
+The scene v2 sample at `d93f038` also passed three Home round trips while
+playing the same embedded-lyrics MP3 and one configuration rotation. The
+sample intentionally pauses in `onStop`. Returning preserved the song and
+embedded lyrics, and Play continued from the retained position. UI PID 8405
+and playback PID 8831 stayed the same. Android changed the viewport from
+800x600 to 600x800. The restored sample reported `NativeRequired`, `NativeGpu`
+and `Ready:PartitaMainAndGlow`. Logcat showed no ANR or fatal crash for the run.
+
+| Operation | Playing before (s) | Paused on return (s) | Playing after resume (s) | UI PSS (KiB) | Playback PSS (KiB) | Combined PSS (KiB) |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Before stress | | | | 95699 | 48858 | 144557 |
+| Home 1 | 1 | 3 | 5 | 107754 | 48706 | 156460 |
+| Home 2 | 4 | 5 | 7 | 119472 | 48793 | 168265 |
+| Home 3 | 3 | 5 | 6 | 106896 | 48785 | 155681 |
+| Rotation | 3 | 5 | 6 | 116226 | 48999 | 165225 |
+
+Each PSS reading is a `dumpsys meminfo <pid>` snapshot. These short runs did
+not isolate Vulkan driver memory or establish long-term memory stability.
+The raw observations are in the ignored `.work/renderer-playback-stress.json`.

@@ -1,6 +1,7 @@
 package org.example.folianativeconsumer
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
@@ -47,7 +48,10 @@ class ConsumerActivity : ComponentActivity() {
         state?.getParcelable<Intent>("rendererRequest")?.let{setIntent(it)}
         @Suppress("DEPRECATION")
         window.decorView.systemUiVisibility=View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-        window.setDecorFitsSystemWindows(false);window.insetsController?.hide(WindowInsets.Type.systemBars())
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.setDecorFitsSystemWindows(false)
+            window.insetsController?.hide(WindowInsets.Type.systemBars())
+        }
         current=mutableStateOf(request(intent))
         val root=FrameLayout(this)
         val label=TextView(this).apply{text="Preparing AAR";setTextColor(-1);textSize=10f}

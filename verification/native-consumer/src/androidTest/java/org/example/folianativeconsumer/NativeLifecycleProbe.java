@@ -15,7 +15,12 @@ import java.util.regex.Pattern;
 /** Public Android/AAR APIs against the actual minified coordinate consumer. */
 public final class NativeLifecycleProbe extends Instrumentation {
     private Activity activity;
-    @Override public void onCreate(Bundle arguments){super.onCreate(arguments);start();}
+    private String availability;
+    @Override public void onCreate(Bundle arguments){
+        super.onCreate(arguments);
+        availability=arguments.getString("availability");
+        start();
+    }
     private Intent intent(){return new Intent(Intent.ACTION_MAIN).setClassName(getTargetContext(),"org.example.folianativeconsumer.ConsumerActivity").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);}
     private String state(){AtomicReference<String> text=new AtomicReference<>("");runOnMainSync(()->text.set(textOf(activity.getWindow().getDecorView())));return text.get();}
     private String await(String... tokens){
@@ -60,10 +65,48 @@ public final class NativeLifecycleProbe extends Instrumentation {
         }
         throw new AssertionError("Expected " + expected + " renderer workers after disposing views");
     }
+    private void assertSourceAction(String text, long mediaMs) {
+        long deadline = SystemClock.uptimeMillis() + 10000;
+        while (SystemClock.uptimeMillis() < deadline) {
+            AccessibilityNodeInfo line = findDescription(getUiAutomation().getRootInActiveWindow(), text);
+            if (line != null && line.performAction(AccessibilityNodeInfo.ACTION_CLICK)) {
+                await("CLICK source=true media=" + mediaMs);
+                return;
+            }
+            SystemClock.sleep(50);
+        }
+        throw new AssertionError("No Kotlin lyric action for " + text + ": " + state());
+    }
+    private void checkAvailability(String mode) {
+        activity = startActivitySync(intent().putExtra("backend", "Kotlin").putExtra("mediaMs", 1500L));
+        await("Kotlin Kotlin", "media=1500");
+        assertSourceAction("Amber", 1500);
+        if (mode.equals("present")) {
+            update(intent().putExtra("backend", "NativeRequired").putExtra("mediaMs", 1500L));
+            await("NativeGpu Ready:PartitaMainAndGlow", "sampled=1500000");
+        } else if (mode.equals("absent")) {
+            update(intent().putExtra("backend", "NativePreferred").putExtra("mediaMs", 1500L));
+            await("Kotlin Fallback", "RuntimeUnavailable:", "media=1500");
+            assertSourceAction("Amber", 1500);
+            update(intent().putExtra("backend", "NativePreferred").putExtra("mediaMs", 3400L));
+            assertSourceAction("Silver", 3400);
+            update(intent().putExtra("backend", "NativeRequired").putExtra("mediaMs", 3400L));
+            await("Failed Failed", "RuntimeUnavailable:", "media=3400");
+            if (!textures().isEmpty()) throw new AssertionError("Unavailable runtime attached a surface");
+        } else if (!mode.equals("kotlin")) {
+            throw new AssertionError("Unknown availability mode: " + mode);
+        }
+    }
     @Override public void onStart(){
         Bundle result=new Bundle();
         try{
             getUiAutomation(); // Enable accessibility before the composition is created.
+            if (availability != null) {
+                checkAvailability(availability);
+                result.putString("stream", "PASS API " + android.os.Build.VERSION.SDK_INT + " availability=" + availability + "\n");
+                finish(Activity.RESULT_OK, result);
+                return;
+            }
             activity=startActivitySync(intent());
             String initial=await("ABI=2 NativeGpu Ready:PartitaMainAndGlow","sampled=1500000");stable();
             long uploads=value(initial,"uploads");

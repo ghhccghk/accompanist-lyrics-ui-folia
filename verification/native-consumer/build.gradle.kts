@@ -2,6 +2,8 @@ plugins {
     id("com.android.application") version "9.3.2"
     id("org.jetbrains.kotlin.plugin.compose") version "2.4.10"
 }
+// Test a missing runtime while keeping exactly the same Kotlin/AAR APIs.
+val omitRenderer = providers.gradleProperty("foliaConsumerWithoutNativeRuntime").map(String::toBoolean).orElse(false)
 android {
     namespace = "org.example.folianativeconsumer"
     compileSdk = 37
@@ -21,7 +23,10 @@ android {
     testBuildType = "release"
     // Producer already strips debug info. Keep its exact verified binary so
     // provenance can be checked byte-for-byte after consumer packaging.
-    packaging { jniLibs.keepDebugSymbols += "**/liblyrics_folia_renderer.so" }
+    packaging {
+        jniLibs.keepDebugSymbols += "**/liblyrics_folia_renderer.so"
+        if (omitRenderer.get()) jniLibs.excludes += "**/liblyrics_folia_renderer.so"
+    }
 }
 dependencies {
     implementation("top.ghhccghk.accompanist:lyrics-ui-folia-native-android:0.1.0-SNAPSHOT")

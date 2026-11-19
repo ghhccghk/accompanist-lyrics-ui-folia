@@ -23,6 +23,8 @@ parser.add_argument("--sdk", type=Path, required=True)
 parser.add_argument("--java-home", type=Path, required=True)
 parser.add_argument("--work", type=Path, default=Path(tempfile.gettempdir()) / "folia-native-coordinate-consumer")
 parser.add_argument("--serial", help="Explicit task-owned emulator only; never autodetect a device")
+parser.add_argument("--availability", choices=("kotlin", "present", "absent"),
+                    help="Run the startup/availability probe instead of the full lifecycle probe")
 args = parser.parse_args()
 work = args.work.resolve()
 assert work != ROOT and ROOT not in work.parents, "Consumer must be outside source checkout"
@@ -64,6 +66,9 @@ assert shutil.which("rustc", path=env["PATH"]) is None
 wrapper = [str(project / "gradlew.bat")] if os.name == "nt" else ["sh", str(project / "gradlew")]
 command = [*wrapper, "--no-daemon", "--console=plain", f"-PfoliaRepository={repository.as_uri()}",
            "assembleRelease", "assembleReleaseAndroidTest", "verifyConsumerTaskBoundary"]
+omit_renderer = args.availability == "absent"
+if omit_renderer:
+    command.append("-PfoliaConsumerWithoutNativeRuntime=true")
 log = work / "build.log"
 with log.open("w", encoding="utf-8") as output:
     result = subprocess.run(command, cwd=project, env=env, stdout=output, stderr=subprocess.STDOUT)
@@ -73,7 +78,10 @@ if result.returncode:
 apk = next((project / "build/outputs/apk/release").glob("*-release.apk"))
 with ZipFile(apk) as archive:
     native = [n for n in archive.namelist() if n.endswith("liblyrics_folia_renderer.so")]
-    assert len(native) == 2 and {n.split('/')[1] for n in native} == {"arm64-v8a", "x86_64"}
+    if omit_renderer:
+        assert not native, "The runtime-unavailable control must not package the renderer"
+    else:
+        assert len(native) == 2 and {n.split('/')[1] for n in native} == {"arm64-v8a", "x86_64"}
     hashes = {n: hashlib.sha256(archive.read(n)).hexdigest() for n in native}
     assert not any("folia_mask_experiment" in n for n in archive.namelist())
     assert "classes.dex" in archive.namelist()
@@ -90,9 +98,14 @@ if args.serial:
     subprocess.run([adb, "-s", args.serial, "install", "-r", str(apk)], check=True)
     tests = next((project / "build/outputs/apk/androidTest/release").glob("*.apk"))
     subprocess.run([adb, "-s", args.serial, "install", "-r", "-t", str(tests)], check=True)
-    probe = subprocess.run([adb, "-s", args.serial, "shell", "am", "instrument", "-w", "org.example.folianativeconsumer.test/org.example.folianativeconsumer.NativeLifecycleProbe"], check=True, capture_output=True, text=True, timeout=300)
+    command = [adb, "-s", args.serial, "shell", "am", "instrument", "-w"]
+    if args.availability:
+        command += ["-e", "availability", args.availability]
+    command += ["org.example.folianativeconsumer.test/org.example.folianativeconsumer.NativeLifecycleProbe"]
+    probe = subprocess.run(command, check=True, capture_output=True, text=True, timeout=300)
     print(probe.stdout)
-    assert "PASS release/R8" in probe.stdout and "FAIL " not in probe.stdout, probe.stdout
+    expected = f"availability={args.availability}" if args.availability else "PASS release/R8"
+    assert "PASS " in probe.stdout and expected in probe.stdout and "FAIL " not in probe.stdout, probe.stdout
     evidence["runtime"] = probe.stdout.strip()
 (work / "evidence.json").write_text(json.dumps(evidence, indent=2), encoding="utf-8")
 print(json.dumps(evidence, indent=2))

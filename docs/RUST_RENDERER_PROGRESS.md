@@ -112,8 +112,17 @@ matrix remains open.
   unclassified. This tests unwind, not abort or a native crash.
 - R1 host behavior: verify Preferred/Required against a runtime failure in
   the independent consumer, with the same lyric source and media snapshot.
-- Current next item: R2 consumer API 26¨C29 startup. R3 pressure diagnostics,
-  R4 paired visual/interaction checks, and R5 local candidate follow.
+- R2: guarded the test consumer's API 30 window calls without changing
+  minSdk 26. The independent Release/R8 APK without the renderer `.so`
+  passed `availability=absent` on separate API 26, 28, and 29 x86_64 images:
+  Kotlin source action at 1500 ms, Preferred fallback with the same source
+  and position, seek to the second lyric at 3400 ms, and explicit Required
+  failure. The with-runtime API 29 attempt loaded the library but had no
+  compatible Vulkan surface adapter (`Create:-11`); no native frame is
+  claimed on API 26¨C29. `scripts/verify-native-consumer.py --availability
+  absent` builds the control; `--availability present` requires a real submit.
+- Current next item: R3 pressure diagnostics; R4 paired visual/interaction
+  checks and R5 local candidate follow.
 
 ## Remaining
 

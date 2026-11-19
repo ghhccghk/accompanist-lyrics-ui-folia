@@ -52,6 +52,7 @@ internal class PartitaNativePlan(line:NormalizedLine, private val prepared:Parti
             val image = textures[texture].image
             parent.then(transform).quadBounds(image.width, image.height)
         }
+        is FoliaRendererPlane -> error("Projective planes are not Partita commands")
         is FoliaRendererGroup -> when {
             opacity <= 0f || commands.isEmpty() -> null
             allowDirectDraw && opacity == 1f && blurSigma <= .01f ->
@@ -96,6 +97,7 @@ internal class PartitaNativePlan(line:NormalizedLine, private val prepared:Parti
             commands = commands.map { command ->
                 when (command) {
                     is FoliaRendererImage -> command.copy(transform = shift.then(command.transform))
+                    is FoliaRendererPlane -> error("Projective planes are not Partita commands")
                     is FoliaRendererGroup -> command.copy(transform = shift.then(command.transform))
                 }
             })

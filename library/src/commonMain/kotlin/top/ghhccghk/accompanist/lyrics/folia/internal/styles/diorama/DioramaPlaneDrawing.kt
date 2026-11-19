@@ -6,6 +6,17 @@ package top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.*
 
+internal data class DioramaTextPlane(
+    val image: ImageBitmap,
+    val origin: DioramaVec,
+    val x: DioramaVec,
+    val y: DioramaVec,
+    val alpha: Float,
+    val color: Color,
+    val additive: Boolean,
+    val fog: DioramaFog?,
+)
+
 internal data class DioramaPlanePoint(val x: Double, val y: Double)
 internal data class DioramaPlaneClip(val points: List<DioramaPlanePoint>, val needsClip: Boolean)
 

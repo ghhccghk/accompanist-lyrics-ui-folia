@@ -86,7 +86,11 @@ class ConsumerActivity : ComponentActivity() {
                 Layout(content={repeat(r.instances){slot->key(slot){FoliaNativeLyricsView(source,{FoliaPlaybackSnapshot(r.ms,false,r.ms)},
                     typography=FoliaTypography(secondary=TextStyle(fontFamily=family,fontWeight=FontWeight.Bold)),
                     options=FoliaOptions(showTranslation=r.scene == "subtitle",showPhonetic=false,showNextLine=false,reducedMotion=r.reduced,offsetMillis=r.offset),
-                    style=if(r.theme=="Partita")FoliaStyle.Partita(PartitaTuning(showGuideLines=r.guides))else FoliaStyle.Classic(),backend=r.backend,
+                    style=when (r.theme) {
+                        "Partita" -> FoliaStyle.Partita(PartitaTuning(showGuideLines=r.guides))
+                        "Diorama" -> FoliaStyle.Diorama()
+                        else -> FoliaStyle.Classic()
+                    },backend=r.backend,
                     active=r.active&&hostVisible,rendererConfig=FoliaNativeRendererConfig(r.budget),
                     diagnosticsIntervalFrames=1,
                     onRendererStatus={s->

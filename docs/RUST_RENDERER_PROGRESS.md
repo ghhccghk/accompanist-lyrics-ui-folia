@@ -10,7 +10,7 @@ This is the single current execution checklist; the design and implementation pr
 - Existing native code is CPU mask/colour only. No renderer was present at the starting commit.
 - Preserved and excluded the pre-existing release signing hunk in `sample/android-app/build.gradle.kts` and untracked `gradle/gradle-daemon-jvm.properties`.
 
-## Current: visual, real playback and runtime stress validation
+## Current: Android Diorama text preview and native acceptance
 
 P1 platform milestone passed (`ad21f29`); evidence: `verification/native-renderer-p1.md`. P2 real core/prepared Partita + GPU passes, 6 Android Rust tests, existing Partita and bridge JVM tests, isolated release/R8 native consumer and paused frame stability passed; evidence: `verification/native-renderer-p2.md`. This is not complete visual/performance acceptance. Implement and validate the thin sample, persisted per-theme backends, failure/lifecycle and interaction behavior next.
 
@@ -63,6 +63,22 @@ The release consumer also captured three emoji and seven subtitle timing pairs.
 The subtitle band matched through appearance and removal. Isolated main-stage
 pixel peaks remain open.
 
+At the user's direction, P5 implementation started while the first theme's
+remaining acceptance work stayed open. The Android Diorama preview reuses the
+Kotlin camera, shaped raster window, plane order, near/far clipping and source
+objects. The optional AAR draws the projected lyric masks, fog, glow and soul
+layers. The explicit backend picker selects it for Diorama. The standalone
+Release/R8 consumer submitted visible Diorama frames on the API 34 x86_64
+emulator at six media samples, including forward and backward seeks. A one-byte
+texture budget exercised `NativePreferred` fallback. The full Partita lifecycle
+probe passed with the same artifacts. The sample debug APK built successfully.
+
+The preview uses the ordinary Android plane baseline and RGBA8 blending. The
+calibrated mip and F16 paths and paired picture/performance acceptance remain
+open. The frame protocol uses v3 for projective planes and v2 for Partita.
+The JNI ABI remains 2. Local snapshots: core Android `0.1.0-20261119.040652-28`,
+native Android `0.1.0-20261119.040652-16`.
+
 ## Remaining
 
 - P3: residual main-stage edge coverage. The real playback sample passed three
@@ -70,7 +86,9 @@ pixel peaks remain open.
   at the retained position. See the P3 evidence for both process PSS readings.
 - P4: ARM64 runtime and paired hardware performance. Resize and scene-retirement
   Vulkan tests now account for reclaimed scratch texture bytes; see P4 evidence.
-- Only after the first theme closes: trace-led second theme, then separately validated desktop host.
+- P5: calibrated Diorama mip/F16 rendering and device feature checks, followed
+  by matched visual, interaction and performance validation.
+- P6: separately validated desktop host and independent platform consumer.
 
 ## P0 observations and fixed acceptance conditions
 
@@ -103,5 +121,6 @@ pixel peaks remain open.
 Keep this theme on the experimental, explicitly selected path. The first-theme
 exit gate remains: resolve the measured local visual differences without
 changing the Kotlin scene or reducing effects, and collect a paired physical
-performance trace. Do not start P5 while those gates remain open. ARM64 runtime
-needs a suitable host or device; the connected physical device remains out of scope.
+performance trace. Continue the explicitly selected Diorama preview in parallel
+under the same acceptance criteria. ARM64 runtime needs a suitable host or
+device. The connected physical device remains out of scope.

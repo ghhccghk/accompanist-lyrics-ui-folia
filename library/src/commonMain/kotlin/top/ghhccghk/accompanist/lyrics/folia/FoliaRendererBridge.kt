@@ -14,7 +14,7 @@ import kotlin.math.sin
 annotation class ExperimentalFoliaRendererBridge
 
 @ExperimentalFoliaRendererBridge
-const val FOLIA_RENDERER_SCENE_VERSION: Int = 2
+const val FOLIA_RENDERER_SCENE_VERSION: Int = 3
 
 /** Fully shaped CPU coverage uploaded only when a preparation changes. Shadow
  * sigmas request GPU preparation, never a CPU mask/colour processor invocation. */
@@ -53,6 +53,25 @@ data class FoliaRendererGroup(val width:Int,val height:Int,val commands:List<Fol
     val opacity:Float=1f,val blurSigma:Float=0f,val transform:FoliaRendererTransform=FoliaRendererTransform(),
     val allowDirectDraw:Boolean=false):FoliaRendererCommand
 
+/** A vertex in homogeneous viewport coordinates with a perpendicular camera depth of [w]. */
+@ExperimentalFoliaRendererBridge
+data class FoliaRendererPlaneVertex(val x: Float, val y: Float, val w: Float, val u: Float, val v: Float)
+
+@ExperimentalFoliaRendererBridge
+data class FoliaRendererPlaneFog(val color: Color, val near: Float, val far: Float)
+
+/** A convex, already clipped text mask. These commands belong directly in an
+ * identity viewport root and are replayed in painter's order. */
+@ExperimentalFoliaRendererBridge
+data class FoliaRendererPlane(
+    val texture: Int,
+    val vertices: List<FoliaRendererPlaneVertex>,
+    val color: Color,
+    val opacity: Float,
+    val additive: Boolean,
+    val fog: FoliaRendererPlaneFog?,
+) : FoliaRendererCommand
+
 @ExperimentalFoliaRendererBridge
 data class FoliaRendererFrame(val mediaTimeUs:Long,val width:Int,val height:Int,val root:FoliaRendererGroup)
 
@@ -70,3 +89,17 @@ interface FoliaPartitaRenderTarget {
 
 @ExperimentalFoliaRendererBridge
 val LocalFoliaPartitaRenderTarget = staticCompositionLocalOf<FoliaPartitaRenderTarget?> { null }
+
+/** A frame can be deferred while the clock is between two raster windows. */
+@ExperimentalFoliaRendererBridge
+interface FoliaDioramaRenderTarget {
+    val overlaysVisible: Boolean
+
+    @Composable
+    fun Stage(scene: FoliaRendererScene, modifier: Modifier,
+        frame: (width: Int, height: Int) -> FoliaRendererFrame?,
+        onPresented: (FoliaRendererFrame) -> Unit)
+}
+
+@ExperimentalFoliaRendererBridge
+val LocalFoliaDioramaRenderTarget = staticCompositionLocalOf<FoliaDioramaRenderTarget?> { null }

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 //! Bounded little-endian scene commands. All bytes are owned before GPU dispatch.
 pub const MAGIC: u32 = 0x31475246;
-const SCENE_VERSION: u32 = 2;
+const SCENE_VERSION: u32 = 3;
 pub const MAX_PACKET: usize = 512 * 1024;
 pub const MAX_NODES: usize = 4096;
 pub const MAX_FRAME_BYTES: u64 = 192 * 1024 * 1024;
@@ -12,6 +12,15 @@ pub struct Transform(pub [f32;6]);
 pub enum Command {
     Image { texture:u64, color:[f32;4], transform:Transform },
     Group(Group),
+    Plane(Plane),
+}
+#[derive(Debug)]
+pub struct Plane {
+    pub texture: u64,
+    pub color: [f32; 4],
+    pub additive: bool,
+    pub fog: Option<[f32; 5]>,
+    pub vertices: Vec<[f32; 5]>,
 }
 #[derive(Debug)]
 pub struct Group {
@@ -57,6 +66,34 @@ impl Reader<'_> {
                     let mut color=[0.;4];for f in &mut color{*f=self.float(0.,1.)?;}
                     result.push(Command::Image{texture,color,transform:self.matrix()?});
                 },
+                5 if self.version >= 3 => {
+                    let texture = self.u64()?;
+                    if texture == 0 { return Err(-34); }
+                    let flags = self.u32()?;
+                    if flags > 3 { return Err(-31); }
+                    let mut color = [0.; 4];
+                    for channel in &mut color { *channel = self.float(0., 1.)?; }
+                    let fog = if flags & 2 != 0 {
+                        let mut values = [0.; 5];
+                        for channel in &mut values[..3] { *channel = self.float(0., 1.)?; }
+                        values[3] = self.float(0., 1_000_000.)?;
+                        values[4] = self.float(0., 1_000_000.)?;
+                        if values[3] >= values[4] { return Err(-31); }
+                        Some(values)
+                    } else { None };
+                    let count = self.u32()? as usize;
+                    if !(3..=6).contains(&count) { return Err(-32); }
+                    let mut vertices = Vec::with_capacity(count);
+                    for _ in 0..count {
+                        vertices.push([
+                            self.float(-100_000_000., 100_000_000.)?,
+                            self.float(-100_000_000., 100_000_000.)?,
+                            self.float(0.0001, 1_000_000.)?,
+                            self.float(0., 1.)?, self.float(0., 1.)?,
+                        ]);
+                    }
+                    result.push(Command::Plane(Plane { texture, color, additive: flags & 1 != 0, fog, vertices }));
+                }
                 _=>return Err(-30),
             }
         }
@@ -89,7 +126,7 @@ pub fn parse(bytes:&[u8])->Result<Frame,i32> {
         assert!(matches!(&frame.commands[0], Command::Group(group) if !group.direct));
         bytes[24..28].copy_from_slice(&4u32.to_le_bytes());
         assert!(parse(&bytes).is_err());
-        bytes[4..8].copy_from_slice(&SCENE_VERSION.to_le_bytes());
+        bytes[4..8].copy_from_slice(&2u32.to_le_bytes());
         let frame = parse(&bytes).unwrap();
         assert!(matches!(&frame.commands[0], Command::Group(group) if group.direct));
         bytes[40..44].copy_from_slice(&1f32.to_le_bytes());

@@ -8,6 +8,7 @@ import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
+import top.ghhccghk.accompanist.lyrics.folia.FoliaQuality
 import top.ghhccghk.accompanist.lyrics.folia.internal.model.normalize
 import kotlin.math.max
 import kotlin.math.sqrt
@@ -177,6 +178,39 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
                 breath=breath?:dioramaBreathAt(breathOriginSeconds+time,reducedMotion),baseRenderer=activeBaseRenderer)
         }
     }
+    fun visitPlanes(time: Double, view: DioramaPerspective, primary: DioramaLinearColor,
+        accent: DioramaLinearColor, secondary: DioramaLinearColor, fog: DioramaFog?,
+        reduced: Boolean, quality: FoliaQuality, emit: (DioramaTextPlane) -> Unit) {
+        val toneMapping = DioramaToneMapping.AcesFilmic
+        for (neighbor in neighborFramesAt(time, view, primary, secondary)) {
+            if (neighbor.opacity <= 0.0) continue
+            val plane = plainAt(neighbor.index)
+            emit(plane.text.plane(view, plane.frame, plane.placement, neighbor.color.srgb(toneMapping),
+                neighbor.opacity.toFloat(), fog))
+        }
+        val index = camera.subjectIndex(time)
+        val subject = camera.subjects[index]
+        val frames = stageFrames(time, view, primary, accent, reduced, quality)
+        lines[index].text.visitPlanes(view, subject.frame, subject.placement, frames) { image, origin, x, y, alpha, color, additive ->
+            emit(DioramaTextPlane(image, origin, x, y, alpha, color.srgb(toneMapping), additive, fog))
+        }
+    }
+
+    fun stageFrames(time: Double, view: DioramaPerspective, primary: DioramaLinearColor,
+        accent: DioramaLinearColor, reduced: Boolean, quality: FoliaQuality): List<DioramaUnitFrame> {
+        val index = camera.subjectIndex(time)
+        val subject = camera.subjects[index]
+        val delta = dioramaComposeLocal(subject.frame, subject.placement.offsetR, subject.placement.offsetU, 0.0) - view.eye
+        val strength = when (quality) {
+            FoliaQuality.Standard -> 1.0
+            FoliaQuality.Minimal -> 0.0
+            else -> .6
+        }
+        return lines[index].text.framesAt(time, primary, accent,
+            DioramaUnitTuning(glow = strength, soul = if (reduced) 0.0 else strength),
+            life = dioramaTextLife(sqrt(delta.dot(delta))), breath = breathAt(time, reducedMotion = reduced))
+    }
+
     companion object {
         fun prepare(core: SyncedLyrics, style: TextStyle, measurer: TextMeasurer,
             resolver: FontFamily.Resolver, width: Double, height: Double, shots: List<DioramaShot>? = null,

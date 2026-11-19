@@ -1,6 +1,7 @@
 // Copyright (c) 2026 chthollyphile and contributors
 // SPDX-License-Identifier: AGPL-3.0-only
 // Public preview host for pinned Diorama text/camera ports. docs/upstream.md.
+@file:OptIn(top.ghhccghk.accompanist.lyrics.folia.ExperimentalFoliaRendererBridge::class)
 package top.ghhccghk.accompanist.lyrics.folia.internal.styles.diorama
 
 import androidx.compose.foundation.Canvas
@@ -62,6 +63,7 @@ internal fun DioramaPlaybackStage(core:SyncedLyrics,time:()->Double,textStyle:Te
     val observer by rememberUpdatedState(onPrepared)
     val visible by rememberUpdatedState(showText)
     val click by rememberUpdatedState(onClick);val longPress by rememberUpdatedState(onLongPress)
+    val target = LocalFoliaDioramaRenderTarget.current
     val reduced=options.reducedMotion
     val mode=when(options.animationIntensity){
         FoliaAnimationIntensity.Calm->DioramaShotMode.calm
@@ -136,10 +138,24 @@ internal fun DioramaPlaybackStage(core:SyncedLyrics,time:()->Double,textStyle:Te
         // running; render a truthful loading state until asynchronous IO ends.
         val available by remember(p,current){derivedStateOf{windowVersion;preparedIndex==current&&p.hasRastersAt(clock().coerceIn(0.0,p.camera.endTime))}}
         if(!available||windowFailure!=null)BasicText(windowFailure?:"正在读取镜台纹理…",style=textStyle.copy(color=colors.secondary))
-        val input=if(onClick==null&&onLongPress==null)Modifier else Modifier.pointerInput(p,density,reduced,fog){
+        val nativeScene = remember(p, current, windowVersion, available, windowFailure, target) {
+            if (target != null && available && windowFailure == null) {
+                DioramaNativeScene(p, clock().coerceIn(0.0, p.camera.endTime))
+            } else null
+        }
+        var presentedTime by remember(p, target) { mutableStateOf<Double?>(null) }
+        if (target != null && nativeScene != null && visible()) {
+            target.Stage(nativeScene.scene, Modifier.fillMaxSize(), frame = { w, h ->
+                val time = clock().coerceIn(0.0, p.camera.endTime)
+                nativeScene.frame(time, w, h, density.density, reduced, options.quality, primary, accent, secondary, fog)
+            }, onPresented = { frame -> presentedTime = frame.mediaTimeUs / 1_000_000.0 })
+        }
+        val input=if(onClick==null&&onLongPress==null)Modifier else Modifier.pointerInput(p,density,reduced,fog,target){
             awaitEachGesture {
                 val down=awaitFirstDown(requireUnconsumed=false)
-                fun hit(point:Offset):Int? {if(!visible()||!available||windowFailure!=null)return null;val t=clock().coerceIn(0.0,p.camera.endTime)
+                fun hit(point:Offset):Int? {if(!visible()||!available||windowFailure!=null)return null
+                    val t = if (target?.overlaysVisible == true) presentedTime ?: return null
+                        else clock().coerceIn(0.0,p.camera.endTime)
                     if(!p.hasRastersAt(t))return null
                     return p.hitTest(t,p.camera.perspectiveAt(t,reduced),point/density.density,reduced,fog)}
                 val i=hit(down.position)?:return@awaitEachGesture
@@ -152,23 +168,23 @@ internal fun DioramaPlaybackStage(core:SyncedLyrics,time:()->Double,textStyle:Te
             }
         }
         Canvas(Modifier.fillMaxSize().then(input).semantics {
-            contentDescription=if(visible()&&available&&windowFailure==null)p.lines[current].core.lyric.text else ""
+            contentDescription = if (visible() && available && windowFailure == null) {
+                if (target?.overlaysVisible == true) {
+                    presentedTime?.let { p.sourceAt(it).lyric.text }.orEmpty()
+                } else p.lines[current].core.lyric.text
+            } else ""
         }) {
-            if(!visible()||!available||windowFailure!=null)return@Canvas
+            if(!visible()||!available||windowFailure!=null||target?.overlaysVisible==true)return@Canvas
             val t=clock().coerceIn(0.0,p.camera.endTime)
             if(!p.hasRastersAt(t))return@Canvas
             val s=density.density
             scale(s,s,Offset.Zero){inset(0f,0f,size.width-width.toFloat(),size.height-height.toFloat()){
             clipRect(0f,0f,width.toFloat(),height.toFloat()){
-                p.drawStage(this,t,p.camera.perspectiveAt(t,reduced),primary,accent,secondary,reduced,fog,
+                val view = p.camera.perspectiveAt(t, reduced)
+                p.drawStage(this,t,view,primary,accent,secondary,reduced,fog,
                     plainRenderer=plain.takeIf{preparedIndex==current},activeBaseRenderer=active.takeIf{preparedIndex==current},transparentTextSurface=true,
-                    activeFrames=if(options.quality!=FoliaQuality.Standard)p.run {
-                        val i=camera.subjectIndex(t);val subject=camera.subjects[i]
-                        val delta=dioramaComposeLocal(subject.frame,subject.placement.offsetR,subject.placement.offsetU,0.0)-camera.perspectiveAt(t,reduced).eye
-                        val strength=if(options.quality==FoliaQuality.Minimal)0.0 else .6
-                        lines[i].text.framesAt(t,primary,accent,DioramaUnitTuning(glow=strength,soul=if(reduced)0.0 else strength),
-                            life=dioramaTextLife(kotlin.math.sqrt(delta.dot(delta))),breath=breathAt(t,reducedMotion=reduced))
-                    }else null)
+                    activeFrames=if(options.quality!=FoliaQuality.Standard)
+                        p.stageFrames(t, view, primary, accent, reduced, options.quality) else null)
             }}}
         }
     }

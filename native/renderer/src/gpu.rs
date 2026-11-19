@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-use crate::protocol::{Command, Frame, Group, Transform};
+use crate::protocol::{Command, Frame, Group, Plane, Transform};
 use std::collections::BTreeMap;
 use wgpu::util::DeviceExt;
 
@@ -18,6 +18,7 @@ pub struct Gpu {
     draw:wgpu::RenderPipeline, present:wgpu::RenderPipeline,
     blur:wgpu::RenderPipeline, blur_float:wgpu::RenderPipeline, halo:wgpu::RenderPipeline,
     sampler:wgpu::Sampler,
+    plane_pipelines: Option<[wgpu::RenderPipeline; 2]>,
     images:BTreeMap<u64,Image>, pool:Vec<Image>, resident:u64,
     pub submitted:u64, pub uploaded_bytes:u64, pub peak_bytes:u64,
 }
@@ -30,13 +31,17 @@ fn uniform_entry(binding:u32,vertex:bool)->wgpu::BindGroupLayoutEntry {
         ty:wgpu::BindingType::Buffer{ty:wgpu::BufferBindingType::Uniform,has_dynamic_offset:false,min_binding_size:None},count:None}
 }
 fn pipeline(device:&wgpu::Device,layout:&wgpu::BindGroupLayout,shader:&str,format:wgpu::TextureFormat,blend:bool)->wgpu::RenderPipeline {
+    pipeline_with_blend(device, layout, shader, format, blend.then_some(wgpu::BlendState::PREMULTIPLIED_ALPHA_BLENDING))
+}
+fn pipeline_with_blend(device: &wgpu::Device, layout: &wgpu::BindGroupLayout, shader: &str,
+    format: wgpu::TextureFormat, blend: Option<wgpu::BlendState>) -> wgpu::RenderPipeline {
     let module=device.create_shader_module(wgpu::ShaderModuleDescriptor{label:Some("Folia WGSL"),source:wgpu::ShaderSource::Wgsl(shader.into())});
     let layout=device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor{label:None,bind_group_layouts:&[layout],push_constant_ranges:&[]});
     device.create_render_pipeline(&wgpu::RenderPipelineDescriptor{
         label:Some("Folia pass"),layout:Some(&layout),
         vertex:wgpu::VertexState{module:&module,entry_point:Some("vertex"),compilation_options:Default::default(),buffers:&[]},
         fragment:Some(wgpu::FragmentState{module:&module,entry_point:Some("fragment"),compilation_options:Default::default(),
-            targets:&[Some(wgpu::ColorTargetState{format,blend:if blend{Some(wgpu::BlendState::PREMULTIPLIED_ALPHA_BLENDING)}else{None},write_mask:wgpu::ColorWrites::ALL})]}),
+            targets:&[Some(wgpu::ColorTargetState{format,blend,write_mask:wgpu::ColorWrites::ALL})]}),
         primitive:Default::default(),depth_stencil:None,multisample:Default::default(),multiview:None,cache:None,
     })
 }
@@ -75,7 +80,7 @@ impl Gpu {
         let blur_float=pipeline(&device,&blur_layout,include_str!("blur.wgsl"),FLOAT,false);
         let halo=pipeline(&device,&halo_layout,include_str!("halo.wgsl"),FORMAT,false);
         let sampler=device.create_sampler(&wgpu::SamplerDescriptor{mag_filter:wgpu::FilterMode::Linear,min_filter:wgpu::FilterMode::Linear,..Default::default()});
-        Self{device,queue,layout,blur_layout,halo_layout,draw,present,blur,blur_float,halo,sampler,images:BTreeMap::new(),pool:Vec::new(),resident:0,submitted:0,uploaded_bytes:0,peak_bytes:0}
+        Self{device,queue,layout,blur_layout,halo_layout,draw,present,blur,blur_float,halo,sampler,plane_pipelines:None,images:BTreeMap::new(),pool:Vec::new(),resident:0,submitted:0,uploaded_bytes:0,peak_bytes:0}
     }
     fn allocate(&mut self,w:u32,h:u32,format:wgpu::TextureFormat)->Result<Image,i32> {
         let bytes=w as u64*h as u64*if format==FLOAT{16}else{4};
@@ -100,6 +105,47 @@ impl Gpu {
             wgpu::BindGroupEntry{binding:1,resource:wgpu::BindingResource::Sampler(&self.sampler)},
             wgpu::BindGroupEntry{binding:2,resource:uniform.as_entire_binding()}]});
         pass(encoder,target,if present{&self.present}else{&self.draw},&bind,6,false);
+    }
+    fn draw_plane(&mut self, encoder: &mut wgpu::CommandEncoder, target: &wgpu::TextureView,
+        size: (u32, u32), plane: &Plane) -> Result<(), i32> {
+        let image = self.images.get(&plane.texture).ok_or(-43)?;
+        let pipelines = self.plane_pipelines.get_or_insert_with(|| {
+            let add = wgpu::BlendComponent {
+                src_factor: wgpu::BlendFactor::One, dst_factor: wgpu::BlendFactor::One,
+                operation: wgpu::BlendOperation::Add,
+            };
+            let shader = include_str!("plane.wgsl");
+            [
+                pipeline_with_blend(&self.device, &self.layout, shader, FORMAT,
+                    Some(wgpu::BlendState::PREMULTIPLIED_ALPHA_BLENDING)),
+                pipeline_with_blend(&self.device, &self.layout, shader, FORMAT,
+                    Some(wgpu::BlendState {color: add, alpha: add})),
+            ]
+        });
+        let mut data = [0.; 64];
+        data[..4].copy_from_slice(&plane.color);
+        data[4..6].copy_from_slice(&[size.0 as f32, size.1 as f32]);
+        if let Some([r, g, b, near, far]) = plane.fog {
+            data[6] = near;
+            data[7] = far;
+            data[8..11].copy_from_slice(&[r, g, b]);
+            data[11] = 1.;
+        }
+        for (index, &[x, y, w, u, v]) in plane.vertices.iter().enumerate() {
+            let start = 12 + index * 8;
+            data[start..start + 8].copy_from_slice(&[x, y, w, 0., u, v, 0., 0.]);
+        }
+        let uniform = buffer(&self.device, &floats(&data));
+        let bind = self.device.create_bind_group(&wgpu::BindGroupDescriptor {
+            label: Some("Diorama text plane"), layout: &self.layout, entries: &[
+                wgpu::BindGroupEntry { binding: 0, resource: wgpu::BindingResource::TextureView(&image.view) },
+                wgpu::BindGroupEntry { binding: 1, resource: wgpu::BindingResource::Sampler(&self.sampler) },
+                wgpu::BindGroupEntry { binding: 2, resource: uniform.as_entire_binding() },
+            ],
+        });
+        let count = (plane.vertices.len() as u32 - 2) * 3;
+        pass(encoder, target, &pipelines[plane.additive as usize], &bind, count, false);
+        Ok(())
     }
     fn blurred(&mut self,encoder:&mut wgpu::CommandEncoder,source:&Image,sigma:f32,gaussian_small:bool)->Result<Image,i32> {
         if !sigma.is_finite()||!(0.0..=128.).contains(&sigma){return Err(-41);}
@@ -164,6 +210,10 @@ impl Gpu {
                 Command::Image{texture,color,transform}=>{
                     let image=self.images.get(texture).ok_or(-43)?;
                     self.draw_image(encoder,image,target,size,then(parent,*transform)?,*color,true,false);
+                },
+                Command::Plane(plane) => {
+                    if parent != IDENTITY { return Err(-31); }
+                    self.draw_plane(encoder, target, size, plane)?;
                 },
                 Command::Group(g)=>{
                     if g.opacity==0. {continue;}

@@ -20,7 +20,7 @@ internal fun LyricThemeControls(session: SampleSession) {
                 selected=session.rendererBackend==backend,onClick={session.setRendererBackend(backend)},
                 modifier=Modifier.testTag("renderer-backend-${backend.name}"),label={Text(backend.name)})
         }
-        Text("Rust GPU 目前仅接云阶主舞台；字幕／等待使用 Kotlin 覆盖层。Preferred 失败会说明原因，Required 失败直接显示。",style=MaterialTheme.typography.bodySmall)
+        Text("Rust GPU 支持云阶主舞台和镜台文字实验预览。云阶字幕和等待使用 Kotlin。Preferred 失败时回退，Required 会显示错误。",style=MaterialTheme.typography.bodySmall)
         val report=session.rendererReport
         Text("请求 ${session.rendererBackend} · 实际 ${report.actual} · ${report.state}",style=MaterialTheme.typography.bodySmall)
         report.reason?.let{Text(it,style=MaterialTheme.typography.bodySmall)}

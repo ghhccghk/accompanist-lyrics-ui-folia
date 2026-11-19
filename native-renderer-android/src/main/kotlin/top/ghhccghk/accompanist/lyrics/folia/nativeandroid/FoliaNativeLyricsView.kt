@@ -48,8 +48,10 @@ fun FoliaNativeLyricsView(
     onLineClicked:(ISyncedLine)->Unit={},onLinePressed:(ISyncedLine)->Unit={},
 ) {
     val observer by rememberUpdatedState(onRendererStatus)
-    val supported=style is FoliaStyle.Partita
-    val target=remember(backend,contentKey,supported,rendererConfig){NativePartitaTarget(rendererConfig)}
+    val diorama = style is FoliaStyle.Diorama
+    val supported=style is FoliaStyle.Partita || diorama
+    val theme = style.rendererThemeName()
+    val target=remember(backend,contentKey,theme,rendererConfig){NativeSceneTarget(rendererConfig)}
     var failure by remember(target){mutableStateOf<String?>(null)}
     var loaded by remember(target){mutableStateOf(false)}
     var ready by remember(target){mutableStateOf(false)}
@@ -82,7 +84,7 @@ fun FoliaNativeLyricsView(
                         val first=!ready;ready=true
                         // Avoid a recomposition or user callback per frame unless
                         // explicitly sampled by a diagnostics consumer.
-                        if(first||(diagnosticsIntervalFrames>0&&packet.id%diagnosticsIntervalFrames==0L))observer(FoliaNativeRendererStatus(backend,FoliaRendererPath.NativeGpu,"Ready:PartitaMainAndGlow",frameId=packet.id,
+                        if(first||(diagnosticsIntervalFrames>0&&packet.id%diagnosticsIntervalFrames==0L))observer(FoliaNativeRendererStatus(backend,FoliaRendererPath.NativeGpu,if (diorama) "Ready:DioramaText" else "Ready:PartitaMainAndGlow",frameId=packet.id,
                             textureCount=stats?.getOrNull(1)?:0,residentTextureBytes=stats?.getOrNull(2)?:0,
                             peakTextureBytes=stats?.getOrNull(3)?:0,uploadedBytes=stats?.getOrNull(4)?:0,
                             sampledMediaTimeUs=packet.frames.lastOrNull()?.frame?.mediaTimeUs))
@@ -92,12 +94,14 @@ fun FoliaNativeLyricsView(
             }},modifier=Modifier.fillMaxSize(),onRelease={target.detach(it);it.report={};it.onPacketSubmitted={_,_->};it.release()},
                 update={it.setRenderingActive(active)})
             }
-            CompositionLocalProvider(LocalFoliaPartitaRenderTarget provides target,
+            CompositionLocalProvider(
+                LocalFoliaPartitaRenderTarget provides target.takeUnless { diorama },
+                LocalFoliaDioramaRenderTarget provides target.takeIf { diorama },
                 LocalFoliaMaskProcessor provides null,LocalFoliaColourProcessor provides null){base(Modifier.fillMaxSize())}
         }
         // Preferred keeps the current Kotlin image until an actual nonempty
         // native scene has submitted. Removing it never recreates/seeks a player.
-        if(!ready&&backend==FoliaRendererBackend.NativePreferred)base(Modifier.fillMaxSize())
+        if(!ready&&backend==FoliaRendererBackend.NativePreferred&&(!diorama||!loaded))base(Modifier.fillMaxSize())
     }
 }
 
@@ -113,7 +117,7 @@ private fun FoliaStyle.rendererThemeName(): String = when (this) {
 }
 
 @OptIn(ExperimentalFoliaRendererBridge::class)
-private class NativePartitaTarget(private val config:FoliaNativeRendererConfig):FoliaPartitaRenderTarget {
+private class NativeSceneTarget(private val config:FoliaNativeRendererConfig):FoliaPartitaRenderTarget, FoliaDioramaRenderTarget {
     override var overlaysVisible by mutableStateOf(false)
     var onFailure:(String)->Unit={}
     private val ui=android.os.Handler(android.os.Looper.getMainLooper())
@@ -136,7 +140,10 @@ private class NativePartitaTarget(private val config:FoliaNativeRendererConfig):
         }}
         try{v.publish(ScenePacketEncoder.encode(++nextFrame,width,height,ordered.map{it.upload},frames))}catch(e:Exception){fail(e)}
     }
-    @Composable override fun Line(scene:FoliaRendererScene,modifier:Modifier,frame:(Int,Int)->FoliaRendererFrame,onPresented:(FoliaRendererFrame)->Unit){
+    @Composable override fun Line(scene:FoliaRendererScene,modifier:Modifier,frame:(Int,Int)->FoliaRendererFrame,onPresented:(FoliaRendererFrame)->Unit) = Stage(scene, modifier, frame, onPresented)
+
+    @Composable override fun Stage(scene: FoliaRendererScene, modifier: Modifier,
+        frame: (Int, Int) -> FoliaRendererFrame?, onPresented: (FoliaRendererFrame) -> Unit) {
         val prepared=remember(scene){runCatching{
             Entry(SceneUpload(++nextScene,scene,config.preparedTextureBudgetBytes))
         }}
@@ -152,8 +159,10 @@ private class NativePartitaTarget(private val config:FoliaNativeRendererConfig):
             width=size.width.toInt();height=size.height.toInt()
             if(width>0&&height>0){
                 entry.notify=acknowledge
-                val next=build(width,height)
-                if(entry.frame!=next){entry.frame=next;publish()}
+                try {
+                    val next=build(width,height) ?: return@Canvas
+                    if(entry.frame!=next){entry.frame=next;publish()}
+                } catch (error: Exception) { fail(error) }
             }
         }
     }

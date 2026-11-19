@@ -35,12 +35,18 @@ internal class DioramaPlainText private constructor(val raster:DioramaRaster, va
     fun draw(scope: DrawScope, view: DioramaPerspective, frame: DioramaFrame,
         placement: DioramaPlacement, color: Color = Color.White, alpha: Float = 1f,
         fog: DioramaFog? = null) = with(scope) {
+        val plane = plane(view, frame, placement, color, alpha, fog)
+        drawDioramaPlane(plane.image, view, plane.origin, plane.x, plane.y, plane.alpha, plane.color, fog = plane.fog)
+    }
+
+    fun plane(view: DioramaPerspective, frame: DioramaFrame, placement: DioramaPlacement,
+        color: Color, alpha: Float, fog: DioramaFog?): DioramaTextPlane {
         val scale = dioramaFrameFit(worldWidth, 5.2, view.fov, view.width / view.height) * placement.scale
         val x = dioramaPlaneAxis(frame, placement, 1.0, 0.0) * (scale * .62 / fontPx)
         val y = dioramaPlaneAxis(frame, placement, 0.0, 1.0) * (scale * .62 / fontPx)
         val center = dioramaComposeLocal(frame, placement.offsetR, placement.offsetU, 0.0)
         val origin = center - x * (image.width / 2.0) + y * (image.height / 2.0)
-        drawDioramaPlane(image,view,origin,x,y * -1.0,alpha,color,fog=fog)
+        return DioramaTextPlane(image, origin, x, y * -1.0, alpha, color, false, fog)
     }
 
     companion object {

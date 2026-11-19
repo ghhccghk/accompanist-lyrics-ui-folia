@@ -38,6 +38,7 @@ internal object ScenePacketEncoder {
         fun float(v:Float){require(v.isFinite());int(v.toBits())}
         fun matrix(t:FoliaRendererTransform){float(t.a);float(t.b);float(t.c);float(t.d);float(t.x);float(t.y)}
         var nodes=0
+        var hasPlanes = false
         fun command(c:FoliaRendererCommand,scene:Long,depth:Int) {
             require(depth<=16&&++nodes<=4096)
             when(c){
@@ -45,6 +46,24 @@ internal object ScenePacketEncoder {
                     // v2 adds a direct group opcode. v1 groups keep isolated semantics.
                     int(if (c.allowDirectDraw && c.opacity == 1f && c.blurSigma <= .01f) 4 else 1);int(c.width);int(c.height);float(c.opacity);float(c.blurSigma);matrix(c.transform)
                     c.commands.forEach{command(it,scene,depth+1)};int(3)
+                }
+                is FoliaRendererPlane -> {
+                    hasPlanes = true
+                    require(c.vertices.size in 3..6 && c.texture in 0 until 65535)
+                    int(5)
+                    long((scene shl 16) + c.texture + 1)
+                    val fog = c.fog
+                    int((if (c.additive) 1 else 0) or (if (fog != null) 2 else 0))
+                    val color = c.color.convert(ColorSpaces.Srgb)
+                    float(color.red); float(color.green); float(color.blue); float(color.alpha * c.opacity)
+                    if (fog != null) {
+                        val ink = fog.color.convert(ColorSpaces.Srgb)
+                        float(ink.red); float(ink.green); float(ink.blue); float(fog.near); float(fog.far)
+                    }
+                    int(c.vertices.size)
+                    for (vertex in c.vertices) {
+                        float(vertex.x); float(vertex.y); float(vertex.w); float(vertex.u); float(vertex.v)
+                    }
                 }
                 is FoliaRendererImage->{
                     int(2);long((scene shl 16)+(c.texture+1))
@@ -54,9 +73,11 @@ internal object ScenePacketEncoder {
             }
             require(out.size()<=512*1024)
         }
-        int(0x31475246);int(FOLIA_RENDERER_SCENE_VERSION);long(id);int(width);int(height)
+        int(0x31475246);int(2);long(id);int(width);int(height)
         frames.forEach{command(it.frame.root,it.scene.id,0)};int(3)
-        return NativeScenePacket(id,width,height,scenes,frames,out.toByteArray())
+        val bytes = out.toByteArray()
+        if (hasPlanes) bytes[4] = FOLIA_RENDERER_SCENE_VERSION.toByte()
+        return NativeScenePacket(id,width,height,scenes,frames,bytes)
     }
 }
 internal fun ByteArray.directBuffer():ByteBuffer=ByteBuffer.allocateDirect(size).also{it.put(this);it.flip()}

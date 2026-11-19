@@ -64,6 +64,16 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         placement: DioramaPlacement, states: List<DioramaUnitFrame>, fog: DioramaFog? = null,
         toneMapping: DioramaToneMapping = DioramaToneMapping.None,
         baseRenderer: DioramaActiveBaseRenderer? = null) = with(scope) {
+        visitPlanes(view, frame, placement, states) { image, origin, x, y, alpha, color, additive ->
+            if (additive || baseRenderer?.draw(image, this, view, origin, x, y, color, alpha, fog, toneMapping) != true) {
+                drawDioramaPlane(image, view, origin, x, y, alpha, color.srgb(toneMapping), additive, fog)
+            }
+        }
+    }
+
+    fun visitPlanes(view: DioramaPerspective, frame: DioramaFrame, placement: DioramaPlacement,
+        states: List<DioramaUnitFrame>,
+        emit: (ImageBitmap, DioramaVec, DioramaVec, DioramaVec, Float, DioramaLinearColor, Boolean) -> Unit) {
         require(states.size==slices.size) { "One resolved frame per prepared text unit is required" }
         val fit = dioramaFrameFit(lineAdvance * .62 / 128, 5.2, view.fov, view.width / view.height) * placement.scale
         val unitScale = fit * .62 / 128
@@ -74,13 +84,10 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         val y = up * unitScale
         val center = dioramaComposeLocal(frame, placement.offsetR, placement.offsetU, 0.0)
         fun plane(slice: DioramaActiveSlice, image: ImageBitmap, alpha: Double, color: DioramaLinearColor,
-            depth: Double = 0.0, lift: Double = 0.0, scale: Double = 1.0, additive: Boolean = false,
-            sampleBase: Boolean = false) {
+            depth: Double = 0.0, lift: Double = 0.0, scale: Double = 1.0, additive: Boolean = false) {
             val origin = center + x * (slice.centerPx + slice.imageOffsetPx * scale) + normal * (depth * fit) + up * (lift * fit) -
                 x * (image.width / 2.0 * scale) + y * (image.height / 2.0 * scale)
-            if(sampleBase&&baseRenderer?.draw(image,this,view,origin,x*scale,y*-scale,color,
-                    alpha.toFloat(),fog,toneMapping)==true)return
-            drawDioramaPlane(image,view,origin,x * scale,y * -scale,alpha.toFloat(),color.srgb(toneMapping),additive,fog)
+            emit(image, origin, x * scale, y * -scale, alpha.toFloat(), color, additive)
         }
         // Three sorts by renderOrder: all17 glow, all18 soul, then all19 bodies.
         // Rendering three layers per unit changes overlapping ghosts and halos.
@@ -95,7 +102,7 @@ internal class DioramaActiveText private constructor(val slices: List<DioramaAct
         }
         for ((i, slice) in slices.withIndex()) {
             val state = states[i]
-            plane(slice, slice.body, state.baseOpacity, state.fill, sampleBase = true)
+            plane(slice, slice.body, state.baseOpacity, state.fill)
         }
     }
 

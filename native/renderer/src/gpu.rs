@@ -10,11 +10,15 @@ pub(crate) const TEXT_COMPOSITE: wgpu::TextureFormat = wgpu::TextureFormat::Rgba
 const FLOAT:wgpu::TextureFormat=wgpu::TextureFormat::Rgba32Float;
 const BUDGET:u64=192*1024*1024;
 #[derive(Clone)]
-pub struct Image { pub texture:wgpu::Texture, pub view:wgpu::TextureView, pub width:u32, pub height:u32, format:wgpu::TextureFormat }
-impl Image { fn bytes(&self)->u64{texture_bytes(self.width, self.height, self.format)} }
-fn texture_bytes(width: u32, height: u32, format: wgpu::TextureFormat) -> u64 {
+pub struct Image { pub texture:wgpu::Texture, pub view:wgpu::TextureView, pub width:u32, pub height:u32, format:wgpu::TextureFormat, levels: u32 }
+impl Image {
+    fn bytes(&self) -> u64 { texture_bytes(self.width, self.height, self.format, self.levels) }
+}
+fn texture_bytes(width: u32, height: u32, format: wgpu::TextureFormat, levels: u32) -> u64 {
     let bytes_per_pixel = match format { FLOAT => 16, TEXT_COMPOSITE => 8, _ => 4 };
-    u64::from(width) * u64::from(height) * bytes_per_pixel
+    (0..levels).map(|level| {
+        u64::from((width >> level).max(1)) * u64::from((height >> level).max(1)) * bytes_per_pixel
+    }).sum()
 }
 
 pub struct Gpu {
@@ -25,6 +29,9 @@ pub struct Gpu {
     sampler:wgpu::Sampler,
     supports_text_composite: bool,
     plane_pipelines: Option<[wgpu::RenderPipeline; 2]>,
+    mip_pipeline: Option<wgpu::RenderPipeline>,
+    mip_sampler: wgpu::Sampler,
+    mips: BTreeMap<u64, Image>,
     images:BTreeMap<u64,Image>, pool:Vec<Image>, resident:u64,
     pub submitted:u64, pub uploaded_bytes:u64, pub peak_bytes:u64,
 }
@@ -86,18 +93,25 @@ impl Gpu {
         let blur_float=pipeline(&device,&blur_layout,include_str!("blur.wgsl"),FLOAT,false);
         let halo=pipeline(&device,&halo_layout,include_str!("halo.wgsl"),FORMAT,false);
         let sampler=device.create_sampler(&wgpu::SamplerDescriptor{mag_filter:wgpu::FilterMode::Linear,min_filter:wgpu::FilterMode::Linear,..Default::default()});
-        Self{device,queue,layout,blur_layout,halo_layout,draw,present,blur,blur_float,halo,sampler,supports_text_composite,plane_pipelines:None,images:BTreeMap::new(),pool:Vec::new(),resident:0,submitted:0,uploaded_bytes:0,peak_bytes:0}
+        let mip_sampler = device.create_sampler(&wgpu::SamplerDescriptor {
+            mag_filter: wgpu::FilterMode::Linear, min_filter: wgpu::FilterMode::Linear,
+            mipmap_filter: wgpu::FilterMode::Linear, ..Default::default()
+        });
+        Self{device,queue,layout,blur_layout,halo_layout,draw,present,blur,blur_float,halo,sampler,supports_text_composite,plane_pipelines:None,mip_pipeline:None,mip_sampler,mips:BTreeMap::new(),images:BTreeMap::new(),pool:Vec::new(),resident:0,submitted:0,uploaded_bytes:0,peak_bytes:0}
     }
     fn allocate(&mut self,w:u32,h:u32,format:wgpu::TextureFormat)->Result<Image,i32> {
-        let bytes=texture_bytes(w,h,format);
+        self.allocate_levels(w, h, format, 1)
+    }
+    fn allocate_levels(&mut self, w: u32, h: u32, format: wgpu::TextureFormat, levels: u32) -> Result<Image, i32> {
+        let bytes=texture_bytes(w,h,format,levels);
         // Never undercount retired in-flight resources by dropping scratch here.
         if self.resident+bytes>BUDGET {return Err(-40);}
-        let texture=self.device.create_texture(&wgpu::TextureDescriptor{label:Some("Folia texture"),size:wgpu::Extent3d{width:w,height:h,depth_or_array_layers:1},mip_level_count:1,sample_count:1,dimension:wgpu::TextureDimension::D2,format,
+        let texture=self.device.create_texture(&wgpu::TextureDescriptor{label:Some("Folia texture"),size:wgpu::Extent3d{width:w,height:h,depth_or_array_layers:1},mip_level_count:levels,sample_count:1,dimension:wgpu::TextureDimension::D2,format,
             usage:wgpu::TextureUsages::TEXTURE_BINDING|wgpu::TextureUsages::RENDER_ATTACHMENT|wgpu::TextureUsages::COPY_DST|
                 if cfg!(test){wgpu::TextureUsages::COPY_SRC}else{wgpu::TextureUsages::empty()},view_formats:&[]});
         let view=texture.create_view(&Default::default());
         self.resident+=bytes;self.peak_bytes=self.peak_bytes.max(self.resident);
-        Ok(Image{texture,view,width:w,height:h,format})
+        Ok(Image{texture,view,width:w,height:h,format,levels})
     }
     fn take(&mut self,w:u32,h:u32,format:wgpu::TextureFormat)->Result<Image,i32> {
         if let Some(i)=self.pool.iter().position(|p|p.width==w&&p.height==h&&p.format==format){Ok(self.pool.swap_remove(i))}else{self.allocate(w,h,format)}
@@ -112,9 +126,43 @@ impl Gpu {
             wgpu::BindGroupEntry{binding:2,resource:uniform.as_entire_binding()}]});
         pass(encoder,target,if present{&self.present}else{&self.draw},&bind,6,false);
     }
+    fn prepare_plane_mips(&mut self, encoder: &mut wgpu::CommandEncoder, id: u64) -> Result<(), i32> {
+        if self.mips.contains_key(&id) { return Ok(()); }
+        let source = self.images.get(&id).ok_or(-43)?.clone();
+        let levels = source.width.max(source.height).ilog2() + 1;
+        let mips = self.allocate_levels(source.width, source.height, TEXT_COMPOSITE, levels)?;
+        let pipeline = self.mip_pipeline.get_or_insert_with(|| pipeline(&self.device, &self.layout,
+            include_str!("plane_mips.wgsl"), TEXT_COMPOSITE, false));
+        let mut previous = source.view;
+        for level in 0..levels {
+            let next = mips.texture.create_view(&wgpu::TextureViewDescriptor {
+                base_mip_level: level, mip_level_count: Some(1), ..Default::default()
+            });
+            let uniform = buffer(&self.device, &floats(&[
+                (mips.width >> level).max(1) as f32, (mips.height >> level).max(1) as f32,
+                if level == 0 { 1. } else { 0. }, 0.,
+            ]));
+            let bind = self.device.create_bind_group(&wgpu::BindGroupDescriptor {
+                label: Some("Diorama mip preparation"), layout: &self.layout, entries: &[
+                    wgpu::BindGroupEntry { binding: 0, resource: wgpu::BindingResource::TextureView(&previous) },
+                    wgpu::BindGroupEntry { binding: 1, resource: wgpu::BindingResource::Sampler(&self.sampler) },
+                    wgpu::BindGroupEntry { binding: 2, resource: uniform.as_entire_binding() },
+                ],
+            });
+            pass(encoder, &next, pipeline, &bind, 3, true);
+            previous = next;
+        }
+        self.mips.insert(id, mips);
+        Ok(())
+    }
     fn draw_plane(&mut self, encoder: &mut wgpu::CommandEncoder, target: &wgpu::TextureView,
         size: (u32, u32), plane: &Plane) -> Result<(), i32> {
-        let image = self.images.get(&plane.texture).ok_or(-43)?;
+        let (image, sampler) = if plane.mip_material {
+            self.prepare_plane_mips(encoder, plane.texture)?;
+            (&self.mips[&plane.texture], &self.mip_sampler)
+        } else {
+            (self.images.get(&plane.texture).ok_or(-43)?, &self.sampler)
+        };
         let pipelines = self.plane_pipelines.get_or_insert_with(|| {
             let add = wgpu::BlendComponent {
                 src_factor: wgpu::BlendFactor::One, dst_factor: wgpu::BlendFactor::One,
@@ -137,6 +185,7 @@ impl Gpu {
             data[8..11].copy_from_slice(&[r, g, b]);
             data[11] = 1.;
         }
+        data[60] = if plane.mip_material { 1. } else { 0. };
         for (index, &[x, y, w, u, v]) in plane.vertices.iter().enumerate() {
             let start = 12 + index * 8;
             data[start..start + 8].copy_from_slice(&[x, y, w, 0., u, v, 0., 0.]);
@@ -145,7 +194,7 @@ impl Gpu {
         let bind = self.device.create_bind_group(&wgpu::BindGroupDescriptor {
             label: Some("Diorama text plane"), layout: &self.layout, entries: &[
                 wgpu::BindGroupEntry { binding: 0, resource: wgpu::BindingResource::TextureView(&image.view) },
-                wgpu::BindGroupEntry { binding: 1, resource: wgpu::BindingResource::Sampler(&self.sampler) },
+                wgpu::BindGroupEntry { binding: 1, resource: wgpu::BindingResource::Sampler(sampler) },
                 wgpu::BindGroupEntry { binding: 2, resource: uniform.as_entire_binding() },
             ],
         });
@@ -284,10 +333,15 @@ impl Gpu {
             self.resident -= image.bytes();
             false
         });
+        self.mips.retain(|id, image| {
+            if *id >> 16 != scene { return true; }
+            self.resident -= image.bytes();
+            false
+        });
         self.clear_scratch();
         Ok(())
     }
-    pub fn stats(&self)->[i64;5]{[self.submitted as i64,self.images.len() as i64,self.resident as i64,self.peak_bytes as i64,self.uploaded_bytes as i64]}
+    pub fn stats(&self)->[i64;5]{[self.submitted as i64,(self.images.len() + self.mips.len()) as i64,self.resident as i64,self.peak_bytes as i64,self.uploaded_bytes as i64]}
 }
 
 #[cfg(test)]

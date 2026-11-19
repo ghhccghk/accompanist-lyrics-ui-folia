@@ -9,6 +9,15 @@ extern "C" {
     fn ANativeWindow_fromSurface(env: *mut JNIEnv, surface: jobject) -> *mut c_void;
     fn ANativeWindow_release(window: *mut c_void);
 }
+#[link(name = "log")]
+extern "C" {
+    fn __android_log_write(priority: i32, tag: *const std::ffi::c_char, text: *const std::ffi::c_char) -> i32;
+}
+fn log_gpu_error(error: impl std::fmt::Display) {
+    if let Ok(message) = std::ffi::CString::new(error.to_string()) {
+        unsafe { __android_log_write(6, c"FoliaRenderer".as_ptr(), message.as_ptr()); }
+    }
+}
 struct Window(usize);
 impl Drop for Window { fn drop(&mut self) { unsafe { ANativeWindow_release(self.0 as *mut c_void); } } }
 impl HasWindowHandle for Window {
@@ -50,7 +59,10 @@ impl Session {
         config.desired_maximum_frame_latency = 2;
         let errors = std::sync::Arc::new(std::sync::atomic::AtomicBool::new(false));
         let lost = std::sync::Arc::new(std::sync::atomic::AtomicBool::new(false));
-        let e = errors.clone(); device.on_uncaptured_error(std::sync::Arc::new(move |_| { e.store(true, std::sync::atomic::Ordering::Release); }));
+        let e = errors.clone(); device.on_uncaptured_error(std::sync::Arc::new(move |error| {
+            e.store(true, std::sync::atomic::Ordering::Release);
+            log_gpu_error(error);
+        }));
         let l = lost.clone(); device.set_device_lost_callback(move |_,_| { l.store(true,std::sync::atomic::Ordering::Release); });
         surface.configure(&device,&config);
         if !adapter.get_texture_format_features(wgpu::TextureFormat::Rgba32Float).allowed_usages.contains(wgpu::TextureUsages::RENDER_ATTACHMENT){return Err(-15);}
@@ -90,6 +102,7 @@ impl Session {
         }); }
         self.queue.submit(Some(encoder.finish()));
         }
+        if self.errors.load(Acquire) || self.lost.load(Acquire) { return Err(-20); }
         frame.present(); self.recoveries=0; Ok(0)
     }
 }

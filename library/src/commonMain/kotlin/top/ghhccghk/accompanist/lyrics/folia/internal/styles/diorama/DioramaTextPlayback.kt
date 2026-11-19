@@ -186,13 +186,14 @@ internal class DioramaTextPlayback private constructor(val lines: List<DioramaPl
             if (neighbor.opacity <= 0.0) continue
             val plane = plainAt(neighbor.index)
             emit(plane.text.plane(view, plane.frame, plane.placement, neighbor.color.srgb(toneMapping),
-                neighbor.opacity.toFloat(), fog))
+                neighbor.opacity.toFloat(), fog).copy(mipMaterial = neighbor.color))
         }
         val index = camera.subjectIndex(time)
         val subject = camera.subjects[index]
         val frames = stageFrames(time, view, primary, accent, reduced, quality)
         lines[index].text.visitPlanes(view, subject.frame, subject.placement, frames) { image, origin, x, y, alpha, color, additive ->
-            emit(DioramaTextPlane(image, origin, x, y, alpha, color.srgb(toneMapping), additive, fog))
+            emit(DioramaTextPlane(image, origin, x, y, alpha, color.srgb(toneMapping), additive, fog,
+                mipMaterial = color.takeUnless { additive }))
         }
     }
 

@@ -7,6 +7,11 @@ prepare coverage. Rust runs actual blur/glow/group composition. Subtitles,
 secondary lines and finite waiting dots still use Kotlin overlays. There is no
 native player, SPW, alternate media clock or per-frame full-screen readback.
 
+The Android Diorama experiment draws the existing projective text planes.
+The native path uses F16 composition and generates color and coverage mips for
+body and neighbor textures. Devices without the required F16 support report a
+capability failure. The selected backend controls fallback.
+
 ## Producer
 
 Verified producer host: Windows. Install JDK 21, Android SDK with NDK

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 //! Bounded little-endian scene commands. All bytes are owned before GPU dispatch.
 pub const MAGIC: u32 = 0x31475246;
-const SCENE_VERSION: u32 = 3;
+const SCENE_VERSION: u32 = 4;
 pub const MAX_PACKET: usize = 512 * 1024;
 pub const MAX_NODES: usize = 4096;
 pub const MAX_FRAME_BYTES: u64 = 192 * 1024 * 1024;
@@ -19,6 +19,7 @@ pub struct Plane {
     pub texture: u64,
     pub color: [f32; 4],
     pub additive: bool,
+    pub mip_material: bool,
     pub fog: Option<[f32; 5]>,
     pub vertices: Vec<[f32; 5]>,
 }
@@ -70,9 +71,11 @@ impl Reader<'_> {
                     let texture = self.u64()?;
                     if texture == 0 { return Err(-34); }
                     let flags = self.u32()?;
-                    if flags > 3 { return Err(-31); }
+                    if flags > if self.version >= 4 { 7 } else { 3 } { return Err(-31); }
+                    let mip_material = flags & 4 != 0;
                     let mut color = [0.; 4];
-                    for channel in &mut color { *channel = self.float(0., 1.)?; }
+                    for channel in &mut color[..3] { *channel = self.float(0., if mip_material { 16. } else { 1. })?; }
+                    color[3] = self.float(0., 1.)?;
                     let fog = if flags & 2 != 0 {
                         let mut values = [0.; 5];
                         for channel in &mut values[..3] { *channel = self.float(0., 1.)?; }
@@ -92,7 +95,7 @@ impl Reader<'_> {
                             self.float(0., 1.)?, self.float(0., 1.)?,
                         ]);
                     }
-                    result.push(Command::Plane(Plane { texture, color, additive: flags & 1 != 0, fog, vertices }));
+                    result.push(Command::Plane(Plane { texture, color, additive: flags & 1 != 0, mip_material, fog, vertices }));
                 }
                 _=>return Err(-30),
             }

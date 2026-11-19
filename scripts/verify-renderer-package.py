@@ -40,7 +40,7 @@ def inspect_elf(readelf, binary):
         offset, address, alignment = (int(row[i], 16) for i in (1, 2, -1))
         assert offset % alignment == address % alignment, binary
     needed = sorted(re.findall(r"Shared library: \[([^\]]+)\]", description))
-    assert set(needed) <= {"libandroid.so", "libdl.so", "libm.so", "libc.so"}, needed
+    assert set(needed) <= {"libandroid.so", "libdl.so", "libm.so", "libc.so", "liblog.so"}, needed
     build_id = re.search(r"Build ID: ([0-9a-f]+)", description).group(1)
     return {"build_id": build_id, "needed": needed, "debug_line": ".debug_line " in description,
             "load_alignments": [row[-1] for row in loads]}
@@ -61,8 +61,10 @@ def main():
           (ZipFile(args.apk) if args.apk else nullcontext()) as apk,
           tempfile.TemporaryDirectory() as temporary):
         for path in ("Cargo.lock", "Cargo.toml", "rust-toolchain.toml", "SOURCES.md", "src/android.rs",
-                     "src/draw.wgsl", "src/blur.wgsl", "src/halo.wgsl", "build-android.ps1"):
+                     "src/draw.wgsl", "src/blur.wgsl", "src/halo.wgsl", "src/plane.wgsl",
+                     "src/plane_mips.wgsl", "LICENSES/MIT-three-0.185.1.txt", "build-android.ps1"):
             assert path in sources.namelist(), path
+        assert aar.read("META-INF/lyrics-ui-folia-native/MIT-three-0.185.1.txt") == sources.read("LICENSES/MIT-three-0.185.1.txt")
         manifest_bytes = sources.read("third-party/DEPENDENCIES.json")
         manifest = json.loads(manifest_bytes)
         assert aar.read(NOTICES + "DEPENDENCIES.json") == manifest_bytes

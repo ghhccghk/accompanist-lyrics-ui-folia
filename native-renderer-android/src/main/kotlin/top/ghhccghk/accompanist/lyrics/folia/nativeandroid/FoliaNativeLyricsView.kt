@@ -140,12 +140,16 @@ private class NativeSceneTarget(private val config:FoliaNativeRendererConfig):Fo
         }}
         try{v.publish(ScenePacketEncoder.encode(++nextFrame,width,height,ordered.map{it.upload},frames))}catch(e:Exception){fail(e)}
     }
-    @Composable override fun Line(scene:FoliaRendererScene,modifier:Modifier,frame:(Int,Int)->FoliaRendererFrame,onPresented:(FoliaRendererFrame)->Unit) = Stage(scene, modifier, frame, onPresented)
+    @Composable override fun Line(scene:FoliaRendererScene,modifier:Modifier,frame:(Int,Int)->FoliaRendererFrame,onPresented:(FoliaRendererFrame)->Unit) = Scene(scene, modifier, false, frame, onPresented)
 
     @Composable override fun Stage(scene: FoliaRendererScene, modifier: Modifier,
+        frame: (Int, Int) -> FoliaRendererFrame?, onPresented: (FoliaRendererFrame) -> Unit) =
+        Scene(scene, modifier, true, frame, onPresented)
+
+    @Composable private fun Scene(scene: FoliaRendererScene, modifier: Modifier, preserveColor: Boolean,
         frame: (Int, Int) -> FoliaRendererFrame?, onPresented: (FoliaRendererFrame) -> Unit) {
         val prepared=remember(scene){runCatching{
-            Entry(SceneUpload(++nextScene,scene,config.preparedTextureBudgetBytes))
+            Entry(SceneUpload(++nextScene,scene,config.preparedTextureBudgetBytes,preserveColor))
         }}
         val entry=prepared.getOrNull()
         if(entry==null){LaunchedEffect(prepared){fail(prepared.exceptionOrNull()!!)};return}

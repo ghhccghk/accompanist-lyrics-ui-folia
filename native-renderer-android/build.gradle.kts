@@ -69,6 +69,7 @@ val sourceArchive = tasks.register<Zip>("rendererSourceArchive") {
     archiveClassifier.set("rust-sources")
     from(rootProject.file("native/renderer")) { exclude("target/**") }
     from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md"))
+    from(rootProject.file("LICENSES/MIT-three-0.185.1.txt")) { into("LICENSES") }
     from(rootProject.file("native/experimental-mask/rust-environment.ps1")) { into("build-support") }
     from(rootProject.file("scripts/archive-renderer-dependencies.py")) { into("build-support") }
     dependsOn(dependencyBundle)
@@ -80,7 +81,7 @@ val symbolArchive=tasks.register<Zip>("rendererSymbolArchive") {
 }
 tasks.withType<Zip>().configureEach {
     if (name != "rendererSourceArchive") {
-        from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md")) { into("META-INF/lyrics-ui-folia-native") }
+        from(rootProject.files("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md", "LICENSES/MIT-three-0.185.1.txt")) { into("META-INF/lyrics-ui-folia-native") }
         dependsOn(dependencyBundle)
         from(layout.buildDirectory.dir("generated/rendererDependencies/bundle")) {
             exclude("registry-sources/**")

@@ -10,6 +10,8 @@ fonts, icons, player, SPW, cryoglyph patch or application dependencies are copie
 | Folia-rust-android | same revision, styles/partita.rs and styles/glow.rs in crates/folia-visualizer | inspected, not copied: enlarged translucent text halo is unsuitable for equivalent Partita glow |
 | lyrics-ui-folia | fdcc1e5, native/experimental-mask/rust-environment.ps1 | producer build reuses local tool lookup only; CPU experiment runtime is not linked |
 | lyrics-ui-folia | fdcc1e5, PartitaLine.kt, partita samplers, classic/GlowPrimitives.kt | FoliaRendererBridge.kt + PartitaNativeScene.kt reuse current prepared cells and samplers; src/gpu.rs and blur/halo/draw.wgsl independently implement the existing three-box kernel/phase, small Gaussian and integer halo alpha on GPU. GPU conformance tests use an independent naive f64 implementation; no reference simplified halo copied |
+| lyrics-ui-folia | `2b6d129`, existing `DioramaPlainSampler.jvm.kt` and core Diorama text preparation | `src/plane_mips.wgsl` and `src/plane.wgsl` use the existing shaped planes and implement the calibrated linear color, trilinear mip and four-tap sampling policy using Vulkan texture levels. |
+| Three.js | 0.185.1, `ShaderChunk/tonemapping_pars_fragment.glsl.js` via `DioramaToneMapping.kt` | `src/plane.wgsl` adapts the existing ACES transform. See `LICENSES/MIT-three-0.185.1.txt` for the MIT notice. |
 
 Transitive Rust dependency versions, sources and checksums are fixed by Cargo.lock.
 `cargo metadata --locked` provides the complete dependency graph and license fields.

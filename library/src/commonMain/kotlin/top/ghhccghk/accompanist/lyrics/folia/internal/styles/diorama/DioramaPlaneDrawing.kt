@@ -15,6 +15,7 @@ internal data class DioramaTextPlane(
     val color: Color,
     val additive: Boolean,
     val fog: DioramaFog?,
+    val mipMaterial: DioramaLinearColor? = null,
 )
 
 internal data class DioramaPlanePoint(val x: Double, val y: Double)

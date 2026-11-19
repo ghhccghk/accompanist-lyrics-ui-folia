@@ -45,5 +45,6 @@ private fun DioramaTextPlane.command(view: DioramaPerspective, texture: Int, den
         )
     }
     return FoliaRendererPlane(texture, vertices, color, alpha.coerceIn(0f, 1f), additive,
-        fog?.let { FoliaRendererPlaneFog(it.encodedColor, it.near.toFloat(), it.far.toFloat()) })
+        fog?.let { FoliaRendererPlaneFog(it.encodedColor, it.near.toFloat(), it.far.toFloat()) },
+        mipMaterial?.let { Triple(it.red.toFloat(), it.green.toFloat(), it.blue.toFloat()) })
 }

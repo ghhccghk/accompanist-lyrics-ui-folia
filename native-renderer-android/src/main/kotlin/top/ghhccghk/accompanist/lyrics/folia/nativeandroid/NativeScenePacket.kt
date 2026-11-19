@@ -8,7 +8,7 @@ import java.nio.ByteBuffer
 
 internal data class TextureUpload(val id:Long,val width:Int,val height:Int,val rgba:ByteArray,
     val sigma1:Float,val sigma2:Float,val inkAlpha:Float)
-internal class SceneUpload(val id:Long,scene:FoliaRendererScene,budget:Long) {
+internal class SceneUpload(val id:Long,scene:FoliaRendererScene,budget:Long,preserveColor:Boolean = false) {
     val byteCount=scene.textures.sumOf { it.image.width.toLong()*it.image.height*4 }
     init { require(byteCount<=budget) { "PreparedTextureBudgetExceeded:required=$byteCount available=$budget" } }
     val textures:List<TextureUpload> = scene.textures.mapIndexed{index,texture->
@@ -18,9 +18,22 @@ internal class SceneUpload(val id:Long,scene:FoliaRendererScene,budget:Long) {
         require(count<=8*1024*1024)
         val argb=IntArray(count);image.readPixels(argb)
         val rgba=ByteArray(Math.multiplyExact(count,4))
-        // All Partita body/halo textures are shaped coverage. The existing
-        // Android body path also tints coverage rather than substituting fonts.
-        for(i in argb.indices){val a=(argb[i] ushr 24).toByte();val p=i*4;rgba[p]=a;rgba[p+1]=a;rgba[p+2]=a;rgba[p+3]=a}
+        for (i in argb.indices) {
+            val pixel = argb[i]
+            val alpha = (pixel ushr 24).toByte()
+            val offset = i * 4
+            if (preserveColor) {
+                val rgb = if (alpha == 0.toByte()) 0 else pixel
+                rgba[offset] = (rgb ushr 16).toByte()
+                rgba[offset + 1] = (rgb ushr 8).toByte()
+                rgba[offset + 2] = rgb.toByte()
+            } else {
+                rgba[offset] = alpha
+                rgba[offset + 1] = alpha
+                rgba[offset + 2] = alpha
+            }
+            rgba[offset + 3] = alpha
+        }
         require(texture.shadowSigmas.size<=2)
         TextureUpload((id shl 16)+(index+1),image.width,image.height,rgba,
             texture.shadowSigmas.getOrElse(0){0f},texture.shadowSigmas.getOrElse(1){0f},texture.shadowInkAlpha)
@@ -53,9 +66,11 @@ internal object ScenePacketEncoder {
                     int(5)
                     long((scene shl 16) + c.texture + 1)
                     val fog = c.fog
-                    int((if (c.additive) 1 else 0) or (if (fog != null) 2 else 0))
+                    val material = c.mipMaterial
+                    int((if (c.additive) 1 else 0) or (if (fog != null) 2 else 0) or (if (material != null) 4 else 0))
                     val color = c.color.convert(ColorSpaces.Srgb)
-                    float(color.red); float(color.green); float(color.blue); float(color.alpha * c.opacity)
+                    float(material?.first ?: color.red); float(material?.second ?: color.green)
+                    float(material?.third ?: color.blue); float(color.alpha * c.opacity)
                     if (fog != null) {
                         val ink = fog.color.convert(ColorSpaces.Srgb)
                         float(ink.red); float(ink.green); float(ink.blue); float(fog.near); float(fog.far)

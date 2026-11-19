@@ -14,7 +14,7 @@ import kotlin.math.sin
 annotation class ExperimentalFoliaRendererBridge
 
 @ExperimentalFoliaRendererBridge
-const val FOLIA_RENDERER_SCENE_VERSION: Int = 3
+const val FOLIA_RENDERER_SCENE_VERSION: Int = 4
 
 /** Fully shaped CPU coverage uploaded only when a preparation changes. Shadow
  * sigmas request GPU preparation, never a CPU mask/colour processor invocation. */
@@ -70,6 +70,8 @@ data class FoliaRendererPlane(
     val opacity: Float,
     val additive: Boolean,
     val fog: FoliaRendererPlaneFog?,
+    /** Linear material RGB before ACES. Null requests level-zero mask tinting. */
+    val mipMaterial: Triple<Float, Float, Float>? = null,
 ) : FoliaRendererCommand
 
 @ExperimentalFoliaRendererBridge

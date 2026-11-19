@@ -73,9 +73,8 @@ emulator at six media samples, including forward and backward seeks. A one-byte
 texture budget exercised `NativePreferred` fallback. The full Partita lifecycle
 probe passed with the same artifacts. The sample debug APK built successfully.
 
-The preview uses the ordinary Android plane baseline and RGBA8 blending. The
-calibrated mip and F16 paths and paired picture/performance acceptance remain
-open. The frame protocol uses v3 for projective planes and v2 for Partita.
+The first preview used the ordinary Android plane baseline and RGBA8 blending.
+The first projective protocol was v3. Partita continues to emit scene v2.
 The JNI ABI remains 2. Local snapshots: core Android `0.1.0-20261119.040652-28`,
 native Android `0.1.0-20261119.040652-16`.
 The next increment uses an F16 attachment for the projective text pass and
@@ -84,6 +83,20 @@ follow the requested backend's failure policy. Attachment bytes count toward
 the existing GPU budget. Local native snapshot `0.1.0-20261119.041541-17`
 passed the API 34 Release/R8 Diorama smoke and Partita lifecycle checks.
 
+Scene v4 adds the calibrated mip material for neighbor and body textures.
+Vulkan builds straight linear RGB and alpha mip levels on demand within the
+current scene's GPU budget. Projection controls up to four trilinear taps.
+The renderer tone maps the sampled material before fog, then composites in
+F16. Glow and soul use their prepared coverage at level zero. Replacing a
+raster window retires its mips along with the source textures. Debug APK and
+coordinate-only Release/R8 builds passed. The API 34 consumer rendered the
+baseline at 1500 ms, then passed seeks to 3300, 3550, 900, 3700 and 1500 ms.
+The same native binaries also passed the API 34 Partita lifecycle probe.
+The final local native snapshot `0.1.0-20261119.042845-20` passed static
+checks for both ABIs, symbol IDs, 16 KiB ELF and APK alignment, and shader
+source and license packaging. The matched visual and performance acceptance
+matrix remains open.
+
 ## Remaining
 
 - P3: residual main-stage edge coverage. The real playback sample passed three
@@ -91,8 +104,8 @@ passed the API 34 Release/R8 Diorama smoke and Partita lifecycle checks.
   at the retained position. See the P3 evidence for both process PSS readings.
 - P4: ARM64 runtime and paired hardware performance. Resize and scene-retirement
   Vulkan tests now account for reclaimed scratch texture bytes; see P4 evidence.
-- P5: calibrated Diorama mip/F16 rendering and device feature checks, followed
-  by matched visual, interaction and performance validation.
+- P5: matched Diorama visual, interaction, device capability and performance
+  validation. The Vulkan mip and F16 implementation is in the experiment.
 - P6: separately validated desktop host and independent platform consumer.
 
 ## P0 observations and fixed acceptance conditions

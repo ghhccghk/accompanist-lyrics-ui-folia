@@ -27,8 +27,8 @@ impl<T> Sessions<T> {
         self.values.insert(self.next, value);
         Ok(self.next)
     }
-    pub fn get_mut(&mut self, id: i64) -> Result<&mut T, i32> { self.values.get_mut(&id).ok_or(-4) }
-    pub fn remove(&mut self, id: i64) { self.values.remove(&id); }
+    pub fn get(&self, id: i64) -> Result<&T, i32> { self.values.get(&id).ok_or(-4) }
+    pub fn remove(&mut self, id: i64) -> Option<T> { self.values.remove(&id) }
 }
 
 #[cfg(target_os = "android")]
@@ -46,8 +46,8 @@ mod tests {
         let a = sessions.insert(10).unwrap();
         let b = sessions.insert(20).unwrap();
         sessions.remove(a); sessions.remove(a);
-        assert!(sessions.get_mut(a).is_err());
-        assert_eq!(*sessions.get_mut(b).unwrap(),20);
+        assert!(sessions.get(a).is_err());
+        assert_eq!(*sessions.get(b).unwrap(),20);
         assert!(sessions.insert(30).unwrap()>b);
     }
 }

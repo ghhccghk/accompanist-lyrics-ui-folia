@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.SurfaceTexture
 import android.os.Handler
 import android.os.HandlerThread
+import android.util.Log
 import android.view.Choreographer
 import android.view.Surface
 import android.view.TextureView
@@ -38,15 +39,19 @@ class FoliaNativeSurfaceView internal constructor(
     private val clock by lazy { Choreographer.getInstance() }
     private val callback = Choreographer.FrameCallback { draw() }
     init { isOpaque = false; surfaceTextureListener = this }
-    private fun stop() {
+    private fun stop(): Int {
         if (queued) clock.removeFrameCallback(callback)
         queued = false
         unopenedSurface?.release()
         unopenedSurface = null
-        if (handle > 0) RendererJni.destroy(handle)
+        val retired = handle
         handle = 0
         uploaded.clear()
         lastSubmittedId=-1L
+        if (retired <= 0) return 0
+        return RendererJni.destroy(retired).also { status ->
+            if (status != 0) Log.e("FoliaRenderer", "Destroy:$status (session $retired)")
+        }
     }
     private fun hasScene() = mailbox.get()?.frames?.isNotEmpty() == true
 
@@ -134,8 +139,9 @@ class FoliaNativeSurfaceView internal constructor(
         }) surface.release()
     }
     private fun fail(generation: Long, reason: String) {
-        stop()
-        post { if (!released && serial == generation) report("Failed:$reason") }
+        val cleanup = stop()
+        val detail = if (cleanup == 0) reason else "$reason;Destroy:$cleanup"
+        post { if (!released && serial == generation) report("Failed:$detail") }
     }
 
     private fun createSession(generation: Long): Boolean {

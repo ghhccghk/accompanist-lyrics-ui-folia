@@ -97,6 +97,24 @@ checks for both ABIs, symbol IDs, 16 KiB ELF and APK alignment, and shader
 source and license packaging. The matched visual and performance acceptance
 matrix remains open.
 
+## November 19 review follow-up
+
+- R1: isolated native session failures and made destroy status visible. The
+  same-process Vulkan regression reproduced A's `-99` poisoning B with `-98`
+  under the baseline lock. With per-session locking, A and B drew, A failed
+  at the test-only upload injection, B drew again, A retired twice, and C
+  created and drew. A separate concurrency test kept B usable while destroy
+  waited for A's admitted render. Run with `scripts/test-renderer-android.ps1`
+  on the API 34 x86_64 AVD using `-gpu host` (NVIDIA). SwiftShader and Lavapipe
+  behind gfxstream instead reported `Failed to unbox VkDevice` after A's
+  destruction and B returned a new GPU error rather than `-98`; do not claim
+  this driver-level failure is fixed. The first OOM from the review remains
+  unclassified. This tests unwind, not abort or a native crash.
+- R1 host behavior: verify Preferred/Required against a runtime failure in
+  the independent consumer, with the same lyric source and media snapshot.
+- Current next item: R2 consumer API 26¨C29 startup. R3 pressure diagnostics,
+  R4 paired visual/interaction checks, and R5 local candidate follow.
+
 ## Remaining
 
 - P3: residual main-stage edge coverage. The real playback sample passed three

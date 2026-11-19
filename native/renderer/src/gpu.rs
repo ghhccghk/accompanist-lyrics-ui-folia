@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 use crate::protocol::{Command, Frame, Group, Plane, Transform};
-use std::collections::BTreeMap;
+use std::{collections::BTreeMap, sync::{Arc, atomic::{AtomicBool, Ordering}}};
 use wgpu::util::DeviceExt;
 
 const IDENTITY: Transform = Transform([1., 0., 0., 1., 0., 0.]);
@@ -21,7 +21,14 @@ fn texture_bytes(width: u32, height: u32, format: wgpu::TextureFormat, levels: u
     }).sum()
 }
 
+pub(crate) fn check_health(failed: &AtomicBool) -> Result<(), i32> {
+    if failed.load(Ordering::Acquire) { Err(-20) } else { Ok(()) }
+}
+
 pub struct Gpu {
+    #[cfg(test)]
+    panic_during_upload: bool,
+    failed: Arc<AtomicBool>,
     device:wgpu::Device, queue:wgpu::Queue,
     layout:wgpu::BindGroupLayout, blur_layout:wgpu::BindGroupLayout, halo_layout:wgpu::BindGroupLayout,
     draw:wgpu::RenderPipeline, present:wgpu::RenderPipeline,
@@ -82,7 +89,7 @@ fn clear(encoder:&mut wgpu::CommandEncoder,target:&wgpu::TextureView) {
             ops:wgpu::Operations{load:wgpu::LoadOp::Clear(wgpu::Color::TRANSPARENT),store:wgpu::StoreOp::Store}})],..Default::default()});
 }
 impl Gpu {
-    pub fn new(device:wgpu::Device,queue:wgpu::Queue,surface_format:wgpu::TextureFormat,supports_text_composite:bool)->Self {
+    pub fn new(device:wgpu::Device,queue:wgpu::Queue,surface_format:wgpu::TextureFormat,supports_text_composite:bool,failed:Arc<AtomicBool>)->Self {
         let layout=device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor{label:None,entries:&[
             texture_entry(0,true),wgpu::BindGroupLayoutEntry{binding:1,visibility:wgpu::ShaderStages::FRAGMENT,ty:wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),count:None},uniform_entry(2,true)]});
         let blur_layout=device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor{label:None,entries:&[texture_entry(0,false),uniform_entry(1,false)]});
@@ -97,23 +104,32 @@ impl Gpu {
             mag_filter: wgpu::FilterMode::Linear, min_filter: wgpu::FilterMode::Linear,
             mipmap_filter: wgpu::FilterMode::Linear, ..Default::default()
         });
-        Self{device,queue,layout,blur_layout,halo_layout,draw,present,blur,blur_float,halo,sampler,supports_text_composite,plane_pipelines:None,mip_pipeline:None,mip_sampler,mips:BTreeMap::new(),images:BTreeMap::new(),pool:Vec::new(),resident:0,submitted:0,uploaded_bytes:0,peak_bytes:0}
+        Self{
+            #[cfg(test)]
+            panic_during_upload:false,
+            failed,device,queue,layout,blur_layout,halo_layout,draw,present,blur,blur_float,halo,sampler,supports_text_composite,plane_pipelines:None,mip_pipeline:None,mip_sampler,mips:BTreeMap::new(),images:BTreeMap::new(),pool:Vec::new(),resident:0,submitted:0,uploaded_bytes:0,peak_bytes:0}
     }
+    pub fn check_health(&self) -> Result<(), i32> { check_health(&self.failed) }
+
     fn allocate(&mut self,w:u32,h:u32,format:wgpu::TextureFormat)->Result<Image,i32> {
         self.allocate_levels(w, h, format, 1)
     }
     fn allocate_levels(&mut self, w: u32, h: u32, format: wgpu::TextureFormat, levels: u32) -> Result<Image, i32> {
+        self.check_health()?;
         let bytes=texture_bytes(w,h,format,levels);
         // Never undercount retired in-flight resources by dropping scratch here.
         if self.resident+bytes>BUDGET {return Err(-40);}
         let texture=self.device.create_texture(&wgpu::TextureDescriptor{label:Some("Folia texture"),size:wgpu::Extent3d{width:w,height:h,depth_or_array_layers:1},mip_level_count:levels,sample_count:1,dimension:wgpu::TextureDimension::D2,format,
             usage:wgpu::TextureUsages::TEXTURE_BINDING|wgpu::TextureUsages::RENDER_ATTACHMENT|wgpu::TextureUsages::COPY_DST|
                 if cfg!(test){wgpu::TextureUsages::COPY_SRC}else{wgpu::TextureUsages::empty()},view_formats:&[]});
+        self.check_health()?;
         let view=texture.create_view(&Default::default());
+        self.check_health()?;
         self.resident+=bytes;self.peak_bytes=self.peak_bytes.max(self.resident);
         Ok(Image{texture,view,width:w,height:h,format,levels})
     }
     fn take(&mut self,w:u32,h:u32,format:wgpu::TextureFormat)->Result<Image,i32> {
+        self.check_health()?;
         if let Some(i)=self.pool.iter().position(|p|p.width==w&&p.height==h&&p.format==format){Ok(self.pool.swap_remove(i))}else{self.allocate(w,h,format)}
     }
     fn recycle(&mut self,image:Image){self.pool.push(image);}
@@ -135,6 +151,7 @@ impl Gpu {
             include_str!("plane_mips.wgsl"), TEXT_COMPOSITE, false));
         let mut previous = source.view;
         for level in 0..levels {
+            check_health(&self.failed)?;
             let next = mips.texture.create_view(&wgpu::TextureViewDescriptor {
                 base_mip_level: level, mip_level_count: Some(1), ..Default::default()
             });
@@ -210,6 +227,7 @@ impl Gpu {
         let output=self.take(source.width,source.height,FORMAT)?;
         let small=gaussian_small&&sigma<2.;let passes=if small{2}else{6};
         for index in 0..passes {
+            self.check_health()?;
             let phase=index%3;
             let count=if small{2*(3.*sigma).ceil() as i32+1}else{window+if phase==2&&window%2==0{1}else{0}};
             let left=count/2+if !small&&count%2==0&&phase==1{-1}else{0};
@@ -231,8 +249,11 @@ impl Gpu {
         let expected=(width as usize).checked_mul(height as usize).and_then(|v|v.checked_mul(4)).ok_or(-42)?;
         if pixels.len()!=expected {return Err(-42);}
         let source=self.allocate(width,height,FORMAT)?;
+        #[cfg(test)]
+        if self.panic_during_upload { panic!("test-only upload unwind"); }
         self.queue.write_texture(wgpu::TexelCopyTextureInfo{texture:&source.texture,mip_level:0,origin:wgpu::Origin3d::ZERO,aspect:wgpu::TextureAspect::All},pixels,
             wgpu::TexelCopyBufferLayout{offset:0,bytes_per_row:Some(width*4),rows_per_image:Some(height)},wgpu::Extent3d{width,height,depth_or_array_layers:1});
+        self.check_health()?;
         self.uploaded_bytes+=expected as u64;
         let result=if sigmas.is_empty(){source}else{
             let mut encoder=self.device.create_command_encoder(&Default::default());
@@ -246,7 +267,11 @@ impl Gpu {
                 wgpu::BindGroupEntry{binding:1,resource:wgpu::BindingResource::TextureView(&second.as_ref().unwrap_or(&first).view)},
                 wgpu::BindGroupEntry{binding:2,resource:uniform.as_entire_binding()}]});
             pass(&mut encoder,&output.view,&self.halo,&bind,3,true);
-            self.queue.submit(Some(encoder.finish()));
+            self.check_health()?;
+            let commands = encoder.finish();
+            self.check_health()?;
+            self.queue.submit(Some(commands));
+            self.check_health()?;
             self.recycle(first);if let Some(second)=second{self.recycle(second);}self.recycle(source);output
         };
         self.images.insert(id,result);Ok(())
@@ -261,6 +286,7 @@ impl Gpu {
     }
     fn commands(&mut self,encoder:&mut wgpu::CommandEncoder,target:&wgpu::TextureView,size:(u32,u32),commands:&[Command],parent:Transform)->Result<(),i32> {
         for command in commands {
+            self.check_health()?;
             match command {
                 Command::Image{texture,color,transform}=>{
                     let image=self.images.get(texture).ok_or(-43)?;
@@ -286,6 +312,7 @@ impl Gpu {
         }Ok(())
     }
     pub fn render(&mut self,frame:&Frame,target:&wgpu::TextureView)->Result<(),i32> {
+        self.check_health()?;
         let mut encoder=self.device.create_command_encoder(&Default::default());
         let format = if frame.projective {
             if !self.supports_text_composite { return Err(-45); }
@@ -298,14 +325,20 @@ impl Gpu {
         self.commands(&mut encoder,&image.view,(frame.width,frame.height),&frame.commands,IDENTITY)?;
         clear(&mut encoder,target);
         self.draw_image(&mut encoder,&image,target,(frame.width,frame.height),IDENTITY,[1.;4],false,true);
-        self.queue.submit(Some(encoder.finish()));self.submitted=frame.id;self.recycle(image);Ok(())
+        self.check_health()?;
+        let commands = encoder.finish();
+        self.check_health()?;
+        self.queue.submit(Some(commands));
+        self.check_health()?;
+        self.submitted=frame.id;self.recycle(image);Ok(())
     }
     fn wait_for_submitted_work(&self) -> Result<(), i32> {
+        self.check_health()?;
         self.device.poll(wgpu::PollType::Wait {
             submission_index: None,
             timeout: Some(std::time::Duration::from_secs(2)),
         }).map_err(|_| -44)?;
-        Ok(())
+        self.check_health()
     }
 
     fn clear_scratch(&mut self) {
@@ -393,7 +426,38 @@ mod tests {
             required_limits:wgpu::Limits::downlevel_defaults().using_resolution(adapter.limits()),
             ..Default::default()
         })).unwrap();
-        Gpu::new(device,queue,FORMAT,true)
+        Gpu::new(device,queue,FORMAT,true,Arc::default())
+    }
+
+    #[test]
+    fn real_vulkan_upload_panic_is_isolated_to_one_session() {
+        use crate::android::SessionTable;
+        let sessions = SessionTable::new();
+        let a = sessions.insert(open_gpu()).unwrap();
+        let b = sessions.insert(open_gpu()).unwrap();
+        let draw = |handle, id| sessions.run(handle, |gpu| {
+            let target = gpu.allocate(32, 32, FORMAT)?;
+            gpu.render(&Frame {id,width:32,height:32,commands:vec![],projective:false}, &target.view)?;
+            gpu.wait_for_submitted_work()?;
+            assert_eq!(gpu.stats()[0], id as i64);
+            Ok(())
+        });
+        draw(a, 1).unwrap();
+        draw(b, 2).unwrap();
+        let failed = sessions.run(a, |gpu| {
+            gpu.panic_during_upload = true;
+            gpu.upload((1 << 16) | 1, 8, 8, &[255; 8 * 8 * 4], &[], 1.)
+        });
+        assert_eq!(failed, Err(-99));
+        assert_eq!(draw(b, 3), Ok(()), "B must keep drawing after A fails");
+        assert_eq!(draw(a, 4), Err(-4), "A must not use its failed GPU again");
+        assert_eq!(sessions.destroy(a), Ok(()));
+        assert_eq!(sessions.destroy(a), Ok(()));
+        let c = sessions.insert(open_gpu()).unwrap();
+        assert!(c > b);
+        draw(c, 5).unwrap();
+        sessions.destroy(b).unwrap();
+        sessions.destroy(c).unwrap();
     }
 
     #[test]

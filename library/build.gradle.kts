@@ -94,7 +94,14 @@ tasks.withType<Zip>().configureEach {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 publishing {
-    repositories { maven { name = "Verification"; url = rootProject.layout.buildDirectory.dir("local-maven").get().asFile.toURI() } }
+    repositories {
+        maven {
+            name = "Verification"
+            url = providers.gradleProperty("foliaLocalRepository")
+                .map { rootProject.file(it).toURI() }
+                .getOrElse(rootProject.layout.buildDirectory.dir("local-maven").get().asFile.toURI())
+        }
+    }
     publications.withType<MavenPublication>().configureEach {
         artifactId = if (name == "kotlinMultiplatform") "lyrics-ui-folia" else "lyrics-ui-folia-${name.lowercase()}"
         pom {

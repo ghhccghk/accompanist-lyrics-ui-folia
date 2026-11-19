@@ -6,7 +6,8 @@ plugins {
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.android.application) apply false
 }
+val localVersion = providers.gradleProperty("foliaLocalVersion").orElse("0.1.0-SNAPSHOT")
 allprojects {
     group = "top.ghhccghk.accompanist"
-    version = "0.1.0-SNAPSHOT"
+    version = localVersion.get()
 }

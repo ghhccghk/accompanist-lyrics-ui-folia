@@ -90,7 +90,14 @@ tasks.withType<Zip>().configureEach {
     }
 }
 publishing {
-    repositories { maven { name = "Verification"; url = rootProject.layout.buildDirectory.dir("local-maven").get().asFile.toURI() } }
+    repositories {
+        maven {
+            name = "Verification"
+            url = providers.gradleProperty("foliaLocalRepository")
+                .map { rootProject.file(it).toURI() }
+                .getOrElse(rootProject.layout.buildDirectory.dir("local-maven").get().asFile.toURI())
+        }
+    }
     publications.withType<MavenPublication>().configureEach {
         artifactId = if (name == "kotlinMultiplatform") "lyrics-ui-folia-native" else "lyrics-ui-folia-native-android"
         if (name != "kotlinMultiplatform") { artifact(sourceArchive);artifact(symbolArchive) }

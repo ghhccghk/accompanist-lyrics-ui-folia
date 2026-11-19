@@ -1,4 +1,4 @@
-"""Check the exact local Maven snapshot, paired symbols and consuming APK."""
+"""Check a local Maven build, paired symbols and consuming APK."""
 import argparse
 from contextlib import nullcontext
 import hashlib
@@ -32,6 +32,20 @@ def files_for_snapshot(directory):
     return files
 
 
+def publication_files(repository, artifact, version):
+    directory = repository / "top/ghhccghk/accompanist" / artifact / version
+    if version.endswith("-SNAPSHOT"):
+        assert artifact == ARTIFACT
+        return files_for_snapshot(directory)
+    stem = f"{artifact}-{version}"
+    files = {}
+    for path in directory.glob(stem + "*"):
+        if path.suffix in (".aar", ".jar", ".zip", ".module", ".pom"):
+            classifier = path.stem[len(stem):].removeprefix("-")
+            files[classifier or path.suffix[1:]] = path
+    return files
+
+
 def inspect_elf(readelf, binary):
     description = subprocess.check_output([readelf, "-l", "-d", "-n", "-S", "-W", binary], text=True)
     loads = [line.split() for line in description.splitlines() if line.strip().startswith("LOAD ")]
@@ -48,14 +62,15 @@ def inspect_elf(readelf, binary):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--repository", type=Path, default=ROOT / "build/local-maven")
+    parser.add_argument("--version", default=VERSION)
     parser.add_argument("--readelf", type=Path, required=True)
     parser.add_argument("--zipalign", type=Path)
     parser.add_argument("--apk", type=Path)
     args = parser.parse_args()
     if bool(args.apk) != bool(args.zipalign):
         parser.error("Specify --apk and --zipalign together")
-    directory = ROOT / "build/local-maven/top/ghhccghk/accompanist" / ARTIFACT / VERSION
-    files = files_for_snapshot(directory)
+    files = publication_files(args.repository, ARTIFACT, args.version)
     with (ZipFile(files["aar"]) as aar, ZipFile(files["rust-sources"]) as sources,
           ZipFile(files["native-symbols"]) as symbols,
           (ZipFile(args.apk) if args.apk else nullcontext()) as apk,
@@ -81,7 +96,7 @@ def main():
                 assert sha256(payload) == notice["sha256"] and aar.read(NOTICES + path) == payload, path
         assert crates == {name for name in sources.namelist() if name.endswith(".crate")}
         assert not any(name.endswith(".crate") for name in aar.namelist())
-        evidence = {"crates": len(crates), "so": {}}
+        evidence = {"version": args.version, "crates": len(crates), "lock_sha256": manifest["lock_sha256"], "so": {}}
         for abi in ("arm64-v8a", "x86_64"):
             name = f"{abi}/liblyrics_folia_renderer.so"
             runtime = aar.read("jni/" + name)

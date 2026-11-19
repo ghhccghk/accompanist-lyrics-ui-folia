@@ -135,8 +135,12 @@ matrix remains open.
   to the target-only baseline. No production budget or policy changed.
   Reproduce using `scripts/probe-native-pressure.py` and
   `scripts/test-renderer-android.ps1 -Pressure` on a task-owned emulator.
-- Current next item: R4 paired visual and interaction checks, then R5
-  local candidate.
+- R4: captured eight Partita and eight Diorama pairs against Android Kotlin
+  on API 34. Partita lifecycle passed. Partita edge coverage and broader
+  Diorama discrepancies are still open. Upstream Folia parity, Diorama
+  full input matrix and ARM64 hardware gates remain pending. Results are in
+  `verification/native-renderer-visual.md`.
+- Current next item: R5 local candidate.
 
 ## Remaining
 

@@ -126,3 +126,48 @@ emulator, capture the same matrix with:
 ```powershell
 python scripts/capture-renderer-pairs.py --adb <adb.exe> --serial emulator-5580 --output .work/renderer-pairs
 ```
+
+## November 19 review rerun against Android Kotlin
+
+API 34 x86_64 with the host NVIDIA Vulkan backend. Release/R8 coordinate
+consumer using the renderer rebuilt after `98d9b85`. Fixtures, font, density,
+viewport, timestamps and quality settings matched within each pair. Captures
+exclude the diagnostic label at y < 40. The figures are absolute RGB channel
+errors over foreground pixels in either capture.
+
+| Theme / case | Mean | P99 | Peak |
+| --- | ---: | ---: | ---: |
+| Partita / baseline-1500 | 0.274 | 2 | 10 |
+| Partita / cjk | 0.185 | 1 | 35 |
+| Partita / bidi-rtl | 0.265 | 1 | 8 |
+| Partita / cluster | 0.135 | 1 | 24 |
+| Partita / waiting | 0.000 | 0 | 0 |
+| Partita / emoji-1500 | 0.190 | 1 | 8 |
+| Partita / subtitle-1500 | 0.170 | 1 | 10 |
+| Partita / subtitle-3300 | 0.543 | 2 | 4 |
+| Diorama / baseline-850 | 7.477 | 44 | 58 |
+| Diorama / baseline-1500 | 6.789 | 42 | 107 |
+| Diorama / baseline-3300 | 3.781 | 35 | 72 |
+| Diorama / baseline-3550 | 1.467 | 30 | 68 |
+| Diorama / baseline-3700 | 6.798 | 41 | 88 |
+| Diorama / cjk-1500 | 5.932 | 39 | 92 |
+| Diorama / bidi-rtl-1500 | 6.834 | 39 | 59 |
+| Diorama / wrap-1500 | 10.499 | 64 | 129 |
+
+The Partita waiting sample and both subtitle regions matched exactly. The
+CJK peak was localized and remains open, as do cluster coverage differences.
+Diorama submitted each sampled frame, including the 3300–3700 ms line
+transition. Its error spans larger regions. Keep the same F16, mip and
+projection implementation as the starting point for isolating the discrepancy.
+The Partita Release/R8 lifecycle check also passed seeking, source identity,
+click and long press, cancelled gestures, multiple views and retirement.
+Diorama seek, font and viewport changes passed the pressure probe. Matching
+Diorama hit geometry and full interaction coverage remain open.
+
+This table compares the two Android implementations. Direct comparison with
+the pinned upstream Folia frontend remains pending. Existing component
+calibrations in `docs/diorama-preview.md` cover separate browser and Kotlin
+inputs. ARM64 runtime and equal-quality frame-time gates remain pending.
+
+Reproduce with `scripts/capture-renderer-pairs.py --theme Diorama` or
+`--theme Partita`, a task-owned 800×600 emulator and the Release consumer.

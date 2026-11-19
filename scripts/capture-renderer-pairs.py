@@ -1,4 +1,4 @@
-"""Capture matched paused Partita frames from the independent release consumer."""
+"""Capture matched paused Partita or Diorama frames from the independent release consumer."""
 import argparse
 from importlib import import_module
 import io
@@ -21,19 +21,20 @@ def device(adb, *args):
     return subprocess.check_output([*adb, *args], timeout=20)
 
 
-def capture(adb, output, case, backend):
+def capture(adb, output, case, backend, theme):
     key, scene, sample, w, h, scale, reduced, guides = case
     device(adb, 'shell','am','force-stop',PACKAGE)
     device(adb, 'shell','am','start','-W','-n',PACKAGE+'/.ConsumerActivity','--es','backend',backend,
-           '--es','scene',scene,'--el','mediaMs',str(sample),'--ei','width',str(w),'--ei','height',str(h),
+           '--es','scene',scene,'--es','theme',theme,'--el','mediaMs',str(sample),'--ei','width',str(w),'--ei','height',str(h),
            '--ef','fontScale',str(scale),'--ez','reduced',reduced,'--ez','guides',guides)
     pid = device(adb, 'shell','pidof',PACKAGE).decode().strip()
     until = time.monotonic()+25
     status = ''
     while time.monotonic()<until:
         status = device(adb, 'logcat','-d','--pid='+pid,'-s','FoliaNativeConsumer').decode(errors='replace')
-        expected = ('path=Kotlin state=Kotlin' if backend=='Kotlin' else 'path=NativeGpu state=Ready:PartitaMainAndGlow')
-        if scene=='waiting' and backend=='NativeRequired':
+        native_state = 'PartitaMainAndGlow' if theme == 'Partita' else 'DioramaText'
+        expected = 'path=Kotlin state=Kotlin' if backend == 'Kotlin' else f'path=NativeGpu state=Ready:{native_state}'
+        if theme == 'Partita' and scene=='waiting' and backend=='NativeRequired':
             expected = 'path=Preparing state=Preparing'
         if any(expected in line and f'media={sample} ' in line and
                (backend == 'Kotlin' or scene == 'waiting' or f'sampled={sample * 1000} ' in line)
@@ -67,6 +68,7 @@ def main():
     parser.add_argument('--adb', type=Path, required=True)
     parser.add_argument('--serial', required=True, help='Task-owned 800x600 Android emulator')
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--theme', choices=('Partita', 'Diorama'), default='Partita')
     parser.add_argument('--case', action='append', help='Capture only the named case; repeatable')
     args = parser.parse_args()
     if not args.serial.startswith('emulator-'):
@@ -84,6 +86,9 @@ def main():
               ('waiting', 'waiting', 9000, *SCREEN, 1, 'false', 'true')]
     cases += [standard('emoji', ms) for ms in (850, 1500, 2280)]
     cases += [standard('subtitle', ms) for ms in (750, 850, 1000, 1500, 3199, 3300, 3500)]
+    if args.theme == 'Diorama':
+        cases = [standard('baseline', ms) for ms in (850, 1500, 3300, 3550, 3700)]
+        cases += [standard(scene, 1500) for scene in ('cjk', 'bidi-rtl', 'wrap')]
     if args.case and (unknown := set(args.case) - {case[0] for case in cases}):
         parser.error(f'Unknown cases: {sorted(unknown)}')
     results = {}
@@ -95,10 +100,10 @@ def main():
         order = ('Kotlin', 'NativeRequired') if index % 2 == 0 else ('NativeRequired', 'Kotlin')
         for backend in order:
             try:
-                frames[backend] = capture(adb, args.output, case, backend)
+                frames[backend] = capture(adb, args.output, case, backend, args.theme)
             except (OSError, RuntimeError, ValueError, subprocess.SubprocessError) as error:
                 errors[backend] = str(error)
-        result = {'settings': case, 'errors': errors}
+        result = {'theme': args.theme, 'reference': 'Android Kotlin', 'settings': case, 'errors': errors}
         if not errors:
             area = np.s_[40:height, :width]
             result.update(visual.summarize(frames['Kotlin'][area], frames['NativeRequired'][area]))

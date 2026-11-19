@@ -4,6 +4,18 @@ package top.ghhccghk.accompanist.lyrics.folia.internal.styles.partita
 
 import top.ghhccghk.accompanist.lyrics.folia.internal.animation.*
 
+internal fun partitaLineNeedsOffscreen(timeUs: Long, enterUs: Long, leaveUs: Long?,
+    profile: RenderProfile, reducedMotion: Boolean): Boolean {
+    if (reducedMotion) return false
+    val enterDuration = when (profile.mode) {
+        Reveal.Normal -> 300_000L
+        Reveal.Fast -> 160_000L
+        Reveal.Instant -> 0L
+    }
+    return (profile.mode != Reveal.Instant && motionElapsedUs(timeUs - enterUs) <= enterDuration) ||
+        (leaveUs != null && timeUs >= leaveUs)
+}
+
 internal data class PartitaChunkFrame(val x: Float, val y: Float, val scale: Float,
     val rotation: Float, val alpha: Float, val guide: Float, val active: Boolean, val waiting: Boolean)
 

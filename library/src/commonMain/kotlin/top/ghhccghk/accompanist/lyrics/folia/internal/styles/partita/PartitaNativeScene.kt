@@ -70,7 +70,7 @@ internal class PartitaNativePlan(line:NormalizedLine, private val prepared:Parti
                     }
                     val t=translate(rp+x,rp+y).then(scale(if(horizontal)chunk.guide else 1f,if(horizontal)1f else chunk.guide))
                         .then(translate(-(if(horizontal&&right)g.size.width else 0f)-g.padding,-(if(horizontal)0f else g.size.height)-g.padding))
-                    rowCommands+=FoliaRendererGroup(image.width,image.height,children,chunk.guide.coerceIn(0f,1f),transform=t)
+                    rowCommands+=FoliaRendererGroup(image.width,image.height,children,chunk.guide.coerceIn(0f,1f),transform=t,allowDirectDraw=true)
                 }
                 addGuide(guides[ri].first,false,if(right)(geo.box.width*d+7*d).toFloat() else -8*d,((geo.box.height+16)*d).toFloat(),69/255f)
                 addGuide(guides[ri].second,true,if(right)((geo.box.width+16)*d).toFloat() else -16*d,((geo.box.height+7)*d).toFloat(),53/255f)
@@ -95,12 +95,13 @@ internal class PartitaNativePlan(line:NormalizedLine, private val prepared:Parti
                 val t=translate((rp+(box.left+box.width/2+word.x)*d).toFloat(),(rp+(box.top+box.height/2+word.y)*d).toFloat())
                     .then(rotate(word.rotation)).then(scale(word.scale))
                     .then(translate((-box.width*d/2-wp).toFloat(),(-box.height*d/2+cell.baseline-wp).toFloat()))
-                rowCommands+=FoliaRendererGroup(cell.layout.size.width+2*wp,cell.layout.size.height+2*wp,children,word.alpha.coerceIn(0f,1f),transform=t)
+                rowCommands+=FoliaRendererGroup(cell.layout.size.width+2*wp,cell.layout.size.height+2*wp,children,word.alpha.coerceIn(0f,1f),transform=t,allowDirectDraw=true)
             }
             val t=lineTransform.then(translate((origin.x+(geo.box.left+geo.box.width/2+chunk.x)*d).toFloat(),(origin.y+(geo.box.top+geo.box.height/2+chunk.y)*d).toFloat()))
                 .then(rotate(chunk.rotation)).then(scale(chunk.scale)).then(translate((-geo.box.width*d/2-rp).toFloat(),(-geo.box.height*d/2-rp).toFloat()))
-            FoliaRendererGroup(ceil(geo.box.width*d).toInt()+2*rp,ceil(geo.box.height*d).toInt()+2*rp,rowCommands,chunk.alpha.coerceIn(0f,1f),transform=t)
+            FoliaRendererGroup(ceil(geo.box.width*d).toInt()+2*rp,ceil(geo.box.height*d).toInt()+2*rp,rowCommands,chunk.alpha.coerceIn(0f,1f),transform=t,allowDirectDraw=true)
         }
-        return FoliaRendererFrame(time,width,height,FoliaRendererGroup(width+2*p,height+2*p,rows,motion.alpha,motion.blur,translate(-p.toFloat(),-p.toFloat())))
+        return FoliaRendererFrame(time,width,height,FoliaRendererGroup(width+2*p,height+2*p,rows,motion.alpha,motion.blur,translate(-p.toFloat(),-p.toFloat()),
+            allowDirectDraw=!partitaLineNeedsOffscreen(time,enterUs,leaveUs,profile,options.reducedMotion)))
     }
 }

@@ -42,7 +42,8 @@ internal object ScenePacketEncoder {
             require(depth<=16&&++nodes<=4096)
             when(c){
                 is FoliaRendererGroup->{
-                    int(1);int(c.width);int(c.height);float(c.opacity);float(c.blurSigma);matrix(c.transform)
+                    // v2 adds a direct group opcode. v1 groups keep isolated semantics.
+                    int(if (c.allowDirectDraw && c.opacity == 1f && c.blurSigma <= .01f) 4 else 1);int(c.width);int(c.height);float(c.opacity);float(c.blurSigma);matrix(c.transform)
                     c.commands.forEach{command(it,scene,depth+1)};int(3)
                 }
                 is FoliaRendererImage->{

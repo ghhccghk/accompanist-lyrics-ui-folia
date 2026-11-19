@@ -3,6 +3,8 @@ use crate::protocol::{Command, Frame, Group, Transform};
 use std::collections::BTreeMap;
 use wgpu::util::DeviceExt;
 
+const IDENTITY: Transform = Transform([1., 0., 0., 1., 0., 0.]);
+
 const FORMAT:wgpu::TextureFormat=wgpu::TextureFormat::Rgba8Unorm;
 const FLOAT:wgpu::TextureFormat=wgpu::TextureFormat::Rgba32Float;
 const BUDGET:u64=192*1024*1024;
@@ -40,6 +42,14 @@ fn pipeline(device:&wgpu::Device,layout:&wgpu::BindGroupLayout,shader:&str,forma
 }
 fn buffer(device:&wgpu::Device,bytes:&[u8])->wgpu::Buffer {
     device.create_buffer_init(&wgpu::util::BufferInitDescriptor{label:Some("Folia uniforms"),contents:bytes,usage:wgpu::BufferUsages::UNIFORM})
+}
+fn then(Transform([a, b, c, d, x, y]): Transform,
+    Transform([e, f, g, h, u, v]): Transform) -> Result<Transform, i32> {
+    let matrix = [a*e+c*f, b*e+d*f, a*g+c*h, b*g+d*h, a*u+c*v+x, b*u+d*v+y];
+    if matrix.iter().any(|value| value.abs() > 1_000_000. || !value.is_finite()) {
+        return Err(-31);
+    }
+    Ok(Transform(matrix))
 }
 fn floats(values:&[f32])->Vec<u8>{values.iter().flat_map(|v|v.to_le_bytes()).collect()}
 fn pass(encoder:&mut wgpu::CommandEncoder,target:&wgpu::TextureView,pipe:&wgpu::RenderPipeline,bind:&wgpu::BindGroup,vertices:u32,clear:bool) {
@@ -143,22 +153,28 @@ impl Gpu {
     fn group(&mut self,encoder:&mut wgpu::CommandEncoder,group:&Group)->Result<Image,i32> {
         let image=self.take(group.width,group.height,FORMAT)?;
         clear(encoder,&image.view);
-        if group.opacity>0. {self.commands(encoder,&image.view,(group.width,group.height),&group.commands)?;}
+        if group.opacity>0. {self.commands(encoder,&image.view,(group.width,group.height),&group.commands,IDENTITY)?;}
         if group.sigma>0.01&&group.opacity>0. {
             let output=self.blurred(encoder,&image,group.sigma,true)?;self.recycle(image);Ok(output)
         }else{Ok(image)}
     }
-    fn commands(&mut self,encoder:&mut wgpu::CommandEncoder,target:&wgpu::TextureView,size:(u32,u32),commands:&[Command])->Result<(),i32> {
+    fn commands(&mut self,encoder:&mut wgpu::CommandEncoder,target:&wgpu::TextureView,size:(u32,u32),commands:&[Command],parent:Transform)->Result<(),i32> {
         for command in commands {
             match command {
                 Command::Image{texture,color,transform}=>{
                     let image=self.images.get(texture).ok_or(-43)?;
-                    self.draw_image(encoder,image,target,size,*transform,*color,true,false);
+                    self.draw_image(encoder,image,target,size,then(parent,*transform)?,*color,true,false);
                 },
                 Command::Group(g)=>{
                     if g.opacity==0. {continue;}
+                    // Retain the parent transform through non-isolated groups. Sampling
+                    // a texture at every layer spreads narrow guides and softens text.
+                    if g.direct {
+                        self.commands(encoder,target,size,&g.commands,then(parent,g.transform)?)?;
+                        continue;
+                    }
                     let image=self.group(encoder,g)?;
-                    self.draw_image(encoder,&image,target,size,g.transform,[1.,1.,1.,g.opacity],false,false);
+                    self.draw_image(encoder,&image,target,size,then(parent,g.transform)?,[1.,1.,1.,g.opacity],false,false);
                     self.recycle(image);
                 }
             }
@@ -168,9 +184,9 @@ impl Gpu {
         let mut encoder=self.device.create_command_encoder(&Default::default());
         let image=self.take(frame.width,frame.height,FORMAT)?;
         clear(&mut encoder,&image.view);
-        self.commands(&mut encoder,&image.view,(frame.width,frame.height),&frame.commands)?;
+        self.commands(&mut encoder,&image.view,(frame.width,frame.height),&frame.commands,IDENTITY)?;
         clear(&mut encoder,target);
-        self.draw_image(&mut encoder,&image,target,(frame.width,frame.height),Transform([1.,0.,0.,1.,0.,0.]),[1.;4],false,true);
+        self.draw_image(&mut encoder,&image,target,(frame.width,frame.height),IDENTITY,[1.;4],false,true);
         self.queue.submit(Some(encoder.finish()));self.submitted=frame.id;self.recycle(image);Ok(())
     }
     pub fn drop_scene(&mut self,scene:u64)->Result<(),i32> {

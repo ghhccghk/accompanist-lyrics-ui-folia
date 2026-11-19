@@ -14,7 +14,7 @@ import kotlin.math.sin
 annotation class ExperimentalFoliaRendererBridge
 
 @ExperimentalFoliaRendererBridge
-const val FOLIA_RENDERER_SCENE_VERSION: Int = 1
+const val FOLIA_RENDERER_SCENE_VERSION: Int = 2
 
 /** Fully shaped CPU coverage uploaded only when a preparation changes. Shadow
  * sigmas request GPU preparation, never a CPU mask/colour processor invocation. */
@@ -45,9 +45,13 @@ sealed interface FoliaRendererCommand
 data class FoliaRendererImage(val texture:Int,val color:Color,val opacity:Float=1f,
     val transform:FoliaRendererTransform=FoliaRendererTransform()):FoliaRendererCommand
 
+/** An isolated group clips to its bounds and composites its children together.
+ * With [allowDirectDraw], a fully opaque, unfiltered group may instead replay its
+ * children under its transform with no group clip or intermediate raster. */
 @ExperimentalFoliaRendererBridge
 data class FoliaRendererGroup(val width:Int,val height:Int,val commands:List<FoliaRendererCommand>,
-    val opacity:Float=1f,val blurSigma:Float=0f,val transform:FoliaRendererTransform=FoliaRendererTransform()):FoliaRendererCommand
+    val opacity:Float=1f,val blurSigma:Float=0f,val transform:FoliaRendererTransform=FoliaRendererTransform(),
+    val allowDirectDraw:Boolean=false):FoliaRendererCommand
 
 @ExperimentalFoliaRendererBridge
 data class FoliaRendererFrame(val mediaTimeUs:Long,val width:Int,val height:Int,val root:FoliaRendererGroup)

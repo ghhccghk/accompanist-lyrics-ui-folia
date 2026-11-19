@@ -55,3 +55,39 @@ case run:
 ```text
 python scripts/compare-renderer-captures.py kotlin.png native.png --region 0 40 800 600
 ```
+
+## Scene protocol v2 rerun
+
+The same 13 fixture pairs were captured from local Maven snapshot
+`0.1.0-20261119.015134-12` on the same emulator. The guide-off diagnostic
+is omitted. Kotlin keeps the same drawing behavior. The native renderer
+replays eligible layers under the composed transform, while keeping
+translucent, filtered and forced-offscreen groups isolated.
+
+| Case | Mean | P99 | Peak | Worst tile mean |
+| --- | ---: | ---: | ---: | ---: |
+| baseline-850 | 0.371 | 2 | 3 | 0.609 |
+| baseline-1500 | 0.420 | 2 | 11 | 0.887 |
+| baseline-3300 | 0.565 | 2 | 4 | 1.000 |
+| wrap | 0.476 | 4 | 9 | 1.030 |
+| arabic | 0.393 | 2 | 8 | 0.758 |
+| cjk | 0.401 | 2 | 32 | 0.902 |
+| bidi-rtl | 0.415 | 2 | 8 | 0.819 |
+| bidi-ltr | 0.383 | 2 | 9 | 0.833 |
+| cluster | 0.380 | 2 | 26 | 1.120 |
+| large-reduced | 0.426 | 2 | 4 | 1.000 |
+| waiting | 0.000 | 0 | 0 | 0.000 |
+| subtitle-1500 | 0.327 | 2 | 11 | 0.736 |
+| subtitle-3300 | 0.653 | 2 | 4 | 1.151 |
+
+The vertical guide now aligns in the Latin and CJK comparisons. The CJK
+maximum of 32 is a single pixel on the horizontal guide near (607, 319),
+where the solid Kotlin rectangle and the sampled GPU mask use different
+edge coverage. The most affected 32x32 CJK tile averages 0.902. Preserve
+this remaining local difference for further comparison.
+
+Android Rust tests passed (7/7). The API 34 independent release/R8 consumer
+passed the full lifecycle probe. Both packaged ABIs, matching symbol build
+IDs, 63 crate sources and licenses, and 16 KiB APK alignment were checked.
+JNI ABI stays at 2. Rust accepts v1 packets with the original isolation
+behavior and requires scene v2 for direct groups.

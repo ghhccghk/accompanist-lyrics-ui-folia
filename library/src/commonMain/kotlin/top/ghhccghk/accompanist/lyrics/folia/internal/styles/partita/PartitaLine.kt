@@ -243,9 +243,7 @@ internal fun PartitaLine(line: NormalizedLine, playback: () -> FoliaPlaybackSnap
             val origin=Offset((size.width-contentWidth*d)/2,(size.height-geometry.height*d)/2)
             val padding=ceil(180*d).toInt()
             lineLayer.alpha=frame.alpha;lineLayer.blurSigma=frame.blur
-            val enterDuration=when(profile.mode){Reveal.Normal->300_000L;Reveal.Fast->160_000L;Reveal.Instant->0L}
-            lineLayer.forceOffscreen=!options.reducedMotion && ((profile.mode!=Reveal.Instant &&
-                motionElapsedUs(time-enterUs)<=enterDuration) || (leaveUs!=null && time>=leaveUs))
+            lineLayer.forceOffscreen=partitaLineNeedsOffscreen(time,enterUs,leaveUs,profile,options.reducedMotion)
             lineLayer.record(this,IntSize(size.width.toInt()+2*padding,size.height.toInt()+2*padding)) {
                 withTransform({translate(padding.toFloat(),padding.toFloat());translate(0f,frame.breathingY);scale(frame.scale,frame.scale,center-Offset(padding.toFloat(),padding.toFloat()))}) {
                     prepared.rows.forEachIndexed { ri,cells ->

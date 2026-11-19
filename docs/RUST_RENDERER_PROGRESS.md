@@ -53,10 +53,12 @@ real MediaPlayer playback in the `:playback` process, external LRC attachment,
 and seek. Returning from Home preserved paused playback and lyrics selection.
 See [the sample check](../verification/native-renderer-p3.md).
 
-Fourteen fixed-time visual pairs were measured from the release consumer.
-Waiting and the visible subtitle overlay matched exactly. Peak local differences
-reached 97/255, so main-stage visual acceptance remains open. See
-[visual results](../verification/native-renderer-visual.md).
+The first release-consumer visual matrix isolated a peak error of 97/255 at
+Partita guides. Scene protocol v2 lets opaque, unfiltered groups replay directly
+under their composed transform. Forced offscreen transitions, group alpha and
+blur still use isolated layers. The independent release/R8 lifecycle and source,
+symbol and 16 KiB package checks passed again. See
+[visual results](../verification/native-renderer-visual.md) for the paired rerun.
 
 ## Remaining
 

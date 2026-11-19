@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 //! Bounded little-endian scene commands. All bytes are owned before GPU dispatch.
 pub const MAGIC: u32 = 0x31475246;
+const SCENE_VERSION: u32 = 2;
 pub const MAX_PACKET: usize = 512 * 1024;
 pub const MAX_NODES: usize = 4096;
 pub const MAX_FRAME_BYTES: u64 = 192 * 1024 * 1024;
@@ -16,9 +17,10 @@ pub enum Command {
 pub struct Group {
     pub width:u32, pub height:u32, pub opacity:f32, pub sigma:f32,
     pub transform:Transform, pub commands:Vec<Command>,
+    pub direct: bool,
 }
 pub struct Frame { pub id:u64, pub width:u32, pub height:u32, pub commands:Vec<Command> }
-struct Reader<'a> { bytes:&'a [u8], at:usize, count:usize, pixels:u64 }
+struct Reader<'a> { bytes:&'a [u8], at:usize, count:usize, pixels:u64, version:u32 }
 impl Reader<'_> {
     fn u32(&mut self)->Result<u32,i32> {
         let end=self.at.checked_add(4).ok_or(-30)?;
@@ -40,13 +42,15 @@ impl Reader<'_> {
             if op==3 {return Ok(result);}
             self.count+=1; if self.count>MAX_NODES {return Err(-32);}
             match op {
-                1=>{
+                1 | 4 if op == 1 || self.version >= 2 => {
                     let (width,height)=crate::dimensions(self.u32()? as i32,self.u32()? as i32)?;
                     self.pixels=self.pixels.checked_add(width as u64*height as u64).ok_or(-33)?;
                     if self.pixels*4>MAX_FRAME_BYTES {return Err(-33);}
                     let opacity=self.float(0.,1.)?;let sigma=self.float(0.,512.)?;let transform=self.matrix()?;
+                    let direct = op == 4;
+                    if direct && (opacity != 1. || sigma > 0.01) { return Err(-31); }
                     let commands=self.commands(depth+1)?;
-                    result.push(Command::Group(Group {width,height,opacity,sigma,transform,commands}));
+                    result.push(Command::Group(Group {width,height,opacity,sigma,transform,commands,direct}));
                 },
                 2=>{
                     let texture=self.u64()?; if texture==0{return Err(-34);}
@@ -60,8 +64,10 @@ impl Reader<'_> {
 }
 pub fn parse(bytes:&[u8])->Result<Frame,i32> {
     if bytes.len()>MAX_PACKET {return Err(-30);}
-    let mut r=Reader{bytes,at:0,count:0,pixels:0};
-    if r.u32()?!=MAGIC||r.u32()?!=1 {return Err(-35);}
+    let mut r=Reader{bytes,at:0,count:0,pixels:0,version:0};
+    if r.u32()?!=MAGIC {return Err(-35);}
+    r.version = r.u32()?;
+    if !(1..=SCENE_VERSION).contains(&r.version) {return Err(-35);}
     let id=r.u64()?;let(width,height)=crate::dimensions(r.u32()? as i32,r.u32()? as i32)?;
     let commands=r.commands(0)?;
     if r.at!=bytes.len(){return Err(-30);}
@@ -73,6 +79,25 @@ pub fn parse(bytes:&[u8])->Result<Frame,i32> {
     fn base()->Vec<u8>{[MAGIC,1,7,0,800,600].into_iter().flat_map(u32::to_le_bytes).collect()}
     fn push(b:&mut Vec<u8>,v:u32){b.extend(v.to_le_bytes());}
     fn group(b:&mut Vec<u8>,w:u32,h:u32){for v in [1,w,h,1f32.to_bits(),0,1f32.to_bits(),0,0,1f32.to_bits(),0,0]{push(b,v);}}
+    #[test]
+    fn direct_groups_require_v2_and_preserve_isolation_rules() {
+        let mut bytes = base();
+        group(&mut bytes, 8, 8);
+        push(&mut bytes, 3);
+        push(&mut bytes, 3);
+        let frame = parse(&bytes).unwrap();
+        assert!(matches!(&frame.commands[0], Command::Group(group) if !group.direct));
+        bytes[24..28].copy_from_slice(&4u32.to_le_bytes());
+        assert!(parse(&bytes).is_err());
+        bytes[4..8].copy_from_slice(&SCENE_VERSION.to_le_bytes());
+        let frame = parse(&bytes).unwrap();
+        assert!(matches!(&frame.commands[0], Command::Group(group) if group.direct));
+        bytes[40..44].copy_from_slice(&1f32.to_le_bytes());
+        assert!(parse(&bytes).is_err());
+        bytes[40..44].copy_from_slice(&0f32.to_le_bytes());
+        bytes[36..40].copy_from_slice(&0.5f32.to_le_bytes());
+        assert!(parse(&bytes).is_err());
+    }
     #[test] fn empty_frame_and_truncations(){
         let mut b=base();push(&mut b,3);let f=parse(&b).unwrap();assert_eq!(f.id,7);assert_eq!((f.width,f.height),(800,600));
         for n in 0..b.len(){assert!(parse(&b[..n]).is_err());}

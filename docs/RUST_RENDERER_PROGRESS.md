@@ -88,7 +88,11 @@ pixel peaks remain open.
 - Android SDK and pinned NDK present; project-local Rust 1.91.1 present.
 - ARM64/x86_64 locked builds, AAR publication, Rust 2/2 tests on Android and isolated release/R8 packaged runtime probe: PASS. Exact hashes, initial failures and scope are in `verification/native-renderer-p1.md`.
 - Partita scene adapter + real GPU submit in isolated minified consumer: PASS; 6/6 Rust Android tests; 2/2 bridge tests and existing Partita suite PASS. Paused diagnostics no longer resubmit unchanged frames. See P2 evidence for exact limits and open visual differences.
-- ARM64 runtime and paired physical-device performance: pending; Partita visual differences remain documented.
+- November 19 follow-up: 40 targeted Partita/bridge JVM tests passed; 8 Rust Vulkan tests passed on the API 34 emulator. The release/R8 lifecycle probe passed on both API 34 / 4 KiB and API 35 / 16 KiB x86_64 emulators using snapshot `0.1.0-20261119.020648-14`; the isolated consumer built with no Rust or NDK tasks. The sample debug APK rebuilt.
+- Matched release-consumer captures: 13 original Latin/wrap/Arabic/CJK/bidi/cluster/large/waiting/subtitle pairs, 3 emoji timestamps and 7 subtitle timestamps. Full aggregate metrics and residual pixels are in `verification/native-renderer-visual.md`; the subtitle region matched exactly during enter/hold/exit.
+- Real playback: three Home transitions and one 800x600 to 600x800 rotation retained the embedded song and paused media time; explicit resume advanced from the retained position. UI and playback PIDs remained stable. Per-process PSS is recorded in `verification/native-renderer-p3.md`.
+- Scene resize and independent retirement checks verify resident GPU bytes return to baseline after four viewport sizes, over-budget allocation is rejected without counter growth, and two scenes release independently.
+- ARM64 runtime and paired physical-device performance remain unverified. Local SwiftShader provides Vulkan correctness, not hardware performance. Partita visual edge differences remain documented.
 
 ## Next action / acceptance gate
 

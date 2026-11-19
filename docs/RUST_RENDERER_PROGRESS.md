@@ -143,16 +143,18 @@ matrix remains open.
 - R4 (`b989b0b`, `8e38cfd`): captured eight Partita and eight Diorama pairs
   against Android Kotlin on API 34. Matched baseline browser captures also
   ran for both themes against the pinned Folia text stages. On API 35,
-  both Diorama backends passed tap and long press with the original source
-  object at 1500 ms. The transition test reached the blank handler in both.
+  both Diorama backends passed the Release/R8 paired tap, long press, source
+  identity, drag and pointer cancellation, blank touch and paused transition
+  input checks (`--availability diorama-input`).
   Partita lifecycle passed. Partita edge coverage, broader Diorama visual
   differences, the wider interaction matrix and ARM64 performance remain
   open. See [Android and upstream results](../verification/native-renderer-visual.md).
 - R5 (`71593c2`, `ae5c1c9`): locally published matching Kotlin and native
   candidates. RC.2 ran all 76 producer tasks and passed both Release/R8 app
   probes on the API 35 x86_64 16 KiB emulator. Core packages, runtime, symbols,
-  16 KiB alignment and dependency archives checked out. The offline Rust source rebuild outside the checkout
-  needed nine additional locked Windows host crates. See [candidate evidence](../verification/native-renderer-candidate.md).
+  16 KiB alignment and dependency archives checked out. The offline Rust
+  source rebuild outside the checkout needed nine additional locked Windows
+  host crates. See [candidate evidence](../verification/native-renderer-candidate.md).
 
 ## Remaining
 

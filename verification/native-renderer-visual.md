@@ -162,11 +162,15 @@ projection implementation as the starting point for isolating the discrepancy.
 The Partita Release/R8 lifecycle check also passed seeking, source identity,
 click and long press, cancelled gestures, multiple views and retirement.
 Diorama seek, font and viewport changes passed the pressure probe. On API 35
-with the 16 KiB image and Maven `0.1.0-rc.1`, both backends returned the
-original source line on tap (75 ms) and long press (700 ms) at `(433,356)`
-with media paused at 1500 ms. A 700 ms hold at `(364,317)` during the
-3550 ms transition reached the blank handler in both backends. The wider
-Diorama hit geometry and gesture matrix remain open.
+with the 16 KiB image and Maven `0.1.0-rc.2`, both backends returned the
+original source line on tap and long press at `(433,356)` with media paused
+at 1500 ms. Both suppressed actions on drag and pointer cancellation and
+routed a corner tap to the blank handler. A long press at `(364,317)` during
+the 3550 ms transition reached the blank handler in both backends. Use
+`verify-native-consumer.py --availability diorama-input` on the 800×600
+fixture. This covers two paused timestamps. Hit geometry while playing,
+during a song replacement and across more viewport and font settings remains
+open.
 
 This table compares the two Android implementations. ARM64 runtime and
 frame-time gates remain pending.
@@ -199,8 +203,11 @@ comparison.
 
 The region, foreground mask and units match the Android pair table. Both
 Android renderers show larger differences against upstream than against one
-another in these samples. Theme parity remains open. These captures do not
-isolate camera timing, font edges, mip sampling, clipping, fog or glow.
+another in these samples. Theme parity remains open. Android Kotlin's
+Diorama sampler factories return null, so the Android Kotlin path uses Compose
+planes while native uses the projective shader with explicit mips. The capture
+matrix measures the combined difference. Isolating the contribution of camera
+timing, font edges, mip sampling, clipping, fog and glow requires focused probes.
 
 ```powershell
 node verification/classic-browser/capture-renderer-partita.mjs

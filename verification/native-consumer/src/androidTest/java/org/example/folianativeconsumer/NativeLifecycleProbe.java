@@ -45,14 +45,14 @@ public final class NativeLifecycleProbe extends Instrumentation {
         SystemClock.sleep(hold);
         pointer(down, MotionEvent.ACTION_UP, x, y);
     }
-    private void assertCancelled(String label, boolean drag) {
+    private void assertCancelled(String label, boolean drag, float x, float y) {
         long down = SystemClock.uptimeMillis();
-        pointer(down, MotionEvent.ACTION_DOWN, 430, 326);
+        pointer(down, MotionEvent.ACTION_DOWN, x, y);
         if (drag) {
-            pointer(down, MotionEvent.ACTION_MOVE, 430, 406);
-            pointer(down, MotionEvent.ACTION_UP, 430, 406);
+            pointer(down, MotionEvent.ACTION_MOVE, x, y + 80);
+            pointer(down, MotionEvent.ACTION_UP, x, y + 80);
         } else {
-            pointer(down, MotionEvent.ACTION_CANCEL, 430, 326);
+            pointer(down, MotionEvent.ACTION_CANCEL, x, y);
         }
         SystemClock.sleep(ViewConfiguration.getLongPressTimeout() + 100);
         if (!label.equals(state())) throw new AssertionError("Cancelled gesture fired: " + state());
@@ -99,6 +99,36 @@ public final class NativeLifecycleProbe extends Instrumentation {
             throw new AssertionError("Unknown availability mode: " + mode);
         }
     }
+    private Intent diorama(String backend, long mediaMs) {
+        return intent().putExtra("theme", "Diorama").putExtra("backend", backend).putExtra("mediaMs", mediaMs);
+    }
+    private void checkDioramaInput() {
+        activity = startActivitySync(diorama("Kotlin", 1500));
+        for (String backend : new String[]{"Kotlin", "NativeRequired"}) {
+            boolean nativeBackend = backend.equals("NativeRequired");
+            update(diorama(backend, 1500));
+            if (nativeBackend) await("NativeGpu Ready:DioramaText", "sampled=1500000");
+            else await("Kotlin Kotlin", "media=1500");
+            stable();
+            // Stable interior hit from both 800x600 baseline captures.
+            touch(433, 356, 75);
+            await("CLICK source=true media=1500");
+            touch(433, 356, ViewConfiguration.getLongPressTimeout() + 200);
+            await("LONG source=true media=1500");
+            touch(10, 590, 75);
+            String blank = await("BLANK media=1500");
+            assertCancelled(blank, true, 433, 356);
+            assertCancelled(blank, false, 433, 356);
+            update(diorama(backend, 3550));
+            if (nativeBackend) await("NativeGpu Ready:DioramaText", "sampled=3550000");
+            // Kotlin reports backend changes; the blank callback confirms the new media snapshot.
+            waitForIdleSync();
+            stable();
+            // Projected ink there is outside the interactive footprint at the cut.
+            touch(364, 317, ViewConfiguration.getLongPressTimeout() + 200);
+            await("BLANK media=3550");
+        }
+    }
     private void checkSessionFault() throws ReflectiveOperationException {
         activity = startActivitySync(intent().putExtra("backend", "NativePreferred"));
         Class<?> jni = Class.forName("top.ghhccghk.accompanist.lyrics.folia.nativeandroid.RendererJni");
@@ -132,6 +162,7 @@ public final class NativeLifecycleProbe extends Instrumentation {
             getUiAutomation(); // Enable accessibility before the composition is created.
             if (availability != null) {
                 if (availability.equals("session-fault")) checkSessionFault();
+                else if (availability.equals("diorama-input")) checkDioramaInput();
                 else checkAvailability(availability);
                 result.putString("stream", "PASS API " + android.os.Build.VERSION.SDK_INT + " availability=" + availability + "\n");
                 finish(Activity.RESULT_OK, result);
@@ -173,8 +204,8 @@ public final class NativeLifecycleProbe extends Instrumentation {
             await("LONG source=true");
             touch(10, 590, 50);
             String blank = await("BLANK media=1500");
-            assertCancelled(blank, true);
-            assertCancelled(blank, false);
+            assertCancelled(blank, true, 430, 326);
+            assertCancelled(blank, false, 430, 326);
             update(intent().putExtra("mediaMs",1501L));await("sampled=1501000");
             update(intent().putExtra("mediaMs",1700L).putExtra("width",640).putExtra("height",480).putExtra("fontScale",1.5f).putExtra("reduced",true).putExtra("guides",false));
             await("NativeGpu","sampled=1700000");List<TextureView> resized=textures();

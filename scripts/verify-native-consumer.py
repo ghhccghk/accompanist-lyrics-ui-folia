@@ -28,7 +28,7 @@ parser.add_argument("--repository", type=Path, help="Explicit local Maven reposi
 parser.add_argument("--version", default="0.1.0-SNAPSHOT")
 parser.add_argument("--core-only", action="store_true", help="Build only against the Kotlin coordinate")
 parser.add_argument("--serial", help="Explicit task-owned emulator only; never autodetect a device")
-parser.add_argument("--availability", choices=("kotlin", "present", "absent", "session-fault"),
+parser.add_argument("--availability", choices=("kotlin", "present", "absent", "session-fault", "diorama-input"),
                     help="Run the startup/availability probe instead of the full lifecycle probe")
 args = parser.parse_args()
 if args.core_only and args.availability:

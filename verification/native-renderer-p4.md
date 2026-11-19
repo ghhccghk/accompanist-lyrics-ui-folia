@@ -51,3 +51,23 @@ SwiftShader Vulkan, 800x600 at 160 dpi. `getconf PAGE_SIZE` reported `16384`.
 The complete release/R8 lifecycle probe passed, including native Vulkan Partita
 submissions. This is a 16 KiB x86_64 emulator result, not physical hardware.
 ARM64 runtime execution remains open. See [lifecycle evidence](native-renderer-p3.md).
+
+## Scene v2 and GPU retirement rerun
+
+On November 19, 2026, the native producer published snapshot
+`0.1.0-20261119.020648-14`. The isolated coordinate-only release consumer
+rebuilt and ran its lifecycle probe on the API 34 / 4 KiB and API 35 / 16 KiB
+x86_64 task-owned emulators. Both reported `PASS release/R8 AAR`. The exact APK
+passed `zipalign -c -P 16 -v 4`. The AAR and paired symbols were checked for
+all 63 locked crate sources and licenses, both ABI build IDs, and four 0x4000
+ELF LOAD alignments. The x86_64 API 35 runtime loaded the new ABI 2 binary at
+16384-byte pages. The arm64-v8a binary was packaged and inspected, but no
+ARM64 runtime host was available.
+
+Eight Rust tests passed on Android Vulkan. The new GPU test uploads two
+independent scene textures, renders through four increasing viewport sizes,
+and checks that each old viewport's scratch attachments return to baseline
+resident bytes after resize. It rejects an 8192x8192 over-budget allocation
+without inflating resident accounting, then drops scenes separately and checks
+the remaining texture count and byte totals. Scene retirement and resize wait
+up to two seconds for submitted GPU work before releasing scratch allocations.

@@ -61,6 +61,7 @@ impl Session {
         use std::sync::atomic::Ordering::Acquire;
         if self.errors.load(Acquire) || self.lost.load(Acquire) { return Err(-20); }
         if self.config.width != width || self.config.height != height {
+            self.gpu.resize()?;
             self.config.width=width; self.config.height=height;
             self.surface.configure(&self.device,&self.config);
         }

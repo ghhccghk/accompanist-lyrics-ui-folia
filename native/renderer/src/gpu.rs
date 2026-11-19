@@ -189,13 +189,41 @@ impl Gpu {
         self.draw_image(&mut encoder,&image,target,(frame.width,frame.height),IDENTITY,[1.;4],false,true);
         self.queue.submit(Some(encoder.finish()));self.submitted=frame.id;self.recycle(image);Ok(())
     }
-    pub fn drop_scene(&mut self,scene:u64)->Result<(),i32> {
-        // Scene replacement is preparation, never a normal frame. Bound the
-        // wait before releasing retired GPU allocations and scratch accounting.
-        self.device.poll(wgpu::PollType::Wait{submission_index:None,timeout:Some(std::time::Duration::from_secs(2))}).map_err(|_|-44)?;
-        let ids:Vec<_>=self.images.keys().filter(|id|**id>>16==scene).copied().collect();
-        for id in ids{if let Some(image)=self.images.remove(&id){self.recycle(image);}}
-        for image in self.pool.drain(..){self.resident-=image.bytes();}Ok(())
+    fn wait_for_submitted_work(&self) -> Result<(), i32> {
+        self.device.poll(wgpu::PollType::Wait {
+            submission_index: None,
+            timeout: Some(std::time::Duration::from_secs(2)),
+        }).map_err(|_| -44)?;
+        Ok(())
+    }
+
+    fn clear_scratch(&mut self) {
+        for image in self.pool.drain(..) {
+            self.resident -= image.bytes();
+        }
+    }
+
+    pub fn resize(&mut self) -> Result<(), i32> {
+        // The pool is size-keyed. Repeated viewport changes would otherwise
+        // retain full-size attachments until the next lyric scene retires.
+        if !self.pool.is_empty() {
+            self.wait_for_submitted_work()?;
+            self.clear_scratch();
+        }
+        Ok(())
+    }
+
+    pub fn drop_scene(&mut self, scene: u64) -> Result<(), i32> {
+        // Scene replacement is preparation, never a normal frame. Wait before
+        // releasing retired GPU allocations and reducing scratch accounting.
+        self.wait_for_submitted_work()?;
+        self.images.retain(|id, image| {
+            if *id >> 16 != scene { return true; }
+            self.resident -= image.bytes();
+            false
+        });
+        self.clear_scratch();
+        Ok(())
     }
     pub fn stats(&self)->[i64;5]{[self.submitted as i64,self.images.len() as i64,self.resident as i64,self.peak_bytes as i64,self.uploaded_bytes as i64]}
 }
@@ -242,14 +270,51 @@ mod tests {
         let bytes=buffer.slice(..).get_mapped_range();let mut out=Vec::new();
         for y in 0..image.height as usize{out.extend_from_slice(&bytes[y*stride as usize..y*stride as usize+image.width as usize*4]);}out
     }
-    #[test] fn real_vulkan_shadow_and_small_gaussian_match_f64_reference(){
+    fn open_gpu() -> Gpu {
         let instance=wgpu::Instance::new(&wgpu::InstanceDescriptor{backends:wgpu::Backends::VULKAN,..Default::default()});
         let adapter=pollster::block_on(instance.request_adapter(&Default::default())).expect("A real Vulkan adapter is required for this explicit test");
         let(device,queue)=pollster::block_on(adapter.request_device(&wgpu::DeviceDescriptor{
             required_limits:wgpu::Limits::downlevel_defaults().using_resolution(adapter.limits()),
             ..Default::default()
         })).unwrap();
-        let mut gpu=Gpu::new(device,queue,FORMAT);
+        Gpu::new(device,queue,FORMAT)
+    }
+
+    #[test]
+    fn real_vulkan_resize_and_scene_retirement_reclaim_texture_budget() {
+        let mut gpu = open_gpu();
+        let first_scene = (1 << 16) | 1;
+        let second_scene = (2 << 16) | 1;
+        let pixels = vec![64; 32 * 32 * 4];
+        for id in [first_scene, second_scene] {
+            gpu.upload(id, 32, 32, &pixels, &[], 1.).unwrap();
+        }
+        let prepared_bytes = (pixels.len() * 2) as u64;
+        let target = gpu.allocate(128, 128, FORMAT).unwrap();
+        let target_bytes = target.bytes();
+        for (index, width) in [64, 80, 96, 112].into_iter().enumerate() {
+            let frame = Frame {
+                id: index as u64 + 1, width, height: 64, commands: vec![Command::Image {
+                    texture: second_scene, color: [1.; 4], transform: IDENTITY,
+                }],
+            };
+            gpu.render(&frame, &target.view).unwrap();
+            assert_eq!(gpu.resident, prepared_bytes + target_bytes + (width * 64 * 4) as u64);
+            gpu.resize().unwrap();
+            assert_eq!(gpu.resident, prepared_bytes + target_bytes);
+            assert_eq!(gpu.images.len(), 2);
+        }
+        assert_eq!(gpu.allocate(8192, 8192, FORMAT).err(), Some(-40));
+        assert_eq!(gpu.resident, prepared_bytes + target_bytes);
+        gpu.drop_scene(1).unwrap();
+        assert_eq!(gpu.images.keys().copied().collect::<Vec<_>>(), [second_scene]);
+        assert_eq!(gpu.resident, pixels.len() as u64 + target_bytes);
+        gpu.drop_scene(2).unwrap();
+        assert_eq!(gpu.resident, target_bytes);
+    }
+
+    #[test] fn real_vulkan_shadow_and_small_gaussian_match_f64_reference(){
+        let mut gpu = open_gpu();
         let(w,h)=(31usize,17usize);
         let alpha:Vec<u8>=(0..w*h).map(|i|if i%11==0{1}else if i%7==0{255}else{((i*137+29)%173) as u8}).collect();
         let rgba:Vec<u8>=alpha.iter().flat_map(|a|[*a;4]).collect();

@@ -68,7 +68,8 @@ pixel peaks remain open.
 - P3: residual main-stage edge coverage. The real playback sample passed three
   Home round trips and a rotation while playing, with pause on stop and resume
   at the retained position. See the P3 evidence for both process PSS readings.
-- P4: ARM64 runtime, device-error/resource-pressure evidence and paired hardware performance.
+- P4: ARM64 runtime and paired hardware performance. Resize and scene-retirement
+  Vulkan tests now account for reclaimed scratch texture bytes; see P4 evidence.
 - Only after the first theme closes: trace-led second theme, then separately validated desktop host.
 
 ## P0 observations and fixed acceptance conditions

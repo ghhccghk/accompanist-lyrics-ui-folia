@@ -16,10 +16,17 @@ const family='Diorama Mounted',face=new FontFace(family,`url(${fontUrl})`,{weigh
 await face.load();document.fonts.add(face);await document.fonts.ready;
 const make=(n:number,label:string)=>Array.from({length:n},(_,i)=>({fullText:`Synthetic ${label} line ${i}`,
  startTime:(700+i*1400)/1000,endTime:(1500+i*1400)/1000,words:[]}));
-const oldLines=make(8,'outgoing'),lines=make(3,'incoming'),oldSeed='Outgoing mirror',seed='Incoming mirror';
+const baseline = new URLSearchParams(location.search).has('androidBaseline');
+const baselineLine = (a: string, b: string, startTime: number, middle: number, endTime: number) => ({
+ fullText: a + b, startTime, endTime,
+ words: [{text: a, startTime, endTime: middle}, {text: b, startTime: middle, endTime}],
+});
+const oldLines = baseline ? [baselineLine('Amber ', 'echo', .7, 1.3, 1.9),
+ baselineLine('Silver ', 'light', 3.2, 3.65, 4.1)] : make(8, 'outgoing');
+const lines = make(3, 'incoming'), oldSeed = baseline ? 'Diorama' : 'Outgoing mirror', seed = 'Incoming mirror';
 const seq=createSequencerState();let segment=appendSegment(seq,{seed:oldSeed,lines:oldLines,round:0,placementOrigin:{x:0,y:0,z:0}});
 const theme={name:'Mounted source',fontFamily:family,fontWeight:700,fontStyle:'sans',animationIntensity:'normal',
- primaryColor:'#dfe5ec',secondaryColor:'#758daa',accentColor:'#f17b4d',backgroundColor:'#162435',wordColors:[]};
+ primaryColor:'#dfe5ec',secondaryColor:baseline?'#adb9c8':'#758daa',accentColor:baseline?'#ffffff':'#f17b4d',backgroundColor:'#162435',wordColors:[]};
 const motion=resolveDioramaMotionParams(undefined,'normal'),media=motionValue(0),zero=motionValue(0);
 const bands=Object.fromEntries(['bass','lowMid','mid','vocal','treble'].map(k=>[k,zero]));
 const widthRef={current:0},canvas=document.querySelector('canvas')!,root=createRoot(canvas);

@@ -161,13 +161,49 @@ transition. Its error spans larger regions. Keep the same F16, mip and
 projection implementation as the starting point for isolating the discrepancy.
 The Partita Release/R8 lifecycle check also passed seeking, source identity,
 click and long press, cancelled gestures, multiple views and retirement.
-Diorama seek, font and viewport changes passed the pressure probe. Matching
-Diorama hit geometry and full interaction coverage remain open.
+Diorama seek, font and viewport changes passed the pressure probe. On API 35
+with the 16 KiB image and Maven `0.1.0-rc.1`, both backends returned the
+original source line on tap (75 ms) and long press (700 ms) at `(433,356)`
+with media paused at 1500 ms. A 700 ms hold at `(364,317)` during the
+3550 ms transition reached the blank handler in both backends. The wider
+Diorama hit geometry and gesture matrix remain open.
 
-This table compares the two Android implementations. Direct comparison with
-the pinned upstream Folia frontend remains pending. Existing component
-calibrations in `docs/diorama-preview.md` cover separate browser and Kotlin
-inputs. ARM64 runtime and equal-quality frame-time gates remain pending.
+This table compares the two Android implementations. ARM64 runtime and
+frame-time gates remain pending.
 
 Reproduce with `scripts/capture-renderer-pairs.py --theme Diorama` or
 `--theme Partita`, a task-owned 800×600 emulator and the Release consumer.
+
+## Baseline against pinned upstream Folia
+
+The browser ran the text stage at `cc6226e464050a456a2913e062374f23d3844cc5`
+using Chromium `151.0.7922.34`. Both sides use “Amber echo” and “Silver light”
+with the same word times, Latin font file, font scale 1, 800×600 viewport,
+DPR 1 and uniform palette. Partita uses the original mounted visualizer with
+its default motion and guides. Diorama mounts the original CameraRig and
+DioramaScene with seed `Diorama` and no audio or particles. Existing mounted
+cut fixtures remain separate. The browser advances through the song with a
+controlled clock. Android loads independent paused timestamps. Browser motion,
+text rasterization and the mounting history can contribute to the measured
+pixel differences. The browser clocks supply media positions for visual
+comparison.
+
+| Upstream case | Android Kotlin mean / P99 / peak | Android native mean / P99 / peak |
+| --- | ---: | ---: |
+| Partita 1500 ms | 3.770 / 56 / 146 | 3.728 / 56 / 145 |
+| Diorama 850 ms | 22.570 / 112 / 163 | 19.833 / 103 / 143 |
+| Diorama 1500 ms | 18.865 / 150 / 178 | 15.782 / 147 / 178 |
+| Diorama 3300 ms | 22.876 / 91 / 126 | 21.855 / 84 / 126 |
+| Diorama 3550 ms | 35.913 / 58 / 125 | 35.725 / 58 / 126 |
+| Diorama 3700 ms | 9.908 / 107 / 153 | 10.189 / 97 / 149 |
+
+The region, foreground mask and units match the Android pair table. Both
+Android renderers show larger differences against upstream than against one
+another in these samples. Theme parity remains open. These captures do not
+isolate camera timing, font edges, mip sampling, clipping, fog or glow.
+
+```powershell
+node verification/classic-browser/capture-renderer-partita.mjs
+node verification/classic-browser/capture-diorama-mounted.mjs --android-baseline
+python scripts/compare-renderer-captures.py .work/review-upstream-diorama/baseline-1500.png .work/review-visual-diorama/baseline-1500-NativeRequired.png --region 0 40 800 600
+```

@@ -16,8 +16,9 @@ function renderingVersions(){
 }
 const rendering=renderingVersions();
 const diagnostic=process.argv.includes('--diagnostic');
+const androidBaseline=process.argv.includes('--android-baseline');
 const folder=path.join(root,diagnostic?'.work/diorama-mounted-control-diagnostic':'verification/diorama-fixtures/mounted-cut-v1');
-if(fs.existsSync(folder))throw Error('Preserve mounted source fixture; refusing overwrite');
+if(!androidBaseline&&fs.existsSync(folder))throw Error('Preserve mounted source fixture; refusing overwrite');
 const aliases=['react','react/jsx-runtime','react/jsx-dev-runtime','react-dom','react-dom/client','@react-three/fiber','framer-motion']
  .map(n=>({find:new RegExp('^'+n+'$'),replacement:require.resolve(n)}));
 aliases.push({find:/^three$/,replacement:path.join(path.dirname(require.resolve('three')),'three.module.js')});
@@ -26,6 +27,24 @@ const server=await createServer({configFile:false,root:path.join(root,'verificat
  cacheDir:path.join(root,'.work/diorama-mounted-vite-v2'),server:{host:'127.0.0.1',port:4188,strictPort:true,hmr:false,fs:{allow:[root]}}});
 let browser;try{
  await server.listen();browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+ if (androidBaseline) {
+  const output = path.join(root, '.work/review-upstream-diorama');
+  fs.mkdirSync(output, {recursive:true});
+  const page = await browser.newPage({viewport:{width:800,height:600},deviceScaleFactor:1});
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('http://127.0.0.1:4188/diorama-mounted.html?androidBaseline');
+  await page.waitForFunction(() => window.mountedReady, null, {timeout:20000});
+  const samples = [850,1500,3300,3550,3700];
+  const ticks = [...new Set([...Array.from({length:Math.floor(Math.max(...samples) * 60 / 1000) + 1}, (_, i) => i/60), ...samples.map(ms=>ms/1000), .7, 3.2])]
+   .sort((a,b)=>a-b);
+  for (const t of ticks) {
+   await page.evaluate(time => window.stepMounted(time, time), t);
+   if (samples.includes(t * 1000)) await page.screenshot({path:path.join(output, `baseline-${t * 1000}.png`)});
+  }
+  if (errors.length) throw Error(errors.join('\n'));
+  console.log(JSON.stringify({revision, browser:browser.version(), samples, output}));
+ } else {
  const times=[0,.7,1.6,2.099,2.1,3.199,3.2,3.201,3.499,3.5,4.5,4.6],captures=[],steps=[],teardowns=[];let inputs;
  fs.mkdirSync(out,{recursive:true});
  for(const width of(diagnostic?[380]:[380,800]))for(const fps of(diagnostic?[60]:[60,144])){
@@ -63,4 +82,5 @@ let browser;try{
    ...s.state.position,...s.state.velocity,...s.state.look,...s.state.lookVelocity,s.state.alignment,...s.state.alignmentOrientation,
    ...s.state.orientation,...s.renderedPosition,...s.renderedOrientation,s.controlPeak,s.rasterIndices.join(','),s.neighbors.map(n=>n.index).join(',')].join('\t'))].join('\n')+'\n');
  console.log(JSON.stringify({frames:captures.length,steps:steps.length,teardowns,folder}));
+ }
 }finally{await browser?.close();await server.close()}
